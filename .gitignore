@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# API Keys & Config
+.env
+config/api_keys.json
+config/secrets.json
+
+# Media Files
+assets/raw_footage/
+assets/veo_clips/
+assets/nasa_footage/
+assets/voiceovers/
+output/videos/
+output/thumbnails/
+temp/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

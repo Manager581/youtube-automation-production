@@ -1,0 +1,69 @@
+# YouTube Automation Configuration
+
+# Channel Settings
+channel:
+  name: "Space Facts Channel"
+  niche: "space_facts"
+  target_video_length: 1200  # 20 minutes in seconds
+  upload_frequency: 4  # videos per week
+
+# Video Production Settings
+video:
+  resolution: "1920x1080"
+  fps: 30
+  codec: "libx264"
+  audio_bitrate: "192k"
+  video_bitrate: "8000k"
+
+# Script Settings
+script:
+  target_word_count: 5000  # ~20 minute video at 250 wpm
+  style: "watop"  # engagement-optimized
+  hook_length: 5  # seconds
+  reengagement_interval: 90  # seconds
+
+# Veo 3 Settings
+veo:
+  max_clip_length: 8  # seconds
+  clips_per_video: 150  # for 20-min video (8s clips)
+  style: "cinematic space documentary"
+  resolution: "1080p"
+
+# NASA Footage Settings
+nasa:
+  api_endpoint: "https://images-api.nasa.gov"
+  download_quality: "high"
+  max_clips_per_topic: 30
+
+# Music & SFX
+audio:
+  background_music_volume: 0.15  # 15% volume
+  sfx_volume: 0.3  # 30% volume
+  voiceover_volume: 1.0  # 100% volume
+  music_source: "youtube_audio_library"  # free
+
+# Thumbnail Settings
+thumbnail:
+  width: 1280
+  height: 720
+  style: "watop"  # dramatic, high contrast, text overlay
+
+# Upload Settings
+youtube:
+  category_id: 28  # Science & Technology
+  default_tags:
+    - "space facts"
+    - "astronomy"
+    - "space exploration"
+    - "nasa"
+    - "universe"
+    - "science"
+  privacy_status: "public"  # or "private" for review first
+
+# Workflow Mode
+workflow:
+  mode: "manual"  # "manual" or "api" (upgrade later)
+  human_review:
+    scripts: false  # set true if you want to review before video production
+    final_video: true  # set true to review before upload
+    thumbnails: false
