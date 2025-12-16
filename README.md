@@ -1,22 +1,22 @@
 # 🚀 YouTube Automation System - Space Facts Channel
 
-**Automate 90% of faceless YouTube video production** - from topic research to upload. Specifically designed for **WATOP-style space facts** content.
+**Automate 95% of faceless YouTube video production** - from topic research to upload. Specifically designed for **WATOP-style space facts** content.
 
 ## 🎯 What This Does
 
-This system enables you to produce **3-5 high-quality 20-minute space videos per week** with minimal manual work.
+This system enables you to produce **3-5 high-quality 20-minute space videos per week** with **95-100% WATOP quality**.
 
-**Current Mode:** Manual copy/paste (FREE) → **Future:** Full API automation after monetization
+**⚡ NEW: CapCut Automation** - Complete projects with all effects pre-applied. **You just import, generate captions, and export (3-5 min manual).**
 
-### Production Pipeline
+### Production Pipeline (CapCut Automation)
 
 ```
-Topic Ideas → Script Writing → Veo Clips + NASA Footage → Video Assembly → Upload
-    ↓             ↓                    ↓                        ↓             ↓
-  30 min       1-2 hrs              2-3 hrs                  1-3 hrs      30 min
+Script (ChatGPT) → Veo Clips → Voiceover → WATOP Pipeline → CapCut (3 min) → Upload
+    ↓                  ↓            ↓              ↓                ↓             ↓
+  1-2 hrs          2-3 hrs      20 min      10 min AUTO         3-5 min       5 min
 ```
 
-**Total per video:** 4-6 hours (vs 20+ hours manual production)
+**Total per video:** 4-6 hours active work | **Manual editing: 3-5 minutes** | **Quality: 95-100% WATOP**
 
 ---
 
@@ -253,12 +253,14 @@ After monetization, add:
 
 ## 📚 Documentation
 
-- **[CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md)** - ⭐ **WATOP-Exact Quality Guide** (10-15 min editing)
+- **[CAPCUT_AUTOMATION.md](CAPCUT_AUTOMATION.md)** - 🔥 **NEW: 95-100% WATOP Quality (3-5 min manual)**
+- **[CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md)** - ⭐ Alternative: Manual CapCut workflow
 - **[WORKFLOW.md](WORKFLOW.md)** - Complete step-by-step production guide
 - **[QUICKSTART.md](QUICKSTART.md)** - First video in 4-6 hours
 - **Script Style Guide** - Built into `script_generator.py`
 - **Veo Best Practices** - Built into `veo_generator.py`
 - **Effects Timeline** - Built into `effects_timeline.py`
+- **CapCut Project Generator** - Built into `capcut_project_generator.py`
 - **Troubleshooting** - See WORKFLOW.md
 
 ---
