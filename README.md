@@ -33,9 +33,12 @@ Topic Ideas → Script Writing → Veo Clips + NASA Footage → Video Assembly �
 - ✅ **Music/SFX** - YouTube Audio Library integration (free)
 
 ### Video Production
-- ✅ **Automated Assembly** - Combines Veo + NASA + voiceover + music
-- ✅ **MoviePy Editing** - Programmatic video editing (Python-based)
-- ✅ **Quality Rendering** - 1080p 30fps export
+- ✅ **Effects Timeline Generator** - Analyzes scripts for zoom, text, SFX placements (every 1-2 seconds)
+- ✅ **WATOP-Exact Quality** - Sub-1-second micro-engagements matching WATOP's style
+- ✅ **CapCut Workflow** - 10-15 min manual editing for perfect results (see [CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md))
+- ✅ **SFX Library Setup** - Auto-placement of 200-400 sound effects per video
+- ✅ **Auto-Captions Ready** - Optimized for CapCut's auto-caption feature
+- ✅ **Quality Rendering** - 1080p 30-60fps export
 
 ### Distribution
 - ✅ **Thumbnail Generator** - Creates DALL-E/Midjourney prompts
@@ -61,7 +64,7 @@ python src/content/topic_generator.py
 
 ### 2. Produce Your First Video
 
-**See [WORKFLOW.md](WORKFLOW.md) for complete step-by-step instructions**
+**WATOP-Exact Quality - See [CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md)**
 
 Quick version:
 
@@ -78,17 +81,27 @@ python src/production/veo_generator.py generate scripts/drafts/your_script.md
 # 4. Download NASA footage
 python src/production/nasa_downloader.py script scripts/drafts/your_script.md
 
-# 5. Record voiceover (manual)
+# 5. **NEW: Setup SFX library (one-time, 15 min)**
+python src/production/sfx_library_setup.py guide
+# Follow guide to download 20+ free sound effects
+
+# 6. Record voiceover (manual)
 # Save to: assets/voiceovers/[script_name].mp3
 
-# 6. Assemble video
+# 7. **NEW: Generate effects timeline (WATOP-style)**
+python src/production/effects_timeline.py scripts/drafts/your_script.md
+
+# 8. Assemble base video
 python src/production/video_assembler.py [script_name] [shotlist.json] [voiceover.mp3]
 
-# 7. Generate thumbnail & metadata
+# 9. **NEW: Apply WATOP effects in CapCut (10-15 min)**
+# See CAPCUT_WATOP_WORKFLOW.md for step-by-step CapCut editing
+
+# 10. Generate thumbnail & metadata
 python src/distribution/thumbnail_generator.py "Your Title"
 python src/distribution/metadata_generator.py "Your Title" scripts/drafts/your_script.md
 
-# 8. Upload to YouTube (manual or automated)
+# 11. Upload to YouTube (manual or automated)
 ```
 
 ---
@@ -240,9 +253,12 @@ After monetization, add:
 
 ## 📚 Documentation
 
+- **[CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md)** - ⭐ **WATOP-Exact Quality Guide** (10-15 min editing)
 - **[WORKFLOW.md](WORKFLOW.md)** - Complete step-by-step production guide
+- **[QUICKSTART.md](QUICKSTART.md)** - First video in 4-6 hours
 - **Script Style Guide** - Built into `script_generator.py`
 - **Veo Best Practices** - Built into `veo_generator.py`
+- **Effects Timeline** - Built into `effects_timeline.py`
 - **Troubleshooting** - See WORKFLOW.md
 
 ---
