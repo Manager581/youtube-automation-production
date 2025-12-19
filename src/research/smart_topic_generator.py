@@ -118,28 +118,46 @@ class SmartTopicGenerator:
         patterns = self.load_winning_patterns()
 
         # Title templates based on actual high performers
+        # Simpler templates that actually work
         templates = [
-            "{opening} {authority}'s {topic} {action} a {number}-Degree {phenomenon} {hook}",
-            "We Finally {action} Why {topic} {hook}",
-            "{authority} Just {action} Something {emotion} About {topic}",
-            "Not a {topic1}, But a {topic2}: Scientists Now Believe This {hook}",
-            "{opening} {topic} {action} at the Edge of {location} {ending}",
-            "Scientists {action} {phenomenon} Inside {topic} {ending}",
-            "The Real Reason Why {topic} {hook}",
-            "{authority} {action} Data About {topic} And What It Revealed Is {emotion}",
-            "{topic} Just Did Something That {hook}",
-            "The Truth About {topic} That {authority} Doesn't Want You To Know"
+            # Pattern: Massive! Voyager Found a 50,000-Degree Wall
+            "Massive! {topic} Found a {number}-Degree {phenomenon} at the Edge of {location}",
+
+            # Pattern: We Finally Know Why X Behaves So Strangely
+            "We Finally Know Why {topic} Behaves So Strangely",
+
+            # Pattern: NASA Just Discovered Something Terrifying About X
+            "{authority} Just Discovered Something {emotion} About {topic}",
+
+            # Pattern: Scientists Found X Inside Y And It Changed Everything
+            "Scientists Found {phenomenon} Inside {topic} And It Changed Everything",
+
+            # Pattern: The Real Reason Why X No Longer Makes Sense
+            "The Real Reason Why {topic} No Longer Makes Sense",
+
+            # Pattern: X Just Did Something Impossible
+            "{topic} Just Did Something Impossible And Scientists Can't Explain It",
+
+            # Pattern: Finally! NASA Responds To X
+            "Finally! {authority} Responds To Claims About {topic}",
+
+            # Pattern: Not a Comet, But a Cell
+            "Not a {type1}, But a {type2}: What {topic} Really Is Will Shock You",
+
+            # Pattern: What NASA Found About X
+            "What {authority} Found About {topic} Rewrites Everything We Know",
+
+            # Discovery pattern
+            "{authority}'s {topic} Just Revealed Something That No Longer Makes Sense"
         ]
 
         # Fill-ins
         authorities = ['NASA', 'Voyager', 'Scientists', 'Astronomers', 'James Webb']
-        actions = list(patterns.get('actions', ['Found', 'Discovered']))
-        hooks = list(patterns.get('hooks', ['Behaves Strangely']))
-        endings = ['And It Changed Everything', 'That Rewrites Physics']
-        emotions = ['Terrifying', 'Shocking', 'Mind-Blowing', 'Impossible']
+        emotions = ['Terrifying', 'Shocking', 'Mind-Blowing', 'Impossible', 'Strange']
         numbers = ['10,000', '50,000', '100,000', '1 Million']
-        phenomena = ['Wall', 'Layer', 'Field', 'Zone', 'Barrier']
-        locations = ['the Solar System', 'the Milky Way', 'the Universe', 'Space']
+        phenomena = ['a Massive Wall', 'a Strange Layer', 'a Hidden Field', 'an Impossible Zone', 'a Mysterious Barrier']
+        locations = ['the Solar System', 'the Milky Way', 'the Universe', 'Our Galaxy']
+        types = ['Comet', 'Asteroid', 'Star', 'Planet', 'Rock', 'Gas Cloud']
 
         # Expand proven topics with variations
         topic_variations = {}
@@ -178,18 +196,14 @@ class SmartTopicGenerator:
             # Fill template
             try:
                 title = template.format(
-                    opening=random.choice(list(patterns.get('openings', [''])) or ['']),
                     authority=random.choice(authorities),
                     topic=topic,
-                    topic1=random.choice(topic_list),
-                    topic2=random.choice(topic_list),
-                    action=random.choice(actions),
-                    hook=random.choice(hooks),
-                    ending=random.choice(endings),
                     emotion=random.choice(emotions),
                     number=random.choice(numbers),
                     phenomenon=random.choice(phenomena),
-                    location=random.choice(locations)
+                    location=random.choice(locations),
+                    type1=random.choice(types),
+                    type2=random.choice(types)
                 )
 
                 # Clean up
