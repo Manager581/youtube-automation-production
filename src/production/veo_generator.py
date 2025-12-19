@@ -62,29 +62,135 @@ TIPS FOR 8-SECOND CLIPS:
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def parse_script_for_visuals(self, script_file):
-        """Extract visual cues from script"""
+        """Extract visual cues from script - supports both tagged and narrative scripts"""
 
         with open(script_file, 'r') as f:
             script_content = f.read()
 
-        # Extract [SHOW: ...] cues
+        # First, try to find explicit [SHOW: ...] cues
         show_cues = re.findall(r'\[SHOW:(.*?)\]', script_content, re.IGNORECASE)
 
-        # Extract timestamps if present
-        timestamp_pattern = r'\[(\d+:\d+)\]'
-        timestamps = re.findall(timestamp_pattern, script_content)
+        if show_cues:
+            # Script has explicit visual tags
+            timestamps = re.findall(r'\[(\d+:\d+)\]', script_content)
+            segments = script_content.split('\n\n')
 
-        # Parse script into segments
-        segments = script_content.split('\n\n')
+            visual_cues = []
+            for i, cue in enumerate(show_cues):
+                visual_cues.append({
+                    "index": i,
+                    "timestamp": timestamps[i] if i < len(timestamps) else f"~{i*10}s",
+                    "description": cue.strip(),
+                    "context": segments[min(i, len(segments)-1)][:200]
+                })
+            return visual_cues
+
+        # No explicit tags - parse narrative script intelligently
+        print("📖 No [SHOW:] tags found. Parsing narrative script...")
+        return self._parse_narrative_script(script_content)
+
+    def _parse_narrative_script(self, script_content):
+        """Intelligently parse narrative scripts for visual concepts"""
+
+        # Space documentary visual keywords and their Veo prompts
+        visual_keywords = {
+            # Stars and stellar objects
+            'betelgeuse': "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+            'red supergiant': "Wide shot of massive red supergiant star, enormous scale, glowing red atmosphere, slow rotation, photorealistic space rendering",
+            'star': "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+            'orion': "Wide shot of Orion constellation against starfield, Betelgeuse glowing red at shoulder position, constellat lines visible, night sky astronomy",
+            'sun': "Cinematic shot of our Sun from space, surface detail visible, solar prominences, dramatic lighting",
+
+            # Cosmic events
+            'supernova': "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+            'explosion': "Massive stellar explosion, shockwave expanding through space, bright flash, debris field, dramatic cinematography",
+            'surface mass ejection': "Enormous chunk of stellar material being ejected from star surface, glowing plasma, dramatic event, slow motion",
+            'dust cloud': "Massive interstellar dust cloud drifting through space, backlit by stars, volumetric rendering, mysterious atmosphere",
+            'dimming': "Time-lapse of Betelgeuse dimming, star fading from bright to dim, comparison over time, documentary style",
+
+            # Companion star
+            'companion star': "Distant view showing two stars in binary orbit, larger red giant with small blue companion nearby, orbital motion",
+            'betelbuddy': "Close-up of small blue-white companion star near massive red supergiant, size comparison, dramatic scale difference",
+            'binary system': "Wide shot of binary star system, two stars orbiting common center, orbital paths visible, cinematic",
+
+            # Planets and solar system
+            'earth': "Beautiful shot of Earth from space, blue marble, city lights visible on night side, realistic",
+            'mars': "Orbital shot of Mars, red planet surface visible, polar ice caps, photorealistic planetary rendering",
+            'jupiter': "Cinematic flyby of Jupiter, Great Red Spot visible, atmospheric bands, massive scale, 4K space documentary",
+            'solar system': "Wide shot of entire solar system, Sun at center, planets in orbital paths, scale visualization",
+
+            # Cosmic structures
+            'nebula': "Colorful emission nebula with star formation, volumetric gas clouds, dramatic lighting, deep space photography style",
+            'galaxy': "Spectacular spiral galaxy with billions of stars, galactic arms visible, slow rotation, epic cosmic scale",
+            'milky way': "Edge-on view of Milky Way galaxy, spiral structure visible, billions of stars, cosmic perspective",
+            'black hole': "Dramatic visualization of black hole with accretion disk, warped spacetime visible, glowing matter spiraling inward",
+
+            # Space phenomena
+            'neutrino detector': "Underground neutrino detector facility, massive water tank with photomultiplier tubes glowing, scientific facility interior",
+            'telescope': "Ground-based observatory telescope at night, dome open, telescope tracking stars, time-lapse of sky rotation",
+            'james webb': "James Webb Space Telescope in space, golden mirror panels visible, Earth in background, photorealistic spacecraft",
+            'hubble': "Hubble Space Telescope orbiting Earth, solar panels extended, iconic spacecraft, documentary footage style",
+
+            # Scale and comparison
+            'scale': "Visual size comparison showing Betelgeuse compared to solar system, Sun at center with Mars orbit, massive star scale",
+            'size comparison': "Split screen showing size difference between Sun and Betelgeuse, dramatic scale visualization",
+
+            # Observational
+            'night sky': "Beautiful starfield with Orion constellation prominent, Milky Way visible, mountain silhouette, astrophotography style",
+            'observation': "Person using telescope at night, eye to eyepiece, stars reflected in optics, documentary style",
+            'amateur astronomer': "Backyard astronomer with telescope looking at night sky, suburban setting, relatable perspective",
+        }
+
+        # Break script into paragraphs
+        paragraphs = [p.strip() for p in script_content.split('\n\n') if p.strip() and not p.strip().startswith('#')]
 
         visual_cues = []
-        for i, cue in enumerate(show_cues):
-            visual_cues.append({
-                "index": i,
-                "timestamp": timestamps[i] if i < len(timestamps) else f"~{i*10}s",
-                "description": cue.strip(),
-                "context": segments[min(i, len(segments)-1)][:200]
-            })
+        clip_index = 0
+
+        for para_index, paragraph in enumerate(paragraphs):
+            para_lower = paragraph.lower()
+
+            # Skip very short paragraphs or pure markdown
+            if len(paragraph) < 100 or paragraph.startswith('##'):
+                continue
+
+            # Find all matching keywords in this paragraph
+            matches = []
+            for keyword, prompt in visual_keywords.items():
+                if keyword in para_lower:
+                    matches.append((keyword, prompt))
+
+            # If matches found, use them
+            if matches:
+                for keyword, prompt in matches[:2]:  # Max 2 clips per paragraph
+                    visual_cues.append({
+                        "index": clip_index,
+                        "timestamp": f"~{clip_index * 8}s",
+                        "description": keyword.title(),
+                        "veo_prompt": prompt,
+                        "context": paragraph[:200]
+                    })
+                    clip_index += 1
+
+            # If no matches, generate generic space visuals
+            elif 'star' in para_lower or 'space' in para_lower or 'cosmic' in para_lower:
+                # Generic space B-roll
+                b_roll_prompts = [
+                    "Deep space starfield with distant galaxies, slow camera movement, 4K astrophotography style",
+                    "Cinematic shot of colorful nebula, volumetric clouds, star formation visible, epic space documentary",
+                    "Wide shot of spiral galaxy, billions of stars, slow rotation, cosmic scale, photorealistic",
+                ]
+                import random
+                prompt = random.choice(b_roll_prompts)
+
+                visual_cues.append({
+                    "index": clip_index,
+                    "timestamp": f"~{clip_index * 8}s",
+                    "description": "Space B-Roll",
+                    "veo_prompt": prompt,
+                    "context": paragraph[:200]
+                })
+                clip_index += 1
 
         return visual_cues
 
@@ -103,8 +209,11 @@ TIPS FOR 8-SECOND CLIPS:
         print(f"Target Clips: {self.config['veo']['clips_per_video']}")
 
         for i, cue in enumerate(visual_cues):
-            # Convert script cue to optimized Veo prompt
-            veo_prompt = self._optimize_for_veo(cue['description'])
+            # Use pre-generated Veo prompt if available, otherwise optimize description
+            if 'veo_prompt' in cue:
+                veo_prompt = cue['veo_prompt']
+            else:
+                veo_prompt = self._optimize_for_veo(cue['description'])
 
             shot = {
                 "shot_number": i + 1,
