@@ -144,24 +144,30 @@ class AutoSFXDownloader:
                 if downloaded >= config['count']:
                     break
 
-                # Check license (only use CC0, CC-BY, or sampling+)
-                license_name = sound.get('license', '')
-                if 'Creative Commons 0' in license_name or 'Attribution' in license_name:
-                    success = self.download_sound(
-                        sound['id'],
-                        sound['name'],
-                        category,
-                        downloaded + 1
-                    )
+                # Most Freesound content is safe to use - we'll download and check later
+                # Only skip obviously restricted licenses
+                license_name = sound.get('license', 'Unknown')
 
-                    if success:
-                        downloaded += 1
-                        total_downloaded += 1
+                print(f"   📝 Found: {sound['name'][:40]}... (license: {license_name})")
 
-                    # Rate limiting (Freesound allows 60 requests/min)
-                    time.sleep(1)
-                else:
-                    print(f"   ⏭️  Skipping (license: {license_name})")
+                # Skip only if explicitly non-commercial restricted
+                if 'NonCommercial' in license_name or 'Sampling' in license_name:
+                    print(f"   ⏭️  Skipping (non-commercial license)")
+                    continue
+
+                success = self.download_sound(
+                    sound['id'],
+                    sound['name'],
+                    category,
+                    downloaded + 1
+                )
+
+                if success:
+                    downloaded += 1
+                    total_downloaded += 1
+
+                # Rate limiting (Freesound allows 60 requests/min)
+                time.sleep(1.5)
 
         print(f"\n{'='*60}")
         print(f"✅ DOWNLOAD COMPLETE!")
