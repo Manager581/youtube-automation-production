@@ -85,8 +85,8 @@ class AutoSFXDownloader:
             print(f"❌ Search failed: {response.status_code}")
             return []
 
-    def download_sound(self, sound_id, sound_name, category, index):
-        """Download a specific sound file"""
+    def download_sound(self, sound_info, category, index):
+        """Download a specific sound file using preview URL"""
 
         # Clean filename
         safe_name = f"{category}_{index:02d}.mp3"
@@ -97,11 +97,16 @@ class AutoSFXDownloader:
             print(f"   ⏭️  {safe_name} already exists, skipping")
             return True
 
-        # Get download URL
-        url = f"{self.base_url}/sounds/{sound_id}/download/"
+        # Use high-quality preview URL (no OAuth needed)
+        preview_url = sound_info.get('previews', {}).get('preview-hq-mp3')
+
+        if not preview_url:
+            print(f"   ❌ No preview available for {safe_name}")
+            return False
 
         try:
-            response = requests.get(url, headers=self.headers, stream=True)
+            # No auth needed for previews
+            response = requests.get(preview_url, stream=True)
 
             if response.status_code == 200:
                 with open(output_path, 'wb') as f:
@@ -156,8 +161,7 @@ class AutoSFXDownloader:
                     continue
 
                 success = self.download_sound(
-                    sound['id'],
-                    sound['name'],
+                    sound,
                     category,
                     downloaded + 1
                 )
