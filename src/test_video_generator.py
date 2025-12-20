@@ -4,7 +4,11 @@ Tests the workflow with intro audio + NASA footage
 """
 
 from pathlib import Path
-from moviepy.editor import *
+try:
+    from moviepy.editor import *
+except ImportError:
+    # MoviePy 2.x uses different import structure
+    from moviepy import AudioFileClip, ImageClip, concatenate_videoclips
 import random
 
 
@@ -44,11 +48,11 @@ def create_test_video(voiceover_path, output_name="test_output"):
         print(f"   Processing image {i+1}/{len(selected_images)}: {img_path.name}")
 
         # Load image
-        img_clip = ImageClip(str(img_path)).set_duration(clip_duration)
+        img_clip = ImageClip(str(img_path)).with_duration(clip_duration)
 
         # Ken Burns effect (slow zoom + pan)
         # Start scale 1.0, end scale 1.2 (20% zoom)
-        zoom_effect = img_clip.resize(lambda t: 1 + 0.2 * (t / clip_duration))
+        zoom_effect = img_clip.resized(lambda t: 1 + 0.2 * (t / clip_duration))
 
         # Set position
         clips.append(zoom_effect)
@@ -58,11 +62,11 @@ def create_test_video(voiceover_path, output_name="test_output"):
     video = concatenate_videoclips(clips, method="compose")
 
     # Trim to match audio duration
-    video = video.subclip(0, min(video.duration, duration))
+    video = video.subclipped(0, min(video.duration, duration))
 
     # Add voiceover
     print("🎵 Adding voiceover...")
-    final_video = video.set_audio(audio)
+    final_video = video.with_audio(audio)
 
     # Export
     output_path = Path("output") / f"{output_name}.mp4"

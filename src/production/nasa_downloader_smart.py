@@ -122,9 +122,18 @@ class SmartNASADownloader:
                 ]
 
                 if image_urls:
-                    # Prefer 'large' or 'orig' images
-                    large = [url for url in image_urls if 'large' in url.lower() or 'orig' in url.lower()]
-                    return large[0] if large else image_urls[0]
+                    # Prefer medium/large images (orig images often blocked)
+                    large = [url for url in image_urls if 'large' in url.lower()]
+                    medium = [url for url in image_urls if 'medium' in url.lower()]
+
+                    if large:
+                        return large[0]
+                    elif medium:
+                        return medium[0]
+                    else:
+                        # Filter out 'orig' as they're often blocked
+                        non_orig = [url for url in image_urls if 'orig' not in url.lower()]
+                        return non_orig[0] if non_orig else image_urls[0]
 
             return None
 
@@ -140,7 +149,18 @@ class SmartNASADownloader:
             return str(output_path)
 
         try:
-            response = requests.get(url, stream=True, timeout=60)
+            # Convert HTTP to HTTPS (NASA CDN requires HTTPS)
+            if url.startswith('http://'):
+                url = url.replace('http://', 'https://', 1)
+
+            # Add browser headers to avoid 403 errors
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Referer': 'https://images.nasa.gov/'
+            }
+            response = requests.get(url, stream=True, timeout=60, headers=headers)
             response.raise_for_status()
 
             with open(output_path, 'wb') as f:
