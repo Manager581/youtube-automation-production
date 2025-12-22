@@ -1010,28 +1010,80 @@ def main():
     """CLI interface"""
     import sys
 
-    if len(sys.argv) < 2:
-        print("\n🔬 Phase 1: Creator Analysis Pipeline")
-        print("\nUsage:")
-        print("  Option 1 - Auto-fetch from channel:")
-        print("    python src/phase1_analyzer.py --channel <channel_url> <creator_name> [months_back] [max_videos]")
-        print("\n  Option 2 - From URL file:")
-        print("    python src/phase1_analyzer.py <video_urls_file> <creator_name>")
-        print("\nExamples:")
-        print("  # Auto-fetch WATOP's last 6 months (up to 50 videos)")
-        print("  python src/phase1_analyzer.py --channel https://youtube.com/@WATOP watop")
-        print("")
-        print("  # Auto-fetch last 12 months, max 100 videos")
-        print("  python src/phase1_analyzer.py --channel https://youtube.com/@WATOP watop 12 100")
-        print("")
-        print("  # From file")
-        print("  python src/phase1_analyzer.py research/watop_urls.txt watop")
-        return
-
     analyzer = CreatorAnalyzer()
 
+    # Interactive mode - no arguments provided
+    if len(sys.argv) < 2:
+        print("\n🔬 CREATOR ANALYSIS PIPELINE - Interactive Mode")
+        print("=" * 80)
+
+        # Ask for channel URL
+        print("\n📺 Enter the YouTube channel URL to analyze:")
+        print("   Examples:")
+        print("   - https://www.youtube.com/@WATOP_VIDEO")
+        print("   - https://www.youtube.com/@MrBeast")
+        print("   - https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw")
+        channel_url = input("\n   Channel URL: ").strip()
+
+        if not channel_url:
+            print("❌ No URL provided. Exiting.")
+            return
+
+        # Ask for creator name
+        creator_name = input("\n📝 Enter a name for this creator (e.g., 'watop', 'mrbeast'): ").strip()
+        if not creator_name:
+            creator_name = "creator"
+
+        # Ask for months back
+        months_input = input("\n📅 How many months back to analyze? (default: 6): ").strip()
+        months_back = int(months_input) if months_input else 6
+
+        # Ask for max videos
+        max_input = input(f"\n📊 Maximum number of videos to analyze? (default: 50): ").strip()
+        max_videos = int(max_input) if max_input else 50
+
+        print(f"\n📡 Settings:")
+        print(f"   Channel: {channel_url}")
+        print(f"   Creator: {creator_name}")
+        print(f"   Date range: Last {months_back} months")
+        print(f"   Max videos: {max_videos}")
+
+        # Show preview before analyzing
+        print(f"\n🔍 Fetching preview of first 5 videos...")
+        try:
+            cutoff_date = datetime.now() - timedelta(days=months_back * 30)
+            date_str = cutoff_date.strftime('%Y%m%d')
+
+            preview_cmd = [
+                'yt-dlp',
+                '--flat-playlist',
+                '--print', '%(title)s | %(upload_date)s',
+                '--playlist-end', '5',
+                '--dateafter', date_str,
+                '--match-filter', 'duration > 60',
+                '--match-filter', '!is_live',
+                channel_url
+            ]
+
+            result = subprocess.run(preview_cmd, capture_output=True, text=True, timeout=60)
+            if result.stdout.strip():
+                print("\n📹 Preview of videos that will be analyzed:")
+                for i, line in enumerate(result.stdout.strip().split('\n')[:5], 1):
+                    print(f"   {i}. {line}")
+            else:
+                print("   ⚠️  Could not fetch preview")
+        except Exception as e:
+            print(f"   ⚠️  Preview failed: {e}")
+
+        confirm = input("\n❓ Does this look correct? Proceed with full analysis? (yes/no): ").strip().lower()
+        if confirm not in ['yes', 'y']:
+            print("❌ Analysis cancelled")
+            return
+
+        results = analyzer.analyze_channel_from_url(channel_url, creator_name, months_back, max_videos)
+
     # Check if using --channel mode
-    if sys.argv[1] == '--channel':
+    elif sys.argv[1] == '--channel':
         if len(sys.argv) < 4:
             print("❌ Usage: --channel <channel_url> <creator_name> [months_back] [max_videos]")
             return
