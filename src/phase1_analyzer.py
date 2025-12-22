@@ -30,7 +30,7 @@ class CreatorAnalyzer:
         self.videos_dir.mkdir(exist_ok=True)
 
     def analyze_channel_from_url(self, channel_url: str, creator_name: str = "creator",
-                                 months_back: int = 6, max_videos: int = 50):
+                                 months_back: int = 6, max_videos: int = 50, auto_confirm: bool = False):
         """
         Complete analysis pipeline - auto-fetch recent videos from channel
 
@@ -39,15 +39,30 @@ class CreatorAnalyzer:
             creator_name: Name for this creator (e.g., "watop")
             months_back: How many months back to analyze (default 6)
             max_videos: Maximum videos to analyze (default 50)
+            auto_confirm: Skip confirmation prompt (default False)
         """
 
         print(f"\n🔬 CREATOR ANALYSIS PIPELINE - {creator_name.upper()}")
         print("=" * 80)
 
-        # Fetch recent videos from channel
-        print(f"📥 Fetching last {months_back} months of videos...")
-        video_urls = self._fetch_channel_videos(channel_url, months_back, max_videos)
-        print(f"📹 Found {len(video_urls)} videos to analyze")
+        # Pre-scan: Count matching videos before analysis
+        print(f"🔍 Scanning channel for matching videos...")
+        total_matching, video_urls = self._fetch_channel_videos(
+            channel_url, months_back, max_videos, return_count=True
+        )
+
+        print(f"\n📊 SCAN RESULTS:")
+        print(f"   ✅ Found {total_matching} videos matching criteria:")
+        print(f"      - Uploaded in last {months_back} months")
+        print(f"      - Duration > 60 seconds (long-form only)")
+        print(f"      - Not live streams")
+        print(f"\n   📹 Will analyze: {len(video_urls)} videos (limited by max_videos={max_videos})")
+
+        if not auto_confirm:
+            response = input(f"\n❓ Do you want to proceed with analysis? (yes/no): ").strip().lower()
+            if response not in ['yes', 'y']:
+                print("❌ Analysis cancelled by user")
+                return {'error': 'Cancelled by user'}
 
         return self._analyze_videos(video_urls, creator_name)
 
@@ -70,7 +85,7 @@ class CreatorAnalyzer:
         return self._analyze_videos(video_urls, creator_name)
 
     def _fetch_channel_videos(self, channel_url: str, months_back: int = 6,
-                             max_videos: int = 50) -> List[str]:
+                             max_videos: int = 50, return_count: bool = False):
         """
         Fetch recent videos from a channel using yt-dlp
 
@@ -83,6 +98,7 @@ class CreatorAnalyzer:
             channel_url: Channel URL or any video from channel
             months_back: How many months back to fetch
             max_videos: Maximum number of videos
+            return_count: If True, returns (total_count, urls[:max_videos]). If False, returns urls[:max_videos]
         """
 
         # Calculate date filter
@@ -90,39 +106,40 @@ class CreatorAnalyzer:
         date_str = cutoff_date.strftime('%Y%m%d')
 
         try:
-            # Use yt-dlp to get video URLs from channel
-            # Fetch extra to account for shorts being filtered out
-            fetch_limit = max_videos * 2
-
+            # Use yt-dlp to get ALL matching videos first (for count)
             cmd = [
                 'yt-dlp',
                 '--flat-playlist',
                 '--print', 'url',
-                '--playlist-end', str(fetch_limit),
                 '--dateafter', date_str,
                 '--match-filter', 'duration > 60',  # Exclude shorts (< 60 seconds)
                 '--match-filter', '!is_live',  # Exclude live streams
-                '--playlist-items', f'1-{fetch_limit}',  # Ensure newest first
                 channel_url
             ]
 
-            print(f"   Fetching long-form videos (>60s) uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
-            print(f"   Excluding: Shorts, live streams")
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=120)
+            print(f"   Scanning for long-form videos (>60s) uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
+            print(f"   Filters: duration > 60s, not live streams")
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=180)
 
-            urls = [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
+            all_urls = [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
+            total_count = len(all_urls)
 
             # Limit to max_videos
-            urls = urls[:max_videos]
+            urls = all_urls[:max_videos]
 
-            print(f"   ✅ Found {len(urls)} long-form videos from last {months_back} months")
-
-            return urls
+            if return_count:
+                return total_count, urls
+            else:
+                print(f"   ✅ Found {len(urls)} long-form videos from last {months_back} months")
+                return urls
 
         except Exception as e:
             print(f"   ❌ Error fetching channel videos: {e}")
             print(f"   💡 Try providing a channel URL or video URL from the channel")
-            return []
+            if return_count:
+                return 0, []
+            else:
+                return []
 
     def _analyze_videos(self, video_urls: List[str], creator_name: str) -> Dict:
         """Analyze a list of video URLs"""
