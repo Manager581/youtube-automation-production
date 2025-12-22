@@ -224,8 +224,19 @@ class CreatorAnalyzer:
 
         print(f"   Downloaded {len(comments)} comments")
 
-        # Step 5: Source detection (will implement next)
-        # Step 6: Audio-visual sync (will implement next)
+        # Step 5: Thumbnail analysis
+        print("\n🖼️  Step 5: Analyzing thumbnail...")
+        thumbnail_analysis = self._analyze_thumbnail(metadata, output_dir)
+        video_data['thumbnail_analysis'] = thumbnail_analysis
+
+        # Step 6: Title analysis
+        print("\n📰 Step 6: Analyzing title patterns...")
+        title_analysis = self._analyze_title(metadata)
+        video_data['title_analysis'] = title_analysis
+
+        # Step 7: Audio transcription (if enabled)
+        # Step 8: Visual classification (if enabled)
+        # Step 9: Source detection (future)
 
         video_data['status'] = 'complete'
         return video_data
@@ -391,6 +402,151 @@ class CreatorAnalyzer:
             print(f"   ⚠️  Error downloading comments: {e}")
             return []
 
+    def _analyze_thumbnail(self, metadata: Dict, output_dir: Path) -> Dict:
+        """
+        Download and analyze thumbnail
+        - Download thumbnail image
+        - Detect colors/palette
+        - OCR any text
+        - Detect faces/objects (basic)
+        """
+
+        try:
+            import urllib.request
+            from collections import Counter
+
+            thumbnail_url = metadata.get('thumbnail')
+            if not thumbnail_url:
+                return {'error': 'No thumbnail URL'}
+
+            # Download thumbnail
+            thumbnail_path = output_dir / f"{metadata.get('id', 'unknown')}_thumbnail.jpg"
+            urllib.request.urlretrieve(thumbnail_url, thumbnail_path)
+
+            print(f"   Downloaded thumbnail: {thumbnail_path.name}")
+
+            analysis = {
+                'thumbnail_url': thumbnail_url,
+                'local_path': str(thumbnail_path),
+                'has_text': False,  # Will implement OCR
+                'dominant_colors': [],  # Will implement color detection
+            }
+
+            # Try basic analysis with PIL if available
+            try:
+                from PIL import Image
+                import colorsys
+
+                img = Image.open(thumbnail_path)
+
+                # Get dominant colors (simple approach - get most common colors)
+                img_resized = img.resize((150, 150))  # Reduce size for performance
+                pixels = list(img_resized.getdata())
+
+                # Count colors
+                color_counts = Counter(pixels)
+                top_colors = color_counts.most_common(5)
+
+                # Convert to hex
+                dominant_colors = []
+                for color, count in top_colors:
+                    if isinstance(color, tuple) and len(color) >= 3:
+                        hex_color = '#{:02x}{:02x}{:02x}'.format(color[0], color[1], color[2])
+                        dominant_colors.append({
+                            'hex': hex_color,
+                            'rgb': color[:3],
+                            'frequency': count / len(pixels)
+                        })
+
+                analysis['dominant_colors'] = dominant_colors
+                analysis['dimensions'] = {'width': img.width, 'height': img.height}
+
+                print(f"   Dominant colors: {[c['hex'] for c in dominant_colors[:3]]}")
+
+            except ImportError:
+                print(f"   ⚠️  PIL not available - skipping color analysis")
+            except Exception as e:
+                print(f"   ⚠️  Color analysis failed: {e}")
+
+            return analysis
+
+        except Exception as e:
+            print(f"   ⚠️  Thumbnail analysis failed: {e}")
+            return {'error': str(e)}
+
+    def _analyze_title(self, metadata: Dict) -> Dict:
+        """
+        Analyze title patterns for CTR optimization
+        - Length/character count
+        - Question marks (curiosity)
+        - Numbers
+        - Emotional trigger words
+        - Capitalization patterns
+        """
+
+        title = metadata.get('title', '')
+
+        if not title:
+            return {'error': 'No title'}
+
+        # Emotional trigger words (expanded list)
+        trigger_words = {
+            'shock': ['shocking', 'insane', 'crazy', 'unbelievable', 'incredible', 'terrifying'],
+            'urgency': ['finally', 'now', 'urgent', 'breaking', 'just', 'immediately'],
+            'curiosity': ['secret', 'hidden', 'revealed', 'truth', 'exposed', 'mystery'],
+            'negative': ['worst', 'terrible', 'disaster', 'failure', 'mistake', 'warning'],
+            'superlative': ['best', 'ultimate', 'greatest', 'perfect', 'amazing', 'top']
+        }
+
+        title_lower = title.lower()
+
+        # Detect triggers
+        detected_triggers = {}
+        for category, words in trigger_words.items():
+            found = [w for w in words if w in title_lower]
+            if found:
+                detected_triggers[category] = found
+
+        # Detect numbers
+        import re
+        numbers = re.findall(r'\d+', title)
+
+        # Detect questions
+        has_question = '?' in title
+
+        # Detect lists
+        has_list_indicator = bool(re.search(r'\b\d+\s+(ways|reasons|things|facts|tips|secrets)', title_lower))
+
+        # Capitalization patterns
+        all_caps_words = [w for w in title.split() if w.isupper() and len(w) > 1]
+
+        # Detect brackets/parentheses
+        has_brackets = bool(re.search(r'[\[\(].*?[\]\)]', title))
+
+        analysis = {
+            'title': title,
+            'length': len(title),
+            'word_count': len(title.split()),
+            'has_question': has_question,
+            'has_numbers': len(numbers) > 0,
+            'numbers': numbers,
+            'emotional_triggers': detected_triggers,
+            'trigger_count': sum(len(v) for v in detected_triggers.values()),
+            'has_list_indicator': has_list_indicator,
+            'all_caps_words': all_caps_words,
+            'has_brackets': has_brackets,
+            'starts_with_number': title[0].isdigit() if title else False,
+        }
+
+        print(f"   Length: {analysis['length']} chars, {analysis['word_count']} words")
+        print(f"   Triggers: {analysis['trigger_count']} ({list(detected_triggers.keys())})")
+        if numbers:
+            print(f"   Numbers: {numbers}")
+        if has_question:
+            print(f"   Has question mark")
+
+        return analysis
+
     def _compare_performance(self, videos: List[Dict]) -> Dict:
         """
         Compare best vs worst performing videos to find success patterns
@@ -417,6 +573,15 @@ class CreatorAnalyzer:
             values = [v.get('cut_analysis', {}).get(key, 0) for v in videos if v.get('cut_analysis')]
             return sum(values) / len(values) if values else 0
 
+        def title_avg(videos, key):
+            values = [v.get('title_analysis', {}).get(key, 0) for v in videos if v.get('title_analysis')]
+            return sum(values) / len(values) if values else 0
+
+        def title_pattern_freq(videos, key):
+            """Calculate frequency of a boolean pattern in titles"""
+            count = sum(1 for v in videos if v.get('title_analysis', {}).get(key, False))
+            return count / len(videos) if videos else 0
+
         insights = {
             'top_performers': {
                 'count': len(top_performers),
@@ -424,6 +589,11 @@ class CreatorAnalyzer:
                 'avg_cuts_per_minute': avg(top_performers, 'cuts_per_minute'),
                 'avg_segment_duration': avg(top_performers, 'avg_segment_duration'),
                 'avg_duration': sum(v.get('duration', 0) for v in top_performers) / len(top_performers),
+                # Title analysis
+                'avg_title_length': title_avg(top_performers, 'length'),
+                'avg_trigger_count': title_avg(top_performers, 'trigger_count'),
+                'question_frequency': title_pattern_freq(top_performers, 'has_question'),
+                'number_frequency': title_pattern_freq(top_performers, 'has_numbers'),
             },
             'bottom_performers': {
                 'count': len(bottom_performers),
@@ -431,6 +601,11 @@ class CreatorAnalyzer:
                 'avg_cuts_per_minute': avg(bottom_performers, 'cuts_per_minute'),
                 'avg_segment_duration': avg(bottom_performers, 'avg_segment_duration'),
                 'avg_duration': sum(v.get('duration', 0) for v in bottom_performers) / len(bottom_performers),
+                # Title analysis
+                'avg_title_length': title_avg(bottom_performers, 'length'),
+                'avg_trigger_count': title_avg(bottom_performers, 'trigger_count'),
+                'question_frequency': title_pattern_freq(bottom_performers, 'has_question'),
+                'number_frequency': title_pattern_freq(bottom_performers, 'has_numbers'),
             }
         }
 
@@ -439,11 +614,20 @@ class CreatorAnalyzer:
             'cuts_per_minute_diff': insights['top_performers']['avg_cuts_per_minute'] - insights['bottom_performers']['avg_cuts_per_minute'],
             'segment_duration_diff': insights['top_performers']['avg_segment_duration'] - insights['bottom_performers']['avg_segment_duration'],
             'duration_diff': insights['top_performers']['avg_duration'] - insights['bottom_performers']['avg_duration'],
+            'title_length_diff': insights['top_performers']['avg_title_length'] - insights['bottom_performers']['avg_title_length'],
+            'trigger_count_diff': insights['top_performers']['avg_trigger_count'] - insights['bottom_performers']['avg_trigger_count'],
+            'question_freq_diff': insights['top_performers']['question_frequency'] - insights['bottom_performers']['question_frequency'],
         }
 
-        print(f"\n   📊 Top performers: {insights['top_performers']['avg_cuts_per_minute']:.1f} cuts/min")
-        print(f"   📊 Bottom performers: {insights['bottom_performers']['avg_cuts_per_minute']:.1f} cuts/min")
-        print(f"   📊 Difference: {insights['differential']['cuts_per_minute_diff']:+.1f} cuts/min")
+        print(f"\n   📊 PACING:")
+        print(f"      Top performers: {insights['top_performers']['avg_cuts_per_minute']:.1f} cuts/min")
+        print(f"      Bottom performers: {insights['bottom_performers']['avg_cuts_per_minute']:.1f} cuts/min")
+        print(f"      Difference: {insights['differential']['cuts_per_minute_diff']:+.1f} cuts/min")
+
+        print(f"\n   📊 TITLES:")
+        print(f"      Top: {insights['top_performers']['avg_title_length']:.0f} chars, {insights['top_performers']['avg_trigger_count']:.1f} triggers")
+        print(f"      Bottom: {insights['bottom_performers']['avg_title_length']:.0f} chars, {insights['bottom_performers']['avg_trigger_count']:.1f} triggers")
+        print(f"      Questions: {insights['top_performers']['question_frequency']:.0%} (top) vs {insights['bottom_performers']['question_frequency']:.0%} (bottom)")
 
         return insights
 
