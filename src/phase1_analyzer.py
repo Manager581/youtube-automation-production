@@ -106,11 +106,11 @@ class CreatorAnalyzer:
         date_str = cutoff_date.strftime('%Y%m%d')
 
         try:
-            # Use yt-dlp to get ALL matching videos first (for count)
+            # Use yt-dlp to get ALL matching videos with upload dates (for verification)
             cmd = [
                 'yt-dlp',
                 '--flat-playlist',
-                '--print', 'url',
+                '--print', '%(url)s|%(upload_date)s',
                 '--dateafter', date_str,
                 '--match-filter', 'duration > 60',  # Exclude shorts (< 60 seconds)
                 '--match-filter', '!is_live',  # Exclude live streams
@@ -118,10 +118,25 @@ class CreatorAnalyzer:
             ]
 
             print(f"   Scanning for long-form videos (>60s) uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
-            print(f"   Filters: duration > 60s, not live streams")
+            print(f"   Filters: duration > 60s, not live streams, uploaded after {date_str}")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=180)
 
-            all_urls = [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
+            # Parse URLs and verify dates
+            all_urls = []
+            for line in result.stdout.strip().split('\n'):
+                if not line.strip():
+                    continue
+                parts = line.strip().split('|')
+                if len(parts) >= 2:
+                    url = parts[0]
+                    upload_date = parts[1]
+                    # Double-check date filter (yt-dlp sometimes doesn't filter correctly)
+                    if upload_date and upload_date >= date_str:
+                        all_urls.append(url)
+                elif len(parts) == 1:
+                    # If no date returned, include it (yt-dlp should have filtered already)
+                    all_urls.append(parts[0])
+
             total_count = len(all_urls)
 
             # Limit to max_videos
