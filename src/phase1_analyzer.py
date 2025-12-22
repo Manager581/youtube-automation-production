@@ -894,6 +894,18 @@ class CreatorAnalyzer:
             count = sum(1 for v in videos if v.get('title_analysis', {}).get(key, False))
             return count / len(videos) if videos else 0
 
+        def script_avg(videos, *keys):
+            """Extract nested script analysis values"""
+            values = []
+            for v in videos:
+                script = v.get('script_analysis', {})
+                value = script
+                for key in keys:
+                    value = value.get(key, {}) if isinstance(value, dict) else 0
+                if isinstance(value, (int, float)) and value > 0:
+                    values.append(value)
+            return sum(values) / len(values) if values else 0
+
         insights = {
             'top_performers': {
                 'count': len(top_performers),
@@ -906,6 +918,11 @@ class CreatorAnalyzer:
                 'avg_trigger_count': title_avg(top_performers, 'trigger_count'),
                 'question_frequency': title_pattern_freq(top_performers, 'has_question'),
                 'number_frequency': title_pattern_freq(top_performers, 'has_numbers'),
+                # Script analysis
+                'avg_hook_delivery': script_avg(top_performers, 'hook', 'title_delivery_score'),
+                'avg_reengagement_count': script_avg(top_performers, 'reengagement', 'count'),
+                'avg_cut_offset': script_avg(top_performers, 'cut_mapping', 'avg_offset'),
+                'avg_speaking_pace': script_avg(top_performers, 'pace_variation', 'avg_wpm'),
             },
             'bottom_performers': {
                 'count': len(bottom_performers),
@@ -918,6 +935,11 @@ class CreatorAnalyzer:
                 'avg_trigger_count': title_avg(bottom_performers, 'trigger_count'),
                 'question_frequency': title_pattern_freq(bottom_performers, 'has_question'),
                 'number_frequency': title_pattern_freq(bottom_performers, 'has_numbers'),
+                # Script analysis
+                'avg_hook_delivery': script_avg(bottom_performers, 'hook', 'title_delivery_score'),
+                'avg_reengagement_count': script_avg(bottom_performers, 'reengagement', 'count'),
+                'avg_cut_offset': script_avg(bottom_performers, 'cut_mapping', 'avg_offset'),
+                'avg_speaking_pace': script_avg(bottom_performers, 'pace_variation', 'avg_wpm'),
             }
         }
 
@@ -929,6 +951,11 @@ class CreatorAnalyzer:
             'title_length_diff': insights['top_performers']['avg_title_length'] - insights['bottom_performers']['avg_title_length'],
             'trigger_count_diff': insights['top_performers']['avg_trigger_count'] - insights['bottom_performers']['avg_trigger_count'],
             'question_freq_diff': insights['top_performers']['question_frequency'] - insights['bottom_performers']['question_frequency'],
+            # Script differentials
+            'hook_delivery_diff': insights['top_performers']['avg_hook_delivery'] - insights['bottom_performers']['avg_hook_delivery'],
+            'reengagement_diff': insights['top_performers']['avg_reengagement_count'] - insights['bottom_performers']['avg_reengagement_count'],
+            'cut_offset_diff': insights['top_performers']['avg_cut_offset'] - insights['bottom_performers']['avg_cut_offset'],
+            'speaking_pace_diff': insights['top_performers']['avg_speaking_pace'] - insights['bottom_performers']['avg_speaking_pace'],
         }
 
         print(f"\n   📊 PACING:")
@@ -940,6 +967,12 @@ class CreatorAnalyzer:
         print(f"      Top: {insights['top_performers']['avg_title_length']:.0f} chars, {insights['top_performers']['avg_trigger_count']:.1f} triggers")
         print(f"      Bottom: {insights['bottom_performers']['avg_title_length']:.0f} chars, {insights['bottom_performers']['avg_trigger_count']:.1f} triggers")
         print(f"      Questions: {insights['top_performers']['question_frequency']:.0%} (top) vs {insights['bottom_performers']['question_frequency']:.0%} (bottom)")
+
+        print(f"\n   📊 SCRIPT ANALYSIS:")
+        print(f"      Hook Delivery: {insights['top_performers']['avg_hook_delivery']:.1%} (top) vs {insights['bottom_performers']['avg_hook_delivery']:.1%} (bottom)")
+        print(f"      Re-engagement: {insights['top_performers']['avg_reengagement_count']:.1f} (top) vs {insights['bottom_performers']['avg_reengagement_count']:.1f} (bottom)")
+        print(f"      Cut Timing: {insights['top_performers']['avg_cut_offset']:+.2f}s (top) vs {insights['bottom_performers']['avg_cut_offset']:+.2f}s (bottom)")
+        print(f"      Speaking Pace: {insights['top_performers']['avg_speaking_pace']:.0f} WPM (top) vs {insights['bottom_performers']['avg_speaking_pace']:.0f} WPM (bottom)")
 
         return insights
 
@@ -960,22 +993,34 @@ class CreatorAnalyzer:
 
 ## Performance Insights
 
-### Top Performers
+### Top Performers (Top 30% by Views)
 - **Average Views:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_views', 0):,.0f}
 - **Cuts Per Minute:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_cuts_per_minute', 0):.1f}
 - **Avg Segment Duration:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_segment_duration', 0):.2f}s
 - **Avg Video Duration:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_duration', 0):.0f}s
+- **Hook Delivery Score:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_hook_delivery', 0):.1%}
+- **Re-engagement Moments:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_reengagement_count', 0):.1f}
+- **Cut Timing Offset:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_cut_offset', 0):+.2f}s
+- **Speaking Pace:** {results.get('performance_insights', {}).get('top_performers', {}).get('avg_speaking_pace', 0):.0f} WPM
 
-### Bottom Performers
+### Bottom Performers (Bottom 30% by Views)
 - **Average Views:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_views', 0):,.0f}
 - **Cuts Per Minute:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_cuts_per_minute', 0):.1f}
 - **Avg Segment Duration:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_segment_duration', 0):.2f}s
 - **Avg Video Duration:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_duration', 0):.0f}s
+- **Hook Delivery Score:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_hook_delivery', 0):.1%}
+- **Re-engagement Moments:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_reengagement_count', 0):.1f}
+- **Cut Timing Offset:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_cut_offset', 0):+.2f}s
+- **Speaking Pace:** {results.get('performance_insights', {}).get('bottom_performers', {}).get('avg_speaking_pace', 0):.0f} WPM
 
-### Key Differences
+### Key Differences (Top - Bottom)
 - **Cuts Per Minute:** {results.get('performance_insights', {}).get('differential', {}).get('cuts_per_minute_diff', 0):+.1f}
 - **Segment Duration:** {results.get('performance_insights', {}).get('differential', {}).get('segment_duration_diff', 0):+.2f}s
 - **Video Duration:** {results.get('performance_insights', {}).get('differential', {}).get('duration_diff', 0):+.0f}s
+- **Hook Delivery:** {results.get('performance_insights', {}).get('differential', {}).get('hook_delivery_diff', 0):+.1%}
+- **Re-engagement:** {results.get('performance_insights', {}).get('differential', {}).get('reengagement_diff', 0):+.1f}
+- **Cut Timing:** {results.get('performance_insights', {}).get('differential', {}).get('cut_offset_diff', 0):+.2f}s
+- **Speaking Pace:** {results.get('performance_insights', {}).get('differential', {}).get('speaking_pace_diff', 0):+.0f} WPM
 
 ---
 
