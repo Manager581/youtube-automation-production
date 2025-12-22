@@ -15,7 +15,6 @@ from pathlib import Path
 from typing import List, Dict, Optional
 import re
 from datetime import datetime
-import base64
 import os
 
 
@@ -298,7 +297,7 @@ class VisualAnalyzer:
 
     def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict]) -> List[Dict]:
         """
-        Classify visual content using GPT-4V
+        Classify visual content using Google Gemini (Free API)
 
         Args:
             keyframes: Dict mapping segment_id to keyframe path
@@ -309,21 +308,27 @@ class VisualAnalyzer:
         """
 
         try:
-            from openai import OpenAI
+            import google.generativeai as genai
+            from PIL import Image
         except ImportError:
-            print("   ⚠️  OpenAI library not installed. Run: pip install openai")
+            print("   ⚠️  google-generativeai or Pillow not installed.")
+            print("   ⚠️  Run: pip install google-generativeai Pillow")
             print("   ⚠️  Skipping visual classification...")
             return []
 
         # Check for API key
-        api_key = os.getenv('OPENAI_API_KEY')
+        api_key = os.getenv('GOOGLE_API_KEY')
         if not api_key:
-            print("   ⚠️  OPENAI_API_KEY not set. Skipping visual classification...")
+            print("   ⚠️  GOOGLE_API_KEY not set.")
+            print("   ⚠️  Get your free API key at: https://aistudio.google.com/app/apikey")
+            print("   ⚠️  Then set: export GOOGLE_API_KEY='your-key-here'")
+            print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with GPT-4V...")
+        print("\n🔍 Step 4: Classifying visual content with Google Gemini (Free API)...")
 
-        client = OpenAI(api_key=api_key)
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-1.5-flash')
         classifications = []
 
         # Create context map for segments
@@ -336,23 +341,14 @@ class VisualAnalyzer:
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
-                # Read and encode image
-                with open(keyframe_path, 'rb') as f:
-                    image_data = base64.b64encode(f.read()).decode('utf-8')
+                # Open image with PIL
+                img = Image.open(keyframe_path)
 
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
 
-                # GPT-4V classification prompt
-                response = client.chat.completions.create(
-                    model="gpt-4o",
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": [
-                                {
-                                    "type": "text",
-                                    "text": f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
+                # Gemini classification prompt
+                prompt = f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
 
 Respond ONLY with valid JSON (no markdown, no extra text):
 {{
@@ -362,24 +358,18 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "motion_style": "static|slow_pan|zoom|fast_cut|transition",
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
-                                },
-                                {
-                                    "type": "image_url",
-                                    "image_url": {
-                                        "url": f"data:image/jpeg;base64,{image_data}"
-                                    }
-                                }
-                            ]
-                        }
-                    ],
-                    max_tokens=300
-                )
+
+                # Generate content with Gemini
+                response = model.generate_content([prompt, img])
 
                 # Parse response
-                result_text = response.choices[0].message.content.strip()
+                result_text = response.text.strip()
 
                 # Clean markdown formatting if present
-                if result_text.startswith('```'):
+                if result_text.startswith('```json'):
+                    result_text = result_text.split('\n', 1)[1]
+                    result_text = result_text.rsplit('\n```', 1)[0]
+                elif result_text.startswith('```'):
                     result_text = result_text.split('\n', 1)[1]
                     result_text = result_text.rsplit('\n```', 1)[0]
 
