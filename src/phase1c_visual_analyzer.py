@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import List, Dict, Optional
 import re
 from datetime import datetime
+import base64
+import os
 
 
 class VisualAnalyzer:
@@ -95,6 +97,14 @@ class VisualAnalyzer:
                         transcript['words']
                     )
                     visual_data['visual_script_map'] = visual_script_map
+
+                    # Classify visual content with GPT-4V
+                    if visual_data.get('keyframes'):
+                        classifications = self._classify_keyframes(
+                            visual_data['keyframes'],
+                            visual_script_map
+                        )
+                        visual_data['visual_classifications'] = classifications
 
                 results['videos'].append({
                     'id': video_id,
@@ -179,6 +189,7 @@ class VisualAnalyzer:
                 'video_id': video_id,
                 'total_segments': len(segments),
                 'segments': segments,
+                'keyframes': keyframes,  # Dict of segment_id -> keyframe_path
                 'segments_dir': str(segments_dir)
             }
 
@@ -284,6 +295,111 @@ class VisualAnalyzer:
         print(f"   ✅ Mapped {len(visual_script_map)} visual segments to script")
 
         return visual_script_map
+
+    def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict]) -> List[Dict]:
+        """
+        Classify visual content using GPT-4V
+
+        Args:
+            keyframes: Dict mapping segment_id to keyframe path
+            segment_words_map: Visual-script mapping with words for context
+
+        Returns:
+            List of classified segments with content type, subject, source
+        """
+
+        try:
+            from openai import OpenAI
+        except ImportError:
+            print("   ⚠️  OpenAI library not installed. Run: pip install openai")
+            print("   ⚠️  Skipping visual classification...")
+            return []
+
+        # Check for API key
+        api_key = os.getenv('OPENAI_API_KEY')
+        if not api_key:
+            print("   ⚠️  OPENAI_API_KEY not set. Skipping visual classification...")
+            return []
+
+        print("\n🔍 Step 4: Classifying visual content with GPT-4V...")
+
+        client = OpenAI(api_key=api_key)
+        classifications = []
+
+        # Create context map for segments
+        words_by_segment = {s['segment_id']: s['words'] for s in segment_words_map}
+
+        # Process keyframes (sample to avoid too many API calls)
+        keyframe_items = list(keyframes.items())
+        sample_interval = max(1, len(keyframe_items) // 20)  # Max 20 classifications per video
+        sampled_keyframes = keyframe_items[::sample_interval]
+
+        for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
+            try:
+                # Read and encode image
+                with open(keyframe_path, 'rb') as f:
+                    image_data = base64.b64encode(f.read()).decode('utf-8')
+
+                # Get script context for this segment
+                context_words = words_by_segment.get(segment_id, "")
+
+                # GPT-4V classification prompt
+                response = client.chat.completions.create(
+                    model="gpt-4o",
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
+
+Respond ONLY with valid JSON (no markdown, no extra text):
+{{
+  "content_type": "news_clip|space_footage|cgi_animation|chart_graphic|text_overlay|person_talking|aerial_footage|documentary_footage|stock_footage|other",
+  "subject": "brief description of what is shown (5-10 words)",
+  "source_indicators": "watermarks, logos, or style clues visible",
+  "motion_style": "static|slow_pan|zoom|fast_cut|transition",
+  "quality": "professional|amateur|stock|ai_generated"
+}}"""
+                                },
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{image_data}"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    max_tokens=300
+                )
+
+                # Parse response
+                result_text = response.choices[0].message.content.strip()
+
+                # Clean markdown formatting if present
+                if result_text.startswith('```'):
+                    result_text = result_text.split('\n', 1)[1]
+                    result_text = result_text.rsplit('\n```', 1)[0]
+
+                classification = json.loads(result_text)
+
+                classification['segment_id'] = segment_id
+                classification['keyframe'] = keyframe_path
+                classification['script_context'] = context_words[:100]  # First 100 chars
+
+                classifications.append(classification)
+
+                print(f"   [{i}/{len(sampled_keyframes)}] Classified: {classification['content_type']} - {classification['subject']}")
+
+            except Exception as e:
+                print(f"   ⚠️  Failed to classify keyframe {segment_id}: {e}")
+                continue
+
+        print(f"   ✅ Classified {len(classifications)} visual segments")
+
+        return classifications
 
 
 def main():
