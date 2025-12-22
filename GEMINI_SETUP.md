@@ -14,7 +14,7 @@
 ## Install Required Libraries
 
 ```bash
-pip install google-generativeai Pillow
+pip install google-genai Pillow
 ```
 
 ## Set Environment Variable
@@ -60,9 +60,14 @@ The visual classifications will be saved to `analysis/watop/visual_analysis.json
 - Verify you've exported the key: `echo $GOOGLE_API_KEY`
 - Make sure you've sourced your shell config: `source ~/.zshrc`
 
-**"google-generativeai not installed" error:**
-- Run: `pip install google-generativeai Pillow`
+**"google-genai not installed" error:**
+- Run: `pip install google-genai Pillow`
 - Make sure you're in your virtual environment
+- If you have the old `google-generativeai` package, uninstall it first:
+  ```bash
+  pip uninstall google-generativeai
+  pip install google-genai
+  ```
 
 **Rate limit errors:**
 - Free tier allows 15 requests/min, 1,500/day

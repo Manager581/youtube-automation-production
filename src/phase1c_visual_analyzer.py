@@ -308,11 +308,12 @@ class VisualAnalyzer:
         """
 
         try:
-            import google.generativeai as genai
+            from google import genai
+            from google.genai import types
             from PIL import Image
         except ImportError:
-            print("   ⚠️  google-generativeai or Pillow not installed.")
-            print("   ⚠️  Run: pip install google-generativeai Pillow")
+            print("   ⚠️  google-genai or Pillow not installed.")
+            print("   ⚠️  Run: pip install google-genai Pillow")
             print("   ⚠️  Skipping visual classification...")
             return []
 
@@ -327,8 +328,7 @@ class VisualAnalyzer:
 
         print("\n🔍 Step 4: Classifying visual content with Google Gemini (Free API)...")
 
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        client = genai.Client(api_key=api_key)
         classifications = []
 
         # Create context map for segments
@@ -341,8 +341,9 @@ class VisualAnalyzer:
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
-                # Open image with PIL
-                img = Image.open(keyframe_path)
+                # Read image file
+                with open(keyframe_path, 'rb') as f:
+                    image_bytes = f.read()
 
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
@@ -360,7 +361,13 @@ Respond ONLY with valid JSON (no markdown, no extra text):
 }}"""
 
                 # Generate content with Gemini
-                response = model.generate_content([prompt, img])
+                response = client.models.generate_content(
+                    model='gemini-1.5-flash',
+                    contents=[
+                        prompt,
+                        types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg')
+                    ]
+                )
 
                 # Parse response
                 result_text = response.text.strip()
