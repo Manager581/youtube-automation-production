@@ -390,9 +390,12 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
 
-                # Generate content with Gemini
+                # Generate content with Gemini (stable free tier model)
+                import time
+                time.sleep(4)  # Rate limit: max 15 req/min = 1 every 4 seconds
+
                 response = client.models.generate_content(
-                    model='gemini-2.0-flash-exp',
+                    model='gemini-1.5-flash',
                     contents=[
                         prompt,
                         types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg')
