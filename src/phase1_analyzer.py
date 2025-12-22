@@ -1049,7 +1049,7 @@ def main():
         print(f"   Max videos: {max_videos}")
 
         # Show preview before analyzing
-        print(f"\n🔍 Fetching preview of first 5 videos...")
+        print(f"\n🔍 Fetching preview of first 10 videos...")
         try:
             cutoff_date = datetime.now() - timedelta(days=months_back * 30)
             date_str = cutoff_date.strftime('%Y%m%d')
@@ -1058,7 +1058,7 @@ def main():
                 'yt-dlp',
                 '--flat-playlist',
                 '--print', '%(title)s | %(upload_date)s',
-                '--playlist-end', '5',
+                '--playlist-end', '10',
                 '--dateafter', date_str,
                 '--match-filter', 'duration > 60',
                 '--match-filter', '!is_live',
@@ -1068,7 +1068,7 @@ def main():
             result = subprocess.run(preview_cmd, capture_output=True, text=True, timeout=60)
             if result.stdout.strip():
                 print("\n📹 Preview of videos that will be analyzed:")
-                for i, line in enumerate(result.stdout.strip().split('\n')[:5], 1):
+                for i, line in enumerate(result.stdout.strip().split('\n')[:10], 1):
                     print(f"   {i}. {line}")
             else:
                 print("   ⚠️  Could not fetch preview")
