@@ -29,9 +29,31 @@ class CreatorAnalyzer:
         self.videos_dir = self.output_dir / "videos"
         self.videos_dir.mkdir(exist_ok=True)
 
+    def analyze_channel_from_url(self, channel_url: str, creator_name: str = "creator",
+                                 months_back: int = 6, max_videos: int = 50):
+        """
+        Complete analysis pipeline - auto-fetch recent videos from channel
+
+        Args:
+            channel_url: YouTube channel URL or any video from the channel
+            creator_name: Name for this creator (e.g., "watop")
+            months_back: How many months back to analyze (default 6)
+            max_videos: Maximum videos to analyze (default 50)
+        """
+
+        print(f"\n🔬 CREATOR ANALYSIS PIPELINE - {creator_name.upper()}")
+        print("=" * 80)
+
+        # Fetch recent videos from channel
+        print(f"📥 Fetching last {months_back} months of videos...")
+        video_urls = self._fetch_channel_videos(channel_url, months_back, max_videos)
+        print(f"📹 Found {len(video_urls)} videos to analyze")
+
+        return self._analyze_videos(video_urls, creator_name)
+
     def analyze_channel(self, video_urls_file: Path, creator_name: str = "creator"):
         """
-        Complete analysis pipeline for a creator
+        Complete analysis pipeline for a creator (from URL file)
 
         Args:
             video_urls_file: Path to file with video URLs (one per line)
@@ -44,6 +66,55 @@ class CreatorAnalyzer:
         # Load video URLs
         video_urls = self._load_video_urls(video_urls_file)
         print(f"📹 Found {len(video_urls)} videos to analyze")
+
+        return self._analyze_videos(video_urls, creator_name)
+
+    def _fetch_channel_videos(self, channel_url: str, months_back: int = 6,
+                             max_videos: int = 50) -> List[str]:
+        """
+        Fetch recent videos from a channel using yt-dlp
+
+        Args:
+            channel_url: Channel URL or any video from channel
+            months_back: How many months back to fetch
+            max_videos: Maximum number of videos
+        """
+
+        # Calculate date filter
+        cutoff_date = datetime.now() - timedelta(days=months_back * 30)
+        date_str = cutoff_date.strftime('%Y%m%d')
+
+        try:
+            # Use yt-dlp to get video URLs from channel
+            cmd = [
+                'yt-dlp',
+                '--flat-playlist',
+                '--print', 'url',
+                '--playlist-end', str(max_videos),
+                '--dateafter', date_str,
+                channel_url
+            ]
+
+            print(f"   Fetching videos uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=120)
+
+            urls = [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
+
+            print(f"   ✅ Found {len(urls)} videos from last {months_back} months")
+
+            return urls
+
+        except Exception as e:
+            print(f"   ❌ Error fetching channel videos: {e}")
+            print(f"   💡 Try providing a channel URL or video URL from the channel")
+            return []
+
+    def _analyze_videos(self, video_urls: List[str], creator_name: str) -> Dict:
+        """Analyze a list of video URLs"""
+
+        if not video_urls:
+            print("❌ No videos to analyze!")
+            return {'error': 'No videos found'}
 
         # Create creator output directory
         creator_dir = self.output_dir / creator_name
@@ -440,24 +511,56 @@ def main():
 
     if len(sys.argv) < 2:
         print("\n🔬 Phase 1: Creator Analysis Pipeline")
-        print("\nUsage: python src/phase1_analyzer.py <video_urls_file> [creator_name]")
-        print("\nExample:")
+        print("\nUsage:")
+        print("  Option 1 - Auto-fetch from channel:")
+        print("    python src/phase1_analyzer.py --channel <channel_url> <creator_name> [months_back] [max_videos]")
+        print("\n  Option 2 - From URL file:")
+        print("    python src/phase1_analyzer.py <video_urls_file> <creator_name>")
+        print("\nExamples:")
+        print("  # Auto-fetch WATOP's last 6 months (up to 50 videos)")
+        print("  python src/phase1_analyzer.py --channel https://youtube.com/@WATOP watop")
+        print("")
+        print("  # Auto-fetch last 12 months, max 100 videos")
+        print("  python src/phase1_analyzer.py --channel https://youtube.com/@WATOP watop 12 100")
+        print("")
+        print("  # From file")
         print("  python src/phase1_analyzer.py research/watop_urls.txt watop")
-        print("\nThe video URLs file should have one YouTube URL per line.")
         return
 
-    urls_file = Path(sys.argv[1])
-    creator_name = sys.argv[2] if len(sys.argv) > 2 else "creator"
-
-    if not urls_file.exists():
-        print(f"❌ File not found: {urls_file}")
-        return
-
-    # Run analysis
     analyzer = CreatorAnalyzer()
-    results = analyzer.analyze_channel(urls_file, creator_name)
 
-    print(f"\n✅ Analysis complete! Check analysis/{creator_name}/ for results")
+    # Check if using --channel mode
+    if sys.argv[1] == '--channel':
+        if len(sys.argv) < 4:
+            print("❌ Usage: --channel <channel_url> <creator_name> [months_back] [max_videos]")
+            return
+
+        channel_url = sys.argv[2]
+        creator_name = sys.argv[3]
+        months_back = int(sys.argv[4]) if len(sys.argv) > 4 else 6
+        max_videos = int(sys.argv[5]) if len(sys.argv) > 5 else 50
+
+        print(f"📡 Auto-fetching from channel: {channel_url}")
+        print(f"📅 Date range: Last {months_back} months")
+        print(f"📊 Max videos: {max_videos}")
+
+        results = analyzer.analyze_channel_from_url(channel_url, creator_name, months_back, max_videos)
+
+    else:
+        # File mode
+        urls_file = Path(sys.argv[1])
+        creator_name = sys.argv[2] if len(sys.argv) > 2 else "creator"
+
+        if not urls_file.exists():
+            print(f"❌ File not found: {urls_file}")
+            return
+
+        results = analyzer.analyze_channel(urls_file, creator_name)
+
+    if results and 'error' not in results:
+        print(f"\n✅ Analysis complete! Check analysis/{creator_name}/ for results")
+    else:
+        print(f"\n❌ Analysis failed")
 
 
 if __name__ == "__main__":
