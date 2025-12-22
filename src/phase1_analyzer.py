@@ -234,9 +234,24 @@ class CreatorAnalyzer:
         title_analysis = self._analyze_title(metadata)
         video_data['title_analysis'] = title_analysis
 
-        # Step 7: Audio transcription (if enabled)
-        # Step 8: Visual classification (if enabled)
-        # Step 9: Source detection (future)
+        # Step 7: Audio transcription with word-level timestamps
+        print("\n🎙️  Step 7: Transcribing audio...")
+        transcript_analysis = self._transcribe_audio(video_path, metadata, output_dir)
+        video_data['transcript_analysis'] = transcript_analysis
+
+        # Step 8: Script analysis (hook, re-engagement, etc.)
+        if transcript_analysis and 'error' not in transcript_analysis:
+            print("\n📝 Step 8: Analyzing script structure...")
+            script_analysis = self._analyze_script_structure(
+                transcript_analysis,
+                title_analysis,
+                cut_analysis,
+                metadata
+            )
+            video_data['script_analysis'] = script_analysis
+
+        # Step 9: Visual classification (future)
+        # Step 10: Source detection (future)
 
         video_data['status'] = 'complete'
         return video_data
@@ -546,6 +561,276 @@ class CreatorAnalyzer:
             print(f"   Has question mark")
 
         return analysis
+
+    def _transcribe_audio(self, video_path: Path, metadata: Dict, output_dir: Path) -> Dict:
+        """
+        Transcribe audio with word-level timestamps using Whisper
+        """
+
+        try:
+            # Extract audio from video
+            audio_path = output_dir / f"{metadata.get('id', 'unknown')}_audio.wav"
+
+            print(f"   Extracting audio...")
+            cmd = [
+                'ffmpeg', '-y',
+                '-i', str(video_path),
+                '-vn',  # No video
+                '-acodec', 'pcm_s16le',
+                '-ar', '16000',  # 16kHz for Whisper
+                '-ac', '1',  # Mono
+                str(audio_path)
+            ]
+
+            subprocess.run(cmd, check=True, capture_output=True)
+            print(f"   Audio extracted: {audio_path.name}")
+
+            # Transcribe with Whisper
+            print(f"   Transcribing with Whisper (this may take a few minutes)...")
+
+            try:
+                import whisper
+
+                # Load model (base is good balance of speed/accuracy)
+                model = whisper.load_model("base")
+
+                # Transcribe with word timestamps
+                result = model.transcribe(
+                    str(audio_path),
+                    word_timestamps=True,
+                    verbose=False
+                )
+
+                # Extract words with timestamps
+                words = []
+                for segment in result.get('segments', []):
+                    for word_info in segment.get('words', []):
+                        words.append({
+                            'word': word_info.get('word', '').strip(),
+                            'start': word_info.get('start', 0),
+                            'end': word_info.get('end', 0)
+                        })
+
+                # Full text
+                full_text = result.get('text', '')
+
+                # Calculate speaking pace
+                total_words = len(words)
+                duration = metadata.get('duration', 0)
+                words_per_minute = (total_words / duration * 60) if duration > 0 else 0
+
+                print(f"   Transcribed {total_words} words")
+                print(f"   Speaking pace: {words_per_minute:.1f} WPM")
+
+                # Save full transcript
+                transcript_file = output_dir / f"{metadata.get('id', 'unknown')}_transcript.json"
+                self._save_results({
+                    'text': full_text,
+                    'words': words,
+                    'segments': result.get('segments', [])
+                }, transcript_file)
+
+                # Cleanup audio file
+                audio_path.unlink()
+
+                return {
+                    'full_text': full_text,
+                    'word_count': total_words,
+                    'words_per_minute': words_per_minute,
+                    'words': words[:100],  # Save first 100 words in main results
+                    'transcript_file': str(transcript_file)
+                }
+
+            except ImportError:
+                print(f"   ⚠️  Whisper not available - install with: pip install openai-whisper")
+                return {'error': 'Whisper not installed'}
+            except Exception as e:
+                print(f"   ⚠️  Transcription failed: {e}")
+                return {'error': str(e)}
+
+        except Exception as e:
+            print(f"   ⚠️  Audio extraction failed: {e}")
+            return {'error': str(e)}
+
+    def _analyze_script_structure(self, transcript_analysis: Dict, title_analysis: Dict,
+                                  cut_analysis: Dict, metadata: Dict) -> Dict:
+        """
+        Analyze script structure:
+        - Hook analysis (first 15s vs title promise)
+        - Re-engagement patterns
+        - Cut-to-word mapping
+        - Speaking pace variations
+        """
+
+        try:
+            import json
+
+            # Load full transcript
+            transcript_file = transcript_analysis.get('transcript_file')
+            if not transcript_file:
+                return {'error': 'No transcript file'}
+
+            with open(transcript_file, 'r') as f:
+                transcript_data = json.load(f)
+
+            words = transcript_data.get('words', [])
+            full_text = transcript_data.get('text', '')
+
+            if not words:
+                return {'error': 'No words in transcript'}
+
+            print(f"   Analyzing {len(words)} words...")
+
+            # 1. Hook analysis (first 15 seconds)
+            hook_words = [w for w in words if w['start'] < 15]
+            hook_text = ' '.join([w['word'] for w in hook_words])
+
+            # Check if hook delivers on title promise
+            title = title_analysis.get('title', '').lower()
+            hook_lower = hook_text.lower()
+
+            # Extract key words from title
+            import re
+            title_keywords = set(re.findall(r'\b\w+\b', title))
+            title_keywords = {w for w in title_keywords if len(w) > 3}  # Only meaningful words
+
+            # Check how many title keywords appear in hook
+            hook_keywords = set(re.findall(r'\b\w+\b', hook_lower))
+            matching_keywords = title_keywords & hook_keywords
+            title_delivery_score = len(matching_keywords) / len(title_keywords) if title_keywords else 0
+
+            print(f"   Hook: {len(hook_words)} words, delivers {title_delivery_score:.0%} of title promise")
+
+            # 2. Re-engagement pattern detection
+            reengagement_patterns = [
+                'but wait', 'but here', 'but there', 'however', 'but first',
+                'here\'s the thing', 'here\'s the crazy part', 'here\'s what',
+                'get this', 'check this out', 'now here', 'and that\'s not',
+                'it gets better', 'it gets worse', 'even more', 'but that\'s not all'
+            ]
+
+            reengagement_moments = []
+            full_text_lower = full_text.lower()
+
+            for pattern in reengagement_patterns:
+                if pattern in full_text_lower:
+                    # Find word index
+                    for i, word in enumerate(words):
+                        if i < len(words) - 2:
+                            phrase = (words[i]['word'] + ' ' + words[i+1]['word']).lower().strip()
+                            if pattern.startswith(phrase) or phrase in pattern:
+                                reengagement_moments.append({
+                                    'timestamp': words[i]['start'],
+                                    'pattern': pattern,
+                                    'context': ' '.join([w['word'] for w in words[max(0,i-3):min(len(words),i+4)]])
+                                })
+                                break
+
+            print(f"   Found {len(reengagement_moments)} re-engagement moments")
+
+            # 3. Map cuts to words (which words do cuts happen on?)
+            cut_timestamps = cut_analysis.get('cut_timestamps', [])
+            cuts_mapped_to_words = []
+
+            for cut_time in cut_timestamps[:20]:  # Analyze first 20 cuts
+                # Find nearest word
+                nearest_word = None
+                min_diff = float('inf')
+
+                for word in words:
+                    diff = abs(word['start'] - cut_time)
+                    if diff < min_diff:
+                        min_diff = diff
+                        nearest_word = word
+
+                if nearest_word and min_diff < 1.0:  # Within 1 second
+                    timing_relation = "BEFORE" if cut_time < nearest_word['start'] else "DURING" if cut_time < nearest_word['end'] else "AFTER"
+
+                    cuts_mapped_to_words.append({
+                        'cut_time': cut_time,
+                        'word': nearest_word['word'],
+                        'word_start': nearest_word['start'],
+                        'timing': timing_relation,
+                        'offset': cut_time - nearest_word['start']
+                    })
+
+            # Calculate average offset
+            if cuts_mapped_to_words:
+                avg_offset = sum(c['offset'] for c in cuts_mapped_to_words) / len(cuts_mapped_to_words)
+                print(f"   Cuts typically occur {avg_offset:+.2f}s relative to keywords")
+
+            # 4. Speaking pace variations
+            # Divide into segments and calculate WPM for each
+            segment_duration = 30  # 30-second segments
+            pace_segments = []
+
+            current_segment_words = []
+            current_segment_start = 0
+
+            for word in words:
+                if word['start'] >= current_segment_start + segment_duration:
+                    if current_segment_words:
+                        seg_wpm = len(current_segment_words) / segment_duration * 60
+                        pace_segments.append({
+                            'start': current_segment_start,
+                            'end': current_segment_start + segment_duration,
+                            'wpm': seg_wpm,
+                            'word_count': len(current_segment_words)
+                        })
+                    current_segment_words = []
+                    current_segment_start += segment_duration
+
+                current_segment_words.append(word)
+
+            # Last segment
+            if current_segment_words:
+                remaining_duration = words[-1]['end'] - current_segment_start
+                if remaining_duration > 0:
+                    seg_wpm = len(current_segment_words) / remaining_duration * 60
+                    pace_segments.append({
+                        'start': current_segment_start,
+                        'end': words[-1]['end'],
+                        'wpm': seg_wpm,
+                        'word_count': len(current_segment_words)
+                    })
+
+            # Find pace variations
+            if pace_segments:
+                wpms = [s['wpm'] for s in pace_segments]
+                avg_wpm = sum(wpms) / len(wpms)
+                max_wpm = max(wpms)
+                min_wpm = min(wpms)
+
+                print(f"   Speaking pace: {avg_wpm:.1f} WPM avg (range: {min_wpm:.1f}-{max_wpm:.1f})")
+
+            return {
+                'hook': {
+                    'word_count': len(hook_words),
+                    'text': hook_text,
+                    'title_delivery_score': title_delivery_score,
+                    'matching_keywords': list(matching_keywords)
+                },
+                'reengagement': {
+                    'count': len(reengagement_moments),
+                    'moments': reengagement_moments[:10],  # First 10
+                    'avg_interval': (words[-1]['end'] / len(reengagement_moments)) if reengagement_moments else 0
+                },
+                'cut_mapping': {
+                    'analyzed_cuts': len(cuts_mapped_to_words),
+                    'avg_offset': avg_offset if cuts_mapped_to_words else 0,
+                    'examples': cuts_mapped_to_words[:5]
+                },
+                'pace_variation': {
+                    'segments': len(pace_segments),
+                    'avg_wpm': avg_wpm if pace_segments else 0,
+                    'max_wpm': max_wpm if pace_segments else 0,
+                    'min_wpm': min_wpm if pace_segments else 0
+                }
+            }
+
+        except Exception as e:
+            print(f"   ⚠️  Script analysis failed: {e}")
+            return {'error': str(e)}
 
     def _compare_performance(self, videos: List[Dict]) -> Dict:
         """
