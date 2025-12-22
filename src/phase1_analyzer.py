@@ -52,11 +52,10 @@ class CreatorAnalyzer:
         )
 
         print(f"\n📊 SCAN RESULTS:")
-        print(f"   ✅ Found {total_matching} videos matching criteria:")
-        print(f"      - Uploaded in last {months_back} months")
-        print(f"      - Duration > 60 seconds (long-form only)")
+        print(f"   ✅ Found {total_matching} long-form videos on channel")
+        print(f"      - Duration > 60 seconds (excludes Shorts)")
         print(f"      - Not live streams")
-        print(f"\n   📹 Will analyze: {len(video_urls)} videos (limited by max_videos={max_videos})")
+        print(f"\n   📹 Will analyze: {len(video_urls)} most recent videos")
 
         if not auto_confirm:
             response = input(f"\n❓ Do you want to proceed with analysis? (yes/no): ").strip().lower()
@@ -92,60 +91,41 @@ class CreatorAnalyzer:
         Filters:
         - Only long-form videos (> 60 seconds, excludes Shorts)
         - Sorted by upload date (newest first)
-        - Within date range (last N months)
 
         Args:
             channel_url: Channel URL or any video from channel
-            months_back: How many months back to fetch
-            max_videos: Maximum number of videos
+            months_back: IGNORED - kept for compatibility
+            max_videos: Number of most recent videos to fetch
             return_count: If True, returns (total_count, urls[:max_videos]). If False, returns urls[:max_videos]
         """
 
-        # Calculate date filter
-        cutoff_date = datetime.now() - timedelta(days=months_back * 30)
-        date_str = cutoff_date.strftime('%Y%m%d')
-
         try:
-            # Use yt-dlp to get ALL matching videos with upload dates (for verification)
+            # Fetch most recent videos (sorted newest first by default)
             cmd = [
                 'yt-dlp',
                 '--flat-playlist',
-                '--print', '%(url)s|%(upload_date)s',
-                '--dateafter', date_str,
+                '--print', 'url',
                 '--match-filter', 'duration > 60',  # Exclude shorts (< 60 seconds)
                 '--match-filter', '!is_live',  # Exclude live streams
+                '--playlist-end', str(max_videos * 2),  # Fetch extra to account for filtering
                 channel_url
             ]
 
-            print(f"   Scanning for long-form videos (>60s) uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
-            print(f"   Filters: duration > 60s, not live streams, uploaded after {date_str}")
+            print(f"   Fetching {max_videos} most recent long-form videos (>60s)...")
+            print(f"   Filters: duration > 60s, not live streams")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=180)
 
-            # Parse URLs and verify dates
-            all_urls = []
-            for line in result.stdout.strip().split('\n'):
-                if not line.strip():
-                    continue
-                parts = line.strip().split('|')
-                if len(parts) >= 2:
-                    url = parts[0]
-                    upload_date = parts[1]
-                    # Double-check date filter (yt-dlp sometimes doesn't filter correctly)
-                    if upload_date and upload_date >= date_str:
-                        all_urls.append(url)
-                elif len(parts) == 1:
-                    # If no date returned, include it (yt-dlp should have filtered already)
-                    all_urls.append(parts[0])
-
-            total_count = len(all_urls)
+            # Parse URLs
+            all_urls = [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
 
             # Limit to max_videos
             urls = all_urls[:max_videos]
+            total_count = len(all_urls)
 
             if return_count:
                 return total_count, urls
             else:
-                print(f"   ✅ Found {len(urls)} long-form videos from last {months_back} months")
+                print(f"   ✅ Found {len(urls)} most recent long-form videos")
                 return urls
 
         except Exception as e:
@@ -1049,32 +1029,23 @@ def main():
         if not creator_name:
             creator_name = "creator"
 
-        # Ask for months back
-        months_input = input("\n📅 How many months back to analyze? (default: 6): ").strip()
-        months_back = int(months_input) if months_input else 6
-
-        # Ask for max videos
-        max_input = input(f"\n📊 Maximum number of videos to analyze? (default: 50): ").strip()
+        # Ask for number of videos
+        max_input = input(f"\n📊 How many of their most recent videos to analyze? (default: 50): ").strip()
         max_videos = int(max_input) if max_input else 50
 
         print(f"\n📡 Settings:")
         print(f"   Channel: {channel_url}")
         print(f"   Creator: {creator_name}")
-        print(f"   Date range: Last {months_back} months")
-        print(f"   Max videos: {max_videos}")
+        print(f"   Videos: {max_videos} most recent long-form videos")
 
         # Show preview before analyzing
         print(f"\n🔍 Fetching preview of first 10 videos...")
         try:
-            cutoff_date = datetime.now() - timedelta(days=months_back * 30)
-            date_str = cutoff_date.strftime('%Y%m%d')
-
             preview_cmd = [
                 'yt-dlp',
                 '--flat-playlist',
                 '--print', '%(title)s | %(upload_date)s',
                 '--playlist-end', '10',
-                '--dateafter', date_str,
                 '--match-filter', 'duration > 60',
                 '--match-filter', '!is_live',
                 channel_url
@@ -1082,7 +1053,7 @@ def main():
 
             result = subprocess.run(preview_cmd, capture_output=True, text=True, timeout=60)
             if result.stdout.strip():
-                print("\n📹 Preview of videos that will be analyzed:")
+                print("\n📹 Preview of most recent videos:")
                 for i, line in enumerate(result.stdout.strip().split('\n')[:10], 1):
                     print(f"   {i}. {line}")
             else:
@@ -1095,7 +1066,7 @@ def main():
             print("❌ Analysis cancelled")
             return
 
-        results = analyzer.analyze_channel_from_url(channel_url, creator_name, months_back, max_videos)
+        results = analyzer.analyze_channel_from_url(channel_url, creator_name, 6, max_videos)
 
     # Check if using --channel mode
     elif sys.argv[1] == '--channel':
