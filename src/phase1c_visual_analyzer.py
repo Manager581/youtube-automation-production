@@ -256,7 +256,9 @@ class VisualAnalyzer:
 
         for segment in segments:
             start_time = segment['start_time']
-            end_time = segment.get('end_time', float('inf'))
+            end_time = segment.get('end_time')
+            if end_time is None:
+                end_time = float('inf')
 
             # Find words that overlap with this visual segment
             segment_words = []
