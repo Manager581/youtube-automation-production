@@ -74,6 +74,11 @@ class CreatorAnalyzer:
         """
         Fetch recent videos from a channel using yt-dlp
 
+        Filters:
+        - Only long-form videos (> 60 seconds, excludes Shorts)
+        - Sorted by upload date (newest first)
+        - Within date range (last N months)
+
         Args:
             channel_url: Channel URL or any video from channel
             months_back: How many months back to fetch
@@ -86,21 +91,31 @@ class CreatorAnalyzer:
 
         try:
             # Use yt-dlp to get video URLs from channel
+            # Fetch extra to account for shorts being filtered out
+            fetch_limit = max_videos * 2
+
             cmd = [
                 'yt-dlp',
                 '--flat-playlist',
                 '--print', 'url',
-                '--playlist-end', str(max_videos),
+                '--playlist-end', str(fetch_limit),
                 '--dateafter', date_str,
+                '--match-filter', 'duration > 60',  # Exclude shorts (< 60 seconds)
+                '--match-filter', '!is_live',  # Exclude live streams
+                '--playlist-items', f'1-{fetch_limit}',  # Ensure newest first
                 channel_url
             ]
 
-            print(f"   Fetching videos uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
+            print(f"   Fetching long-form videos (>60s) uploaded after {cutoff_date.strftime('%Y-%m-%d')}...")
+            print(f"   Excluding: Shorts, live streams")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=120)
 
             urls = [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
 
-            print(f"   ✅ Found {len(urls)} videos from last {months_back} months")
+            # Limit to max_videos
+            urls = urls[:max_videos]
+
+            print(f"   ✅ Found {len(urls)} long-form videos from last {months_back} months")
 
             return urls
 
