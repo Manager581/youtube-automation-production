@@ -91,13 +91,24 @@ class VisualAnalyzer:
                 # Map visuals to script (if transcript exists)
                 transcript = video.get('transcript_analysis', {})
                 if transcript and transcript.get('words'):
-                    visual_script_map = self._map_visuals_to_script(
-                        visual_data['segments'],
-                        transcript['words']
-                    )
-                    visual_data['visual_script_map'] = visual_script_map
+                    # Check if visual_script_map is cached
+                    if 'visual_script_map' not in visual_data:
+                        visual_script_map = self._map_visuals_to_script(
+                            visual_data['segments'],
+                            transcript['words']
+                        )
+                        visual_data['visual_script_map'] = visual_script_map
 
-                    # Classify visual content with GPT-4V
+                        # Update cache with mapping
+                        cache_file = creator_dir / f"{video_id}_segments" / "metadata.json"
+                        with open(cache_file, 'w') as f:
+                            json.dump(visual_data, f, indent=2)
+                    else:
+                        print("🔗 Step 3: Mapping visuals to script... (using cache)")
+                        print(f"   ✅ Loaded {len(visual_data['visual_script_map'])} cached visual-script mappings")
+                        visual_script_map = visual_data['visual_script_map']
+
+                    # Classify visual content with Gemini
                     if visual_data.get('keyframes'):
                         classifications = self._classify_keyframes(
                             visual_data['keyframes'],
@@ -138,11 +149,24 @@ class VisualAnalyzer:
         Uses ffmpeg scene detection to identify visual transitions
         """
 
-        print("🎬 Step 1: Detecting scenes...")
-
         # Create segments directory
         segments_dir = output_dir / f"{video_id}_segments"
         segments_dir.mkdir(exist_ok=True)
+
+        # Check for cached analysis
+        cache_file = segments_dir / "metadata.json"
+        if cache_file.exists():
+            print("🎬 Step 1: Detecting scenes... (using cache)")
+            print("📸 Step 2: Extracting keyframes... (using cache)")
+            try:
+                with open(cache_file, 'r') as f:
+                    cached_data = json.load(f)
+                print(f"   ✅ Loaded {cached_data['total_segments']} cached segments with {len(cached_data['keyframes'])} keyframes")
+                return cached_data
+            except Exception as e:
+                print(f"   ⚠️  Cache corrupted, re-analyzing: {e}")
+
+        print("🎬 Step 1: Detecting scenes...")
 
         try:
             # Use ffmpeg scene detection
@@ -184,13 +208,19 @@ class VisualAnalyzer:
                     'keyframe_path': keyframes.get(i, None)
                 })
 
-            return {
+            result_data = {
                 'video_id': video_id,
                 'total_segments': len(segments),
                 'segments': segments,
                 'keyframes': keyframes,  # Dict of segment_id -> keyframe_path
                 'segments_dir': str(segments_dir)
             }
+
+            # Save cache
+            with open(cache_file, 'w') as f:
+                json.dump(result_data, f, indent=2)
+
+            return result_data
 
         except subprocess.TimeoutExpired:
             print(f"   ❌ Scene detection timed out")
