@@ -24,13 +24,14 @@ class VisualAnalyzer:
     def __init__(self, analysis_dir: str = "analysis"):
         self.analysis_dir = Path(analysis_dir)
 
-    def analyze_creator_visuals(self, creator_name: str, top_n: int = 10):
+    def analyze_creator_visuals(self, creator_name: str, top_n: int = 10, skip_classification: bool = False):
         """
         Analyze visual-script sync for top N videos of a creator
 
         Args:
             creator_name: Creator directory name (e.g., "watop")
             top_n: Number of top videos to analyze (default 10)
+            skip_classification: Skip Step 4 (visual classification) to save API quota
         """
 
         creator_dir = self.analysis_dir / creator_name
@@ -108,13 +109,15 @@ class VisualAnalyzer:
                         print(f"   ✅ Loaded {len(visual_data['visual_script_map'])} cached visual-script mappings")
                         visual_script_map = visual_data['visual_script_map']
 
-                    # Classify visual content with Gemini
-                    if visual_data.get('keyframes'):
+                    # Classify visual content with Gemini (unless skipped)
+                    if not skip_classification and visual_data.get('keyframes'):
                         classifications = self._classify_keyframes(
                             visual_data['keyframes'],
                             visual_script_map
                         )
                         visual_data['visual_classifications'] = classifications
+                    elif skip_classification:
+                        print("\n⏭️  Skipping Step 4 (visual classification) to preserve API quota")
 
                 results['videos'].append({
                     'id': video_id,
@@ -439,16 +442,18 @@ def main():
     if len(sys.argv) < 2:
         print("\n🎬 Phase 1C: Visual-Script Sync Analysis")
         print("\nUsage:")
-        print("  python src/phase1c_visual_analyzer.py <creator_name> [top_n]")
+        print("  python src/phase1c_visual_analyzer.py <creator_name> [top_n] [--skip-classification]")
         print("\nExample:")
         print("  python src/phase1c_visual_analyzer.py watop 10")
+        print("  python src/phase1c_visual_analyzer.py watop 10 --skip-classification  # Build cache only")
         return
 
     creator_name = sys.argv[1]
-    top_n = int(sys.argv[2]) if len(sys.argv) > 2 else 10
+    top_n = int(sys.argv[2]) if len(sys.argv) > 2 and not sys.argv[2].startswith('--') else 10
+    skip_classification = '--skip-classification' in sys.argv
 
     analyzer = VisualAnalyzer()
-    analyzer.analyze_creator_visuals(creator_name, top_n)
+    analyzer.analyze_creator_visuals(creator_name, top_n, skip_classification=skip_classification)
 
 
 if __name__ == "__main__":
