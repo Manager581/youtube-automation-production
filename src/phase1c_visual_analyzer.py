@@ -398,7 +398,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                 time.sleep(4)  # Rate limit: max 15 req/min = 1 every 4 seconds
 
                 response = client.models.generate_content(
-                    model='gemini-1.5-flash',
+                    model='gemini-2.0-flash',
                     contents=[
                         prompt,
                         types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg')
