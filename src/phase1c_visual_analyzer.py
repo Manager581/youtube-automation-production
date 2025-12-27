@@ -24,14 +24,15 @@ class VisualAnalyzer:
     def __init__(self, analysis_dir: str = "analysis"):
         self.analysis_dir = Path(analysis_dir)
 
-    def analyze_creator_visuals(self, creator_name: str, top_n: int = 10, skip_classification: bool = False):
+    def analyze_creator_visuals(self, creator_name: str, top_n: int = 10, skip_classification: bool = False, analyze_bottom: bool = False):
         """
-        Analyze visual-script sync for top N videos of a creator
+        Analyze visual-script sync for top N or bottom N videos of a creator
 
         Args:
             creator_name: Creator directory name (e.g., "watop")
-            top_n: Number of top videos to analyze (default 10)
+            top_n: Number of videos to analyze (default 10)
             skip_classification: Skip Step 4 (visual classification) to save API quota
+            analyze_bottom: If True, analyze bottom N videos instead of top N
         """
 
         creator_dir = self.analysis_dir / creator_name
@@ -55,27 +56,34 @@ class VisualAnalyzer:
         valid_videos = [v for v in videos if v.get('status') == 'complete' and v.get('view_count')]
         sorted_videos = sorted(valid_videos, key=lambda x: x.get('view_count', 0), reverse=True)
 
-        top_videos = sorted_videos[:top_n]
+        # Select top or bottom performers
+        if analyze_bottom:
+            selected_videos = sorted_videos[-top_n:] if len(sorted_videos) >= top_n else sorted_videos
+            performance_label = "BOTTOM"
+        else:
+            selected_videos = sorted_videos[:top_n]
+            performance_label = "TOP"
 
         print(f"\n🎬 PHASE 1C: VISUAL-SCRIPT SYNC ANALYSIS")
         print("=" * 80)
         print(f"Creator: {creator_name.upper()}")
-        print(f"Analyzing top {len(top_videos)} videos by views\n")
+        print(f"Analyzing {performance_label} {len(selected_videos)} videos by views\n")
 
         results = {
             'creator': creator_name,
             'analysis_date': datetime.now().isoformat(),
-            'videos_analyzed': len(top_videos),
+            'videos_analyzed': len(selected_videos),
+            'performance_type': performance_label.lower(),
             'videos': []
         }
 
-        for i, video in enumerate(top_videos, 1):
+        for i, video in enumerate(selected_videos, 1):
             video_id = video.get('id', 'unknown')
             title = video.get('title', 'Unknown')
             views = video.get('view_count', 0)
 
             print(f"\n{'='*80}")
-            print(f"🎥 VIDEO {i}/{len(top_videos)}: {title}")
+            print(f"🎥 VIDEO {i}/{len(selected_videos)}: {title}")
             print(f"   Views: {views:,} | ID: {video_id}")
             print(f"{'='*80}\n")
 
@@ -127,7 +135,8 @@ class VisualAnalyzer:
                 })
 
         # Save results
-        output_file = creator_dir / "visual_analysis.json"
+        filename = f"visual_analysis_{performance_label.lower()}.json"
+        output_file = creator_dir / filename
         with open(output_file, 'w') as f:
             json.dump(results, f, indent=2)
 
@@ -330,7 +339,7 @@ class VisualAnalyzer:
 
     def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict]) -> List[Dict]:
         """
-        Classify visual content using Google Gemini (Free API)
+        Classify visual content using Groq Llama Vision (Free API - 1000 req/day)
 
         Args:
             keyframes: Dict mapping segment_id to keyframe path
@@ -341,27 +350,25 @@ class VisualAnalyzer:
         """
 
         try:
-            from google import genai
-            from google.genai import types
-            from PIL import Image
+            from groq import Groq
         except ImportError:
-            print("   ⚠️  google-genai or Pillow not installed.")
-            print("   ⚠️  Run: pip install google-genai Pillow")
+            print("   ⚠️  groq library not installed.")
+            print("   ⚠️  Run: pip install groq")
             print("   ⚠️  Skipping visual classification...")
             return []
 
         # Check for API key
-        api_key = os.getenv('GOOGLE_API_KEY')
+        api_key = os.getenv('GROQ_API_KEY')
         if not api_key:
-            print("   ⚠️  GOOGLE_API_KEY not set.")
-            print("   ⚠️  Get your free API key at: https://aistudio.google.com/app/apikey")
-            print("   ⚠️  Then set: export GOOGLE_API_KEY='your-key-here'")
+            print("   ⚠️  GROQ_API_KEY not set.")
+            print("   ⚠️  Get your free API key at: https://console.groq.com/keys")
+            print("   ⚠️  Then set: export GROQ_API_KEY='your-key-here'")
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with Google Gemini (Free API)...")
+        print("\n🔍 Step 4: Classifying visual content with Groq Llama Vision (Free API - 1000 req/day)...")
 
-        client = genai.Client(api_key=api_key)
+        client = Groq(api_key=api_key)
         classifications = []
 
         # Create context map for segments
@@ -374,14 +381,16 @@ class VisualAnalyzer:
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
-                # Read image file
+                # Encode image to base64 (required for Groq vision API)
+                import base64
                 with open(keyframe_path, 'rb') as f:
                     image_bytes = f.read()
+                    image_base64 = base64.b64encode(image_bytes).decode('utf-8')
 
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
 
-                # Gemini classification prompt
+                # Groq vision classification prompt
                 prompt = f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
 
 Respond ONLY with valid JSON (no markdown, no extra text):
@@ -393,20 +402,29 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
 
-                # Generate content with Gemini (stable free tier model)
-                import time
-                time.sleep(4)  # Rate limit: max 15 req/min = 1 every 4 seconds
-
-                response = client.models.generate_content(
-                    model='gemini-2.5-flash-lite',
-                    contents=[
-                        prompt,
-                        types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg')
-                    ]
+                # Generate content with Groq Llama Vision
+                response = client.chat.completions.create(
+                    model="llama-3.2-90b-vision-preview",
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": prompt},
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{image_base64}"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    temperature=0.1,
+                    max_tokens=300
                 )
 
                 # Parse response
-                result_text = response.text.strip()
+                result_text = response.choices[0].message.content.strip()
 
                 # Clean markdown formatting if present
                 if result_text.startswith('```json'):
@@ -442,18 +460,23 @@ def main():
     if len(sys.argv) < 2:
         print("\n🎬 Phase 1C: Visual-Script Sync Analysis")
         print("\nUsage:")
-        print("  python src/phase1c_visual_analyzer.py <creator_name> [top_n] [--skip-classification]")
-        print("\nExample:")
-        print("  python src/phase1c_visual_analyzer.py watop 10")
-        print("  python src/phase1c_visual_analyzer.py watop 10 --skip-classification  # Build cache only")
+        print("  python src/phase1c_visual_analyzer.py <creator_name> [top_n] [flags]")
+        print("\nFlags:")
+        print("  --skip-classification  Skip visual classification (build cache only)")
+        print("  --bottom              Analyze bottom performers instead of top")
+        print("\nExamples:")
+        print("  python src/phase1c_visual_analyzer.py watop 10              # Top 10 videos")
+        print("  python src/phase1c_visual_analyzer.py watop 10 --bottom     # Bottom 10 videos")
+        print("  python src/phase1c_visual_analyzer.py watop 10 --skip-classification")
         return
 
     creator_name = sys.argv[1]
     top_n = int(sys.argv[2]) if len(sys.argv) > 2 and not sys.argv[2].startswith('--') else 10
     skip_classification = '--skip-classification' in sys.argv
+    analyze_bottom = '--bottom' in sys.argv
 
     analyzer = VisualAnalyzer()
-    analyzer.analyze_creator_visuals(creator_name, top_n, skip_classification=skip_classification)
+    analyzer.analyze_creator_visuals(creator_name, top_n, skip_classification=skip_classification, analyze_bottom=analyze_bottom)
 
 
 if __name__ == "__main__":
