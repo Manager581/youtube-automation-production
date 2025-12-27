@@ -339,7 +339,7 @@ class VisualAnalyzer:
 
     def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict]) -> List[Dict]:
         """
-        Classify visual content using Groq Llama Vision (Free API - 1000 req/day)
+        Classify visual content using OpenAI GPT-4o Vision (~$1.50 for 280 images)
 
         Args:
             keyframes: Dict mapping segment_id to keyframe path
@@ -350,25 +350,25 @@ class VisualAnalyzer:
         """
 
         try:
-            from groq import Groq
+            from openai import OpenAI
         except ImportError:
-            print("   ⚠️  groq library not installed.")
-            print("   ⚠️  Run: pip install groq")
+            print("   ⚠️  openai library not installed.")
+            print("   ⚠️  Run: pip install openai")
             print("   ⚠️  Skipping visual classification...")
             return []
 
         # Check for API key
-        api_key = os.getenv('GROQ_API_KEY')
+        api_key = os.getenv('OPENAI_API_KEY')
         if not api_key:
-            print("   ⚠️  GROQ_API_KEY not set.")
-            print("   ⚠️  Get your free API key at: https://console.groq.com/keys")
-            print("   ⚠️  Then set: export GROQ_API_KEY='your-key-here'")
+            print("   ⚠️  OPENAI_API_KEY not set.")
+            print("   ⚠️  Get your API key at: https://platform.openai.com/api-keys")
+            print("   ⚠️  Then set: export OPENAI_API_KEY='your-key-here'")
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with Groq Llama Vision (Free API - 1000 req/day)...")
+        print("\n🔍 Step 4: Classifying visual content with OpenAI GPT-4o Vision (~$1.50 total cost)...")
 
-        client = Groq(api_key=api_key)
+        client = OpenAI(api_key=api_key)
         classifications = []
 
         # Create context map for segments
@@ -402,9 +402,9 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
 
-                # Generate content with Groq Llama Vision
+                # Generate content with OpenAI GPT-4o Vision
                 response = client.chat.completions.create(
-                    model="llama-3.2-11b-vision-preview",
+                    model="gpt-4o",
                     messages=[
                         {
                             "role": "user",
@@ -413,7 +413,8 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                                 {
                                     "type": "image_url",
                                     "image_url": {
-                                        "url": f"data:image/jpeg;base64,{image_base64}"
+                                        "url": f"data:image/jpeg;base64,{image_base64}",
+                                        "detail": "low"  # Low detail = $0.000425 per image vs $0.0055
                                     }
                                 }
                             ]
