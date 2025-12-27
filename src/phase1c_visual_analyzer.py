@@ -404,7 +404,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
 
                 # Generate content with Groq Llama Vision
                 response = client.chat.completions.create(
-                    model="llama-3.2-90b-vision-preview",
+                    model="llama-3.2-11b-vision-preview",
                     messages=[
                         {
                             "role": "user",
