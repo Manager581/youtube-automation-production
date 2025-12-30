@@ -407,21 +407,15 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
 
-                # Format prompt for the model
-                formatted_prompt = apply_chat_template(
-                    processor, config, prompt, num_images=1
-                )
-
-                # DEBUG: Check what apply_chat_template returns
-                print(f"   [DEBUG] formatted_prompt type: {type(formatted_prompt)}")
-                print(f"   [DEBUG] formatted_prompt value: {str(formatted_prompt)[:200]}")
+                # Skip apply_chat_template - use raw prompt directly
+                # The error is happening in apply_chat_template(), not generate()
 
                 # Generate classification using local MLX model
                 # Note: MLX-VLM expects image as a LIST of PIL Image objects
                 result_text = generate(
                     model=model,
                     processor=processor,
-                    prompt=formatted_prompt,
+                    prompt=prompt,
                     image=[img],
                     verbose=False
                 )
