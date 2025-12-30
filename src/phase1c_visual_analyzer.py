@@ -386,10 +386,10 @@ class VisualAnalyzer:
         if max_keyframes and len(keyframe_items) > max_keyframes:
             sample_interval = max(1, len(keyframe_items) // max_keyframes)
             sampled_keyframes = keyframe_items[::sample_interval]
-            print(f"   📊 Analyzing {len(sampled_keyframes)} of {len(keyframe_items)} keyframes (~${len(sampled_keyframes) * 0.0015:.2f} cost)")
+            print(f"   📊 Analyzing {len(sampled_keyframes)} of {len(keyframe_items)} keyframes (~${len(sampled_keyframes) * 0.000425:.2f} cost)")
         else:
             sampled_keyframes = keyframe_items
-            print(f"   📊 Analyzing all {len(sampled_keyframes)} keyframes (~${len(sampled_keyframes) * 0.0015:.2f} cost)")
+            print(f"   📊 Analyzing all {len(sampled_keyframes)} keyframes (~${len(sampled_keyframes) * 0.000425:.2f} cost)")
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
@@ -420,7 +420,8 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                                 {
                                     "type": "image_url",
                                     "image_url": {
-                                        "url": f"data:image/jpeg;base64,{base64_image}"
+                                        "url": f"data:image/jpeg;base64,{base64_image}",
+                                        "detail": "low"  # Use low-detail mode for cost savings (~$2.50 vs $8.75)
                                     }
                                 }
                             ]
@@ -452,7 +453,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                 continue
 
         print(f"   ✅ Classified {len(classifications)} visual segments")
-        print(f"   💰 Total cost: ~${len(classifications) * 0.0015:.2f}")
+        print(f"   💰 Total cost: ~${len(classifications) * 0.000425:.2f} (low-detail mode)")
 
         return classifications
 
