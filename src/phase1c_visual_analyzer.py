@@ -413,13 +413,16 @@ Respond ONLY with valid JSON (no markdown, no extra text):
 
                 # Generate classification using Qwen2-VL
                 # Image must be passed as a list of paths
-                result_text = generate(
+                result = generate(
                     model,
                     processor,
                     formatted_prompt,
                     [keyframe_path],
                     verbose=False
                 )
+
+                # Extract text from GenerationResult object
+                result_text = result.text
 
                 # Clean markdown formatting if present
                 if result_text.startswith('```json'):
