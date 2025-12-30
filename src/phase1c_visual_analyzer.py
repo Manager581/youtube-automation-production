@@ -356,10 +356,9 @@ class VisualAnalyzer:
             from mlx_vlm import load, generate
             from mlx_vlm.prompt_utils import apply_chat_template
             from mlx_vlm.utils import load_config
-            from PIL import Image
         except ImportError:
-            print("   ⚠️  mlx-vlm or Pillow not installed.")
-            print("   ⚠️  Run: pip install mlx-vlm pillow")
+            print("   ⚠️  mlx-vlm not installed.")
+            print("   ⚠️  Run: pip install mlx-vlm")
             print("   ⚠️  Skipping visual classification...")
             return []
 
@@ -389,9 +388,6 @@ class VisualAnalyzer:
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
-                # Load image
-                image = Image.open(keyframe_path)
-
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
 
@@ -413,11 +409,12 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                 )
 
                 # Generate classification using local MLX model
+                # Note: MLX-VLM expects image path string, not PIL Image object
                 result_text = generate(
                     model,
                     processor,
                     formatted_prompt,
-                    [image],
+                    keyframe_path,
                     verbose=False
                 )
 
