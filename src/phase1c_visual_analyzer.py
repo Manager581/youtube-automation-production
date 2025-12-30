@@ -412,6 +412,10 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                     processor, config, prompt, num_images=1
                 )
 
+                # DEBUG: Check what apply_chat_template returns
+                print(f"   [DEBUG] formatted_prompt type: {type(formatted_prompt)}")
+                print(f"   [DEBUG] formatted_prompt value: {str(formatted_prompt)[:200]}")
+
                 # Generate classification using local MLX model
                 # Note: MLX-VLM expects image as a LIST of PIL Image objects
                 result_text = generate(
