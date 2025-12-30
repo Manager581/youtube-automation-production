@@ -411,10 +411,10 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                 # Generate classification using local MLX model
                 # Note: MLX-VLM expects image path string, not PIL Image object
                 result_text = generate(
-                    model,
-                    processor,
-                    formatted_prompt,
-                    keyframe_path,
+                    model=model,
+                    processor=processor,
+                    prompt=formatted_prompt,
+                    image=keyframe_path,
                     verbose=False
                 )
 
