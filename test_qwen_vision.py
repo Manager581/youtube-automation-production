@@ -14,15 +14,15 @@ model, processor = load(model_path)
 config = load_config(model_path)
 print("✅ Model loaded!")
 
-# Test with first available keyframe
+# Test with first available thumbnail
 import glob
-keyframes = glob.glob("analysis/watop/*/keyframes/segment_0000.jpg")
+test_images = glob.glob("analysis/watop/*_thumbnail.jpg")
 
-if not keyframes:
-    print("❌ No keyframes found. Run phase1c first to generate keyframes.")
+if not test_images:
+    print("❌ No images found. Run phase1c first.")
     exit(1)
 
-test_image = keyframes[0]
+test_image = test_images[0]
 print(f"🖼️  Testing with: {test_image}")
 
 # Simple prompt
