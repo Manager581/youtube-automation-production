@@ -9,7 +9,7 @@ print("🧪 Testing Qwen2-VL with a single image...")
 
 # Load model
 print("📦 Loading model...")
-model_path = "mlx-community/Qwen2-VL-2B-Instruct-4bit"
+model_path = "mlx-community/Qwen2.5-VL-7B-Instruct-4bit"
 model, processor = load(model_path)
 config = load_config(model_path)
 print("✅ Model loaded!")
