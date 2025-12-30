@@ -362,12 +362,12 @@ class VisualAnalyzer:
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with Qwen2-VL (Local, FREE, Unlimited)...")
-        print("   📦 Loading model (first run downloads ~3GB, then cached)...")
+        print("\n🔍 Step 4: Classifying visual content with Qwen2-VL 7B (Local, FREE, Unlimited)...")
+        print("   📦 Loading model (first run downloads ~7GB, then cached)...")
 
         try:
-            # Load Qwen2-VL 2B (4-bit quantized) - officially supported by MLX-VLM
-            model_path = "mlx-community/Qwen2-VL-2B-Instruct-4bit"
+            # Load Qwen2-VL 7B (4-bit quantized) - Better accuracy for JSON formatting
+            model_path = "mlx-community/Qwen2-VL-7B-Instruct-4bit"
             model, processor = load(model_path)
             config = load_config(model_path)
             print("   ✅ Model loaded successfully")
@@ -413,12 +413,15 @@ Respond ONLY with valid JSON (no markdown, no extra text):
 
                 # Generate classification using Qwen2-VL
                 # Image must be passed as a list of paths
+                # temp=0.0 for deterministic, consistent JSON formatting
                 result = generate(
                     model,
                     processor,
                     formatted_prompt,
                     [keyframe_path],
-                    verbose=False
+                    verbose=False,
+                    temp=0.0,
+                    max_tokens=300
                 )
 
                 # Extract text from GenerationResult object
