@@ -354,12 +354,9 @@ class VisualAnalyzer:
 
         try:
             from mlx_vlm import load, generate
-            from mlx_vlm.prompt_utils import apply_chat_template
-            from mlx_vlm.utils import load_config
-            from PIL import Image
         except ImportError:
-            print("   ⚠️  mlx-vlm or Pillow not installed.")
-            print("   ⚠️  Run: pip install mlx-vlm pillow")
+            print("   ⚠️  mlx-vlm not installed.")
+            print("   ⚠️  Run: pip install mlx-vlm")
             print("   ⚠️  Skipping visual classification...")
             return []
 
@@ -370,7 +367,6 @@ class VisualAnalyzer:
             # Load Llama 3.2 Vision 11B (4-bit quantized for efficiency)
             model_path = "mlx-community/Llama-3.2-11B-Vision-Instruct-4bit"
             model, processor = load(model_path)
-            config = load_config(model_path)
             print("   ✅ Model loaded successfully")
         except Exception as e:
             print(f"   ❌ Failed to load model: {e}")
@@ -389,54 +385,33 @@ class VisualAnalyzer:
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
-                # Load image as PIL Image
-                img = Image.open(keyframe_path)
-
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
 
-                # Local Llama Vision classification prompt
-                prompt = f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
-
-Respond ONLY with valid JSON (no markdown, no extra text):
-{{
-  "content_type": "news_clip|space_footage|cgi_animation|chart_graphic|text_overlay|person_talking|aerial_footage|documentary_footage|stock_footage|other",
-  "subject": "brief description of what is shown (5-10 words)",
-  "source_indicators": "watermarks, logos, or style clues visible",
-  "motion_style": "static|slow_pan|zoom|fast_cut|transition",
-  "quality": "professional|amateur|stock|ai_generated"
-}}"""
-
-                # Skip apply_chat_template - use raw prompt directly
-                # The error is happening in apply_chat_template(), not generate()
+                # Simple prompt - ask model to describe what it sees
+                prompt = "Describe what you see in this image in one sentence."
 
                 # Generate classification using local MLX model
-                # Note: MLX-VLM expects image as a LIST of PIL Image objects
+                # Pass image path as string (not PIL Image)
                 result_text = generate(
                     model=model,
                     processor=processor,
                     prompt=prompt,
-                    image=[img],
+                    image=keyframe_path,
                     verbose=False
                 )
 
-                # Clean markdown formatting if present
-                if result_text.startswith('```json'):
-                    result_text = result_text.split('\n', 1)[1]
-                    result_text = result_text.rsplit('\n```', 1)[0]
-                elif result_text.startswith('```'):
-                    result_text = result_text.split('\n', 1)[1]
-                    result_text = result_text.rsplit('\n```', 1)[0]
-
-                classification = json.loads(result_text)
-
-                classification['segment_id'] = segment_id
-                classification['keyframe'] = keyframe_path
-                classification['script_context'] = context_words[:100]  # First 100 chars
+                # For now, just store the description
+                classification = {
+                    'segment_id': segment_id,
+                    'keyframe': keyframe_path,
+                    'script_context': context_words[:100],
+                    'description': result_text.strip()
+                }
 
                 classifications.append(classification)
 
-                print(f"   [{i}/{len(sampled_keyframes)}] Classified: {classification['content_type']} - {classification['subject']}")
+                print(f"   [{i}/{len(sampled_keyframes)}] Classified: {result_text[:80]}...")
 
             except Exception as e:
                 print(f"   ⚠️  Failed to classify keyframe {segment_id}: {e}")
