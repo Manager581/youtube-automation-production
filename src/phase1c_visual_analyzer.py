@@ -362,12 +362,12 @@ class VisualAnalyzer:
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with Qwen2.5-VL 32B (Local, FREE, Unlimited)...")
-        print("   📦 Loading model (first run downloads ~16GB, then cached)...")
+        print("\n🔍 Step 4: Classifying visual content with Qwen2.5-VL 7B (Local, FREE, Unlimited)...")
+        print("   📦 Loading model (first run downloads ~7GB, then cached)...")
 
         try:
-            # Load Qwen2.5-VL 32B (4-bit quantized) - GPT-4o level accuracy
-            model_path = "mlx-community/Qwen2.5-VL-32B-Instruct-4bit"
+            # Load Qwen2.5-VL 7B (4-bit quantized) - Better than 2.0, safe memory usage
+            model_path = "mlx-community/Qwen2.5-VL-7B-Instruct-4bit"
             model, processor = load(model_path)
             config = load_config(model_path)
             print("   ✅ Model loaded successfully")
