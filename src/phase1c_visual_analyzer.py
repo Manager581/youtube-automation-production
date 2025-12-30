@@ -372,7 +372,10 @@ class VisualAnalyzer:
             config = load_config(model_path)
             print("   ✅ Model loaded successfully")
         except Exception as e:
+            import traceback
             print(f"   ❌ Failed to load model: {e}")
+            print("   Full traceback:")
+            traceback.print_exc()
             print("   ⚠️  Skipping visual classification...")
             return []
 
