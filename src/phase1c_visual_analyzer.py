@@ -16,6 +16,11 @@ from typing import List, Dict, Optional
 import re
 from datetime import datetime
 import os
+import base64
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 
 class VisualAnalyzer:
@@ -24,7 +29,7 @@ class VisualAnalyzer:
     def __init__(self, analysis_dir: str = "analysis"):
         self.analysis_dir = Path(analysis_dir)
 
-    def analyze_creator_visuals(self, creator_name: str, top_n: int = 10, skip_classification: bool = False, analyze_bottom: bool = False):
+    def analyze_creator_visuals(self, creator_name: str, top_n: int = 10, skip_classification: bool = False, analyze_bottom: bool = False, use_openai: bool = False, max_keyframes: int = None):
         """
         Analyze visual-script sync for top N or bottom N videos of a creator
 
@@ -33,6 +38,8 @@ class VisualAnalyzer:
             top_n: Number of videos to analyze (default 10)
             skip_classification: Skip Step 4 (visual classification) to save API quota
             analyze_bottom: If True, analyze bottom N videos instead of top N
+            use_openai: Use OpenAI GPT-4o Vision instead of local MLX (costs ~$0.15/video)
+            max_keyframes: Max keyframes to analyze per video (None = all keyframes)
         """
 
         creator_dir = self.analysis_dir / creator_name
@@ -117,11 +124,13 @@ class VisualAnalyzer:
                         print(f"   ✅ Loaded {len(visual_data['visual_script_map'])} cached visual-script mappings")
                         visual_script_map = visual_data['visual_script_map']
 
-                    # Classify visual content with Gemini (unless skipped)
+                    # Classify visual content (unless skipped)
                     if not skip_classification and visual_data.get('keyframes'):
                         classifications = self._classify_keyframes(
                             visual_data['keyframes'],
-                            visual_script_map
+                            visual_script_map,
+                            use_openai=use_openai,
+                            max_keyframes=max_keyframes
                         )
                         visual_data['visual_classifications'] = classifications
                     elif skip_classification:
@@ -337,20 +346,133 @@ class VisualAnalyzer:
 
         return visual_script_map
 
-    def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict]) -> List[Dict]:
+    def _classify_keyframes_openai(self, keyframes: Dict[int, str], segment_words_map: List[Dict], max_keyframes: int = None) -> List[Dict]:
         """
-        Classify visual content using local Llama 3.2 Vision (MLX on Apple Silicon)
+        Classify visual content using OpenAI GPT-4o Vision
 
-        FREE - No API costs, unlimited use, runs locally on M5 chip
-        First run will download ~22GB model, then cached forever
+        Cost: ~$0.15 per video (100 keyframes × $0.00150 per image)
 
         Args:
             keyframes: Dict mapping segment_id to keyframe path
             segment_words_map: Visual-script mapping with words for context
+            max_keyframes: Max keyframes to analyze (None = all)
 
         Returns:
             List of classified segments with content type, subject, source
         """
+
+        try:
+            from openai import OpenAI
+        except ImportError:
+            print("   ❌ openai package not installed.")
+            print("   ⚠️  Run: pip install openai")
+            return []
+
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            print("   ❌ OPENAI_API_KEY not found in environment")
+            print("   ⚠️  Add it to your .env file")
+            return []
+
+        client = OpenAI(api_key=api_key)
+
+        print("\n🔍 Step 4: Classifying visual content with OpenAI GPT-4o Vision...")
+
+        classifications = []
+        words_by_segment = {s['segment_id']: s['words'] for s in segment_words_map}
+
+        # Sample keyframes if max_keyframes specified
+        keyframe_items = list(keyframes.items())
+        if max_keyframes and len(keyframe_items) > max_keyframes:
+            sample_interval = max(1, len(keyframe_items) // max_keyframes)
+            sampled_keyframes = keyframe_items[::sample_interval]
+            print(f"   📊 Analyzing {len(sampled_keyframes)} of {len(keyframe_items)} keyframes (~${len(sampled_keyframes) * 0.0015:.2f} cost)")
+        else:
+            sampled_keyframes = keyframe_items
+            print(f"   📊 Analyzing all {len(sampled_keyframes)} keyframes (~${len(sampled_keyframes) * 0.0015:.2f} cost)")
+
+        for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
+            try:
+                context_words = words_by_segment.get(segment_id, "")
+
+                # Encode image to base64
+                with open(keyframe_path, "rb") as img_file:
+                    base64_image = base64.b64encode(img_file.read()).decode('utf-8')
+
+                prompt = f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
+
+Respond ONLY with valid JSON (no markdown, no extra text):
+{{
+  "content_type": "news_clip|space_footage|cgi_animation|chart_graphic|text_overlay|person_talking|aerial_footage|documentary_footage|stock_footage|other",
+  "subject": "brief description of what is shown (5-10 words)",
+  "source_indicators": "watermarks, logos, or style clues visible",
+  "motion_style": "static|slow_pan|zoom|fast_cut|transition",
+  "quality": "professional|amateur|stock|ai_generated"
+}}"""
+
+                response = client.chat.completions.create(
+                    model="gpt-4o",
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": prompt},
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{base64_image}"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    max_tokens=300,
+                    temperature=0.0
+                )
+
+                result_text = response.choices[0].message.content
+
+                # Clean markdown if present
+                if result_text.startswith('```json'):
+                    result_text = result_text.split('\n', 1)[1].rsplit('\n```', 1)[0]
+                elif result_text.startswith('```'):
+                    result_text = result_text.split('\n', 1)[1].rsplit('\n```', 1)[0]
+
+                classification = json.loads(result_text.strip())
+                classification['segment_id'] = segment_id
+                classification['keyframe'] = keyframe_path
+                classification['script_context'] = context_words[:100]
+
+                classifications.append(classification)
+
+                print(f"   [{i}/{len(sampled_keyframes)}] Classified: {classification['content_type']} - {classification['subject']}")
+
+            except Exception as e:
+                print(f"   ⚠️  Failed to classify keyframe {segment_id}: {e}")
+                continue
+
+        print(f"   ✅ Classified {len(classifications)} visual segments")
+        print(f"   💰 Total cost: ~${len(classifications) * 0.0015:.2f}")
+
+        return classifications
+
+    def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict], use_openai: bool = False, max_keyframes: int = None) -> List[Dict]:
+        """
+        Classify visual content using either OpenAI GPT-4o Vision or local Qwen2.5-VL
+
+        Args:
+            keyframes: Dict mapping segment_id to keyframe path
+            segment_words_map: Visual-script mapping with words for context
+            use_openai: Use OpenAI instead of local model
+            max_keyframes: Max keyframes to analyze per video (None = all for OpenAI, 20 for local)
+
+        Returns:
+            List of classified segments with content type, subject, source
+        """
+
+        # Route to OpenAI if requested
+        if use_openai:
+            return self._classify_keyframes_openai(keyframes, segment_words_map, max_keyframes)
 
         try:
             from mlx_vlm import load, generate
@@ -384,10 +506,18 @@ class VisualAnalyzer:
         # Create context map for segments
         words_by_segment = {s['segment_id']: s['words'] for s in segment_words_map}
 
-        # Process keyframes (sample to avoid too many API calls)
+        # Process keyframes (sample based on max_keyframes parameter)
         keyframe_items = list(keyframes.items())
-        sample_interval = max(1, len(keyframe_items) // 20)  # Max 20 classifications per video
-        sampled_keyframes = keyframe_items[::sample_interval]
+        if max_keyframes is None:
+            max_keyframes = 20  # Default for local inference to avoid long processing times
+
+        if len(keyframe_items) > max_keyframes:
+            sample_interval = max(1, len(keyframe_items) // max_keyframes)
+            sampled_keyframes = keyframe_items[::sample_interval]
+            print(f"   📊 Analyzing {len(sampled_keyframes)} of {len(keyframe_items)} keyframes")
+        else:
+            sampled_keyframes = keyframe_items
+            print(f"   📊 Analyzing all {len(sampled_keyframes)} keyframes")
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
@@ -466,19 +596,37 @@ def main():
         print("\nFlags:")
         print("  --skip-classification  Skip visual classification (build cache only)")
         print("  --bottom              Analyze bottom performers instead of top")
+        print("  --use-openai          Use OpenAI GPT-4o Vision (~$0.15/video, all keyframes)")
+        print("  --max-keyframes N     Max keyframes per video (default: 20 local, all OpenAI)")
         print("\nExamples:")
-        print("  python src/phase1c_visual_analyzer.py watop 10              # Top 10 videos")
-        print("  python src/phase1c_visual_analyzer.py watop 10 --bottom     # Bottom 10 videos")
-        print("  python src/phase1c_visual_analyzer.py watop 10 --skip-classification")
+        print("  python src/phase1c_visual_analyzer.py watop 10                    # Top 10, local MLX, 20 keyframes/video")
+        print("  python src/phase1c_visual_analyzer.py watop 10 --use-openai       # Top 10, OpenAI, ALL keyframes (~$1.50 total)")
+        print("  python src/phase1c_visual_analyzer.py watop 10 --use-openai --max-keyframes 50  # Limit to 50 keyframes/video")
+        print("  python src/phase1c_visual_analyzer.py watop 10 --bottom           # Bottom 10 videos")
         return
 
     creator_name = sys.argv[1]
     top_n = int(sys.argv[2]) if len(sys.argv) > 2 and not sys.argv[2].startswith('--') else 10
     skip_classification = '--skip-classification' in sys.argv
     analyze_bottom = '--bottom' in sys.argv
+    use_openai = '--use-openai' in sys.argv
+
+    # Parse --max-keyframes
+    max_keyframes = None
+    for i, arg in enumerate(sys.argv):
+        if arg == '--max-keyframes' and i + 1 < len(sys.argv):
+            max_keyframes = int(sys.argv[i + 1])
+            break
 
     analyzer = VisualAnalyzer()
-    analyzer.analyze_creator_visuals(creator_name, top_n, skip_classification=skip_classification, analyze_bottom=analyze_bottom)
+    analyzer.analyze_creator_visuals(
+        creator_name,
+        top_n,
+        skip_classification=skip_classification,
+        analyze_bottom=analyze_bottom,
+        use_openai=use_openai,
+        max_keyframes=max_keyframes
+    )
 
 
 if __name__ == "__main__":
