@@ -354,6 +354,8 @@ class VisualAnalyzer:
 
         try:
             from mlx_vlm import load, generate
+            from mlx_vlm.prompt_utils import apply_chat_template
+            from mlx_vlm.utils import load_config
             from PIL import Image
         except ImportError:
             print("   ⚠️  mlx-vlm or Pillow not installed.")
@@ -366,7 +368,9 @@ class VisualAnalyzer:
 
         try:
             # Load Llama 3.2 Vision 11B (4-bit quantized for efficiency)
-            model, processor = load("mlx-community/Llama-3.2-11B-Vision-Instruct-4bit")
+            model_path = "mlx-community/Llama-3.2-11B-Vision-Instruct-4bit"
+            model, processor = load(model_path)
+            config = load_config(model_path)
             print("   ✅ Model loaded successfully")
         except Exception as e:
             print(f"   ❌ Failed to load model: {e}")
@@ -403,14 +407,17 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
 
+                # Format prompt for the model
+                formatted_prompt = apply_chat_template(
+                    processor, config, prompt, num_images=1
+                )
+
                 # Generate classification using local MLX model
                 result_text = generate(
                     model,
                     processor,
-                    image,
-                    prompt,
-                    temp=0.1,
-                    max_tokens=300,
+                    formatted_prompt,
+                    [image],
                     verbose=False
                 )
 
