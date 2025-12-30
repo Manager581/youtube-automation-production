@@ -339,7 +339,10 @@ class VisualAnalyzer:
 
     def _classify_keyframes(self, keyframes: Dict[int, str], segment_words_map: List[Dict]) -> List[Dict]:
         """
-        Classify visual content using OpenAI GPT-4o Vision (~$1.50 for 280 images)
+        Classify visual content using local Llama 3.2 Vision (MLX on Apple Silicon)
+
+        FREE - No API costs, unlimited use, runs locally on M5 chip
+        First run will download ~22GB model, then cached forever
 
         Args:
             keyframes: Dict mapping segment_id to keyframe path
@@ -350,25 +353,26 @@ class VisualAnalyzer:
         """
 
         try:
-            from openai import OpenAI
+            from mlx_vlm import load, generate
+            from PIL import Image
         except ImportError:
-            print("   ⚠️  openai library not installed.")
-            print("   ⚠️  Run: pip install openai")
+            print("   ⚠️  mlx-vlm or Pillow not installed.")
+            print("   ⚠️  Run: pip install mlx-vlm pillow")
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        # Check for API key
-        api_key = os.getenv('OPENAI_API_KEY')
-        if not api_key:
-            print("   ⚠️  OPENAI_API_KEY not set.")
-            print("   ⚠️  Get your API key at: https://platform.openai.com/api-keys")
-            print("   ⚠️  Then set: export OPENAI_API_KEY='your-key-here'")
+        print("\n🔍 Step 4: Classifying visual content with Llama 3.2 Vision (Local, FREE, Unlimited)...")
+        print("   📦 Loading model (first run downloads ~22GB, then cached)...")
+
+        try:
+            # Load Llama 3.2 Vision 11B (4-bit quantized for efficiency)
+            model, processor = load("mlx-community/Llama-3.2-11B-Vision-Instruct-4bit")
+            print("   ✅ Model loaded successfully")
+        except Exception as e:
+            print(f"   ❌ Failed to load model: {e}")
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with OpenAI GPT-4o Vision (~$1.50 total cost)...")
-
-        client = OpenAI(api_key=api_key)
         classifications = []
 
         # Create context map for segments
@@ -381,16 +385,13 @@ class VisualAnalyzer:
 
         for i, (segment_id, keyframe_path) in enumerate(sampled_keyframes, 1):
             try:
-                # Encode image to base64 (required for Groq vision API)
-                import base64
-                with open(keyframe_path, 'rb') as f:
-                    image_bytes = f.read()
-                    image_base64 = base64.b64encode(image_bytes).decode('utf-8')
+                # Load image
+                image = Image.open(keyframe_path)
 
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
 
-                # Groq vision classification prompt
+                # Local Llama Vision classification prompt
                 prompt = f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
 
 Respond ONLY with valid JSON (no markdown, no extra text):
@@ -402,30 +403,16 @@ Respond ONLY with valid JSON (no markdown, no extra text):
   "quality": "professional|amateur|stock|ai_generated"
 }}"""
 
-                # Generate content with OpenAI GPT-4o Vision
-                response = client.chat.completions.create(
-                    model="gpt-4o",
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": [
-                                {"type": "text", "text": prompt},
-                                {
-                                    "type": "image_url",
-                                    "image_url": {
-                                        "url": f"data:image/jpeg;base64,{image_base64}",
-                                        "detail": "low"  # Low detail = $0.000425 per image vs $0.0055
-                                    }
-                                }
-                            ]
-                        }
-                    ],
-                    temperature=0.1,
-                    max_tokens=300
+                # Generate classification using local MLX model
+                result_text = generate(
+                    model,
+                    processor,
+                    image,
+                    prompt,
+                    temp=0.1,
+                    max_tokens=300,
+                    verbose=False
                 )
-
-                # Parse response
-                result_text = response.choices[0].message.content.strip()
 
                 # Clean markdown formatting if present
                 if result_text.startswith('```json'):
