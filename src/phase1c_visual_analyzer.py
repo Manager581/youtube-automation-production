@@ -354,19 +354,22 @@ class VisualAnalyzer:
 
         try:
             from mlx_vlm import load, generate
+            from mlx_vlm.prompt_utils import apply_chat_template
+            from mlx_vlm.utils import load_config
         except ImportError:
             print("   ⚠️  mlx-vlm not installed.")
             print("   ⚠️  Run: pip install mlx-vlm")
             print("   ⚠️  Skipping visual classification...")
             return []
 
-        print("\n🔍 Step 4: Classifying visual content with Llama 3.2 Vision (Local, FREE, Unlimited)...")
-        print("   📦 Loading model (first run downloads ~22GB, then cached)...")
+        print("\n🔍 Step 4: Classifying visual content with Qwen2-VL (Local, FREE, Unlimited)...")
+        print("   📦 Loading model (first run downloads ~3GB, then cached)...")
 
         try:
-            # Load Llama 3.2 Vision 11B (4-bit quantized for efficiency)
-            model_path = "mlx-community/Llama-3.2-11B-Vision-Instruct-4bit"
+            # Load Qwen2-VL 2B (4-bit quantized) - officially supported by MLX-VLM
+            model_path = "mlx-community/Qwen2-VL-2B-Instruct-4bit"
             model, processor = load(model_path)
+            config = load_config(model_path)
             print("   ✅ Model loaded successfully")
         except Exception as e:
             print(f"   ❌ Failed to load model: {e}")
@@ -388,30 +391,51 @@ class VisualAnalyzer:
                 # Get script context for this segment
                 context_words = words_by_segment.get(segment_id, "")
 
-                # Simple prompt - ask model to describe what it sees
-                prompt = "Describe what you see in this image in one sentence."
+                # Classification prompt with context
+                prompt = f"""Analyze this video frame and classify it. The narrator says: "{context_words}"
 
-                # Generate classification using local MLX model
-                # Pass image path as string (not PIL Image)
+Respond ONLY with valid JSON (no markdown, no extra text):
+{{
+  "content_type": "news_clip|space_footage|cgi_animation|chart_graphic|text_overlay|person_talking|aerial_footage|documentary_footage|stock_footage|other",
+  "subject": "brief description of what is shown (5-10 words)",
+  "source_indicators": "watermarks, logos, or style clues visible",
+  "motion_style": "static|slow_pan|zoom|fast_cut|transition",
+  "quality": "professional|amateur|stock|ai_generated"
+}}"""
+
+                # Format prompt using apply_chat_template (required for Qwen2-VL)
+                formatted_prompt = apply_chat_template(
+                    processor, config, prompt, num_images=1
+                )
+
+                # Generate classification using Qwen2-VL
+                # Image must be passed as a list of paths
                 result_text = generate(
-                    model=model,
-                    processor=processor,
-                    prompt=prompt,
-                    image=keyframe_path,
+                    model,
+                    processor,
+                    formatted_prompt,
+                    [keyframe_path],
                     verbose=False
                 )
 
-                # For now, just store the description
-                classification = {
-                    'segment_id': segment_id,
-                    'keyframe': keyframe_path,
-                    'script_context': context_words[:100],
-                    'description': result_text.strip()
-                }
+                # Clean markdown formatting if present
+                if result_text.startswith('```json'):
+                    result_text = result_text.split('\n', 1)[1]
+                    result_text = result_text.rsplit('\n```', 1)[0]
+                elif result_text.startswith('```'):
+                    result_text = result_text.split('\n', 1)[1]
+                    result_text = result_text.rsplit('\n```', 1)[0]
+
+                # Parse JSON response
+                classification = json.loads(result_text.strip())
+
+                classification['segment_id'] = segment_id
+                classification['keyframe'] = keyframe_path
+                classification['script_context'] = context_words[:100]
 
                 classifications.append(classification)
 
-                print(f"   [{i}/{len(sampled_keyframes)}] Classified: {result_text[:80]}...")
+                print(f"   [{i}/{len(sampled_keyframes)}] Classified: {classification['content_type']} - {classification['subject']}")
 
             except Exception as e:
                 print(f"   ⚠️  Failed to classify keyframe {segment_id}: {e}")
