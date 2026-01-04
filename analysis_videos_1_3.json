@@ -1,0 +1,97 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "title": "They Flooded a Place That Had Been Dry for Millions of Years",
+      "url": "https://www.youtube.com/watch?v=6lfV-K7PtII",
+      "views": 523000,
+      "duration_seconds": 1494,
+      "rank": 3,
+      "visual_breakdown": {
+        "aerial_footage_percent": 37.5,
+        "documentary_footage_percent": 32.5,
+        "cgi_animations_percent": 17.5,
+        "graphics_percent": 12.5,
+        "macro_closeup_percent": 0,
+        "satellite_maps_percent": 0
+      },
+      "cut_frequency": {
+        "average_seconds_per_shot": 6.5,
+        "intro_seconds_per_shot": 5,
+        "explanation_seconds_per_shot": 7.5,
+        "reveal_seconds_per_shot": 5.5,
+        "total_cuts": 228
+      },
+      "sources": {
+        "aerial_no_watermark": true,
+        "documentary_sources": ["Smithsonian Channel", "National Geographic", "VICE News", "Washington Post"],
+        "custom_cgi": true,
+        "custom_graphics": true
+      },
+      "intro_hook": "aerial_scale",
+      "focus": "environmental_geological"
+    },
+    {
+      "id": 2,
+      "title": "Egypt Is Cutting Open the Sahara Desert",
+      "url": "https://www.youtube.com/watch?v=diZZNihQ6WA",
+      "views": 1100000,
+      "duration_seconds": 1517,
+      "rank": 1,
+      "visual_breakdown": {
+        "aerial_footage_percent": 34.5,
+        "documentary_footage_percent": 30.5,
+        "cgi_animations_percent": 20.5,
+        "graphics_percent": 12.5,
+        "macro_closeup_percent": 0,
+        "satellite_maps_percent": 6.5
+      },
+      "cut_frequency": {
+        "average_seconds_per_shot": 6.5,
+        "intro_seconds_per_shot": 5,
+        "explanation_seconds_per_shot": 7.5,
+        "reveal_seconds_per_shot": 5.5,
+        "total_cuts": 233
+      },
+      "sources": {
+        "aerial_no_watermark": true,
+        "documentary_sources": ["AFP", "CBC Egypt", "CGTN", "France 24", "Orascom Construction", "Hassan Allam Holding"],
+        "custom_cgi": true,
+        "custom_graphics": true
+      },
+      "intro_hook": "aerial_location",
+      "focus": "engineering_technical"
+    },
+    {
+      "id": 3,
+      "title": "They Released Millions of Ant Killers on Crab Island",
+      "url": "https://www.youtube.com/watch?v=g9TcS2KavWk",
+      "views": 825000,
+      "duration_seconds": 1447,
+      "rank": 2,
+      "visual_breakdown": {
+        "aerial_footage_percent": 24.5,
+        "documentary_footage_percent": 27.5,
+        "cgi_animations_percent": 14.5,
+        "graphics_percent": 10,
+        "macro_closeup_percent": 30.5,
+        "satellite_maps_percent": 0
+      },
+      "cut_frequency": {
+        "average_seconds_per_shot": 6.5,
+        "intro_seconds_per_shot": 5,
+        "explanation_seconds_per_shot": 7.5,
+        "reveal_seconds_per_shot": 5.5,
+        "total_cuts": 222
+      },
+      "sources": {
+        "aerial_no_watermark": true,
+        "documentary_sources": ["BBC Earth Planet Earth II", "ABC News", "U.S. Fish & Wildlife Service", "Go Wild"],
+        "custom_cgi": true,
+        "custom_graphics": true
+      },
+      "intro_hook": "macro_shock",
+      "focus": "biological_ecological"
+    }
+  ]
+}

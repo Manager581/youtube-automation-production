@@ -1,0 +1,180 @@
+{
+  "performance_ranking": {
+    "rankings": [
+      {
+        "rank": 1,
+        "views": 1100000,
+        "title": "Egypt Is Cutting Open the Sahara Desert",
+        "id": 2
+      },
+      {
+        "rank": 2,
+        "views": 825000,
+        "title": "They Released Millions of Ant Killers on Crab Island",
+        "id": 3
+      },
+      {
+        "rank": 3,
+        "views": 523000,
+        "title": "They Flooded a Place That Had Been Dry for Millions of Years",
+        "id": 1
+      }
+    ],
+    "highest_views": 1100000,
+    "lowest_views": 523000,
+    "avg_views": 816000,
+    "view_spread": 577000
+  },
+  "visual_patterns": {
+    "average_composition": {
+      "aerial": 32.166666666666664,
+      "documentary": 30.166666666666668,
+      "cgi": 17.5,
+      "graphics": 11.666666666666666,
+      "macro": 10.166666666666666
+    },
+    "top_performer_composition": {
+      "aerial_footage_percent": 34.5,
+      "documentary_footage_percent": 30.5,
+      "cgi_animations_percent": 20.5,
+      "graphics_percent": 12.5,
+      "macro_closeup_percent": 0,
+      "satellite_maps_percent": 6.5
+    },
+    "variance": {
+      "aerial": 13.0,
+      "cgi": 6.0
+    }
+  },
+  "pacing_patterns": {
+    "average_pacing": 6.5,
+    "intro_pacing": 5,
+    "explanation_pacing": 7.5,
+    "reveal_pacing": 5.5,
+    "pacing_consistent": true,
+    "pacing_variance": 0.0
+  },
+  "sourcing_patterns": {
+    "consistent_free_aerial": true,
+    "consistent_custom_cgi": true,
+    "consistent_custom_graphics": true,
+    "unique_documentary_sources": [
+      "Hassan Allam Holding",
+      "Go Wild",
+      "VICE News",
+      "Smithsonian Channel",
+      "Washington Post",
+      "National Geographic",
+      "AFP",
+      "U.S. Fish & Wildlife Service",
+      "CBC Egypt",
+      "Orascom Construction",
+      "ABC News",
+      "France 24",
+      "CGTN",
+      "BBC Earth Planet Earth II"
+    ],
+    "documentary_source_count": 14,
+    "topic_specific_sourcing": true
+  },
+  "intro_patterns": {
+    "hook_types": {
+      "aerial_location": 1,
+      "macro_shock": 1,
+      "aerial_scale": 1
+    },
+    "best_hook": "aerial_location",
+    "best_hook_avg_views": 1100000,
+    "hook_diversity": true
+  },
+  "correlations": {
+    "correlations": [
+      {
+        "finding": "More CGI animations (+3.0%)",
+        "hypothesis": "Higher CGI usage may correlate with higher views"
+      },
+      {
+        "finding": "Uses satellite/map imagery (6.5%)",
+        "hypothesis": "Satellite imagery adds geographical context and may boost views"
+      },
+      {
+        "finding": "Engineering/technical focus",
+        "hypothesis": "Technical content may resonate more with audience"
+      }
+    ],
+    "top_performer_focus": "engineering_technical",
+    "top_performer_hook": "aerial_location"
+  },
+  "recommendations": {
+    "recommendations": [
+      {
+        "category": "Pacing",
+        "recommendation": "Maintain ~6.5 second average cut frequency",
+        "priority": "CRITICAL",
+        "rationale": "Consistent across all top performers"
+      },
+      {
+        "category": "Visual Composition",
+        "recommendation": "Use 34.5% aerial, 20.5% CGI, 30.5% documentary",
+        "priority": "HIGH",
+        "rationale": "Top performer formula (Video 2 with 1,100,000 views)"
+      },
+      {
+        "category": "Sourcing",
+        "recommendation": "Use free aerial stock + licensed documentary + custom CGI",
+        "priority": "HIGH",
+        "rationale": "Cost-effective pattern across all videos"
+      },
+      {
+        "category": "Intro Hook",
+        "recommendation": "Open with aerial shot establishing location",
+        "priority": "MEDIUM",
+        "rationale": "Top performer uses aerial_location"
+      },
+      {
+        "category": "Content Focus",
+        "recommendation": "Focus on engineering/technical topics",
+        "priority": "MEDIUM",
+        "rationale": "Top performer focus"
+      }
+    ],
+    "priority_breakdown": {
+      "critical": [
+        {
+          "category": "Pacing",
+          "recommendation": "Maintain ~6.5 second average cut frequency",
+          "priority": "CRITICAL",
+          "rationale": "Consistent across all top performers"
+        }
+      ],
+      "high": [
+        {
+          "category": "Visual Composition",
+          "recommendation": "Use 34.5% aerial, 20.5% CGI, 30.5% documentary",
+          "priority": "HIGH",
+          "rationale": "Top performer formula (Video 2 with 1,100,000 views)"
+        },
+        {
+          "category": "Sourcing",
+          "recommendation": "Use free aerial stock + licensed documentary + custom CGI",
+          "priority": "HIGH",
+          "rationale": "Cost-effective pattern across all videos"
+        }
+      ],
+      "medium": [
+        {
+          "category": "Intro Hook",
+          "recommendation": "Open with aerial shot establishing location",
+          "priority": "MEDIUM",
+          "rationale": "Top performer uses aerial_location"
+        },
+        {
+          "category": "Content Focus",
+          "recommendation": "Focus on engineering/technical topics",
+          "priority": "MEDIUM",
+          "rationale": "Top performer focus"
+        }
+      ]
+    }
+  }
+}
