@@ -376,24 +376,74 @@ It represents the EXACT patterns used by {creator_name} to create engaging conte
 def main():
     """CLI interface"""
     import sys
+    import os
 
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 2:
         print("\n🔬 Master Formula Extractor")
         print("\nUsage:")
-        print("  python src/master_formula_extractor.py <creator_name> <video_dir>")
-        print("\nExample:")
-        print("  python src/master_formula_extractor.py watop analysis/watop/videos/")
+        print("  python src/master_formula_extractor.py <creator_name> [video_dir]")
+        print("\nExamples:")
+        print("  python src/master_formula_extractor.py watop")
+        print("  python src/master_formula_extractor.py watop /path/to/videos/")
         print("\nThis will:")
-        print("  - Run ALL analysis phases on all videos in directory")
+        print("  - Check for existing analysis data in analysis/<creator_name>/")
+        print("  - Run ALL analysis phases on videos")
         print("  - Extract complete formula patterns")
         print("  - Generate actionable SOP")
         return
 
     creator_name = sys.argv[1]
-    video_dir = Path(sys.argv[2])
+
+    # Check if analysis directory already has data
+    analysis_path = Path(f"analysis/{creator_name}")
+    if analysis_path.exists():
+        existing_files = list(analysis_path.glob("*"))
+        if existing_files:
+            print(f"\n📂 Found existing analysis directory: {analysis_path}")
+            print(f"   Contains {len(existing_files)} items")
+
+            # Check for transcript files
+            transcripts = list(analysis_path.glob("*_transcript.json"))
+            if transcripts:
+                print(f"   ✅ Found {len(transcripts)} transcript files")
+                print(f"\n💡 Tip: Analysis can continue from existing transcripts")
+
+            # Check for visual analysis files
+            visual_files = list(analysis_path.glob("*_visual.json"))
+            if visual_files:
+                print(f"   ✅ Found {len(visual_files)} visual analysis files")
+
+    # Determine video directory
+    if len(sys.argv) >= 3:
+        video_dir = Path(sys.argv[2])
+    else:
+        # Try common locations
+        possible_dirs = [
+            Path(f"analysis/{creator_name}/videos"),
+            Path("data/videos"),
+            Path(os.path.expanduser(f"~/Documents/YouTube Automation Master Process/data/entertainment/long/")),
+        ]
+
+        video_dir = None
+        for possible_dir in possible_dirs:
+            if possible_dir.exists() and list(possible_dir.glob("*.mp4")):
+                video_dir = possible_dir
+                print(f"\n📹 Auto-detected video directory: {video_dir}")
+                break
+
+        if not video_dir:
+            print(f"\n❌ No video directory specified and couldn't auto-detect")
+            print(f"\n💡 Please specify video directory:")
+            print(f"   python src/master_formula_extractor.py {creator_name} /path/to/videos/")
+            print(f"\n🔍 Searched these locations:")
+            for pd in possible_dirs:
+                print(f"   - {pd}")
+            return
 
     if not video_dir.exists():
         print(f"❌ Video directory not found: {video_dir}")
+        print(f"\n💡 Make sure the path is correct. Try:")
+        print(f"   python src/master_formula_extractor.py {creator_name} \"/full/path/to/videos/\"")
         return
 
     # Find all video files
@@ -402,10 +452,24 @@ def main():
         print(f"❌ No .mp4 files found in {video_dir}")
         return
 
+    print(f"\n📹 Found {len(video_files)} video files:")
+    for i, vf in enumerate(video_files[:5], 1):
+        print(f"   {i}. {vf.name}")
+    if len(video_files) > 5:
+        print(f"   ... and {len(video_files) - 5} more")
+
+    # Ask for confirmation if many videos
+    if len(video_files) > 10:
+        print(f"\n⚠️  Processing {len(video_files)} videos will take significant time")
+        print(f"   Each video takes ~5-10 minutes for complete analysis")
+        print(f"   Estimated time: {len(video_files) * 7 / 60:.1f} hours")
+        response = input(f"\n   Continue? (y/n): ")
+        if response.lower() != 'y':
+            print("Cancelled.")
+            return
+
     # Extract video IDs from filenames
     video_ids = [f.stem for f in video_files]
-
-    print(f"📹 Found {len(video_files)} videos")
 
     extractor = MasterFormulaExtractor()
     extractor.extract_complete_formula(creator_name, video_ids, video_files)
