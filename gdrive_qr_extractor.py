@@ -383,6 +383,12 @@ def main():
         logger.warning("No files found in the folder. Exiting.")
         sys.exit(0)
 
+    # TEST MODE: Limit to first 20 files
+    TEST_LIMIT = 20
+    if len(files) > TEST_LIMIT:
+        logger.info(f"🧪 TEST MODE: Limiting to first {TEST_LIMIT} files (out of {len(files)} total)")
+        files = files[:TEST_LIMIT]
+
     # Process all files
     successful, failed, records = process_files(drive_service, files, QR_CODES_FOLDER_ID)
 
