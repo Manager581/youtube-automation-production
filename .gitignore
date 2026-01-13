@@ -1,0 +1,32 @@
+# Environment variables
+.env
+
+# Service account credentials
+service-account.json
+*.json
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# QR code output
+qr_codes/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
