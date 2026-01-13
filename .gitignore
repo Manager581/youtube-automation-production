@@ -13,6 +13,9 @@ env/
 # QR code output
 qr_codes/
 
+# Log files
+*.log
+
 # Python cache
 __pycache__/
 *.py[cod]
