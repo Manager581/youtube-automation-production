@@ -133,7 +133,9 @@ def list_files_in_folder(drive_service, folder_id: str) -> List[Dict]:
                 q=query,
                 pageSize=1000,  # Max allowed
                 fields="nextPageToken, files(id, name, mimeType)",
-                pageToken=page_token
+                pageToken=page_token,
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True
             ).execute()
 
             batch = results.get('files', [])
@@ -219,7 +221,8 @@ def upload_qr_code(drive_service, filepath: str, qr_folder_id: str, original_fil
         file = drive_service.files().create(
             body=file_metadata,
             media_body=media,
-            fields="id,name,webViewLink"
+            fields="id,name,webViewLink",
+            supportsAllDrives=True
         ).execute()
 
         file_id = file.get("id")
