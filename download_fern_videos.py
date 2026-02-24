@@ -4,7 +4,7 @@ import subprocess
 import json
 from pathlib import Path
 
-FERN_CHANNEL = "@FernTv"
+FERN_CHANNEL = "@fern-tv"
 OUTPUT_DIR = Path("analysis/fern")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
