@@ -11,10 +11,11 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 print("Fetching Fern's top 30 videos...")
 result = subprocess.run([
     "yt-dlp",
+    "--no-check-certificates",
     "--flat-playlist",
     "--print", "%(id)s|%(title)s|%(view_count)s|%(duration)s",
     "--playlist-end", "30",
-    f"https://www.youtube.com/{FERN_CHANNEL}/videos?sort=p"
+    f"https://www.youtube.com/{FERN_CHANNEL}/videos"
 ], capture_output=True, text=True)
 
 videos = []
@@ -41,6 +42,7 @@ for i, video in enumerate(videos[:30], 1):
     # Download video + transcript
     subprocess.run([
         "yt-dlp",
+        "--no-check-certificates",
         "-f", "best",
         "--write-auto-sub",
         "--write-info-json",
