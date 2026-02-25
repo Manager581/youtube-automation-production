@@ -1,0 +1,34 @@
+# Fern (@fern-tv) - Top 30 Videos by Views
+# Run: python src/phase1_analyzer.py analyze research/fern_urls.txt fern
+# Or use yt-dlp directly: yt-dlp -f best -o "analysis/fern/%(id)s/video.%(ext)s" -a research/fern_urls.txt
+
+https://www.youtube.com/watch?v=wLFY_Zu_O08
+https://www.youtube.com/watch?v=I1rzcZWTIjo
+https://www.youtube.com/watch?v=qqJSXoa5ZtQ
+https://www.youtube.com/watch?v=yXdzKqhEA9M
+https://www.youtube.com/watch?v=8Gm7kSUkBAk
+https://www.youtube.com/watch?v=fHRS_NOs24w
+https://www.youtube.com/watch?v=ZhfI0EboPU0
+https://www.youtube.com/watch?v=OpUEEr-F5dY
+https://www.youtube.com/watch?v=HauQtcj7UTM
+https://www.youtube.com/watch?v=imCjhNEovL4
+https://www.youtube.com/watch?v=pt309onrQNE
+https://www.youtube.com/watch?v=LAPcW7OAv98
+https://www.youtube.com/watch?v=1mMoeD-E7fg
+https://www.youtube.com/watch?v=j4OKo0VpoeM
+https://www.youtube.com/watch?v=-a29Ygyzc2c
+https://www.youtube.com/watch?v=zVgj3dFjWhs
+https://www.youtube.com/watch?v=sEr5vEF6_ec
+https://www.youtube.com/watch?v=K4E1u3_S1p8
+https://www.youtube.com/watch?v=-1DvXSsWKLI
+https://www.youtube.com/watch?v=_JPyhs6-0Gc
+https://www.youtube.com/watch?v=TP7Z_Eqxhxk
+https://www.youtube.com/watch?v=VKXQnBlzqzs
+https://www.youtube.com/watch?v=Q7pgDmR-pWg
+https://www.youtube.com/watch?v=tpn8_ZpQ-Ho
+https://www.youtube.com/watch?v=1aQutbZq0v0
+https://www.youtube.com/watch?v=QVr6oNkOfrc
+https://www.youtube.com/watch?v=Aj7HX7I8KHs
+https://www.youtube.com/watch?v=ydnpyYEhP30
+https://www.youtube.com/watch?v=X9BblS3qGaU
+https://www.youtube.com/watch?v=78vWO2SCfEk
