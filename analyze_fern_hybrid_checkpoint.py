@@ -547,7 +547,10 @@ def analyze_all_videos_checkpoint(base_dir, model, resume=False):
     for i in range(start_video, len(video_ids)):
         video_id = video_ids[i]
         checkpoint['current_video_index'] = i
-        checkpoint['current_frame_index'] = 0  # Reset for new video
+
+        # Only reset frame index when moving to a NEW video (not when resuming same video)
+        if i > start_video or not resume:
+            checkpoint['current_frame_index'] = 0
 
         print(f"\n[{i+1}/{len(video_ids)}] Analyzing {video_id}...")
 
