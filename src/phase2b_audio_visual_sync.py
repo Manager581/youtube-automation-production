@@ -142,6 +142,39 @@ class AudioVisualSyncAnalyzer:
             'energy_variance': float(np.var(rms))
         }
 
+    def _parse_vtt_to_words(self, vtt_path: Path) -> List[Dict]:
+        """Parse VTT file to extract word-level timing"""
+        import re
+
+        if not vtt_path.exists():
+            return []
+
+        with open(vtt_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # VTT format: <HH:MM:SS.mmm><c> word</c>
+        pattern = r'<(\d{2}):(\d{2}):([\d.]+)><c>\s*([^<]+)</c>'
+        matches = re.findall(pattern, content)
+
+        words = []
+        for i, (h, m, s, word) in enumerate(matches):
+            start_time = int(h) * 3600 + int(m) * 60 + float(s)
+
+            # Estimate end time (use next word's start, or add 0.3s for last word)
+            if i < len(matches) - 1:
+                next_h, next_m, next_s, _ = matches[i + 1]
+                end_time = int(next_h) * 3600 + int(next_m) * 60 + float(next_s)
+            else:
+                end_time = start_time + 0.3
+
+            words.append({
+                'word': word.strip(),
+                'start': start_time,
+                'end': end_time
+            })
+
+        return words
+
     def _analyze_voice_pacing(self, y: np.ndarray, sr: int, video_id: str, creator_name: str) -> Dict:
         """
         Analyze voice pacing patterns
@@ -151,18 +184,23 @@ class AudioVisualSyncAnalyzer:
 
         print(f"      🗣️  Analyzing voice pacing...")
 
-        # Load transcript
+        # Load transcript - try VTT file first, then JSON
         creator_dir = self.analysis_dir / creator_name
+        vtt_file = creator_dir / video_id / "video.en.vtt"
         transcript_file = creator_dir / f"{video_id}_transcript.json"
 
-        if not transcript_file.exists():
+        words = []
+
+        # Try VTT file first
+        if vtt_file.exists():
+            words = self._parse_vtt_to_words(vtt_file)
+        elif transcript_file.exists():
+            with open(transcript_file, 'r') as f:
+                transcript_data = json.load(f)
+            words = transcript_data.get('words', [])
+        else:
             print(f"         ⚠️  No transcript found, skipping voice analysis")
             return {}
-
-        with open(transcript_file, 'r') as f:
-            transcript_data = json.load(f)
-
-        words = transcript_data.get('words', [])
 
         if not words:
             return {}
