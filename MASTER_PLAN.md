@@ -160,20 +160,32 @@ Output: `narration.wav` + word-level timestamps for video sync.
 
 ---
 
-### Phase 6: Audio Mix ❌ NOT YET BUILT
+### Phase 6: Audio Mix ✅ BUILT — inside video_assembler.py
 
-`mix_audio.py` does not exist. `video_assembler.py` handles inline narration+music mixing, but a standalone audio mix script (SFX layering, ducking, compression) hasn't been built.
+Audio mixing is fully implemented inside `pipeline/video_assembler.py` via the `mix_audio()` function (line ~934). A separate `mix_audio.py` is not needed.
 
-**SFX already available in `assets/sfx/`:**
+**What's built:**
+- Narration + music mixing via ffmpeg `amix` filter
+- Music volume envelope: louder for first 3s intro, then ducks under narration
+- Looping music track for full video duration
+- AAC output at 192k
+
+**Audio analysis complete (3 videos):**
+- `aVA7aXOH1pk_audio_analysis.json`, `wLFY_Zu_O08_audio_analysis.json`, `wkVygetgeRY_audio_analysis.json` — BPM, beat timing, music change points
+- `aVA7aXOH1pk_audio_full.json`, `wLFY_Zu_O08_audio_full.json`, `wkVygetgeRY_audio_full.json` — full demucs stem separation results
+- `FERN_SFX_FORMULA.json` — SFX spec: 10.9% of cuts have SFX, dominant type `impact_thud`, verdict: "minimal SFX — cuts are mostly clean audio transitions"
+- `MUSIC_IDENTITY.json` — per-video music fingerprint
+- `SOUND_DESIGN_FORMULA.json` — ambient + music layer spec
+
+**Measured Fern audio spec:**
+- BPM: ~117 (measured from Trump video; dark cinematic tempo)
+- SFX: minimal (only 10.9% of cuts), impact_thud dominant — no heavy SFX layer needed
+- Assembler guidance from formula: "No SFX layer needed — cuts are clean audio transitions"
+
+**SFX available in `assets/sfx/` (committed):**
 `rumble_01–03.mp3`, `impact_01–02.mp3`, `tension_01.mp3`, `shimmer_01–03.mp3`, `whoosh_01–05.mp3`
 
-**Fern's audio formula:**
-- Music: 116 BPM, dark cinematic, piano + strings
-- Music level: -18 dB under narration (sidechaining)
-- SFX on every major revelation/cut hit
-- Ambient bed: ~60% of runtime
-
-**When building:** Use `pydub` or `ffmpeg` Python wrapper. Reference `SOUND_DESIGN_FORMULA.json` + `FERN_SFX_FORMULA.json`.
+**To mix:** `video_assembler.py --music assets/music/track.mp3` handles it automatically.
 
 ---
 
@@ -231,11 +243,11 @@ Manual upload via YouTube Studio is sufficient. `publish_video.py` (YouTube Data
 ## Current State Summary
 
 ```
-ANALYSIS:    ██████████  100% (optional re-run for animation motion fields)
-RESEARCH:    ██████████  100% (all scripts built + comments cached)
-SCRIPT GEN:  ████████░░   80% (Claude Code interactive = free, no standalone script)
-VOICE:       ████████░░   80% (F5-TTS fully built — needs your voice recordings)
-AUDIO MIX:   ░░░░░░░░░░    0% (mix_audio.py not built; assembler handles basic mix)
+ANALYSIS:    ██████████  100% (3 videos, 1,838 frames; optional qwen3.5 re-run for motion fields)
+RESEARCH:    ██████████  100% (30 videos: comments/titles/transcripts; 237 topic signals)
+SCRIPT GEN:  ████████░░   80% (Claude Code interactive = free; script_enhancer.py built)
+VOICE:       ████████░░   80% (F5-TTS + audio_preprocessor built — needs voice recordings)
+AUDIO MIX:   ██████████  100% (mix_audio() inside video_assembler.py; all formulas measured)
 VIDEO:       ██████████  100% (footage_sourcer + video_assembler built)
 THUMBNAIL:   ░░░░░░░░░░    0% (use Claude Code + manual, no script yet)
 PUBLISH:     ██████████  100% (manual upload works fine)
@@ -338,4 +350,7 @@ venv/bin/python monitor.py
 
 *Last updated: 2026-03-02*
 *Videos analyzed: aVA7aXOH1pk (Trump), wLFY_Zu_O08 (FBI/KKK), wkVygetgeRY (Unabomber) — 3 total, 1,838 frames*
+*30 Fern videos: comments + titles + transcripts + signals all committed to GitHub*
+*Audio mix: COMPLETE — mix_audio() in video_assembler.py; all audio formulas measured and committed*
 *Models: qwen3.5:4b and qwen3.5:27b added to analyze_fern_hybrid_checkpoint.py (pull with `ollama pull qwen3.5:4b`)*
+*Only blocker for first video: record 3 voice clips (neutral/tense/energized) → assets/voice/*
