@@ -1,0 +1,429 @@
+{
+  "channel": "fern-tv",
+  "videos_analyzed": 30,
+  "angle_rankings": [
+    {
+      "angle": "INSTITUTION_HOW",
+      "count": 1,
+      "avg_views": 11223342,
+      "max_views": 11223342,
+      "total_views": 11223342,
+      "top_titles": [
+        "How an FBI Agent Infiltrated the KKK"
+      ],
+      "all_titles": [
+        [
+          "How an FBI Agent Infiltrated the KKK",
+          11223342
+        ]
+      ]
+    },
+    {
+      "angle": "PERSON_GENIUS_TRAGEDY",
+      "count": 4,
+      "avg_views": 4155154,
+      "max_views": 5400015,
+      "total_views": 16620614,
+      "top_titles": [
+        "The Kid Who Hacked the Pentagon (and paid with his life)",
+        "Why Otto Warmbier Didn't Survive North Korea",
+        "The Indian Genius Nobody Understands"
+      ],
+      "all_titles": [
+        [
+          "The Kid Who Hacked the Pentagon (and paid with his life)",
+          5400015
+        ],
+        [
+          "Why Otto Warmbier Didn't Survive North Korea",
+          4683044
+        ],
+        [
+          "The Indian Genius Nobody Understands",
+          4439205
+        ],
+        [
+          "The Only Nazi Hitler Feared",
+          2098350
+        ]
+      ]
+    },
+    {
+      "angle": "THREAT_WHY",
+      "count": 3,
+      "avg_views": 3294900,
+      "max_views": 4165212,
+      "total_views": 9884699,
+      "top_titles": [
+        "The Dumb Design of Modern Cars",
+        "Why Fentanyl Is So Easy to Smuggle",
+        "Why the U.S. President Is Almost Impossible to Kill"
+      ],
+      "all_titles": [
+        [
+          "The Dumb Design of Modern Cars",
+          4165212
+        ],
+        [
+          "Why Fentanyl Is So Easy to Smuggle",
+          3088048
+        ],
+        [
+          "Why the U.S. President Is Almost Impossible to Kill",
+          2631439
+        ]
+      ]
+    },
+    {
+      "angle": "PLACE_HORROR",
+      "count": 6,
+      "avg_views": 3164850,
+      "max_views": 5069452,
+      "total_views": 18989099,
+      "top_titles": [
+        "The Most Secret Building in Manhattan",
+        "Camp 14: The Most Horrible Place in North Korea",
+        "The Mutated Animals of Chernobyl"
+      ],
+      "all_titles": [
+        [
+          "The Most Secret Building in Manhattan",
+          5069452
+        ],
+        [
+          "Camp 14: The Most Horrible Place in North Korea",
+          4512181
+        ],
+        [
+          "The Mutated Animals of Chernobyl",
+          3029692
+        ],
+        [
+          "Why You Should Never Go to North Sentinel Island",
+          2430362
+        ],
+        [
+          "Disneyland\u2019s Most Preventable Tragedy",
+          1984352
+        ],
+        [
+          "The Insane Waterpark That Killed 6 People",
+          1963060
+        ]
+      ]
+    },
+    {
+      "angle": "OTHER",
+      "count": 4,
+      "avg_views": 2920803,
+      "max_views": 4271649,
+      "total_views": 11683211,
+      "top_titles": [
+        "The Hunt for the Charlie Kirk Shooter",
+        "The Family That Broke News",
+        "The Bizarre Kidnapping of Aldi\u2019s CEO"
+      ],
+      "all_titles": [
+        [
+          "The Hunt for the Charlie Kirk Shooter",
+          4271649
+        ],
+        [
+          "The Family That Broke News",
+          3444606
+        ],
+        [
+          "The Bizarre Kidnapping of Aldi\u2019s CEO",
+          2837734
+        ],
+        [
+          "The Hunt for the Lost Communist Console",
+          1129222
+        ]
+      ]
+    },
+    {
+      "angle": "VILLAIN_EXPOSED",
+      "count": 4,
+      "avg_views": 2884348,
+      "max_views": 4415225,
+      "total_views": 11537394,
+      "top_titles": [
+        "Russia\u2019s Most Wanted Hackers",
+        "We Investigated China's Secret Highway",
+        "Putin's Secret Sons"
+      ],
+      "all_titles": [
+        [
+          "Russia\u2019s Most Wanted Hackers",
+          4415225
+        ],
+        [
+          "We Investigated China's Secret Highway",
+          3320015
+        ],
+        [
+          "Putin's Secret Sons",
+          1924863
+        ],
+        [
+          "The Most Evil Secret Police in History",
+          1877291
+        ]
+      ]
+    },
+    {
+      "angle": "POWER_MONEY",
+      "count": 2,
+      "avg_views": 2662005,
+      "max_views": 2989143,
+      "total_views": 5324010,
+      "top_titles": [
+        "The $1 Billion Coca-Cola Machine",
+        "How Peter Thiel Is Destroying Democracy"
+      ],
+      "all_titles": [
+        [
+          "The $1 Billion Coca-Cola Machine",
+          2989143
+        ],
+        [
+          "How Peter Thiel Is Destroying Democracy",
+          2334867
+        ]
+      ]
+    },
+    {
+      "angle": "PROCESS_HOW",
+      "count": 5,
+      "avg_views": 2555597,
+      "max_views": 3500965,
+      "total_views": 12777983,
+      "top_titles": [
+        "How a Minecraft Scammer Stole $16,500,000",
+        "How a Cult Took Over Fiji",
+        "How Meth Is Killing Europe"
+      ],
+      "all_titles": [
+        [
+          "How a Minecraft Scammer Stole $16,500,000",
+          3500965
+        ],
+        [
+          "How a Cult Took Over Fiji",
+          2880577
+        ],
+        [
+          "How Meth Is Killing Europe",
+          2711671
+        ],
+        [
+          "How Egypt is Flooding the Desert",
+          1940317
+        ],
+        [
+          "How Cocaine Is Destroying Europe",
+          1744453
+        ]
+      ]
+    },
+    {
+      "angle": "SECRET_REVEALED",
+      "count": 1,
+      "avg_views": 1362691,
+      "max_views": 1362691,
+      "total_views": 1362691,
+      "top_titles": [
+        "How Trump is Secretly Getting Rich (way richer than before)"
+      ],
+      "all_titles": [
+        [
+          "How Trump is Secretly Getting Rich (way richer than before)",
+          1362691
+        ]
+      ]
+    }
+  ],
+  "all_classified": [
+    {
+      "id": "wLFY_Zu_O08",
+      "title": "How an FBI Agent Infiltrated the KKK",
+      "views": 11223342,
+      "angle": "INSTITUTION_HOW"
+    },
+    {
+      "id": "I1rzcZWTIjo",
+      "title": "The Kid Who Hacked the Pentagon (and paid with his life)",
+      "views": 5400015,
+      "angle": "PERSON_GENIUS_TRAGEDY"
+    },
+    {
+      "id": "qqJSXoa5ZtQ",
+      "title": "The Most Secret Building in Manhattan",
+      "views": 5069452,
+      "angle": "PLACE_HORROR"
+    },
+    {
+      "id": "yXdzKqhEA9M",
+      "title": "Why Otto Warmbier Didn't Survive North Korea",
+      "views": 4683044,
+      "angle": "PERSON_GENIUS_TRAGEDY"
+    },
+    {
+      "id": "8Gm7kSUkBAk",
+      "title": "Camp 14: The Most Horrible Place in North Korea",
+      "views": 4512181,
+      "angle": "PLACE_HORROR"
+    },
+    {
+      "id": "fHRS_NOs24w",
+      "title": "The Indian Genius Nobody Understands",
+      "views": 4439205,
+      "angle": "PERSON_GENIUS_TRAGEDY"
+    },
+    {
+      "id": "ZhfI0EboPU0",
+      "title": "Russia\u2019s Most Wanted Hackers",
+      "views": 4415225,
+      "angle": "VILLAIN_EXPOSED"
+    },
+    {
+      "id": "OpUEEr-F5dY",
+      "title": "The Hunt for the Charlie Kirk Shooter",
+      "views": 4271649,
+      "angle": "OTHER"
+    },
+    {
+      "id": "HauQtcj7UTM",
+      "title": "The Dumb Design of Modern Cars",
+      "views": 4165212,
+      "angle": "THREAT_WHY"
+    },
+    {
+      "id": "imCjhNEovL4",
+      "title": "How a Minecraft Scammer Stole $16,500,000",
+      "views": 3500965,
+      "angle": "PROCESS_HOW"
+    },
+    {
+      "id": "pt309onrQNE",
+      "title": "The Family That Broke News",
+      "views": 3444606,
+      "angle": "OTHER"
+    },
+    {
+      "id": "LAPcW7OAv98",
+      "title": "We Investigated China's Secret Highway",
+      "views": 3320015,
+      "angle": "VILLAIN_EXPOSED"
+    },
+    {
+      "id": "1mMoeD-E7fg",
+      "title": "Why Fentanyl Is So Easy to Smuggle",
+      "views": 3088048,
+      "angle": "THREAT_WHY"
+    },
+    {
+      "id": "j4OKo0VpoeM",
+      "title": "The Mutated Animals of Chernobyl",
+      "views": 3029692,
+      "angle": "PLACE_HORROR"
+    },
+    {
+      "id": "-a29Ygyzc2c",
+      "title": "The $1 Billion Coca-Cola Machine",
+      "views": 2989143,
+      "angle": "POWER_MONEY"
+    },
+    {
+      "id": "zVgj3dFjWhs",
+      "title": "How a Cult Took Over Fiji",
+      "views": 2880577,
+      "angle": "PROCESS_HOW"
+    },
+    {
+      "id": "sEr5vEF6_ec",
+      "title": "The Bizarre Kidnapping of Aldi\u2019s CEO",
+      "views": 2837734,
+      "angle": "OTHER"
+    },
+    {
+      "id": "K4E1u3_S1p8",
+      "title": "How Meth Is Killing Europe",
+      "views": 2711671,
+      "angle": "PROCESS_HOW"
+    },
+    {
+      "id": "-1DvXSsWKLI",
+      "title": "Why the U.S. President Is Almost Impossible to Kill",
+      "views": 2631439,
+      "angle": "THREAT_WHY"
+    },
+    {
+      "id": "_JPyhs6-0Gc",
+      "title": "Why You Should Never Go to North Sentinel Island",
+      "views": 2430362,
+      "angle": "PLACE_HORROR"
+    },
+    {
+      "id": "TP7Z_Eqxhxk",
+      "title": "How Peter Thiel Is Destroying Democracy",
+      "views": 2334867,
+      "angle": "POWER_MONEY"
+    },
+    {
+      "id": "VKXQnBlzqzs",
+      "title": "The Only Nazi Hitler Feared",
+      "views": 2098350,
+      "angle": "PERSON_GENIUS_TRAGEDY"
+    },
+    {
+      "id": "Q7pgDmR-pWg",
+      "title": "Disneyland\u2019s Most Preventable Tragedy",
+      "views": 1984352,
+      "angle": "PLACE_HORROR"
+    },
+    {
+      "id": "tpn8_ZpQ-Ho",
+      "title": "The Insane Waterpark That Killed 6 People",
+      "views": 1963060,
+      "angle": "PLACE_HORROR"
+    },
+    {
+      "id": "1aQutbZq0v0",
+      "title": "How Egypt is Flooding the Desert",
+      "views": 1940317,
+      "angle": "PROCESS_HOW"
+    },
+    {
+      "id": "QVr6oNkOfrc",
+      "title": "Putin's Secret Sons",
+      "views": 1924863,
+      "angle": "VILLAIN_EXPOSED"
+    },
+    {
+      "id": "Aj7HX7I8KHs",
+      "title": "The Most Evil Secret Police in History",
+      "views": 1877291,
+      "angle": "VILLAIN_EXPOSED"
+    },
+    {
+      "id": "ydnpyYEhP30",
+      "title": "How Cocaine Is Destroying Europe",
+      "views": 1744453,
+      "angle": "PROCESS_HOW"
+    },
+    {
+      "id": "X9BblS3qGaU",
+      "title": "How Trump is Secretly Getting Rich (way richer than before)",
+      "views": 1362691,
+      "angle": "SECRET_REVEALED"
+    },
+    {
+      "id": "78vWO2SCfEk",
+      "title": "The Hunt for the Lost Communist Console",
+      "views": 1129222,
+      "angle": "OTHER"
+    }
+  ]
+}

@@ -1,0 +1,3715 @@
+{
+  "video_id": "aVA7aXOH1pk",
+  "duration": 371.38,
+  "bpm": 200.5,
+  "pause_count": 32,
+  "emphasis_count": 50,
+  "music_events": 0,
+  "word_count": 761,
+  "pauses": [
+    {
+      "start": 33.68,
+      "end": 34.23,
+      "duration": 0.55
+    },
+    {
+      "start": 44.83,
+      "end": 45.38,
+      "duration": 0.55
+    },
+    {
+      "start": 46.83,
+      "end": 47.23,
+      "duration": 0.4
+    },
+    {
+      "start": 48.93,
+      "end": 49.28,
+      "duration": 0.35
+    },
+    {
+      "start": 49.33,
+      "end": 49.98,
+      "duration": 0.65
+    },
+    {
+      "start": 56.62,
+      "end": 57.22,
+      "duration": 0.6
+    },
+    {
+      "start": 59.62,
+      "end": 60.02,
+      "duration": 0.4
+    },
+    {
+      "start": 66.92,
+      "end": 67.37,
+      "duration": 0.45
+    },
+    {
+      "start": 77.51,
+      "end": 77.86,
+      "duration": 0.35
+    },
+    {
+      "start": 89.51,
+      "end": 90.46,
+      "duration": 0.95
+    },
+    {
+      "start": 103.8,
+      "end": 104.35,
+      "duration": 0.55
+    },
+    {
+      "start": 104.5,
+      "end": 105.6,
+      "duration": 1.1
+    },
+    {
+      "start": 210.55,
+      "end": 210.95,
+      "duration": 0.4
+    },
+    {
+      "start": 211.75,
+      "end": 212.15,
+      "duration": 0.4
+    },
+    {
+      "start": 213.4,
+      "end": 213.9,
+      "duration": 0.5
+    },
+    {
+      "start": 274.68,
+      "end": 275.03,
+      "duration": 0.35
+    },
+    {
+      "start": 284.42,
+      "end": 284.82,
+      "duration": 0.4
+    },
+    {
+      "start": 285.27,
+      "end": 285.77,
+      "duration": 0.5
+    },
+    {
+      "start": 290.67,
+      "end": 293.02,
+      "duration": 2.35
+    },
+    {
+      "start": 299.76,
+      "end": 300.46,
+      "duration": 0.7
+    },
+    {
+      "start": 304.11,
+      "end": 304.46,
+      "duration": 0.35
+    },
+    {
+      "start": 314.06,
+      "end": 314.41,
+      "duration": 0.35
+    },
+    {
+      "start": 316.81,
+      "end": 317.36,
+      "duration": 0.55
+    },
+    {
+      "start": 318.36,
+      "end": 318.71,
+      "duration": 0.35
+    },
+    {
+      "start": 325.2,
+      "end": 325.6,
+      "duration": 0.4
+    },
+    {
+      "start": 340.0,
+      "end": 340.35,
+      "duration": 0.35
+    },
+    {
+      "start": 345.29,
+      "end": 345.64,
+      "duration": 0.35
+    },
+    {
+      "start": 349.29,
+      "end": 349.74,
+      "duration": 0.45
+    },
+    {
+      "start": 351.74,
+      "end": 352.09,
+      "duration": 0.35
+    },
+    {
+      "start": 354.74,
+      "end": 355.09,
+      "duration": 0.35
+    },
+    {
+      "start": 359.49,
+      "end": 360.04,
+      "duration": 0.55
+    },
+    {
+      "start": 361.54,
+      "end": 361.94,
+      "duration": 0.4
+    }
+  ],
+  "emphasis_peaks": [
+    {
+      "timestamp": 0.5,
+      "energy": 0.1151
+    },
+    {
+      "timestamp": 1.0,
+      "energy": 0.1089
+    },
+    {
+      "timestamp": 1.5,
+      "energy": 0.107
+    },
+    {
+      "timestamp": 2.0,
+      "energy": 0.0992
+    },
+    {
+      "timestamp": 2.5,
+      "energy": 0.1197
+    },
+    {
+      "timestamp": 3.0,
+      "energy": 0.1092
+    },
+    {
+      "timestamp": 3.5,
+      "energy": 0.1074
+    },
+    {
+      "timestamp": 4.0,
+      "energy": 0.1618
+    },
+    {
+      "timestamp": 6.0,
+      "energy": 0.1389
+    },
+    {
+      "timestamp": 6.5,
+      "energy": 0.1198
+    },
+    {
+      "timestamp": 8.0,
+      "energy": 0.1063
+    },
+    {
+      "timestamp": 9.5,
+      "energy": 0.1129
+    },
+    {
+      "timestamp": 10.0,
+      "energy": 0.1357
+    },
+    {
+      "timestamp": 11.5,
+      "energy": 0.0955
+    },
+    {
+      "timestamp": 14.0,
+      "energy": 0.1163
+    },
+    {
+      "timestamp": 21.0,
+      "energy": 0.1087
+    },
+    {
+      "timestamp": 21.5,
+      "energy": 0.0979
+    },
+    {
+      "timestamp": 23.5,
+      "energy": 0.0969
+    },
+    {
+      "timestamp": 24.0,
+      "energy": 0.1
+    },
+    {
+      "timestamp": 25.5,
+      "energy": 0.1121
+    },
+    {
+      "timestamp": 26.0,
+      "energy": 0.13
+    },
+    {
+      "timestamp": 27.0,
+      "energy": 0.1319
+    },
+    {
+      "timestamp": 27.5,
+      "energy": 0.1179
+    },
+    {
+      "timestamp": 29.0,
+      "energy": 0.0938
+    },
+    {
+      "timestamp": 30.0,
+      "energy": 0.0942
+    },
+    {
+      "timestamp": 31.5,
+      "energy": 0.0995
+    },
+    {
+      "timestamp": 32.0,
+      "energy": 0.1002
+    },
+    {
+      "timestamp": 33.0,
+      "energy": 0.0958
+    },
+    {
+      "timestamp": 34.0,
+      "energy": 0.114
+    },
+    {
+      "timestamp": 35.5,
+      "energy": 0.1907
+    },
+    {
+      "timestamp": 36.0,
+      "energy": 0.1949
+    },
+    {
+      "timestamp": 36.5,
+      "energy": 0.3443
+    },
+    {
+      "timestamp": 37.0,
+      "energy": 0.283
+    },
+    {
+      "timestamp": 37.5,
+      "energy": 0.2783
+    },
+    {
+      "timestamp": 38.0,
+      "energy": 0.3476
+    },
+    {
+      "timestamp": 38.5,
+      "energy": 0.3008
+    },
+    {
+      "timestamp": 39.0,
+      "energy": 0.1731
+    },
+    {
+      "timestamp": 39.5,
+      "energy": 0.1122
+    },
+    {
+      "timestamp": 41.5,
+      "energy": 0.1459
+    },
+    {
+      "timestamp": 42.0,
+      "energy": 0.1229
+    },
+    {
+      "timestamp": 42.5,
+      "energy": 0.1564
+    },
+    {
+      "timestamp": 43.0,
+      "energy": 0.1728
+    },
+    {
+      "timestamp": 43.5,
+      "energy": 0.2041
+    },
+    {
+      "timestamp": 44.0,
+      "energy": 0.2278
+    },
+    {
+      "timestamp": 45.5,
+      "energy": 0.1165
+    },
+    {
+      "timestamp": 46.0,
+      "energy": 0.1252
+    },
+    {
+      "timestamp": 52.0,
+      "energy": 0.095
+    },
+    {
+      "timestamp": 52.5,
+      "energy": 0.0948
+    },
+    {
+      "timestamp": 57.0,
+      "energy": 0.1023
+    },
+    {
+      "timestamp": 57.5,
+      "energy": 0.1112
+    }
+  ],
+  "builds_drops": [],
+  "master_timeline": [
+    {
+      "timestamp": 0,
+      "words": "",
+      "vocal_energy": 0.0962,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 1,
+      "words": "",
+      "vocal_energy": 0.1079,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 2,
+      "words": "",
+      "vocal_energy": 0.1099,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 3,
+      "words": "the 13th of July",
+      "vocal_energy": 0.1083,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 4,
+      "words": "in Butler",
+      "vocal_energy": 0.1291,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 5,
+      "words": "",
+      "vocal_energy": 0.0578,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 6,
+      "words": "former US",
+      "vocal_energy": 0.1297,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 7,
+      "words": "president Donald",
+      "vocal_energy": 0.0704,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 8,
+      "words": "speaks at a rally",
+      "vocal_energy": 0.0897,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 9,
+      "words": "it's",
+      "vocal_energy": 0.0862,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 10,
+      "words": "only days he",
+      "vocal_energy": 0.1137,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 11,
+      "words": "plans to accept the official",
+      "vocal_energy": 0.0833,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 12,
+      "words": "",
+      "vocal_energy": 0.0803,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 13,
+      "words": "nomination",
+      "vocal_energy": 0.0714,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 14,
+      "words": "he's just minutes",
+      "vocal_energy": 0.1013,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 15,
+      "words": "his speech",
+      "vocal_energy": 0.0787,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 16,
+      "words": "when shots are",
+      "vocal_energy": 0.0842,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 17,
+      "words": "fired",
+      "vocal_energy": 0.0736,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 18,
+      "words": "a look at what",
+      "vocal_energy": 0.0773,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 19,
+      "words": "",
+      "vocal_energy": 0.0665,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 20,
+      "words": "",
+      "vocal_energy": 0.0815,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 21,
+      "words": "",
+      "vocal_energy": 0.1034,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 22,
+      "words": "",
+      "vocal_energy": 0.0891,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 23,
+      "words": "",
+      "vocal_energy": 0.0921,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 24,
+      "words": "",
+      "vocal_energy": 0.0906,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 25,
+      "words": "Trump",
+      "vocal_energy": 0.1019,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 26,
+      "words": "got hit",
+      "vocal_energy": 0.1129,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 27,
+      "words": "but survived",
+      "vocal_energy": 0.1251,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 28,
+      "words": "",
+      "vocal_energy": 0.0883,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 29,
+      "words": "",
+      "vocal_energy": 0.0915,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 30,
+      "words": "",
+      "vocal_energy": 0.0697,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 31,
+      "words": "",
+      "vocal_energy": 0.0739,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 32,
+      "words": "tried to assassinate",
+      "vocal_energy": 0.0781,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 33,
+      "words": "him in daylight",
+      "vocal_energy": 0.0724,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 34,
+      "words": "here",
+      "vocal_energy": 0.0954,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 35,
+      "words": "is how it",
+      "vocal_energy": 0.1448,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 36,
+      "words": "",
+      "vocal_energy": 0.2798,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 37,
+      "words": "",
+      "vocal_energy": 0.2807,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 38,
+      "words": "",
+      "vocal_energy": 0.325,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 39,
+      "words": "",
+      "vocal_energy": 0.1459,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 40,
+      "words": "",
+      "vocal_energy": 0.0799,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 41,
+      "words": "",
+      "vocal_energy": 0.11,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 42,
+      "words": "",
+      "vocal_energy": 0.1407,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 43,
+      "words": "",
+      "vocal_energy": 0.1891,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 44,
+      "words": "",
+      "vocal_energy": 0.171,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 45,
+      "words": "by the",
+      "vocal_energy": 0.1008,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 46,
+      "words": "time this video is published",
+      "vocal_energy": 0.1025,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 47,
+      "words": "details",
+      "vocal_energy": 0.0752,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 48,
+      "words": "might have",
+      "vocal_energy": 0.056,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 49,
+      "words": "",
+      "vocal_energy": 0.0065,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 50,
+      "words": "",
+      "vocal_energy": 0.044,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 51,
+      "words": "",
+      "vocal_energy": 0.0424,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 52,
+      "words": "it's a hot sweltering",
+      "vocal_energy": 0.0949,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 53,
+      "words": "early",
+      "vocal_energy": 0.0692,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 54,
+      "words": "as tens of thousands",
+      "vocal_energy": 0.075,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 55,
+      "words": "gather here",
+      "vocal_energy": 0.0713,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 56,
+      "words": "see Trump",
+      "vocal_energy": 0.0401,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 57,
+      "words": "Pennsylvania",
+      "vocal_energy": 0.1069,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": true,
+      "music_event": null
+    },
+    {
+      "timestamp": 58,
+      "words": "is one of six",
+      "vocal_energy": 0.0915,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 59,
+      "words": "swing States",
+      "vocal_energy": 0.0506,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 60,
+      "words": "that will help secure",
+      "vocal_energy": 0.1053,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 61,
+      "words": "win in the next",
+      "vocal_energy": 0.0582,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 62,
+      "words": "presidential",
+      "vocal_energy": 0.0642,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 63,
+      "words": "",
+      "vocal_energy": 0.0941,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 64,
+      "words": "Butler skews heavily",
+      "vocal_energy": 0.087,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 65,
+      "words": "Republican",
+      "vocal_energy": 0.0708,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 66,
+      "words": "it is a bluecar",
+      "vocal_energy": 0.0682,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 67,
+      "words": "",
+      "vocal_energy": 0.0284,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 68,
+      "words": "",
+      "vocal_energy": 0.0337,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 69,
+      "words": "",
+      "vocal_energy": 0.038,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 70,
+      "words": "",
+      "vocal_energy": 0.0387,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 71,
+      "words": "this is a",
+      "vocal_energy": 0.0449,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 72,
+      "words": "big crowd",
+      "vocal_energy": 0.0399,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 73,
+      "words": "this is a big",
+      "vocal_energy": 0.0499,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 74,
+      "words": "beautiful",
+      "vocal_energy": 0.0492,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 75,
+      "words": "",
+      "vocal_energy": 0.0307,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 76,
+      "words": "he is surrounded",
+      "vocal_energy": 0.1256,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 77,
+      "words": "by supporters",
+      "vocal_energy": 0.0618,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 78,
+      "words": "are sitting",
+      "vocal_energy": 0.1044,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 79,
+      "words": "or standing in front",
+      "vocal_energy": 0.0826,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 80,
+      "words": "of stage",
+      "vocal_energy": 0.0633,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 81,
+      "words": "some sit on the bleachers",
+      "vocal_energy": 0.0979,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 82,
+      "words": "",
+      "vocal_energy": 0.0684,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 83,
+      "words": "left and",
+      "vocal_energy": 0.0432,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 84,
+      "words": "right",
+      "vocal_energy": 0.0614,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 85,
+      "words": "Trump's support and",
+      "vocal_energy": 0.0883,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 86,
+      "words": "security",
+      "vocal_energy": 0.0599,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 87,
+      "words": "including Secret",
+      "vocal_energy": 0.0641,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 88,
+      "words": "agents are right",
+      "vocal_energy": 0.0645,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 89,
+      "words": "at the stage",
+      "vocal_energy": 0.0413,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 90,
+      "words": "",
+      "vocal_energy": 0.0582,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 91,
+      "words": "him are three",
+      "vocal_energy": 0.1007,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 92,
+      "words": "large buildings",
+      "vocal_energy": 0.0658,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 93,
+      "words": "on roof of the",
+      "vocal_energy": 0.1219,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 94,
+      "words": "building on the far left",
+      "vocal_energy": 0.1015,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 95,
+      "words": "on the far right",
+      "vocal_energy": 0.086,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 96,
+      "words": "are Secret Service",
+      "vocal_energy": 0.0699,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 97,
+      "words": "",
+      "vocal_energy": 0.0859,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 98,
+      "words": "they are constantly scanning",
+      "vocal_energy": 0.0824,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 99,
+      "words": "the",
+      "vocal_energy": 0.0661,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 100,
+      "words": "looking for threats",
+      "vocal_energy": 0.0594,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 101,
+      "words": "they",
+      "vocal_energy": 0.0902,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 102,
+      "words": "be seen in this video",
+      "vocal_energy": 0.1083,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 103,
+      "words": "filmed by a",
+      "vocal_energy": 0.0743,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 104,
+      "words": "",
+      "vocal_energy": 0.0078,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 105,
+      "words": "",
+      "vocal_energy": 0.0677,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 106,
+      "words": "",
+      "vocal_energy": 0.0535,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 107,
+      "words": "hello",
+      "vocal_energy": 0.0262,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 108,
+      "words": "Butler and hello",
+      "vocal_energy": 0.0435,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 109,
+      "words": "to",
+      "vocal_energy": 0.0401,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 110,
+      "words": "I'm thrilled to be",
+      "vocal_energy": 0.0367,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 111,
+      "words": "back",
+      "vocal_energy": 0.0854,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 112,
+      "words": "begins with his speech",
+      "vocal_energy": 0.0611,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 113,
+      "words": "things seem",
+      "vocal_energy": 0.102,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 114,
+      "words": "",
+      "vocal_energy": 0.0459,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 115,
+      "words": "he turns to",
+      "vocal_energy": 0.1032,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 116,
+      "words": "the right and points a",
+      "vocal_energy": 0.0925,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 117,
+      "words": "chart showing statistics",
+      "vocal_energy": 0.0864,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 118,
+      "words": "on border",
+      "vocal_energy": 0.0669,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 119,
+      "words": "at the same",
+      "vocal_energy": 0.0836,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 120,
+      "words": "time time several",
+      "vocal_energy": 0.0864,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 121,
+      "words": "in the crowd",
+      "vocal_energy": 0.0994,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 122,
+      "words": "notice a man with a",
+      "vocal_energy": 0.0955,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 123,
+      "words": "on the roof of",
+      "vocal_energy": 0.0854,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 124,
+      "words": "a building close by",
+      "vocal_energy": 0.0721,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 125,
+      "words": "",
+      "vocal_energy": 0.1222,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 126,
+      "words": "",
+      "vocal_energy": 0.0911,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 127,
+      "words": "",
+      "vocal_energy": 0.0681,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 128,
+      "words": "",
+      "vocal_energy": 0.0609,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 129,
+      "words": "it's too",
+      "vocal_energy": 0.0818,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 130,
+      "words": "late take a",
+      "vocal_energy": 0.1338,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 131,
+      "words": "look what",
+      "vocal_energy": 0.0591,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 132,
+      "words": "all of a sudden",
+      "vocal_energy": 0.1281,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 133,
+      "words": "bullets start",
+      "vocal_energy": 0.1153,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 134,
+      "words": "",
+      "vocal_energy": 0.0782,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 135,
+      "words": "one even gets captured",
+      "vocal_energy": 0.0826,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 136,
+      "words": "on",
+      "vocal_energy": 0.0651,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 137,
+      "words": "",
+      "vocal_energy": 0.0543,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 138,
+      "words": "another",
+      "vocal_energy": 0.1256,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 139,
+      "words": "building about 400",
+      "vocal_energy": 0.0934,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 140,
+      "words": "ft or",
+      "vocal_energy": 0.0859,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 141,
+      "words": "M north of",
+      "vocal_energy": 0.0827,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 142,
+      "words": "the stage",
+      "vocal_energy": 0.0642,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 143,
+      "words": "the shots are from",
+      "vocal_energy": 0.0712,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 144,
+      "words": "here on the",
+      "vocal_energy": 0.0713,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 145,
+      "words": "",
+      "vocal_energy": 0.0332,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 146,
+      "words": "",
+      "vocal_energy": 0.0885,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 147,
+      "words": "the gunman is 20-year-old",
+      "vocal_energy": 0.1003,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 148,
+      "words": "Thomas",
+      "vocal_energy": 0.0725,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 149,
+      "words": "Kooks he",
+      "vocal_energy": 0.0817,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 150,
+      "words": "is armed with an AR-15",
+      "vocal_energy": 0.0922,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 151,
+      "words": "",
+      "vocal_energy": 0.0649,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 152,
+      "words": "rifle",
+      "vocal_energy": 0.0605,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 153,
+      "words": "the gun was",
+      "vocal_energy": 0.0995,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 154,
+      "words": "legally by",
+      "vocal_energy": 0.0628,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 155,
+      "words": "his father",
+      "vocal_energy": 0.0663,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 156,
+      "words": "first he",
+      "vocal_energy": 0.077,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 157,
+      "words": "fires around",
+      "vocal_energy": 0.0882,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 158,
+      "words": "of three shots",
+      "vocal_energy": 0.0529,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 159,
+      "words": "a look at what",
+      "vocal_energy": 0.0576,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 160,
+      "words": "",
+      "vocal_energy": 0.0389,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 161,
+      "words": "",
+      "vocal_energy": 0.0342,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 162,
+      "words": "Trump",
+      "vocal_energy": 0.0855,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 163,
+      "words": "reaches up with his hand",
+      "vocal_energy": 0.0596,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 164,
+      "words": "first bullet",
+      "vocal_energy": 0.0996,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 165,
+      "words": "pierces the upper part",
+      "vocal_energy": 0.0725,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 166,
+      "words": "his right ear",
+      "vocal_energy": 0.0555,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 167,
+      "words": "he will later",
+      "vocal_energy": 0.1326,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 168,
+      "words": "say that over to",
+      "vocal_energy": 0.084,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 169,
+      "words": "the right at that exact",
+      "vocal_energy": 0.0813,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 170,
+      "words": "prevented",
+      "vocal_energy": 0.0846,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 171,
+      "words": "the bullet from hitting",
+      "vocal_energy": 0.0599,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 172,
+      "words": "right in the head",
+      "vocal_energy": 0.0635,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 173,
+      "words": "he Ducks down",
+      "vocal_energy": 0.1236,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 174,
+      "words": "the podium and",
+      "vocal_energy": 0.0818,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 175,
+      "words": "within 3 to 4",
+      "vocal_energy": 0.0773,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 176,
+      "words": "after the first",
+      "vocal_energy": 0.0661,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 177,
+      "words": "shot secret",
+      "vocal_energy": 0.0783,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 178,
+      "words": "agent swarmed",
+      "vocal_energy": 0.0739,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 179,
+      "words": "the former",
+      "vocal_energy": 0.0697,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 180,
+      "words": "and Shield him with their",
+      "vocal_energy": 0.0874,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 181,
+      "words": "Crooks",
+      "vocal_energy": 0.0816,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 182,
+      "words": "opens fire",
+      "vocal_energy": 0.0957,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 183,
+      "words": "again",
+      "vocal_energy": 0.0686,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 184,
+      "words": "with five",
+      "vocal_energy": 0.0831,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 185,
+      "words": "more",
+      "vocal_energy": 0.0396,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 186,
+      "words": "",
+      "vocal_energy": 0.0461,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 187,
+      "words": "",
+      "vocal_energy": 0.0396,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 188,
+      "words": "",
+      "vocal_energy": 0.0781,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 189,
+      "words": "right before the first shot",
+      "vocal_energy": 0.0888,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 190,
+      "words": "by",
+      "vocal_energy": 0.0921,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 191,
+      "words": "one of the snipers on the left",
+      "vocal_energy": 0.0921,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 192,
+      "words": "behind Trump",
+      "vocal_energy": 0.0746,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 193,
+      "words": "seems to detect the",
+      "vocal_energy": 0.0814,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 194,
+      "words": "and prepares to",
+      "vocal_energy": 0.0615,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 195,
+      "words": "return fire",
+      "vocal_energy": 0.0619,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 196,
+      "words": "take look",
+      "vocal_energy": 0.1252,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 197,
+      "words": "at what",
+      "vocal_energy": 0.0791,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 198,
+      "words": "",
+      "vocal_energy": 0.0535,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 199,
+      "words": "some Outlets",
+      "vocal_energy": 0.1151,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 200,
+      "words": "report that these",
+      "vocal_energy": 0.0711,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 201,
+      "words": "killed Crooks",
+      "vocal_energy": 0.0621,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 202,
+      "words": "while the secret",
+      "vocal_energy": 0.0866,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 203,
+      "words": "confirmed its Personnel",
+      "vocal_energy": 0.0773,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 204,
+      "words": "the shooter",
+      "vocal_energy": 0.0551,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 205,
+      "words": "we could not",
+      "vocal_energy": 0.1179,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 206,
+      "words": "that it was",
+      "vocal_energy": 0.0889,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 207,
+      "words": "in fact these agents",
+      "vocal_energy": 0.0477,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 208,
+      "words": "the gunmen",
+      "vocal_energy": 0.0897,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 209,
+      "words": "also hit",
+      "vocal_energy": 0.0674,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 210,
+      "words": "on the bleachers",
+      "vocal_energy": 0.0498,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 211,
+      "words": "one man died",
+      "vocal_energy": 0.0847,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 212,
+      "words": "",
+      "vocal_energy": 0.0781,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 213,
+      "words": "Cory comprador",
+      "vocal_energy": 0.0321,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 214,
+      "words": "two others",
+      "vocal_energy": 0.0658,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 215,
+      "words": "critically injured",
+      "vocal_energy": 0.0458,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 216,
+      "words": "with Trump's",
+      "vocal_energy": 0.0957,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 217,
+      "words": "still on",
+      "vocal_energy": 0.0818,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 218,
+      "words": "we can hear the",
+      "vocal_energy": 0.0814,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 219,
+      "words": "exchanges among the",
+      "vocal_energy": 0.0609,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 220,
+      "words": "",
+      "vocal_energy": 0.0442,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 221,
+      "words": "",
+      "vocal_energy": 0.0643,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 222,
+      "words": "",
+      "vocal_energy": 0.0857,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 223,
+      "words": "on ready on",
+      "vocal_energy": 0.0597,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 224,
+      "words": "you",
+      "vocal_energy": 0.0589,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 225,
+      "words": "",
+      "vocal_energy": 0.0556,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 226,
+      "words": "",
+      "vocal_energy": 0.0437,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 227,
+      "words": "about 42",
+      "vocal_energy": 0.099,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 228,
+      "words": "seconds after Crook's open",
+      "vocal_energy": 0.0759,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 229,
+      "words": "they",
+      "vocal_energy": 0.0772,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 230,
+      "words": "confirm the shooter",
+      "vocal_energy": 0.0813,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 231,
+      "words": "is",
+      "vocal_energy": 0.0269,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 232,
+      "words": "",
+      "vocal_energy": 0.0332,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 233,
+      "words": "",
+      "vocal_energy": 0.0339,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 234,
+      "words": "",
+      "vocal_energy": 0.0379,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 235,
+      "words": "we",
+      "vocal_energy": 0.0486,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 236,
+      "words": "good",
+      "vocal_energy": 0.0552,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 237,
+      "words": "Shooters down are",
+      "vocal_energy": 0.054,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 238,
+      "words": "we good move",
+      "vocal_energy": 0.0388,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 239,
+      "words": "we clear",
+      "vocal_energy": 0.0585,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 240,
+      "words": "we",
+      "vocal_energy": 0.0825,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 241,
+      "words": "we're",
+      "vocal_energy": 0.067,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 242,
+      "words": "they prepare",
+      "vocal_energy": 0.0997,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 243,
+      "words": "escort him to an armored",
+      "vocal_energy": 0.065,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 244,
+      "words": "",
+      "vocal_energy": 0.0552,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 245,
+      "words": "",
+      "vocal_energy": 0.0627,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 246,
+      "words": "let me get my",
+      "vocal_energy": 0.0576,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 247,
+      "words": "let me get my",
+      "vocal_energy": 0.0377,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 248,
+      "words": "I you sir",
+      "vocal_energy": 0.1073,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 249,
+      "words": "I got you sir let me",
+      "vocal_energy": 0.0908,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 250,
+      "words": "get my hold",
+      "vocal_energy": 0.0666,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 251,
+      "words": "that in your head bloody",
+      "vocal_energy": 0.0628,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 252,
+      "words": "so got to",
+      "vocal_energy": 0.12,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 253,
+      "words": "move to the to",
+      "vocal_energy": 0.1259,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 254,
+      "words": "the",
+      "vocal_energy": 0.068,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 255,
+      "words": "let me get",
+      "vocal_energy": 0.1098,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 256,
+      "words": "",
+      "vocal_energy": 0.128,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 257,
+      "words": "",
+      "vocal_energy": 0.136,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 258,
+      "words": "",
+      "vocal_energy": 0.1175,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 259,
+      "words": "watch",
+      "vocal_energy": 0.0767,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 260,
+      "words": "",
+      "vocal_energy": 0.0495,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 261,
+      "words": "wait wait wait",
+      "vocal_energy": 0.0777,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 262,
+      "words": "in about 75",
+      "vocal_energy": 0.1219,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 263,
+      "words": "seconds ducking",
+      "vocal_energy": 0.0971,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 264,
+      "words": "to the ground Trump",
+      "vocal_energy": 0.1017,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 265,
+      "words": "raises fist",
+      "vocal_energy": 0.0689,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 266,
+      "words": "he's mouthing",
+      "vocal_energy": 0.1014,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 267,
+      "words": "the words fight",
+      "vocal_energy": 0.0872,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 268,
+      "words": "fight",
+      "vocal_energy": 0.0497,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 269,
+      "words": "the resulting photo",
+      "vocal_energy": 0.1136,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 270,
+      "words": "travel",
+      "vocal_energy": 0.0727,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 271,
+      "words": "around the entire",
+      "vocal_energy": 0.0771,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 272,
+      "words": "",
+      "vocal_energy": 0.0825,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 273,
+      "words": "",
+      "vocal_energy": 0.0185,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 274,
+      "words": "",
+      "vocal_energy": 0.0312,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 275,
+      "words": "",
+      "vocal_energy": 0.0218,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 276,
+      "words": "the",
+      "vocal_energy": 0.057,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 277,
+      "words": "crowd starts to Champ for",
+      "vocal_energy": 0.0717,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 278,
+      "words": "the president as",
+      "vocal_energy": 0.0755,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 279,
+      "words": "he leaves the stage",
+      "vocal_energy": 0.0666,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 280,
+      "words": "",
+      "vocal_energy": 0.0564,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 281,
+      "words": "",
+      "vocal_energy": 0.0268,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 282,
+      "words": "",
+      "vocal_energy": 0.0437,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 283,
+      "words": "Trump is then rushed",
+      "vocal_energy": 0.0885,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 284,
+      "words": "to a",
+      "vocal_energy": 0.0469,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 285,
+      "words": "",
+      "vocal_energy": 0.0778,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 286,
+      "words": "later that night he has",
+      "vocal_energy": 0.0918,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 287,
+      "words": "flown New Jersey",
+      "vocal_energy": 0.059,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 288,
+      "words": "he appears to be",
+      "vocal_energy": 0.0774,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 289,
+      "words": "",
+      "vocal_energy": 0.0122,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 290,
+      "words": "",
+      "vocal_energy": 0.0149,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 291,
+      "words": "",
+      "vocal_energy": 0.0036,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 292,
+      "words": "",
+      "vocal_energy": 0.0007,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 293,
+      "words": "",
+      "vocal_energy": 0.123,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 294,
+      "words": "there are",
+      "vocal_energy": 0.1189,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 295,
+      "words": "a lot of questions",
+      "vocal_energy": 0.1119,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 296,
+      "words": "we have an answer to",
+      "vocal_energy": 0.0544,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 297,
+      "words": "right now",
+      "vocal_energy": 0.1049,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 298,
+      "words": "why the forces unable",
+      "vocal_energy": 0.0852,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 299,
+      "words": "to prevent the",
+      "vocal_energy": 0.0624,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 300,
+      "words": "",
+      "vocal_energy": 0.0928,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 301,
+      "words": "on X",
+      "vocal_energy": 0.0848,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 302,
+      "words": "suggests that at least",
+      "vocal_energy": 0.0827,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 303,
+      "words": "the on the roof behind",
+      "vocal_energy": 0.0776,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 304,
+      "words": "Trump were",
+      "vocal_energy": 0.0909,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 305,
+      "words": "Scouting For dangers",
+      "vocal_energy": 0.0908,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 306,
+      "words": "further away",
+      "vocal_energy": 0.0768,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 307,
+      "words": "this rooftop",
+      "vocal_energy": 0.0819,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 308,
+      "words": "possibly falling into",
+      "vocal_energy": 0.0768,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 309,
+      "words": "responsibility",
+      "vocal_energy": 0.0728,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 310,
+      "words": "of other law",
+      "vocal_energy": 0.0731,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 311,
+      "words": "agents",
+      "vocal_energy": 0.0298,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 312,
+      "words": "we were unable",
+      "vocal_energy": 0.0977,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 313,
+      "words": "to",
+      "vocal_energy": 0.0611,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 314,
+      "words": "that",
+      "vocal_energy": 0.0916,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 315,
+      "words": "why couldn't our men",
+      "vocal_energy": 0.0871,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 316,
+      "words": "up on this building",
+      "vocal_energy": 0.0738,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 317,
+      "words": "what was",
+      "vocal_energy": 0.0865,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 318,
+      "words": "motive",
+      "vocal_energy": 0.0644,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 319,
+      "words": "the Gman had",
+      "vocal_energy": 0.1164,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 320,
+      "words": "no criminal",
+      "vocal_energy": 0.0637,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 321,
+      "words": "in Pennsylvania's public",
+      "vocal_energy": 0.0745,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 322,
+      "words": "court",
+      "vocal_energy": 0.0717,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 323,
+      "words": "the New York Times found a",
+      "vocal_energy": 0.1011,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 324,
+      "words": "voter record",
+      "vocal_energy": 0.0605,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 325,
+      "words": "for Crooks it",
+      "vocal_energy": 0.0769,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 326,
+      "words": "shows he was registered",
+      "vocal_energy": 0.0768,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 327,
+      "words": "as a republican",
+      "vocal_energy": 0.0806,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 328,
+      "words": "also found that he",
+      "vocal_energy": 0.0975,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 329,
+      "words": "donated $15",
+      "vocal_energy": 0.0852,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 330,
+      "words": "to a voter turnout",
+      "vocal_energy": 0.0704,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 331,
+      "words": "group through a",
+      "vocal_energy": 0.0681,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 332,
+      "words": "donation",
+      "vocal_energy": 0.0603,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 333,
+      "words": "platform in 2021",
+      "vocal_energy": 0.058,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 334,
+      "words": "he",
+      "vocal_energy": 0.063,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 335,
+      "words": "a kitchen worker",
+      "vocal_energy": 0.0674,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 336,
+      "words": "and had a",
+      "vocal_energy": 0.0792,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 337,
+      "words": "at a local shooting club",
+      "vocal_energy": 0.0398,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 338,
+      "words": "the",
+      "vocal_energy": 0.1062,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 339,
+      "words": "found suspicious",
+      "vocal_energy": 0.0774,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 340,
+      "words": "devices in both",
+      "vocal_energy": 0.0747,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 341,
+      "words": "his and home",
+      "vocal_energy": 0.0472,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 342,
+      "words": "they are being evaluated",
+      "vocal_energy": 0.1621,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 343,
+      "words": "by agency",
+      "vocal_energy": 0.0764,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 344,
+      "words": "at the time of this",
+      "vocal_energy": 0.0681,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 345,
+      "words": "recording",
+      "vocal_energy": 0.0812,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 346,
+      "words": "investigation is",
+      "vocal_energy": 0.1037,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 347,
+      "words": "ongoing and new",
+      "vocal_energy": 0.0814,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 348,
+      "words": "is being published",
+      "vocal_energy": 0.0614,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 349,
+      "words": "by the",
+      "vocal_energy": 0.0706,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 350,
+      "words": "President Biden and",
+      "vocal_energy": 0.0884,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 351,
+      "words": "various around the world",
+      "vocal_energy": 0.0712,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 352,
+      "words": "condemn the",
+      "vocal_energy": 0.0757,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 353,
+      "words": "and political",
+      "vocal_energy": 0.0639,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 354,
+      "words": "violence at large",
+      "vocal_energy": 0.0406,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 355,
+      "words": "picture",
+      "vocal_energy": 0.0861,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 356,
+      "words": "of trump bloodied",
+      "vocal_energy": 0.082,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 357,
+      "words": "but with",
+      "vocal_energy": 0.083,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 358,
+      "words": "a raised fist in front",
+      "vocal_energy": 0.064,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 359,
+      "words": "of American flag",
+      "vocal_energy": 0.0587,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 360,
+      "words": "will surely become",
+      "vocal_energy": 0.0866,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 361,
+      "words": "a symbol",
+      "vocal_energy": 0.0469,
+      "music_energy": 0.0,
+      "is_pause": true,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 362,
+      "words": "in his re-election",
+      "vocal_energy": 0.0595,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 363,
+      "words": "",
+      "vocal_energy": 0.0085,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 364,
+      "words": "",
+      "vocal_energy": 0.0019,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 365,
+      "words": "",
+      "vocal_energy": 0.0003,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 366,
+      "words": "",
+      "vocal_energy": 0.0,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 367,
+      "words": "",
+      "vocal_energy": 0.0,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 368,
+      "words": "",
+      "vocal_energy": 0.0,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 369,
+      "words": "",
+      "vocal_energy": 0.0,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    },
+    {
+      "timestamp": 370,
+      "words": "",
+      "vocal_energy": 0.0,
+      "music_energy": 0.0,
+      "is_pause": false,
+      "is_emphasis": false,
+      "music_event": null
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "grand_avg": {
+    "r_mean": 97.07,
+    "g_mean": 93.07,
+    "b_mean": 90.22,
+    "lum_mean": 93.72,
+    "saturation": 0.38,
+    "contrast_std": 42.63,
+    "shadow_mean": 36.76,
+    "highlight_mean": 169.96
+  },
+  "per_video": [
+    {
+      "r_mean": 163.75,
+      "g_mean": 153.89,
+      "b_mean": 155.52,
+      "lum_mean": 156.11,
+      "saturation": 0.17,
+      "contrast_std": 46.25,
+      "shadow_mean": 74.52,
+      "highlight_mean": 226.61
+    },
+    {
+      "r_mean": 42.97,
+      "g_mean": 39.3,
+      "b_mean": 31.67,
+      "lum_mean": 39.53,
+      "saturation": 0.66,
+      "contrast_std": 36.87,
+      "shadow_mean": 11.93,
+      "highlight_mean": 121.74
+    },
+    {
+      "r_mean": 84.49,
+      "g_mean": 86.03,
+      "b_mean": 83.48,
+      "lum_mean": 85.52,
+      "saturation": 0.32,
+      "contrast_std": 44.77,
+      "shadow_mean": 23.82,
+      "highlight_mean": 161.52
+    }
+  ],
+  "ffmpeg_filter": {
+    "eq": "eq=contrast=0.78:brightness=-0.064:saturation=1.09",
+    "b_channel_shift": -0.011,
+    "r_channel_shift": 0.016,
+    "interpretation": "neutral"
+  }
+}

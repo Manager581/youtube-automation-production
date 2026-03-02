@@ -1,0 +1,175 @@
+{
+  "videos": [
+    {
+      "video": "Trump_Assassination",
+      "duration_sec": 363,
+      "total_words": 849,
+      "wpm": 140,
+      "sentence_rhythm": {
+        "avg_words_per_sentence": 849,
+        "short_sentences_pct": 0,
+        "note": "Short sentences (<= 5 words) create punch/rhythm"
+      },
+      "hook": {
+        "first_line": "it's the 13th of July in Butler",
+        "opens_with_quote": false,
+        "opens_with_date": false,
+        "opens_with_location": true,
+        "hook_word_count": 149,
+        "hook_text": "it's the 13th of July in Butler Pennsylvania former US president Donald Trump speaks at a rally it's only days until he plans to accept the official Republican nomination he's just minutes into his speech when shots are fired take a look at what happened Trump got hit but survived [Music] someone tr"
+      },
+      "curiosity_gaps": {
+        "count": 0,
+        "gaps": [],
+        "first_gap_at_sec": null,
+        "first_gap_pct": null
+      },
+      "sponsor": null,
+      "act_structure": {
+        "act1_hook_0_15pct": "it's the 13th of July in Butler Pennsylvania former US president Donald Trump speaks at a rally it's only days",
+        "act2_buildup_15_65pct": "evening as tens of thousands gather here to see Trump Pennsylvania is one of six vital swing States that will help secure",
+        "act3_climax_65_90pct": "down we good Shooters down are we good to move we clear we we're they prepare to escort him to an armored",
+        "outro_90_100pct": "that he was registered as a republican they also found that he donated $15 to a liberal voter turnout group through a"
+      },
+      "top_content_words": [
+        [
+          "trump",
+          12
+        ],
+        [
+          "right",
+          9
+        ],
+        [
+          "pennsylvania",
+          4
+        ],
+        [
+          "president",
+          4
+        ],
+        [
+          "shots",
+          4
+        ]
+      ]
+    },
+    {
+      "video": "FBI_KKK",
+      "duration_sec": 2458,
+      "total_words": 7315,
+      "wpm": 179,
+      "sentence_rhythm": {
+        "avg_words_per_sentence": 13,
+        "short_sentences_pct": 19,
+        "note": "Short sentences (<= 5 words) create punch/rhythm"
+      },
+      "hook": {
+        "first_line": "If there's any snitches in the group, we",
+        "opens_with_quote": true,
+        "opens_with_date": false,
+        "opens_with_location": false,
+        "hook_word_count": 250,
+        "hook_text": "If there's any snitches in the group, we kill the snitches and they fire shots out of a gun. Boom. Boom. And everybody's kind of getting scared. &gt;&gt; April 21, 2017. A group of men stand in a remote field in the middle of Alabama. &gt;&gt; It was nighttime and I am blindfolded. I've been instruc"
+      },
+      "curiosity_gaps": {
+        "count": 5,
+        "gaps": [
+          {
+            "time": 920.87,
+            "time_pct": 37,
+            "text": "in the building except one. Clothesline"
+          },
+          {
+            "time": 1235.43,
+            "time_pct": 50,
+            "text": "contact the United Clans of America?"
+          },
+          {
+            "time": 1237.75,
+            "time_pct": 50,
+            "text": "Well, it turns out the group I was"
+          },
+          {
+            "time": 1775.27,
+            "time_pct": 72,
+            "text": "need to make the decision. Does he truly want to join?"
+          },
+          {
+            "time": 2178.95,
+            "time_pct": 89,
+            "text": "It turns out the camping trip isn't a"
+          }
+        ],
+        "first_gap_at_sec": 920.87,
+        "first_gap_pct": 37
+      },
+      "sponsor": null,
+      "act_structure": {
+        "act1_hook_0_15pct": "If there's any snitches in the group, we kill the snitches and they fire shots out of a gun. Boom. Boom. And",
+        "act2_buildup_15_65pct": "plans. It's exactly the kind of thing he spent the last 17 years working to I became an FBI agent in 1998 and uh by",
+        "act3_climax_65_90pct": "but nothing happens. A fellow agent points out that he doesn't have any friends. He adds a few people and that does it. He's promptly kicked off. Okay",
+        "outro_90_100pct": "that or help. And then Peslence was going to set the house on fire. But in the planning of everything, at one point"
+      },
+      "top_content_words": [
+        [
+          "scott",
+          79
+        ]
+      ]
+    },
+    {
+      "video": "Unabomber",
+      "duration_sec": 1674,
+      "total_words": 4522,
+      "wpm": 162,
+      "sentence_rhythm": {
+        "avg_words_per_sentence": 13,
+        "short_sentences_pct": 11,
+        "note": "Short sentences (<= 5 words) create punch/rhythm"
+      },
+      "hook": {
+        "first_line": "My motive for doing what I am going to",
+        "opens_with_quote": true,
+        "opens_with_date": false,
+        "opens_with_location": false,
+        "hook_word_count": 208,
+        "hook_text": "My motive for doing what I am going to do is simply personal revenge. I do not expect to accomplish it. Lincoln, Montana, 1996. This cabin is the chosen home of Theodore J. Kazinski, more commonly known as the Uni Bomber. He's long been feared as America's smartest criminal, a serial bomber who's ki"
+      },
+      "curiosity_gaps": {
+        "count": 2,
+        "gaps": [
+          {
+            "time": 119.59,
+            "time_pct": 7,
+            "text": "despite his intellect, he made some"
+          },
+          {
+            "time": 211.99,
+            "time_pct": 13,
+            "text": "a young age that Ted is exceptionally"
+          }
+        ],
+        "first_gap_at_sec": 119.59,
+        "first_gap_pct": 7
+      },
+      "sponsor": {
+        "time": 510.63,
+        "time_pct": 31,
+        "text": "download the app, pick your destination,"
+      },
+      "act_structure": {
+        "act1_hook_0_15pct": "My motive for doing what I am going to do is simply personal revenge. I do not expect to accomplish",
+        "act2_buildup_15_65pct": "years old. Like many college freshmen, Ted struggles to adjust. Here, he no longer feels like the smartest person in",
+        "act3_climax_65_90pct": "opening and both professors are badly injured. Shortly after, the New York Times receives a typewritten letter. It",
+        "outro_90_100pct": "but they are never able to touch. He writes classical music for her before she dies of lung cancer. Later, Ted also"
+      },
+      "top_content_words": [
+        [
+          "bomber",
+          20
+        ]
+      ]
+    }
+  ]
+}

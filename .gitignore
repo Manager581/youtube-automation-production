@@ -15,25 +15,67 @@ dist/
 .env
 config/api_keys.json
 config/secrets.json
+service-account.json
+*service_account*.json
+cookies.txt
+youtube-cookies.txt
 
-# Media Files
+# ─── Large Video / Audio files ────────────────────────────────────────────────
+# Never commit raw videos or audio — too large, regenerable from YouTube
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.wav
+*.mp3
+!assets/sfx/*.mp3
+*.m4a
+*.flac
+*.aac
+*.ogg
+
+# ─── Keyframe images — regenerable from videos ────────────────────────────────
+**/hybrid_keyframes/
+**/ground_truth_frames/
+**/keyframes/
+
+# ─── Heavy analysis artifacts ─────────────────────────────────────────────────
+analysis/fern/audio_cache/
+analysis/fern/demucs_out/
+analysis/fern/thumbnails/
+
+# ─── watop brand — not in scope ───────────────────────────────────────────────
+analysis/watop/
+research/watop/
+
+# ─── Assets that are too large or private ─────────────────────────────────────
 assets/raw_footage/
 assets/veo_clips/
 assets/nasa_footage/
 assets/voiceovers/
+assets/music/
+assets/voice/          # your personal voice recordings — keep private
+
+# ─── Generated output ─────────────────────────────────────────────────────────
 output/
 temp/
+footage/
 
-# Logs
+# ─── Checkpoint backups ───────────────────────────────────────────────────────
+analysis/fern/.checkpoint.json.backup*
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
 logs/
 *.log
 
-# OS
+# ─── OS / IDE ─────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
-
-# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# ─── QR codes (unrelated to Fern pipeline) ────────────────────────────────────
+qr_codes/

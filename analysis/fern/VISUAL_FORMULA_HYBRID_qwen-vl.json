@@ -1,0 +1,19 @@
+{
+  "footage_distribution": {},
+  "camera_angles": {
+    "not_applicable": 69,
+    "extreme_close_up": 90,
+    "close_up": 663,
+    "wide": 370,
+    "medium": 252,
+    "eye_level": 95,
+    "overhead": 47,
+    "aerial": 39,
+    "dutch_angle": 4,
+    "POV": 13,
+    "static": 12
+  },
+  "model": "qwen-vl",
+  "videos_analyzed": 2,
+  "total_samples": 0
+}

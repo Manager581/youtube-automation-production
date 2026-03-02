@@ -15,11 +15,24 @@ CHECKPOINT SYSTEM:
 - Pauses when limit hit, auto-continues next day
 
 Usage:
-    export GOOGLE_API_KEY="your-key"
-    python analyze_fern_hybrid_checkpoint.py --all --model gemini-flash
+    # Recommended: Qwen3.5 4B — free, local, works on M1 16GB or M5 24GB
+    ollama pull qwen3.5:4b
+    venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen3.5-4b 2>&1 | tee /tmp/fern_analysis.log
 
-    # Resume next day (automatically picks up where it left off)
-    python analyze_fern_hybrid_checkpoint.py --all --model gemini-flash --resume
+    # Higher quality: Qwen3.5 27B — free, local, needs dedicated 24GB+ machine
+    ollama pull qwen3.5:27b
+    venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen3.5-27b 2>&1 | tee /tmp/fern_analysis.log
+
+    # Legacy: Qwen2.5-VL 7B (already installed)
+    venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen-vl 2>&1 | tee /tmp/fern_analysis.log
+
+    # Resume after interruption
+    venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen3.5-4b --resume
+
+    # Monitor progress in a second terminal
+    venv/bin/python monitor.py
+
+    # NOTE: Gemini Flash (--model gemini-flash) costs money — ask before using.
 """
 
 import subprocess
@@ -40,17 +53,17 @@ from collections import Counter
 MODELS = {
     'gemini-flash': {
         'provider': 'google',
-        'model_id': 'gemini-2.0-flash-exp',
+        'model_id': 'gemini-2.0-flash',
         'daily_limit': 1500,  # Free tier
         'cost_per_image': 0.0,
         'description': 'Google Gemini 2.0 Flash (FREE, 1500/day)'
     },
     'gemini-flash-paid': {
         'provider': 'google',
-        'model_id': 'gemini-1.5-flash',
+        'model_id': 'gemini-2.0-flash',
         'daily_limit': None,  # No limit (paid)
         'cost_per_image': 0.001,
-        'description': 'Google Gemini 1.5 Flash (Paid)'
+        'description': 'Google Gemini 2.0 Flash (Paid)'
     },
     'gpt-4o-mini': {
         'provider': 'openai',
@@ -58,6 +71,27 @@ MODELS = {
         'daily_limit': None,
         'cost_per_image': 0.0001,
         'description': 'OpenAI GPT-4o-mini'
+    },
+    'qwen-vl': {
+        'provider': 'ollama',
+        'model_id': 'qwen2.5vl:7b',
+        'daily_limit': None,  # Local, no limits
+        'cost_per_image': 0.0,
+        'description': 'Qwen2.5-VL 7B (FREE, local — legacy, prefer qwen3.5-4b)'
+    },
+    'qwen3.5-4b': {
+        'provider': 'ollama',
+        'model_id': 'qwen3.5:4b',
+        'daily_limit': None,
+        'cost_per_image': 0.0,
+        'description': 'Qwen3.5 4B (FREE, local — 3.4GB, works on M1 16GB or any M5, best default)'
+    },
+    'qwen3.5-27b': {
+        'provider': 'ollama',
+        'model_id': 'qwen3.5:27b',
+        'daily_limit': None,
+        'cost_per_image': 0.0,
+        'description': 'Qwen3.5 27B (FREE, local — 17GB, highest quality, needs dedicated 24GB+ machine)'
     }
 }
 
@@ -219,11 +253,21 @@ def extract_keyframe(video_path, timestamp, output_path):
         return False
 
 
-def extract_hybrid_keyframes(video_path, timestamps, output_dir, start_index=0):
-    """Extract keyframes at hybrid timestamps"""
+def extract_hybrid_keyframes(video_path, timestamps, output_dir, start_index=0,
+                              cut_times=None, duration=0):
+    """
+    Extract keyframes at hybrid timestamps.
 
+    For each primary frame (Frame A), also extracts a secondary frame 0.5s later
+    (Frame B), clamped to within the same shot (won't cross a cut boundary).
+    Frame B is used by the AI to detect animation direction and easing — you cannot
+    determine HOW elements move from a single still frame.
+    """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Sort cut times for binary-search-style next-cut lookup
+    sorted_cuts = sorted(cut_times) if cut_times else []
 
     print(f"  Extracting keyframes (starting from {start_index}/{len(timestamps)})...")
 
@@ -232,18 +276,28 @@ def extract_hybrid_keyframes(video_path, timestamps, output_dir, start_index=0):
         ts = timestamps[i]
         output_path = output_dir / f'frame_{i:04d}_{ts:.2f}s.jpg'
 
-        # Skip if already extracted
+        # Compute secondary timestamp: 0.5s later, clamped to within the same shot
+        if sorted_cuts:
+            next_cut = next((c for c in sorted_cuts if c > ts + 0.05), duration or ts + 2.0)
+        else:
+            next_cut = ts + 2.0
+        secondary_ts = min(ts + 0.5, next_cut - 0.05)
+        if secondary_ts <= ts:
+            secondary_ts = ts + 0.1
+        secondary_path = output_dir / f'frame_{i:04d}_{ts:.2f}s_B.jpg'
+
+        # Extract primary frame (Frame A) if not already done
+        if not output_path.exists():
+            extract_keyframe(video_path, ts, output_path)
+
+        # Extract secondary frame (Frame B) if not already done
+        if not secondary_path.exists():
+            extract_keyframe(video_path, secondary_ts, secondary_path)
+
         if output_path.exists():
             keyframes.append({
                 'path': output_path,
-                'timestamp': ts,
-                'index': i
-            })
-            continue
-
-        if extract_keyframe(video_path, ts, output_path):
-            keyframes.append({
-                'path': output_path,
+                'secondary_path': secondary_path if secondary_path.exists() else None,
                 'timestamp': ts,
                 'index': i
             })
@@ -251,7 +305,7 @@ def extract_hybrid_keyframes(video_path, timestamps, output_dir, start_index=0):
         if (i + 1) % 50 == 0:
             print(f"    {i + 1}/{len(timestamps)} frames extracted")
 
-    print(f"  ✓ Extracted {len(keyframes)} keyframes")
+    print(f"  ✓ Extracted {len(keyframes)} keyframe pairs")
     return keyframes
 
 # ============================================================================
@@ -294,40 +348,147 @@ def get_words_at_time(word_timeline, timestamp, window=1.5):
 # AI CLASSIFICATION
 # ============================================================================
 
-CLASSIFICATION_PROMPT = """Analyze this frame from a YouTube video.
+CLASSIFICATION_PROMPT = """You are analyzing TWO consecutive frames from the same shot in a documentary-style YouTube channel.
+Frame A is the primary frame. Frame B is captured 0.5 seconds later in the SAME shot (no cut between them).
+
+Use BOTH frames together to understand what is moving, in which direction, and how — especially for animations, text reveals, and motion graphics. Describe everything with maximum detail so the visual style can be exactly replicated.
 
 Return ONLY a JSON object (no other text):
 
 {
-  "footage_type": "3D_animation | real_footage | hybrid | graphics | text_overlay",
-  "camera_angle": "aerial | close_up | medium | wide | POV | map_view | diagram",
-  "camera_movement": "none | zooming_in | zooming_out | panning_left | panning_right | tracking",
-  "content": "person | people | landscape | building | map | diagram | text | object | vehicle | document",
-  "text_on_screen": "yes | no",
-  "text_content": "<text if visible>",
-  "mood": "dark | bright | neutral | dramatic | mysterious"
+  "scene_description": "<2-3 sentence detailed description of exactly what is in this frame>",
+
+  "visual_category": "motion_graphic | archival_footage | modern_broll | news_screenshot | document_photo | animated_map | title_card | quote_card | name_card | talking_head | reconstructed_footage | stock_footage | screen_recording | black_screen",
+
+  "animation_style": "<if motion_graphic/title_card/quote_card: describe the specific animation — e.g. 'typewriter text appearing letter by letter on black background' | 'name lower-third fading in from left' | 'animated map with red dot pulsing' | 'particle dust effect' | 'none'>",
+
+  "color_grade": "dark_cinematic | desaturated_cold | desaturated_warm | high_contrast_bw | natural_color | washed_out | deep_shadow | none",
+  "color_palette": "<dominant colors visible, e.g. 'deep blacks, muted greens, burnt orange highlights'>",
+  "brightness": "very_dark | dark | medium | bright | very_bright",
+
+  "people_count": 0,
+  "people_description": "<if people present: describe their appearance, clothing, emotion, positioning — e.g. '1 white male in suit, serious expression, medium shot, dramatic side lighting' | 'none'>",
+  "people_role": "protagonist | antagonist | victim | authority | crowd | unknown | none",
+
+  "text_on_screen": true,
+  "text_content": "<exact text if visible, word for word>",
+  "text_style": "<describe font: serif/sans-serif, size relative to screen, color, placement, animation style — e.g. 'large white serif all-caps centered, slow fade in' | 'small yellow lower-third sans-serif' | 'none'>",
+
+  "camera_angle": "aerial | extreme_close_up | close_up | medium | wide | extreme_wide | POV | dutch_angle | overhead | eye_level",
+  "camera_movement": "static | slow_zoom_in | slow_zoom_out | fast_zoom | pan_left | pan_right | tilt_up | tilt_down | tracking | handheld_shake | ken_burns",
+  "depth_of_field": "very_shallow_bokeh | shallow | deep | not_applicable",
+
+  "lighting": "dramatic_chiaroscuro | rim_backlit | low_key_shadows | natural_daylight | overcast_flat | artificial_indoor | none",
+  "atmosphere": "<visual atmosphere: e.g. 'foggy and ominous', 'stark and clinical', 'warm golden hour', 'cold blue night', 'none'>",
+
+  "location_type": "indoor_office | indoor_courtroom | indoor_prison | indoor_residential | outdoor_urban | outdoor_nature | outdoor_war_zone | aerial | digital_space | not_applicable",
+  "era": "pre_1950s | 1950s_1970s | 1980s_1990s | 2000s_2010s | modern_2020s | timeless_graphic | unknown",
+  "footage_quality": "crisp_4k | broadcast_hd | standard_def | archival_grainy | archival_bw | lo_fi | graphic",
+
+  "emotional_tone": "ominous | tense | fear | powerful | triumphant | somber | mysterious | shocking | neutral | hopeful",
+  "narrative_function": "hook | establishing_context | character_intro | evidence | tension_build | revelation | climax | resolution | transition | reenactment",
+
+  "production_technique": "<specific technique used — e.g. 'news chyron overlay on real footage', 'slow push into photo', 'split screen', 'talking head with lower third', 'animated infographic', 'document zoom', 'satellite map zoom', 'none'>",
+
+  "kinetic_quality": "completely_static | subtle_life | moderate_motion | high_energy | chaotic",
+  "subject_motion": "<what is actively moving within the scene content — e.g. 'fire flickering', 'insect wings beating', 'flowing water', 'crowd movement', 'wind in trees', 'smoke drifting', 'none'>",
+  "motion_source": "camera_only | subject_only | animation | camera_and_subject | camera_and_animation | none",
+
+  "animation_motion": "<FOR GRAPHIC/ANIMATION SHOTS: describe exactly how elements moved between Frame A and Frame B — direction, what moved, how far — e.g. 'white text slides in from left, ~70% across by Frame B', 'name card fades in from transparent, fully visible by Frame B', 'logo scales up from small center point to full size', 'map dot pulses outward', 'no change — static graphic', 'none — live footage'>",
+  "animation_easing": "snap | ease_out | ease_in_out | float | bounce | instant_appear | none"
 }"""
 
 
-def encode_image(image_path):
-    """Encode image to base64"""
+def encode_image(image_path, max_width=854):
+    """Encode image to base64, resizing to max_width for faster inference.
+    854px (480p width) is more than enough for visual classification — no need for 1080p.
+    """
+    import io
+    try:
+        from PIL import Image
+        img = Image.open(image_path)
+        if img.width > max_width:
+            ratio = max_width / img.width
+            new_h = int(img.height * ratio)
+            img = img.resize((max_width, new_h), Image.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format='JPEG', quality=85)
+        return base64.standard_b64encode(buf.getvalue()).decode('utf-8')
+    except ImportError:
+        # PIL not available, send as-is
+        with open(image_path, 'rb') as f:
+            return base64.standard_b64encode(f.read()).decode('utf-8')
+
+
+def classify_with_ollama(image_path, model_id, secondary_image_path=None):
+    """Classify with a local Ollama vision model (e.g. Qwen2.5-VL).
+    Sends both Frame A and Frame B (0.5s later) when available so the model
+    can describe animation direction and easing between the two frames.
+    """
+    import urllib.request
+    import base64
+
     with open(image_path, 'rb') as f:
-        return base64.standard_b64encode(f.read()).decode('utf-8')
+        img_b64 = base64.standard_b64encode(f.read()).decode('utf-8')
+
+    images = [img_b64]
+    if secondary_image_path and Path(secondary_image_path).exists():
+        with open(secondary_image_path, 'rb') as f:
+            images.append(base64.standard_b64encode(f.read()).decode('utf-8'))
+
+    payload = json.dumps({
+        'model': model_id,
+        'prompt': CLASSIFICATION_PROMPT,
+        'images': images,
+        'stream': False
+    }).encode('utf-8')
+
+    req = urllib.request.Request(
+        'http://localhost:11434/api/generate',
+        data=payload,
+        headers={'Content-Type': 'application/json'}
+    )
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read().decode('utf-8'))
+
+    text = data.get('response', '').strip()
+    json_match = re.search(r'\{.*\}', text, re.DOTALL)
+    if json_match:
+        return json.loads(json_match.group())
+    else:
+        return {'error': 'Could not parse response', 'raw': text[:200]}
 
 
-def classify_with_gemini(image_path, model_id):
-    """Classify with Google Gemini"""
-    import google.generativeai as genai
-
-    api_key = os.getenv('GOOGLE_API_KEY')
-    genai.configure(api_key=api_key)
-
-    model = genai.GenerativeModel(model_id)
-
+def classify_with_gemini(image_path, model_id, secondary_image_path=None):
+    """Classify with Google Gemini.
+    Sends both Frame A and Frame B (0.5s later) when available so the model
+    can describe animation direction and easing between the two frames.
+    """
+    from google import genai
+    from google.genai import types
+    import io
     from PIL import Image
-    img = Image.open(image_path)
 
-    response = model.generate_content([CLASSIFICATION_PROMPT, img])
+    client = genai.Client(api_key=os.getenv('GOOGLE_API_KEY'))
+
+    img = Image.open(image_path).convert('RGB')
+    buf = io.BytesIO()
+    img.save(buf, format='JPEG')
+    buf.seek(0)
+
+    contents = [
+        CLASSIFICATION_PROMPT,
+        types.Part.from_bytes(data=buf.read(), mime_type='image/jpeg')
+    ]
+
+    if secondary_image_path and Path(secondary_image_path).exists():
+        img2 = Image.open(secondary_image_path).convert('RGB')
+        buf2 = io.BytesIO()
+        img2.save(buf2, format='JPEG')
+        buf2.seek(0)
+        contents.append(types.Part.from_bytes(data=buf2.read(), mime_type='image/jpeg'))
+
+    response = client.models.generate_content(model=model_id, contents=contents)
 
     text = response.text.strip()
     json_match = re.search(r'\{.*\}', text, re.DOTALL)
@@ -335,6 +496,15 @@ def classify_with_gemini(image_path, model_id):
         return json.loads(json_match.group())
     else:
         return {'error': 'Could not parse response'}
+
+
+class FatalAPIError(Exception):
+    """Raised when the API returns an unrecoverable error (wrong model, bad key, etc.)"""
+    pass
+
+class QuotaExhaustedError(Exception):
+    """Raised when the daily quota is exhausted."""
+    pass
 
 
 def classify_keyframe(keyframe, model_name):
@@ -345,8 +515,11 @@ def classify_keyframe(keyframe, model_name):
     model_id = config['model_id']
 
     try:
+        secondary = keyframe.get('secondary_path')
         if provider == 'google':
-            result = classify_with_gemini(keyframe['path'], model_id)
+            result = classify_with_gemini(keyframe['path'], model_id, secondary)
+        elif provider == 'ollama':
+            result = classify_with_ollama(keyframe['path'], model_id, secondary)
         else:
             result = {'error': 'Provider not implemented'}
 
@@ -355,10 +528,26 @@ def classify_keyframe(keyframe, model_name):
         return result
 
     except Exception as e:
+        error_str = str(e)
+        # 429: distinguish RPM limit (retry) from daily quota (stop)
+        if '429' in error_str or 'RESOURCE_EXHAUSTED' in error_str:
+            # Daily quota has "limit: 0" or "per_day" in the message
+            if 'per_day' in error_str.lower() or 'limit: 0' in error_str or 'GenerateRequestsPerDay' in error_str:
+                raise QuotaExhaustedError(f"Daily quota exhausted: {error_str[:200]}")
+            # RPM limit — just sleep and return error so caller retries next frame
+            import re as _re
+            retry_match = _re.search(r'retryDelay.*?(\d+)s', error_str)
+            wait = int(retry_match.group(1)) + 2 if retry_match else 65
+            print(f"\n  ⏳ Rate limit hit — waiting {wait}s before continuing...")
+            time.sleep(wait)
+            return {'timestamp': keyframe['timestamp'], 'frame_index': keyframe['index'], 'error': f'rate_limited_retried'}
+        # Fatal errors: wrong model name, invalid API key, permission denied
+        if any(x in error_str for x in ['not found', '404', 'API_KEY', 'PERMISSION_DENIED']):
+            raise FatalAPIError(f"Fatal API error (not retrying): {error_str[:200]}")
         return {
             'timestamp': keyframe['timestamp'],
             'frame_index': keyframe['index'],
-            'error': str(e)
+            'error': error_str
         }
 
 
@@ -370,6 +559,8 @@ def classify_with_limit(keyframes, model_name, checkpoint, start_index=0):
 
     classified = []
     requests_made = 0
+    total = len(keyframes)
+    start_time = time.time()
 
     for i, kf in enumerate(keyframes):
         # Check if we hit today's limit
@@ -380,21 +571,53 @@ def classify_with_limit(keyframes, model_name, checkpoint, start_index=0):
             save_checkpoint(checkpoint)
             return classified, False  # Not complete
 
-        result = classify_keyframe(kf, model_name)
+        try:
+            result = classify_keyframe(kf, model_name)
+        except QuotaExhaustedError as e:
+            print(f"\n⏸️  Daily quota exhausted — stopping cleanly")
+            print(f"   Processed {i} frames this session")
+            print(f"   Run again tomorrow to continue")
+            save_checkpoint(checkpoint)
+            return classified, False
+        except FatalAPIError as e:
+            print(f"\n💀 FATAL ERROR — stopping immediately to protect quota")
+            print(f"   {e}")
+            save_checkpoint(checkpoint)
+            raise SystemExit(1)
+
         classified.append(result)
 
-        checkpoint['requests_today'] += 1
+        # Only count against quota if the request actually hit the API
+        if 'error' not in result or any(x in result.get('error', '') for x in ['quota', 'rate', 'limit']):
+            checkpoint['requests_today'] += 1
+
         checkpoint['current_frame_index'] = start_index + i + 1
         checkpoint['total_processed'] += 1
         requests_made += 1
 
+        # Live progress bar
+        elapsed = time.time() - start_time
+        fps = requests_made / elapsed if elapsed > 0 else 0
+        remaining = (total - i - 1) / fps if fps > 0 else 0
+        pct = (i + 1) / total * 100
+        bar_len = 30
+        filled = int(bar_len * (i + 1) / total)
+        bar = '█' * filled + '░' * (bar_len - filled)
+        eta_str = f"{int(remaining // 60)}m{int(remaining % 60)}s" if remaining > 0 else "done"
+        has_error = 'error' in result
+        status = '⚠' if has_error else '✓'
+        print(f"\r  {status} [{bar}] {pct:5.1f}% | {i+1}/{total} frames | {fps:.1f} fps | ETA: {eta_str}  ", end='', flush=True)
+
         # Save checkpoint every 100 frames
         if requests_made % 100 == 0:
-            print(f"    {requests_made} frames classified (checkpoint saved)")
+            print()  # newline before checkpoint message
+            print(f"    Checkpoint saved at frame {requests_made}")
             save_checkpoint(checkpoint)
 
-        # Rate limiting
-        time.sleep(0.05)  # ~20 req/sec
+        # Rate limiting for API models only
+        # Gemini 2.5 Flash free tier: 10 RPM = 1 request per 6 seconds
+        if config.get('daily_limit'):
+            time.sleep(6.5)  # ~9 req/min, safely under 10 RPM limit
 
     return classified, True  # Complete
 
@@ -436,16 +659,21 @@ def analyze_video_hybrid(video_id, base_dir, model, checkpoint, resume=False):
     cut_times = detect_cuts(video_file, threshold=0.3)
 
     # Step 2: Generate hybrid timestamps
+    # interval=30.0 means only sample every 30s within shots — cut points are always included.
+    # This reduces frame count by ~10x vs interval=2.0 while still capturing all scene transitions.
     print(f"\nStep 2: Generating hybrid timestamps...")
-    timestamps = generate_hybrid_timestamps(duration, cut_times, interval=2.0)
+    timestamps = generate_hybrid_timestamps(duration, cut_times, interval=30.0)
 
     # Determine start index (for resume)
     start_index = checkpoint.get('current_frame_index', 0) if resume else 0
 
-    # Step 3: Extract keyframes
+    # Step 3: Extract keyframes (primary Frame A + secondary Frame B per sample)
     print(f"\nStep 3: Extracting keyframes...")
     keyframes_dir = video_dir / 'hybrid_keyframes'
-    all_keyframes = extract_hybrid_keyframes(video_file, timestamps, keyframes_dir, start_index)
+    all_keyframes = extract_hybrid_keyframes(
+        video_file, timestamps, keyframes_dir, start_index,
+        cut_times=cut_times, duration=duration
+    )
 
     # Step 4: Load words
     print(f"\nStep 4: Loading word timeline...")
@@ -498,6 +726,7 @@ def analyze_video_hybrid(video_id, base_dir, model, checkpoint, resume=False):
         'model': model,
         'sample_count': len(timeline),
         'cut_count': len(cut_times),
+        'cut_timestamps': cut_times,   # stored for transition analysis in motion analyzer
         'complete': complete,
         'timeline': timeline,
         'metadata': metadata
@@ -639,8 +868,8 @@ Examples:
 
     args = parser.parse_args()
 
-    # Check API key
-    if not os.getenv('GOOGLE_API_KEY'):
+    # Check API key (only needed for Google models)
+    if MODELS[args.model]['provider'] == 'google' and not os.getenv('GOOGLE_API_KEY'):
         print("❌ GOOGLE_API_KEY not set")
         print("Get free key at: https://aistudio.google.com/app/apikey")
         print("Then run: export GOOGLE_API_KEY='your-key'")
@@ -648,12 +877,19 @@ Examples:
 
     # Check dependencies
     try:
-        import google.generativeai
         from PIL import Image
     except ImportError as e:
         print(f"❌ Missing dependency: {e}")
-        print("Install with: pip install google-generativeai pillow")
+        print("Install with: pip install pillow")
         sys.exit(1)
+
+    if MODELS[args.model]['provider'] == 'ollama':
+        import urllib.request
+        try:
+            urllib.request.urlopen('http://localhost:11434', timeout=3)
+        except Exception:
+            print("❌ Ollama is not running. Start it with: ollama serve")
+            sys.exit(1)
 
     # Run
     analyze_all_videos_checkpoint(args.base_dir, args.model, args.resume)

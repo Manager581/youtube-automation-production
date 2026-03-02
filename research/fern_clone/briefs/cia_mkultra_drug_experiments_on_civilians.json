@@ -1,0 +1,256 @@
+{
+  "query": "CIA MKUltra drug experiments on civilians",
+  "brand_id": "fern_clone",
+  "generated_at": "2026-03-01T08:24:16.531597",
+  "wikipedia": {
+    "title": "Montreal experiments",
+    "url": "https://en.wikipedia.org/wiki/Montreal_experiments",
+    "summary": "The Montreal experiments (officially MKULTRA Subproject 68) were a series of experiments, initially aimed to treat schizophrenia by changing memories and erasing the patients' thoughts using the Scottish psychiatrist Donald Ewen Cameron's method of \"psychic driving\", as well as drug-induced sleep, intensive electroconvulsive therapy, sensory deprivation and Thorazine. The experiments were conducted at the Allan Memorial Institute of McGill University in Montreal between 1957 and 1964 by Cameron and funded by the CIA as part of Project MKUltra, which lasted until 1973 and was only revealed to the public in 1975.\nThe patients of this experiment expected positive changes from Cameron's treatment. However, these patients suffered severely under conditions that were not in accordance with human rights. Not only the patients but also their families show long lasting effects on their mental health. Some of these symptoms include retrograde amnesia as well as impairments in everyday life abilities such as self-care.\nDetails of the experiments has been kept out of the public domain the CIA, by the destruction of files or by the use of non-disclosure agreements. Whether or not Cameron was aware that funding for his experiments was coming from the CIA is unclear; it has been argued that he would have carried out the exact same experiments if funding had come from a source without ulterior motives.",
+    "word_count": 219,
+    "sections": [
+      "Donald Ewen Cameron",
+      "Government Funding",
+      "Canadian Agencies",
+      "The CIA",
+      "Investigation",
+      "Treatment",
+      "Drug-induced sleep",
+      "Electroconvulsive therapy (ECT)",
+      "Sensory deprivation",
+      "Psychic driving",
+      "Subjects",
+      "Aftermath",
+      "Criticism",
+      "References"
+    ]
+  },
+  "news_coverage": [
+    {
+      "title": "The Top Secret Testimony of CIA’s MKULTRA Chief, 50 Years Later",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOa2pTYlVnbm5JQkgyTXBzSW1vamNxR0lwY1VlNUNzb2RXQVpsOXRlN1Z6NFluOW53b1FKRF9sRTFvMTJCRjNLZ2s0bkxjcFgxTFpYaFJBQzZOMlNvQnhQVFdqN0dwT091RUNyVE5weDEyeTNCaEZwZi1iMXNtMzFnS0h2S3VfZFJ0NFVVVDVJSW9NTFBZckh5MDFGQmp5M1lmSHk0SGRCa2FxT2hSYzRubFFLcGRVaEExbGVnT3p4Zl8?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOa2pTYlVnbm5JQkgyTXBzSW1vamNxR0lwY1VlNUNzb2RXQVpsOXRlN1Z6NFluOW53b1FKRF9sRTFvMTJCRjNLZ2s0bkxjcFgxTFpYaFJBQzZOMlNvQnhQVFdqN0dwT091RUNyVE5",
+      "pub_date": "Thu, 30 Oct 2025 07:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "At 16, I was experimented on by the CIA and now I'm suing",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yaDBLVGYxNVVrT2pYS1VOajlBd01UeDl2MkxVRVNCQjZoMUZsTUpKX18wOEZhY1NBeTItU0NTdDJXZXNtZnBlQTJIRWFrX1Zqel92T3pCTkpBUQ?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yaDBLVGYxNVVrT2pYS1VOajlBd01UeDl2MkxVRVNCQjZoMUZsTUpKX18wOEZhY1NBeTItU0NTdDJXZXNtZnBlQTJIRWFrX1Zqel92T3pCTkpBUQ?oc=5\" target=\"_blank\"&gt",
+      "pub_date": "Fri, 14 Nov 2025 08:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "Project Artichoke: 70 Years Later – The CIA, Mind-Control Drugs &amp; Vaccines",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNalRfcjdxVDBaNE5LcnQ5akcyZGtRdndLejZlalVCUktFNnB4WVAzNEFJandrVHhBZy1oUHRJODFYQXdTNlk4R2NOQVFobWRta1dQRDdzdldOSHhzY3lYOU5oU3RGUFVZVXpWQmVteXZZa1RPU0o1MTdfbk52Nlg4b2wya1JDMU00XzhSS3BXWTRwaGMyZ2oyY0wzSkotZw?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNalRfcjdxVDBaNE5LcnQ5akcyZGtRdndLejZlalVCUktFNnB4WVAzNEFJandrVHhBZy1oUHRJODFYQXdTNlk4R2NOQVFobWRta1dQRDdzdldOSHhzY3lYOU5oU3RGUFVZVXpWQmV",
+      "pub_date": "Thu, 26 Feb 2026 16:56:35 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "How a Government Mind Control Experiment Backfired",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSG5pbUtuZ21BcnVMdHRVckFIUVFQU3Rrc2tiSUdPQkpXTnNSQ1hhY0xkcFFmb1NVajJPWlE1eFNOdkthelBNZWVMb25nUWFoWEY3V2RlMnZ1WHFBeU1LSkxURzExck5qa1BHSVVQa0lMMXMwSWxpbDRQNmt0eTlSMThiaDVTc2hjNXZydHl2X1d1RTg?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSG5pbUtuZ21BcnVMdHRVckFIUVFQU3Rrc2tiSUdPQkpXTnNSQ1hhY0xkcFFmb1NVajJPWlE1eFNOdkthelBNZWVMb25nUWFoWEY3V2RlMnZ1WHFBeU1LSkxURzExck5qa1BHSVV",
+      "pub_date": "Wed, 16 Jul 2025 07:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "How malleable are our brains to suggestion and under what circumstances?",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTW51eUdHMHhET2FvcTluU2NiZmNsckw0bGlCaFJOcmoyNThQaG9HVmhnU3lpRnoxNFVhRmFzbXhubVdzanpVdjRPVEdXNnhiaDVfSzV3VmpwX2lSRDB3T1JkcnlpZnhIZWswTjZzWHV2elN0Z1lDLUZwSXlER1Jmb2xmRU11RFNWbDdsQ3g0M0NCdEZxYkpZSGRSY1FCR0lRbUdHLWZaYlZhODJURmxPQUZONkplTk4tejJxTUNXQk82MGfSAcgBQVVfeXFMUC00Sjd6eXhmZDJRaWVka3RQZk9XMDI5TUtvNEdEMngzbWM3LWZCVk55YjFWZTNGYWNiRVVLUUk5aUhnb1JQOWtuZThGNjVfN1ZnbDNyVmpETldsMkJDOHdFWVNBV3EwTlNVNEowMFdSRjBEYTNoZUNsWHQwRVZhcGNJeVcxRFJreFh3RTFsbV9aTjd1WkJoS1dvZ2lFbUIxT0NQUDBIUVN5aWVFandmdHBWYV8yN0xlVzZWSkFOTFRxeWQta0MzcU4?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTW51eUdHMHhET2FvcTluU2NiZmNsckw0bGlCaFJOcmoyNThQaG9HVmhnU3lpRnoxNFVhRmFzbXhubVdzanpVdjRPVEdXNnhiaDVfSzV3VmpwX2lSRDB3T1JkcnlpZnhIZWswTjZ",
+      "pub_date": "Fri, 25 Apr 2025 07:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "The CIA's Appalling Human Experiments With Mind Control - History.com",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOOXdDSDVJWWxURXNkVmo2N3ZtQy16RF9NN00zYUhybGtyaEt3YVVjVUVDR2lfMnBMMGlqbWd5ckpaODFseWtpQUp5bmNncUkzRDlqN0VweFloZUlNUzVHSktWMnpmY2o2Xy1tMjctbmhrNkRwb1d6NmNKYTlBLWoyeWdfcw?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOOXdDSDVJWWxURXNkVmo2N3ZtQy16RF9NN00zYUhybGtyaEt3YVVjVUVDR2lfMnBMMGlqbWd5ckpaODFseWtpQUp5bmNncUkzRDlqN0VweFloZUlNUzVHSktWMnpmY2o2Xy1tMjc",
+      "pub_date": "Wed, 01 Nov 2017 13:39:20 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "What Was Project MKUltra? Inside the CIA's Mind Control Experiments That May Have Involved Charles Manson - People.com",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5mYUlWLWwyby1QUExxbDE3WnU2a2pibWFGREZxX3RqODVsdHV4bUdTMzl6VE90RzdjM1VzUzdkazJnOUNhcjdFYk9EanM0bHQ1aU9WY3JESnVUbWJFM0pMc0d2cGFvNmIzaFBMTkVlRTdncWs?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE5mYUlWLWwyby1QUExxbDE3WnU2a2pibWFGREZxX3RqODVsdHV4bUdTMzl6VE90RzdjM1VzUzdkazJnOUNhcjdFYk9EanM0bHQ1aU9WY3JESnVUbWJFM0pMc0d2cGFvNmIzaFBMTkV",
+      "pub_date": "Sat, 08 Mar 2025 08:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "Secret CIA Document Shows Plan to Test Drugs on Prisoners",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeEVSV1phallFM1dsY0NqOENQeEt5YWs3Z0lxMG1HNEpNSlROc3Z0OHI2clRJSkExOFhCTWlsa3BwcmVCWlNXT2UxaUd4TXNGRm5rMG81cTF1ejl4elJBSFpvVVV3c0ZoNV9aYThRSWw3SXEwWjZaVi1IVUNfMjV0RnlDYlZOOVY5cVRlUlk4dFVTamQzNm8xN1ZRdw?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQeEVSV1phallFM1dsY0NqOENQeEt5YWs3Z0lxMG1HNEpNSlROc3Z0OHI2clRJSkExOFhCTWlsa3BwcmVCWlNXT2UxaUd4TXNGRm5rMG81cTF1ejl4elJBSFpvVVV3c0ZoNV9aYTh",
+      "pub_date": "Tue, 13 Nov 2018 08:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "The True Story of MK-Ultra and the CIA Mad Scientist",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLWNUbjBoaGxqTmhSLXlleXdLZUFRc3d3MVZ3NzhadlE2Y2J3UnVlZWVWNmZWWDZuZzZ6N2YtZ3p5bGZkbWpZMkFaaG5Wejlvajk5bjJObkFFeEhFb0d5ZUhrZlgtcEo1UlA3dEl6Tk5hS3FGMnhKdlNYRmhlaW53MHNXQQ?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOLWNUbjBoaGxqTmhSLXlleXdLZUFRc3d3MVZ3NzhadlE2Y2J3UnVlZWVWNmZWWDZuZzZ6N2YtZ3p5bGZkbWpZMkFaaG5Wejlvajk5bjJObkFFeEhFb0d5ZUhrZlgtcEo1UlA3dEl",
+      "pub_date": "Fri, 09 Oct 2020 07:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "CIA Behavior Control Experiments Focus of New Scholarly Collection",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdlRNUldnbVNlSVRmcnhyNTNZRkRha3pLQlA0YmppTndYb3NnaWlGVkd1eS03VE5pNnlrcFduNFhTVXdUTjhRSnY3bzhBLUFJNjUwVDVsMnFRNUc1aW5MN2RwNDlhWkFCOVJLenBoNVlmVFlmM3JsLXVVMjZpLXlqSGxIT2lwTFhrcVlnVWJ1NW1XVkNLTjljOVFkRHhDbUhLWkw0SndtUFBIdGNJVXdzLVNtbzFPcmlUWnBGYVNB?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOdlRNUldnbVNlSVRmcnhyNTNZRkRha3pLQlA0YmppTndYb3NnaWlGVkd1eS03VE5pNnlrcFduNFhTVXdUTjhRSnY3bzhBLUFJNjUwVDVsMnFRNUc1aW5MN2RwNDlhWkFCOVJLenB",
+      "pub_date": "Mon, 23 Dec 2024 08:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "At 16, I was experimented on by the CIA and now I'm suing",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yaDBLVGYxNVVrT2pYS1VOajlBd01UeDl2MkxVRVNCQjZoMUZsTUpKX18wOEZhY1NBeTItU0NTdDJXZXNtZnBlQTJIRWFrX1Zqel92T3pCTkpBUQ?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yaDBLVGYxNVVrT2pYS1VOajlBd01UeDl2MkxVRVNCQjZoMUZsTUpKX18wOEZhY1NBeTItU0NTdDJXZXNtZnBlQTJIRWFrX1Zqel92T3pCTkpBUQ?oc=5\" target=\"_blank\"&gt",
+      "pub_date": "Fri, 14 Nov 2025 08:00:00 GMT",
+      "source": "google_news"
+    },
+    {
+      "title": "Victims of CIA-linked Montreal brainwashing experiments cleared to sue in class action",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQaHIxNW1WVFVIS216OWR2dXJibzB5ZFNmOUJFTm1yUEFMdkZIT3NFUndxa1FJSHVUak56VlBfdDN3STNGd3ZLMmQyVHd1eGtYVmljeXZrSVJNNkp3eDVGOC1POVcwVXIwQkZHR0s2Y3h3VDI4ZE54T0ZqY2pYcVJHbW9xcWU0aGJENGtFaHBRc3FBdUlCemt3c1g0dzRwTEp0RFFfR0JKWQ?oc=5",
+      "snippet": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQaHIxNW1WVFVIS216OWR2dXJibzB5ZFNmOUJFTm1yUEFMdkZIT3NFUndxa1FJSHVUak56VlBfdDN3STNGd3ZLMmQyVHd1eGtYVmljeXZrSVJNNkp3eDVGOC1POVcwVXIwQkZHR0s",
+      "pub_date": "Fri, 01 Aug 2025 07:00:00 GMT",
+      "source": "google_news"
+    }
+  ],
+  "entities": {
+    "people_orgs": [
+      "The Montreal",
+      "Donald Ewen Cameron",
+      "Allan Memorial Institute"
+    ],
+    "agencies": [
+      "CIA"
+    ],
+    "countries": [],
+    "years": [
+      "1957",
+      "1964",
+      "1973",
+      "1975"
+    ]
+  },
+  "footage_leads": [
+    {
+      "type": "youtube_news",
+      "query": "CIA CIA MKUltra drug experiments on civilian",
+      "channels": [
+        "Reuters",
+        "AP Archive",
+        "C-SPAN"
+      ],
+      "notes": "Look for CIA press conferences, hearings, statements"
+    },
+    {
+      "type": "internet_archive",
+      "query": "CIA MKUltra drug experiments on civilians",
+      "url": "https://archive.org/search?query=CIA%20MKUltra%20drug%20experiments%20on%20civilians&mediatype=movies",
+      "notes": "Archival footage, old news broadcasts, government videos"
+    },
+    {
+      "type": "internet_archive_news",
+      "query": "CIA MKUltra drug experiments on civilian 1964",
+      "url": "https://archive.org/search?query=CIA%20MKUltra%20drug%20experiments%20on%20civilian%201964&mediatype=movies&and[]=year%3A1964",
+      "notes": "News footage from 1964"
+    },
+    {
+      "type": "internet_archive_news",
+      "query": "CIA MKUltra drug experiments on civilian 1973",
+      "url": "https://archive.org/search?query=CIA%20MKUltra%20drug%20experiments%20on%20civilian%201973&mediatype=movies&and[]=year%3A1973",
+      "notes": "News footage from 1973"
+    },
+    {
+      "type": "internet_archive_news",
+      "query": "CIA MKUltra drug experiments on civilian 1975",
+      "url": "https://archive.org/search?query=CIA%20MKUltra%20drug%20experiments%20on%20civilian%201975&mediatype=movies&and[]=year%3A1975",
+      "notes": "News footage from 1975"
+    },
+    {
+      "type": "wikimedia_commons",
+      "query": "CIA MKUltra drug experiments on civilians",
+      "url": "https://commons.wikimedia.org/w/index.php?search=CIA%20MKUltra%20drug%20experiments%20on%20civilians&title=Special:MediaSearch&type=video",
+      "notes": "Public domain photos and videos"
+    }
+  ],
+  "curiosity_gaps": [],
+  "fern_fit": {
+    "institutions_found": [
+      "CIA",
+      "UN"
+    ],
+    "themes_found": [],
+    "has_human_angle": true,
+    "has_institutional_angle": true,
+    "suggested_angle": "INSTITUTION_HOW",
+    "suggested_template": "How [Institution] [Shocking Action/Method]",
+    "fern_fit_score": 7
+  },
+  "script_seed": {
+    "hook_options": [
+      {
+        "type": "reveal",
+        "text": "[SHOCKING FACT]. This is the story of CIA MKUltra drug experiments on civilians.",
+        "note": "Open on the most disturbing fact, then pull back to explain how we got here"
+      },
+      {
+        "type": "date_anchor",
+        "text": "In 1957, [PERSON/EVENT] [DID SOMETHING THAT CHANGED EVERYTHING]. What happened next was never supposed to come out.",
+        "note": "Lock the viewer in a specific moment in time — creates urgency"
+      },
+      {
+        "type": "institution",
+        "text": "The CIA has a problem. A problem they spent [X years] trying to make sure you'd never find out about.",
+        "note": "Opens with institutional credibility + conspiracy of silence = immediate tension"
+      }
+    ],
+    "key_facts": [
+      "The experiments were conducted at the Allan Memorial Institute of McGill University in Montreal between 1957 and 1964 by Cameron and funded by the CIA as part of Project MKUltra, which lasted until 1973 and was only revealed to the public in 1975.",
+      "The patients of this experiment expected positive changes from Cameron's treatment.",
+      "However, these patients suffered severely under conditions that were not in accordance with human rights.",
+      "Not only the patients but also their families show long lasting effects on their mental health.",
+      "Some of these symptoms include retrograde amnesia as well as impairments in everyday life abilities such as self-care.",
+      "Details of the experiments has been kept out of the public domain the CIA, by the destruction of files or by the use of non-disclosure agreements.",
+      "Whether or not Cameron was aware that funding for his experiments was coming from the CIA is unclear; it has been argued that he would have carried out the exact same experiments if funding had come from a source without ulterior motives."
+    ],
+    "open_questions": [],
+    "suggested_structure": [
+      {
+        "segment": "HOOK",
+        "duration_min": 2,
+        "purpose": "Plant the central mystery. Do NOT explain yet."
+      },
+      {
+        "segment": "ORIGIN",
+        "duration_min": 4,
+        "purpose": "Who/what is at the center. Context for 1957.",
+        "wiki_section": "Donald Ewen Cameron"
+      },
+      {
+        "segment": "ESCALATION_1",
+        "duration_min": 5,
+        "purpose": "First major revelation. Raise the stakes.",
+        "wiki_section": "Government Funding"
+      },
+      {
+        "segment": "MIDPOINT_TWIST",
+        "duration_min": 3,
+        "purpose": "The story turns — what the audience assumed was wrong.",
+        "wiki_section": "Canadian Agencies"
+      },
+      {
+        "segment": "ESCALATION_2",
+        "duration_min": 5,
+        "purpose": "Deepest point of the story. Darkest moment.",
+        "wiki_section": "The CIA"
+      },
+      {
+        "segment": "RESOLUTION",
+        "duration_min": 4,
+        "purpose": "How it ended / what we know now. Leave some threads open.",
+        "wiki_section": "Investigation"
+      },
+      {
+        "segment": "CODA",
+        "duration_min": 2,
+        "purpose": "Bigger implication. Why this matters TODAY. Next curiosity gap."
+      }
+    ]
+  }
+}

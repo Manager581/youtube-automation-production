@@ -234,7 +234,7 @@ def correlate_cuts_with_script(cut_times, transcript_data, curiosity_gaps, hooks
 # MAIN ANALYZER
 # ============================================================================
 
-def analyze_video_visuals(video_id, base_dir='/home/user/youtube-automation'):
+def analyze_video_visuals(video_id, base_dir='.'):
     """Run complete visual analysis on a Fern video"""
 
     base_path = Path(base_dir)
@@ -347,7 +347,7 @@ def analyze_video_visuals(video_id, base_dir='/home/user/youtube-automation'):
     return result
 
 
-def analyze_all_videos(base_dir='/home/user/youtube-automation'):
+def analyze_all_videos(base_dir='.'):
     """Analyze all Fern videos that have video.mp4 files"""
 
     base_path = Path(base_dir)

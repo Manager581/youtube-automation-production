@@ -1,0 +1,367 @@
+{
+  "videos": {
+    "Trump_Assassination": {
+      "total_analyzed_sec": 300,
+      "summary": {
+        "total_events": 45,
+        "events_per_min": 9.0,
+        "avg_gap_sec": 6.0,
+        "type_distribution": {
+          "sustain_mid": 35,
+          "riser": 10
+        }
+      },
+      "music": null,
+      "sample_events": [
+        {
+          "time_sec": 7.92,
+          "energy_db": -31.2,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 18.41,
+          "energy_db": -14.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 19.25,
+          "energy_db": -23.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 19.97,
+          "energy_db": -24.4,
+          "type": "riser"
+        },
+        {
+          "time_sec": 20.13,
+          "energy_db": -24.2,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 22.76,
+          "energy_db": -28.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 22.87,
+          "energy_db": -28.9,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 23.17,
+          "energy_db": -32.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 23.34,
+          "energy_db": -33.9,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 23.64,
+          "energy_db": -32.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 41.98,
+          "energy_db": -21.4,
+          "type": "riser"
+        },
+        {
+          "time_sec": 42.28,
+          "energy_db": -14.8,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 42.35,
+          "energy_db": -16.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 42.47,
+          "energy_db": -4.6,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 42.59,
+          "energy_db": -8.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 43.03,
+          "energy_db": -7.2,
+          "type": "riser"
+        },
+        {
+          "time_sec": 76.42,
+          "energy_db": -32.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 98.45,
+          "energy_db": -34.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 101.68,
+          "energy_db": -32.6,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 102.17,
+          "energy_db": -33.7,
+          "type": "riser"
+        },
+        {
+          "time_sec": 132.21,
+          "energy_db": -30.8,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 159.8,
+          "energy_db": -30.5,
+          "type": "riser"
+        },
+        {
+          "time_sec": 159.96,
+          "energy_db": -31.3,
+          "type": "riser"
+        },
+        {
+          "time_sec": 163.24,
+          "energy_db": -30.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 167.62,
+          "energy_db": -33.5,
+          "type": "riser"
+        },
+        {
+          "time_sec": 177.28,
+          "energy_db": -31.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 181.79,
+          "energy_db": -30.9,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 186.02,
+          "energy_db": -31.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 187.04,
+          "energy_db": -29.2,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 188.73,
+          "energy_db": -27.1,
+          "type": "sustain_mid"
+        }
+      ]
+    },
+    "FBI_KKK": {
+      "total_analyzed_sec": 300,
+      "summary": {
+        "total_events": 76,
+        "events_per_min": 15.2,
+        "avg_gap_sec": 3.6,
+        "type_distribution": {
+          "sustain_mid": 61,
+          "riser": 9,
+          "sustain_low": 4,
+          "impact_bright": 1,
+          "whoosh": 1
+        }
+      },
+      "music": null,
+      "sample_events": [
+        {
+          "time_sec": 11.84,
+          "energy_db": -31.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 13.72,
+          "energy_db": -21.8,
+          "type": "sustain_low"
+        },
+        {
+          "time_sec": 20.85,
+          "energy_db": -32.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 36.85,
+          "energy_db": -31.6,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 42.21,
+          "energy_db": -28.3,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 43.49,
+          "energy_db": -30.9,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 46.14,
+          "energy_db": -31.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 49.13,
+          "energy_db": -33.6,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 51.39,
+          "energy_db": -28.8,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 51.57,
+          "energy_db": -30.9,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 51.85,
+          "energy_db": -31.1,
+          "type": "riser"
+        },
+        {
+          "time_sec": 62.04,
+          "energy_db": -33.4,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 76.81,
+          "energy_db": -29.7,
+          "type": "riser"
+        },
+        {
+          "time_sec": 81.04,
+          "energy_db": -34.4,
+          "type": "impact_bright"
+        },
+        {
+          "time_sec": 81.22,
+          "energy_db": -32.5,
+          "type": "whoosh"
+        },
+        {
+          "time_sec": 81.78,
+          "energy_db": -29.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 88.96,
+          "energy_db": -28.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 89.79,
+          "energy_db": -24.2,
+          "type": "riser"
+        },
+        {
+          "time_sec": 91.12,
+          "energy_db": -32.8,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 91.93,
+          "energy_db": -28.3,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 92.16,
+          "energy_db": -26.8,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 92.58,
+          "energy_db": -20.6,
+          "type": "sustain_low"
+        },
+        {
+          "time_sec": 93.55,
+          "energy_db": -30.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 96.39,
+          "energy_db": -5.1,
+          "type": "riser"
+        },
+        {
+          "time_sec": 97.85,
+          "energy_db": -3.7,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 99.38,
+          "energy_db": -5.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 100.12,
+          "energy_db": -8.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 100.94,
+          "energy_db": -3.5,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 101.73,
+          "energy_db": -6.9,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 102.49,
+          "energy_db": -9.7,
+          "type": "sustain_mid"
+        }
+      ]
+    },
+    "Unabomber": {
+      "total_analyzed_sec": 300,
+      "summary": {
+        "total_events": 3,
+        "events_per_min": 0.6,
+        "avg_gap_sec": 9.1,
+        "type_distribution": {
+          "impact_bright": 2,
+          "sustain_mid": 1
+        }
+      },
+      "music": null,
+      "sample_events": [
+        {
+          "time_sec": 166.97,
+          "energy_db": -27.1,
+          "type": "sustain_mid"
+        },
+        {
+          "time_sec": 182.88,
+          "energy_db": -33.3,
+          "type": "impact_bright"
+        },
+        {
+          "time_sec": 185.25,
+          "energy_db": -33.0,
+          "type": "impact_bright"
+        }
+      ]
+    }
+  }
+}

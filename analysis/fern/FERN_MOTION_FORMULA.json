@@ -1,0 +1,238 @@
+{
+  "videos_analyzed": 3,
+  "per_video": [
+    {
+      "video": "analysis/fern/aVA7aXOH1pk/video.mp4",
+      "video_id": "aVA7aXOH1pk",
+      "duration_sec": 371.4,
+      "cut_dynamics": {
+        "total_cuts": 64,
+        "cuts_per_minute": 10.3,
+        "avg_segment_duration_sec": 5.8,
+        "segment_duration_distribution": {
+          "under_1s": 44.8,
+          "1_to_3s": 35.2,
+          "3_to_6s": 1.6,
+          "over_6s": 18.4
+        }
+      },
+      "motion": {
+        "distribution_pct": {
+          "zoom_in": 28.0,
+          "zoom_out": 25.6,
+          "static": 25.6,
+          "pan_up": 9.6,
+          "pan_down": 6.4,
+          "indeterminate": 3.2,
+          "pan_left": 0.8,
+          "pan_right": 0.8
+        },
+        "zoom_in_pct": 28.0,
+        "zoom_out_pct": 25.6,
+        "pan_pct": 17.6,
+        "static_pct": 25.6,
+        "avg_zoom_rate_pct_per_sec": 5.837,
+        "zoom_in_rate_pct_per_sec": 5.054,
+        "zoom_out_rate_pct_per_sec": 6.694,
+        "interpretation": "aggressive_motion (5\u201310%/s \u2014 high energy)"
+      },
+      "color_grade_intensity": {
+        "saturation": 0.183,
+        "brightness": 0.538,
+        "contrast": 0.189,
+        "black_crush_pct": 13.024,
+        "highlight_clip_pct": 11.708
+      },
+      "content_motion": {
+        "avg_total_motion_energy_pct": 0.291,
+        "motion_source_distribution": {
+          "camera_only": 40.8,
+          "both": 30.4,
+          "neither": 24.8,
+          "subject_only": 4.0
+        },
+        "subject_motion_in_static_shots_pct": 15.6,
+        "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+      },
+      "transition_types": {
+        "_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"
+      },
+      "beat_sync": {
+        "beat_sync_pct": 42.2,
+        "avg_offset_ms": 120.1,
+        "beat_interval_sec": 0.517,
+        "total_cuts": 135
+      }
+    },
+    {
+      "video": "analysis/fern/wLFY_Zu_O08/video.mp4",
+      "video_id": "wLFY_Zu_O08",
+      "duration_sec": 2464.1,
+      "cut_dynamics": {
+        "total_cuts": 513,
+        "cuts_per_minute": 12.5,
+        "avg_segment_duration_sec": 4.8,
+        "segment_duration_distribution": {
+          "under_1s": 51.0,
+          "1_to_3s": 33.3,
+          "3_to_6s": 1.5,
+          "over_6s": 14.1
+        }
+      },
+      "motion": {
+        "distribution_pct": {
+          "zoom_in": 38.9,
+          "static": 25.8,
+          "zoom_out": 20.7,
+          "pan_up": 6.1,
+          "pan_down": 3.5,
+          "pan_right": 2.5,
+          "indeterminate": 1.5,
+          "pan_left": 1.0
+        },
+        "zoom_in_pct": 38.9,
+        "zoom_out_pct": 20.7,
+        "pan_pct": 13.1,
+        "static_pct": 25.8,
+        "avg_zoom_rate_pct_per_sec": 4.428,
+        "zoom_in_rate_pct_per_sec": 4.619,
+        "zoom_out_rate_pct_per_sec": 4.069,
+        "interpretation": "moderate_motion (2\u20135%/s \u2014 modern YouTube doc)"
+      },
+      "color_grade_intensity": {
+        "saturation": 0.287,
+        "brightness": 0.24,
+        "contrast": 0.183,
+        "black_crush_pct": 37.292,
+        "highlight_clip_pct": 1.465
+      },
+      "content_motion": {
+        "avg_total_motion_energy_pct": 0.169,
+        "motion_source_distribution": {
+          "camera_only": 57.6,
+          "neither": 26.3,
+          "both": 15.2,
+          "subject_only": 1.0
+        },
+        "subject_motion_in_static_shots_pct": 0.0,
+        "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+      },
+      "transition_types": {
+        "_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"
+      },
+      "beat_sync": {
+        "beat_sync_pct": 37.8,
+        "avg_offset_ms": 129.9,
+        "beat_interval_sec": 0.517,
+        "total_cuts": 1030
+      }
+    },
+    {
+      "video": "analysis/fern/wkVygetgeRY/video.mp4",
+      "video_id": "wkVygetgeRY",
+      "duration_sec": 1689.4,
+      "cut_dynamics": {
+        "total_cuts": 314,
+        "cuts_per_minute": 11.2,
+        "avg_segment_duration_sec": 5.38,
+        "segment_duration_distribution": {
+          "under_1s": 50.9,
+          "1_to_3s": 37.2,
+          "3_to_6s": 0.9,
+          "over_6s": 11.0
+        }
+      },
+      "motion": {
+        "distribution_pct": {
+          "zoom_in": 42.7,
+          "zoom_out": 24.8,
+          "static": 8.7,
+          "pan_up": 6.9,
+          "indeterminate": 6.4,
+          "pan_down": 5.0,
+          "pan_right": 3.2,
+          "pan_left": 2.3
+        },
+        "zoom_in_pct": 42.7,
+        "zoom_out_pct": 24.8,
+        "pan_pct": 17.4,
+        "static_pct": 8.7,
+        "avg_zoom_rate_pct_per_sec": 5.819,
+        "zoom_in_rate_pct_per_sec": 6.696,
+        "zoom_out_rate_pct_per_sec": 4.308,
+        "interpretation": "aggressive_motion (5\u201310%/s \u2014 high energy)"
+      },
+      "color_grade_intensity": {
+        "saturation": 0.261,
+        "brightness": 0.326,
+        "contrast": 0.191,
+        "black_crush_pct": 23.648,
+        "highlight_clip_pct": 2.542
+      },
+      "content_motion": {
+        "avg_total_motion_energy_pct": 0.279,
+        "motion_source_distribution": {
+          "camera_only": 62.8,
+          "both": 22.0,
+          "neither": 11.5,
+          "subject_only": 3.7
+        },
+        "subject_motion_in_static_shots_pct": 10.5,
+        "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+      },
+      "transition_types": {
+        "_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"
+      },
+      "beat_sync": {
+        "beat_sync_pct": 37.3,
+        "avg_offset_ms": 130.4,
+        "beat_interval_sec": 0.517,
+        "total_cuts": 673
+      }
+    }
+  ],
+  "PRODUCTION_SPEC": {
+    "_comment": "Use these values when building video_assembler.py",
+    "ken_burns": {
+      "zoom_in_rate_pct_per_sec": 5.456,
+      "zoom_out_rate_pct_per_sec": 5.024,
+      "avg_zoom_rate_pct_per_sec": 5.361,
+      "zoom_in_pct": 36.533,
+      "zoom_out_pct": 23.7,
+      "static_pct": 20.033,
+      "interpretation": "aggressive_motion (5\u201310%/s \u2014 high energy)"
+    },
+    "cut_timing": {
+      "cuts_per_minute": 11.333,
+      "avg_segment_duration_sec": 5.327
+    },
+    "beat_sync": {
+      "tight_sync_pct": 39.1,
+      "avg_offset_ms": 126.8
+    },
+    "color_grade": {
+      "saturation": 0.244,
+      "brightness": 0.368,
+      "contrast": 0.188,
+      "black_crush_pct": 24.655,
+      "highlight_clip_pct": 5.238
+    },
+    "content_motion": {
+      "_comment": "Optical flow captures subject motion (fire, insects, water) missed by camera tracking",
+      "avg_total_motion_energy_pct": 0.246,
+      "subject_motion_in_static_shots_pct": 8.7,
+      "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+    },
+    "transition_types": {
+      "_comment": "How shots connect \u2014 hard_cut dominant in fast-paced docs, dissolve/fade for emotional moments",
+      "_note": "Requires cut_timestamps in timeline JSON. Re-run hybrid analyzer, then this script.",
+      "distribution": {
+        "hard_cut": 0,
+        "dissolve": 0,
+        "fade_to_black": 0,
+        "fade_from_black": 0,
+        "whip_pan": 0
+      }
+    }
+  }
+}

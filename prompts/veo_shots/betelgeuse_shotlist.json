@@ -1,0 +1,1449 @@
+{
+  "script_file": "scripts/drafts/betelgeuse.md",
+  "generated_at": "2025-12-19T08:32:59.077924",
+  "total_shots": 144,
+  "target_duration": 1152,
+  "shots": [
+    {
+      "shot_number": 1,
+      "timestamp": "~0s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_001.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 2,
+      "timestamp": "~8s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_002.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 3,
+      "timestamp": "~16s",
+      "duration": 8,
+      "veo_prompt": "Deep space starfield with distant galaxies, slow camera movement, 4K astrophotography style",
+      "original_cue": "Space B-Roll",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_003.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 4,
+      "timestamp": "~24s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_004.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 5,
+      "timestamp": "~32s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_005.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 6,
+      "timestamp": "~40s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of massive red supergiant star, enormous scale, glowing red atmosphere, slow rotation, photorealistic space rendering",
+      "original_cue": "Red Supergiant",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_006.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 7,
+      "timestamp": "~48s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_007.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 8,
+      "timestamp": "~56s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_008.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 9,
+      "timestamp": "~64s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_009.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 10,
+      "timestamp": "~72s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_010.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 11,
+      "timestamp": "~80s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_011.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 12,
+      "timestamp": "~88s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of massive red supergiant star, enormous scale, glowing red atmosphere, slow rotation, photorealistic space rendering",
+      "original_cue": "Red Supergiant",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_012.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 13,
+      "timestamp": "~96s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_013.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 14,
+      "timestamp": "~104s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_014.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 15,
+      "timestamp": "~112s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_015.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 16,
+      "timestamp": "~120s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_016.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 17,
+      "timestamp": "~128s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_017.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 18,
+      "timestamp": "~136s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_018.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 19,
+      "timestamp": "~144s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_019.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 20,
+      "timestamp": "~152s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_020.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 21,
+      "timestamp": "~160s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_021.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 22,
+      "timestamp": "~168s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_022.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 23,
+      "timestamp": "~176s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_023.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 24,
+      "timestamp": "~184s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_024.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 25,
+      "timestamp": "~192s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_025.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 26,
+      "timestamp": "~200s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_026.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 27,
+      "timestamp": "~208s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_027.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 28,
+      "timestamp": "~216s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_028.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 29,
+      "timestamp": "~224s",
+      "duration": 8,
+      "veo_prompt": "Cinematic shot of our Sun from space, surface detail visible, solar prominences, dramatic lighting",
+      "original_cue": "Sun",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_029.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 30,
+      "timestamp": "~232s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_030.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 31,
+      "timestamp": "~240s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_031.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 32,
+      "timestamp": "~248s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_032.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 33,
+      "timestamp": "~256s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_033.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 34,
+      "timestamp": "~264s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_034.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 35,
+      "timestamp": "~272s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of Orion constellation against starfield, Betelgeuse glowing red at shoulder position, constellat lines visible, night sky astronomy",
+      "original_cue": "Orion",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_035.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 36,
+      "timestamp": "~280s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_036.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 37,
+      "timestamp": "~288s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_037.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 38,
+      "timestamp": "~296s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_038.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 39,
+      "timestamp": "~304s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_039.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 40,
+      "timestamp": "~312s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_040.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 41,
+      "timestamp": "~320s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_041.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 42,
+      "timestamp": "~328s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_042.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 43,
+      "timestamp": "~336s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_043.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 44,
+      "timestamp": "~344s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_044.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 45,
+      "timestamp": "~352s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_045.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 46,
+      "timestamp": "~360s",
+      "duration": 8,
+      "veo_prompt": "Cinematic shot of our Sun from space, surface detail visible, solar prominences, dramatic lighting",
+      "original_cue": "Sun",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_046.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 47,
+      "timestamp": "~368s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_047.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 48,
+      "timestamp": "~376s",
+      "duration": 8,
+      "veo_prompt": "Time-lapse of Betelgeuse dimming, star fading from bright to dim, comparison over time, documentary style",
+      "original_cue": "Dimming",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_048.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 49,
+      "timestamp": "~384s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_049.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 50,
+      "timestamp": "~392s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_050.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 51,
+      "timestamp": "~400s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_051.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 52,
+      "timestamp": "~408s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_052.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 53,
+      "timestamp": "~416s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_053.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 54,
+      "timestamp": "~424s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_054.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 55,
+      "timestamp": "~432s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_055.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 56,
+      "timestamp": "~440s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_056.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 57,
+      "timestamp": "~448s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_057.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 58,
+      "timestamp": "~456s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_058.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 59,
+      "timestamp": "~464s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_059.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 60,
+      "timestamp": "~472s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_060.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 61,
+      "timestamp": "~480s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_061.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 62,
+      "timestamp": "~488s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_062.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 63,
+      "timestamp": "~496s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_063.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 64,
+      "timestamp": "~504s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_064.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 65,
+      "timestamp": "~512s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_065.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 66,
+      "timestamp": "~520s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_066.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 67,
+      "timestamp": "~528s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_067.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 68,
+      "timestamp": "~536s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_068.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 69,
+      "timestamp": "~544s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_069.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 70,
+      "timestamp": "~552s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_070.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 71,
+      "timestamp": "~560s",
+      "duration": 8,
+      "veo_prompt": "Close-up of small blue-white companion star near massive red supergiant, size comparison, dramatic scale difference",
+      "original_cue": "Betelbuddy",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_071.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 72,
+      "timestamp": "~568s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_072.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 73,
+      "timestamp": "~576s",
+      "duration": 8,
+      "veo_prompt": "Close-up of small blue-white companion star near massive red supergiant, size comparison, dramatic scale difference",
+      "original_cue": "Betelbuddy",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_073.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 74,
+      "timestamp": "~584s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_074.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 75,
+      "timestamp": "~592s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_075.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 76,
+      "timestamp": "~600s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_076.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 77,
+      "timestamp": "~608s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_077.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 78,
+      "timestamp": "~616s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_078.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 79,
+      "timestamp": "~624s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_079.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 80,
+      "timestamp": "~632s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_080.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 81,
+      "timestamp": "~640s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_081.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 82,
+      "timestamp": "~648s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_082.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 83,
+      "timestamp": "~656s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_083.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 84,
+      "timestamp": "~664s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_084.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 85,
+      "timestamp": "~672s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_085.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 86,
+      "timestamp": "~680s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_086.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 87,
+      "timestamp": "~688s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_087.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 88,
+      "timestamp": "~696s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_088.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 89,
+      "timestamp": "~704s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_089.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 90,
+      "timestamp": "~712s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of Orion constellation against starfield, Betelgeuse glowing red at shoulder position, constellat lines visible, night sky astronomy",
+      "original_cue": "Orion",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_090.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 91,
+      "timestamp": "~720s",
+      "duration": 8,
+      "veo_prompt": "Beautiful shot of Earth from space, blue marble, city lights visible on night side, realistic",
+      "original_cue": "Earth",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_091.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 92,
+      "timestamp": "~728s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_092.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 93,
+      "timestamp": "~736s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_093.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 94,
+      "timestamp": "~744s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_094.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 95,
+      "timestamp": "~752s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_095.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 96,
+      "timestamp": "~760s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of Orion constellation against starfield, Betelgeuse glowing red at shoulder position, constellat lines visible, night sky astronomy",
+      "original_cue": "Orion",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_096.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 97,
+      "timestamp": "~768s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_097.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 98,
+      "timestamp": "~776s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_098.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 99,
+      "timestamp": "~784s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_099.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 100,
+      "timestamp": "~792s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_100.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 101,
+      "timestamp": "~800s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_101.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 102,
+      "timestamp": "~808s",
+      "duration": 8,
+      "veo_prompt": "Beautiful shot of Earth from space, blue marble, city lights visible on night side, realistic",
+      "original_cue": "Earth",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_102.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 103,
+      "timestamp": "~816s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_103.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 104,
+      "timestamp": "~824s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_104.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 105,
+      "timestamp": "~832s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_105.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 106,
+      "timestamp": "~840s",
+      "duration": 8,
+      "veo_prompt": "Beautiful shot of Earth from space, blue marble, city lights visible on night side, realistic",
+      "original_cue": "Earth",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_106.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 107,
+      "timestamp": "~848s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_107.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 108,
+      "timestamp": "~856s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_108.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 109,
+      "timestamp": "~864s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_109.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 110,
+      "timestamp": "~872s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_110.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 111,
+      "timestamp": "~880s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_111.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 112,
+      "timestamp": "~888s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_112.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 113,
+      "timestamp": "~896s",
+      "duration": 8,
+      "veo_prompt": "Underground neutrino detector facility, massive water tank with photomultiplier tubes glowing, scientific facility interior",
+      "original_cue": "Neutrino Detector",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_113.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 114,
+      "timestamp": "~904s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_114.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 115,
+      "timestamp": "~912s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_115.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 116,
+      "timestamp": "~920s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_116.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 117,
+      "timestamp": "~928s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_117.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 118,
+      "timestamp": "~936s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_118.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 119,
+      "timestamp": "~944s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_119.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 120,
+      "timestamp": "~952s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_120.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 121,
+      "timestamp": "~960s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_121.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 122,
+      "timestamp": "~968s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_122.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 123,
+      "timestamp": "~976s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_123.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 124,
+      "timestamp": "~984s",
+      "duration": 8,
+      "veo_prompt": "Spectacular supernova explosion, expanding shockwave, bright core, debris cloud forming, epic scale, volumetric rendering",
+      "original_cue": "Supernova",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_124.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 125,
+      "timestamp": "~992s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_125.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 126,
+      "timestamp": "~1000s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_126.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 127,
+      "timestamp": "~1008s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_127.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 128,
+      "timestamp": "~1016s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_128.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 129,
+      "timestamp": "~1024s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_129.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 130,
+      "timestamp": "~1032s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_130.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 131,
+      "timestamp": "~1040s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_131.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 132,
+      "timestamp": "~1048s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_132.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 133,
+      "timestamp": "~1056s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_133.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 134,
+      "timestamp": "~1064s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_134.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 135,
+      "timestamp": "~1072s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_135.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 136,
+      "timestamp": "~1080s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of Orion constellation against starfield, Betelgeuse glowing red at shoulder position, constellat lines visible, night sky astronomy",
+      "original_cue": "Orion",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_136.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 137,
+      "timestamp": "~1088s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_137.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 138,
+      "timestamp": "~1096s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_138.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 139,
+      "timestamp": "~1104s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_139.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 140,
+      "timestamp": "~1112s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_140.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 141,
+      "timestamp": "~1120s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_141.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 142,
+      "timestamp": "~1128s",
+      "duration": 8,
+      "veo_prompt": "Wide shot of binary star system, two stars orbiting common center, orbital paths visible, cinematic",
+      "original_cue": "Binary System",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_142.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 143,
+      "timestamp": "~1136s",
+      "duration": 8,
+      "veo_prompt": "Cinematic close-up of Betelgeuse, massive red supergiant star, glowing orange-red surface with dark spots, slow camera push, 4K space documentary",
+      "original_cue": "Betelgeuse",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_143.mp4",
+      "status": "pending"
+    },
+    {
+      "shot_number": 144,
+      "timestamp": "~1144s",
+      "duration": 8,
+      "veo_prompt": "Dramatic shot of massive star with visible corona, solar flares, surface detail, cinematic lighting",
+      "original_cue": "Star",
+      "style": "cinematic space documentary style, 4K quality, NASA-inspired",
+      "filename": "veo_clip_144.mp4",
+      "status": "pending"
+    }
+  ],
+  "veo_best_practices": "\nBest Veo 3 Prompts (8-second clips):\n\n\u2705 GOOD PROMPTS:\n- \"Cinematic shot of a massive black hole warping spacetime, accretion disk glowing blue and orange, 4K NASA style\"\n- \"Slow push into a colorful nebula with stars forming, volumetric god rays, deep space photography style\"\n- \"Camera orbiting a ringed gas giant planet, dramatic lighting, photorealistic, 4K space documentary\"\n- \"Time-lapse of Earth from ISS showing city lights at night, smooth motion, realistic\"\n- \"Asteroid field slowly drifting through space, dramatic backlighting from distant sun, cinematic\"\n\n\u274c AVOID:\n- Too much action (Veo struggles with fast motion in 8s)\n- Complex movements (keep camera moves simple)\n- Text or UI elements (generate those in editing)\n- Multiple subjects changing rapidly\n- Abstract concepts without visual references\n\nVELO STRENGTHS:\n- Slow, cinematic camera movements\n- Atmospheric effects (nebulas, gas clouds, lighting)\n- Scale and grandeur (planets, stars, cosmic structures)\n- Realistic space textures and materials\n- Smooth orbital/dolly/push camera moves\n\nTIPS FOR 8-SECOND CLIPS:\n- Single clear subject per clip\n- One camera movement (push, orbit, or static)\n- Descriptive but concise (20-30 words)\n- Include style keywords: \"cinematic\", \"4K\", \"photorealistic\"\n- Specify lighting: \"dramatic backlighting\", \"volumetric\", \"moody\"\n"
+}

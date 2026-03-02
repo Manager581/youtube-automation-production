@@ -1,0 +1,139 @@
+{
+  "videos_analyzed": 1,
+  "per_video": [
+    {
+      "video_id": "wLFY_Zu_O08",
+      "text_stats": {
+        "appear_events": 90,
+        "disappear_events": 89,
+        "avg_hold_duration_sec": 8.36,
+        "min_hold_duration_sec": 0.5,
+        "max_hold_duration_sec": 159.64
+      },
+      "animation": {
+        "appear_type_distribution": {
+          "slide_reveal": 19,
+          "already_visible": 3,
+          "fade_in": 3
+        },
+        "dominant_appear_type": "already_visible",
+        "avg_fade_in_duration_ms": 511.0,
+        "zone_distribution": {
+          "upper": 12,
+          "center": 7,
+          "lower": 6
+        },
+        "dominant_zone": "upper"
+      },
+      "sample_events": [
+        {
+          "timestamp": 30.18,
+          "zone": "upper",
+          "animation": {
+            "type": "already_visible",
+            "duration_ms": 0
+          },
+          "text_content": "Ku-Klux-Klan"
+        },
+        {
+          "timestamp": 48.56,
+          "zone": "lower",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 1000.0
+          },
+          "text_content": "Hillbilly Donnie Brasco"
+        },
+        {
+          "timestamp": 52.4,
+          "zone": "upper",
+          "animation": {
+            "type": "fade_in",
+            "duration_ms": 467.0
+          },
+          "text_content": "Dalton Fischer Podcast - Undercover FBI Agent Exposes Shocking US Terror Plots, "
+        },
+        {
+          "timestamp": 57.96,
+          "zone": "upper",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 1933.0
+          },
+          "text_content": "True Crime Vault - How The Outlaws MC Actually Works (2024)"
+        },
+        {
+          "timestamp": 61.28,
+          "zone": "upper",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 2000.0
+          },
+          "text_content": "Outlaws"
+        },
+        {
+          "timestamp": 66.28,
+          "zone": "center",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 1333.0
+          },
+          "text_content": "WRDW News 12 - Federal appeals court denies Dylann Roof's request for new trial "
+        },
+        {
+          "timestamp": 113.14,
+          "zone": "upper",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 1533.0
+          },
+          "text_content": "FACT CHECK: BRIAN DOOSE\nVOICE OVER ELMER"
+        },
+        {
+          "timestamp": 219.72,
+          "zone": "upper",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 1667.0
+          },
+          "text_content": "ABC News - A timeline of the 2017 protests in Charlottesville and the political "
+        },
+        {
+          "timestamp": 220.4,
+          "zone": "upper",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 1600.0
+          },
+          "text_content": "ABC News (Australia) - Neo-Nazi organisation 'The Base' added to terrorism list "
+        },
+        {
+          "timestamp": 221.04,
+          "zone": "upper",
+          "animation": {
+            "type": "slide_reveal",
+            "duration_ms": 333.0
+          },
+          "text_content": "ABC News (Australia) - Neo-Nazi organisation 'The Base' added to terrorism list "
+        }
+      ]
+    }
+  ],
+  "PRODUCTION_SPEC": {
+    "dominant_appear_animation": "slide_reveal",
+    "appear_type_breakdown": {
+      "slide_reveal": 19,
+      "already_visible": 3,
+      "fade_in": 3
+    },
+    "avg_fade_in_ms": 511.0,
+    "dominant_text_zone": "upper",
+    "zone_breakdown": {
+      "upper": 12,
+      "center": 7,
+      "lower": 6
+    },
+    "avg_text_hold_sec": 8.36,
+    "assembler_guidance": "Use slide_reveal for text appearance (511ms duration). Place text primarily in upper zone. Hold text for avg 8.4s before removing."
+  }
+}

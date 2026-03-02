@@ -1,0 +1,183 @@
+{
+  "timestamp": "2025-12-19T07:26:28.829407",
+  "summary": {
+    "total_videos": 12,
+    "high_performers": 6,
+    "medium_performers": 2,
+    "low_performers": 4
+  },
+  "topic_stats": [
+    {
+      "topic": "solar system",
+      "success_rate": 100.0,
+      "total_appearances": 1,
+      "high_count": 1
+    },
+    {
+      "topic": "milky way",
+      "success_rate": 100.0,
+      "total_appearances": 1,
+      "high_count": 1
+    },
+    {
+      "topic": "betelgeuse",
+      "success_rate": 100.0,
+      "total_appearances": 1,
+      "high_count": 1
+    },
+    {
+      "topic": "jupiter",
+      "success_rate": 100.0,
+      "total_appearances": 1,
+      "high_count": 1
+    },
+    {
+      "topic": "comet",
+      "success_rate": 100.0,
+      "total_appearances": 1,
+      "high_count": 1
+    },
+    {
+      "topic": "voyager",
+      "success_rate": 100.0,
+      "total_appearances": 1,
+      "high_count": 1
+    },
+    {
+      "topic": "james webb",
+      "success_rate": 33.33333333333333,
+      "total_appearances": 3,
+      "high_count": 1
+    },
+    {
+      "topic": "asteroid",
+      "success_rate": 0.0,
+      "total_appearances": 1,
+      "high_count": 0
+    },
+    {
+      "topic": "planet",
+      "success_rate": 0.0,
+      "total_appearances": 1,
+      "high_count": 0
+    },
+    {
+      "topic": "venus",
+      "success_rate": 0.0,
+      "total_appearances": 1,
+      "high_count": 0
+    }
+  ],
+  "winning_topics": [],
+  "high_performing_videos": [
+    {
+      "title": "Massive! Voyager Found a 50,000-Degree \u201cWall\u201d at the Edge of the Solar System",
+      "upload_date": "20251106",
+      "view_count": 1242452,
+      "topics": [
+        "voyager",
+        "solar system"
+      ],
+      "trend_data": [
+        {
+          "topic": "voyager",
+          "upload_date": "2025-11-06",
+          "trend_score": null,
+          "was_trending": null
+        },
+        {
+          "topic": "solar system",
+          "upload_date": "2025-11-06",
+          "trend_score": null,
+          "was_trending": null
+        }
+      ],
+      "views_per_topic": 621226.0
+    },
+    {
+      "title": "Not a Comet, But a Cell: Scientists Now Believe This Object Might Actually Be Alive",
+      "upload_date": "20251102",
+      "view_count": 750082,
+      "topics": [
+        "comet"
+      ],
+      "trend_data": [
+        {
+          "topic": "comet",
+          "upload_date": "2025-11-02",
+          "trend_score": null,
+          "was_trending": null
+        }
+      ],
+      "views_per_topic": 750082.0
+    },
+    {
+      "title": "We Finally Know Why Betelgeuse Behaves So Strangely",
+      "upload_date": "20251126",
+      "view_count": 1070808,
+      "topics": [
+        "betelgeuse"
+      ],
+      "trend_data": [
+        {
+          "topic": "betelgeuse",
+          "upload_date": "2025-11-26",
+          "trend_score": null,
+          "was_trending": null
+        }
+      ],
+      "views_per_topic": 1070808.0
+    },
+    {
+      "title": "James Webb's New Images of Neptune Have Left Scientists Confused",
+      "upload_date": "20251028",
+      "view_count": 2070997,
+      "topics": [
+        "james webb"
+      ],
+      "trend_data": [
+        {
+          "topic": "james webb",
+          "upload_date": "2025-10-28",
+          "trend_score": null,
+          "was_trending": null
+        }
+      ],
+      "views_per_topic": 2070997.0
+    },
+    {
+      "title": "We've Finally Seen Jupiter's Core | Juno Year 8 Update II",
+      "upload_date": "20251002",
+      "view_count": 1956914,
+      "topics": [
+        "jupiter"
+      ],
+      "trend_data": [
+        {
+          "topic": "jupiter",
+          "upload_date": "2025-10-02",
+          "trend_score": null,
+          "was_trending": null
+        }
+      ],
+      "views_per_topic": 1956914.0
+    },
+    {
+      "title": "An Epic Journey Around The Milky Way | Space Documentary 2024",
+      "upload_date": "20240426",
+      "view_count": 1487089,
+      "topics": [
+        "milky way"
+      ],
+      "trend_data": [
+        {
+          "topic": "milky way",
+          "upload_date": "2024-04-26",
+          "trend_score": null,
+          "was_trending": null
+        }
+      ],
+      "views_per_topic": 1487089.0
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "brand_id": "fern_clone",
+  "channel": {
+    "lane": "Institutions and systems with hidden or dark sides — told through the individuals caught inside them",
+    "tone": "Serious, investigative, atmospheric. Never sensationalist. The facts are disturbing enough.",
+    "target_audience": "25-45, curious about power structures, history, true crime, geopolitics"
+  },
+
+  "content_formula": {
+    "target_duration_min": 25,
+    "target_wpm": 160,
+    "curiosity_gaps_per_min": 0.43,
+    "curiosity_gap_avg_duration_sec": 40,
+    "dominant_emotions": ["fear", "mystery", "tragedy"],
+    "avoid_emotions": ["comedy", "inspiration", "celebration"],
+    "title_angles_ranked": [
+      {
+        "pattern": "INSTITUTION_HOW",
+        "avg_views": 11223342,
+        "template": "How [Institution] [Shocking Action/Method]",
+        "examples": ["How an FBI Agent Infiltrated the KKK"],
+        "keywords": ["How the", "How an", "How a"]
+      },
+      {
+        "pattern": "COUNTRY_DARK",
+        "avg_views": 5592303,
+        "template": "[Country]'s [Most/Hidden/Secret] [Dark Reality]",
+        "examples": ["Camp 14: The Most Horrible Place in North Korea"],
+        "keywords": ["North Korea", "Russia", "China", "Iran", "Cuba", "Soviet"]
+      },
+      {
+        "pattern": "PERSON_GENIUS_TRAGEDY",
+        "avg_views": 4155154,
+        "template": "The [Person] Who [Remarkable Achievement] (and [Dark Consequence])",
+        "examples": ["The Kid Who Hacked the Pentagon (and paid with his life)"],
+        "keywords": []
+      },
+      {
+        "pattern": "THREAT_WHY",
+        "avg_views": 3294900,
+        "template": "Why [Thing] Is [Shocking/Dangerous Truth]",
+        "examples": ["Why Fentanyl Is So Easy to Smuggle"],
+        "keywords": ["Why the", "Why is", "Why are"]
+      },
+      {
+        "pattern": "SUPERLATIVE",
+        "avg_views": 3571700,
+        "template": "The Most [Extreme Adjective] [Noun] in [Place/History]",
+        "examples": ["The Most Secret Building in Manhattan"],
+        "keywords": ["Most Secret", "Most Dangerous", "Most Horrifying", "Most Hidden"]
+      }
+    ]
+  },
+
+  "topic_filters": {
+    "required_elements": [
+      "A specific person or group as the human entry point",
+      "An institution or system that failed, deceived, or had a dark side",
+      "A twist or reveal — something the public doesn't know or expects",
+      "Stakes: life, death, freedom, or power"
+    ],
+    "institutions": [
+      "FBI", "CIA", "NSA", "DEA", "ATF", "Secret Service", "Pentagon", "military",
+      "KGB", "FSB", "Stasi", "Mossad", "MI6", "Interpol",
+      "court", "prison", "government", "senate", "congress", "white house",
+      "SEC", "FDA", "CDC", "WHO", "UN", "NATO",
+      "pharmaceutical", "oil company", "bank", "tech giant"
+    ],
+    "themes": [
+      "infiltration", "undercover", "double agent", "mole",
+      "cover-up", "classified", "declassified", "FOIA",
+      "whistleblower", "defector", "exile",
+      "corruption", "scandal", "conspiracy", "secret program",
+      "imprisonment", "political prisoner", "execution",
+      "experiment on humans", "psychological operation", "propaganda"
+    ],
+    "person_archetypes": [
+      "genius who was punished", "whistleblower", "undercover agent",
+      "political prisoner", "defector", "child prodigy", "outsider who discovered truth",
+      "soldier following orders", "scientist who went too far"
+    ],
+    "hard_avoid": [
+      "sports", "celebrity gossip", "entertainment", "gaming",
+      "product reviews", "finance-only (without scandal)", "diet/health",
+      "pure politics (partisan)", "comedy", "travel"
+    ],
+    "soft_avoid": [
+      "stories already covered by Fern",
+      "stories with no footage available",
+      "stories requiring only one source"
+    ]
+  },
+
+  "already_covered": [
+    "Trump assassination attempt", "FBI KKK infiltration", "Unabomber",
+    "Otto Warmbier", "Camp 14", "Pentagon hacker",
+    "Most Secret Building Manhattan", "Fentanyl smuggling",
+    "North Korea", "Nazi Hitler feared"
+  ],
+
+  "research_sources": {
+    "reddit": [
+      "history", "todayilearned", "UnresolvedMysteries",
+      "conspiracy", "worldnews", "TrueOffTopic", "longreads",
+      "esist", "Keep_Track", "WikiLeaks"
+    ],
+    "google_news_keywords": [
+      "declassified FBI", "CIA operation revealed", "FOIA release",
+      "whistleblower", "government cover-up", "secret program",
+      "undercover operation", "political prisoner", "defector",
+      "declassified documents", "classified files released"
+    ],
+    "youtube_competitor_channels": [
+      "Fern", "MrBallen", "Newsthink", "TLDR News",
+      "Coffeezilla", "LEMMiNO", "Wendover Productions",
+      "CNN", "Daily Mail", "Vice News"
+    ],
+    "tiktok_accounts": [
+      "@atlasobscura", "@historyfacts", "@realstories",
+      "@cnn", "@dailymail", "@teamtrump"
+    ]
+  },
+
+  "visual_style": {
+    "color_grade": "dark_cinematic",
+    "brightness": "dark",
+    "primary_footage_types": ["document_photo", "news_screenshot", "archival_footage"],
+    "forbidden": ["stock_footage", "AI_generated_video"],
+    "thumbnail": {
+      "background": "pure black or dark desaturated",
+      "text_words": "1-3 maximum",
+      "text_rule": "Most extreme single fact — NOT a repeat of the title",
+      "font": "Impact or heavy condensed bold sans-serif",
+      "example_words": ["DEAD", "FBI", "CLASSIFIED", "NO ESCAPE", "IT'S THEM."]
+    }
+  },
+
+  "audio_style": {
+    "music_type": "atmospheric_ambient",
+    "music_source": "royalty-free library (Musicbed/Artlist tier)",
+    "events_per_min": 8.3,
+    "avg_gap_sec": 6.2,
+    "dominant_sounds": ["sustain_mid_pad", "riser", "tension_sting"],
+    "forbidden": ["upbeat", "comedy", "pop", "stock_loop"]
+  },
+
+  "production": {
+    "voiceover": "ElevenLabs — serious, measured, authoritative male voice",
+    "footage_sources": [
+      "YouTube news channels (Reuters, AP, BBC, CNN, C-SPAN, local affiliates)",
+      "Internet Archive TV News",
+      "Wikimedia Commons",
+      "Court hearing footage",
+      "Government archive footage",
+      "TikTok via yt-dlp",
+      "Twitter/X via yt-dlp"
+    ],
+    "forbidden_sources": ["stock footage libraries", "AI-generated video"]
+  }
+}

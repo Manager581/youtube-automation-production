@@ -1,0 +1,200 @@
+{
+  "scripts": [
+    {
+      "video": "Trump_Assassination_Attempt",
+      "total_duration_sec": 363,
+      "total_words": 849,
+      "wpm": 140,
+      "avg_sentence_words": 849,
+      "opening_25_words": "it's the 13th of July in Butler Pennsylvania former US president Donald Trump speaks at a rally it's only days until he plans to accept",
+      "hook_first_30s": "it's the 13th of July in Butler Pennsylvania former US president Donald Trump speaks at a rally it's only days until he plans to accept the official Republican nomination he's just minutes into his speech when shots are fired take a look at what happened Trump got hit but survived",
+      "first_question": {
+        "time": null,
+        "text": null
+      },
+      "main_character": null,
+      "reveal_moments": [],
+      "stakes_moments": [
+        {
+          "time": "01:19.75",
+          "text": "most are sitting or standing in front of"
+        }
+      ],
+      "act_structure": {
+        "act1_hook": {
+          "duration_sec": 91,
+          "summary": "it's the 13th of July in Butler Pennsylvania former US president Donald Trump speaks at a rally it's only days"
+        },
+        "act2_buildup": {
+          "start_sec": 91,
+          "end_sec": 236,
+          "summary": "Service agents are right at the stage behind him are three large buildings on the roof of the building on the far left"
+        },
+        "act3_climax": {
+          "start_sec": 236,
+          "summary": "down we good Shooters down are we good to move we clear we we're they prepare to escort him to an armored"
+        }
+      }
+    },
+    {
+      "video": "FBI_Undercover_KKK",
+      "total_duration_sec": 2458,
+      "total_words": 7315,
+      "wpm": 179,
+      "avg_sentence_words": 12,
+      "opening_25_words": "If there's any snitches in the group, we kill the snitches and they fire shots out of a gun. Boom. Boom. And everybody's kind of",
+      "hook_first_30s": "If there's any snitches in the group, we kill the snitches and they fire shots out of a gun. Boom. Boom. And everybody's kind of getting scared. &gt;&gt; April 21, 2017. A group of men stand in a remote field in the middle of Alabama. &gt;&gt; It was nighttime and I am blindfolded. I've been instructed to place my right hand on the right shoulder of the person in front of me in line because that signifies brotherhood. The Brotherhood",
+      "first_question": {
+        "time": "04:50.63",
+        "text": "like, \"What?\" I'm like, \"Man, look at"
+      },
+      "main_character": null,
+      "reveal_moments": [
+        {
+          "time": "15:20.87",
+          "text": "in the building except one. Clothesline",
+          "trigger": "except"
+        },
+        {
+          "time": "18:29.59",
+          "text": "divorce. [music] In reality, he's been",
+          "trigger": "in reality"
+        },
+        {
+          "time": "20:19.11",
+          "text": "influence. However, Burning Crosses is still one of their favorite things to",
+          "trigger": "however"
+        },
+        {
+          "time": "20:37.75",
+          "text": "Well, it turns out the group I was",
+          "trigger": "it turns out"
+        },
+        {
+          "time": "36:18.95",
+          "text": "It turns out the camping trip isn't a",
+          "trigger": "it turns out"
+        }
+      ],
+      "stakes_moments": [
+        {
+          "time": "00:33.91",
+          "text": "oldest, most notorious white supremacist"
+        },
+        {
+          "time": "02:35.43",
+          "text": "Scott is 14 years old and he's just seen"
+        },
+        {
+          "time": "03:56.55",
+          "text": "been nearly 35 years since [music]"
+        },
+        {
+          "time": "06:03.27",
+          "text": "far the most dangerous group Scott will"
+        },
+        {
+          "time": "06:12.31",
+          "text": "spent the last 17 years working to"
+        },
+        {
+          "time": "07:41.99",
+          "text": "years undercover with the Bunano crime"
+        },
+        {
+          "time": "07:52.47",
+          "text": "is Donnie Brasco. This dude did 6 years"
+        },
+        {
+          "time": "08:12.47",
+          "text": "\"Jesus, kid, either you got the biggest"
+        }
+      ],
+      "act_structure": {
+        "act1_hook": {
+          "duration_sec": 614,
+          "summary": "If there's any snitches in the group, we kill the snitches and they fire shots out of a gun. Boom. Boom. And"
+        },
+        "act2_buildup": {
+          "start_sec": 614,
+          "end_sec": 1598,
+          "summary": "suitable for many undercovers. But he has something most other agents don't. He doesn't need to pretend to be a hard-"
+        },
+        "act3_climax": {
+          "start_sec": 1598,
+          "summary": "but nothing happens. A fellow agent points out that he doesn't have any friends. He adds a few people and that does it. He's promptly kicked off. Okay,"
+        }
+      }
+    },
+    {
+      "video": "Unabomber",
+      "total_duration_sec": 1674,
+      "total_words": 4522,
+      "wpm": 162,
+      "avg_sentence_words": 13,
+      "opening_25_words": "My motive for doing what I am going to do is simply personal revenge. I do not expect to accomplish it. Lincoln, Montana, 1996. This",
+      "hook_first_30s": "My motive for doing what I am going to do is simply personal revenge. I do not expect to accomplish it. Lincoln, Montana, 1996. This cabin is the chosen home of Theodore J. Kazinski, more commonly known as the Uni Bomber. He's long been feared as America's smartest criminal, a serial bomber who's",
+      "first_question": {
+        "time": "07:45.91",
+        "text": "all? Far away in his cabin, Ted reads"
+      },
+      "main_character": null,
+      "reveal_moments": [
+        {
+          "time": "03:31.99",
+          "text": "a young age that Ted is exceptionally",
+          "trigger": "except"
+        }
+      ],
+      "stakes_moments": [
+        {
+          "time": "00:37.75",
+          "text": "years, he's eluded the FBI. It's the"
+        },
+        {
+          "time": "00:39.67",
+          "text": "largest, most expensive manhunt in the"
+        },
+        {
+          "time": "00:45.99",
+          "text": "history's most intellectual serial"
+        },
+        {
+          "time": "01:05.59",
+          "text": "decades. It's where he turned from off"
+        },
+        {
+          "time": "01:31.27",
+          "text": "who pisses him off, which is most"
+        },
+        {
+          "time": "04:11.19",
+          "text": "years old. Like many college freshmen,"
+        },
+        {
+          "time": "04:40.23",
+          "text": "than almost everyone else on campus. As"
+        },
+        {
+          "time": "05:25.51",
+          "text": "pigs for an experiment. his final most"
+        }
+      ],
+      "act_structure": {
+        "act1_hook": {
+          "duration_sec": 419,
+          "summary": "My motive for doing what I am going to do is simply personal revenge. I do not expect to accomplish"
+        },
+        "act2_buildup": {
+          "start_sec": 419,
+          "end_sec": 1088,
+          "summary": "no letters from organizations claiming credit. The victims appear to be scattershot of random people. The"
+        },
+        "act3_climax": {
+          "start_sec": 1088,
+          "summary": "opening and both professors are badly injured. Shortly after, the New York Times receives a typewritten letter. It"
+        }
+      }
+    }
+  ]
+}

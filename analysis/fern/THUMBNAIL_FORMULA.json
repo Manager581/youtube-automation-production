@@ -1,0 +1,84 @@
+{
+  "channel": "fern-tv",
+  "thumbnails_analyzed": 11,
+  "formula": {
+    "background": {
+      "rule": "Pure black OR dark desaturated grey — ALWAYS",
+      "never": "Colorful, busy, or natural backgrounds"
+    },
+    "text_overlay": {
+      "word_count": "1-3 words MAXIMUM",
+      "content_rule": "The most extreme single fact from the video — NOT a repeat of the title",
+      "examples": ["DEAD", "FBI", "GENIUS", "NO WINDOWS", "MUTATED", "MASSIVE HACK", "SECRET SONS", "WORSE THAN HITLER?", "IT'S THEM."],
+      "font": "Heavy condensed bold sans-serif (Impact or equivalent)",
+      "placement": "Top-left, bottom-left, or center — never competes with subject",
+      "styles": [
+        "White text in red filled rectangle (most common, ~60%)",
+        "White bold text with black outline (archival/CCTV thumbnails)",
+        "Yellow bold text with black outline (positive reveals: GENIUS)"
+      ]
+    },
+    "color_treatment": {
+      "dominant_accent": "RED — appears in 9/11 thumbnails",
+      "secondary_accent": "YELLOW (used for GENIUS/positive labels)",
+      "subject_treatment": "Red color grade overlay on faces, OR red object coloring for CGI builds, OR red banner label",
+      "rule": "Every thumbnail has exactly one strong color — almost always red"
+    },
+    "arrow_callout": {
+      "frequency": "~50% of thumbnails",
+      "style": "Bold red arrow or speech bubble callout pointing to key subject",
+      "purpose": "Creates a 'reveal' interaction — viewer has to look where the arrow points",
+      "examples": [
+        "Arrow pointing to windowless building",
+        "Arrow pointing to mutated bug",
+        "Arrow + IT'S THEM pointing to hackers",
+        "KKK/FBI speech bubble labels on each person"
+      ]
+    },
+    "subject_types": {
+      "person_face_closeup": {
+        "description": "Real historical photo, often red color-graded, direct eye contact at viewer",
+        "examples": ["Otto Warmbier detained", "Reinhard Heydrich portrait", "Kim Jong-Un glaring"],
+        "treatment": "Desaturated + red tint, often slight vignette"
+      },
+      "cgi_3d_object": {
+        "description": "Custom 3D rendered model of the subject — NOT stock photos",
+        "examples": ["Pentagon miniature in hand", "Red prison compound", "Red windowless skyscraper"],
+        "style": "Photorealistic but clearly synthetic, red color treatment"
+      },
+      "composite_scene": {
+        "description": "Multiple cutout figures composited on dark background to show the twist",
+        "examples": ["FBI agent surrounded by 4 KKK figures", "Kid + Minecraft fire + money", "Car + deployed airbag + cop"],
+        "rule": "Scene visually SHOWS the twist without needing a caption to explain"
+      },
+      "archival_footage": {
+        "description": "Real CCTV/surveillance-style grainy footage treated as a leak",
+        "examples": ["Russian hackers walking through airport corridor"],
+        "treatment": "Heavy grain, scanlines, B&W or desaturated, 'leaked footage' feel"
+      }
+    },
+    "composition": {
+      "rule": "NEVER more than 2 elements competing for attention",
+      "subject_position": "Slightly left of center OR centered, leaving space for text",
+      "perspective": "Low angle or straight-on — subjects feel powerful/threatening",
+      "eye_contact": "Direct at viewer when faces present — creates personal threat feeling"
+    },
+    "never_use": [
+      "Fern's own face or any presenter face",
+      "More than 3 words of text",
+      "Bright or colorful backgrounds",
+      "Stock photo aesthetic",
+      "Text that repeats the video title",
+      "More than 2 dominant visual elements"
+    ]
+  },
+  "generation_prompt_template": "Dark almost-black background. [SUBJECT: brief description]. Red color treatment. [TEXT: 1-3 words in bold white on red rectangle, top-left]. Cinematic, editorial style. No faces of presenters.",
+  "text_word_bank": {
+    "status_labels": ["DEAD", "CAPTURED", "EXPOSED", "DISAPPEARED", "ARRESTED"],
+    "role_labels": ["FBI", "CIA", "KKK", "MOLE", "SPY", "TRAITOR"],
+    "quality_labels": ["GENIUS", "EVIL", "INSANE", "DUMB", "BRILLIANT"],
+    "action_labels": ["HACKED", "STOLEN", "KILLED", "LEAKED", "BANNED"],
+    "mystery_labels": ["SECRET", "HIDDEN", "CLASSIFIED", "CENSORED", "UNKNOWN"],
+    "sentence_fragments": ["IT'S THEM.", "NO WINDOWS.", "WORSE THAN HITLER?", "NOT HUMAN."]
+  }
+}

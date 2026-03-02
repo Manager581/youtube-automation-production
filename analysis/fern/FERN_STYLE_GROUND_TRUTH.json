@@ -1,0 +1,348 @@
+{
+  "videos_analyzed": 3,
+  "VERIFIED_SPEC": {
+    "text_on_solid_dark_background": {
+      "avg_pct_of_text_frames": 1.7,
+      "verdict": "NO \u2014 text is always on top of photos. Do NOT use bare text cards.",
+      "implication": "When no image exists: find ANY related image rather than showing text alone"
+    },
+    "text_color": {
+      "dominant": "white_pct",
+      "distribution": {
+        "white_pct": 3
+      }
+    },
+    "transition_style": {
+      "dominant": "hard_cut",
+      "distribution": {
+        "hard_cut": 3
+      },
+      "implication": "Use hard_cut between segments"
+    },
+    "motion_graphics_usage": {
+      "avg_pct": 7.6,
+      "verdict": "Minimal motion graphics detected (~8% of frames)"
+    },
+    "font_weight": {
+      "classification": "extra_bold",
+      "distribution": {
+        "extra_bold": 3
+      }
+    }
+  },
+  "per_video": [
+    {
+      "video_id": "aVA7aXOH1pk",
+      "Q1_text_on_solid_background": {
+        "solid_dark_bg_pct": 0.0,
+        "solid_dark_count": 0,
+        "photo_bg_count": 60,
+        "verdict": "NO \u2014 text is always overlaid on photos",
+        "sample_frames": []
+      },
+      "Q2_text_colors": {
+        "distribution": {
+          "white_pct": 91.7,
+          "red_pct": 0.0,
+          "yellow_pct": 8.0
+        },
+        "dominant": "white_pct"
+      },
+      "Q3_transition_types": {
+        "distribution": {
+          "hard_cut": 36,
+          "fade_to_black": 4
+        },
+        "dominant": "hard_cut",
+        "verdict": "Fern primarily uses hard_cut"
+      },
+      "Q4_low_complexity_frames": {
+        "distribution": {
+          "near_solid_with_slight_texture": 17,
+          "black_frame": 3
+        },
+        "sample_frames": [
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_000.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 290.24
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_001.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 292.46
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_002.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 292.96
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_003.jpg",
+            "complexity": 0.9,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 49.04
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_004.jpg",
+            "complexity": 1.0,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 49.08
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_005.jpg",
+            "complexity": 10.4,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 30.48
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_006.jpg",
+            "complexity": 10.4,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 149.36
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_aVA7aXOH1pk_007.jpg",
+            "complexity": 10.9,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 183.14
+          }
+        ],
+        "verdict": "Content sections always have photo underneath"
+      },
+      "Q5_motion_graphics": {
+        "detected_pct": 14.8,
+        "sample_frames": [
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_001.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_002.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_003.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_004.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_005.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_006.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_007.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_aVA7aXOH1pk_008.jpg"
+        ],
+        "verdict": "14.8% of frames appear to be non-photographic (potential motion graphics)"
+      },
+      "Q6_font_weight": {
+        "avg_stroke_width_px": 10.0,
+        "classification": "extra_bold",
+        "verdict": "Text appears to be extra_bold weight"
+      }
+    },
+    {
+      "video_id": "wLFY_Zu_O08",
+      "Q1_text_on_solid_background": {
+        "solid_dark_bg_pct": 0.0,
+        "solid_dark_count": 0,
+        "photo_bg_count": 60,
+        "verdict": "NO \u2014 text is always overlaid on photos",
+        "sample_frames": []
+      },
+      "Q2_text_colors": {
+        "distribution": {
+          "white_pct": 78.9,
+          "red_pct": 0.0,
+          "yellow_pct": 43.5
+        },
+        "dominant": "white_pct"
+      },
+      "Q3_transition_types": {
+        "distribution": {
+          "hard_cut": 33,
+          "fade_to_black": 4,
+          "fade_to_white": 3
+        },
+        "dominant": "hard_cut",
+        "verdict": "Fern primarily uses hard_cut"
+      },
+      "Q4_low_complexity_frames": {
+        "distribution": {
+          "near_solid_with_slight_texture": 14,
+          "black_frame": 5,
+          "text_on_dark_bg": 1
+        },
+        "sample_frames": [
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_000.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 0.0
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_001.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 2230.4
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_002.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 2232.82
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_003.jpg",
+            "complexity": 0.3,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 219.24
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_004.jpg",
+            "complexity": 0.3,
+            "category": "text_on_dark_bg",
+            "timestamp": 902.94
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_005.jpg",
+            "complexity": 0.7,
+            "category": "black_frame",
+            "timestamp": 1817.62
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_006.jpg",
+            "complexity": 0.9,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 202.52
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wLFY_Zu_O08_007.jpg",
+            "complexity": 1.0,
+            "category": "near_solid_with_slight_texture",
+            "timestamp": 202.48
+          }
+        ],
+        "verdict": "Fern does use text-on-dark for some content"
+      },
+      "Q5_motion_graphics": {
+        "detected_pct": 1.6,
+        "sample_frames": [
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_001.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_002.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_003.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_004.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_005.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_006.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_007.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wLFY_Zu_O08_008.jpg"
+        ],
+        "verdict": "1.6% of frames appear to be non-photographic (potential motion graphics)"
+      },
+      "Q6_font_weight": {
+        "avg_stroke_width_px": 9.0,
+        "classification": "extra_bold",
+        "verdict": "Text appears to be extra_bold weight"
+      }
+    },
+    {
+      "video_id": "wkVygetgeRY",
+      "Q1_text_on_solid_background": {
+        "solid_dark_bg_pct": 5.0,
+        "solid_dark_count": 3,
+        "photo_bg_count": 57,
+        "verdict": "NO \u2014 text is always overlaid on photos",
+        "sample_frames": [
+          "analysis/fern/ground_truth_frames/Q1_solid_bg_wkVygetgeRY_001.jpg",
+          "analysis/fern/ground_truth_frames/Q1_solid_bg_wkVygetgeRY_002.jpg",
+          "analysis/fern/ground_truth_frames/Q1_solid_bg_wkVygetgeRY_003.jpg"
+        ]
+      },
+      "Q2_text_colors": {
+        "distribution": {
+          "white_pct": 85.5,
+          "red_pct": 0.7,
+          "yellow_pct": 10.7
+        },
+        "dominant": "white_pct"
+      },
+      "Q3_transition_types": {
+        "distribution": {
+          "hard_cut": 36,
+          "fade_to_black": 4
+        },
+        "dominant": "hard_cut",
+        "verdict": "Fern primarily uses hard_cut"
+      },
+      "Q4_low_complexity_frames": {
+        "distribution": {
+          "black_frame": 10,
+          "near_solid_with_slight_texture": 10
+        },
+        "sample_frames": [
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_000.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 0.0
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_001.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 10.88
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_002.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 169.7
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_003.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 273.24
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_004.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 351.72
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_005.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 352.86
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_006.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 559.5
+          },
+          {
+            "path": "analysis/fern/ground_truth_frames/Q4_low_complexity_wkVygetgeRY_007.jpg",
+            "complexity": 0.0,
+            "category": "black_frame",
+            "timestamp": 656.14
+          }
+        ],
+        "verdict": "Content sections always have photo underneath"
+      },
+      "Q5_motion_graphics": {
+        "detected_pct": 6.4,
+        "sample_frames": [
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_001.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_002.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_003.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_004.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_005.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_006.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_007.jpg",
+          "analysis/fern/ground_truth_frames/Q5_motion_graphic_wkVygetgeRY_008.jpg"
+        ],
+        "verdict": "6.4% of frames appear to be non-photographic (potential motion graphics)"
+      },
+      "Q6_font_weight": {
+        "avg_stroke_width_px": 9.5,
+        "classification": "extra_bold",
+        "verdict": "Text appears to be extra_bold weight"
+      }
+    }
+  ],
+  "sample_frames_dir": "analysis/fern/ground_truth_frames"
+}

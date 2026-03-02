@@ -1,0 +1,111 @@
+SOUND EFFECTS LIBRARY SETUP GUIDE
+================================================================================
+
+WATOP-style videos need constant sound effects (every 2-3 seconds).
+This guide helps you build a free SFX library.
+
+================================================================================
+FREE SFX SOURCES
+================================================================================
+
+1. **Mixkit.co** (EASIEST - No signup required)
+   URL: https://mixkit.co/free-sound-effects/
+   - Search for each effect type below
+   - Download MP3 files
+   - Save to: assets/sfx/
+
+2. **Zapsplat.com** (Large library)
+   URL: https://www.zapsplat.com/
+   - Free signup required
+   - Must credit in video description (free license)
+
+3. **Freesound.org** (Massive library)
+   URL: https://freesound.org/
+   - Free signup required
+   - Check license (most are CC0 - public domain)
+
+================================================================================
+REQUIRED SOUND EFFECTS
+================================================================================
+
+Download at least 3-5 variations of each type:
+
+## IMPACT
+   Search terms: impact, explosion, crash, thud, hit
+   Save as: assets/sfx/impact_*.mp3
+
+## WHOOSH
+   Search terms: whoosh, swish, flyby, pass, wind
+   Save as: assets/sfx/whoosh_*.mp3
+
+## RUMBLE
+   Search terms: rumble, bass, deep, sub, low frequency
+   Save as: assets/sfx/rumble_*.mp3
+
+## SHIMMER
+   Search terms: shimmer, chime, sparkle, twinkle, magic
+   Save as: assets/sfx/shimmer_*.mp3
+
+## TENSION
+   Search terms: tension, suspense, drone, build, dark
+   Save as: assets/sfx/tension_*.mp3
+
+## REVEAL
+   Search terms: reveal, rise, crescendo, build up, epic
+   Save as: assets/sfx/reveal_*.mp3
+
+## COUNTDOWN
+   Search terms: countdown, tick, beep, timer, clock
+   Save as: assets/sfx/countdown_*.mp3
+
+## SCIENCE
+   Search terms: science, tech, digital, computer, futuristic
+   Save as: assets/sfx/science_*.mp3
+
+================================================================================
+QUICK START (15 minutes)
+================================================================================
+
+Minimal SFX pack (20 files):
+
+1. Go to: https://mixkit.co/free-sound-effects/
+
+2. Search and download:
+   - 'whoosh' → Download 5 different whoosh sounds
+   - 'impact' → Download 5 impact/hit sounds
+   - 'bass drop' → Download 3 bass/rumble sounds
+   - 'chime' → Download 3 shimmer sounds
+   - 'rise' → Download 4 rise/reveal sounds
+
+3. Save all to: assets/sfx/
+
+4. Rename for clarity:
+   whoosh_1.mp3, whoosh_2.mp3, ...
+   impact_1.mp3, impact_2.mp3, ...
+   etc.
+
+================================================================================
+ADVANCED: YouTube Audio Library (100% Safe)
+================================================================================
+
+YouTube's own library (no copyright issues):
+
+1. Go to: https://www.youtube.com/audiolibrary
+2. Click 'Sound Effects' tab
+3. Filter by 'Genre' → Cinematic, Sci-Fi
+4. Download sound effects
+5. Save to assets/sfx/
+
+================================================================================
+VERIFY SETUP
+================================================================================
+
+After downloading, run:
+  python src/production/sfx_library_setup.py verify
+
+This will check you have enough SFX for production.
+
+MINIMUM REQUIREMENT:
+  - At least 20 SFX files total
+  - At least 3 files per category
+

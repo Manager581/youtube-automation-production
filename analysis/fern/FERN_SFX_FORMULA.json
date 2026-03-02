@@ -1,0 +1,198 @@
+{
+  "videos_analyzed": 1,
+  "per_video": [
+    {
+      "video_id": "wLFY_Zu_O08",
+      "duration_sec": 2464.1,
+      "total_cut_timestamps": 1029,
+      "sfx_findings": {
+        "cuts_with_sfx_pct": 10.9,
+        "sfx_type_distribution": {
+          "impact_thud": 105,
+          "broadband_whoosh": 7
+        },
+        "avg_sfx_loudness_ratio_vs_baseline": 2.26,
+        "avg_sfx_peak_offset_ms": -8.2,
+        "sfx_ratio_threshold_used": 1.8,
+        "verdict": "minimal_sfx: cuts are mostly audio-free"
+      },
+      "baseline": {
+        "avg_onset_strength": 4.9,
+        "avg_rms_energy": 0.115665
+      },
+      "sample_cuts": [
+        {
+          "timestamp": 6.26,
+          "onset_strength": 7.326,
+          "onset_ratio": 1.495,
+          "rms_energy": 0.141001,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 6.76,
+          "onset_strength": 1.848,
+          "onset_ratio": 0.377,
+          "rms_energy": 0.128158,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 6.88,
+          "onset_strength": 9.255,
+          "onset_ratio": 1.889,
+          "rms_energy": 0.2136,
+          "has_sfx": true,
+          "sfx_type": "impact_thud"
+        },
+        {
+          "timestamp": 7.16,
+          "onset_strength": 1.139,
+          "onset_ratio": 0.232,
+          "rms_energy": 0.156477,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 7.28,
+          "onset_strength": 8.4,
+          "onset_ratio": 1.714,
+          "rms_energy": 0.164641,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 8.82,
+          "onset_strength": 3.916,
+          "onset_ratio": 0.799,
+          "rms_energy": 0.138991,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 9.32,
+          "onset_strength": 1.157,
+          "onset_ratio": 0.236,
+          "rms_energy": 0.135644,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 10.0,
+          "onset_strength": 0.868,
+          "onset_ratio": 0.177,
+          "rms_energy": 0.154299,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 25.82,
+          "onset_strength": 1.795,
+          "onset_ratio": 0.366,
+          "rms_energy": 0.115947,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 26.32,
+          "onset_strength": 0.831,
+          "onset_ratio": 0.169,
+          "rms_energy": 0.030244,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 28.02,
+          "onset_strength": 2.855,
+          "onset_ratio": 0.583,
+          "rms_energy": 0.135846,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 28.52,
+          "onset_strength": 1.483,
+          "onset_ratio": 0.303,
+          "rms_energy": 0.032188,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 30.18,
+          "onset_strength": 11.466,
+          "onset_ratio": 2.34,
+          "rms_energy": 0.11883,
+          "has_sfx": true,
+          "sfx_type": "impact_thud"
+        },
+        {
+          "timestamp": 31.34,
+          "onset_strength": 10.025,
+          "onset_ratio": 2.046,
+          "rms_energy": 0.213814,
+          "has_sfx": true,
+          "sfx_type": "impact_thud"
+        },
+        {
+          "timestamp": 31.84,
+          "onset_strength": 5.273,
+          "onset_ratio": 1.076,
+          "rms_energy": 0.113621,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 46.5,
+          "onset_strength": 4.142,
+          "onset_ratio": 0.845,
+          "rms_energy": 0.035044,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 47.0,
+          "onset_strength": 1.052,
+          "onset_ratio": 0.215,
+          "rms_energy": 0.026858,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 48.56,
+          "onset_strength": 6.863,
+          "onset_ratio": 1.401,
+          "rms_energy": 0.182701,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 49.62,
+          "onset_strength": 4.509,
+          "onset_ratio": 0.92,
+          "rms_energy": 0.07287,
+          "has_sfx": false,
+          "sfx_type": null
+        },
+        {
+          "timestamp": 50.12,
+          "onset_strength": 1.477,
+          "onset_ratio": 0.301,
+          "rms_energy": 0.043342,
+          "has_sfx": false,
+          "sfx_type": null
+        }
+      ]
+    }
+  ],
+  "PRODUCTION_SPEC": {
+    "cuts_with_sfx_pct": 10.9,
+    "dominant_sfx_type": "impact_thud",
+    "sfx_type_breakdown": {
+      "impact_thud": 105,
+      "broadband_whoosh": 7
+    },
+    "avg_loudness_ratio": 2.26,
+    "verdict": "minimal_sfx: cuts are mostly audio-free",
+    "assembler_guidance": "No SFX layer needed \u2014 cuts are clean audio transitions"
+  }
+}
