@@ -54,6 +54,135 @@ from pathlib import Path
 
 
 # ---------------------------------------------------------------------------
+# Fern catalog — duplicate / overlap detection (runs BEFORE all other checks)
+# ---------------------------------------------------------------------------
+
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+_OVERLAP_STOPWORDS = {
+    "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for", "of",
+    "with", "by", "from", "is", "was", "are", "were", "how", "why", "what",
+    "who", "when", "that", "this", "it", "its", "their", "they", "his", "her",
+    "our", "your", "my", "did", "does", "has", "had", "have", "not", "no",
+    "about", "into", "just", "most", "more", "than", "after", "before", "been",
+    "will", "would", "could", "should", "very", "also", "even", "only", "ever",
+    "didn", "wasn", "wouldn", "couldn", "isn", "aren",
+}
+
+_OVERLAP_HARD_SKIP = 0.60
+_OVERLAP_WARNING   = 0.30
+
+
+def _load_fern_catalog() -> list:
+    """Load all Fern video titles, descriptions, and view counts."""
+    catalog = []
+    fern_dir = _PROJECT_ROOT / "analysis" / "fern"
+    for info_file in sorted(fern_dir.glob("*/video.info.json")):
+        try:
+            d = json.loads(info_file.read_text())
+            raw_desc = (d.get("description") or "")
+            clean_desc = re.sub(r"https?://\S+", "", raw_desc)
+            clean_desc = re.sub(
+                r"\b(use code|coupon|discount|promo|sponsor)\b.*", "",
+                clean_desc, flags=re.IGNORECASE
+            )
+            catalog.append({
+                "video_id":    info_file.parent.name,
+                "title":       d.get("title", ""),
+                "view_count":  d.get("view_count", 0),
+                "description": clean_desc[:400],
+            })
+        except Exception:
+            pass
+    return catalog
+
+
+def _key_terms_overlap(text: str) -> set:
+    words = re.findall(r"\b\w+\b", text.lower())
+    return {w for w in words if w not in _OVERLAP_STOPWORDS and len(w) > 3}
+
+
+def _fern_entry_similarity(query: str, entry: dict) -> float:
+    """0.0–1.0 similarity: Jaccard on title key terms + acronym + proper-noun bonuses.
+    Uses title ONLY for Jaccard (description dilutes with sponsor/source noise)."""
+    q_terms = _key_terms_overlap(query)
+    f_terms = _key_terms_overlap(entry["title"])   # title only for Jaccard
+
+    if not q_terms or not f_terms:
+        return 0.0
+
+    overlap = q_terms & f_terms
+    jaccard = len(overlap) / max(len(q_terms | f_terms), 1)
+
+    # Acronym exact-match bonus (FBI, CIA, KKK…)
+    q_ents = set(re.findall(r"\b[A-Z]{2,}\b", query))
+    f_ents = set(re.findall(r"\b[A-Z]{2,}\b", entry["title"]))
+    entity_bonus = min(0.30, len(q_ents & f_ents) * 0.15)
+
+    # Proper-noun bonus (people, places, orgs)
+    q_proper = set(re.findall(r"\b[A-Z][a-z]{3,}\b", query))
+    f_proper = set(re.findall(r"\b[A-Z][a-z]{3,}\b", entry["title"]))
+    proper_bonus = min(0.20, len(q_proper & f_proper) * 0.10)
+
+    return min(1.0, jaccard + entity_bonus + proper_bonus)
+
+
+def _check_fern_overlap(query: str, catalog: list) -> dict:
+    """
+    Return the best Fern catalog match and a flag:
+      HARD_SKIP  (≥ 0.60) — Fern already made this; saves API calls, returns SKIP immediately
+      WARNING    (≥ 0.30) — overlapping topic; continues validation but warns
+      CLEAR       (< 0.30) — no significant overlap
+    """
+    if not catalog:
+        return {"flag": "CLEAR", "similarity": 0.0, "matched_title": "",
+                "matched_video_id": "", "matched_views": 0, "top_3": []}
+
+    scored = sorted(
+        [(e, _fern_entry_similarity(query, e)) for e in catalog],
+        key=lambda x: -x[1]
+    )
+    best_entry, best_sim = scored[0]
+    flag = ("HARD_SKIP" if best_sim >= _OVERLAP_HARD_SKIP
+            else "WARNING"   if best_sim >= _OVERLAP_WARNING
+            else "CLEAR")
+
+    return {
+        "flag":             flag,
+        "similarity":       round(best_sim, 3),
+        "matched_title":    best_entry["title"],
+        "matched_video_id": best_entry["video_id"],
+        "matched_views":    best_entry["view_count"],
+        "top_3": [
+            {"title": e["title"], "video_id": e["video_id"],
+             "views": e["view_count"], "similarity": round(s, 3)}
+            for e, s in scored[:3] if s > 0.10
+        ],
+    }
+
+
+def _print_overlap_result(overlap: dict):
+    sim_pct = f"{overlap['similarity']:.0%}"
+    if overlap["flag"] == "HARD_SKIP":
+        print(f"  ❌ DUPLICATE: {sim_pct} match → '{overlap['matched_title']}'")
+        print(f"     {overlap['matched_views']:,} views — Fern's audience already knows this story")
+        print(f"     Skipping remaining checks to save time.")
+    elif overlap["flag"] == "WARNING":
+        print(f"  ⚠  WARNING: {sim_pct} overlap → '{overlap['matched_title']}' ({overlap['matched_views']:,} views)")
+        print(f"     Continuing validation — ensure your angle is meaningfully different.")
+        if len(overlap.get("top_3", [])) > 1:
+            for m in overlap["top_3"][1:]:
+                if m["similarity"] > 0.15:
+                    print(f"     Also similar: '{m['title']}' ({m['similarity']:.0%})")
+    else:
+        best = overlap["top_3"][0] if overlap.get("top_3") else None
+        if best:
+            print(f"  ✓  CLEAR (closest Fern match: '{best['title'][:45]}' at {best['similarity']:.0%})")
+        else:
+            print(f"  ✓  CLEAR — no significant Fern catalog overlap")
+
+
+# ---------------------------------------------------------------------------
 # Scoring weights — tuned to Fern's formula
 # ---------------------------------------------------------------------------
 
@@ -548,6 +677,45 @@ def validate_story(query: str, brand_id: str = "fern_clone",
     print(f"STORY VALIDATION: {query[:55]}")
     print(f"{'='*60}\n")
 
+    # --- [0] Fern catalog overlap check — runs first, can short-circuit ---
+    print("[0/5] Checking Fern catalog overlap...")
+    fern_catalog = _load_fern_catalog()
+    overlap = _check_fern_overlap(query, fern_catalog)
+    _print_overlap_result(overlap)
+    print()
+
+    if overlap["flag"] == "HARD_SKIP":
+        dim_overlap = DimensionResult(
+            score=0,
+            verdict="DUPLICATE",
+            evidence=[
+                f"Fern already covered: '{overlap['matched_title']}'",
+                f"Views: {overlap['matched_views']:,} | Similarity: {overlap['similarity']:.0%}",
+            ],
+            notes=["Pick a different topic, or find an angle Fern has not taken."],
+        )
+        prod_notes = [
+            f"FERN DUPLICATE ({overlap['similarity']:.0%} similar): '{overlap['matched_title']}'",
+            f"  That video has {overlap['matched_views']:,} views — Fern's audience already knows this story.",
+            f"  Produce a different angle or pick a new topic entirely.",
+        ]
+        if len(overlap.get("top_3", [])) > 1:
+            for m in overlap["top_3"][1:]:
+                if m["similarity"] > 0.15:
+                    prod_notes.append(
+                        f"  Also overlaps: '{m['title']}' ({m['similarity']:.0%})"
+                    )
+        result = ValidationResult(
+            query=query,
+            overall_score=0,
+            verdict="SKIP",
+            dimensions={"fern_overlap": dim_overlap},
+            production_notes=prod_notes,
+            visual_strategy="N/A — topic skipped (Fern duplicate)",
+        )
+        _print_summary(result)
+        return result
+
     # --- Fetch data (or use brief) ---
     if brief:
         wiki = brief.get("wikipedia", {})
@@ -617,6 +785,15 @@ def validate_story(query: str, brand_id: str = "fern_clone",
 
     # --- Production notes ---
     prod_notes = []
+
+    # Fern overlap warning (if any)
+    if overlap["flag"] == "WARNING":
+        prod_notes.append(
+            f"⚠  Overlaps Fern's '{overlap['matched_title']}' "
+            f"({overlap['matched_views']:,} views, {overlap['similarity']:.0%} match) — "
+            f"ensure your angle is meaningfully different before producing"
+        )
+
     if verdict == "GO":
         prod_notes.append(f"Overall score {overall}/100 — proceed to full research brief")
     elif verdict == "NEEDS_WORK":

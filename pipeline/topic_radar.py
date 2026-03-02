@@ -151,6 +151,125 @@ def get_trend_score(keyword: str) -> int:
         return -1
 
 
+# ── Fern catalog — duplicate / overlap detection ─────────────────────────────
+
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+_OVERLAP_STOPWORDS = {
+    "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for", "of",
+    "with", "by", "from", "is", "was", "are", "were", "how", "why", "what",
+    "who", "when", "that", "this", "it", "its", "their", "they", "his", "her",
+    "our", "your", "my", "did", "does", "has", "had", "have", "not", "no",
+    "about", "into", "just", "most", "more", "than", "after", "before", "been",
+    "will", "would", "could", "should", "very", "also", "even", "only", "ever",
+    "didn", "wasn", "wouldn", "couldn", "isn", "aren",
+}
+
+# Thresholds for overlap flag
+_OVERLAP_HARD_SKIP = 0.60   # Fern already made this — disqualify
+_OVERLAP_WARNING   = 0.30   # Similar topic — warn but allow
+
+
+def _load_fern_catalog() -> list:
+    """Load all Fern video titles, descriptions, and view counts for overlap detection."""
+    catalog = []
+    fern_dir = _PROJECT_ROOT / "analysis" / "fern"
+    for info_file in sorted(fern_dir.glob("*/video.info.json")):
+        try:
+            d = json.loads(info_file.read_text())
+            # Strip URLs and sponsor lines from description to get story keywords
+            raw_desc = (d.get("description") or "")
+            clean_desc = re.sub(r"https?://\S+", "", raw_desc)
+            clean_desc = re.sub(r"\b(use code|coupon|discount|promo|sponsor)\b.*", "", clean_desc, flags=re.IGNORECASE)
+            catalog.append({
+                "video_id":    info_file.parent.name,
+                "title":       d.get("title", ""),
+                "view_count":  d.get("view_count", 0),
+                "description": clean_desc[:400],
+            })
+        except Exception:
+            pass
+    return catalog
+
+
+def _key_terms(text: str) -> set:
+    """Extract significant words (no stopwords, length > 3)."""
+    words = re.findall(r"\b\w+\b", text.lower())
+    return {w for w in words if w not in _OVERLAP_STOPWORDS and len(w) > 3}
+
+
+def _fern_entry_similarity(query: str, entry: dict) -> float:
+    """
+    Return 0.0–1.0 similarity between a query string and a single Fern catalog entry.
+
+    Algorithm:
+      1. Jaccard overlap on key terms — TITLE ONLY (description would dilute with
+         unrelated sponsor/source words and reduce real topic matches)
+      2. Acronym exact-match bonus — FBI, CIA, KKK, NSA, etc. (+0.15 each, max 0.30)
+      3. Proper-noun bonus — people, places, orgs (+0.10 each, max 0.20)
+    """
+    q_terms = _key_terms(query)
+    f_terms = _key_terms(entry["title"])   # title only for Jaccard
+
+    if not q_terms or not f_terms:
+        return 0.0
+
+    overlap = q_terms & f_terms
+    jaccard = len(overlap) / max(len(q_terms | f_terms), 1)
+
+    # Acronym exact-match bonus (each matching 2+-char uppercase token adds 0.15)
+    q_ents = set(re.findall(r"\b[A-Z]{2,}\b", query))
+    f_ents = set(re.findall(r"\b[A-Z]{2,}\b", entry["title"]))
+    entity_bonus = min(0.30, len(q_ents & f_ents) * 0.15)
+
+    # Proper-noun bonus (Title-Cased words: people, places, orgs)
+    q_proper = set(re.findall(r"\b[A-Z][a-z]{3,}\b", query))
+    f_proper = set(re.findall(r"\b[A-Z][a-z]{3,}\b", entry["title"]))
+    proper_bonus = min(0.20, len(q_proper & f_proper) * 0.10)
+
+    return min(1.0, jaccard + entity_bonus + proper_bonus)
+
+
+def check_fern_overlap(query: str, catalog: list) -> dict:
+    """
+    Check query against all 30 Fern videos. Returns:
+    {
+        "flag":             "HARD_SKIP" | "WARNING" | "CLEAR",
+        "similarity":       float,          # 0.0–1.0
+        "matched_title":    str,
+        "matched_video_id": str,
+        "matched_views":    int,
+        "top_3": [...]                      # top 3 matches with scores
+    }
+    """
+    if not catalog:
+        return {"flag": "CLEAR", "similarity": 0.0, "matched_title": "",
+                "matched_video_id": "", "matched_views": 0, "top_3": []}
+
+    scored = sorted(
+        [(e, _fern_entry_similarity(query, e)) for e in catalog],
+        key=lambda x: -x[1]
+    )
+    best_entry, best_sim = scored[0]
+
+    flag = ("HARD_SKIP" if best_sim >= _OVERLAP_HARD_SKIP
+            else "WARNING"   if best_sim >= _OVERLAP_WARNING
+            else "CLEAR")
+
+    return {
+        "flag":             flag,
+        "similarity":       round(best_sim, 3),
+        "matched_title":    best_entry["title"],
+        "matched_video_id": best_entry["video_id"],
+        "matched_views":    best_entry["view_count"],
+        "top_3": [
+            {"title": e["title"], "video_id": e["video_id"],
+             "views": e["view_count"], "similarity": round(s, 3)}
+            for e, s in scored[:3] if s > 0.10
+        ],
+    }
+
+
 # ── Scoring ───────────────────────────────────────────────────────────────────
 
 def extract_story_keywords(text: str) -> list:
@@ -172,7 +291,7 @@ def _word_match(term: str, text_lower: str, text_original: str = "") -> bool:
     return bool(re.search(r'\b' + re.escape(term.lower()) + r'\b', text_lower))
 
 
-def score_story(item: dict, brand: dict) -> dict:
+def score_story(item: dict, brand: dict, fern_catalog: list = None) -> dict:
     """Score a story candidate against the brand identity. Returns enriched item with score."""
     title = (item.get("title") or "").lower()
     text_orig = (item.get("title") or "") + " " + (item.get("text") or "")
@@ -189,12 +308,20 @@ def score_story(item: dict, brand: dict) -> dict:
         if any(_word_match(word, text, text_orig) for word in avoid.lower().split("/")):
             return None  # disqualified
 
-    # ── Already covered by Fern ──
-    covered = [c.lower() for c in brand.get("already_covered", [])]
-    for c in covered:
-        if any(_word_match(word, text, text_orig) for word in c.split()[:2] if len(word) > 4):
-            warnings.append(f"possibly already covered: {c}")
-            score -= 20
+    # ── Fern catalog overlap — disqualify if Fern already made this video ──
+    if fern_catalog:
+        overlap = check_fern_overlap(text_orig, fern_catalog)
+        if overlap["flag"] == "HARD_SKIP":
+            return None  # Fern already covered this — hard disqualify
+        elif overlap["flag"] == "WARNING":
+            matched_short = overlap["matched_title"][:55]
+            views_k = overlap["matched_views"] // 1000
+            warnings.append(
+                f"overlaps Fern's '{matched_short}' "
+                f"({views_k:,}K views, {overlap['similarity']:.0%} match) — "
+                f"verify your angle is meaningfully different"
+            )
+            score -= 15
 
     # ── Institution match ──
     # High-value: intelligence agencies and dark institutions (+20)
@@ -497,11 +624,19 @@ def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
 
     print(f"\nTotal raw items: {len(all_items)}")
 
+    # Load Fern catalog once for duplicate detection
+    print("\nLoading Fern catalog for overlap detection...")
+    fern_catalog = _load_fern_catalog()
+    if fern_catalog:
+        print(f"  → {len(fern_catalog)} Fern videos loaded for overlap check")
+    else:
+        print("  ⚠ No Fern catalog found — overlap check skipped")
+
     # Score and filter
     print("\nScoring candidates...")
     scored = []
     for item in all_items:
-        result = score_story(item, brand)
+        result = score_story(item, brand, fern_catalog)
         if result and result["viral_score"] > 0:
             scored.append(result)
 
