@@ -281,6 +281,7 @@ RESEARCH:    ██████████  100% (30 videos: comments/titles/tr
 SCRIPT GEN:  ██████████  100% (Claude Code interactive + script_enhancer.py + check_fern_script.py)
 VOICE:       ██████████  100% (F5-TTS + audio_preprocessor + voice_generator built + voice clips recorded)
 AUDIO MIX:   ██████████  100% (mix_audio() inside video_assembler.py; all formulas measured)
+MUSIC:       ██████████  100% (music_sourcer.py built — analyzes script mood, downloads free CC0 track)
 VIDEO:       ██████████  100% (footage_sourcer + video_assembler built; Ken Burns + color grade + text)
 ANIMATION:   ░░░░░░░░░░    0% (future enhancement — black fallback works for now)
 THUMBNAIL:   ░░░░░░░░░░    0% (use Claude Code + manual — no script needed until volume)
@@ -304,9 +305,10 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 6. `python pipeline/script_enhancer.py --input scripts/raw.txt --output scripts/enhanced.txt`
 7. `python check_fern_script.py scripts/enhanced.txt` — **must score 85+ before proceeding to voice**
 8. `python pipeline/voice_generator.py --ref-neutral assets/voice/voice_neutral_ref.wav --ref-tense assets/voice/voice_tense_ref.wav --ref-energized assets/voice/voice_energized_ref.wav --auto-transcribe --script scripts/enhanced_topic.txt --out audio/topic/narration.wav`
-9. `python pipeline/footage_sourcer.py --brief research/fern_clone/briefs/{topic}.json --out footage/fern_clone/{topic}/`
-10. `python pipeline/video_assembler.py --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --out output/{topic}/final.mp4`
-11. Manual upload to YouTube
+9. `python pipeline/music_sourcer.py --script scripts/enhanced_{topic}.txt` — finds + downloads free CC0 music matching script mood → `assets/music/track.mp3`
+10. `python pipeline/footage_sourcer.py --brief research/fern_clone/briefs/{topic}.json --out footage/fern_clone/{topic}/`
+11. `python pipeline/video_assembler.py --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --out output/{topic}/final.mp4`
+12. Manual upload to YouTube
 
 ---
 
