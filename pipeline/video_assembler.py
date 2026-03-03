@@ -171,6 +171,38 @@ def _escape_text(text: str) -> str:
 FOCAL_MODEL_PREFERENCE = ["qwen3.5:27b", "qwen3.5:4b", "qwen2.5vl:7b"]
 
 
+def _focal_from_description(description: str, image_path: Path) -> tuple[float, float] | None:
+    """
+    Convert a text description of a focal element (e.g. "the date stamp top-right")
+    into approximate (x, y) coordinates. Used when storyboard provides explicit
+    focal_element text — avoids needing to call the vision model.
+
+    Returns (fx, fy) in [0,1] or None if description gives no positional hints.
+    """
+    desc = description.lower()
+
+    # Positional keywords → approximate grid coordinates
+    x_hints = {"left": 0.25, "right": 0.75, "center": 0.5, "middle": 0.5}
+    y_hints = {"top": 0.25, "bottom": 0.75, "upper": 0.25, "lower": 0.75,
+               "center": 0.5, "middle": 0.5}
+
+    fx, fy = None, None
+    for word, val in x_hints.items():
+        if word in desc:
+            fx = val
+            break
+    for word, val in y_hints.items():
+        if word in desc:
+            fy = val
+            break
+
+    if fx is None and fy is None:
+        # No positional hints — fall through to model detection
+        return None
+
+    return (fx or 0.5, fy or 0.5)
+
+
 def detect_focal_point(
     image_path: Path,
     narration_text: str = "",
@@ -546,15 +578,44 @@ def snap_to_beat(
 # Timeline builder
 # ---------------------------------------------------------------------------
 
+def _find_storyboard_match(chunk_text: str, storyboard: list) -> int | None:
+    """
+    Find the storyboard entry (by index) that best matches a narration chunk.
+    Uses word-overlap (Jaccard similarity). Returns None if no confident match.
+    """
+    chunk_words = set(w.lower() for w in chunk_text.split() if len(w) > 3)
+    if not chunk_words:
+        return None
+    best_score = 0.0
+    best_idx = None
+    for i, entry in enumerate(storyboard):
+        if entry.get("shot_type") == "chapter_card":
+            continue
+        entry_words = set(w.lower() for w in entry.get("text", "").split() if len(w) > 3)
+        if not entry_words:
+            continue
+        union = len(chunk_words | entry_words)
+        overlap = len(chunk_words & entry_words) / max(union, 1)
+        if overlap > best_score:
+            best_score = overlap
+            best_idx = i
+    return best_idx if best_score >= 0.15 else None
+
+
 def build_timeline(
     narration_manifest: dict,
     footage_manifest: dict,
     brand_config: dict,
     beat_times: list[float] | None = None,
     detect_focal_points: bool = False,
+    storyboard: list | None = None,
 ) -> list[dict]:
     """
     Map narration chunks to visual segments.
+
+    storyboard: optional list of storyboard entries (from storyboard_generator.py).
+    When provided, clips tagged with matching storyboard_segment_ids are preferred
+    over round-robin selection — giving story-specific footage for each moment.
 
     Returns list of segment dicts:
     {
@@ -674,10 +735,33 @@ def build_timeline(
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
             seg_lower_third = {"name": lt_info[0], "role": lt_info[1]} if lt_info else None
 
+            # Storyboard match: find the storyboard entry for this chunk (if storyboard provided)
+            sb_entry_idx = None
+            sb_focal_element = None
+            if storyboard and is_chunk_start:
+                sb_entry_idx = _find_storyboard_match(chunk_text, storyboard)
+                if sb_entry_idx is not None:
+                    sb_focal_element = storyboard[sb_entry_idx].get("focal_element")
+
+            # Story-tagged footage: prefer clips/stills tagged for this storyboard segment
+            tagged_still = None
+            tagged_clip  = None
+            if sb_entry_idx is not None:
+                for s in stills:
+                    if sb_entry_idx in s.get("storyboard_segment_ids", []):
+                        tagged_still = s
+                        break
+                for c in videos:
+                    if sb_entry_idx in c.get("storyboard_segment_ids", []):
+                        tagged_clip = c
+                        break
+
             # Footage: content-type drives clip vs. still probability
-            use_clip = (video_idx < len(videos)) and (
-                random.random() < spec.clip_probability  # content-type specific probability
-                or (random.random() < 0.05)              # 5% random chance
+            use_clip = bool(tagged_clip) or (
+                (video_idx < len(videos)) and (
+                    random.random() < spec.clip_probability
+                    or (random.random() < 0.05)
+                )
             )
 
             seg_base = {
@@ -691,26 +775,34 @@ def build_timeline(
                 "lower_third": seg_lower_third,
             }
 
-            if use_clip and videos:
-                clip = videos[video_idx % len(videos)]
-                video_idx += 1
+            if use_clip and (tagged_clip or videos):
+                clip = tagged_clip or videos[video_idx % len(videos)]
+                if not tagged_clip:
+                    video_idx += 1
                 segments.append({**seg_base,
                     "source_type": "clip",
-                    "source_path": clip.get("path", ""),
+                    "source_path": clip.get("path", clip.get("local_path", "")),
                     "motion": "natural",
+                    "storyboard_match": sb_entry_idx is not None,
                 })
-            elif stills:
-                still = stills[still_idx % len(stills)]
-                still_idx += 1
-                still_path = Path(still.get("path", ""))
+            elif tagged_still or stills:
+                still = tagged_still or stills[still_idx % len(stills)]
+                if not tagged_still:
+                    still_idx += 1
+                still_path = Path(still.get("path", still.get("local_path", "")))
                 focal = None
                 if detect_focal_points and still_path.exists():
-                    focal = detect_focal_point(still_path, narration_text=chunk_text)
+                    # Storyboard focal_element overrides model detection when available
+                    if sb_focal_element:
+                        focal = _focal_from_description(sb_focal_element, still_path)
+                    else:
+                        focal = detect_focal_point(still_path, narration_text=chunk_text)
                 segments.append({**seg_base,
                     "source_type": "still",
                     "source_path": str(still_path),
                     "motion": motion,
                     "focal_point": focal,
+                    "storyboard_match": tagged_still is not None,
                 })
             else:
                 segments.append({**seg_base,
@@ -718,6 +810,7 @@ def build_timeline(
                     "source_path": None,
                     "motion": "static",
                     "focal_point": None,
+                    "storyboard_match": False,
                 })
 
             t += seg_dur
@@ -1502,6 +1595,10 @@ def _parse_args():
     p.add_argument("--focal-points", action="store_true",
                    help="Detect Ken Burns focal points via local vision model (qwen3.5:27b). "
                         "Results cached per image. Falls back to center if model unavailable.")
+    p.add_argument("--storyboard", default=None,
+                   help="Path to storyboard.json (from storyboard_generator.py). "
+                        "Enables story-specific footage selection: clips tagged with "
+                        "matching storyboard_segment_ids are preferred over round-robin.")
     return p.parse_args()
 
 
@@ -1557,14 +1654,28 @@ def main():
         else:
             print("  Beat detection unavailable — cuts will not be beat-synced")
 
+    # Load storyboard if provided
+    storyboard = None
+    if args.storyboard:
+        sb_path = Path(args.storyboard)
+        if sb_path.exists():
+            storyboard = json.load(open(sb_path))
+            tagged = sum(1 for e in storyboard if e.get("search_query"))
+            print(f"  Storyboard: {sb_path.name} ({len(storyboard)} entries, {tagged} with search queries)")
+        else:
+            print(f"  WARNING: Storyboard not found: {sb_path} — proceeding without")
+
     # Build timeline
     print("\nBuilding timeline...")
     if args.focal_points:
         print("  Focal point detection enabled (qwen3.5:27b — will cache results per image)")
+    if storyboard:
+        print("  Story-aware footage selection enabled (storyboard match → tagged clips first)")
     segments = build_timeline(
         narration_manifest, footage_manifest, brand_config,
         beat_times=beat_times,
         detect_focal_points=args.focal_points,
+        storyboard=storyboard,
     )
     total_dur = sum(s["duration_sec"] for s in segments)
     print(f"  {len(segments)} segments → {total_dur:.0f}s ({total_dur/60:.1f}min)")

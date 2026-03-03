@@ -259,7 +259,36 @@ venv/bin/python pipeline/footage_sourcer.py \
 ```
 Sources from: YouTube (yt-dlp), Internet Archive, Wikimedia Commons images (all free).
 
-**Storyboard integration with footage_sourcer:** Pass `--storyboard storyboards/topic.json` to footage_sourcer once that flag is wired (next build — footage_sourcer currently uses brief-derived tags, needs storyboard search queries as primary).
+**Storyboard integration — FULLY WIRED (2026-03-02):**
+
+```bash
+# Step 1: Generate storyboard (after script enhancement)
+venv/bin/python pipeline/storyboard_generator.py \
+  --script scripts/enhanced_topic.txt \
+  --out storyboards/topic.json
+
+# Step 2: Source footage using storyboard queries (story-specific searches)
+venv/bin/python pipeline/footage_sourcer.py \
+  --brand fern_clone \
+  --brief research/fern_clone/briefs/topic.json \
+  --storyboard storyboards/topic.json \
+  --download
+
+# Step 3: Assemble with storyboard-aware clip selection
+venv/bin/python pipeline/video_assembler.py \
+  --brand fern_clone \
+  --narration audio/topic/narration_manifest.json \
+  --footage footage/fern_clone/topic/manifest.json \
+  --music assets/music/track.mp3 \
+  --storyboard storyboards/topic.json \
+  --out output/topic/final.mp4
+```
+
+How it works end-to-end:
+1. `storyboard_generator.py` → per-segment: `show`, `search_query`, `focal_element`, `shot_type`
+2. `footage_sourcer.py --storyboard` → runs targeted search per storyboard query → tags each clip with `storyboard_segment_ids`
+3. `video_assembler.py --storyboard` → for each narration chunk, text-matches to storyboard entry → picks the tagged clip first → falls back to round-robin if none found
+4. `focal_element` from storyboard → Ken Burns target (positional description → coordinates, no vision model needed for explicit descriptions)
 
 **Assemble video:**
 ```bash
@@ -384,11 +413,11 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 **Manual check:** Listen to narration. Catch mispronunciations, wrong emotion, timing drift.
 
 10. `python pipeline/music_sourcer.py --script scripts/enhanced_{topic}.txt` — mood-matched CC0 track → `assets/music/track.mp3`
-11. `python pipeline/footage_sourcer.py --brief research/fern_clone/briefs/{topic}.json --out footage/fern_clone/{topic}/`
+11. `python pipeline/footage_sourcer.py --brand fern_clone --brief research/fern_clone/briefs/{topic}.json --storyboard storyboards/{topic}.json --download --out footage/fern_clone/{topic}/`
 
 **Manual check:** Scan downloaded footage. Delete wrong clips. Add missing critical visuals.
 
-12. `python pipeline/video_assembler.py --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --out output/{topic}/final.mp4`
+12. `python pipeline/video_assembler.py --brand fern_clone --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --storyboard storyboards/{topic}.json --out output/{topic}/final.mp4`
     → Saves `output/{topic}/timeline.json` automatically.
 13. `python check_fern_video.py output/{topic}/final.mp4` — **must PASS or WARN before upload**
 
@@ -447,4 +476,6 @@ venv/bin/python monitor.py
 *Final video QA: built 2026-03-02 — check_fern_video.py, 8 checks, auto-detects timeline.json and music*
 *Music sourcer: built 2026-03-02 — mood analysis + Pixabay CC0 (free API, no payment)*
 *Animation bridge: storyboard shot_type field reserved for future Blender/AE pipeline when footage not found*
-*Next build: wire storyboard search queries into footage_sourcer --storyboard flag*
+*Storyboard fully wired 2026-03-02: footage_sourcer --storyboard + video_assembler --storyboard both integrated*
+*Full story-aware chain complete: script → storyboard → targeted footage search → tagged clips → story-specific assembly → QA → upload*
+*Next build: animation layer — when footage_sourcer returns nothing, storyboard shot_type + show triggers graphic generation*

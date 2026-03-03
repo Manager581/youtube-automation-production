@@ -5,11 +5,16 @@ Footage Sourcer — finds and downloads relevant footage for a story.
 Sources (NO stock footage, ever):
   1. YouTube news channels — Reuters, AP Archive, BBC, CNN, C-SPAN, etc.
   2. Internet Archive — archival footage, old news broadcasts, gov docs
-  3. Competitor/reference channels — for style reference only (not for reuse)
+  3. Wikimedia Commons — free-licensed still images (CC/PD)
 
 Usage:
-    # Source footage from a research brief
-    python pipeline/footage_sourcer.py --brand fern_clone --brief cia_mkultra_drug_experiments_on_civilians
+    # Source footage from a research brief (broad topic search)
+    python pipeline/footage_sourcer.py --brand fern_clone --brief cia_mkultra
+
+    # Source from a storyboard (PREFERRED — story-driven targeted searches)
+    python pipeline/footage_sourcer.py --brand fern_clone \
+        --brief cia_mkultra \
+        --storyboard storyboards/cia_mkultra.json
 
     # Source from a direct query
     python pipeline/footage_sourcer.py --brand fern_clone --query "CIA MKUltra experiments" --download
@@ -18,8 +23,15 @@ Usage:
     python pipeline/footage_sourcer.py --brand fern_clone --brief cia_mkultra --preview
 
 Output:
-    footage/{brand_id}/{slug}/manifest.json  — all found clips with metadata
+    footage/{brand_id}/{slug}/manifest.json  — all clips with metadata + storyboard_segment_ids
     footage/{brand_id}/{slug}/*.mp4           — downloaded clips (if --download)
+    footage/{brand_id}/{slug}/images/         — Wikimedia still images (if downloaded)
+
+Storyboard integration:
+    When --storyboard is provided, each clip in the manifest gains:
+      "storyboard_segment_ids": [3, 7, 12]   — which story segments this clip serves
+      "storyboard_show": "FBI memo 1973..."   — what the storyboard specified to show
+    video_assembler.py uses these to pick the right clip for each story moment.
 """
 
 import json
@@ -370,6 +382,183 @@ def source_wikimedia_for_story(query: str, entities: dict,
     return all_images
 
 
+# ── Storyboard integration ───────────────────────────────────────────────────
+
+def load_storyboard(storyboard_path: str) -> list:
+    """Load storyboard JSON and return list of segment dicts."""
+    path = Path(storyboard_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Storyboard not found: {path}")
+    return json.loads(path.read_text())
+
+
+def _group_storyboard_by_query(storyboard: list) -> dict:
+    """
+    Group storyboard segments by search_query.
+    Returns: {search_query: [segment_dicts]}
+    Skips chapter cards and segments with no search_query.
+    """
+    groups: dict[str, list] = {}
+    for i, seg in enumerate(storyboard):
+        if seg.get("shot_type") == "chapter_card":
+            continue
+        query = seg.get("search_query", "").strip()
+        if not query:
+            continue
+        seg = {**seg, "segment_index": i}
+        if query not in groups:
+            groups[query] = []
+        groups[query].append(seg)
+    return groups
+
+
+def source_footage_from_storyboard(
+    storyboard: list,
+    broad_query: str,
+    entities: dict,
+    brand_id: str,
+    output_dir: Path,
+    download: bool = False,
+    preview_only: bool = False,
+) -> dict:
+    """
+    Story-driven footage sourcing using a storyboard.
+
+    For each unique search_query in the storyboard:
+      - Searches YouTube + Internet Archive + Wikimedia
+      - Tags results with which segment_ids they serve
+      - Prefers Wikimedia images for document_photo/documentary_photo shot types
+      - Prefers YouTube/Archive for archival_footage/news_footage shot types
+
+    Also runs the broad topic search as a fallback pool.
+    """
+    slug = slugify(broad_query)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"\n{'='*60}")
+    print(f"FOOTAGE SOURCER (storyboard-driven): {broad_query[:50]}")
+    print(f"{'='*60}\n")
+
+    groups = _group_storyboard_by_query(storyboard)
+    print(f"Storyboard: {len(storyboard)} segments → {len(groups)} unique search queries\n")
+
+    # Track all clips and images with their storyboard tags
+    all_clips: list[dict] = []
+    all_images: list[dict] = []
+
+    # ── 1. Per-segment targeted searches ──
+    for query, segs in groups.items():
+        seg_indices = [s["segment_index"] for s in segs]
+        shot_types = list({s.get("shot_type", "") for s in segs})
+        show_desc = segs[0].get("show", "")
+
+        print(f"  [{', '.join(str(i) for i in seg_indices[:3])}{'...' if len(seg_indices)>3 else ''}] "
+              f"{query[:50]}  ({shot_types[0]})")
+
+        needs_video = any(st in ("archival_footage", "news_footage") for st in shot_types)
+        needs_image = any(st in ("document_photo", "documentary_photo", "person_photo", "map") for st in shot_types)
+
+        # Video sources (YouTube + Archive)
+        if needs_video or not needs_image:
+            yt_clips = search_youtube(query, max_results=4)
+            for c in yt_clips:
+                c["storyboard_segment_ids"] = seg_indices
+                c["storyboard_show"] = show_desc
+            all_clips.extend(yt_clips)
+            time.sleep(0.3)
+
+            ia_clips = search_internet_archive(query, max_results=3)
+            for c in ia_clips:
+                c["storyboard_segment_ids"] = seg_indices
+                c["storyboard_show"] = show_desc
+            all_clips.extend(ia_clips)
+
+        # Image sources (Wikimedia Commons)
+        if needs_image or not needs_video:
+            imgs = search_wikimedia_images(query, max_results=15)
+            for img in imgs:
+                img["storyboard_segment_ids"] = seg_indices
+                img["storyboard_show"] = show_desc
+            all_images.extend(imgs)
+            time.sleep(0.3)
+
+    # ── 2. Broad fallback search (covers any untagged segments) ──
+    print(f"\nBroad fallback: '{broad_query[:50]}'...")
+    fallback_clips = search_youtube(broad_query, max_results=8)
+    all_clips.extend(fallback_clips)  # no storyboard_tags — fallback only
+
+    fallback_images = source_wikimedia_for_story(
+        broad_query, entities, output_dir,
+        download=False, max_images=20,
+    )
+    all_images.extend(fallback_images)
+
+    # ── Score, deduplicate ──
+    print(f"\nScoring {len(all_clips)} video clips + {len(all_images)} images...")
+    seen_urls = set()
+    unique_clips = []
+    for c in all_clips:
+        url = c.get("url", c.get("id", ""))
+        if url not in seen_urls:
+            seen_urls.add(url)
+            c["relevance_score"] = score_clip(c, broad_query, entities)
+            unique_clips.append(c)
+    unique_clips.sort(key=lambda c: (
+        len(c.get("storyboard_segment_ids", [])) > 0,  # tagged clips first
+        c["relevance_score"]
+    ), reverse=True)
+    top_clips = unique_clips[:MAX_TOTAL_CLIPS]
+
+    seen_img_urls = set()
+    unique_images = []
+    for img in all_images:
+        url = img.get("url", "")
+        if url and url not in seen_img_urls:
+            seen_img_urls.add(url)
+            unique_images.append(img)
+    unique_images = unique_images[:60]
+
+    # ── Summary ──
+    tagged_clips  = sum(1 for c in top_clips  if c.get("storyboard_segment_ids"))
+    tagged_images = sum(1 for i in unique_images if i.get("storyboard_segment_ids"))
+    print(f"\n{'='*60}")
+    print(f"ASSET SUMMARY")
+    print(f"{'='*60}")
+    print(f"  Video clips: {len(top_clips)} ({tagged_clips} story-tagged)")
+    print(f"  Images:      {len(unique_images)} ({tagged_images} story-tagged)")
+
+    if preview_only:
+        print("\n[Preview — use --download to fetch assets]")
+        return _save_manifest(top_clips, unique_images, broad_query, slug, brand_id, output_dir)
+
+    # ── Download ──
+    if download:
+        print(f"\nDownloading top {min(12, len(top_clips))} clips...")
+        for i, clip in enumerate(top_clips[:12]):
+            tag = f"segs {clip['storyboard_segment_ids']}" if clip.get("storyboard_segment_ids") else "fallback"
+            print(f"  [{i+1}/12] [{tag}] {clip['title'][:50]}...")
+            updated = download_clip(clip, output_dir)
+            top_clips[i] = updated
+            status = f"✅ {updated.get('file_size_mb','?')}MB" if updated.get("downloaded") else f"⚠ {updated.get('error','')[:40]}"
+            print(f"    {status}")
+            time.sleep(1.0)
+
+        print(f"\nDownloading {len(unique_images)} images...")
+        img_dir = output_dir / "images"
+        img_dir.mkdir(exist_ok=True)
+        downloaded_imgs = []
+        for img in unique_images:
+            result = download_wikimedia_image(img, img_dir)
+            downloaded_imgs.append(result)
+            if result.get("downloaded") and not result.get("cached"):
+                time.sleep(0.2)
+        ok = sum(1 for r in downloaded_imgs if r.get("downloaded"))
+        print(f"  Images downloaded: {ok}/{len(unique_images)}")
+        unique_images = downloaded_imgs
+
+    return _save_manifest(top_clips, unique_images, broad_query, slug, brand_id, output_dir)
+
+
 # ── Relevance scoring ──────────────────────────────────────────────────────────
 
 def score_clip(clip: dict, query: str, entities: dict) -> int:
@@ -678,13 +867,27 @@ if __name__ == "__main__":
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--brief", help="Research brief slug (from research/{brand}/briefs/)")
     group.add_argument("--query", help="Direct search query")
-    parser.add_argument("--download", action="store_true", help="Download top 10 clips")
+    parser.add_argument("--storyboard", help="Path to storyboard.json — enables story-driven targeted searches")
+    parser.add_argument("--download", action="store_true", help="Download top clips and images")
     parser.add_argument("--preview", action="store_true", help="Preview only, no download")
     args = parser.parse_args()
 
     if args.brief:
-        run_from_brief(args.brief, args.brand, args.download, args.preview)
+        brief = load_brief(args.brand, args.brief)
+        query = brief.get("query", args.brief)
+        entities = brief.get("entities", {})
     else:
-        entities = {}  # No brief — use bare query
-        source_footage(args.query, entities, args.brand,
+        query = args.query
+        entities = {}
+
+    if args.storyboard:
+        storyboard = load_storyboard(args.storyboard)
+        slug = slugify(query)
+        out_dir = Path(f"footage/{args.brand}/{slug}")
+        source_footage_from_storyboard(
+            storyboard, query, entities, args.brand, out_dir,
+            download=args.download, preview_only=args.preview,
+        )
+    else:
+        source_footage(query, entities, args.brand,
                        download=args.download, preview_only=args.preview)
