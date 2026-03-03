@@ -286,21 +286,67 @@ def check_fern_overlap(query: str, catalog: list) -> dict:
 # article, already fact-checked, often with primary sources listed.
 
 WIKIPEDIA_DARK_CATEGORIES = [
+    # Deep historical — CIA black programs, human experiments, domestic surveillance
     "United_States_government_cover-ups",
     "Human_subject_research_scandals",
+    "Human_experimentation_in_the_United_States",
+    "COINTELPRO",
+    "CIA_activities_in_the_United_States",
+    "CIA_covert_operations",                   # Bay of Pigs, Operation Condor, CHAOS
+    # Cold War espionage — spies, defectors, double agents
     "Espionage_scandals_in_the_United_States",
     "Cold_War_espionage",
-    "COINTELPRO",
-    "Political_scandals_in_the_United_States",
-    "FBI_investigations",
-    "Unsolved_murders_in_the_United_States",
-    "American_whistleblowers",
-    "CIA_activities_in_the_United_States",
-    "United_States_intelligence_agencies",
-    "Human_experimentation_in_the_United_States",
+    "Soviet_espionage_in_the_United_States",   # Rosenbergs, Aldrich Ames, Robert Hanssen
     "Cold_War_propaganda",
-    "Classified_information_in_the_United_States",
+    # Whistleblowers and true crime
+    "American_whistleblowers",
+    "Unsolved_murders_in_the_United_States",
     "Assassinations_in_the_United_States",
+    "American_serial_killers",                 # MrBallen/Fern crossover territory
+]
+
+# Keyword signals injected into each Wikipedia item's text field.
+# Critical: article titles like "Project MKUltra" or "COINTELPRO" don't contain
+# keywords like "classified" or "cover-up" — without injection they fail the minimum
+# signal gate in score_story() and are discarded entirely.
+_CATEGORY_SIGNALS = {
+    "United_States_government_cover-ups":
+        "CIA FBI classified secret program cover-up declassified government",
+    "Human_subject_research_scandals":
+        "CIA classified secret program experiment cover-up human subjects scandal",
+    "Human_experimentation_in_the_United_States":
+        "CIA military classified secret program experiment cover-up civilians",
+    "COINTELPRO":
+        "FBI classified secret program cover-up infiltration",
+    "CIA_activities_in_the_United_States":
+        "CIA classified secret program cover-up infiltration operation",
+    "CIA_covert_operations":
+        "CIA classified secret program cover-up infiltration operation",
+    "Espionage_scandals_in_the_United_States":
+        "CIA FBI classified secret spy infiltration cover-up mole double agent",
+    "Cold_War_espionage":
+        "CIA KGB classified secret spy defector cover-up double agent mole",
+    "Soviet_espionage_in_the_United_States":
+        "KGB spy classified secret infiltration cover-up defector mole double agent",
+    "Cold_War_propaganda":
+        "CIA classified secret program cover-up propaganda psychological operation",
+    "American_whistleblowers":
+        "classified secret cover-up declassified whistleblower FBI CIA NSA",
+    "Unsolved_murders_in_the_United_States":
+        "murdered killed death unsolved secret investigation FBI cover-up",
+    "Assassinations_in_the_United_States":
+        "assassination killed death classified secret cover-up political",
+    "American_serial_killers":
+        "murdered killed death serial secret investigation FBI arrested prison executed",
+}
+
+# Wikipedia article titles containing these terms are recent news, not historical stories.
+# Fern covers deep history — filter these at the source before scoring.
+_WIKI_RECENCY_TERMS = [
+    "trump", "biden", "mar-a-lago", "pelosi", "maga",
+    "2019", "2020", "2021", "2022", "2023", "2024", "2025",
+    "covid", "pandemic", "coronavirus",
+    "ukraine", "zelensky",
 ]
 
 
@@ -323,25 +369,34 @@ def fetch_wikipedia_category(category: str, limit: int = 50) -> list:
         with urllib.request.urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
         pages = data.get("query", {}).get("categorymembers", [])
-        return [
-            {
+
+        # Inject category-specific scoring keywords so short titles like
+        # "Project MKUltra" or "COINTELPRO" trigger institution/theme matching.
+        signals = _CATEGORY_SIGNALS.get(category, "")
+
+        results = []
+        for p in pages:
+            title = p["title"]
+            # Skip recent news articles — Fern covers deep history not current events
+            if any(term in title.lower() for term in _WIKI_RECENCY_TERMS):
+                continue
+            results.append({
                 "source": f"wikipedia/{category.replace('_', ' ')}",
-                "title": p["title"],
-                # Text = title + category context — feeds keyword scoring
+                "title": title,
                 "text": (
-                    f"{p['title']}. "
+                    f"{title}. "
                     f"Category: {category.replace('_', ' ')}. "
-                    f"Documented historical event with primary sources."
+                    f"{signals} "
+                    f"Documented historical event."
                 ),
-                "url": f"https://en.wikipedia.org/wiki/{p['title'].replace(' ', '_')}",
+                "url": f"https://en.wikipedia.org/wiki/{title.replace(' ', '_')}",
                 "score": 0,
                 "comments": 0,
-                # Wikipedia bonus: verified real story with documentation
-                # Compensates for no Reddit engagement signal on historical content
+                # Wikipedia bonus: verified real story with documentation.
+                # Compensates for no Reddit engagement signal on historical content.
                 "source_bonus": 20,
-            }
-            for p in pages
-        ]
+            })
+        return results
     except Exception as e:
         print(f"  ⚠ Wikipedia/{category}: {e}")
         return []
@@ -726,28 +781,86 @@ def scan_tiktok(brand: dict) -> list:
     return all_videos
 
 
+# Maps keywords found in story titles → dramatic action phrases for Fern-style titles.
+# Evaluated in order — first match wins.
+_ACTION_PHRASES = [
+    (["torture", "tortur", "enhanced interrogation"],       "Used Torture on Detainees"),
+    (["mkultra", "lsd", "hallucinogen", "acid test"],       "Secretly Drugged American Citizens"),
+    (["drug", "drugged", "dosed citizens"],                 "Secretly Drugged American Citizens"),
+    (["experiment", "experimented", "human subject"],       "Secretly Experimented on Citizens"),
+    (["assassinat"],                                        "Ran a Secret Assassination Program"),
+    (["serial killer", "serial murder"],                    "Hunted Its Most Dangerous Serial Killer"),
+    (["murder", "murdered"],                                "Covered Up a Murder"),
+    (["surveillance", "wiretap", "wiretapping"],            "Secretly Surveilled Its Own Citizens"),
+    (["infiltrat"],                                         "Infiltrated Civilian Organizations"),
+    (["defect", "defector", "double agent", "mole"],        "Had a Mole at the Highest Level"),
+    (["whistleblow", "leaked document"],                    "Silenced the Person Who Told the Truth"),
+    (["propaganda", "psychological operation"],             "Used Propaganda on Its Own People"),
+    (["prison break", "escape", "escaped from"],            "Built an Inescapable Prison"),
+    (["executed", "execution", "electric chair", "death row"], "Executed People in Secret"),
+    (["cover-up", "covered up", "concealed"],               "Covered Up the Truth for Decades"),
+    (["classified", "declassified", "secret program"],      "Kept a Secret Program Hidden for Decades"),
+]
+
+
 def suggest_title(item: dict, brand: dict) -> str:
-    """Suggest a Fern-style title for a story candidate."""
-    title = item["title"]
-    angle = item.get("angle")
+    """
+    Generate a Fern-style title from story signals.
+    Never leaves [Template Placeholder] strings in output — always returns a real sentence.
+    """
+    original_title = item["title"]
     institutions = item.get("institutions_found", [])
     formula = brand["content_formula"]
+    angle = item.get("angle") or formula["title_angles_ranked"][0]["pattern"]
 
-    if not angle:
-        # Pick highest-performing angle
-        angle = formula["title_angles_ranked"][0]["pattern"]
+    # Prefer named agencies over generic words (FBI/CIA > government/military)
+    _generic_inst = {"government", "bank", "military", "congress", "senate",
+                     "court", "prison", "pharmaceutical", "who", "un", "sec"}
+    named = [i for i in institutions if i.lower() not in _generic_inst]
+    inst = named[0] if named else (institutions[0] if institutions else None)
 
-    templates = {t["pattern"]: t["template"] for t in formula["title_angles_ranked"]}
-    template = templates.get(angle, "[Topic]: [The Hidden Truth]")
+    # Derive a dramatic action phrase from keywords in the story title
+    title_lower = original_title.lower()
+    action = None
+    for keywords, phrase in _ACTION_PHRASES:
+        if any(kw in title_lower for kw in keywords):
+            action = phrase
+            break
 
-    # Prefer named agencies/orgs over generic terms (avoid "How WHO [Shocking]")
-    _generic = {"who", "un", "sec", "court", "prison", "government",
-                "bank", "military", "congress", "senate"}
-    named = [i for i in institutions if i.lower() not in _generic]
-    inst = (named[0] if named else institutions[0]) if institutions else "[Institution]"
-    suggested = template.replace("[Institution]", inst)
+    # Build a real title based on angle
+    article = "the " if inst and inst not in {"FBI", "CIA", "NSA", "KGB", "Mossad", "MI6", "ATF", "DEA"} else "the "
 
-    return f"{suggested}  [from: {title[:60]}]"
+    if angle == "INSTITUTION_HOW":
+        if inst and action:
+            return f"How {article}{inst} {action}"
+        elif inst:
+            return f"The {inst}'s Darkest Secret: {original_title}"
+        elif action:
+            return f"How the Government {action}"
+
+    elif angle == "COUNTRY_DARK":
+        for country in ["North Korea", "Russia", "China", "Iran", "Cuba", "Soviet", "America"]:
+            if country.lower() in title_lower:
+                dark = action.split()[0].lower() if action else "hidden"
+                return f"{country}'s Most {dark.title()} Secret"
+
+    elif angle == "SUPERLATIVE":
+        subject = inst or "Secret Program"
+        return f"The Most Horrifying {subject} in American History"
+
+    elif angle == "PERSON_GENIUS_TRAGEDY":
+        if action:
+            return f"The Person Who Discovered {inst or 'the Truth'} (and paid with their life)"
+
+    # Universal fallback — always a real sentence, never a template
+    if inst and action:
+        return f"How {article}{inst} {action}"
+    elif inst:
+        return f"The {inst}'s Darkest Secret: {original_title}"
+    elif action:
+        return f"How the Government {action}"
+    else:
+        return f"The Hidden Truth About: {original_title}"
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
