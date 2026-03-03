@@ -3,7 +3,12 @@
     "channel": "@fern-tv",
     "analysis_date": "2026-03-02",
     "videos_complete": 3,
-    "total_videos_with_complete_analysis": 3
+    "total_videos_with_complete_analysis": 3,
+    "last_updated": "2026-03-02",
+    "includes_motion_formula": true,
+    "includes_per_type_correlation": true,
+    "labeled_frames": 1838,
+    "segment_motion_videos": 3
   },
   "script_patterns": {
     "metadata": {
@@ -17872,6 +17877,460 @@
     },
     "energy": {
       "avg_energy": 0
+    }
+  },
+  "motion_formula": {
+    "videos_analyzed": 3,
+    "per_video": [
+      {
+        "video": "analysis/fern/aVA7aXOH1pk/video.mp4",
+        "video_id": "aVA7aXOH1pk",
+        "duration_sec": 371.4,
+        "cut_dynamics": {
+          "total_cuts": 64,
+          "cuts_per_minute": 10.3,
+          "avg_segment_duration_sec": 5.8,
+          "segment_duration_distribution": {
+            "under_1s": 44.8,
+            "1_to_3s": 35.2,
+            "3_to_6s": 1.6,
+            "over_6s": 18.4
+          }
+        },
+        "motion": {
+          "distribution_pct": {
+            "zoom_in": 28.0,
+            "zoom_out": 25.6,
+            "static": 25.6,
+            "pan_up": 9.6,
+            "pan_down": 6.4,
+            "indeterminate": 3.2,
+            "pan_left": 0.8,
+            "pan_right": 0.8
+          },
+          "zoom_in_pct": 28.0,
+          "zoom_out_pct": 25.6,
+          "pan_pct": 17.6,
+          "static_pct": 25.6,
+          "avg_zoom_rate_pct_per_sec": 5.837,
+          "zoom_in_rate_pct_per_sec": 5.054,
+          "zoom_out_rate_pct_per_sec": 6.694,
+          "interpretation": "aggressive_motion (5\u201310%/s \u2014 high energy)"
+        },
+        "color_grade_intensity": {
+          "saturation": 0.183,
+          "brightness": 0.538,
+          "contrast": 0.189,
+          "black_crush_pct": 13.024,
+          "highlight_clip_pct": 11.708
+        },
+        "content_motion": {
+          "avg_total_motion_energy_pct": 0.291,
+          "motion_source_distribution": {
+            "camera_only": 40.8,
+            "both": 30.4,
+            "neither": 24.8,
+            "subject_only": 4.0
+          },
+          "subject_motion_in_static_shots_pct": 15.6,
+          "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+        },
+        "transition_types": {
+          "_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"
+        },
+        "beat_sync": {
+          "beat_sync_pct": 42.2,
+          "avg_offset_ms": 120.1,
+          "beat_interval_sec": 0.517,
+          "total_cuts": 135
+        }
+      },
+      {
+        "video": "analysis/fern/wLFY_Zu_O08/video.mp4",
+        "video_id": "wLFY_Zu_O08",
+        "duration_sec": 2464.1,
+        "cut_dynamics": {
+          "total_cuts": 513,
+          "cuts_per_minute": 12.5,
+          "avg_segment_duration_sec": 4.8,
+          "segment_duration_distribution": {
+            "under_1s": 51.0,
+            "1_to_3s": 33.3,
+            "3_to_6s": 1.5,
+            "over_6s": 14.1
+          }
+        },
+        "motion": {
+          "distribution_pct": {
+            "zoom_in": 38.9,
+            "static": 25.8,
+            "zoom_out": 20.7,
+            "pan_up": 6.1,
+            "pan_down": 3.5,
+            "pan_right": 2.5,
+            "indeterminate": 1.5,
+            "pan_left": 1.0
+          },
+          "zoom_in_pct": 38.9,
+          "zoom_out_pct": 20.7,
+          "pan_pct": 13.1,
+          "static_pct": 25.8,
+          "avg_zoom_rate_pct_per_sec": 4.428,
+          "zoom_in_rate_pct_per_sec": 4.619,
+          "zoom_out_rate_pct_per_sec": 4.069,
+          "interpretation": "moderate_motion (2\u20135%/s \u2014 modern YouTube doc)"
+        },
+        "color_grade_intensity": {
+          "saturation": 0.287,
+          "brightness": 0.24,
+          "contrast": 0.183,
+          "black_crush_pct": 37.292,
+          "highlight_clip_pct": 1.465
+        },
+        "content_motion": {
+          "avg_total_motion_energy_pct": 0.169,
+          "motion_source_distribution": {
+            "camera_only": 57.6,
+            "neither": 26.3,
+            "both": 15.2,
+            "subject_only": 1.0
+          },
+          "subject_motion_in_static_shots_pct": 0.0,
+          "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+        },
+        "transition_types": {
+          "_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"
+        },
+        "beat_sync": {
+          "beat_sync_pct": 37.8,
+          "avg_offset_ms": 129.9,
+          "beat_interval_sec": 0.517,
+          "total_cuts": 1030
+        }
+      },
+      {
+        "video": "analysis/fern/wkVygetgeRY/video.mp4",
+        "video_id": "wkVygetgeRY",
+        "duration_sec": 1689.4,
+        "cut_dynamics": {
+          "total_cuts": 314,
+          "cuts_per_minute": 11.2,
+          "avg_segment_duration_sec": 5.38,
+          "segment_duration_distribution": {
+            "under_1s": 50.9,
+            "1_to_3s": 37.2,
+            "3_to_6s": 0.9,
+            "over_6s": 11.0
+          }
+        },
+        "motion": {
+          "distribution_pct": {
+            "zoom_in": 42.7,
+            "zoom_out": 24.8,
+            "static": 8.7,
+            "pan_up": 6.9,
+            "indeterminate": 6.4,
+            "pan_down": 5.0,
+            "pan_right": 3.2,
+            "pan_left": 2.3
+          },
+          "zoom_in_pct": 42.7,
+          "zoom_out_pct": 24.8,
+          "pan_pct": 17.4,
+          "static_pct": 8.7,
+          "avg_zoom_rate_pct_per_sec": 5.819,
+          "zoom_in_rate_pct_per_sec": 6.696,
+          "zoom_out_rate_pct_per_sec": 4.308,
+          "interpretation": "aggressive_motion (5\u201310%/s \u2014 high energy)"
+        },
+        "color_grade_intensity": {
+          "saturation": 0.261,
+          "brightness": 0.326,
+          "contrast": 0.191,
+          "black_crush_pct": 23.648,
+          "highlight_clip_pct": 2.542
+        },
+        "content_motion": {
+          "avg_total_motion_energy_pct": 0.279,
+          "motion_source_distribution": {
+            "camera_only": 62.8,
+            "both": 22.0,
+            "neither": 11.5,
+            "subject_only": 3.7
+          },
+          "subject_motion_in_static_shots_pct": 10.5,
+          "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+        },
+        "transition_types": {
+          "_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"
+        },
+        "beat_sync": {
+          "beat_sync_pct": 37.3,
+          "avg_offset_ms": 130.4,
+          "beat_interval_sec": 0.517,
+          "total_cuts": 673
+        }
+      }
+    ],
+    "PRODUCTION_SPEC": {
+      "_comment": "Use these values when building video_assembler.py",
+      "ken_burns": {
+        "zoom_in_rate_pct_per_sec": 5.456,
+        "zoom_out_rate_pct_per_sec": 5.024,
+        "avg_zoom_rate_pct_per_sec": 5.361,
+        "zoom_in_pct": 36.533,
+        "zoom_out_pct": 23.7,
+        "static_pct": 20.033,
+        "interpretation": "aggressive_motion (5\u201310%/s \u2014 high energy)"
+      },
+      "cut_timing": {
+        "cuts_per_minute": 11.333,
+        "avg_segment_duration_sec": 5.327
+      },
+      "beat_sync": {
+        "tight_sync_pct": 39.1,
+        "avg_offset_ms": 126.8
+      },
+      "color_grade": {
+        "saturation": 0.244,
+        "brightness": 0.368,
+        "contrast": 0.188,
+        "black_crush_pct": 24.655,
+        "highlight_clip_pct": 5.238
+      },
+      "content_motion": {
+        "_comment": "Optical flow captures subject motion (fire, insects, water) missed by camera tracking",
+        "avg_total_motion_energy_pct": 0.246,
+        "subject_motion_in_static_shots_pct": 8.7,
+        "interpretation": "subtle_life (distant fire, slow breathing, barely-moving subjects)"
+      },
+      "transition_types": {
+        "_comment": "How shots connect \u2014 hard_cut dominant in fast-paced docs, dissolve/fade for emotional moments",
+        "_note": "Requires cut_timestamps in timeline JSON. Re-run hybrid analyzer, then this script.",
+        "distribution": {
+          "hard_cut": 0,
+          "dissolve": 0,
+          "fade_to_black": 0,
+          "fade_from_black": 0,
+          "whip_pan": 0
+        }
+      }
+    }
+  },
+  "content_type_correlation": {
+    "character_intro": {
+      "n_frames": 209,
+      "pct_of_labeled": 11.7,
+      "footage_type": {
+        "documentary_photo": 56.5,
+        "document_photo": 42.6
+      },
+      "emotional_tone": {
+        "neutral": 47.4,
+        "tense": 21.1,
+        "powerful": 15.8,
+        "ominous": 6.2,
+        "somber": 5.3
+      },
+      "atmosphere": {
+        "neutral": 30.6,
+        "ominous": 8.6
+      },
+      "sample_words": [
+        "the gunman is 20-year-old Thomas",
+        "Thomas Kooks he is armed with an",
+        "what was motive the Gman had no criminal",
+        "in 2021 he a kitchen worker and",
+        "because that brotherhood. The Brotherhood"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "climax": {
+      "n_frames": 1,
+      "pct_of_labeled": 0.1,
+      "footage_type": {
+        "reconstructed_footage": 100.0
+      },
+      "emotional_tone": {
+        "powerful": 100.0
+      },
+      "atmosphere": {
+        "powerful": 100.0
+      },
+      "sample_words": [
+        "all started as a mock"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "establishing_context": {
+      "n_frames": 1064,
+      "pct_of_labeled": 59.6,
+      "footage_type": {
+        "document_photo": 59.7,
+        "documentary_photo": 10.9,
+        "archival_footage": 9.3,
+        "news_screenshot": 7.0,
+        "reconstructed_footage": 5.3,
+        "documentary_footage": 4.2
+      },
+      "emotional_tone": {
+        "neutral": 33.6,
+        "tense": 29.9,
+        "ominous": 11.7,
+        "mysterious": 11.3,
+        "powerful": 7.5,
+        "somber": 5.5
+      },
+      "atmosphere": {
+        "stark_and_clinical": 13.0,
+        "mysterious": 12.6,
+        "neutral": 12.5,
+        "foggy_and_ominous": 10.1
+      },
+      "sample_words": [
+        "[no speech]",
+        "Donald speaks at a rally it's only days",
+        "speaks at a rally it's only days he plans",
+        "days he plans to accept the official",
+        "the official nomination he's just minutes"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "evidence": {
+      "n_frames": 186,
+      "pct_of_labeled": 10.4,
+      "footage_type": {
+        "document_photo": 88.7,
+        "reconstructed_footage": 4.8
+      },
+      "emotional_tone": {
+        "tense": 47.8,
+        "ominous": 31.2,
+        "mysterious": 9.7,
+        "neutral": 8.1
+      },
+      "atmosphere": {
+        "mysterious": 21.0,
+        "ominous": 19.9,
+        "foggy_and_ominous": 16.1,
+        "stark_and_clinical": 7.5,
+        "mysterious_and_somber": 6.5
+      },
+      "sample_words": [
+        "entire",
+        "[no speech]",
+        "a kitchen worker and had a at a local shooting club",
+        "had a at a local shooting club the found",
+        "as a killer, a contraband smuggler, arms"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "hook": {
+      "n_frames": 61,
+      "pct_of_labeled": 3.4,
+      "footage_type": {
+        "document_photo": 50.8,
+        "title_card": 36.1,
+        "modern_broll": 4.9,
+        "reconstructed_footage": 3.3,
+        "screen_recording": 3.3
+      },
+      "emotional_tone": {
+        "ominous": 45.9,
+        "mysterious": 21.3,
+        "neutral": 14.8,
+        "tense": 9.8
+      },
+      "atmosphere": {
+        "mysterious": 26.2,
+        "ominous": 23.0,
+        "foggy_and_ominous": 19.7,
+        "neutral": 9.8
+      },
+      "sample_words": [
+        "and they fire shots of a gun. Boom. Boom. And",
+        "fire shots of a gun. Boom. Boom. And kind",
+        "shots of a gun. Boom. Boom. And kind of getting",
+        "His nickname, Hillbilly Donnie",
+        "Hillbilly Donnie He's gone undercover as"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "revelation": {
+      "n_frames": 3,
+      "pct_of_labeled": 0.2,
+      "footage_type": {
+        "news_screenshot": 66.7,
+        "document_photo": 33.3
+      },
+      "emotional_tone": {
+        "neutral": 33.3,
+        "powerful": 33.3,
+        "somber": 33.3
+      },
+      "atmosphere": {
+        "unknown": 33.3,
+        "ominous": 33.3,
+        "serious_and_somber": 33.3
+      },
+      "sample_words": [
+        "and political violence at large picture of trump",
+        "anything like sober ones, then they dreamed of and destruction,",
+        "connection. For 17 he's"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "tension_build": {
+      "n_frames": 224,
+      "pct_of_labeled": 12.6,
+      "footage_type": {
+        "document_photo": 87.1,
+        "reconstructed_footage": 5.8,
+        "documentary_footage": 3.1
+      },
+      "emotional_tone": {
+        "tense": 88.8,
+        "ominous": 10.3
+      },
+      "atmosphere": {
+        "ominous": 23.2,
+        "foggy_and_ominous": 13.8,
+        "stark_and_clinical": 13.4,
+        "tense": 12.5,
+        "warm_golden_hour": 6.2
+      },
+      "sample_words": [
+        "Trump got hit but survived",
+        "Thomas Kooks he is armed with an AR-15",
+        "the bullet from hitting right in the head he Ducks down",
+        "it was in fact these agents the gunmen also hit",
+        "about 42 seconds after Crook's"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "transition": {
+      "n_frames": 36,
+      "pct_of_labeled": 2.0,
+      "footage_type": {
+        "black_screen": 86.1
+      },
+      "emotional_tone": {
+        "neutral": 88.9,
+        "mysterious": 11.1
+      },
+      "atmosphere": {
+        "unknown": 77.8,
+        "mysterious": 8.3,
+        "neutral": 5.6
+      },
+      "sample_words": [
+        "might have",
+        "[no speech]",
+        "[no speech]",
+        "President Biden and various around the world condemn",
+        "[no speech]"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
     }
   }
 }

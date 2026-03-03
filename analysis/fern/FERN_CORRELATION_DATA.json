@@ -1,0 +1,222 @@
+{
+  "_description": "Cross-correlation of narrative_function with visual production choices. MEASURED from 3 Fern videos.",
+  "_data_source": "qwen-vl AI frame classifications (timeline_hybrid_qwen-vl.json)",
+  "_motion_note": "Per-content-type motion INCLUDED \u2014 see production_rules.py _MOTION_* constants. Measured from segment_motion.json x timeline_hybrid_qwen-vl.json.",
+  "narrative_function_correlation": {
+    "character_intro": {
+      "n_frames": 209,
+      "pct_of_labeled": 11.7,
+      "footage_type": {
+        "documentary_photo": 56.5,
+        "document_photo": 42.6
+      },
+      "emotional_tone": {
+        "neutral": 47.4,
+        "tense": 21.1,
+        "powerful": 15.8,
+        "ominous": 6.2,
+        "somber": 5.3
+      },
+      "atmosphere": {
+        "neutral": 30.6,
+        "ominous": 8.6
+      },
+      "sample_words": [
+        "the gunman is 20-year-old Thomas",
+        "Thomas Kooks he is armed with an",
+        "what was motive the Gman had no criminal",
+        "in 2021 he a kitchen worker and",
+        "because that brotherhood. The Brotherhood"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "climax": {
+      "n_frames": 1,
+      "pct_of_labeled": 0.1,
+      "footage_type": {
+        "reconstructed_footage": 100.0
+      },
+      "emotional_tone": {
+        "powerful": 100.0
+      },
+      "atmosphere": {
+        "powerful": 100.0
+      },
+      "sample_words": [
+        "all started as a mock"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "establishing_context": {
+      "n_frames": 1064,
+      "pct_of_labeled": 59.6,
+      "footage_type": {
+        "document_photo": 59.7,
+        "documentary_photo": 10.9,
+        "archival_footage": 9.3,
+        "news_screenshot": 7.0,
+        "reconstructed_footage": 5.3,
+        "documentary_footage": 4.2
+      },
+      "emotional_tone": {
+        "neutral": 33.6,
+        "tense": 29.9,
+        "ominous": 11.7,
+        "mysterious": 11.3,
+        "powerful": 7.5,
+        "somber": 5.5
+      },
+      "atmosphere": {
+        "stark_and_clinical": 13.0,
+        "mysterious": 12.6,
+        "neutral": 12.5,
+        "foggy_and_ominous": 10.1
+      },
+      "sample_words": [
+        "[no speech]",
+        "Donald speaks at a rally it's only days",
+        "speaks at a rally it's only days he plans",
+        "days he plans to accept the official",
+        "the official nomination he's just minutes"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "evidence": {
+      "n_frames": 186,
+      "pct_of_labeled": 10.4,
+      "footage_type": {
+        "document_photo": 88.7,
+        "reconstructed_footage": 4.8
+      },
+      "emotional_tone": {
+        "tense": 47.8,
+        "ominous": 31.2,
+        "mysterious": 9.7,
+        "neutral": 8.1
+      },
+      "atmosphere": {
+        "mysterious": 21.0,
+        "ominous": 19.9,
+        "foggy_and_ominous": 16.1,
+        "stark_and_clinical": 7.5,
+        "mysterious_and_somber": 6.5
+      },
+      "sample_words": [
+        "entire",
+        "[no speech]",
+        "a kitchen worker and had a at a local shooting club",
+        "had a at a local shooting club the found",
+        "as a killer, a contraband smuggler, arms"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "hook": {
+      "n_frames": 61,
+      "pct_of_labeled": 3.4,
+      "footage_type": {
+        "document_photo": 50.8,
+        "title_card": 36.1,
+        "modern_broll": 4.9,
+        "reconstructed_footage": 3.3,
+        "screen_recording": 3.3
+      },
+      "emotional_tone": {
+        "ominous": 45.9,
+        "mysterious": 21.3,
+        "neutral": 14.8,
+        "tense": 9.8
+      },
+      "atmosphere": {
+        "mysterious": 26.2,
+        "ominous": 23.0,
+        "foggy_and_ominous": 19.7,
+        "neutral": 9.8
+      },
+      "sample_words": [
+        "and they fire shots of a gun. Boom. Boom. And",
+        "fire shots of a gun. Boom. Boom. And kind",
+        "shots of a gun. Boom. Boom. And kind of getting",
+        "His nickname, Hillbilly Donnie",
+        "Hillbilly Donnie He's gone undercover as"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "revelation": {
+      "n_frames": 3,
+      "pct_of_labeled": 0.2,
+      "footage_type": {
+        "news_screenshot": 66.7,
+        "document_photo": 33.3
+      },
+      "emotional_tone": {
+        "neutral": 33.3,
+        "powerful": 33.3,
+        "somber": 33.3
+      },
+      "atmosphere": {
+        "unknown": 33.3,
+        "ominous": 33.3,
+        "serious_and_somber": 33.3
+      },
+      "sample_words": [
+        "and political violence at large picture of trump",
+        "anything like sober ones, then they dreamed of and destruction,",
+        "connection. For 17 he's"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "tension_build": {
+      "n_frames": 224,
+      "pct_of_labeled": 12.6,
+      "footage_type": {
+        "document_photo": 87.1,
+        "reconstructed_footage": 5.8,
+        "documentary_footage": 3.1
+      },
+      "emotional_tone": {
+        "tense": 88.8,
+        "ominous": 10.3
+      },
+      "atmosphere": {
+        "ominous": 23.2,
+        "foggy_and_ominous": 13.8,
+        "stark_and_clinical": 13.4,
+        "tense": 12.5,
+        "warm_golden_hour": 6.2
+      },
+      "sample_words": [
+        "Trump got hit but survived",
+        "Thomas Kooks he is armed with an AR-15",
+        "the bullet from hitting right in the head he Ducks down",
+        "it was in fact these agents the gunmen also hit",
+        "about 42 seconds after Crook's"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    },
+    "transition": {
+      "n_frames": 36,
+      "pct_of_labeled": 2.0,
+      "footage_type": {
+        "black_screen": 86.1
+      },
+      "emotional_tone": {
+        "neutral": 88.9,
+        "mysterious": 11.1
+      },
+      "atmosphere": {
+        "unknown": 77.8,
+        "mysterious": 8.3,
+        "neutral": 5.6
+      },
+      "sample_words": [
+        "might have",
+        "[no speech]",
+        "[no speech]",
+        "President Biden and various around the world condemn",
+        "[no speech]"
+      ],
+      "_note": "Measured from AI frame classifications. narrative_function labeled by qwen-vl model."
+    }
+  },
+  "_last_updated": "2026-03-02"
+}

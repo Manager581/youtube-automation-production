@@ -7,7 +7,7 @@ Production spec (measured from actual Fern videos):
   Color grade: saturation 0.46× input, black crush (push 0–7% luma to black)
   Text: slide_reveal 511ms, upper/center/lower zone by content type, hold ~9s
   Cuts: content-driven (not beat-synced), avg 4–6s per segment
-  SFX: none needed — music carries continuously
+  SFX: ~10.9% of cuts trigger impact/whoosh from assets/sfx/ (formula-measured)
   Footage: 62% document_photo, 13% documentary_photo, 6% archival_footage (measured)
   Chapter cards: white serif typewriter text on black (wkVygetgeRY style)
   Lower thirds: name + role with semi-transparent dark bar
@@ -58,6 +58,12 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+from pipeline.production_rules import (
+    classify_all_chunks,
+    get_spec,
+    pacing_range,
+)
 
 # ---------------------------------------------------------------------------
 # Production constants — measured from Fern videos
@@ -114,6 +120,11 @@ CHAPTER_CARD_SERIF_FONTS   = [    # Font preference order (macOS + Linux)
     "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
 ]
 
+# SFX — formula-measured: ~10.9% of cuts trigger a sound effect
+SFX_CUT_RATE   = 0.109   # probability of SFX on any visual cut
+SFX_VOLUME     = 0.45    # SFX level (applied inside sfx_composite before mixing)
+SFX_DIR        = Path(__file__).parent.parent / "assets" / "sfx"
+
 # Lower third — name/role overlay with background bar
 LOWER_THIRD_NAME_SIZE   = 48     # Primary name text size
 LOWER_THIRD_ROLE_SIZE   = 32     # Secondary role/title size
@@ -151,6 +162,102 @@ def _escape_text(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Ken Burns focal point detection
+# ---------------------------------------------------------------------------
+
+# Falls back to (0.5, 0.5) if model unavailable or parse fails.
+# Cache: {image}.focal.json — dict keyed by narration_hash so same image can have
+# different focal points for different story moments.
+FOCAL_MODEL_PREFERENCE = ["qwen3.5:27b", "qwen3.5:4b", "qwen2.5vl:7b"]
+
+
+def detect_focal_point(
+    image_path: Path,
+    narration_text: str = "",
+) -> tuple[float, float]:
+    """
+    Ask a local vision model WHERE in this image the story is pointing right now.
+    The focal point is story-driven — if narration says "the date was March 14th",
+    the zoom should lock onto the date on the document, not a face.
+
+    narration_text: the script line being spoken over this image — tells the model
+                    what story element to find in the frame.
+
+    Returns (fx, fy) as fractions of frame width/height (0.0–1.0).
+    Results cached per (image, narration_hash). Falls back to (0.5, 0.5).
+    """
+    import hashlib, urllib.request as _req
+
+    cache_path = image_path.with_suffix(image_path.suffix + ".focal.json")
+    cache_key  = hashlib.md5(narration_text.encode()).hexdigest()[:8] if narration_text else "default"
+
+    # Check disk cache
+    if cache_path.exists():
+        try:
+            cache = json.loads(cache_path.read_text())
+            if cache_key in cache:
+                d = cache[cache_key]
+                return (float(d["x"]), float(d["y"]))
+        except Exception:
+            cache = {}
+    else:
+        cache = {}
+
+    # Build story-aware prompt — focal point follows the NARRATION, not just the image
+    if narration_text:
+        prompt = (
+            f'The narrator is saying: "{narration_text.strip()}"\n\n'
+            "Given what the narrator is talking about, where in this image should "
+            "the camera focus to best emphasize that story element? "
+            "It could be a date, a name, a face, a signature, a building, a document detail — "
+            "whatever the narration is pointing at.\n\n"
+            'Return ONLY a JSON object: {"x": 0.45, "y": 0.38} '
+            "where x=0.0 is left edge, x=1.0 is right edge, y=0.0 is top, y=1.0 is bottom."
+        )
+    else:
+        prompt = (
+            "Where is the most visually important element in this image? "
+            'Return ONLY a JSON object: {"x": 0.45, "y": 0.38} '
+            "where x=0.0 is left, x=1.0 is right, y=0.0 is top, y=1.0 is bottom."
+        )
+
+    import base64, re as _re
+
+    for model in FOCAL_MODEL_PREFERENCE:
+        try:
+            # Call ollama REST API (correct way to send images)
+            img_b64 = base64.b64encode(image_path.read_bytes()).decode()
+            payload = json.dumps({
+                "model": model,
+                "prompt": prompt,
+                "images": [img_b64],
+                "stream": False,
+            }).encode()
+            req = _req.Request(
+                "http://localhost:11434/api/generate",
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            with _req.urlopen(req, timeout=60) as resp:
+                response_text = json.loads(resp.read())["response"]
+
+            match = _re.search(r'"x"\s*:\s*([\d.]+).*?"y"\s*:\s*([\d.]+)', response_text)
+            if match:
+                fx = max(0.05, min(0.95, float(match.group(1))))
+                fy = max(0.05, min(0.95, float(match.group(2))))
+                cache[cache_key] = {"x": fx, "y": fy, "model": model,
+                                    "narration": narration_text[:80]}
+                cache_path.write_text(json.dumps(cache, indent=2))
+                return (fx, fy)
+        except Exception:
+            continue
+
+    # Fallback: frame center
+    return (0.5, 0.5)
+
+
+# ---------------------------------------------------------------------------
 # Ken Burns — create video from a still image
 # ---------------------------------------------------------------------------
 
@@ -160,27 +267,37 @@ def make_ken_burns(
     direction: str,      # "zoom_in" | "zoom_out" | "static" | "pan_left" | "pan_right"
     out_path: Path,
     fps: int = OUTPUT_FPS,
+    focal_point: tuple[float, float] | None = None,
 ) -> Path:
     """
     Render a Ken Burns motion clip from a still image using FFmpeg zoompan.
     direction is one of: zoom_in, zoom_out, static, pan_left, pan_right
+    focal_point: (fx, fy) as fractions of frame size — zoom stays anchored here.
+                 Defaults to frame center (0.5, 0.5) if not provided.
     """
     n_frames = int(math.ceil(duration_sec * fps))
     zoom_per_frame = KB_ZOOM_RATE_PER_SEC / fps
+
+    # Focal point for zoom anchor — defaults to center
+    fx, fy = focal_point if focal_point else (0.5, 0.5)
+    # x/y in zoompan are the top-left corner of the crop window
+    # To keep (fx, fy) centered: x = iw*fx - (iw/zoom)/2, clamped to valid range
+    x_focal = f"max(0,min(iw-iw/zoom,iw*{fx:.4f}-(iw/zoom/2)))"
+    y_focal = f"max(0,min(ih-ih/zoom,ih*{fy:.4f}-(ih/zoom/2)))"
 
     if direction == "zoom_in":
         start_z = KB_START_ZOOM_IN
         end_z   = min(start_z + KB_ZOOM_RATE_PER_SEC * duration_sec, KB_MAX_ZOOM)
         z_expr  = f"min(zoom+{zoom_per_frame:.6f},{end_z:.4f})"
-        x_expr  = "iw/2-(iw/zoom/2)"
-        y_expr  = "ih/2-(ih/zoom/2)"
+        x_expr  = x_focal
+        y_expr  = y_focal
 
     elif direction == "zoom_out":
         start_z = min(KB_START_ZOOM_OUT, KB_MAX_ZOOM)
         end_z   = max(start_z - KB_ZOOM_RATE_PER_SEC * duration_sec, 1.0)
         z_expr  = f"if(eq(on,1),{start_z:.4f},max(zoom-{zoom_per_frame:.6f},{end_z:.4f}))"
-        x_expr  = "iw/2-(iw/zoom/2)"
-        y_expr  = "ih/2-(ih/zoom/2)"
+        x_expr  = x_focal
+        y_expr  = y_focal
 
     elif direction == "pan_left":
         z_expr  = "1.15"   # slight zoom to allow panning without black bars
@@ -194,8 +311,8 @@ def make_ken_burns(
 
     else:  # static — very subtle 1% drift zoom-in (not fully static, maintains energy)
         z_expr  = f"min(zoom+{zoom_per_frame*0.2:.6f},1.05)"
-        x_expr  = "iw/2-(iw/zoom/2)"
-        y_expr  = "ih/2-(ih/zoom/2)"
+        x_expr  = x_focal
+        y_expr  = y_focal
 
     zoompan = (
         f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
@@ -381,6 +498,51 @@ def prepare_clip(
 
 
 # ---------------------------------------------------------------------------
+# Beat sync helpers
+# ---------------------------------------------------------------------------
+
+# Fern measured: ~39% of cuts land within 100ms of a beat.
+# We snap any cut that naturally falls within BEAT_SNAP_WINDOW of a beat.
+# At 116 BPM (beat every 0.517s), a ±0.1s window gives ~39% natural snap rate.
+BEAT_SNAP_WINDOW = 0.10   # seconds on either side of a beat
+
+
+def load_beat_times(music_path: Path) -> list[float]:
+    """
+    Return sorted list of beat timestamps (seconds) from a music file.
+    Uses librosa beat tracker. Cached in memory per path for the process lifetime.
+    Returns [] if librosa unavailable or file unreadable.
+    """
+    try:
+        import librosa
+        y, sr = librosa.load(str(music_path), sr=None, mono=True)
+        _, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+        return librosa.frames_to_time(beat_frames, sr=sr).tolist()
+    except Exception:
+        return []
+
+
+def snap_to_beat(
+    t_start: float,
+    desired_end: float,
+    beat_times: list[float],
+    min_dur: float,
+    max_dur: float,
+) -> float:
+    """
+    If a beat falls within BEAT_SNAP_WINDOW of desired_end AND the resulting
+    duration stays within [min_dur, max_dur], return the beat time.
+    Otherwise return desired_end unchanged.
+    """
+    for beat in beat_times:
+        if abs(beat - desired_end) <= BEAT_SNAP_WINDOW:
+            new_dur = beat - t_start
+            if min_dur <= new_dur <= max_dur:
+                return beat
+    return desired_end
+
+
+# ---------------------------------------------------------------------------
 # Timeline builder
 # ---------------------------------------------------------------------------
 
@@ -388,6 +550,8 @@ def build_timeline(
     narration_manifest: dict,
     footage_manifest: dict,
     brand_config: dict,
+    beat_times: list[float] | None = None,
+    detect_focal_points: bool = False,
 ) -> list[dict]:
     """
     Map narration chunks to visual segments.
@@ -407,6 +571,9 @@ def build_timeline(
     chapters = narration_manifest.get("chapters", [])  # [{title, start_sec, num?}, ...]
     clips    = footage_manifest.get("clips", [])
 
+    # Pre-compute lower-third events (first occurrence of each named person)
+    lower_third_map = _detect_named_persons(chunks)
+
     # Separate stills from video clips in footage
     stills = [c for c in clips if c.get("type") in ("still", "image", None)
               or str(c.get("path", "")).lower().endswith((".jpg", ".jpeg", ".png", ".webp"))]
@@ -415,8 +582,10 @@ def build_timeline(
     # Shuffle stills so they don't appear in the same order as sourced
     random.shuffle(stills)
 
-    # Motion direction cycling: alternate zoom_in → zoom_out → static → pan → ...
-    motion_cycle = _build_motion_cycle()
+    # Classify every chunk by content type using the production rules engine.
+    # This replaces the old random motion_cycle + flat SFX_CUT_RATE approach.
+    total_dur_sec = sum(c.get("duration_sec", DEFAULT_SEGMENT_SEC) for c in chunks)
+    chunk_types = classify_all_chunks(chunks, total_duration_sec=total_dur_sec)
 
     # Build chapter card placeholders keyed by their target start time
     # Chapter cards are inserted BEFORE their start_sec with a time offset
@@ -431,13 +600,14 @@ def build_timeline(
     cursor = 0.0
     still_idx = 0
     video_idx = 0
-    motion_idx = 0
 
     for chunk_idx, chunk in enumerate(chunks):
-        chunk_start = chunk.get("start_sec", cursor)
-        chunk_dur   = chunk.get("duration_sec", DEFAULT_SEGMENT_SEC)
-        chunk_text  = chunk.get("text", "")
-        chunk_end   = chunk_start + chunk_dur
+        chunk_start  = chunk.get("start_sec", cursor)
+        chunk_dur    = chunk.get("duration_sec", DEFAULT_SEGMENT_SEC)
+        chunk_text   = chunk.get("text", "")
+        chunk_end    = chunk_start + chunk_dur
+        content_type = chunk_types[chunk_idx]
+        spec         = get_spec(content_type)
 
         # Inject chapter card if one is scheduled at or just before this chunk
         for ch_start in sorted(chapter_by_sec.keys()):
@@ -472,58 +642,82 @@ def build_timeline(
 
         # Extract key phrases from this chunk for text overlay
         overlay_text, overlay_zone = _extract_overlay_text(chunk_text)
+        # Content-type can override text zone when classification is confident
+        if spec.text_zone != "auto":
+            overlay_zone = spec.text_zone
+
+        # Segment duration range from content type pacing
+        min_seg, max_seg = pacing_range(spec.cut_pacing)
 
         # Fill the chunk duration with one or more visual segments
         t = chunk_start
         while t < chunk_end - 0.5:
             remaining = chunk_end - t
-            seg_dur = min(remaining, random.uniform(MIN_SEGMENT_SEC, MAX_SEGMENT_SEC))
+            raw_end = t + min(remaining, random.uniform(min_seg, max_seg))
+            # Snap cut to nearest beat if one falls within BEAT_SNAP_WINDOW
+            if beat_times:
+                raw_end = snap_to_beat(t, raw_end, beat_times, min_seg, min(remaining, max_seg))
+            seg_dur = raw_end - t
+            is_chunk_start = (t == chunk_start)
 
-            # Decide: use archival clip or still?
-            # Archival clips appear roughly every 8-10 stills (~10-12% of segments)
+            # Motion: drawn from content-type weighted distribution (not random cycle)
+            motion = spec.weighted_motion()
+
+            # SFX: content-type probability + type (not flat rate)
+            # Reveal/climax/stakes have much higher probability than background
+            if random.random() < spec.sfx_probability:
+                seg_sfx = spec.sfx_type
+            else:
+                seg_sfx = None
+
+            # Lower third: first segment of chunk, if this chunk introduces a named person
+            lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
+            seg_lower_third = {"name": lt_info[0], "role": lt_info[1]} if lt_info else None
+
+            # Footage: content-type drives clip vs. still probability
             use_clip = (video_idx < len(videos)) and (
-                (still_idx > 0 and still_idx % 9 == 0)  # every 9th segment
+                random.random() < spec.clip_probability  # content-type specific probability
                 or (random.random() < 0.05)              # 5% random chance
             )
+
+            seg_base = {
+                "start_sec": round(t, 3),
+                "duration_sec": round(seg_dur, 3),
+                "text": overlay_text if is_chunk_start else None,
+                "text_zone": overlay_zone if is_chunk_start else "upper",
+                "narration_chunk_idx": chunk_idx,
+                "content_type": content_type,   # carry through for compliance report
+                "sfx": seg_sfx,
+                "lower_third": seg_lower_third,
+            }
 
             if use_clip and videos:
                 clip = videos[video_idx % len(videos)]
                 video_idx += 1
-                segments.append({
-                    "start_sec": round(t, 3),
-                    "duration_sec": round(seg_dur, 3),
+                segments.append({**seg_base,
                     "source_type": "clip",
                     "source_path": clip.get("path", ""),
                     "motion": "natural",
-                    "text": overlay_text if t == chunk_start else None,
-                    "text_zone": overlay_zone if t == chunk_start else "upper",
-                    "narration_chunk_idx": chunk_idx,
                 })
             elif stills:
                 still = stills[still_idx % len(stills)]
                 still_idx += 1
-                motion = motion_cycle[motion_idx % len(motion_cycle)]
-                motion_idx += 1
-                segments.append({
-                    "start_sec": round(t, 3),
-                    "duration_sec": round(seg_dur, 3),
+                still_path = Path(still.get("path", ""))
+                focal = None
+                if detect_focal_points and still_path.exists():
+                    focal = detect_focal_point(still_path, narration_text=chunk_text)
+                segments.append({**seg_base,
                     "source_type": "still",
-                    "source_path": still.get("path", ""),
+                    "source_path": str(still_path),
                     "motion": motion,
-                    "text": overlay_text if t == chunk_start else None,
-                    "text_zone": overlay_zone if t == chunk_start else "upper",
-                    "narration_chunk_idx": chunk_idx,
+                    "focal_point": focal,
                 })
             else:
-                segments.append({
-                    "start_sec": round(t, 3),
-                    "duration_sec": round(seg_dur, 3),
+                segments.append({**seg_base,
                     "source_type": "black",
                     "source_path": None,
                     "motion": "static",
-                    "text": overlay_text if t == chunk_start else None,
-                    "text_zone": overlay_zone if t == chunk_start else "upper",
-                    "narration_chunk_idx": chunk_idx,
+                    "focal_point": None,
                 })
 
             t += seg_dur
@@ -546,6 +740,17 @@ def _build_motion_cycle() -> list[str]:
     )
     random.shuffle(cycle)
     return cycle
+
+
+def _pick_sfx_file(sfx_type: str) -> Path | None:
+    """Return a random existing SFX file for the given type, or None if unavailable."""
+    candidates = {
+        "impact": ["impact_01.mp3", "impact_02.mp3"],
+        "whoosh": ["whoosh_01.mp3", "whoosh_02.mp3", "whoosh_03.mp3", "whoosh_04.mp3", "whoosh_05.mp3"],
+        "rumble": ["rumble_01.mp3", "rumble_02.mp3", "rumble_03.mp3"],
+    }
+    files = [SFX_DIR / f for f in candidates.get(sfx_type, []) if (SFX_DIR / f).exists()]
+    return random.choice(files) if files else None
 
 
 def _extract_overlay_text(chunk_text: str) -> tuple[str | None, str]:
@@ -595,6 +800,66 @@ def _extract_overlay_text(chunk_text: str) -> tuple[str | None, str]:
     return None, "upper"
 
 
+def _detect_named_persons(chunks: list[dict]) -> dict[int, tuple[str, str]]:
+    """
+    Scan narration chunks and return the FIRST occurrence of each named person.
+    Returns {chunk_idx: (name, role)} for segments that should show a lower-third.
+
+    Detects patterns like:
+      "Theodore Kaczynski, known as the Unabomber"
+      "J. Edgar Hoover — the FBI director"
+      "Richard Nixon" (name only, no role)
+    """
+    seen_names: set[str] = set()
+    result: dict[int, tuple[str, str]] = {}
+
+    # Appositive: "Name, [the/a/known as] Role" or "Name — [the] Role"
+    appositive_re = re.compile(
+        r'\b([A-Z][a-z]+(?:\s+[A-Z]\.?\s*)?(?:[A-Z][a-z]+\s*){1,3})'
+        r'(?:,\s*(?:known as\s*)?(?:the\s+|a\s+)?([A-Za-z][^,.\n]{3,40}?)'
+        r'|\s+—\s*(?:the\s+)?([A-Za-z][^,.\n]{3,40}?))'
+        r'(?=[,. ])'
+    )
+    name_only_re = re.compile(r'\b([A-Z][a-z]+\s+(?:[A-Z]\.?\s+)?[A-Z][a-z]+)\b')
+    filler = {"The", "A", "An", "In", "On", "At", "Of", "To", "By",
+              "It", "This", "That", "These", "United", "New"}
+    skip_words = {"States", "War", "Era", "Act", "Bill", "Case", "Street",
+                  "Avenue", "Commission", "Committee", "Congress", "Senate"}
+
+    for idx, chunk in enumerate(chunks):
+        text = chunk.get("text", "")
+
+        # Try appositive pattern first (gives name + role)
+        for m in appositive_re.finditer(text):
+            name = m.group(1).strip()
+            role = (m.group(2) or m.group(3) or "").strip().rstrip(".,;")
+            parts = name.split()
+            if len(parts) < 2 or parts[0] in filler:
+                continue
+            if name not in seen_names:
+                seen_names.add(name)
+                result[idx] = (name, role[:42] if role else "")
+                break
+
+        if idx in result:
+            continue
+
+        # Fall back: plain "First Last" pattern
+        for m in name_only_re.finditer(text):
+            name = m.group(1).strip()
+            parts = name.split()
+            if parts[0] in filler:
+                continue
+            if any(w in name for w in skip_words):
+                continue
+            if name not in seen_names:
+                seen_names.add(name)
+                result[idx] = (name, "")
+                break
+
+    return result
+
+
 # ---------------------------------------------------------------------------
 # Render
 # ---------------------------------------------------------------------------
@@ -620,9 +885,11 @@ def render(
             label = seg['source_type']
             if label == "chapter_card":
                 label = f"CHAPTER {seg.get('chapter_num','?')}: {seg.get('chapter_title','')}"
+            ct = seg.get("content_type", "")[:14]
             print(f"  [{i:03d}] {seg['start_sec']:6.1f}s  {dur_str:7s}  "
-                  f"{seg['motion']:12s}  {label[:50]}"
-                  + (f"  TEXT: {seg['text'][:30]}" if seg.get("text") else ""))
+                  f"{seg['motion']:12s}  {ct:14s}  {label[:40]}"
+                  + (f"  SFX:{seg['sfx']}" if seg.get("sfx") else "")
+                  + (f"  LT:{seg['lower_third']['name'][:20]}" if seg.get("lower_third") else ""))
         total_dur = sum(s["duration_sec"] for s in segments if s["duration_sec"] >= 0)
         print(f"\nTotal (excl. chapter cards): {total_dur:.1f}s  ({total_dur/60:.1f}min)")
         print(f"Segments: {len(segments)}")
@@ -630,10 +897,14 @@ def render(
         return out_path
 
     segment_paths = []
+    sfx_events: list[dict]  = []   # {"time_sec": float, "sfx_file": str}
+    lt_events:  list[dict]  = []   # {"time_sec", "end_sec", "name", "role"}
+    render_cursor = 0.0            # cumulative final-video timestamp
+
     print(f"\nRendering {len(segments)} segments...")
 
     for i, seg in enumerate(segments):
-        seg_raw   = tmp_dir / f"seg_{i:04d}_raw.mp4"
+        seg_raw    = tmp_dir / f"seg_{i:04d}_raw.mp4"
         seg_graded = tmp_dir / f"seg_{i:04d}_graded.mp4"
         seg_final  = tmp_dir / f"seg_{i:04d}_final.mp4"
         dur = seg["duration_sec"]
@@ -649,9 +920,27 @@ def render(
             print(f"  [{i+1}/{len(segments)}] CHAPTER CARD  {card_dur:.1f}s  "
                   f"Chapter {seg['chapter_num']}: {seg['chapter_title']}  ✓")
             segment_paths.append(seg_final)
+            render_cursor += card_dur
             continue
 
         dur = seg["duration_sec"]
+
+        # Collect SFX event at the START of this segment (the visual cut point)
+        if seg.get("sfx"):
+            sfx_file = _pick_sfx_file(seg["sfx"])
+            if sfx_file:
+                sfx_events.append({"time_sec": render_cursor, "sfx_file": str(sfx_file)})
+
+        # Collect lower-third event (will be applied post-concat for accurate timestamps)
+        lt = seg.get("lower_third")
+        if lt and lt.get("name"):
+            lt_events.append({
+                "time_sec": render_cursor,
+                "end_sec":  render_cursor + min(dur, 4.0),
+                "name": lt["name"],
+                "role": lt.get("role", ""),
+            })
+
         print(f"  [{i+1}/{len(segments)}] {seg['motion']:12s}  {dur:.1f}s  "
               f"{Path(seg['source_path'] or '').name[:35] if seg['source_path'] else 'BLACK'}",
               end="  ", flush=True)
@@ -660,7 +949,8 @@ def render(
         if seg["source_type"] == "still":
             src = Path(seg["source_path"])
             if src.exists():
-                make_ken_burns(src, dur, seg["motion"], seg_raw)
+                make_ken_burns(src, dur, seg["motion"], seg_raw,
+                               focal_point=seg.get("focal_point"))
             else:
                 _make_black(dur, seg_raw)
 
@@ -692,28 +982,71 @@ def render(
         add_text_overlay(seg_graded, text_entries, seg_final)
 
         segment_paths.append(seg_final)
+        render_cursor += dur
         print("✓")
+
+    total_video_dur = render_cursor
 
     # Step 4: Concatenate all segments
     print("\nConcatenating segments...")
     raw_video = tmp_dir / "video_no_audio.mp4"
     _concat_videos(segment_paths, raw_video)
 
+    # Step 4b: Apply lower thirds in one pass (avoids N re-encodes)
+    if lt_events:
+        print(f"Applying {len(lt_events)} lower-third overlays...")
+        video_with_lt = tmp_dir / "video_with_lt.mp4"
+        _apply_lower_thirds_batch(raw_video, lt_events, video_with_lt)
+        raw_video = video_with_lt
+
+    # Step 4c: Build SFX composite audio track
+    sfx_composite: "Path | None" = None
+    if sfx_events:
+        print(f"Building SFX composite ({len(sfx_events)} events)...")
+        sfx_composite_path = tmp_dir / "sfx_composite.wav"
+        sfx_composite = _build_sfx_composite(sfx_events, total_video_dur, sfx_composite_path)
+
     # Step 5: Mix audio
     print("Mixing audio...")
     if music_path and music_path.exists():
-        mix_audio(raw_video, narration_path, music_path, out_path)
+        mix_audio(raw_video, narration_path, music_path, out_path, sfx_composite)
     else:
-        # Just attach narration
-        cmd = [
-            "ffmpeg", "-y",
-            "-i", str(raw_video),
-            "-i", str(narration_path),
-            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest",
-            str(out_path),
-        ]
-        _run(cmd, "attach_audio")
+        _mix_narration_only(raw_video, narration_path, out_path, sfx_composite)
+
+    # ── Formula compliance report ────────────────────────────────────────────
+    visual_segs = [s for s in segments if s["source_type"] not in ("chapter_card", "black")]
+    if visual_segs and total_video_dur > 0:
+        dur_min      = total_video_dur / 60
+        cuts_per_min = len(visual_segs) / dur_min
+        motions      = [s["motion"] for s in visual_segs]
+        n            = len(motions)
+        zi_pct   = motions.count("zoom_in")   / n * 100
+        zo_pct   = motions.count("zoom_out")  / n * 100
+        st_pct   = motions.count("static")    / n * 100
+        pan_pct  = (motions.count("pan_right") + motions.count("pan_left")) / n * 100
+        sfx_pct  = len(sfx_events) / n * 100 if n else 0
+        lt_count = len(lt_events)
+
+        def _bar(val: float, target: float, tol: float = 20) -> str:
+            ok = abs(val - target) / max(target, 1) <= tol / 100
+            return "✓" if ok else "✗"
+
+        print(f"\n{'─' * 58}")
+        print(f"  FORMULA COMPLIANCE REPORT")
+        print(f"{'─' * 58}")
+        print(f"  Duration:    {total_video_dur:.0f}s  ({dur_min:.1f} min)")
+        print(f"  Segments:    {len(visual_segs)}")
+        print(f"  Cuts/min:    {cuts_per_min:.1f}  [target 11.3]  {_bar(cuts_per_min, 11.3)}")
+        print(f"  Zoom-in:     {zi_pct:.0f}%  [target 40%]  {_bar(zi_pct, 40)}")
+        print(f"  Zoom-out:    {zo_pct:.0f}%  [target 25%]  {_bar(zo_pct, 25)}")
+        print(f"  Static:      {st_pct:.0f}%  [target 26%]  {_bar(st_pct, 26)}")
+        print(f"  Pan:         {pan_pct:.0f}%  [target 9%]   {_bar(pan_pct, 9)}")
+        print(f"  SFX rate:    {sfx_pct:.1f}%  [target 10.9%]  {_bar(sfx_pct, 10.9)}")
+        print(f"  Lower thirds:{lt_count}  (named persons shown)")
+        still_pct = sum(1 for s in visual_segs if s["source_type"] == "still") / n * 100
+        clip_pct  = 100 - still_pct
+        print(f"  Footage mix: {still_pct:.0f}% stills / {clip_pct:.0f}% clips  [target 88%/12%]")
+        print(f"{'─' * 58}")
 
     print(f"\nDone → {out_path}")
     return out_path
@@ -912,6 +1245,122 @@ def add_lower_third(
     return out_path
 
 
+def _apply_lower_thirds_batch(
+    input_path: Path,
+    lt_events: list[dict],  # [{"time_sec", "end_sec", "name", "role"}]
+    out_path: Path,
+) -> Path:
+    """
+    Apply multiple lower-third overlays in a single ffmpeg pass over the full video.
+    More efficient than calling add_lower_third() N times (avoids N re-encodes).
+    """
+    font_opts = [
+        "/System/Library/Fonts/Helvetica.ttc",
+        "/System/Library/Fonts/SFPro.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    ]
+    font_path = next((f for f in font_opts if Path(f).exists()), "")
+    font_arg  = f":fontfile={font_path}" if font_path else ""
+
+    bar_y  = int(1080 * LOWER_THIRD_BAR_Y_PCT)
+    name_y = bar_y + 10
+    role_y = name_y + LOWER_THIRD_NAME_SIZE + 8
+
+    filters = []
+    for ev in lt_events:
+        t_in  = ev["time_sec"]
+        t_out = ev["end_sec"]
+        enable = f"between(t,{t_in:.3f},{t_out:.3f})"
+
+        slide_end  = t_in + TEXT_SLIDE_DURATION
+        fade_start = t_out - 0.2
+        alpha = (
+            f"if(lt(t,{slide_end:.3f}),"
+            f"max(0,(t-{t_in:.3f})/{TEXT_SLIDE_DURATION:.3f}),"
+            f"if(gt(t,{fade_start:.3f}),"
+            f"max(0,({t_out:.3f}-t)/0.2),1))"
+        ).replace(" ", "")
+
+        escaped_name = _escape_text(ev["name"].upper())
+        filters.append(
+            f"drawbox=x=0:y={bar_y}:w=iw:h={LOWER_THIRD_BAR_H}"
+            f":color=black@0.78:t=fill:enable='{enable}'"
+        )
+        filters.append(
+            f"drawtext=text='{escaped_name}'"
+            f":fontcolor=white:fontsize={LOWER_THIRD_NAME_SIZE}{font_arg}"
+            f":x=60:y={name_y}"
+            f":shadowcolor=black@0.5:shadowx=2:shadowy=2"
+            f":alpha='{alpha}':enable='{enable}'"
+        )
+        role = ev.get("role", "")
+        if role:
+            escaped_role = _escape_text(role)
+            filters.append(
+                f"drawtext=text='{escaped_role}'"
+                f":fontcolor={LOWER_THIRD_ROLE_COLOR}:fontsize={LOWER_THIRD_ROLE_SIZE}{font_arg}"
+                f":x=60:y={role_y}"
+                f":alpha='{alpha}':enable='{enable}'"
+            )
+
+    vf = ",".join(filters)
+    cmd = [
+        "ffmpeg", "-y", "-i", str(input_path),
+        "-vf", vf,
+        "-c:v", "libx264", "-preset", "fast", "-crf", str(OUTPUT_CRF),
+        "-pix_fmt", "yuv420p", "-an",
+        str(out_path),
+    ]
+    _run(cmd, "lower_thirds_batch")
+    return out_path
+
+
+def _build_sfx_composite(
+    sfx_events: list[dict],  # [{"time_sec": float, "sfx_file": str}]
+    total_dur: float,
+    out_path: Path,
+) -> "Path | None":
+    """
+    Build a composite audio track: each SFX placed at its timestamp.
+    Uses adelay to position each SFX at the correct cut point.
+    Returns out_path if successful, None if no valid SFX files found.
+    """
+    valid = [ev for ev in sfx_events if Path(ev["sfx_file"]).exists()]
+    if not valid:
+        return None
+
+    # Start with a silent base, then layer in each delayed SFX
+    inputs = ["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo:d={total_dur}"]
+    filter_parts = []
+    for i, ev in enumerate(valid):
+        delay_ms = int(ev["time_sec"] * 1000)
+        inputs += ["-i", ev["sfx_file"]]
+        filter_parts.append(
+            f"[{i + 1}]volume={SFX_VOLUME},adelay={delay_ms}|{delay_ms}[sfx{i}]"
+        )
+
+    n_inputs = 1 + len(valid)
+    labels = "[0]" + "".join(f"[sfx{i}]" for i in range(len(valid)))
+    filter_parts.append(
+        f"{labels}amix=inputs={n_inputs}:duration=first:dropout_transition=0[sfxout]"
+    )
+
+    cmd = (
+        ["ffmpeg", "-y"]
+        + inputs
+        + [
+            "-filter_complex", ";".join(filter_parts),
+            "-map", "[sfxout]",
+            "-t", str(total_dur),
+            "-ar", "44100", "-ac", "2",
+            str(out_path),
+        ]
+    )
+    _run(cmd, "sfx_composite")
+    return out_path
+
+
 def _concat_videos(video_paths: list[Path], out_path: Path) -> Path:
     """Concatenate video files using ffmpeg concat demuxer."""
     list_file = out_path.parent / "_concat_list.txt"
@@ -936,33 +1385,86 @@ def mix_audio(
     narration_path: Path,
     music_path: Path,
     out_path: Path,
+    sfx_path: "Path | None" = None,
 ) -> Path:
     """
-    Mix narration + music under video.
+    Mix narration + music (+ optional SFX composite) under video.
     Music ducks under narration (MUSIC_VOLUME).
     Music plays louder during first 3s intro (MUSIC_INTRO_VOLUME).
+    SFX composite is mixed at full scale (already volume-adjusted by _build_sfx_composite).
     """
-    # Build filter: music volume envelope
-    filter_complex = (
-        f"[1:a]volume={NARRATION_VOLUME}[narr];"
-        f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
-        f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
-        f"[narr][music]amix=inputs=2:duration=first:dropout_transition=3[aout]"
-    )
-    cmd = [
-        "ffmpeg", "-y",
-        "-i", str(video_path),
-        "-i", str(narration_path),
-        "-stream_loop", "-1", "-i", str(music_path),
-        "-filter_complex", filter_complex,
-        "-map", "0:v",
-        "-map", "[aout]",
-        "-c:v", "copy",
-        "-c:a", "aac", "-b:a", "192k",
-        "-shortest",
-        str(out_path),
-    ]
+    if sfx_path and sfx_path.exists():
+        filter_complex = (
+            f"[1:a]volume={NARRATION_VOLUME}[narr];"
+            f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
+            f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
+            f"[3:a]volume=1.0[sfx];"
+            f"[narr][music][sfx]amix=inputs=3:duration=first:dropout_transition=3[aout]"
+        )
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", str(video_path),
+            "-i", str(narration_path),
+            "-stream_loop", "-1", "-i", str(music_path),
+            "-i", str(sfx_path),
+            "-filter_complex", filter_complex,
+            "-map", "0:v", "-map", "[aout]",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-shortest", str(out_path),
+        ]
+    else:
+        filter_complex = (
+            f"[1:a]volume={NARRATION_VOLUME}[narr];"
+            f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
+            f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
+            f"[narr][music]amix=inputs=2:duration=first:dropout_transition=3[aout]"
+        )
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", str(video_path),
+            "-i", str(narration_path),
+            "-stream_loop", "-1", "-i", str(music_path),
+            "-filter_complex", filter_complex,
+            "-map", "0:v", "-map", "[aout]",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-shortest", str(out_path),
+        ]
     _run(cmd, "mix_audio")
+    return out_path
+
+
+def _mix_narration_only(
+    video_path: Path,
+    narration_path: Path,
+    out_path: Path,
+    sfx_path: "Path | None" = None,
+) -> Path:
+    """Attach narration (+ optional SFX) to video without background music."""
+    if sfx_path and sfx_path.exists():
+        filter_complex = (
+            f"[1:a]volume={NARRATION_VOLUME}[narr];"
+            f"[2:a]volume=1.0[sfx];"
+            f"[narr][sfx]amix=inputs=2:duration=first:dropout_transition=0[aout]"
+        )
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", str(video_path),
+            "-i", str(narration_path),
+            "-i", str(sfx_path),
+            "-filter_complex", filter_complex,
+            "-map", "0:v", "-map", "[aout]",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-shortest", str(out_path),
+        ]
+    else:
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", str(video_path),
+            "-i", str(narration_path),
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-shortest", str(out_path),
+        ]
+    _run(cmd, "attach_audio")
     return out_path
 
 
@@ -989,6 +1491,9 @@ def _parse_args():
                    help="Print timeline without rendering")
     p.add_argument("--keep-tmp", action="store_true",
                    help="Keep temporary segment files")
+    p.add_argument("--focal-points", action="store_true",
+                   help="Detect Ken Burns focal points via local vision model (qwen3.5:27b). "
+                        "Results cached per image. Falls back to center if model unavailable.")
     return p.parse_args()
 
 
@@ -1034,9 +1539,25 @@ def main():
     print(f"  Music:     {music_path or 'none'}")
     print(f"  Output:    {out_path}")
 
+    # Load beat timestamps from music track for beat-sync cut snapping
+    beat_times: list[float] = []
+    if music_path and music_path.exists():
+        print("\nDetecting beats from music track...")
+        beat_times = load_beat_times(music_path)
+        if beat_times:
+            print(f"  {len(beat_times)} beats detected  (~{60/(beat_times[1]-beat_times[0]):.0f} BPM estimated)")
+        else:
+            print("  Beat detection unavailable — cuts will not be beat-synced")
+
     # Build timeline
     print("\nBuilding timeline...")
-    segments = build_timeline(narration_manifest, footage_manifest, brand_config)
+    if args.focal_points:
+        print("  Focal point detection enabled (qwen3.5:27b — will cache results per image)")
+    segments = build_timeline(
+        narration_manifest, footage_manifest, brand_config,
+        beat_times=beat_times,
+        detect_focal_points=args.focal_points,
+    )
     total_dur = sum(s["duration_sec"] for s in segments)
     print(f"  {len(segments)} segments → {total_dur:.0f}s ({total_dur/60:.1f}min)")
 

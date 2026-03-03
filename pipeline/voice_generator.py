@@ -319,7 +319,7 @@ def _generate_chunk(tts, ref_audio: Path, ref_text: str,
         ref_file=str(ref_audio),
         ref_text=ref_text,
         gen_text=gen_text,
-        output_file=str(out_path),
+        file_wave=str(out_path),
     )
     return out_path
 
@@ -340,12 +340,13 @@ def _normalize_wpm(chunk_wav: Path, word_count: int,
 
     actual_wpm = (word_count / actual_duration) * 60
     target_duration = (word_count / target_wpm) * 60
-    ratio = actual_duration / target_duration  # >1 = too slow, <1 = too fast
+    # ratio = actual/target: >1 means audio is too long (too slow), <1 means too short (too fast)
+    # atempo: >1 = faster (shorter), <1 = slower (longer) — so pass ratio directly
+    ratio = actual_duration / target_duration
 
     if abs(ratio - 1.0) > WPM_TOLERANCE:
-        stretch_ratio = 1.0 / ratio  # invert: speed up if too slow
-        print(f"    WPM {actual_wpm:.0f} → stretching ×{stretch_ratio:.2f} → ~{target_wpm:.0f} WPM")
-        return _time_stretch(chunk_wav, stretch_ratio)
+        print(f"    WPM {actual_wpm:.0f} → stretching ×{ratio:.2f} → ~{target_wpm:.0f} WPM")
+        return _time_stretch(chunk_wav, ratio)
 
     return chunk_wav
 

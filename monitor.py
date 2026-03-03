@@ -20,6 +20,8 @@ from datetime import datetime, timedelta
 
 # Log file written by analyze_fern_hybrid_checkpoint.py
 ANALYSIS_LOG = "/tmp/fern_analysis.log"
+# Log file written by analyze_fern_motion.py
+MOTION_LOG   = "/tmp/fern_motion.log"
 CHECKPOINT   = Path("analysis/fern/.checkpoint.json")
 FERN_DIR     = Path("analysis/fern")
 VIDEO_IDS    = ["aVA7aXOH1pk", "wLFY_Zu_O08", "wkVygetgeRY"]
@@ -29,22 +31,23 @@ VIDEO_NAMES  = {
     "wkVygetgeRY": "Unabomber",
 }
 
-# Pipeline phases — what's built and runnable
+# Pipeline phases: (label, script, base_status, cost, output_glob_or_None)
+# output_glob → if file(s) exist matching this glob, phase shows as "done" not "ready"
 PIPELINE_PHASES = [
-    ("Analysis (visual)",  "analyze_fern_hybrid_checkpoint.py", "complete",    "free-local"),
-    ("Motion Analysis",    "analyze_fern_motion.py",            "complete",    "free-local"),
-    ("Master Formula",     "create_master_formula.py",          "complete",    "free-local"),
-    ("Topic Radar",        "pipeline/topic_radar.py",           "ready",       "free-local"),
-    ("Comments Miner",     "pipeline/comments_miner.py",        "ready",       "free-yt-dlp"),
-    ("Research Brief",     "pipeline/research_brief.py",        "ready",       "free-local"),
-    ("Story Validator",    "pipeline/story_validator.py",       "ready",       "free-local"),
-    ("Script Gen",         "(use Claude Code interactively)",   "ready",       "free-claude-max"),
-    ("Script Enhancer",    "pipeline/script_enhancer.py",       "ready",       "free-local-ollama"),
-    ("Voice Preprocessor", "pipeline/audio_preprocessor.py",   "needs-clips", "free-local"),
-    ("Voice Generator",    "pipeline/voice_generator.py",       "needs-clips", "free-f5-tts"),
-    ("Footage Sourcer",    "pipeline/footage_sourcer.py",       "ready",       "free-local"),
-    ("Video Assembler",    "pipeline/video_assembler.py",       "ready",       "free-local"),
-    ("Publish",            "(manual upload for now)",           "manual",      "free"),
+    ("Analysis (visual)",  "analyze_fern_hybrid_checkpoint.py", "complete", "free-local",        None),
+    ("Motion Analysis",    "analyze_fern_motion.py",            "complete", "free-local",        None),
+    ("Cross-Correlate",    "analyze_fern_crosscorrelate.py",    "complete", "free-local",        "analysis/fern/FERN_CORRELATION_DATA.json"),
+    ("Topic Radar",        "pipeline/topic_radar.py",           "ready",    "free-local",        "research/*/topic_candidates.json"),
+    ("Comments Miner",     "pipeline/comments_miner.py",        "ready",    "free-yt-dlp",       None),
+    ("Research Brief",     "pipeline/research_brief.py",        "ready",    "free-local",        "research/*/briefs/*.json"),
+    ("Story Validator",    "pipeline/story_validator.py",       "ready",    "free-local",        None),
+    ("Script Gen",         "(Claude Code interactively)",       "ready",    "free-claude-max",   "research/*/scripts/*.md"),
+    ("Script Enhancer",    "pipeline/script_enhancer.py",       "ready",    "free-ollama",       "research/*/scripts/*_enhanced.md"),
+    ("Voice Preprocessor", "pipeline/audio_preprocessor.py",   "ready",    "free-local",        "assets/voice/voice_*.wav"),
+    ("Voice Generator",    "pipeline/voice_generator.py",       "ready",    "free-f5-tts",       "assets/voiceovers/*.mp3"),
+    ("Footage Sourcer",    "pipeline/footage_sourcer.py",       "ready",    "free-local",        None),
+    ("Video Assembler",    "pipeline/video_assembler.py",       "ready",    "free-local",        "output/*.mp4"),
+    ("Publish",            "(manual upload for now)",           "manual",   "free",              None),
 ]
 
 R   = "\033[0m"
@@ -90,6 +93,109 @@ def get_analysis_pid():
         return out.split()[0] if out else None
     except:
         return None
+
+def get_motion_pid():
+    try:
+        out = subprocess.run(
+            ["pgrep", "-f", "analyze_fern_motion"],
+            capture_output=True, text=True
+        ).stdout.strip()
+        return out.split()[0] if out else None
+    except:
+        return None
+
+def parse_motion_progress(lines):
+    """Parse MOTION_START / MOTION_PROGRESS / MOTION_DONE lines from motion log."""
+    current_vid = None
+    done = 0
+    total = 0
+    eta_str = ""
+    completed = []
+
+    for line in lines:
+        if line.startswith("MOTION_START "):
+            parts = line.split()
+            if len(parts) >= 3:
+                current_vid = parts[1]
+                total = int(parts[2])
+                done = 0
+        elif line.startswith("MOTION_PROGRESS "):
+            parts = line.split()
+            if len(parts) >= 5:
+                current_vid = parts[1]
+                seg_part = parts[2]   # e.g. "40/200"
+                eta_part = parts[4]   # e.g. "ETA:1m30s"
+                try:
+                    done, total = (int(x) for x in seg_part.split("/"))
+                    eta_str = eta_part.replace("ETA:", "")
+                except ValueError:
+                    pass
+        elif line.startswith("MOTION_DONE "):
+            parts = line.split()
+            if len(parts) >= 2:
+                vid = parts[1]
+                if vid not in completed:
+                    completed.append(vid)
+                if vid == current_vid:
+                    current_vid = None
+                    done = 0
+                    total = 0
+
+    return current_vid, done, total, eta_str, completed
+
+def segment_motion_status(vid):
+    """Returns (exists, n_segments) for a video's segment_motion.json."""
+    p = FERN_DIR / vid / "segment_motion.json"
+    if not p.exists():
+        return False, 0
+    try:
+        data = json.loads(p.read_text())
+        return True, len(data.get("segments", []))
+    except:
+        return True, 0
+
+def get_running_pipeline_scripts():
+    """Return dict of {script_name: pid} for any pipeline scripts currently running."""
+    pipeline_scripts = [
+        "topic_radar", "comments_miner", "research_brief", "story_validator",
+        "script_enhancer", "audio_preprocessor", "voice_generator",
+        "footage_sourcer", "video_assembler",
+    ]
+    running = {}
+    try:
+        out = subprocess.run(
+            ["pgrep", "-af", "python"],
+            capture_output=True, text=True
+        ).stdout
+        for line in out.strip().splitlines():
+            for s in pipeline_scripts:
+                if s in line:
+                    pid = line.split()[0]
+                    running[s] = pid
+    except:
+        pass
+    return running
+
+def phase_output_exists(glob_pattern):
+    """Return (exists, count, newest_path) for a glob pattern."""
+    if not glob_pattern:
+        return False, 0, None
+    matches = sorted(Path(".").glob(glob_pattern), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not matches:
+        return False, 0, None
+    return True, len(matches), matches[0]
+
+def get_next_step():
+    """Return the first pipeline phase that is ready but has no output yet."""
+    for phase, script, base_status, cost, glob_pat in PIPELINE_PHASES:
+        if base_status in ("complete", "manual"):
+            continue
+        if glob_pat:
+            exists, count, _ = phase_output_exists(glob_pat)
+            if exists:
+                continue  # already done
+        return phase, script
+    return None, None
 
 def parse_progress(lines):
     vid_num = "?"
@@ -175,14 +281,18 @@ def fmt_duration(sec):
 
 
 def render():
-    w     = cols()
-    lines = read_log(ANALYSIS_LOG)
-    pid   = get_analysis_pid()
-    age   = log_age(ANALYSIS_LOG)
-    cp    = load_checkpoint()
-    now   = datetime.now().strftime("%H:%M:%S")
+    w          = cols()
+    lines      = read_log(ANALYSIS_LOG)
+    mot_lines  = read_log(MOTION_LOG)
+    pid        = get_analysis_pid()
+    mot_pid    = get_motion_pid()
+    age        = log_age(ANALYSIS_LOG)
+    mot_age    = log_age(MOTION_LOG)
+    cp         = load_checkpoint()
+    now        = datetime.now().strftime("%H:%M:%S")
 
     vid_num, vid_id, done, total, eta_str, spf, errors, model = parse_progress(lines)
+    mot_vid, mot_done, mot_total, mot_eta, mot_completed = parse_motion_progress(mot_lines)
 
     clear()
 
@@ -195,8 +305,47 @@ def render():
 
     sep = f"  {DIM}{'─'*(w-4)}{R}"
 
+    # ── MOTION ANALYSIS STATUS ──────────────────────────────────────────────
+    seg_done_all = all(segment_motion_status(v)[0] for v in VIDEO_IDS)
+    print(f"  {B}▸ MOTION ANALYSIS  {DIM}(OpenCV optical flow — no AI model needed){R}")
+
+    if mot_pid:
+        mot_status = f"{GR}● RUNNING{R}  PID {mot_pid}  —  log updated {int(mot_age)}s ago"
+    elif mot_lines:
+        mot_status = f"{DIM}● NOT RUNNING{R}  (log from previous run)"
+    else:
+        mot_status = f"{DIM}● NOT STARTED{R}"
+
+    print(f"    {mot_status}")
+
+    # Per-video segment_motion.json status
+    seg_row = "    "
+    for vid in VIDEO_IDS:
+        exists, n_segs = segment_motion_status(vid)
+        short = vid[:8]
+        if exists:
+            seg_row += f"  {GR}✓{R} {short}({n_segs}segs)"
+        elif mot_vid == vid and mot_total > 0:
+            pct2 = int(mot_done / mot_total * 100) if mot_total else 0
+            seg_row += f"  {YL}⟳{R} {short}({pct2}%{' ETA:'+mot_eta if mot_eta else ''})"
+        else:
+            seg_row += f"  {DIM}◌ {short}{R}"
+    print(seg_row)
+
+    if not mot_pid:
+        corr_path = FERN_DIR / "FERN_CORRELATION_DATA.json"
+        if seg_done_all and corr_path.exists():
+            corr_age = datetime.now() - datetime.fromtimestamp(corr_path.stat().st_mtime)
+            age_str = f"{corr_age.days}d ago" if corr_age.days > 0 else "today"
+            print(f"    {GR}✓ All segment_motion.json ready  ·  FERN_CORRELATION_DATA.json {age_str}{R}")
+        elif seg_done_all:
+            print(f"    {YL}⚠ Segments ready — run: venv/bin/python analyze_fern_crosscorrelate.py --save{R}")
+        else:
+            print(f"    {DIM}To run: venv/bin/python analyze_fern_motion.py --all --save-segments 2>&1 | tee {MOTION_LOG}{R}")
+    print()
+
     # ── ANALYSIS PROCESS STATUS ─────────────────────────────────────────────
-    print(f"  {B}▸ ANALYSIS PROCESS{R}")
+    print(f"  {B}▸ AI FRAME ANALYSIS  {DIM}(Ollama vision model){R}")
     if pid:
         if age < 120:
             status = f"{GR}● RUNNING{R}  PID {pid}  —  log updated {int(age)}s ago"
@@ -210,7 +359,7 @@ def render():
     print(f"    {status}")
     if not pid:
         print(f"    {DIM}To run: venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen-vl 2>&1 | tee {ANALYSIS_LOG}{R}")
-        print(f"    {DIM}Better:  ... --model qwen3.5-4b  (need: ollama pull qwen3.5:4b){R}")
+        print(f"    {DIM}Better quality: ollama pull qwen2.5vl:32b  then  --model qwen2.5vl:32b{R}")
     print()
 
     # ── CURRENT VIDEO PROGRESS ─────────────────────────────────────────────
@@ -298,26 +447,52 @@ def render():
     print(sep)
     print(f"  {B}▸ PIPELINE PHASE STATUS{R}")
     print()
-    status_colors  = {"complete": GR, "ready": CY, "needs-clips": YL, "manual": MG, "not-started": DIM}
-    status_labels  = {"complete": "✓ DONE", "ready": "▶ READY", "needs-clips": "⚠ NEEDS CLIPS",
-                      "manual": "○ MANUAL", "not-started": "◌ NOT STARTED"}
-    cost_labels    = {
-        "free-local":        f"{GR}free/local{R}",
-        "free-yt-dlp":       f"{GR}free/yt-dlp{R}",
-        "free-local-ollama": f"{GR}free/ollama{R}",
-        "free-claude-max":   f"{GR}free/claude-max{R}",
-        "free-f5-tts":       f"{GR}free/f5-tts{R}",
-        "free":              f"{GR}free{R}",
+
+    running_scripts = get_running_pipeline_scripts()
+    next_phase, next_script = get_next_step()
+
+    cost_labels = {
+        "free-local":      f"{GR}local{R}",
+        "free-yt-dlp":     f"{GR}yt-dlp{R}",
+        "free-ollama":     f"{GR}ollama{R}",
+        "free-claude-max": f"{GR}claude{R}",
+        "free-f5-tts":     f"{GR}f5-tts{R}",
+        "free":            f"{GR}free{R}",
     }
-    for phase, script, status, cost in PIPELINE_PHASES:
-        col      = status_colors.get(status, DIM)
-        label    = status_labels.get(status, status.upper())
+
+    for phase, script, base_status, cost, glob_pat in PIPELINE_PHASES:
         cost_str = cost_labels.get(cost, f"{DIM}{cost}{R}")
-        print(f"    {col}{label:<18}{R}  {phase:<22}  {DIM}{script:<44}{R}  {cost_str}")
+        script_key = Path(script).stem if script.startswith("pipeline/") else ""
+        is_running = script_key in running_scripts
+
+        # Determine real status
+        if is_running:
+            pid_r = running_scripts[script_key]
+            label = f"{GR}● RUNNING  pid {pid_r}{R}"
+        elif base_status == "complete":
+            label = f"{GR}✓ DONE{R}"
+        elif base_status == "manual":
+            label = f"{MG}○ MANUAL{R}"
+        elif glob_pat:
+            exists, count, newest = phase_output_exists(glob_pat)
+            if exists:
+                newest_name = newest.name if newest else ""
+                label = f"{GR}✓ DONE{R}  {DIM}({count} file{'s' if count>1 else ''}, newest: {newest_name}){R}"
+            elif phase == next_phase:
+                label = f"{CY}▶ NEXT STEP{R}"
+            else:
+                label = f"{DIM}◌ pending{R}"
+        else:
+            if phase == next_phase:
+                label = f"{CY}▶ NEXT STEP{R}"
+            else:
+                label = f"{DIM}◌ pending{R}"
+
+        print(f"    {label:<55}  {phase:<22}  {DIM}{script:<44}{R}  {cost_str}")
 
     print()
-    print(f"  {YL}⚠ Voice clips needed:{R} record neutral/tense/energized (15–30s each)")
-    print(f"  {DIM}  Save to: assets/voice/voice_neutral.wav, voice_tense.wav, voice_energized.wav{R}")
+    if next_phase:
+        print(f"  {CY}▶ NEXT:{R} {next_phase}  →  {DIM}{next_script}{R}")
     print()
 
     # ── SAMPLE CLASSIFICATIONS ───────────────────────────────────────────────

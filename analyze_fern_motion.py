@@ -18,6 +18,7 @@ import argparse
 import json
 import math
 import sys
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -33,6 +34,24 @@ MIN_SEG_SECS    = 0.4    # ignore segments shorter than this
 MIN_FEATURES    = 20     # need at least this many feature matches to trust the measurement
 ZOOM_IN_THRESH  = 1.002  # scale > this = zooming in
 ZOOM_OUT_THRESH = 0.998  # scale < this = zooming out
+
+# Log file for monitor.py to watch
+MOTION_LOG = Path("/tmp/fern_motion.log")
+
+_log_file = None
+
+
+def _init_log():
+    """Open motion log file for writing (append mode for resume)."""
+    global _log_file
+    _log_file = open(MOTION_LOG, "a", buffering=1)  # line-buffered
+
+
+def _log(msg: str):
+    """Print to stdout AND flush to motion log file for monitor.py."""
+    print(msg)
+    if _log_file:
+        _log_file.write(msg + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -381,7 +400,7 @@ def analyze_beat_sync(cut_times: list[float], bpm: float) -> dict:
 # ---------------------------------------------------------------------------
 
 def analyze_video(video_path: Path, timeline_path: Path, audio_path: Path = None) -> dict:
-    print(f"\nAnalyzing motion: {video_path.name}")
+    _log(f"\nAnalyzing motion: {video_path.name}")
 
     # Load timeline (cut points + timestamps)
     timeline = json.load(open(timeline_path))
@@ -408,13 +427,22 @@ def analyze_video(video_path: Path, timeline_path: Path, audio_path: Path = None
         return {}
 
     video_fps = cap.get(cv2.CAP_PROP_FPS)
-    print(f"  Video: {video_fps:.1f}fps, {video_duration/60:.1f}min")
-    print(f"  Analyzing {len(segments_to_analyze)} segments (sampled from {len(times)-1} total)...")
+    vid_id = video_path.parent.name
+    _log(f"  Video: {video_fps:.1f}fps, {video_duration/60:.1f}min")
+    _log(f"  Analyzing {len(segments_to_analyze)} segments (sampled from {len(times)-1} total)...")
+    _log(f"MOTION_START {vid_id} {len(segments_to_analyze)}")
 
     segment_results = []
+    t_start = time.time()
+    n_total = len(segments_to_analyze)
     for i, (start, end) in enumerate(segments_to_analyze):
-        if i % 20 == 0:
-            print(f"  [{i}/{len(segments_to_analyze)}] {start:.0f}s...")
+        if i % 10 == 0 and i > 0:
+            elapsed = time.time() - t_start
+            rate = i / elapsed
+            eta_sec = int((n_total - i) / rate) if rate > 0 else 0
+            eta_str = f"{eta_sec//60}m{eta_sec%60:02d}s"
+            pct = i / n_total * 100
+            _log(f"MOTION_PROGRESS {vid_id} {i}/{n_total} {pct:.1f}% ETA:{eta_str}")
         result = analyze_segment(cap, start, end, video_fps)
         if result:
             segment_results.append(result)
@@ -426,7 +454,7 @@ def analyze_video(video_path: Path, timeline_path: Path, audio_path: Path = None
         # Sample up to 300 cuts for speed
         step_t = max(1, len(actual_cut_timestamps) // 300)
         sampled_cuts = actual_cut_timestamps[::step_t]
-        print(f"  Classifying {len(sampled_cuts)} transitions...")
+        _log(f"  Classifying {len(sampled_cuts)} transitions...")
         transition_types = []
         for ct in sampled_cuts:
             t_type = classify_transition(cap, ct, video_fps)
@@ -434,14 +462,14 @@ def analyze_video(video_path: Path, timeline_path: Path, audio_path: Path = None
         t_counts = Counter(transition_types)
         transition_dist = {k: round(v / len(transition_types) * 100, 1)
                            for k, v in t_counts.most_common()}
-        print(f"  Transitions: {transition_dist}")
+        _log(f"  Transitions: {transition_dist}")
     else:
         transition_dist = {"_note": "Re-run hybrid analyzer to store cut_timestamps, then re-run this script"}
 
     cap.release()
 
     if not segment_results:
-        print("  No segments analyzed.")
+        _log("  No segments analyzed.")
         return {}
 
     # Aggregate motion types
@@ -498,6 +526,8 @@ def analyze_video(video_path: Path, timeline_path: Path, audio_path: Path = None
         "video": str(video_path),
         "video_id": video_path.parent.name,
         "duration_sec": round(video_duration, 1),
+        # Private: only present when --save-segments; consumed and removed by main()
+        "_segment_results": segment_results,
 
         "cut_dynamics": {
             "total_cuts": cut_count,
@@ -578,7 +608,15 @@ def main():
     g.add_argument("--all", action="store_true", help="Analyze all 3 Fern videos")
     p.add_argument("--out", default="analysis/fern/FERN_MOTION_FORMULA.json",
                    help="Output JSON path")
+    p.add_argument("--save-segments", action="store_true",
+                   help="Save per-segment motion data to {video_id}_segment_motion.json "
+                        "for cross-correlation with narrative_function via "
+                        "analyze_fern_crosscorrelate.py. Enables per-content-type motion "
+                        "weights in production_rules.py (currently using global averages).")
     args = p.parse_args()
+
+    _init_log()
+    _log(f"Motion analysis started: {time.strftime('%Y-%m-%d %H:%M:%S')}")
 
     if args.all:
         video_paths = sorted(Path("analysis/fern").glob("*/video.mp4"))
@@ -588,17 +626,51 @@ def main():
     all_results = []
     for video_path in video_paths:
         vid_id = video_path.parent.name
+
+        # Checkpoint: if segment_motion.json already exists, skip this video
+        seg_path = video_path.parent / "segment_motion.json"
+        if args.save_segments and seg_path.exists():
+            _log(f"\n  SKIP {vid_id} — segment_motion.json already exists (checkpoint)")
+            # Still need its results for the aggregate formula
+            # Re-load from existing segment file to reconstruct aggregate
+            # (We don't have the full result dict, so just skip aggregate for now)
+            _log(f"  NOTE: {vid_id} will be excluded from aggregate formula re-run.")
+            _log(f"        To re-analyze: delete {seg_path} first.")
+            continue
+
         # Find matching qwen-vl timeline (complete)
-        timeline_path = video_path.parent / f"timeline_hybrid_qwen-vl.json"
+        timeline_path = video_path.parent / "timeline_hybrid_qwen-vl.json"
         if not timeline_path.exists():
             timeline_path = next(video_path.parent.glob("timeline_hybrid_*.json"), None)
         if not timeline_path:
-            print(f"  Skipping {vid_id} — no timeline found")
+            _log(f"  Skipping {vid_id} — no timeline found")
             continue
 
         result = analyze_video(video_path, timeline_path)
         if result:
             all_results.append(result)
+
+            # Save per-segment motion data immediately after each video completes.
+            # Doing this per-video (not at the end) means if the run is interrupted
+            # mid-way, completed videos are already saved and won't need re-processing.
+            if args.save_segments:
+                segs = result.pop("_segment_results", [])
+                seg_data = {
+                    "video_id": vid_id,
+                    "timeline_source": str(timeline_path),
+                    "_note": (
+                        "Per-segment motion data for cross-correlation with narrative_function. "
+                        "Join on timestamp range [start_sec, end_sec] against "
+                        "timeline_hybrid_qwen-vl.json frame timestamps."
+                    ),
+                    "segments": segs,
+                }
+                with open(seg_path, "w") as f:
+                    json.dump(seg_data, f, indent=2)
+                _log(f"  ✓ Saved segment data: {seg_path} ({len(segs)} segments)")
+                _log(f"MOTION_DONE {vid_id} {len(segs)}")
+            else:
+                result.pop("_segment_results", None)  # discard if not saving
 
     if not all_results:
         print("No results.")
