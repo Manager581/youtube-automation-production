@@ -226,19 +226,51 @@ def check_footage_variety(timeline_path):
         return None, "WARN", f"Could not read timeline: {e}"
 
     counts = {}
+    total_visual = 0
+    black_count  = 0
+    anim_count   = 0
+
     for seg in tl:
+        stype = seg.get("source_type", "")
+        if stype in ("chapter_card",):
+            continue
+        total_visual += 1
+        if stype == "black":
+            black_count += 1
+        elif stype == "animation":
+            anim_count += 1
         src = seg.get("source_path")
         if src:
             name = Path(src).name
             counts[name] = counts.get(name, 0) + 1
 
+    # Animation is a legitimate style choice (Fern himself uses illustrated segments)
+    # Only flag raw black screens as a problem
+    anim_pct = anim_count / max(total_visual, 1) * 100
+    black_pct = black_count / max(total_visual, 1) * 100
+
     overused = {k: v for k, v in counts.items() if v > MAX_CLIP_REPEATS}
+
+    notes = []
+    if anim_count > 0:
+        notes.append(f"{anim_count} animated ({anim_pct:.0f}%)")
     if overused:
         top = sorted(overused.items(), key=lambda x: -x[1])[:3]
         details = ", ".join(f"{k} ×{v}" for k, v in top)
-        return overused, "WARN", f"{len(overused)} clip(s) used >{MAX_CLIP_REPEATS}×: {details}"
+        notes.append(f"{len(overused)} overused: {details}")
 
-    return counts, "PASS", f"{len(counts)} unique sources, no overuse ✓"
+    if black_count > 0 and black_pct > 20:
+        note_str = "  |  ".join(notes) if notes else ""
+        return black_count, "WARN", f"{black_count} raw black screens ({black_pct:.0f}%) — run animation_generator.py to fill gaps.  {note_str}"
+
+    if overused:
+        top = sorted(overused.items(), key=lambda x: -x[1])[:3]
+        details = ", ".join(f"{k} ×{v}" for k, v in top)
+        note_str = f"  |  {'  |  '.join(notes)}" if notes else ""
+        return overused, "WARN", f"{len(overused)} clip(s) used >{MAX_CLIP_REPEATS}×: {details}{note_str}"
+
+    note_str = f"  ({',  '.join(notes)})" if notes else ""
+    return counts, "PASS", f"{len(counts)} unique sources, no overuse ✓{note_str}"
 
 
 def check_beat_sync(timeline_path, music_path):

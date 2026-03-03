@@ -382,6 +382,30 @@ Paste `TITLE_ANGLE_FORMULA.json` + video topic into Claude Code, ask for 3 title
 
 ---
 
+### Phase 8.5: Interactive Pipeline Runner ✅ BUILT — `run_pipeline.py`
+
+The single command that runs the entire pipeline. Replaces memorizing 13 commands.
+
+```bash
+python run_pipeline.py          # start or resume
+python run_pipeline.py --list   # see all stages
+python run_pipeline.py --status # see where you are
+python run_pipeline.py --from footage  # jump to a stage
+python run_pipeline.py --reset  # start over
+```
+
+**How it works:**
+- Runs every automated step with **live terminal output** — you see everything as it happens
+- Stops at **your decision points** with a plain-English question box:
+  - *Topic selection* — shows scored candidates from topic_radar, you pick 1–8 or type your own
+  - *Story validation* — shows GO/SKIP/NEEDS WORK, you confirm or override
+  - *Script score* — shows 0–100 score, blocks if <75, warns if <85
+  - *Voice approval* — plays the narration, you approve or regenerate
+  - *Footage review* — shows "42 images / 8 clips / 6 will be animated", you review and confirm
+  - *Final upload* — shows QA results, you watch the video, you approve
+- **State saved** between runs (`.pipeline_run.json`) — Ctrl+C anytime, resume exactly where you left off
+- `monitor.py` still works alongside as a passive background dashboard (separate terminal)
+
 ### Phase 9: Publish ○ MANUAL FOR NOW
 
 Manual upload via YouTube Studio is sufficient. `publish_video.py` (YouTube Data API v3) can be built when volume warrants it.
