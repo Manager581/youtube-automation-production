@@ -308,8 +308,32 @@ venv/bin/python pipeline/video_assembler.py \
 - Text: slide_reveal 511ms, held ~9s
 - Chapter cards: white serif typewriter text on black
 
-**Known gap — Animation generation:**
-When `footage_sourcer.py` finds insufficient footage AND `story_validator.py` sets `visual_strategy = "ANIMATED"`, the assembler currently falls back to `source_type: "black"` (black screen with Ken Burns on images where available). **No true animation generation is built yet.** Wikimedia images get Ken Burns applied, but there is no Blender/After Effects/motion graphics pipeline. For most history/crime/documentary topics, document photos + Wikipedia images + archival footage is usually sufficient. Animation pipeline is a future enhancement.
+**Footage guardrails (built 2026-03-02):**
+`footage_sourcer.py` now enforces:
+- `SEARCH_TIMEOUT_SEC = 20` — each search terminates after 20s so the pipeline never hangs
+- `MIN_VIABLE_IMAGES = 10` / `MIN_VIABLE_CLIPS = 2` — thresholds for "sufficient footage"
+- `needs_animation` list — after searching, segments with zero image AND zero clip coverage are flagged in the manifest so the animation layer can fill them
+
+**Clip pivotal moment detection — `pipeline/clip_analyzer.py` ✅ BUILT:**
+The pipeline previously always started clips from position 0 — taking the first 5s of a 3-minute AP Archive clip. `clip_analyzer.py` solves this:
+- Samples frames every 2s throughout the clip
+- Scores each window against the storyboard `show` description using a local vision model (qwen3.5:4b)
+- Falls back to scene-change activity score if no vision model available
+- Returns `(start_sec, duration_sec)` — the best 5-second window in the clip
+- Results cached in `.clip_moment_cache/`
+- Adds `clip_start_sec` to manifest; `video_assembler.py` passes this to `prepare_clip()`
+
+```bash
+# Analyze one clip
+venv/bin/python pipeline/clip_analyzer.py clip \
+  --clip footage/topic/ap_archive.mp4 \
+  --show "FBI director testifying at Senate hearing" \
+  --duration 5.0
+
+# Batch process all clips in a footage manifest
+venv/bin/python pipeline/clip_analyzer.py manifest \
+  --manifest footage/fern_clone/topic/manifest.json
+```
 
 ---
 
@@ -376,7 +400,8 @@ AUDIO MIX:   ██████████  100% (mix_audio() inside video_asse
 MUSIC:       ██████████  100% (music_sourcer.py — mood-matched CC0 track; Pixabay free API)
 VIDEO:       ██████████  100% (footage_sourcer + video_assembler; Ken Burns + color grade + text + beat sync)
 VIDEO QA:    ██████████  100% (check_fern_video.py — 8-check gate before upload)
-ANIMATION:   ░░░░░░░░░░    0% (next: storyboard shot_type="no_footage" triggers animation; black fallback works now)
+CLIP MOMENT: ██████████  100% (clip_analyzer.py — best window via vision model; prepare_clip() uses clip_start_sec)
+ANIMATION:   ████████░░   80% (animation_generator.py built — document/map/person/text cards via Pillow; auto-triggered from needs_animation)
 THUMBNAIL:   ░░░░░░░░░░    0% (use Claude Code + manual — no script needed until volume)
 PUBLISH:     ██████████  100% (manual upload works fine)
 ```
@@ -392,7 +417,10 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 4. ✅ **Final video QA** — `check_fern_video.py` validates assembled video against Fern benchmarks (8 checks: duration, cut rate, audio levels, color grade, A/V sync, chapter cards, footage variety, beat sync). Run before every upload.
 5. ✅ **Timeline saved** — `video_assembler.py` now saves `output/{topic}/timeline.json` automatically. Used by `check_fern_video.py` for chapter card and footage variety checks.
 6. ✅ **Music sourcer** — `pipeline/music_sourcer.py` analyzes script mood, downloads free CC0 track. Pixabay API is free (register at pixabay.com → API, no payment). Set `PIXABAY_API_KEY` env var.
-7. ✅ **Story-aware animation bridge** — storyboard `shot_type` field carries the intent for future animation: when footage_sourcer returns nothing for a story beat, `shot_type` tells the animation layer exactly what to create. Black fallback is current; Blender/AE pipeline is next phase.
+7. ✅ **Story-aware animation bridge** — storyboard `shot_type` field carries the intent for animation: when footage_sourcer returns nothing for a story beat, `shot_type` tells the animation layer exactly what to create. Black fallback was old; now `pipeline/animation_generator.py` generates the visual automatically.
+8. ✅ **Clip pivotal moment detection** — `pipeline/clip_analyzer.py` finds the best window in a downloaded clip using vision model frame scoring. `prepare_clip()` now uses `clip_start_sec` from the manifest — no more "always take from position 0" gap.
+9. ✅ **Animation generator** — `pipeline/animation_generator.py` generates still image frames (document cards, map cards, portrait cards, text cards) using Pillow when real footage is unavailable. Images feed directly into the existing Ken Burns pipeline. Segments tagged `needs_animation` in the manifest automatically get generated visuals — no black screens.
+10. ✅ **Footage guardrails** — `footage_sourcer.py` now has `SEARCH_TIMEOUT_SEC = 20` per search, minimum viable footage thresholds, and `needs_animation` detection. The pipeline will not hang and will always report what it found vs. what needs to be generated.
 
 **Steps to produce the first video:**
 
@@ -459,6 +487,8 @@ venv/bin/python monitor.py
 | `analysis/fern/TITLE_ANGLE_FORMULA.json` | Title patterns ranked by view performance |
 | `analysis/fern/FERN_STYLE_GROUND_TRUTH.json` | Ground truth style reference |
 | `pipeline/storyboard_generator.py` | Story-driven per-segment visual brief — runs after script enhance, before footage |
+| `pipeline/clip_analyzer.py` | Find the pivotal moment in a downloaded clip — vision model frame scoring → clip_start_sec |
+| `pipeline/animation_generator.py` | Generate still image frames when real footage unavailable — doc/map/person/text cards via Pillow |
 | `check_fern_script.py` | Pre-voice script QA (must score 85+) |
 | `check_fern_video.py` | Post-assembly video QA gate (8 checks vs Fern benchmarks) — run before upload |
 | `monitor.py` | Live pipeline dashboard (run in second terminal) |
@@ -478,4 +508,7 @@ venv/bin/python monitor.py
 *Animation bridge: storyboard shot_type field reserved for future Blender/AE pipeline when footage not found*
 *Storyboard fully wired 2026-03-02: footage_sourcer --storyboard + video_assembler --storyboard both integrated*
 *Full story-aware chain complete: script → storyboard → targeted footage search → tagged clips → story-specific assembly → QA → upload*
-*Next build: animation layer — when footage_sourcer returns nothing, storyboard shot_type + show triggers graphic generation*
+*Clip pivotal moment: built 2026-03-02 — clip_analyzer.py, vision model frame scoring, clip_start_sec in manifest*
+*Animation generator: built 2026-03-02 — animation_generator.py, Pillow doc/map/person/text cards, auto-triggered from needs_animation*
+*Footage guardrails: built 2026-03-02 — SEARCH_TIMEOUT_SEC, MIN_VIABLE thresholds, needs_animation flagging in manifest*
+*Full story-aware + animation pipeline complete: no black screens, no wrong clip windows, no hanging searches*

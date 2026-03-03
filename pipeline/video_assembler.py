@@ -507,8 +507,12 @@ def prepare_clip(
     clip_path: Path,
     duration_sec: float,
     out_path: Path,
+    start_sec: float = 0.0,
 ) -> Path:
-    """Resize an archival video clip to 1080p and apply color grade."""
+    """Resize an archival video clip to 1080p and apply color grade.
+
+    start_sec: offset into the clip to begin from (from clip_analyzer.find_best_moment).
+    """
     vf = (
         f"scale={OUTPUT_RES}:force_original_aspect_ratio=decrease,"
         f"pad={OUTPUT_RES}:(ow-iw)/2:(oh-ih)/2:black,"
@@ -517,7 +521,9 @@ def prepare_clip(
         f"eq=gamma={COLOR_CONTRAST_GAMMA}"
     )
     cmd = [
-        "ffmpeg", "-y", "-i", str(clip_path),
+        "ffmpeg", "-y",
+        "-ss", str(start_sec),
+        "-i", str(clip_path),
         "-t", str(duration_sec),
         "-vf", vf,
         "-c:v", "libx264", "-preset", "fast", "-crf", "23",
@@ -782,6 +788,7 @@ def build_timeline(
                 segments.append({**seg_base,
                     "source_type": "clip",
                     "source_path": clip.get("path", clip.get("local_path", "")),
+                    "clip_start_sec": clip.get("clip_start_sec", 0.0),  # from clip_analyzer
                     "motion": "natural",
                     "storyboard_match": sb_entry_idx is not None,
                 })
@@ -803,6 +810,18 @@ def build_timeline(
                     "motion": motion,
                     "focal_point": focal,
                     "storyboard_match": tagged_still is not None,
+                })
+            elif sb_entry_idx is not None and storyboard:
+                # No real footage found but storyboard entry exists — generate visual
+                sb = storyboard[sb_entry_idx]
+                segments.append({**seg_base,
+                    "source_type": "animation",
+                    "source_path": None,
+                    "motion": motion,
+                    "focal_point": None,
+                    "storyboard_match": True,
+                    "anim_show": sb.get("show", ""),
+                    "anim_shot_type": sb.get("shot_type", "documentary_photo"),
                 })
             else:
                 segments.append({**seg_base,
@@ -1050,8 +1069,34 @@ def render(
         elif seg["source_type"] == "clip":
             src = Path(seg["source_path"])
             if src.exists():
-                prepare_clip(src, dur, seg_raw)
+                prepare_clip(src, dur, seg_raw,
+                             start_sec=seg.get("clip_start_sec", 0.0))
             else:
+                _make_black(dur, seg_raw)
+
+        elif seg["source_type"] == "animation":
+            # No real footage — generate a still using animation_generator, then Ken Burns it
+            try:
+                from pipeline.animation_generator import generate_animation_frame
+                anim_png = seg_raw.parent / f"{seg_raw.stem}_anim.png"
+                narration_text = ""
+                # Recover narration text from chunk if available
+                if "_narration_chunks" in globals():
+                    chunk_idx = seg.get("narration_chunk_idx", 0)
+                    # narration_chunks is local to assemble() — we stored narration in seg
+                result = generate_animation_frame(
+                    show=seg.get("anim_show", ""),
+                    shot_type=seg.get("anim_shot_type", "documentary_photo"),
+                    narration_text=seg.get("text") or seg.get("anim_show", ""),
+                    out_path=anim_png,
+                )
+                if result and anim_png.exists():
+                    make_ken_burns(anim_png, dur, seg.get("motion", "zoom_in"), seg_raw,
+                                   focal_point=seg.get("focal_point"))
+                else:
+                    _make_black(dur, seg_raw)
+            except Exception as e:
+                print(f"  [animation] render error: {e}")
                 _make_black(dur, seg_raw)
 
         else:  # black
@@ -1107,7 +1152,7 @@ def render(
         _mix_narration_only(raw_video, narration_path, out_path, sfx_composite)
 
     # ── Formula compliance report ────────────────────────────────────────────
-    visual_segs = [s for s in segments if s["source_type"] not in ("chapter_card", "black")]
+    visual_segs = [s for s in segments if s["source_type"] not in ("chapter_card", "black", "animation")]
     if visual_segs and total_video_dur > 0:
         dur_min      = total_video_dur / 60
         cuts_per_min = len(visual_segs) / dur_min

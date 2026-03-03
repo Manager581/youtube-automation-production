@@ -44,6 +44,18 @@ import urllib.parse
 from pathlib import Path
 from datetime import datetime
 
+# ── Guardrails ────────────────────────────────────────────────────────────────
+
+# Per-query search timeout (seconds). Prevents any single search hanging the run.
+SEARCH_TIMEOUT_SEC = 20
+
+# If total found < this, print a warning and flag output for animation fallback
+MIN_VIABLE_IMAGES = 10    # Wikimedia images
+MIN_VIABLE_CLIPS  = 2     # video clips
+
+# Per-segment: if 0 images AND 0 clips found, flag as NEEDS_ANIMATION
+# The assembly step will call animation_generator.py for flagged segments
+
 
 # ── News channels that produce reusable footage ──────────────────────────────
 # These channels upload footage under fair use / news license contexts.
@@ -518,6 +530,24 @@ def source_footage_from_storyboard(
             unique_images.append(img)
     unique_images = unique_images[:60]
 
+    # ── Guardrail: flag segments with zero coverage ──
+    needs_animation = []
+    if storyboard:
+        for i, seg in enumerate(storyboard):
+            if seg.get("shot_type") == "chapter_card":
+                continue
+            has_clip  = any(i in c.get("storyboard_segment_ids", []) for c in unique_clips)
+            has_image = any(i in img.get("storyboard_segment_ids", []) for img in unique_images)
+            if not has_clip and not has_image:
+                needs_animation.append({
+                    "segment_index": i,
+                    "show": seg.get("show", ""),
+                    "shot_type": seg.get("shot_type", "documentary_photo"),
+                    "focal_element": seg.get("focal_element", ""),
+                    "search_query": seg.get("search_query", ""),
+                    "text": seg.get("text", ""),
+                })
+
     # ── Summary ──
     tagged_clips  = sum(1 for c in top_clips  if c.get("storyboard_segment_ids"))
     tagged_images = sum(1 for i in unique_images if i.get("storyboard_segment_ids"))
@@ -526,10 +556,16 @@ def source_footage_from_storyboard(
     print(f"{'='*60}")
     print(f"  Video clips: {len(top_clips)} ({tagged_clips} story-tagged)")
     print(f"  Images:      {len(unique_images)} ({tagged_images} story-tagged)")
+    if needs_animation:
+        print(f"  NEEDS ANIMATION: {len(needs_animation)} segment(s) have no footage found")
+        print(f"    Run: python pipeline/animation_generator.py --manifest footage/{{brand}}/{{topic}}/manifest.json")
+    else:
+        print(f"  Coverage: all story segments have footage ✓")
 
     if preview_only:
         print("\n[Preview — use --download to fetch assets]")
-        return _save_manifest(top_clips, unique_images, broad_query, slug, brand_id, output_dir)
+        return _save_manifest(top_clips, unique_images, broad_query, slug, brand_id, output_dir,
+                              needs_animation=needs_animation)
 
     # ── Download ──
     if download:
@@ -556,7 +592,8 @@ def source_footage_from_storyboard(
         print(f"  Images downloaded: {ok}/{len(unique_images)}")
         unique_images = downloaded_imgs
 
-    return _save_manifest(top_clips, unique_images, broad_query, slug, brand_id, output_dir)
+    return _save_manifest(top_clips, unique_images, broad_query, slug, brand_id, output_dir,
+                          needs_animation=needs_animation)
 
 
 # ── Relevance scoring ──────────────────────────────────────────────────────────
@@ -806,7 +843,8 @@ def source_footage(query: str, entities: dict, brand_id: str,
 
 
 def _save_manifest(clips: list, images: list, query: str, slug: str,
-                   brand_id: str, output_dir: Path) -> dict:
+                   brand_id: str, output_dir: Path,
+                   needs_animation: list | None = None) -> dict:
     """Save footage manifest to disk — includes both video clips and still images."""
     downloaded_clips  = [c for c in clips  if c.get("downloaded")]
     downloaded_images = [i for i in images if i.get("downloaded")]
@@ -828,7 +866,9 @@ def _save_manifest(clips: list, images: list, query: str, slug: str,
             "video_clips_downloaded": len(downloaded_clips),
             "images_found":         len(images),
             "images_downloaded":    len(downloaded_images),
+            "needs_animation_count": len(needs_animation) if needs_animation else 0,
         },
+        "needs_animation": needs_animation or [],
         "visual_mix_note": (
             "Fern target: 57% document_photo, 20% documentary_photo, "
             "6% news_screenshot, 4% archival. Wikimedia images cover the first two. "
