@@ -1048,6 +1048,14 @@ def render(
         print(f"  Footage mix: {still_pct:.0f}% stills / {clip_pct:.0f}% clips  [target 88%/12%]")
         print(f"{'─' * 58}")
 
+    # Save timeline.json alongside output for check_fern_video.py and debugging
+    timeline_json = out_path.parent / "timeline.json"
+    try:
+        timeline_json.write_text(json.dumps(segments, indent=2, default=str))
+        print(f"Timeline → {timeline_json}")
+    except Exception:
+        pass  # non-critical
+
     print(f"\nDone → {out_path}")
     return out_path
 

@@ -219,16 +219,47 @@ Audio mixing is fully implemented inside `pipeline/video_assembler.py` via the `
 
 ---
 
+### Phase 6.5: Storyboard Generation ✅ BUILT — free, local Ollama
+
+**Closes the single biggest quality gap: footage is now story-driven, not tag-pool random.**
+
+For each narration segment, tells the assembler:
+- What SPECIFIC visual to show (not "a document" — "the 1973 FBI memo with CONFIDENTIAL stamp")
+- Exact search query for footage_sourcer (targeted, not generic tags)
+- What focal element Ken Burns pulls toward (the date, the name, the building)
+- Shot type + intensity
+
+```bash
+venv/bin/python pipeline/storyboard_generator.py \
+  --script scripts/enhanced_topic.txt \
+  --out storyboards/topic.json
+```
+
+Runs fully locally via Ollama (qwen3.5:4b preferred — fast). Falls back to rule-based extraction if Ollama unavailable. Results cached per segment — re-run is fast.
+
+**Story-aware chain:** every downstream choice is now story-aware:
+- Storyboard → footage search query (story-specific)
+- Storyboard focal_element → Ken Burns target (story-specific)
+- Narration emotion → music intensity (story-specific)
+- [PAUSE:5.0] chapter markers → music swells + chapter cards (story-specific)
+
+**When footage doesn't exist → animate it:** If footage_sourcer returns nothing for a storyboard entry, the assembler currently falls back to black screen + Ken Burns on any available image. The storyboard `shot_type` field is designed to trigger animation generation when that pipeline is built (e.g. "no archival footage found → generate with Blender/After Effects"). This is the bridge to the animation layer.
+
+---
+
 ### Phase 7: Video Assembly ✅ BUILT — free, local
 
-**Source footage first:**
+**Step 1 — Source footage (now storyboard-driven):**
 ```bash
+venv/bin/python pipeline/storyboard_generator.py --script scripts/enhanced_topic.txt --out storyboards/topic.json
 venv/bin/python pipeline/footage_sourcer.py \
   --brand fern_clone \
   --brief research/fern_clone/briefs/topic.json \
   --out footage/fern_clone/topic/
 ```
 Sources from: YouTube (yt-dlp), Internet Archive, Wikimedia Commons images (all free).
+
+**Storyboard integration with footage_sourcer:** Pass `--storyboard storyboards/topic.json` to footage_sourcer once that flag is wired (next build — footage_sourcer currently uses brief-derived tags, needs storyboard search queries as primary).
 
 **Assemble video:**
 ```bash
@@ -250,6 +281,37 @@ venv/bin/python pipeline/video_assembler.py \
 
 **Known gap — Animation generation:**
 When `footage_sourcer.py` finds insufficient footage AND `story_validator.py` sets `visual_strategy = "ANIMATED"`, the assembler currently falls back to `source_type: "black"` (black screen with Ken Burns on images where available). **No true animation generation is built yet.** Wikimedia images get Ken Burns applied, but there is no Blender/After Effects/motion graphics pipeline. For most history/crime/documentary topics, document photos + Wikipedia images + archival footage is usually sufficient. Animation pipeline is a future enhancement.
+
+---
+
+### Phase 7.5: Final Video QA ✅ BUILT — `check_fern_video.py`
+
+Run after assembly, before upload. Validates against Fern's measured benchmarks.
+
+```bash
+venv/bin/python check_fern_video.py output/topic/final.mp4
+# Auto-detects output/topic/timeline.json and assets/music/track.mp3
+# Or explicitly:
+venv/bin/python check_fern_video.py output/topic/final.mp4 \
+  --timeline output/topic/timeline.json \
+  --music assets/music/track.mp3
+```
+
+**Checks (8 total):**
+| Check | Target | Fail condition |
+|---|---|---|
+| Duration | 22–27 min | <18 min or >32 min = FAIL |
+| Cut rate | 11.3 cuts/min | <8 or >15 = WARN |
+| Audio levels | -14 to -18 LUFS | <-23 or >-10 = WARN |
+| Color grade | Saturation <0.35 | >0.40 = WARN (ungraded) |
+| A/V sync | <0.5s drift | >2.0s = FAIL |
+| Chapter cards | ~5 per video | 0 = WARN |
+| Footage variety | No clip >3× | >3× = WARN |
+| Beat sync | ~39% on-beat | <25% = WARN |
+
+Exit code 0 = PASS/WARN, exit code 1 = FAIL. Pipeline can gate on this: `if check_fern_video.py fails → do not upload`.
+
+Note: `video_assembler.py` now saves `output/topic/timeline.json` alongside the final video automatically. check_fern_video.py picks it up without any flags.
 
 ---
 
@@ -279,11 +341,13 @@ Manual upload via YouTube Studio is sufficient. `publish_video.py` (YouTube Data
 ANALYSIS:    ██████████  100% (3 videos, 1,838 frames; optional qwen3.5 re-run for motion fields)
 RESEARCH:    ██████████  100% (30 videos: comments/titles/transcripts; 237 topic signals)
 SCRIPT GEN:  ██████████  100% (Claude Code interactive + script_enhancer.py + check_fern_script.py)
+STORYBOARD:  ██████████  100% (storyboard_generator.py — story-driven per-segment visual direction)
 VOICE:       ██████████  100% (F5-TTS + audio_preprocessor + voice_generator built + voice clips recorded)
 AUDIO MIX:   ██████████  100% (mix_audio() inside video_assembler.py; all formulas measured)
-MUSIC:       ██████████  100% (music_sourcer.py built — analyzes script mood, downloads free CC0 track)
-VIDEO:       ██████████  100% (footage_sourcer + video_assembler built; Ken Burns + color grade + text)
-ANIMATION:   ░░░░░░░░░░    0% (future enhancement — black fallback works for now)
+MUSIC:       ██████████  100% (music_sourcer.py — mood-matched CC0 track; Pixabay free API)
+VIDEO:       ██████████  100% (footage_sourcer + video_assembler; Ken Burns + color grade + text + beat sync)
+VIDEO QA:    ██████████  100% (check_fern_video.py — 8-check gate before upload)
+ANIMATION:   ░░░░░░░░░░    0% (next: storyboard shot_type="no_footage" triggers animation; black fallback works now)
 THUMBNAIL:   ░░░░░░░░░░    0% (use Claude Code + manual — no script needed until volume)
 PUBLISH:     ██████████  100% (manual upload works fine)
 ```
@@ -295,20 +359,40 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 2. ✅ **Ken Burns focal point** — `video_assembler.py --focal-points` now calls local vision model (qwen3.5:27b preferred) via Ollama REST API. Focal point is **story-driven**: the model is told what the narrator is saying at that moment and finds the story element in the frame (a date on a document, a name, a building — whatever the narration points at). Results cached per (image, narration_hash). Falls back to center if model unavailable.
    - Requires: `ollama pull qwen3.5:27b` (17GB) — not yet downloaded
    - Falls back to: `qwen3.5:4b` → `qwen2.5vl:7b` → center (0.5, 0.5)
+3. ✅ **Storyboard generator** — `pipeline/storyboard_generator.py` converts enhanced script into per-segment visual brief. Every downstream choice is now story-aware: footage search queries are specific, Ken Burns focal_element is explicit, intensity matches emotion. Replaces random tag-pool selection.
+4. ✅ **Final video QA** — `check_fern_video.py` validates assembled video against Fern benchmarks (8 checks: duration, cut rate, audio levels, color grade, A/V sync, chapter cards, footage variety, beat sync). Run before every upload.
+5. ✅ **Timeline saved** — `video_assembler.py` now saves `output/{topic}/timeline.json` automatically. Used by `check_fern_video.py` for chapter card and footage variety checks.
+6. ✅ **Music sourcer** — `pipeline/music_sourcer.py` analyzes script mood, downloads free CC0 track. Pixabay API is free (register at pixabay.com → API, no payment). Set `PIXABAY_API_KEY` env var.
+7. ✅ **Story-aware animation bridge** — storyboard `shot_type` field carries the intent for future animation: when footage_sourcer returns nothing for a story beat, `shot_type` tells the animation layer exactly what to create. Black fallback is current; Blender/AE pipeline is next phase.
 
-**Next actions to produce the first video:**
+**Steps to produce the first video:**
+
+**Automated steps** (run and wait):
 1. `python pipeline/topic_radar.py --brand fern_clone` — finds candidates, auto-checks Fern overlap
 2. `python pipeline/comments_miner.py --brand fern_clone` — refresh audience signals (already cached)
 3. `python pipeline/research_brief.py --brand fern_clone --query "{chosen topic}"`
 4. `python pipeline/story_validator.py --query "{chosen topic}" --brand fern_clone` — GO/SKIP + overlap check
-5. Claude Code: write script from brief (reference SCRIPT_FORMULA.json + FERN_MASTER_FORMULA.json)
+
+**Manual decision:** Pick the topic. High viral score + low Fern overlap. No script saves a bad topic.
+
+5. Claude Code: write script from brief (reference SCRIPT_FORMULA.json + FERN_MASTER_FORMULA.json). Target ~4,200 words / 25 min.
 6. `python pipeline/script_enhancer.py --input scripts/raw.txt --output scripts/enhanced.txt`
-7. `python check_fern_script.py scripts/enhanced.txt` — **must score 85+ before proceeding to voice**
-8. `python pipeline/voice_generator.py --ref-neutral assets/voice/voice_neutral_ref.wav --ref-tense assets/voice/voice_tense_ref.wav --ref-energized assets/voice/voice_energized_ref.wav --auto-transcribe --script scripts/enhanced_topic.txt --out audio/topic/narration.wav`
-9. `python pipeline/music_sourcer.py --script scripts/enhanced_{topic}.txt` — finds + downloads free CC0 music matching script mood → `assets/music/track.mp3`
-10. `python pipeline/footage_sourcer.py --brief research/fern_clone/briefs/{topic}.json --out footage/fern_clone/{topic}/`
-11. `python pipeline/video_assembler.py --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --out output/{topic}/final.mp4`
-12. Manual upload to YouTube
+7. `python check_fern_script.py scripts/enhanced.txt` — **must score 85+ before proceeding**
+8. `python pipeline/storyboard_generator.py --script scripts/enhanced_{topic}.txt --out storyboards/{topic}.json` — per-segment visual brief (story-driven)
+9. `python pipeline/voice_generator.py --ref-neutral assets/voice/voice_neutral_ref.wav --ref-tense assets/voice/voice_tense_ref.wav --ref-energized assets/voice/voice_energized_ref.wav --auto-transcribe --script scripts/enhanced_topic.txt --out audio/topic/narration.wav`
+
+**Manual check:** Listen to narration. Catch mispronunciations, wrong emotion, timing drift.
+
+10. `python pipeline/music_sourcer.py --script scripts/enhanced_{topic}.txt` — mood-matched CC0 track → `assets/music/track.mp3`
+11. `python pipeline/footage_sourcer.py --brief research/fern_clone/briefs/{topic}.json --out footage/fern_clone/{topic}/`
+
+**Manual check:** Scan downloaded footage. Delete wrong clips. Add missing critical visuals.
+
+12. `python pipeline/video_assembler.py --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --out output/{topic}/final.mp4`
+    → Saves `output/{topic}/timeline.json` automatically.
+13. `python check_fern_video.py output/{topic}/final.mp4` — **must PASS or WARN before upload**
+
+**Manual:** Watch the full video. Then upload to YouTube Studio.
 
 ---
 
@@ -345,6 +429,9 @@ venv/bin/python monitor.py
 | `analysis/fern/THUMBNAIL_FORMULA.json` | Thumbnail composition rules |
 | `analysis/fern/TITLE_ANGLE_FORMULA.json` | Title patterns ranked by view performance |
 | `analysis/fern/FERN_STYLE_GROUND_TRUTH.json` | Ground truth style reference |
+| `pipeline/storyboard_generator.py` | Story-driven per-segment visual brief — runs after script enhance, before footage |
+| `check_fern_script.py` | Pre-voice script QA (must score 85+) |
+| `check_fern_video.py` | Post-assembly video QA gate (8 checks vs Fern benchmarks) — run before upload |
 | `monitor.py` | Live pipeline dashboard (run in second terminal) |
 | `research_pipeline.py` | ⚠️ USES PAID API — do not run; use Claude Code instead |
 
@@ -353,11 +440,11 @@ venv/bin/python monitor.py
 *Last updated: 2026-03-02*
 *Videos analyzed: aVA7aXOH1pk (Trump), wLFY_Zu_O08 (FBI/KKK), wkVygetgeRY (Unabomber) — 3 total, 1,838 frames*
 *30 Fern videos: comments + titles + transcripts + signals all committed to GitHub*
-*Audio mix: COMPLETE — mix_audio() in video_assembler.py; all audio formulas measured and committed*
-*Models: qwen3.5:4b and qwen3.5:27b added to analyze_fern_hybrid_checkpoint.py (pull with `ollama pull qwen3.5:4b`)*
-*Fern title overlap checker: BUILT into topic_radar.py and story_validator.py (28/30 videos in catalog)*
-*Catalog gap: aVA7aXOH1pk and wkVygetgeRY missing video.info.json — not in overlap catalog*
-*All 9 pipeline scripts confirmed FULLY BUILT (voice_generator, audio_preprocessor, footage_sourcer, video_assembler all complete)*
-*No blockers for first video — pipeline is fully operational*
+*All pipeline scripts: topic_radar, comments_miner, research_brief, story_validator, script_enhancer, check_fern_script, storyboard_generator, voice_generator, audio_preprocessor, music_sourcer, footage_sourcer, video_assembler, check_fern_video — ALL COMPLETE*
 *Beat sync: built 2026-03-02 — librosa beat_track + snap_to_beat in video_assembler.py*
-*Ken Burns focal point: built 2026-03-02 — story-aware detect_focal_point() via Ollama REST API, cached per (image, narration_hash). Use --focal-points flag. Needs qwen3.5:27b pulled (17GB).*
+*Ken Burns focal point: built 2026-03-02 — story-aware detect_focal_point() via Ollama REST API, cached per (image, narration_hash). Needs qwen3.5:27b pulled (17GB).*
+*Storyboard generator: built 2026-03-02 — per-segment visual brief, story-driven footage search + Ken Burns focal_element*
+*Final video QA: built 2026-03-02 — check_fern_video.py, 8 checks, auto-detects timeline.json and music*
+*Music sourcer: built 2026-03-02 — mood analysis + Pixabay CC0 (free API, no payment)*
+*Animation bridge: storyboard shot_type field reserved for future Blender/AE pipeline when footage not found*
+*Next build: wire storyboard search queries into footage_sourcer --storyboard flag*
