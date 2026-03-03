@@ -450,6 +450,11 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 11. ✅ **Automated voice QA** — `check_fern_voice.py` runs immediately after voice_generator. Checks: integrated LUFS (-20 to -16 target), WPM from manifest timestamps (138.7 target), silence ratio (<25% warn, <45% fail), peak level (clipping detection). PASS or WARN auto-proceed — no listening required. Only FAIL stops the pipeline.
 12. ✅ **Automated footage verification** — `pipeline/footage_verifier.py` scores every downloaded image/clip against its storyboard description using a vision model. Items scoring <0.10 (completely unrelated) are removed from the manifest automatically. Reports per-segment coverage: ≥60% auto-proceeds, 40–59% warns but proceeds, <40% asks user. Note: clip audio is already stripped by `-an` in `prepare_clip()` — footage verifier doesn't need to handle this.
 13. ✅ **No black screens** — `video_assembler.py` final fallback (no footage + no storyboard) now generates a narration text card via `animation_generator.py` instead of black. Content segments never show black. Only the 0.4s chapter card padding intentionally uses black.
+14. ✅ **Full storyboard→voice→assembly integration** — Four bugs fixed / enhancements wired:
+    - **`chunks` vs `segments` (CRITICAL BUG FIXED)**: voice_generator outputs `"segments"` in manifest; assembler was reading `"chunks"` → empty timeline. Now reads `segments`, filters to speech-only.
+    - **Chapter cards from storyboard**: voice_generator doesn't write chapter data. Assembler now extracts chapter timing from storyboard `is_chapter_break` entries via proportional position mapping → chapter cards appear at the right moments.
+    - **Intensity-driven Ken Burns zoom rate**: storyboard `intensity` now modulates `make_ken_burns()` zoom speed per segment. `tense`=7%/sec, `ominous`=2.5%/sec, `energized`=8%/sec, `neutral`=5%/sec. Tense scenes push in faster; ominous scenes drift almost imperceptibly.
+    - **Sequential storyboard matching**: was doing full O(n²) rescan per chunk. Now uses windowed sequential search from last match position — correct because narration and storyboard are both in script order.
 
 **Steps to produce the first video:**
 
@@ -547,3 +552,4 @@ venv/bin/python monitor.py
 *Footage verification automated: pipeline/footage_verifier.py — vision model scores each item vs storyboard; bad items auto-removed; <40% coverage asks user.*
 *run_pipeline.py updated: stage_voice and stage_footage both now fully automated. Manual decision points reduced to: topic, story (GO/SKIP), script, final upload.*
 *No-black-screens rule enforced: video_assembler.py final fallback now generates narration text card. Content segments never black.*
+*Full storyboard integration: CRITICAL BUG fixed (chunks vs segments field name). Chapter cards from storyboard is_chapter_break. Intensity→KB zoom rate (tense=7%/sec, ominous=2.5%/sec). Sequential storyboard matching.*

@@ -70,13 +70,22 @@ from pipeline.production_rules import (
 # ---------------------------------------------------------------------------
 
 # Ken Burns
-KB_ZOOM_RATE_PER_SEC  = 0.05    # 5% scale change per second
+KB_ZOOM_RATE_PER_SEC  = 0.05    # 5% scale change per second (Fern measured baseline)
 KB_ZOOM_IN_PCT        = 0.40    # 40% of segments zoom in
 KB_ZOOM_OUT_PCT        = 0.25    # 25% zoom out
 KB_STATIC_PCT         = 0.26    # 26% hold static (no motion)
 KB_START_ZOOM_IN       = 1.00    # zoom-in segments: start at 100%, grow
 KB_START_ZOOM_OUT      = 1.30    # zoom-out segments: start at 130%, shrink back
 KB_MAX_ZOOM            = 1.35    # never exceed 35% zoom (avoid aliasing)
+
+# Storyboard intensity → Ken Burns zoom rate (varies from baseline)
+# tense = faster push creates anxiety; ominous = ultra-slow creates dread
+KB_INTENSITY_ZOOM = {
+    "tense":     0.070,   # 7%/sec — anxious energy
+    "ominous":   0.025,   # 2.5%/sec — slow creeping dread
+    "energized": 0.080,   # 8%/sec — momentum and pace
+    "neutral":   0.050,   # 5%/sec — Fern baseline
+}
 
 # Color grade — matches Fern's measured saturation=0.183, black_crush=13%
 COLOR_SATURATION       = 0.46    # hue filter saturation multiplier (natural → Fern)
@@ -300,15 +309,18 @@ def make_ken_burns(
     out_path: Path,
     fps: int = OUTPUT_FPS,
     focal_point: tuple[float, float] | None = None,
+    zoom_rate: float = KB_ZOOM_RATE_PER_SEC,   # modulated by storyboard intensity
 ) -> Path:
     """
     Render a Ken Burns motion clip from a still image using FFmpeg zoompan.
     direction is one of: zoom_in, zoom_out, static, pan_left, pan_right
     focal_point: (fx, fy) as fractions of frame size — zoom stays anchored here.
                  Defaults to frame center (0.5, 0.5) if not provided.
+    zoom_rate: zoom % change per second. Default is Fern's measured 5%/sec.
+               Pass KB_INTENSITY_ZOOM[intensity] for story-aware pacing.
     """
     n_frames = int(math.ceil(duration_sec * fps))
-    zoom_per_frame = KB_ZOOM_RATE_PER_SEC / fps
+    zoom_per_frame = zoom_rate / fps
 
     # Focal point for zoom anchor — defaults to center
     fx, fy = focal_point if focal_point else (0.5, 0.5)
@@ -319,14 +331,14 @@ def make_ken_burns(
 
     if direction == "zoom_in":
         start_z = KB_START_ZOOM_IN
-        end_z   = min(start_z + KB_ZOOM_RATE_PER_SEC * duration_sec, KB_MAX_ZOOM)
+        end_z   = min(start_z + zoom_rate * duration_sec, KB_MAX_ZOOM)
         z_expr  = f"min(zoom+{zoom_per_frame:.6f},{end_z:.4f})"
         x_expr  = x_focal
         y_expr  = y_focal
 
     elif direction == "zoom_out":
         start_z = min(KB_START_ZOOM_OUT, KB_MAX_ZOOM)
-        end_z   = max(start_z - KB_ZOOM_RATE_PER_SEC * duration_sec, 1.0)
+        end_z   = max(start_z - zoom_rate * duration_sec, 1.0)
         z_expr  = f"if(eq(on,1),{start_z:.4f},max(zoom-{zoom_per_frame:.6f},{end_z:.4f}))"
         x_expr  = x_focal
         y_expr  = y_focal
@@ -584,17 +596,32 @@ def snap_to_beat(
 # Timeline builder
 # ---------------------------------------------------------------------------
 
-def _find_storyboard_match(chunk_text: str, storyboard: list) -> int | None:
+def _find_storyboard_match(
+    chunk_text: str,
+    storyboard: list,
+    start_idx: int = 0,
+) -> int | None:
     """
     Find the storyboard entry (by index) that best matches a narration chunk.
     Uses word-overlap (Jaccard similarity). Returns None if no confident match.
+
+    start_idx: search forward from this index (sequential matching — narration
+    and storyboard are generated from the same script in the same order).
+    Allows a small lookback in case of minor segment misalignment.
     """
     chunk_words = set(w.lower() for w in chunk_text.split() if len(w) > 3)
     if not chunk_words:
         return None
+    # Windowed search: look from slightly before start_idx up to +20 entries.
+    # This prevents matching already-passed storyboard segments while tolerating
+    # the different segmentation granularity (narration chunks are larger than
+    # storyboard entries — typically 4:1 ratio).
+    search_from = max(0, start_idx - 2)
+    search_to   = min(len(storyboard), start_idx + 20)
     best_score = 0.0
     best_idx = None
-    for i, entry in enumerate(storyboard):
+    for i in range(search_from, search_to):
+        entry = storyboard[i]
         if entry.get("shot_type") == "chapter_card":
             continue
         entry_words = set(w.lower() for w in entry.get("text", "").split() if len(w) > 3)
@@ -606,6 +633,32 @@ def _find_storyboard_match(chunk_text: str, storyboard: list) -> int | None:
             best_score = overlap
             best_idx = i
     return best_idx if best_score >= 0.15 else None
+
+
+def _chapters_from_storyboard(storyboard: list, chunks: list) -> list:
+    """
+    Extract chapter timing from storyboard is_chapter_break entries.
+    Maps each chapter break proportionally to the corresponding narration chunk
+    using relative position (both are generated from the same script in order).
+
+    Called by build_timeline() when the narration manifest has no chapters.
+    """
+    if not storyboard or not chunks:
+        return []
+    chapters = []
+    total_sb = max(len(storyboard) - 1, 1)
+    total_chunks = max(len(chunks) - 1, 1)
+    for i, entry in enumerate(storyboard):
+        if not entry.get("is_chapter_break"):
+            continue
+        # Map storyboard position to chunk index proportionally
+        chunk_idx = min(int(round(i / total_sb * total_chunks)), len(chunks) - 1)
+        chapters.append({
+            "num":       entry.get("chapter_num", len(chapters) + 2),
+            "title":     entry.get("chapter_title", f"Part {len(chapters) + 2}"),
+            "start_sec": chunks[chunk_idx].get("start_sec", 0.0),
+        })
+    return chapters
 
 
 def build_timeline(
@@ -634,9 +687,22 @@ def build_timeline(
         "narration_chunk_idx": int | None,
     }
     """
-    chunks   = narration_manifest.get("chunks", [])
-    chapters = narration_manifest.get("chapters", [])  # [{title, start_sec, num?}, ...]
+    # voice_generator outputs "segments"; legacy manifests may use "chunks".
+    # Filter to speech-only — drop pause segments that have no visual content.
+    chunks = narration_manifest.get("chunks") or [
+        s for s in narration_manifest.get("segments", [])
+        if s.get("type", "speech") == "speech"
+    ]
+    chapters = narration_manifest.get("chapters", [])
     clips    = footage_manifest.get("clips", [])
+
+    # If the narration manifest has no chapter data but a storyboard was provided,
+    # extract chapter timing from the storyboard's is_chapter_break entries.
+    # This covers the common case where voice_generator doesn't write chapters.
+    if not chapters and storyboard:
+        chapters = _chapters_from_storyboard(storyboard, chunks)
+        if chapters:
+            print(f"  Chapters extracted from storyboard: {len(chapters)} chapter breaks")
 
     # Pre-compute lower-third events (first occurrence of each named person)
     lower_third_map = _detect_named_persons(chunks)
@@ -667,6 +733,7 @@ def build_timeline(
     cursor = 0.0
     still_idx = 0
     video_idx = 0
+    sb_cursor = 0   # sequential storyboard pointer — advances as we match chunks
 
     for chunk_idx, chunk in enumerate(chunks):
         chunk_start  = chunk.get("start_sec", cursor)
@@ -741,13 +808,18 @@ def build_timeline(
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
             seg_lower_third = {"name": lt_info[0], "role": lt_info[1]} if lt_info else None
 
-            # Storyboard match: find the storyboard entry for this chunk (if storyboard provided)
+            # Storyboard match: sequential search from sb_cursor (not full rescan).
+            # Advances the cursor on each match — same script order in both systems.
             sb_entry_idx = None
             sb_focal_element = None
+            sb_intensity = "neutral"
             if storyboard and is_chunk_start:
-                sb_entry_idx = _find_storyboard_match(chunk_text, storyboard)
+                sb_entry_idx = _find_storyboard_match(chunk_text, storyboard,
+                                                      start_idx=sb_cursor)
                 if sb_entry_idx is not None:
+                    sb_cursor = sb_entry_idx   # advance pointer
                     sb_focal_element = storyboard[sb_entry_idx].get("focal_element")
+                    sb_intensity     = storyboard[sb_entry_idx].get("intensity", "neutral")
 
             # Story-tagged footage: prefer clips/stills tagged for this storyboard segment
             tagged_still = None
@@ -770,6 +842,9 @@ def build_timeline(
                 )
             )
 
+            # Ken Burns zoom rate modulated by storyboard intensity
+            kb_zoom_rate = KB_INTENSITY_ZOOM.get(sb_intensity, KB_ZOOM_RATE_PER_SEC)
+
             seg_base = {
                 "start_sec": round(t, 3),
                 "duration_sec": round(seg_dur, 3),
@@ -779,6 +854,7 @@ def build_timeline(
                 "content_type": content_type,   # carry through for compliance report
                 "sfx": seg_sfx,
                 "lower_third": seg_lower_third,
+                "kb_zoom_rate": kb_zoom_rate,   # story-aware Ken Burns rate
             }
 
             if use_clip and (tagged_clip or videos):
@@ -1066,7 +1142,8 @@ def render(
             src = Path(seg["source_path"])
             if src.exists():
                 make_ken_burns(src, dur, seg["motion"], seg_raw,
-                               focal_point=seg.get("focal_point"))
+                               focal_point=seg.get("focal_point"),
+                               zoom_rate=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC))
             else:
                 _make_black(dur, seg_raw)
 
@@ -1096,7 +1173,8 @@ def render(
                 )
                 if result and anim_png.exists():
                     make_ken_burns(anim_png, dur, seg.get("motion", "zoom_in"), seg_raw,
-                                   focal_point=seg.get("focal_point"))
+                                   focal_point=seg.get("focal_point"),
+                                   zoom_rate=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC))
                 else:
                     _make_black(dur, seg_raw)
             except Exception as e:
