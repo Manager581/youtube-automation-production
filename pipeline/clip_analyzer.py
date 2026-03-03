@@ -42,8 +42,9 @@ SAMPLE_INTERVAL_SEC = 2.0    # sample one frame every N seconds
 MIN_CLIP_DURATION   = 2.0    # don't try to find moments in clips shorter than this
 CACHE_DIR           = Path(".clip_moment_cache")
 
-# Vision model for frame analysis (same preference as focal point detection)
-VISION_MODELS = ["qwen3.5:27b", "qwen3.5:4b", "qwen2.5vl:7b"]
+# Vision-capable models only — must support image input via Ollama "images" field.
+# Text-only models (qwen3.5:27b, qwen3.5:4b) are NOT included here.
+VISION_MODELS = ["qwen2.5vl:7b", "qwen2.5vl:72b", "llava:13b", "llava:7b", "llava"]
 OLLAMA_URL    = "http://localhost:11434/api/generate"
 
 # Scene activity threshold — used when no vision model available

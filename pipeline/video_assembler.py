@@ -177,7 +177,9 @@ def _escape_text(text: str) -> str:
 # Falls back to (0.5, 0.5) if model unavailable or parse fails.
 # Cache: {image}.focal.json — dict keyed by narration_hash so same image can have
 # different focal points for different story moments.
-FOCAL_MODEL_PREFERENCE = ["qwen3.5:27b", "qwen3.5:4b", "qwen2.5vl:7b"]
+# Vision-capable models only — must support image input via Ollama "images" field.
+# Text-only models (qwen3.5:27b, qwen3.5:4b) are NOT included here.
+FOCAL_MODEL_PREFERENCE = ["qwen2.5vl:7b", "qwen2.5vl:72b", "llava:13b", "llava:7b", "llava"]
 
 
 def _focal_from_description(description: str, image_path: Path) -> tuple[float, float] | None:
