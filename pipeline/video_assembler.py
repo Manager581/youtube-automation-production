@@ -795,8 +795,44 @@ def build_timeline(
         if spec.text_zone != "auto":
             overlay_zone = spec.text_zone
 
-        # Segment duration range from content type pacing
+        # Storyboard match — done before pacing and inner loop so the
+        # narrative_function override applies to ALL visual segments in this chunk.
+        sb_entry_idx = None
+        sb_focal_element = None
+        sb_intensity = "neutral"
+        if storyboard:
+            sb_entry_idx = _find_storyboard_match(chunk_text, storyboard,
+                                                  start_idx=sb_cursor)
+            if sb_entry_idx is not None:
+                sb_cursor = sb_entry_idx   # advance pointer
+                sb_focal_element = storyboard[sb_entry_idx].get("focal_element")
+                sb_intensity     = storyboard[sb_entry_idx].get("intensity", "neutral")
+                # narrative_function from storyboard overrides keyword-based classifier.
+                # The LLM had full script context when it chose this label — more accurate.
+                sb_narrative_fn = storyboard[sb_entry_idx].get("narrative_function")
+                if sb_narrative_fn and sb_narrative_fn not in ("chapter_break",):
+                    content_type = sb_narrative_fn
+                    spec = get_spec(content_type)
+                    if spec.text_zone != "auto":
+                        overlay_zone = spec.text_zone
+
+        # Segment duration range (after spec may be overridden by narrative_function)
         min_seg, max_seg = pacing_range(spec.cut_pacing)
+
+        # Story-tagged footage: prefer clips/stills near the current storyboard cursor.
+        # A 150-word narration chunk spans ~3-5 storyboard segments, so search a window.
+        tagged_still = None
+        tagged_clip  = None
+        if sb_entry_idx is not None and storyboard:
+            search_ids = set(range(sb_cursor, min(sb_cursor + 6, len(storyboard))))
+            for s in stills:
+                if search_ids & set(s.get("storyboard_segment_ids", [])):
+                    tagged_still = s
+                    break
+            for c in videos:
+                if search_ids & set(c.get("storyboard_segment_ids", [])):
+                    tagged_clip = c
+                    break
 
         # Fill the chunk duration with one or more visual segments
         t = chunk_start
@@ -822,32 +858,6 @@ def build_timeline(
             # Lower third: first segment of chunk, if this chunk introduces a named person
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
             seg_lower_third = {"name": lt_info[0], "role": lt_info[1]} if lt_info else None
-
-            # Storyboard match: sequential search from sb_cursor (not full rescan).
-            # Advances the cursor on each match — same script order in both systems.
-            sb_entry_idx = None
-            sb_focal_element = None
-            sb_intensity = "neutral"
-            if storyboard and is_chunk_start:
-                sb_entry_idx = _find_storyboard_match(chunk_text, storyboard,
-                                                      start_idx=sb_cursor)
-                if sb_entry_idx is not None:
-                    sb_cursor = sb_entry_idx   # advance pointer
-                    sb_focal_element = storyboard[sb_entry_idx].get("focal_element")
-                    sb_intensity     = storyboard[sb_entry_idx].get("intensity", "neutral")
-
-            # Story-tagged footage: prefer clips/stills tagged for this storyboard segment
-            tagged_still = None
-            tagged_clip  = None
-            if sb_entry_idx is not None:
-                for s in stills:
-                    if sb_entry_idx in s.get("storyboard_segment_ids", []):
-                        tagged_still = s
-                        break
-                for c in videos:
-                    if sb_entry_idx in c.get("storyboard_segment_ids", []):
-                        tagged_clip = c
-                        break
 
             # Footage: content-type drives clip vs. still probability
             use_clip = bool(tagged_clip) or (
@@ -889,11 +899,12 @@ def build_timeline(
                     still_idx += 1
                 still_path = Path(still.get("path", still.get("local_path", "")))
                 focal = None
-                if detect_focal_points and still_path.exists():
-                    # Storyboard focal_element overrides model detection when available
+                if still_path.exists():
+                    # Text-based focal from storyboard — always apply, no model needed
                     if sb_focal_element:
                         focal = _focal_from_description(sb_focal_element, still_path)
-                    else:
+                    # Vision model fallback: only when --focal-points flag is set
+                    if focal is None and detect_focal_points:
                         focal = detect_focal_point(still_path, narration_text=chunk_text)
                 segments.append({**seg_base,
                     "source_type": "still",

@@ -213,13 +213,24 @@ Rules:
 - If the narration says a date → show something from that date
 - If the narration describes a location → show that location
 
+narrative_function guide:
+- hook_opening: first 30s, establishes stakes
+- context_background: factual dates, timelines, background setup
+- character_intro: first mention of a named person
+- tension_build: pressure building toward a reveal
+- reveal: "except / in reality / it turns out" — the twist or discovery
+- stakes_moment: consequences, danger, superlatives ("most notorious", "executed")
+- climax: peak action — arrest, explosion, confession, the defining moment
+- aftermath: resolution, legacy, "to this day"
+
 Respond with ONLY valid JSON, no explanation:
 {
   "show": "one specific visual description (15 words max)",
   "search_query": "3-6 word search query to find this on YouTube/Archive.org",
   "focal_element": "what element in the frame to zoom toward (10 words max)",
   "shot_type": "document_photo | archival_footage | person_photo | map | news_footage | documentary_photo",
-  "intensity": "tense | neutral | energized | ominous"
+  "intensity": "tense | neutral | energized | ominous",
+  "narrative_function": "hook_opening | context_background | character_intro | tension_build | reveal | stakes_moment | climax | aftermath"
 }
 
 Narration: "{TEXT}"
@@ -247,6 +258,7 @@ def generate_visual_brief(
             "focal_element": None,
             "shot_type": "chapter_card",
             "intensity": segment.get("emotion", "neutral"),
+            "narrative_function": "chapter_break",
         }
 
     text = segment["text"]
@@ -287,10 +299,13 @@ def _parse_ollama_response(response: str, text: str, emotion: str) -> dict:
     if match:
         try:
             data = json.loads(match.group())
-            # Validate required fields
+            # Validate required fields (narrative_function optional — added field, older caches lack it)
             required = {"show", "search_query", "focal_element", "shot_type", "intensity"}
             if required.issubset(data.keys()):
-                return {k: data[k] for k in required}
+                result = {k: data[k] for k in required}
+                if "narrative_function" in data:
+                    result["narrative_function"] = data["narrative_function"]
+                return result
         except json.JSONDecodeError:
             pass
 
@@ -330,12 +345,40 @@ def _fallback_brief(text: str, emotion: str) -> dict:
     if isinstance(query, list):
         query = " ".join(query)
 
+    # Derive narrative_function from emotion + keyword signals
+    _tl = text_lower
+    _reveal_words = {"except", "in reality", "it turns out", "but then", "however",
+                     "suddenly", "shockingly", "turns out", "actually,", "in fact,"}
+    _stakes_words = {"most dangerous", "most notorious", "executed", "killed", "murdered",
+                     "sentenced to", "convicted", "deadliest", "unprecedented", "first ever"}
+    _climax_words = {"arrested", "opened fire", "detonated", "stormed", "confessed",
+                     "pleaded guilty", "was caught", "they found", "that's when"}
+    _aftermath_words = {"ultimately", "in the end", "eventually", "to this day",
+                        "the legacy", "years later,", "today,", "the fallout"}
+    if any(w in _tl for w in _reveal_words):
+        narrative_function = "reveal"
+    elif any(w in _tl for w in _climax_words) and emotion in ("tense", "energized"):
+        narrative_function = "climax"
+    elif any(w in _tl for w in _stakes_words):
+        narrative_function = "stakes_moment"
+    elif any(w in _tl for w in _aftermath_words):
+        narrative_function = "aftermath"
+    elif emotion == "energized":
+        narrative_function = "climax"
+    elif emotion == "tense":
+        narrative_function = "tension_build"
+    elif emotion == "ominous":
+        narrative_function = "tension_build"
+    else:
+        narrative_function = "context_background"
+
     return {
         "show": show,
         "search_query": query,
         "focal_element": focal,
         "shot_type": shot_type,
         "intensity": emotion,
+        "narrative_function": narrative_function,
     }
 
 

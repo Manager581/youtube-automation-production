@@ -392,6 +392,7 @@ def generate_narration(
     manifest = {"segments": [], "total_duration_sec": 0.0, "out": str(out_path)}
     cursor = 0.0
     speech_idx = 0
+    pending_pause_dur = 0.0  # accumulated pause duration before next speech chunk
 
     for seg in segments:
         if isinstance(seg, PauseSegment):
@@ -402,6 +403,7 @@ def generate_narration(
                 "start_sec": round(cursor, 3),
                 "duration_sec": round(seg.duration, 3),
             })
+            pending_pause_dur += seg.duration  # will be written to next speech chunk
             cursor += seg.duration
 
         else:  # SpeechSegment
@@ -431,8 +433,10 @@ def generate_narration(
                 "end_sec": round(cursor + dur, 3),
                 "word_count": word_count,
                 "voice_register": reg,
+                "pause_before_sec": round(pending_pause_dur, 3),  # for reveal detection
                 "text": seg.text,
             })
+            pending_pause_dur = 0.0  # reset — consumed by this chunk
             wav_parts.append(chunk_wav)
             cursor += dur
 
