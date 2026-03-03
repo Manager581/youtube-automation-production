@@ -35,8 +35,8 @@ Usage:
 
 Starting Ollama if not running:
   ollama serve &
-  ollama pull qwen2.5:32b   # 17.6GB — best quality for scripting on 24GB M5
-  ollama pull qwen2.5:7b    # 4.7GB  — faster, slightly lower quality
+  ollama pull qwen3.5:27b   # 17GB — recommended for M5 24GB (best quality)
+  ollama pull qwen3.5:4b    # 3.4GB — faster fallback
 """
 
 import argparse
@@ -100,7 +100,7 @@ SCRIPT:
 # ---------------------------------------------------------------------------
 
 OLLAMA_URL = "http://localhost:11434"
-DEFAULT_MODEL = "gpt-oss:20b"
+DEFAULT_MODEL = "qwen3.5:27b"
 
 
 def _ollama_available() -> bool:
@@ -126,9 +126,9 @@ def _best_available_model(preferred: str) -> str:
     if not models:
         return preferred
 
-    # Preference order for script quality
-    candidates = [preferred, "qwen2.5:32b", "qwen2.5:14b", "qwen2.5:7b",
-                  "gpt-oss:20b", "gpt-oss:120b", "llama3.1:8b"]
+    # Preference order for script quality (text-only models, no VL variants)
+    candidates = [preferred, "qwen3.5:27b", "qwen3.5:4b", "qwen2.5:32b",
+                  "qwen2.5:14b", "qwen2.5:7b", "gpt-oss:20b", "llama3.1:8b"]
     for c in candidates:
         # Check prefix match (model names include :tag)
         for m in models:
