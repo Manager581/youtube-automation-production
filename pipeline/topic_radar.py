@@ -875,54 +875,51 @@ def run_radar(brand_id: str, timeframe: str = "month", limit: int = 30,
     print(f"Min score: {min_score}+  |  Timeframe: {timeframe}")
     print(f"{'='*60}\n")
 
-    # Gather from all sources
-    all_items = []
-
-    print("Scanning Reddit...")
-    all_items.extend(scan_reddit(brand, timeframe))
-
-    print("\nScanning Google News...")
-    all_items.extend(scan_google_news(brand))
-
-    print("\nScanning YouTube competitors...")
-    yt_items = scan_youtube_competitors(brand)
-    all_items.extend(yt_items)
-    print(f"  → {len(yt_items)} videos from competitor channels")
-
-    print("\nScanning TikTok accounts...")
-    tt_items = scan_tiktok(brand)
-    all_items.extend(tt_items)
-    print(f"  → {len(tt_items)} TikToks scanned")
-
-    # Wikipedia dark history — the best source for Fern-style topics
-    print("\nScanning Wikipedia dark history categories...")
-    wiki_items = scan_wikipedia_dark_history()
-    all_items.extend(wiki_items)
-    print(f"  → {len(wiki_items)} Wikipedia articles scanned")
-
-    # Investigative journalism feeds
-    print("\nScanning investigative journalism feeds...")
-    inv_items = scan_investigative_journalism()
-    all_items.extend(inv_items)
-    print(f"  → {len(inv_items)} investigative articles scanned")
-
-    print(f"\nTotal raw items: {len(all_items)}")
-
-    # Load Fern catalog once for duplicate detection
-    print("\nLoading Fern catalog for overlap detection...")
+    # Load Fern catalog first — needed for overlap check during scoring
+    print("Loading Fern catalog for overlap detection...")
     fern_catalog = _load_fern_catalog()
     if fern_catalog:
         print(f"  → {len(fern_catalog)} Fern videos loaded for overlap check")
     else:
         print("  ⚠ No Fern catalog found — overlap check skipped")
 
-    # Score and filter
-    print("\nScoring candidates...")
+    def _scan_and_score(items: list) -> list:
+        """Score a batch of raw items, return non-zero results."""
+        out = []
+        for item in items:
+            result = score_story(item, brand, fern_catalog)
+            if result and result["viral_score"] > 0:
+                out.append(result)
+        return out
+
+    # Scan sources one at a time — stop as soon as we find a strong (85+) candidate.
+    # This avoids waiting through all sources when a great story is found early.
+    STRONG_SCORE = 85
     scored = []
-    for item in all_items:
-        result = score_story(item, brand, fern_catalog)
-        if result and result["viral_score"] > 0:
-            scored.append(result)
+    total_raw = 0
+
+    sources = [
+        ("Reddit",                  lambda: scan_reddit(brand, timeframe)),
+        ("Wikipedia dark history",  scan_wikipedia_dark_history),
+        ("Google News",             lambda: scan_google_news(brand)),
+        ("Investigative journalism", scan_investigative_journalism),
+        ("YouTube competitors",     lambda: scan_youtube_competitors(brand)),
+        ("TikTok",                  lambda: scan_tiktok(brand)),
+    ]
+
+    for label, scanner in sources:
+        print(f"\nScanning {label}...")
+        items = scanner()
+        total_raw += len(items)
+        batch = _scan_and_score(items)
+        scored.extend(batch)
+        best_so_far = max((c["viral_score"] for c in scored), default=0)
+        print(f"  → {len(items)} items  |  best score so far: {best_so_far}")
+        if best_so_far >= STRONG_SCORE:
+            print(f"  ✅ Strong candidate found (score {best_so_far}) — stopping early")
+            break
+
+    print(f"\nTotal raw items scanned: {total_raw}")
 
     # Deduplicate and sort
     scored = deduplicate(scored)
