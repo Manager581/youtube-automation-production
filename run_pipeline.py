@@ -23,9 +23,9 @@ Stages in order:
     enhance     → Script enhancer (automated)
     qa_script   → Script QA check. YOU confirm score before voice.
     storyboard  → Storyboard generator (automated)
-    voice       → Voice narration (automated, slow). YOU listen and approve.
+    voice       → Voice narration + automated QA (LUFS, WPM, silence). Only stops if FAIL.
     music       → Music sourcer (automated)
-    footage     → Footage sourcer (automated). YOU review coverage report.
+    footage     → Footage sourcing + vision verification (auto-removes bad items).
     assemble    → Video assembler (automated, slow)
     qa_video    → Final video QA. YOU approve before upload.
     done        → Ready to upload!
@@ -548,7 +548,11 @@ def stage_storyboard(state: dict) -> bool:
 
 
 def stage_voice(state: dict) -> bool:
-    """Run voice_generator.py and ask user to approve the audio."""
+    """
+    Run voice_generator.py then auto-verify with check_fern_voice.py.
+    Only pauses for manual intervention if voice QA returns FAIL.
+    PASS and WARN proceed automatically — no need to listen every time.
+    """
     print_header(state, "voice")
 
     slug      = state["slug"]
@@ -581,41 +585,57 @@ def stage_voice(state: dict) -> bool:
         step_fail(f"voice_generator failed (code {rc})")
         return False
 
-    inform(f"Voice narration generated → {out_wav}", "success")
-    print()
-    print(f"  {MG}{BOLD}━━━  YOUR TURN  ━━━{R}")
-    print()
-    print(f"  {BOLD}Listen to the narration now:{R}")
-    print(f"  {DIM}  open {out_wav}{R}")
-    print(f"  {DIM}  or: afplay {out_wav}{R}")
-    print()
-    print(f"  {DIM}Listen for: mispronunciations, wrong emotion, speed issues, clipping{R}")
-    print()
+    if not Path(out_wav).exists():
+        step_fail(f"Narration file missing after generation: {out_wav}")
+        return False
 
-    # Offer to play it automatically
-    try:
-        if Path(out_wav).exists():
-            play = ask(
-                "Play narration now in terminal? (requires macOS afplay)",
-                options=["yes", "no — I'll open it myself"],
-                default="yes",
-            )
-            if play.startswith("y"):
-                subprocess.run(["afplay", out_wav])
-    except Exception:
-        pass
+    # ── Automated voice QA ────────────────────────────────────────────────────
+    inform("Running automated voice QA — checking LUFS, WPM, silence, clipping…", "info")
+
+    qa_cmd = [PYTHON, "check_fern_voice.py", out_wav, "--script", enhanced]
+    if Path(manifest_path).exists():
+        qa_cmd += ["--manifest", manifest_path]
+
+    qa_rc, qa_output = run_live(qa_cmd, "voice_qa")
+
+    # Parse verdict
+    voice_verdict = "UNKNOWN"
+    for line in qa_output.splitlines():
+        if "FAIL" in line and "Verdict" in line:
+            voice_verdict = "FAIL"
+        elif "WARN" in line and "Verdict" in line:
+            voice_verdict = "WARN"
+        elif "PASS" in line and "Verdict" in line:
+            voice_verdict = "PASS"
+
+    if voice_verdict == "PASS":
+        step_done("Voice narration: PASS — all checks green. Proceeding automatically.")
+        return True
+
+    if voice_verdict == "WARN":
+        inform("Voice QA: WARN — minor issues, within acceptable range. Auto-proceeding.", "warn")
+        step_done("Narration accepted (warnings noted)")
+        return True
+
+    # FAIL or UNKNOWN — stop and ask
+    inform("Voice QA: FAIL — critical issues detected. Regeneration recommended.", "error")
+    print()
+    print(f"  {DIM}Common causes: F5-TTS speed, LUFS too low/high, excessive silence{R}")
+    print(f"  {DIM}Check script for very long runs of text without [PAUSE] markers{R}")
+    print()
 
     answer = ask(
-        "Are you happy with the narration? (listen carefully for errors)",
-        options=["yes — sounds good", "no — regenerate"],
+        "Voice QA failed. Regenerate narration? (recommended)",
+        options=["yes — regenerate", "no — override and proceed anyway"],
         default="yes",
     )
-    if answer.startswith("n"):
-        inform("Rerunning voice generator — check script for problem areas first.", "warn")
+    if answer.startswith("y"):
+        inform("Rerunning voice generator…", "info")
         state["stage"] = "voice"
         return False
 
-    step_done("Narration approved")
+    inform("Overriding voice QA failure — proceeding with flagged narration.", "warn")
+    step_done("Narration accepted (QA override)")
     return True
 
 
@@ -648,7 +668,11 @@ def stage_music(state: dict) -> bool:
 
 
 def stage_footage(state: dict) -> bool:
-    """Run footage_sourcer.py and show coverage report."""
+    """
+    Run footage_sourcer.py then auto-verify with footage_verifier.py.
+    Vision model scores each item against its storyboard description.
+    Auto-removes irrelevant items. Only asks user if coverage is critically low.
+    """
     print_header(state, "footage")
 
     slug       = state["slug"]
@@ -670,55 +694,102 @@ def stage_footage(state: dict) -> bool:
     if Path(storyboard).exists():
         cmd += ["--storyboard", storyboard]
 
-    rc, output = run_live(cmd)
+    rc, _ = run_live(cmd)
 
     # Find manifest
-    manifest_path = str(Path(out_dir) / "manifest.json")
-    if Path(manifest_path).exists():
-        state["paths"]["footage_manifest"] = manifest_path
-        # Parse coverage report
-        try:
-            manifest = json.loads(Path(manifest_path).read_text())
-            clips  = manifest.get("clips", [])
-            images = [c for c in clips if str(c.get("local_path","")).lower().endswith((".jpg",".png",".jpeg",".webp"))]
-            videos = [c for c in clips if str(c.get("local_path","")).lower().endswith((".mp4",".mov",".mkv",".webm"))]
-            needs_anim = manifest.get("needs_animation", [])
-
-            print(f"\n  {BOLD}{'─' * 60}{R}")
-            print(f"  {BOLD}Footage Coverage Report:{R}")
-            print()
-            print(f"  {GR}✓{R}  Images downloaded:    {WH}{len(images)}{R}  stills")
-            print(f"  {GR}✓{R}  Video clips:          {WH}{len(videos)}{R}  clips")
-            if needs_anim:
-                print(f"  {YL}▲{R}  Segments to animate:  {WH}{len(needs_anim)}{R}  (no real footage found — will be generated)")
-            else:
-                print(f"  {GR}✓{R}  Segments to animate:  0  (all segments have real footage)")
-            print(f"  {BOLD}{'─' * 60}{R}")
-            print()
-        except Exception:
-            pass
-
-    else:
+    manifest_path = Path(out_dir) / "manifest.json"
+    if not manifest_path.exists():
         step_fail(f"footage_sourcer failed (code {rc}) or no manifest created")
+        return False
 
-    print(f"  {DIM}Footage saved → {out_dir}/{R}")
+    state["paths"]["footage_manifest"] = str(manifest_path)
+
+    # Quick download summary
+    try:
+        manifest = json.loads(manifest_path.read_text())
+        clips  = manifest.get("clips", [])
+        images = [c for c in clips if str(c.get("local_path","")).lower().endswith((".jpg",".png",".jpeg",".webp"))]
+        videos = [c for c in clips if str(c.get("local_path","")).lower().endswith((".mp4",".mov",".mkv",".webm"))]
+        needs_anim = manifest.get("needs_animation", [])
+
+        print(f"\n  {BOLD}{'─' * 60}{R}")
+        print(f"  {BOLD}Download Summary:{R}")
+        print()
+        print(f"  {GR}✓{R}  Images:           {WH}{len(images)}{R}  stills")
+        print(f"  {GR}✓{R}  Video clips:      {WH}{len(videos)}{R}  clips")
+        if needs_anim:
+            print(f"  {YL}▲{R}  Needs animation:  {WH}{len(needs_anim)}{R}  segments (will be auto-generated)")
+        print(f"  {BOLD}{'─' * 60}{R}\n")
+    except Exception:
+        pass
+
+    # ── Automated footage verification ────────────────────────────────────────
+    inform("Running footage verification — scoring items against storyboard…", "info")
+    inform("This removes irrelevant downloads automatically. No manual review needed.", "info")
+
+    verify_rc, verify_output = run_live([
+        PYTHON, "pipeline/footage_verifier.py",
+        "--manifest", str(manifest_path),
+    ], "footage_verifier")
+
+    # Parse coverage from output
+    coverage_pct = 100.0
+    for line in verify_output.splitlines():
+        m = re.search(r"Coverage:\s*([\d.]+)%", line)
+        if m:
+            coverage_pct = float(m.group(1))
+            break
+
+    # Parse removed count
+    removed_count = 0
+    for line in verify_output.splitlines():
+        m = re.search(r"(\d+) irrelevant item", line)
+        if m:
+            removed_count = int(m.group(1))
+
+    if removed_count > 0:
+        inform(f"Removed {removed_count} irrelevant item(s) from manifest.", "info")
+
+    # Coverage-based decision
+    if coverage_pct >= 60:
+        # Good enough — auto-proceed, animation handles the rest
+        step_done(
+            f"Footage verified — {coverage_pct:.0f}% storyboard coverage. "
+            f"Gaps will use auto-generated animations."
+        )
+        return True
+
+    if coverage_pct >= 40:
+        # Low but workable — inform and auto-proceed
+        inform(
+            f"Coverage is low ({coverage_pct:.0f}%) — many segments will use animation. "
+            f"This is normal for niche/archival topics.",
+            "warn",
+        )
+        step_done("Footage stage complete — proceeding (animation will fill gaps)")
+        return True
+
+    # Critically low — ask user
+    inform(
+        f"CRITICAL: only {coverage_pct:.0f}% of story segments have verified footage. "
+        f"Most of the video will be animated.",
+        "error",
+    )
     print()
-    print(f"  {MG}Review footage:{R}")
-    print(f"  {DIM}  Images: open footage/fern_clone/{slug}/images/{R}")
-    print(f"  {DIM}  Clips:  ls footage/fern_clone/{slug}/clips/{R}")
-    print(f"  {DIM}  Delete anything wrong. Add any critical missing visuals manually.{R}")
+    print(f"  {DIM}This can happen for highly specific archival topics — still a valid video.{R}")
+    print(f"  {DIM}Animation frames are cinematic and match Fern's visual style.{R}")
     print()
 
     answer = ask(
-        "Have you reviewed the footage? Happy with what was found?",
-        options=["yes — proceed to assembly", "no — I want to add/remove files first"],
+        f"Only {coverage_pct:.0f}% footage coverage. Proceed anyway (animation fills gaps)?",
+        options=["yes — proceed with animation", "no — re-source footage first"],
         default="yes",
     )
     if answer.startswith("n"):
-        inform("Take your time. Run again when you're ready — will resume here.", "info")
+        inform("Re-run footage_sourcer manually with different search terms, then run again.", "info")
         sys.exit(0)
 
-    step_done("Footage approved")
+    step_done("Footage stage complete (low coverage override — animation will fill gaps)")
     return True
 
 

@@ -400,8 +400,8 @@ python run_pipeline.py --reset  # start over
   - *Topic selection* — shows scored candidates from topic_radar, you pick 1–8 or type your own
   - *Story validation* — shows GO/SKIP/NEEDS WORK, you confirm or override
   - *Script score* — shows 0–100 score, blocks if <75, warns if <85
-  - *Voice approval* — plays the narration, you approve or regenerate
-  - *Footage review* — shows "42 images / 8 clips / 6 will be animated", you review and confirm
+  - *Voice QA* — auto-runs `check_fern_voice.py` (LUFS, WPM, silence, clipping). Only stops if FAIL.
+  - *Footage verification* — auto-runs `footage_verifier.py` (vision model scores each item vs storyboard). Auto-removes bad items. Only asks if coverage < 40%.
   - *Final upload* — shows QA results, you watch the video, you approve
 - **State saved** between runs (`.pipeline_run.json`) — Ctrl+C anytime, resume exactly where you left off
 - `monitor.py` still works alongside as a passive background dashboard (separate terminal)
@@ -425,7 +425,9 @@ MUSIC:       ██████████  100% (music_sourcer.py — mood-mat
 VIDEO:       ██████████  100% (footage_sourcer + video_assembler; Ken Burns + color grade + text + beat sync)
 VIDEO QA:    ██████████  100% (check_fern_video.py — 8-check gate before upload)
 CLIP MOMENT: ██████████  100% (clip_analyzer.py — best window via vision model; prepare_clip() uses clip_start_sec)
-ANIMATION:   ████████░░   80% (animation_generator.py built — document/map/person/text cards via Pillow; auto-triggered from needs_animation)
+ANIMATION:   ██████████  100% (animation_generator.py — doc/map/person/text cards via Pillow; auto-triggered; NO black screens)
+VOICE QA:    ██████████  100% (check_fern_voice.py — LUFS, WPM, silence, clipping; PASS/WARN auto-proceed, FAIL blocks)
+FOOTAGE QA:  ██████████  100% (footage_verifier.py — vision model scores each item vs storyboard; auto-removes bad items)
 THUMBNAIL:   ░░░░░░░░░░    0% (use Claude Code + manual — no script needed until volume)
 PUBLISH:     ██████████  100% (manual upload works fine)
 ```
@@ -445,6 +447,9 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 8. ✅ **Clip pivotal moment detection** — `pipeline/clip_analyzer.py` finds the best window in a downloaded clip using vision model frame scoring. `prepare_clip()` now uses `clip_start_sec` from the manifest — no more "always take from position 0" gap.
 9. ✅ **Animation generator** — `pipeline/animation_generator.py` generates still image frames (document cards, map cards, portrait cards, text cards) using Pillow when real footage is unavailable. Images feed directly into the existing Ken Burns pipeline. Segments tagged `needs_animation` in the manifest automatically get generated visuals — no black screens.
 10. ✅ **Footage guardrails** — `footage_sourcer.py` now has `SEARCH_TIMEOUT_SEC = 20` per search, minimum viable footage thresholds, and `needs_animation` detection. The pipeline will not hang and will always report what it found vs. what needs to be generated.
+11. ✅ **Automated voice QA** — `check_fern_voice.py` runs immediately after voice_generator. Checks: integrated LUFS (-20 to -16 target), WPM from manifest timestamps (138.7 target), silence ratio (<25% warn, <45% fail), peak level (clipping detection). PASS or WARN auto-proceed — no listening required. Only FAIL stops the pipeline.
+12. ✅ **Automated footage verification** — `pipeline/footage_verifier.py` scores every downloaded image/clip against its storyboard description using a vision model. Items scoring <0.10 (completely unrelated) are removed from the manifest automatically. Reports per-segment coverage: ≥60% auto-proceeds, 40–59% warns but proceeds, <40% asks user. Note: clip audio is already stripped by `-an` in `prepare_clip()` — footage verifier doesn't need to handle this.
+13. ✅ **No black screens** — `video_assembler.py` final fallback (no footage + no storyboard) now generates a narration text card via `animation_generator.py` instead of black. Content segments never show black. Only the 0.4s chapter card padding intentionally uses black.
 
 **Steps to produce the first video:**
 
@@ -461,13 +466,13 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 7. `python check_fern_script.py scripts/enhanced.txt` — **must score 85+ before proceeding**
 8. `python pipeline/storyboard_generator.py --script scripts/enhanced_{topic}.txt --out storyboards/{topic}.json` — per-segment visual brief (story-driven)
 9. `python pipeline/voice_generator.py --ref-neutral assets/voice/voice_neutral_ref.wav --ref-tense assets/voice/voice_tense_ref.wav --ref-energized assets/voice/voice_energized_ref.wav --auto-transcribe --script scripts/enhanced_topic.txt --out audio/topic/narration.wav`
-
-**Manual check:** Listen to narration. Catch mispronunciations, wrong emotion, timing drift.
+   → Then immediately: `python check_fern_voice.py audio/{topic}/narration.wav --script scripts/enhanced_{topic}.txt --manifest audio/{topic}/narration_manifest.json`
+   → **PASS or WARN = proceed. FAIL = regenerate.** No manual listening needed.
 
 10. `python pipeline/music_sourcer.py --script scripts/enhanced_{topic}.txt` — mood-matched CC0 track → `assets/music/track.mp3`
 11. `python pipeline/footage_sourcer.py --brand fern_clone --brief research/fern_clone/briefs/{topic}.json --storyboard storyboards/{topic}.json --download --out footage/fern_clone/{topic}/`
-
-**Manual check:** Scan downloaded footage. Delete wrong clips. Add missing critical visuals.
+    → Then immediately: `python pipeline/footage_verifier.py --manifest footage/fern_clone/{topic}/manifest.json`
+    → Vision model scores each item vs storyboard description. Removes bad items automatically. **No manual review needed** — low coverage (<40%) asks for override.
 
 12. `python pipeline/video_assembler.py --brand fern_clone --narration audio/{topic}/narration_manifest.json --footage footage/fern_clone/{topic}/manifest.json --music assets/music/track.mp3 --storyboard storyboards/{topic}.json --out output/{topic}/final.mp4`
     → Saves `output/{topic}/timeline.json` automatically.
@@ -514,6 +519,8 @@ venv/bin/python monitor.py
 | `pipeline/clip_analyzer.py` | Find the pivotal moment in a downloaded clip — vision model frame scoring → clip_start_sec |
 | `pipeline/animation_generator.py` | Generate still image frames when real footage unavailable — doc/map/person/text cards via Pillow |
 | `check_fern_script.py` | Pre-voice script QA (must score 85+) |
+| `check_fern_voice.py` | Post-generation voice QA — LUFS, WPM, silence, clipping. Automated; PASS/WARN auto-proceed |
+| `pipeline/footage_verifier.py` | Vision model scores each downloaded item vs storyboard. Auto-removes bad items. |
 | `check_fern_video.py` | Post-assembly video QA gate (8 checks vs Fern benchmarks) — run before upload |
 | `monitor.py` | Live pipeline dashboard (run in second terminal) |
 | `research_pipeline.py` | ⚠️ USES PAID API — do not run; use Claude Code instead |
@@ -536,3 +543,7 @@ venv/bin/python monitor.py
 *Animation generator: built 2026-03-02 — animation_generator.py, Pillow doc/map/person/text cards, auto-triggered from needs_animation*
 *Footage guardrails: built 2026-03-02 — SEARCH_TIMEOUT_SEC, MIN_VIABLE thresholds, needs_animation flagging in manifest*
 *Full story-aware + animation pipeline complete: no black screens, no wrong clip windows, no hanging searches*
+*Voice QA automated: check_fern_voice.py — LUFS/WPM/silence/clipping auto-check; PASS+WARN auto-proceed, FAIL regenerates. No manual listening.*
+*Footage verification automated: pipeline/footage_verifier.py — vision model scores each item vs storyboard; bad items auto-removed; <40% coverage asks user.*
+*run_pipeline.py updated: stage_voice and stage_footage both now fully automated. Manual decision points reduced to: topic, story (GO/SKIP), script, final upload.*
+*No-black-screens rule enforced: video_assembler.py final fallback now generates narration text card. Content segments never black.*

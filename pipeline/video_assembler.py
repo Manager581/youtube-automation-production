@@ -824,12 +824,16 @@ def build_timeline(
                     "anim_shot_type": sb.get("shot_type", "documentary_photo"),
                 })
             else:
+                # No footage and no storyboard entry — generate a narration text card.
+                # Fern NEVER uses black screens for content. Always show something.
                 segments.append({**seg_base,
-                    "source_type": "black",
+                    "source_type": "animation",
                     "source_path": None,
-                    "motion": "static",
+                    "motion": motion,
                     "focal_point": None,
                     "storyboard_match": False,
+                    "anim_show": chunk_text[:100] if chunk_text else "documentary segment",
+                    "anim_shot_type": "documentary_photo",
                 })
 
             t += seg_dur
