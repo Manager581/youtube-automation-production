@@ -4,14 +4,19 @@ Topic Radar — finds viral story candidates matching a brand identity.
 
 Usage:
     python pipeline/topic_radar.py --brand fern_clone
-    python pipeline/topic_radar.py --brand fern_clone --limit 20 --since week
+    python pipeline/topic_radar.py --brand fern_clone --min-score 60  # show more candidates
+    python pipeline/topic_radar.py --brand fern_clone --timeframe month
 
 Sources (zero API keys required for basic run):
-    - Reddit JSON API
-    - Google News RSS
+    - Wikipedia dark history categories (best source — pre-validated, documented stories)
+    - Reddit JSON API (month timeframe — history/crime/mystery subreddits)
+    - Investigative journalism RSS (ProPublica, The Intercept)
+    - Google News RSS (historical/declassified keywords)
     - YouTube competitor channels (via yt-dlp)
     - TikTok accounts (via yt-dlp)
-    - pytrends (Google Trends validation)
+
+Only shows candidates scoring 75+ (pass --min-score to adjust).
+Score 75–84 = solid candidate. 85+ = strong candidate.
 
 Output:
     research/{brand_id}/topic_candidates.json  — ranked story list
@@ -270,6 +275,149 @@ def check_fern_overlap(query: str, catalog: list) -> dict:
     }
 
 
+# ── Wikipedia dark history scanner ───────────────────────────────────────────
+#
+# These Wikipedia categories are literal goldmines for Fern-style topics.
+# Every entry is a real story with archival documentation. The API is free,
+# no key required, and returns up to 50 articles per category.
+#
+# Why this beats Google News: News surfaces what's trending NOW. Wikipedia
+# categories surface stories that are PROVEN — deep enough to warrant an
+# article, already fact-checked, often with primary sources listed.
+
+WIKIPEDIA_DARK_CATEGORIES = [
+    "United_States_government_cover-ups",
+    "Human_subject_research_scandals",
+    "Espionage_scandals_in_the_United_States",
+    "Cold_War_espionage",
+    "COINTELPRO",
+    "Political_scandals_in_the_United_States",
+    "FBI_investigations",
+    "Unsolved_murders_in_the_United_States",
+    "American_whistleblowers",
+    "CIA_activities_in_the_United_States",
+    "United_States_intelligence_agencies",
+    "Human_experimentation_in_the_United_States",
+    "Cold_War_propaganda",
+    "Classified_information_in_the_United_States",
+    "Assassinations_in_the_United_States",
+]
+
+
+def fetch_wikipedia_category(category: str, limit: int = 50) -> list:
+    """
+    Fetch article titles from a Wikipedia category via the free MediaWiki API.
+    Returns items ready for score_story(). No API key required.
+
+    Each Wikipedia article in a dark history category = a real, documented story
+    that's already proven interesting enough to have an encyclopedia entry.
+    """
+    url = (
+        "https://en.wikipedia.org/w/api.php"
+        f"?action=query&list=categorymembers"
+        f"&cmtitle=Category:{category}"
+        f"&cmlimit={limit}&format=json&cmtype=page"
+    )
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "topic-radar/1.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        pages = data.get("query", {}).get("categorymembers", [])
+        return [
+            {
+                "source": f"wikipedia/{category.replace('_', ' ')}",
+                "title": p["title"],
+                # Text = title + category context — feeds keyword scoring
+                "text": (
+                    f"{p['title']}. "
+                    f"Category: {category.replace('_', ' ')}. "
+                    f"Documented historical event with primary sources."
+                ),
+                "url": f"https://en.wikipedia.org/wiki/{p['title'].replace(' ', '_')}",
+                "score": 0,
+                "comments": 0,
+                # Wikipedia bonus: verified real story with documentation
+                # Compensates for no Reddit engagement signal on historical content
+                "source_bonus": 20,
+            }
+            for p in pages
+        ]
+    except Exception as e:
+        print(f"  ⚠ Wikipedia/{category}: {e}")
+        return []
+
+
+def scan_wikipedia_dark_history() -> list:
+    """Scan all dark history categories. Returns deduplicated article list."""
+    all_articles = []
+    seen_titles: set[str] = set()
+
+    for category in WIKIPEDIA_DARK_CATEGORIES:
+        print(f"  Wikipedia: {category.replace('_', ' ')}...")
+        articles = fetch_wikipedia_category(category)
+        for a in articles:
+            if a["title"] not in seen_titles:
+                seen_titles.add(a["title"])
+                all_articles.append(a)
+        time.sleep(0.5)  # polite rate limit
+
+    return all_articles
+
+
+# ── Investigative journalism RSS ──────────────────────────────────────────────
+
+INVESTIGATIVE_RSS_FEEDS = [
+    # ProPublica — nonprofit investigative journalism, free to use
+    "https://feeds.propublica.org/propublica/main",
+    # The Intercept — national security / intelligence / government accountability
+    "https://theintercept.com/feed/?rss",
+]
+
+
+def fetch_investigative_rss(url: str) -> list:
+    """Fetch investigative journalism RSS feed. Returns items for scoring."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "topic-radar/1.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            content = resp.read().decode("utf-8", errors="replace")
+
+        items = []
+        entries = re.findall(r"<item>(.*?)</item>", content, re.DOTALL)
+        for entry in entries[:10]:
+            title_m = re.search(r"<title[^>]*>(.*?)</title>", entry, re.DOTALL)
+            link_m  = re.search(r"<link>(.*?)</link>", entry)
+            desc_m  = re.search(r"<description[^>]*>(.*?)</description>", entry, re.DOTALL)
+            if title_m:
+                title = re.sub(r"<[^>]+>|<!\[CDATA\[|\]\]>", "", title_m.group(1)).strip()
+                desc  = re.sub(r"<[^>]+>|<!\[CDATA\[|\]\]>", "", desc_m.group(1) if desc_m else "")[:300]
+                items.append({
+                    "source": f"investigative/{url.split('/')[2]}",
+                    "title": title,
+                    "text": desc,
+                    "url": link_m.group(1).strip() if link_m else "",
+                    "score": 0,
+                    "comments": 0,
+                    # Investigative journalism bonus: professional editorial judgment
+                    "source_bonus": 10,
+                })
+        return items
+    except Exception as e:
+        print(f"  ⚠ RSS {url}: {e}")
+        return []
+
+
+def scan_investigative_journalism() -> list:
+    """Scan ProPublica, The Intercept for investigative story leads."""
+    all_items = []
+    for feed_url in INVESTIGATIVE_RSS_FEEDS:
+        domain = feed_url.split("/")[2].replace("feeds.", "")
+        print(f"  {domain}...")
+        items = fetch_investigative_rss(feed_url)
+        all_items.extend(items)
+        time.sleep(1.0)
+    return all_items
+
+
 # ── Scoring ───────────────────────────────────────────────────────────────────
 
 def extract_story_keywords(text: str) -> list:
@@ -374,7 +522,7 @@ def score_story(item: dict, brand: dict, fern_catalog: list = None) -> dict:
             score += angle["avg_views"] // 500000  # bonus proportional to proven performance
             break
 
-    # ── Reddit engagement bonus ──
+    # ── Reddit / view engagement bonus ──
     reddit_score = item.get("score", 0)
     if reddit_score > 10000:
         score += 25
@@ -384,6 +532,15 @@ def score_story(item: dict, brand: dict, fern_catalog: list = None) -> dict:
         signals.append(f"strong reddit ({reddit_score:,} upvotes)")
     elif reddit_score > 500:
         score += 8
+
+    # ── Source quality bonus ──
+    # Wikipedia / investigative journalism sources are pre-validated stories.
+    # Compensates for the absence of Reddit engagement on historical content.
+    source_bonus = item.get("source_bonus", 0)
+    if source_bonus:
+        score += source_bonus
+        source_name = item.get("source", "").split("/")[0]
+        signals.append(f"verified source ({source_name})")
 
     # ── Minimum signal gate — must have at least one institution or theme match ──
     if not matched_institutions and not matched_themes:
@@ -595,12 +752,14 @@ def suggest_title(item: dict, brand: dict) -> str:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
+def run_radar(brand_id: str, timeframe: str = "month", limit: int = 30,
+              min_score: int = 75) -> list:
     brand = load_brand(brand_id)
 
     print(f"\n{'='*60}")
     print(f"TOPIC RADAR — {brand_id}")
     print(f"Lane: {brand['channel']['lane'][:70]}")
+    print(f"Min score: {min_score}+  |  Timeframe: {timeframe}")
     print(f"{'='*60}\n")
 
     # Gather from all sources
@@ -621,6 +780,18 @@ def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
     tt_items = scan_tiktok(brand)
     all_items.extend(tt_items)
     print(f"  → {len(tt_items)} TikToks scanned")
+
+    # Wikipedia dark history — the best source for Fern-style topics
+    print("\nScanning Wikipedia dark history categories...")
+    wiki_items = scan_wikipedia_dark_history()
+    all_items.extend(wiki_items)
+    print(f"  → {len(wiki_items)} Wikipedia articles scanned")
+
+    # Investigative journalism feeds
+    print("\nScanning investigative journalism feeds...")
+    inv_items = scan_investigative_journalism()
+    all_items.extend(inv_items)
+    print(f"  → {len(inv_items)} investigative articles scanned")
 
     print(f"\nTotal raw items: {len(all_items)}")
 
@@ -643,13 +814,26 @@ def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
     # Deduplicate and sort
     scored = deduplicate(scored)
     scored.sort(key=lambda x: x["viral_score"], reverse=True)
-    top = scored[:limit]
+
+    # Apply minimum score threshold — only show actionable candidates
+    qualifying = [c for c in scored if c["viral_score"] >= min_score]
+    top = qualifying[:limit]
+
+    # Safety net: if nothing qualifies, show top 5 with a warning
+    if not top and scored:
+        print(f"\n⚠  No candidates scored ≥{min_score}.")
+        print(f"   Best score: {scored[0]['viral_score']} ({scored[0]['title'][:60]})")
+        print(f"   Showing top 5 anyway — lower threshold with --min-score 60\n")
+        top = scored[:5]
+    elif len(qualifying) < 5:
+        print(f"\n⚠  Only {len(qualifying)} candidates scored ≥{min_score}.")
+        print(f"   Use --min-score 60 to see more, or re-run with --timeframe month\n")
 
     # Add title suggestions
     for item in top:
         item["suggested_title"] = suggest_title(item, brand)
 
-    # Output
+    # Output — save ALL qualifying (not just display limit)
     output_dir = Path(f"research/{brand_id}")
     output_dir.mkdir(parents=True, exist_ok=True)
     output_file = output_dir / "topic_candidates.json"
@@ -658,20 +842,26 @@ def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
         "brand_id": brand_id,
         "generated_at": datetime.now().isoformat(),
         "timeframe": timeframe,
+        "min_score": min_score,
         "total_scanned": len(all_items),
-        "candidates": top,
+        "qualifying_count": len(qualifying),
+        "candidates": qualifying[:limit],
     }
 
     output_file.write_text(json.dumps(output, indent=2, ensure_ascii=False))
 
-    # Print summary
+    # Print summary — only qualifying candidates
+    display = top[:10]
     print(f"\n{'='*60}")
-    print(f"TOP {min(10, len(top))} CANDIDATES")
+    print(f"TOP {len(display)} CANDIDATES (score ≥{min_score})")
     print(f"{'='*60}")
-    for i, c in enumerate(top[:10], 1):
+    if not display:
+        print("  No qualifying candidates. Try --min-score 60 or --timeframe month.")
+    for i, c in enumerate(display, 1):
         angle_tag = f"[{c['angle']}]" if c.get("angle") else "[unclassified]"
         source_tag = c["source"].split("/")[0]
-        print(f"\n{i:2}. Score: {c['viral_score']:3} | {angle_tag} | {source_tag}")
+        score_color = "✅" if c["viral_score"] >= 85 else "🟡"
+        print(f"\n{i:2}. {score_color} Score: {c['viral_score']:3} | {angle_tag} | {source_tag}")
         print(f"    {c['title'][:80]}")
         if c["signals"]:
             print(f"    ✓ {' | '.join(c['signals'][:3])}")
@@ -680,7 +870,7 @@ def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
         print(f"    → {c['suggested_title'][:90]}")
 
     print(f"\n✅ Full results saved to: {output_file}")
-    print(f"   {len(top)} candidates | {len(all_items)} total scanned\n")
+    print(f"   {len(qualifying)} qualifying | {len(all_items)} total scanned\n")
 
     return top
 
@@ -688,9 +878,11 @@ def run_radar(brand_id: str, timeframe: str = "week", limit: int = 30) -> list:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Topic Radar — finds viral story candidates")
     parser.add_argument("--brand", required=True, help="Brand config ID (e.g. fern_clone)")
-    parser.add_argument("--timeframe", default="week", choices=["day", "week", "month"],
-                        help="Reddit timeframe (default: week)")
+    parser.add_argument("--timeframe", default="month", choices=["day", "week", "month", "year", "all"],
+                        help="Reddit timeframe (default: month — week is too short for historical stories)")
     parser.add_argument("--limit", type=int, default=30, help="Max candidates to return")
+    parser.add_argument("--min-score", type=int, default=75,
+                        help="Minimum viral score to show (default: 75). Use 60 to see more candidates.")
     args = parser.parse_args()
 
-    run_radar(args.brand, args.timeframe, args.limit)
+    run_radar(args.brand, args.timeframe, args.limit, args.min_score)

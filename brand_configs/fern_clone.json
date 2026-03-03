@@ -100,24 +100,24 @@
 
   "research_sources": {
     "reddit": [
-      "history", "todayilearned", "UnresolvedMysteries",
-      "conspiracy", "worldnews", "TrueOffTopic", "longreads",
-      "esist", "Keep_Track", "WikiLeaks"
+      "UnresolvedMysteries", "TrueCrime", "history",
+      "todayilearned", "Damnthatsinteresting", "coldcases",
+      "HistoryMemes", "Mysteries", "Glitch_in_the_Matrix"
     ],
     "google_news_keywords": [
-      "declassified FBI", "CIA operation revealed", "FOIA release",
-      "whistleblower", "government cover-up", "secret program",
-      "undercover operation", "political prisoner", "defector",
-      "declassified documents", "classified files released"
+      "declassified FBI files", "CIA secret experiment history",
+      "FOIA release documents", "whistleblower confession",
+      "Cold War secret program revealed", "government experiment civilians",
+      "FBI surveillance history", "intelligence scandal cover-up",
+      "spy defector cold war", "classified program declassified"
     ],
     "youtube_competitor_channels": [
-      "Fern", "MrBallen", "Newsthink", "TLDR News",
-      "Coffeezilla", "LEMMiNO", "Wendover Productions",
-      "CNN", "Daily Mail", "Vice News"
+      "Fern", "MrBallen", "LEMMiNO", "Coffeezilla",
+      "Newsthink", "Wendover Productions", "Vice News"
     ],
     "tiktok_accounts": [
       "@atlasobscura", "@historyfacts", "@realstories",
-      "@cnn", "@dailymail", "@teamtrump"
+      "@todayilearned.hist", "@conspiracyfiles"
     ]
   },
 
