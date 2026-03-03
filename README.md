@@ -22,17 +22,18 @@ brew install ffmpeg ffprobe yt-dlp
 ### Ollama models
 
 ```bash
-# Required for storyboard generation, script enhancement
-ollama pull qwen3.5:4b          # 3.4 GB — use this one (fast on M5 24GB)
+# Primary text model — storyboard generation, script enhancement
+# M5 24GB: use 27b (17GB, fits fine, much better output quality)
+ollama pull qwen3.5:27b         # 17 GB — recommended for M5 24GB
 
-# Already installed (vision model for footage verification + focal points)
-# qwen2.5vl:7b                  # 6 GB — already pulled, used as fallback
+# Fallback text model (if 27b is too slow for you)
+# ollama pull qwen3.5:4b        # 3.4 GB — faster but lower quality output
 
-# Optional — higher quality focal points (slow, 17GB)
-# ollama pull qwen3.5:27b
+# Already installed — vision tasks (footage verification, focal points)
+# qwen2.5vl:7b                  # 6 GB — already pulled, correct tool for vision
 ```
 
-> **Note:** `qwen3.5:4b` is NOT yet installed. Run `ollama pull qwen3.5:4b` before first use. The pipeline falls back to `qwen2.5vl:7b` for vision tasks but text-only tasks (storyboard, script enhancement) need a text model.
+> **Note:** `qwen3.5:27b` is NOT yet installed. Run `ollama pull qwen3.5:27b` (17GB download). The pipeline falls back to `qwen3.5:4b` → `qwen2.5vl:7b` if 27b isn't available, but storyboard quality will be noticeably lower.
 
 ### Python dependencies
 

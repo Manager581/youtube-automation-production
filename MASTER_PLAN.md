@@ -235,7 +235,7 @@ venv/bin/python pipeline/storyboard_generator.py \
   --out storyboards/topic.json
 ```
 
-Runs fully locally via Ollama (qwen3.5:4b preferred — fast). Falls back to rule-based extraction if Ollama unavailable. Results cached per segment — re-run is fast.
+Runs fully locally via Ollama (qwen3.5:27b recommended on M5 24GB — 17GB fits, much better story comprehension; falls back to qwen3.5:4b → rule-based extraction). Results cached per segment — re-run is fast.
 
 **Story-aware chain:** every downstream choice is now story-aware:
 - Storyboard → footage search query (story-specific)
