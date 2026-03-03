@@ -310,53 +310,10 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 
 ---
 
-## M1 Setup — Overnight Re-Analysis with Qwen3.5
+## Hardware Notes
 
-Re-run visual classification with the newer Qwen3.5 model to get the new fields (`animation_motion`, `animation_easing`, `kinetic_quality`, `subject_motion`, `cut_timestamps`, better `transition_types`). Run on M1 (16GB) so M5 stays free.
-
-**One-time M1 setup:**
-```bash
-# 1. Enable on M1: System Settings → General → Sharing → Remote Login → ON
-# 2. From M5 terminal:
-ssh yourname@m1.local
-
-# 3. On M1 — install Ollama (if not already): https://ollama.com/download
-# 4. Pull the model (3.4GB — fits on 16GB M1 with 12GB headroom)
-ollama pull qwen3.5:4b
-
-# 5. Sync code from M5 (git push from M5 first, then on M1):
-cd ~/Documents/youtube-automation-production
-git pull
-
-# 6. Reset checkpoint
-python3 -c "
-import json, shutil
-cp = json.load(open('analysis/fern/.checkpoint.json'))
-shutil.copy('analysis/fern/.checkpoint.json', 'analysis/fern/.checkpoint.json.backup')
-cp['current_video_index'] = 0
-cp['current_frame_index'] = 0
-json.dump(cp, open('analysis/fern/.checkpoint.json', 'w'), indent=2)
-print('Reset. Ready.')
-"
-
-# 7. Run overnight (nohup survives SSH disconnect)
-nohup venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen3.5-4b \
-  > /tmp/fern_analysis.log 2>&1 &
-echo "Running. PID: $!"
-
-# 8. Monitor from M5 (leave this running in a tab)
-ssh yourname@m1.local "tail -f /tmp/fern_analysis.log"
-
-# 9. After completion, copy timelines back to M5
-scp yourname@m1.local:'~/Documents/youtube-automation-production/analysis/fern/*/timeline_hybrid_qwen3.5-4b.json' .
-# Then rebuild master formula on M5:
-venv/bin/python create_master_formula.py
-```
-
-**Why qwen3.5:4b is better than the current qwen2.5vl:7b:**
-- Newer architecture released Feb 2026 — outperforms Qwen3-VL on visual tasks
-- Supports vision (images) natively in the unified model
-- Same ~3-4GB size, similar speed, better accuracy
+- **M5 24GB** — main machine. Use for everything.
+- **M1 16GB** — 16GB only. Do NOT use for model inference or overnight analysis runs. Not enough headroom.
 
 ---
 
