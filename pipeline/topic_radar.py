@@ -953,7 +953,7 @@ def run_radar(brand_id: str, timeframe: str = "month", limit: int = 30,
         "generated_at": datetime.now().isoformat(),
         "timeframe": timeframe,
         "min_score": min_score,
-        "total_scanned": len(all_items),
+        "total_scanned": total_raw,
         "qualifying_count": len(qualifying),
         "candidates": qualifying[:limit],
     }
@@ -980,7 +980,7 @@ def run_radar(brand_id: str, timeframe: str = "month", limit: int = 30,
         print(f"    → {c['suggested_title'][:90]}")
 
     print(f"\n✅ Full results saved to: {output_file}")
-    print(f"   {len(qualifying)} qualifying | {len(all_items)} total scanned\n")
+    print(f"   {len(qualifying)} qualifying | {total_raw} total scanned\n")
 
     return top
 
