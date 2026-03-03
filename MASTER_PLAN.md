@@ -450,6 +450,8 @@ PUBLISH:     ██████████  100% (manual upload works fine)
 11. ✅ **Automated voice QA** — `check_fern_voice.py` runs immediately after voice_generator. Checks: integrated LUFS (-20 to -16 target), WPM from manifest timestamps (138.7 target), silence ratio (<25% warn, <45% fail), peak level (clipping detection). PASS or WARN auto-proceed — no listening required. Only FAIL stops the pipeline.
 12. ✅ **Automated footage verification** — `pipeline/footage_verifier.py` scores every downloaded image/clip against its storyboard description using a vision model. Items scoring <0.10 (completely unrelated) are removed from the manifest automatically. Reports per-segment coverage: ≥60% auto-proceeds, 40–59% warns but proceeds, <40% asks user. Note: clip audio is already stripped by `-an` in `prepare_clip()` — footage verifier doesn't need to handle this.
 13. ✅ **No black screens** — `video_assembler.py` final fallback (no footage + no storyboard) now generates a narration text card via `animation_generator.py` instead of black. Content segments never show black. Only the 0.4s chapter card padding intentionally uses black.
+15. ✅ **`local_path` vs `path` field bug fixed** — `video_assembler.py` was filtering stills/videos with `c.get("path","")` but `footage_sourcer.py` writes `"local_path"`. All video clips were silently dropped into an empty `videos` list every run. Fixed: `_clip_path_str()` helper checks `local_path` first with `path` fallback. Also added `c.get("downloaded")` guard so undownloaded manifest entries are never counted.
+16. ✅ **Voice QA WPM check silently skipped (fixed)** — `check_fern_voice.py` `check_wpm()` was reading `manifest.get("chunks",[])` but `voice_generator.py` writes `"segments"`. WPM check always returned SKIP with no warning. Also reading `"start"/"end"` timestamp fields instead of `"start_sec"/"end_sec"`. Fixed both: falls back to `segments` (speech-only), reads `"start_sec"/"end_sec"` with legacy fallback.
 14. ✅ **Full storyboard→voice→assembly integration** — Four bugs fixed / enhancements wired:
     - **`chunks` vs `segments` (CRITICAL BUG FIXED)**: voice_generator outputs `"segments"` in manifest; assembler was reading `"chunks"` → empty timeline. Now reads `segments`, filters to speech-only.
     - **Chapter cards from storyboard**: voice_generator doesn't write chapter data. Assembler now extracts chapter timing from storyboard `is_chapter_break` entries via proportional position mapping → chapter cards appear at the right moments.
@@ -532,7 +534,7 @@ venv/bin/python monitor.py
 
 ---
 
-*Last updated: 2026-03-02*
+*Last updated: 2026-03-02 (session 2)*
 *Videos analyzed: aVA7aXOH1pk (Trump), wLFY_Zu_O08 (FBI/KKK), wkVygetgeRY (Unabomber) — 3 total, 1,838 frames*
 *30 Fern videos: comments + titles + transcripts + signals all committed to GitHub*
 *All pipeline scripts: topic_radar, comments_miner, research_brief, story_validator, script_enhancer, check_fern_script, storyboard_generator, voice_generator, audio_preprocessor, music_sourcer, footage_sourcer, video_assembler, check_fern_video — ALL COMPLETE*
@@ -547,6 +549,9 @@ venv/bin/python monitor.py
 *Clip pivotal moment: built 2026-03-02 — clip_analyzer.py, vision model frame scoring, clip_start_sec in manifest*
 *Animation generator: built 2026-03-02 — animation_generator.py, Pillow doc/map/person/text cards, auto-triggered from needs_animation*
 *Footage guardrails: built 2026-03-02 — SEARCH_TIMEOUT_SEC, MIN_VIABLE thresholds, needs_animation flagging in manifest*
+*Bug fix 2026-03-02: video_assembler.py local_path/path field — videos list was always empty; fixed with _clip_path_str() + downloaded guard*
+*Bug fix 2026-03-02: check_fern_voice.py WPM always SKIP — chunks→segments fallback + start_sec/end_sec timestamp fields*
+*README.md: replaced old WATOP/space-facts content with accurate Fern pipeline setup guide*
 *Full story-aware + animation pipeline complete: no black screens, no wrong clip windows, no hanging searches*
 *Voice QA automated: check_fern_voice.py — LUFS/WPM/silence/clipping auto-check; PASS+WARN auto-proceed, FAIL regenerates. No manual listening.*
 *Footage verification automated: pipeline/footage_verifier.py — vision model scores each item vs storyboard; bad items auto-removed; <40% coverage asks user.*

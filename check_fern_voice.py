@@ -210,8 +210,12 @@ def check_wpm(audio_path: Path, manifest_path: Path | None):
     except Exception as e:
         return None, "WARN", f"Could not read manifest: {e}"
 
-    # Manifest may have word-level or chunk-level timestamps
-    chunks = manifest.get("chunks", [])
+    # Manifest may have word-level or chunk-level timestamps.
+    # voice_generator writes "segments"; support both field names.
+    chunks = manifest.get("chunks") or [
+        s for s in manifest.get("segments", [])
+        if s.get("type", "speech") == "speech"
+    ]
     if not chunks:
         return None, "SKIP", "No chunk data in manifest — WPM check skipped"
 
@@ -219,9 +223,11 @@ def check_wpm(audio_path: Path, manifest_path: Path | None):
     if total_words == 0:
         return None, "SKIP", "No text in manifest chunks"
 
-    # Duration from first to last chunk
-    start_time = chunks[0].get("start", 0)
-    end_time   = chunks[-1].get("end", chunks[-1].get("start", 0))
+    # Duration from first to last chunk.
+    # voice_generator writes "start_sec"/"end_sec"; support both timestamp formats.
+    start_time = chunks[0].get("start_sec", chunks[0].get("start", 0))
+    end_time   = chunks[-1].get("end_sec", chunks[-1].get("end",
+                    chunks[-1].get("start_sec", chunks[-1].get("start", 0))))
     speech_dur_min = (end_time - start_time) / 60
 
     if speech_dur_min <= 0:

@@ -707,10 +707,23 @@ def build_timeline(
     # Pre-compute lower-third events (first occurrence of each named person)
     lower_third_map = _detect_named_persons(chunks)
 
-    # Separate stills from video clips in footage
-    stills = [c for c in clips if c.get("type") in ("still", "image", None)
-              or str(c.get("path", "")).lower().endswith((".jpg", ".jpeg", ".png", ".webp"))]
-    videos = [c for c in clips if str(c.get("path", "")).lower().endswith((".mp4", ".mov", ".mkv", ".webm"))]
+    # Separate stills from video clips in footage.
+    # footage_sourcer writes "local_path"; support both field names for safety.
+    def _clip_path_str(c):
+        return str(c.get("local_path") or c.get("path") or "")
+
+    stills = [
+        c for c in clips
+        if c.get("downloaded") and (
+            c.get("type") in ("still", "image")
+            or _clip_path_str(c).lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
+        )
+    ]
+    videos = [
+        c for c in clips
+        if c.get("downloaded") and
+        _clip_path_str(c).lower().endswith((".mp4", ".mov", ".mkv", ".webm"))
+    ]
 
     # Shuffle stills so they don't appear in the same order as sourced
     random.shuffle(stills)

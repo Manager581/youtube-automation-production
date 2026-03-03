@@ -1,346 +1,377 @@
-# 🚀 YouTube Automation System - Space Facts Channel
+# Fern-Clone YouTube Automation Pipeline
 
-**Automate 95% of faceless YouTube video production** - from topic research to upload. Specifically designed for **WATOP-style space facts** content.
+Automated production pipeline that replicates the style of **@fern-tv** (4.6M subscribers) — dark, archival, documentary-style long-form YouTube videos — using your own cloned voice on new topics.
 
-## 🎯 What This Does
-
-This system enables you to produce **3-5 high-quality 20-minute space videos per week** with **95-100% WATOP quality**.
-
-**⚡ NEW: CapCut Automation** - Complete projects with all effects pre-applied. **You just import, generate captions, and export (3-5 min manual).**
-
-### Production Pipeline (CapCut Automation)
-
-```
-Script (ChatGPT) → Veo Clips → Voiceover → WATOP Pipeline → CapCut (3 min) → Upload
-    ↓                  ↓            ↓              ↓                ↓             ↓
-  1-2 hrs          2-3 hrs      20 min      10 min AUTO         3-5 min       5 min
-```
-
-**Total per video:** 4-6 hours active work | **Manual editing: 3-5 minutes** | **Quality: 95-100% WATOP**
+**Target:** 22–27 min videos at 138.7 WPM with Ken Burns + color grade + chapter cards, fully assembled locally at zero cost.
 
 ---
 
-## ✨ Key Features
+## Prerequisites
 
-### Content Generation
-- ✅ **Topic Generator** - Creates viral space topic ideas (manual prompts)
-- ✅ **Script Writer** - WATOP-style engagement-optimized scripts (5,000 words)
-- ✅ **Style Guide** - Built-in hooks, retention tactics, pacing rules
-
-### Asset Collection
-- ✅ **Veo 3 Integration** - Generates custom 8-second space clips (your Gemini access)
-- ✅ **NASA Downloader** - Auto-downloads free public domain footage (140K+ assets)
-- ✅ **Music/SFX** - YouTube Audio Library integration (free)
-
-### Video Production
-- ✅ **Effects Timeline Generator** - Analyzes scripts for zoom, text, SFX placements (every 1-2 seconds)
-- ✅ **WATOP-Exact Quality** - Sub-1-second micro-engagements matching WATOP's style
-- ✅ **CapCut Workflow** - 10-15 min manual editing for perfect results (see [CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md))
-- ✅ **SFX Library Setup** - Auto-placement of 200-400 sound effects per video
-- ✅ **Auto-Captions Ready** - Optimized for CapCut's auto-caption feature
-- ✅ **Quality Rendering** - 1080p 30-60fps export
-
-### Distribution
-- ✅ **Thumbnail Generator** - Creates DALL-E/Midjourney prompts
-- ✅ **Metadata Optimizer** - Titles, descriptions, tags, chapters
-- ✅ **YouTube Uploader** - API integration (requires one-time setup)
-
----
-
-## 🚀 Quick Start
-
-### 1. Install
+### System dependencies
 
 ```bash
-# Clone repository (already done)
-cd youtube-automation
+# macOS
+brew install ffmpeg ffprobe yt-dlp
+```
 
-# Install dependencies
+- **Python 3.13** (the venv is already at `venv/`)
+- **Ollama** — [install from ollama.com](https://ollama.com) — runs local AI models
+- **F5-TTS** v1.1.16 — local voice cloning (see Voice section below)
+
+### Ollama models
+
+```bash
+# Required for storyboard generation, script enhancement
+ollama pull qwen3.5:4b          # 3.4 GB — use this one (fast on M5 24GB)
+
+# Already installed (vision model for footage verification + focal points)
+# qwen2.5vl:7b                  # 6 GB — already pulled, used as fallback
+
+# Optional — higher quality focal points (slow, 17GB)
+# ollama pull qwen3.5:27b
+```
+
+> **Note:** `qwen3.5:4b` is NOT yet installed. Run `ollama pull qwen3.5:4b` before first use. The pipeline falls back to `qwen2.5vl:7b` for vision tasks but text-only tasks (storyboard, script enhancement) need a text model.
+
+### Python dependencies
+
+```bash
+# Activate the venv (already set up)
+source venv/bin/activate
+
+# If starting fresh
 pip install -r requirements.txt
-
-# Verify setup
-python src/content/topic_generator.py
+# Also needed (not in requirements.txt yet):
+pip install librosa soundfile
 ```
 
-### 2. Produce Your First Video
+---
 
-**WATOP-Exact Quality - See [CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md)**
-
-Quick version:
+## One-Command Run
 
 ```bash
-# 1. Generate topic ideas
-python src/content/topic_generator.py generate 20
+python run_pipeline.py
+```
 
-# 2. Generate script (after choosing topic)
-python src/content/script_generator.py generate "Your Topic Title"
+This runs the entire pipeline interactively. It stops at 4 human decision points and runs everything else automatically.
 
-# 3. Create Veo shot list
-python src/production/veo_generator.py generate scripts/drafts/your_script.md
+```bash
+python run_pipeline.py --list       # show all stages
+python run_pipeline.py --status     # show current progress
+python run_pipeline.py --from voice # resume from a specific stage
+python run_pipeline.py --reset      # start over
+```
 
-# 4. Download NASA footage
-python src/production/nasa_downloader.py script scripts/drafts/your_script.md
+State is saved in `.pipeline_run.json` — Ctrl+C at any point and resume later.
 
-# 5. **NEW: Setup SFX library (one-time, 15 min)**
-python src/production/sfx_library_setup.py guide
-# Follow guide to download 20+ free sound effects
+---
 
-# 6. Record voiceover (manual)
-# Save to: assets/voiceovers/[script_name].mp3
+## Manual Stage-by-Stage
 
-# 7. **NEW: Generate effects timeline (WATOP-style)**
-python src/production/effects_timeline.py scripts/drafts/your_script.md
+If you prefer to run stages individually:
 
-# 8. Assemble base video
-python src/production/video_assembler.py [script_name] [shotlist.json] [voiceover.mp3]
+### 1. Topic Research
 
-# 9. **NEW: Apply WATOP effects in CapCut (10-15 min)**
-# See CAPCUT_WATOP_WORKFLOW.md for step-by-step CapCut editing
+```bash
+venv/bin/python pipeline/topic_radar.py --brand fern_clone
+venv/bin/python pipeline/comments_miner.py --brand fern_clone
+```
 
-# 10. Generate thumbnail & metadata
-python src/distribution/thumbnail_generator.py "Your Title"
-python src/distribution/metadata_generator.py "Your Title" scripts/drafts/your_script.md
+Scans Reddit, Google News, YouTube for viral story candidates. Auto-checks Fern overlap (won't suggest topics Fern already covered). Output: `research/fern_clone/` directory.
 
-# 11. Upload to YouTube (manual or automated)
+**Human decision: pick a topic.** High viral score + low Fern overlap = best bet.
+
+### 2. Research Brief
+
+```bash
+venv/bin/python pipeline/research_brief.py --brand fern_clone --query "Your Topic Here"
+venv/bin/python pipeline/story_validator.py --query "Your Topic Here" --brand fern_clone
+```
+
+Generates Wikipedia background + news RSS brief. Scores story on 5 dimensions (factual depth, viral hook, narrative arc, visual assets, public interest). Must be GO or NEEDS WORK to continue.
+
+### 3. Script Generation
+
+**Use Claude Code interactively — do NOT run `research_pipeline.py` from code (calls paid API).**
+
+```
+1. Open a new Claude Code session
+2. Paste contents of research/fern_clone/briefs/{topic}.json
+3. Say: "Write a full Fern-style script using SCRIPT_FORMULA.json and FERN_MASTER_FORMULA.json"
+4. Save output to scripts/{topic}.txt
+```
+
+Target: ~4,200 words / 25 min at 138.7 WPM. Use `[PAUSE:5.0]` markers at chapter breaks.
+
+### 4. Script Enhancement + QA
+
+```bash
+venv/bin/python pipeline/script_enhancer.py \
+  --input scripts/{topic}.txt \
+  --output scripts/enhanced_{topic}.txt
+
+venv/bin/python check_fern_script.py scripts/enhanced_{topic}.txt
+```
+
+Adds `[BEAT]`, `[PAUSE:1.2]`, `[BREATH]`, `[VOICE:tense/neutral/energized]` markers. Script must score **85+** before proceeding to voice.
+
+### 5. Storyboard Generation
+
+```bash
+venv/bin/python pipeline/storyboard_generator.py \
+  --script scripts/enhanced_{topic}.txt \
+  --out storyboards/{topic}.json
+```
+
+Generates per-segment visual brief: what to show, exact footage search query, focal element, shot type, intensity. Story-drives all downstream choices. Uses `qwen3.5:4b` locally.
+
+### 6. Voice Narration
+
+```bash
+venv/bin/python pipeline/voice_generator.py \
+  --ref-neutral   assets/voice/voice_neutral_ref.wav \
+  --ref-tense     assets/voice/voice_tense_ref.wav \
+  --ref-energized assets/voice/voice_energized_ref.wav \
+  --auto-transcribe \
+  --script scripts/enhanced_{topic}.txt \
+  --out audio/{topic}/narration.wav
+```
+
+Uses F5-TTS v1.1.16 locally. Reference clips must be exactly 10s (trimmed `*_ref.wav` files).
+
+**Voice QA (automatic — no listening required):**
+
+```bash
+venv/bin/python check_fern_voice.py audio/{topic}/narration.wav \
+  --manifest audio/{topic}/narration_manifest.json
+```
+
+Checks: LUFS (-20 to -16 target), WPM (138.7 target), silence ratio, peak clipping. PASS/WARN = auto-proceed. FAIL = regenerate.
+
+### 7. Music
+
+```bash
+venv/bin/python pipeline/music_sourcer.py --script scripts/enhanced_{topic}.txt
+# Downloads to assets/music/track.mp3
+```
+
+Analyzes script mood, downloads a free CC0 track. Requires `PIXABAY_API_KEY` env var (free — register at pixabay.com/api).
+
+### 8. Footage Sourcing
+
+```bash
+venv/bin/python pipeline/footage_sourcer.py \
+  --brand fern_clone \
+  --brief research/fern_clone/briefs/{topic}.json \
+  --storyboard storyboards/{topic}.json \
+  --download \
+  --out footage/fern_clone/{topic}/
+```
+
+Sources from YouTube (yt-dlp), Internet Archive, Wikimedia Commons. Storyboard drives targeted search queries per segment. Each clip is tagged with storyboard segment IDs.
+
+**Footage QA (automatic):**
+
+```bash
+venv/bin/python pipeline/footage_verifier.py \
+  --manifest footage/fern_clone/{topic}/manifest.json
+```
+
+Vision model scores each item vs storyboard description. Removes unrelated items (<0.10 score). ≥60% coverage = auto-proceed. <40% = asks for override.
+
+**Find pivotal moments in downloaded clips (optional but recommended):**
+
+```bash
+venv/bin/python pipeline/clip_analyzer.py manifest \
+  --manifest footage/fern_clone/{topic}/manifest.json
+```
+
+Scores each 5s window in every clip against the storyboard description. Saves `clip_start_sec` to manifest — assembler uses the best moment instead of position 0.
+
+### 9. Video Assembly
+
+```bash
+venv/bin/python pipeline/video_assembler.py \
+  --brand fern_clone \
+  --narration audio/{topic}/narration_manifest.json \
+  --footage footage/fern_clone/{topic}/manifest.json \
+  --music assets/music/track.mp3 \
+  --storyboard storyboards/{topic}.json \
+  --out output/{topic}/final.mp4
+```
+
+Produces: Ken Burns stills, color-graded clips, chapter cards, lower-thirds, beat-synced cuts, text overlays, narration + music mix. Saves `output/{topic}/timeline.json` alongside.
+
+Optional flags:
+- `--focal-points` — enable vision model focal point detection (needs Ollama running)
+- `--dry-run` — preview timeline without rendering
+- `--no-beat-sync` — disable beat-snap
+
+### 10. Final QA
+
+```bash
+venv/bin/python check_fern_video.py output/{topic}/final.mp4
+```
+
+8 checks: duration (22–27 min), cut rate (11.3/min target), audio levels (-14 to -18 LUFS), color grade, A/V sync, chapter cards (≥5), footage variety, beat sync (~39%). Must PASS or WARN before upload.
+
+### 11. Thumbnail + Title
+
+**Title:** Paste `TITLE_ANGLE_FORMULA.json` + topic into Claude Code — ask for 3 options ranked by formula score.
+
+**Thumbnail:** Follow `THUMBNAIL_FORMULA.json` manually (no script — no volume to justify automation yet).
+
+### 12. Upload
+
+Manual via YouTube Studio.
+
+---
+
+## Voice Reference Clips Setup
+
+If voice reference files are missing or need replacement:
+
+```bash
+# Record yourself reading a few sentences in neutral/tense/energized tone
+# Then clean and normalize:
+venv/bin/python pipeline/audio_preprocessor.py \
+  --input my_raw_recording.wav \
+  --output assets/voice/voice_neutral.wav \
+  --report
+
+# Trim to exactly 10s reference clip (F5-TTS clips anything >12s → bad output):
+ffmpeg -ss 0 -t 10 -i assets/voice/voice_neutral.wav assets/voice/voice_neutral_ref.wav
+```
+
+Required files in `assets/voice/`:
+- `voice_neutral_ref.wav` (10s)
+- `voice_tense_ref.wav` (10s)
+- `voice_energized_ref.wav` (10s)
+
+---
+
+## F5-TTS Installation
+
+```bash
+# F5-TTS v1.1.16 (exact version — other versions have speed issues)
+pip install f5-tts==1.1.16
+
+# Verify
+python -c "from f5_tts.api import F5TTS; print('OK')"
 ```
 
 ---
 
-## 📁 Project Structure
+## Environment Variables
+
+```bash
+# Required for music sourcing
+export PIXABAY_API_KEY="your_key_here"   # free at pixabay.com/api
+
+# Optional — only if using paid APIs (not needed for this pipeline)
+# export ANTHROPIC_API_KEY="..."
+```
+
+---
+
+## Project Structure
 
 ```
-youtube-automation/
-├── config/
-│   ├── config.yaml           # Main configuration
-│   └── .env.template         # API keys (for future)
-├── src/
-│   ├── content/
-│   │   ├── topic_generator.py      # Generate video topics
-│   │   └── script_generator.py     # Write WATOP-style scripts
-│   ├── production/
-│   │   ├── veo_generator.py        # Create Veo 3 shot lists
-│   │   ├── nasa_downloader.py      # Download NASA footage
-│   │   └── video_assembler.py      # Assemble final video
-│   └── distribution/
-│       ├── thumbnail_generator.py  # Generate thumbnail prompts
-│       ├── metadata_generator.py   # Create YouTube metadata
-│       └── youtube_uploader.py     # Upload to YouTube
+youtube-automation-production/
+├── pipeline/                    # All automation scripts
+│   ├── topic_radar.py           # Find viral story candidates
+│   ├── comments_miner.py        # Mine Fern comments for signals
+│   ├── research_brief.py        # Wikipedia + RSS brief
+│   ├── story_validator.py       # GO/SKIP verdict (5-dim scoring)
+│   ├── script_enhancer.py       # Add emotion/pause/breath markers
+│   ├── storyboard_generator.py  # Per-segment visual brief (story-driven)
+│   ├── voice_generator.py       # F5-TTS narration generation
+│   ├── audio_preprocessor.py    # Clean + normalize voice recordings
+│   ├── music_sourcer.py         # CC0 music download (Pixabay)
+│   ├── footage_sourcer.py       # Download footage (yt-dlp, Archive, Wikimedia)
+│   ├── footage_verifier.py      # Vision model scores footage vs storyboard
+│   ├── clip_analyzer.py         # Find pivotal moment in downloaded clips
+│   ├── animation_generator.py   # Generate doc/map/person cards (Pillow)
+│   └── video_assembler.py       # Full video assembly (ffmpeg + moviepy)
+├── check_fern_script.py         # Script QA gate (must score 85+)
+├── check_fern_voice.py          # Voice QA gate (LUFS, WPM, silence, clipping)
+├── check_fern_video.py          # Final video QA gate (8 checks vs Fern benchmarks)
+├── run_pipeline.py              # Single-command interactive pipeline runner
+├── monitor.py                   # Live dashboard (run in second terminal)
+├── brand_configs/
+│   └── fern_clone.json          # Brand identity, topic filters, title formulas
+├── analysis/fern/               # All analyzed Fern data
+│   ├── FERN_MASTER_FORMULA.json # The formula — feeds all generation scripts
+│   ├── SCRIPT_FORMULA.json      # Script writing rules (4,200 words, 25 min)
+│   ├── FERN_MOTION_FORMULA.json # Camera motion + transition spec
+│   ├── MUSIC_IDENTITY.json      # Music selection + BPM (116 BPM)
+│   ├── SOUND_DESIGN_FORMULA.json
+│   ├── THUMBNAIL_FORMULA.json
+│   ├── TITLE_ANGLE_FORMULA.json
+│   └── {video_id}/              # Per-video analysis data
+├── scripts/                     # Raw and enhanced scripts
+├── storyboards/                 # Per-topic visual storyboards
+├── audio/                       # Narration audio + manifests
+├── footage/                     # Downloaded footage + manifests
 ├── assets/
-│   ├── veo_clips/           # Your Veo 3 generated clips
-│   ├── nasa_footage/        # Auto-downloaded NASA videos
-│   ├── voiceovers/          # Your recorded voiceovers
-│   ├── music/               # Background music tracks
-│   └── sfx/                 # Sound effects
-├── scripts/
-│   ├── drafts/              # AI-generated scripts
-│   └── final/               # Approved scripts
-├── output/
-│   ├── videos/              # Final rendered videos
-│   ├── thumbnails/          # Thumbnail images
-│   └── metadata/            # YouTube metadata files
-├── prompts/                 # Generated prompts for manual use
-├── WORKFLOW.md              # Complete production workflow
-└── README.md                # This file
+│   ├── voice/                   # Voice reference clips (10s each)
+│   ├── music/                   # Background music tracks
+│   └── sfx/                     # Sound effects
+├── output/                      # Final rendered videos + timelines
+└── research/fern_clone/         # Research briefs + topic signals
 ```
 
 ---
 
-## 💰 Cost Breakdown
+## Cost
 
-### Current Setup (Manual Mode): **FREE**
+**Everything is free.** No paid APIs are used.
 
-| Component | Cost | Notes |
-|-----------|------|-------|
-| Topic/Script Generation | $0 | Use ChatGPT/Claude Pro (you have) |
-| Veo 3 Clips | $0 | Included in Gemini Pro |
-| NASA Footage | $0 | Public domain |
-| Music/SFX | $0 | YouTube Audio Library |
-| Video Editing | $0 | MoviePy (Python) |
-| Hosting | $0 | Local + Google Cloud (you have) |
-| **TOTAL** | **$0/month** | |
+| Component | Tool | Cost |
+|---|---|---|
+| Topic/research | topic_radar + Reddit/RSS | $0 |
+| Script | Claude Code (Claude Max sub) | $0 |
+| Script enhancement | Ollama qwen3.5:4b local | $0 |
+| Voice | F5-TTS local | $0 |
+| Footage | yt-dlp + Internet Archive | $0 |
+| Music | Pixabay CC0 (free API) | $0 |
+| Video assembly | ffmpeg + moviepy | $0 |
+| AI scoring | Ollama local | $0 |
 
-### Future Upgrade (API Automation): **$75-150/month**
-
-After monetization, add:
-- OpenAI/Claude API: $50-100/month
-- Voice cloning (ElevenLabs): $22/month
-- AI video (Runway/Pika): $12-20/month
-- Analytics tools: $0-30/month
-
-**ROI:** At $500/month revenue, APIs cost 15-30%, save 15+ hours/week
+> One exception: `research_pipeline.py` calls the Anthropic API directly — **do not run this from code.** Use Claude Code interactively instead.
 
 ---
 
-## 🎨 Content Style
+## Key Formula Stats (measured from Fern)
 
-**Inspired by:** WATOP, Bright Side, Kurzgesagt, The Infographics Show
-
-### Script Formula
-- **Hook** (0-5s): Shocking fact that demands attention
-- **Setup** (5-30s): Stakes and why it matters
-- **Body** (30s-18min): 10-12 segments with mini-hooks
-- **Resolution** (18-20min): Payoff and final revelation
-- **CTA** (last 30s): Subscribe, like, next video
-
-### Engagement Tactics
-- Curiosity loops (pose question → answer later)
-- Re-engagement every 60-90 seconds
-- Pattern interrupts (pace/topic changes)
-- Scale comparisons (mind-blowing size/time)
-- "But wait, it gets crazier..." moments
-
-### Visual Style
-- 8-second Veo clips (cinematic, dramatic)
-- NASA footage (real space imagery)
-- Fast cuts every 3-5 seconds
-- Smooth transitions with fades
-- Text overlays for emphasis
+- Script: ~4,200 words, 25 min @ **138.7 WPM**
+- Color grade: 0.46× saturation, 7% black crush, 0.90 gamma
+- Ken Burns: 5%/sec zoom rate (modulated by storyboard intensity)
+- Cut rate: **11.3 cuts/min** avg (content-driven, 4–6s per segment)
+- Music BPM: **116 BPM** (dark cinematic)
+- Beat sync: ~39% of cuts land within ±100ms of a beat
+- Chapter cards: ~5 per video (white serif typewriter on black)
+- SFX: minimal (10.9% of cuts) — impact_thud dominant
 
 ---
 
-## 📊 Target Metrics
+## Troubleshooting
 
-### Video Performance Goals
-- **CTR:** 8%+ (click-through rate)
-- **AVD:** 70%+ (average view duration)
-- **Watch Time:** 14+ minutes average
-- **Engagement:** 5%+ like rate
+**Ollama not running:**
+```bash
+ollama serve   # start in background
+ollama list    # verify models
+```
 
-### Channel Growth Milestones
-- **Month 1:** 100+ subscribers, 12-15 videos
-- **Month 3:** 1,000+ subscribers (Partner Program eligibility)
-- **Month 6:** 10,000+ subscribers, $500+/month
-- **Year 1:** 100,000+ subscribers, $2,000+/month
+**F5-TTS speed issues:** Make sure reference clips are exactly 10s. F5-TTS clips anything >12s which causes erratic speed output.
 
----
+**Footage sourcing hangs:** Each search has a 20s timeout built in. If it's still hanging, check `yt-dlp` version: `yt-dlp --update`
 
-## 🔧 Requirements
+**Black screens in output:** Shouldn't happen — `animation_generator.py` auto-generates text/doc/map cards for segments with no footage. If you see black, check that `needs_animation` segments have a valid `storyboard_show` description in the storyboard JSON.
 
-### Software
-- **Python 3.8+**
-- **MoviePy** (video editing)
-- **M1 Mac** (or any computer with 8GB+ RAM)
-
-### Services (What You Have)
-- ✅ ChatGPT Pro or Claude Pro (script writing)
-- ✅ Gemini Pro with Veo 3 (video generation)
-- ✅ Google Cloud (storage)
-- ✅ Microphone (voiceover recording)
-
-### Optional (Free Alternatives)
-- Canva (thumbnails) - free
-- Audacity (audio editing) - free
-- OBS (screen recording) - free
+**WPM check shows SKIP:** The narration manifest `segments` field may be empty. Check `audio/{topic}/narration_manifest.json` — it should have a `segments` list with `start_sec`, `end_sec`, `text` fields.
 
 ---
 
-## 🎯 Who This Is For
-
-### Perfect If You:
-- ✅ Run or want to start a faceless YouTube channel
-- ✅ Want to scale content production
-- ✅ Have ChatGPT/Claude/Gemini Pro access
-- ✅ Can record voiceovers (for now)
-- ✅ Want WATOP-level production quality
-- ✅ Prefer starting free before investing
-
-### Not Ideal If:
-- ❌ Want fully automated (no manual work) - *not yet, upgrade later*
-- ❌ Don't want to record voiceovers - *voice cloning coming in Phase 2*
-- ❌ Need instant results - *setup takes 1-2 hours*
-
----
-
-## 📚 Documentation
-
-- **[CAPCUT_AUTOMATION.md](CAPCUT_AUTOMATION.md)** - 🔥 **NEW: 95-100% WATOP Quality (3-5 min manual)**
-- **[CAPCUT_WATOP_WORKFLOW.md](CAPCUT_WATOP_WORKFLOW.md)** - ⭐ Alternative: Manual CapCut workflow
-- **[WORKFLOW.md](WORKFLOW.md)** - Complete step-by-step production guide
-- **[QUICKSTART.md](QUICKSTART.md)** - First video in 4-6 hours
-- **Script Style Guide** - Built into `script_generator.py`
-- **Veo Best Practices** - Built into `veo_generator.py`
-- **Effects Timeline** - Built into `effects_timeline.py`
-- **CapCut Project Generator** - Built into `capcut_project_generator.py`
-- **Troubleshooting** - See WORKFLOW.md
-
----
-
-## 🗺️ Roadmap
-
-### ✅ Phase 1: Manual Workflow (Current)
-- Topic generation with prompts
-- Script writing via ChatGPT/Claude
-- Veo clip generation (manual)
-- NASA footage automation
-- Video assembly automation
-- Thumbnail/metadata prompts
-- Manual YouTube upload
-
-### 🔄 Phase 2: Semi-Automation (After Monetization)
-- Browser automation (Playwright)
-- Voice cloning (ElevenLabs)
-- Automated thumbnail generation
-- Scheduled uploads
-- Performance analytics
-
-### 🚀 Phase 3: Full Automation (Scale)
-- End-to-end API pipeline
-- Multi-channel management
-- A/B testing automation
-- Trend detection
-- Revenue optimization
-
----
-
-## 🤝 Contributing
-
-This is a personal project, but improvements welcome:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
----
-
-## ⚠️ Disclaimer
-
-### Content & Copyright
-- All NASA footage is **public domain** (verified via NASA Media Guidelines)
-- Scripts must be **original or properly attributed**
-- Veo-generated content is yours to use commercially
-- Always verify facts and cite sources
-
-### YouTube Policies
-- Ensure compliance with YouTube Partner Program policies
-- Disclose AI-generated content if required
-- Follow copyright and fair use guidelines
-- No misleading thumbnails or clickbait
-
-### No Guarantees
-- Channel success depends on content quality, consistency, niche selection
-- YouTube algorithm changes may affect performance
-- Monetization requires 1000 subs + 4000 watch hours
-
----
-
-## 📧 Support
-
-- **Documentation:** See [WORKFLOW.md](WORKFLOW.md)
-- **Issues:** Open a GitHub issue
-- **Questions:** Check troubleshooting section first
-
----
-
-## 📝 License
-
-**MIT License** - Use commercially, modify freely, no warranty provided.
-
-NASA content: Public domain (no license required)
-
----
-
-**Built for creators who want to scale faceless YouTube channels without sacrificing quality.**
-
-**Current Status:** ✅ Ready for production
-**Cost:** $0/month (manual mode)
-**Time per video:** 4-6 hours
-**Output:** WATOP-quality 20-minute videos 
+See [MASTER_PLAN.md](MASTER_PLAN.md) for complete pipeline status, formula details, and architectural notes.
