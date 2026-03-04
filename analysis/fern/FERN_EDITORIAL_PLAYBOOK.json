@@ -1,0 +1,338 @@
+{
+  "_meta": {
+    "description": "Fern Editorial Playbook — narrative-driven editorial rules reverse-engineered from synchronized multi-track analysis of Fern videos. Every rule answers WHY a decision is made, not just WHAT the statistics are.",
+    "source_videos": ["wkVygetgeRY (Unabomber, 28 min, 673 frames, 205 segments)"],
+    "generated": "2026-03-03",
+    "version": "1.0"
+  },
+
+  "core_principle": "Every editorial decision must be narratively motivated. A cut happens because the story demands it. A zoom happens because the viewer needs to focus on something. Text appears because it reinforces the spoken word. Statistics are a validation check, not a creative driver.",
+
+  "rhythm_pattern": {
+    "description": "Fern alternates between long sustained holds and rapid cut bursts. This creates a breathing rhythm — slow contemplation punctuated by montage energy.",
+    "long_hold": {
+      "duration_sec": [8, 20],
+      "visual": "document_photo",
+      "purpose": "Sustained narration over a single image. Used during character exposition, context-setting, backstory. The image is the anchor while the voice carries the story.",
+      "motion": "slow_zoom_in",
+      "zoom_rate_pct_per_sec": [1.0, 3.0]
+    },
+    "rapid_burst": {
+      "duration_sec": [2, 4],
+      "visual": ["archival_footage", "news_screenshot", "documentary_footage"],
+      "purpose": "Illustrative punctuation. Quick visual proof of what was just said. Used when citing specific events, showing evidence, or creating montage energy.",
+      "motion": "varies_by_content"
+    },
+    "typical_cycle": "10-20s hold → 2-4s burst → 10-20s hold → 2-4s burst"
+  },
+
+  "cut_rules": {
+    "description": "44% of cuts align with narrative function shifts. The remaining 56% provide visual freshness within the same narrative beat.",
+    "narrative_motivated_cuts": {
+      "percentage": 44,
+      "triggers": [
+        "Story shifts from one topic/person/era to another",
+        "New evidence or proof is being introduced",
+        "Emotional tone changes (context → tension, exposition → revelation)",
+        "A name is spoken for the first time (cut to their photo/document)",
+        "A location is named (cut to photo/map of that place)",
+        "A document or artifact is referenced (cut to show it)"
+      ]
+    },
+    "visual_freshness_cuts": {
+      "percentage": 56,
+      "triggers": [
+        "Same narrative beat, different visual angle on the same topic",
+        "After 8-12s on a single image, cut to another image of the same subject",
+        "Source document changes (different page, different archive)",
+        "Prevent viewer fatigue during long exposition stretches"
+      ],
+      "max_same_image_sec": 20,
+      "typical_refresh_sec": [8, 12]
+    },
+    "cut_rate": {
+      "measured": 13.2,
+      "note": "13.2 cuts/min is an OUTCOME of narrative cuts + freshness cuts combined. Do NOT target this number directly — let it emerge from following the rules above."
+    }
+  },
+
+  "motion_rules": {
+    "description": "Motion type and speed are determined by narrative intent, not random distribution. Zoom speed is the primary emotional signal.",
+    "zoom_in": {
+      "percentage_of_motion": 50.5,
+      "when": [
+        "Drawing attention to a detail (a name, a date, a signature)",
+        "Building tension — narrator is revealing something",
+        "Focusing on evidence being discussed",
+        "Character introduction — zooming to face"
+      ],
+      "speed_by_intensity": {
+        "normal_context": {"pct_per_sec": [1.0, 3.0], "description": "Gentle pull-in during exposition"},
+        "building_tension": {"pct_per_sec": [3.0, 5.0], "description": "Noticeable tightening as stakes rise"},
+        "emotional_peak": {"pct_per_sec": [5.0, 9.0], "description": "Aggressive push-in at reveals, shocking facts"},
+        "extreme_revelation": {"pct_per_sec": [15.0, 25.0], "description": "Snap zoom on the most shocking evidence. Rare — 1-2 per video. Reserved for the single most damning piece of evidence."}
+      }
+    },
+    "zoom_out": {
+      "percentage_of_motion": 26.2,
+      "when": [
+        "Revealing scope or scale (map showing multiple locations, crime scene wide shot)",
+        "Pulling back after an intense moment — giving viewer breathing room",
+        "Establishing a new location or setting",
+        "Transitioning from detail to big picture"
+      ],
+      "speed_by_intent": {
+        "scope_reveal": {"pct_per_sec": [1.0, 3.0]},
+        "emotional_exhale": {"pct_per_sec": [3.0, 8.0]},
+        "scale_shock": {"pct_per_sec": [5.0, 10.0], "description": "Wide pull-back showing extent of damage, number of victims, geographic spread"}
+      }
+    },
+    "pan": {
+      "percentage_of_motion": 12.7,
+      "types": {
+        "pan_right": {"pct": 1.8, "when": "Scanning/reading a document left-to-right, showing timeline progression"},
+        "pan_left": {"pct": 1.8, "when": "Revisiting, going back in time"},
+        "pan_up": {"pct": 4.8, "when": "Reading down a document/list, scrolling archival text"},
+        "pan_down": {"pct": 4.3, "when": "Scrolling protest signs, reading newspaper columns"}
+      }
+    },
+    "static": {
+      "percentage_of_motion": 7.0,
+      "when": [
+        "Image has internal motion (video clip playing)",
+        "Brief transitional moment",
+        "Newspaper headline that viewer needs time to read",
+        "Title/chapter card"
+      ]
+    }
+  },
+
+  "visual_category_rules": {
+    "description": "What to show is determined by what's being said. Visual categories are narrative tools.",
+    "document_photo": {
+      "percentage": 32.9,
+      "avg_duration_sec": 10.4,
+      "when": "Default visual for sustained narration. FBI files, letters, memos, legal documents, personal photos, mugshots. The backbone of every segment.",
+      "sourcing": "Government archives (FBI vault, NARA), Wikimedia Commons, Internet Archive, court records"
+    },
+    "archival_footage": {
+      "percentage": 3.6,
+      "avg_duration_sec": 4.6,
+      "when": "Showing real historical events being described. Protest footage, arrest footage, press conferences, crime scene footage.",
+      "sourcing": "AP Archive, Reuters, Internet Archive, public domain news reels"
+    },
+    "news_screenshot": {
+      "percentage": 1.3,
+      "avg_duration_sec": 4.7,
+      "when": "Citing a specific news event or public reaction. Headline must be readable and relevant to current narration.",
+      "sourcing": "Newspaper archives, screenshot from news websites"
+    },
+    "documentary_footage": {
+      "percentage": 0.8,
+      "avg_duration_sec": 6.3,
+      "when": "Longer clips from documentaries or recorded interviews about the subject.",
+      "sourcing": "Public domain documentaries, fair use clips"
+    },
+    "reconstructed_footage": {
+      "percentage": 1.7,
+      "avg_duration_sec": 4.0,
+      "when": "Dramatic visualization of described events (re-creations, B-roll that evokes the scene).",
+      "sourcing": "Stock footage matching era and setting"
+    },
+    "title_card": {
+      "percentage": 0.8,
+      "avg_duration_sec": 2.8,
+      "when": "Chapter transitions and key entity introductions only. Brief — just enough to read.",
+      "style": "White serif typewriter text on dark background"
+    }
+  },
+
+  "text_overlay_rules": {
+    "description": "Text on screen ALWAYS reinforces what the narrator is saying at that exact moment. Never decorative, never random.",
+    "types": {
+      "source_citation": {
+        "format": "[number]",
+        "when": "Citing a specific source. Appears in corner of document photos. Shows credibility.",
+        "frequency": "Every 30-60s during evidence-heavy sections"
+      },
+      "person_identification": {
+        "format": "FULL NAME in caps",
+        "when": "First time a person is named in narration. Appears on their photo or related document.",
+        "example": "THEODORE JOHN KACZYNSKI"
+      },
+      "entity_label": {
+        "format": "Name in caps",
+        "when": "Introducing an organization, program, or concept. Brief title card.",
+        "examples": ["MKULTRA", "UNIVERSITY AIRLINE BOMBER"]
+      },
+      "in_frame_text": {
+        "when": "Text naturally present in the source material. Newspaper headlines, document text, protest signs.",
+        "rule": "The text visible in the image must relate to what the narrator is currently saying."
+      },
+      "location_label": {
+        "format": "Place name",
+        "when": "Setting a scene geographically",
+        "examples": ["Lincoln, Montana", "Washington, Michigan, Illinois, Tennessee, California"]
+      },
+      "quote": {
+        "format": "Quoted text, often as typewriter effect",
+        "when": "Reading the subject's own words. Text appears as narrator reads it.",
+        "example": "My motive for doing what I am going to do is simply personal revenge."
+      }
+    }
+  },
+
+  "chapter_transition_formula": {
+    "description": "Fern's chapter breaks follow a precise emotional arc, not just a card slap.",
+    "sequence": [
+      {
+        "step": 1,
+        "name": "concluding_punch",
+        "description": "The last sentence before the break is a punchy, emotionally loaded line that wraps up the current thread.",
+        "example": "despite his intellect, he made some pretty dumb mistakes.",
+        "duration_sec": [2, 4]
+      },
+      {
+        "step": 2,
+        "name": "dramatic_silence",
+        "description": "Narration stops. Music continues or swells. Visual may hold on last image or fade to black.",
+        "duration_sec": [2, 5]
+      },
+      {
+        "step": 3,
+        "name": "music_bridge",
+        "description": "Music fills the gap. May include brief credits overlay. Emotional reset — the music signals 'we're moving to something new'.",
+        "duration_sec": [10, 30],
+        "note": "Fern uses 20-40s music breaks for major chapter transitions, 5-10s for minor ones"
+      },
+      {
+        "step": 4,
+        "name": "chapter_card",
+        "description": "Title card with chapter name. White serif on dark. Brief.",
+        "duration_sec": [2, 4],
+        "style": "white_serif_on_dark"
+      },
+      {
+        "step": 5,
+        "name": "new_hook",
+        "description": "The new chapter opens with a re-hook — a fresh compelling line or image that resets audience attention. NOT a boring context-setter.",
+        "example": "Transitioning to new era with an arresting quote or shocking fact"
+      }
+    ]
+  },
+
+  "hook_formula": {
+    "description": "The video opens (and each chapter reopens) with a visceral hook. Fern's hook is always a primary source — the subject's own words or the most shocking evidence.",
+    "opening_hook": {
+      "technique": "Subject's own words displayed as typewriter text on dark background, read by narrator in ominous tone",
+      "motion": "slow_zoom_in at 3-5%/s",
+      "duration_sec": [8, 15],
+      "tone": "ominous",
+      "example": "My motive for doing what I am going to do is simply personal revenge. I do not expect to accomplish anything by it."
+    },
+    "mid_video_rehooks": {
+      "frequency": "At each chapter/act transition",
+      "technique": "Re-engagement with a new compelling fact, quote, or piece of evidence before diving into exposition",
+      "purpose": "Prevent viewer drop-off by resetting curiosity at each major story beat"
+    }
+  },
+
+  "narrative_function_visual_mapping": {
+    "description": "What narrative function is happening determines what visual and motion to use.",
+    "establishing_context": {
+      "percentage_of_video": 63.7,
+      "visual": "document_photo (sustained hold)",
+      "motion": "slow_zoom_in (1-3%/s)",
+      "cuts": "Every 8-12s for visual freshness, same narrative beat",
+      "text": "Source citations [n] on documents"
+    },
+    "evidence": {
+      "percentage_of_video": 14.5,
+      "visual": "document_photo with visible text, or news_screenshot with readable headline",
+      "motion": "zoom_in (1.5-5%/s) — drawing attention to the proof",
+      "cuts": "Cut TO the evidence as narrator references it",
+      "text": "In-frame text must match what narrator is describing"
+    },
+    "tension_build": {
+      "percentage_of_video": 8.5,
+      "visual": "document_photo or archival_footage",
+      "motion": "faster_zoom_in (5-9%/s) — aggressive push-in",
+      "cuts": "Faster pacing, 2-4s segments, possible rapid montage",
+      "text": "Minimal — let visuals and voice carry tension"
+    },
+    "character_intro": {
+      "percentage_of_video": 2.7,
+      "visual": "Photo of the person being introduced",
+      "motion": "zoom_in to face (2-5%/s)",
+      "cuts": "Cut to photo when name is first spoken",
+      "text": "FULL NAME overlay on first mention"
+    },
+    "hook": {
+      "percentage_of_video": 3.8,
+      "visual": "Primary source (document, quote card, or dramatic archival)",
+      "motion": "slow_zoom_in (3-5%/s)",
+      "cuts": "Hold — don't cut during a hook. Let it breathe.",
+      "text": "Quote being read, or striking headline"
+    },
+    "revelation": {
+      "percentage_of_video": 0.3,
+      "visual": "The evidence that reveals the truth",
+      "motion": "extreme_zoom_in (15-25%/s) — snap focus",
+      "cuts": "Cut to the reveal artifact the instant narrator delivers the line",
+      "text": "The damning text, if it's a document"
+    },
+    "transition": {
+      "percentage_of_video": 1.4,
+      "visual": "black_screen or fade",
+      "motion": "none or slow_zoom_out",
+      "cuts": "Fade to black, hold, fade up on new chapter",
+      "text": "Chapter card after the fade"
+    }
+  },
+
+  "segment_duration_by_type": {
+    "document_photo": {"avg_sec": 10.4, "range": [4, 20], "note": "Backbone visual. Long holds with slow zoom."},
+    "archival_footage": {"avg_sec": 4.6, "range": [2, 8], "note": "Quick illustrative clips."},
+    "news_screenshot": {"avg_sec": 4.7, "range": [2, 8], "note": "Just enough to read the headline."},
+    "documentary_footage": {"avg_sec": 6.3, "range": [4, 12], "note": "Interview clips or documentary excerpts."},
+    "reconstructed_footage": {"avg_sec": 4.0, "range": [2, 6], "note": "Brief dramatic visualization."},
+    "title_card": {"avg_sec": 2.8, "range": [2, 4], "note": "Chapter labels only."},
+    "screen_recording": {"avg_sec": 8.5, "range": [4, 12], "note": "Showing digital evidence or website content."}
+  },
+
+  "audio_rules": {
+    "music": {
+      "bpm": 123,
+      "style": "dark cinematic, piano + strings",
+      "role": "Continuous underscore. Louder during silence/transitions, ducked under narration.",
+      "swells": "Music swells at chapter transitions and before dramatic pauses",
+      "drops": "Music drops to near-silence for the most intimate/shocking revelations"
+    },
+    "dramatic_pauses": {
+      "frequency": "3-5 per chapter (every 2-3 minutes)",
+      "duration_sec": [1, 3],
+      "when": [
+        "After delivering a shocking fact — let it land",
+        "Before introducing a new character or era",
+        "At the end of a rhetorical question",
+        "Before a chapter transition"
+      ]
+    },
+    "sfx": {
+      "usage": "Minimal — 10.9% of cuts. Fern relies on music + voice, not SFX.",
+      "type": "Subtle impact_thud at major reveals only"
+    }
+  },
+
+  "production_checklist": {
+    "description": "Before each segment, answer these questions. If you can't, the segment isn't ready.",
+    "per_segment": [
+      "WHY this image? What in the narration demands this specific visual?",
+      "WHY cut here? Did the story shift, or has the current image been held long enough?",
+      "WHY this motion? Is the narrator revealing (zoom in), establishing (zoom out), or scanning (pan)?",
+      "WHY this zoom speed? Does the emotional intensity of this moment justify faster/slower motion?",
+      "Is there text on screen? Does it match what the narrator is saying RIGHT NOW?",
+      "If this is a chapter break, did the previous sentence land as a concluding punch?"
+    ]
+  }
+}
