@@ -718,11 +718,17 @@ def validate_story(query: str, brand_id: str = "fern_clone",
 
     # --- Fetch data (or use brief) ---
     if brief:
-        wiki = brief.get("wikipedia", {})
+        wiki_brief = brief.get("wikipedia", {})
         news_count = len(brief.get("news_coverage", []))
-        all_text = wiki.get("summary", "") + "\n".join(
-            n.get("snippet", "") for n in brief.get("news_coverage", [])
-        )
+        # Brief only stores a short intro summary — fetch full article for accurate scoring
+        if wiki_brief.get("word_count", 0) < 500:
+            print(f"  (Brief has {wiki_brief.get('word_count', 0)}-word summary — fetching full Wikipedia article...)")
+            wiki = _wiki_search(wiki_brief.get("title", "") or query)
+        else:
+            wiki = wiki_brief
+        # Google News RSS snippets are often just encoded URLs — use titles instead
+        news_titles = "\n".join(n.get("title", "") for n in brief.get("news_coverage", []))
+        all_text = wiki.get("extract", wiki.get("summary", "")) + "\n" + news_titles
         entities = brief.get("entities", {}).get("people_orgs", [])[:4]
     else:
         print("[1/5] Fetching Wikipedia...")

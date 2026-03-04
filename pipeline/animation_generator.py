@@ -604,8 +604,13 @@ def generate_for_manifest(
     results = []
 
     print(f"\nGenerating {len(needs_animation)} animation frames...")
-    for i, seg_id in enumerate(needs_animation):
-        sb = sb_by_id.get(seg_id, {})
+    for i, seg_entry in enumerate(needs_animation):
+        # needs_animation items can be int IDs or dicts with segment_index
+        if isinstance(seg_entry, dict):
+            seg_id = seg_entry.get("segment_index", seg_entry.get("segment_id", i))
+        else:
+            seg_id = seg_entry
+        sb = sb_by_id.get(seg_id, seg_entry if isinstance(seg_entry, dict) else {})
         show           = sb.get("show", f"segment {seg_id}")
         shot_type      = sb.get("shot_type", "documentary_photo")
         narration_text = sb.get("text", "")

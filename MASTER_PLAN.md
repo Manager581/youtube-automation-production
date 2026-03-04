@@ -432,6 +432,62 @@ THUMBNAIL:   ░░░░░░░░░░    0% (use Claude Code + manual — 
 PUBLISH:     ██████████  100% (manual upload works fine)
 ```
 
+---
+
+## CRITICAL: Narrative-Driven Editing Requirements (2026-03-03)
+
+**V5 render review revealed the pipeline produces statistically-correct but narratively-meaningless output.** Hitting numerical targets (cut rate, zoom %, beat sync %) is necessary but NOT sufficient. Every editorial decision MUST be story-motivated.
+
+### The Problem
+- Cuts happen at statistical intervals, not story beats
+- Zoom/pan directions are random to hit global % targets, not narratively motivated
+- Chapter transitions are abrupt black cards with no voice/visual buildup
+- Footage is generic or Pillow text cards showing search prompts
+- Beat sync is metronomic, not emphatic
+- Text overlays show metadata/prompts, not story-reinforcing information
+- Nothing ties visual choices to what the narrator is actually saying
+
+### Requirements — Every Decision Must Answer "WHY?"
+
+1. **Storyboard dictates everything** — the storyboard is the master document. Footage, cuts, motion, music, SFX all flow FROM it. Not from statistics.
+2. **No Pillow text card placeholders** — every segment needs real archival footage/photos. Pillow-generated text cards showing search queries are unacceptable for production.
+3. **Cuts must be narratively motivated** — cut on story beats, reveals, scene changes, speaker shifts. NOT random intervals matching a statistical cut rate.
+4. **Motion must match narrative** — zoom INTO evidence being revealed, slow pan ACROSS a location being described, static hold on a face being named. NOT random zoom/pan to hit global % targets.
+5. **Chapter transitions need buildup** — voice tone shifts + visual cues must signal chapter change BEFORE the card appears. NOT just a sudden black card.
+6. **Beat sync must be meaningful** — cuts on musical beats should coincide with narrative emphasis (a reveal, a name drop, a stakes escalation). NOT just metronomic alignment.
+7. **Real footage required** — document_photo, archival_footage, documentary_photo sourced from Archive.org, Wikimedia, government archives. Every segment should have a real visual.
+8. **Text on screen must be intentional** — dates, names, quotes, location labels that reinforce what the narrator is saying. NOT random metadata or generation prompts.
+
+### Solution: Synchronized Multi-Track Editorial Playbook
+
+**Goal:** Reverse-engineer Fern's editorial logic by correlating ALL tracks simultaneously, not measuring them independently.
+
+For each moment in a Fern video, answer: "WHY did Fern cut here? WHY this image? WHY zoom in now? WHY this motion speed?"
+
+**Tracks to correlate (per 0.5–1s window):**
+- Narration text (what is being said)
+- Visual category (what is on screen)
+- Motion type + speed (how the camera moves)
+- Audio energy + beat proximity (musical context)
+- Text overlays (what text appears)
+- Narrative function (hook/context/reveal/climax/etc.)
+- Emotional tone (tense/ominous/energized/etc.)
+
+**Data loaded for Unabomber (wkVygetgeRY):**
+- VTT subtitles: 170 windows of narration with timing
+- Timeline: 673 AI-labeled frames (visual_category, scene_description, narrative_function, emotional_tone)
+- Motion: 218 segments (motion_type, zoom_rate, saturation, black_crush)
+- Audio: 123 BPM, 3466 beats, 92 silence segments, 50 energy peaks
+
+**Next steps:**
+1. Correlate all tracks into unified timeline windows
+2. Extract editorial rules (e.g. "when narrator says a person's name → cut to portrait photo + zoom to face")
+3. Build `FERN_EDITORIAL_PLAYBOOK.json` with narrative-context rules
+4. Rewrite storyboard_generator + video_assembler to use playbook rules instead of statistical targets
+5. Re-run on all 3 analyzed Fern videos to validate
+
+---
+
 **No blockers for first video.** Everything is ready to run.
 
 **Precision enhancements built (2026-03-02):**
@@ -538,7 +594,7 @@ venv/bin/python monitor.py
 
 ---
 
-*Last updated: 2026-03-02 (session 3)*
+*Last updated: 2026-03-03 (session 4 — narrative requirements + editorial playbook)*
 *Videos analyzed: aVA7aXOH1pk (Trump), wLFY_Zu_O08 (FBI/KKK), wkVygetgeRY (Unabomber) — 3 total, 1,838 frames*
 *30 Fern videos: comments + titles + transcripts + signals all committed to GitHub*
 *All pipeline scripts: topic_radar, comments_miner, research_brief, story_validator, script_enhancer, check_fern_script, storyboard_generator, voice_generator, audio_preprocessor, music_sourcer, footage_sourcer, video_assembler, check_fern_video — ALL COMPLETE*
@@ -563,3 +619,4 @@ venv/bin/python monitor.py
 *No-black-screens rule enforced: video_assembler.py final fallback now generates narration text card. Content segments never black.*
 *Full storyboard integration: CRITICAL BUG fixed (chunks vs segments field name). Chapter cards from storyboard is_chapter_break. Intensity→KB zoom rate (tense=7%/sec, ominous=2.5%/sec). Sequential storyboard matching.*
 *Story coherence fixes (session 3): 4 connective-tissue bugs fixed that were silently breaking Fern-style narrative-driven production. (1) voice_generator.py pause_before_sec: reveal detection now fires. (2) storyboard_generator.py narrative_function: LLM labels each segment directly — no more keyword guessing. (3) video_assembler.py focal_element default: text-based focal always applied from storyboard, no flag. (4) video_assembler.py spec override + window search: narrative_function from storyboard overrides motion/SFX/pacing; window search finds tagged footage across 6 storyboard entries per chunk.*
+*Session 4 (2026-03-03): A/V sync fixed (200.7s→0.41s PASS): chapter card double-counting, pause gap mapping, text format mismatch, post-build normalization. Script QA duration scoring tightened (15,40)→(20,30) + score_metric vs 24.5min target. Image reuse fixed: tagged_still→tagged_stills list with rotation (unique images 36→112/149). .djvu crash fixed. V5 rendered — narratively meaningless despite passing QA numerically. Editorial playbook approach initiated.*

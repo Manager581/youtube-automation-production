@@ -161,10 +161,15 @@ def _ffmpeg_available() -> bool:
 
 
 def _escape_text(text: str) -> str:
-    """Escape text for FFmpeg drawtext filter."""
+    """Escape text for FFmpeg drawtext filter.
+
+    Apostrophes are replaced with the visually-identical Unicode right single
+    quotation mark (U+2019) so they don't break single-quote delimiters in the
+    filter graph.  All other special chars are backslash-escaped.
+    """
     return (text
             .replace("\\", "\\\\")
-            .replace("'", "\\'")
+            .replace("'", "\u2019")   # avoid breaking single-quote wrapping
             .replace(":", "\\:")
             .replace("[", "\\[")
             .replace("]", "\\]"))
@@ -500,7 +505,9 @@ def add_text_overlay(
         shutil.copy(input_path, out_path)
         return out_path
 
-    vf = ",".join(drawtext_filters)
+    # Escape commas inside each drawtext filter (min/max/between expressions)
+    # so ffmpeg doesn't treat them as filter-chain separators.
+    vf = ",".join(f.replace(",", "\\,") for f in drawtext_filters)
     cmd = [
         "ffmpeg", "-y", "-i", str(input_path),
         "-vf", vf,
@@ -527,9 +534,10 @@ def prepare_clip(
 
     start_sec: offset into the clip to begin from (from clip_analyzer.find_best_moment).
     """
+    pad_res = OUTPUT_RES.replace("x", ":")   # ffmpeg pad needs 1920:1080
     vf = (
         f"scale={OUTPUT_RES}:force_original_aspect_ratio=decrease,"
-        f"pad={OUTPUT_RES}:(ow-iw)/2:(oh-ih)/2:black,"
+        f"pad={pad_res}:(ow-iw)/2:(oh-ih)/2:black,"
         f"hue=s={COLOR_SATURATION},"
         f"curves=all='0/0 {COLOR_BLACK_CRUSH:.3f}/0 1/1',"
         f"eq=gamma={COLOR_CONTRAST_GAMMA}"
@@ -540,6 +548,7 @@ def prepare_clip(
         "-i", str(clip_path),
         "-t", str(duration_sec),
         "-vf", vf,
+        "-r", str(OUTPUT_FPS),   # force consistent fps for concat
         "-c:v", "libx264", "-preset", "fast", "-crf", "23",
         "-pix_fmt", "yuv420p",
         "-an",
@@ -640,25 +649,54 @@ def _find_storyboard_match(
 def _chapters_from_storyboard(storyboard: list, chunks: list) -> list:
     """
     Extract chapter timing from storyboard is_chapter_break entries.
-    Maps each chapter break proportionally to the corresponding narration chunk
-    using relative position (both are generated from the same script in order).
+    Places each chapter at the nearest large pause gap (≥3s) between speech
+    chunks — these are the [PAUSE:5.0] / [PAUSE:3.0] markers written into
+    the script specifically for chapter breaks.
 
+    Falls back to proportional mapping if there aren't enough pause gaps.
     Called by build_timeline() when the narration manifest has no chapters.
     """
-    if not storyboard or not chunks:
+    chapter_entries = [e for e in storyboard if e.get("is_chapter_break")]
+    if not chapter_entries or not chunks:
         return []
+
+    # Find large pause gaps between speech chunks.
+    pause_gaps = []
+    for ci in range(len(chunks) - 1):
+        chunk_end_t = chunks[ci].get("start_sec", 0) + chunks[ci].get("duration_sec", 0)
+        next_start = chunks[ci + 1].get("start_sec", chunk_end_t)
+        gap = next_start - chunk_end_t
+        if gap >= 3.0:
+            pause_gaps.append((chunk_end_t, gap))
+
+    # Prefer 5.0s gaps (explicit chapter breaks), then 3.0s gaps as fallback.
+    pause_5s = sorted([p for p in pause_gaps if p[1] >= 4.5])
+    pause_3s = sorted([p for p in pause_gaps if p[1] < 4.5])
+    available = list(pause_5s)
+    if len(available) < len(chapter_entries):
+        available.extend(pause_3s[:len(chapter_entries) - len(available)])
+    available.sort()  # chronological order
+
     chapters = []
-    total_sb = max(len(storyboard) - 1, 1)
-    total_chunks = max(len(chunks) - 1, 1)
-    for i, entry in enumerate(storyboard):
-        if not entry.get("is_chapter_break"):
-            continue
-        # Map storyboard position to chunk index proportionally
-        chunk_idx = min(int(round(i / total_sb * total_chunks)), len(chunks) - 1)
+    for i, entry in enumerate(chapter_entries):
+        if i < len(available):
+            start_sec = available[i][0]
+        else:
+            # Fallback: proportional mapping for excess chapters
+            total_sb = max(len(storyboard) - 1, 1)
+            total_chunks = max(len(chunks) - 1, 1)
+            try:
+                sb_idx = storyboard.index(entry)
+            except ValueError:
+                sb_idx = i
+            chunk_idx = min(int(round(sb_idx / total_sb * total_chunks)),
+                            len(chunks) - 1)
+            start_sec = chunks[chunk_idx].get("start_sec", 0.0)
+
         chapters.append({
-            "num":       entry.get("chapter_num", len(chapters) + 2),
-            "title":     entry.get("chapter_title", f"Part {len(chapters) + 2}"),
-            "start_sec": chunks[chunk_idx].get("start_sec", 0.0),
+            "num":   entry.get("chapter_num", len(chapters) + 2),
+            "title": entry.get("chapter_title", f"Part {len(chapters) + 2}"),
+            "start_sec": start_sec,
         })
     return chapters
 
@@ -706,6 +744,27 @@ def build_timeline(
         if chapters:
             print(f"  Chapters extracted from storyboard: {len(chapters)} chapter breaks")
 
+    # Extend each speech chunk's visual coverage to fill the pause gap after it.
+    # The narration WAV includes pauses between chunks, so the visual timeline must
+    # match — otherwise A/V drift accumulates (visuals end before audio).
+    total_narration_dur = narration_manifest.get("total_duration_sec", 0)
+
+    # Build a set of chapter card start positions so we can skip those gaps.
+    chapter_starts = {float(ch.get("start_sec", -1)) for ch in chapters}
+
+    for ci in range(len(chunks)):
+        speech_end = chunks[ci].get("start_sec", 0) + chunks[ci].get("duration_sec", 0)
+        if ci + 1 < len(chunks):
+            next_start = chunks[ci + 1].get("start_sec", speech_end)
+            # Don't extend into pause gaps that have chapter cards — those cards
+            # fill the gap themselves. Extending into them double-counts duration.
+            if speech_end in chapter_starts:
+                chunks[ci]["_visual_end"] = speech_end
+            else:
+                chunks[ci]["_visual_end"] = next_start
+        else:
+            chunks[ci]["_visual_end"] = total_narration_dur or speech_end
+
     # Pre-compute lower-third events (first occurrence of each named person)
     lower_third_map = _detect_named_persons(chunks)
 
@@ -714,12 +773,13 @@ def build_timeline(
     def _clip_path_str(c):
         return str(c.get("local_path") or c.get("path") or "")
 
+    _STILL_EXTS = (".jpg", ".jpeg", ".png", ".webp")
     stills = [
         c for c in clips
         if c.get("downloaded") and (
             c.get("type") in ("still", "image")
-            or _clip_path_str(c).lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
-        )
+            or _clip_path_str(c).lower().endswith(_STILL_EXTS)
+        ) and _clip_path_str(c).lower().endswith(_STILL_EXTS)  # reject unsupported formats
     ]
     videos = [
         c for c in clips
@@ -749,16 +809,22 @@ def build_timeline(
     still_idx = 0
     video_idx = 0
     sb_cursor = 0   # sequential storyboard pointer — advances as we match chunks
+    _prev_still_path = None   # track last image for Ken Burns continuity
+    _prev_motion = None       # maintain motion direction across same-image sub-segments
 
     for chunk_idx, chunk in enumerate(chunks):
         chunk_start  = chunk.get("start_sec", cursor)
         chunk_dur    = chunk.get("duration_sec", DEFAULT_SEGMENT_SEC)
         chunk_text   = chunk.get("text", "")
-        chunk_end    = chunk_start + chunk_dur
+        # Use _visual_end to cover trailing pause gap (if set), otherwise
+        # fall back to speech-only end for backward compatibility.
+        chunk_end    = chunk.get("_visual_end", chunk_start + chunk_dur)
         content_type = chunk_types[chunk_idx]
         spec         = get_spec(content_type)
 
-        # Inject chapter card if one is scheduled at or just before this chunk
+        # Inject chapter card if one is scheduled at or just before this chunk.
+        # _visual_end was NOT extended into chapter-card gaps, so the card fills
+        # the gap without double-counting.
         for ch_start in sorted(chapter_by_sec.keys()):
             if cursor <= ch_start <= chunk_start:
                 ch = chapter_by_sec.pop(ch_start)
@@ -774,6 +840,13 @@ def build_timeline(
                     "narration_chunk_idx": None,
                 })
                 cursor += 0.4
+                # Pre-compute card duration (same formula as make_chapter_card)
+                roman_idx = min(ch["num"] - 1, len(_ROMAN) - 1) if ch["num"] >= 1 else 0
+                full_text = f"Chapter {_ROMAN[roman_idx]}: {ch['title']}"
+                _card_dur = (CHAPTER_CARD_FADE_SEC
+                             + len(full_text) / CHAPTER_CARD_CHARS_PER_SEC
+                             + CHAPTER_CARD_MIN_HOLD_SEC
+                             + CHAPTER_CARD_FADE_SEC)
                 # Chapter card placeholder (duration filled at render time)
                 segments.append({
                     "start_sec": round(cursor, 3),
@@ -787,7 +860,7 @@ def build_timeline(
                     "chapter_num":   ch["num"],
                     "chapter_title": ch["title"],
                 })
-                cursor += 0.0   # duration updated during render
+                cursor += _card_dur   # advance cursor past the card
 
         # Extract key phrases from this chunk for text overlay
         overlay_text, overlay_zone = _extract_overlay_text(chunk_text)
@@ -819,20 +892,21 @@ def build_timeline(
         # Segment duration range (after spec may be overridden by narrative_function)
         min_seg, max_seg = pacing_range(spec.cut_pacing)
 
-        # Story-tagged footage: prefer clips/stills near the current storyboard cursor.
-        # A 150-word narration chunk spans ~3-5 storyboard segments, so search a window.
-        tagged_still = None
-        tagged_clip  = None
+        # Story-tagged footage: collect ALL stills/clips matching the current
+        # storyboard window so sub-segments can rotate through them instead of
+        # reusing the same image for every cut within a chunk.
+        tagged_stills = []
+        tagged_clip   = None
         if sb_entry_idx is not None and storyboard:
             search_ids = set(range(sb_cursor, min(sb_cursor + 6, len(storyboard))))
             for s in stills:
                 if search_ids & set(s.get("storyboard_segment_ids", [])):
-                    tagged_still = s
-                    break
+                    tagged_stills.append(s)
             for c in videos:
                 if search_ids & set(c.get("storyboard_segment_ids", [])):
                     tagged_clip = c
                     break
+        tagged_still_idx = 0   # rotates through tagged_stills per sub-segment
 
         # Fill the chunk duration with one or more visual segments
         t = chunk_start
@@ -845,7 +919,9 @@ def build_timeline(
             seg_dur = raw_end - t
             is_chunk_start = (t == chunk_start)
 
-            # Motion: drawn from content-type weighted distribution (not random cycle)
+            # Motion: drawn from content-type weighted distribution, but maintain
+            # the same direction when consecutive sub-segments reuse the same image.
+            # This prevents jarring zoom-in → zoom-out → zoom-in on the same photo.
             motion = spec.weighted_motion()
 
             # SFX: content-type probability + type (not flat rate)
@@ -893,11 +969,20 @@ def build_timeline(
                     "motion": "natural",
                     "storyboard_match": sb_entry_idx is not None,
                 })
-            elif tagged_still or stills:
-                still = tagged_still or stills[still_idx % len(stills)]
-                if not tagged_still:
+            elif tagged_stills or stills:
+                if tagged_stills:
+                    still = tagged_stills[tagged_still_idx % len(tagged_stills)]
+                    tagged_still_idx += 1
+                else:
+                    still = stills[still_idx % len(stills)]
                     still_idx += 1
                 still_path = Path(still.get("path", still.get("local_path", "")))
+                # Ken Burns continuity: keep same direction for same image
+                sp_str = str(still_path)
+                if sp_str == _prev_still_path and _prev_motion:
+                    motion = _prev_motion
+                _prev_still_path = sp_str
+                _prev_motion = motion
                 focal = None
                 if still_path.exists():
                     # Text-based focal from storyboard — always apply, no model needed
@@ -911,7 +996,7 @@ def build_timeline(
                     "source_path": str(still_path),
                     "motion": motion,
                     "focal_point": focal,
-                    "storyboard_match": tagged_still is not None,
+                    "storyboard_match": bool(tagged_stills),
                 })
             elif sb_entry_idx is not None and storyboard:
                 # No real footage found but storyboard entry exists — generate visual
@@ -940,6 +1025,36 @@ def build_timeline(
 
             t += seg_dur
             cursor = t
+
+    # ── Post-build normalization ─────────────────────────────────────────
+    # Small drift can remain because chapter cards don't exactly fill their
+    # pause gaps. Scale content segment durations so total video ≈ narration.
+    if total_narration_dur > 0:
+        total_visual = 0.0
+        for s in segments:
+            if s["duration_sec"] < 0:  # chapter card sentinel
+                ri = min(s.get("chapter_num", 1) - 1, len(_ROMAN) - 1)
+                ft = f"Chapter {_ROMAN[ri]}: {s.get('chapter_title', '')}"
+                total_visual += (CHAPTER_CARD_FADE_SEC
+                                 + len(ft) / CHAPTER_CARD_CHARS_PER_SEC
+                                 + CHAPTER_CARD_MIN_HOLD_SEC
+                                 + CHAPTER_CARD_FADE_SEC)
+            else:
+                total_visual += s["duration_sec"]
+        drift = total_visual - total_narration_dur
+        if abs(drift) > 0.5:
+            content_dur = sum(s["duration_sec"] for s in segments
+                              if s["source_type"] not in ("chapter_card", "black")
+                              and s["duration_sec"] > 0)
+            if content_dur > 0:
+                scale = (content_dur - drift) / content_dur
+                for s in segments:
+                    if (s["source_type"] not in ("chapter_card", "black")
+                            and s["duration_sec"] > 0):
+                        s["duration_sec"] = round(s["duration_sec"] * scale, 3)
+                print(f"  A/V sync normalization: {drift:+.1f}s drift → "
+                      f"scaled {len([s for s in segments if s['source_type'] not in ('chapter_card','black')])} "
+                      f"segments by {scale:.4f}")
 
     return segments
 
@@ -976,45 +1091,48 @@ def _extract_overlay_text(chunk_text: str) -> tuple[str | None, str]:
     Extract a short text overlay and its display zone from a narration chunk.
     Returns (text, zone) where zone is "upper" | "center" | "lower".
 
-    Zone logic (matches Fern's measured 48%/28%/24% distribution):
-      - Dates/years/facts  → upper  (fact card, top of frame)
-      - Person names        → center (name reveal, mid frame)
-      - Location/context    → lower  (caption style)
+    Only returns overlays for high-value content:
+      - Full dates/years  → upper  (e.g. "November 28, 1953")
+      - Person names on first mention → center  (e.g. "Frank Olson")
+      - Named locations   → lower  (e.g. "Fort Detrick, Maryland")
+
+    Returns (None, "upper") for most chunks — Fern doesn't overlay every segment.
     """
-    # Dates/years → upper zone
-    year_match = re.search(r'\b(19[0-9]{2}|20[0-9]{2})\b', chunk_text)
+    # Full date expressions → upper zone  (e.g. "November 28, 1953" or "April 1953")
+    date_match = re.search(
+        r'((?:January|February|March|April|May|June|July|August|September|'
+        r'October|November|December)\s+\d{1,2},?\s+\d{4})', chunk_text)
+    if date_match:
+        return date_match.group(1), "upper"
+
+    # Standalone year with context  (e.g. "1953." at sentence start)
+    year_match = re.search(r'(?:^|\.\s+)(\d{4})\.\s', chunk_text)
     if year_match:
-        ctx_start = max(0, year_match.start() - 20)
-        ctx_end   = min(len(chunk_text), year_match.end() + 30)
-        ctx = chunk_text[ctx_start:ctx_end].strip()
-        words = ctx.split()[:5]
-        return " ".join(words), "upper"
+        return year_match.group(1), "upper"
 
-    # Person names (2–4 title-case words) → center zone
-    person_match = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3})\b', chunk_text)
-    if person_match:
-        name = person_match[0]
-        # If it looks like a person name (2 title-case words, no "The/A/An")
+    # Named locations with state/country  (e.g. "Fort Detrick, Maryland")
+    loc_match = re.search(
+        r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2},\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b',
+        chunk_text)
+    if loc_match:
+        loc = loc_match.group(1)
+        # Filter out sentence-start false positives
+        filler = {"The", "A", "An", "In", "On", "At", "Of", "To", "By", "But", "And", "His", "Her"}
+        if loc.split()[0] not in filler:
+            return loc[:45], "lower"
+
+    # Person names: only 2–3 word Title Case names that look like real names
+    # (skip sentence-initial words and common articles)
+    filler = {"The", "A", "An", "In", "On", "At", "Of", "To", "By", "But", "And",
+              "His", "Her", "He", "She", "It", "This", "That", "They", "Some",
+              "What", "When", "Where", "Over", "Under", "Room", "About", "After"}
+    person_matches = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})\b', chunk_text)
+    for name in person_matches:
         parts = name.split()
-        filler = {"The", "A", "An", "In", "On", "At", "Of", "To", "By"}
-        if len(parts) >= 2 and parts[0] not in filler:
+        if parts[0] not in filler and len(parts) >= 2:
             return name[:40], "center"
-        return name[:40], "upper"
 
-    # Location/context keywords → lower
-    location_words = {"america", "united states", "russia", "china", "north korea",
-                      "washington", "new york", "london", "moscow", "pentagon"}
-    chunk_lower = chunk_text.lower()
-    if any(w in chunk_lower for w in location_words):
-        words = chunk_text.strip().split()[:4]
-        return " ".join(words), "lower"
-
-    # Generic fallback → upper
-    words = chunk_text.strip().split()[:4]
-    candidate = " ".join(words)
-    if len(candidate) > 6:
-        return candidate, "upper"
-
+    # No overlay for most chunks — this is intentional
     return None, "upper"
 
 
@@ -1234,9 +1352,23 @@ def render(
     total_video_dur = render_cursor
 
     # Step 4: Concatenate all segments
-    print("\nConcatenating segments...")
+    print(f"\nConcatenating {len(segment_paths)} segments "
+          f"(planned: {total_video_dur:.1f}s / {total_video_dur/60:.1f}min)...")
     raw_video = tmp_dir / "video_no_audio.mp4"
     _concat_videos(segment_paths, raw_video)
+
+    # Verify concat output matches expected duration
+    try:
+        probe = subprocess.run(
+            ["ffprobe", "-v", "quiet", "-print_format", "json",
+             "-show_format", str(raw_video)],
+            capture_output=True, text=True)
+        concat_dur = float(json.loads(probe.stdout)["format"]["duration"])
+        drift = abs(concat_dur - total_video_dur)
+        print(f"  Concat video: {concat_dur:.1f}s  (expected {total_video_dur:.1f}s, "
+              f"drift {drift:.1f}s{'  ⚠️' if drift > 2.0 else '  ✓'})")
+    except Exception:
+        pass
 
     # Step 4b: Apply lower thirds in one pass (avoids N re-encodes)
     if lt_events:
@@ -1664,14 +1796,14 @@ def mix_audio(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest", str(out_path),
+            str(out_path),
         ]
     else:
         filter_complex = (
             f"[1:a]volume={NARRATION_VOLUME}[narr];"
             f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
             f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
-            f"[narr][music]amix=inputs=2:duration=first:dropout_transition=3[aout]"
+            f"[narr][music]amix=inputs=2:duration=first:dropout_transition=3:normalize=0[aout]"
         )
         cmd = [
             "ffmpeg", "-y",
@@ -1681,7 +1813,7 @@ def mix_audio(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest", str(out_path),
+            str(out_path),
         ]
     _run(cmd, "mix_audio")
     return out_path
@@ -1693,12 +1825,17 @@ def _mix_narration_only(
     out_path: Path,
     sfx_path: "Path | None" = None,
 ) -> Path:
-    """Attach narration (+ optional SFX) to video without background music."""
+    """Attach narration (+ optional SFX) to video without background music.
+
+    Uses -map flags to select exactly one video and one audio stream.
+    Does NOT use -shortest — if there's a small duration mismatch the video
+    simply freezes on the last frame while audio finishes (better than truncating).
+    """
     if sfx_path and sfx_path.exists():
         filter_complex = (
             f"[1:a]volume={NARRATION_VOLUME}[narr];"
             f"[2:a]volume=1.0[sfx];"
-            f"[narr][sfx]amix=inputs=2:duration=first:dropout_transition=0[aout]"
+            f"[narr][sfx]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[aout]"
         )
         cmd = [
             "ffmpeg", "-y",
@@ -1708,15 +1845,16 @@ def _mix_narration_only(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest", str(out_path),
+            str(out_path),
         ]
     else:
         cmd = [
             "ffmpeg", "-y",
             "-i", str(video_path),
             "-i", str(narration_path),
+            "-map", "0:v", "-map", "1:a",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest", str(out_path),
+            str(out_path),
         ]
     _run(cmd, "attach_audio")
     return out_path

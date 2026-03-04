@@ -34,7 +34,7 @@ FERN_BENCHMARKS = {
 
     # Duration
     'duration_target_min': 24.5,
-    'duration_range_min': (15, 40),
+    'duration_range_min': (20, 30),
 
     # Re-engagement hooks
     'hooks_per_min': 0.122,
@@ -216,7 +216,8 @@ def check_script(script_text, title=None):
     estimated_duration_min = word_count / B['wpm_target']
     estimated_wpm = B['wpm_target']  # We can't measure actual delivery, but we check word count
 
-    score, status, detail = score_range(estimated_duration_min, B['duration_range_min'][0], B['duration_range_min'][1])
+    # Score against the actual target (24.5 min), not just the wide range.
+    score, status, detail = score_metric(estimated_duration_min, B['duration_target_min'])
     results['scores']['duration'] = {'score': score, 'status': status, 'detail': detail}
 
     print(f"\n--- DURATION ---")
@@ -228,6 +229,10 @@ def check_script(script_text, title=None):
         results['issues'].append(f"Script is too short ({estimated_duration_min:.1f} min). Fern's sweet spot is {B['duration_target_min']:.0f} min. Add {int((B['duration_target_min'] - estimated_duration_min) * B['wpm_target'])} more words.")
     elif estimated_duration_min > B['duration_range_min'][1]:
         results['issues'].append(f"Script is too long ({estimated_duration_min:.1f} min). Consider trimming {int((estimated_duration_min - B['duration_target_min']) * B['wpm_target'])} words.")
+    elif score <= 50:
+        shortfall = B['duration_target_min'] - estimated_duration_min
+        if shortfall > 0:
+            results['issues'].append(f"Script is short ({estimated_duration_min:.1f} min vs {B['duration_target_min']:.0f} min target). Add ~{int(shortfall * B['wpm_target'])} words.")
 
     # ---- 2. OPENING HOOK ----
     print(f"\n--- OPENING HOOK (first ~30 words) ---")

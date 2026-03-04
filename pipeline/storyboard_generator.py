@@ -101,19 +101,25 @@ def parse_script_segments(script_path: Path) -> list[dict]:
         if not para:
             continue
 
-        # Detect chapter breaks
-        if re.match(r"^\[PAUSE:\d", para):
-            pause_match = re.match(r"^\[PAUSE:([\d.]+)\](.*)$", para, re.DOTALL)
-            if pause_match:
-                title_text = pause_match.group(2).strip()
-                chapter_num += 1
-                segments.append({
-                    "text": title_text or f"Chapter {chapter_num}",
-                    "emotion": current_emotion,
-                    "is_chapter_break": True,
-                    "chapter_num": chapter_num,
-                    "chapter_title": title_text or f"Chapter {chapter_num}",
-                })
+        # Detect explicit chapter headings (e.g. "CHAPTER 1: FORT DETRICK" or "OUTRO")
+        chapter_match = re.match(r"^(?:\[VOICE:[^\]]+\]\s*)?CHAPTER\s+\d+\s*:\s*(.+)$", para, re.IGNORECASE)
+        outro_match = re.match(r"^(?:\[VOICE:[^\]]+\]\s*)?OUTRO\s*$", para, re.IGNORECASE)
+        if chapter_match or outro_match:
+            title_text = chapter_match.group(1).strip() if chapter_match else "OUTRO"
+            # Strip any remaining markers from title
+            title_text = re.sub(r"\[VOICE:[^\]]+\]|\[BEAT\]|\[BREATH\]|\[PAUSE:[^\]]+\]", "", title_text).strip()
+            chapter_num += 1
+            segments.append({
+                "text": title_text,
+                "emotion": current_emotion,
+                "is_chapter_break": True,
+                "chapter_num": chapter_num,
+                "chapter_title": title_text,
+            })
+            continue
+
+        # Standalone pause markers — just skip (pauses are handled in voice generation)
+        if re.match(r"^\[PAUSE:[\d.]+\]\s*$", para):
             continue
 
         # Detect emotion changes
@@ -184,7 +190,8 @@ def _ollama_generate(model: str, prompt: str) -> str | None:
         "model": model,
         "prompt": prompt,
         "stream": False,
-        "options": {"temperature": 0.3, "num_predict": 200},
+        "think": False,          # disable qwen3.5 thinking mode — output only
+        "options": {"temperature": 0.3, "num_predict": 300},
     }).encode()
     try:
         req = urllib.request.Request(

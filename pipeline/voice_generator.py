@@ -66,6 +66,106 @@ WPM_TOLERANCE = 0.15
 WPM_STRETCH_MIN = 0.5   # ffmpeg atempo min
 WPM_STRETCH_MAX = 2.0   # ffmpeg atempo max
 
+# Per-register F5-TTS speed calibration (measured with _ref.wav clips)
+# Each register's reference clip has a different natural speaking rate.
+# These multipliers normalize all registers to ~139 WPM.
+REGISTER_SPEED = {
+    "neutral":   1.16,
+    "tense":     1.15,
+    "energized": 1.10,
+}
+
+
+# ---------------------------------------------------------------------------
+# TTS text preprocessor — convert numbers/symbols to spoken words
+# ---------------------------------------------------------------------------
+
+_ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+         "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+         "seventeen", "eighteen", "nineteen"]
+_TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+
+def _num_to_words(n: int) -> str:
+    if n < 0:
+        return "minus " + _num_to_words(-n)
+    if n < 20:
+        return _ONES[n]
+    if n < 100:
+        return _TENS[n // 10] + ("" if n % 10 == 0 else " " + _ONES[n % 10])
+    if n < 1000:
+        rest = _num_to_words(n % 100)
+        return _ONES[n // 100] + " hundred" + ("" if not rest else " " + rest)
+    if n < 1_000_000:
+        rest = _num_to_words(n % 1000)
+        return _num_to_words(n // 1000) + " thousand" + ("" if not rest else " " + rest)
+    if n < 1_000_000_000:
+        rest = _num_to_words(n % 1_000_000)
+        return _num_to_words(n // 1_000_000) + " million" + ("" if not rest else " " + rest)
+    return str(n)
+
+def _year_to_words(y: int) -> str:
+    if 1000 <= y <= 1999:
+        hi, lo = divmod(y, 100)
+        if lo == 0:
+            return _num_to_words(hi) + " hundred"
+        return _num_to_words(hi) + " " + _num_to_words(lo)
+    if 2000 <= y <= 2099:
+        if y == 2000:
+            return "two thousand"
+        return "two thousand " + _num_to_words(y - 2000)
+    return _num_to_words(y)
+
+def _tts_preprocess(text: str) -> str:
+    """Convert numbers, dates, and symbols to spoken words for TTS clarity."""
+    import re as _re
+    # Time: 3:09 → three oh nine
+    def _time_repl(m):
+        h, mi = int(m.group(1)), m.group(2)
+        mi_words = "oh " + _num_to_words(int(mi)) if mi.startswith("0") and len(mi) == 2 else _num_to_words(int(mi))
+        return _num_to_words(h) + " " + mi_words
+    text = _re.sub(r'\b(\d{1,2}):(\d{2})\b', _time_repl, text)
+    # Ordinals: 10th → tenth, 13th → thirteenth
+    _ordinal_map = {"1": "first", "2": "second", "3": "third", "5": "fifth",
+                    "8": "eighth", "9": "ninth", "12": "twelfth"}
+    def _ord_repl(m):
+        n = int(m.group(1))
+        s = str(n)
+        if s in _ordinal_map:
+            return _ordinal_map[s]
+        w = _num_to_words(n)
+        if w.endswith("y"):
+            return w[:-1] + "ieth"
+        if w.endswith("e"):
+            return w + "th" if not w.endswith("ve") else w[:-2] + "fth"
+        return w + "th"
+    text = _re.sub(r'\b(\d+)(?:st|nd|rd|th)\b', _ord_repl, text)
+    # Dollar amounts: $750,000 → seven hundred fifty thousand dollars
+    def _dollar_repl(m):
+        n = int(m.group(1).replace(",", ""))
+        return _num_to_words(n) + " dollars"
+    text = _re.sub(r'\$([0-9,]+)', _dollar_repl, text)
+    # Years (4-digit standalone): 1953 → nineteen fifty three
+    def _year_repl(m):
+        return _year_to_words(int(m.group(0)))
+    text = _re.sub(r'\b(1[0-9]{3}|20[0-9]{2})\b', _year_repl, text)
+    # Room numbers like 1018A
+    def _room_repl(m):
+        num_part = m.group(1)
+        letter = m.group(2) or ""
+        hi, lo = int(num_part[:2]), int(num_part[2:])
+        result = _num_to_words(hi) + " " + _num_to_words(lo)
+        if letter:
+            result += " " + letter.upper()
+        return result
+    text = _re.sub(r'\b(\d{4})([A-Za-z])\b', _room_repl, text)
+    # Remaining plain numbers: 22 → twenty two
+    def _plain_num(m):
+        return _num_to_words(int(m.group(0).replace(",", "")))
+    text = _re.sub(r'\b\d[\d,]*\b', _plain_num, text)
+    # U.S. → U S (avoid period confusion)
+    text = text.replace("U.S.", "U S")
+    return text
+
 
 # ---------------------------------------------------------------------------
 # Script segment data structures
@@ -314,12 +414,15 @@ def _load_tts():
 
 
 def _generate_chunk(tts, ref_audio: Path, ref_text: str,
-                    gen_text: str, out_path: Path) -> Path:
+                    gen_text: str, out_path: Path,
+                    speed: float = 0.85) -> Path:
+    gen_text = _tts_preprocess(gen_text)
     tts.infer(
         ref_file=str(ref_audio),
         ref_text=ref_text,
         gen_text=gen_text,
         file_wave=str(out_path),
+        speed=speed,
     )
     return out_path
 
@@ -416,7 +519,8 @@ def generate_narration(
             print(f"  [{speech_idx}/{speech_count}] [{reg}] {word_count}w: {seg.text[:55]}…")
 
             try:
-                _generate_chunk(tts, ref_wav, ref_text, seg.text, chunk_wav)
+                reg_speed = REGISTER_SPEED.get(reg, 1.15)
+                _generate_chunk(tts, ref_wav, ref_text, seg.text, chunk_wav, speed=reg_speed)
             except Exception as e:
                 print(f"  ERROR on segment {speech_idx}: {e}")
                 raise
