@@ -79,3 +79,4 @@ Thumbs.db
 
 # ─── QR codes (unrelated to Fern pipeline) ────────────────────────────────────
 qr_codes/
+.animation_cache/

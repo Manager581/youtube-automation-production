@@ -59,16 +59,28 @@ import sys
 import tempfile
 from pathlib import Path
 
-from pipeline.production_rules import (
-    classify_all_chunks,
-    get_spec,
-    load_playbook,
-    pacing_range,
-    playbook_motion,
-    playbook_prefers_clip,
-    playbook_segment_duration,
-    playbook_sfx,
-)
+try:
+    from pipeline.production_rules import (
+        classify_all_chunks,
+        get_spec,
+        load_playbook,
+        pacing_range,
+        playbook_motion,
+        playbook_prefers_clip,
+        playbook_segment_duration,
+        playbook_sfx,
+    )
+except ImportError:
+    from production_rules import (  # type: ignore[no-redef]
+        classify_all_chunks,
+        get_spec,
+        load_playbook,
+        pacing_range,
+        playbook_motion,
+        playbook_prefers_clip,
+        playbook_segment_duration,
+        playbook_sfx,
+    )
 
 # ---------------------------------------------------------------------------
 # Production constants — measured from Fern videos
@@ -325,60 +337,85 @@ def make_ken_burns(
 ) -> Path:
     """
     Render a Ken Burns motion clip from a still image using FFmpeg zoompan.
-    direction is one of: zoom_in, zoom_out, static, pan_left, pan_right, pan_up, pan_down
-    focal_point: (fx, fy) as fractions of frame size — zoom stays anchored here.
-                 Defaults to frame center (0.5, 0.5) if not provided.
-    zoom_rate: zoom % change per second. Default is Fern's measured 5%/sec.
-               Pass KB_INTENSITY_ZOOM[intensity] for story-aware pacing.
-    """
-    n_frames = int(math.ceil(duration_sec * fps))
-    zoom_per_frame = zoom_rate / fps
 
-    # Focal point for zoom anchor — defaults to center
+    Three layers of motion (matching Fern's actual camera behavior):
+      1. Primary motion — zoom or pan as specified by direction
+      2. Compound drift — zooms get subtle pan; pans get subtle zoom
+      3. Easing — sinusoidal ease-in-out on all motion (never constant speed)
+
+    direction: zoom_in, zoom_out, static, pan_left, pan_right, pan_up, pan_down
+    focal_point: (fx, fy) as fractions [0..1]. Zoom anchors here. Default center.
+    zoom_rate: zoom %/sec change. Modulated by storyboard intensity.
+    """
+    n_frames = max(int(math.ceil(duration_sec * fps)), 1)
+
+    # Focal point — defaults to center
     fx, fy = focal_point if focal_point else (0.5, 0.5)
-    # x/y in zoompan are the top-left corner of the crop window
-    # To keep (fx, fy) centered: x = iw*fx - (iw/zoom)/2, clamped to valid range
-    x_focal = f"max(0,min(iw-iw/zoom,iw*{fx:.4f}-(iw/zoom/2)))"
-    y_focal = f"max(0,min(ih-ih/zoom,ih*{fy:.4f}-(ih/zoom/2)))"
+
+    # --- Easing expression: sinusoidal ease-in-out ---
+    # ease(t) = (1 - cos(t * PI)) / 2  →  0 at start, 1 at end, smooth accel/decel
+    ease = f"(1-cos(on/{n_frames}*PI))/2"
+
+    # --- Compound drift: subtle random offset unique to each segment ---
+    # For zooms: camera settles toward focal (zoom_in) or drifts away (zoom_out)
+    # For pans: slight perpendicular sway so motion isn't robotically straight
+    drift_x = random.uniform(-0.03, 0.03)
+    drift_y = random.uniform(-0.02, 0.02)
+
+    # Helper: focal-anchored x/y with optional animated drift
+    def _focal_xy(dfx: str = "0", dfy: str = "0") -> tuple[str, str]:
+        """Return clamped (x_expr, y_expr) for zoompan, with drift offset."""
+        ex = f"max(0,min(iw-iw/zoom,iw*({fx:.4f}+{dfx})-(iw/zoom/2)))"
+        ey = f"max(0,min(ih-ih/zoom,ih*({fy:.4f}+{dfy})-(ih/zoom/2)))"
+        return ex, ey
 
     if direction == "zoom_in":
         start_z = KB_START_ZOOM_IN
-        end_z   = min(start_z + zoom_rate * duration_sec, KB_MAX_ZOOM)
-        z_expr  = f"min(zoom+{zoom_per_frame:.6f},{end_z:.4f})"
-        x_expr  = x_focal
-        y_expr  = y_focal
+        end_z = min(start_z + zoom_rate * duration_sec, KB_MAX_ZOOM)
+        delta = end_z - start_z
+        # Eased zoom: starts slow, accelerates, decelerates into cut
+        z_expr = f"{start_z:.4f}+{delta:.4f}*{ease}"
+        # Compound: settle drift — start slightly offset, land on focal point
+        dfx = f"{drift_x:.4f}*(1-{ease})"
+        dfy = f"{drift_y:.4f}*(1-{ease})"
+        x_expr, y_expr = _focal_xy(dfx, dfy)
 
     elif direction == "zoom_out":
         start_z = min(KB_START_ZOOM_OUT, KB_MAX_ZOOM)
-        end_z   = max(start_z - zoom_rate * duration_sec, 1.0)
-        z_expr  = f"if(eq(on,1),{start_z:.4f},max(zoom-{zoom_per_frame:.6f},{end_z:.4f}))"
-        x_expr  = x_focal
-        y_expr  = y_focal
+        end_z = max(start_z - zoom_rate * duration_sec, 1.0)
+        delta = start_z - end_z
+        # Eased zoom out
+        z_expr = f"{start_z:.4f}-{delta:.4f}*{ease}"
+        # Compound: release drift — start on focal, drift away as we pull back
+        dfx = f"{drift_x:.4f}*{ease}"
+        dfy = f"{drift_y:.4f}*{ease}"
+        x_expr, y_expr = _focal_xy(dfx, dfy)
 
-    elif direction == "pan_left":
-        z_expr  = "1.15"   # slight zoom to allow panning without black bars
-        x_expr  = f"iw/2-(iw/zoom/2)+((iw/zoom)*0.15*on/{n_frames})"
-        y_expr  = "ih/2-(ih/zoom/2)"
+    elif direction in ("pan_left", "pan_right", "pan_up", "pan_down"):
+        # Pans get subtle zoom (1.15→1.22) instead of flat 1.15
+        z_expr = f"1.15+0.07*{ease}"
+        # Eased pan travel (15% of visible frame)
+        eased_t = f"0.15*{ease}"
+        if direction == "pan_left":
+            x_expr = f"iw/2-(iw/zoom/2)+((iw/zoom)*{eased_t})"
+            # Perpendicular micro-sway on y
+            y_expr = f"ih/2-(ih/zoom/2)+((ih/zoom)*{drift_y:.4f}*{ease})"
+        elif direction == "pan_right":
+            x_expr = f"iw/2-(iw/zoom/2)-((iw/zoom)*{eased_t})"
+            y_expr = f"ih/2-(ih/zoom/2)+((ih/zoom)*{drift_y:.4f}*{ease})"
+        elif direction == "pan_up":
+            x_expr = f"iw/2-(iw/zoom/2)+((iw/zoom)*{drift_x:.4f}*{ease})"
+            y_expr = f"ih/2-(ih/zoom/2)+((ih/zoom)*{eased_t})"
+        else:  # pan_down
+            x_expr = f"iw/2-(iw/zoom/2)+((iw/zoom)*{drift_x:.4f}*{ease})"
+            y_expr = f"ih/2-(ih/zoom/2)-((ih/zoom)*{eased_t})"
 
-    elif direction == "pan_right":
-        z_expr  = "1.15"
-        x_expr  = f"iw/2-(iw/zoom/2)-((iw/zoom)*0.15*on/{n_frames})"
-        y_expr  = "ih/2-(ih/zoom/2)"
-
-    elif direction == "pan_up":
-        z_expr  = "1.15"
-        x_expr  = "iw/2-(iw/zoom/2)"
-        y_expr  = f"ih/2-(ih/zoom/2)+((ih/zoom)*0.15*on/{n_frames})"
-
-    elif direction == "pan_down":
-        z_expr  = "1.15"
-        x_expr  = "iw/2-(iw/zoom/2)"
-        y_expr  = f"ih/2-(ih/zoom/2)-((ih/zoom)*0.15*on/{n_frames})"
-
-    else:  # static — very subtle 1% drift zoom-in (not fully static, maintains energy)
-        z_expr  = f"min(zoom+{zoom_per_frame*0.2:.6f},1.05)"
-        x_expr  = x_focal
-        y_expr  = y_focal
+    else:  # static — micro-drift + micro-zoom (Fern never truly holds still)
+        z_expr = f"1.0+0.03*{ease}"   # barely perceptible 3% zoom
+        # Random directional drift so each "static" shot has unique subtle movement
+        dfx = f"{drift_x:.4f}*{ease}"
+        dfy = f"{drift_y:.4f}*{ease}"
+        x_expr, y_expr = _focal_xy(dfx, dfy)
 
     zoompan = (
         f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
@@ -1521,7 +1558,7 @@ def render(
         zi_pct   = motions.count("zoom_in")   / n * 100
         zo_pct   = motions.count("zoom_out")  / n * 100
         st_pct   = motions.count("static")    / n * 100
-        pan_pct  = (motions.count("pan_right") + motions.count("pan_left")) / n * 100
+        pan_pct  = (motions.count("pan_right") + motions.count("pan_left") + motions.count("pan_up") + motions.count("pan_down")) / n * 100
         sfx_pct  = len(sfx_events) / n * 100 if n else 0
         lt_count = len(lt_events)
 

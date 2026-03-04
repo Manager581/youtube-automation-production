@@ -625,20 +625,43 @@ def playbook_motion(
     Resolve motion direction + zoom speed from narrative intent.
 
     Returns (direction, zoom_rate_pct_per_sec).
-    Direction is narratively motivated: zoom_in for focus/reveal,
-    zoom_out for scope/scale, static for reading time.
-    Speed scales with emotional intensity.
+    Direction uses weighted randomness to match Fern's measured distribution
+    (~50% zoom_in, ~26% zoom_out, ~13% pan, ~7% static) while biasing
+    toward narratively appropriate motions.
     """
     import random
 
-    # Direction from narrative function
-    direction = _NF_MOTION_MAP.get(narrative_function, "zoom_in")
+    # Narrative function → weighted motion choices
+    # Each function has a primary direction but allows variety
+    _NF_MOTION_WEIGHTS: dict[str, list[tuple[str, float]]] = {
+        # reveal/climax: almost always zoom_in (pushing into evidence)
+        "reveal":       [("zoom_in", 0.85), ("zoom_out", 0.10), ("static", 0.05)],
+        "revelation":   [("zoom_in", 0.85), ("zoom_out", 0.10), ("static", 0.05)],
+        "climax":       [("zoom_in", 0.75), ("zoom_out", 0.15), ("static", 0.10)],
+        "evidence":     [("zoom_in", 0.75), ("zoom_out", 0.15), ("pan_up", 0.10)],
+        # tension_build: mostly zoom_in, some variety
+        "tension_build":     [("zoom_in", 0.55), ("zoom_out", 0.25), ("pan_down", 0.10), ("static", 0.05), ("pan_up", 0.05)],
+        "stakes_moment":     [("zoom_in", 0.55), ("zoom_out", 0.25), ("static", 0.10), ("pan_up", 0.10)],
+        # context: most variety — matches establishing_context measured weights
+        "context_background":    [("zoom_in", 0.35), ("zoom_out", 0.26), ("static", 0.23), ("pan_up", 0.10), ("pan_down", 0.06)],
+        "establishing_context":  [("zoom_in", 0.35), ("zoom_out", 0.26), ("static", 0.23), ("pan_up", 0.10), ("pan_down", 0.06)],
+        # character intro: zoom_in to face dominant
+        "character_intro":   [("zoom_in", 0.54), ("zoom_out", 0.26), ("static", 0.12), ("pan_right", 0.04), ("pan_down", 0.04)],
+        # hook: sustained zoom_in
+        "hook_opening":  [("zoom_in", 0.53), ("zoom_out", 0.18), ("static", 0.24), ("pan_right", 0.05)],
+        # aftermath: mostly zoom_out (pulling back, breathing room)
+        "aftermath":     [("zoom_out", 0.50), ("zoom_in", 0.25), ("static", 0.15), ("pan_up", 0.10)],
+        # transition/chapter: static
+        "transition":    [("static", 0.70), ("zoom_out", 0.30)],
+        "chapter_break": [("static", 0.90), ("zoom_out", 0.10)],
+    }
 
-    # Special overrides from playbook logic
-    if narrative_function in ("aftermath",):
-        direction = "zoom_out"
-    elif narrative_function in ("reveal", "revelation", "evidence"):
-        direction = "zoom_in"  # Always push into evidence
+    weights = _NF_MOTION_WEIGHTS.get(
+        narrative_function,
+        [("zoom_in", 0.40), ("zoom_out", 0.24), ("static", 0.20), ("pan_up", 0.08), ("pan_down", 0.05), ("pan_right", 0.02), ("pan_left", 0.01)],
+    )
+    directions, probs = zip(*weights)
+    direction = random.choices(directions, weights=probs, k=1)[0]
 
     # Zoom rate from intensity
     lo, hi = _INTENSITY_ZOOM_RANGE.get(intensity, (1.0, 3.0))

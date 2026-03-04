@@ -212,7 +212,7 @@ def _ollama_generate(model: str, prompt: str) -> str | None:
             data=payload,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=60) as resp:
+        with urllib.request.urlopen(req, timeout=300) as resp:
             data = json.loads(resp.read())
             return data.get("response", "").strip()
     except Exception:
