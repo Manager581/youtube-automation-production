@@ -62,7 +62,12 @@ from pathlib import Path
 from pipeline.production_rules import (
     classify_all_chunks,
     get_spec,
+    load_playbook,
     pacing_range,
+    playbook_motion,
+    playbook_prefers_clip,
+    playbook_segment_duration,
+    playbook_sfx,
 )
 
 # ---------------------------------------------------------------------------
@@ -312,7 +317,7 @@ def detect_focal_point(
 def make_ken_burns(
     image_path: Path,
     duration_sec: float,
-    direction: str,      # "zoom_in" | "zoom_out" | "static" | "pan_left" | "pan_right"
+    direction: str,      # "zoom_in" | "zoom_out" | "static" | "pan_left" | "pan_right" | "pan_up" | "pan_down"
     out_path: Path,
     fps: int = OUTPUT_FPS,
     focal_point: tuple[float, float] | None = None,
@@ -320,7 +325,7 @@ def make_ken_burns(
 ) -> Path:
     """
     Render a Ken Burns motion clip from a still image using FFmpeg zoompan.
-    direction is one of: zoom_in, zoom_out, static, pan_left, pan_right
+    direction is one of: zoom_in, zoom_out, static, pan_left, pan_right, pan_up, pan_down
     focal_point: (fx, fy) as fractions of frame size — zoom stays anchored here.
                  Defaults to frame center (0.5, 0.5) if not provided.
     zoom_rate: zoom % change per second. Default is Fern's measured 5%/sec.
@@ -359,6 +364,16 @@ def make_ken_burns(
         z_expr  = "1.15"
         x_expr  = f"iw/2-(iw/zoom/2)-((iw/zoom)*0.15*on/{n_frames})"
         y_expr  = "ih/2-(ih/zoom/2)"
+
+    elif direction == "pan_up":
+        z_expr  = "1.15"
+        x_expr  = "iw/2-(iw/zoom/2)"
+        y_expr  = f"ih/2-(ih/zoom/2)+((ih/zoom)*0.15*on/{n_frames})"
+
+    elif direction == "pan_down":
+        z_expr  = "1.15"
+        x_expr  = "iw/2-(iw/zoom/2)"
+        y_expr  = f"ih/2-(ih/zoom/2)-((ih/zoom)*0.15*on/{n_frames})"
 
     else:  # static — very subtle 1% drift zoom-in (not fully static, maintains energy)
         z_expr  = f"min(zoom+{zoom_per_frame*0.2:.6f},1.05)"
@@ -828,10 +843,23 @@ def build_timeline(
         for ch_start in sorted(chapter_by_sec.keys()):
             if cursor <= ch_start <= chunk_start:
                 ch = chapter_by_sec.pop(ch_start)
-                # 0.4s black separator before card
+                # Playbook 5-step chapter transition:
+                # 1. Concluding punch (in narration — no code change needed)
+                # 2. Dramatic silence: 2-5s black (replaces old 0.4s)
+                # 3. Music bridge (handled by [PAUSE:5.0+] in script audio)
+                # Look for transition_spec from storyboard chapter entry
+                _silence_dur = 3.0   # default
+                if storyboard:
+                    for sb_e in storyboard:
+                        if (sb_e.get("is_chapter_break")
+                                and sb_e.get("chapter_title") == ch.get("title")):
+                            ts = sb_e.get("transition_spec", {})
+                            sil_range = ts.get("silence_sec", [2, 5])
+                            _silence_dur = random.uniform(sil_range[0], sil_range[1])
+                            break
                 segments.append({
                     "start_sec": round(cursor, 3),
-                    "duration_sec": 0.4,
+                    "duration_sec": round(_silence_dur, 3),
                     "source_type": "black",
                     "source_path": None,
                     "motion": "static",
@@ -839,7 +867,7 @@ def build_timeline(
                     "text_zone": "upper",
                     "narration_chunk_idx": None,
                 })
-                cursor += 0.4
+                cursor += _silence_dur
                 # Pre-compute card duration (same formula as make_chapter_card)
                 roman_idx = min(ch["num"] - 1, len(_ROMAN) - 1) if ch["num"] >= 1 else 0
                 full_text = f"Chapter {_ROMAN[roman_idx]}: {ch['title']}"
@@ -862,9 +890,9 @@ def build_timeline(
                 })
                 cursor += _card_dur   # advance cursor past the card
 
-        # Extract key phrases from this chunk for text overlay
+        # ── DP7: Text overlay ─────────────────────────────────────────
+        # Prefer storyboard text_overlay_type when available
         overlay_text, overlay_zone = _extract_overlay_text(chunk_text)
-        # Content-type can override text zone when classification is confident
         if spec.text_zone != "auto":
             overlay_zone = spec.text_zone
 
@@ -873,24 +901,55 @@ def build_timeline(
         sb_entry_idx = None
         sb_focal_element = None
         sb_intensity = "neutral"
+        sb_entry = None
         if storyboard:
             sb_entry_idx = _find_storyboard_match(chunk_text, storyboard,
                                                   start_idx=sb_cursor)
             if sb_entry_idx is not None:
-                sb_cursor = sb_entry_idx   # advance pointer
-                sb_focal_element = storyboard[sb_entry_idx].get("focal_element")
-                sb_intensity     = storyboard[sb_entry_idx].get("intensity", "neutral")
-                # narrative_function from storyboard overrides keyword-based classifier.
-                # The LLM had full script context when it chose this label — more accurate.
-                sb_narrative_fn = storyboard[sb_entry_idx].get("narrative_function")
+                sb_cursor = sb_entry_idx
+                sb_entry = storyboard[sb_entry_idx]
+                sb_focal_element = sb_entry.get("focal_element")
+                sb_intensity     = sb_entry.get("intensity", "neutral")
+                sb_narrative_fn = sb_entry.get("narrative_function")
                 if sb_narrative_fn and sb_narrative_fn not in ("chapter_break",):
                     content_type = sb_narrative_fn
                     spec = get_spec(content_type)
                     if spec.text_zone != "auto":
                         overlay_zone = spec.text_zone
 
-        # Segment duration range (after spec may be overridden by narrative_function)
-        min_seg, max_seg = pacing_range(spec.cut_pacing)
+                # DP7 enrichment: storyboard text_overlay_type → semantic overlay
+                sb_overlay_type = sb_entry.get("text_overlay_type")
+                if sb_overlay_type and sb_overlay_type != "null":
+                    if sb_overlay_type == "person_identification":
+                        # Extract FULL NAME from text
+                        names = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", chunk_text)
+                        if names:
+                            overlay_text = names[0].upper()
+                            overlay_zone = "center"
+                    elif sb_overlay_type == "entity_label":
+                        acronyms = re.findall(r"\b[A-Z]{2,}\b", chunk_text)
+                        real = [a for a in acronyms if a not in ("THE", "AND", "FOR", "BUT")]
+                        if real:
+                            overlay_text = real[0]
+                            overlay_zone = "center"
+                    elif sb_overlay_type == "location_label":
+                        overlay_zone = "lower"
+                    elif sb_overlay_type == "quote":
+                        quotes = re.findall(r'"([^"]{10,})"', chunk_text)
+                        if quotes:
+                            overlay_text = f'"{quotes[0]}"'
+                            overlay_zone = "center"
+
+        # ── DP2: Segment duration ─────────────────────────────────────
+        # Prefer storyboard hold_duration_range, fallback to playbook by shot_type,
+        # then existing pacing_range.
+        if sb_entry and "hold_duration_range" in sb_entry:
+            min_seg, max_seg = sb_entry["hold_duration_range"]
+        elif sb_entry and sb_entry.get("shot_type"):
+            min_seg, max_seg = playbook_segment_duration(
+                sb_entry["shot_type"], content_type)
+        else:
+            min_seg, max_seg = pacing_range(spec.cut_pacing)
 
         # Story-tagged footage: collect ALL stills/clips matching the current
         # storyboard window so sub-segments can rotate through them instead of
@@ -906,27 +965,34 @@ def build_timeline(
                 if search_ids & set(c.get("storyboard_segment_ids", [])):
                     tagged_clip = c
                     break
-        tagged_still_idx = 0   # rotates through tagged_stills per sub-segment
+        tagged_still_idx = 0
 
         # Fill the chunk duration with one or more visual segments
         t = chunk_start
         while t < chunk_end - 0.5:
             remaining = chunk_end - t
             raw_end = t + min(remaining, random.uniform(min_seg, max_seg))
-            # Snap cut to nearest beat if one falls within BEAT_SNAP_WINDOW
             if beat_times:
                 raw_end = snap_to_beat(t, raw_end, beat_times, min_seg, min(remaining, max_seg))
             seg_dur = raw_end - t
             is_chunk_start = (t == chunk_start)
 
-            # Motion: drawn from content-type weighted distribution, but maintain
-            # the same direction when consecutive sub-segments reuse the same image.
-            # This prevents jarring zoom-in → zoom-out → zoom-in on the same photo.
-            motion = spec.weighted_motion()
+            # ── DP3: Motion type + speed ──────────────────────────────
+            # Prefer storyboard motion_direction, fallback to playbook resolver,
+            # then existing weighted random.
+            if sb_entry and "motion_direction" in sb_entry:
+                motion = sb_entry["motion_direction"]
+            else:
+                motion = spec.weighted_motion()
 
-            # SFX: content-type probability + type (not flat rate)
-            # Reveal/climax/stakes have much higher probability than background
-            if random.random() < spec.sfx_probability:
+            # ── DP4: SFX ──────────────────────────────────────────────
+            # Prefer playbook-driven SFX (narrative function + cut motivation),
+            # fallback to existing probability.
+            sb_cut_mot = sb_entry.get("cut_motivation") if sb_entry else None
+            seg_sfx_type = playbook_sfx(content_type, sb_cut_mot)
+            if seg_sfx_type:
+                seg_sfx = seg_sfx_type
+            elif random.random() < spec.sfx_probability:
                 seg_sfx = spec.sfx_type
             else:
                 seg_sfx = None
@@ -935,16 +1001,28 @@ def build_timeline(
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
             seg_lower_third = {"name": lt_info[0], "role": lt_info[1]} if lt_info else None
 
-            # Footage: content-type drives clip vs. still probability
-            use_clip = bool(tagged_clip) or (
-                (video_idx < len(videos)) and (
-                    random.random() < spec.clip_probability
-                    or (random.random() < 0.05)
+            # ── DP5: Clip vs still ────────────────────────────────────
+            # Prefer playbook shot_type classification, fallback to existing probability.
+            sb_shot_type = sb_entry.get("shot_type") if sb_entry else None
+            if sb_shot_type and playbook_prefers_clip(sb_shot_type):
+                use_clip = bool(tagged_clip) or (video_idx < len(videos))
+            elif bool(tagged_clip):
+                use_clip = True
+            else:
+                use_clip = (
+                    (video_idx < len(videos)) and (
+                        random.random() < spec.clip_probability
+                        or (random.random() < 0.05)
+                    )
                 )
-            )
 
-            # Ken Burns zoom rate modulated by storyboard intensity
-            kb_zoom_rate = KB_INTENSITY_ZOOM.get(sb_intensity, KB_ZOOM_RATE_PER_SEC)
+            # ── Ken Burns zoom rate ───────────────────────────────────
+            # Prefer storyboard zoom_rate_pct_sec (editorial playbook values),
+            # fallback to intensity-keyed constant.
+            if sb_entry and "zoom_rate_pct_sec" in sb_entry:
+                kb_zoom_rate = sb_entry["zoom_rate_pct_sec"] / 100.0
+            else:
+                kb_zoom_rate = KB_INTENSITY_ZOOM.get(sb_intensity, KB_ZOOM_RATE_PER_SEC)
 
             seg_base = {
                 "start_sec": round(t, 3),
@@ -1056,7 +1134,49 @@ def build_timeline(
                       f"scaled {len([s for s in segments if s['source_type'] not in ('chapter_card','black')])} "
                       f"segments by {scale:.4f}")
 
+    # ── Post-build compliance report (validates, doesn't drive) ─────
+    _print_compliance_report(segments)
+
     return segments
+
+
+def _print_compliance_report(segments: list[dict]) -> None:
+    """Print editorial compliance stats — validates output vs playbook targets."""
+    content_segs = [s for s in segments
+                    if s["source_type"] not in ("chapter_card", "black")]
+    if not content_segs:
+        return
+
+    total_dur = sum(s["duration_sec"] for s in content_segs if s["duration_sec"] > 0)
+    total_dur_min = total_dur / 60.0 if total_dur > 0 else 1.0
+
+    # Cut rate
+    cut_rate = len(content_segs) / total_dur_min if total_dur_min > 0 else 0
+
+    # Motion distribution
+    motion_counts: dict[str, int] = {}
+    for s in content_segs:
+        m = s.get("motion", "static")
+        motion_counts[m] = motion_counts.get(m, 0) + 1
+    n = len(content_segs) or 1
+
+    # Average segment duration
+    avg_dur = total_dur / len(content_segs) if content_segs else 0
+
+    # SFX rate
+    sfx_segs = sum(1 for s in content_segs if s.get("sfx"))
+    sfx_pct = sfx_segs / n * 100
+
+    print(f"\n  ── Editorial compliance report ──")
+    print(f"  Cut rate:    {cut_rate:.1f}/min  (playbook target: ~13.2)")
+    print(f"  Avg segment: {avg_dur:.1f}s")
+    print(f"  Motion:  ", end="")
+    for m in ("zoom_in", "zoom_out", "static", "pan_up", "pan_down", "pan_right", "pan_left", "natural"):
+        c = motion_counts.get(m, 0)
+        if c > 0:
+            print(f"{m}={c/n*100:.0f}% ", end="")
+    print(f"\n  SFX:     {sfx_pct:.1f}% of cuts  (playbook: ~10.9%)")
+    print(f"  Storyboard match: {sum(1 for s in content_segs if s.get('storyboard_match'))}/{n}")
 
 
 def _build_motion_cycle() -> list[str]:

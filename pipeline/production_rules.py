@@ -562,3 +562,165 @@ PACING_RANGES: dict[str, tuple[float, float]] = {
 def pacing_range(cut_pacing: str) -> tuple[float, float]:
     """Return (min_sec, max_sec) for segment duration given a cut_pacing label."""
     return PACING_RANGES.get(cut_pacing, PACING_RANGES["normal"])
+
+
+# ---------------------------------------------------------------------------
+# Editorial Playbook — narrative-intent-driven decision resolvers
+# Source: analysis/fern/FERN_EDITORIAL_PLAYBOOK.json
+# These replace random statistical sampling with WHY-driven logic.
+# ---------------------------------------------------------------------------
+
+import json
+from pathlib import Path
+
+_PLAYBOOK_CACHE: dict | None = None
+
+
+def load_playbook(path: str | Path | None = None) -> dict | None:
+    """Load the editorial playbook once and cache it. Returns None if not found."""
+    global _PLAYBOOK_CACHE
+    if _PLAYBOOK_CACHE is not None:
+        return _PLAYBOOK_CACHE
+    if path is None:
+        path = Path(__file__).parent.parent / "analysis" / "fern" / "FERN_EDITORIAL_PLAYBOOK.json"
+    p = Path(path)
+    if p.exists():
+        _PLAYBOOK_CACHE = json.loads(p.read_text())
+        return _PLAYBOOK_CACHE
+    return None
+
+
+# Narrative function → default motion direction mapping
+_NF_MOTION_MAP: dict[str, str] = {
+    "hook_opening":       "zoom_in",
+    "context_background": "zoom_in",
+    "establishing_context": "zoom_in",
+    "character_intro":    "zoom_in",
+    "tension_build":      "zoom_in",
+    "evidence":           "zoom_in",
+    "reveal":             "zoom_in",
+    "revelation":         "zoom_in",
+    "stakes_moment":      "zoom_in",
+    "climax":             "zoom_in",
+    "aftermath":          "zoom_out",
+    "transition":         "static",
+    "chapter_break":      "static",
+}
+
+# Intensity → zoom speed range (percent per second)
+_INTENSITY_ZOOM_RANGE: dict[str, tuple[float, float]] = {
+    "neutral":   (1.0, 3.0),
+    "ominous":   (1.5, 3.0),
+    "tense":     (3.0, 6.0),
+    "energized": (5.0, 9.0),
+}
+
+
+def playbook_motion(
+    narrative_function: str,
+    intensity: str,
+    playbook: dict | None = None,
+) -> tuple[str, float]:
+    """
+    Resolve motion direction + zoom speed from narrative intent.
+
+    Returns (direction, zoom_rate_pct_per_sec).
+    Direction is narratively motivated: zoom_in for focus/reveal,
+    zoom_out for scope/scale, static for reading time.
+    Speed scales with emotional intensity.
+    """
+    import random
+
+    # Direction from narrative function
+    direction = _NF_MOTION_MAP.get(narrative_function, "zoom_in")
+
+    # Special overrides from playbook logic
+    if narrative_function in ("aftermath",):
+        direction = "zoom_out"
+    elif narrative_function in ("reveal", "revelation", "evidence"):
+        direction = "zoom_in"  # Always push into evidence
+
+    # Zoom rate from intensity
+    lo, hi = _INTENSITY_ZOOM_RANGE.get(intensity, (1.0, 3.0))
+
+    # Extreme revelations get snap zoom (rare — only use for reveal + energized)
+    if narrative_function in ("reveal", "revelation") and intensity == "energized":
+        lo, hi = 15.0, 25.0
+
+    zoom_rate = random.uniform(lo, hi)
+    return direction, round(zoom_rate, 2)
+
+
+# Shot type → segment duration range (from playbook segment_duration_by_type)
+_SHOT_DURATION_RANGE: dict[str, tuple[float, float]] = {
+    "document_photo":       (4.0, 20.0),
+    "archival_footage":     (2.0, 8.0),
+    "news_screenshot":      (2.0, 8.0),
+    "news_footage":         (2.0, 8.0),
+    "documentary_footage":  (4.0, 12.0),
+    "documentary_photo":    (4.0, 12.0),
+    "reconstructed_footage": (2.0, 6.0),
+    "title_card":           (2.0, 4.0),
+    "chapter_card":         (2.0, 4.0),
+    "person_photo":         (4.0, 12.0),
+    "map":                  (3.0, 8.0),
+}
+
+
+def playbook_segment_duration(
+    shot_type: str,
+    narrative_function: str | None = None,
+    playbook: dict | None = None,
+) -> tuple[float, float]:
+    """
+    Resolve segment duration range from visual type.
+
+    Returns (min_sec, max_sec). Duration is determined by WHAT's on screen
+    (document_photo gets held 10.4s avg, archival clips are 4.6s),
+    not by abstract pacing labels.
+    """
+    if shot_type in _SHOT_DURATION_RANGE:
+        return _SHOT_DURATION_RANGE[shot_type]
+    # Fallback to pacing_range using narrative function → pacing guess
+    if narrative_function in ("climax",):
+        return pacing_range("very_fast")
+    if narrative_function in ("tension_build", "reveal", "stakes_moment"):
+        return pacing_range("fast")
+    return pacing_range("normal")
+
+
+# Shot types that should prefer video clips over stills
+_CLIP_SHOT_TYPES: set[str] = {
+    "archival_footage", "documentary_footage", "reconstructed_footage",
+    "news_footage",
+}
+
+
+def playbook_prefers_clip(shot_type: str) -> bool:
+    """Return True if this shot_type should use a video clip rather than a still."""
+    return shot_type in _CLIP_SHOT_TYPES
+
+
+def playbook_sfx(
+    narrative_function: str,
+    cut_motivation: str | None = None,
+) -> str | None:
+    """
+    Resolve SFX placement from narrative context.
+
+    Playbook rule: "Minimal — 10.9% of cuts. Fern relies on music + voice.
+    Type: Subtle impact_thud at major reveals only."
+    """
+    import random
+
+    # SFX only at narrative-motivated cuts, not visual freshness
+    if cut_motivation and cut_motivation == "visual_freshness":
+        return None
+
+    if narrative_function in ("reveal", "revelation", "climax"):
+        return "impact" if random.random() < 0.30 else None
+    if narrative_function in ("stakes_moment",):
+        return "impact" if random.random() < 0.15 else None
+    if narrative_function in ("tension_build",):
+        return "rumble" if random.random() < 0.10 else None
+    return None

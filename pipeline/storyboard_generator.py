@@ -43,6 +43,19 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+try:
+    from pipeline.production_rules import (
+        load_playbook,
+        playbook_motion,
+        playbook_segment_duration,
+    )
+except ImportError:
+    from production_rules import (  # type: ignore[no-redef]
+        load_playbook,
+        playbook_motion,
+        playbook_segment_duration,
+    )
+
 # ── Config ────────────────────────────────────────────────────────────────────
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -209,7 +222,8 @@ def _ollama_generate(model: str, prompt: str) -> str | None:
 # ── Visual brief generation ───────────────────────────────────────────────────
 
 STORYBOARD_PROMPT = """You are a documentary video editor working in the style of @fern-tv on YouTube.
-Your job: given one sentence of narration, decide what specific image should appear on screen.
+Your job: given one sentence of narration, decide what specific image should appear on screen
+and HOW it should be presented (motion, zoom speed, cut motivation).
 
 Rules:
 - Be SPECIFIC. Not "a document" but "the original 1973 FBI memo with CONFIDENTIAL stamp visible"
@@ -219,6 +233,30 @@ Rules:
 - If the narration says a name → show that person's face or their work
 - If the narration says a date → show something from that date
 - If the narration describes a location → show that location
+
+Motion rules (from Fern's editorial playbook):
+- zoom_in = drawing attention to detail, building tension, revealing evidence
+- zoom_out = showing scope/scale, pulling back after intense moment, establishing location
+- pan_right/left = scanning a document, reading text, timeline progression
+- pan_up/pan_down = scrolling archival text, reading newspaper columns
+- static = letting viewer read text, brief transitional moment
+- zoom speed = narrative intensity: 1-3%/s context, 3-5%/s tension, 5-9%/s peak, 15-25%/s extreme revelation (max 1-2 per video)
+
+cut_motivation = WHY is this a new visual moment:
+- narrative_shift: story moves to new topic/person/era
+- name_drop: a person is named for the first time
+- evidence_intro: a document/proof/artifact is cited
+- location_named: a new place is mentioned
+- tone_change: emotional register shifts
+- visual_freshness: same narrative beat, but current image held too long
+
+text_overlay_type = what text (if any) should reinforce the narration:
+- person_identification: show person's FULL NAME on first mention
+- entity_label: show organization/program name (e.g., MKULTRA, FBI)
+- location_label: show place name to set the scene
+- quote: show the subject's own words as they're read
+- source_citation: show [source number] on documents
+- null: no text overlay needed
 
 narrative_function guide:
 - hook_opening: first 30s, establishes stakes
@@ -237,7 +275,11 @@ Respond with ONLY valid JSON, no explanation:
   "focal_element": "what element in the frame to zoom toward (10 words max)",
   "shot_type": "document_photo | archival_footage | person_photo | map | news_footage | documentary_photo",
   "intensity": "tense | neutral | energized | ominous",
-  "narrative_function": "hook_opening | context_background | character_intro | tension_build | reveal | stakes_moment | climax | aftermath"
+  "narrative_function": "hook_opening | context_background | character_intro | tension_build | reveal | stakes_moment | climax | aftermath",
+  "motion_direction": "zoom_in | zoom_out | pan_right | pan_left | pan_up | pan_down | static",
+  "zoom_rate_pct_sec": 3.0,
+  "cut_motivation": "narrative_shift | name_drop | evidence_intro | location_named | tone_change | visual_freshness",
+  "text_overlay_type": "person_identification | entity_label | location_label | quote | source_citation | null"
 }
 
 Narration: "{TEXT}"
@@ -258,7 +300,7 @@ def generate_visual_brief(
     """Generate visual direction for one segment. Returns enriched segment dict."""
 
     if segment.get("is_chapter_break"):
-        return {
+        brief = {
             **segment,
             "show": "chapter card — black screen with chapter title",
             "search_query": None,
@@ -267,6 +309,7 @@ def generate_visual_brief(
             "intensity": segment.get("emotion", "neutral"),
             "narrative_function": "chapter_break",
         }
+        return _enrich_from_playbook(brief)
 
     text = segment["text"]
     emotion = segment.get("emotion", "neutral")
@@ -278,7 +321,8 @@ def generate_visual_brief(
         if cache_file.exists():
             try:
                 cached = json.loads(cache_file.read_text())
-                return {**segment, **cached, "_cached": True}
+                merged = {**segment, **cached, "_cached": True}
+                return _enrich_from_playbook(merged)
             except json.JSONDecodeError:
                 pass
 
@@ -292,11 +336,17 @@ def generate_visual_brief(
     else:
         brief = _parse_ollama_response(response, text, emotion)
 
-    # Cache result
-    if use_cache and brief:
-        cache_file.write_text(json.dumps(brief))
+    # Enrich with playbook rules (fills any missing fields)
+    brief = _enrich_from_playbook({**segment, **brief})
 
-    return {**segment, **brief}
+    # Cache result (strip segment fields to keep cache clean)
+    if use_cache:
+        cache_fields = {k: v for k, v in brief.items()
+                        if k not in ("text", "emotion", "is_chapter_break",
+                                     "chapter_num", "chapter_title", "_cached")}
+        cache_file.write_text(json.dumps(cache_fields))
+
+    return brief
 
 
 def _parse_ollama_response(response: str, text: str, emotion: str) -> dict:
@@ -306,12 +356,16 @@ def _parse_ollama_response(response: str, text: str, emotion: str) -> dict:
     if match:
         try:
             data = json.loads(match.group())
-            # Validate required fields (narrative_function optional — added field, older caches lack it)
+            # Validate required fields
             required = {"show", "search_query", "focal_element", "shot_type", "intensity"}
             if required.issubset(data.keys()):
                 result = {k: data[k] for k in required}
-                if "narrative_function" in data:
-                    result["narrative_function"] = data["narrative_function"]
+                # Accept all optional playbook fields
+                for opt in ("narrative_function", "motion_direction",
+                            "zoom_rate_pct_sec", "cut_motivation",
+                            "text_overlay_type"):
+                    if opt in data:
+                        result[opt] = data[opt]
                 return result
         except json.JSONDecodeError:
             pass
@@ -379,6 +433,10 @@ def _fallback_brief(text: str, emotion: str) -> dict:
     else:
         narrative_function = "context_background"
 
+    # Resolve playbook-driven motion + duration
+    direction, zoom_rate = playbook_motion(narrative_function, emotion)
+    dur_min, dur_max = playbook_segment_duration(shot_type, narrative_function)
+
     return {
         "show": show,
         "search_query": query,
@@ -386,7 +444,116 @@ def _fallback_brief(text: str, emotion: str) -> dict:
         "shot_type": shot_type,
         "intensity": emotion,
         "narrative_function": narrative_function,
+        "motion_direction": direction,
+        "zoom_rate_pct_sec": zoom_rate,
+        "hold_duration_range": [dur_min, dur_max],
+        "cut_motivation": _infer_cut_motivation(text, narrative_function),
+        "text_overlay_type": _infer_text_overlay_type(text, narrative_function),
     }
+
+
+# ── Playbook enrichment ──────────────────────────────────────────────────────
+
+def _infer_cut_motivation(text: str, narrative_function: str) -> str:
+    """Classify WHY this segment is a new visual moment."""
+    tl = text.lower()
+
+    # Name drop — proper nouns suggest a person being introduced
+    proper_nouns = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", text)
+    if narrative_function == "character_intro" or proper_nouns:
+        return "name_drop"
+
+    # Evidence intro — documents, studies, reports being cited
+    if any(w in tl for w in ["document", "memo", "file", "report", "letter",
+                              "study", "evidence", "investigation", "classified",
+                              "according to", "records show", "files reveal"]):
+        return "evidence_intro"
+
+    # Location named
+    if any(w in tl for w in ["in ", "at ", "from "]) and re.search(
+            r"\b[A-Z][a-z]+(?:,\s*[A-Z][a-z]+)?\b", text):
+        # Check for place-like patterns (City, State)
+        if re.search(r"\b[A-Z][a-z]+,\s*[A-Z]", text):
+            return "location_named"
+
+    # Tone change
+    if narrative_function in ("reveal", "revelation", "climax", "stakes_moment"):
+        return "tone_change"
+
+    # Narrative shift — topic/era/person change
+    if narrative_function in ("hook_opening", "chapter_break", "transition"):
+        return "narrative_shift"
+
+    return "visual_freshness"
+
+
+def _infer_text_overlay_type(text: str, narrative_function: str) -> str | None:
+    """Map text patterns to semantic overlay type."""
+    # Person identification — first mention of a full name
+    if narrative_function == "character_intro":
+        names = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", text)
+        if names:
+            return "person_identification"
+
+    # Quote — text contains quoted speech
+    if re.search(r'"[^"]{10,}"', text) or re.search(r"\u201c[^\u201d]{10,}\u201d", text):
+        return "quote"
+
+    # Entity label — ALL CAPS acronyms or org names
+    if re.search(r"\b[A-Z]{2,}\b", text):
+        acronyms = re.findall(r"\b[A-Z]{2,}\b", text)
+        # Filter out common words that happen to be caps
+        real_acronyms = [a for a in acronyms if a not in ("THE", "AND", "FOR", "BUT", "NOT", "HIS", "HER")]
+        if real_acronyms:
+            return "entity_label"
+
+    # Location label — place names (City, State pattern)
+    if re.search(r"\b[A-Z][a-z]+,\s*[A-Z][a-z]+\b", text):
+        return "location_label"
+
+    return None
+
+
+def _enrich_from_playbook(brief: dict) -> dict:
+    """
+    Post-processor: fill any missing playbook fields using narrative intent.
+
+    Applied to BOTH Ollama responses and fallback-generated briefs.
+    Handles old cached entries gracefully (fills missing fields only).
+    """
+    nf = brief.get("narrative_function", "context_background")
+    intensity = brief.get("intensity", "neutral")
+    shot_type = brief.get("shot_type", "document_photo")
+    text = brief.get("text", brief.get("show", ""))
+
+    # motion_direction + zoom_rate_pct_sec
+    if "motion_direction" not in brief or "zoom_rate_pct_sec" not in brief:
+        direction, zoom_rate = playbook_motion(nf, intensity)
+        brief.setdefault("motion_direction", direction)
+        brief.setdefault("zoom_rate_pct_sec", zoom_rate)
+
+    # hold_duration_range
+    if "hold_duration_range" not in brief:
+        dur_min, dur_max = playbook_segment_duration(shot_type, nf)
+        brief["hold_duration_range"] = [dur_min, dur_max]
+
+    # cut_motivation
+    if "cut_motivation" not in brief:
+        brief["cut_motivation"] = _infer_cut_motivation(text, nf)
+
+    # text_overlay_type
+    if "text_overlay_type" not in brief:
+        brief["text_overlay_type"] = _infer_text_overlay_type(text, nf)
+
+    # chapter_break transition_spec
+    if nf == "chapter_break" and "transition_spec" not in brief:
+        brief["transition_spec"] = {
+            "silence_sec": [2, 5],
+            "card_duration_sec": [2, 4],
+            "style": "white_serif_on_dark",
+        }
+
+    return brief
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
