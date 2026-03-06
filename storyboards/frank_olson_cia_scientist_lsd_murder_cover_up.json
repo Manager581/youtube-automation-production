@@ -3,10 +3,10 @@
     "text": "November 28, 1953. New York City. 3:09 in the morning.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: November 28, 1953. New York City. 3:09 in the morning.",
-    "search_query": "November New York City",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Dark aerial view of 1950s Manhattan skyline at night, city lights",
+    "search_query": "New York City skyline 1950s night",
+    "focal_element": "midtown hotel district",
+    "shot_type": "archival_footage",
     "intensity": "energized",
     "narrative_function": "climax",
     "motion_direction": "static",
@@ -16,15 +16,16 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "A man crashes through a closed window on the 10th floor of the Hotel Statler and falls to his death on the pavement below.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: A man crashes through a closed window on the 10th floor of t",
-    "search_query": "Hotel Statler",
-    "focal_element": "primary subject",
+    "show": "Hotel Statler (now Hotel Pennsylvania) exterior, 1950s photograph",
+    "search_query": "Hotel Statler New York 1950s",
+    "focal_element": "hotel upper floors and windows",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -35,16 +36,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "His name is Frank Olson.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: His name is Frank Olson.",
-    "search_query": "His Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Portrait photograph of Frank Olson, government ID or family photo",
+    "search_query": "Frank Olson portrait CIA scientist",
+    "focal_element": "Frank Olson's face",
+    "shot_type": "person_photo",
     "intensity": "energized",
     "narrative_function": "climax",
     "motion_direction": "zoom_in",
@@ -54,15 +56,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He's 43 years old. A bacteriologist. A government scientist. A husband. The father of three young children who are at home asleep in Maryland right now, waiting for their dad to come back.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: He's 43 years old. A bacteriologist. A government scientist.",
-    "search_query": "He The Maryland",
-    "focal_element": "primary subject",
+    "show": "1950s suburban family scene — father, mother, children, modest home",
+    "search_query": "1950s American family suburban Maryland",
+    "focal_element": "family gathered together",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -73,16 +76,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "And the U.S. government is about to spend the next 22 years lying about how he died.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: And the U.S. government is about to spend the next 22 years ",
-    "search_query": "And",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Close-up of classified government document with heavy black redactions",
+    "search_query": "classified document stamped top secret redacted",
+    "focal_element": "TOP SECRET stamp and redaction marks",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -92,15 +96,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "His roommate that night is a CIA officer named Robert Lashbrook.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: His roommate that night is a CIA officer named Robert Lashbr",
-    "search_query": "His CIA Robert Lashbrook",
-    "focal_element": "primary subject",
+    "show": "Shadowy figure in a dark hotel room, silhouette near phone, noir atmosphere",
+    "search_query": "Robert Lashbrook CIA officer 1950s",
+    "focal_element": "figure's silhouette against window",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -111,16 +116,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "When police arrive at the scene, Lashbrook is calm. Unnaturally calm. He's already on the phone when investigators get to the room.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: When police arrive at the scene, Lashbrook is calm. Unnatura",
-    "search_query": "When Lashbrook Unnaturally He",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "1950s New York police at a hotel crime scene, noir atmosphere, flashbulbs",
+    "search_query": "1950s crime scene hotel New York police",
+    "focal_element": "police officers examining scene",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -130,16 +136,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
-    "text": "They would later trace that call. The number he dialed belonged to Sidney Gottlieb \u2014 the head of the CIA's most secret program in American history. A program that would eventually become one of the greatest scandals in the history of the United States government.",
+    "text": "They would later trace that call. The number he dialed belonged to Sidney Gottlieb — the head of the CIA's most secret program in American history. A program that would eventually become one of the greatest scandals in the history of the United States government.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: They would later trace that call. The number he dialed belon",
-    "search_query": "They The Sidney Gottlieb",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Portrait of Sidney Gottlieb, the CIA chemist who ran MKUltra",
+    "search_query": "Sidney Gottlieb CIA MKUltra portrait",
+    "focal_element": "Gottlieb's face",
+    "shot_type": "person_photo",
     "intensity": "neutral",
     "narrative_function": "aftermath",
     "motion_direction": "zoom_out",
@@ -149,16 +156,17 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "A program called MKUltra.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: A program called MKUltra.",
-    "search_query": "A program called MKUltra.",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Declassified MKUltra program document with CIA letterhead",
+    "search_query": "MKUltra CIA document declassified",
+    "focal_element": "MKUltra project name on document",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -168,16 +176,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
-    "text": "The official story \u2014 the one the government put forward and defended for decades \u2014 was that Frank Olson had suffered a mental breakdown and taken his own life.",
+    "text": "The official story — the one the government put forward and defended for decades — was that Frank Olson had suffered a mental breakdown and taken his own life.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The official story \u2014 the one the government put forward and ",
-    "search_query": "The Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "1953 newspaper clipping reporting scientist's death as suicide",
+    "search_query": "newspaper headline suicide CIA scientist 1953",
+    "focal_element": "headline text",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -187,16 +196,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "It was a lie. And they knew it was a lie from the moment they told it.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: It was a lie. And they knew it was a lie from the moment the",
-    "search_query": "It And",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Shattered mirror or cracked glass — visual metaphor for broken truth",
+    "search_query": "cracked mirror shattered glass dark",
+    "focal_element": "fracture pattern in glass",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -206,16 +216,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "But here's the thing. Even after the truth started to come out \u2014 even after the CIA admitted the drugging, after Congress held hearings, after documents were declassified, after a Netflix documentary was made about this case \u2014 even after all of that \u2014",
+    "text": "But here's the thing. Even after the truth started to come out — even after the CIA admitted the drugging, after Congress held hearings, after documents were declassified, after a Netflix documentary was made about this case — even after all of that —",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "official document related to: But here's the thing. Even after the truth started to come o",
-    "search_query": "But Even CIA Congress",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Congressional hearing room, formal proceedings, senators at long table",
+    "search_query": "US Congress hearing room 1975 Church Committee",
+    "focal_element": "witness table and microphones",
+    "shot_type": "archival_footage",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -225,15 +236,16 @@
       20.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "The full truth has never been confirmed.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The full truth has never been confirmed.",
-    "search_query": "The",
-    "focal_element": "primary subject",
+    "show": "Dark foggy path disappearing into nothing — truth still hidden",
+    "search_query": "fog obscured path dark unknown",
+    "focal_element": "vanishing point in fog",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -244,16 +256,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And the men who were responsible died without ever facing justice.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: And the men who were responsible died without ever facing ju",
-    "search_query": "And",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Empty courtroom or scales of justice — no one faced consequences",
+    "search_query": "empty courtroom justice scales",
+    "focal_element": "empty defendant's chair or tilted scales",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -263,16 +276,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "This is the story of Frank Olson. And what the CIA did to him.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: This is the story of Frank Olson. And what the CIA did to hi",
-    "search_query": "This Frank Olson And",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson with his family, candid photo, 1950s Americana",
+    "search_query": "Frank Olson family photo 1950s",
+    "focal_element": "Frank's face among family",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -282,7 +296,8 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "FORT DETRICK",
@@ -290,7 +305,7 @@
     "is_chapter_break": true,
     "chapter_num": 1,
     "chapter_title": "FORT DETRICK",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -320,9 +335,9 @@
     "text": "To understand what happened to Frank Olson, you need to understand where he worked.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: To understand what happened to Frank Olson, you need to unde",
-    "search_query": "To Frank Olson",
-    "focal_element": "primary subject",
+    "show": "Fort Detrick military complex — entrance gate, sign, guard post",
+    "search_query": "Fort Detrick biological weapons laboratory",
+    "focal_element": "Fort Detrick sign",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -333,15 +348,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "Fort Detrick, Maryland. 1943.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Fort Detrick, Maryland. 1943.",
-    "search_query": "Fort Detrick Maryland",
-    "focal_element": "primary subject",
+    "show": "Aerial view of Fort Detrick complex, military buildings, 1940s",
+    "search_query": "Fort Detrick Maryland 1943 aerial",
+    "focal_element": "laboratory buildings sprawl",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -352,16 +368,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "location_label"
+    "text_overlay_type": "location_label",
+    "visual_approach": "real_archival"
   },
   {
-    "text": "The United States has just entered the Second World War, and the military is racing to develop every possible weapon. That includes biological weapons \u2014 diseases and pathogens engineered to be weaponized and deployed against enemy populations.",
+    "text": "The United States has just entered the Second World War, and the military is racing to develop every possible weapon. That includes biological weapons — diseases and pathogens engineered to be weaponized and deployed against enemy populations.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: The United States has just entered the Second World War, and",
-    "search_query": "The United States Second",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "WWII-era military laboratory, scientists in protective gear, glass vials",
+    "search_query": "World War II biological warfare laboratory",
+    "focal_element": "scientists at work",
+    "shot_type": "archival_footage",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -371,15 +388,16 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "Frank Olson was recruited to join the Army Biological Warfare Laboratories at Fort Detrick in 1943. He had a doctorate in biochemistry. He was brilliant, thorough, and driven.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson was recruited to join the Army Biological Warfar",
-    "search_query": "Frank Olson Army Biological",
-    "focal_element": "primary subject",
+    "show": "1950s military scientist in lab coat at Fort Detrick, working with equipment",
+    "search_query": "Fort Detrick scientist 1950s laboratory",
+    "focal_element": "scientist's hands working with lab equipment",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -390,15 +408,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
-    "text": "He specialized in aerobiology \u2014 specifically, the science of how biological agents can be released into the air to infect the maximum number of people.",
+    "text": "He specialized in aerobiology — specifically, the science of how biological agents can be released into the air to infect the maximum number of people.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He specialized in aerobiology \u2014 specifically, the science of",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Close-up of laboratory equipment — microscope, petri dishes, biological samples",
+    "search_query": "aerobiology pathogen laboratory microscope",
+    "focal_element": "microscope lens and slides",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -409,15 +428,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Over the next decade, he rose to become one of the most important scientists in the entire American bioweapons program.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Over the next decade, he rose to become one of the most impo",
-    "search_query": "Over American",
-    "focal_element": "primary subject",
+    "show": "Military research facility corridor, restricted access signs, sterile hallway",
+    "search_query": "classified military research facility 1950s",
+    "focal_element": "RESTRICTED ACCESS sign",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -428,15 +448,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And that program was enormous.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: And that program was enormous.",
-    "search_query": "And",
-    "focal_element": "primary subject",
+    "show": "Sprawling Fort Detrick campus, multiple buildings, military vehicles",
+    "search_query": "Fort Detrick campus buildings 1950s expansion",
+    "focal_element": "scale of the complex",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -447,15 +468,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "By the early 1950s, Fort Detrick employed thousands of scientists and military personnel. They were developing anthrax, brucellosis, botulinum toxin. They were running experiments on everything from livestock to human volunteers.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: By the early 1950s, Fort Detrick employed thousands of scien",
-    "search_query": "By Fort Detrick They",
-    "focal_element": "primary subject",
+    "show": "Group of scientists in white coats at Fort Detrick, formal group photograph",
+    "search_query": "Fort Detrick scientists group photo 1950s",
+    "focal_element": "row of scientists faces",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -466,15 +488,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "They were also working closely with the CIA.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: They were also working closely with the CIA.",
-    "search_query": "They CIA",
-    "focal_element": "primary subject",
+    "show": "CIA headquarters exterior or CIA seal — the intelligence connection",
+    "search_query": "CIA headquarters Langley 1950s",
+    "focal_element": "CIA eagle seal",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -485,16 +508,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "Because the Cold War had changed everything.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Because the Cold War had changed everything.",
-    "search_query": "Because Cold War",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Cold War imagery — nuclear mushroom cloud, fallout shelter sign, Duck and Cover",
+    "search_query": "Cold War propaganda nuclear fallout shelter",
+    "focal_element": "mushroom cloud or fallout shelter sign",
+    "shot_type": "archival_footage",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -504,16 +528,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "In the early 1950s, American POWs returning from Korea were saying things that terrified the U.S. intelligence community. Soldiers who had been captured were coming home confessing to biological warfare crimes they hadn't committed. Denouncing America. Praising communism. Reciting prepared statements with a strange, flat, mechanical quality.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: In the early 1950s, American POWs returning from Korea were ",
-    "search_query": "In American Korea Soldiers",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Korean War POWs, haggard soldiers, brainwashing propaganda footage",
+    "search_query": "Korean War POW brainwashing 1950s",
+    "focal_element": "soldiers' faces showing distress",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -523,16 +548,17 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The CIA's conclusion was stark: the Soviets had developed a method of controlling the human mind.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The CIA's conclusion was stark: the Soviets had developed a ",
-    "search_query": "The CIA Soviets",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Cold War propaganda about Soviet mind control, newspaper headlines, fear",
+    "search_query": "Soviet mind control propaganda Cold War",
+    "focal_element": "alarming headline text",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -542,16 +568,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "And the United States had to develop one too.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: And the United States had to develop one too.",
-    "search_query": "And United States",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Pentagon exterior or military intelligence briefing room, serious atmosphere",
+    "search_query": "Pentagon military intelligence Cold War 1950s",
+    "focal_element": "Pentagon building or briefing table",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "static",
@@ -561,16 +588,17 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
-    "text": "This was the birth of MKUltra. And it would consume the next decade of Frank Olson's life \u2014 even though, in the beginning, he didn't fully understand what he was part of.",
+    "text": "This was the birth of MKUltra. And it would consume the next decade of Frank Olson's life — even though, in the beginning, he didn't fully understand what he was part of.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: This was the birth of MKUltra. And it would consume the next",
-    "search_query": "This And Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "MKUltra authorization document, typed memorandum with CIA stamps",
+    "search_query": "MKUltra program document CIA authorization",
+    "focal_element": "project authorization text and signatures",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -580,7 +608,8 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "THE PROGRAM",
@@ -588,7 +617,7 @@
     "is_chapter_break": true,
     "chapter_num": 2,
     "chapter_title": "THE PROGRAM",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -618,10 +647,10 @@
     "text": "MKUltra was officially authorized by CIA Director Allen Dulles in April 1953.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: MKUltra was officially authorized by CIA Director Allen Dull",
-    "search_query": "CIA Director Allen Dulles",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Portrait of CIA Director Allen Dulles, formal government photo",
+    "search_query": "Allen Dulles CIA Director portrait 1950s",
+    "focal_element": "Allen Dulles's face, pipe, glasses",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -631,16 +660,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
-    "text": "Its stated goal was the development of techniques for \"behavior modification\" \u2014 a clinical way of saying they wanted to learn how to control what people believed, what they said, and what they did.",
+    "text": "Its stated goal was the development of techniques for \"behavior modification\" — a clinical way of saying they wanted to learn how to control what people believed, what they said, and what they did.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: Its stated goal was the development of techniques for \"behav",
-    "search_query": "Its",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Declassified CIA memo discussing behavioral modification techniques",
+    "search_query": "behavior modification CIA document declassified",
+    "focal_element": "typed text about behavior control",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -650,16 +680,17 @@
       8.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "quote"
+    "text_overlay_type": "quote",
+    "visual_approach": "real_archival"
   },
   {
     "text": "The program eventually involved 150 separate research projects. It funded experiments at 80 institutions, including 44 colleges and universities, 15 research foundations, and 12 hospitals. Most of the scientists involved had no idea their funding was coming from the CIA. They thought they were working on legitimate psychological research.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The program eventually involved 150 separate research projec",
-    "search_query": "The It Most CIA",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "List of MKUltra subprojects, university names, financial records",
+    "search_query": "MKUltra subproject list declassified document",
+    "focal_element": "project numbers and dollar amounts",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "aftermath",
     "motion_direction": "zoom_in",
@@ -669,16 +700,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "The man who ran it all was Sidney Gottlieb.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The man who ran it all was Sidney Gottlieb.",
-    "search_query": "The Sidney Gottlieb",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Sidney Gottlieb photograph — the man who ran MKUltra",
+    "search_query": "Sidney Gottlieb CIA chemist portrait",
+    "focal_element": "Gottlieb's face",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -688,15 +720,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "Gottlieb was 35 years old when he took over MKUltra. He had a PhD in chemistry from Caltech. He had a clubfoot and a stutter, and was by all accounts fiercely intelligent and almost frighteningly committed to the work.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Gottlieb was 35 years old when he took over MKUltra. He had ",
-    "search_query": "Gottlieb He Ph Caltech",
-    "focal_element": "primary subject",
+    "show": "1940s university chemistry lab, academic setting, glassware and equipment",
+    "search_query": "Caltech campus 1940s chemistry laboratory",
+    "focal_element": "chemistry apparatus",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -707,16 +740,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He believed, genuinely, that he was protecting the United States. That the Soviets would stop at nothing, and so neither could America.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: He believed, genuinely, that he was protecting the United St",
-    "search_query": "He United States That",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "American flag waving, government building, patriotic Cold War imagery",
+    "search_query": "patriotic Cold War American flag government",
+    "focal_element": "flag against government building",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -726,15 +760,16 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "Under his direction, MKUltra tested virtually everything that might alter human consciousness. Hypnosis. Electroconvulsive therapy. Sensory deprivation. Drugs \u2014 dozens of different drugs, in dozens of combinations, administered to subjects who had no idea what was happening to them.",
+    "text": "Under his direction, MKUltra tested virtually everything that might alter human consciousness. Hypnosis. Electroconvulsive therapy. Sensory deprivation. Drugs — dozens of different drugs, in dozens of combinations, administered to subjects who had no idea what was happening to them.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Under his direction, MKUltra tested virtually everything tha",
-    "search_query": "Under Hypnosis Electroconvulsive Sensory",
-    "focal_element": "primary subject",
+    "show": "MKUltra experiment imagery — isolation chamber, electrodes, clinical setting",
+    "search_query": "MKUltra experiments sensory deprivation electroshock",
+    "focal_element": "clinical equipment in sterile room",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -745,15 +780,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "LSD was the one they kept coming back to.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: LSD was the one they kept coming back to.",
-    "search_query": "LSD",
-    "focal_element": "primary subject",
+    "show": "LSD molecule structure, laboratory vials, psychedelic research",
+    "search_query": "LSD chemical structure lysergic acid laboratory",
+    "focal_element": "LSD chemical formula or vial",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -764,15 +800,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
-    "text": "The CIA had first gotten their hands on a large supply of LSD in 1953 \u2014 purchasing 10 kilograms from the Swiss pharmaceutical company Sandoz. That was approximately 100 million doses. More than enough to drug every single person in several major American cities.",
+    "text": "The CIA had first gotten their hands on a large supply of LSD in 1953 — purchasing 10 kilograms from the Swiss pharmaceutical company Sandoz. That was approximately 100 million doses. More than enough to drug every single person in several major American cities.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The CIA had first gotten their hands on a large supply of LS",
-    "search_query": "The CIA LSD Swiss",
-    "focal_element": "primary subject",
+    "show": "Sandoz pharmaceutical company, Swiss laboratory, LSD synthesis",
+    "search_query": "Sandoz LSD pharmaceutical Swiss laboratory 1950s",
+    "focal_element": "Sandoz laboratory or LSD vials",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -783,15 +820,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "They wanted to know: could LSD be used to disorient an enemy? To make a soldier unfit to fight? To make a prisoner say things they'd never otherwise say?",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: They wanted to know: could LSD be used to disorient an enemy",
-    "search_query": "They LSD To To",
-    "focal_element": "primary subject",
+    "show": "Dark interrogation room — single chair, harsh spotlight, oppressive atmosphere",
+    "search_query": "interrogation room dark spotlight chair",
+    "focal_element": "empty chair under spotlight",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -802,16 +840,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "They needed human test subjects.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: They needed human test subjects.",
-    "search_query": "They",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Medical experiment consent form or clinical trial paperwork — but no real consent",
+    "search_query": "human experimentation consent form medical",
+    "focal_element": "unsigned consent line",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -821,16 +860,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "They used mental patients. They used prisoners. They used prostitutes they hired to bring clients to CIA safe houses. They used U.S. soldiers who were told only that they were participating in a \"chemical warfare\" study.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: They used mental patients. They used prisoners. They used pr",
-    "search_query": "They They They CIA",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "1950s mental institution — patients in ward, institutional setting, dehumanizing",
+    "search_query": "mental institution 1950s patients ward",
+    "focal_element": "patients in rows of beds",
+    "shot_type": "archival_footage",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -840,15 +880,16 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "quote"
+    "text_overlay_type": "quote",
+    "visual_approach": "real_archival"
   },
   {
     "text": "And they used their own people.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: And they used their own people.",
-    "search_query": "And",
-    "focal_element": "primary subject",
+    "show": "Close-up of hands and pills — forced medication, unwilling subjects",
+    "search_query": "hands pushing pills medication unwilling",
+    "focal_element": "pills in outstretched hand",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -859,16 +900,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "CIA employees, Army scientists, people with high security clearances \u2014 people who couldn't go public even if something went wrong.",
+    "text": "CIA employees, Army scientists, people with high security clearances — people who couldn't go public even if something went wrong.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: CIA employees, Army scientists, people with high security cl",
-    "search_query": "CIA Army",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Military ID badge, security clearance document, government personnel file",
+    "search_query": "military scientist security clearance badge 1950s",
+    "focal_element": "security clearance badge with photo",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_up",
@@ -878,16 +920,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Frank Olson was one of those people.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson was one of those people.",
-    "search_query": "Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson portrait — the test subject who was one of their own",
+    "search_query": "Frank Olson portrait photograph",
+    "focal_element": "Frank's face, serious expression",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -897,7 +940,8 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "DEEP CREEK LAKE",
@@ -905,7 +949,7 @@
     "is_chapter_break": true,
     "chapter_num": 3,
     "chapter_title": "DEEP CREEK LAKE",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -935,10 +979,10 @@
     "text": "November 18, 1953.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: November 18, 1953.",
-    "search_query": "November",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Calendar page showing November 1953, date circled",
+    "search_query": "calendar November 1953 date",
+    "focal_element": "November 18 date",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -948,15 +992,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Frank Olson drives from Frederick, Maryland to a remote cabin at Deep Creek Lake in the mountains of western Maryland. It's a CIA safe house, used for off-site meetings where sensitive programs can be discussed without risk of surveillance.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson drives from Frederick, Maryland to a remote cabi",
-    "search_query": "Frank Olson Frederick Maryland",
-    "focal_element": "primary subject",
+    "show": "Remote cabin lodge at Deep Creek Lake, Maryland — isolated, wooded, rustic",
+    "search_query": "Deep Creek Lodge Maryland 1950s cabin",
+    "focal_element": "lodge building among trees",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -967,15 +1012,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
-    "text": "He's there with a group of CIA officers and Army scientists \u2014 all people with top-level clearances, all involved in the joint CIA-Army programs at Fort Detrick.",
+    "text": "He's there with a group of CIA officers and Army scientists — all people with top-level clearances, all involved in the joint CIA-Army programs at Fort Detrick.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He's there with a group of CIA officers and Army scientists ",
-    "search_query": "He CIA Army CIA",
-    "focal_element": "primary subject",
+    "show": "Group of men in suits around a conference table, 1950s government meeting",
+    "search_query": "men meeting conference table 1950s government",
+    "focal_element": "men in discussion around table",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -986,15 +1032,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The meeting goes two days. They discuss biological warfare. They discuss MKUltra. They discuss ongoing interrogation programs.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The meeting goes two days. They discuss biological warfare. ",
-    "search_query": "The They They They",
-    "focal_element": "primary subject",
+    "show": "1950s evening social — men with cocktail glasses, amber liquor, formal setting",
+    "search_query": "evening cocktails 1950s men drinking spirits",
+    "focal_element": "cocktail glasses being filled",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1005,16 +1052,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "On the evening of the second night, November 19th, Sidney Gottlieb does something that will eventually shake the entire U.S. intelligence establishment.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: On the evening of the second night, November 19th, Sidney Go",
-    "search_query": "On November Sidney Gottlieb",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Sidney Gottlieb portrait — the man who secretly dosed the drinks",
+    "search_query": "Sidney Gottlieb CIA MKUltra",
+    "focal_element": "Gottlieb's calculating expression",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "aftermath",
     "motion_direction": "zoom_out",
@@ -1024,15 +1072,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He pours a large dose of LSD into the bottle of Cointreau that the group has been drinking from.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He pours a large dose of LSD into the bottle of Cointreau th",
-    "search_query": "He LSD Cointreau",
-    "focal_element": "primary subject",
+    "show": "Close-up of liquor being poured into glasses — the LSD was in the Cointreau",
+    "search_query": "Cointreau bottle liquor being poured 1950s",
+    "focal_element": "liquid pouring into glass",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1043,15 +1092,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He doesn't tell anyone.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He doesn't tell anyone.",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Hand surreptitiously adding something to a drink — the betrayal",
+    "search_query": "hand dropping substance into drink secretly",
+    "focal_element": "hand above glass",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1062,15 +1112,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The men continue drinking. They continue talking. About 20 minutes later, when the drug is already working, Gottlieb announces what he's done.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The men continue drinking. They continue talking. About 20 m",
-    "search_query": "The They About Gottlieb",
-    "focal_element": "primary subject",
+    "show": "Group of men suddenly confused, disoriented — the LSD taking effect",
+    "search_query": "men laughing drinking 1950s confusion",
+    "focal_element": "confused expressions on faces",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1081,15 +1132,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He tells them it was an experiment. He tells them not to worry.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: He tells them it was an experiment. He tells them not to wor",
-    "search_query": "He He",
-    "focal_element": "primary subject",
+    "show": "A man addressing a group seriously — Gottlieb revealing the experiment",
+    "search_query": "man confessing explaining serious 1950s",
+    "focal_element": "speaker's face",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1100,15 +1152,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Some of the men find the situation funny. Others are disoriented but manage to ride it out.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: Some of the men find the situation funny. Others are disorie",
-    "search_query": "Some Others",
-    "focal_element": "primary subject",
+    "show": "Mixed reactions — some laughing nervously, others visibly shaken",
+    "search_query": "nervous laughter confusion disorientation",
+    "focal_element": "contrasting expressions",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1119,16 +1172,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Frank Olson does not find it funny.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson does not find it funny.",
-    "search_query": "Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson — not laughing, something broken behind his eyes",
+    "search_query": "Frank Olson portrait serious concerned",
+    "focal_element": "Frank's troubled expression",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -1138,15 +1192,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "Something happens to him that night that goes beyond a bad drug experience.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Something happens to him that night that goes beyond a bad d",
-    "search_query": "Something",
-    "focal_element": "primary subject",
+    "show": "Solitary figure in a dark room — psychological breakdown, isolation",
+    "search_query": "man alone dark room distressed psychological",
+    "focal_element": "hunched figure in shadow",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1157,15 +1212,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Within hours, he's withdrawn. Quiet. Disturbed in a way that doesn't lift.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Within hours, he's withdrawn. Quiet. Disturbed in a way that",
-    "search_query": "Within Quiet Disturbed",
-    "focal_element": "primary subject",
+    "show": "Close-up of hands gripping a chair arm, trembling — psychological distress",
+    "search_query": "man withdrawn quiet disturbed paranoid",
+    "focal_element": "white-knuckled hands",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1176,15 +1232,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He calls his wife Alice the next morning and she notices something is wrong. He can't describe what it is. He just says he feels like he's made \"a terrible mistake.\"",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He calls his wife Alice the next morning and she notices som",
-    "search_query": "He Alice He He",
-    "focal_element": "primary subject",
+    "show": "1950s rotary phone being used — Alice receiving a troubled call from Frank",
+    "search_query": "1950s telephone call worried wife home",
+    "focal_element": "hand holding telephone receiver",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1195,15 +1252,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "quote"
+    "text_overlay_type": "quote",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "She assumes he means the conference. She assumes it'll pass.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: She assumes he means the conference. She assumes it'll pass.",
-    "search_query": "She She",
-    "focal_element": "primary subject",
+    "show": "Woman at home, concerned expression after phone call, 1950s domestic setting",
+    "search_query": "1950s woman at home concerned phone call",
+    "focal_element": "woman's worried face",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1214,15 +1272,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "It doesn't pass.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: It doesn't pass.",
-    "search_query": "It",
-    "focal_element": "primary subject",
+    "show": "Dark hallway with a door slightly ajar — something lurking, won't pass",
+    "search_query": "dark hallway door slightly open ominous",
+    "focal_element": "crack of light through door",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1233,15 +1292,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "When he returns home to Frederick later that week, Alice can see immediately that her husband is not right. He's not sleeping. He's not eating. He's paranoid and disconnected.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: When he returns home to Frederick later that week, Alice can",
-    "search_query": "When Frederick Alice He",
-    "focal_element": "primary subject",
+    "show": "1950s suburban home in Frederick, Maryland — normal life shattered",
+    "search_query": "1950s suburban home Frederick Maryland",
+    "focal_element": "modest family home exterior",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1252,15 +1312,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He tells her he wants to leave the program.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: He tells her he wants to leave the program.",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Silhouette of a man at a window looking out — wanting to leave, trapped",
+    "search_query": "man wanting to quit job desperate leaving",
+    "focal_element": "man's silhouette against light",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1271,15 +1332,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He tells a colleague at Fort Detrick that he feels like he's in a \"fog.\" That he can't trust people. That he needs to get out.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: He tells a colleague at Fort Detrick that he feels like he's",
-    "search_query": "He Fort Detrick That",
-    "focal_element": "primary subject",
+    "show": "Fort Detrick security gate — the place he can't unsee",
+    "search_query": "Fort Detrick entrance gate security 1950s",
+    "focal_element": "security checkpoint and fence",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1290,16 +1352,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "But here's the thing about Frank Olson that distinguishes him from the other men who were drugged that night.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: But here's the thing about Frank Olson that distinguishes hi",
-    "search_query": "But Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Stack of classified manila folders — Frank knew things beyond MKUltra",
+    "search_query": "classified files folder manila envelope secrets",
+    "focal_element": "TOP SECRET stamps on folders",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -1309,15 +1372,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He wasn't just upset about the LSD.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He wasn't just upset about the LSD.",
-    "search_query": "He LSD",
-    "focal_element": "primary subject",
+    "show": "Distorted, blurred vision — the LSD was not the whole story",
+    "search_query": "LSD psychedelic effects blurred vision distortion",
+    "focal_element": "distorted center of frame",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1328,15 +1392,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He had seen other things.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He had seen other things.",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Dark underground corridor or hidden facility — what else he had seen",
+    "search_query": "dark secret underground facility hidden",
+    "focal_element": "disappearing corridor",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1347,7 +1412,8 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "WHAT HE KNEW",
@@ -1355,7 +1421,7 @@
     "is_chapter_break": true,
     "chapter_num": 4,
     "chapter_title": "WHAT HE KNEW",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -1385,10 +1451,10 @@
     "text": "Over the previous year, Frank Olson had been involved in programs that extended far beyond Fort Detrick.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Over the previous year, Frank Olson had been involved in pro",
-    "search_query": "Over Frank Olson Fort",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Biological weapons field testing — soldiers in protective suits, desolate terrain",
+    "search_query": "biological weapons testing field military",
+    "focal_element": "hazmat-suited figures",
+    "shot_type": "archival_footage",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -1398,15 +1464,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
-    "text": "In 1952 and 1953, he had traveled to Europe on behalf of the CIA. He visited facilities in West Germany and the United Kingdom where the Agency was conducting interrogation experiments \u2014 using drugs, deprivation, and psychological techniques on suspected Soviet agents.",
+    "text": "In 1952 and 1953, he had traveled to Europe on behalf of the CIA. He visited facilities in West Germany and the United Kingdom where the Agency was conducting interrogation experiments — using drugs, deprivation, and psychological techniques on suspected Soviet agents.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: In 1952 and 1953, he had traveled to Europe on behalf of the",
-    "search_query": "In Europe CIA He",
-    "focal_element": "primary subject",
+    "show": "European city in early 1950s — Frank's covert trips abroad",
+    "search_query": "CIA operations Europe 1950s Cold War",
+    "focal_element": "European architecture, shadows",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1417,16 +1484,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
-    "text": "According to research done decades later by his son Eric and investigative journalists, Olson witnessed at least one interrogation session in Europe that disturbed him deeply. Some accounts describe a prisoner who was drugged and subsequently killed \u2014 either because the experiment went wrong or because the CIA decided he needed to be silenced.",
+    "text": "According to research done decades later by his son Eric and investigative journalists, Olson witnessed at least one interrogation session in Europe that disturbed him deeply. Some accounts describe a prisoner who was drugged and subsequently killed — either because the experiment went wrong or because the CIA decided he needed to be silenced.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: According to research done decades later by his son Eric and",
-    "search_query": "According Eric Olson Europe",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Eric Olson, older, looking through documents — decades of research",
+    "search_query": "Eric Olson investigating father death",
+    "focal_element": "Eric's determined face",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "stakes_moment",
     "motion_direction": "pan_up",
@@ -1436,16 +1504,17 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "Olson reportedly told at least one person about this.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "official document related to: Olson reportedly told at least one person about this.",
-    "search_query": "Olson",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Two men in hushed conversation — Olson confiding what he saw",
+    "search_query": "man whispering telling secret confidential",
+    "focal_element": "faces close together, secretive",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_up",
@@ -1455,15 +1524,16 @@
       20.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "He had also seen documents and materials at Fort Detrick that suggested the United States had used biological weapons during the Korean War \u2014 anthrax and other agents deployed against North Korean and Chinese soldiers in ways that violated the Geneva Convention. This was a charge the U.S. government denied then and still denies today.",
+    "text": "He had also seen documents and materials at Fort Detrick that suggested the United States had used biological weapons during the Korean War — anthrax and other agents deployed against North Korean and Chinese soldiers in ways that violated the Geneva Convention. This was a charge the U.S. government denied then and still denies today.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "official document related to: He had also seen documents and materials at Fort Detrick tha",
-    "search_query": "He Fort Detrick United",
-    "focal_element": "text content of document",
+    "show": "Stacks of classified documents in a government archive — what he had access to",
+    "search_query": "Fort Detrick classified documents biological weapons",
+    "focal_element": "classified stamps and file numbers",
     "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1474,16 +1544,17 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "But Frank Olson knew.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: But Frank Olson knew.",
-    "search_query": "But Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson portrait — a man carrying the weight of terrible knowledge",
+    "search_query": "Frank Olson portrait knowledge burden",
+    "focal_element": "Frank's eyes",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "static",
@@ -1493,15 +1564,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "And now he was cracking up. Saying he wanted to leave. Saying he'd made a terrible mistake.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: And now he was cracking up. Saying he wanted to leave. Sayin",
-    "search_query": "And Saying Saying",
-    "focal_element": "primary subject",
+    "show": "Hands shaking, papers scattered — a man coming apart at the seams",
+    "search_query": "man breaking down stressed unstable paranoid",
+    "focal_element": "trembling hands over documents",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1512,15 +1584,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "In the world of intelligence operations, this is what's known as a security risk.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: In the world of intelligence operations, this is what's know",
-    "search_query": "In",
-    "focal_element": "primary subject",
+    "show": "Crosshairs or surveillance photo — he became a security liability",
+    "search_query": "security liability intelligence community cold war",
+    "focal_element": "crosshair center point",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1531,15 +1604,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "A man who knows too much, who's unstable, who wants out \u2014 that's a problem that needs to be solved.",
+    "text": "A man who knows too much, who's unstable, who wants out — that's a problem that needs to be solved.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: A man who knows too much, who's unstable, who wants out \u2014 th",
-    "search_query": "A man who knows",
-    "focal_element": "primary subject",
+    "show": "Figure cornered in a dead-end alley — a man who knows too much",
+    "search_query": "man trapped cornered no exit shadow",
+    "focal_element": "trapped figure at dead end",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1550,16 +1624,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The CIA's response was not to let him get treatment. Not to let him see a doctor of his own choosing. Not to send him home to his family.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The CIA's response was not to let him get treatment. Not to ",
-    "search_query": "The CIA Not Not",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Redacted CIA document about handling internal security threats",
+    "search_query": "CIA containment protocol internal threat",
+    "focal_element": "heavily redacted text with visible threat language",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -1569,16 +1644,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "They sent him to New York.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: They sent him to New York.",
-    "search_query": "They New York",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Night taxi ride through 1950s New York City streets — sent to NYC",
+    "search_query": "1950s New York City taxi night",
+    "focal_element": "blurred city lights through car window",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -1588,15 +1664,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "They put him in the care of a CIA-cleared psychiatrist named Harold Abramson \u2014 a man who was himself deeply enmeshed in MKUltra research, who had been receiving CIA funding for his own LSD experiments for years.",
+    "text": "They put him in the care of a CIA-cleared psychiatrist named Harold Abramson — a man who was himself deeply enmeshed in MKUltra research, who had been receiving CIA funding for his own LSD experiments for years.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: They put him in the care of a CIA-cleared psychiatrist named",
-    "search_query": "They CIA Harold Abramson",
-    "focal_element": "primary subject",
+    "show": "1950s psychiatrist's office — clinical, cold, not for healing",
+    "search_query": "Harold Abramson psychiatrist CIA 1950s",
+    "focal_element": "psychiatrist's desk and chair",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1607,15 +1684,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "This was not care.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: This was not care.",
-    "search_query": "This",
-    "focal_element": "primary subject",
+    "show": "Bare institutional room — this was not care",
+    "search_query": "institutional room bare clinical cold",
+    "focal_element": "empty sterile room",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1626,15 +1704,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "This was containment.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: This was containment.",
-    "search_query": "This",
-    "focal_element": "primary subject",
+    "show": "Heavy locked door with small window — containment, not treatment",
+    "search_query": "locked door institutional containment control",
+    "focal_element": "lock and small observation window",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1645,16 +1724,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Over the next nine days, Olson traveled back and forth between Washington and New York. He stayed in hotels. He met with Abramson. He was accompanied at all times by CIA personnel.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: Over the next nine days, Olson traveled back and forth betwe",
-    "search_query": "Over Olson Washington New",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "1950s train between Washington and New York — nine days of shuttling",
+    "search_query": "Washington DC train station 1950s travel",
+    "focal_element": "train platform or tracks",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -1664,15 +1744,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
-    "text": "On November 24th, he flew to New York and met with Abramson again. Abramson's notes describe a man who was \"psychotic\" and \"needed hospitalization.\" But instead of hospitalizing him, the CIA arranged for him to fly to Europe \u2014 perhaps to be treated at another facility, perhaps for other reasons. The trip was planned but never happened.",
+    "text": "On November 24th, he flew to New York and met with Abramson again. Abramson's notes describe a man who was \"psychotic\" and \"needed hospitalization.\" But instead of hospitalizing him, the CIA arranged for him to fly to Europe — perhaps to be treated at another facility, perhaps for other reasons. The trip was planned but never happened.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: On November 24th, he flew to New York and met with Abramson ",
-    "search_query": "On November New York",
-    "focal_element": "primary subject",
+    "show": "November evening in 1950s New York — the final days",
+    "search_query": "1950s New York City street evening November",
+    "focal_element": "dark wet city streets",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1683,15 +1764,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "quote"
+    "text_overlay_type": "quote",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "On the night of November 27th, Frank Olson and Robert Lashbrook checked into the Hotel Statler in midtown Manhattan.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: On the night of November 27th, Frank Olson and Robert Lashbr",
-    "search_query": "On November Frank Olson",
-    "focal_element": "primary subject",
+    "show": "1950s hotel room interior — Room 1018A, tenth floor, the final night",
+    "search_query": "Hotel Statler room interior 1950s",
+    "focal_element": "hotel window and bed",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1702,15 +1784,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Room 1018A. Tenth floor.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: Room 1018A. Tenth floor.",
-    "search_query": "Room Tenth",
-    "focal_element": "primary subject",
+    "show": "Hotel room door with number plate — Room 1018A, Tenth floor",
+    "search_query": "hotel room number plate door 1950s",
+    "focal_element": "room number plate",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -1721,16 +1804,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Lashbrook told police the next morning that he had woken to a crash. That Olson had run across the room, pulled up the venetian blind, and dove through the closed window.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: Lashbrook told police the next morning that he had woken to ",
-    "search_query": "Lashbrook That Olson",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Dark hotel room, figure in bed — Lashbrook's story of that night",
+    "search_query": "man lying in bed dark hotel room night",
+    "focal_element": "figure in darkness",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "pan_down",
@@ -1740,16 +1824,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He said he was asleep when it happened. He said he saw nothing.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: He said he was asleep when it happened. He said he saw nothi",
-    "search_query": "He He",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Empty hands raised — he saw nothing, heard nothing, knew nothing",
+    "search_query": "man denying knowledge hands up innocent",
+    "focal_element": "open palms",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -1759,15 +1844,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "But the investigators at the scene noticed something.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: But the investigators at the scene noticed something.",
-    "search_query": "But",
-    "focal_element": "primary subject",
+    "show": "1950s detective examining evidence at a scene — something doesn't add up",
+    "search_query": "detective investigating 1950s crime scene evidence",
+    "focal_element": "detective's focused examination",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1778,15 +1864,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The venetian blind on the window was intact.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The venetian blind on the window was intact.",
-    "search_query": "The",
-    "focal_element": "primary subject",
+    "show": "Close-up of intact venetian blinds on a window — the crucial evidence",
+    "search_query": "venetian blind window intact undamaged",
+    "focal_element": "undamaged blind slats",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1797,15 +1884,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "If a man had run across a room and hurled himself through the glass, the blind should have been destroyed on impact. Instead it was simply raised \u2014 as if someone had carefully lifted it out of the way first.",
+    "text": "If a man had run across a room and hurled himself through the glass, the blind should have been destroyed on impact. Instead it was simply raised — as if someone had carefully lifted it out of the way first.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: If a man had run across a room and hurled himself through th",
-    "search_query": "If Instead",
-    "focal_element": "primary subject",
+    "show": "Shattered window with glass broken outward — inconsistent with suicide",
+    "search_query": "shattered window broken glass outward",
+    "focal_element": "broken glass pattern",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1816,16 +1904,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The glass had shattered outward. But there were also injuries on Olson's body that the original 1953 medical examiner didn't explain.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The glass had shattered outward. But there were also injurie",
-    "search_query": "The But Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Close-up of medical/forensic notes — injuries inconsistent with the story",
+    "search_query": "forensic evidence body examination injuries",
+    "focal_element": "forensic notation about injuries",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_down",
@@ -1835,15 +1924,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "No one asked questions.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: No one asked questions.",
-    "search_query": "No",
-    "focal_element": "primary subject",
+    "show": "Finger pressed to lips — no one asked questions. Silence.",
+    "search_query": "silence finger over lips suppression",
+    "focal_element": "finger over lips gesture",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1854,16 +1944,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The CIA had already called it a suicide.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The CIA had already called it a suicide.",
-    "search_query": "The CIA",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Official CIA report stamped SUICIDE — case closed before it began",
+    "search_query": "CIA official report suicide determination stamp",
+    "focal_element": "SUICIDE stamp on document",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -1873,16 +1964,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Case closed.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Case closed.",
-    "search_query": "Case",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "File folder being closed, CASE CLOSED stamp — 22 years of silence ahead",
+    "search_query": "file folder closing case closed stamp",
+    "focal_element": "CASE CLOSED stamp",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "static",
@@ -1892,7 +1984,8 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "THE SILENCE",
@@ -1900,7 +1993,7 @@
     "is_chapter_break": true,
     "chapter_num": 5,
     "chapter_title": "THE SILENCE",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -1930,9 +2023,9 @@
     "text": "For 22 years, nothing.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: For 22 years, nothing.",
-    "search_query": "For",
-    "focal_element": "primary subject",
+    "show": "Calendar pages flying — 22 years of nothing, time passing",
+    "search_query": "calendar pages turning years passing time",
+    "focal_element": "years blurring past",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -1943,16 +2036,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Alice Olson was told her husband had suffered a mental breakdown and jumped. She was given a small government pension. She was told to move on.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: Alice Olson was told her husband had suffered a mental break",
-    "search_query": "Alice Olson She She",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Lone woman in a 1950s home — Alice Olson, told her husband had a breakdown",
+    "search_query": "Alice Olson 1950s widow grief",
+    "focal_element": "woman alone in domestic setting",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_up",
@@ -1962,16 +2056,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "Her children \u2014 Eric, Lisa, and Nils \u2014 grew up without a father. They were told he had been ill. They were told it had been an accident of mental health.",
+    "text": "Her children — Eric, Lisa, and Nils — grew up without a father. They were told he had been ill. They were told it had been an accident of mental health.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: Her children \u2014 Eric, Lisa, and Nils \u2014 grew up without a fath",
-    "search_query": "Her Eric Lisa Nils",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Children in 1960s — Eric, Lisa, Nils growing up without answers",
+    "search_query": "children growing up without father 1950s 1960s",
+    "focal_element": "children's faces",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_down",
@@ -1981,16 +2076,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "location_label"
+    "text_overlay_type": "location_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Eric was nine years old when his father died.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: Eric was nine years old when his father died.",
-    "search_query": "Eric",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Young boy looking out a window — Eric, nine years old, knowing something was wrong",
+    "search_query": "Eric Olson young boy 1950s",
+    "focal_element": "boy's contemplative face",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2000,15 +2096,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He spent his entire childhood with the nagging sense that something wasn't right. That the story didn't add up.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He spent his entire childhood with the nagging sense that so",
-    "search_query": "He That",
-    "focal_element": "primary subject",
+    "show": "Child's hand reaching for a closed door — the nagging sense that something was hidden",
+    "search_query": "child sensing something wrong suspicious unanswered",
+    "focal_element": "small hand on doorknob",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2019,15 +2116,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He was correct.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He was correct.",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Light breaking through darkness — he was correct",
+    "search_query": "truth revealed document uncovered light",
+    "focal_element": "shaft of light",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2038,16 +2136,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "In 1975, the United States Senate began investigating the CIA. The Church Committee, led by Senator Frank Church of Idaho, was conducting a sweeping review of intelligence agency abuses \u2014 illegal domestic surveillance, assassination plots, covert operations in foreign countries.",
+    "text": "In 1975, the United States Senate began investigating the CIA. The Church Committee, led by Senator Frank Church of Idaho, was conducting a sweeping review of intelligence agency abuses — illegal domestic surveillance, assassination plots, covert operations in foreign countries.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: In 1975, the United States Senate began investigating the CI",
-    "search_query": "In United States Senate",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Church Committee Senate hearings, 1975 — investigating CIA abuses",
+    "search_query": "Church Committee Senate hearings 1975 CIA",
+    "focal_element": "senators at hearing table with microphones",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -2057,16 +2156,17 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "And MKUltra.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: And MKUltra.",
-    "search_query": "And",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "MKUltra documents being revealed — the program exposed",
+    "search_query": "MKUltra CIA declassified document 1975",
+    "focal_element": "MKUltra document header",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -2076,15 +2176,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The Rockefeller Commission, which preceded the Church Committee, had already published a report that contained a detail almost buried in its appendices: a description of an Army employee who had been secretly dosed with LSD by the CIA and had subsequently died.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: The Rockefeller Commission, which preceded the Church Commit",
-    "search_query": "The Rockefeller Commission Church",
-    "focal_element": "text content of document",
+    "show": "Rockefeller Commission report — anonymous mention of a scientist's death",
+    "search_query": "Rockefeller Commission report 1975 CIA",
+    "focal_element": "report text about unnamed scientist",
     "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -2095,16 +2196,17 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "The description was anonymized. But it was specific enough.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The description was anonymized. But it was specific enough.",
-    "search_query": "The But",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Document with redacted name but specific enough details — she knew",
+    "search_query": "anonymized document description redacted name",
+    "focal_element": "blacked out name with surrounding description",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -2114,15 +2216,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Alice Olson recognized it immediately.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Alice Olson recognized it immediately.",
-    "search_query": "Alice Olson",
-    "focal_element": "primary subject",
+    "show": "Woman reading a newspaper, hand covering mouth — Alice recognizes her husband",
+    "search_query": "woman reading newspaper shocking discovery revelation",
+    "focal_element": "woman's shocked expression",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2133,15 +2236,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "She called her son Eric.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: She called her son Eric.",
-    "search_query": "She Eric",
-    "focal_element": "primary subject",
+    "show": "1970s telephone being picked up urgently — the call to Eric",
+    "search_query": "1970s telephone urgent phone call mother to son",
+    "focal_element": "hand grabbing phone receiver",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2152,16 +2256,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "\"Eric,\" she said. \"It's your father.\"",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: \"Eric,\" she said. \"It's your father.\"",
-    "search_query": "Eric It",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Close-up of phone receiver — 'Eric, it's your father'",
+    "search_query": "emotional phone call revelation father truth",
+    "focal_element": "telephone receiver, emotional weight",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2171,16 +2276,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "quote"
+    "text_overlay_type": "quote",
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "The revelation triggered a chain of events that would partially \u2014 only partially \u2014 crack open what had really happened.",
+    "text": "The revelation triggered a chain of events that would partially — only partially — crack open what had really happened.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The revelation triggered a chain of events that would partia",
-    "search_query": "The",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "President Ford in White House meeting — personally meeting the Olson family",
+    "search_query": "White House meeting President Ford 1975",
+    "focal_element": "President Ford's face",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -2190,16 +2296,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "President Gerald Ford met personally with the Olson family in the Oval Office. He apologized. He expressed condolences. He said the government was deeply sorry for what had been done.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: President Gerald Ford met personally with the Olson family i",
-    "search_query": "President Gerald Ford Olson",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Gerald Ford meeting with family in White House — official acknowledgment",
+    "search_query": "President Gerald Ford Olson family White House",
+    "focal_element": "Ford shaking hands or at table with family",
+    "shot_type": "archival_footage",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "pan_up",
@@ -2209,16 +2316,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "CIA Director William Colby met with the family and provided a selection of documents. He was careful about which ones he gave them. He acknowledged that Frank Olson had been drugged without his consent.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: CIA Director William Colby met with the family and provided ",
-    "search_query": "CIA Director William Colby",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "CIA Director William Colby — partial disclosure, controlled narrative",
+    "search_query": "William Colby CIA Director 1975 portrait",
+    "focal_element": "Colby's measured expression",
+    "shot_type": "person_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -2228,16 +2336,17 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "What he did not acknowledge was murder.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: What he did not acknowledge was murder.",
-    "search_query": "What",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Document with the word MURDER conspicuously absent — what he did not say",
+    "search_query": "redacted document key words blacked out murder",
+    "focal_element": "gap where truth should be",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2247,16 +2356,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "The government's position, carefully maintained for years, was this: the LSD had caused a mental breakdown. The breakdown had caused a suicide. The CIA's culpability was in the drugging \u2014 not in the death itself.",
+    "text": "The government's position, carefully maintained for years, was this: the LSD had caused a mental breakdown. The breakdown had caused a suicide. The CIA's culpability was in the drugging — not in the death itself.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The government's position, carefully maintained for years, w",
-    "search_query": "The LSD The The",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Carefully worded official statement — LSD, tragic, regrettable. Not murder.",
+    "search_query": "official government statement carefully worded legal",
+    "focal_element": "precise legal language",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -2266,16 +2376,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The family was offered $750,000 in compensation.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The family was offered $750,000 in compensation.",
-    "search_query": "The",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Check or financial document — $750,000 compensation to buy silence",
+    "search_query": "settlement check compensation money payment",
+    "focal_element": "dollar amount on check",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -2285,16 +2396,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Eric Olson did not accept this as the truth.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Eric Olson did not accept this as the truth.",
-    "search_query": "Eric Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Eric Olson as an adult — refusing to accept the official story",
+    "search_query": "Eric Olson adult interview determined justice",
+    "focal_element": "Eric's determined face",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2304,15 +2416,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He kept digging.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He kept digging.",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Man digging through stacks of files — Eric kept digging, wouldn't stop",
+    "search_query": "man searching through files documents investigating",
+    "focal_element": "hands pulling files from boxes",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2323,15 +2436,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "In 1994, Eric Olson did something that takes an extraordinary kind of determination and grief.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: In 1994, Eric Olson did something that takes an extraordinar",
-    "search_query": "In Eric Olson",
-    "focal_element": "primary subject",
+    "show": "Exhumation of a grave — Eric having his father's body dug up for truth",
+    "search_query": "exhumation grave cemetery forensic team",
+    "focal_element": "grave being opened",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -2342,15 +2456,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He had his father's body exhumed from its grave in Frederick, Maryland.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: He had his father's body exhumed from its grave in Frederick",
-    "search_query": "He Frederick Maryland",
-    "focal_element": "primary subject",
+    "show": "Cemetery in Frederick, Maryland — the grave that held answers",
+    "search_query": "Frederick Maryland cemetery 1994",
+    "focal_element": "headstone with Olson name",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -2361,16 +2476,17 @@
       12.0
     ],
     "cut_motivation": "location_named",
-    "text_overlay_type": "location_label"
+    "text_overlay_type": "location_label",
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "He hired James Starrs, a professor of forensic science at George Washington University Law School and one of the leading forensic investigators in the country \u2014 a man who had previously worked on cases involving the exhumation of Jesse James and the Boston Strangler.",
+    "text": "He hired James Starrs, a professor of forensic science at George Washington University Law School and one of the leading forensic investigators in the country — a man who had previously worked on cases involving the exhumation of Jesse James and the Boston Strangler.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: He hired James Starrs, a professor of forensic science at Ge",
-    "search_query": "He James Starrs George",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Forensic scientist examining remains — James Starrs conducting new autopsy",
+    "search_query": "James Starrs forensic scientist George Washington University",
+    "focal_element": "forensic scientist at work",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -2380,15 +2496,16 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "Starrs and his team conducted a new, full autopsy.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: Starrs and his team conducted a new, full autopsy.",
-    "search_query": "Starrs",
-    "focal_element": "primary subject",
+    "show": "Forensic autopsy in progress — clinical, methodical, searching for truth",
+    "search_query": "forensic autopsy examination medical examiner",
+    "focal_element": "medical instruments and examination",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -2399,16 +2516,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "What they found was this:",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: What they found was this:",
-    "search_query": "What",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Forensic report detailing findings — the evidence was damning",
+    "search_query": "forensic report findings evidence skull examination",
+    "focal_element": "typed findings about skull injury",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "pan_up",
@@ -2418,16 +2536,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "Frank Olson had a significant hematoma \u2014 a bruise from internal bleeding \u2014 on the left side of his head, near his temple.",
+    "text": "Frank Olson had a significant hematoma — a bruise from internal bleeding — on the left side of his head, near his temple.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson had a significant hematoma \u2014 a bruise from inter",
-    "search_query": "Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Forensic diagram of cranial injury — hematoma inconsistent with fall",
+    "search_query": "skull cranial hematoma forensic evidence blunt force",
+    "focal_element": "location of hematoma on skull diagram",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2437,16 +2556,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "This injury was inconsistent with a forward plunge through a window. It was inconsistent with the impact from falling ten stories.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: This injury was inconsistent with a forward plunge through a",
-    "search_query": "This It",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Forensic analysis notes — injury not consistent with a forward plunge",
+    "search_query": "forensic analysis inconsistent with suicide evidence",
+    "focal_element": "key conclusion text",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_down",
@@ -2456,15 +2576,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "It was consistent with being struck by a blunt object before the fall.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: It was consistent with being struck by a blunt object before",
-    "search_query": "It",
-    "focal_element": "primary subject",
+    "show": "Blunt instrument or weapon silhouette — consistent with being struck",
+    "search_query": "blunt object weapon evidence forensic",
+    "focal_element": "weapon outline",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2475,16 +2596,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "In Starrs's professional opinion, Frank Olson had been rendered unconscious \u2014 or close to it \u2014 before he went through that window.",
+    "text": "In Starrs's professional opinion, Frank Olson had been rendered unconscious — or close to it — before he went through that window.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: In Starrs's professional opinion, Frank Olson had been rende",
-    "search_query": "In Starrs Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Forensic conclusion document — rendered unconscious before going through window",
+    "search_query": "forensic conclusion homicide not suicide",
+    "focal_element": "conclusion text about manner of death",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2494,15 +2616,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He had not jumped. He had not run across the room and dove.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He had not jumped. He had not run across the room and dove.",
-    "search_query": "He He",
-    "focal_element": "primary subject",
+    "show": "Shattered window view from inside room — he didn't jump. He didn't dive.",
+    "search_query": "broken window from inside shattered glass evidence",
+    "focal_element": "shattered window frame",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2513,15 +2636,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Someone had hit him. And then put him through the glass.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Someone had hit him. And then put him through the glass.",
-    "search_query": "Someone And",
-    "focal_element": "primary subject",
+    "show": "Dark hands reaching — someone hit him and put him through the glass",
+    "search_query": "violent crime evidence pushed thrown murder",
+    "focal_element": "aggressive hands in motion",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2532,16 +2656,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Starrs's conclusion was unambiguous: \"The evidence pointed toward a homicide.\"",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Starrs's conclusion was unambiguous: \"The evidence pointed t",
-    "search_query": "Starrs The",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Quote text: 'The evidence pointed to homicide' — Starrs's unambiguous conclusion",
+    "search_query": "forensic expert testimony conclusion homicide quote",
+    "focal_element": "quoted text on dark background",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2551,7 +2676,8 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "quote"
+    "text_overlay_type": "quote",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "WHAT THEY'VE NEVER ADMITTED",
@@ -2559,7 +2685,7 @@
     "is_chapter_break": true,
     "chapter_num": 6,
     "chapter_title": "WHAT THEY'VE NEVER ADMITTED",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -2589,10 +2715,10 @@
     "text": "In 2012, Eric Olson filed a formal request with the Manhattan District Attorney's office to open a murder investigation into his father's death.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "official document related to: In 2012, Eric Olson filed a formal request with the Manhatta",
-    "search_query": "In Eric Olson Manhattan",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Manhattan DA's office or New York courthouse — Eric's formal request",
+    "search_query": "Manhattan District Attorney office courthouse New York",
+    "focal_element": "courthouse facade",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2602,15 +2728,16 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The DA's office briefly opened an inquiry. They reviewed the forensic evidence. They interviewed witnesses who were still alive.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The DA's office briefly opened an inquiry. They reviewed the",
-    "search_query": "The DA They They",
-    "focal_element": "primary subject",
+    "show": "Prosecutor briefly reviewing old files — opened and then closed again",
+    "search_query": "prosecutor reviewing old case files cold case",
+    "focal_element": "files being flipped through",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2621,15 +2748,16 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And then they closed it again.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: And then they closed it again.",
-    "search_query": "And",
-    "focal_element": "primary subject",
+    "show": "File folder being shut — and then they closed it again. No charges.",
+    "search_query": "closing file folder shutting case dismissed",
+    "focal_element": "folder snapping shut",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2640,16 +2768,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "No charges were filed.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "official document related to: No charges were filed.",
-    "search_query": "No",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Empty courtroom with gavel — no charges were filed",
+    "search_query": "empty courtroom no justice gavel",
+    "focal_element": "judge's empty bench and gavel",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2659,15 +2788,16 @@
       20.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "The explanation given was that too much time had passed. That the evidence, while suggestive, was not enough to support criminal prosecution. That the key witnesses \u2014 Lashbrook, Gottlieb, Abramson \u2014 were either dead or elderly.",
+    "text": "The explanation given was that too much time had passed. That the evidence, while suggestive, was not enough to support criminal prosecution. That the key witnesses — Lashbrook, Gottlieb, Abramson — were either dead or elderly.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: The explanation given was that too much time had passed. Tha",
-    "search_query": "The That That Lashbrook",
-    "focal_element": "primary subject",
+    "show": "Clock with cobwebs, faded documents — too much time had passed, they said",
+    "search_query": "too much time passed evidence deteriorated excuse",
+    "focal_element": "dusty clock face",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -2678,16 +2808,17 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "location_label"
+    "text_overlay_type": "location_label",
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "Sidney Gottlieb died in 1999, at the age of 80. He had retired to a farm in Virginia, where he spent his final years tending goats and practicing yoga. He gave occasional interviews in which he acknowledged his role in MKUltra. He said, publicly, that he had no regrets about the program \u2014 that he believed it had been necessary for the defense of the United States.",
+    "text": "Sidney Gottlieb died in 1999, at the age of 80. He had retired to a farm in Virginia, where he spent his final years tending goats and practicing yoga. He gave occasional interviews in which he acknowledged his role in MKUltra. He said, publicly, that he had no regrets about the program — that he believed it had been necessary for the defense of the United States.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: Sidney Gottlieb died in 1999, at the age of 80. He had retir",
-    "search_query": "Sidney Gottlieb He Virginia",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Rural Virginia farmhouse — Gottlieb retired peacefully, died at 80",
+    "search_query": "Sidney Gottlieb old age Virginia retirement",
+    "focal_element": "peaceful rural setting (the injustice)",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -2697,16 +2828,17 @@
       8.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "He was never charged with anything. Not the illegal drugging of thousands of Americans. Not the deaths of subjects who died during experiments. Not the death of Frank Olson.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: He was never charged with anything. Not the illegal drugging",
-    "search_query": "He Not Americans Not",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Man walking away free — never charged with anything, ever",
+    "search_query": "man never charged walking free justice denied",
+    "focal_element": "figure walking away, back turned",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2716,16 +2848,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Robert Lashbrook, the CIA officer who was in the room when Frank Olson went through that window, died in 2014. He maintained his story to the end. He woke up. He heard a crash. He had no explanation.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: Robert Lashbrook, the CIA officer who was in the room when F",
-    "search_query": "Robert Lashbrook CIA Frank",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Empty hotel room — Lashbrook, the man in the room, also died without confession",
+    "search_query": "Robert Lashbrook CIA officer died 2002",
+    "focal_element": "empty room, unmade bed",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "pan_up",
@@ -2735,16 +2868,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The CIA, in responses to journalists and documentary filmmakers, has consistently declined to comment on the specifics of Olson's death. They have acknowledged the LSD program. They have expressed regret for the abuses of MKUltra.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: The CIA, in responses to journalists and documentary filmmak",
-    "search_query": "The CIA Olson They",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "CIA spokesperson podium — maintaining the sanitized version forever",
+    "search_query": "CIA official statement no comment classified",
+    "focal_element": "CIA seal behind podium",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -2754,16 +2888,17 @@
       20.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "They have never said murder.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: They have never said murder.",
-    "search_query": "They",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Word MURDER crossed out and replaced with INCIDENT — they never said murder",
+    "search_query": "they never said murder denial evasion",
+    "focal_element": "crossed out word",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "static",
@@ -2773,16 +2908,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "In 2017, Netflix released Wormwood, a six-part documentary series directed by Errol Morris.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: In 2017, Netflix released Wormwood, a six-part documentary s",
-    "search_query": "In Netflix Wormwood Errol",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Wormwood Netflix documentary title card or poster",
+    "search_query": "Wormwood Netflix documentary Errol Morris 2017",
+    "focal_element": "WORMWOOD title text",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -2792,16 +2928,17 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
-    "text": "If you don't know Errol Morris, he's one of the greatest documentary filmmakers who has ever lived. The Fog of War. The Thin Blue Line \u2014 the documentary that got an innocent man out of prison. He spent years on Wormwood.",
+    "text": "If you don't know Errol Morris, he's one of the greatest documentary filmmakers who has ever lived. The Fog of War. The Thin Blue Line — the documentary that got an innocent man out of prison. He spent years on Wormwood.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: If you don't know Errol Morris, he's one of the greatest doc",
-    "search_query": "If Errol Morris The",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Errol Morris portrait — one of the greatest documentary filmmakers",
+    "search_query": "Errol Morris documentary filmmaker portrait",
+    "focal_element": "Morris's face",
+    "shot_type": "person_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -2811,16 +2948,17 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The series reconstructed the Frank Olson case with new detail and rigor, using interviews with Eric Olson spanning decades, newly declassified documents, and dramatic reenactments. It made a compelling case that what happened at the Hotel Statler was not a suicide.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: The series reconstructed the Frank Olson case with new detai",
-    "search_query": "The Frank Olson Eric",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Scene from Wormwood documentary — reconstructing the Frank Olson case",
+    "search_query": "Wormwood documentary Frank Olson reconstruction",
+    "focal_element": "dramatic reconstruction scene",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -2830,16 +2968,17 @@
       20.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The CIA responded with a statement that said, essentially, nothing.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "map showing location referenced in: The CIA responded with a statement that said, essentially, n",
-    "search_query": "The CIA",
-    "focal_element": "key location on map",
-    "shot_type": "map",
+    "show": "Bland official statement on letterhead — the CIA said essentially nothing",
+    "search_query": "CIA press statement no comment nothing new",
+    "focal_element": "empty bureaucratic language",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "static",
@@ -2849,16 +2988,17 @@
       8.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Eric Olson, now in his late seventies, continues to pursue the case.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Eric Olson, now in his late seventies, continues to pursue t",
-    "search_query": "Eric Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Eric Olson in recent years — still pursuing the truth, now in his seventies",
+    "search_query": "Eric Olson elderly man still searching truth",
+    "focal_element": "Eric's weathered but determined face",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_out",
@@ -2868,15 +3008,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He has spent over five decades on this.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: He has spent over five decades on this.",
-    "search_query": "He",
-    "focal_element": "primary subject",
+    "show": "Desk covered in decades of documents, files, photos — five decades of work",
+    "search_query": "man at desk decades of documents research",
+    "focal_element": "mountain of accumulated research",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2887,15 +3028,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Five decades trying to find out what happened to his father on one night in 1953.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Five decades trying to find out what happened to his father ",
-    "search_query": "Five",
-    "focal_element": "primary subject",
+    "show": "Timeline showing 1953 to present — five decades trying to find out the truth",
+    "search_query": "calendar decades passing 1953 to 2020s fifty years",
+    "focal_element": "span of years",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2906,7 +3048,8 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "OUTRO",
@@ -2914,7 +3057,7 @@
     "is_chapter_break": true,
     "chapter_num": 7,
     "chapter_title": "OUTRO",
-    "show": "chapter card \u2014 black screen with chapter title",
+    "show": "chapter card — black screen with chapter title",
     "search_query": null,
     "focal_element": null,
     "shot_type": "chapter_card",
@@ -2944,10 +3087,10 @@
     "text": "There is a version of this story where Frank Olson was a tragedy of the Cold War. A man caught up in programs he didn't fully understand, drugged against his will, who broke under the pressure and took his own life.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: There is a version of this story where Frank Olson was a tra",
-    "search_query": "There Frank Olson Cold",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson portrait — there is a version where he was a tragic Cold War casualty",
+    "search_query": "Frank Olson portrait Cold War victim",
+    "focal_element": "Frank's face, reflective",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2957,15 +3100,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The CIA would prefer that version.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The CIA would prefer that version.",
-    "search_query": "The CIA",
-    "focal_element": "primary subject",
+    "show": "CIA headquarters with American flag — the version they prefer",
+    "search_query": "CIA preferred narrative sanitized version official",
+    "focal_element": "CIA building entrance",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -2976,16 +3120,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "But the evidence doesn't support it.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: But the evidence doesn't support it.",
-    "search_query": "But",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Stack of contradicting evidence — the evidence doesn't support their version",
+    "search_query": "evidence contradicts official story stack",
+    "focal_element": "pile of damning documents",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -2995,16 +3140,17 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The hematoma on his head doesn't support it. The intact venetian blind doesn't support it. The immediate phone call to Sidney Gottlieb from the room where he died doesn't support it. The nine days of CIA surveillance and control that preceded his death don't support it. The 22 years of official silence don't support it.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: The hematoma on his head doesn't support it. The intact vene",
-    "search_query": "The The The Sidney",
-    "focal_element": "face of subject",
-    "shot_type": "person_photo",
+    "show": "Split image: hematoma evidence, intact blinds, shattered glass — none of it adds up",
+    "search_query": "forensic evidence hematoma venetian blind window",
+    "focal_element": "three pieces of evidence together",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -3014,16 +3160,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "What the evidence does support is this:",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: What the evidence does support is this:",
-    "search_query": "What",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Evidence laid out on a table — what the evidence does support",
+    "search_query": "evidence truth revelation documents pile",
+    "focal_element": "documents arranged like a case file",
+    "shot_type": "document_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "pan_down",
@@ -3033,16 +3180,17 @@
       12.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Frank Olson was a man who knew too much.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson was a man who knew too much.",
-    "search_query": "Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson — a man who knew too much",
+    "search_query": "Frank Olson portrait man who knew too much",
+    "focal_element": "Frank's knowing eyes",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -3052,16 +3200,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "He knew about the biological weapons programs. He knew about the interrogations in Europe. He knew what the CIA had done to American soldiers, mental patients, and prisoners in its obsessive search for mind control.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: He knew about the biological weapons programs. He knew about",
-    "search_query": "He He Europe He",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Montage suggestion: classified files, European map, covert operations imagery",
+    "search_query": "classified files biological weapons Europe covert",
+    "focal_element": "overlapping classified images",
+    "shot_type": "document_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_out",
@@ -3071,15 +3220,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And he wanted out.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "photo illustrating: And he wanted out.",
-    "search_query": "And",
-    "focal_element": "primary subject",
+    "show": "Hand reaching for a door handle — and he wanted out",
+    "search_query": "man wanting to leave escape exit door",
+    "focal_element": "hand on door handle",
     "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
@@ -3090,16 +3240,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "In the intelligence world, wanting out when you know what he knew is not a resignation letter you put in your desk drawer. It's a problem that needs to be solved.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "official document related to: In the intelligence world, wanting out when you know what he",
-    "search_query": "In It",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Endless corridor with no exit — in intelligence, wanting out is dangerous",
+    "search_query": "intelligence world danger escape impossible",
+    "focal_element": "infinite hallway perspective",
+    "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -3109,15 +3260,16 @@
       20.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Eric Olson has said, in interview after interview, that he believes his father was murdered. Not as an act of madness. Not as a cover-up of a failed experiment. But as a deliberate act by people who had decided that Frank Olson's knowledge was more dangerous than his life.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "portrait photo of person referenced in: Eric Olson has said, in interview after interview, that he b",
-    "search_query": "Eric Olson Not Not",
-    "focal_element": "face of subject",
+    "show": "Eric Olson in interview — saying his father was murdered, interview after interview",
+    "search_query": "Eric Olson interview camera testimony",
+    "focal_element": "Eric speaking directly",
     "shot_type": "person_photo",
     "intensity": "neutral",
     "narrative_function": "stakes_moment",
@@ -3128,16 +3280,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "The files that might answer that question definitively are still classified.",
     "emotion": "neutral",
     "is_chapter_break": false,
-    "show": "official document related to: The files that might answer that question definitively are s",
-    "search_query": "The",
-    "focal_element": "text content of document",
-    "shot_type": "document_photo",
+    "show": "Sealed government vault or locked archive — files that might answer the question",
+    "search_query": "classified files locked vault sealed archives",
+    "focal_element": "vault door or archive lock",
+    "shot_type": "documentary_photo",
     "intensity": "neutral",
     "narrative_function": "context_background",
     "motion_direction": "zoom_in",
@@ -3147,15 +3300,16 @@
       20.0
     ],
     "cut_motivation": "evidence_intro",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The full truth is still, as of this moment, unknown.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: The full truth is still, as of this moment, unknown.",
-    "search_query": "The",
-    "focal_element": "primary subject",
+    "show": "Foggy landscape fading to nothing — the full truth is still unknown",
+    "search_query": "fog uncertainty unknown hidden truth question mark",
+    "focal_element": "vanishing horizon",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -3166,16 +3320,17 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And so Frank Olson remains what he has been for over 70 years:",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: And so Frank Olson remains what he has been for over 70 year",
-    "search_query": "And Frank Olson",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson — what he has been for over 70 years: an unanswered question",
+    "search_query": "Frank Olson memorial unanswered questions",
+    "focal_element": "Frank's face fading into shadow",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -3185,15 +3340,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "A man the CIA killed, or didn't kill. A man who jumped, or was pushed. A man whose family has spent their entire lives demanding an answer from a government that has never fully given one.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: A man the CIA killed, or didn't kill. A man who jumped, or w",
-    "search_query": "CIA",
-    "focal_element": "primary subject",
+    "show": "Figure between light and shadow — killed or not killed, jumped or pushed",
+    "search_query": "question mark shadows ambiguity unsolved mystery",
+    "focal_element": "figure half in light half in shadow",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "stakes_moment",
@@ -3204,16 +3360,17 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "His son Eric is still asking.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: His son Eric is still asking.",
-    "search_query": "His Eric",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Eric Olson, elder, looking at camera — his son is still asking",
+    "search_query": "Eric Olson elderly still asking searching",
+    "focal_element": "Eric's eyes, still searching",
+    "shot_type": "person_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
     "motion_direction": "zoom_in",
@@ -3223,15 +3380,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "real_archival"
   },
   {
     "text": "There is something that matters a great deal about that. About the fact that a man in his late seventies is still asking what happened to his father on a November morning in 1953. Still making calls. Still filing requests. Still pushing against a wall of government silence.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: There is something that matters a great deal about that. Abo",
-    "search_query": "There About November Still",
-    "focal_element": "primary subject",
+    "show": "Looking up at hotel windows at night — that November night still matters",
+    "search_query": "Hotel Statler window November 1953 night",
+    "focal_element": "illuminated window on high floor",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3242,15 +3400,16 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Because this is not an old story. This is not ancient history.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: Because this is not an old story. This is not ancient histor",
-    "search_query": "Because This",
-    "focal_element": "primary subject",
+    "show": "Modern government building — this is not ancient history, it's ongoing",
+    "search_query": "ongoing injustice modern government accountability",
+    "focal_element": "imposing modern architecture",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3261,15 +3420,16 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "The programs that killed Frank Olson \u2014 MKUltra, the biological weapons experiments, the interrogation techniques developed at Fort Detrick \u2014 these programs were not the work of rogue agents or a single corrupt administration. They were authorized at the highest levels of the U.S. government. They involved hundreds of scientists, doctors, military officers, and intelligence officials who all made choices that harmed innocent people.",
+    "text": "The programs that killed Frank Olson — MKUltra, the biological weapons experiments, the interrogation techniques developed at Fort Detrick — these programs were not the work of rogue agents or a single corrupt administration. They were authorized at the highest levels of the U.S. government. They involved hundreds of scientists, doctors, military officers, and intelligence officials who all made choices that harmed innocent people.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: The programs that killed Frank Olson \u2014 MKUltra, the biologic",
-    "search_query": "The Frank Olson Fort",
-    "focal_element": "primary subject",
+    "show": "Government officials in hallway — the programs that killed Frank Olson",
+    "search_query": "Fort Detrick MKUltra biological weapons officials",
+    "focal_element": "officials walking in government corridor",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "stakes_moment",
@@ -3280,15 +3440,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And almost none of them faced any consequences at all.",
     "emotion": "tense",
     "is_chapter_break": false,
-    "show": "photo illustrating: And almost none of them faced any consequences at all.",
-    "search_query": "And",
-    "focal_element": "primary subject",
+    "show": "Figures in suits walking away — almost none faced any consequences",
+    "search_query": "no consequences powerful people walking free",
+    "focal_element": "backs of suited figures leaving",
     "shot_type": "documentary_photo",
     "intensity": "tense",
     "narrative_function": "tension_build",
@@ -3299,15 +3460,16 @@
       12.0
     ],
     "cut_motivation": "visual_freshness",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "The lesson of Frank Olson is not that the CIA is uniquely evil, or that the government is always lying, or that you can't trust institutions.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: The lesson of Frank Olson is not that the CIA is uniquely ev",
-    "search_query": "The Frank Olson CIA",
-    "focal_element": "primary subject",
+    "show": "CIA seal large and imposing — the lesson is about institutional power",
+    "search_query": "CIA accountability lesson power institution",
+    "focal_element": "CIA eagle seal, large",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3318,15 +3480,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "The lesson is simpler and harder than that.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: The lesson is simpler and harder than that.",
-    "search_query": "The",
-    "focal_element": "primary subject",
+    "show": "Massive marble columns of government building — institutions protecting themselves",
+    "search_query": "powerful institution marble columns government",
+    "focal_element": "towering columns, human scale",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3337,15 +3500,16 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
-    "text": "It's that powerful institutions will go to extraordinary lengths to protect themselves. That the people inside those institutions will make choices that seem justifiable in the moment \u2014 necessary, even patriotic \u2014 that look like something else entirely from the outside.",
+    "text": "It's that powerful institutions will go to extraordinary lengths to protect themselves. That the people inside those institutions will make choices that seem justifiable in the moment — necessary, even patriotic — that look like something else entirely from the outside.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: It's that powerful institutions will go to extraordinary len",
-    "search_query": "It That",
-    "focal_element": "primary subject",
+    "show": "Documents being shredded or buried — extraordinary lengths to protect secrets",
+    "search_query": "cover up secrets buried hidden truth",
+    "focal_element": "paper being destroyed",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3356,15 +3520,16 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "And that the only force powerful enough to push back against that is people like Eric Olson.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: And that the only force powerful enough to push back against",
-    "search_query": "And Eric Olson",
-    "focal_element": "primary subject",
+    "show": "Single person standing before massive building — ordinary people pushing back",
+    "search_query": "ordinary person fighting system persistence",
+    "focal_element": "lone figure against institution",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3375,15 +3540,16 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "People who refuse to let it go. People who keep asking the question.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: People who refuse to let it go. People who keep asking the q",
-    "search_query": "People People",
-    "focal_element": "primary subject",
+    "show": "Hands gripping documents, refusing to let go — people who keep asking",
+    "search_query": "persistent investigator refusing to give up truth",
+    "focal_element": "determined grip on papers",
     "shot_type": "documentary_photo",
     "intensity": "energized",
     "narrative_function": "climax",
@@ -3394,16 +3560,17 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   },
   {
     "text": "Frank Olson deserved better. His family deserved better. And every person who was secretly drugged, experimented on, or harmed by the programs that ran through Fort Detrick and the CIA in those years deserved better.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: Frank Olson deserved better. His family deserved better. And",
-    "search_query": "Frank Olson His And",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Frank Olson family photograph — they deserved better",
+    "search_query": "Frank Olson family photo deserved better justice",
+    "focal_element": "the family together, before",
+    "shot_type": "person_photo",
     "intensity": "energized",
     "narrative_function": "climax",
     "motion_direction": "zoom_out",
@@ -3413,16 +3580,17 @@
       12.0
     ],
     "cut_motivation": "name_drop",
-    "text_overlay_type": "entity_label"
+    "text_overlay_type": "entity_label",
+    "visual_approach": "real_archival"
   },
   {
     "text": "The least we can do is remember their names.",
     "emotion": "energized",
     "is_chapter_break": false,
-    "show": "photo illustrating: The least we can do is remember their names.",
-    "search_query": "The",
-    "focal_element": "primary subject",
-    "shot_type": "documentary_photo",
+    "show": "Simple white text on dark background: the names. Memorial tribute.",
+    "search_query": "names remembered memorial tribute",
+    "focal_element": "names in clean typography",
+    "shot_type": "title_card",
     "intensity": "energized",
     "narrative_function": "climax",
     "motion_direction": "zoom_in",
@@ -3432,6 +3600,7 @@
       12.0
     ],
     "cut_motivation": "tone_change",
-    "text_overlay_type": null
+    "text_overlay_type": null,
+    "visual_approach": "visual_metaphor"
   }
 ]

@@ -48,12 +48,14 @@ try:
         load_playbook,
         playbook_motion,
         playbook_segment_duration,
+        playbook_sfx,
     )
 except ImportError:
     from production_rules import (  # type: ignore[no-redef]
         load_playbook,
         playbook_motion,
         playbook_segment_duration,
+        playbook_sfx,
     )
 
 # ── Config ────────────────────────────────────────────────────────────────────
@@ -84,6 +86,9 @@ SEGMENT_WORDS_MIN = 15   # ~6.5s at 138.7 WPM
 SEGMENT_WORDS_MAX = 80   # ~35s — break longer passages
 
 CACHE_DIR = Path(".storyboard_cache")
+
+# Frame rate for timing sheet calculations
+TIMING_FPS = 30
 
 
 # ── Script parsing ─────────────────────────────────────────────────────────────
@@ -514,6 +519,278 @@ def _infer_text_overlay_type(text: str, narrative_function: str) -> str | None:
     return None
 
 
+def _build_timing_sheet(brief: dict, fps: int = TIMING_FPS) -> dict:
+    """
+    Build an exposure sheet (X-sheet) for one storyboard segment.
+
+    Maps every editorial decision to exact frame numbers so the assembler
+    (or a human animator) knows precisely what happens and when.
+
+    Fields:
+        hold_frames:      total frames this segment occupies
+        motion:           keyframe spec — type, start/end scale, easing
+        text_entry_frame: frame when text overlay starts appearing
+        text_exit_frame:  frame when text overlay finishes / fades
+        text_content:     the actual overlay string (or None)
+        sfx_trigger_frame: frame when SFX fires (None = no SFX)
+        sfx_type:         which SFX to use (None = no SFX)
+        transition_in:    how this segment enters (cut/fade/dissolve + frame count)
+        transition_out:   how this segment exits
+        sub_beats:        list of visual sub-divisions within the segment
+                          (for segments > 3s that need internal variety)
+    """
+    # Resolve duration → frame count
+    dur_range = brief.get("hold_duration_range", [4.0, 8.0])
+    # Use midpoint of range as the nominal duration
+    dur_mid = (dur_range[0] + dur_range[1]) / 2.0
+    hold_frames = round(dur_mid * fps)
+
+    # ── Motion keyframes ──
+    motion_dir = brief.get("motion_direction", "zoom_in")
+    zoom_rate = brief.get("zoom_rate_pct_sec", 3.0)
+    # Calculate total scale change over the segment
+    # zoom_rate is %/sec, so over dur_mid seconds: total_pct = zoom_rate * dur_mid
+    total_pct = zoom_rate * dur_mid / 100.0
+    if motion_dir == "zoom_in":
+        start_scale, end_scale = 1.0, 1.0 + total_pct
+    elif motion_dir == "zoom_out":
+        start_scale, end_scale = 1.0 + total_pct, 1.0
+    else:
+        # Pan directions — scale stays 1.0, motion expressed differently
+        start_scale, end_scale = 1.0, 1.0
+
+    # Easing: reveals/climax get ease_in (accelerating punch), context gets ease_in_out
+    nf = brief.get("narrative_function", "context_background")
+    if nf in ("reveal", "revelation", "climax", "stakes_moment"):
+        easing = "ease_in"
+    elif nf in ("aftermath",):
+        easing = "ease_out"
+    else:
+        easing = "ease_in_out"
+
+    motion_spec = {
+        "type": motion_dir,
+        "start_scale": round(start_scale, 4),
+        "end_scale": round(end_scale, 4),
+        "easing": easing,
+    }
+
+    # For pan directions, add pan_pixels_per_frame
+    if motion_dir.startswith("pan_"):
+        # Translate zoom_rate (nominally %/s) into pixel shift per frame
+        # At 1920px wide, 3%/s ≈ 57.6 px/s ≈ ~1.9 px/frame at 30fps
+        px_per_sec = (zoom_rate / 100.0) * 1920
+        motion_spec["pan_px_per_frame"] = round(px_per_sec / fps, 2)
+
+    # ── Text overlay timing ──
+    text_type = brief.get("text_overlay_type")
+    text_content = None
+    text_entry_frame = None
+    text_exit_frame = None
+
+    if text_type and text_type != "null":
+        text_content = _resolve_text_content(brief, text_type)
+        # Text appears 3-5 frames in (not instant — gives eye time to land)
+        text_entry_frame = 4
+        # Text stays for 70% of segment, then fades
+        text_exit_frame = round(hold_frames * 0.85)
+
+        # Special cases:
+        if text_type == "quote":
+            # Quotes appear later (narrator sets up context first)
+            text_entry_frame = round(hold_frames * 0.15)
+        elif text_type == "source_citation":
+            # Citations flash briefly at bottom
+            text_entry_frame = round(hold_frames * 0.6)
+            text_exit_frame = hold_frames - 3
+
+    # ── SFX timing ──
+    sfx_type = playbook_sfx(nf, brief.get("cut_motivation"))
+    sfx_trigger_frame = None
+    if sfx_type:
+        if sfx_type in ("whoosh",):
+            sfx_trigger_frame = 0  # whoosh on the cut itself
+        elif sfx_type in ("impact",):
+            sfx_trigger_frame = 2  # impact lands 2 frames after cut
+        elif sfx_type in ("shimmer", "tension"):
+            sfx_trigger_frame = round(hold_frames * 0.1)  # subtle fade-in
+        elif sfx_type in ("rumble",):
+            sfx_trigger_frame = 0  # rumble starts immediately
+
+    # ── Transitions ──
+    is_chapter = nf == "chapter_break"
+    intensity = brief.get("intensity", "neutral")
+
+    # Transition in
+    if is_chapter:
+        transition_in = {"type": "fade_from_black", "frames": round(fps * 0.5)}
+    elif nf in ("reveal", "revelation") and intensity in ("tense", "energized"):
+        transition_in = {"type": "cut", "frames": 0}  # hard cut for impact
+    elif nf == "aftermath":
+        transition_in = {"type": "dissolve", "frames": round(fps * 0.4)}
+    else:
+        transition_in = {"type": "cut", "frames": 0}
+
+    # Transition out
+    if is_chapter:
+        transition_out = {"type": "fade_to_black", "frames": round(fps * 0.5)}
+    elif brief.get("cut_motivation") == "tone_change":
+        transition_out = {"type": "dissolve", "frames": round(fps * 0.3)}
+    else:
+        transition_out = {"type": "cut", "frames": 0}
+
+    # ── Sub-beats (internal variety for segments > 3s) ──
+    sub_beats = _generate_sub_beats(brief, hold_frames, fps)
+
+    return {
+        "hold_frames": hold_frames,
+        "hold_sec": round(dur_mid, 2),
+        "fps": fps,
+        "motion": motion_spec,
+        "text_entry_frame": text_entry_frame,
+        "text_exit_frame": text_exit_frame,
+        "text_content": text_content,
+        "sfx_trigger_frame": sfx_trigger_frame,
+        "sfx_type": sfx_type,
+        "transition_in": transition_in,
+        "transition_out": transition_out,
+        "sub_beats": sub_beats,
+    }
+
+
+def _resolve_text_content(brief: dict, text_type: str) -> str | None:
+    """Extract the actual text string to display from narration + overlay type."""
+    text = brief.get("text", "")
+
+    if text_type == "person_identification":
+        # Find full names (First Last)
+        names = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", text)
+        return names[0].upper() if names else None
+
+    if text_type == "entity_label":
+        # Find acronyms / org names
+        acronyms = re.findall(r"\b[A-Z]{2,}\b", text)
+        real = [a for a in acronyms if a not in ("THE", "AND", "FOR", "BUT", "NOT", "HIS", "HER")]
+        return real[0] if real else None
+
+    if text_type == "location_label":
+        # Find "City, State" patterns first (highest specificity)
+        city_state = re.findall(r"\b([A-Z][a-z]+ [A-Z][a-z]+,\s*[A-Z][a-z]+)\b", text)
+        if city_state:
+            return city_state[0].upper()
+        # Fall back to "Place Name" (two+ capitalized words that aren't person names)
+        places = re.findall(r"\b([A-Z][a-z]+(?: [A-Z][a-z]+)*)\b", text)
+        _skip = {"The", "A", "An", "In", "On", "At", "He", "She", "His", "Her",
+                 "But", "And", "Was", "Were", "Had", "That", "This", "They"}
+        places = [p for p in places if p.split()[0] not in _skip]
+        return places[0].upper() if places else None
+
+    if text_type == "quote":
+        # Extract quoted text
+        match = re.search(r'"([^"]{10,})"', text) or re.search(r'\u201c([^\u201d]{10,})\u201d', text)
+        return f'"{match.group(1)}"' if match else None
+
+    if text_type == "source_citation":
+        return "SOURCE"
+
+    return None
+
+
+def _generate_sub_beats(brief: dict, hold_frames: int, fps: int) -> list[dict]:
+    """
+    Generate internal visual sub-beats for segments that hold too long.
+
+    Based on v4 learnings: any segment > 3s needs internal variety —
+    zoom speed changes, text reveals, focal shifts — to keep the viewer
+    engaged. This is the X-sheet's frame-by-frame breakdown.
+
+    Returns list of sub-beat dicts, each with:
+      - start_frame, end_frame
+      - action: what changes at this sub-beat
+      - description: human-readable note
+    """
+    hold_sec = hold_frames / fps
+    sub_beats = []
+
+    # Short segments (< 3s) don't need sub-beats
+    if hold_sec < 3.0:
+        return sub_beats
+
+    nf = brief.get("narrative_function", "context_background")
+    text_type = brief.get("text_overlay_type")
+
+    # Medium segments (3-5s): 2 sub-beats
+    if hold_sec < 5.0:
+        mid = hold_frames // 2
+        sub_beats.append({
+            "start_frame": 0,
+            "end_frame": mid,
+            "action": "primary_visual",
+            "description": "Main visual + initial motion",
+        })
+        # Second half: zoom speed change or text entry
+        action2 = "text_reveal" if text_type else "zoom_accelerate"
+        sub_beats.append({
+            "start_frame": mid,
+            "end_frame": hold_frames,
+            "action": action2,
+            "description": "Text overlay appears" if text_type else "Motion accelerates toward focal point",
+        })
+
+    # Long segments (5-8s): 3 sub-beats
+    elif hold_sec < 8.0:
+        third = hold_frames // 3
+        sub_beats.append({
+            "start_frame": 0,
+            "end_frame": third,
+            "action": "establish",
+            "description": "Wide view, slow initial motion",
+        })
+        sub_beats.append({
+            "start_frame": third,
+            "end_frame": third * 2,
+            "action": "focus",
+            "description": "Tighten to focal element" + (f" + text: {brief.get('text_overlay_type', '')}" if text_type else ""),
+        })
+        action3 = "resolve" if nf in ("aftermath", "context_background") else "intensify"
+        sub_beats.append({
+            "start_frame": third * 2,
+            "end_frame": hold_frames,
+            "action": action3,
+            "description": "Push to detail / prepare for next cut" if action3 == "intensify" else "Hold on key detail, ease motion",
+        })
+
+    # Very long segments (8s+): 4 sub-beats — needs most internal variety
+    else:
+        quarter = hold_frames // 4
+        sub_beats.append({
+            "start_frame": 0,
+            "end_frame": quarter,
+            "action": "establish",
+            "description": "Wide establishing view",
+        })
+        sub_beats.append({
+            "start_frame": quarter,
+            "end_frame": quarter * 2,
+            "action": "detail_1",
+            "description": "First detail / text entry",
+        })
+        sub_beats.append({
+            "start_frame": quarter * 2,
+            "end_frame": quarter * 3,
+            "action": "detail_2",
+            "description": "Second detail or focal shift",
+        })
+        sub_beats.append({
+            "start_frame": quarter * 3,
+            "end_frame": hold_frames,
+            "action": "resolve",
+            "description": "Final push / prepare exit",
+        })
+
+    return sub_beats
+
+
 def _enrich_from_playbook(brief: dict) -> dict:
     """
     Post-processor: fill any missing playbook fields using narrative intent.
@@ -552,6 +829,11 @@ def _enrich_from_playbook(brief: dict) -> dict:
             "card_duration_sec": [2, 4],
             "style": "white_serif_on_dark",
         }
+
+    # ── Timing sheet (exposure sheet / X-sheet) ──
+    # Built AFTER all other fields are resolved so it can read motion, text, SFX, etc.
+    if "timing_sheet" not in brief:
+        brief["timing_sheet"] = _build_timing_sheet(brief)
 
     return brief
 

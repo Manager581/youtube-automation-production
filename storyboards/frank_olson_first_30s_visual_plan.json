@@ -1,0 +1,446 @@
+{
+  "_doc": "Beat-by-beat visual plan for Frank Olson first 30 seconds (hook). Every visual answers: what is the narrator saying RIGHT NOW?",
+  "_principle": "NO generic stock photos. Real archival + narrative-specific animations + story-driven SFX.",
+
+  "beats": [
+    {
+      "beat_id": "hook_01_nyc_night",
+      "time_range": [0.0, 4.1],
+      "narration": "November 28, 1953. New York City. 3:09 in the morning.",
+      "voice_tone": "energized",
+
+      "visual": {
+        "description": "Dark aerial view of 1950s Manhattan skyline at night. City lights glowing. Camera slowly pushes in toward midtown hotel district.",
+        "source_type": "existing_clip",
+        "source_file": "1950s_New_York_City_Skyline_at_Night.mp4",
+        "clip_window": [0, 8],
+        "motion": "slow_zoom_in",
+        "zoom_rate": 3.0,
+        "focal_point": "midtown hotel district"
+      },
+
+      "text_overlay": {
+        "text": "NOVEMBER 28, 1953",
+        "style": "typewriter",
+        "position": "center",
+        "appear_at": 0.5,
+        "font": "white_serif_on_dark",
+        "note": "Date appears with typewriter effect, sets the era immediately"
+      },
+
+      "sfx": {
+        "type": "ambient_city",
+        "note": "Low distant traffic hum, 1950s urban atmosphere. Very quiet. Source from Freesound/Pixabay audio.",
+        "download_query": "1950s city night ambient traffic distant",
+        "volume": 0.08
+      },
+
+      "music": "Dark piano begins, barely audible — single low notes",
+      "why": "Establish time, place, atmosphere. Viewer sees exactly where this happened."
+    },
+
+    {
+      "beat_id": "hook_02_hotel_crash",
+      "time_range": [4.1, 9.1],
+      "narration": "[PAUSE:0.8] A man crashes through a closed window on the 10th floor of the Hotel Statler",
+      "voice_tone": "energized",
+
+      "sub_beats": [
+        {
+          "sub_id": "pause_buildup",
+          "time_range": [4.1, 4.9],
+          "visual": {
+            "description": "Cut to Hotel Statler exterior at night. Looking UP at the building from street level. One window on the 10th floor is lit. Everything else is dark.",
+            "source_type": "wikimedia_download",
+            "source_query": "Hotel Statler New York 1950s exterior",
+            "fallback": "animation",
+            "fallback_description": "Animated hotel facade — tall dark building, single lit window high up. Art deco style, 1950s New York. Dark blue/black color palette.",
+            "motion": "slow_zoom_in",
+            "zoom_rate": 2.0,
+            "focal_point": "lit window on 10th floor"
+          },
+          "sfx": null,
+          "why": "The pause builds dread. Viewer sees the window BEFORE the narrator describes what happens."
+        },
+        {
+          "sub_id": "the_crash",
+          "time_range": [4.9, 7.5],
+          "narration_words": "A man crashes through a closed window",
+          "visual": {
+            "description": "At the word 'crashes' — QUICK CUT to close-up of shattering glass. Shards flying outward toward camera. Motion blur. This should be an animated sequence: venetian blind fragments, glass fragments, a dark silhouette figure behind them.",
+            "source_type": "animation_sequence",
+            "animation_spec": {
+              "type": "glass_shatter",
+              "frames": 24,
+              "duration_sec": 1.0,
+              "elements": [
+                "hotel window frame",
+                "glass shards flying outward",
+                "venetian blind fragments",
+                "dark silhouette of falling figure behind glass"
+              ],
+              "color_palette": ["#0a0a1a", "#1a1a3a", "#ffffff", "#88aacc"],
+              "note": "This is THE signature visual moment. Must be impactful. Can be composited from multiple layers in Pillow: dark background + glass shard overlay + silhouette."
+            },
+            "motion": "static_or_shake",
+            "note": "Brief camera shake effect (2-3 frame jitter) to sell the impact"
+          },
+          "sfx": {
+            "type": "glass_shatter",
+            "trigger_word": "crashes",
+            "trigger_time_offset": 0.0,
+            "volume": 0.7,
+            "download_query": "glass window shattering breaking crash",
+            "note": "CRITICAL SFX — must be a real glass shattering sound, not a generic impact. Needs to sound like a large window."
+          },
+          "why": "The most important moment in the first 30 seconds. The narrator says 'crashes through a window' and the viewer SEES and HEARS the glass shatter. This is what was completely missing in v7."
+        },
+        {
+          "sub_id": "hotel_statler",
+          "time_range": [7.5, 9.1],
+          "narration_words": "on the 10th floor of the Hotel Statler",
+          "visual": {
+            "description": "Wide shot of Hotel Statler exterior. Text overlay appears: 'HOTEL STATLER'. Camera slowly tilts up toward the 10th floor.",
+            "source_type": "wikimedia_download",
+            "source_query": "Hotel Statler New York",
+            "fallback": "animation",
+            "fallback_description": "Art deco hotel facade with 'HOTEL STATLER' sign. Night. 1950s architectural style.",
+            "motion": "pan_up",
+            "zoom_rate": 4.0,
+            "focal_point": "hotel sign and upper floors"
+          },
+          "text_overlay": {
+            "text": "HOTEL STATLER",
+            "style": "typewriter",
+            "position": "lower_third",
+            "font": "white_serif_on_dark"
+          },
+          "sfx": {
+            "type": "glass_settle",
+            "note": "Fading tinkling of glass settling. Tail end of the shatter.",
+            "volume": 0.3
+          },
+          "why": "Give the location a name. Viewer now knows WHERE."
+        }
+      ]
+    },
+
+    {
+      "beat_id": "hook_03_the_fall",
+      "time_range": [9.1, 13.2],
+      "narration": "[BEAT] and falls to his death on the pavement below. His name is Frank Olson.",
+      "voice_tone": "energized",
+
+      "sub_beats": [
+        {
+          "sub_id": "falls_to_death",
+          "time_range": [9.1, 10.8],
+          "narration_words": "and falls to his death on the pavement below",
+          "visual": {
+            "description": "Animated downward motion — camera looking DOWN the side of the building at night. Street lamps far below. The sense of falling. Dark, vertiginous.",
+            "source_type": "animation_sequence",
+            "animation_spec": {
+              "type": "vertical_fall",
+              "frames": 36,
+              "duration_sec": 1.5,
+              "elements": [
+                "building facade rushing past (dark bricks, lit windows)",
+                "street lamps growing larger below",
+                "ground approaching"
+              ],
+              "technique": "pan_down at high speed (25%/sec) on a tall building composite image",
+              "color_palette": ["#0a0a1a", "#1a1a3a", "#ffcc44"],
+              "note": "Can be achieved with a VERY fast pan_down on a tall building exterior image. Ken Burns at 25%/sec downward."
+            },
+            "motion": "fast_pan_down",
+            "zoom_rate": 25.0
+          },
+          "sfx": {
+            "type": "body_impact",
+            "trigger_word": "pavement",
+            "volume": 0.5,
+            "download_query": "heavy body impact thud ground fall",
+            "note": "Dull, heavy impact. NOT cartoonish. Realistic and unsettling."
+          },
+          "why": "The viewer experiences the fall. The fast downward pan gives a visceral sense of the 10-story drop."
+        },
+        {
+          "sub_id": "his_name",
+          "time_range": [10.8, 13.2],
+          "narration_words": "His name is Frank Olson.",
+          "visual": {
+            "description": "CUT TO BLACK for 0.3 seconds (the impact). Then: Frank Olson's name in white serif text on dark background, slowly revealing. If a public domain photo of Olson exists, show it. Otherwise: government-ID-style frame with his name, year of birth (1910), and 'U.S. ARMY BIOCHEMIST' below.",
+            "source_type": "animation",
+            "animation_spec": {
+              "type": "person_card",
+              "elements": [
+                "0.3s black screen (impact moment)",
+                "Fade in: white serif text 'FRANK OLSON' centered",
+                "Below: '1910 — 1953' in smaller text",
+                "Below: 'U.S. ARMY BIOCHEMIST' even smaller",
+                "Optional: government ID photo frame (empty or with photo if available)"
+              ],
+              "color_palette": ["#0a0a0a", "#ffffff", "#cccccc"],
+              "note": "This is a solemn, memorial-style reveal. Simple white text on near-black. The name matters — it's the first time we hear it."
+            },
+            "motion": "static",
+            "note": "No motion on the name card. Let it breathe."
+          },
+          "text_overlay": {
+            "text": "FRANK OLSON",
+            "style": "typewriter",
+            "position": "center",
+            "font": "white_serif_on_dark",
+            "secondary_text": "1910 — 1953"
+          },
+          "sfx": null,
+          "music": "Piano holds single low note. Silence around the name.",
+          "why": "After the violent fall, SILENCE and a name. The contrast is powerful. Now the viewer knows this is about a real person."
+        }
+      ]
+    },
+
+    {
+      "beat_id": "hook_04_the_man",
+      "time_range": [13.2, 24.9],
+      "narration": "He's 43 years old. A bacteriologist. A government scientist. A husband. The father of three young children who are at home asleep in Maryland right now, waiting for their dad to come back.",
+      "voice_tone": "neutral",
+      "note": "This is a long segment (11.7s). Needs 2-3 visual cuts to match the narration arc: scientist → family man.",
+
+      "sub_beats": [
+        {
+          "sub_id": "the_scientist",
+          "time_range": [13.2, 18.0],
+          "narration_words": "He's 43 years old. A bacteriologist. A government scientist.",
+          "visual": {
+            "description": "Fort Detrick laboratory — 1940s/1950s era. Scientists in white coats working in a biological research facility. If no real photo available: a well-composed animation showing a lab interior with microscopes, test tubes, the feel of government science in the early Cold War.",
+            "source_type": "wikimedia_download",
+            "source_query": "Fort Detrick biological laboratory 1940s 1950s",
+            "alt_queries": [
+              "biological warfare laboratory United States Army",
+              "Army Chemical Corps laboratory",
+              "military research laboratory 1950s"
+            ],
+            "fallback": "archive_org_clip",
+            "fallback_query": "biological warfare laboratory film 1950s military",
+            "motion": "slow_zoom_in",
+            "zoom_rate": 3.0,
+            "focal_point": "scientist at work"
+          },
+          "text_overlay": {
+            "text": "FORT DETRICK, MARYLAND",
+            "style": "typewriter",
+            "position": "lower_third",
+            "appear_at": 14.0,
+            "note": "Location label appears briefly — tells the viewer where Olson worked"
+          },
+          "sfx": null,
+          "why": "Establish who Olson was — a government scientist. Real lab imagery grounds the story in reality."
+        },
+        {
+          "sub_id": "the_family",
+          "time_range": [18.0, 24.9],
+          "narration_words": "A husband. The father of three young children who are at home asleep in Maryland right now, waiting for their dad to come back.",
+          "visual": {
+            "description": "1950s American family — father, mother, three children. Suburban home. Warm golden tones (contrast with the cold night we just saw). This should feel like safety, normalcy, warmth — everything that's about to be destroyed.",
+            "source_type": "wikimedia_download",
+            "source_query": "1950s American family suburban home Maryland",
+            "alt_queries": [
+              "1950s family portrait children United States",
+              "American suburban family 1950s home photograph",
+              "post-war American family children house"
+            ],
+            "fallback": "archive_org_clip",
+            "fallback_query": "1950s American family home life suburban",
+            "fallback_archive_ids": ["prelinger"],
+            "motion": "slow_pan_right",
+            "zoom_rate": 2.0,
+            "focal_point": "children",
+            "color_note": "Slightly warmer color grade here — golden/amber tint. This is the ONE warm moment in the whole video."
+          },
+          "sfx": null,
+          "music": "Piano melody becomes slightly warmer, more melodic — then cuts",
+          "why": "The narrator says 'father of three children' — the viewer SEES children. This is what was completely missing in v7. The emotional gut punch: this man had a family, and they're waiting for him to come home."
+        }
+      ]
+    },
+
+    {
+      "beat_id": "hook_05_the_lie",
+      "time_range": [24.9, 32.5],
+      "narration": "And the U.S. government is about to spend the next 22 years lying about how he died. [PAUSE:3.0]",
+      "voice_tone": "tense",
+
+      "sub_beats": [
+        {
+          "sub_id": "the_lie",
+          "time_range": [24.9, 29.5],
+          "narration_words": "And the U.S. government is about to spend the next 22 years lying about how he died.",
+          "visual": {
+            "description": "Close-up of a REAL declassified MKUltra document — heavy black redactions, CIA letterhead, TOP SECRET stamp. Slow zoom into the redacted sections.",
+            "source_type": "existing_wiki",
+            "source_file": "Mkultra-lsd-doc.jpg",
+            "alt_source": "DeclassifiedMKULTRA.jpg",
+            "note": "We already have these downloaded. Use the real declassified docs — they're far more powerful than any stock photo.",
+            "motion": "slow_zoom_in",
+            "zoom_rate": 4.0,
+            "focal_point": "TOP SECRET stamp and redaction marks"
+          },
+          "text_overlay": {
+            "text": "22 YEARS",
+            "style": "typewriter",
+            "position": "center",
+            "appear_at": 27.0,
+            "font": "white_serif_on_dark",
+            "note": "The number appears as the narrator says it — visual reinforcement"
+          },
+          "sfx": {
+            "type": "rumble",
+            "trigger_time": 25.0,
+            "volume": 0.25,
+            "note": "Low rumble building underneath — dread. Use existing assets/sfx/rumble_01.mp3",
+            "source": "existing_asset"
+          },
+          "why": "'22 years lying' while looking at real classified documents. The viewer sees the actual machinery of the cover-up."
+        },
+        {
+          "sub_id": "dramatic_silence",
+          "time_range": [29.5, 32.5],
+          "visual": {
+            "description": "Slow fade to black. Total darkness. Hold for 3 seconds. This is the dramatic pause that signals: 'what you're about to hear will change everything you thought you knew.'",
+            "source_type": "black_screen",
+            "motion": "static",
+            "transition_in": "fade_to_black over 1.0s",
+            "note": "This silence is as important as any visual. Let the weight of '22 years lying' sink in."
+          },
+          "sfx": {
+            "type": "silence_with_room_tone",
+            "note": "Not dead silence — very faint room tone so it doesn't feel like a technical error",
+            "volume": 0.02
+          },
+          "music": "Music stops completely. Dead air.",
+          "why": "The 3-second pause is Fern's signature move. After a devastating reveal, SILENCE. Let the viewer absorb it."
+        }
+      ]
+    }
+  ],
+
+  "assets_needed": {
+    "must_download": [
+      {
+        "type": "image",
+        "description": "Hotel Statler / Hotel Pennsylvania NYC exterior, 1950s era",
+        "source": "wikimedia_commons",
+        "search_queries": [
+          "Hotel Statler New York",
+          "Hotel Pennsylvania New York 1950s",
+          "Hotel Statler Hilton Manhattan"
+        ],
+        "priority": "high"
+      },
+      {
+        "type": "image",
+        "description": "Fort Detrick biological laboratory, 1940s-1950s",
+        "source": "wikimedia_commons",
+        "search_queries": [
+          "Fort Detrick laboratory",
+          "biological warfare laboratory Army",
+          "Army Chemical Corps"
+        ],
+        "priority": "high"
+      },
+      {
+        "type": "image",
+        "description": "1950s American family with children",
+        "source": "wikimedia_commons",
+        "search_queries": [
+          "1950s American family",
+          "post-war suburban family United States",
+          "1950s family children home"
+        ],
+        "alt_source": "archive.org/details/prelinger (1950s family life films)",
+        "priority": "high"
+      }
+    ],
+
+    "must_create_animations": [
+      {
+        "type": "glass_shatter_sequence",
+        "description": "Glass window shattering outward — the hotel crash moment",
+        "technique": "Pillow composite: dark blue background + white glass shard shapes + venetian blind lines + dark silhouette",
+        "frames": 24,
+        "priority": "critical"
+      },
+      {
+        "type": "vertical_fall",
+        "description": "Fast downward pan on building exterior — the 10-story fall",
+        "technique": "Ken Burns pan_down at 25%/sec on a tall building image",
+        "priority": "high"
+      },
+      {
+        "type": "person_name_card",
+        "description": "Frank Olson memorial card — name, dates, title",
+        "technique": "Pillow: white serif text centered on near-black background",
+        "priority": "high"
+      }
+    ],
+
+    "must_download_sfx": [
+      {
+        "type": "glass_shatter",
+        "description": "Large window glass shattering/breaking",
+        "source": "pixabay_audio",
+        "search_query": "glass window shattering breaking",
+        "priority": "critical",
+        "note": "This is the single most important SFX in the entire video"
+      },
+      {
+        "type": "body_impact",
+        "description": "Heavy body hitting pavement from height",
+        "source": "pixabay_audio",
+        "search_query": "heavy impact thud fall body ground",
+        "priority": "high"
+      },
+      {
+        "type": "city_ambient",
+        "description": "Quiet 1950s urban night atmosphere",
+        "source": "freesound",
+        "search_query": "city night ambient quiet traffic distant",
+        "priority": "medium"
+      }
+    ],
+
+    "already_have": [
+      {
+        "type": "clip",
+        "file": "1950s_New_York_City_Skyline_at_Night.mp4",
+        "used_for": "Opening shot — NYC skyline"
+      },
+      {
+        "type": "image",
+        "file": "Mkultra-lsd-doc.jpg",
+        "used_for": "The classified document during '22 years lying'"
+      },
+      {
+        "type": "image",
+        "file": "DeclassifiedMKULTRA.jpg",
+        "used_for": "Alternative classified document"
+      }
+    ]
+  },
+
+  "editorial_notes": {
+    "pacing": "The first 30 seconds has 3 distinct emotional phases: DREAD (0-4s, dark city), VIOLENCE (4-10s, the crash and fall), HUMANITY (10-25s, who was this man), BETRAYAL (25-32s, the lie). Each phase has a different color temperature and energy level.",
+    "color_progression": [
+      "0-4s: Cold blue/black (night city)",
+      "4-10s: Flash of white (breaking glass) then blue-black",
+      "10-13s: Near-black (name reveal)",
+      "13-18s: Cool grey (laboratory)",
+      "18-25s: Warm amber/gold (family — the ONE warm moment)",
+      "25-32s: Cold blue into total black (the cover-up)"
+    ],
+    "cut_rhythm": "7 visual cuts in 32 seconds = 13.1 cuts/min. Matches Fern's measured 13.2/min. But every cut is motivated: location→crash→fall→name→scientist→family→document→silence",
+    "music_arc": "Single piano notes → brief warmth during family → silence. Music supports but never dominates.",
+    "what_v7_got_wrong": "v7 showed a generic statue zooming in while the narrator described Frank Olson falling from a window. The viewer saw NOTHING related to what was being said. This plan ensures every frame answers: what is the narrator saying RIGHT NOW?"
+  }
+}

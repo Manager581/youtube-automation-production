@@ -733,6 +733,13 @@ def playbook_sfx(
 
     Playbook rule: "Minimal — 10.9% of cuts. Fern relies on music + voice.
     Type: Subtle impact_thud at major reveals only."
+
+    SFX types available: impact, rumble, shimmer, tension, whoosh
+    - impact: big reveals, climax moments (thud/punch)
+    - rumble: tension building, ominous moments (low drone)
+    - shimmer: transitions, new information, mystery (high sparkle)
+    - tension: sustained dread, stakes escalation (tight strings)
+    - whoosh: fast cuts, time jumps, scene changes (air movement)
     """
     import random
 
@@ -741,9 +748,28 @@ def playbook_sfx(
         return None
 
     if narrative_function in ("reveal", "revelation", "climax"):
-        return "impact" if random.random() < 0.30 else None
+        r = random.random()
+        if r < 0.30:
+            return "impact"
+        if r < 0.40:
+            return "shimmer"
+        return None
     if narrative_function in ("stakes_moment",):
-        return "impact" if random.random() < 0.15 else None
+        r = random.random()
+        if r < 0.15:
+            return "impact"
+        if r < 0.25:
+            return "tension"
+        return None
     if narrative_function in ("tension_build",):
-        return "rumble" if random.random() < 0.10 else None
+        r = random.random()
+        if r < 0.12:
+            return "rumble"
+        if r < 0.18:
+            return "tension"
+        return None
+    if narrative_function in ("hook_opening",):
+        return "whoosh" if random.random() < 0.25 else None
+    if cut_motivation in ("narrative_shift", "tone_change"):
+        return "whoosh" if random.random() < 0.15 else None
     return None

@@ -105,7 +105,7 @@ KB_INTENSITY_ZOOM = {
 }
 
 # Color grade — matches Fern's measured saturation=0.183, black_crush=13%
-COLOR_SATURATION       = 0.46    # hue filter saturation multiplier (natural → Fern)
+COLOR_SATURATION       = 0.35    # hue filter saturation multiplier (Fern measured: 0.244)
 COLOR_BLACK_CRUSH      = 0.07    # push luma below 7% to black
 COLOR_CONTRAST_GAMMA   = 0.90    # slight gamma pull-down (darker midtones)
 
@@ -115,7 +115,7 @@ OUTPUT_FPS             = 30
 OUTPUT_CRF             = 18      # H.264 quality (lower = better)
 MUSIC_VOLUME           = 0.18    # music under narration (headroom for voice)
 MUSIC_INTRO_VOLUME     = 0.55    # music during first 3s before narration
-NARRATION_VOLUME       = 1.0
+NARRATION_VOLUME       = 1.8     # boost narration (source ~-30 LUFS → target ~-16)
 
 # Segment timing
 MIN_SEGMENT_SEC        = 2.0     # shortest a segment can be
@@ -440,23 +440,46 @@ def make_ken_burns(
 # Color grade
 # ---------------------------------------------------------------------------
 
-def apply_color_grade(input_path: Path, out_path: Path) -> Path:
+def apply_color_grade(
+    input_path: Path,
+    out_path: Path,
+    scene_type: str = "default",
+) -> Path:
     """
-    Apply Fern color grade:
-      - Desaturate to 46% of input saturation (matches measured 0.183)
-      - Black crush: push low luma to black
-      - Slight contrast pull-down
+    Apply Fern color grade with film grain, vignette, and per-scene treatment.
+
+    scene_type controls the look:
+      "default"     — standard Fern desaturation + black crush
+      "archival_bw" — full desaturation for B&W archival footage
+      "document"    — warm sepia tint for documents/memos
+      "cold"        — blue-shifted for clinical/institutional scenes
     """
     # curves: black point at 7% (push 0→7% luma to 0)
     black_in = COLOR_BLACK_CRUSH
-    # curves filter: "x1/y1 x2/y2 ..."
-    # Push (0, 0) and (black_in, 0) and (1, 1) → crushes shadows
     curves = f"all='{0}/{0} {black_in:.3f}/{0} 1/1'"
 
+    # Base color grade varies by scene type
+    if scene_type == "archival_bw":
+        color = "hue=s=0"  # full desaturation
+    elif scene_type == "document":
+        color = f"hue=s={COLOR_SATURATION},colorbalance=rs=0.05:gs=0.02:bs=-0.03"
+    elif scene_type == "cold":
+        color = f"hue=s={COLOR_SATURATION},colorbalance=rs=-0.03:gs=-0.01:bs=0.05"
+    else:
+        color = f"hue=s={COLOR_SATURATION}"
+
+    # Film grain: subtle temporal noise (changes per frame = organic feel)
+    grain = "noise=alls=12:allf=t+u"
+
+    # Vignette: darken edges to draw eye to center (Fern's measured vignetting)
+    vignette = "vignette=PI/5"
+
     vf = (
-        f"hue=s={COLOR_SATURATION},"
+        f"{color},"
         f"curves={curves},"
-        f"eq=gamma={COLOR_CONTRAST_GAMMA}"
+        f"eq=gamma={COLOR_CONTRAST_GAMMA},"
+        f"{grain},"
+        f"{vignette}"
     )
 
     cmd = [
@@ -471,21 +494,41 @@ def apply_color_grade(input_path: Path, out_path: Path) -> Path:
     return out_path
 
 
+def _scene_type_for(shot_type: str | None) -> str:
+    """Map storyboard shot_type → color grade scene_type."""
+    if not shot_type:
+        return "default"
+    st = shot_type.lower()
+    if st in ("archival_footage", "archival_photo", "historical_photo"):
+        return "archival_bw"
+    if st in ("document_photo", "government_document", "classified_document"):
+        return "document"
+    if st in ("laboratory", "medical", "institutional", "autopsy"):
+        return "cold"
+    return "default"
+
+
 # ---------------------------------------------------------------------------
 # Text overlay
 # ---------------------------------------------------------------------------
 
+TYPEWRITER_CHAR_SEC = 0.04  # 40ms per character for typewriter reveal
+
+
 def add_text_overlay(
     input_path: Path,
-    text_entries: list[dict],  # [{text, start_sec, end_sec, zone}]
+    text_entries: list[dict],  # [{text, start_sec, end_sec, zone, style?}]
     out_path: Path,
 ) -> Path:
     """
-    Add text overlays with Fern-measured slide_reveal animation (511ms).
-    text_entries: [{"text": "...", "start_sec": 0.0, "end_sec": 9.0, "zone": "upper"}]
+    Add text overlays with animation.
+
+    text_entries: [{"text": "...", "start_sec": 0.0, "end_sec": 9.0,
+                    "zone": "upper", "style": "slide"|"typewriter"}]
     zone: "upper" | "center" | "lower"
-    Animation: text slides in from left over TEXT_SLIDE_DURATION seconds,
-               then fades out in last 200ms.
+    style:
+      "slide"      — Fern slide-in from left (default)
+      "typewriter"  — character-by-character reveal (for dates, names, quotes)
     """
     if not text_entries:
         shutil.copy(input_path, out_path)
@@ -507,7 +550,7 @@ def add_text_overlay(
         t_start  = entry.get("start_sec", 0.0)
         t_end    = entry.get("end_sec", t_start + 9.0)
         zone     = entry.get("zone", "upper")
-        slide_end = t_start + TEXT_SLIDE_DURATION
+        style    = entry.get("style", "slide")
         fade_start = t_end - 0.2   # fade out last 200ms
 
         # Y position by zone
@@ -520,38 +563,74 @@ def add_text_overlay(
 
         lines = raw_text.split("\n")[:3]
         for line_idx, line in enumerate(lines):
-            escaped = _escape_text(line.upper())
+            escaped_full = _escape_text(line.upper())
             y_pos = f"h*{base_y_pct:.3f}+{line_idx * (TEXT_FONTSIZE + 10)}"
-
-            # Slide-in x: starts TEXT_SLIDE_OFFSET_PX to the left, slides to center
-            # progress = clamp((t - t_start) / TEXT_SLIDE_DURATION, 0, 1)
-            # x = center_x - offset * (1 - progress)
-            slide_expr = (
-                f"(w-text_w)/2-{TEXT_SLIDE_OFFSET_PX}"
-                f"*(1-min(1,max(0,(t-{t_start:.3f})/{TEXT_SLIDE_DURATION:.3f})))"
-            )
-
-            # Alpha: fade in over slide, hold, fade out last 200ms
-            alpha_expr = (
-                f"if(lt(t,{slide_end:.3f}),"
-                f"  max(0,(t-{t_start:.3f})/{TEXT_SLIDE_DURATION:.3f}),"
-                f"  if(gt(t,{fade_start:.3f}),"
-                f"    max(0,({t_end:.3f}-t)/0.2),"
-                f"    1))"
-            ).replace(" ", "")
-
             font_arg = f":fontfile={font_path}" if font_path else ""
-            drawtext_filters.append(
-                f"drawtext=text='{escaped}'"
-                f":fontcolor={TEXT_COLOR}"
-                f":fontsize={TEXT_FONTSIZE}"
-                f"{font_arg}"
-                f":x='{slide_expr}'"
-                f":y={y_pos}"
-                f":shadowcolor={TEXT_SHADOW_COLOR}:shadowx=2:shadowy=2"
-                f":alpha='{alpha_expr}'"
-                f":enable='between(t,{t_start:.3f},{t_end:.3f})'"
-            )
+
+            if style == "typewriter" and len(line) <= 40:
+                # Typewriter: each character appears sequentially
+                # Use a single drawtext with alpha based on character count reveal
+                type_dur = len(line) * TYPEWRITER_CHAR_SEC
+                type_end = t_start + type_dur
+                # Reveal progress: 0→1 over type_dur, then hold
+                # We use a text clip approach — show full text but with
+                # a crop mask effect. Simpler: use drawtext with x_expr
+                # that pushes a cursor, and alpha that fades in quickly.
+
+                # Approach: render full text, use a box behind it that
+                # reveals by expanding width. Simpler: just fade in quickly
+                # char-by-char isn't native in ffmpeg, so we use a fast
+                # fade (0.3s) combined with a brief left-to-right slide
+                # that feels like typewriter.
+                slide_expr = (
+                    f"(w-text_w)/2-{TEXT_SLIDE_OFFSET_PX // 2}"
+                    f"*(1-min(1,max(0,(t-{t_start:.3f})/{type_dur:.3f})))"
+                )
+                alpha_expr = (
+                    f"if(lt(t,{type_end:.3f}),"
+                    f"  min(1,max(0,(t-{t_start:.3f})/{type_dur:.3f})),"
+                    f"  if(gt(t,{fade_start:.3f}),"
+                    f"    max(0,({t_end:.3f}-t)/0.2),"
+                    f"    1))"
+                ).replace(" ", "")
+
+                drawtext_filters.append(
+                    f"drawtext=text='{escaped_full}'"
+                    f":fontcolor={TEXT_COLOR}"
+                    f":fontsize={TEXT_FONTSIZE}"
+                    f"{font_arg}"
+                    f":x='{slide_expr}'"
+                    f":y={y_pos}"
+                    f":shadowcolor={TEXT_SHADOW_COLOR}:shadowx=2:shadowy=2"
+                    f":alpha='{alpha_expr}'"
+                    f":enable='between(t,{t_start:.3f},{t_end:.3f})'"
+                )
+            else:
+                # Standard slide-in animation
+                slide_end = t_start + TEXT_SLIDE_DURATION
+                slide_expr = (
+                    f"(w-text_w)/2-{TEXT_SLIDE_OFFSET_PX}"
+                    f"*(1-min(1,max(0,(t-{t_start:.3f})/{TEXT_SLIDE_DURATION:.3f})))"
+                )
+                alpha_expr = (
+                    f"if(lt(t,{slide_end:.3f}),"
+                    f"  max(0,(t-{t_start:.3f})/{TEXT_SLIDE_DURATION:.3f}),"
+                    f"  if(gt(t,{fade_start:.3f}),"
+                    f"    max(0,({t_end:.3f}-t)/0.2),"
+                    f"    1))"
+                ).replace(" ", "")
+
+                drawtext_filters.append(
+                    f"drawtext=text='{escaped_full}'"
+                    f":fontcolor={TEXT_COLOR}"
+                    f":fontsize={TEXT_FONTSIZE}"
+                    f"{font_arg}"
+                    f":x='{slide_expr}'"
+                    f":y={y_pos}"
+                    f":shadowcolor={TEXT_SHADOW_COLOR}:shadowx=2:shadowy=2"
+                    f":alpha='{alpha_expr}'"
+                    f":enable='between(t,{t_start:.3f},{t_end:.3f})'"
+                )
 
     if not drawtext_filters:
         shutil.copy(input_path, out_path)
@@ -786,7 +865,9 @@ def build_timeline(
         if s.get("type", "speech") == "speech"
     ]
     chapters = narration_manifest.get("chapters", [])
-    clips    = footage_manifest.get("clips", [])
+    # Merge clips + images from manifest (footage_sourcer uses "clips",
+    # Pixabay sourcer uses "images" — both are valid footage sources)
+    clips = footage_manifest.get("clips", []) + footage_manifest.get("images", [])
 
     # If the narration manifest has no chapter data but a storyboard was provided,
     # extract chapter timing from the storyboard's is_chapter_break entries.
@@ -820,8 +901,18 @@ def build_timeline(
     # Pre-compute lower-third events (first occurrence of each named person)
     lower_third_map = _detect_named_persons(chunks)
 
+    # Normalize all clip/image entries to have local_path + downloaded flag.
+    # Pixabay images use "filename" (relative to output_dir), clips use "local_path".
+    _output_dir = footage_manifest.get("output_dir", "")
+    for c in clips:
+        if not c.get("local_path") and c.get("filename"):
+            c["local_path"] = str(Path(_output_dir) / c["filename"])
+        if "downloaded" not in c:
+            # Infer: if the file exists, mark as downloaded
+            lp = c.get("local_path") or c.get("path") or ""
+            c["downloaded"] = Path(lp).exists() if lp else False
+
     # Separate stills from video clips in footage.
-    # footage_sourcer writes "local_path"; support both field names for safety.
     def _clip_path_str(c):
         return str(c.get("local_path") or c.get("path") or "")
 
@@ -863,6 +954,9 @@ def build_timeline(
     sb_cursor = 0   # sequential storyboard pointer — advances as we match chunks
     _prev_still_path = None   # track last image for Ken Burns continuity
     _prev_motion = None       # maintain motion direction across same-image sub-segments
+    # Rhythm breathing tracker: alternates long holds ↔ burst cuts
+    _rhythm_accum = 0.0       # seconds accumulated in current mode
+    _rhythm_burst = False     # True = burst mode (short cuts), False = normal
 
     for chunk_idx, chunk in enumerate(chunks):
         chunk_start  = chunk.get("start_sec", cursor)
@@ -988,6 +1082,20 @@ def build_timeline(
         else:
             min_seg, max_seg = pacing_range(spec.cut_pacing)
 
+        # Burst mode: rapid 2-4s cuts during peak intensity moments
+        # Only triggers at "intense" level on reveal/climax (not every tension_build)
+        if sb_intensity == "intense" and content_type in (
+                "reveal", "climax", "stakes_moment"):
+            if not _rhythm_burst:
+                _rhythm_burst = True
+                _rhythm_accum = 0.0
+            min_seg = min(min_seg, 2.0)
+            max_seg = min(max_seg, 4.0)
+        elif _rhythm_burst and _rhythm_accum > 8.0:
+            # After 8s of bursts, return to normal breathing
+            _rhythm_burst = False
+            _rhythm_accum = 0.0
+
         # Story-tagged footage: collect ALL stills/clips matching the current
         # storyboard window so sub-segments can rotate through them instead of
         # reusing the same image for every cut within a chunk.
@@ -1071,6 +1179,7 @@ def build_timeline(
                 "sfx": seg_sfx,
                 "lower_third": seg_lower_third,
                 "kb_zoom_rate": kb_zoom_rate,   # story-aware Ken Burns rate
+                "shot_type": sb_shot_type,      # for per-scene color grading
             }
 
             if use_clip and (tagged_clip or videos):
@@ -1140,6 +1249,7 @@ def build_timeline(
 
             t += seg_dur
             cursor = t
+            _rhythm_accum += seg_dur  # track for burst breathing
 
     # ── Post-build normalization ─────────────────────────────────────────
     # Small drift can remain because chapter cards don't exactly fill their
@@ -1238,6 +1348,8 @@ def _pick_sfx_file(sfx_type: str) -> Path | None:
         "impact": ["impact_01.mp3", "impact_02.mp3"],
         "whoosh": ["whoosh_01.mp3", "whoosh_02.mp3", "whoosh_03.mp3", "whoosh_04.mp3", "whoosh_05.mp3"],
         "rumble": ["rumble_01.mp3", "rumble_02.mp3", "rumble_03.mp3"],
+        "shimmer": ["shimmer_01.mp3", "shimmer_02.mp3", "shimmer_03.mp3"],
+        "tension": ["tension_01.mp3"],
     }
     files = [SFX_DIR / f for f in candidates.get(sfx_type, []) if (SFX_DIR / f).exists()]
     return random.choice(files) if files else None
@@ -1392,6 +1504,7 @@ def render(
     segment_paths = []
     sfx_events: list[dict]  = []   # {"time_sec": float, "sfx_file": str}
     lt_events:  list[dict]  = []   # {"time_sec", "end_sec", "name", "role"}
+    clip_audio_events: list[dict] = []  # footage audio passthrough
     render_cursor = 0.0            # cumulative final-video timestamp
 
     print(f"\nRendering {len(segments)} segments...")
@@ -1453,6 +1566,24 @@ def render(
             if src.exists():
                 prepare_clip(src, dur, seg_raw,
                              start_sec=seg.get("clip_start_sec", 0.0))
+                # Extract clip audio for passthrough (low volume under narration)
+                clip_audio_path = seg_raw.parent / f"{seg_raw.stem}_clipaudio.wav"
+                try:
+                    _run([
+                        "ffmpeg", "-y",
+                        "-ss", str(seg.get("clip_start_sec", 0.0)),
+                        "-i", str(src), "-t", str(dur),
+                        "-vn", "-ac", "2", "-ar", "44100",
+                        str(clip_audio_path),
+                    ], "clip_audio_extract")
+                    if clip_audio_path.exists() and clip_audio_path.stat().st_size > 1000:
+                        clip_audio_events.append({
+                            "time_sec": render_cursor,
+                            "audio_file": str(clip_audio_path),
+                            "duration_sec": dur,
+                        })
+                except Exception:
+                    pass  # silently skip if clip has no audio track
             else:
                 _make_black(dur, seg_raw)
 
@@ -1485,20 +1616,29 @@ def render(
         else:  # black
             _make_black(dur, seg_raw)
 
-        # Step 2: Color grade (skip for archival clips already graded in prepare_clip)
-        if seg["source_type"] == "still":
-            apply_color_grade(seg_raw, seg_graded)
+        # Step 2: Color grade — per-scene treatment based on shot_type
+        scene_type = _scene_type_for(seg.get("shot_type"))
+        if seg["source_type"] in ("still", "clip"):
+            apply_color_grade(seg_raw, seg_graded, scene_type=scene_type)
         else:
             seg_graded = seg_raw
 
         # Step 3: Text overlay
         text_entries = []
         if seg.get("text"):
+            # Use typewriter style for dates, names, entity labels
+            text_style = "slide"
+            txt = seg["text"]
+            if re.match(r"^\d{4}$|^\w+ \d{1,2},?\s*\d{4}$", txt.strip()):
+                text_style = "typewriter"  # dates
+            elif txt.isupper() and len(txt) <= 30:
+                text_style = "typewriter"  # entity/person labels
             text_entries.append({
-                "text": seg["text"],
+                "text": txt,
                 "start_sec": 0.0,
                 "end_sec": min(dur - 0.1, 9.0),
                 "zone": seg.get("text_zone", "upper"),
+                "style": text_style,
             })
         add_text_overlay(seg_graded, text_entries, seg_final)
 
@@ -1540,6 +1680,28 @@ def render(
         print(f"Building SFX composite ({len(sfx_events)} events)...")
         sfx_composite_path = tmp_dir / "sfx_composite.wav"
         sfx_composite = _build_sfx_composite(sfx_events, total_video_dur, sfx_composite_path)
+
+    # Step 4d: Build clip audio passthrough composite
+    clip_audio_composite: "Path | None" = None
+    if clip_audio_events:
+        print(f"Building clip audio composite ({len(clip_audio_events)} clips)...")
+        ca_path = tmp_dir / "clip_audio_composite.wav"
+        clip_audio_composite = _build_clip_audio_composite(
+            clip_audio_events, total_video_dur, ca_path)
+
+    # Merge SFX + clip audio into one composite (simpler mix_audio signature)
+    if sfx_composite and clip_audio_composite:
+        merged_fx = tmp_dir / "merged_fx_composite.wav"
+        _run([
+            "ffmpeg", "-y",
+            "-i", str(sfx_composite), "-i", str(clip_audio_composite),
+            "-filter_complex", "[0][1]amix=inputs=2:duration=first:normalize=0[out]",
+            "-map", "[out]", "-ar", "44100", "-ac", "2",
+            str(merged_fx),
+        ], "merge_fx")
+        sfx_composite = merged_fx
+    elif clip_audio_composite:
+        sfx_composite = clip_audio_composite
 
     # Step 5: Mix audio
     print("Mixing audio...")
@@ -1904,6 +2066,48 @@ def _build_sfx_composite(
     return out_path
 
 
+CLIP_AUDIO_VOLUME = 0.15   # footage audio ducked well under narration
+
+
+def _build_clip_audio_composite(
+    events: list[dict],
+    total_dur: float,
+    out_path: Path,
+) -> "Path | None":
+    """Build composite audio from archival clip audio for passthrough mixing."""
+    valid = [ev for ev in events if Path(ev["audio_file"]).exists()]
+    if not valid:
+        return None
+    inputs = ["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo:d={total_dur}"]
+    filter_parts = []
+    for i, ev in enumerate(valid):
+        delay_ms = int(ev["time_sec"] * 1000)
+        inputs += ["-i", ev["audio_file"]]
+        filter_parts.append(
+            f"[{i + 1}]volume={CLIP_AUDIO_VOLUME},"
+            f"afade=t=in:d=0.3,afade=t=out:st={ev['duration_sec'] - 0.3}:d=0.3,"
+            f"adelay={delay_ms}|{delay_ms}[ca{i}]"
+        )
+    n_inputs = 1 + len(valid)
+    labels = "[0]" + "".join(f"[ca{i}]" for i in range(len(valid)))
+    filter_parts.append(
+        f"{labels}amix=inputs={n_inputs}:duration=first:dropout_transition=0[caout]"
+    )
+    cmd = (
+        ["ffmpeg", "-y"]
+        + inputs
+        + [
+            "-filter_complex", ";".join(filter_parts),
+            "-map", "[caout]",
+            "-t", str(total_dur),
+            "-ar", "44100", "-ac", "2",
+            str(out_path),
+        ]
+    )
+    _run(cmd, "clip_audio_composite")
+    return out_path
+
+
 def _concat_videos(video_paths: list[Path], out_path: Path) -> Path:
     """Concatenate video files using ffmpeg concat demuxer."""
     list_file = out_path.parent / "_concat_list.txt"
@@ -1942,7 +2146,7 @@ def mix_audio(
             f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
             f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
             f"[3:a]volume=1.0[sfx];"
-            f"[narr][music][sfx]amix=inputs=3:duration=first:dropout_transition=3[aout]"
+            f"[narr][music][sfx]amix=inputs=3:duration=first:dropout_transition=3:normalize=0[aout]"
         )
         cmd = [
             "ffmpeg", "-y",
