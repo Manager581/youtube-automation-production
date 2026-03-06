@@ -59,6 +59,11 @@ import sys
 import tempfile
 from pathlib import Path
 
+# Ensure project root is on path for `from pipeline.xxx` imports
+_project_root = str(Path(__file__).resolve().parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 try:
     from pipeline.production_rules import (
         classify_all_chunks,
@@ -334,9 +339,16 @@ def make_ken_burns(
     fps: int = OUTPUT_FPS,
     focal_point: tuple[float, float] | None = None,
     zoom_rate: float = KB_ZOOM_RATE_PER_SEC,   # modulated by storyboard intensity
+    parallax_engine=None,       # ParallaxEngine instance for depth parallax rendering
+    visual_config=None,         # SegmentVisualConfig for story-driven overlays
+    start_time: float = 0.0,    # absolute timeline position (for time-based effects)
 ) -> Path:
     """
-    Render a Ken Burns motion clip from a still image using FFmpeg zoompan.
+    Render a Ken Burns motion clip from a still image.
+
+    If parallax_engine is provided: uses Depth Anything V2 parallax + numpy overlays
+    (frame-by-frame, story-driven visual treatment from SegmentVisualConfig).
+    Otherwise: uses FFmpeg zoompan filter (backward compatible).
 
     Three layers of motion (matching Fern's actual camera behavior):
       1. Primary motion — zoom or pan as specified by direction
@@ -347,6 +359,26 @@ def make_ken_burns(
     focal_point: (fx, fy) as fractions [0..1]. Zoom anchors here. Default center.
     zoom_rate: zoom %/sec change. Modulated by storyboard intensity.
     """
+    # Parallax path: depth-based 3D Ken Burns with overlays (story-driven)
+    if parallax_engine is not None:
+        from pipeline.parallax_renderer import (
+            render_segment_frames, frames_to_mp4, SegmentVisualConfig
+        )
+        config = visual_config or SegmentVisualConfig(
+            motion_type={"zoom_in": "slow_zoom_in", "zoom_out": "slow_zoom_out",
+                         "pan_left": "pan_left", "pan_right": "pan_right",
+                         "pan_up": "pan_up", "pan_down": "pan_down",
+                         "static": "static"}.get(direction, "slow_zoom_in"),
+            motion_speed=zoom_rate * 60,
+        )
+        frames = render_segment_frames(
+            parallax_engine, str(image_path), duration_sec, config,
+            start_time=start_time, focal_point=focal_point,
+        )
+        frames_to_mp4(frames, str(out_path), fps)
+        return out_path
+
+    # FFmpeg zoompan path (fallback when no parallax engine)
     n_frames = max(int(math.ceil(duration_sec * fps)), 1)
 
     # Focal point — defaults to center
@@ -1176,6 +1208,7 @@ def build_timeline(
                 "text_zone": overlay_zone if is_chunk_start else "upper",
                 "narration_chunk_idx": chunk_idx,
                 "content_type": content_type,   # carry through for compliance report
+                "intensity": sb_intensity,      # for parallax visual config
                 "sfx": seg_sfx,
                 "lower_third": seg_lower_third,
                 "kb_zoom_rate": kb_zoom_rate,   # story-aware Ken Burns rate
@@ -1476,12 +1509,22 @@ def render(
     out_path: Path,
     tmp_dir: Path,
     dry_run: bool = False,
+    use_parallax: bool = False,
 ) -> Path:
     """
     Render all segments, apply grade, add text, concatenate, mix audio.
+    When use_parallax=True, stills get depth parallax + motion graphics + story-driven color.
     """
     out_path.parent.mkdir(parents=True, exist_ok=True)
     tmp_dir.mkdir(parents=True, exist_ok=True)
+
+    # Initialize parallax engine if requested
+    parallax_engine = None
+    if use_parallax:
+        from pipeline.parallax_renderer import ParallaxEngine, SegmentVisualConfig
+        cache_dir = tmp_dir / ".depth_cache"
+        parallax_engine = ParallaxEngine(cache_dir=str(cache_dir))
+        print("  Parallax rendering enabled (depth model loads on first still)")
 
     if dry_run:
         print("\n=== DRY RUN TIMELINE ===")
@@ -1552,12 +1595,33 @@ def render(
               end="  ", flush=True)
 
         # Step 1: Create raw segment
+        # Build parallax visual config from storyboard metadata (if parallax enabled)
+        _visual_config = None
+        if parallax_engine and seg["source_type"] == "still":
+            from pipeline.parallax_renderer import SegmentVisualConfig
+            _visual_config = SegmentVisualConfig.from_storyboard(
+                narrative_function=seg.get("content_type", "context_background"),
+                intensity=seg.get("intensity", "neutral"),
+                shot_type=seg.get("shot_type"),
+                motion_direction=seg.get("motion", "zoom_in"),
+                zoom_rate_pct_sec=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC) * 100,
+            )
+            # Attach text overlay to visual config (rendered in-frame, not separate ffmpeg pass)
+            if seg.get("text"):
+                _visual_config.text_overlay = seg["text"]
+                _visual_config.text_position = (
+                    "lower_third" if seg.get("text_zone") == "lower" else "center"
+                )
+
         if seg["source_type"] == "still":
             src = Path(seg["source_path"])
             if src.exists():
                 make_ken_burns(src, dur, seg["motion"], seg_raw,
                                focal_point=seg.get("focal_point"),
-                               zoom_rate=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC))
+                               zoom_rate=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC),
+                               parallax_engine=parallax_engine,
+                               visual_config=_visual_config,
+                               start_time=render_cursor)
             else:
                 _make_black(dur, seg_raw)
 
@@ -1616,31 +1680,35 @@ def render(
         else:  # black
             _make_black(dur, seg_raw)
 
-        # Step 2: Color grade — per-scene treatment based on shot_type
-        scene_type = _scene_type_for(seg.get("shot_type"))
-        if seg["source_type"] in ("still", "clip"):
-            apply_color_grade(seg_raw, seg_graded, scene_type=scene_type)
+        # Step 2 & 3: Color grade + text overlay
+        # When parallax rendered a still, both are already applied in-frame — skip ffmpeg passes
+        if parallax_engine and seg["source_type"] == "still" and _visual_config:
+            seg_final = seg_raw  # parallax already did color + overlays + text
         else:
-            seg_graded = seg_raw
+            # FFmpeg color grade — per-scene treatment based on shot_type
+            scene_type = _scene_type_for(seg.get("shot_type"))
+            if seg["source_type"] in ("still", "clip"):
+                apply_color_grade(seg_raw, seg_graded, scene_type=scene_type)
+            else:
+                seg_graded = seg_raw
 
-        # Step 3: Text overlay
-        text_entries = []
-        if seg.get("text"):
-            # Use typewriter style for dates, names, entity labels
-            text_style = "slide"
-            txt = seg["text"]
-            if re.match(r"^\d{4}$|^\w+ \d{1,2},?\s*\d{4}$", txt.strip()):
-                text_style = "typewriter"  # dates
-            elif txt.isupper() and len(txt) <= 30:
-                text_style = "typewriter"  # entity/person labels
-            text_entries.append({
-                "text": txt,
-                "start_sec": 0.0,
-                "end_sec": min(dur - 0.1, 9.0),
-                "zone": seg.get("text_zone", "upper"),
-                "style": text_style,
-            })
-        add_text_overlay(seg_graded, text_entries, seg_final)
+            # FFmpeg text overlay
+            text_entries = []
+            if seg.get("text"):
+                text_style = "slide"
+                txt = seg["text"]
+                if re.match(r"^\d{4}$|^\w+ \d{1,2},?\s*\d{4}$", txt.strip()):
+                    text_style = "typewriter"
+                elif txt.isupper() and len(txt) <= 30:
+                    text_style = "typewriter"
+                text_entries.append({
+                    "text": txt,
+                    "start_sec": 0.0,
+                    "end_sec": min(dur - 0.1, 9.0),
+                    "zone": seg.get("text_zone", "upper"),
+                    "style": text_style,
+                })
+            add_text_overlay(seg_graded, text_entries, seg_final)
 
         segment_paths.append(seg_final)
         render_cursor += dur
@@ -2251,6 +2319,11 @@ def _parse_args():
                    help="Path to storyboard.json (from storyboard_generator.py). "
                         "Enables story-specific footage selection: clips tagged with "
                         "matching storyboard_segment_ids are preferred over round-robin.")
+    p.add_argument("--parallax", action="store_true",
+                   help="Use depth parallax + motion graphics rendering for stills. "
+                        "Requires Depth Anything V2 (~95MB). Renders ~2-3 hours for 25min video. "
+                        "Every segment's visual treatment is story-driven (narrative_function, "
+                        "intensity, shot_type).")
     return p.parse_args()
 
 
@@ -2342,6 +2415,7 @@ def main():
             out_path=out_path,
             tmp_dir=tmp_dir,
             dry_run=args.dry_run,
+            use_parallax=args.parallax,
         )
     finally:
         if not args.keep_tmp and not args.dry_run and tmp_dir.exists():
