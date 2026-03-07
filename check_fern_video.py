@@ -339,6 +339,106 @@ def check_narration_sync(video_path):
     return drift, "PASS", f"A/V sync ✓  (drift: {drift:.2f}s)"
 
 
+def check_brightness_floor(video_path):
+    """Check for near-black frames — dark/dead segments indicate bad footage or encoding errors."""
+    try:
+        from PIL import Image
+        import numpy as np
+    except ImportError:
+        return None, "SKIP", "Pillow/numpy not installed"
+
+    # Get duration
+    data = _ffprobe_json(video_path, "stream=duration", select_streams="v:0")
+    if not data or not data.get("streams"):
+        return None, "SKIP", "Cannot read video duration"
+    duration = float(data["streams"][0].get("duration", 0))
+    if duration <= 0:
+        return None, "SKIP", "Zero duration"
+
+    # Sample 10 frames per minute
+    n_samples = max(10, int(duration / 60 * 10))
+    interval = duration / n_samples
+    dark_frames = 0
+    consecutive_dark = 0
+    max_consecutive = 0
+
+    for idx in range(n_samples):
+        t = idx * interval
+        # Extract one frame at time t
+        cmd = [
+            "ffmpeg", "-ss", f"{t:.2f}", "-i", str(video_path),
+            "-vframes", "1", "-f", "rawvideo", "-pix_fmt", "rgb24",
+            "-v", "error", "pipe:1"
+        ]
+        try:
+            result = subprocess.run(cmd, capture_output=True, timeout=10)
+            if result.returncode != 0 or len(result.stdout) < 100:
+                continue
+            # Parse raw frame (we don't know exact size, just check mean brightness)
+            arr = np.frombuffer(result.stdout, dtype=np.uint8)
+            mean_brightness = arr.mean()
+            if mean_brightness < 20:
+                dark_frames += 1
+                consecutive_dark += 1
+                max_consecutive = max(max_consecutive, consecutive_dark)
+            else:
+                consecutive_dark = 0
+        except Exception:
+            continue
+
+    dark_pct = dark_frames / max(n_samples, 1)
+
+    if max_consecutive >= 3 or dark_pct > 0.05:
+        return dark_pct, "FAIL", (f"{dark_pct:.0%} near-black frames "
+                                   f"(max {max_consecutive} consecutive) — "
+                                   "check for dead segments or encoding errors")
+    if dark_frames > 0:
+        return dark_pct, "WARN", f"{dark_frames} near-black frame(s) detected ({dark_pct:.0%})"
+    return dark_pct, "PASS", "No near-black frames ✓"
+
+
+def check_content_dedup(timeline_path):
+    """Check if too many segments reuse the same image — indicates sourcing gap."""
+    if not timeline_path:
+        return None, "SKIP", "No timeline.json"
+
+    try:
+        with open(timeline_path) as f:
+            tl = json.load(f)
+    except Exception as e:
+        return None, "WARN", f"Could not read timeline: {e}"
+
+    # Count source_path usage
+    path_counts: dict[str, int] = {}
+    total_visual = 0
+    for seg in tl:
+        if seg.get("source_type") in ("chapter_card", "black"):
+            continue
+        total_visual += 1
+        sp = seg.get("source_path", "")
+        if sp:
+            path_counts[sp] = path_counts.get(sp, 0) + 1
+
+    if total_visual == 0:
+        return None, "SKIP", "No visual segments"
+
+    unique = len(path_counts)
+    reuse_pct = 1.0 - (unique / max(total_visual, 1))
+
+    # Check for heavy reuse
+    overused = {p: c for p, c in path_counts.items() if c > 4}
+
+    if reuse_pct > 0.5:
+        return reuse_pct, "FAIL", (f"Only {unique} unique images for {total_visual} segments "
+                                    f"({reuse_pct:.0%} reuse) — need more footage")
+    if reuse_pct > 0.3 or overused:
+        details = ", ".join(f"{Path(p).name}×{c}" for p, c in
+                           sorted(overused.items(), key=lambda x: -x[1])[:3])
+        return reuse_pct, "WARN", (f"{unique}/{total_visual} unique ({reuse_pct:.0%} reuse)"
+                                    + (f" — overused: {details}" if details else ""))
+    return reuse_pct, "PASS", f"{unique}/{total_visual} unique sources ({reuse_pct:.0%} reuse) ✓"
+
+
 # ── Output ────────────────────────────────────────────────────────────────────
 
 def print_check(name, status, message):
@@ -413,6 +513,12 @@ def main():
 
     _, s, m = check_beat_sync(timeline, music)
     results.append(print_check("Beat sync", s, m))
+
+    _, s, m = check_brightness_floor(video)
+    results.append(print_check("Brightness floor", s, m))
+
+    _, s, m = check_content_dedup(timeline)
+    results.append(print_check("Content dedup", s, m))
 
     # Summary
     fails  = results.count("FAIL")

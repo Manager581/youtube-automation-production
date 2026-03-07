@@ -20,6 +20,7 @@ Usage:
     frames_to_mp4(frames, "output/seg_0042.mp4")
 """
 
+import cv2
 import hashlib
 import math
 import os
@@ -99,7 +100,15 @@ class SegmentVisualConfig:
     text_overlay: str | None = None
     text_position: str = "center"
     text_style: str = "typewriter"
+    text_size: int = 56  # font size in pixels (Director can override)
     secondary_text: str | None = None
+    # v2.0 fields
+    composition_type: str = "single"  # "single", "composite", "text_card"
+    layers: list = field(default_factory=list)
+    atmosphere: str = "none"  # "dust", "fog", "rain", "none"
+    transition_in: dict | None = None
+    transition_out: dict | None = None
+    sync_points: list = field(default_factory=list)
 
     @classmethod
     def from_storyboard(cls, narrative_function: str, intensity: str,
@@ -276,6 +285,187 @@ def render_parallax_frame(image_arr, depth_arr, t, motion_type="slow_zoom_in",
         image_arr[y1, x1] * fx * fy
     )
     return np.clip(result, 0, 255).astype(np.uint8)
+
+
+# ── Multi-Image Compositing ─────────────────────────────────────────────────
+
+def extract_subject(image_arr: np.ndarray, depth_arr: np.ndarray,
+                    threshold: float = 0.55) -> np.ndarray:
+    """
+    Extract foreground subject using depth map thresholding.
+
+    Returns RGBA array where alpha = feathered subject mask.
+    Foreground = depth > threshold (closer objects have higher depth values
+    after Depth Anything normalization).
+    """
+    h, w = image_arr.shape[:2]
+    mask = (depth_arr > threshold).astype(np.float32)
+    mask_u8 = (mask * 255).astype(np.uint8)
+
+    # Morphological cleanup: close holes, remove noise
+    kernel = np.ones((7, 7), np.uint8)
+    mask_u8 = cv2.morphologyEx(mask_u8, cv2.MORPH_CLOSE, kernel)
+    mask_u8 = cv2.morphologyEx(mask_u8, cv2.MORPH_OPEN, kernel)
+
+    # Gaussian feathering for smooth edges
+    mask_smooth = cv2.GaussianBlur(mask_u8, (0, 0), 5).astype(np.float32) / 255.0
+
+    rgba = np.zeros((h, w, 4), dtype=np.uint8)
+    rgba[:, :, :3] = image_arr
+    rgba[:, :, 3] = (mask_smooth * 255).astype(np.uint8)
+    return rgba
+
+
+def inpaint_layer(layer_rgba: np.ndarray, original_image: np.ndarray | None = None) -> np.ndarray:
+    """
+    Fill holes in a layer using blur-fill (NOT cv2.inpaint, which creates streaky artifacts).
+
+    Only blurs into hole regions — existing pixels stay sharp.
+    """
+    rgb = layer_rgba[:, :, :3].copy()
+    alpha = layer_rgba[:, :, 3]
+
+    hole_mask = (alpha < 30).astype(np.float32)
+    if np.sum(hole_mask) < 100:
+        result = layer_rgba.copy()
+        result[:, :, 3] = 255
+        return result
+
+    source = original_image if original_image is not None else rgb
+    blurred_fill = cv2.GaussianBlur(source, (0, 0), 30)
+
+    # Soft edge mask: only blend into holes, keep existing pixels sharp
+    soft_mask = cv2.GaussianBlur(hole_mask, (0, 0), 15)
+    soft_mask3 = soft_mask[:, :, np.newaxis]
+
+    filled = rgb.astype(np.float32) * (1 - soft_mask3) + blurred_fill.astype(np.float32) * soft_mask3
+    result = layer_rgba.copy()
+    result[:, :, :3] = np.clip(filled, 0, 255).astype(np.uint8)
+    result[:, :, 3] = 255
+    return result
+
+
+def render_composite_frame(
+    bg_arr: np.ndarray, bg_depth: np.ndarray,
+    subject_rgba: np.ndarray,
+    t: float, motion_speed: float = 3.0,
+    parallax_strength: float = 50.0,
+    subject_scale: float = 0.65,
+) -> np.ndarray:
+    """
+    Render a composite frame: subject over background with independent parallax motion.
+
+    Background moves slowly, subject moves faster — creates depth separation.
+    """
+    h, w = bg_arr.shape[:2]
+
+    # Background parallax (slow)
+    bg_frame = render_parallax_frame(
+        bg_arr, bg_depth, t,
+        motion_type="slow_zoom_in",
+        parallax_strength=parallax_strength * 0.3,
+        speed=motion_speed * 0.5,
+    )
+
+    # Resize subject to fit canvas
+    sh, sw = subject_rgba.shape[:2]
+    target_h = int(h * subject_scale)
+    scale = target_h / sh
+    new_w, new_h = int(sw * scale), int(sh * scale)
+    subject_resized = cv2.resize(subject_rgba, (new_w, new_h), interpolation=cv2.INTER_LANCZOS4)
+
+    # Subject motion (faster, parallax effect)
+    dx = t * motion_speed * 8.0
+    dy = t * motion_speed * -3.0
+
+    # Place subject centered horizontally, lower-center vertically
+    place_x = int((w - new_w) / 2 + dx)
+    place_y = int(h - new_h - int(h * 0.05) + dy)
+
+    # Alpha composite subject onto background
+    result = bg_frame.copy()
+    _alpha_composite_onto(result, subject_resized, place_x, place_y)
+
+    return result
+
+
+def _alpha_composite_onto(canvas: np.ndarray, rgba: np.ndarray, x: int, y: int):
+    """Composite RGBA layer onto RGB canvas at (x, y). Modifies canvas in-place."""
+    ch, cw = canvas.shape[:2]
+    lh, lw = rgba.shape[:2]
+
+    # Clip to canvas bounds
+    src_x1 = max(0, -x)
+    src_y1 = max(0, -y)
+    src_x2 = min(lw, cw - x)
+    src_y2 = min(lh, ch - y)
+    dst_x1 = max(0, x)
+    dst_y1 = max(0, y)
+    dst_x2 = dst_x1 + (src_x2 - src_x1)
+    dst_y2 = dst_y1 + (src_y2 - src_y1)
+
+    if dst_x2 <= dst_x1 or dst_y2 <= dst_y1:
+        return
+
+    alpha = rgba[src_y1:src_y2, src_x1:src_x2, 3:4].astype(np.float32) / 255.0
+    fg = rgba[src_y1:src_y2, src_x1:src_x2, :3].astype(np.float32)
+    bg = canvas[dst_y1:dst_y2, dst_x1:dst_x2].astype(np.float32)
+
+    canvas[dst_y1:dst_y2, dst_x1:dst_x2] = np.clip(
+        fg * alpha + bg * (1.0 - alpha), 0, 255
+    ).astype(np.uint8)
+
+
+def create_atmosphere_layer(atmo_type: str, w: int, h: int, t: float,
+                            seed: int = 42) -> np.ndarray | None:
+    """
+    Create atmospheric RGBA overlay: dust, fog, rain, or none.
+
+    Returns RGBA array or None if atmo_type == 'none'.
+    """
+    if atmo_type == "none":
+        return None
+
+    layer = np.zeros((h, w, 4), dtype=np.uint8)
+
+    if atmo_type == "dust":
+        # Dust particles as RGBA layer (reuse existing dust logic but as overlay)
+        rng = random.Random(seed)
+        for i in range(40):
+            base_x = rng.uniform(0, w)
+            base_y = rng.uniform(0, h)
+            drift = rng.uniform(0.3, 1.5)
+            phase = rng.uniform(0, 2 * math.pi)
+            x = int((base_x + math.sin(t * drift + phase) * 100 + t * 25) % w)
+            y = int((base_y + math.cos(t * drift * 0.7 + phase) * 60 - t * 15) % h)
+            size = rng.randint(2, 8)
+            brightness = rng.randint(180, 240)
+            alpha = rng.uniform(0.15, 0.5) * (0.5 + 0.5 * math.sin(t * 3 + phase))
+            alpha = max(0, alpha)
+            cv2.circle(layer, (x, y), size, (brightness, brightness, brightness, int(alpha * 255)), -1)
+
+    elif atmo_type == "fog":
+        # Horizontal fog band that drifts
+        fog_y = int(h * (0.35 + 0.1 * math.sin(t * 0.3)))
+        fog_h = int(h * 0.25)
+        for row in range(max(0, fog_y - fog_h), min(h, fog_y + fog_h)):
+            dist = abs(row - fog_y) / max(fog_h, 1)
+            alpha = int(30 * (1.0 - dist) * (0.7 + 0.3 * math.sin(t * 0.5)))
+            layer[row, :, :3] = 200
+            layer[row, :, 3] = alpha
+
+    elif atmo_type == "rain":
+        rng = random.Random(seed)
+        for i in range(80):
+            x = int(rng.uniform(0, w))
+            y = int((rng.uniform(0, h) + t * 400) % h)
+            length = rng.randint(15, 40)
+            alpha = rng.randint(30, 80)
+            angle_x = rng.randint(-3, -1)
+            cv2.line(layer, (x, y), (x + angle_x, y + length),
+                     (200, 200, 220, alpha), 1)
+
+    return layer
 
 
 # ── Color Grading ────────────────────────────────────────────────────────────
@@ -466,12 +656,15 @@ def render_segment_frames(
     config: SegmentVisualConfig,
     start_time: float = 0.0,
     focal_point: tuple[float, float] | None = None,
+    bg_image_path: str | None = None,
 ) -> list[np.ndarray]:
     """
     Render a complete segment as a list of numpy frames.
 
     This is the generalized version of render_beat() from render_hook_30s.py.
     Every visual decision is driven by the SegmentVisualConfig (from storyboard).
+
+    For composite segments, image_path = subject, bg_image_path = background.
 
     Returns list of (H, W, 3) uint8 arrays.
     """
@@ -486,31 +679,73 @@ def render_segment_frames(
     dep_img = dep_img.resize((iw, ih), Image.LANCZOS)
     dep_arr = np.array(dep_img).astype(np.float32) / 255.0
 
+    # Composite mode: load background + extract subject
+    composite_mode = (config.composition_type == "composite" and bg_image_path)
+    bg_arr = bg_dep = subject_rgba = None
+    if composite_mode:
+        bg_img = Image.open(bg_image_path).convert("RGB")
+        bg_img = prepare_image(bg_img)
+        bg_arr = np.array(bg_img)
+        bg_depth_raw = engine.get_depth_map(bg_img, bg_image_path)
+        bg_dep_img = Image.fromarray((bg_depth_raw * 255).astype(np.uint8))
+        bh, bw = bg_arr.shape[:2]
+        bg_dep_img = bg_dep_img.resize((bw, bh), Image.LANCZOS)
+        bg_dep = np.array(bg_dep_img).astype(np.float32) / 255.0
+        # Extract subject from primary image
+        subject_rgba = extract_subject(img_arr, dep_arr, threshold=0.50)
+
     num_frames = int(duration_sec * FPS)
     frames = []
+
+    # Pre-compute sync point trigger frames
+    sync_triggers = {}
+    for sp in config.sync_points:
+        word_idx = sp.get("word_index", 0)
+        total_words = sp.get("_total_words", 20)
+        trigger_t = word_idx / max(total_words, 1)
+        trigger_frame = int(trigger_t * num_frames)
+        sync_triggers[trigger_frame] = sp
 
     for i in range(num_frames):
         t = i / max(1, num_frames - 1)
         t_eased = 0.5 - 0.5 * math.cos(t * math.pi)  # sinusoidal ease-in-out
 
-        frame = render_parallax_frame(
-            img_arr, dep_arr, t_eased,
-            config.motion_type, config.parallax_strength, config.motion_speed
-        )
-
-        # Center crop to output dimensions
-        fh, fw = frame.shape[:2]
-        cy, cx = (fh - H) // 2, (fw - W) // 2
-        if cy >= 0 and cx >= 0:
-            frame = frame[cy:cy + H, cx:cx + W]
+        if composite_mode:
+            frame = render_composite_frame(
+                bg_arr, bg_dep, subject_rgba,
+                t_eased, config.motion_speed, config.parallax_strength,
+            )
+            # Center crop
+            fh, fw = frame.shape[:2]
+            cy, cx = (fh - H) // 2, (fw - W) // 2
+            if cy >= 0 and cx >= 0:
+                frame = frame[cy:cy + H, cx:cx + W]
+            else:
+                frame = np.array(Image.fromarray(frame).resize((W, H), Image.LANCZOS))
         else:
-            frame = np.array(Image.fromarray(frame).resize((W, H), Image.LANCZOS))
+            frame = render_parallax_frame(
+                img_arr, dep_arr, t_eased,
+                config.motion_type, config.parallax_strength, config.motion_speed
+            )
+            # Center crop to output dimensions
+            fh, fw = frame.shape[:2]
+            cy, cx = (fh - H) // 2, (fw - W) // 2
+            if cy >= 0 and cx >= 0:
+                frame = frame[cy:cy + H, cx:cx + W]
+            else:
+                frame = np.array(Image.fromarray(frame).resize((W, H), Image.LANCZOS))
 
         # Color grade
         frame = color_grade(frame, config.color_style)
 
-        # Motion graphics overlays
+        # Atmosphere overlay (between background and post-processing)
         abs_t = start_time + i / FPS
+        atmo = create_atmosphere_layer(config.atmosphere, W, H, abs_t,
+                                        seed=int(start_time * 10) + 42)
+        if atmo is not None:
+            _alpha_composite_onto(frame, atmo, 0, 0)
+
+        # Motion graphics overlays
         if config.particles:
             frame = add_dust_particles(frame, abs_t, config.particle_intensity,
                                        seed=int(start_time * 10) + 42)
@@ -521,15 +756,48 @@ def render_segment_frames(
         if config.vignette:
             frame = add_vignette(frame, config.vignette_strength)
 
-        # Text overlay (typewriter style)
-        if config.text_overlay and t >= 0.1:
+        # Sync point text reveals
+        active_sync_text = None
+        for trigger_frame, sp in sync_triggers.items():
+            if i >= trigger_frame:
+                active_sync_text = sp
+        if active_sync_text and active_sync_text.get("action") == "text_reveal":
+            sp_text = active_sync_text.get("text", "")
+            sp_trigger = list(sync_triggers.keys())[list(sync_triggers.values()).index(active_sync_text)]
+            sp_progress = min(1.0, (i - sp_trigger) / max(1, FPS * 1.5))  # 1.5s reveal
+            if sp_progress > 0:
+                pf = Image.fromarray(frame)
+                sp_font_size = sp.get("font_size", config.text_size)
+                pf = render_typewriter_text(
+                    pf, sp_text, "lower_third", sp_progress, font_size=sp_font_size
+                )
+                frame = np.array(pf)
+
+        # Regular text overlay (typewriter style) — only if no sync point text is active
+        elif config.text_overlay and t >= 0.1:
             tp = min(1.0, (t - 0.1) / 0.3)
             pf = Image.fromarray(frame)
             pf = render_typewriter_text(
                 pf, config.text_overlay, config.text_position, tp,
+                font_size=config.text_size,
                 secondary_text=config.secondary_text
             )
             frame = np.array(pf)
+
+        # Transition fades
+        if config.transition_in and i < config.transition_in.get("frames", 0):
+            fade_frames = config.transition_in["frames"]
+            fade_type = config.transition_in.get("type", "cut")
+            if fade_type == "fade_from_black":
+                alpha = i / max(1, fade_frames)
+                frame = (frame.astype(np.float32) * alpha).astype(np.uint8)
+        if config.transition_out:
+            out_frames = config.transition_out.get("frames", 0)
+            if out_frames > 0 and i >= num_frames - out_frames:
+                fade_type = config.transition_out.get("type", "cut")
+                if fade_type == "fade_to_black":
+                    alpha = (num_frames - 1 - i) / max(1, out_frames)
+                    frame = (frame.astype(np.float32) * alpha).astype(np.uint8)
 
         frames.append(frame)
 

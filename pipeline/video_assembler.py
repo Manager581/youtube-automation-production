@@ -133,7 +133,7 @@ TEXT_SLIDE_OFFSET_PX   = 120     # pixels off-center text starts from (slides to
 TEXT_UPPER_Y_PCT       = 0.07    # 7% from top
 TEXT_CENTER_Y_PCT      = 0.42    # ~middle of frame
 TEXT_LOWER_Y_PCT       = 0.75    # 75% from top (lower third area)
-TEXT_FONTSIZE          = 52
+TEXT_FONTSIZE          = 78
 TEXT_COLOR             = "white"
 TEXT_SHADOW_COLOR      = "black@0.7"
 TEXT_FONT              = "Arial-Bold"  # fallback to available system font
@@ -342,6 +342,7 @@ def make_ken_burns(
     parallax_engine=None,       # ParallaxEngine instance for depth parallax rendering
     visual_config=None,         # SegmentVisualConfig for story-driven overlays
     start_time: float = 0.0,    # absolute timeline position (for time-based effects)
+    bg_image_path: str | None = None,  # background image for composite rendering
 ) -> Path:
     """
     Render a Ken Burns motion clip from a still image.
@@ -371,12 +372,17 @@ def make_ken_burns(
                          "static": "static"}.get(direction, "slow_zoom_in"),
             motion_speed=zoom_rate * 60,
         )
-        frames = render_segment_frames(
-            parallax_engine, str(image_path), duration_sec, config,
-            start_time=start_time, focal_point=focal_point,
-        )
-        frames_to_mp4(frames, str(out_path), fps)
-        return out_path
+        try:
+            frames = render_segment_frames(
+                parallax_engine, str(image_path), duration_sec, config,
+                start_time=start_time, focal_point=focal_point,
+                bg_image_path=bg_image_path,
+            )
+            frames_to_mp4(frames, str(out_path), fps)
+            return out_path
+        except Exception as e:
+            logging.warning("Parallax render failed for %s: %s — falling back to FFmpeg",
+                            image_path, e)
 
     # FFmpeg zoompan path (fallback when no parallax engine)
     n_frames = max(int(math.ceil(duration_sec * fps)), 1)
@@ -476,6 +482,7 @@ def apply_color_grade(
     input_path: Path,
     out_path: Path,
     scene_type: str = "default",
+    is_clip: bool = False,
 ) -> Path:
     """
     Apply Fern color grade with film grain, vignette, and per-scene treatment.
@@ -485,34 +492,53 @@ def apply_color_grade(
       "archival_bw" — full desaturation for B&W archival footage
       "document"    — warm sepia tint for documents/memos
       "cold"        — blue-shifted for clinical/institutional scenes
+
+    is_clip: when True, uses lighter grade (no vignette, softer black crush,
+             lighter gamma) to avoid crushing already-dark archival footage.
     """
-    # curves: black point at 7% (push 0→7% luma to 0)
-    black_in = COLOR_BLACK_CRUSH
+    if is_clip:
+        # Clips: gentle grade only — keep original brightness/contrast
+        black_in = 0.03  # softer black crush (3% vs 7% for stills)
+        gamma = 0.96     # barely touch gamma
+        sat = min(COLOR_SATURATION * 1.4, 0.65)  # less desaturation
+    else:
+        black_in = COLOR_BLACK_CRUSH
+        gamma = COLOR_CONTRAST_GAMMA
+        sat = COLOR_SATURATION
+
     curves = f"all='{0}/{0} {black_in:.3f}/{0} 1/1'"
 
     # Base color grade varies by scene type
     if scene_type == "archival_bw":
         color = "hue=s=0"  # full desaturation
     elif scene_type == "document":
-        color = f"hue=s={COLOR_SATURATION},colorbalance=rs=0.05:gs=0.02:bs=-0.03"
+        color = f"hue=s={sat},colorbalance=rs=0.05:gs=0.02:bs=-0.03"
     elif scene_type == "cold":
-        color = f"hue=s={COLOR_SATURATION},colorbalance=rs=-0.03:gs=-0.01:bs=0.05"
+        color = f"hue=s={sat},colorbalance=rs=-0.03:gs=-0.01:bs=0.05"
     else:
-        color = f"hue=s={COLOR_SATURATION}"
+        color = f"hue=s={sat}"
 
     # Film grain: subtle temporal noise (changes per frame = organic feel)
     grain = "noise=alls=12:allf=t+u"
 
-    # Vignette: darken edges to draw eye to center (Fern's measured vignetting)
-    vignette = "vignette=PI/5"
-
-    vf = (
-        f"{color},"
-        f"curves={curves},"
-        f"eq=gamma={COLOR_CONTRAST_GAMMA},"
-        f"{grain},"
-        f"{vignette}"
-    )
+    if is_clip:
+        # No vignette on clips — they're already produced video
+        vf = (
+            f"{color},"
+            f"curves={curves},"
+            f"eq=gamma={gamma},"
+            f"{grain}"
+        )
+    else:
+        # Vignette: darken edges to draw eye to center (Fern's measured vignetting)
+        vignette = "vignette=PI/5"
+        vf = (
+            f"{color},"
+            f"curves={curves},"
+            f"eq=gamma={gamma},"
+            f"{grain},"
+            f"{vignette}"
+        )
 
     cmd = [
         "ffmpeg", "-y", "-i", str(input_path),
@@ -871,6 +897,7 @@ def build_timeline(
     beat_times: list[float] | None = None,
     detect_focal_points: bool = False,
     storyboard: list | None = None,
+    stills_only: bool = False,
 ) -> list[dict]:
     """
     Map narration chunks to visual segments.
@@ -956,11 +983,14 @@ def build_timeline(
             or _clip_path_str(c).lower().endswith(_STILL_EXTS)
         ) and _clip_path_str(c).lower().endswith(_STILL_EXTS)  # reject unsupported formats
     ]
-    videos = [
-        c for c in clips
-        if c.get("downloaded") and
-        _clip_path_str(c).lower().endswith((".mp4", ".mov", ".mkv", ".webm"))
-    ]
+    if stills_only:
+        videos = []
+    else:
+        videos = [
+            c for c in clips
+            if c.get("downloaded") and
+            _clip_path_str(c).lower().endswith((".mp4", ".mov", ".mkv", ".webm"))
+        ]
 
     # Shuffle stills so they don't appear in the same order as sourced
     random.shuffle(stills)
@@ -1163,16 +1193,20 @@ def build_timeline(
                 motion = spec.weighted_motion()
 
             # ── DP4: SFX ──────────────────────────────────────────────
-            # Prefer playbook-driven SFX (narrative function + cut motivation),
-            # fallback to existing probability.
-            sb_cut_mot = sb_entry.get("cut_motivation") if sb_entry else None
-            seg_sfx_type = playbook_sfx(content_type, sb_cut_mot)
-            if seg_sfx_type:
-                seg_sfx = seg_sfx_type
-            elif random.random() < spec.sfx_probability:
-                seg_sfx = spec.sfx_type
+            # Prefer Director-provided SFX (content-matched), then playbook,
+            # then existing probability.
+            director_sfx = sb_entry.get("sfx") if sb_entry else None
+            if isinstance(director_sfx, dict) and director_sfx.get("type"):
+                seg_sfx = director_sfx["type"]
             else:
-                seg_sfx = None
+                sb_cut_mot = sb_entry.get("cut_motivation") if sb_entry else None
+                seg_sfx_type = playbook_sfx(content_type, sb_cut_mot)
+                if seg_sfx_type:
+                    seg_sfx = seg_sfx_type
+                elif random.random() < spec.sfx_probability:
+                    seg_sfx = spec.sfx_type
+                else:
+                    seg_sfx = None
 
             # Lower third: first segment of chunk, if this chunk introduces a named person
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
@@ -1213,6 +1247,19 @@ def build_timeline(
                 "lower_third": seg_lower_third,
                 "kb_zoom_rate": kb_zoom_rate,   # story-aware Ken Burns rate
                 "shot_type": sb_shot_type,      # for per-scene color grading
+                # v2.0 storyboard / Director fields (passed through to parallax renderer)
+                "composition": sb_entry.get("composition") if sb_entry else None,
+                "sync_points": sb_entry.get("sync_points", []) if sb_entry else [],
+                "_scene_id": sb_entry.get("_scene_id") if sb_entry else None,
+                "transition_in": sb_entry.get("transition_in") if sb_entry else None,
+                "transition_out": sb_entry.get("transition_out") if sb_entry else None,
+                "zoom_target": sb_entry.get("zoom_target") if sb_entry else None,
+                "arc_position": sb_entry.get("arc_position") if sb_entry else None,
+                # Director text overlay overrides
+                "_text_overlay": sb_entry.get("_text_overlay") if sb_entry else None,
+                "_text_overlay_size": sb_entry.get("_text_overlay_size") if sb_entry else None,
+                "_text_overlay_style": sb_entry.get("_text_overlay_style") if sb_entry else None,
+                "_text_overlay_hold_sec": sb_entry.get("_text_overlay_hold_sec") if sb_entry else None,
             }
 
             if use_clip and (tagged_clip or videos):
@@ -1248,12 +1295,25 @@ def build_timeline(
                     # Vision model fallback: only when --focal-points flag is set
                     if focal is None and detect_focal_points:
                         focal = detect_focal_point(still_path, narration_text=chunk_text)
+                # For composite segments, pick a second still as background
+                _bg_img = None
+                if seg_base.get("composition", {}).get("type") == "composite":
+                    # Try next tagged still, else next general still
+                    if tagged_stills and len(tagged_stills) > 1:
+                        bg_still = tagged_stills[(tagged_still_idx) % len(tagged_stills)]
+                        _bg_img = str(Path(bg_still.get("path", bg_still.get("local_path", ""))))
+                    elif len(stills) > 1:
+                        bg_still = stills[(still_idx) % len(stills)]
+                        _bg_img = str(Path(bg_still.get("path", bg_still.get("local_path", ""))))
+                        still_idx += 1
+
                 segments.append({**seg_base,
                     "source_type": "still",
                     "source_path": str(still_path),
                     "motion": motion,
                     "focal_point": focal,
                     "storyboard_match": bool(tagged_stills),
+                    "_bg_image_path": _bg_img,
                 })
             elif sb_entry_idx is not None and storyboard:
                 # No real footage found but storyboard entry exists — generate visual
@@ -1379,6 +1439,8 @@ def _pick_sfx_file(sfx_type: str) -> Path | None:
     """Return a random existing SFX file for the given type, or None if unavailable."""
     candidates = {
         "impact": ["impact_01.mp3", "impact_02.mp3"],
+        "body_impact": ["body_impact_01.mp3", "impact_01.mp3"],
+        "glass_shatter": ["glass_shatter_01.mp3"],
         "whoosh": ["whoosh_01.mp3", "whoosh_02.mp3", "whoosh_03.mp3", "whoosh_04.mp3", "whoosh_05.mp3"],
         "rumble": ["rumble_01.mp3", "rumble_02.mp3", "rumble_03.mp3"],
         "shimmer": ["shimmer_01.mp3", "shimmer_02.mp3", "shimmer_03.mp3"],
@@ -1580,6 +1642,15 @@ def render(
             if sfx_file:
                 sfx_events.append({"time_sec": render_cursor, "sfx_file": str(sfx_file)})
 
+        # Collect typewriter click SFX for sync point text reveals
+        typewriter_sfx = Path("assets/sfx/typewriter_key.wav")
+        if typewriter_sfx.exists():
+            for sp in seg.get("sync_points", []):
+                if sp.get("typewriter_click") and sp.get("word_index") is not None:
+                    total_words = sp.get("_total_words", 20)
+                    trigger_t = render_cursor + (sp["word_index"] / max(1, total_words)) * dur
+                    sfx_events.append({"time_sec": trigger_t, "sfx_file": str(typewriter_sfx)})
+
         # Collect lower-third event (will be applied post-concat for accurate timestamps)
         lt = seg.get("lower_third")
         if lt and lt.get("name"):
@@ -1597,6 +1668,7 @@ def render(
         # Step 1: Create raw segment
         # Build parallax visual config from storyboard metadata (if parallax enabled)
         _visual_config = None
+        _bg_image_path = None  # for composite rendering
         if parallax_engine and seg["source_type"] == "still":
             from pipeline.parallax_renderer import SegmentVisualConfig
             _visual_config = SegmentVisualConfig.from_storyboard(
@@ -1607,21 +1679,52 @@ def render(
                 zoom_rate_pct_sec=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC) * 100,
             )
             # Attach text overlay to visual config (rendered in-frame, not separate ffmpeg pass)
-            if seg.get("text"):
+            # Director-provided text overlay takes priority
+            if seg.get("_text_overlay"):
+                _visual_config.text_overlay = seg["_text_overlay"]
+                _visual_config.text_position = seg.get("_text_overlay_position", "lower_third")
+                _visual_config.text_size = seg.get("_text_overlay_size", 56)
+                _visual_config.text_style = seg.get("_text_overlay_style", "typewriter")
+            elif seg.get("text"):
                 _visual_config.text_overlay = seg["text"]
                 _visual_config.text_position = (
                     "lower_third" if seg.get("text_zone") == "lower" else "center"
                 )
+            # v2.0: Apply composition, sync_points, transitions from storyboard
+            comp = seg.get("composition")
+            if comp:
+                _visual_config.composition_type = comp.get("type", "single")
+                _visual_config.layers = comp.get("layers", [])
+                _visual_config.atmosphere = comp.get("atmosphere", "none")
+                # Override color grade from composition if specified
+                cg = comp.get("color_grade")
+                if cg:
+                    _visual_config.color_style = cg
+            sync_pts = seg.get("sync_points", [])
+            if sync_pts:
+                # Inject total word count for timing estimation
+                total_words = len(seg.get("text", "").split()) if seg.get("text") else 20
+                for sp in sync_pts:
+                    sp["_total_words"] = total_words
+                _visual_config.sync_points = sync_pts
+            # Director-provided transitions
+            if seg.get("transition_in"):
+                _visual_config.transition_in = seg["transition_in"]
+            if seg.get("transition_out"):
+                _visual_config.transition_out = seg["transition_out"]
 
         if seg["source_type"] == "still":
             src = Path(seg["source_path"])
             if src.exists():
+                # For composite segments, try to find a background image
+                _bg_path = seg.get("_bg_image_path")
                 make_ken_burns(src, dur, seg["motion"], seg_raw,
                                focal_point=seg.get("focal_point"),
                                zoom_rate=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC),
                                parallax_engine=parallax_engine,
                                visual_config=_visual_config,
-                               start_time=render_cursor)
+                               start_time=render_cursor,
+                               bg_image_path=_bg_path)
             else:
                 _make_black(dur, seg_raw)
 
@@ -1688,7 +1791,8 @@ def render(
             # FFmpeg color grade — per-scene treatment based on shot_type
             scene_type = _scene_type_for(seg.get("shot_type"))
             if seg["source_type"] in ("still", "clip"):
-                apply_color_grade(seg_raw, seg_graded, scene_type=scene_type)
+                apply_color_grade(seg_raw, seg_graded, scene_type=scene_type,
+                                  is_clip=(seg["source_type"] == "clip"))
             else:
                 seg_graded = seg_raw
 
@@ -2324,6 +2428,9 @@ def _parse_args():
                         "Requires Depth Anything V2 (~95MB). Renders ~2-3 hours for 25min video. "
                         "Every segment's visual treatment is story-driven (narrative_function, "
                         "intensity, shot_type).")
+    p.add_argument("--stills-only", action="store_true",
+                   help="Use only still images, skip all video clips. "
+                        "Eliminates watermark/wrong-content issues from stock clips.")
     return p.parse_args()
 
 
@@ -2384,9 +2491,23 @@ def main():
     if args.storyboard:
         sb_path = Path(args.storyboard)
         if sb_path.exists():
-            storyboard = json.load(open(sb_path))
-            tagged = sum(1 for e in storyboard if e.get("search_query"))
-            print(f"  Storyboard: {sb_path.name} ({len(storyboard)} entries, {tagged} with search queries)")
+            raw_sb = json.load(open(sb_path))
+            # v2.0 schema: flatten scenes[].segments[] into a flat list
+            if isinstance(raw_sb, dict) and raw_sb.get("schema_version") == "2.0":
+                storyboard = []
+                for scene in raw_sb.get("scenes", []):
+                    for seg in scene.get("segments", []):
+                        seg["_scene_id"] = scene.get("scene_id")
+                        storyboard.append(seg)
+                print(f"  Storyboard v2.0: {sb_path.name} ({len(storyboard)} segments in "
+                      f"{raw_sb.get('scene_count', '?')} scenes, "
+                      f"{raw_sb.get('composite_count', 0)} composites, "
+                      f"{raw_sb.get('sync_point_count', 0)} sync points)")
+            else:
+                # v1 flat list
+                storyboard = raw_sb if isinstance(raw_sb, list) else []
+                tagged = sum(1 for e in storyboard if e.get("search_query"))
+                print(f"  Storyboard: {sb_path.name} ({len(storyboard)} entries, {tagged} with search queries)")
         else:
             print(f"  WARNING: Storyboard not found: {sb_path} — proceeding without")
 
@@ -2396,11 +2517,14 @@ def main():
         print("  Focal point detection enabled (qwen3.5:27b — will cache results per image)")
     if storyboard:
         print("  Story-aware footage selection enabled (storyboard match → tagged clips first)")
+    if args.stills_only:
+        print("  Stills-only mode: all video clips will be skipped")
     segments = build_timeline(
         narration_manifest, footage_manifest, brand_config,
         beat_times=beat_times,
         detect_focal_points=args.focal_points,
         storyboard=storyboard,
+        stills_only=args.stills_only,
     )
     total_dur = sum(s["duration_sec"] for s in segments)
     print(f"  {len(segments)} segments → {total_dur:.0f}s ({total_dur/60:.1f}min)")

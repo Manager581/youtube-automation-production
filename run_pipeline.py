@@ -61,7 +61,7 @@ PYTHON     = str(Path("venv/bin/python"))
 # All stage names in order
 STAGE_ORDER = [
     "topic", "brief", "validate", "script", "enhance",
-    "qa_script", "storyboard", "voice", "music",
+    "qa_script", "storyboard", "director", "voice", "music",
     "footage", "assemble", "qa_video", "done",
 ]
 
@@ -73,6 +73,7 @@ STAGE_LABELS = {
     "enhance":    "Script Enhancement",
     "qa_script":  "Script QA Check",
     "storyboard": "Storyboard Generation",
+    "director":   "Director's Pass",
     "voice":      "Voice Narration",
     "music":      "Music Selection",
     "footage":    "Footage Sourcing",
@@ -547,6 +548,40 @@ def stage_storyboard(state: dict) -> bool:
     return False
 
 
+def stage_director(state: dict) -> bool:
+    """Run director.py — full-context editorial pass over storyboard."""
+    print_header(state, "director")
+
+    slug     = state["slug"]
+    enhanced = state["paths"].get("script_enhanced", f"scripts/enhanced_{slug}.txt")
+    sb_in    = state["paths"].get("storyboard", f"storyboards/{slug}.json")
+    sb_out   = f"storyboards/{slug}_directed.json"
+
+    inform("Director's pass — full-context editorial decisions for the whole video…", "info")
+
+    rc, _ = run_live([
+        PYTHON, "pipeline/director.py",
+        "--script", enhanced,
+        "--storyboard", sb_in,
+        "--out", sb_out,
+    ])
+
+    if Path(sb_out).exists():
+        # Replace storyboard path with directed version for downstream stages
+        state["paths"]["storyboard"] = sb_out
+        try:
+            d = json.loads(Path(sb_out).read_text())
+            n_seg = d.get("segment_count", "?")
+            n_sc  = d.get("scene_count", "?")
+            n_sfx = d.get("sfx_count", 0)
+        except Exception:
+            n_seg, n_sc, n_sfx = "?", "?", "?"
+        step_done(f"Director → {sb_out}  ({n_seg} segments, {n_sc} scenes, {n_sfx} SFX)")
+        return True
+    step_fail(f"director failed (code {rc})")
+    return False
+
+
 def stage_voice(state: dict) -> bool:
     """
     Run voice_generator.py then auto-verify with check_fern_voice.py.
@@ -939,6 +974,7 @@ STAGE_FUNCS = {
     "enhance":    stage_enhance,
     "qa_script":  stage_qa_script,
     "storyboard": stage_storyboard,
+    "director":   stage_director,
     "voice":      stage_voice,
     "music":      stage_music,
     "footage":    stage_footage,

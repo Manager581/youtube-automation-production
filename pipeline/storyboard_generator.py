@@ -209,7 +209,7 @@ def _ollama_generate(model: str, prompt: str) -> str | None:
         "prompt": prompt,
         "stream": False,
         "think": False,          # disable qwen3.5 thinking mode — output only
-        "options": {"temperature": 0.3, "num_predict": 300},
+        "options": {"temperature": 0.3, "num_predict": 500},
     }).encode()
     try:
         req = urllib.request.Request(
@@ -226,65 +226,74 @@ def _ollama_generate(model: str, prompt: str) -> str | None:
 
 # ── Visual brief generation ───────────────────────────────────────────────────
 
-STORYBOARD_PROMPT = """You are a documentary video editor working in the style of @fern-tv on YouTube.
-Your job: given one sentence of narration, decide what specific image should appear on screen
-and HOW it should be presented (motion, zoom speed, cut motivation).
+STORYBOARD_PROMPT = """You are a documentary video editor and compositor working in the style of @fern-tv on YouTube.
+Your job: given one sentence of narration, decide EXACTLY what visual elements should appear on screen,
+how they should be LAYERED together, and how the camera should move.
+
+Think like a compositor building a scene from separate elements:
+- "He was a bacteriologist" → background: 1950s laboratory interior, midground: glass petri dishes on bench, foreground: microscope view of bacteria culture
+- "Frank Olson at the Hotel Statler" → background: Hotel Statler exterior 1950s, foreground: Frank Olson portrait (extracted, placed in scene)
+- "The CIA launched a secret program" → single: classified CIA document with TOP SECRET stamp, redacted text visible
+- "November 28, 1953" → single: dark aerial view of 1950s Manhattan skyline at night
 
 Rules:
 - Be SPECIFIC. Not "a document" but "the original 1973 FBI memo with CONFIDENTIAL stamp visible"
 - Not "a person" but "Ted Kaczynski's Harvard ID photo, 1958, young face"
-- The visual should ILLUSTRATE the exact fact or emotion being stated
+- The visual must ILLUSTRATE the exact fact or emotion being stated
 - Prefer documents, photos, maps, archival footage over generic stock
-- If the narration says a name → show that person's face or their work
-- If the narration says a date → show something from that date
-- If the narration describes a location → show that location
+- If narration mentions a PROFESSION → show tools/environment of that profession
+- If narration mentions a PLACE → show that specific place
+- If narration mentions a PERSON at a PLACE → layer person over place (composite)
+- If narration describes a CONCEPT (power, fear, secrecy) → show a visual metaphor
 
-Motion rules (from Fern's editorial playbook):
+composition.type rules:
+- "single": ONE image fills the frame (default, ~70% of segments). Use for documents, portraits, maps, single locations.
+- "composite": MULTIPLE layered elements with depth separation (~25%). Use when narration references multiple distinct visual subjects (person + place, object + environment, cause + effect).
+- "text_card": chapter breaks only (~5%).
+
+Each layer needs:
+- role: "background" (furthest, moves slowest), "midground" (middle depth), "foreground" (closest, moves fastest)
+- search_query: specific 3-6 word query to find this exact element
+- depth_extract: true if this element should be CUT OUT from its photo (e.g., a person extracted from their portrait)
+
+atmosphere: "dust" (tension/mystery), "fog" (aftermath/distance), "rain" (despair/cold), "none" (clean/neutral)
+
+Motion rules:
 - zoom_in = drawing attention to detail, building tension, revealing evidence
-- zoom_out = showing scope/scale, pulling back after intense moment, establishing location
-- pan_right/left = scanning a document, reading text, timeline progression
-- pan_up/pan_down = scrolling archival text, reading newspaper columns
-- static = letting viewer read text, brief transitional moment
-- zoom speed = narrative intensity: 1-3%/s context, 3-5%/s tension, 5-9%/s peak, 15-25%/s extreme revelation (max 1-2 per video)
+- zoom_out = showing scope/scale, pulling back after intense moment
+- pan_right/left = scanning a document, timeline progression
+- static = letting viewer read text
+- zoom speed = narrative intensity: 1-3%/s context, 3-5%/s tension, 5-9%/s peak
 
 cut_motivation = WHY is this a new visual moment:
-- narrative_shift: story moves to new topic/person/era
-- name_drop: a person is named for the first time
-- evidence_intro: a document/proof/artifact is cited
-- location_named: a new place is mentioned
-- tone_change: emotional register shifts
-- visual_freshness: same narrative beat, but current image held too long
+- narrative_shift | name_drop | evidence_intro | location_named | tone_change | visual_freshness
 
-text_overlay_type = what text (if any) should reinforce the narration:
-- person_identification: show person's FULL NAME on first mention
-- entity_label: show organization/program name (e.g., MKULTRA, FBI)
-- location_label: show place name to set the scene
-- quote: show the subject's own words as they're read
-- source_citation: show [source number] on documents
-- null: no text overlay needed
+text_overlay_type:
+- person_identification | entity_label | location_label | quote | source_citation | null
 
-narrative_function guide:
-- hook_opening: first 30s, establishes stakes
-- context_background: factual dates, timelines, background setup
-- character_intro: first mention of a named person
-- tension_build: pressure building toward a reveal
-- reveal: "except / in reality / it turns out" — the twist or discovery
-- stakes_moment: consequences, danger, superlatives ("most notorious", "executed")
-- climax: peak action — arrest, explosion, confession, the defining moment
-- aftermath: resolution, legacy, "to this day"
+narrative_function:
+- hook_opening | context_background | character_intro | tension_build | reveal | stakes_moment | climax | aftermath
 
 Respond with ONLY valid JSON, no explanation:
 {
   "show": "one specific visual description (15 words max)",
-  "search_query": "3-6 word search query to find this on YouTube/Archive.org",
-  "focal_element": "what element in the frame to zoom toward (10 words max)",
+  "search_query": "3-6 word primary search query",
+  "focal_element": "what to zoom toward (10 words max)",
   "shot_type": "document_photo | archival_footage | person_photo | map | news_footage | documentary_photo",
   "intensity": "tense | neutral | energized | ominous",
   "narrative_function": "hook_opening | context_background | character_intro | tension_build | reveal | stakes_moment | climax | aftermath",
   "motion_direction": "zoom_in | zoom_out | pan_right | pan_left | pan_up | pan_down | static",
   "zoom_rate_pct_sec": 3.0,
   "cut_motivation": "narrative_shift | name_drop | evidence_intro | location_named | tone_change | visual_freshness",
-  "text_overlay_type": "person_identification | entity_label | location_label | quote | source_citation | null"
+  "text_overlay_type": "person_identification | entity_label | location_label | quote | source_citation | null",
+  "composition": {
+    "type": "single or composite or text_card",
+    "layers": [
+      {"role": "background", "search_query": "specific search for background element"},
+      {"role": "foreground", "search_query": "specific search for foreground element", "depth_extract": true}
+    ],
+    "atmosphere": "dust | fog | rain | none"
+  }
 }
 
 Narration: "{TEXT}"
@@ -354,13 +363,42 @@ def generate_visual_brief(
     return brief
 
 
+def _extract_nested_json(text: str) -> str | None:
+    """Extract the outermost JSON object from text, handling nested braces."""
+    start = text.find("{")
+    if start == -1:
+        return None
+    depth = 0
+    in_string = False
+    escape = False
+    for i in range(start, len(text)):
+        c = text[i]
+        if escape:
+            escape = False
+            continue
+        if c == "\\":
+            escape = True
+            continue
+        if c == '"' and not escape:
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
+    return None
+
+
 def _parse_ollama_response(response: str, text: str, emotion: str) -> dict:
     """Parse JSON from ollama response, with fallback."""
-    # Extract JSON block
-    match = re.search(r"\{[\s\S]*?\}", response)
-    if match:
+    json_str = _extract_nested_json(response)
+    if json_str:
         try:
-            data = json.loads(match.group())
+            data = json.loads(json_str)
             # Validate required fields
             required = {"show", "search_query", "focal_element", "shot_type", "intensity"}
             if required.issubset(data.keys()):
@@ -368,7 +406,7 @@ def _parse_ollama_response(response: str, text: str, emotion: str) -> dict:
                 # Accept all optional playbook fields
                 for opt in ("narrative_function", "motion_direction",
                             "zoom_rate_pct_sec", "cut_motivation",
-                            "text_overlay_type"):
+                            "text_overlay_type", "composition"):
                     if opt in data:
                         result[opt] = data[opt]
                 return result
@@ -442,6 +480,12 @@ def _fallback_brief(text: str, emotion: str) -> dict:
     direction, zoom_rate = playbook_motion(narrative_function, emotion)
     dur_min, dur_max = playbook_segment_duration(shot_type, narrative_function)
 
+    # Fallback composition: single by default, keyword-based composite detection
+    composition = _infer_composition({
+        "text": text, "narrative_function": narrative_function,
+        "search_query": query, "show": show, "shot_type": shot_type,
+    })
+
     return {
         "show": show,
         "search_query": query,
@@ -454,6 +498,7 @@ def _fallback_brief(text: str, emotion: str) -> dict:
         "hold_duration_range": [dur_min, dur_max],
         "cut_motivation": _infer_cut_motivation(text, narrative_function),
         "text_overlay_type": _infer_text_overlay_type(text, narrative_function),
+        "composition": composition,
     }
 
 
@@ -791,6 +836,280 @@ def _generate_sub_beats(brief: dict, hold_frames: int, fps: int) -> list[dict]:
     return sub_beats
 
 
+# Narrative function → color grade mapping (mirrors parallax_renderer.STYLE_MAP)
+_NF_COLOR_MAP = {
+    "hook_opening": "cold",
+    "context_background": "neutral",
+    "character_intro": "warm",
+    "tension_build": "dark",
+    "reveal": "vibrant",
+    "stakes_moment": "dark",
+    "climax": "vibrant",
+    "aftermath": "archival",
+}
+
+
+def _infer_composition(brief: dict) -> dict:
+    """
+    Infer composition recipe: single still, multi-image composite, or text card.
+
+    composite = person mentioned + location in same segment (layer subject over bg)
+    text_card = chapter breaks
+    single = everything else (default, one still with depth parallax)
+    """
+    nf = brief.get("narrative_function", "context_background")
+    text = brief.get("text", "")
+    shot_type = brief.get("shot_type", "")
+
+    # Chapter breaks → text card
+    if brief.get("is_chapter_break") or nf == "chapter_break":
+        return {
+            "type": "text_card",
+            "layers": [],
+            "atmosphere": "none",
+            "color_grade": "neutral",
+        }
+
+    # Detect composite candidates: person + location in same sentence
+    # Filter out location-like proper nouns (Hotel X, Fort X, Camp X, etc.)
+    _not_person_words = {"Hotel", "Fort", "Camp", "Lake", "Mount", "Port", "Saint",
+                         "North", "South", "East", "West", "New", "Old", "San",
+                         "United", "Central", "National", "Federal", "General",
+                         "Soviet", "British", "American", "World", "Cold",
+                         "The", "This", "That", "When", "After", "Before",
+                         "Under", "During", "Between", "Within", "Around"}
+    all_proper = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", text)
+    person_names = [n for n in all_proper if n.split()[0] not in _not_person_words]
+    has_person = bool(person_names)
+
+    location_words = {"hotel", "building", "house", "office", "laboratory", "lab",
+                      "headquarters", "base", "camp", "prison", "hospital", "airport",
+                      "station", "church", "school", "university", "farm", "cabin",
+                      "fort", "detrick", "langley", "pentagon"}
+    has_location = any(w in text.lower() for w in location_words)
+
+    # Also detect place names (City, State pattern)
+    has_place_name = bool(re.search(r"\b[A-Z][a-z]+,\s*[A-Z]", text))
+
+    # Composite when: actual person referenced AND a specific place is described
+    if has_person and (has_location or has_place_name):
+        search = brief.get("search_query", "")
+
+        # Subject = first real person name, background = main search query
+        subject_query = f"{person_names[0]} portrait photo"
+        bg_query = search  # main search query is often location-focused
+
+        return {
+            "type": "composite",
+            "layers": [
+                {"role": "background", "search_query": bg_query},
+                {"role": "subject", "search_query": subject_query, "depth_extract": True},
+            ],
+            "atmosphere": "dust" if nf in ("tension_build", "climax", "stakes_moment") else "none",
+            "color_grade": _NF_COLOR_MAP.get(nf, "neutral"),
+        }
+
+    # Default: single still
+    atmosphere = "none"
+    if nf in ("tension_build", "climax", "stakes_moment"):
+        atmosphere = "dust"
+    elif nf == "aftermath":
+        atmosphere = "fog"
+
+    return {
+        "type": "single",
+        "layers": [{"role": "primary", "search_query": brief.get("search_query", "")}],
+        "atmosphere": atmosphere,
+        "color_grade": _NF_COLOR_MAP.get(nf, "neutral"),
+    }
+
+
+def _infer_sync_points(brief: dict) -> list[dict]:
+    """
+    Generate sync points: word-level triggers for text reveals, SFX, or zoom punches.
+
+    Since we don't have word-level timestamps, we record the trigger word and its
+    index in the narration text. The assembler estimates timing from word position.
+    """
+    text = brief.get("text", "")
+    text_type = brief.get("text_overlay_type")
+    words = text.split()
+
+    if not words:
+        return []
+
+    sync_points = []
+
+    # Text reveal sync points — trigger on the word that motivates the overlay
+    if text_type == "person_identification":
+        names = re.findall(r"\b[A-Z][a-z]+ [A-Z][a-z]+\b", text)
+        if names:
+            name = names[0]
+            first_word = name.split()[0]
+            for i, w in enumerate(words):
+                if w.strip(".,!?;:") == first_word:
+                    sync_points.append({
+                        "word": first_word,
+                        "word_index": i,
+                        "action": "text_reveal",
+                        "text": name.upper(),
+                    })
+                    break
+
+    elif text_type == "entity_label":
+        acronyms = re.findall(r"\b[A-Z]{2,}\b", text)
+        real = [a for a in acronyms if a not in ("THE", "AND", "FOR", "BUT", "NOT", "HIS", "HER")]
+        if real:
+            target = real[0]
+            for i, w in enumerate(words):
+                if w.strip(".,!?;:") == target:
+                    sync_points.append({
+                        "word": target,
+                        "word_index": i,
+                        "action": "text_reveal",
+                        "text": target,
+                    })
+                    break
+
+    elif text_type == "location_label":
+        city_state = re.findall(r"\b([A-Z][a-z]+(?:,\s*[A-Z][a-z]+)?)\b", text)
+        if city_state:
+            location = city_state[0]
+            first_word = location.split(",")[0].split()[0]
+            for i, w in enumerate(words):
+                if w.strip(".,!?;:") == first_word:
+                    sync_points.append({
+                        "word": first_word,
+                        "word_index": i,
+                        "action": "text_reveal",
+                        "text": location.upper(),
+                    })
+                    break
+
+    elif text_type == "quote":
+        # Trigger on opening quote mark
+        for i, w in enumerate(words):
+            if '"' in w or '\u201c' in w:
+                sync_points.append({
+                    "word": w,
+                    "word_index": i,
+                    "action": "text_reveal",
+                    "text": _resolve_text_content(brief, "quote"),
+                })
+                break
+
+    # Date sync points — reveal date text when year/date is spoken
+    date_match = re.search(r"\b((?:January|February|March|April|May|June|July|August|"
+                           r"September|October|November|December)\s+\d{1,2},?\s+\d{4})\b", text)
+    if date_match:
+        date_str = date_match.group(1)
+        first_word = date_str.split()[0]
+        for i, w in enumerate(words):
+            if w.strip(".,!?;:") == first_word:
+                # Only add if not already a text_reveal for same word
+                if not any(sp["word_index"] == i for sp in sync_points):
+                    sync_points.append({
+                        "word": first_word,
+                        "word_index": i,
+                        "action": "text_reveal",
+                        "text": date_str.upper(),
+                    })
+                break
+
+    return sync_points
+
+
+def _group_into_scenes(segments: list[dict]) -> list[dict]:
+    """
+    Group contiguous segments into scenes based on narrative boundaries.
+
+    Scene breaks happen on:
+    - Chapter breaks (is_chapter_break == True)
+    - Narrative function category changes (e.g. context → tension)
+    - Scenes capped at 8 segments max
+
+    Returns list of scene dicts with embedded segments.
+    """
+    if not segments:
+        return []
+
+    # Define narrative function categories (functions that "feel" similar stay grouped)
+    NF_CATEGORY = {
+        "hook_opening": "opening",
+        "context_background": "context",
+        "character_intro": "context",
+        "tension_build": "tension",
+        "reveal": "peak",
+        "stakes_moment": "peak",
+        "climax": "peak",
+        "aftermath": "resolution",
+        "chapter_break": "break",
+    }
+
+    scenes = []
+    current_segs = []
+    current_category = None
+    scene_counter = 0
+
+    for seg in segments:
+        nf = seg.get("narrative_function", "context_background")
+        cat = NF_CATEGORY.get(nf, "context")
+
+        # Scene break conditions
+        is_break = (
+            seg.get("is_chapter_break") or
+            (current_category and cat != current_category and cat != "break") or
+            len(current_segs) >= 8
+        )
+
+        if is_break and current_segs:
+            scene_counter += 1
+            scenes.append(_make_scene(scene_counter, current_segs))
+            current_segs = []
+
+        # Chapter breaks become their own single-segment scene
+        if seg.get("is_chapter_break"):
+            scene_counter += 1
+            scenes.append(_make_scene(scene_counter, [seg]))
+            current_category = None
+            continue
+
+        current_segs.append(seg)
+        current_category = cat
+
+    # Flush remaining
+    if current_segs:
+        scene_counter += 1
+        scenes.append(_make_scene(scene_counter, current_segs))
+
+    return scenes
+
+
+def _make_scene(num: int, segs: list[dict]) -> dict:
+    """Build a scene dict from a group of segments."""
+    # Dominant narrative function = most common
+    nf_counts: dict[str, int] = {}
+    for s in segs:
+        nf = s.get("narrative_function", "context_background")
+        nf_counts[nf] = nf_counts.get(nf, 0) + 1
+    dominant_nf = max(nf_counts, key=nf_counts.get)
+
+    # Scene name: first segment's show text, truncated
+    first_show = segs[0].get("show", segs[0].get("text", ""))[:50]
+
+    # Build a slug from the first segment's text
+    text_words = segs[0].get("text", "").split()[:5]
+    slug = "_".join(w.lower().strip(".,!?;:'\"") for w in text_words if w.strip(".,!?;:'\""))[:30]
+
+    return {
+        "scene_id": f"s{num:02d}_{slug}",
+        "scene_name": first_show,
+        "narrative_arc": dominant_nf,
+        "segment_count": len(segs),
+        "segments": segs,
+    }
+
+
 def _enrich_from_playbook(brief: dict) -> dict:
     """
     Post-processor: fill any missing playbook fields using narrative intent.
@@ -829,6 +1148,28 @@ def _enrich_from_playbook(brief: dict) -> dict:
             "card_duration_sec": [2, 4],
             "style": "white_serif_on_dark",
         }
+
+    # ── Composition recipe (v2.0) ──
+    if "composition" not in brief:
+        brief["composition"] = _infer_composition(brief)
+    else:
+        # Validate LLM-provided composition has required structure
+        comp = brief["composition"]
+        if not isinstance(comp, dict) or "type" not in comp:
+            brief["composition"] = _infer_composition(brief)
+        else:
+            comp.setdefault("layers", [])
+            comp.setdefault("atmosphere", "none")
+            # Ensure each layer has a search_query
+            for layer in comp["layers"]:
+                if not isinstance(layer, dict):
+                    continue
+                layer.setdefault("search_query", brief.get("search_query", ""))
+                layer.setdefault("role", "background")
+
+    # ── Sync points (v2.0) ──
+    if "sync_points" not in brief:
+        brief["sync_points"] = _infer_sync_points(brief)
 
     # ── Timing sheet (exposure sheet / X-sheet) ──
     # Built AFTER all other fields are resolved so it can read motion, text, SFX, etc.
@@ -894,18 +1235,41 @@ def main():
             print(f"  [{i+1:3d}/{len(segments)}]  {brief.get('shot_type','?'):20s}  "
                   f"{brief.get('show','?')[:60]}{cached_tag}")
 
+    # Group into scenes (v2.0)
+    scenes = _group_into_scenes(storyboard)
+    composite_count = sum(
+        1 for s in storyboard
+        if s.get("composition", {}).get("type") == "composite"
+    )
+    sync_count = sum(len(s.get("sync_points", [])) for s in storyboard)
+
+    print(f"\n  Scenes: {len(scenes)}  |  Composites: {composite_count}  |  Sync points: {sync_count}")
+
     # Output
     if args.preview:
         print(f"\n{'─'*70}")
-        for i, s in enumerate(storyboard):
-            print(f"\n[{i+1:3d}] {s.get('emotion','').upper():<10}  {s.get('shot_type','')}")
-            print(f"  NAR: {s['text'][:100]}")
-            print(f"  SHOW: {s.get('show','')}")
-            print(f"  SEARCH: {s.get('search_query','')}")
-            print(f"  FOCUS: {s.get('focal_element','')}")
+        for si, scene in enumerate(scenes):
+            print(f"\n  SCENE {si+1}: {scene['scene_name'][:60]}  [{scene['narrative_arc']}]")
+            for s in scene["segments"]:
+                comp = s.get("composition", {}).get("type", "single")
+                syncs = len(s.get("sync_points", []))
+                print(f"    {s.get('emotion','').upper():<10}  {s.get('shot_type',''):20s}  "
+                      f"comp={comp}  syncs={syncs}")
+                print(f"      NAR: {s['text'][:90]}")
+                print(f"      SHOW: {s.get('show','')[:70]}")
         print(f"\n{'─'*70}")
-        print(f"Total: {len(storyboard)} segments")
+        print(f"Total: {len(storyboard)} segments in {len(scenes)} scenes")
         return
+
+    # Build v2.0 output structure
+    output = {
+        "schema_version": "2.0",
+        "segment_count": len(storyboard),
+        "scene_count": len(scenes),
+        "composite_count": composite_count,
+        "sync_point_count": sync_count,
+        "scenes": scenes,
+    }
 
     # Write output
     if args.out:
@@ -916,9 +1280,11 @@ def main():
         out_path = Path("storyboards") / f"{slug}.json"
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(storyboard, indent=2))
-    print(f"\nStoryboard written → {out_path}")
-    print(f"  {len(storyboard)} entries  ({visual_count} visual + {chapter_count} chapter cards)")
+    out_path.write_text(json.dumps(output, indent=2))
+    print(f"\nStoryboard v2.0 written → {out_path}")
+    print(f"  {len(storyboard)} segments in {len(scenes)} scenes")
+    print(f"  ({visual_count} visual + {chapter_count} chapter cards)")
+    print(f"  {composite_count} composite scenes, {sync_count} sync points")
     print(f"\nNext: pass storyboard to footage_sourcer:")
     print(f"  python pipeline/footage_sourcer.py --storyboard {out_path} --out footage/fern_clone/topic/")
 

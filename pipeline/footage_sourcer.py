@@ -409,18 +409,39 @@ def _group_storyboard_by_query(storyboard: list) -> dict:
     Group storyboard segments by search_query.
     Returns: {search_query: [segment_dicts]}
     Skips chapter cards and segments with no search_query.
+
+    For v2.0 storyboards with composition layers, each layer's search_query
+    is also extracted as a separate query group, tagged with the same segment.
+    This ensures composite segments get multiple images sourced.
     """
     groups: dict[str, list] = {}
     for i, seg in enumerate(storyboard):
         if seg.get("shot_type") == "chapter_card":
             continue
+        tagged_seg = {**seg, "segment_index": i}
+
+        # Primary search query (always present)
         query = seg.get("search_query", "").strip()
-        if not query:
-            continue
-        seg = {**seg, "segment_index": i}
-        if query not in groups:
-            groups[query] = []
-        groups[query].append(seg)
+        if query:
+            if query not in groups:
+                groups[query] = []
+            groups[query].append(tagged_seg)
+
+        # v2.0: also extract per-layer search queries from composition
+        comp = seg.get("composition", {})
+        if isinstance(comp, dict) and comp.get("layers"):
+            for layer in comp["layers"]:
+                if not isinstance(layer, dict):
+                    continue
+                layer_query = layer.get("search_query", "").strip()
+                # Skip if same as primary query (avoid duplicate searches)
+                if layer_query and layer_query != query:
+                    if layer_query not in groups:
+                        groups[layer_query] = []
+                    # Tag with same segment index so images get matched back
+                    layer_seg = {**tagged_seg, "_layer_role": layer.get("role", "background")}
+                    groups[layer_query].append(layer_seg)
+
     return groups
 
 
