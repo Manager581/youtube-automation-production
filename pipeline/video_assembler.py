@@ -2284,41 +2284,65 @@ def _build_sfx_composite(
 ) -> "Path | None":
     """
     Build a composite audio track: each SFX placed at its timestamp.
-    Uses adelay to position each SFX at the correct cut point.
-    Returns out_path if successful, None if no valid SFX files found.
+
+    Uses numpy to overlay each SFX onto a silent buffer at the correct
+    offset.  This avoids ffmpeg amix with 60+ inputs which produces
+    buzzy artifacts from filter chain accumulation.
     """
+    import soundfile as sf
     valid = [ev for ev in sfx_events if Path(ev["sfx_file"]).exists()]
     if not valid:
         return None
 
-    # Start with a silent base, then layer in each delayed SFX
-    inputs = ["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo:d={total_dur}"]
-    filter_parts = []
-    for i, ev in enumerate(valid):
-        delay_ms = int(ev["time_sec"] * 1000)
-        inputs += ["-i", ev["sfx_file"]]
-        filter_parts.append(
-            f"[{i + 1}]volume={SFX_VOLUME},adelay={delay_ms}|{delay_ms}[sfx{i}]"
-        )
+    sr = 44100
+    n_samples = int(total_dur * sr)
+    composite = np.zeros((n_samples, 2), dtype=np.float32)  # stereo
 
-    n_inputs = 1 + len(valid)
-    labels = "[0]" + "".join(f"[sfx{i}]" for i in range(len(valid)))
-    filter_parts.append(
-        f"{labels}amix=inputs={n_inputs}:duration=first:dropout_transition=0[sfxout]"
-    )
+    for ev in valid:
+        try:
+            # Load SFX file
+            sfx_data, sfx_sr = sf.read(ev["sfx_file"], dtype="float32")
+        except Exception:
+            try:
+                import librosa
+                y, sfx_sr = librosa.load(ev["sfx_file"], sr=sr, mono=False)
+                if y.ndim == 1:
+                    sfx_data = np.column_stack([y, y])
+                else:
+                    sfx_data = y.T
+            except Exception:
+                continue
 
-    cmd = (
-        ["ffmpeg", "-y"]
-        + inputs
-        + [
-            "-filter_complex", ";".join(filter_parts),
-            "-map", "[sfxout]",
-            "-t", str(total_dur),
-            "-ar", "44100", "-ac", "2",
-            str(out_path),
-        ]
-    )
-    _run(cmd, "sfx_composite")
+        # Resample if needed
+        if sfx_sr != sr:
+            import librosa
+            if sfx_data.ndim == 1:
+                sfx_data = np.column_stack([sfx_data, sfx_data])
+            left = librosa.resample(sfx_data[:, 0], orig_sr=sfx_sr, target_sr=sr)
+            right = librosa.resample(sfx_data[:, 1], orig_sr=sfx_sr, target_sr=sr)
+            sfx_data = np.column_stack([left, right])
+
+        # Ensure stereo
+        if sfx_data.ndim == 1:
+            sfx_data = np.column_stack([sfx_data, sfx_data])
+
+        # Volume adjust
+        is_click = "typewriter" in Path(ev["sfx_file"]).stem.lower()
+        vol = 1.8 if is_click else SFX_VOLUME
+        sfx_data = sfx_data * vol
+
+        # Place at correct offset
+        offset = int(ev["time_sec"] * sr)
+        end = min(offset + len(sfx_data), n_samples)
+        clip_len = end - offset
+        if clip_len > 0 and offset >= 0:
+            composite[offset:end] += sfx_data[:clip_len]
+
+    # Clip to prevent distortion
+    composite = np.clip(composite, -1.0, 1.0)
+
+    # Write as WAV
+    sf.write(str(out_path), composite, sr, subtype="PCM_16")
     return out_path
 
 
