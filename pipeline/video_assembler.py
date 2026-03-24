@@ -1306,7 +1306,7 @@ def build_timeline(
                         focal = detect_focal_point(still_path, narration_text=chunk_text)
                 # For composite segments, pick a second still as background
                 _bg_img = None
-                if seg_base.get("composition", {}).get("type") == "composite":
+                if (seg_base.get("composition") or {}).get("type") == "composite":
                     # Try next tagged still, else next general still
                     if tagged_stills and len(tagged_stills) > 1:
                         bg_still = tagged_stills[(tagged_still_idx) % len(tagged_stills)]
