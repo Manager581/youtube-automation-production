@@ -2419,7 +2419,15 @@ def mix_audio(
     Music ducks under narration (MUSIC_VOLUME).
     Music plays louder during first 3s intro (MUSIC_INTRO_VOLUME).
     SFX composite is mixed at full scale (already volume-adjusted by _build_sfx_composite).
+    Audio is truncated to match video duration (prevents black screen in preview mode).
     """
+    # Get video duration to truncate audio to match
+    import subprocess as _sp
+    _probe = _sp.run(["ffprobe", "-v", "quiet", "-print_format", "json",
+                       "-show_format", str(video_path)],
+                      capture_output=True, text=True)
+    _vid_dur = float(json.loads(_probe.stdout).get("format", {}).get("duration", 0))
+    _t_flag = ["-t", str(_vid_dur)] if _vid_dur > 0 else []
     if sfx_path and sfx_path.exists():
         filter_complex = (
             f"[1:a]volume={NARRATION_VOLUME}[narr];"
@@ -2437,7 +2445,7 @@ def mix_audio(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest",
+            *_t_flag,
             str(out_path),
         ]
     else:
@@ -2455,7 +2463,7 @@ def mix_audio(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-            "-shortest",
+            *_t_flag,
             str(out_path),
         ]
     _run(cmd, "mix_audio")
