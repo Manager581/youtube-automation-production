@@ -2437,6 +2437,7 @@ def mix_audio(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-shortest",
             str(out_path),
         ]
     else:
@@ -2454,6 +2455,7 @@ def mix_audio(
             "-filter_complex", filter_complex,
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+            "-shortest",
             str(out_path),
         ]
     _run(cmd, "mix_audio")
