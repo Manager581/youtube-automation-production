@@ -109,6 +109,15 @@ CONTENT_SFX_RULES = [
     (r"door|enter|arrive|walk in", "whoosh", "scene entry"),
 ]
 
+DOCUMENT_HIGHLIGHT_RULES = [
+    (r"subject|title|header|project mkultra|mkultra", "header", 0.12, 0.22, 0.05, 0.95),
+    (r"top secret|classified|confidential|clearance", "stamp", 0.68, 0.75, 0.10, 0.90),
+    (r"signature|signed|gottlieb|authorized|approved", "signature", 0.72, 0.88, 0.30, 0.90),
+    (r"LSD|drug|dose|l\.s\.d|acid|cointreau", "lsd_ref", 0.22, 0.35, 0.05, 0.95),
+    (r"budget|\$39|money|fund|grant|\$", "budget", 0.42, 0.55, 0.05, 0.95),
+    (r"experiment|behavior|modification|conditioning", "body", 0.25, 0.45, 0.05, 0.95),
+]
+
 # Text overlay size rules based on content
 TEXT_SIZE_RULES = {
     "date": 72,           # Dates need to be big and readable: "NOVEMBER 28, 1953"
@@ -121,6 +130,36 @@ TEXT_SIZE_RULES = {
 
 
 # ── Content Analysis ────────────────────────────────────────────────────────
+
+def _is_document_content(text: str) -> bool:
+    doc_patterns = [
+        r"the document|the memo|the report|the file",
+        r"reads|states|written|stamped|classified as",
+        r"declassified|released|page|paragraph|section",
+        r"subject line|header|title.*reads",
+    ]
+    text_lower = text.lower()
+    return any(re.search(p, text_lower) for p in doc_patterns)
+
+
+def _detect_document_highlights(text: str, shot_type: str = "") -> list:
+    if not _is_document_content(text):
+        return []
+    text_lower = text.lower()
+    words = text_lower.split()
+    total_words = max(len(words), 1)
+    highlights = []
+    for pattern, label, y1, y2, x1, x2 in DOCUMENT_HIGHLIGHT_RULES:
+        match = re.search(pattern, text_lower)
+        if match:
+            word_pos = len(text_lower[:match.start()].split())
+            reveal_at = min(0.95, max(0.05, word_pos / total_words))
+            highlights.append({
+                "y_start": y1, "y_end": y2, "x_start": x1, "x_end": x2,
+                "color": [255, 255, 0], "reveal_at": reveal_at, "_label": label,
+            })
+    return highlights
+
 
 def _detect_content_sfx(text: str) -> tuple[str | None, str | None]:
     """Match narration text to content-appropriate SFX."""
@@ -332,6 +371,11 @@ def direct(script_path: str, storyboard_path: str) -> dict:
                 "motivation": sfx_motivation,
             }
 
+        # ── 3b. Document highlights ──
+        shot_type = seg.get("shot_type", "")
+        highlight_regions = _detect_document_highlights(text, shot_type)
+        is_doc_content = _is_document_content(text)
+
         # ── 4. Zoom target (content-aware) ──
         zoom_target = _detect_zoom_target(text, seg.get("show", ""))
 
@@ -506,6 +550,8 @@ def direct(script_path: str, storyboard_path: str) -> dict:
             "composition": comp,
             "sync_points": sync_points,
             "tension_level": round(scene_tension_level, 2),
+            "highlight_regions": highlight_regions if highlight_regions else None,
+            "_document_content": is_doc_content,
             # Text overlay details
             "_text_overlay": text_overlay,
             "_text_overlay_size": text_overlay_size,

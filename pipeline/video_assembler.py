@@ -1195,18 +1195,23 @@ def build_timeline(
             # ── DP4: SFX ──────────────────────────────────────────────
             # Prefer Director-provided SFX (content-matched), then playbook,
             # then existing probability.
+            _sfx_is_director = False
             director_sfx = sb_entry.get("sfx") if sb_entry else None
             if isinstance(director_sfx, dict) and director_sfx.get("type"):
                 seg_sfx = director_sfx["type"]
+                _sfx_is_director = True
             else:
                 sb_cut_mot = sb_entry.get("cut_motivation") if sb_entry else None
                 seg_sfx_type = playbook_sfx(content_type, sb_cut_mot)
                 if seg_sfx_type:
                     seg_sfx = seg_sfx_type
+                    _sfx_is_director = True
                 elif random.random() < spec.sfx_probability:
                     seg_sfx = spec.sfx_type
+                    _sfx_is_director = False
                 else:
                     seg_sfx = None
+                    _sfx_is_director = False
 
             # Lower third: first segment of chunk, if this chunk introduces a named person
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
@@ -1244,6 +1249,7 @@ def build_timeline(
                 "content_type": content_type,   # carry through for compliance report
                 "intensity": sb_intensity,      # for parallax visual config
                 "sfx": seg_sfx,
+                "_sfx_is_director": _sfx_is_director,
                 "lower_third": seg_lower_third,
                 "kb_zoom_rate": kb_zoom_rate,   # story-aware Ken Burns rate
                 "shot_type": sb_shot_type,      # for per-scene color grading
@@ -1260,6 +1266,9 @@ def build_timeline(
                 "_text_overlay_size": sb_entry.get("_text_overlay_size") if sb_entry else None,
                 "_text_overlay_style": sb_entry.get("_text_overlay_style") if sb_entry else None,
                 "_text_overlay_hold_sec": sb_entry.get("_text_overlay_hold_sec") if sb_entry else None,
+                "highlight_regions": sb_entry.get("highlight_regions") if sb_entry else None,
+                "_document_content": sb_entry.get("_document_content", False) if sb_entry else False,
+                "search_query": sb_entry.get("search_query", "") if sb_entry else "",
             }
 
             if use_clip and (tagged_clip or videos):
@@ -1374,9 +1383,53 @@ def build_timeline(
                       f"scaled {len([s for s in segments if s['source_type'] not in ('chapter_card','black')])} "
                       f"segments by {scale:.4f}")
 
+    # ── Post-build image diversity pass ─────────────────────────────
+    segments = _enforce_image_diversity(segments, stills)
+
     # ── Post-build compliance report (validates, doesn't drive) ─────
     _print_compliance_report(segments)
 
+    return segments
+
+
+def _enforce_image_diversity(segments: list, stills: list,
+                             max_per_window: int = 1, window_sec: float = 20.0) -> list:
+    """Reduce image repetition by swapping duplicate stills within a sliding window."""
+    if not segments or not stills:
+        return segments
+    still_paths = list({
+        str(s.get("local_path") or s.get("path") or "")
+        for s in stills
+        if (s.get("local_path") or s.get("path") or "").lower().endswith(
+            (".jpg", ".jpeg", ".png", ".webp"))
+    })
+    swaps = 0
+    for i, seg in enumerate(segments):
+        if seg.get("source_type") != "still" or not seg.get("source_path"):
+            continue
+        if seg.get("highlight_regions"):
+            continue
+        src = seg["source_path"]
+        t_start = sum(s.get("duration_sec", 0) for s in segments[:i])
+        count = 0
+        t_acc = t_start
+        for j in range(i - 1, -1, -1):
+            t_acc -= segments[j].get("duration_sec", 0)
+            if t_start - t_acc > window_sec:
+                break
+            if segments[j].get("source_path") == src:
+                count += 1
+        if count >= max_per_window:
+            alts = [p for p in still_paths if p != src and Path(p).exists()]
+            if alts:
+                seg["source_path"] = random.choice(alts)
+                seg["_diversity_swapped"] = True
+                seg.pop("highlight_regions", None)
+                seg.pop("shots", None)
+                seg.pop("_document_content", None)
+                swaps += 1
+    if swaps:
+        print(f"  Image diversity: swapped {swaps} segments to reduce repetition")
     return segments
 
 
@@ -1438,13 +1491,14 @@ def _build_motion_cycle() -> list[str]:
 def _pick_sfx_file(sfx_type: str) -> Path | None:
     """Return a random existing SFX file for the given type, or None if unavailable."""
     candidates = {
-        "impact": ["impact_01.mp3", "impact_02.mp3"],
-        "body_impact": ["body_impact_01.mp3", "impact_01.mp3"],
-        "glass_shatter": ["glass_shatter_01.mp3"],
+        "impact": ["impact_01.mp3", "impact_02.mp3", "impact_cc0_01.mp3", "impact_cc0_02.mp3"],
+        "body_impact": ["body_impact_01.mp3", "body_fall_cc0_01.mp3", "impact_cc0_01.mp3"],
+        "glass_shatter": ["glass_shatter_01.mp3", "glass_cc0_01.mp3", "glass_cc0_03.mp3", "glass_cc0_04.mp3"],
         "whoosh": ["whoosh_01.mp3", "whoosh_02.mp3", "whoosh_03.mp3", "whoosh_04.mp3", "whoosh_05.mp3"],
         "rumble": ["rumble_01.mp3", "rumble_02.mp3", "rumble_03.mp3"],
         "shimmer": ["shimmer_01.mp3", "shimmer_02.mp3", "shimmer_03.mp3"],
         "tension": ["tension_01.mp3"],
+        "highlighter": ["highlighter_01.mp3"],
     }
     files = [SFX_DIR / f for f in candidates.get(sfx_type, []) if (SFX_DIR / f).exists()]
     return random.choice(files) if files else None
@@ -1651,6 +1705,14 @@ def render(
                     trigger_t = render_cursor + (sp["word_index"] / max(1, total_words)) * dur
                     sfx_events.append({"time_sec": trigger_t, "sfx_file": str(typewriter_sfx)})
 
+        # Collect highlighter SFX for segments with highlight_regions
+        if seg.get("highlight_regions"):
+            hl_sfx = _pick_sfx_file("highlighter")
+            if hl_sfx:
+                for hr in seg["highlight_regions"]:
+                    hl_time = render_cursor + hr.get("reveal_at", 0.5) * dur
+                    sfx_events.append({"time_sec": hl_time, "sfx_file": str(hl_sfx)})
+
         # Collect lower-third event (will be applied post-concat for accurate timestamps)
         lt = seg.get("lower_third")
         if lt and lt.get("name"):
@@ -1712,6 +1774,28 @@ def render(
                 _visual_config.transition_in = seg["transition_in"]
             if seg.get("transition_out"):
                 _visual_config.transition_out = seg["transition_out"]
+
+            # Document mode: letterbox portrait documents
+            _src = seg.get("source_path", "")
+            if _src and seg.get("source_type") == "still":
+                _is_doc_type = seg.get("shot_type", "").lower() in ("document_photo", "document", "declassified", "memo")
+                _is_doc_query = any(w in seg.get("search_query", "").lower() for w in ("document", "memo", "declassified", "report"))
+                if _is_doc_type or _is_doc_query:
+                    try:
+                        from PIL import Image as _PILImg
+                        with _PILImg.open(_src) as _dim:
+                            if _dim.height > _dim.width * 1.2:
+                                _visual_config.document_mode = True
+                    except Exception:
+                        pass
+
+            # Wire highlight_regions to renderer
+            if seg.get("highlight_regions"):
+                _visual_config.highlight_regions = seg["highlight_regions"]
+
+            # Camera shake only for Director/playbook SFX (not random rolls)
+            if seg.get("sfx") and seg.get("_sfx_is_director"):
+                _visual_config.camera_shake = True
 
         if seg["source_type"] == "still":
             src = Path(seg["source_path"])

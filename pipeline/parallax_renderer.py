@@ -109,6 +109,12 @@ class SegmentVisualConfig:
     transition_in: dict | None = None
     transition_out: dict | None = None
     sync_points: list = field(default_factory=list)
+    shots: list = field(default_factory=list)  # shot choreography array
+    camera_shake: bool = False
+    glass_crack_overlay: bool = False
+    document_mode: bool = False         # letterbox portrait docs + 2D affine (no depth warp)
+    document_focus_y: float = 0.5
+    highlight_regions: list = field(default_factory=list)
 
     @classmethod
     def from_storyboard(cls, narrative_function: str, intensity: str,
@@ -210,9 +216,25 @@ def _get_depth_map_raw(image, model, processor, device):
 
 # ── Parallax Frame Rendering ────────────────────────────────────────────────
 
-def prepare_image(img: Image.Image, margin: int = 100) -> Image.Image:
+def prepare_image(img: Image.Image, margin: int = 100, document_mode: bool = False) -> Image.Image:
     """Resize/crop to output dims with margin for parallax."""
     tw, th = W + margin * 2, H + margin * 2
+
+    # Document mode: scale-to-fit with black padding (preserve full document)
+    if document_mode:
+        aspect_src = img.width / img.height
+        aspect_dst = tw / th
+        if aspect_src > aspect_dst:
+            new_w = tw
+            new_h = int(tw / aspect_src)
+        else:
+            new_h = th
+            new_w = int(th * aspect_src)
+        img = img.resize((new_w, new_h), Image.LANCZOS)
+        padded = Image.new("RGB", (tw, th), (0, 0, 0))
+        padded.paste(img, ((tw - new_w) // 2, (th - new_h) // 2))
+        return padded
+
     aspect_src = img.width / img.height
     aspect_dst = tw / th
     if aspect_src > aspect_dst:
@@ -285,6 +307,17 @@ def render_parallax_frame(image_arr, depth_arr, t, motion_type="slow_zoom_in",
         image_arr[y1, x1] * fx * fy
     )
     return np.clip(result, 0, 255).astype(np.uint8)
+
+
+def _affine_frame(image_arr, zoom, dx, dy):
+    """Simple 2D affine zoom/pan using cv2.warpAffine. No depth map needed."""
+    h, w = image_arr.shape[:2]
+    cx, cy = w / 2.0, h / 2.0
+    M = np.float32([
+        [zoom, 0, cx * (1 - zoom) - dx],
+        [0, zoom, cy * (1 - zoom) - dy],
+    ])
+    return cv2.warpAffine(image_arr, M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT_101)
 
 
 # ── Multi-Image Compositing ─────────────────────────────────────────────────
@@ -669,15 +702,18 @@ def render_segment_frames(
     Returns list of (H, W, 3) uint8 arrays.
     """
     img = Image.open(image_path).convert("RGB")
-    img = prepare_image(img)
+    img = prepare_image(img, document_mode=config.document_mode)
     img_arr = np.array(img)
 
-    depth_arr = engine.get_depth_map(img, image_path)
-    # Resize depth to match prepared image
-    dep_img = Image.fromarray((depth_arr * 255).astype(np.uint8))
-    ih, iw = img_arr.shape[:2]
-    dep_img = dep_img.resize((iw, ih), Image.LANCZOS)
-    dep_arr = np.array(dep_img).astype(np.float32) / 255.0
+    if config.document_mode:
+        dep_arr = None
+    else:
+        depth_arr = engine.get_depth_map(img, image_path)
+        # Resize depth to match prepared image
+        dep_img = Image.fromarray((depth_arr * 255).astype(np.uint8))
+        ih, iw = img_arr.shape[:2]
+        dep_img = dep_img.resize((iw, ih), Image.LANCZOS)
+        dep_arr = np.array(dep_img).astype(np.float32) / 255.0
 
     # Composite mode: load background + extract subject
     composite_mode = (config.composition_type == "composite" and bg_image_path)
@@ -716,6 +752,39 @@ def render_segment_frames(
                 t_eased, config.motion_speed, config.parallax_strength,
             )
             # Center crop
+            fh, fw = frame.shape[:2]
+            cy, cx = (fh - H) // 2, (fw - W) // 2
+            if cy >= 0 and cx >= 0:
+                frame = frame[cy:cy + H, cx:cx + W]
+            else:
+                frame = np.array(Image.fromarray(frame).resize((W, H), Image.LANCZOS))
+        elif config.document_mode:
+            # 2D affine zoom/pan — no depth warp for documents
+            speed = config.motion_speed
+            mt = config.motion_type
+            if mt in ("slow_zoom_in", "zoom_in"):
+                zoom = 1.0 + t_eased * speed / 100.0
+                dx, dy = 0.0, 0.0
+            elif mt in ("slow_zoom_out", "zoom_out"):
+                zoom = 1.0 + (1.0 - t_eased) * speed / 100.0
+                dx, dy = 0.0, 0.0
+            elif mt == "pan_right":
+                zoom = 1.02
+                dx, dy = t_eased * speed * 15, 0.0
+            elif mt == "pan_left":
+                zoom = 1.02
+                dx, dy = -t_eased * speed * 15, 0.0
+            elif mt == "pan_up":
+                zoom = 1.02
+                dx, dy = 0.0, -t_eased * speed * 15
+            elif mt == "pan_down":
+                zoom = 1.02
+                dx, dy = 0.0, t_eased * speed * 15
+            else:  # static
+                zoom = 1.0 + t_eased * 0.005
+                dx, dy = 0.0, 0.0
+            frame = _affine_frame(img_arr, zoom, dx, dy)
+            # Center crop to output dimensions
             fh, fw = frame.shape[:2]
             cy, cx = (fh - H) // 2, (fw - W) // 2
             if cy >= 0 and cx >= 0:
