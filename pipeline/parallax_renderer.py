@@ -81,6 +81,7 @@ MOTION_TYPE_MAP = {
     "pan_up": "pan_up",
     "pan_down": "pan_down",
     "static": "static",
+    "document_scan": "document_scan",
 }
 
 
@@ -109,6 +110,18 @@ class SegmentVisualConfig:
     transition_in: dict | None = None
     transition_out: dict | None = None
     sync_points: list = field(default_factory=list)
+    shots: list = field(default_factory=list)  # shot choreography array
+    # Each shot: {"phase": str, "duration_pct": float, "zoom": [start, end],
+    #             "region": [x1, y1, x2, y2] or None, "text": str or None,
+    #             "highlight": bool}
+    camera_shake: bool = False          # violent shake on impact/crash
+    glass_crack_overlay: bool = False   # glass crack overlay effect
+    # Document-specific fields
+    document_mode: bool = False         # letterbox portrait docs (scale-to-fit, black bars)
+    document_focus_y: float = 0.5       # 0.0-1.0: where in document to zoom into (last 30%)
+    highlight_regions: list = field(default_factory=list)
+    # Each: {"y_start": 0.3, "y_end": 0.4, "x_start": 0.1, "x_end": 0.9,
+    #        "color": [255, 255, 0], "reveal_at": 0.5}
 
     @classmethod
     def from_storyboard(cls, narrative_function: str, intensity: str,
@@ -210,11 +223,33 @@ def _get_depth_map_raw(image, model, processor, device):
 
 # ── Parallax Frame Rendering ────────────────────────────────────────────────
 
-def prepare_image(img: Image.Image, margin: int = 100) -> Image.Image:
-    """Resize/crop to output dims with margin for parallax."""
+def prepare_image(img: Image.Image, margin: int = 100,
+                   document_mode: bool = False) -> Image.Image:
+    """Resize/crop to output dims with margin for parallax.
+
+    document_mode: if True, scale-to-fit (contain) with black padding instead
+    of cover-crop.  Keeps full portrait documents visible in 16:9 frame.
+    """
     tw, th = W + margin * 2, H + margin * 2
     aspect_src = img.width / img.height
     aspect_dst = tw / th
+
+    if document_mode:
+        # Contain: fit entire image, pad remainder with black
+        if aspect_src > aspect_dst:          # wider than target
+            new_w = tw
+            new_h = int(new_w / aspect_src)
+        else:                                 # taller/portrait
+            new_h = th
+            new_w = int(new_h * aspect_src)
+        img = img.resize((new_w, new_h), Image.LANCZOS)
+        canvas = Image.new("RGB", (tw, th), (0, 0, 0))
+        paste_x = (tw - new_w) // 2
+        paste_y = (th - new_h) // 2
+        canvas.paste(img, (paste_x, paste_y))
+        return canvas
+
+    # Default: cover-crop (fill frame, crop excess)
     if aspect_src > aspect_dst:
         new_h = th
         new_w = int(new_h * aspect_src)
@@ -227,35 +262,16 @@ def prepare_image(img: Image.Image, margin: int = 100) -> Image.Image:
     return img.crop((left, top, left + tw, top + th))
 
 
-def render_parallax_frame(image_arr, depth_arr, t, motion_type="slow_zoom_in",
-                          parallax_strength=50.0, speed=3.0):
-    """Render single parallax frame with depth-based layer motion."""
-    h, w = image_arr.shape[:2]
+def _warp_frame(image_arr, depth_arr, zoom, dx, dy, parallax_strength=50.0):
+    """Core depth-based warp. Returns warped frame.
 
-    if motion_type == "slow_zoom_in":
-        zoom = 1.0 + t * speed * 0.01
-        dx, dy = 0.0, 0.0
-    elif motion_type == "slow_zoom_out":
-        zoom = 1.0 + (1.0 - t) * speed * 0.01
-        dx, dy = 0.0, 0.0
-    elif motion_type == "pan_right":
-        zoom = 1.02
-        dx, dy = t * speed * 15, 0.0
-    elif motion_type == "pan_left":
-        zoom = 1.02
-        dx, dy = -t * speed * 15, 0.0
-    elif motion_type == "pan_up":
-        zoom = 1.02
-        dx, dy = 0.0, -t * speed * 15
-    elif motion_type == "pan_down":
-        zoom = 1.02
-        dx, dy = 0.0, t * speed * 15
-    elif motion_type == "static":
-        zoom = 1.0 + t * 0.005
-        dx, dy = t * 2.0, t * 1.0
-    else:
-        zoom = 1.0 + t * 0.03
-        dx, dy = 0.0, 0.0
+    image_arr: (H, W, 3) uint8
+    depth_arr: (H, W) float32 [0,1] where 1=far
+    zoom: scalar zoom factor (1.0 = no zoom)
+    dx, dy: pixel offsets for pan motion
+    parallax_strength: depth-based displacement intensity
+    """
+    h, w = image_arr.shape[:2]
 
     near_factor = 1.0 - depth_arr
     shift_x = near_factor * dx * parallax_strength / 60.0
@@ -285,6 +301,148 @@ def render_parallax_frame(image_arr, depth_arr, t, motion_type="slow_zoom_in",
         image_arr[y1, x1] * fx * fy
     )
     return np.clip(result, 0, 255).astype(np.uint8)
+
+
+def _affine_frame(image_arr, zoom, dx, dy):
+    """Simple 2D affine zoom/pan — NO depth warping.
+
+    Used for flat documents where depth-based parallax produces artifacts.
+    Uses cv2.warpAffine for clean bilinear interpolation without depth distortion.
+    """
+    import cv2
+    h, w = image_arr.shape[:2]
+    cx, cy = w / 2.0, h / 2.0
+
+    # Build affine matrix: translate to center, scale, translate back + pan
+    M = np.float32([
+        [zoom, 0, cx * (1 - zoom) - dx],
+        [0, zoom, cy * (1 - zoom) - dy],
+    ])
+    return cv2.warpAffine(image_arr, M, (w, h),
+                          flags=cv2.INTER_LINEAR,
+                          borderMode=cv2.BORDER_REFLECT_101)
+
+
+def _compute_choreographed_motion(t: float, shots: list, h: int, w: int):
+    """Compute zoom, dx, dy from a shots choreography array.
+
+    t: normalized progress 0→1 through entire segment
+    shots: list of {"duration_pct", "zoom": [start, end], "region": [x1,y1,x2,y2] or None}
+           region coords are 0-1 normalized
+    Returns: (zoom, dx, dy)
+    """
+    if not shots:
+        return 1.0, 0.0, 0.0
+
+    # Walk through shots accumulating duration_pct to find active shot
+    accumulated = 0.0
+    active_shot = shots[-1]  # fallback to last shot
+    phase_t = 1.0
+
+    for shot in shots:
+        dur = shot.get("duration_pct", 0.0)
+        if t <= accumulated + dur or dur == 0:
+            active_shot = shot
+            if dur > 0:
+                phase_t = (t - accumulated) / dur
+            else:
+                phase_t = 0.0
+            break
+        accumulated += dur
+    else:
+        # t is past all shots — hold on last shot's end state
+        phase_t = 1.0
+
+    phase_t = max(0.0, min(1.0, phase_t))
+
+    # Sinusoidal easing
+    phase_t_smooth = 0.5 - 0.5 * math.cos(phase_t * math.pi)
+
+    # Interpolate zoom
+    zoom_range = active_shot.get("zoom", [1.0, 1.0])
+    zoom_start = zoom_range[0] if len(zoom_range) > 0 else 1.0
+    zoom_end = zoom_range[1] if len(zoom_range) > 1 else zoom_start
+    zoom = zoom_start + (zoom_end - zoom_start) * phase_t_smooth
+
+    # Compute dx, dy from region (pan toward region center)
+    region = active_shot.get("region")
+    dx, dy = 0.0, 0.0
+    if region and len(region) >= 4:
+        # Region is [x1, y1, x2, y2] in 0-1 normalized coords
+        rx = (region[0] + region[2]) / 2.0  # center x, 0-1
+        ry = (region[1] + region[3]) / 2.0  # center y, 0-1
+        # Convert to pixel offset from image center
+        dx = (rx - 0.5) * w * 0.3 * phase_t_smooth
+        dy = (ry - 0.5) * h * 0.3 * phase_t_smooth
+
+    return zoom, dx, dy
+
+
+def render_parallax_frame(image_arr, depth_arr, t, motion_type="slow_zoom_in",
+                          parallax_strength=50.0, speed=3.0,
+                          document_focus_y=0.5):
+    """Render single parallax frame with depth-based layer motion.
+
+    For document_scan: 3-phase motion — show top, pan down, zoom into focus area.
+    document_focus_y: 0.0-1.0, vertical position to zoom into in the final phase.
+    """
+    h, w = image_arr.shape[:2]
+
+    if motion_type == "document_scan":
+        # Phase 1 (0-30%): show top of document, slight zoom 1.0 → 1.1
+        # Phase 2 (30-70%): pan down through document smoothly
+        # Phase 3 (70-100%): zoom into relevant area 1.1 → 1.4
+        if t <= 0.3:
+            # Phase 1: gentle zoom from top
+            phase_t = t / 0.3  # 0→1 within phase
+            zoom = 1.0 + phase_t * 0.1  # 1.0 → 1.1
+            dx = 0.0
+            # Start near top of image (negative dy shifts view upward)
+            dy = -h * 0.15
+        elif t <= 0.7:
+            # Phase 2: pan down through document
+            phase_t = (t - 0.3) / 0.4  # 0→1 within phase
+            phase_t_smooth = 0.5 - 0.5 * math.cos(phase_t * math.pi)  # ease
+            zoom = 1.1  # hold zoom steady
+            dx = 0.0
+            # Pan from top region down toward focus_y
+            start_dy = -h * 0.15
+            end_dy = (document_focus_y - 0.5) * h * 0.3
+            dy = start_dy + (end_dy - start_dy) * phase_t_smooth
+        else:
+            # Phase 3: zoom into focus area
+            phase_t = (t - 0.7) / 0.3  # 0→1 within phase
+            phase_t_smooth = 0.5 - 0.5 * math.cos(phase_t * math.pi)  # ease
+            zoom = 1.1 + phase_t_smooth * 0.3  # 1.1 → 1.4
+            # Center on focus point
+            dx = 0.0
+            dy = (document_focus_y - 0.5) * h * 0.3
+    elif motion_type == "slow_zoom_in":
+        zoom = 1.0 + t * speed * 0.01
+        dx, dy = 0.0, 0.0
+    elif motion_type == "slow_zoom_out":
+        zoom = 1.0 + (1.0 - t) * speed * 0.01
+        dx, dy = 0.0, 0.0
+    elif motion_type == "pan_right":
+        zoom = 1.02
+        dx, dy = t * speed * 15, 0.0
+    elif motion_type == "pan_left":
+        zoom = 1.02
+        dx, dy = -t * speed * 15, 0.0
+    elif motion_type == "pan_up":
+        zoom = 1.02
+        dx, dy = 0.0, -t * speed * 15
+    elif motion_type == "pan_down":
+        zoom = 1.02
+        dx, dy = 0.0, t * speed * 15
+    elif motion_type == "static":
+        zoom = 1.0 + t * 0.005
+        dx, dy = t * 2.0, t * 1.0
+    else:
+        zoom = 1.0 + t * 0.03
+        dx, dy = 0.0, 0.0
+
+    return _warp_frame(image_arr, depth_arr, zoom, dx, dy, parallax_strength)
 
 
 # ── Multi-Image Compositing ─────────────────────────────────────────────────
@@ -647,6 +805,114 @@ def render_typewriter_text(frame, text, position, progress, font_size=56,
     return frame
 
 
+# ── Camera Shake + Glass Crack Effects ──────────────────────────────────────
+
+def apply_camera_shake(frame: np.ndarray, t: float, intensity: float = 1.0) -> np.ndarray:
+    """Apply violent camera shake — random offset + slight rotation.
+
+    t: 0.0 to 1.0 progress through the segment. Shake decays over time.
+    """
+    h, w = frame.shape[:2]
+    decay = max(0, 1.0 - t * 1.5)  # shake fades out over ~67% of segment
+    if decay <= 0:
+        return frame
+    # Random offset (seeded by frame index for reproducibility)
+    seed = int(t * 1000) % 997
+    rng = np.random.RandomState(seed)
+    max_px = int(20 * intensity * decay)
+    dx = rng.randint(-max_px, max_px + 1) if max_px > 0 else 0
+    dy = rng.randint(-max_px, max_px + 1) if max_px > 0 else 0
+    # Shift frame with black fill
+    M = np.float32([[1, 0, dx], [0, 1, dy]])
+    shifted = cv2.warpAffine(frame, M, (w, h), borderMode=cv2.BORDER_REFLECT)
+    return shifted
+
+
+def apply_glass_crack_overlay(frame: np.ndarray, t: float) -> np.ndarray:
+    """Draw expanding glass crack lines radiating from an impact point.
+
+    Cracks appear suddenly and stay. More cracks appear over time.
+    """
+    h, w = frame.shape[:2]
+    if t < 0.05:
+        return frame  # slight delay before cracks appear
+
+    overlay = frame.copy()
+    # Impact point: slightly off-center upper area (like a window)
+    cx, cy = int(w * 0.45), int(h * 0.35)
+
+    rng = np.random.RandomState(42)
+    num_cracks = min(12, int(3 + t * 15))  # more cracks appear over time
+
+    for ci in range(num_cracks):
+        angle = rng.uniform(0, 2 * math.pi)
+        length = rng.randint(80, min(w, h) // 2)
+        # Main crack line
+        ex = int(cx + length * math.cos(angle))
+        ey = int(cy + length * math.sin(angle))
+        thickness = rng.randint(1, 3)
+        # White crack with slight transparency
+        cv2.line(overlay, (cx, cy), (ex, ey), (220, 220, 220), thickness, cv2.LINE_AA)
+        # Add small branch cracks
+        num_branches = rng.randint(1, 4)
+        for _ in range(num_branches):
+            bt = rng.uniform(0.3, 0.8)
+            bx = int(cx + (ex - cx) * bt)
+            by = int(cy + (ey - cy) * bt)
+            ba = angle + rng.uniform(-0.8, 0.8)
+            bl = rng.randint(20, 60)
+            bex = int(bx + bl * math.cos(ba))
+            bey = int(by + bl * math.sin(ba))
+            cv2.line(overlay, (bx, by), (bex, bey), (200, 200, 200), 1, cv2.LINE_AA)
+
+    # Blend: cracks are semi-transparent
+    alpha = min(0.7, t * 2)
+    result = cv2.addWeighted(frame, 1.0 - alpha * 0.3, overlay, alpha * 0.3 + (1.0 - alpha * 0.3), 0)
+    return result
+
+
+# ── Document Highlight Overlay ──────────────────────────────────────────────
+
+def _apply_highlight_regions(frame: np.ndarray, t: float, duration_sec: float,
+                              regions: list) -> np.ndarray:
+    """Draw semi-transparent highlight rectangles that wipe left-to-right.
+
+    Each region dict: y_start, y_end, x_start, x_end (0-1 normalized),
+    color [R,G,B], reveal_at (fraction of segment when wipe begins).
+    The wipe takes ~0.5s proportional to segment duration.
+    """
+    fh, fw = frame.shape[:2]
+    result = frame.copy()
+    wipe_duration_frac = min(0.15, 0.5 / max(duration_sec, 0.1))  # ~0.5s as fraction
+
+    for region in regions:
+        reveal_at = region.get("reveal_at", 0.5)
+        if t < reveal_at:
+            continue
+
+        # Wipe progress: 0→1 over wipe_duration_frac
+        wipe_t = min(1.0, (t - reveal_at) / max(wipe_duration_frac, 0.001))
+
+        color = region.get("color", [255, 255, 0])
+        y1 = int(region.get("y_start", 0.3) * fh)
+        y2 = int(region.get("y_end", 0.4) * fh)
+        x1 = int(region.get("x_start", 0.1) * fw)
+        x2_full = int(region.get("x_end", 0.9) * fw)
+        # Left-to-right wipe: only fill up to wipe_t fraction of the region width
+        x2 = x1 + int((x2_full - x1) * wipe_t)
+
+        if x2 <= x1 or y2 <= y1:
+            continue
+
+        # Create highlight overlay and blend at alpha ~0.3
+        overlay = result[y1:y2, x1:x2].copy()
+        highlight = np.full_like(overlay, color[:3], dtype=np.uint8)
+        blended = cv2.addWeighted(overlay, 0.7, highlight, 0.3, 0)
+        result[y1:y2, x1:x2] = blended
+
+    return result
+
+
 # ── Main Segment Renderer ───────────────────────────────────────────────────
 
 def render_segment_frames(
@@ -669,15 +935,19 @@ def render_segment_frames(
     Returns list of (H, W, 3) uint8 arrays.
     """
     img = Image.open(image_path).convert("RGB")
-    img = prepare_image(img)
+    img = prepare_image(img, document_mode=config.document_mode)
     img_arr = np.array(img)
 
-    depth_arr = engine.get_depth_map(img, image_path)
-    # Resize depth to match prepared image
-    dep_img = Image.fromarray((depth_arr * 255).astype(np.uint8))
     ih, iw = img_arr.shape[:2]
-    dep_img = dep_img.resize((iw, ih), Image.LANCZOS)
-    dep_arr = np.array(dep_img).astype(np.float32) / 255.0
+
+    # Skip depth computation for flat documents — they get 2D affine only
+    if config.document_mode:
+        dep_arr = None
+    else:
+        depth_arr = engine.get_depth_map(img, image_path)
+        dep_img = Image.fromarray((depth_arr * 255).astype(np.uint8))
+        dep_img = dep_img.resize((iw, ih), Image.LANCZOS)
+        dep_arr = np.array(dep_img).astype(np.float32) / 255.0
 
     # Composite mode: load background + extract subject
     composite_mode = (config.composition_type == "composite" and bg_image_path)
@@ -722,11 +992,43 @@ def render_segment_frames(
                 frame = frame[cy:cy + H, cx:cx + W]
             else:
                 frame = np.array(Image.fromarray(frame).resize((W, H), Image.LANCZOS))
+        elif config.shots:
+            # Shot choreography: Director-driven multi-phase camera motion
+            zoom, dx, dy = _compute_choreographed_motion(t_eased, config.shots, ih, iw)
+            if config.document_mode:
+                frame = _affine_frame(img_arr, zoom, dx, dy)
+            else:
+                frame = _warp_frame(img_arr, dep_arr, zoom, dx, dy, config.parallax_strength)
+            # Center crop to output dimensions
+            fh, fw = frame.shape[:2]
+            cy, cx = (fh - H) // 2, (fw - W) // 2
+            if cy >= 0 and cx >= 0:
+                frame = frame[cy:cy + H, cx:cx + W]
+            else:
+                frame = np.array(Image.fromarray(frame).resize((W, H), Image.LANCZOS))
         else:
-            frame = render_parallax_frame(
-                img_arr, dep_arr, t_eased,
-                config.motion_type, config.parallax_strength, config.motion_speed
-            )
+            if config.document_mode:
+                # 2D affine for flat documents — no depth distortion
+                mt = config.motion_type or "slow_zoom_in"
+                speed = config.motion_speed or 3.0
+                zoom = 1.0 + t_eased * speed / 100.0
+                dx = dy = 0.0
+                if "pan" in mt:
+                    pan_amt = t_eased * speed * 2
+                    if "right" in mt: dx = pan_amt
+                    elif "left" in mt: dx = -pan_amt
+                    if "up" in mt: dy = -pan_amt
+                    elif "down" in mt: dy = pan_amt
+                    zoom = 1.0 + t_eased * 1.0 / 100.0
+                elif "zoom_out" in mt:
+                    zoom = 1.0 + (1.0 - t_eased) * speed / 100.0
+                frame = _affine_frame(img_arr, zoom, dx, dy)
+            else:
+                frame = render_parallax_frame(
+                    img_arr, dep_arr, t_eased,
+                    config.motion_type, config.parallax_strength, config.motion_speed,
+                    document_focus_y=config.document_focus_y,
+                )
             # Center crop to output dimensions
             fh, fw = frame.shape[:2]
             cy, cx = (fh - H) // 2, (fw - W) // 2
@@ -737,6 +1039,10 @@ def render_segment_frames(
 
         # Color grade
         frame = color_grade(frame, config.color_style)
+
+        # Document highlight overlays (semi-transparent colored rectangles with left-to-right wipe)
+        if config.highlight_regions:
+            frame = _apply_highlight_regions(frame, t, duration_sec, config.highlight_regions)
 
         # Atmosphere overlay (between background and post-processing)
         abs_t = start_time + i / FPS
@@ -755,6 +1061,14 @@ def render_segment_frames(
             frame = add_light_leak(frame, abs_t, corner="top_right")
         if config.vignette:
             frame = add_vignette(frame, config.vignette_strength)
+
+        # Camera shake (on impact/crash segments)
+        if config.camera_shake:
+            frame = apply_camera_shake(frame, t, intensity=1.5)
+
+        # Glass crack overlay (on glass_shatter segments)
+        if config.glass_crack_overlay:
+            frame = apply_glass_crack_overlay(frame, t)
 
         # Sync point text reveals
         active_sync_text = None

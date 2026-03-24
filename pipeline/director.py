@@ -30,6 +30,8 @@ import re
 import sys
 from pathlib import Path
 
+from pipeline.sequence_templates import match_sequence
+
 # ── Narrative Arc Categories ────────────────────────────────────────────────
 
 # The director understands these arc positions and adjusts everything accordingly
@@ -108,6 +110,65 @@ CONTENT_SFX_RULES = [
     (r"bruise|hematoma|injury|wound|struck|hit|blow", "impact", "physical violence"),
     (r"door|enter|arrive|walk in", "whoosh", "scene entry"),
 ]
+
+# Document highlight rules — when narration mentions document content,
+# draw a yellow highlight wipe over the relevant region of the document.
+# (region coordinates are normalized 0-1, matched to MKULTRA memo layout)
+DOCUMENT_HIGHLIGHT_RULES = [
+    # (keyword pattern, label, y_start, y_end, x_start, x_end)
+    (r"subject|title|header|project mkultra|mkultra", "header", 0.12, 0.22, 0.05, 0.95),
+    (r"top secret|classified|confidential|clearance", "stamp", 0.68, 0.75, 0.10, 0.90),
+    (r"signature|signed|gottlieb|authorized|approved", "signature", 0.72, 0.88, 0.30, 0.90),
+    (r"LSD|drug|dose|l\.s\.d|acid|cointreau", "lsd_ref", 0.22, 0.35, 0.05, 0.95),
+    (r"budget|\$39|money|fund|grant|\$", "budget", 0.42, 0.55, 0.05, 0.95),
+    (r"experiment|behavior|modification|conditioning", "body", 0.25, 0.45, 0.05, 0.95),
+]
+
+
+def _is_document_content(text: str) -> bool:
+    """Return True when narration explicitly references reading/examining a document."""
+    doc_patterns = [
+        r"the document|the memo|the report|the file",
+        r"reads|states|written|stamped|classified as",
+        r"declassified|released|page|paragraph|section",
+        r"subject line|header|title.*reads",
+    ]
+    text_lower = text.lower()
+    return any(re.search(p, text_lower) for p in doc_patterns)
+
+
+def _detect_document_highlights(text: str, shot_type: str = "") -> list:
+    """Generate highlight_regions for document segments based on narration content.
+
+    Only fires when the narration is specifically about the document content,
+    not when the document is used as a thematic backdrop.
+    """
+    if not _is_document_content(text):
+        return []
+
+    text_lower = text.lower()
+    words = text_lower.split()
+    total_words = max(len(words), 1)
+    highlights = []
+
+    for pattern, label, y1, y2, x1, x2 in DOCUMENT_HIGHLIGHT_RULES:
+        match = re.search(pattern, text_lower)
+        if match:
+            # Compute reveal_at: where in the narration this word appears
+            match_start = match.start()
+            word_pos = len(text_lower[:match_start].split())
+            reveal_at = min(0.95, max(0.05, word_pos / total_words))
+
+            highlights.append({
+                "y_start": y1, "y_end": y2,
+                "x_start": x1, "x_end": x2,
+                "color": [255, 255, 0],  # yellow highlighter
+                "reveal_at": reveal_at,
+                "_label": label,
+            })
+
+    return highlights
+
 
 # Text overlay size rules based on content
 TEXT_SIZE_RULES = {
@@ -332,6 +393,11 @@ def direct(script_path: str, storyboard_path: str) -> dict:
                 "motivation": sfx_motivation,
             }
 
+        # ── 3b. Document highlights (content-matched regions) ──
+        shot_type = seg.get("shot_type", "")
+        highlight_regions = _detect_document_highlights(text, shot_type)
+        is_doc_content = _is_document_content(text)
+
         # ── 4. Zoom target (content-aware) ──
         zoom_target = _detect_zoom_target(text, seg.get("show", ""))
 
@@ -512,7 +578,24 @@ def direct(script_path: str, storyboard_path: str) -> dict:
             "_text_overlay_position": text_overlay_position,
             "_text_overlay_style": text_overlay_style,
             "_text_overlay_hold_sec": text_overlay_hold_sec,
+            # Document highlighting
+            "highlight_regions": highlight_regions if highlight_regions else None,
+            "_document_content": is_doc_content,
         }
+
+        # ── Sequence detection ──
+        # For dramatic moments (falls, violence, reveals), attach a multi-shot
+        # choreography plan that the assembler renders as a coordinated sequence.
+        seq = match_sequence(text)
+        if seq:
+            directed["sequence_plan"] = seq["shots"]
+            directed["sequence_name"] = seq["name"]
+            # Use first shot's SFX if Director didn't already assign one
+            if not sfx and seq["shots"][0].get("sfx"):
+                directed["sfx"] = {
+                    "type": seq["shots"][0]["sfx"],
+                    "motivation": f"sequence:{seq['name']}",
+                }
 
         directed_segments.append(directed)
         prev_emotion = emotion

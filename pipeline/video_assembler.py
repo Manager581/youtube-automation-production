@@ -796,6 +796,212 @@ def snap_to_beat(
 # Timeline builder
 # ---------------------------------------------------------------------------
 
+MAX_MERGED_DURATION = 12.0  # seconds — safety cap for merged segments
+
+
+_MOTION_ALT = {
+    "zoom_in": "zoom_out", "zoom_out": "zoom_in",
+    "pan_right": "pan_left", "pan_left": "pan_right",
+    "pan_up": "pan_down", "pan_down": "pan_up",
+    "static": "zoom_in",
+}
+
+
+def _merge_same_image_segments(segments: list) -> list:
+    """Merge consecutive sub-segments that show the same still image.
+
+    Fixes the zoom-reset problem: when 3 sub-segments of the same image
+    each render with t=0→1, the zoom resets 3 times.  Merging them into
+    one longer segment gives one continuous t=0→1 motion.
+
+    When a merge is blocked by the duration cap, the new segment gets an
+    alternated motion direction so the viewer sees a different camera move
+    instead of an identical zoom that resets.
+    """
+    if not segments:
+        return segments
+
+    merged: list = [segments[0]]
+    for seg in segments[1:]:
+        prev = merged[-1]
+        same_still = (
+            seg.get("source_type") == "still"
+            and prev.get("source_type") == "still"
+            and seg.get("source_path")
+            and seg["source_path"] == prev.get("source_path")
+        )
+        # Safety: don't merge beyond cap (prevents one image holding forever)
+        would_exceed_cap = (
+            prev.get("duration_sec", 0) + seg.get("duration_sec", 0)
+            >= MAX_MERGED_DURATION
+        )
+
+        if same_still and not would_exceed_cap:
+            # Extend previous segment
+            prev["duration_sec"] = round(
+                prev["duration_sec"] + seg["duration_sec"], 3
+            )
+            # Accumulate SFX from later segments if first has none
+            if seg.get("sfx") and not prev.get("sfx"):
+                prev["sfx"] = seg["sfx"]
+            # Accumulate sync_points
+            if seg.get("sync_points"):
+                prev.setdefault("sync_points", []).extend(seg["sync_points"])
+        else:
+            # If cap blocked the merge on same image, alternate motion
+            # based on the PREVIOUS segment's motion (not the current segment's
+            # original motion).  This ensures chains of 3+ alternate correctly:
+            # zoom_in → zoom_out → zoom_in instead of zoom_in → zoom_out → zoom_out.
+            if same_still and would_exceed_cap:
+                alt = _MOTION_ALT.get(prev.get("motion", ""), "")
+                if alt:
+                    seg["motion"] = alt
+            merged.append(seg)
+
+    eliminated = len(segments) - len(merged)
+    if eliminated > 0:
+        print(
+            f"  ⊕ Zoom continuity: merged {len(segments)} → {len(merged)} "
+            f"segments ({eliminated} same-image resets eliminated)"
+        )
+    return merged
+
+
+def _enforce_image_diversity(segments: list, stills: list,
+                             max_per_window: int = 2,
+                             window_sec: float = 30.0) -> list:
+    """Enforce rolling-window image diversity.
+
+    Scans segments and ensures no single image appears more than
+    `max_per_window` times in any `window_sec` window.  When a segment
+    exceeds the limit and is NOT a document-content moment (no
+    highlight_regions), its image is swapped to a random alternative
+    from the stills pool.
+    """
+    if not segments or not stills:
+        return segments
+
+    # Build a set of unique still paths for random replacement
+    still_paths = list({
+        str(s.get("local_path") or s.get("path") or "")
+        for s in stills
+        if (s.get("local_path") or s.get("path") or "").lower().endswith(
+            (".jpg", ".jpeg", ".png", ".webp"))
+    })
+
+    swaps = 0
+    for i, seg in enumerate(segments):
+        if seg.get("source_type") != "still" or not seg.get("source_path"):
+            continue
+        # Don't touch document-content segments with highlights
+        if seg.get("highlight_regions"):
+            continue
+
+        # Count how many times this image appeared in the preceding window
+        src = seg["source_path"]
+        t_start = sum(s.get("duration_sec", 0) for s in segments[:i])
+        count = 0
+        t_acc = t_start
+        for j in range(i - 1, -1, -1):
+            t_acc -= segments[j].get("duration_sec", 0)
+            if t_start - t_acc > window_sec:
+                break
+            if segments[j].get("source_path") == src:
+                count += 1
+
+        if count >= max_per_window:
+            # Find a replacement: any still that isn't the current one
+            alts = [p for p in still_paths if p != src and Path(p).exists()]
+            if alts:
+                old_name = Path(src).name
+                new_path = random.choice(alts)
+                seg["source_path"] = new_path
+                seg["_diversity_swapped"] = True
+                # Clear document-specific data — new image isn't the document
+                seg.pop("highlight_regions", None)
+                seg.pop("shots", None)
+                seg.pop("_document_content", None)
+                swaps += 1
+                if swaps <= 5:
+                    print(f"    🔄 seg {i}: {old_name} → {Path(new_path).name} (was {count}x in {window_sec}s)")
+
+    if swaps:
+        print(f"  🔄 Image diversity: swapped {swaps} segments to reduce repetition")
+    return segments
+
+
+def _build_chunk_to_sb_map(chunks: list, sb_segments: list) -> dict:
+    """Map each narration chunk to its best-matching storyboard segment via text overlap.
+
+    Returns dict of {chunk_index: storyboard_index}.
+    Constraint: storyboard assignments are monotonically non-decreasing (preserve order).
+    Empty/pause chunks inherit from the previous chunk's assignment.
+    """
+    _STOP = {"the", "a", "an", "and", "of", "to", "in", "is", "was", "he", "his",
+             "her", "that", "this", "it", "they", "them", "but", "or", "for", "with",
+             "had", "were", "are", "been", "have", "has", "who", "what", "would",
+             "could", "from", "not", "just", "about", "into", "over", "their", "there",
+             "when", "than", "then", "more", "some", "its", "only", "also", "after",
+             "before", "other", "which", "these", "those", "will", "can", "all", "each",
+             "every", "much", "very", "being", "did", "does", "done"}
+
+    chunk_to_sb = {}
+    sb_start = 0  # monotonic lower bound — never go backwards
+
+    for ci, chunk in enumerate(chunks):
+        chunk_text = (chunk.get("text") or "").strip().lower()
+        if not chunk_text:
+            # Empty chunk (pause) — inherit from previous chunk's storyboard segment
+            chunk_to_sb[ci] = chunk_to_sb.get(ci - 1, sb_start)
+            continue
+
+        chunk_words = set(chunk_text.split()) - _STOP
+        # Also remove very short words
+        chunk_words = {w for w in chunk_words if len(w) > 2}
+
+        if not chunk_words:
+            chunk_to_sb[ci] = chunk_to_sb.get(ci - 1, sb_start)
+            continue
+
+        best_score = 0.0
+        best_sb = sb_start
+
+        # Search forward from current position, look ahead up to 15 segments
+        search_end = min(len(sb_segments), sb_start + 15)
+
+        for si in range(sb_start, search_end):
+            sb_text = (sb_segments[si].get("text") or "").strip().lower()
+            if not sb_text:
+                continue
+            # Skip chapter card entries
+            if sb_segments[si].get("shot_type") == "chapter_card":
+                continue
+
+            sb_words = set(sb_text.split()) - _STOP
+            sb_words = {w for w in sb_words if len(w) > 2}
+
+            if not sb_words:
+                continue
+
+            # Word overlap ratio (using min denominator for partial matches)
+            overlap = len(chunk_words & sb_words) / max(1, min(len(chunk_words), len(sb_words)))
+
+            # Bonus for exact substring containment
+            if sb_text in chunk_text or chunk_text in sb_text:
+                overlap = max(overlap, 0.9)
+
+            if overlap > best_score:
+                best_score = overlap
+                best_sb = si
+
+        chunk_to_sb[ci] = best_sb
+        # Advance search start to prevent going backwards
+        if best_score >= 0.15:
+            sb_start = best_sb
+
+    return chunk_to_sb
+
+
 def _find_storyboard_match(
     chunk_text: str,
     storyboard: list,
@@ -890,6 +1096,72 @@ def _chapters_from_storyboard(storyboard: list, chunks: list) -> list:
     return chapters
 
 
+def _score_image_for_shot(
+    still: dict, sb_entry: dict | None, shot_category: str | None = None
+) -> float:
+    """Score 0.0-1.0 how well an image matches a segment's visual needs.
+
+    Uses filename keywords, storyboard 'show' text, search_query, and
+    storyboard_segment_ids to determine relevance.
+    """
+    score = 0.0
+    raw = still.get("path") or still.get("local_path") or still.get("filename") or ""
+    p = Path(raw)
+    fname = p.name.lower()
+    fname_stem = p.stem.lower().replace("_", " ").replace("-", " ")
+
+    # 1. Shot category keywords (from sequence template)
+    if shot_category:
+        for kw in shot_category.split("|"):
+            kw = kw.strip()
+            if kw and kw in fname_stem:
+                score += 0.4
+
+    # 2. Storyboard 'show' text
+    if sb_entry:
+        show_text = (sb_entry.get("show") or "").lower()
+        for word in show_text.split():
+            if len(word) > 3 and word in fname_stem:
+                score += 0.3
+
+    # 3. Segment ID match — image was sourced FOR this segment
+    seg_ids = still.get("storyboard_segment_ids", [])
+    sb_idx = sb_entry.get("_segment_index") if sb_entry else None
+    if sb_idx is not None and sb_idx in seg_ids:
+        score += 0.5
+
+    # 4. Search query keywords
+    if sb_entry:
+        query = (sb_entry.get("search_query") or "").lower()
+        for word in query.split():
+            if len(word) > 3 and word in fname_stem:
+                score += 0.2
+
+    return min(1.0, score)
+
+
+def _blend_two_images(
+    fg_path: Path, bg_path: Path, darken: float = 0.5, out_dir: Path | None = None,
+) -> Path:
+    """Blend two images together with darkening. Returns path to blended image."""
+    import numpy as np
+    from PIL import Image
+
+    fg = Image.open(fg_path).convert("RGB")
+    bg = Image.open(bg_path).convert("RGB").resize(fg.size, Image.LANCZOS)
+
+    fg_arr = np.array(fg, dtype=np.float32) / 255.0
+    bg_arr = np.array(bg, dtype=np.float32) / 255.0
+
+    # Weighted blend with darkening
+    blended = (fg_arr * 0.6 + bg_arr * 0.4) * (1.0 - darken * 0.5)
+    blended = np.clip(blended * 255, 0, 255).astype(np.uint8)
+
+    out = (out_dir or fg_path.parent) / f"_blend_{fg_path.stem}_{bg_path.stem}.jpg"
+    Image.fromarray(blended).save(out, quality=92)
+    return out
+
+
 def build_timeline(
     narration_manifest: dict,
     footage_manifest: dict,
@@ -926,7 +1198,18 @@ def build_timeline(
     chapters = narration_manifest.get("chapters", [])
     # Merge clips + images from manifest (footage_sourcer uses "clips",
     # Pixabay sourcer uses "images" — both are valid footage sources)
-    clips = footage_manifest.get("clips", []) + footage_manifest.get("images", [])
+    raw_images = footage_manifest.get("images", [])
+    # Normalize image entries: they use "filename" not "path"/"local_path",
+    # and lack "downloaded" flag. Fix both so the stills filter picks them up.
+    output_dir = footage_manifest.get("output_dir", "")
+    for img in raw_images:
+        if img.get("filename") and not img.get("path") and not img.get("local_path"):
+            img["path"] = str(Path(output_dir) / img["filename"]) if output_dir else img["filename"]
+        if "downloaded" not in img:
+            # Check if file actually exists
+            p = img.get("path") or img.get("local_path") or img.get("filename") or ""
+            img["downloaded"] = Path(p).exists()
+    clips = footage_manifest.get("clips", []) + raw_images
 
     # If the narration manifest has no chapter data but a storyboard was provided,
     # extract chapter timing from the storyboard's is_chapter_break entries.
@@ -956,6 +1239,19 @@ def build_timeline(
                 chunks[ci]["_visual_end"] = next_start
         else:
             chunks[ci]["_visual_end"] = total_narration_dur or speech_end
+
+    # Pre-build chunk→storyboard mapping (text-based, monotonic)
+    chunk_to_sb = {}
+    if storyboard:
+        chunk_to_sb = _build_chunk_to_sb_map(chunks, storyboard)
+        print(f"  Chunk→SB mapping: {len(chunk_to_sb)} chunks mapped to {len(storyboard)} storyboard segments")
+        for ci in range(min(20, len(chunk_to_sb))):
+            sb_i = chunk_to_sb[ci]
+            ct = (chunks[ci].get("text") or "")[:40]
+            st = (storyboard[sb_i].get("text") or "")[:40]
+            print(f"    Chunk {ci:3d} → SB {sb_i:3d}  narr='{ct}' sb='{st}'")
+        if len(chunk_to_sb) > 20:
+            print(f"    ... ({len(chunk_to_sb) - 20} more)")
 
     # Pre-compute lower-third events (first occurrence of each named person)
     lower_third_map = _detect_named_persons(chunks)
@@ -1013,9 +1309,13 @@ def build_timeline(
     cursor = 0.0
     still_idx = 0
     video_idx = 0
-    sb_cursor = 0   # sequential storyboard pointer — advances as we match chunks
+    # chunk_to_sb map replaces the old sb_cursor sequential pointer
     _prev_still_path = None   # track last image for Ken Burns continuity
     _prev_motion = None       # maintain motion direction across same-image sub-segments
+    _prev_chunk_image = None  # image used by the PREVIOUS narration chunk (for cross-chunk variety)
+    _consecutive_same_count = 0  # how many consecutive sub-segments used the same image
+    _consecutive_same_image = None  # path of the image being tracked for consecutive use
+    _prev_sb_idx_for_sfx = -1  # track storyboard entry to fire SFX on first sub-segment of each entry
     # Rhythm breathing tracker: alternates long holds ↔ burst cuts
     _rhythm_accum = 0.0       # seconds accumulated in current mode
     _rhythm_burst = False     # True = burst mode (short cuts), False = normal
@@ -1089,17 +1389,15 @@ def build_timeline(
         if spec.text_zone != "auto":
             overlay_zone = spec.text_zone
 
-        # Storyboard match — done before pacing and inner loop so the
-        # narrative_function override applies to ALL visual segments in this chunk.
+        # Storyboard match — use pre-built text-based mapping (not positional).
+        # chunk_to_sb was built before the main loop via _build_chunk_to_sb_map().
         sb_entry_idx = None
         sb_focal_element = None
         sb_intensity = "neutral"
         sb_entry = None
-        if storyboard:
-            sb_entry_idx = _find_storyboard_match(chunk_text, storyboard,
-                                                  start_idx=sb_cursor)
-            if sb_entry_idx is not None:
-                sb_cursor = sb_entry_idx
+        if storyboard and chunk_idx in chunk_to_sb:
+            sb_entry_idx = chunk_to_sb[chunk_idx]
+            if sb_entry_idx is not None and sb_entry_idx < len(storyboard):
                 sb_entry = storyboard[sb_entry_idx]
                 sb_focal_element = sb_entry.get("focal_element")
                 sb_intensity     = sb_entry.get("intensity", "neutral")
@@ -1120,11 +1418,9 @@ def build_timeline(
                             overlay_text = names[0].upper()
                             overlay_zone = "center"
                     elif sb_overlay_type == "entity_label":
-                        acronyms = re.findall(r"\b[A-Z]{2,}\b", chunk_text)
-                        real = [a for a in acronyms if a not in ("THE", "AND", "FOR", "BUT")]
-                        if real:
-                            overlay_text = real[0]
-                            overlay_zone = "center"
+                        # Only show entity labels that the Director explicitly set
+                        # via _text_overlay — skip regex acronym extraction (too noisy)
+                        pass
                     elif sb_overlay_type == "location_label":
                         overlay_zone = "lower"
                     elif sb_overlay_type == "quote":
@@ -1164,7 +1460,7 @@ def build_timeline(
         tagged_stills = []
         tagged_clip   = None
         if sb_entry_idx is not None and storyboard:
-            search_ids = set(range(sb_cursor, min(sb_cursor + 6, len(storyboard))))
+            search_ids = set(range(sb_entry_idx, min(sb_entry_idx + 6, len(storyboard))))
             for s in stills:
                 if search_ids & set(s.get("storyboard_segment_ids", [])):
                     tagged_stills.append(s)
@@ -1173,8 +1469,14 @@ def build_timeline(
                     tagged_clip = c
                     break
         tagged_still_idx = 0
+        seq_shot_idx = 0  # index into sequence_plan shots
 
         # Fill the chunk duration with one or more visual segments
+        # Track how many sub-segments we've emitted so we can advance through
+        # storyboard entries within long narration chunks (one chunk may span
+        # multiple storyboard segments with different composition plans).
+        _sub_seg_count = 0
+        _chunk_sb_entry_idx = sb_entry_idx  # starting storyboard entry for this chunk
         t = chunk_start
         while t < chunk_end - 0.5:
             remaining = chunk_end - t
@@ -1184,29 +1486,70 @@ def build_timeline(
             seg_dur = raw_end - t
             is_chunk_start = (t == chunk_start)
 
+            # ── Advance storyboard entry within long chunks ──────────
+            # Every 2 sub-segments, try the next storyboard entry that also
+            # overlaps with this chunk's narration text (prevents 7 segments
+            # of same image while staying text-aligned).
+            if _sub_seg_count > 0 and _sub_seg_count % 2 == 0 and _chunk_sb_entry_idx is not None:
+                _advance_target = _chunk_sb_entry_idx + (_sub_seg_count // 2)
+                # Clamp: don't advance past the NEXT chunk's mapped sb entry
+                _next_chunk_sb = chunk_to_sb.get(chunk_idx + 1)
+                if _next_chunk_sb is not None:
+                    _advance_target = min(_advance_target, _next_chunk_sb - 1)
+                if _advance_target > _chunk_sb_entry_idx and _advance_target < len(storyboard):
+                    sb_entry_idx = _advance_target
+                    sb_entry = storyboard[sb_entry_idx]
+
+            # ── Sequence mode ────────────────────────────────────────
+            # If Director attached a sequence_plan, override duration/motion/SFX
+            # for each shot in the choreography.
+            seq_plan = sb_entry.get("sequence_plan") if sb_entry else None
+            seq_shot = None
+            if seq_plan and seq_shot_idx < len(seq_plan):
+                seq_shot = seq_plan[seq_shot_idx]
+                seg_dur = min(seq_shot["duration"], remaining)
+                raw_end = t + seg_dur
+
             # ── DP3: Motion type + speed ──────────────────────────────
-            # Prefer storyboard motion_direction, fallback to playbook resolver,
-            # then existing weighted random.
-            if sb_entry and "motion_direction" in sb_entry:
+            # Prefer sequence shot motion, then storyboard, then playbook, then random.
+            if seq_shot and seq_shot.get("motion"):
+                motion = seq_shot["motion"]
+            elif sb_entry and "motion_direction" in sb_entry:
                 motion = sb_entry["motion_direction"]
             else:
                 motion = spec.weighted_motion()
 
             # ── DP4: SFX ──────────────────────────────────────────────
-            # Prefer Director-provided SFX (content-matched), then playbook,
-            # then existing probability.
-            director_sfx = sb_entry.get("sfx") if sb_entry else None
-            if isinstance(director_sfx, dict) and director_sfx.get("type"):
-                seg_sfx = director_sfx["type"]
+            # SFX fires on the FIRST sub-segment that maps to each storyboard
+            # entry (not at chunk_start, which may be a different storyboard
+            # segment).  This ensures glass_shatter fires when the "crashes
+            # through window" narration starts, not at the NYC establishing shot.
+            is_new_sb_entry = (sb_entry_idx != _prev_sb_idx_for_sfx)
+            _sfx_is_director = False  # True = story-driven (shake OK), False = random ambient
+            if not is_new_sb_entry:
+                seg_sfx = None
             else:
-                sb_cut_mot = sb_entry.get("cut_motivation") if sb_entry else None
-                seg_sfx_type = playbook_sfx(content_type, sb_cut_mot)
-                if seg_sfx_type:
-                    seg_sfx = seg_sfx_type
-                elif random.random() < spec.sfx_probability:
-                    seg_sfx = spec.sfx_type
+                _prev_sb_idx_for_sfx = sb_entry_idx
+                if seq_shot and seq_shot.get("sfx"):
+                    seg_sfx = seq_shot["sfx"]
+                    _sfx_is_director = True
                 else:
-                    seg_sfx = None
+                    director_sfx = sb_entry.get("sfx") if sb_entry else None
+                    if isinstance(director_sfx, dict) and director_sfx.get("type"):
+                        seg_sfx = director_sfx["type"]
+                        _sfx_is_director = True
+                    elif playbook_sfx(content_type,
+                                      sb_entry.get("cut_motivation") if sb_entry else None):
+                        seg_sfx = playbook_sfx(
+                            content_type,
+                            sb_entry.get("cut_motivation") if sb_entry else None,
+                        )
+                        _sfx_is_director = True
+                    elif random.random() < spec.sfx_probability:
+                        seg_sfx = spec.sfx_type
+                        _sfx_is_director = False  # random roll — no visual effects
+                    else:
+                        seg_sfx = None
 
             # Lower third: first segment of chunk, if this chunk introduces a named person
             lt_info = lower_third_map.get(chunk_idx) if is_chunk_start else None
@@ -1241,25 +1584,34 @@ def build_timeline(
                 "text": overlay_text if is_chunk_start else None,
                 "text_zone": overlay_zone if is_chunk_start else "upper",
                 "narration_chunk_idx": chunk_idx,
+                "sb_entry_idx": sb_entry_idx,   # storyboard segment index (for checkpoint matching)
                 "content_type": content_type,   # carry through for compliance report
                 "intensity": sb_intensity,      # for parallax visual config
                 "sfx": seg_sfx,
+                "_sfx_is_director": _sfx_is_director,
                 "lower_third": seg_lower_third,
                 "kb_zoom_rate": kb_zoom_rate,   # story-aware Ken Burns rate
                 "shot_type": sb_shot_type,      # for per-scene color grading
                 # v2.0 storyboard / Director fields (passed through to parallax renderer)
                 "composition": sb_entry.get("composition") if sb_entry else None,
-                "sync_points": sb_entry.get("sync_points", []) if sb_entry else [],
+                "sync_points": (sb_entry.get("sync_points", []) if sb_entry else []) if is_chunk_start else [],
                 "_scene_id": sb_entry.get("_scene_id") if sb_entry else None,
                 "transition_in": sb_entry.get("transition_in") if sb_entry else None,
                 "transition_out": sb_entry.get("transition_out") if sb_entry else None,
                 "zoom_target": sb_entry.get("zoom_target") if sb_entry else None,
                 "arc_position": sb_entry.get("arc_position") if sb_entry else None,
-                # Director text overlay overrides
-                "_text_overlay": sb_entry.get("_text_overlay") if sb_entry else None,
-                "_text_overlay_size": sb_entry.get("_text_overlay_size") if sb_entry else None,
-                "_text_overlay_style": sb_entry.get("_text_overlay_style") if sb_entry else None,
-                "_text_overlay_hold_sec": sb_entry.get("_text_overlay_hold_sec") if sb_entry else None,
+                # Shot choreography (from storyboard — overrides motion_type in renderer)
+                "shots": sb_entry.get("shots") if sb_entry else None,
+                # Director text overlay overrides — only on first sub-segment of chunk
+                # (prevents typewriter text restarting on every sub-segment)
+                "_text_overlay": (sb_entry.get("_text_overlay") if sb_entry else None) if is_chunk_start else None,
+                "_text_overlay_size": (sb_entry.get("_text_overlay_size") if sb_entry else None) if is_chunk_start else None,
+                "_text_overlay_style": (sb_entry.get("_text_overlay_style") if sb_entry else None) if is_chunk_start else None,
+                "_text_overlay_hold_sec": (sb_entry.get("_text_overlay_hold_sec") if sb_entry else None) if is_chunk_start else None,
+                "_content_type": (sb_entry.get("composition_plan") or {}).get("content_type") if sb_entry else None,
+                # Document highlight regions (from Director)
+                "highlight_regions": sb_entry.get("highlight_regions") if sb_entry else None,
+                "_document_content": sb_entry.get("_document_content", False) if sb_entry else False,
             }
 
             if use_clip and (tagged_clip or videos):
@@ -1274,19 +1626,77 @@ def build_timeline(
                     "storyboard_match": sb_entry_idx is not None,
                 })
             elif tagged_stills or stills:
-                if tagged_stills:
-                    still = tagged_stills[tagged_still_idx % len(tagged_stills)]
-                    tagged_still_idx += 1
-                else:
-                    still = stills[still_idx % len(stills)]
+                pool = tagged_stills if tagged_stills else stills
+                still = None
+
+                # ── Composition plan: use Claude-chosen image ──
+                # Search ALL stills (not just tagged), since composition plan
+                # may reference images outside the current segment window.
+                # Within the same chunk, always use the comp plan image (same scene).
+                # Across chunks, if the new comp plan picks the same image as the
+                # previous chunk, force a different one for visual variety.
+                comp_plan = sb_entry.get("composition_plan") if sb_entry else None
+
+                if comp_plan and comp_plan.get("primary_image"):
+                    chosen_stem = Path(comp_plan["primary_image"]).stem.lower()
+                    candidate = next(
+                        (s for s in stills
+                         if chosen_stem in (s.get("path") or s.get("filename") or "").lower()),
+                        None,
+                    )
+                    if candidate:
+                        cand_path = str(Path(candidate.get("path", candidate.get("local_path", ""))))
+                        # Only block if this is the FIRST sub-segment of a new chunk
+                        # AND the previous chunk used the same image
+                        if is_chunk_start and cand_path == _prev_chunk_image:
+                            still = None  # force scored fallback for variety
+                        else:
+                            still = candidate
+
+                # ── Fallback: scored matching ──
+                if still is None:
+                    shot_cat = None
+                    if seq_shot:
+                        shot_cat = seq_shot.get("image_category")
+                        seq_shot_idx += 1
+                    scored = sorted(
+                        [(s, _score_image_for_shot(s, sb_entry, shot_cat)) for s in pool],
+                        key=lambda x: x[1], reverse=True,
+                    )
+                    # Skip the previous chunk's image for variety
+                    if _prev_chunk_image:
+                        for s, sc in scored:
+                            sp = str(Path(s.get("path", s.get("local_path", ""))))
+                            if sp != _prev_chunk_image:
+                                still = s
+                                break
+                    if still is None:
+                        still = scored[0][0]
+
+                if not tagged_stills:
                     still_idx += 1
                 still_path = Path(still.get("path", still.get("local_path", "")))
-                # Ken Burns continuity: keep same direction for same image
+                # Track for Ken Burns continuity within same image
                 sp_str = str(still_path)
                 if sp_str == _prev_still_path and _prev_motion:
                     motion = _prev_motion
+                elif _prev_still_path and sp_str != _prev_still_path and _prev_motion == motion:
+                    # Different image but same motion as previous — alternate for variety
+                    _alt_map = {
+                        "zoom_in": "zoom_out",
+                        "zoom_out": "zoom_in",
+                        "pan_right": "pan_left",
+                        "pan_left": "pan_right",
+                        "pan_up": "pan_down",
+                        "pan_down": "pan_up",
+                        "static": "zoom_in",
+                    }
+                    motion = _alt_map.get(motion, "zoom_out")
                 _prev_still_path = sp_str
                 _prev_motion = motion
+                # Track chunk-level image for cross-chunk variety
+                if is_chunk_start:
+                    _prev_chunk_image = sp_str
                 focal = None
                 if still_path.exists():
                     # Text-based focal from storyboard — always apply, no model needed
@@ -1295,10 +1705,22 @@ def build_timeline(
                     # Vision model fallback: only when --focal-points flag is set
                     if focal is None and detect_focal_points:
                         focal = detect_focal_point(still_path, narration_text=chunk_text)
-                # For composite segments, pick a second still as background
+                # For composite/blend segments, pick a second still as background
                 _bg_img = None
-                if seg_base.get("composition", {}).get("type") == "composite":
-                    # Try next tagged still, else next general still
+                _blend_mode = None
+                comp_type = (comp_plan or {}).get("method", "single")
+                if comp_type in ("composite", "blend") and comp_plan.get("secondary_image"):
+                    sec_stem = Path(comp_plan["secondary_image"]).stem.lower()
+                    bg_match = next(
+                        (s for s in stills
+                         if sec_stem in (s.get("path") or s.get("filename") or "").lower()),
+                        None,
+                    )
+                    if bg_match:
+                        _bg_img = str(Path(bg_match.get("path", bg_match.get("local_path", ""))))
+                        _blend_mode = comp_type  # "composite" or "blend"
+                elif (seg_base.get("composition") or {}).get("type") == "composite":
+                    # Legacy storyboard composite fallback
                     if tagged_stills and len(tagged_stills) > 1:
                         bg_still = tagged_stills[(tagged_still_idx) % len(tagged_stills)]
                         _bg_img = str(Path(bg_still.get("path", bg_still.get("local_path", ""))))
@@ -1312,8 +1734,11 @@ def build_timeline(
                     "source_path": str(still_path),
                     "motion": motion,
                     "focal_point": focal,
-                    "storyboard_match": bool(tagged_stills),
+                    "storyboard_match": bool(tagged_stills) or bool(comp_plan),
                     "_bg_image_path": _bg_img,
+                    "_blend_mode": _blend_mode,
+                    "_color_grade": (comp_plan or {}).get("color_grade"),
+                    "_darken": (comp_plan or {}).get("darken"),
                 })
             elif sb_entry_idx is not None and storyboard:
                 # No real footage found but storyboard entry exists — generate visual
@@ -1342,7 +1767,78 @@ def build_timeline(
 
             t += seg_dur
             cursor = t
+            _sub_seg_count += 1
             _rhythm_accum += seg_dur  # track for burst breathing
+
+            # ── Consecutive same-image swap ──────────────────────────────
+            # If the same still image has been used for more than 3 consecutive
+            # sub-segments, swap to a different image for visual variety.
+            last_seg = segments[-1]
+            if last_seg.get("source_type") == "still" and last_seg.get("source_path"):
+                seg_img = last_seg["source_path"]
+                if seg_img == _consecutive_same_image:
+                    _consecutive_same_count += 1
+                else:
+                    _consecutive_same_image = seg_img
+                    _consecutive_same_count = 1
+
+                if _consecutive_same_count > 2:
+                    # Check if the composition plan INTENTIONALLY chose this image
+                    cp = sb_entry.get("composition_plan") if sb_entry else None
+                    cp_primary = (cp.get("primary_image", "") if cp else "").lower()
+                    seg_img_stem = Path(seg_img).stem.lower()
+                    editorial_choice = cp_primary and seg_img_stem in cp_primary.lower()
+
+                    if editorial_choice:
+                        # Composition plan deliberately chose this image — respect it.
+                        # (e.g., talking about Frank Olson → show Frank Olson)
+                        pass
+                    else:
+                        # Image was scored/fallback — swap for variety
+                        replacement = None
+                        # 1) Check composition_plan for alternative images
+                        if cp and cp.get("secondary_image"):
+                            sec_stem = Path(cp["secondary_image"]).stem.lower()
+                            replacement = next(
+                                (s for s in stills
+                                 if sec_stem in (s.get("path") or s.get("filename") or "").lower()
+                                 and str(Path(s.get("path", s.get("local_path", "")))) != seg_img),
+                                None,
+                            )
+                        # 2) Try tagged stills with matching storyboard tags
+                        if replacement is None and tagged_stills:
+                            for ts in tagged_stills:
+                                ts_path = str(Path(ts.get("path", ts.get("local_path", ""))))
+                                if ts_path != seg_img:
+                                    replacement = ts
+                                    break
+                        # 3) Any different image from the full pool
+                        if replacement is None and stills:
+                            for s in stills:
+                                s_path = str(Path(s.get("path", s.get("local_path", ""))))
+                                if s_path != seg_img:
+                                    replacement = s
+                                    break
+                        if replacement:
+                            new_path = str(Path(replacement.get("path", replacement.get("local_path", ""))))
+                            print(f"  ↻ Image swap: {Path(seg_img).name} → {Path(new_path).name} (was {_consecutive_same_count} consecutive)")
+                            last_seg["source_path"] = new_path
+                            _consecutive_same_image = new_path
+                            _consecutive_same_count = 1
+            else:
+                # Non-still segment (clip, animation, black) resets the counter
+                _consecutive_same_image = None
+                _consecutive_same_count = 0
+
+    # ── Merge consecutive same-image sub-segments ────────────────────────
+    # When 3 sub-segments show the same image with the same motion, the
+    # renderer produces 3 independent zoom animations that reset every 2s.
+    # Merge them into one longer segment so t goes 0→1 ONCE = one smooth
+    # continuous camera move.  This is the permanent fix for zoom resets.
+    segments = _merge_same_image_segments(segments)
+
+    # Enforce rolling-window image diversity: max 1 appearance per 20s window
+    segments = _enforce_image_diversity(segments, stills, max_per_window=1, window_sec=20.0)
 
     # ── Post-build normalization ─────────────────────────────────────────
     # Small drift can remain because chapter cards don't exactly fill their
@@ -1436,18 +1932,47 @@ def _build_motion_cycle() -> list[str]:
 
 
 def _pick_sfx_file(sfx_type: str) -> Path | None:
-    """Return a random existing SFX file for the given type, or None if unavailable."""
+    """Return a validated SFX file for the given type, or None if unavailable.
+
+    Validates each candidate via pipeline.asset_validator.validate_sfx_file()
+    (spectral centroid check).  If a file's centroid exceeds 2x the max for its
+    type, it is skipped and the next numbered variant is tried.  If all variants
+    fail validation, returns None rather than playing garbage audio.
+    """
     candidates = {
-        "impact": ["impact_01.mp3", "impact_02.mp3"],
-        "body_impact": ["body_impact_01.mp3", "impact_01.mp3"],
-        "glass_shatter": ["glass_shatter_01.mp3"],
+        "impact": ["impact_01.mp3", "impact_02.mp3", "impact_cc0_01.mp3", "impact_cc0_02.mp3"],
+        "body_impact": ["body_impact_01.mp3", "body_fall_cc0_01.mp3", "impact_cc0_01.mp3"],
+        "glass_shatter": ["glass_shatter_01.mp3", "glass_cc0_01.mp3",
+                          "glass_cc0_03.mp3", "glass_cc0_04.mp3"],
+        "highlighter": ["highlighter_01.mp3"],
         "whoosh": ["whoosh_01.mp3", "whoosh_02.mp3", "whoosh_03.mp3", "whoosh_04.mp3", "whoosh_05.mp3"],
         "rumble": ["rumble_01.mp3", "rumble_02.mp3", "rumble_03.mp3"],
         "shimmer": ["shimmer_01.mp3", "shimmer_02.mp3", "shimmer_03.mp3"],
         "tension": ["tension_01.mp3"],
     }
     files = [SFX_DIR / f for f in candidates.get(sfx_type, []) if (SFX_DIR / f).exists()]
-    return random.choice(files) if files else None
+    if not files:
+        return None
+
+    # Try to validate each candidate — skip files with wildly wrong spectral profile
+    try:
+        from pipeline.asset_validator import validate_sfx_file
+        validated = []
+        for f in files:
+            result = validate_sfx_file(f)
+            status = result.get("status", "PASS") if isinstance(result, dict) else "PASS"
+            if status != "FAIL":
+                validated.append(f)
+            else:
+                print(f"    ⚠ SFX skip: {f.name} — {result.get('detail', 'spectral mismatch')}")
+        if validated:
+            return random.choice(validated)
+        # All candidates failed validation — use nothing rather than garbage audio
+        print(f"    ⚠ SFX: all {sfx_type} variants failed validation — omitting SFX")
+        return None
+    except ImportError:
+        # asset_validator not available — fall back to random pick (original behavior)
+        return random.choice(files)
 
 
 def _extract_overlay_text(chunk_text: str) -> tuple[str | None, str]:
@@ -1489,7 +2014,8 @@ def _extract_overlay_text(chunk_text: str) -> tuple[str | None, str]:
     # (skip sentence-initial words and common articles)
     filler = {"The", "A", "An", "In", "On", "At", "Of", "To", "By", "But", "And",
               "His", "Her", "He", "She", "It", "This", "That", "They", "Some",
-              "What", "When", "Where", "Over", "Under", "Room", "About", "After"}
+              "What", "When", "Where", "Over", "Under", "Room", "About", "After",
+              "United", "New", "Second", "World", "Cold", "Deep", "Project"}
     person_matches = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})\b', chunk_text)
     for name in person_matches:
         parts = name.split()
@@ -1572,6 +2098,7 @@ def render(
     tmp_dir: Path,
     dry_run: bool = False,
     use_parallax: bool = False,
+    preview_sec: int = 0,
 ) -> Path:
     """
     Render all segments, apply grade, add text, concatenate, mix audio.
@@ -1612,6 +2139,8 @@ def render(
     clip_audio_events: list[dict] = []  # footage audio passthrough
     render_cursor = 0.0            # cumulative final-video timestamp
 
+    preview_limit = preview_sec
+
     print(f"\nRendering {len(segments)} segments...")
 
     for i, seg in enumerate(segments):
@@ -1619,6 +2148,11 @@ def render(
         seg_graded = tmp_dir / f"seg_{i:04d}_graded.mp4"
         seg_final  = tmp_dir / f"seg_{i:04d}_final.mp4"
         dur = seg["duration_sec"]
+
+        # Preview mode: stop rendering past the time limit
+        if preview_limit and render_cursor >= preview_limit:
+            print(f"\n  Preview limit reached ({preview_limit}s) — stopping render at segment {i}")
+            break
 
         # Chapter cards: render with Pillow typewriter effect, skip grade
         if seg["source_type"] == "chapter_card":
@@ -1643,13 +2177,38 @@ def render(
                 sfx_events.append({"time_sec": render_cursor, "sfx_file": str(sfx_file)})
 
         # Collect typewriter click SFX for sync point text reveals
-        typewriter_sfx = Path("assets/sfx/typewriter_key.wav")
+        typewriter_sfx = SFX_DIR / "typewriter_key.wav"
         if typewriter_sfx.exists():
             for sp in seg.get("sync_points", []):
                 if sp.get("typewriter_click") and sp.get("word_index") is not None:
                     total_words = sp.get("_total_words", 20)
                     trigger_t = render_cursor + (sp["word_index"] / max(1, total_words)) * dur
                     sfx_events.append({"time_sec": trigger_t, "sfx_file": str(typewriter_sfx)})
+                    print(f"    🔊 Typewriter click at {trigger_t:.1f}s")
+
+        # Highlighter SFX: fire when document highlight regions reveal
+        if seg.get("highlight_regions"):
+            hl_sfx = _pick_sfx_file("highlighter")
+            if hl_sfx:
+                for hr in seg["highlight_regions"]:
+                    hl_time = render_cursor + hr.get("reveal_at", 0.5) * dur
+                    sfx_events.append({"time_sec": hl_time, "sfx_file": str(hl_sfx)})
+                    print(f"    🖊️ Highlighter at {hl_time:.1f}s ({hr.get('_label', '')})")
+
+        # Transition SFX: fire when image changes based on content type of NEW image
+        if seg.get("_content_type"):
+            prev_image = segments[i-1].get("source_path", "") if i > 0 else ""
+            curr_image = seg.get("source_path", "")
+            if curr_image and curr_image != prev_image:
+                ct = seg["_content_type"]
+                if ct == "person":
+                    trans_sfx = SFX_DIR / "camera_shutter_01.mp3"
+                elif ct == "document":
+                    trans_sfx = SFX_DIR / "paper_rustle_01.mp3"
+                else:
+                    trans_sfx = None
+                if trans_sfx and trans_sfx.exists():
+                    sfx_events.append({"time_sec": render_cursor, "sfx_file": str(trans_sfx)})
 
         # Collect lower-third event (will be applied post-concat for accurate timestamps)
         lt = seg.get("lower_third")
@@ -1702,22 +2261,82 @@ def render(
                     _visual_config.color_style = cg
             sync_pts = seg.get("sync_points", [])
             if sync_pts:
-                # Inject total word count for timing estimation
-                total_words = len(seg.get("text", "").split()) if seg.get("text") else 20
-                for sp in sync_pts:
-                    sp["_total_words"] = total_words
-                _visual_config.sync_points = sync_pts
+                # Skip sync_point text_reveals if Director overlay already covers it
+                # (prevents duplicate text on screen)
+                if _visual_config.text_overlay:
+                    sync_pts = [sp for sp in sync_pts if sp.get("action") != "text_reveal"]
+                if sync_pts:
+                    total_words = len(seg.get("text", "").split()) if seg.get("text") else 20
+                    for sp in sync_pts:
+                        sp["_total_words"] = total_words
+                    _visual_config.sync_points = sync_pts
             # Director-provided transitions
             if seg.get("transition_in"):
                 _visual_config.transition_in = seg["transition_in"]
             if seg.get("transition_out"):
                 _visual_config.transition_out = seg["transition_out"]
+            # Document mode: letterbox portrait documents instead of center-cropping
+            _src = seg.get("source_path", "")
+            if _src and seg.get("source_type") == "still":
+                _is_doc_type = seg.get("shot_type", "").lower() in (
+                    "document_photo", "document", "declassified", "memo",
+                )
+                _is_doc_query = any(w in seg.get("search_query", "").lower()
+                                    for w in ("document", "memo", "declassified", "report"))
+                if _is_doc_type or _is_doc_query:
+                    try:
+                        from PIL import Image as _PILImg
+                        with _PILImg.open(_src) as _dim:
+                            if _dim.height > _dim.width * 1.2:  # portrait
+                                _visual_config.document_mode = True
+                    except Exception:
+                        pass
+            # Shot choreography (from storyboard — overrides motion_type)
+            if seg.get("shots"):
+                _visual_config.shots = seg["shots"]
+            # Document highlights (yellow marker wipe on key text)
+            if seg.get("highlight_regions"):
+                _visual_config.highlight_regions = seg["highlight_regions"]
+            # Visual effects triggered by Director-assigned SFX only
+            # (not random probability SFX — those are ambient, not story-driven)
+            _sfx_str = seg.get("sfx", "") or ""
+            if seg.get("_sfx_is_director"):
+                if _sfx_str in ("glass_shatter",):
+                    _visual_config.camera_shake = True
+                    _visual_config.glass_crack_overlay = True
+                elif _sfx_str in ("impact", "body_impact"):
+                    _visual_config.camera_shake = True
+
+            # Document-aware motion: override Ken Burns to document_scan for document images
+            _comp_ct = seg.get("_content_type", "")
+            _shot_t = (seg.get("shot_type") or "").lower()
+            if _comp_ct == "document" or _shot_t in (
+                "document_photo", "government_document", "classified_document"
+            ):
+                _visual_config.motion_type = "document_scan"
+                # Use focal_point y-component for document_focus_y if available
+                fp = seg.get("focal_point")
+                if fp and len(fp) >= 2:
+                    _visual_config.document_focus_y = fp[1]
+                else:
+                    _visual_config.document_focus_y = 0.5
 
         if seg["source_type"] == "still":
             src = Path(seg["source_path"])
             if src.exists():
-                # For composite segments, try to find a background image
                 _bg_path = seg.get("_bg_image_path")
+                _blend = seg.get("_blend_mode")
+                # Blend mode: merge two images into one before Ken Burns
+                if _blend == "blend" and _bg_path and Path(_bg_path).exists():
+                    src = _blend_two_images(
+                        src, Path(_bg_path),
+                        darken=seg.get("_darken", 0.5),
+                        out_dir=tmp_dir,
+                    )
+                    _bg_path = None  # already blended
+                # Apply composition color grade override
+                if _visual_config and seg.get("_color_grade"):
+                    _visual_config.color_style = seg["_color_grade"]
                 make_ken_burns(src, dur, seg["motion"], seg_raw,
                                focal_point=seg.get("focal_point"),
                                zoom_rate=seg.get("kb_zoom_rate", KB_ZOOM_RATE_PER_SEC),
@@ -1852,6 +2471,12 @@ def render(
         print(f"Building SFX composite ({len(sfx_events)} events)...")
         sfx_composite_path = tmp_dir / "sfx_composite.wav"
         sfx_composite = _build_sfx_composite(sfx_events, total_video_dur, sfx_composite_path)
+        # DEBUG: copy SFX composite for inspection
+        if sfx_composite and sfx_composite.exists():
+            import shutil
+            debug_sfx = Path("/tmp/debug_sfx_composite.wav")
+            shutil.copy2(sfx_composite, debug_sfx)
+            print(f"  DEBUG: SFX composite saved to {debug_sfx} ({debug_sfx.stat().st_size} bytes)")
 
     # Step 4d: Build clip audio passthrough composite
     clip_audio_composite: "Path | None" = None
@@ -2213,14 +2838,17 @@ def _build_sfx_composite(
     for i, ev in enumerate(valid):
         delay_ms = int(ev["time_sec"] * 1000)
         inputs += ["-i", ev["sfx_file"]]
+        # Typewriter clicks are very short (80ms) — boost volume so they're audible
+        is_click = "typewriter" in Path(ev["sfx_file"]).stem.lower()
+        vol = 1.8 if is_click else SFX_VOLUME
         filter_parts.append(
-            f"[{i + 1}]volume={SFX_VOLUME},adelay={delay_ms}|{delay_ms}[sfx{i}]"
+            f"[{i + 1}]volume={vol},adelay={delay_ms}|{delay_ms}[sfx{i}]"
         )
 
     n_inputs = 1 + len(valid)
     labels = "[0]" + "".join(f"[sfx{i}]" for i in range(len(valid)))
     filter_parts.append(
-        f"{labels}amix=inputs={n_inputs}:duration=first:dropout_transition=0[sfxout]"
+        f"{labels}amix=inputs={n_inputs}:duration=first:dropout_transition=0:normalize=0[sfxout]"
     )
 
     cmd = (
@@ -2312,12 +2940,15 @@ def mix_audio(
     Music plays louder during first 3s intro (MUSIC_INTRO_VOLUME).
     SFX composite is mixed at full scale (already volume-adjusted by _build_sfx_composite).
     """
+    # Resample all audio to 44.1kHz stereo before mixing to prevent choppy output
+    # (narration=24kHz mono, SFX=44.1kHz stereo, music=48kHz stereo)
+    _AR = "aresample=44100,aformat=channel_layouts=stereo"
     if sfx_path and sfx_path.exists():
         filter_complex = (
-            f"[1:a]volume={NARRATION_VOLUME}[narr];"
-            f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
+            f"[1:a]{_AR},volume={NARRATION_VOLUME}[narr];"
+            f"[2:a]{_AR},volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
             f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
-            f"[3:a]volume=1.0[sfx];"
+            f"[3:a]{_AR},volume=1.0[sfx];"
             f"[narr][music][sfx]amix=inputs=3:duration=first:dropout_transition=3:normalize=0[aout]"
         )
         cmd = [
@@ -2333,8 +2964,8 @@ def mix_audio(
         ]
     else:
         filter_complex = (
-            f"[1:a]volume={NARRATION_VOLUME}[narr];"
-            f"[2:a]volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
+            f"[1:a]{_AR},volume={NARRATION_VOLUME}[narr];"
+            f"[2:a]{_AR},volume='{MUSIC_INTRO_VOLUME}*between(t,0,3)"
             f"+{MUSIC_VOLUME}*(1-between(t,0,3))'[music];"
             f"[narr][music]amix=inputs=2:duration=first:dropout_transition=3:normalize=0[aout]"
         )
@@ -2364,10 +2995,11 @@ def _mix_narration_only(
     Does NOT use -shortest — if there's a small duration mismatch the video
     simply freezes on the last frame while audio finishes (better than truncating).
     """
+    _AR = "aresample=44100,aformat=channel_layouts=stereo"
     if sfx_path and sfx_path.exists():
         filter_complex = (
-            f"[1:a]volume={NARRATION_VOLUME}[narr];"
-            f"[2:a]volume=1.0[sfx];"
+            f"[1:a]{_AR},volume={NARRATION_VOLUME}[narr];"
+            f"[2:a]{_AR},volume=1.0[sfx];"
             f"[narr][sfx]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[aout]"
         )
         cmd = [
@@ -2431,6 +3063,8 @@ def _parse_args():
     p.add_argument("--stills-only", action="store_true",
                    help="Use only still images, skip all video clips. "
                         "Eliminates watermark/wrong-content issues from stock clips.")
+    p.add_argument("--preview", type=int, default=0,
+                   help="Only render first N seconds of video (skip segments past this time)")
     return p.parse_args()
 
 
@@ -2540,6 +3174,7 @@ def main():
             tmp_dir=tmp_dir,
             dry_run=args.dry_run,
             use_parallax=args.parallax,
+            preview_sec=args.preview,
         )
     finally:
         if not args.keep_tmp and not args.dry_run and tmp_dir.exists():

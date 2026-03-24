@@ -1,0 +1,18 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 9.152,
+      "end_sec": 9.152,
+      "word_count": 24,
+      "voice_register": "neutral",
+      "text": "It's the summer of 1995. A package arrives at the home of a lobbyist in Sacramento. There's nothing unusual about it at first glance."
+    }
+  ],
+  "total_duration_sec": 9.152,
+  "out": "audio/test/test_narration.wav",
+  "word_count_total": 24,
+  "avg_wpm": 157.3
+}

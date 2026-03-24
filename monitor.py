@@ -1,55 +1,30 @@
 #!/usr/bin/env python3
 """
-Live dashboard — monitors the full Fern production pipeline.
+Live dashboard — monitors the QA-gated render pipeline.
 
 Usage:
-  # Terminal 1: run analysis, stream to log
-  venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen-vl 2>&1 | tee /tmp/fern_analysis.log
+  # Terminal 1: run render, stream to log
+  venv/bin/python scripts/render_with_qa.py \
+      --topic frank_olson_cia_scientist_lsd_murder_cover_up \
+      --stills-only --parallax 2>&1 | tee /tmp/render_qa.log
 
   # Terminal 2: live dashboard
   python monitor.py
 """
 
 import os
-import time
 import re
 import json
 import subprocess
-from pathlib import Path
+import time
+from collections import Counter
 from datetime import datetime, timedelta
+from pathlib import Path
 
-# Log file written by analyze_fern_hybrid_checkpoint.py
-ANALYSIS_LOG = "/tmp/fern_analysis.log"
-# Log file written by analyze_fern_motion.py
-MOTION_LOG   = "/tmp/fern_motion.log"
-CHECKPOINT   = Path("analysis/fern/.checkpoint.json")
-FERN_DIR     = Path("analysis/fern")
-VIDEO_IDS    = ["aVA7aXOH1pk", "wLFY_Zu_O08", "wkVygetgeRY"]
-VIDEO_NAMES  = {
-    "aVA7aXOH1pk": "Trump Assassination Attempt",
-    "wLFY_Zu_O08": "FBI Undercover / KKK",
-    "wkVygetgeRY": "Unabomber",
-}
+RENDER_LOG = "/tmp/render_qa.log"
+PROJECT    = Path(__file__).resolve().parent
 
-# Pipeline phases: (label, script, base_status, cost, output_glob_or_None)
-# output_glob → if file(s) exist matching this glob, phase shows as "done" not "ready"
-PIPELINE_PHASES = [
-    ("Analysis (visual)",  "analyze_fern_hybrid_checkpoint.py", "complete", "free-local",        None),
-    ("Motion Analysis",    "analyze_fern_motion.py",            "complete", "free-local",        None),
-    ("Cross-Correlate",    "analyze_fern_crosscorrelate.py",    "complete", "free-local",        "analysis/fern/FERN_CORRELATION_DATA.json"),
-    ("Topic Radar",        "pipeline/topic_radar.py",           "ready",    "free-local",        "research/*/topic_candidates.json"),
-    ("Comments Miner",     "pipeline/comments_miner.py",        "ready",    "free-yt-dlp",       None),
-    ("Research Brief",     "pipeline/research_brief.py",        "ready",    "free-local",        "research/*/briefs/*.json"),
-    ("Story Validator",    "pipeline/story_validator.py",       "ready",    "free-local",        None),
-    ("Script Gen",         "(Claude Code interactively)",       "ready",    "free-claude-max",   "research/*/scripts/*.md"),
-    ("Script Enhancer",    "pipeline/script_enhancer.py",       "ready",    "free-ollama",       "research/*/scripts/*_enhanced.md"),
-    ("Voice Preprocessor", "pipeline/audio_preprocessor.py",   "ready",    "free-local",        "assets/voice/voice_*.wav"),
-    ("Voice Generator",    "pipeline/voice_generator.py",       "ready",    "free-f5-tts",       "assets/voiceovers/*.mp3"),
-    ("Footage Sourcer",    "pipeline/footage_sourcer.py",       "ready",    "free-local",        None),
-    ("Video Assembler",    "pipeline/video_assembler.py",       "ready",    "free-local",        "output/*.mp4"),
-    ("Publish",            "(manual upload for now)",           "manual",   "free",              None),
-]
-
+# ── ANSI ─────────────────────────────────────────────────────────────────────
 R   = "\033[0m"
 B   = "\033[1m"
 DIM = "\033[2m"
@@ -59,496 +34,438 @@ GR  = "\033[1;32m"
 RD  = "\033[1;31m"
 WH  = "\033[1;37m"
 MG  = "\033[1;35m"
+BG_DK = "\033[48;5;234m"
 
 
 def cols():
     try:
         return os.get_terminal_size().columns
-    except:
+    except Exception:
         return 120
+
 
 def clear():
     print("\033[H\033[2J", end="", flush=True)
 
-def read_log(path, n=500):
+
+def read_log(path, n=5000):
     try:
         raw = Path(path).read_text()
-        lines = re.split(r"[\r\n]+", raw)
-        return [l.rstrip() for l in lines if l.strip()][-n:]
-    except:
+        return raw.splitlines()
+    except Exception:
         return []
+
 
 def log_age(path):
     try:
         return time.time() - Path(path).stat().st_mtime
-    except:
+    except Exception:
         return 9999
 
-def get_analysis_pid():
+
+def get_render_pid():
     try:
         out = subprocess.run(
-            ["pgrep", "-f", "analyze_fern_hybrid_checkpoint"],
+            ["pgrep", "-f", "render_with_qa"],
             capture_output=True, text=True
         ).stdout.strip()
         return out.split()[0] if out else None
-    except:
+    except Exception:
         return None
 
-def get_motion_pid():
+
+def get_assembler_pid():
     try:
         out = subprocess.run(
-            ["pgrep", "-f", "analyze_fern_motion"],
+            ["pgrep", "-f", "video_assembler"],
             capture_output=True, text=True
         ).stdout.strip()
         return out.split()[0] if out else None
-    except:
+    except Exception:
         return None
 
-def parse_motion_progress(lines):
-    """Parse MOTION_START / MOTION_PROGRESS / MOTION_DONE lines from motion log."""
-    current_vid = None
-    done = 0
-    total = 0
-    eta_str = ""
-    completed = []
+
+def strip_ansi(s):
+    return re.sub(r'\033\[[^m]*m', '', s)
+
+
+# ── Log parsing ──────────────────────────────────────────────────────────────
+
+def parse_gates(lines):
+    """Parse gate results from log lines."""
+    gates = []
+    current_gate = None
+    checks = []
 
     for line in lines:
-        if line.startswith("MOTION_START "):
-            parts = line.split()
-            if len(parts) >= 3:
-                current_vid = parts[1]
-                total = int(parts[2])
-                done = 0
-        elif line.startswith("MOTION_PROGRESS "):
-            parts = line.split()
-            if len(parts) >= 5:
-                current_vid = parts[1]
-                seg_part = parts[2]   # e.g. "40/200"
-                eta_part = parts[4]   # e.g. "ETA:1m30s"
-                try:
-                    done, total = (int(x) for x in seg_part.split("/"))
-                    eta_str = eta_part.replace("ETA:", "")
-                except ValueError:
-                    pass
-        elif line.startswith("MOTION_DONE "):
-            parts = line.split()
-            if len(parts) >= 2:
-                vid = parts[1]
-                if vid not in completed:
-                    completed.append(vid)
-                if vid == current_vid:
-                    current_vid = None
-                    done = 0
-                    total = 0
+        clean = strip_ansi(line).strip()
 
-    return current_vid, done, total, eta_str, completed
-
-def segment_motion_status(vid):
-    """Returns (exists, n_segments) for a video's segment_motion.json."""
-    p = FERN_DIR / vid / "segment_motion.json"
-    if not p.exists():
-        return False, 0
-    try:
-        data = json.loads(p.read_text())
-        return True, len(data.get("segments", []))
-    except:
-        return True, 0
-
-def get_running_pipeline_scripts():
-    """Return dict of {script_name: pid} for any pipeline scripts currently running."""
-    pipeline_scripts = [
-        "topic_radar", "comments_miner", "research_brief", "story_validator",
-        "script_enhancer", "audio_preprocessor", "voice_generator",
-        "footage_sourcer", "video_assembler",
-    ]
-    running = {}
-    try:
-        out = subprocess.run(
-            ["pgrep", "-af", "python"],
-            capture_output=True, text=True
-        ).stdout
-        for line in out.strip().splitlines():
-            for s in pipeline_scripts:
-                if s in line:
-                    pid = line.split()[0]
-                    running[s] = pid
-    except:
-        pass
-    return running
-
-def phase_output_exists(glob_pattern):
-    """Return (exists, count, newest_path) for a glob pattern."""
-    if not glob_pattern:
-        return False, 0, None
-    matches = sorted(Path(".").glob(glob_pattern), key=lambda p: p.stat().st_mtime, reverse=True)
-    if not matches:
-        return False, 0, None
-    return True, len(matches), matches[0]
-
-def get_next_step():
-    """Return the first pipeline phase that is ready but has no output yet."""
-    for phase, script, base_status, cost, glob_pat in PIPELINE_PHASES:
-        if base_status in ("complete", "manual"):
-            continue
-        if glob_pat:
-            exists, count, _ = phase_output_exists(glob_pat)
-            if exists:
-                continue  # already done
-        return phase, script
-    return None, None
-
-def parse_progress(lines):
-    vid_num = "?"
-    vid_id  = "?"
-    done    = 0
-    total   = 0
-    eta_str = "calculating..."
-    spf     = None
-    errors  = 0
-    model   = "qwen-vl"
-
-    last_bar = None
-    for line in lines:
-        m = re.search(r"\[(\d+)/(\d+)\] Analyzing (\S+)", line)
+        # Gate header
+        m = re.match(r'GATE (\d+): (.+)', clean)
         if m:
-            vid_num = f"{m.group(1)}/{m.group(2)}"
-            vid_id  = m.group(3).rstrip(".")
-        if "Model:" in line:
-            m2 = re.search(r"Model:\s+(\S+)", line)
-            if m2:
-                model = m2.group(1)
-        bars = re.findall(
-            r"(\d+\.\d+)%\s*\|\s*(\d+)/(\d+) frames.*?ETA:\s*(\S+)", line
-        )
-        if bars:
-            last_bar = bars[-1]
-        if "⚠" in line or "ERROR" in line:
-            errors += 1
+            if current_gate is not None:
+                gates.append({"num": current_gate[0], "name": current_gate[1],
+                              "checks": checks, "verdict": None})
+            current_gate = (int(m.group(1)), m.group(2))
+            checks = []
+            continue
 
-    if last_bar:
-        _, done_s, total_s, eta_str = last_bar
-        done  = int(done_s)
-        total = int(total_s)
-        m_eta = re.match(r"(?:(\d+)h)?(?:(\d+)m)?(\d+)s", eta_str)
-        if m_eta:
-            h  = int(m_eta.group(1) or 0)
-            mn = int(m_eta.group(2) or 0)
-            s  = int(m_eta.group(3) or 0)
-            remaining_sec    = h * 3600 + mn * 60 + s
-            remaining_frames = total - done
-            if remaining_frames > 0:
-                spf = remaining_sec / remaining_frames
+        # Check result
+        if current_gate and clean.startswith(('✓', '⚠', '✗', '–')):
+            icon = clean[0]
+            status = {"✓": "PASS", "⚠": "WARN", "✗": "FAIL", "–": "SKIP"}.get(icon, "?")
+            detail = clean[1:].strip()
+            checks.append({"status": status, "detail": detail})
+            continue
 
-    return vid_num, vid_id, done, total, eta_str, spf, errors, model
+        # Verdict
+        vm = re.match(r'VERDICT:\s*(PASS|WARN|FAIL)', clean)
+        if vm and current_gate:
+            gates.append({"num": current_gate[0], "name": current_gate[1],
+                          "checks": checks, "verdict": vm.group(1)})
+            current_gate = None
+            checks = []
 
-def load_checkpoint():
-    try:
-        return json.loads(CHECKPOINT.read_text())
-    except:
-        return {}
+    # Capture any unfinished gate
+    if current_gate:
+        gates.append({"num": current_gate[0], "name": current_gate[1],
+                      "checks": checks, "verdict": None})
+    return gates
 
-def timeline_status(vid):
-    """Return (frames_count, is_complete, model_used) for best available timeline."""
-    for model in ["qwen3.5-27b", "qwen3.5-4b", "qwen-vl", "gemini-flash"]:
-        p = FERN_DIR / vid / f"timeline_hybrid_{model}.json"
-        if p.exists() and p.stat().st_size > 5000:
-            try:
-                data     = json.loads(p.read_text())
-                timeline = data.get("timeline", [])   # key is "timeline", not "frames"
-                return len(timeline), data.get("complete", False), model
-            except:
-                pass
-    return 0, False, None
 
-def audio_status(vid):
-    p = FERN_DIR / f"{vid}_audio_full.json"
-    if not p.exists():
-        return False, {}
-    try:
-        d = json.loads(p.read_text())
-        return True, d.get("metadata", {})
-    except:
-        return True, {}
+def parse_render_progress(lines):
+    """Parse segment render progress."""
+    segments = []
+    total_segs = 0
+    start_time = None
+    editorial = {}
+
+    for line in lines:
+        clean = strip_ansi(line).strip()
+
+        # Total segment count
+        m = re.match(r'Rendering (\d+) segments', clean)
+        if m:
+            total_segs = int(m.group(1))
+            continue
+
+        # Individual segment render
+        m = re.match(r'\[(\d+)/(\d+)\]\s+(\S+)\s+(\S+)s\s+(.+?)(?:\s+✓|\s+Using|\s+Loading|$)', clean)
+        if m:
+            idx = int(m.group(1))
+            total_segs = int(m.group(2))
+            motion = m.group(3)
+            dur = m.group(4)
+            source = m.group(5).strip()
+            segments.append({
+                "idx": idx, "total": total_segs,
+                "motion": motion, "dur": float(dur),
+                "source": source,
+            })
+            continue
+
+        # Chapter card
+        m = re.match(r'\[(\d+)/(\d+)\]\s+CHAPTER CARD\s+(\S+)s\s+(.+?)(?:\s+✓|$)', clean)
+        if m:
+            idx = int(m.group(1))
+            total_segs = int(m.group(2))
+            dur = m.group(3)
+            title = m.group(4).strip()
+            segments.append({
+                "idx": idx, "total": total_segs,
+                "motion": "CHAPTER", "dur": float(dur),
+                "source": title,
+            })
+            continue
+
+        # Editorial compliance
+        m = re.search(r'Cut rate:\s+([\d.]+)/min', clean)
+        if m:
+            editorial["cut_rate"] = float(m.group(1))
+        m = re.search(r'Avg segment:\s+([\d.]+)s', clean)
+        if m:
+            editorial["avg_seg"] = float(m.group(1))
+        m = re.search(r'SFX:\s+([\d.]+)%', clean)
+        if m:
+            editorial["sfx_pct"] = float(m.group(1))
+        m = re.search(r'Storyboard match:\s+(\d+)/(\d+)', clean)
+        if m:
+            editorial["sb_match"] = f"{m.group(1)}/{m.group(2)}"
+
+        # Motion distribution
+        m = re.search(r'Motion:\s+(.+)', clean)
+        if m:
+            editorial["motion_dist"] = m.group(1).strip()
+
+        # Render complete
+        m = re.search(r'Render complete in ([\d.]+) min', clean)
+        if m:
+            editorial["render_time"] = float(m.group(1))
+
+        # Render failed
+        if 'Render FAILED' in clean:
+            editorial["render_failed"] = True
+
+        # Timeline info
+        m = re.search(r'(\d+) segments → (\d+)s \(([\d.]+)min\)', clean)
+        if m:
+            editorial["timeline_segs"] = int(m.group(1))
+            editorial["timeline_dur"] = float(m.group(3))
+
+        # Beat detection
+        m = re.search(r'(\d+) beats detected\s+\(~(\d+) BPM', clean)
+        if m:
+            editorial["beats"] = int(m.group(1))
+            editorial["bpm"] = int(m.group(2))
+
+    return segments, total_segs, editorial
+
+
+def parse_summary(lines):
+    """Parse final summary if present."""
+    summary = []
+    in_summary = False
+    overall = None
+    for line in lines:
+        clean = strip_ansi(line).strip()
+        if clean == "SUMMARY":
+            in_summary = True
+            continue
+        if in_summary:
+            m = re.match(r'Gate (\d+)\s+(\S.+?)\s+(\d+)/(\d+)\s+(PASS|WARN|FAIL)', clean)
+            if m:
+                summary.append({
+                    "num": int(m.group(1)), "name": m.group(2).strip(),
+                    "passed": int(m.group(3)), "total": int(m.group(4)),
+                    "verdict": m.group(5),
+                })
+            m = re.match(r'OVERALL:\s+(.+)', clean)
+            if m:
+                overall = m.group(1).strip()
+    return summary, overall
+
+
+# ── Rendering ────────────────────────────────────────────────────────────────
 
 def bar(pct, width=40, color=GR):
     filled = int(width * pct / 100)
-    return f"{color}{'█' * filled}{'░' * (width - filled)}{R}"
+    return f"{color}{'█' * filled}{DIM}{'░' * (width - filled)}{R}"
+
 
 def fmt_duration(sec):
+    if sec < 60:
+        return f"{sec:.0f}s"
     h = int(sec // 3600)
     m = int((sec % 3600) // 60)
     return f"{h}h {m}m" if h else f"{m}m"
 
 
 def render():
-    w          = cols()
-    lines      = read_log(ANALYSIS_LOG)
-    mot_lines  = read_log(MOTION_LOG)
-    pid        = get_analysis_pid()
-    mot_pid    = get_motion_pid()
-    age        = log_age(ANALYSIS_LOG)
-    mot_age    = log_age(MOTION_LOG)
-    cp         = load_checkpoint()
-    now        = datetime.now().strftime("%H:%M:%S")
+    w = cols()
+    lines = read_log(RENDER_LOG)
+    pid = get_render_pid()
+    asm_pid = get_assembler_pid()
+    age = log_age(RENDER_LOG)
+    now = datetime.now().strftime("%H:%M:%S")
 
-    vid_num, vid_id, done, total, eta_str, spf, errors, model = parse_progress(lines)
-    mot_vid, mot_done, mot_total, mot_eta, mot_completed = parse_motion_progress(mot_lines)
+    gates = parse_gates(lines)
+    segments, total_segs, editorial = parse_render_progress(lines)
+    summary, overall = parse_summary(lines)
 
     clear()
 
-    # ── HEADER ──────────────────────────────────────────────────────────────
-    hdr = "  FERN PRODUCTION PIPELINE MONITOR  "
+    # ── HEADER ───────────────────────────────────────────────────────────
+    hdr = "  QA-GATED RENDER PIPELINE  "
     pad = (w - len(hdr) - 2) // 2
-    print(f"{CY}{'═'*pad}⟨{hdr}⟩{'═'*(max(0,w-pad-len(hdr)-2))}{R}")
-    print(f"  {DIM}Time: {now}  ·  Refreshes every 5s  ·  Ctrl+C to exit{R}")
-    print()
+    print(f"{CY}{'═' * pad}⟨{hdr}⟩{'═' * max(0, w - pad - len(hdr) - 2)}{R}")
 
-    sep = f"  {DIM}{'─'*(w-4)}{R}"
-
-    # ── MOTION ANALYSIS STATUS ──────────────────────────────────────────────
-    seg_done_all = all(segment_motion_status(v)[0] for v in VIDEO_IDS)
-    print(f"  {B}▸ MOTION ANALYSIS  {DIM}(OpenCV optical flow — no AI model needed){R}")
-
-    if mot_pid:
-        mot_status = f"{GR}● RUNNING{R}  PID {mot_pid}  —  log updated {int(mot_age)}s ago"
-    elif mot_lines:
-        mot_status = f"{DIM}● NOT RUNNING{R}  (log from previous run)"
-    else:
-        mot_status = f"{DIM}● NOT STARTED{R}"
-
-    print(f"    {mot_status}")
-
-    # Per-video segment_motion.json status
-    seg_row = "    "
-    for vid in VIDEO_IDS:
-        exists, n_segs = segment_motion_status(vid)
-        short = vid[:8]
-        if exists:
-            seg_row += f"  {GR}✓{R} {short}({n_segs}segs)"
-        elif mot_vid == vid and mot_total > 0:
-            pct2 = int(mot_done / mot_total * 100) if mot_total else 0
-            seg_row += f"  {YL}⟳{R} {short}({pct2}%{' ETA:'+mot_eta if mot_eta else ''})"
+    status_str = ""
+    if pid or asm_pid:
+        if asm_pid:
+            status_str = f"{GR}● RENDERING{R}  (PID {asm_pid})"
         else:
-            seg_row += f"  {DIM}◌ {short}{R}"
-    print(seg_row)
-
-    if not mot_pid:
-        corr_path = FERN_DIR / "FERN_CORRELATION_DATA.json"
-        if seg_done_all and corr_path.exists():
-            corr_age = datetime.now() - datetime.fromtimestamp(corr_path.stat().st_mtime)
-            age_str = f"{corr_age.days}d ago" if corr_age.days > 0 else "today"
-            print(f"    {GR}✓ All segment_motion.json ready  ·  FERN_CORRELATION_DATA.json {age_str}{R}")
-        elif seg_done_all:
-            print(f"    {YL}⚠ Segments ready — run: venv/bin/python analyze_fern_crosscorrelate.py --save{R}")
+            status_str = f"{GR}● RUNNING{R}  (PID {pid})"
+    elif lines and overall:
+        if "FAIL" in overall:
+            status_str = f"{RD}● FINISHED — FAIL{R}"
         else:
-            print(f"    {DIM}To run: venv/bin/python analyze_fern_motion.py --all --save-segments 2>&1 | tee {MOTION_LOG}{R}")
-    print()
-
-    # ── ANALYSIS PROCESS STATUS ─────────────────────────────────────────────
-    print(f"  {B}▸ AI FRAME ANALYSIS  {DIM}(Ollama vision model){R}")
-    if pid:
-        if age < 120:
-            status = f"{GR}● RUNNING{R}  PID {pid}  —  log updated {int(age)}s ago"
-        else:
-            status = f"{YL}● STALLED{R}  PID {pid}  —  last update {int(age//60)}m ago (Ollama thinking)"
+            status_str = f"{GR}● FINISHED — {overall}{R}"
     elif lines:
-        status = f"{DIM}● NOT RUNNING{R}  (log exists from previous run)"
+        status_str = f"{YL}● LOG EXISTS{R}  (process not running)"
     else:
-        status = f"{DIM}● NOT RUNNING{R}"
+        status_str = f"{DIM}● WAITING FOR LOG{R}"
 
-    print(f"    {status}")
-    if not pid:
-        print(f"    {DIM}To run: venv/bin/python analyze_fern_hybrid_checkpoint.py --all --model qwen-vl 2>&1 | tee {ANALYSIS_LOG}{R}")
-        print(f"    {DIM}Better quality: ollama pull qwen2.5vl:32b  then  --model qwen2.5vl:32b{R}")
+    print(f"  {status_str}  {DIM}·  {now}  ·  log updated {int(age)}s ago  ·  Ctrl+C to exit{R}")
+
+    # Extract topic from log
+    for line in lines[:5]:
+        clean = strip_ansi(line).strip()
+        m = re.search(r'RENDER QA\s*—\s*(\S+)', clean)
+        if m:
+            print(f"  {DIM}Topic:{R} {WH}{m.group(1)}{R}")
+            break
     print()
 
-    # ── CURRENT VIDEO PROGRESS ─────────────────────────────────────────────
-    if pid and total > 0:
+    sep = f"  {DIM}{'─' * (w - 4)}{R}"
+
+    # ── GATE STATUS ──────────────────────────────────────────────────────
+    print(f"  {B}▸ QUALITY GATES{R}")
+    print()
+
+    if summary:
+        # Use final summary table
+        for s in summary:
+            vc = {
+                "PASS": GR, "WARN": YL, "FAIL": RD,
+            }.get(s["verdict"], DIM)
+            icon = {"PASS": "✓", "WARN": "⚠", "FAIL": "✗"}.get(s["verdict"], "?")
+            print(f"    {vc}{icon}{R}  Gate {s['num']}  {s['name']:<24} {s['passed']:>2}/{s['total']:<2}  {vc}{s['verdict']}{R}")
+        if overall:
+            oc = GR if "PASS" in overall else (YL if "WARN" in overall else RD)
+            print(f"\n    {oc}{B}OVERALL: {overall}{R}")
+    elif gates:
+        for g in gates:
+            v = g["verdict"] or "..."
+            vc = {"PASS": GR, "WARN": YL, "FAIL": RD}.get(v, DIM)
+            icon = {"PASS": "✓", "WARN": "⚠", "FAIL": "✗"}.get(v, "⟳")
+            n_checks = len(g["checks"])
+            n_pass = sum(1 for c in g["checks"] if c["status"] in ("PASS", "WARN"))
+            print(f"    {vc}{icon}{R}  Gate {g['num']}  {g['name']:<24} {n_pass:>2}/{n_checks:<2}  {vc}{v}{R}")
+
+        # Show checks for current/last gate
+        active = gates[-1] if gates else None
+        if active and active["verdict"] is None and active["checks"]:
+            print(f"\n    {CY}Currently checking: Gate {active['num']} — {active['name']}{R}")
+            for c in active["checks"][-5:]:
+                ci = {"PASS": f"{GR}✓", "WARN": f"{YL}⚠", "FAIL": f"{RD}✗", "SKIP": f"{DIM}–"}.get(c["status"], "?")
+                print(f"      {ci}{R} {c['detail'][:80]}")
+    else:
+        print(f"    {DIM}No gate data yet — waiting for render_with_qa.py output{R}")
+    print()
+
+    # ── EDITORIAL DECISIONS ──────────────────────────────────────────────
+    if editorial:
         print(sep)
-        vid_label = VIDEO_NAMES.get(vid_id, vid_id)
-        print(f"  {B}▸ NOW PROCESSING:{R}  Video {vid_num}  ·  {WH}{vid_id}{R}  ·  {vid_label}")
-        print()
-        pct   = (done / total * 100) if total > 0 else 0
-        bar_w = min(w - 25, 50)
-        print(f"    {bar(pct, bar_w)}  {WH}{pct:.1f}%{R}  ({done}/{total} frames)")
-        spf_str = f"{spf:.0f}s/frame" if spf else "measuring..."
-        print(f"    Speed: {WH}{spf_str}{R}   ETA this video: {YL}{eta_str}{R}   Errors: {RD if errors else DIM}{errors}{R}")
-        if spf and total > 0:
-            remaining_this = (total - done) * spf
-            cur_idx    = cp.get("current_video_index", 0)
-            vids_left  = len(VIDEO_IDS) - cur_idx - 1
-            est_other  = vids_left * 150 * spf
-            finish_at  = datetime.now() + timedelta(seconds=remaining_this + est_other)
-            print(f"    Est. all videos: {YL}{fmt_duration(remaining_this + est_other)}{R}  (~{finish_at.strftime('%I:%M %p')})")
+        print(f"  {B}▸ EDITORIAL DECISIONS{R}")
         print()
 
-    # ── VIDEO ANALYSIS TABLE ─────────────────────────────────────────────────
-    print(sep)
-    print(f"  {B}▸ VIDEO ANALYSIS STATUS{R}")
-    print()
-    print(f"  {'#':<3} {'VIDEO ID':<14} {'TITLE':<32} {'TIMELINE':<32} {'AUDIO':<14}")
-    print(f"  {'─'*3} {'─'*14} {'─'*32} {'─'*32} {'─'*14}")
+        if editorial.get("bpm"):
+            print(f"    Music:       {WH}{editorial['bpm']} BPM{R}  ({editorial.get('beats', '?')} beats detected)")
+        if editorial.get("timeline_dur"):
+            print(f"    Duration:    {WH}{editorial['timeline_dur']:.1f} min{R}  ({editorial.get('timeline_segs', '?')} segments)")
+        if editorial.get("cut_rate"):
+            print(f"    Cut rate:    {WH}{editorial['cut_rate']:.1f}/min{R}  (Fern target: ~13.2)")
+        if editorial.get("avg_seg"):
+            print(f"    Avg segment: {WH}{editorial['avg_seg']:.1f}s{R}  (Fern target: ~5.3s)")
+        if editorial.get("sfx_pct"):
+            print(f"    SFX density: {WH}{editorial['sfx_pct']:.1f}%{R} of cuts have SFX")
+        if editorial.get("sb_match"):
+            print(f"    Storyboard:  {WH}{editorial['sb_match']}{R} segments matched to footage")
+        if editorial.get("motion_dist"):
+            print(f"    Motion:      {editorial['motion_dist']}")
+        print()
 
-    for i, vid in enumerate(VIDEO_IDS):
-        label = VIDEO_NAMES.get(vid, "?")[:31]
-        frames, is_complete, tl_model = timeline_status(vid)
-        aud_ok, aud_meta = audio_status(vid)
-        is_cur = (vid == vid_id and bool(pid))
+    # ── RENDER PROGRESS ──────────────────────────────────────────────────
+    if segments:
+        print(sep)
+        print(f"  {B}▸ RENDER PROGRESS{R}")
+        print()
 
-        if frames > 0 and is_complete:
-            model_tag = f"[{tl_model}]" if tl_model else ""
-            vis = f"{GR}✓ {frames} frames {model_tag}{R}"
-        elif frames > 0:
-            vis = f"{YL}⏸ {frames} frames (paused){R}"
-        elif is_cur and done > 0:
-            pct2 = int(done / total * 100) if total > 0 else 0
-            vis = f"{YL}⟳ {done}/{total} ({pct2}%){R}"
-        elif is_cur:
-            vis = f"{YL}⟳ starting...{R}"
-        else:
-            vis = f"{DIM}◌ queued{R}"
+        last = segments[-1]
+        done = last["idx"]
+        total = last["total"]
+        pct = (done / total * 100) if total > 0 else 0
 
-        if aud_ok:
-            bpm = aud_meta.get("music_bpm", "?")
-            wpm = aud_meta.get("narration_wpm", "?")
-            aud = f"{GR}✓{R} {DIM}bpm:{bpm} wpm:{wpm}{R}"
-        else:
-            aud = f"{DIM}◌ pending{R}"
+        bar_w = min(w - 30, 50)
+        print(f"    {bar(pct, bar_w)}  {WH}{pct:.1f}%{R}  ({done}/{total})")
 
-        print(f"  {i+1:<3} {vid:<14} {label:<32} {vis:<42} {aud}")
-    print()
+        # ETA estimate from render speed
+        # Count segments rendered, estimate time per segment
+        if len(segments) >= 3:
+            # Estimate speed from segment durations (video duration, not render time)
+            # Use position in list as proxy for time elapsed
+            # We know the log age — rough estimate
+            elapsed_rough = age  # time since last log update is near 0 if running
+            # Better: count how many segments per unit time
+            # Use a simple heuristic: ~4s per segment with parallax
+            secs_per_seg = 4.0  # approximate from observations
+            remaining = (total - done) * secs_per_seg
+            eta = datetime.now() + timedelta(seconds=remaining)
+            print(f"    ETA: {YL}~{fmt_duration(remaining)}{R}  (~{eta.strftime('%I:%M %p')})")
 
-    # ── FORMULA FILES ────────────────────────────────────────────────────────
-    print(sep)
-    print(f"  {B}▸ FORMULA FILES{R}")
-    print()
-    formula_files = [
-        ("FERN_MASTER_FORMULA.json",    "Master aggregate (all formulas)"),
-        ("FERN_MOTION_FORMULA.json",    "Camera + optical flow + transitions"),
-        ("SCRIPT_FORMULA.json",         "Script structure + pacing"),
-        ("MUSIC_IDENTITY.json",         "BPM + genre + energy"),
-        ("SOUND_DESIGN_FORMULA.json",   "SFX + ambient"),
-        ("THUMBNAIL_FORMULA.json",      "Thumbnail composition"),
-        ("TITLE_ANGLE_FORMULA.json",    "Title patterns by performance"),
-        ("FERN_STYLE_GROUND_TRUTH.json","Ground truth style reference"),
-    ]
-    for fname, desc in formula_files:
-        p = FERN_DIR / fname
-        if p.exists():
-            sz  = p.stat().st_size
-            age2 = datetime.now() - datetime.fromtimestamp(p.stat().st_mtime)
-            age_str = f"{age2.days}d ago" if age2.days > 0 else "today"
-            print(f"    {GR}✓{R}  {fname:<40} {DIM}{desc} · {sz//1024}KB · {age_str}{R}")
-        else:
-            print(f"    {RD}✗{R}  {fname:<40} {DIM}MISSING{R}")
-    print()
+        if editorial.get("render_time"):
+            print(f"    {GR}Render completed in {editorial['render_time']:.1f} min{R}")
+        if editorial.get("render_failed"):
+            print(f"    {RD}RENDER FAILED{R}")
+        print()
 
-    # ── FULL PIPELINE STATUS ─────────────────────────────────────────────────
-    print(sep)
-    print(f"  {B}▸ PIPELINE PHASE STATUS{R}")
-    print()
+        # ── MOTION BREAKDOWN ─────────────────────────────────────────────
+        print(sep)
+        print(f"  {B}▸ MOTION BREAKDOWN (rendered so far){R}")
+        print()
 
-    running_scripts = get_running_pipeline_scripts()
-    next_phase, next_script = get_next_step()
+        motion_counts = Counter(s["motion"] for s in segments)
+        total_rendered = len(segments)
+        # Sort by count descending
+        for motion, count in motion_counts.most_common():
+            pct_m = count / total_rendered * 100
+            bar_w2 = min(int(pct_m / 2), 25)
+            color = {
+                "zoom_in": CY, "zoom_out": MG, "static": DIM,
+                "pan_up": YL, "pan_down": YL,
+                "pan_left": YL, "pan_right": YL,
+                "CHAPTER": GR,
+            }.get(motion, WH)
+            print(f"    {color}{motion:<14}{R} {'█' * bar_w2:<25}  {count:>3} ({pct_m:.0f}%)")
+        print()
 
-    cost_labels = {
-        "free-local":      f"{GR}local{R}",
-        "free-yt-dlp":     f"{GR}yt-dlp{R}",
-        "free-ollama":     f"{GR}ollama{R}",
-        "free-claude-max": f"{GR}claude{R}",
-        "free-f5-tts":     f"{GR}f5-tts{R}",
-        "free":            f"{GR}free{R}",
-    }
+        # ── FOOTAGE USAGE ────────────────────────────────────────────────
+        print(sep)
+        print(f"  {B}▸ FOOTAGE USAGE (top 10){R}")
+        print()
 
-    for phase, script, base_status, cost, glob_pat in PIPELINE_PHASES:
-        cost_str = cost_labels.get(cost, f"{DIM}{cost}{R}")
-        script_key = Path(script).stem if script.startswith("pipeline/") else ""
-        is_running = script_key in running_scripts
+        source_counts = Counter(s["source"] for s in segments
+                                if s["source"] not in ("BLACK", "") and s["motion"] != "CHAPTER")
+        for source, count in source_counts.most_common(10):
+            name = source[:45]
+            pct_s = count / total_rendered * 100
+            print(f"    {WH}{count:>3}x{R}  {name:<47} {DIM}({pct_s:.0f}%){R}")
+        unique = len(source_counts)
+        print(f"\n    {DIM}{unique} unique sources across {total_rendered} segments{R}")
+        print()
 
-        # Determine real status
-        if is_running:
-            pid_r = running_scripts[script_key]
-            label = f"{GR}● RUNNING  pid {pid_r}{R}"
-        elif base_status == "complete":
-            label = f"{GR}✓ DONE{R}"
-        elif base_status == "manual":
-            label = f"{MG}○ MANUAL{R}"
-        elif glob_pat:
-            exists, count, newest = phase_output_exists(glob_pat)
-            if exists:
-                newest_name = newest.name if newest else ""
-                label = f"{GR}✓ DONE{R}  {DIM}({count} file{'s' if count>1 else ''}, newest: {newest_name}){R}"
-            elif phase == next_phase:
-                label = f"{CY}▶ NEXT STEP{R}"
-            else:
-                label = f"{DIM}◌ pending{R}"
-        else:
-            if phase == next_phase:
-                label = f"{CY}▶ NEXT STEP{R}"
-            else:
-                label = f"{DIM}◌ pending{R}"
+        # ── RECENT SEGMENTS ──────────────────────────────────────────────
+        print(sep)
+        print(f"  {B}▸ RECENT SEGMENTS (last 8){R}")
+        print()
 
-        print(f"    {label:<55}  {phase:<22}  {DIM}{script:<44}{R}  {cost_str}")
+        recent = segments[-8:]
+        for s in recent:
+            motion = s["motion"]
+            mc = {
+                "zoom_in": CY, "zoom_out": MG, "static": DIM,
+                "pan_up": YL, "pan_down": YL, "CHAPTER": GR,
+            }.get(motion, WH)
+            src = s["source"][:50]
+            print(f"    {DIM}[{s['idx']:>3}/{s['total']}]{R}  {mc}{motion:<14}{R}  {s['dur']:.1f}s  {src}")
+        print()
 
-    print()
-    if next_phase:
-        print(f"  {CY}▶ NEXT:{R} {next_phase}  →  {DIM}{next_script}{R}")
-    print()
-
-    # ── SAMPLE CLASSIFICATIONS ───────────────────────────────────────────────
-    print(sep)
-    print(f"  {B}▸ SAMPLE CLASSIFICATIONS (latest per video){R}")
-    print()
-    any_shown = False
-    for vid in VIDEO_IDS:
-        frames_count, _, tl_model = timeline_status(vid)
-        if frames_count == 0 or tl_model is None:
-            continue
-        p = FERN_DIR / vid / f"timeline_hybrid_{tl_model}.json"
-        try:
-            data     = json.loads(p.read_text())
-            timeline = data.get("timeline", [])
-            if not timeline:
-                continue
-            any_shown = True
-            last = next((e for e in reversed(timeline) if e.get("visual") and e["visual"] != {}), None)
-            if not last:
-                continue
-            vis    = last.get("visual", {})
-            ts     = last.get("timestamp", 0)
-            cat    = vis.get("visual_category", "?")
-            scene  = vis.get("scene_description", "?")[:75]
-            emo    = vis.get("emotional_tone", "?")
-            cam    = vis.get("camera_movement", "?")
-            # new motion fields (present after re-run with updated prompt)
-            motion_src = vis.get("motion_source", "")
-            kinetic    = vis.get("kinetic_quality", "")
-            anim_ease  = vis.get("animation_easing", "")
-            extras = ""
-            if motion_src: extras += f"  src:{motion_src}"
-            if kinetic:    extras += f"  kinetic:{kinetic}"
-            if anim_ease:  extras += f"  ease:{anim_ease}"
-            print(f"    {GR}{vid}{R} ({VIDEO_NAMES[vid][:25]})  {DIM}model:{tl_model}  {frames_count} frames{R}")
-            print(f"    {DIM}t={ts:.1f}s  [{cat}]  cam:{cam}  emo:{emo}{extras}{R}")
-            print(f"    {DIM}\"{scene}\"{R}")
-            print()
-        except Exception:
-            pass
-
-    if not any_shown:
-        print(f"    {DIM}No complete timelines yet — run analysis first.{R}")
+    elif not lines:
+        print(sep)
+        print(f"  {DIM}No render log found at {RENDER_LOG}{R}")
+        print(f"  {DIM}Run: venv/bin/python scripts/render_with_qa.py --topic SLUG --stills-only --parallax 2>&1 | tee {RENDER_LOG}{R}")
         print()
 
     print(f"  {DIM}Ctrl+C to exit{R}", end="", flush=True)
 
 
 if __name__ == "__main__":
-    print("Starting Fern Pipeline Monitor...")
+    print("Starting QA Render Monitor...")
     time.sleep(0.3)
     try:
         while True:
             render()
-            time.sleep(5)
+            time.sleep(3)
     except KeyboardInterrupt:
         clear()
         print("Monitor stopped.")
