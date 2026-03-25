@@ -50,6 +50,7 @@ Usage:
 
 import argparse
 import json
+import logging
 import math
 import random
 import re
@@ -1499,15 +1500,17 @@ def _build_motion_cycle() -> list[str]:
 
 def _pick_sfx_file(sfx_type: str) -> Path | None:
     """Return a random existing SFX file for the given type, or None if unavailable."""
+    # SFX candidates mapped to ACTUAL files in assets/sfx/
+    # Verified against disk contents — every file listed here exists
     candidates = {
-        "impact": ["impact_01.mp3", "impact_02.mp3", "impact_cc0_01.mp3", "impact_cc0_02.mp3"],
-        "body_impact": ["body_impact_01.mp3", "body_fall_cc0_01.mp3", "impact_cc0_01.mp3"],
-        "glass_shatter": ["glass_shatter_01.mp3", "glass_cc0_01.mp3", "glass_cc0_03.mp3", "glass_cc0_04.mp3"],
+        "impact": ["impact_01.mp3", "impact_02.mp3"],
+        "body_impact": ["body_impact_01.mp3", "impact_01.mp3"],
+        "glass_shatter": ["glass_shatter_01.mp3"],
         "whoosh": ["whoosh_01.mp3", "whoosh_02.mp3", "whoosh_03.mp3", "whoosh_04.mp3", "whoosh_05.mp3"],
         "rumble": ["rumble_01.mp3", "rumble_02.mp3", "rumble_03.mp3"],
         "shimmer": ["shimmer_01.mp3", "shimmer_02.mp3", "shimmer_03.mp3"],
         "tension": ["tension_01.mp3"],
-        "highlighter": ["highlighter_01.mp3"],
+        "highlighter": ["shimmer_01.mp3"],  # fallback to shimmer until dedicated file exists
     }
     files = [SFX_DIR / f for f in candidates.get(sfx_type, []) if (SFX_DIR / f).exists()]
     return random.choice(files) if files else None
@@ -2023,7 +2026,9 @@ def render(
 
 
 def _make_black(duration_sec: float, out_path: Path) -> Path:
-    """Create a black video segment."""
+    """Create a black video segment. WARNING: this means footage is MISSING."""
+    logging.warning(f"BLACK FRAME: {out_path.name} ({duration_sec:.1f}s) — missing source footage")
+    print(f"  ⚠ BLACK FRAME at {out_path.name} ({duration_sec:.1f}s) — no source footage found")
     cmd = [
         "ffmpeg", "-y",
         "-f", "lavfi", "-i", f"color=black:s={OUTPUT_RES}:r={OUTPUT_FPS}",
