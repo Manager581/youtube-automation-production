@@ -32,7 +32,9 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from playbook.loader import Playbook
 
-OLLAMA_MODEL = "qwen3:4b"
+# LLM integration: Claude Max (via CLI) is primary, heuristic fallback always available
+# The pattern detectors below work without any LLM — LLM is used for deeper analysis only
+LLM_MODEL = "claude"  # Uses claude CLI (Max subscription)
 
 # --- PATTERN DETECTORS ---
 
@@ -626,14 +628,14 @@ def main():
     parser.add_argument("script", nargs="?", help="Path to script file")
     parser.add_argument("--title", "-t", help="Video title (for intro analysis)")
     parser.add_argument("--compare", nargs=2, metavar="SCRIPT", help="Compare two scripts")
-    parser.add_argument("--no-ollama", action="store_true")
+    parser.add_argument("--no-llm", action="store_true", help="Skip LLM analysis, use heuristics only")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
     if args.compare:
         results = []
         for path in args.compare:
-            r = analyze_script(path, args.title, not args.no_ollama)
+            r = analyze_script(path, args.title, not args.no_llm)
             results.append(r)
             if not args.json:
                 print_report(r)
@@ -658,7 +660,7 @@ def main():
             print(json.dumps(results, indent=2))
 
     elif args.script:
-        result = analyze_script(args.script, args.title, not args.no_ollama)
+        result = analyze_script(args.script, args.title, not args.no_llm)
         if args.json:
             print(json.dumps(result, indent=2))
         else:

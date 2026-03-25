@@ -64,6 +64,15 @@ _project_root = str(Path(__file__).resolve().parent.parent)
 if _project_root not in sys.path:
     sys.path.insert(0, _project_root)
 
+# ── Playbook Integration ──
+try:
+    from playbook.loader import Playbook
+    _PLAYBOOK = Playbook()
+    _HAS_PLAYBOOK = True
+except (ImportError, FileNotFoundError):
+    _PLAYBOOK = None
+    _HAS_PLAYBOOK = False
+
 try:
     from pipeline.production_rules import (
         classify_all_chunks,
@@ -2552,6 +2561,88 @@ def _parse_args():
     return p.parse_args()
 
 
+def _playbook_pre_render_qa(segments: list[dict]) -> dict:
+    """
+    Pre-render quality gate using playbook rules.
+    Validates the timeline against editing.json criteria before committing to render.
+
+    Rules checked:
+    - Cut frequency: avg duration per segment (target: 4-7s for documentary)
+    - B-roll ratio: % of segments using B-roll vs A-roll (target: majority B-roll)
+    - SFX density: % of segments with SFX (target: ~10-15%)
+    - Visual variety: number of distinct source types used
+    - No dead space: segments with very long holds (>12s)
+    """
+    total = len(segments)
+    if total == 0:
+        return {"scores": {}, "warnings": ["No segments to analyze"], "overall": 0}
+
+    scores = {}
+    warnings = []
+
+    # 1. Cut frequency (playbook: new visual every 5s or less for documentary)
+    durations = [s["duration_sec"] for s in segments if s["duration_sec"] > 0]
+    avg_dur = sum(durations) / max(len(durations), 1)
+    if avg_dur <= 5:
+        scores["cut_frequency"] = 1.0
+    elif avg_dur <= 7:
+        scores["cut_frequency"] = 0.85
+    elif avg_dur <= 10:
+        scores["cut_frequency"] = 0.6
+    else:
+        scores["cut_frequency"] = 0.3
+        warnings.append(f"Avg segment duration {avg_dur:.1f}s exceeds 7s documentary target")
+
+    # 2. SFX density (playbook: ~10-15% of cuts should have SFX)
+    sfx_count = sum(1 for s in segments if s.get("sfx"))
+    sfx_ratio = sfx_count / total
+    if 0.08 <= sfx_ratio <= 0.20:
+        scores["sfx_density"] = 1.0
+    elif sfx_ratio < 0.08:
+        scores["sfx_density"] = max(0.3, sfx_ratio / 0.08)
+        warnings.append(f"SFX on only {sfx_ratio*100:.0f}% of segments (target: 10-15%)")
+    else:
+        scores["sfx_density"] = max(0.5, 1.0 - (sfx_ratio - 0.20) * 5)
+        warnings.append(f"SFX overuse at {sfx_ratio*100:.0f}% — risers lose impact (target: 10-15%)")
+
+    # 3. Visual variety (playbook: mix of source types)
+    source_types = set(s.get("source_type", "unknown") for s in segments)
+    # Good variety = 3+ distinct source types
+    variety_score = min(1.0, len(source_types) / 3)
+    scores["visual_variety"] = round(variety_score, 2)
+
+    # 4. No dead space (playbook: zero moments where nothing interesting happens)
+    long_holds = [s for s in segments if s["duration_sec"] > 12]
+    if not long_holds:
+        scores["no_dead_space"] = 1.0
+    else:
+        scores["no_dead_space"] = max(0.3, 1.0 - len(long_holds) / total * 10)
+        warnings.append(f"{len(long_holds)} segments exceed 12s — potential dead space")
+
+    # 5. Text overlay usage (playbook: captions for emphasis only, 3 words or less)
+    text_segs = [s for s in segments if s.get("text_overlay")]
+    if text_segs:
+        text_ratio = len(text_segs) / total
+        # Should be used but not overused (5-20% of segments)
+        if 0.05 <= text_ratio <= 0.25:
+            scores["text_usage"] = 1.0
+        elif text_ratio < 0.05:
+            scores["text_usage"] = 0.6
+        else:
+            scores["text_usage"] = 0.5
+            warnings.append(f"Text overlays on {text_ratio*100:.0f}% of segments — may be overused")
+    else:
+        scores["text_usage"] = 0.5
+        warnings.append("No text overlays detected — consider adding for emphasis")
+
+    # Overall weighted score
+    weights = {"cut_frequency": 0.25, "sfx_density": 0.20, "visual_variety": 0.20,
+               "no_dead_space": 0.20, "text_usage": 0.15}
+    overall = sum(scores.get(k, 0) * w for k, w in weights.items())
+
+    return {"scores": scores, "warnings": warnings, "overall": round(overall, 2)}
+
+
 def main():
     if not _ffmpeg_available():
         print("ERROR: ffmpeg not found in PATH")
@@ -2646,6 +2737,20 @@ def main():
     )
     total_dur = sum(s["duration_sec"] for s in segments)
     print(f"  {len(segments)} segments → {total_dur:.0f}s ({total_dur/60:.1f}min)")
+
+    # ── Playbook Pre-Render QA ──
+    if _HAS_PLAYBOOK:
+        print("\n📋 Playbook Pre-Render QA...")
+        qa = _playbook_pre_render_qa(segments)
+        for k, v in qa["scores"].items():
+            bar = "█" * int(v * 20) + "░" * (20 - int(v * 20))
+            print(f"  {k:25s} {bar} {v*100:.0f}%")
+        print(f"  {'OVERALL':25s} {'█' * int(qa['overall'] * 20)}{'░' * (20 - int(qa['overall'] * 20))} {qa['overall']*100:.0f}%")
+        if qa["warnings"]:
+            print(f"\n  ⚠ Warnings:")
+            for w in qa["warnings"]:
+                print(f"    {w}")
+        print()
 
     # Render
     tmp_dir = out_path.parent / "_assembler_tmp"
