@@ -30,6 +30,19 @@ import re
 import sys
 from pathlib import Path
 
+# ── Playbook Integration ──────────────────────────────────────────────────
+# The playbook sits above the director and provides strategy-level rules
+# derived from studying top YouTube creators (LearnByLeo, etc.)
+
+try:
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    from playbook.loader import Playbook
+    _PLAYBOOK = Playbook()
+    _HAS_PLAYBOOK = True
+except (ImportError, FileNotFoundError):
+    _PLAYBOOK = None
+    _HAS_PLAYBOOK = False
+
 # ── Narrative Arc Categories ────────────────────────────────────────────────
 
 # The director understands these arc positions and adjusts everything accordingly
@@ -93,20 +106,50 @@ ARC_PROFILES = {
 }
 
 # SFX that match actual content (not just narrative function)
+# These rules are topic-agnostic — they match narration keywords to SFX types
+# Following the playbook's 5-layer sound design: whoosh, highlight, riser, hit/impact, drone/rumble
 CONTENT_SFX_RULES = [
-    # (keyword pattern in narration, SFX type, motivation)
+    # Physical/violent actions → impact
     (r"crashes? through.*window|shatter|broke.*glass|through the glass", "glass_shatter", "glass breaking matches narration"),
     (r"falls? to.*death|fell.*stories|plunge|through.*window.*fall", "body_impact", "impact of fall"),
-    (r"phone|call|dialed|rang", "tension", "phone call tension"),
     (r"gun|shot|fire|weapon|bomb|deton", "impact", "violent action"),
-    (r"secret|classified|top secret|confidential", "tension", "secrecy revealed"),
-    (r"LSD|drug|dose|cointreau|experiment", "shimmer", "mind-altering substance"),
-    (r"dead|death|die|kill|murder|homicid", "rumble", "death/violence undertone"),
     (r"scream|shout|yell|crash", "impact", "sudden violent sound"),
-    (r"silence|quiet|calm|nothing", None, None),  # Explicit NO sfx
-    (r"discover|found|reveal|uncover|exhum", "shimmer", "discovery moment"),
     (r"bruise|hematoma|injury|wound|struck|hit|blow", "impact", "physical violence"),
-    (r"door|enter|arrive|walk in", "whoosh", "scene entry"),
+
+    # Secrets/revelation → tension riser
+    (r"secret|classified|top secret|confidential|hidden|buried", "tension", "secrecy revealed"),
+    (r"nobody told you|didn't know|never been told|invisible", "tension", "hidden knowledge revealed"),
+
+    # Substances/altered states → shimmer/highlight
+    (r"LSD|drug|dose|cointreau|experiment", "shimmer", "mind-altering substance"),
+
+    # Discovery/revelation → shimmer highlight
+    (r"discover|found|reveal|uncover|exhum|investigation|expose", "shimmer", "discovery moment"),
+
+    # Death/harm → rumble drone
+    (r"dead|death|die|kill|murder|homicid|suicide|attempt", "rumble", "death/violence undertone"),
+
+    # Data/surveillance/algorithm → tension
+    (r"algorithm|data|score|screen|track|surveillance|monitor", "tension", "algorithmic judgment"),
+    (r"denied|rejected|refused|declined|failed", "impact", "rejection strike"),
+    (r"billion|million|thousand|percent|ninety|eighty|sixty", "shimmer", "shocking statistic"),
+
+    # Legal/institutional → whoosh
+    (r"lawsuit|sued|filed|court|judge|settlement", "whoosh", "legal action"),
+    (r"department of justice|fbi|cia|ftc|eeoc|congress", "whoosh", "institutional authority"),
+
+    # Phone/communication → tension
+    (r"phone|call|dialed|rang|voicemail", "tension", "phone call tension"),
+
+    # Silence/nothing → explicit NO sfx
+    (r"silence|quiet|calm|nothing|pause", None, None),
+
+    # Scene entry/transition → whoosh
+    (r"door|enter|arrive|walk in|walked into", "whoosh", "scene entry"),
+
+    # Emotional moments → rumble
+    (r"blamed? yourself|internalize|worthless|hopeless|desperate", "rumble", "emotional weight"),
+    (r"kafka|orwell|dystop|nightmare|horror", "rumble", "literary/tonal darkness"),
 ]
 
 DOCUMENT_HIGHLIGHT_RULES = [
@@ -264,7 +307,14 @@ def detect_arc_position(seg_index: int, total_segs: int, narrative_function: str
     # Revelation keywords always get revelation treatment
     if any(w in text_lower for w in ["it was a lie", "homicide", "what they found",
                                       "the evidence", "hematoma", "struck", "not jumped",
-                                      "never admitted", "never charged"]):
+                                      "never admitted", "never charged",
+                                      # Topic-agnostic revelation triggers
+                                      "let that land", "stomach drop", "here's what they don't tell",
+                                      "nobody expected", "truly dangerous", "cruelest part",
+                                      "here's the thing about", "the ghost won",
+                                      "they settled", "systematically discriminated",
+                                      "eighty-five percent", "attempted suicide",
+                                      "sixty thousand claims", "the machine doesn't care"]):
         return "revelation"
 
     # Peak emotional moments
@@ -584,6 +634,10 @@ def direct(script_path: str, storyboard_path: str) -> dict:
         "scenes": scenes,
     }
 
+    # ── Playbook Validation Pass ──
+    if _HAS_PLAYBOOK:
+        output["playbook_audit"] = _playbook_audit(output, directed_segments)
+
     return output
 
 
@@ -663,6 +717,180 @@ def _make_directed_scene(num: int, segs: list[dict]) -> dict:
     }
 
 
+# ── Playbook Audit ─────────────────────────────────────────────────────────
+
+def _playbook_audit(output: dict, segments: list[dict]) -> dict:
+    """
+    Validate directed output against playbook rules from LearnByLeo analysis.
+    Returns scores, warnings, and suggested fixes.
+
+    Checks:
+    1. Energy variation (editing.json P-ED-04) — alternate hype/mellow
+    2. Sound design density (editing.json sfx_types) — 5 layer coverage
+    3. Visual variety (editing.json visual_variety) — B-roll ratio, cut frequency
+    4. Attention guides (editing.json six_attention_guides) — technique coverage
+    5. Focus point continuity (editing.json visual_continuity)
+    """
+    if not _HAS_PLAYBOOK:
+        return {"error": "Playbook not available"}
+
+    audit = {"scores": {}, "warnings": [], "suggestions": []}
+    total_segs = len(segments)
+
+    # ── 1. Energy Variation (P-ED-04) ──
+    # Rule: "Vary the energy level — contrast between hype-edited sections
+    # and mellow A-roll forces viewers back into focus"
+    arc_sequence = [s.get("arc_position", "context_setup") for s in segments]
+    high_energy = {"cold_open", "emotional_peak", "revelation"}
+    low_energy = {"context_setup", "aftermath"}
+
+    # Count transitions between high and low energy
+    energy_shifts = 0
+    prev_is_high = None
+    for arc in arc_sequence:
+        is_high = arc in high_energy
+        if prev_is_high is not None and is_high != prev_is_high:
+            energy_shifts += 1
+        prev_is_high = is_high
+
+    # Target: at least 1 shift per 15 segments (per playbook: 3-4 shifts per video)
+    expected_shifts = max(3, total_segs // 15)
+    energy_score = min(1.0, energy_shifts / expected_shifts)
+    audit["scores"]["energy_variation"] = round(energy_score, 2)
+
+    if energy_shifts < 3:
+        audit["warnings"].append({
+            "rule": "P-ED-04",
+            "issue": f"Only {energy_shifts} energy shifts detected. Playbook requires 3-4 minimum.",
+            "fix": "Insert mellow sections between intense sequences. Alternate hype-edited and calm A-roll."
+        })
+
+    # ── 2. Sound Design Density ──
+    # Rule: 5 SFX types should be represented (whoosh, highlight, riser, hit, drone)
+    sfx_segments = [s for s in segments if s.get("sfx")]
+    sfx_types_used = set(s["sfx"]["type"] for s in sfx_segments)
+    playbook_sfx_types = {"whoosh", "highlight", "riser", "impact", "rumble"}
+    # Map our types to playbook types
+    type_map = {"shimmer": "highlight", "tension": "riser", "impact": "impact",
+                "rumble": "rumble", "whoosh": "whoosh", "glass_shatter": "impact",
+                "body_impact": "impact"}
+    mapped_types = set(type_map.get(t, t) for t in sfx_types_used)
+    sfx_coverage = len(mapped_types & playbook_sfx_types) / len(playbook_sfx_types)
+    audit["scores"]["sfx_coverage"] = round(sfx_coverage, 2)
+
+    missing_sfx = playbook_sfx_types - mapped_types
+    if missing_sfx:
+        audit["suggestions"].append({
+            "rule": "editing.sound_design",
+            "issue": f"Missing SFX types: {', '.join(missing_sfx)}",
+            "fix": f"Add {', '.join(missing_sfx)} to appropriate segments for fuller sound design."
+        })
+
+    # SFX density: should be roughly 1 SFX per 5-8 segments for documentary
+    sfx_ratio = len(sfx_segments) / max(total_segs, 1)
+    target_ratio = 0.15  # ~1 in 7 segments
+    sfx_density_score = min(1.0, sfx_ratio / target_ratio)
+    audit["scores"]["sfx_density"] = round(sfx_density_score, 2)
+
+    # ── 3. Cut Frequency ──
+    # Rule: "New visual element every 5 seconds or less" (documentary = 5-7s)
+    holds = [s.get("hold_duration_range", [5, 7]) for s in segments]
+    avg_hold = sum((h[0] + h[1]) / 2 for h in holds) / max(len(holds), 1)
+    # Documentary target: 5-7 seconds per cut
+    if avg_hold <= 7:
+        cut_score = 1.0
+    elif avg_hold <= 10:
+        cut_score = 0.7
+    else:
+        cut_score = 0.4
+    audit["scores"]["cut_frequency"] = round(cut_score, 2)
+
+    if avg_hold > 8:
+        audit["warnings"].append({
+            "rule": "P-ED-02",
+            "issue": f"Average hold {avg_hold:.1f}s exceeds documentary target of 5-7s",
+            "fix": "Reduce hold durations. Even nature documentaries cut every 5 seconds."
+        })
+
+    # ── 4. Visual Continuity ──
+    # Rule: "Focus point continuity — viewer's eyes should stay in same screen position"
+    # Check for zoom_target consistency across adjacent segments
+    continuity_breaks = 0
+    for j in range(1, len(segments)):
+        prev_target = segments[j-1].get("zoom_target", {}).get("target", "")
+        curr_target = segments[j].get("zoom_target", {}).get("target", "")
+        prev_region = segments[j-1].get("zoom_target", {}).get("region", [0.5, 0.5, 0.5, 0.5])
+        curr_region = segments[j].get("zoom_target", {}).get("region", [0.5, 0.5, 0.5, 0.5])
+
+        # Check if center points are far apart (continuity break)
+        if len(prev_region) >= 4 and len(curr_region) >= 4:
+            prev_cx = (prev_region[0] + prev_region[2]) / 2
+            prev_cy = (prev_region[1] + prev_region[3]) / 2
+            curr_cx = (curr_region[0] + curr_region[2]) / 2
+            curr_cy = (curr_region[1] + curr_region[3]) / 2
+            dist = math.sqrt((prev_cx - curr_cx)**2 + (prev_cy - curr_cy)**2)
+            # Big jump = continuity break (unless it's a deliberate scene change)
+            if dist > 0.4 and segments[j].get("arc_position") != "chapter_transition":
+                continuity_breaks += 1
+
+    continuity_score = max(0.0, 1.0 - (continuity_breaks / max(total_segs, 1)) * 5)
+    audit["scores"]["focus_continuity"] = round(continuity_score, 2)
+
+    # ── 5. Graphics animation ──
+    # Rule: "All graphics must animate in — never just appear"
+    text_overlays = [s for s in segments if s.get("_text_overlay")]
+    animated_count = sum(1 for s in text_overlays if s.get("_text_overlay_style") == "typewriter")
+    if text_overlays:
+        anim_score = animated_count / len(text_overlays)
+    else:
+        anim_score = 1.0
+    audit["scores"]["graphics_animated"] = round(anim_score, 2)
+
+    # ── 6. Attention Guide Techniques ──
+    # Rule: "At least 3 of 6 techniques used"
+    techniques_used = set()
+    for s in segments:
+        if s.get("highlight_regions"):
+            techniques_used.add("darken_blur_surrounds")
+            techniques_used.add("animate_important_area")
+        if s.get("_text_overlay"):
+            techniques_used.add("graphic_indicators")
+        zoom = s.get("zoom_target", {})
+        if zoom.get("target") in ("face", "person"):
+            techniques_used.add("scale_position")
+        comp = s.get("composition", {})
+        if comp.get("atmosphere") in ("fog", "dust"):
+            techniques_used.add("glow_effect")
+        if comp.get("color_grade") in ("cold", "dark", "vibrant"):
+            techniques_used.add("color_shift")
+
+    attention_score = min(1.0, len(techniques_used) / 3)
+    audit["scores"]["attention_guides"] = round(attention_score, 2)
+    audit["techniques_used"] = list(techniques_used)
+
+    # ── Overall Score ──
+    weights = {
+        "energy_variation": 0.20,
+        "sfx_coverage": 0.10,
+        "sfx_density": 0.10,
+        "cut_frequency": 0.15,
+        "focus_continuity": 0.15,
+        "graphics_animated": 0.10,
+        "attention_guides": 0.20,
+    }
+    total = sum(audit["scores"].get(k, 0) * w for k, w in weights.items())
+    audit["overall_score"] = round(total, 2)
+    audit["overall_percent"] = f"{total * 100:.0f}%"
+
+    # ── Playbook Checklist Cross-Reference ──
+    checklist_scores = {k: audit["scores"][k] for k in weights}
+    audit["playbook_checklist"] = _PLAYBOOK.score_checklist(
+        "editing", "editing_quality", checklist_scores
+    ) if _HAS_PLAYBOOK else {}
+
+    return audit
+
+
 # ── CLI ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -707,6 +935,29 @@ def main():
     print(f"  {output['segment_count']} segments in {output['scene_count']} scenes")
     print(f"  {output['composite_count']} composites, {output['sfx_count']} SFX events, "
           f"{output['sync_point_count']} sync points")
+
+    # Print playbook audit if available
+    audit = output.get("playbook_audit")
+    if audit and "scores" in audit:
+        print(f"\n{'─'*70}")
+        print(f"  PLAYBOOK AUDIT — {audit.get('overall_percent', '?')}")
+        print(f"{'─'*70}")
+        for k, v in audit["scores"].items():
+            bar = "█" * int(v * 20) + "░" * (20 - int(v * 20))
+            print(f"  {k:25s} {bar} {v*100:.0f}%")
+        if audit.get("warnings"):
+            print(f"\n  ⚠ Warnings:")
+            for w in audit["warnings"]:
+                print(f"    [{w['rule']}] {w['issue']}")
+                print(f"      Fix: {w['fix']}")
+        if audit.get("suggestions"):
+            print(f"\n  💡 Suggestions:")
+            for s in audit["suggestions"]:
+                print(f"    {s['issue']}")
+                print(f"      Fix: {s['fix']}")
+        if audit.get("techniques_used"):
+            print(f"\n  Attention techniques: {', '.join(audit['techniques_used'])}")
+        print(f"{'─'*70}")
 
 
 if __name__ == "__main__":
