@@ -108,14 +108,20 @@ Key rules for the pipeline:
 - `pipeline/storyboard_generator.py` — `_llm_generate()` uses Claude Haiku primary
 - Both fall back to Ollama only if Claude CLI fails
 
+### Current Blocker: Voice Generation
+F5-TTS crashes on segment 13 with `RuntimeError: Sizes of tensors must match`.
+Long text chunks exceed the model's capacity. Fix needed in `pipeline/voice_generator.py`:
+- Add max chunk size cap (~20 words per chunk)
+- Split long sentences at commas/semicolons before sending to F5-TTS
+- The sentence splitter at line 279 exists but doesn't enforce a word limit
+
 ### Next Session Should Do
-1. **Complete storyboard + director pass** if not finished this session
-2. **Run voice generation** on enhanced script
-3. **Source footage** using web_image_sourcer + standard sourcer
-4. **Assemble video** — first end-to-end render
-5. **Final verification loop** — Scene-by-scene review before export
-6. **SFX library expansion** — Download more CC0 SFX to fill gaps
-7. **Merge decision** — When ready, merge `feature/learnbyleo-integration` into main working branch
+1. **Fix voice generator** — add max chunk size to prevent F5-TTS crashes
+2. **Run voice generation** on enhanced script (12 images + 9 clips already sourced)
+3. **Assemble video** — first end-to-end render
+4. **Final verification loop** — Scene-by-scene review before export
+5. **SFX library expansion** — Download more CC0 SFX to fill gaps
+6. **Merge decision** — When ready, merge `feature/learnbyleo-integration` into main working branch
 
 ## Tools & Access
 - **Claude Max** subscription (Opus available via `claude` CLI)
