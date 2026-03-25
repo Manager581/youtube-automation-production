@@ -53,8 +53,8 @@ from typing import Optional
 # Constants — Fern production spec
 # ---------------------------------------------------------------------------
 TARGET_WPM       = 138.7   # Fern's measured avg across 3 videos (127 / 151 / 138)
-CHUNK_WORD_LIMIT = 35      # target words per F5-TTS chunk (was 150 — caused tensor size crashes)
-CHUNK_WORD_MIN   = 8       # don't make a chunk this tiny
+CHUNK_WORD_LIMIT = 22      # target words per F5-TTS chunk (reduced from 35 — tensor mismatch on longer batches)
+CHUNK_WORD_MIN   = 5       # don't make a chunk this tiny
 
 # Default pause durations (seconds)
 PAUSE_BEAT   = 0.30
@@ -523,7 +523,26 @@ def generate_narration(
                 _generate_chunk(tts, ref_wav, ref_text, seg.text, chunk_wav, speed=reg_speed)
             except Exception as e:
                 print(f"  ERROR on segment {speech_idx}: {e}")
-                raise
+                print(f"  Retrying with shorter split...")
+                # Retry: split text in half and generate separately
+                words = seg.text.split()
+                mid = len(words) // 2
+                half1 = ' '.join(words[:mid])
+                half2 = ' '.join(words[mid:])
+                try:
+                    chunk_wav_a = tmp_dir / f'seg_{speech_idx:04d}_a.wav'
+                    chunk_wav_b = tmp_dir / f'seg_{speech_idx:04d}_b.wav'
+                    _generate_chunk(tts, ref_wav, ref_text, half1, chunk_wav_a, speed=reg_speed)
+                    _generate_chunk(tts, ref_wav, ref_text, half2, chunk_wav_b, speed=reg_speed)
+                    _concat_wavs([chunk_wav_a, chunk_wav_b], chunk_wav)
+                except Exception as e2:
+                    print(f"  RETRY FAILED on segment {speech_idx}: {e2}")
+                    print(f"  Inserting silence placeholder for: {seg.text[:60]}...")
+                    est_dur = (word_count / TARGET_WPM) * 60
+                    chunk_wav = _make_silence(est_dur)
+                    wav_parts.append(chunk_wav)
+                    cursor += est_dur
+                    continue
 
             if normalize_wpm:
                 chunk_wav = _normalize_wpm(chunk_wav, word_count)
