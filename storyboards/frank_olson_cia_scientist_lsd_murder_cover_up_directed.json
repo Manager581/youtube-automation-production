@@ -76,7 +76,9 @@
           "_text_overlay_size": 72,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "A man crashes through a closed window on the 10th floor of the Hotel Statler and falls to his death on the pavement below.",
@@ -133,7 +135,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "His name is Frank Olson.",
@@ -186,7 +190,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He's 43 years old. A bacteriologist. A government scientist. A husband. The father of three young children who are at home asleep in Maryland right now, waiting for their dad to come back.",
@@ -239,7 +245,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And the U.S. government is about to spend the next 22 years lying about how he died.",
@@ -296,7 +304,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "His roommate that night is a CIA officer named Robert Lashbrook.",
@@ -349,7 +359,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "When police arrive at the scene, Lashbrook is calm. Unnaturally calm. He's already on the phone when investigators get to the room.",
@@ -406,7 +418,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "They would later trace that call. The number he dialed belonged to Sidney Gottlieb \u2014 the head of the CIA's most secret program in American history. A program that would eventually become one of the greatest scandals in the history of the United States government.",
@@ -459,7 +473,23 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": [
+            {
+              "y_start": 0.72,
+              "y_end": 0.88,
+              "x_start": 0.3,
+              "x_end": 0.9,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.28888888888888886,
+              "_label": "signature"
+            }
+          ],
+          "_document_content": true
         },
         {
           "text": "A program called MKUltra.",
@@ -512,7 +542,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -574,7 +606,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -636,7 +670,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -702,7 +738,36 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": [
+            {
+              "y_start": 0.68,
+              "y_end": 0.75,
+              "x_start": 0.1,
+              "x_end": 0.9,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.6363636363636364,
+              "_label": "stamp"
+            },
+            {
+              "y_start": 0.22,
+              "y_end": 0.35,
+              "x_start": 0.05,
+              "x_end": 0.95,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.4318181818181818,
+              "_label": "lsd_ref"
+            }
+          ],
+          "_document_content": true
         },
         {
           "text": "The full truth has never been confirmed.",
@@ -755,7 +820,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And the men who were responsible died without ever facing justice.",
@@ -812,7 +879,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "This is the story of Frank Olson. And what the CIA did to him.",
@@ -876,7 +945,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -950,7 +1021,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -1012,7 +1085,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Fort Detrick, Maryland. 1943.",
@@ -1076,7 +1151,9 @@
           "_text_overlay_size": 52,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The United States has just entered the Second World War, and the military is racing to develop every possible weapon. That includes biological weapons \u2014 diseases and pathogens engineered to be weaponized and deployed against enemy populations.",
@@ -1133,7 +1210,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "Frank Olson was recruited to join the Army Biological Warfare Laboratories at Fort Detrick in 1943. He had a doctorate in biochemistry. He was brilliant, thorough, and driven.",
@@ -1186,7 +1265,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He specialized in aerobiology \u2014 specifically, the science of how biological agents can be released into the air to infect the maximum number of people.",
@@ -1243,7 +1324,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "Over the next decade, he rose to become one of the most important scientists in the entire American bioweapons program.",
@@ -1300,7 +1383,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And that program was enormous.",
@@ -1353,7 +1438,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "By the early 1950s, Fort Detrick employed thousands of scientists and military personnel. They were developing anthrax, brucellosis, botulinum toxin. They were running experiments on everything from livestock to human volunteers.",
@@ -1410,7 +1497,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "They were also working closely with the CIA.",
@@ -1463,7 +1552,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Because the Cold War had changed everything.",
@@ -1516,7 +1607,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -1582,7 +1675,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The CIA's conclusion was stark: the Soviets had developed a method of controlling the human mind.",
@@ -1635,7 +1730,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -1697,7 +1794,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "This was the birth of MKUltra. And it would consume the next decade of Frank Olson's life \u2014 even though, in the beginning, he didn't fully understand what he was part of.",
@@ -1750,7 +1849,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -1824,7 +1925,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -1897,7 +2000,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Its stated goal was the development of techniques for \"behavior modification\" \u2014 a clinical way of saying they wanted to learn how to control what people believed, what they said, and what they did.",
@@ -1950,7 +2055,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The program eventually involved 150 separate research projects. It funded experiments at 80 institutions, including 44 colleges and universities, 15 research foundations, and 12 hospitals. Most of the scientists involved had no idea their funding was coming from the CIA. They thought they were working on legitimate psychological research.",
@@ -2018,7 +2125,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The man who ran it all was Sidney Gottlieb.",
@@ -2071,7 +2180,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Gottlieb was 35 years old when he took over MKUltra. He had a PhD in chemistry from Caltech. He had a clubfoot and a stutter, and was by all accounts fiercely intelligent and almost frighteningly committed to the work.",
@@ -2124,7 +2235,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He believed, genuinely, that he was protecting the United States. That the Soviets would stop at nothing, and so neither could America.",
@@ -2177,7 +2290,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "Under his direction, MKUltra tested virtually everything that might alter human consciousness. Hypnosis. Electroconvulsive therapy. Sensory deprivation. Drugs \u2014 dozens of different drugs, in dozens of combinations, administered to subjects who had no idea what was happening to them.",
@@ -2234,7 +2349,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "LSD was the one they kept coming back to.",
@@ -2287,7 +2404,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The CIA had first gotten their hands on a large supply of LSD in 1953 \u2014 purchasing 10 kilograms from the Swiss pharmaceutical company Sandoz. That was approximately 100 million doses. More than enough to drug every single person in several major American cities.",
@@ -2351,7 +2470,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "They wanted to know: could LSD be used to disorient an enemy? To make a soldier unfit to fight? To make a prisoner say things they'd never otherwise say?",
@@ -2408,7 +2529,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -2470,7 +2593,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "They used mental patients. They used prisoners. They used prostitutes they hired to bring clients to CIA safe houses. They used U.S. soldiers who were told only that they were participating in a \"chemical warfare\" study.",
@@ -2523,7 +2648,9 @@
           "_text_overlay_size": 44,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And they used their own people.",
@@ -2576,7 +2703,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "CIA employees, Army scientists, people with high security clearances \u2014 people who couldn't go public even if something went wrong.",
@@ -2629,7 +2758,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Frank Olson was one of those people.",
@@ -2682,7 +2813,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -2767,7 +2900,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -2840,7 +2975,9 @@
           "_text_overlay_size": 72,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Frank Olson drives from Frederick, Maryland to a remote cabin at Deep Creek Lake in the mountains of western Maryland. It's a CIA safe house, used for off-site meetings where sensitive programs can be discussed without risk of surveillance.",
@@ -2893,7 +3030,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He's there with a group of CIA officers and Army scientists \u2014 all people with top-level clearances, all involved in the joint CIA-Army programs at Fort Detrick.",
@@ -2957,7 +3096,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The meeting goes two days. They discuss biological warfare. They discuss MKUltra. They discuss ongoing interrogation programs.",
@@ -3010,7 +3151,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "On the evening of the second night, November 19th, Sidney Gottlieb does something that will eventually shake the entire U.S. intelligence establishment.",
@@ -3063,7 +3206,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He pours a large dose of LSD into the bottle of Cointreau that the group has been drinking from.",
@@ -3120,7 +3265,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He doesn't tell anyone.",
@@ -3173,7 +3320,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -3235,7 +3384,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He tells them it was an experiment. He tells them not to worry.",
@@ -3292,7 +3443,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Some of the men find the situation funny. Others are disoriented but manage to ride it out.",
@@ -3345,7 +3498,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -3407,7 +3562,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Something happens to him that night that goes beyond a bad drug experience.",
@@ -3464,7 +3621,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Within hours, he's withdrawn. Quiet. Disturbed in a way that doesn't lift.",
@@ -3517,7 +3676,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He calls his wife Alice the next morning and she notices something is wrong. He can't describe what it is. He just says he feels like he's made \"a terrible mistake.\"",
@@ -3574,7 +3735,9 @@
           "_text_overlay_size": 44,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "She assumes he means the conference. She assumes it'll pass.",
@@ -3627,7 +3790,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "It doesn't pass.",
@@ -3680,7 +3845,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -3742,7 +3909,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He tells her he wants to leave the program.",
@@ -3795,7 +3964,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He tells a colleague at Fort Detrick that he feels like he's in a \"fog.\" That he can't trust people. That he needs to get out.",
@@ -3848,7 +4019,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -3914,7 +4087,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He wasn't just upset about the LSD.",
@@ -3967,7 +4142,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He had seen other things.",
@@ -4020,7 +4197,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -4105,7 +4284,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -4167,7 +4348,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "In 1952 and 1953, he had traveled to Europe on behalf of the CIA. He visited facilities in West Germany and the United Kingdom where the Agency was conducting interrogation experiments \u2014 using drugs, deprivation, and psychological techniques on suspected Soviet agents.",
@@ -4224,7 +4407,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "According to research done decades later by his son Eric and investigative journalists, Olson witnessed at least one interrogation session in Europe that disturbed him deeply. Some accounts describe a prisoner who was drugged and subsequently killed \u2014 either because the experiment went wrong or because the CIA decided he needed to be silenced.",
@@ -4288,7 +4473,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -4350,7 +4537,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He had also seen documents and materials at Fort Detrick that suggested the United States had used biological weapons during the Korean War \u2014 anthrax and other agents deployed against North Korean and Chinese soldiers in ways that violated the Geneva Convention. This was a charge the U.S. government denied then and still denies today.",
@@ -4407,7 +4596,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "But Frank Olson knew.",
@@ -4460,7 +4651,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And now he was cracking up. Saying he wanted to leave. Saying he'd made a terrible mistake.",
@@ -4513,7 +4706,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "In the world of intelligence operations, this is what's known as a security risk.",
@@ -4566,7 +4761,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "A man who knows too much, who's unstable, who wants out \u2014 that's a problem that needs to be solved.",
@@ -4619,7 +4816,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -4681,7 +4880,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "They sent him to New York.",
@@ -4734,7 +4935,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "They put him in the care of a CIA-cleared psychiatrist named Harold Abramson \u2014 a man who was himself deeply enmeshed in MKUltra research, who had been receiving CIA funding for his own LSD experiments for years.",
@@ -4802,7 +5005,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -4864,7 +5069,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "This was containment.",
@@ -4917,7 +5124,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -4979,7 +5188,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "On November 24th, he flew to New York and met with Abramson again. Abramson's notes describe a man who was \"psychotic\" and \"needed hospitalization.\" But instead of hospitalizing him, the CIA arranged for him to fly to Europe \u2014 perhaps to be treated at another facility, perhaps for other reasons. The trip was planned but never happened.",
@@ -5036,7 +5247,9 @@
           "_text_overlay_size": 44,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "On the night of November 27th, Frank Olson and Robert Lashbrook checked into the Hotel Statler in midtown Manhattan.",
@@ -5089,7 +5302,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Room 1018A. Tenth floor.",
@@ -5142,7 +5357,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Lashbrook told police the next morning that he had woken to a crash. That Olson had run across the room, pulled up the venetian blind, and dove through the closed window.",
@@ -5199,7 +5416,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He said he was asleep when it happened. He said he saw nothing.",
@@ -5252,7 +5471,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -5314,7 +5535,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The venetian blind on the window was intact.",
@@ -5367,7 +5590,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "If a man had run across a room and hurled himself through the glass, the blind should have been destroyed on impact. Instead it was simply raised \u2014 as if someone had carefully lifted it out of the way first.",
@@ -5424,7 +5649,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The glass had shattered outward. But there were also injuries on Olson's body that the original 1953 medical examiner didn't explain.",
@@ -5477,7 +5704,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "No one asked questions.",
@@ -5530,7 +5759,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The CIA had already called it a suicide.",
@@ -5587,7 +5818,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Case closed.",
@@ -5640,7 +5873,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -5725,7 +5960,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -5787,7 +6024,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Alice Olson was told her husband had suffered a mental breakdown and jumped. She was given a small government pension. She was told to move on.",
@@ -5840,7 +6079,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Her children \u2014 Eric, Lisa, and Nils \u2014 grew up without a father. They were told he had been ill. They were told it had been an accident of mental health.",
@@ -5893,7 +6134,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Eric was nine years old when his father died.",
@@ -5950,7 +6193,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He spent his entire childhood with the nagging sense that something wasn't right. That the story didn't add up.",
@@ -6003,7 +6248,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He was correct.",
@@ -6056,7 +6303,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -6129,7 +6378,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "And MKUltra.",
@@ -6182,7 +6433,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The Rockefeller Commission, which preceded the Church Committee, had already published a report that contained a detail almost buried in its appendices: a description of an Army employee who had been secretly dosed with LSD by the CIA and had subsequently died.",
@@ -6239,7 +6492,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The description was anonymized. But it was specific enough.",
@@ -6292,7 +6547,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -6354,7 +6611,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "She called her son Eric.",
@@ -6411,7 +6670,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "\"Eric,\" she said. \"It's your father.\"",
@@ -6464,7 +6725,9 @@
           "_text_overlay_size": 44,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.7
+          "_text_overlay_hold_sec": 1.7,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -6526,7 +6789,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "President Gerald Ford met personally with the Olson family in the Oval Office. He apologized. He expressed condolences. He said the government was deeply sorry for what had been done.",
@@ -6579,7 +6844,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "CIA Director William Colby met with the family and provided a selection of documents. He was careful about which ones he gave them. He acknowledged that Frank Olson had been drugged without his consent.",
@@ -6636,7 +6903,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -6702,7 +6971,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -6779,7 +7050,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The family was offered $750,000 in compensation.",
@@ -6832,7 +7105,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -6894,7 +7169,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He kept digging.",
@@ -6947,7 +7224,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7009,7 +7288,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He had his father's body exhumed from its grave in Frederick, Maryland.",
@@ -7066,7 +7347,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He hired James Starrs, a professor of forensic science at George Washington University Law School and one of the leading forensic investigators in the country \u2014 a man who had previously worked on cases involving the exhumation of Jesse James and the Boston Strangler.",
@@ -7123,7 +7406,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Starrs and his team conducted a new, full autopsy.",
@@ -7176,7 +7461,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7242,7 +7529,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Frank Olson had a significant hematoma \u2014 a bruise from internal bleeding \u2014 on the left side of his head, near his temple.",
@@ -7299,7 +7588,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7365,7 +7656,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7431,7 +7724,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7493,7 +7788,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7555,7 +7852,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7621,7 +7920,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7687,7 +7988,9 @@
           "_text_overlay_size": 44,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 2.3
+          "_text_overlay_hold_sec": 2.3,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7761,7 +8064,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -7827,7 +8132,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The DA's office briefly opened an inquiry. They reviewed the forensic evidence. They interviewed witnesses who were still alive.",
@@ -7880,7 +8187,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And then they closed it again.",
@@ -7933,7 +8242,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "No charges were filed.",
@@ -7986,7 +8297,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8052,7 +8365,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8114,7 +8429,36 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": [
+            {
+              "y_start": 0.12,
+              "y_end": 0.22,
+              "x_start": 0.05,
+              "x_end": 0.95,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.5970149253731343,
+              "_label": "header"
+            },
+            {
+              "y_start": 0.72,
+              "y_end": 0.88,
+              "x_start": 0.3,
+              "x_end": 0.9,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.05,
+              "_label": "signature"
+            }
+          ],
+          "_document_content": true
         }
       ]
     },
@@ -8180,7 +8524,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8257,7 +8603,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The CIA, in responses to journalists and documentary filmmakers, has consistently declined to comment on the specifics of Olson's death. They have acknowledged the LSD program. They have expressed regret for the abuses of MKUltra.",
@@ -8310,7 +8658,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8376,7 +8726,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8449,7 +8801,9 @@
           "_text_overlay_size": 72,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 2.0
+          "_text_overlay_hold_sec": 2.0,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "If you don't know Errol Morris, he's one of the greatest documentary filmmakers who has ever lived. The Fog of War. The Thin Blue Line \u2014 the documentary that got an innocent man out of prison. He spent years on Wormwood.",
@@ -8502,7 +8856,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": true
         },
         {
           "text": "The series reconstructed the Frank Olson case with new detail and rigor, using interviews with Eric Olson spanning decades, newly declassified documents, and dramatic reenactments. It made a compelling case that what happened at the Hotel Statler was not a suicide.",
@@ -8559,7 +8915,23 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": [
+            {
+              "y_start": 0.68,
+              "y_end": 0.75,
+              "x_start": 0.1,
+              "x_end": 0.9,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.5121951219512195,
+              "_label": "stamp"
+            }
+          ],
+          "_document_content": true
         },
         {
           "text": "The CIA responded with a statement that said, essentially, nothing.",
@@ -8612,7 +8984,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8674,7 +9048,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "He has spent over five decades on this.",
@@ -8727,7 +9103,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Five decades trying to find out what happened to his father on one night in 1953.",
@@ -8780,7 +9158,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8865,7 +9245,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -8931,7 +9313,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The CIA would prefer that version.",
@@ -8984,7 +9368,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -9046,7 +9432,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The hematoma on his head doesn't support it. The intact venetian blind doesn't support it. The immediate phone call to Sidney Gottlieb from the room where he died doesn't support it. The nine days of CIA surveillance and control that preceded his death don't support it. The 22 years of official silence don't support it.",
@@ -9114,7 +9502,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "What the evidence does support is this:",
@@ -9167,7 +9557,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -9229,7 +9621,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -9295,7 +9689,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And he wanted out.",
@@ -9348,7 +9744,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "In the intelligence world, wanting out when you know what he knew is not a resignation letter you put in your desk drawer. It's a problem that needs to be solved.",
@@ -9401,7 +9799,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Eric Olson has said, in interview after interview, that he believes his father was murdered. Not as an act of madness. Not as a cover-up of a failed experiment. But as a deliberate act by people who had decided that Frank Olson's knowledge was more dangerous than his life.",
@@ -9458,7 +9858,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The files that might answer that question definitively are still classified.",
@@ -9515,7 +9917,23 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": [
+            {
+              "y_start": 0.68,
+              "y_end": 0.75,
+              "x_start": 0.1,
+              "x_end": 0.9,
+              "color": [
+                255,
+                255,
+                0
+              ],
+              "reveal_at": 0.9090909090909091,
+              "_label": "stamp"
+            }
+          ],
+          "_document_content": true
         },
         {
           "text": "The full truth is still, as of this moment, unknown.",
@@ -9568,7 +9986,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And so Frank Olson remains what he has been for over 70 years:",
@@ -9621,7 +10041,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "A man the CIA killed, or didn't kill. A man who jumped, or was pushed. A man whose family has spent their entire lives demanding an answer from a government that has never fully given one.",
@@ -9689,7 +10111,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "His son Eric is still asking.",
@@ -9742,7 +10166,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "There is something that matters a great deal about that. About the fact that a man in his late seventies is still asking what happened to his father on a November morning in 1953. Still making calls. Still filing requests. Still pushing against a wall of government silence.",
@@ -9799,7 +10225,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     },
@@ -9861,7 +10289,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The programs that killed Frank Olson \u2014 MKUltra, the biological weapons experiments, the interrogation techniques developed at Fort Detrick \u2014 these programs were not the work of rogue agents or a single corrupt administration. They were authorized at the highest levels of the U.S. government. They involved hundreds of scientists, doctors, military officers, and intelligence officials who all made choices that harmed innocent people.",
@@ -9918,7 +10348,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And almost none of them faced any consequences at all.",
@@ -9971,7 +10403,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The lesson of Frank Olson is not that the CIA is uniquely evil, or that the government is always lying, or that you can't trust institutions.",
@@ -10024,7 +10458,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The lesson is simpler and harder than that.",
@@ -10077,7 +10513,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "It's that powerful institutions will go to extraordinary lengths to protect themselves. That the people inside those institutions will make choices that seem justifiable in the moment \u2014 necessary, even patriotic \u2014 that look like something else entirely from the outside.",
@@ -10130,7 +10568,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "And that the only force powerful enough to push back against that is people like Eric Olson.",
@@ -10183,7 +10623,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "People who refuse to let it go. People who keep asking the question.",
@@ -10236,7 +10678,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "Frank Olson deserved better. His family deserved better. And every person who was secretly drugged, experimented on, or harmed by the programs that ran through Fort Detrick and the CIA in those years deserved better.",
@@ -10304,7 +10748,9 @@
           "_text_overlay_size": 56,
           "_text_overlay_position": "center",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": 1.5
+          "_text_overlay_hold_sec": 1.5,
+          "highlight_regions": null,
+          "_document_content": false
         },
         {
           "text": "The least we can do is remember their names.",
@@ -10357,7 +10803,9 @@
           "_text_overlay_size": null,
           "_text_overlay_position": "lower_third",
           "_text_overlay_style": "typewriter",
-          "_text_overlay_hold_sec": null
+          "_text_overlay_hold_sec": null,
+          "highlight_regions": null,
+          "_document_content": false
         }
       ]
     }

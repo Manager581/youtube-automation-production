@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "module": "ideation",
+  "description": "Topic selection, audience research, and idea generation strategies",
+
+  "principles": [
+    {
+      "id": "P-ID-01",
+      "rule": "A single video in a popular area of interest can match 1000+ videos in an unpopular area",
+      "implication": "Spend 5+ days researching before committing to a topic. Never rush ideation."
+    },
+    {
+      "id": "P-ID-02",
+      "rule": "Ideas must be BROAD — attractive to most people in your niche, not super specific",
+      "implication": "If only a tiny subset of your audience would care, the idea ceiling is too low."
+    },
+    {
+      "id": "P-ID-03",
+      "rule": "If you cannot create a compelling title and thumbnail BEFORE making the video, the idea is not viable",
+      "implication": "Title/thumbnail is the litmus test for idea quality. Build them first."
+    },
+    {
+      "id": "P-ID-04",
+      "rule": "Ideas are unique combinations of existing information — the more diverse your knowledge, the more unique your ideas",
+      "implication": "Research broadly beyond your niche. Cross-pollinate concepts."
+    }
+  ],
+
+  "tactics": {
+    "audience_research": {
+      "description": "Find what your audience actually wants",
+      "steps": [
+        "Go to YouTube Studio > Analytics > Audience to find channels/videos your audience watches",
+        "Collect top 15 most-viewed videos from each channel your audience watches",
+        "Add relevant channels from the suggested/related column",
+        "Sort by most viewed and identify patterns: recurring topics, pain points, goals, attention-grabbing words",
+        "Create a research checklist of everything to study"
+      ],
+      "time_investment": "At least 1 hour building the initial list"
+    },
+    "idea_generation_creative": {
+      "description": "Generate ideas through diverse knowledge",
+      "steps": [
+        "Research everything related to your audience's concepts, subjects, pain points, wants, and needs",
+        "Keep a notebook, review notes daily",
+        "Best brainstorming technique: set alarm earlier than usual, skim notes for 2 minutes, go back to sleep, hit snooze repeatedly — the half-asleep state is the creativity sweet spot"
+      ]
+    },
+    "outlier_concept_transfer": {
+      "description": "Find viral concepts from other niches and transfer them",
+      "steps": [
+        "Find outlier videos (way more views than channel average) OUTSIDE your niche",
+        "Extract the CONCEPT (not the subject) from the outlier",
+        "Transfer that concept to your audience's interests",
+        "Use ChatGPT to generate search phrases matching your audience's desires",
+        "Search those phrases on outlier-finding tools"
+      ],
+      "critical_mistake": "Assuming any outlier concept works for your audience. The concept must match what your audience actually cares about (helpful vs entertaining vs interesting)."
+    },
+    "trend_riding": {
+      "description": "Study trends and popular videos, then twist them",
+      "steps": [
+        "Monitor trending topics in your niche",
+        "Take existing popular ideas a step further or add a twist",
+        "Combine trending concepts with your unique angle"
+      ]
+    }
+  },
+
+  "checklists": {
+    "four_test_validation": {
+      "description": "Every idea must pass all 4 tests before production begins",
+      "tests": [
+        {
+          "name": "fresh_perspective_test",
+          "description": "Write ideas down, wait a few days, only keep the ones you still feel good about",
+          "pass_rate": "Typically less than 25% survive",
+          "automation_hint": "Score ideas, shelve for 48h, re-score. Drop >50% delta."
+        },
+        {
+          "name": "originality_test",
+          "description": "Search YouTube for your would-be title. If it exists, improve the title/thumbnail or add a twist.",
+          "automation_hint": "YouTube search API — check for title overlap, Jaccard similarity."
+        },
+        {
+          "name": "best_option_test",
+          "description": "Aim for ideas with at least 5-10x outlier score potential. Only take the top 10% of your ideas.",
+          "automation_hint": "Compare estimated view potential against channel baseline."
+        },
+        {
+          "name": "title_thumbnail_test",
+          "description": "Make the title and thumbnail BEFORE making the video. If you cannot create a clear connection between your audience's motivations and the video's value, the idea will not work.",
+          "automation_hint": "Generate title + thumbnail concepts. Score against titles_thumbnails.json checklist."
+        }
+      ]
+    }
+  },
+
+  "anti_patterns": [
+    {
+      "id": "AP-ID-01",
+      "mistake": "Picking topics that are too niche or specific",
+      "consequence": "View ceiling is capped regardless of execution quality",
+      "fix": "Broaden the angle — make it relevant to the majority of your audience"
+    },
+    {
+      "id": "AP-ID-02",
+      "mistake": "Skipping the title/thumbnail test and going straight to production",
+      "consequence": "Investing hours in a video nobody will click on",
+      "fix": "Always create title + thumbnail concepts before writing the script"
+    },
+    {
+      "id": "AP-ID-03",
+      "mistake": "Assuming an outlier concept from another niche automatically works for yours",
+      "consequence": "The concept-audience mismatch leads to low CTR despite high production quality",
+      "fix": "Verify the concept maps to what YOUR audience cares about (helpful/entertaining/interesting)"
+    }
+  ],
+
+  "sources": ["LearnByLeo: How to get the video ideas the algorithm is looking for", "LearnByLeo: How to get SO good at YouTube you can't stop going viral"]
+}

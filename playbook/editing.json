@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "module": "editing",
+  "description": "Four-pillar editing system: style matching, visual variety, continuity, and sound design",
+
+  "principles": [
+    {
+      "id": "P-ED-01",
+      "rule": "Editing style must match the audience's desired experience",
+      "implication": "Entertainment audience = rapid cuts. Hangout audience = long takes. Documentary = medium pacing with tension variation. Always ask: what experience does MY viewer want?"
+    },
+    {
+      "id": "P-ED-02",
+      "rule": "The core of editing is PACING — always as fast as possible for the genre",
+      "implication": "Even slow-paced nature documentaries cut to new clips every 5 seconds minimum.",
+      "benchmarks": {
+        "entertainment": "2-3 seconds per cut",
+        "documentary": "5-7 seconds per cut",
+        "educational": "4-6 seconds per cut",
+        "casual_hangout": "Up to 90 seconds between cuts"
+      }
+    },
+    {
+      "id": "P-ED-03",
+      "rule": "Every moment should blend into the next seamlessly — editing should be invisible",
+      "implication": "Graphics must animate in. Focus point continuity must be maintained. Transitions should feel natural."
+    },
+    {
+      "id": "P-ED-04",
+      "rule": "Vary the energy level — contrast between hype-edited sections and mellow A-roll forces viewers back into focus",
+      "implication": "Most underrated editing tip. Monotone energy = viewer fatigue regardless of content quality."
+    }
+  ],
+
+  "tactics": {
+    "visual_variety": {
+      "description": "Maximize attention through diverse visual elements",
+      "footage_types": [
+        {"type": "a_roll", "description": "See and hear subject simultaneously. Personal, high attention. Use for important statements.", "priority": "important_moments"},
+        {"type": "b_roll", "description": "Extra footage separate from audio. Visual depiction of words. More interesting than A-roll — use as much as possible.", "priority": "majority_of_video"},
+        {"type": "stock_footage", "description": "Lazy version of B-roll. Use sparingly.", "priority": "gap_filler"},
+        {"type": "motion_graphics", "description": "Explain complex things quickly and clearly. High production value signal.", "priority": "explanations"}
+      ],
+      "still_image_motion": {
+        "description": "Give movement to still clips to prevent visual stagnation",
+        "techniques": [
+          "Slowly change scale (Ken Burns zoom)",
+          "Slowly change position (pan/drift)",
+          "Slowly change perspective (parallax)",
+          "Abrupt scale changes to draw attention to important moments",
+          "Zoom into face during important A-roll statements",
+          "Wiggle keyframes (shaking effect) for impact"
+        ]
+      },
+      "captions": {
+        "rule": "Only for emphasis, 3 words or less at a time",
+        "anti_pattern": "Do not use captions just to fill dead space"
+      }
+    },
+    "six_attention_guides": {
+      "description": "Six ways to guide viewer attention on images",
+      "techniques": [
+        {"id": 1, "name": "animate_important_area", "description": "Animate the most important text/area — movement draws the eye"},
+        {"id": 2, "name": "darken_blur_surrounds", "description": "Darken or blur surrounding areas to isolate the subject"},
+        {"id": 3, "name": "color_shift", "description": "Shift hue to red (negative connotation) or yellow/green (positive)"},
+        {"id": 4, "name": "graphic_indicators", "description": "Circles, arrows, underlines pointing to the subject"},
+        {"id": 5, "name": "glow_effect", "description": "Make the subject glow to separate it from background"},
+        {"id": 6, "name": "scale_position", "description": "Scale and position adjustments to emphasize the subject"}
+      ],
+      "automation_hint": "Map these to storyboard segment intensity levels. High tension = techniques 1,2,3. Reveals = 4,5. Calm context = 6 only."
+    },
+    "visual_continuity": {
+      "description": "Make editing invisible through seamless transitions",
+      "rules": [
+        {
+          "rule": "focus_point_continuity",
+          "description": "In the last frame of clip 1 and first frame of clip 2, the viewer's eyes should be in roughly the same screen position",
+          "consequence_if_violated": "Jarring jump — viewer's eyes have to search for new focal point"
+        },
+        {
+          "rule": "animate_graphics_in",
+          "description": "Graphics must move into the frame (animate in) or use a sound effect to explain their appearance",
+          "consequence_if_violated": "Graphics pop in from nowhere — breaks immersion"
+        },
+        {
+          "rule": "full_screen_transitions",
+          "description": "Use full-screen transitions for section/chapter changes",
+          "types": ["fade to black", "dissolve", "wipe"]
+        },
+        {
+          "rule": "deliberate_breaks",
+          "description": "Deliberately break continuity OCCASIONALLY for attention-grabbing jolts",
+          "when": "Major reveals, shocking moments, tone shifts"
+        }
+      ]
+    },
+    "sound_design": {
+      "description": "Immersive audio through layered sound design",
+      "sfx_types": [
+        {"type": "whoosh", "use": "Movement, transitions, visual elements entering/exiting"},
+        {"type": "highlight", "use": "Emphasis on key words or visuals"},
+        {"type": "riser", "use": "Build tension/anticipation. ONLY before genuinely important moments."},
+        {"type": "hit", "use": "Release tension, emphasize major moments. Pair with risers."},
+        {"type": "drone", "use": "Create mystery and suspense. Background layer for tense sections."}
+      ],
+      "music_strategy": [
+        {"rule": "mood_matching", "description": "Choose songs that match the mood of each segment (anticipation, innovation, excitement, dread)"},
+        {"rule": "segment_assignment", "description": "Separate video by subject changes, assign appropriate mood to each"},
+        {"rule": "abrupt_pause", "description": "Abruptly pause music for special moments — jolts attention"},
+        {"rule": "fade_out", "description": "Slowly fade music out to signal segment endings — creates anticipation"},
+        {"rule": "sync_to_events", "description": "Sync music hits/dips to video events (problem section has different energy than solution)"},
+        {"rule": "stems", "description": "Download separate song elements (stems) for precise control over drums, melody, bass"}
+      ]
+    },
+    "production_polish": {
+      "description": "Making the video look professionally produced",
+      "techniques": [
+        "Color grading consistent with mood",
+        "Vignettes for cinematic focus",
+        "Subtle particle animations (dust, fog) for atmosphere",
+        "Film grain for texture",
+        "Consistent font and graphic style throughout"
+      ]
+    }
+  },
+
+  "checklists": {
+    "editing_quality": {
+      "description": "Score the editing quality of a finished video",
+      "criteria": [
+        {"name": "cut_frequency", "description": "New visual element every 5 seconds or less?", "weight": 0.15},
+        {"name": "b_roll_ratio", "description": "B-roll used for majority of video? A-roll reserved for important moments?", "weight": 0.10},
+        {"name": "sfx_density", "description": "Appropriate SFX (whoosh, highlight, riser, hit, drone) at key moments?", "weight": 0.15},
+        {"name": "music_mood_match", "description": "Music mood changes with content mood?", "weight": 0.10},
+        {"name": "energy_variation", "description": "Clear energy shifts between sections? Not monotone?", "weight": 0.15},
+        {"name": "focus_point_continuity", "description": "Eye position consistent across cuts?", "weight": 0.10},
+        {"name": "graphics_animated", "description": "All graphics animate in (not just appear)?", "weight": 0.05},
+        {"name": "attention_guides_used", "description": "At least 3 of the 6 attention guide techniques used?", "weight": 0.10},
+        {"name": "no_dead_space", "description": "Zero moments where nothing visually interesting is happening?", "weight": 0.10}
+      ]
+    }
+  },
+
+  "anti_patterns": [
+    {
+      "id": "AP-ED-01",
+      "mistake": "Same energy level throughout the entire video",
+      "consequence": "Viewer fatigue — even great content feels boring with monotone editing",
+      "fix": "Alternate between hype-edited sections and mellow A-roll"
+    },
+    {
+      "id": "AP-ED-02",
+      "mistake": "Graphics appearing instantly without animation or sound",
+      "consequence": "Breaks immersion — viewer notices the editing",
+      "fix": "Animate every graphic in. Add a subtle whoosh or highlight sound."
+    },
+    {
+      "id": "AP-ED-03",
+      "mistake": "Using risers before unimportant moments",
+      "consequence": "Trains the viewer to ignore tension signals — diminishes real reveals",
+      "fix": "Only use risers before genuinely important moments"
+    },
+    {
+      "id": "AP-ED-04",
+      "mistake": "Using captions as subtitles rather than emphasis",
+      "consequence": "Visual noise — captions lose their punch when overused",
+      "fix": "3 words or less, only for emphasis. Never to fill dead space."
+    },
+    {
+      "id": "AP-ED-05",
+      "mistake": "Visual variety that overwhelms instead of enhances",
+      "consequence": "Variety is like seasoning — too much ruins the experience",
+      "fix": "Healthy amount enhances. Mood should fluctuate but not chaotically."
+    }
+  ],
+
+  "sources": [
+    "LearnByLeo: How to edit SO good your viewers get addicted to your videos",
+    "LearnByLeo: How to get SO good at YouTube you can't stop going viral"
+  ]
+}

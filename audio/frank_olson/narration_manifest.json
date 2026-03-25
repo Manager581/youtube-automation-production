@@ -1,0 +1,1256 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 3.834,
+      "end_sec": 3.834,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "November 28, 1953. New York City. in the morning."
+    },
+    {
+      "type": "pause",
+      "start_sec": 3.834,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 4.634,
+      "duration_sec": 5.198,
+      "end_sec": 9.832,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "A man crashes through a closed window on the 10th floor of the Hotel Statler"
+    },
+    {
+      "type": "pause",
+      "start_sec": 9.832,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 10.132,
+      "duration_sec": 24.843,
+      "end_sec": 34.975,
+      "word_count": 64,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "and falls to his death on the pavement below. His name is Frank Olson. He's 43 years old. A bacteriologist. A government scientist. A husband. The father of three young children who are at home asleep in Maryland right now, waiting for their dad to come back. And the U.S. government is about to spend the next 22 years lying about how he died."
+    },
+    {
+      "type": "pause",
+      "start_sec": 34.975,
+      "duration_sec": 3.0
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 37.975,
+      "duration_sec": 7.888,
+      "end_sec": 45.863,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.0,
+      "text": "His roommate that night is a CIA officer named Robert Lashbrook. When police arrive at the scene, Lashbrook is calm."
+    },
+    {
+      "type": "pause",
+      "start_sec": 45.863,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 46.163,
+      "duration_sec": 7.713,
+      "end_sec": 53.876,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Unnaturally calm. He's already on the phone when investigators get to the room. They would later trace that call."
+    },
+    {
+      "type": "pause",
+      "start_sec": 53.876,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 54.176,
+      "duration_sec": 7.771,
+      "end_sec": 61.947,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The number he dialed belonged to Sidney Gottlieb \u2014 the head of the CIA's most secret program in American history."
+    },
+    {
+      "type": "pause",
+      "start_sec": 61.947,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 62.247,
+      "duration_sec": 21.972,
+      "end_sec": 84.219,
+      "word_count": 56,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A program that would eventually become one of the greatest scandals in the history of the United States government. A program called MKUltra. The official story \u2014 the one the government put forward and defended for decades \u2014 was that Frank Olson had suffered a mental breakdown and taken his own life. It was a lie."
+    },
+    {
+      "type": "pause",
+      "start_sec": 84.219,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 84.519,
+      "duration_sec": 19.766,
+      "end_sec": 104.285,
+      "word_count": 51,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And they knew it was a lie from the moment they told it. But here's the thing. Even after the truth started to come out \u2014 even after the CIA admitted the drugging, after Congress held hearings, after documents were declassified, after a Netflix documentary was made about this case \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 104.285,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 104.585,
+      "duration_sec": 9.128,
+      "end_sec": 113.713,
+      "word_count": 24,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "even after all of that \u2014 The full truth has never been confirmed. And the men who were responsible died without ever facing justice."
+    },
+    {
+      "type": "pause",
+      "start_sec": 113.713,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 114.513,
+      "duration_sec": 2.132,
+      "end_sec": 116.646,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "This is the story of Frank Olson."
+    },
+    {
+      "type": "pause",
+      "start_sec": 116.646,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 116.946,
+      "duration_sec": 1.806,
+      "end_sec": 118.752,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And what the CIA did to him."
+    },
+    {
+      "type": "pause",
+      "start_sec": 118.752,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 123.752,
+      "duration_sec": 8.995,
+      "end_sec": 132.746,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "CHAPTER 1: FORT DETRICK To understand what happened to Frank Olson, you need to understand where he worked. Fort Detrick, Maryland."
+    },
+    {
+      "type": "pause",
+      "start_sec": 132.746,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 133.046,
+      "duration_sec": 63.482,
+      "end_sec": 196.529,
+      "word_count": 147,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "1943. The United States has just entered the Second World War, and the military is racing to develop every possible weapon. That includes biological weapons \u2014 diseases and pathogens engineered to be weaponized and deployed against enemy populations. Frank Olson was recruited to join the Army Biological Warfare Laboratories at Fort Detrick in 1943. He had a doctorate in biochemistry. He was brilliant, thorough, and driven. He specialized in aerobiology \u2014 specifically, the science of how biological agents can be released into the air to infect the maximum number of people. Over the next decade, he rose to become one of the most important scientists in the entire American bioweapons program. And that program was enormous. By the early 1950s, Fort Detrick employed thousands of scientists and military personnel. They were developing anthrax, brucellosis, botulinum toxin. They were running experiments on everything from livestock to human volunteers."
+    },
+    {
+      "type": "pause",
+      "start_sec": 196.529,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 196.728,
+      "duration_sec": 26.758,
+      "end_sec": 223.486,
+      "word_count": 62,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They were also working closely with the CIA. Because the Cold War had changed everything. In the early 1950s, American POWs returning from Korea were saying things that terrified the U.S. intelligence community. Soldiers who had been captured were coming home confessing to biological warfare crimes they hadn't committed. Denouncing America. Praising communism. Reciting prepared statements with a strange, flat, mechanical quality."
+    },
+    {
+      "type": "pause",
+      "start_sec": 223.486,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 224.286,
+      "duration_sec": 2.004,
+      "end_sec": 226.29,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "The CIA's conclusion was stark:"
+    },
+    {
+      "type": "pause",
+      "start_sec": 226.29,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 226.59,
+      "duration_sec": 7.567,
+      "end_sec": 234.156,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "the Soviets had developed a method of controlling the human mind. And the United States had to develop one too."
+    },
+    {
+      "type": "pause",
+      "start_sec": 234.156,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 234.956,
+      "duration_sec": 1.931,
+      "end_sec": 236.887,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "This was the birth of MKUltra."
+    },
+    {
+      "type": "pause",
+      "start_sec": 236.887,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 237.187,
+      "duration_sec": 9.643,
+      "end_sec": 246.83,
+      "word_count": 26,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And it would consume the next decade of Frank Olson's life \u2014 even though, in the beginning, he didn't fully understand what he was part of."
+    },
+    {
+      "type": "pause",
+      "start_sec": 246.83,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 251.83,
+      "duration_sec": 63.482,
+      "end_sec": 315.312,
+      "word_count": 147,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "CHAPTER 2: THE PROGRAM MKUltra was officially authorized by CIA Director Allen Dulles in April 1953. Its stated goal was the development of techniques for \"behavior modification\" \u2014 a clinical way of saying they wanted to learn how to control what people believed, what they said, and what they did. The program eventually involved 150 separate research projects. It funded experiments at 80 institutions, including 44 colleges and universities, 15 research foundations, and 12 hospitals. Most of the scientists involved had no idea their funding was coming from the CIA. They thought they were working on legitimate psychological research. The man who ran it all was Sidney Gottlieb. Gottlieb was 35 years old when he took over MKUltra. He had a PhD in chemistry from Caltech. He had a clubfoot and a stutter, and was by all accounts fiercely intelligent and almost frighteningly committed to the work."
+    },
+    {
+      "type": "pause",
+      "start_sec": 315.312,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 315.512,
+      "duration_sec": 43.577,
+      "end_sec": 359.089,
+      "word_count": 101,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "He believed, genuinely, that he was protecting the United States. That the Soviets would stop at nothing, and so neither could America. Under his direction, MKUltra tested virtually everything that might alter human consciousness. Hypnosis. Electroconvulsive therapy. Sensory deprivation. Drugs \u2014 dozens of different drugs, in dozens of combinations, administered to subjects who had no idea what was happening to them. LSD was the one they kept coming back to. The CIA had first gotten their hands on a large supply of LSD in 1953 \u2014 purchasing 10 kilograms from the Swiss pharmaceutical company Sandoz. That was approximately 100 million doses."
+    },
+    {
+      "type": "pause",
+      "start_sec": 359.089,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 359.389,
+      "duration_sec": 35.707,
+      "end_sec": 395.096,
+      "word_count": 89,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "More than enough to drug every single person in several major American cities. They wanted to know: could LSD be used to disorient an enemy? To make a soldier unfit to fight? To make a prisoner say things they'd never otherwise say? They needed human test subjects. They used mental patients. They used prisoners. They used prostitutes they hired to bring clients to CIA safe houses. They used U.S. soldiers who were told only that they were participating in a \"chemical warfare\" study. And they used their own people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 395.096,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 395.896,
+      "duration_sec": 11.557,
+      "end_sec": 407.453,
+      "word_count": 27,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "CIA employees, Army scientists, people with high security clearances \u2014 people who couldn't go public even if something went wrong. Frank Olson was one of those people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 407.453,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 412.453,
+      "duration_sec": 43.154,
+      "end_sec": 455.607,
+      "word_count": 100,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "CHAPTER 3: DEEP CREEK LAKE November 18, 1953. Frank Olson drives from Frederick, Maryland to a remote cabin at Deep Creek Lake in the mountains of western Maryland. It's a CIA safe house, used for off-site meetings where sensitive programs can be discussed without risk of surveillance. He's there with a group of CIA officers and Army scientists \u2014 all people with top-level clearances, all involved in the joint CIA-Army programs at Fort Detrick. The meeting goes two days. They discuss biological warfare. They discuss MKUltra. They discuss ongoing interrogation programs. On the evening of the second night, November 19th,"
+    },
+    {
+      "type": "pause",
+      "start_sec": 455.607,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 455.907,
+      "duration_sec": 5.565,
+      "end_sec": 461.472,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Sidney Gottlieb does something that will eventually shake the entire U.S. intelligence establishment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 461.472,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 462.272,
+      "duration_sec": 15.993,
+      "end_sec": 478.265,
+      "word_count": 40,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "He pours a large dose of LSD into the bottle of Cointreau that the group has been drinking from. He doesn't tell anyone. The men continue drinking. They continue talking. About 20 minutes later, when the drug is already working,"
+    },
+    {
+      "type": "pause",
+      "start_sec": 478.265,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 478.565,
+      "duration_sec": 4.705,
+      "end_sec": 483.27,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Gottlieb announces what he's done. He tells them it was an experiment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 483.27,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 483.57,
+      "duration_sec": 18.425,
+      "end_sec": 501.995,
+      "word_count": 48,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "He tells them not to worry. Some of the men find the situation funny. Others are disoriented but manage to ride it out. Frank Olson does not find it funny. Something happens to him that night that goes beyond a bad drug experience. Within hours, he's withdrawn. Quiet."
+    },
+    {
+      "type": "pause",
+      "start_sec": 501.995,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 502.295,
+      "duration_sec": 16.483,
+      "end_sec": 518.778,
+      "word_count": 44,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Disturbed in a way that doesn't lift. He calls his wife Alice the next morning and she notices something is wrong. He can't describe what it is. He just says he feels like he's made \"a terrible mistake.\" She assumes he means the conference."
+    },
+    {
+      "type": "pause",
+      "start_sec": 518.778,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 519.078,
+      "duration_sec": 1.451,
+      "end_sec": 520.529,
+      "word_count": 4,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "She assumes it'll pass."
+    },
+    {
+      "type": "pause",
+      "start_sec": 520.529,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 521.328,
+      "duration_sec": 32.654,
+      "end_sec": 553.983,
+      "word_count": 86,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "It doesn't pass. When he returns home to Frederick later that week, Alice can see immediately that her husband is not right. He's not sleeping. He's not eating. He's paranoid and disconnected. He tells her he wants to leave the program. He tells a colleague at Fort Detrick that he feels like he's in a \"fog.\" That he can't trust people. That he needs to get out. But here's the thing about Frank Olson that distinguishes him from the other men who were drugged that night."
+    },
+    {
+      "type": "pause",
+      "start_sec": 553.983,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 554.783,
+      "duration_sec": 4.094,
+      "end_sec": 558.877,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "He wasn't just upset about the LSD. He had seen other things."
+    },
+    {
+      "type": "pause",
+      "start_sec": 558.877,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 563.877,
+      "duration_sec": 54.885,
+      "end_sec": 618.762,
+      "word_count": 127,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "CHAPTER 4: WHAT HE KNEW Over the previous year, Frank Olson had been involved in programs that extended far beyond Fort Detrick. In 1952 and 1953, he had traveled to Europe on behalf of the CIA. He visited facilities in West Germany and the United Kingdom where the Agency was conducting interrogation experiments \u2014 using drugs, deprivation, and psychological techniques on suspected Soviet agents. According to research done decades later by his son Eric and investigative journalists, Olson witnessed at least one interrogation session in Europe that disturbed him deeply. Some accounts describe a prisoner who was drugged and subsequently killed \u2014 either because the experiment went wrong or because the CIA decided he needed to be silenced. Olson reportedly told at least one person about this."
+    },
+    {
+      "type": "pause",
+      "start_sec": 618.762,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 618.962,
+      "duration_sec": 21.544,
+      "end_sec": 640.506,
+      "word_count": 51,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "He had also seen documents and materials at Fort Detrick that suggested the United States had used biological weapons during the Korean War \u2014 anthrax and other agents deployed against North Korean and Chinese soldiers in ways that violated the Geneva Convention. This was a charge the U.S. government denied then"
+    },
+    {
+      "type": "pause",
+      "start_sec": 640.506,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 640.806,
+      "duration_sec": 9.365,
+      "end_sec": 650.171,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "and still denies today. But Frank Olson knew. And now he was cracking up. Saying he wanted to leave. Saying he'd made a terrible mistake."
+    },
+    {
+      "type": "pause",
+      "start_sec": 650.171,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 650.971,
+      "duration_sec": 54.228,
+      "end_sec": 705.199,
+      "word_count": 145,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "In the world of intelligence operations, this is what's known as a security risk. A man who knows too much, who's unstable, who wants out \u2014 that's a problem that needs to be solved. The CIA's response was not to let him get treatment. Not to let him see a doctor of his own choosing. Not to send him home to his family. They sent him to New York. They put him in the care of a CIA-cleared psychiatrist named Harold Abramson \u2014 a man who was himself deeply enmeshed in MKUltra research, who had been receiving CIA funding for his own LSD experiments for years. This was not care. This was containment. Over the next nine days, Olson traveled back and forth between Washington and New York. He stayed in hotels. He met with Abramson. He was accompanied at all times by CIA personnel."
+    },
+    {
+      "type": "pause",
+      "start_sec": 705.199,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 705.399,
+      "duration_sec": 33.659,
+      "end_sec": 739.058,
+      "word_count": 78,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "On November 24th, he flew to New York and met with Abramson again. Abramson's notes describe a man who was \"psychotic\" and \"needed hospitalization.\" But instead of hospitalizing him, the CIA arranged for him to fly to Europe \u2014 perhaps to be treated at another facility, perhaps for other reasons. The trip was planned but never happened. On the night of November 27th, Frank Olson and Robert Lashbrook checked into the Hotel Statler in midtown Manhattan. Room 1018A."
+    },
+    {
+      "type": "pause",
+      "start_sec": 739.058,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 739.358,
+      "duration_sec": 15.307,
+      "end_sec": 754.665,
+      "word_count": 41,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Tenth floor. Lashbrook told police the next morning that he had woken to a crash. That Olson had run across the room, pulled up the venetian blind, and dove through the closed window. He said he was asleep when it happened."
+    },
+    {
+      "type": "pause",
+      "start_sec": 754.665,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 38,
+      "start_sec": 754.965,
+      "duration_sec": 5.216,
+      "end_sec": 760.182,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "He said he saw nothing. But the investigators at the scene noticed something."
+    },
+    {
+      "type": "pause",
+      "start_sec": 760.182,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 39,
+      "start_sec": 760.982,
+      "duration_sec": 11.022,
+      "end_sec": 772.004,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "The venetian blind on the window was intact. If a man had run across a room and hurled himself through the glass, the blind should have been destroyed on impact."
+    },
+    {
+      "type": "pause",
+      "start_sec": 772.004,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 40,
+      "start_sec": 772.304,
+      "duration_sec": 8.526,
+      "end_sec": 780.83,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Instead it was simply raised \u2014 as if someone had carefully lifted it out of the way first. The glass had shattered outward."
+    },
+    {
+      "type": "pause",
+      "start_sec": 780.83,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 41,
+      "start_sec": 781.13,
+      "duration_sec": 8.59,
+      "end_sec": 789.72,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But there were also injuries on Olson's body that the original 1953 medical examiner didn't explain. No one asked questions."
+    },
+    {
+      "type": "pause",
+      "start_sec": 789.72,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 42,
+      "start_sec": 790.52,
+      "duration_sec": 3.556,
+      "end_sec": 794.076,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "The CIA had already called it a suicide. Case closed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 794.076,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 43,
+      "start_sec": 799.076,
+      "duration_sec": 11.988,
+      "end_sec": 811.064,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "CHAPTER 5: THE SILENCE For 22 years, nothing. Alice Olson was told her husband had suffered a mental breakdown and jumped. She was given a small government pension."
+    },
+    {
+      "type": "pause",
+      "start_sec": 811.064,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 44,
+      "start_sec": 811.364,
+      "duration_sec": 21.315,
+      "end_sec": 832.679,
+      "word_count": 59,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "She was told to move on. Her children \u2014 Eric, Lisa, and Nils \u2014 grew up without a father. They were told he had been ill. They were told it had been an accident of mental health. Eric was nine years old when his father died. He spent his entire childhood with the nagging sense that something wasn't right."
+    },
+    {
+      "type": "pause",
+      "start_sec": 832.679,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 45,
+      "start_sec": 832.979,
+      "duration_sec": 41.887,
+      "end_sec": 874.866,
+      "word_count": 97,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "That the story didn't add up. He was correct. In 1975, the United States Senate began investigating the CIA. The Church Committee, led by Senator Frank Church of Idaho, was conducting a sweeping review of intelligence agency abuses \u2014 illegal domestic surveillance, assassination plots, covert operations in foreign countries. And MKUltra. The Rockefeller Commission, which preceded the Church Committee, had already published a report that contained a detail almost buried in its appendices: a description of an Army employee who had been secretly dosed with LSD by the CIA and had subsequently died. The description was anonymized."
+    },
+    {
+      "type": "pause",
+      "start_sec": 874.866,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 46,
+      "start_sec": 875.166,
+      "duration_sec": 6.153,
+      "end_sec": 881.319,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But it was specific enough. Alice Olson recognized it immediately. She called her son Eric."
+    },
+    {
+      "type": "pause",
+      "start_sec": 881.319,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 47,
+      "start_sec": 882.119,
+      "duration_sec": 2.44,
+      "end_sec": 884.559,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "\"Eric,\" she said. \"It's your father.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 884.559,
+      "duration_sec": 3.0
+    },
+    {
+      "type": "speech",
+      "index": 48,
+      "start_sec": 887.559,
+      "duration_sec": 61.818,
+      "end_sec": 949.377,
+      "word_count": 145,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.0,
+      "text": "The revelation triggered a chain of events that would partially \u2014 only partially \u2014 crack open what had really happened. President Gerald Ford met personally with the Olson family in the Oval Office. He apologized. He expressed condolences. He said the government was deeply sorry for what had been done. CIA Director William Colby met with the family and provided a selection of documents. He was careful about which ones he gave them. He acknowledged that Frank Olson had been drugged without his consent. What he did not acknowledge was murder. The government's position, carefully maintained for years, was this: the LSD had caused a mental breakdown. The breakdown had caused a suicide. The CIA's culpability was in the drugging \u2014 not in the death itself. The family was offered $750,000 in compensation. Eric Olson did not accept this as the truth. He kept digging."
+    },
+    {
+      "type": "pause",
+      "start_sec": 949.377,
+      "duration_sec": 3.0
+    },
+    {
+      "type": "speech",
+      "index": 49,
+      "start_sec": 952.377,
+      "duration_sec": 34.473,
+      "end_sec": 986.85,
+      "word_count": 80,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.0,
+      "text": "In 1994, Eric Olson did something that takes an extraordinary kind of determination and grief. He had his father's body exhumed from its grave in Frederick, Maryland. He hired James Starrs, a professor of forensic science at George Washington University Law School and one of the leading forensic investigators in the country \u2014 a man who had previously worked on cases involving the exhumation of Jesse James and the Boston Strangler. Starrs and his team conducted a new, full autopsy."
+    },
+    {
+      "type": "pause",
+      "start_sec": 986.85,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 50,
+      "start_sec": 987.65,
+      "duration_sec": 10.384,
+      "end_sec": 998.034,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "What they found was this: Frank Olson had a significant hematoma \u2014 a bruise from internal bleeding \u2014 on the left side of his head, near his temple."
+    },
+    {
+      "type": "pause",
+      "start_sec": 998.034,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 51,
+      "start_sec": 999.234,
+      "duration_sec": 4.562,
+      "end_sec": 1003.796,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "This injury was inconsistent with a forward plunge through a window."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1003.796,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 52,
+      "start_sec": 1004.096,
+      "duration_sec": 19.658,
+      "end_sec": 1023.754,
+      "word_count": 49,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "It was inconsistent with the impact from falling ten stories. It was consistent with being struck by a blunt object before the fall. In Starrs's professional opinion, Frank Olson had been rendered unconscious \u2014 or close to it \u2014 before he went through that window. He had not jumped."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1023.754,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 53,
+      "start_sec": 1024.054,
+      "duration_sec": 2.656,
+      "end_sec": 1026.71,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "He had not run across the room and dove."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1026.71,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 54,
+      "start_sec": 1027.51,
+      "duration_sec": 1.235,
+      "end_sec": 1028.745,
+      "word_count": 4,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "Someone had hit him."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1028.745,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 55,
+      "start_sec": 1029.045,
+      "duration_sec": 2.273,
+      "end_sec": 1031.318,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And then put him through the glass."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1031.318,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 56,
+      "start_sec": 1032.518,
+      "duration_sec": 4.229,
+      "end_sec": 1036.747,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Starrs's conclusion was unambiguous: \"The evidence pointed toward a homicide.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 1036.747,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 57,
+      "start_sec": 1041.747,
+      "duration_sec": 58.291,
+      "end_sec": 1100.038,
+      "word_count": 135,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "CHAPTER 6: WHAT THEY'VE NEVER ADMITTED In 2012, Eric Olson filed a formal request with the Manhattan District Attorney's office to open a murder investigation into his father's death. The DA's office briefly opened an inquiry. They reviewed the forensic evidence. They interviewed witnesses who were still alive. And then they closed it again. No charges were filed. The explanation given was that too much time had passed. That the evidence, while suggestive, was not enough to support criminal prosecution. That the key witnesses \u2014 Lashbrook, Gottlieb, Abramson \u2014 were either dead or elderly. Sidney Gottlieb died in 1999, at the age of 80. He had retired to a farm in Virginia, where he spent his final years tending goats and practicing yoga. He gave occasional interviews in which he acknowledged his role in MKUltra."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1100.038,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 58,
+      "start_sec": 1100.238,
+      "duration_sec": 12.086,
+      "end_sec": 1112.324,
+      "word_count": 32,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "He said, publicly, that he had no regrets about the program \u2014 that he believed it had been necessary for the defense of the United States. He was never charged with anything."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1112.324,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 59,
+      "start_sec": 1112.624,
+      "duration_sec": 42.448,
+      "end_sec": 1155.072,
+      "word_count": 101,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Not the illegal drugging of thousands of Americans. Not the deaths of subjects who died during experiments. Not the death of Frank Olson. Robert Lashbrook, the CIA officer who was in the room when Frank Olson went through that window, died in 2014. He maintained his story to the end. He woke up. He heard a crash. He had no explanation. The CIA, in responses to journalists and documentary filmmakers, has consistently declined to comment on the specifics of Olson's death. They have acknowledged the LSD program. They have expressed regret for the abuses of MKUltra. They have never said murder."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1155.072,
+      "duration_sec": 3.0
+    },
+    {
+      "type": "speech",
+      "index": 60,
+      "start_sec": 1158.072,
+      "duration_sec": 59.647,
+      "end_sec": 1217.719,
+      "word_count": 141,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.0,
+      "text": "In 2017, Netflix released Wormwood, a six-part documentary series directed by Errol Morris. If you don't know Errol Morris, he's one of the greatest documentary filmmakers who has ever lived. The Fog of War. The Thin Blue Line \u2014 the documentary that got an innocent man out of prison. He spent years on Wormwood. The series reconstructed the Frank Olson case with new detail and rigor, using interviews with Eric Olson spanning decades, newly declassified documents, and dramatic reenactments. It made a compelling case that what happened at the Hotel Statler was not a suicide. The CIA responded with a statement that said, essentially, nothing. Eric Olson, now in his late seventies, continues to pursue the case. He has spent over five decades on this. Five decades trying to find out what happened to his father on one night in 1953."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1217.719,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 61,
+      "start_sec": 1222.719,
+      "duration_sec": 23.335,
+      "end_sec": 1246.054,
+      "word_count": 62,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "OUTRO There is a version of this story where Frank Olson was a tragedy of the Cold War. A man caught up in programs he didn't fully understand, drugged against his will, who broke under the pressure and took his own life. The CIA would prefer that version. But the evidence doesn't support it. The hematoma on his head doesn't support it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1246.054,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 62,
+      "start_sec": 1246.354,
+      "duration_sec": 2.955,
+      "end_sec": 1249.309,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The intact venetian blind doesn't support it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1249.309,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 63,
+      "start_sec": 1249.609,
+      "duration_sec": 6.137,
+      "end_sec": 1255.746,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The immediate phone call to Sidney Gottlieb from the room where he died doesn't support it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1255.746,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 64,
+      "start_sec": 1256.046,
+      "duration_sec": 5.88,
+      "end_sec": 1261.926,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The nine days of CIA surveillance and control that preceded his death don't support it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1261.926,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 65,
+      "start_sec": 1262.226,
+      "duration_sec": 3.852,
+      "end_sec": 1266.078,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The 22 years of official silence don't support it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1266.078,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 66,
+      "start_sec": 1266.878,
+      "duration_sec": 30.206,
+      "end_sec": 1297.083,
+      "word_count": 78,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "What the evidence does support is this: Frank Olson was a man who knew too much. He knew about the biological weapons programs. He knew about the interrogations in Europe. He knew what the CIA had done to American soldiers, mental patients, and prisoners in its obsessive search for mind control. And he wanted out. In the intelligence world, wanting out when you know what he knew is not a resignation letter you put in your desk drawer."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1297.083,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 67,
+      "start_sec": 1297.383,
+      "duration_sec": 30.602,
+      "end_sec": 1327.985,
+      "word_count": 78,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "It's a problem that needs to be solved. Eric Olson has said, in interview after interview, that he believes his father was murdered. Not as an act of madness. Not as a cover-up of a failed experiment. But as a deliberate act by people who had decided that Frank Olson's knowledge was more dangerous than his life. The files that might answer that question definitively are still classified. The full truth is still, as of this moment, unknown."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1327.985,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 68,
+      "start_sec": 1328.785,
+      "duration_sec": 7.103,
+      "end_sec": 1335.888,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "And so Frank Olson remains what he has been for over 70 years: A man the CIA killed, or didn't kill."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1335.888,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 69,
+      "start_sec": 1336.188,
+      "duration_sec": 2.111,
+      "end_sec": 1338.299,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A man who jumped, or was pushed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1338.299,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 70,
+      "start_sec": 1338.599,
+      "duration_sec": 10.026,
+      "end_sec": 1348.625,
+      "word_count": 27,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A man whose family has spent their entire lives demanding an answer from a government that has never fully given one. His son Eric is still asking."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1348.625,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 71,
+      "start_sec": 1349.825,
+      "duration_sec": 22.313,
+      "end_sec": 1372.138,
+      "word_count": 55,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "There is something that matters a great deal about that. About the fact that a man in his late seventies is still asking what happened to his father on a November morning in 1953. Still making calls. Still filing requests. Still pushing against a wall of government silence. Because this is not an old story."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1372.138,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 72,
+      "start_sec": 1372.438,
+      "duration_sec": 54.019,
+      "end_sec": 1426.457,
+      "word_count": 125,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "This is not ancient history. The programs that killed Frank Olson \u2014 MKUltra, the biological weapons experiments, the interrogation techniques developed at Fort Detrick \u2014 these programs were not the work of rogue agents or a single corrupt administration. They were authorized at the highest levels of the U.S. government. They involved hundreds of scientists, doctors, military officers, and intelligence officials who all made choices that harmed innocent people. And almost none of them faced any consequences at all. The lesson of Frank Olson is not that the CIA is uniquely evil, or that the government is always lying, or that you can't trust institutions. The lesson is simpler and harder than that. It's that powerful institutions will go to extraordinary lengths to protect themselves."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1426.457,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 73,
+      "start_sec": 1426.657,
+      "duration_sec": 21.457,
+      "end_sec": 1448.115,
+      "word_count": 53,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "That the people inside those institutions will make choices that seem justifiable in the moment \u2014 necessary, even patriotic \u2014 that look like something else entirely from the outside. And that the only force powerful enough to push back against that is people like Eric Olson. People who refuse to let it go."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1448.115,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 74,
+      "start_sec": 1448.415,
+      "duration_sec": 2.337,
+      "end_sec": 1450.752,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "People who keep asking the question."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1450.752,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 75,
+      "start_sec": 1451.552,
+      "duration_sec": 1.628,
+      "end_sec": 1453.179,
+      "word_count": 4,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "Frank Olson deserved better."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1453.179,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 76,
+      "start_sec": 1453.479,
+      "duration_sec": 1.641,
+      "end_sec": 1455.12,
+      "word_count": 4,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "His family deserved better."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1455.12,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 77,
+      "start_sec": 1455.42,
+      "duration_sec": 10.871,
+      "end_sec": 1466.291,
+      "word_count": 27,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And every person who was secretly drugged, experimented on, or harmed by the programs that ran through Fort Detrick and the CIA in those years deserved better."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1466.291,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 78,
+      "start_sec": 1467.491,
+      "duration_sec": 2.895,
+      "end_sec": 1470.386,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "The least we can do is remember their names."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1470.386,
+      "duration_sec": 5.0
+    }
+  ],
+  "total_duration_sec": 1475.386,
+  "out": "audio/frank_olson/narration.wav",
+  "word_count_total": 3425,
+  "avg_wpm": 139.3
+}

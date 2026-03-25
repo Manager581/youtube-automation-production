@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "module": "intros",
+  "description": "Hook strategies, expectation alignment, pacing, and exceeding expectations",
+
+  "principles": [
+    {
+      "id": "P-IN-01",
+      "rule": "90% of viewership graphs show a huge drop at the beginning because the intro fails to meet the expectations set by the title/thumbnail",
+      "implication": "The intro is the highest-stakes moment. It must immediately deliver on the promise."
+    },
+    {
+      "id": "P-IN-02",
+      "rule": "Create titles, thumbnails, and intros at the SAME TIME",
+      "implication": "After making the title/thumbnail, ask: What reason to watch did I create? What expectations did I set? Then make the intro immediately live up to those."
+    },
+    {
+      "id": "P-IN-03",
+      "rule": "Deliver BOTH the content and the FEELING promised by the title/thumbnail",
+      "implication": "An action thumbnail needs an action intro. A mystery thumbnail needs an immediate mystery setup."
+    },
+    {
+      "id": "P-IN-04",
+      "rule": "After meeting expectations, RAISE the bar by revealing MORE than the title/thumbnail promised",
+      "implication": "Sets a precedent that the rest of the video is worth watching. Builds viewer confidence."
+    }
+  ],
+
+  "tactics": {
+    "pacing_to_genre": {
+      "description": "Match intro pacing to the genre and thumbnail style",
+      "examples": [
+        {
+          "genre": "action/entertainment",
+          "pacing": "Ultra-fast — 5 words in the first second, immediate visual payoff",
+          "reference": "MrBeast: train emerging, horn sounds, yelling in first 2 seconds"
+        },
+        {
+          "genre": "casual/lighthearted",
+          "pacing": "Can be slower (22 seconds to explain), but pacing must match genre expectations",
+          "reference": "Frog pool video: slow explanation matched casual tone, still got 10M views"
+        },
+        {
+          "genre": "documentary/informational",
+          "pacing": "Medium — establish intrigue within 5-10 seconds, build tension",
+          "reference": "Open with the most dramatic moment or revelation, then context"
+        }
+      ],
+      "rule": "Create intros at the appropriate pacing for the genre and reflect the style seen in the thumbnail"
+    },
+    "voiceover_intros": {
+      "description": "Voiceovers enable strong audio AND strong visuals simultaneously",
+      "benefit": "Not constrained by talking head — can show the most compelling footage while delivering the hook",
+      "rule": "Use camera/visual switches every ~4 seconds to retain visual engagement"
+    },
+    "storytelling_intros": {
+      "description": "Present information in narrative order, not bland description",
+      "example": "Instead of 'A bear killed 3 people': introduce the animal, build tension, THEN reveal the deaths",
+      "rule": "Rewrite intros up to 5 times — every sentence must be as meaningful as possible"
+    },
+    "editing_enrichment": {
+      "description": "Pack the intro with production value",
+      "elements": [
+        "Graphics every few seconds",
+        "Sound effects on key moments",
+        "Captions for emphasis (3 words or less)",
+        "Transitions between visual elements",
+        "Properly matched music from the first frame"
+      ]
+    },
+    "exceed_expectations": {
+      "description": "After delivering on the promise, immediately raise the stakes",
+      "technique": "Reveal additional value beyond what the title/thumbnail promised",
+      "example": "MrBeast: delivered the train crash in 5 seconds, then immediately revealed additional experiments (fireworks in a house, etc.)",
+      "rule": "This sets the precedent that the viewer should stay for more surprises"
+    }
+  },
+
+  "checklists": {
+    "intro_quality": {
+      "description": "Score the first 30 seconds of every video",
+      "criteria": [
+        {"name": "expectation_match", "description": "Does the intro immediately address the promise made by title/thumbnail?", "weight": 0.25},
+        {"name": "feeling_match", "description": "Does the pacing/mood match the genre implied by the thumbnail?", "weight": 0.20},
+        {"name": "exceed_expectations", "description": "Does the intro reveal MORE than what was promised?", "weight": 0.15},
+        {"name": "visual_density", "description": "Are there new visuals every 4-5 seconds?", "weight": 0.15},
+        {"name": "audio_enrichment", "description": "Music, SFX, voiceover quality in first 30 seconds?", "weight": 0.10},
+        {"name": "no_filler", "description": "Zero wasted sentences? No 'hey guys' or 'welcome back'?", "weight": 0.15}
+      ]
+    }
+  },
+
+  "anti_patterns": [
+    {
+      "id": "AP-IN-01",
+      "mistake": "Intro doesn't match the expectations set by title/thumbnail",
+      "consequence": "Massive early drop-off — 90% of viewership graphs show this",
+      "fix": "Create title, thumbnail, and intro at the same time. Ask: what did I promise?"
+    },
+    {
+      "id": "AP-IN-02",
+      "mistake": "Slow intro for an action/entertainment video (or fast intro for calm genre)",
+      "consequence": "Pacing mismatch kills immersion",
+      "fix": "Match pacing to genre. Action = immediate payoff. Calm = measured setup."
+    },
+    {
+      "id": "AP-IN-03",
+      "mistake": "Asking for likes/subs in the intro",
+      "consequence": "Breaks immersion at the most critical moment",
+      "fix": "Never. Period."
+    },
+    {
+      "id": "AP-IN-04",
+      "mistake": "Bland descriptive opening instead of narrative storytelling",
+      "consequence": "No emotional hook — viewer processes information without caring",
+      "fix": "Present information in narrative order. Build tension before the reveal."
+    }
+  ],
+
+  "sources": [
+    "LearnByLeo: How to make intros that no one can look away from",
+    "LearnByLeo: How to get SO good at YouTube you can't stop going viral"
+  ]
+}

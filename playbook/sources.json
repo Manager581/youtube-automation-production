@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "description": "Attribution — which creator taught what, with video references",
+  "creators": [
+    {
+      "name": "LearnByLeo",
+      "channel_url": "https://www.youtube.com/@LearnByLeo",
+      "date_analyzed": "2026-03-24",
+      "videos_analyzed": 7,
+      "transcript_location": "~/Downloads/LearnByLeo/",
+      "videos": [
+        {
+          "title": "Every viral CLICKBAIT TACTIC explained (with examples)",
+          "id": "fACvktVGbL8",
+          "modules_informed": ["titles_thumbnails"],
+          "key_contributions": ["26 clickbait tactics", "thumbnail-as-idea-validation"]
+        },
+        {
+          "title": "How to be SO entertaining your videos can't stop going viral",
+          "id": "bhd9G77Fzlc",
+          "modules_informed": ["scripting", "retention_delivery"],
+          "key_contributions": ["green/purple formula", "4 curiosity methods", "but/therefore structure", "3-part litmus test", "camera presence techniques"]
+        },
+        {
+          "title": "How to get the video ideas the algorithm is looking for",
+          "id": "fDIjmwgHNuE",
+          "modules_informed": ["ideation"],
+          "key_contributions": ["popular vs unpopular areas of interest", "outlier concept transfer", "4-test validation checklist"]
+        },
+        {
+          "title": "How to edit SO good your viewers get addicted to your videos",
+          "id": "sLgHqZSe2o0",
+          "modules_informed": ["editing"],
+          "key_contributions": ["4-pillar editing formula", "6 attention guide techniques", "visual continuity rules", "5-layer sound design"]
+        },
+        {
+          "title": "How to get SO good at YouTube you can't stop going viral",
+          "id": "9j68t0a39Jk",
+          "modules_informed": ["ideation", "scripting", "intros", "editing", "retention_delivery"],
+          "key_contributions": ["water tank analogy", "complete YouTube process", "energy variation", "valuable fluff", "AI script writing warnings"]
+        },
+        {
+          "title": "How to make intros that no one can look away from",
+          "id": "HoMzNyXRp00",
+          "modules_informed": ["intros"],
+          "key_contributions": ["expectation alignment", "pacing to genre", "voiceover intros", "exceed expectations technique"]
+        },
+        {
+          "title": "How to literally force everyone to click your videos",
+          "id": "CQeh_f2zh3k",
+          "modules_informed": ["titles_thumbnails"],
+          "key_contributions": ["reason to watch principle", "title/thumbnail synergy", "spotlight elements", "thumbnail storytelling through subtlety"]
+        }
+      ]
+    }
+  ],
+  "extensibility_notes": "To add a new creator: download videos with yt-dlp, extract transcripts, analyze insights, merge into existing modules, and add attribution entry here."
+}

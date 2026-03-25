@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "module": "titles_thumbnails",
+  "description": "Click optimization: 26 clickbait tactics, title formulas, thumbnail design, synergy rules",
+
+  "principles": [
+    {
+      "id": "P-TT-01",
+      "rule": "The reason to watch must be immediately apparent — if it takes longer than 1 second to think of a reason, the title/thumbnail is failing",
+      "implication": "Simplicity and clarity trump cleverness."
+    },
+    {
+      "id": "P-TT-02",
+      "rule": "Titles and thumbnails must BUILD OFF one another, not repeat the same information",
+      "implication": "Repeating is 'too slow' — viewers scanning competing videos will click something faster. Use both to deliver complementary hooks."
+    },
+    {
+      "id": "P-TT-03",
+      "rule": "Create thumbnails from SCRATCH — never use frames from the actual video",
+      "implication": "Separate photographs/images give you full control over composition, mood, and messaging."
+    },
+    {
+      "id": "P-TT-04",
+      "rule": "The thumbnail should intrigue BEFORE the title is read",
+      "implication": "Aim for the thumbnail alone to be compelling enough to watch."
+    },
+    {
+      "id": "P-TT-05",
+      "rule": "The 26 clickbait tactics also serve as criteria for a good video idea",
+      "implication": "If you cannot apply these tactics to a title/thumbnail, the idea itself may not be viable."
+    }
+  ],
+
+  "tactics": {
+    "twenty_six_click_tactics": [
+      {"id": 1, "tactic": "Make thumbnails from scratch", "description": "Never use frames from the actual video. Represent what happens rather than showing literally."},
+      {"id": 2, "tactic": "Depict something alarming", "description": "Exploit the bias that immediate attention goes toward danger."},
+      {"id": 3, "tactic": "Look special/novel", "description": "Unique art styles suggest unique information."},
+      {"id": 4, "tactic": "Maximize brightness contrast", "description": "Make the subject pop against the background."},
+      {"id": 5, "tactic": "Show something/someone familiar", "description": "Exploit recognition bias — emojis, celebrities, well-known brands grab attention first."},
+      {"id": 6, "tactic": "Suggest the viewer is making a mistake or in danger", "description": "Create fear of missing out on important information."},
+      {"id": 7, "tactic": "Focus on the 1-2 most intriguing parts", "description": "Don't describe the whole video, just what makes it interesting."},
+      {"id": 8, "tactic": "Thumbnail should intrigue before the title is read", "description": "Standalone visual intrigue."},
+      {"id": 9, "tactic": "Make it scannable in 1 second", "description": "On mobile, the thumbnail auto-plays after 1 second of not scrolling."},
+      {"id": 10, "tactic": "Maximize color contrast", "description": "Every color, saturation level, and brightness must be deliberate."},
+      {"id": 11, "tactic": "Suggest someone is hiding a secret", "description": "Creates irresistible curiosity."},
+      {"id": 12, "tactic": "Help viewers reach their goals or alleviate pain points", "description": "Direct value proposition."},
+      {"id": 13, "tactic": "Give an accurate stylistic impression", "description": "Artistic thumbnails build trust in video quality."},
+      {"id": 14, "tactic": "Perfect clarity always", "description": "Clarity with uncertainty (I know what's happening but not what happens next) vs confusion (I don't know what's happening). Confusion kills everything."},
+      {"id": 15, "tactic": "Develop a mystery/sense of wonder", "description": "Thought-provoking questions."},
+      {"id": 16, "tactic": "Frame the ordinary as extraordinary", "description": "Word choice matters — spend time finding the best synonyms."},
+      {"id": 17, "tactic": "Promise a spectacle", "description": "Create FOMO with deliberate thumbnail elements."},
+      {"id": 18, "tactic": "Create a puzzle with a missing piece", "description": "Works best when the missing piece feels alarming/important."},
+      {"id": 19, "tactic": "Challenge beliefs or suggest viewers are misinformed", "description": "People click to confirm or deny their beliefs."},
+      {"id": 20, "tactic": "Leverage brand trust", "description": "Use recognized faces/brands for recognition and trust."},
+      {"id": 21, "tactic": "Share proof/evidence", "description": "Credentials, official documents, military technique, etc."},
+      {"id": 22, "tactic": "Introduce an unsolved problem", "description": "Viewers want to see problems solved."},
+      {"id": 23, "tactic": "Share something surprising or counterintuitive", "description": "Defies expectations."},
+      {"id": 24, "tactic": "Facial expressions reacting to something", "description": "Shock and fear are most effective — they imply something extraordinary happened."},
+      {"id": 25, "tactic": "Show a situation with an unknown before or after", "description": "Viewer needs to know what happened next (or before)."},
+      {"id": 26, "tactic": "Make people think 'there is no freaking way'", "description": "Do something extraordinary."}
+    ],
+    "thumbnail_spotlight_elements": {
+      "description": "Three elements that draw the most attention in thumbnails",
+      "elements": [
+        {"name": "expressive_face", "description": "Humans are naturally drawn to faces. Shock and fear expressions are most effective."},
+        {"name": "familiar_object", "description": "Recognized brands, logos, items create instant recognition."},
+        {"name": "short_text", "description": "Keep it brief — never use text for full explanations. 1-3 words max."}
+      ]
+    },
+    "thumbnail_storytelling": {
+      "description": "Use visual subtlety to tell a story in the thumbnail",
+      "techniques": [
+        {"technique": "color_psychology", "description": "Warm colors (orange/red) = excitement/survival/danger. Cool colors (blue/green) = calm/intelligence. Match target demographic."},
+        {"technique": "contextual_text", "description": "Text like 'Day 2' or '41 minutes in' builds excitement and implies a journey."},
+        {"technique": "posture_setting_lighting", "description": "Body language, environment, and lighting tell a story without words."},
+        {"technique": "visual_guides", "description": "Arrows, circles, and borders guide the viewer's eye in a specific order."}
+      ]
+    },
+    "title_optimization": {
+      "description": "Title writing rules for maximum CTR",
+      "rules": [
+        "Put the most important and interesting words at the START of the title",
+        "Use short, common words with clear meanings",
+        "Be dramatic and creative with wording — do not title literally",
+        "Title as the 'driving question' rather than describing what happens",
+        "Use thesaurus.com and ChatGPT to find better word choices",
+        "Questions work well as titles — they create curiosity",
+        "Add extra context that the thumbnail can't convey"
+      ]
+    }
+  },
+
+  "checklists": {
+    "title_thumbnail_score": {
+      "description": "Score a title/thumbnail pair before committing to production",
+      "criteria": [
+        {"name": "one_second_scan", "description": "Can you understand the reason to watch in under 1 second?", "weight": 0.20},
+        {"name": "complementary_info", "description": "Do title and thumbnail deliver different but complementary hooks?", "weight": 0.15},
+        {"name": "tactic_count", "description": "How many of the 26 tactics does this pair use? Target: 3+", "weight": 0.15},
+        {"name": "clarity_vs_confusion", "description": "Is it clear WHAT is happening but uncertain WHAT happens next?", "weight": 0.15},
+        {"name": "curiosity_strength", "description": "Does it create a strong 'I need to know' feeling?", "weight": 0.15},
+        {"name": "standalone_thumbnail", "description": "Does the thumbnail intrigue even without the title?", "weight": 0.10},
+        {"name": "word_quality", "description": "Are title words short, common, dramatic, and front-loaded?", "weight": 0.10}
+      ]
+    }
+  },
+
+  "anti_patterns": [
+    {
+      "id": "AP-TT-01",
+      "mistake": "Title and thumbnail repeat the same information",
+      "consequence": "Only delivers one reason to watch instead of two. Slower than competitors.",
+      "fix": "Make them complementary — each adds a new hook or question."
+    },
+    {
+      "id": "AP-TT-02",
+      "mistake": "Using video screenshots as thumbnails",
+      "consequence": "No control over composition, mood, or messaging",
+      "fix": "Create thumbnails from separate photographs/images built from scratch."
+    },
+    {
+      "id": "AP-TT-03",
+      "mistake": "Putting the least interesting words first in the title",
+      "consequence": "Titles get truncated on mobile — viewers never see the good part",
+      "fix": "Front-load the most compelling words."
+    },
+    {
+      "id": "AP-TT-04",
+      "mistake": "Titling the video literally instead of as a driving question",
+      "consequence": "No curiosity generated — viewer feels they already know the content",
+      "fix": "Frame the title as the question the viewer will want answered."
+    }
+  ],
+
+  "sources": [
+    "LearnByLeo: Every viral CLICKBAIT TACTIC explained (with examples)",
+    "LearnByLeo: How to literally force everyone to click your videos",
+    "LearnByLeo: How to get SO good at YouTube you can't stop going viral"
+  ]
+}

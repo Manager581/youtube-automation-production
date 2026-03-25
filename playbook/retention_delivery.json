@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "module": "retention_delivery",
+  "description": "Camera presence, vocal delivery, storytelling through uncertainty, communication clarity",
+
+  "principles": [
+    {
+      "id": "P-RD-01",
+      "rule": "The biggest mistake across small creators is CONFUSION — you have full context, the viewer has zero",
+      "implication": "Revisit every part ~100 times to find any way to make it easier to understand. Have someone else watch before posting."
+    },
+    {
+      "id": "P-RD-02",
+      "rule": "Intrigue comes from uncertainty — the key to turning boring videos into captivating stories",
+      "implication": "Establish danger, inexperience, and potential failure to make even mundane sequences compelling."
+    },
+    {
+      "id": "P-RD-03",
+      "rule": "Whatever emotion you put into your voice is contagious",
+      "implication": "Vocal delivery is as important as the words. Monotone kills even great scripts."
+    },
+    {
+      "id": "P-RD-04",
+      "rule": "Every single thing discussed should have an accompanying visual",
+      "implication": "Zoom/pan to exactly what the viewer should look at. Never leave them guessing what to focus on."
+    }
+  ],
+
+  "tactics": {
+    "three_part_litmus_test": {
+      "description": "Ryan Trahan's test for every scene — if any answer is 'no', fix or cut the scene",
+      "questions": [
+        {"question": "Does the viewer know what is happening?", "if_no": "Add context or explanation"},
+        {"question": "Do they know why it is important?", "if_no": "Establish stakes or consequences"},
+        {"question": "Do they know what could go wrong?", "if_no": "Introduce uncertainty, danger, or risk"}
+      ],
+      "rule": "If you cannot create curiosity/expectations for a scene, cut it out or summarize with a single voiceover sentence"
+    },
+    "vocal_delivery": {
+      "description": "Voice techniques that make content sound important and engaging",
+      "techniques": [
+        {"technique": "volume_for_excitement", "description": "Speak louder to convey excitement or urgency"},
+        {"technique": "lower_for_suspense", "description": "Lower your voice to create suspense and draw the listener in"},
+        {"technique": "pause_for_anticipation", "description": "Pause before big reveals to build anticipation"},
+        {"technique": "pace_variation", "description": "Speed up for excitement, slow down for gravity"}
+      ],
+      "automation_hint": "Map to voice_generator.py emotion registers: neutral (measured), tense (lower, slower), energized (louder, faster)"
+    },
+    "physical_presence": {
+      "description": "Body language cues for talking-head or presentation videos",
+      "techniques": [
+        "Raise eyebrows for interest/surprise",
+        "Squint for examining detail",
+        "Head movement synced with word emphasis",
+        "Hand gestures to separate ideas visually"
+      ],
+      "note": "Not directly applicable to documentary style, but relevant for any future face-to-camera content"
+    },
+    "communication_clarity": {
+      "description": "Making abstract ideas tangible and easy to understand",
+      "techniques": [
+        {
+          "technique": "analogies",
+          "description": "Turn abstract ideas into vivid, tangible concepts",
+          "example": "The Water Tank analogy for viewer interest"
+        },
+        {
+          "technique": "examples",
+          "description": "Always follow a principle with a concrete example",
+          "rule": "Never state a rule without showing it in action"
+        },
+        {
+          "technique": "visual_communication",
+          "description": "Every single thing discussed should have an accompanying visual. Zoom/pan to exactly what the viewer should look at.",
+          "automation_hint": "Storyboard must have a visual for every narration segment. No 'blank' moments."
+        },
+        {
+          "technique": "first_time_viewer_test",
+          "description": "Assume the viewer has ZERO context. No jargon without explanation. No assumed knowledge.",
+          "automation_hint": "Script QA should flag domain-specific terms without explanation."
+        }
+      ]
+    },
+    "camera_shyness_fix": {
+      "description": "Treat the camera like a close friend who is interested in what you're saying",
+      "mindset": "Focus on sharing the message, not on performing perfectly. Allow mistakes — they can be cut. Authentic excitement beats flawless monotone."
+    },
+    "algorithm_strategy": {
+      "description": "The algorithm is simple: if people click and watch, it promotes more",
+      "implication": "Success = make videos people click on AND watch, better than everyone else. Study what gets the most views in your niche, determine what your audience values, then provide that value better.",
+      "formula": "Click (title/thumbnail) + Watch (content/editing) = Algorithm promotion"
+    }
+  },
+
+  "checklists": {
+    "retention_score": {
+      "description": "Score a video's retention potential before publishing",
+      "criteria": [
+        {"name": "litmus_test_pass", "description": "Does every scene pass the 3-question litmus test?", "weight": 0.20},
+        {"name": "zero_confusion", "description": "Would a first-time viewer understand everything?", "weight": 0.20},
+        {"name": "visual_coverage", "description": "Does every narration segment have an accompanying visual?", "weight": 0.15},
+        {"name": "vocal_variation", "description": "Does vocal delivery vary (volume, pace, pitch) across sections?", "weight": 0.15},
+        {"name": "uncertainty_present", "description": "Is there uncertainty/tension driving the viewer forward?", "weight": 0.15},
+        {"name": "analogies_examples", "description": "Are abstract concepts explained with analogies or examples?", "weight": 0.15}
+      ]
+    }
+  },
+
+  "anti_patterns": [
+    {
+      "id": "AP-RD-01",
+      "mistake": "Assuming the viewer has context you have",
+      "consequence": "Confusion — and confusion kills everything. Viewers leave immediately.",
+      "fix": "Have someone else watch. They will ALWAYS find confusing or boring moments."
+    },
+    {
+      "id": "AP-RD-02",
+      "mistake": "Monotone vocal delivery regardless of content",
+      "consequence": "Even important revelations fall flat. Viewer disengages.",
+      "fix": "Vary volume, pace, and pitch. Louder for excitement, lower for suspense, pause for anticipation."
+    },
+    {
+      "id": "AP-RD-03",
+      "mistake": "Narrating without corresponding visuals",
+      "consequence": "Viewer's eyes wander. They check their phone. Attention lost.",
+      "fix": "Every single thing discussed must have an accompanying visual."
+    },
+    {
+      "id": "AP-RD-04",
+      "mistake": "Scenes that lack purpose or curiosity",
+      "consequence": "Dead weight that trains viewers to expect boredom",
+      "fix": "Apply 3-question litmus test. If it fails, cut or summarize in one sentence."
+    }
+  ],
+
+  "sources": [
+    "LearnByLeo: How to be SO entertaining your videos can't stop going viral",
+    "LearnByLeo: How to get SO good at YouTube you can't stop going viral"
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "module": "scripting",
+  "description": "Script structure, retention patterns, pacing, and writing techniques",
+
+  "principles": [
+    {
+      "id": "P-SC-01",
+      "rule": "The Green/Purple Script Formula: alternate between curiosity-building sections (green) and payoff sections (purple)",
+      "implication": "Without a green section first, the purple section is just boring information instead of a satisfying answer.",
+      "structure": "Green → Purple → Green → Purple throughout the entire video",
+      "green_types": ["problem", "mystery", "question", "expectation", "obstacle"],
+      "purple_types": ["answer", "solution", "payoff", "resolution", "reveal"]
+    },
+    {
+      "id": "P-SC-02",
+      "rule": "The Water Tank analogy: viewers start at full interest which drains quickly. Refill by consistently delivering value.",
+      "implication": "Spread key points evenly throughout. Never cluster all value at the beginning or end.",
+      "drain_rates": {
+        "entertainment_young": "20 seconds between refills",
+        "educational_adult": "2-3 minutes between refills"
+      }
+    },
+    {
+      "id": "P-SC-03",
+      "rule": "The But/Therefore structure beats And/Then structure",
+      "bad_example": "This happened AND then this happened AND then this happened",
+      "good_example": "We tried this, BUT that got in the way. THEREFORE, we had to do this, BUT it didn't work. SO, we tried this.",
+      "implication": "Creates seamless flow with no exit points. Applies to scenes, topics, AND individual sentences."
+    },
+    {
+      "id": "P-SC-04",
+      "rule": "Explain as simply as possible — a 10-min video that could have been 3 minutes will be boring",
+      "caveat": "But trimming too far makes it chaotic and soulless. Find the sweet spot.",
+      "implication": "Every sentence must earn its place. If it doesn't add value, cut it."
+    },
+    {
+      "id": "P-SC-05",
+      "rule": "Make it feel like a natural conversation, not a textbook",
+      "techniques": ["analogies", "examples", "stories", "questions", "humor"],
+      "implication": "AI writes like books. Always rewrite AI output to sound conversational."
+    }
+  ],
+
+  "tactics": {
+    "four_curiosity_methods": {
+      "description": "Four ways to create curiosity for green sections",
+      "methods": [
+        {
+          "name": "mystery",
+          "description": "Create a mystery or present a problem/question lacking an answer",
+          "example": "But there was one detail that didn't add up..."
+        },
+        {
+          "name": "counterintuitive",
+          "description": "Say something surprising or counterintuitive",
+          "example": "The safest country in the world has the highest murder rate for one specific crime..."
+        },
+        {
+          "name": "secret",
+          "description": "Reveal that someone knows a secret",
+          "example": "The CIA knew exactly what happened, but they buried the evidence for 20 years..."
+        },
+        {
+          "name": "missing_piece",
+          "description": "Suggest there is a missing component or something important not yet considered",
+          "example": "But everyone was overlooking the most obvious clue..."
+        }
+      ]
+    },
+    "valuable_fluff": {
+      "description": "Ryan Trahan technique: extend videos by ADDING value, not stretching content",
+      "methods": [
+        "Add humor that reinforces the point",
+        "Add personal connections or relatable tangents",
+        "Add interesting side stories that enrich the main narrative",
+        "Add analogies that make abstract concepts vivid"
+      ],
+      "anti_pattern": "Never pad runtime by repeating the same point in different words"
+    },
+    "uncertainty_storytelling": {
+      "description": "Intrigue comes from uncertainty — the key to turning boring videos into captivating stories",
+      "litmus_test": [
+        "Does the viewer know what is happening?",
+        "Do they know why it is important?",
+        "Do they know what could go wrong?"
+      ],
+      "rule": "If you cannot create curiosity/expectations for a scene, cut it or summarize with a voiceover sentence"
+    },
+    "pockets_of_dopamine": {
+      "description": "Plan quick breaks throughout the video to prevent overwhelming the viewer",
+      "types": ["editing flourishes", "montages", "jokes", "visual gags", "sound design moments"],
+      "placement": "Spread evenly — prevents viewer fatigue during dense informational sections"
+    },
+    "energy_variation": {
+      "description": "Vary the energy level throughout — contrast between sections forces viewers back into focus",
+      "pattern": "Hype-edited section → mellow A-roll → hype section → calm reflection",
+      "rule": "Mood should fluctuate: excitement to worry to joy to unease"
+    }
+  },
+
+  "checklists": {
+    "script_quality": {
+      "description": "Score every script against these criteria before production",
+      "criteria": [
+        {
+          "name": "green_purple_ratio",
+          "description": "Does the script alternate between curiosity and payoff?",
+          "target": "Every purple section preceded by a green section",
+          "weight": 0.20
+        },
+        {
+          "name": "water_tank_pacing",
+          "description": "Are value moments spread evenly throughout?",
+          "target": "No gap longer than 2-3 minutes without a refill",
+          "weight": 0.15
+        },
+        {
+          "name": "but_therefore_flow",
+          "description": "Does the narrative use causal connections, not just sequential listing?",
+          "target": "Minimize 'and then' chains; maximize 'but/therefore/so' connections",
+          "weight": 0.15
+        },
+        {
+          "name": "conversational_tone",
+          "description": "Does it sound like a person talking, not a textbook?",
+          "target": "Contains analogies, questions, examples, stories",
+          "weight": 0.10
+        },
+        {
+          "name": "trim_test",
+          "description": "Could the video be significantly shorter without losing value?",
+          "target": "Every paragraph earns its place. No repetition disguised as emphasis.",
+          "weight": 0.15
+        },
+        {
+          "name": "energy_variation",
+          "description": "Does the energy level vary throughout?",
+          "target": "At least 3-4 energy shifts across the video",
+          "weight": 0.10
+        },
+        {
+          "name": "clarity",
+          "description": "Would a first-time viewer with zero context understand everything?",
+          "target": "No jargon without explanation, no assumed knowledge",
+          "weight": 0.15
+        }
+      ]
+    }
+  },
+
+  "anti_patterns": [
+    {
+      "id": "AP-SC-01",
+      "mistake": "Dumping information without creating curiosity first",
+      "consequence": "Viewer has no reason to care about the answer",
+      "fix": "Always set up the question (green) before delivering the answer (purple)"
+    },
+    {
+      "id": "AP-SC-02",
+      "mistake": "Using AI to write the full script",
+      "consequence": "AI writes like books, not like conversational YouTube. Sounds robotic.",
+      "fix": "Use AI for vocabulary, shortening sentences, and flow — but never the full script"
+    },
+    {
+      "id": "AP-SC-03",
+      "mistake": "Asking for likes/subs in the intro",
+      "consequence": "Breaks immersion at the most critical retention moment",
+      "fix": "Never ask in intro. If at all, mid-video after delivering value."
+    },
+    {
+      "id": "AP-SC-04",
+      "mistake": "Having an outro",
+      "consequence": "The second half drops off because viewers sense the ending",
+      "fix": "Keep the second half just as good. No wind-down, no 'thanks for watching'."
+    },
+    {
+      "id": "AP-SC-05",
+      "mistake": "Sequential 'and then' structure",
+      "consequence": "Feels like a list, not a story. Viewers disengage.",
+      "fix": "Use but/therefore/so connections to create causal flow"
+    }
+  ],
+
+  "sources": [
+    "LearnByLeo: How to be SO entertaining your videos can't stop going viral",
+    "LearnByLeo: How to get SO good at YouTube you can't stop going viral"
+  ]
+}

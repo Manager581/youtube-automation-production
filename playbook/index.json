@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "description": "Master index mapping pipeline stages to playbook modules",
+  "pipeline_mapping": {
+    "topic_radar": {
+      "modules": ["ideation"],
+      "usage": "Score topic ideas against audience interest tests, breadth check, outlier potential"
+    },
+    "research_brief": {
+      "modules": ["ideation"],
+      "usage": "Ensure research covers audience pain points, goals, and curiosity triggers"
+    },
+    "story_validator": {
+      "modules": ["ideation", "titles_thumbnails"],
+      "usage": "Apply 4-test checklist: fresh perspective, originality, best option, title/thumbnail viability"
+    },
+    "script_generation": {
+      "modules": ["scripting", "retention_delivery"],
+      "usage": "Structure script with green/purple pattern, water tank pacing, but/therefore flow"
+    },
+    "script_enhancer": {
+      "modules": ["scripting", "intros"],
+      "usage": "Verify intro meets expectations, add curiosity gaps, check energy variation"
+    },
+    "check_fern_script": {
+      "modules": ["scripting", "intros", "retention_delivery"],
+      "usage": "Score script against playbook retention criteria in addition to Fern metrics"
+    },
+    "storyboard_generator": {
+      "modules": ["editing", "retention_delivery"],
+      "usage": "Apply visual variety rules, plan B-roll density, attention guide techniques"
+    },
+    "director": {
+      "modules": ["editing", "intros", "retention_delivery"],
+      "usage": "Energy variation, sound design layers, visual continuity, deliberate continuity breaks"
+    },
+    "video_assembler": {
+      "modules": ["editing"],
+      "usage": "Enforce cut frequency, visual variety ratios, sound design density, color grading mood"
+    },
+    "title_generation": {
+      "modules": ["titles_thumbnails"],
+      "usage": "Apply 26-tactic checklist, title word optimization, synergy with thumbnail"
+    },
+    "thumbnail_generation": {
+      "modules": ["titles_thumbnails"],
+      "usage": "Apply spotlight elements, color psychology, 1-second scan test, composition rules"
+    },
+    "voice_generator": {
+      "modules": ["retention_delivery"],
+      "usage": "Vocal delivery variation — louder for excitement, lower for suspense, pauses for anticipation"
+    }
+  },
+  "sources": ["LearnByLeo"]
+}
