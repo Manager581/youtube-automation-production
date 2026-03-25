@@ -84,18 +84,24 @@ Key rules for the pipeline:
 - C-SPAN non-floor coverage requires license
 - Content ID claim ≠ strike (claim = shared revenue, strike = video removal)
 
-## What's Still Broken / Not Done
+## What Was Completed This Session
 
-### Immediate (should do next)
-1. **Script v4 rewrite** — Address blind review: back half, CTA woven in, character callbacks, thesis line, tonal break
-2. **Chrome-powered visual sourcer** — Use Chrome MCP to search Google Images, verify with Claude Vision, download best matches. User explicitly does NOT want Pixabay/Pexels (garbage for documentary B-roll).
-3. **Clip verifier** — Extract frames from video clips at intervals, have Claude verify content matches script segment
-4. **Fair use safety rails** — Max clip duration, mandatory narration overlay, source attribution, mute source audio
+### All Done ✅
+1. **Script v4 rewrite** — Blind review 70→80. Added: Diane's story (callback), shoe-size tonal break, thesis line, CTA woven into stories.
+2. **Chrome-powered visual sourcer** (`pipeline/web_image_sourcer.py`) — Searches government archives + web, verifies with Claude Vision, downloads best matches. No Pixabay/Pexels.
+3. **Clip verifier** (`pipeline/clip_verifier.py`) — Extracts frames at intervals, Claude Vision confirms content match. Finds best 3-5s segment.
+4. **Fair use guard** (`pipeline/fair_use_guard.py`) — Max 5s clips, mandatory narration, mute source audio, 2+ transformative layers, attribution logging.
+5. **Orchestrator wiring** — Playbook quality gates at qa_script, director, footage, and assemble stages.
+6. **Bug fixes** — SFX file mapping (7 missing files), logging import, black frame warnings.
 
-### Architecture
-5. **Wire playbook into orchestrator** (`run_pipeline.py`) — Add quality gates at each stage
-6. **Final verification loop** — Scene-by-scene review before export
-7. **Multi-source image integration** — Wire `source_images_free.py` approach into main pipeline
+## What's Still Not Done
+
+### Next Session Should Do
+1. **End-to-end test run** — Run the full pipeline on Secret Scores v4 to find remaining issues
+2. **Final verification loop** — Scene-by-scene review before export (preview each segment)
+3. **Multi-source image integration** — Wire `source_images_free.py` approach deeper into footage_sourcer.py
+4. **SFX library expansion** — Download more CC0 SFX to fill gaps (currently thin on impacts/glass)
+5. **Merge decision** — When ready, merge `feature/learnbyleo-integration` into main working branch
 
 ## Tools & Access
 - **Claude Max** subscription (Opus available via `claude` CLI)
