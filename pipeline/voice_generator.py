@@ -53,8 +53,8 @@ from typing import Optional
 # Constants — Fern production spec
 # ---------------------------------------------------------------------------
 TARGET_WPM       = 138.7   # Fern's measured avg across 3 videos (127 / 151 / 138)
-CHUNK_WORD_LIMIT = 150     # target words per F5-TTS chunk
-CHUNK_WORD_MIN   = 15      # don't make a chunk this tiny
+CHUNK_WORD_LIMIT = 35      # target words per F5-TTS chunk (was 150 — caused tensor size crashes)
+CHUNK_WORD_MIN   = 8       # don't make a chunk this tiny
 
 # Default pause durations (seconds)
 PAUSE_BEAT   = 0.30
