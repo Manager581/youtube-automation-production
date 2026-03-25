@@ -461,11 +461,34 @@ def stage_enhance(state: dict) -> bool:
 
 
 def stage_qa_script(state: dict) -> bool:
-    """Run check_fern_script.py and show score."""
+    """Run check_fern_script.py AND playbook structure analyzer."""
     print_header(state, "qa_script")
 
     slug     = state["slug"]
     enhanced = state["paths"].get("script_enhanced", f"scripts/enhanced_{slug}.txt")
+
+    # ── Playbook Structure Analysis (LearnByLeo-derived) ──
+    inform("Running playbook structure analysis (green/purple, pacing, flow)…", "info")
+    pb_rc, pb_output = run_live([
+        PYTHON, "-m", "pipeline.script_structure_analyzer",
+        enhanced, "--title", state.get("topic", ""),
+    ], "playbook_analyzer")
+
+    # Extract playbook composite score
+    pb_score = None
+    for line in pb_output.splitlines():
+        m = re.search(r"COMPOSITE:\s+([\d.]+)/100", line)
+        if m:
+            pb_score = float(m.group(1))
+
+    if pb_score is not None:
+        pb_color = GR if pb_score >= 80 else (YL if pb_score >= 65 else RD)
+        print(f"\n  {BOLD}Playbook score:  {pb_color}{BOLD}{pb_score:.1f}/100{R}")
+        if pb_score < 65:
+            inform("Script structure needs work — green/purple pattern or energy variation may be weak.", "warn")
+        print()
+
+    # ── Fern Benchmark Analysis ──
 
     inform("Scoring script against Fern benchmarks…", "info")
     rc, output = run_live([PYTHON, "check_fern_script.py", enhanced])
@@ -574,6 +597,19 @@ def stage_director(state: dict) -> bool:
             n_seg = d.get("segment_count", "?")
             n_sc  = d.get("scene_count", "?")
             n_sfx = d.get("sfx_count", 0)
+
+            # Show playbook audit if present
+            audit = d.get("playbook_audit")
+            if audit and "scores" in audit:
+                print(f"\n  {BOLD}Playbook Editing Audit — {audit.get('overall_percent', '?')}{R}")
+                for k, v in audit["scores"].items():
+                    bar = "█" * int(v * 20) + "░" * (20 - int(v * 20))
+                    color = GR if v >= 0.8 else (YL if v >= 0.6 else RD)
+                    print(f"  {k:25s} {color}{bar}{R} {v*100:.0f}%")
+                if audit.get("warnings"):
+                    for w in audit["warnings"]:
+                        print(f"  {YL}⚠ [{w['rule']}] {w['issue']}{R}")
+                print()
         except Exception:
             n_seg, n_sc, n_sfx = "?", "?", "?"
         step_done(f"Director → {sb_out}  ({n_seg} segments, {n_sc} scenes, {n_sfx} SFX)")
@@ -758,6 +794,50 @@ def stage_footage(state: dict) -> bool:
     except Exception:
         pass
 
+    # ── Web image sourcing (Chrome-powered, Claude Vision verified) ──────────
+    try:
+        from pipeline.web_image_sourcer import WebImageSourcer
+        inform("Running web image sourcer — searching government archives + web…", "info")
+        web_sourcer = WebImageSourcer(output_dir=f"{out_dir}/web_sourced")
+
+        # Load storyboard segments for targeted search
+        if Path(storyboard).exists():
+            sb_data = json.loads(Path(storyboard).read_text())
+            if isinstance(sb_data, dict) and sb_data.get("scenes"):
+                sb_flat = []
+                for scene in sb_data["scenes"]:
+                    sb_flat.extend(scene.get("segments", []))
+            else:
+                sb_flat = sb_data if isinstance(sb_data, list) else []
+
+            web_manifest = web_sourcer.source_for_storyboard(sb_flat[:10])  # First 10 segments
+            web_count = web_manifest.get("total_clips", 0)
+            if web_count > 0:
+                inform(f"Web sourcer found {web_count} verified images", "success")
+                # Merge web results into main manifest
+                try:
+                    main_manifest = json.loads(manifest_path.read_text())
+                    main_manifest["clips"].extend(web_manifest.get("clips", []))
+                    manifest_path.write_text(json.dumps(main_manifest, indent=2))
+                except Exception:
+                    pass
+    except ImportError:
+        inform("Web image sourcer not available — using standard sources only", "warn")
+    except Exception as e:
+        inform(f"Web sourcer error (non-fatal): {e}", "warn")
+
+    # ── Clip verification (frame extraction + Claude Vision) ──────────────
+    try:
+        from pipeline.clip_verifier import ClipVerifier
+        verifier = ClipVerifier()
+        if Path(storyboard).exists():
+            inform("Verifying video clips against storyboard…", "info")
+            verifier.verify_manifest(str(manifest_path), sb_flat if 'sb_flat' in dir() else [])
+    except ImportError:
+        pass
+    except Exception as e:
+        inform(f"Clip verification error (non-fatal): {e}", "warn")
+
     # ── Automated footage verification ────────────────────────────────────────
     inform("Running footage verification — scoring items against storyboard…", "info")
     inform("This removes irrelevant downloads automatically. No manual review needed.", "info")
@@ -842,6 +922,36 @@ def stage_assemble(state: dict) -> bool:
     out_path  = f"output/{slug}/final.mp4"
 
     Path(f"output/{slug}").mkdir(parents=True, exist_ok=True)
+
+    # ── Fair Use Compliance Check ──
+    try:
+        from pipeline.fair_use_guard import FairUseGuard
+        guard = FairUseGuard()
+        if Path(footage).exists():
+            footage_data = json.loads(Path(footage).read_text())
+            clips = footage_data.get("clips", [])
+            # Add default transformative elements for our pipeline
+            for clip in clips:
+                clip.setdefault("has_narration", True)
+                clip.setdefault("has_source_audio", False)
+                clip.setdefault("transformative_elements", ["narration_overlay", "ken_burns", "color_grade"])
+                clip.setdefault("duration_sec", 5.0)
+
+            report = guard.check_timeline(clips)
+            compliance = report["compliance_rate"]
+            blocked = report["blocked"]
+
+            if blocked > 0:
+                inform(f"Fair use check: {compliance} compliant, {blocked} segment(s) blocked", "warn")
+                for v in report["violations_log"][:3]:
+                    print(f"  {RD}  Segment {v['segment']}: {', '.join(v['violations'][:2])}{R}")
+            else:
+                inform(f"Fair use check: {compliance} — all segments compliant ✓", "success")
+    except ImportError:
+        pass
+    except Exception as e:
+        inform(f"Fair use check error (non-fatal): {e}", "warn")
+
     inform("Assembling video — Ken Burns, color grade, audio mix, chapter cards…", "info")
     inform("This takes a while. Do not close the terminal.", "info")
 
