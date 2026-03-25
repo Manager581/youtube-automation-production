@@ -39,28 +39,74 @@ LLM_MODEL = "claude"  # Uses claude CLI (Max subscription)
 # --- PATTERN DETECTORS ---
 
 # Green signals: curiosity builders
+# These patterns detect CURIOSITY — questions, mysteries, secrets, counterintuitive
+# statements, missing pieces, and "what happens next" setups.
+# Following playbook: 4 curiosity methods (mystery, counterintuitive, secret, missing piece)
 GREEN_PATTERNS = [
+    # Questions (the most common curiosity builder)
     r"\bbut\b.*\?",                          # "but how...?"
     r"\bwhat\b.*\bif\b",                      # "what if..."
     r"\bwhy\b.*\?",                            # "why did...?"
     r"\bhow\b.*\?",                            # "how could...?"
+    r"\bwho\b.*\?",                            # "who did...?"
+    r"\bwhat\b.*\?",                           # "what...?"
+    r"\bso\b.*\?",                             # "so what...?"
+    r"^[A-Z].*\?\s*$",                        # Any sentence that IS a question
+
+    # Mystery / hidden knowledge
     r"\bnobody\b.*\bknew\b",                  # "nobody knew..."
+    r"\bno one\b.*\bknew\b",                  # "no one knew"
+    r"\bnobody\b.*\btold\b",                  # "nobody told you"
+    r"\bnever\b.*\btold\b",                   # "never been told"
     r"\bsecret\b",                             # "secret"
     r"\bhidden\b",                             # "hidden"
     r"\bmystery\b",                            # "mystery"
+    r"\binvisible\b",                          # "invisible"
+    r"\bin the dark\b",                        # "in the dark"
+
+    # Counterintuitive / surprising
     r"\bstrange\b",                            # "strange"
     r"\bimpossible\b",                         # "impossible"
+    r"\bnobody expected\b",                    # "nobody expected"
+    r"\bhere'?s\b.*\bthing\b",               # "here's the thing"
+    r"\bhere'?s\b.*\bpart\b",                # "here's the part that..."
+    r"\bhere'?s\b.*\bwhat\b.*\bdon'?t\b",   # "here's what they don't..."
+    r"\bturns out\b",                          # "turns out"
+    r"\blet that\b.*\bland\b",               # "let that land"
+    r"\bstomach drop\b",                       # "stomach drop"
+    r"\bhaunt\b",                              # "haunts me"
+
+    # Missing piece / overlooked
     r"\bsomething\b.*\bwrong\b",              # "something was wrong"
     r"\bdidn'?t\b.*\badd up\b",              # "didn't add up"
-    r"\bno one\b.*\bknew\b",                  # "no one knew"
-    r"\buntil\b",                              # "until..."
-    r"\bwhat\b.*\bhappened\b.*\bnext\b",      # "what happened next"
-    r"\bthere\b.*\bone\b.*\bdetail\b",        # "there was one detail"
     r"\boverlooked\b",                         # "overlooked"
     r"\bmissing\b.*\bpiece\b",                # "missing piece"
+    r"\bwhat\b.*\bhappened\b.*\bnext\b",      # "what happened next"
+    r"\bthere\b.*\bone\b.*\bdetail\b",        # "there was one detail"
+
+    # Tension builders / setup phrases
+    r"\buntil\b",                              # "until..."
+    r"\bbut wait\b",                           # "but wait"
+    r"\bgets? worse\b",                        # "it gets worse"
+    r"\bgets? truly\b",                        # "gets truly dangerous"
+    r"\bnow\b.*\bneed to\b.*\btell\b",       # "now I need to tell you"
+    r"\byou might\b.*\bthinking\b",           # "you might be thinking"
+    r"\bsurely\b",                             # "surely someone is watching"
+    r"\bcruelest\b",                           # "cruelest part"
+    r"\bdangerous\b",                          # "dangerous"
+    r"\bnightmare\b",                          # "nightmare"
+    r"\bwhat can be done\b",                   # "what can be done?"
+    r"\bso what happens\b",                    # "so what happens when..."
+    r"\bwhat happens when\b",                  # "what happens when..."
+    r"\bimagine\b",                            # "imagine"
+
+    # Direct challenge to viewer
+    r"\byou'?re being\b",                     # "you're being scored"
+    r"\byou have\b.*\bnever\b",              # "you have never been told"
+    r"\bdon'?t\b.*\bwant you\b.*\bknow\b",  # "don't want you to know"
 ]
 
-# Purple signals: payoff / resolution
+# Purple signals: payoff / resolution / answer delivery
 PURPLE_PATTERNS = [
     r"\bthe answer\b",                         # "the answer"
     r"\bthe truth\b",                          # "the truth"
@@ -74,6 +120,17 @@ PURPLE_PATTERNS = [
     r"\bproved\b",                             # "proved"
     r"\bconfirmed\b",                          # "confirmed"
     r"\bevidence\b.*\bshowed\b",              # "evidence showed"
+    r"\bsettled\b.*\b(lawsuit|million|billion)\b",  # "settled for X million"
+    r"\bfiled\b.*\b(lawsuit|complaint|suit)\b",     # "filed a lawsuit"
+    r"\bfound\b.*\bthat\b",                   # "found that..."
+    r"\binvestigation\b.*\brevealed\b",       # "investigation revealed"
+    r"\bthe company is called\b",              # "the company is called..."
+    r"\byou can\b",                            # "you can [do this]" — actionable payoff
+    r"\bthe moment you know\b",               # "the moment you know..."
+    r"\bnow you do\b",                         # "now you do" — final payoff
+    r"\bpercent\b",                            # Statistics as payoff
+    r"\bmillion\b.*\bdollars?\b",             # Dollar amounts as payoff
+    r"\bbillion\b.*\bdollars?\b",             # Dollar amounts as payoff
 ]
 
 # But/Therefore connectors (good flow)
