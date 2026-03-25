@@ -96,11 +96,21 @@ SCRIPT:
 
 
 # ---------------------------------------------------------------------------
-# Ollama backend (free, local)
+# LLM backend — Claude Max (primary), Ollama (fallback)
 # ---------------------------------------------------------------------------
 
 OLLAMA_URL = "http://localhost:11434"
-DEFAULT_MODEL = "qwen3.5:27b"
+DEFAULT_MODEL = "claude"
+
+
+def _claude_available() -> bool:
+    """Check if Claude CLI is available."""
+    import subprocess
+    try:
+        result = subprocess.run(["claude", "--version"], capture_output=True, timeout=5)
+        return result.returncode == 0
+    except Exception:
+        return False
 
 
 def _ollama_available() -> bool:
@@ -111,58 +121,38 @@ def _ollama_available() -> bool:
         return False
 
 
-def _ollama_models() -> list[str]:
-    try:
-        with urllib.request.urlopen(f"{OLLAMA_URL}/api/tags", timeout=3) as r:
-            data = json.loads(r.read())
-        return [m["name"] for m in data.get("models", [])]
-    except Exception:
-        return []
+def enhance_with_claude(raw_script: str) -> str:
+    """Call Claude Max via CLI to enhance the script. Primary method."""
+    import subprocess
+
+    full_prompt = SYSTEM_PROMPT + "\n\n" + USER_PROMPT.format(script=raw_script.strip())
+
+    print("  Enhancing with Claude Max (opus)...")
+    result = subprocess.run(
+        ["claude", "-p", full_prompt, "--model", "opus", "--output-format", "text"],
+        capture_output=True, text=True, timeout=300
+    )
+
+    if result.returncode == 0 and result.stdout.strip():
+        return result.stdout.strip()
+    raise ConnectionError(f"Claude CLI failed: {result.stderr[:200]}")
 
 
-def _best_available_model(preferred: str) -> str:
-    """Pick the best available model from what's pulled."""
-    models = _ollama_models()
-    if not models:
-        return preferred
-
-    # Preference order for script quality (text-only models, no VL variants)
-    candidates = [preferred, "qwen3.5:27b", "qwen3.5:4b", "qwen2.5:32b",
-                  "qwen2.5:14b", "qwen2.5:7b", "gpt-oss:20b", "llama3.1:8b"]
-    for c in candidates:
-        # Check prefix match (model names include :tag)
-        for m in models:
-            if m.startswith(c.split(":")[0]):
-                return m
-    return models[0]  # fallback to whatever is available
-
-
-def enhance_with_ollama(raw_script: str, model: str = DEFAULT_MODEL) -> str:
-    """Call local Ollama to enhance the script. Returns enhanced text."""
+def enhance_with_ollama(raw_script: str, model: str = "qwen3.5:27b") -> str:
+    """Fallback: Call local Ollama to enhance the script."""
     if not _ollama_available():
-        raise ConnectionError(
-            "Ollama is not running.\n"
-            "Start it with:  ollama serve\n"
-            "Then pull a model:  ollama pull qwen2.5:32b"
-        )
+        raise ConnectionError("Ollama is not running and Claude CLI failed.")
 
-    actual_model = _best_available_model(model)
-    if actual_model != model:
-        print(f"  Model '{model}' not found — using '{actual_model}'")
-
-    print(f"  Enhancing with Ollama ({actual_model})...")
+    print(f"  Falling back to Ollama ({model})...")
 
     payload = json.dumps({
-        "model": actual_model,
+        "model": model,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user",   "content": USER_PROMPT.format(script=raw_script.strip())},
         ],
         "stream": False,
-        "options": {
-            "temperature": 0.7,
-            "num_predict": 8192,
-        }
+        "options": {"temperature": 0.7, "num_predict": 8192},
     }).encode()
 
     req = urllib.request.Request(
@@ -179,6 +169,19 @@ def enhance_with_ollama(raw_script: str, model: str = DEFAULT_MODEL) -> str:
         raise ConnectionError(f"Ollama request failed: {e}")
 
     return data["message"]["content"].strip()
+
+
+def enhance_script(raw_script: str, model: str = DEFAULT_MODEL) -> str:
+    """Enhance a script using Claude Max (primary) or Ollama (fallback)."""
+    # Always try Claude first
+    try:
+        return enhance_with_claude(raw_script)
+    except Exception as e:
+        print(f"  Claude enhancement failed: {e}")
+        print("  Falling back to Ollama...")
+
+    # Fallback to Ollama
+    return enhance_with_ollama(raw_script, model)
 
 
 # ---------------------------------------------------------------------------
@@ -244,17 +247,14 @@ def main():
     output_path = Path(args.output) if args.output else \
         input_path.parent / (input_path.stem + "_enhanced.txt")
 
-    print(f"\nScript Enhancer (local Ollama — free)")
+    print(f"\nScript Enhancer (Claude Max primary, Ollama fallback)")
     print(f"  Input : {input_path} ({len(raw_script.split())} words)")
-    print(f"  Output: {output_path}")
-    print(f"  Model : {args.model}\n")
+    print(f"  Output: {output_path}\n")
 
     try:
-        enhanced = enhance_with_ollama(raw_script, model=args.model)
+        enhanced = enhance_script(raw_script, model=args.model)
     except ConnectionError as e:
         print(f"\nERROR: {e}")
-        print("\nAlternative: paste your script into Claude Code and ask:")
-        print('  "Enhance this script to Fern style with [BEAT], [PAUSE], [VOICE] markup"')
         sys.exit(1)
 
     warnings = validate_markup(enhanced)

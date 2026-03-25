@@ -181,37 +181,35 @@ def parse_script_segments(script_path: Path) -> list[dict]:
 
 # ── Ollama integration ─────────────────────────────────────────────────────────
 
-def _get_available_model() -> str | None:
-    """Return first MODEL_PREFERENCE entry that ollama has installed."""
-    try:
-        req = urllib.request.Request("http://localhost:11434/api/tags")
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-        installed = {m["name"] for m in data.get("models", [])}
-        for model in MODEL_PREFERENCE:
-            # Match with or without :latest
-            if model in installed or f"{model}:latest" in installed:
-                return model
-            # Match base name (e.g. qwen3.5:4b matches qwen3.5:4b-instruct-q4_K_M)
-            base = model.split(":")[0]
-            for inst in installed:
-                if inst.startswith(base + ":"):
-                    return inst
-    except Exception:
-        pass
-    return None
+def _get_available_model() -> str:
+    """Return the best available LLM. Claude Max is primary, always available via CLI."""
+    return "claude"
 
 
-def _ollama_generate(model: str, prompt: str) -> str | None:
-    """Call Ollama text generation, return response text."""
-    payload = json.dumps({
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        "think": False,          # disable qwen3.5 thinking mode — output only
-        "options": {"temperature": 0.3, "num_predict": 500},
-    }).encode()
+def _llm_generate(model: str, prompt: str) -> str | None:
+    """Call Claude Max via CLI (primary) or fall back to Ollama."""
+    import subprocess
+
+    # Primary: Claude Max via CLI
     try:
+        result = subprocess.run(
+            ["claude", "-p", prompt, "--model", "haiku", "--output-format", "text"],
+            capture_output=True, text=True, timeout=60
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout.strip()
+    except Exception as e:
+        print(f"  [storyboard] Claude CLI error: {e}")
+
+    # Fallback: Ollama (only if Claude is unavailable)
+    try:
+        payload = json.dumps({
+            "model": model if model != "claude" else "qwen3:4b",
+            "prompt": prompt,
+            "stream": False,
+            "think": False,
+            "options": {"temperature": 0.3, "num_predict": 500},
+        }).encode()
         req = urllib.request.Request(
             OLLAMA_URL,
             data=payload,
@@ -343,12 +341,12 @@ def generate_visual_brief(
     # Build prompt
     prompt = STORYBOARD_PROMPT.replace("{TEXT}", text).replace("{EMOTION}", emotion)
 
-    response = _ollama_generate(model, prompt)
+    response = _llm_generate(model, prompt)
 
     if not response:
         brief = _fallback_brief(text, emotion)
     else:
-        brief = _parse_ollama_response(response, text, emotion)
+        brief = _parse_llm_response(response, text, emotion)
 
     # Enrich with playbook rules (fills any missing fields)
     brief = _enrich_from_playbook({**segment, **brief})
@@ -393,8 +391,8 @@ def _extract_nested_json(text: str) -> str | None:
     return None
 
 
-def _parse_ollama_response(response: str, text: str, emotion: str) -> dict:
-    """Parse JSON from ollama response, with fallback."""
+def _parse_llm_response(response: str, text: str, emotion: str) -> dict:
+    """Parse JSON from LLM response (Claude or Ollama), with fallback."""
     json_str = _extract_nested_json(response)
     if json_str:
         try:
