@@ -96,12 +96,26 @@ Key rules for the pipeline:
 
 ## What's Still Not Done
 
+### Pipeline Progress on Secret Scores
+- `scripts/raw_secret_scores_v4.txt` — Final script (blind review ~80/100)
+- `scripts/enhanced_secret_scores.txt` — Enhanced with 59 VOICE, 57 PAUSE, 51 BEAT markers
+- `storyboards/secret_scores.json` — Generated (in progress or complete)
+- `storyboards/secret_scores_directed.json` — Director pass (pending)
+- Voice, footage, assembly — Not yet run
+
+### Modules Switched from Ollama to Claude Max
+- `pipeline/script_enhancer.py` — `enhance_script()` uses Claude Opus primary
+- `pipeline/storyboard_generator.py` — `_llm_generate()` uses Claude Haiku primary
+- Both fall back to Ollama only if Claude CLI fails
+
 ### Next Session Should Do
-1. **End-to-end test run** — Run the full pipeline on Secret Scores v4 to find remaining issues
-2. **Final verification loop** — Scene-by-scene review before export (preview each segment)
-3. **Multi-source image integration** — Wire `source_images_free.py` approach deeper into footage_sourcer.py
-4. **SFX library expansion** — Download more CC0 SFX to fill gaps (currently thin on impacts/glass)
-5. **Merge decision** — When ready, merge `feature/learnbyleo-integration` into main working branch
+1. **Complete storyboard + director pass** if not finished this session
+2. **Run voice generation** on enhanced script
+3. **Source footage** using web_image_sourcer + standard sourcer
+4. **Assemble video** — first end-to-end render
+5. **Final verification loop** — Scene-by-scene review before export
+6. **SFX library expansion** — Download more CC0 SFX to fill gaps
+7. **Merge decision** — When ready, merge `feature/learnbyleo-integration` into main working branch
 
 ## Tools & Access
 - **Claude Max** subscription (Opus available via `claude` CLI)
