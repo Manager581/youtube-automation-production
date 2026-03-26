@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(venv/bin/python pipeline/voice_generator.py --ref-neutral assets/voice/voice_neutral_ref.wav --ref-tense assets/voice/voice_tense_ref.wav --ref-energized assets/voice/voice_energized_ref.wav --auto-transcribe --script /tmp/test_script.txt --out audio/test/test_narration.wav)",
+      "Bash(python3 -m json.tool)",
+      "Bash(venv/bin/python -c \":*)"
+    ]
+  }
+}
