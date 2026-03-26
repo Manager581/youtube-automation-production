@@ -631,6 +631,8 @@ def direct(script_path: str, storyboard_path: str) -> dict:
         "composite_count": comp_count,
         "sync_point_count": sync_count,
         "sfx_count": sfx_count,
+        "soundbite_count": 0,
+        "soundbites": [],
         "scenes": scenes,
     }
 
@@ -639,6 +641,77 @@ def direct(script_path: str, storyboard_path: str) -> dict:
         output["playbook_audit"] = _playbook_audit(output, directed_segments)
 
     return output
+
+
+def integrate_soundbites(directors_brief: dict, soundbites: list[dict]) -> dict:
+    """
+    Merge soundbite punch-through decisions into the director's brief.
+
+    For each soundbite, finds the nearest segment in the timeline and adds
+    audio punch-through metadata: duck the narration, unmute clip audio,
+    then restore narration.
+
+    Args:
+        directors_brief: Output from direct()
+        soundbites: Output from SoundbiteAnalyzer.find_soundbites()
+
+    Returns:
+        Updated directors_brief with soundbite data embedded
+    """
+    if not soundbites:
+        return directors_brief
+
+    # Flatten all segments with cumulative timing
+    all_segs = []
+    cumulative_sec = 0.0
+    for scene in directors_brief.get("scenes", []):
+        for seg in scene.get("segments", []):
+            hold = seg.get("hold_duration_range", [5.0, 5.0])
+            avg_hold = (hold[0] + hold[1]) / 2
+            seg["_timeline_start_sec"] = cumulative_sec
+            seg["_timeline_end_sec"] = cumulative_sec + avg_hold
+            all_segs.append(seg)
+            cumulative_sec += avg_hold
+
+    # For each soundbite, find the best segment to attach it to
+    for sb in soundbites:
+        target_sec = sb["timeline_position_sec"]
+
+        # Find nearest segment
+        best_seg = None
+        best_dist = float("inf")
+        for seg in all_segs:
+            mid = (seg["_timeline_start_sec"] + seg["_timeline_end_sec"]) / 2
+            dist = abs(mid - target_sec)
+            if dist < best_dist:
+                best_dist = dist
+                best_seg = seg
+
+        if best_seg is None:
+            continue
+
+        # Attach soundbite to this segment
+        best_seg["clip_audio_punchthrough"] = {
+            "enabled": True,
+            "source_clip": sb["source_clip"],
+            "source_path": sb.get("source_path", ""),
+            "clip_start_sec": sb["start_sec"],
+            "clip_end_sec": sb["end_sec"],
+            "duration_sec": sb["duration_sec"],
+            "soundbite_text": sb["text"],
+            "impact_score": sb["impact_score"],
+            "narration_duck_start_sec": sb["narration_duck_start_sec"],
+            "narration_duck_end_sec": sb["narration_duck_end_sec"],
+            "narration_duck_volume": 0.0,  # Full duck during soundbite
+            "clip_audio_volume": 1.0,      # Full volume for soundbite
+            "fade_in_sec": 0.3,
+            "fade_out_sec": 0.5,
+        }
+
+    directors_brief["soundbites"] = soundbites
+    directors_brief["soundbite_count"] = len(soundbites)
+
+    return directors_brief
 
 
 def _group_into_scenes_directed(segments: list[dict]) -> list[dict]:
@@ -900,6 +973,7 @@ def main():
     ap.add_argument("--storyboard", required=True, help="Existing storyboard .json (v1 or v2)")
     ap.add_argument("--out", help="Output path (default: overwrites storyboard)")
     ap.add_argument("--preview", action="store_true", help="Print summary, don't write")
+    ap.add_argument("--soundbites", help="Soundbites JSON from soundbite_analyzer.py")
     args = ap.parse_args()
 
     print("Director's Pass — full-context editorial decisions")
@@ -907,6 +981,12 @@ def main():
     print(f"  Storyboard: {args.storyboard}")
 
     output = direct(args.script, args.storyboard)
+
+    # Merge soundbites if provided
+    if args.soundbites:
+        sb_data = json.loads(Path(args.soundbites).read_text())
+        output = integrate_soundbites(output, sb_data)
+        print(f"  Soundbites: {output.get('soundbite_count', 0)} punch-throughs integrated")
 
     if args.preview:
         print(f"\n{'─'*70}")
