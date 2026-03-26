@@ -9,6 +9,11 @@ Rules enforced:
 1. MAX_CLIP_DURATION: 5 seconds per source clip (7s hard max)
 2. MANDATORY_NARRATION: Every clip must have voiceover narration overlay
 3. MUTE_SOURCE_AUDIO: Original audio from clips is always muted (Content ID trigger)
+   EXCEPTION: Soundbite punch-throughs (5-8s) allowed when:
+   - Narration is ducked (not absent) before/after the soundbite
+   - Total source audio per source stays under MAX_SOURCE_AUDIO_SEC
+   - Clip has 2+ other transformative layers (commentary context)
+   - Marked explicitly as is_soundbite=True
 4. SOURCE_ATTRIBUTION: Every clip gets a lower-third source attribution
 5. TRANSFORMATIVE_LAYERS: Minimum 2 transformative elements per clip
    (narration + at least one of: zoom/crop, text overlay, color grade, PiP)
@@ -35,6 +40,13 @@ HARD_MAX_CLIP_DURATION_SEC = 7.0
 MIN_TRANSFORMATIVE_LAYERS = 2
 MAX_SOURCE_PERCENTAGE = 0.10  # Never use more than 10% of a source work
 
+# Soundbite punch-through limits
+SOUNDBITE_MIN_SEC = 3.0       # Minimum soundbite duration
+SOUNDBITE_MAX_SEC = 8.0       # Maximum soundbite duration
+MAX_SOURCE_AUDIO_SEC = 25.0   # Max total audio seconds from any single source
+MAX_SOUNDBITES_PER_SOURCE = 3  # Max number of soundbites from one source
+MAX_TOTAL_SOUNDBITES = 12     # Max soundbites in entire video
+
 # Licenses that are exempt from most restrictions
 EXEMPT_LICENSES = {
     "public_domain", "cc0", "us_government", "pd",
@@ -47,6 +59,9 @@ class FairUseGuard:
 
     def __init__(self):
         self.source_usage = {}  # Track how much of each source is used
+        self.source_audio_usage = {}  # Track soundbite audio seconds per source
+        self.soundbite_count_per_source = {}  # Track soundbite count per source
+        self.total_soundbite_count = 0
         self.violations_log = []
 
     def is_exempt(self, license_type: str) -> bool:
@@ -107,10 +122,19 @@ class FairUseGuard:
             violations.append("No narration overlay — clip is not transformative without commentary")
             fixes.append("Add voiceover narration. Never show a clip 'naked'.")
 
-        # 3. Source audio (should be muted)
+        # 3. Source audio (should be muted UNLESS it's an approved soundbite)
         if segment.get("has_source_audio", False):
-            violations.append("Source audio not muted — Content ID will likely flag this")
-            fixes.append("Mute original audio. Content ID is audio-fingerprint driven.")
+            if segment.get("is_soundbite", False):
+                # Soundbite exception — check additional constraints
+                sb_result = self.check_soundbite(segment)
+                if not sb_result["approved"]:
+                    violations.extend(sb_result["violations"])
+                    fixes.extend(sb_result["fixes"])
+                else:
+                    warnings.extend(sb_result.get("warnings", []))
+            else:
+                violations.append("Source audio not muted — Content ID will likely flag this")
+                fixes.append("Mute original audio. Content ID is audio-fingerprint driven.")
 
         # 4. Transformative layers
         # Count what we have: narration, zoom/crop, text_overlay, color_grade, pip
@@ -164,6 +188,94 @@ class FairUseGuard:
             "warnings": warnings,
             "fixes": fixes,
             "transformative_layers": layer_count,
+        }
+
+    def check_soundbite(self, segment: dict) -> dict:
+        """
+        Check if a soundbite punch-through is fair-use compliant.
+
+        Soundbites are brief moments (3-8s) where the original clip audio
+        plays through while narration is ducked. This creates documentary
+        "evidence" moments — letting the source speak for itself in context
+        of critical commentary.
+
+        Requirements:
+        - Duration 3-8 seconds
+        - Narration ducked before/after (not absent from surrounding context)
+        - Total source audio per source < MAX_SOURCE_AUDIO_SEC
+        - Max N soundbites per source
+        - Max total soundbites in video
+        - 2+ transformative layers still required (commentary context)
+        """
+        violations = []
+        warnings = []
+        fixes = []
+
+        duration = segment.get("duration_sec", 0)
+        source_url = segment.get("source_url", "")
+        has_narration_context = segment.get("has_narration_context", True)
+
+        # Duration check
+        if duration > SOUNDBITE_MAX_SEC:
+            violations.append(
+                f"Soundbite {duration:.1f}s exceeds max {SOUNDBITE_MAX_SEC}s"
+            )
+            fixes.append(f"Trim soundbite to {SOUNDBITE_MAX_SEC}s or less")
+        elif duration < SOUNDBITE_MIN_SEC:
+            warnings.append(
+                f"Soundbite {duration:.1f}s very short — may not land with viewers"
+            )
+
+        # Narration context check — soundbite must sit within narration
+        if not has_narration_context:
+            violations.append(
+                "Soundbite has no surrounding narration context — "
+                "not transformative without commentary"
+            )
+            fixes.append("Ensure narration plays before and after the soundbite")
+
+        # Per-source audio budget
+        if source_url:
+            current_audio = self.source_audio_usage.get(source_url, 0)
+            if current_audio + duration > MAX_SOURCE_AUDIO_SEC:
+                violations.append(
+                    f"Source audio budget exceeded: {current_audio + duration:.1f}s "
+                    f"> {MAX_SOURCE_AUDIO_SEC}s for {source_url}"
+                )
+                fixes.append("Use fewer/shorter soundbites from this source")
+            else:
+                self.source_audio_usage[source_url] = current_audio + duration
+
+            # Per-source count
+            current_count = self.soundbite_count_per_source.get(source_url, 0)
+            if current_count >= MAX_SOUNDBITES_PER_SOURCE:
+                violations.append(
+                    f"Too many soundbites ({current_count + 1}) from same source "
+                    f"(max {MAX_SOUNDBITES_PER_SOURCE})"
+                )
+                fixes.append("Diversify — use soundbites from different sources")
+            else:
+                self.soundbite_count_per_source[source_url] = current_count + 1
+
+        # Global soundbite count
+        if self.total_soundbite_count >= MAX_TOTAL_SOUNDBITES:
+            violations.append(
+                f"Total soundbite limit reached ({MAX_TOTAL_SOUNDBITES})"
+            )
+            fixes.append("Remove less impactful soundbites to stay under limit")
+        else:
+            self.total_soundbite_count += 1
+
+        if not violations:
+            warnings.append(
+                f"Soundbite approved: {duration:.1f}s from {source_url or 'unknown'}"
+            )
+
+        return {
+            "approved": len(violations) == 0,
+            "violations": violations,
+            "warnings": warnings,
+            "fixes": fixes,
         }
 
     def check_timeline(self, segments: list[dict]) -> dict:
