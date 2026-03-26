@@ -60,6 +60,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import numpy as np
+
 # Ensure project root is on path for `from pipeline.xxx` imports
 _project_root = str(Path(__file__).resolve().parent.parent)
 if _project_root not in sys.path:
@@ -120,9 +122,9 @@ KB_INTENSITY_ZOOM = {
 }
 
 # Color grade — matches Fern's measured saturation=0.183, black_crush=13%
-COLOR_SATURATION       = 0.35    # hue filter saturation multiplier (Fern measured: 0.244)
-COLOR_BLACK_CRUSH      = 0.07    # push luma below 7% to black
-COLOR_CONTRAST_GAMMA   = 0.90    # slight gamma pull-down (darker midtones)
+COLOR_SATURATION       = 0.25    # hue filter saturation multiplier (subtler than before)
+COLOR_BLACK_CRUSH      = 0.03    # push luma below 3% to black (was 7% — too aggressive)
+COLOR_CONTRAST_GAMMA   = 0.97    # barely touch gamma (was 0.90 — way too dark)
 
 # Output
 OUTPUT_RES             = "1920x1080"
@@ -1235,10 +1237,13 @@ def build_timeline(
             elif bool(tagged_clip):
                 use_clip = True
             else:
+                # Strongly prefer video clips over stills when clips are available.
+                # If we have more clips than stills, use clips ~80% of the time.
+                clip_ratio = len(videos) / max(len(videos) + len(stills), 1)
+                clip_prob = max(spec.clip_probability, clip_ratio, 0.7)
                 use_clip = (
                     (video_idx < len(videos)) and (
-                        random.random() < spec.clip_probability
-                        or (random.random() < 0.05)
+                        random.random() < clip_prob
                     )
                 )
 
@@ -1790,8 +1795,8 @@ def render(
             # Document mode: letterbox portrait documents
             _src = seg.get("source_path", "")
             if _src and seg.get("source_type") == "still":
-                _is_doc_type = seg.get("shot_type", "").lower() in ("document_photo", "document", "declassified", "memo")
-                _is_doc_query = any(w in seg.get("search_query", "").lower() for w in ("document", "memo", "declassified", "report"))
+                _is_doc_type = (seg.get("shot_type") or "").lower() in ("document_photo", "document", "declassified", "memo")
+                _is_doc_query = any(w in (seg.get("search_query") or "").lower() for w in ("document", "memo", "declassified", "report"))
                 if _is_doc_type or _is_doc_query:
                     try:
                         from PIL import Image as _PILImg
