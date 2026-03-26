@@ -1,0 +1,726 @@
+{
+  "segments": [
+    {
+      "seg_id": 0,
+      "arc": "cold_open",
+      "source_clip": "How Insurance Companies Use AI to Deny Your Claims.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 6,
+      "audio_mode": "clip_audio",
+      "narration_text_snippet": "Something is following you. Right now, as you watch this, a number you have never seen...",
+      "editorial_note": "Open with dramatic AI denial visual — hook the viewer with ominous tone"
+    },
+    {
+      "seg_id": 1,
+      "arc": "cold_open",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 52,
+      "clip_end_sec": 59,
+      "audio_mode": "clip_audio",
+      "narration_text_snippet": "And the companies that created it? You've never heard of them. But they have heard of you...",
+      "editorial_note": "60 Min 'multi-billion dollar industry in the shadows' — perfect match for 'never heard of them'"
+    },
+    {
+      "seg_id": 2,
+      "arc": "cold_open",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 8,
+      "audio_mode": "clip_audio",
+      "narration_text_snippet": "One that is, right now, shaping where you can live. Where you can work. Whether you get medical treatment...",
+      "editorial_note": "Jacksonville housing discrimination visual — 'where you can live' gets literal housing footage"
+    },
+    {
+      "seg_id": 3,
+      "arc": "cold_open",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 8,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "But here is the question nobody is asking. What happens when a perfect record meets a broken algorithm?",
+      "editorial_note": "Soundbite punch — algorithmic discrimination visual hits on 'broken algorithm'"
+    },
+    {
+      "seg_id": 4,
+      "arc": "context_setup",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 10,
+      "clip_end_sec": 20,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Mary Louis paid her rent on time for sixteen years...",
+      "editorial_note": "Jacksonville lawsuit footage — Mary Louis housing discrimination story begins"
+    },
+    {
+      "seg_id": 5,
+      "arc": "emotional_peak",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 22,
+      "clip_end_sec": 28,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "She got a rejection letter.",
+      "editorial_note": "Close-up footage from Jacksonville case — rejection moment"
+    },
+    {
+      "seg_id": 6,
+      "arc": "emotional_peak",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 30,
+      "clip_end_sec": 38,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "No explanation. No human being she could call. Just a form...",
+      "editorial_note": "Continue Jacksonville lawsuit visuals — dehumanizing bureaucracy"
+    },
+    {
+      "seg_id": 7,
+      "arc": "revelation",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 40,
+      "clip_end_sec": 45,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "The ghost won.",
+      "editorial_note": "Short sharp cut — hold on lawsuit visual for dramatic beat"
+    },
+    {
+      "seg_id": 8,
+      "arc": "context_setup",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 48,
+      "clip_end_sec": 56,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Here's the thing, though. Mary had a legal right she didn't know about...",
+      "editorial_note": "Continue Jacksonville footage — transition to legal rights angle"
+    },
+    {
+      "seg_id": 9,
+      "arc": "tension_build",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 141,
+      "clip_end_sec": 150,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "So who built the ghost?",
+      "editorial_note": "Switch to 60 Minutes dossier interview — 'who built the ghost' gets investigative journalism visual"
+    },
+    {
+      "seg_id": 10,
+      "arc": "revelation",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 60,
+      "clip_end_sec": 67,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "The company is called SafeRent, formerly known as CoreLogic...",
+      "editorial_note": "Back to Jacksonville — company named in lawsuit"
+    },
+    {
+      "seg_id": 11,
+      "arc": "revelation",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 62,
+      "clip_end_sec": 67,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "A score that, according to a federal lawsuit... systematically discriminated against...",
+      "editorial_note": "Soundbite punch — let viewer hear the lawsuit language from the report"
+    },
+    {
+      "seg_id": 12,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 10,
+      "clip_end_sec": 20,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "SafeRent settled that lawsuit for two point two seven five million dollars...",
+      "editorial_note": "Algorithmic discrimination footage — settlement context"
+    },
+    {
+      "seg_id": 13,
+      "arc": "revelation",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 22,
+      "clip_end_sec": 32,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And this is where the secret becomes truly dangerous. Mathematics is not neutral...",
+      "editorial_note": "Algorithmic bias discussion visuals — 'mathematics is not neutral'"
+    },
+    {
+      "seg_id": 14,
+      "arc": "emotional_peak",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 34,
+      "clip_end_sec": 42,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "You get discrimination that moves at the speed of a computer...",
+      "editorial_note": "Continue algorithmic discrimination footage — speed of automated bias"
+    },
+    {
+      "seg_id": 15,
+      "arc": "revelation",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 210,
+      "clip_end_sec": 220,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But here's the part that should make your stomach drop.",
+      "editorial_note": "60 Minutes investigative reveal — building dread"
+    },
+    {
+      "seg_id": 16,
+      "arc": "emotional_peak",
+      "source_clip": "Data Brokers\uff1a Last Week Tonight with John Oliver (.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 10,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Only three percent of renters know which company screened them...",
+      "editorial_note": "John Oliver data broker expose — ignorance of screening systems"
+    },
+    {
+      "seg_id": 17,
+      "arc": "emotional_peak",
+      "source_clip": "Data Brokers\uff1a Last Week Tonight with John Oliver (.mp4",
+      "clip_start_sec": 12,
+      "clip_end_sec": 18,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "It's happening to millions.",
+      "editorial_note": "Short impactful cut — scale of the problem"
+    },
+    {
+      "seg_id": 18,
+      "arc": "context_setup",
+      "source_clip": "LexisNexis\u00ae Webinar\uff1a \uff02Mobile Privacy\uff1a An Overview .mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 12,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Now. Before we go further \u2014 I want you to try something genuinely strange...",
+      "editorial_note": "LexisNexis mobile privacy webinar — viewer challenge about their own data"
+    },
+    {
+      "seg_id": 19,
+      "arc": "emotional_peak",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 144,
+      "clip_end_sec": 155,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "Because the company that ties all of this data together keeps eighty-three billion records...",
+      "editorial_note": "Soundbite punch — 60 Min data broker dossier interview, scale of data collection"
+    },
+    {
+      "seg_id": 20,
+      "arc": "emotional_peak",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 190,
+      "clip_end_sec": 200,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And you have almost certainly never been told what they have on you.",
+      "editorial_note": "60 Minutes Sparrow Ponty segment — what data is collected on you"
+    },
+    {
+      "seg_id": 21,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 45,
+      "clip_end_sec": 55,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Which brings us to Carmen Arroyo...",
+      "editorial_note": "Algorithmic discrimination in housing — Carmen's story introduction"
+    },
+    {
+      "seg_id": 22,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 57,
+      "clip_end_sec": 68,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Carmen's son had been involved in a legal case \u2014 a charge that was fully dismissed...",
+      "editorial_note": "Continue housing discrimination footage — dismissed charges still in database"
+    },
+    {
+      "seg_id": 23,
+      "arc": "emotional_peak",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 70,
+      "clip_end_sec": 78,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But not gone in the eyes of the database...",
+      "editorial_note": "Algorithmic discrimination — database persistence"
+    },
+    {
+      "seg_id": 24,
+      "arc": "context_setup",
+      "source_clip": "Dad Ruins Incogni and DeleteMe \u2013 The Truth Behind .mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 12,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Now \u2014 Carmen could have disputed this...",
+      "editorial_note": "Data removal/opt-out footage — disputing records"
+    },
+    {
+      "seg_id": 25,
+      "arc": "emotional_peak",
+      "source_clip": "Dad Ruins Incogni and DeleteMe \u2013 The Truth Behind .mp4",
+      "clip_start_sec": 14,
+      "clip_end_sec": 22,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And the system is designed so that you don't know that...",
+      "editorial_note": "Data removal truth — system designed to keep you ignorant"
+    },
+    {
+      "seg_id": 26,
+      "arc": "context_setup",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 239,
+      "clip_end_sec": 250,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And the data is wrong far more often than anyone admits...",
+      "editorial_note": "60 Minutes data accuracy segment — error rates in data"
+    },
+    {
+      "seg_id": 27,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 80,
+      "clip_end_sec": 92,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "So tenant screening is one corner of this world. What happens when you apply for a job?",
+      "editorial_note": "Transition from housing to hiring — algorithmic discrimination in both"
+    },
+    {
+      "seg_id": 28,
+      "arc": "emotional_peak",
+      "source_clip": "We Put 7 Uber Drivers in One Room. What We Found W.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 10,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Because the same logic \u2014 the same faith in algorithms...",
+      "editorial_note": "Uber algorithmic ratings — faith in algorithms controlling workers"
+    },
+    {
+      "seg_id": 29,
+      "arc": "emotional_peak",
+      "source_clip": "We Put 7 Uber Drivers in One Room. What We Found W.mp4",
+      "clip_start_sec": 12,
+      "clip_end_sec": 22,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But increasingly... nobody read anything. Your resume was parsed by software...",
+      "editorial_note": "Uber drivers — algorithmic parsing of humans into scores"
+    },
+    {
+      "seg_id": 30,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 95,
+      "clip_end_sec": 105,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "So what does that future look like? Ask Derek Mobley.",
+      "editorial_note": "Algorithmic discrimination footage — Derek Mobley hiring discrimination"
+    },
+    {
+      "seg_id": 31,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 107,
+      "clip_end_sec": 118,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Derek is a Black man who applied to over a hundred and fifty jobs...",
+      "editorial_note": "Continue algorithmic discrimination — scale of Derek's job search"
+    },
+    {
+      "seg_id": 32,
+      "arc": "tension_build",
+      "source_clip": "We Put 7 Uber Drivers in One Room. What We Found W.mp4",
+      "clip_start_sec": 25,
+      "clip_end_sec": 35,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "At one point, records show he submitted an application at one fifty in the morning...",
+      "editorial_note": "Uber drivers late-night desperation visual — mirrors 1:50am application"
+    },
+    {
+      "seg_id": 33,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 120,
+      "clip_end_sec": 132,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "A study by the Brookings Institution found that when identical resumes were submitted...",
+      "editorial_note": "Algorithmic discrimination — resume bias study"
+    },
+    {
+      "seg_id": 34,
+      "arc": "emotional_peak",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 134,
+      "clip_end_sec": 144,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "The algorithm doesn't need to be racist. It just needs to be accurate \u2014 accurately trained on biased data.",
+      "editorial_note": "Soundbite punch — let algorithmic bias clip speak, key thesis statement"
+    },
+    {
+      "seg_id": 35,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 146,
+      "clip_end_sec": 156,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Now I need to tell you about Kyle Behm...",
+      "editorial_note": "Disability discrimination in hiring — Kyle's story begins"
+    },
+    {
+      "seg_id": 36,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 158,
+      "clip_end_sec": 168,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Kyle was a young man who struggled with bipolar disorder...",
+      "editorial_note": "Continue disability discrimination footage — personality tests"
+    },
+    {
+      "seg_id": 37,
+      "arc": "emotional_peak",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 170,
+      "clip_end_sec": 180,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But every application included a personality test...",
+      "editorial_note": "Algorithmic screening tests — invisible barriers"
+    },
+    {
+      "seg_id": 38,
+      "arc": "emotional_peak",
+      "source_clip": "We Put 7 Uber Drivers in One Room. What We Found W.mp4",
+      "clip_start_sec": 38,
+      "clip_end_sec": 48,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "The rejections piled up. The sense of worthlessness grew.",
+      "editorial_note": "Uber drivers expressing frustration with algorithmic ratings — emotional parallel"
+    },
+    {
+      "seg_id": 39,
+      "arc": "revelation",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 182,
+      "clip_end_sec": 190,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "And Kyle Behm attempted suicide.",
+      "editorial_note": "Soundbite punch — devastating human cost, let the weight sit"
+    },
+    {
+      "seg_id": 40,
+      "arc": "context_setup",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 192,
+      "clip_end_sec": 202,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "His father, a lawyer, investigated...",
+      "editorial_note": "Father's investigation into Kronos personality tests"
+    },
+    {
+      "seg_id": 41,
+      "arc": "revelation",
+      "source_clip": "Protecting Consumer Privacy in the Era of Big Data.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 12,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But here's the thing about fighting these systems...",
+      "editorial_note": "Senate privacy hearing — difficulty of fighting corporate data systems"
+    },
+    {
+      "seg_id": 42,
+      "arc": "context_setup",
+      "source_clip": "Protecting Consumer Privacy in the Era of Big Data.mp4",
+      "clip_start_sec": 14,
+      "clip_end_sec": 26,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And when Kyle's father filed those complaints...",
+      "editorial_note": "Senate hearing footage — regulatory complaints go nowhere"
+    },
+    {
+      "seg_id": 43,
+      "arc": "emotional_peak",
+      "source_clip": "Protecting Consumer Privacy in the Era of Big Data.mp4",
+      "clip_start_sec": 28,
+      "clip_end_sec": 38,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But the process took years. And during those years, Kronos kept selling...",
+      "editorial_note": "Senate hearing — bureaucratic slowness while harm continues"
+    },
+    {
+      "seg_id": 44,
+      "arc": "context_setup",
+      "source_clip": "Senate hearing on strengthening the FTC to protect.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 12,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "So if these systems are so harmful... why does nobody stop them?",
+      "editorial_note": "FTC hearing — question about regulatory failure"
+    },
+    {
+      "seg_id": 45,
+      "arc": "revelation",
+      "source_clip": "Exposing Cigna\u2019s Billion-Dollar Claim Denial Scam.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 10,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "Consider what happened at Cigna...",
+      "editorial_note": "Soundbite punch — Cigna claim denial expose, dramatic reveal of scale"
+    },
+    {
+      "seg_id": 46,
+      "arc": "emotional_peak",
+      "source_clip": "Exposing Cigna\u2019s Billion-Dollar Claim Denial Scam.mp4",
+      "clip_start_sec": 12,
+      "clip_end_sec": 22,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Sixty thousand. One system. One month...",
+      "editorial_note": "Cigna denial footage — staggering volume of automated denials"
+    },
+    {
+      "seg_id": 47,
+      "arc": "context_setup",
+      "source_clip": "How Insurance Companies Use AI to Deny Your Claims.mp4",
+      "clip_start_sec": 150,
+      "clip_end_sec": 162,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "This is the fundamental asymmetry of the secret score economy.",
+      "editorial_note": "Insurance AI — asymmetry between corporations and individuals"
+    },
+    {
+      "seg_id": 48,
+      "arc": "emotional_peak",
+      "source_clip": "How Insurance Companies Use AI to Deny Your Claims.mp4",
+      "clip_start_sec": 8,
+      "clip_end_sec": 16,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And here is the sentence I want you to remember...",
+      "editorial_note": "Insurance AI denial visual — key thesis moment"
+    },
+    {
+      "seg_id": 49,
+      "arc": "emotional_peak",
+      "source_clip": "A data broker defends his industry.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 10,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "The companies know it. The landlords know it...",
+      "editorial_note": "Data broker defending practices — ironic juxtaposition with 'they know it'"
+    },
+    {
+      "seg_id": 50,
+      "arc": "aftermath",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 70,
+      "clip_end_sec": 80,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "When SafeRent wrongly rejects a qualified tenant, SafeRent loses nothing...",
+      "editorial_note": "Jacksonville lawsuit footage — zero accountability for SafeRent"
+    },
+    {
+      "seg_id": 51,
+      "arc": "emotional_peak",
+      "source_clip": "We Put 7 Uber Drivers in One Room. What We Found W.mp4",
+      "clip_start_sec": 50,
+      "clip_end_sec": 60,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "The candidate sits up at one fifty in the morning...",
+      "editorial_note": "Uber drivers late-night work — desperation of algorithmic gig economy"
+    },
+    {
+      "seg_id": 52,
+      "arc": "revelation",
+      "source_clip": "How algorithms are being used to deny health insur.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 10,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And that's perhaps the cruelest part...",
+      "editorial_note": "Health insurance algorithmic denial — cruelty of automated healthcare decisions"
+    },
+    {
+      "seg_id": 53,
+      "arc": "emotional_peak",
+      "source_clip": "How algorithms are being used to deny health insur.mp4",
+      "clip_start_sec": 12,
+      "clip_end_sec": 22,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "The machine has no concept of a chance. It has thresholds.",
+      "editorial_note": "Health insurance AI — thresholds vs. human judgment"
+    },
+    {
+      "seg_id": 54,
+      "arc": "tension_build",
+      "source_clip": "Transforming the FTC\uff1a Legislation to Modernize Con.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 12,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "You might be thinking \u2014 surely someone is watching these companies...",
+      "editorial_note": "FTC modernization hearing — the illusion of regulatory oversight"
+    },
+    {
+      "seg_id": 55,
+      "arc": "aftermath",
+      "source_clip": "Transforming the FTC\uff1a Legislation to Modernize Con.mp4",
+      "clip_start_sec": 14,
+      "clip_end_sec": 26,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "New York City passed Local Law 144...",
+      "editorial_note": "FTC reform hearing — legislative attempts to regulate"
+    },
+    {
+      "seg_id": 56,
+      "arc": "aftermath",
+      "source_clip": "A data broker defends his industry.mp4",
+      "clip_start_sec": 12,
+      "clip_end_sec": 24,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And the money behind these systems \u2014 nine point six billion dollars for RealPage...",
+      "editorial_note": "Data broker defending industry — ironic visual for massive profit discussion"
+    },
+    {
+      "seg_id": 57,
+      "arc": "aftermath",
+      "source_clip": "LexisNexis Telematics Report Causing Insurance Hik.mp4",
+      "clip_start_sec": 0,
+      "clip_end_sec": 16,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But here is what happened in January of this year.",
+      "editorial_note": "LexisNexis telematics — car tracking causing insurance hikes, recent example"
+    },
+    {
+      "seg_id": 58,
+      "arc": "aftermath",
+      "source_clip": "LexisNexis Telematics Report Causing Insurance Hik.mp4",
+      "clip_start_sec": 18,
+      "clip_end_sec": 30,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "A twenty-three-year-old woman in Phoenix...",
+      "editorial_note": "LexisNexis telematics — personal story of insurance scoring victim"
+    },
+    {
+      "seg_id": 59,
+      "arc": "aftermath",
+      "source_clip": "LexisNexis Telematics Report Causing Insurance Hik.mp4",
+      "clip_start_sec": 32,
+      "clip_end_sec": 44,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "She requested her screening report, as is her legal right...",
+      "editorial_note": "LexisNexis telematics — exercising legal right to see your data"
+    },
+    {
+      "seg_id": 60,
+      "arc": "emotional_peak",
+      "source_clip": "LexisNexis Telematics Report Causing Insurance Hik.mp4",
+      "clip_start_sec": 90,
+      "clip_end_sec": 102,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But here's what Diane did that almost nobody does...",
+      "editorial_note": "LexisNexis telematics — Diane's rare act of pushing back"
+    },
+    {
+      "seg_id": 61,
+      "arc": "emotional_peak",
+      "source_clip": "LexisNexis Telematics Report Causing Insurance Hik.mp4",
+      "clip_start_sec": 104,
+      "clip_end_sec": 115,
+      "audio_mode": "soundbite",
+      "narration_text_snippet": "That is the crack in the machine...",
+      "editorial_note": "Soundbite punch — telematics footage, the system's vulnerability revealed"
+    },
+    {
+      "seg_id": 62,
+      "arc": "aftermath",
+      "source_clip": "Data Brokers\uff1a Last Week Tonight with John Oliver (.mp4",
+      "clip_start_sec": 20,
+      "clip_end_sec": 32,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Because every one of these companies \u2014 SafeRent, LexisNexis, CoreLogic, Kronos...",
+      "editorial_note": "John Oliver naming and shaming data brokers — listing the companies"
+    },
+    {
+      "seg_id": 63,
+      "arc": "emotional_peak",
+      "source_clip": "Dad Ruins Incogni and DeleteMe \u2013 The Truth Behind .mp4",
+      "clip_start_sec": 25,
+      "clip_end_sec": 36,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "That three percent who do? They find errors almost every time...",
+      "editorial_note": "Data removal truth — errors found when people actually check"
+    },
+    {
+      "seg_id": 64,
+      "arc": "aftermath",
+      "source_clip": "Lawsuit accuses Jacksonville real estate company o.mp4",
+      "clip_start_sec": 82,
+      "clip_end_sec": 92,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Mary Louis didn't know she could request her SafeRent file...",
+      "editorial_note": "Return to Jacksonville — Mary Louis callback, full circle"
+    },
+    {
+      "seg_id": 65,
+      "arc": "aftermath",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 260,
+      "clip_end_sec": 270,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "You are being scored right now. By companies you have never heard of...",
+      "editorial_note": "60 Minutes — direct address to viewer, you are being tracked"
+    },
+    {
+      "seg_id": 66,
+      "arc": "aftermath",
+      "source_clip": "Algorithms, AI, and Disability Discrimination in H.mp4",
+      "clip_start_sec": 205,
+      "clip_end_sec": 215,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But Kyle Behm is still here. He survived...",
+      "editorial_note": "Return to disability discrimination footage — Kyle's survival, hope"
+    },
+    {
+      "seg_id": 67,
+      "arc": "aftermath",
+      "source_clip": "How Insurance Companies Use AI to Deny Your Claims.mp4",
+      "clip_start_sec": 18,
+      "clip_end_sec": 28,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And somewhere in this country right now, another person...",
+      "editorial_note": "Insurance AI denial — another person being scored right now"
+    },
+    {
+      "seg_id": 68,
+      "arc": "aftermath",
+      "source_clip": "How algorithms are being used to deny health insur.mp4",
+      "clip_start_sec": 25,
+      "clip_end_sec": 32,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "But you do.",
+      "editorial_note": "Short powerful cut — you now know what they don't"
+    },
+    {
+      "seg_id": 69,
+      "arc": "aftermath",
+      "source_clip": "LexisNexis\u00ae Webinar\uff1a \uff02Mobile Privacy\uff1a An Overview .mp4",
+      "clip_start_sec": 15,
+      "clip_end_sec": 28,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "You are the only one in this equation who doesn't know the score...",
+      "editorial_note": "LexisNexis mobile privacy — corporate data collection visual for 'you don't know the score'"
+    },
+    {
+      "seg_id": 70,
+      "arc": "aftermath",
+      "source_clip": "How Insurance Companies Use AI to Deny Your Claims.mp4",
+      "clip_start_sec": 30,
+      "clip_end_sec": 42,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "And the single most dangerous thing about the secret score economy...",
+      "editorial_note": "Insurance AI — final danger statement, building to climax"
+    },
+    {
+      "seg_id": 71,
+      "arc": "aftermath",
+      "source_clip": "60 Minutes\uff1a The Data Brokers \u2013 How Your Personal I.mp4",
+      "clip_start_sec": 270,
+      "clip_end_sec": 280,
+      "audio_mode": "vo_only",
+      "narration_text_snippet": "Break it.",
+      "editorial_note": "Final beat — 60 Minutes investigation visual, call to action with gravity of investigative journalism"
+    }
+  ],
+  "soundbite_segments": [3, 11, 19, 34, 39, 45, 61],
+  "intro_segments": [0, 1, 2, 3]
+}
