@@ -1,0 +1,3428 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 6.909,
+      "end_sec": 6.909,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Something is following you. Right now, as you watch this, a number you have never seen..."
+    },
+    {
+      "type": "pause",
+      "start_sec": 6.909,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 7.109,
+      "duration_sec": 3.442,
+      "end_sec": 10.55,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "is quietly deciding what your life looks like."
+    },
+    {
+      "type": "pause",
+      "start_sec": 10.55,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 10.85,
+      "duration_sec": 6.025,
+      "end_sec": 16.876,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Not your credit score \u2014 you know about that one. This is something else."
+    },
+    {
+      "type": "pause",
+      "start_sec": 16.876,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 17.676,
+      "duration_sec": 0.875,
+      "end_sec": 18.55,
+      "word_count": 2,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "Something hidden."
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 18.55,
+      "duration_sec": 7.342,
+      "end_sec": 25.892,
+      "word_count": 17,
+      "voice_register": "energized",
+      "pause_before_sec": 0.0,
+      "text": "And the companies that created it? You've never heard of them. But they have heard of you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 25.892,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 26.192,
+      "duration_sec": 5.17,
+      "end_sec": 31.362,
+      "word_count": 12,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "They know where you've lived who you've lived with what you've bought"
+    },
+    {
+      "type": "pause",
+      "start_sec": 31.362,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 31.562,
+      "duration_sec": 5.63,
+      "end_sec": 37.192,
+      "word_count": 13,
+      "voice_register": "energized",
+      "pause_before_sec": 0.2,
+      "text": "what you owe \u2014 and what you did on a Tuesday in 2014."
+    },
+    {
+      "type": "pause",
+      "start_sec": 37.192,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 37.342,
+      "duration_sec": 6.46,
+      "end_sec": 43.802,
+      "word_count": 15,
+      "voice_register": "energized",
+      "pause_before_sec": 0.15,
+      "text": "They have assembled a portrait of you so detailed it would make a stalker blush..."
+    },
+    {
+      "type": "pause",
+      "start_sec": 43.802,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 44.002,
+      "duration_sec": 4.318,
+      "end_sec": 48.32,
+      "word_count": 10,
+      "voice_register": "energized",
+      "pause_before_sec": 0.2,
+      "text": "and they have reduced that portrait to a single number."
+    },
+    {
+      "type": "pause",
+      "start_sec": 48.32,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 49.12,
+      "duration_sec": 1.271,
+      "end_sec": 50.391,
+      "word_count": 3,
+      "voice_register": "energized",
+      "pause_before_sec": 0.8,
+      "text": "A secret score."
+    },
+    {
+      "type": "pause",
+      "start_sec": 50.391,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 51.591,
+      "duration_sec": 8.633,
+      "end_sec": 60.225,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "One that is, right now, shaping where you can live. Where you can work. Whether your insurance claim gets paid."
+    },
+    {
+      "type": "pause",
+      "start_sec": 60.225,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 60.425,
+      "duration_sec": 2.594,
+      "end_sec": 63.018,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Whether a doctor will treat you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 63.018,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 63.318,
+      "duration_sec": 3.882,
+      "end_sec": 67.2,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And until this moment... nobody told you it existed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 67.2,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 68.0,
+      "duration_sec": 3.444,
+      "end_sec": 71.444,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "But here is the question nobody is asking."
+    },
+    {
+      "type": "pause",
+      "start_sec": 71.444,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 71.744,
+      "duration_sec": 3.104,
+      "end_sec": 74.848,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "What happens when a perfect record means nothing?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 74.848,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 76.048,
+      "duration_sec": 4.3,
+      "end_sec": 80.348,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Mary Louis paid her rent on time for sixteen years."
+    },
+    {
+      "type": "pause",
+      "start_sec": 80.348,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 80.648,
+      "duration_sec": 6.475,
+      "end_sec": 87.123,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Sixteen years. Not a single missed payment, not a single late check \u2014 not once."
+    },
+    {
+      "type": "pause",
+      "start_sec": 87.123,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 87.323,
+      "duration_sec": 6.476,
+      "end_sec": 93.8,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "She was, by every reasonable measure, the kind of tenant any landlord should dream of."
+    },
+    {
+      "type": "pause",
+      "start_sec": 93.8,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 94.0,
+      "duration_sec": 6.04,
+      "end_sec": 100.04,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "So when she applied for a new apartment, she expected what anyone would expect."
+    },
+    {
+      "type": "pause",
+      "start_sec": 100.04,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 100.34,
+      "duration_sec": 2.197,
+      "end_sec": 102.537,
+      "word_count": 1,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Approval."
+    },
+    {
+      "type": "pause",
+      "start_sec": 102.537,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 103.337,
+      "duration_sec": 2.139,
+      "end_sec": 105.476,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "She got a rejection letter."
+    },
+    {
+      "type": "pause",
+      "start_sec": 105.476,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 106.676,
+      "duration_sec": 6.476,
+      "end_sec": 113.152,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "No explanation. No human being she could call. Just a form that said, essentially... no."
+    },
+    {
+      "type": "pause",
+      "start_sec": 113.152,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 113.452,
+      "duration_sec": 3.88,
+      "end_sec": 117.332,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And the thing that denied her wasn't a person."
+    },
+    {
+      "type": "pause",
+      "start_sec": 117.332,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 117.532,
+      "duration_sec": 6.042,
+      "end_sec": 123.573,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "It wasn't a landlord who looked at her application and made a judgment call."
+    },
+    {
+      "type": "pause",
+      "start_sec": 123.573,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 123.773,
+      "duration_sec": 6.032,
+      "end_sec": 129.805,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "It was a number \u2014 generated by a company she had never heard of"
+    },
+    {
+      "type": "pause",
+      "start_sec": 129.805,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 130.005,
+      "duration_sec": 3.874,
+      "end_sec": 133.879,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "using data she had never been asked to verify."
+    },
+    {
+      "type": "pause",
+      "start_sec": 133.879,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 134.679,
+      "duration_sec": 7.334,
+      "end_sec": 142.013,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "A ghost in the machine said Mary Louis wasn't good enough. Sixteen years of proof said otherwise."
+    },
+    {
+      "type": "pause",
+      "start_sec": 142.013,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 142.313,
+      "duration_sec": 1.274,
+      "end_sec": 143.587,
+      "word_count": 3,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The ghost won."
+    },
+    {
+      "type": "pause",
+      "start_sec": 143.587,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 144.787,
+      "duration_sec": 8.207,
+      "end_sec": 152.994,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Here's the thing, though. Mary had a legal right she didn't know about. Under the Fair Credit Reporting Act"
+    },
+    {
+      "type": "pause",
+      "start_sec": 152.994,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 153.194,
+      "duration_sec": 8.636,
+      "end_sec": 161.83,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "she could have requested her SafeRent file \u2014 could have seen the exact data that denied her disputed every error"
+    },
+    {
+      "type": "pause",
+      "start_sec": 161.83,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 162.03,
+      "duration_sec": 2.573,
+      "end_sec": 164.603,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "and forced them to correct it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 164.603,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 164.903,
+      "duration_sec": 3.488,
+      "end_sec": 168.391,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But nobody told her that. The company certainly didn't."
+    },
+    {
+      "type": "pause",
+      "start_sec": 168.391,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 169.191,
+      "duration_sec": 2.151,
+      "end_sec": 171.342,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "And that's not an accident."
+    },
+    {
+      "type": "pause",
+      "start_sec": 171.342,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 172.142,
+      "duration_sec": 2.146,
+      "end_sec": 174.287,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "So who built the ghost?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 174.287,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 175.087,
+      "duration_sec": 3.808,
+      "end_sec": 178.895,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "The company is called SafeRent, formerly known as CoreLogic."
+    },
+    {
+      "type": "pause",
+      "start_sec": 178.895,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 179.095,
+      "duration_sec": 8.632,
+      "end_sec": 187.728,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Their product is a tenant screening score \u2014 a single number that tells a landlord whether you're worth the risk."
+    },
+    {
+      "type": "pause",
+      "start_sec": 187.728,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 187.928,
+      "duration_sec": 4.256,
+      "end_sec": 192.184,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Sounds reasonable on the surface. Landlords need to make decisions."
+    },
+    {
+      "type": "pause",
+      "start_sec": 192.184,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 38,
+      "start_sec": 192.484,
+      "duration_sec": 6.293,
+      "end_sec": 198.777,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But here's what they don't tell you. SafeRent's algorithm doesn't just look at your rental history."
+    },
+    {
+      "type": "pause",
+      "start_sec": 198.777,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 39,
+      "start_sec": 198.977,
+      "duration_sec": 5.607,
+      "end_sec": 204.584,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It pulls from an enormous web of data \u2014 court records eviction filings"
+    },
+    {
+      "type": "pause",
+      "start_sec": 204.584,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 40,
+      "start_sec": 204.784,
+      "duration_sec": 4.743,
+      "end_sec": 209.527,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "debt records \u2014 and crunches all of it into a score."
+    },
+    {
+      "type": "pause",
+      "start_sec": 209.527,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 41,
+      "start_sec": 210.327,
+      "duration_sec": 5.824,
+      "end_sec": 216.151,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "A score that, according to a federal lawsuit... systematically discriminated against Black and Hispanic renters."
+    },
+    {
+      "type": "pause",
+      "start_sec": 216.151,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 42,
+      "start_sec": 217.351,
+      "duration_sec": 6.667,
+      "end_sec": 224.018,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "SafeRent settled that lawsuit for two point two seven five million dollars. They didn't admit wrongdoing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 224.018,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 43,
+      "start_sec": 224.318,
+      "duration_sec": 1.293,
+      "end_sec": 225.611,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "They never do."
+    },
+    {
+      "type": "pause",
+      "start_sec": 225.611,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 44,
+      "start_sec": 225.761,
+      "duration_sec": 13.739,
+      "end_sec": 239.5,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "But the Department of Justice found that their algorithm produced scores that disproportionately harmed people of color \u2014 effectively encoding racial discrimination into a math equation... and calling it objective."
+    },
+    {
+      "type": "pause",
+      "start_sec": 239.5,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 45,
+      "start_sec": 240.7,
+      "duration_sec": 3.867,
+      "end_sec": 244.567,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "And this is where the secret becomes truly dangerous."
+    },
+    {
+      "type": "pause",
+      "start_sec": 244.567,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 46,
+      "start_sec": 244.867,
+      "duration_sec": 7.341,
+      "end_sec": 252.208,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Mathematics is not neutral when the data it feeds on is poisoned. And the data is poisoned."
+    },
+    {
+      "type": "pause",
+      "start_sec": 252.208,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 47,
+      "start_sec": 252.408,
+      "duration_sec": 6.48,
+      "end_sec": 258.888,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "It has been poisoned for decades, by a society that has never treated everyone equally."
+    },
+    {
+      "type": "pause",
+      "start_sec": 258.888,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 48,
+      "start_sec": 259.038,
+      "duration_sec": 6.908,
+      "end_sec": 265.946,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "When you train an algorithm on historical data from an unequal world, you don't get fairness."
+    },
+    {
+      "type": "pause",
+      "start_sec": 265.946,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 49,
+      "start_sec": 266.746,
+      "duration_sec": 2.15,
+      "end_sec": 268.896,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "You get inequality at scale."
+    },
+    {
+      "type": "pause",
+      "start_sec": 268.896,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 50,
+      "start_sec": 269.196,
+      "duration_sec": 9.49,
+      "end_sec": 278.686,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "You get discrimination that moves at the speed of a computer that processes thousands of applications per hour that never gets tired"
+    },
+    {
+      "type": "pause",
+      "start_sec": 278.686,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 51,
+      "start_sec": 278.886,
+      "duration_sec": 5.174,
+      "end_sec": 284.059,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "never feels guilty... and never has to look anyone in the eye."
+    },
+    {
+      "type": "pause",
+      "start_sec": 284.059,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 52,
+      "start_sec": 285.259,
+      "duration_sec": 4.301,
+      "end_sec": 289.561,
+      "word_count": 10,
+      "voice_register": "energized",
+      "pause_before_sec": 1.2,
+      "text": "But here's the part that should make your stomach drop."
+    },
+    {
+      "type": "pause",
+      "start_sec": 289.561,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 53,
+      "start_sec": 290.361,
+      "duration_sec": 4.323,
+      "end_sec": 294.684,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "Only three percent of renters know which company screened them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 294.684,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 54,
+      "start_sec": 294.984,
+      "duration_sec": 0.715,
+      "end_sec": 295.699,
+      "word_count": 2,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Three percent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 295.699,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 55,
+      "start_sec": 296.499,
+      "duration_sec": 6.902,
+      "end_sec": 303.4,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "That means ninety-seven out of every hundred people who get rejected by one of these algorithms..."
+    },
+    {
+      "type": "pause",
+      "start_sec": 303.4,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 56,
+      "start_sec": 303.6,
+      "duration_sec": 9.487,
+      "end_sec": 313.087,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "don't even know who to be angry at. They don't know what data was used. They don't know what the score was."
+    },
+    {
+      "type": "pause",
+      "start_sec": 313.087,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 57,
+      "start_sec": 313.287,
+      "duration_sec": 3.446,
+      "end_sec": 316.733,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "They just know they didn't get the apartment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 316.733,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 58,
+      "start_sec": 317.033,
+      "duration_sec": 8.208,
+      "end_sec": 325.241,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "It is Kafka's \"The Trial\" made real \u2014 except it's not fiction... and it's not happening to one person."
+    },
+    {
+      "type": "pause",
+      "start_sec": 325.241,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 59,
+      "start_sec": 326.041,
+      "duration_sec": 1.706,
+      "end_sec": 327.747,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "It's happening to millions."
+    },
+    {
+      "type": "pause",
+      "start_sec": 327.747,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 60,
+      "start_sec": 328.947,
+      "duration_sec": 0.971,
+      "end_sec": 329.918,
+      "word_count": 1,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Now."
+    },
+    {
+      "type": "pause",
+      "start_sec": 329.918,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 61,
+      "start_sec": 330.218,
+      "duration_sec": 5.61,
+      "end_sec": 335.828,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Before we go further \u2014 I want you to try something genuinely strange."
+    },
+    {
+      "type": "pause",
+      "start_sec": 335.828,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 62,
+      "start_sec": 335.978,
+      "duration_sec": 7.334,
+      "end_sec": 343.312,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "Think of the most boring fact about yourself. Your shoe size. The name of your first pet."
+    },
+    {
+      "type": "pause",
+      "start_sec": 343.312,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 63,
+      "start_sec": 343.512,
+      "duration_sec": 3.444,
+      "end_sec": 346.956,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The town where you got your driver's license."
+    },
+    {
+      "type": "pause",
+      "start_sec": 346.956,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 64,
+      "start_sec": 347.256,
+      "duration_sec": 7.883,
+      "end_sec": 355.139,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Somewhere, right now, that fact is sitting in a database, contributing to a score that determines something about your life."
+    },
+    {
+      "type": "pause",
+      "start_sec": 355.139,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 65,
+      "start_sec": 355.289,
+      "duration_sec": 4.949,
+      "end_sec": 360.238,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "Your shoe size probably isn't. But you'd be surprised how close we're getting."
+    },
+    {
+      "type": "pause",
+      "start_sec": 360.238,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 66,
+      "start_sec": 361.038,
+      "duration_sec": 9.069,
+      "end_sec": 370.107,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "Because the company that ties all of this data together keeps eighty-three billion records on two hundred and eighty-two million Americans."
+    },
+    {
+      "type": "pause",
+      "start_sec": 370.107,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 67,
+      "start_sec": 370.407,
+      "duration_sec": 7.762,
+      "end_sec": 378.168,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That's LexisNexis. Over two hundred and fifty data points for every man, woman, and child in this country."
+    },
+    {
+      "type": "pause",
+      "start_sec": 378.168,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 68,
+      "start_sec": 378.318,
+      "duration_sec": 9.492,
+      "end_sec": 387.81,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "Where you've lived, who you've lived with, what cars you've driven, what court cases you've been involved in, what properties you've owned."
+    },
+    {
+      "type": "pause",
+      "start_sec": 387.81,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 69,
+      "start_sec": 388.11,
+      "duration_sec": 5.099,
+      "end_sec": 393.209,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "All compiled into products sold to landlords, employers, insurance companies, and law enforcement."
+    },
+    {
+      "type": "pause",
+      "start_sec": 393.209,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 70,
+      "start_sec": 394.009,
+      "duration_sec": 5.621,
+      "end_sec": 399.629,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "And you have almost certainly never been told what they have on you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 399.629,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 71,
+      "start_sec": 400.829,
+      "duration_sec": 2.588,
+      "end_sec": 403.417,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Which brings us to Carmen Arroyo."
+    },
+    {
+      "type": "pause",
+      "start_sec": 403.417,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 72,
+      "start_sec": 403.717,
+      "duration_sec": 4.75,
+      "end_sec": 408.467,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Because Carmen found out what happens when that data is wrong."
+    },
+    {
+      "type": "pause",
+      "start_sec": 408.467,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 73,
+      "start_sec": 409.267,
+      "duration_sec": 9.498,
+      "end_sec": 418.765,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "Carmen's son had been involved in a legal case \u2014 a charge that was fully dismissed. Not reduced, not pled down... dismissed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 418.765,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 74,
+      "start_sec": 418.965,
+      "duration_sec": 3.001,
+      "end_sec": 421.966,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Gone, in the eyes of the law."
+    },
+    {
+      "type": "pause",
+      "start_sec": 421.966,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 75,
+      "start_sec": 422.766,
+      "duration_sec": 3.856,
+      "end_sec": 426.621,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "But not gone in the eyes of the database."
+    },
+    {
+      "type": "pause",
+      "start_sec": 426.621,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 76,
+      "start_sec": 426.921,
+      "duration_sec": 9.077,
+      "end_sec": 435.998,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "When Carmen applied for housing, that ghost charge appeared in her screening report, tied to her name. Her application was denied."
+    },
+    {
+      "type": "pause",
+      "start_sec": 435.998,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 77,
+      "start_sec": 436.198,
+      "duration_sec": 6.028,
+      "end_sec": 442.226,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Not because of anything she had done. Not because of any threat she posed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 442.226,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 78,
+      "start_sec": 443.026,
+      "duration_sec": 7.34,
+      "end_sec": 450.366,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "But because a database carried an accusation that no longer existed legally... but very much existed algorithmically."
+    },
+    {
+      "type": "pause",
+      "start_sec": 450.366,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 79,
+      "start_sec": 450.666,
+      "duration_sec": 6.047,
+      "end_sec": 456.713,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Carmen Arroyo was being punished for something that, by every legal standard... never happened."
+    },
+    {
+      "type": "pause",
+      "start_sec": 456.713,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 80,
+      "start_sec": 457.913,
+      "duration_sec": 8.843,
+      "end_sec": 466.756,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Now \u2014 Carmen could have disputed this. The Fair Credit Reporting Act requires these companies to investigate disputes within thirty days."
+    },
+    {
+      "type": "pause",
+      "start_sec": 466.756,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 81,
+      "start_sec": 466.956,
+      "duration_sec": 4.885,
+      "end_sec": 471.841,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "She could have demanded her file, flagged the error, and forced a correction."
+    },
+    {
+      "type": "pause",
+      "start_sec": 471.841,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 82,
+      "start_sec": 472.141,
+      "duration_sec": 2.15,
+      "end_sec": 474.291,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But she didn't know that."
+    },
+    {
+      "type": "pause",
+      "start_sec": 474.291,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 83,
+      "start_sec": 475.091,
+      "duration_sec": 9.506,
+      "end_sec": 484.597,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "And the system is designed so that you don't know that. Because the moment you start checking the moment you start disputing"
+    },
+    {
+      "type": "pause",
+      "start_sec": 484.597,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 84,
+      "start_sec": 484.797,
+      "duration_sec": 7.328,
+      "end_sec": 492.126,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "the moment you start demanding to see the data \u2014 the whole business model gets more expensive."
+    },
+    {
+      "type": "pause",
+      "start_sec": 492.126,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 85,
+      "start_sec": 492.426,
+      "duration_sec": 4.312,
+      "end_sec": 496.738,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Your ignorance... is a line item in their profit margin."
+    },
+    {
+      "type": "pause",
+      "start_sec": 496.738,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 86,
+      "start_sec": 497.938,
+      "duration_sec": 7.338,
+      "end_sec": 505.277,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "And the data is wrong far more often than anyone admits. Court records are full of errors."
+    },
+    {
+      "type": "pause",
+      "start_sec": 505.277,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 87,
+      "start_sec": 505.477,
+      "duration_sec": 6.795,
+      "end_sec": 512.271,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "People with similar names get their files merged. Charges that were dismissed still show up as convictions."
+    },
+    {
+      "type": "pause",
+      "start_sec": 512.271,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 88,
+      "start_sec": 512.471,
+      "duration_sec": 3.36,
+      "end_sec": 515.831,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Debts that were paid off still appear as outstanding."
+    },
+    {
+      "type": "pause",
+      "start_sec": 515.831,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 89,
+      "start_sec": 516.131,
+      "duration_sec": 5.589,
+      "end_sec": 521.721,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The algorithms consuming this data can't tell the difference. They just see the numbers."
+    },
+    {
+      "type": "pause",
+      "start_sec": 521.721,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 90,
+      "start_sec": 522.52,
+      "duration_sec": 3.873,
+      "end_sec": 526.394,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "So tenant screening is one corner of this world."
+    },
+    {
+      "type": "pause",
+      "start_sec": 526.394,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 91,
+      "start_sec": 526.694,
+      "duration_sec": 3.449,
+      "end_sec": 530.142,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "What happens when you apply for a job?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 530.142,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 92,
+      "start_sec": 530.942,
+      "duration_sec": 6.91,
+      "end_sec": 537.853,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "Because the same logic \u2014 the same faith in algorithms the same removal of human judgment"
+    },
+    {
+      "type": "pause",
+      "start_sec": 537.853,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 93,
+      "start_sec": 538.053,
+      "duration_sec": 6.467,
+      "end_sec": 544.52,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "the same black-box scoring \u2014 has consumed the hiring process at hundreds of major companies."
+    },
+    {
+      "type": "pause",
+      "start_sec": 544.52,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 94,
+      "start_sec": 544.67,
+      "duration_sec": 9.496,
+      "end_sec": 554.167,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "You submit your resume online. You wait. You hear nothing. You assume a human read your application and decided you weren't qualified."
+    },
+    {
+      "type": "pause",
+      "start_sec": 554.167,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 95,
+      "start_sec": 554.967,
+      "duration_sec": 2.123,
+      "end_sec": 557.089,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "But increasingly... nobody read anything."
+    },
+    {
+      "type": "pause",
+      "start_sec": 557.089,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 96,
+      "start_sec": 557.389,
+      "duration_sec": 8.209,
+      "end_sec": 565.599,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Your resume was parsed by software, scored by an algorithm, and discarded before a person ever saw your name."
+    },
+    {
+      "type": "pause",
+      "start_sec": 565.599,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 97,
+      "start_sec": 565.749,
+      "duration_sec": 7.778,
+      "end_sec": 573.527,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "Companies like HireVue asked candidates to record video interviews \u2014 not with a person, but with a camera."
+    },
+    {
+      "type": "pause",
+      "start_sec": 573.527,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 98,
+      "start_sec": 573.727,
+      "duration_sec": 7.769,
+      "end_sec": 581.495,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Then artificial intelligence analyzed your facial expressions, your word choice, your tone of voice... and generated a score."
+    },
+    {
+      "type": "pause",
+      "start_sec": 581.495,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 99,
+      "start_sec": 581.795,
+      "duration_sec": 7.771,
+      "end_sec": 589.567,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Your employability, reduced to the way your mouth moved when you answered a question about your greatest weakness."
+    },
+    {
+      "type": "pause",
+      "start_sec": 589.567,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 100,
+      "start_sec": 590.767,
+      "duration_sec": 3.016,
+      "end_sec": 593.783,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "So what does that future look like?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 593.783,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 101,
+      "start_sec": 594.083,
+      "duration_sec": 1.292,
+      "end_sec": 595.375,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Ask Derek Mobley."
+    },
+    {
+      "type": "pause",
+      "start_sec": 595.375,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 102,
+      "start_sec": 596.175,
+      "duration_sec": 6.028,
+      "end_sec": 602.203,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "Derek is a Black man who applied to over a hundred and fifty jobs."
+    },
+    {
+      "type": "pause",
+      "start_sec": 602.203,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 103,
+      "start_sec": 602.403,
+      "duration_sec": 5.589,
+      "end_sec": 607.992,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "He didn't just apply casually \u2014 he was systematic, persistent, desperate to find work."
+    },
+    {
+      "type": "pause",
+      "start_sec": 607.992,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 104,
+      "start_sec": 608.292,
+      "duration_sec": 6.667,
+      "end_sec": 614.959,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And he was rejected from every single one. Automatically. Without a human ever reviewing his application."
+    },
+    {
+      "type": "speech",
+      "index": 105,
+      "start_sec": 614.959,
+      "duration_sec": 6.479,
+      "end_sec": 621.438,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "At one point, records show he submitted an application at one fifty in the morning."
+    },
+    {
+      "type": "pause",
+      "start_sec": 621.438,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 106,
+      "start_sec": 621.738,
+      "duration_sec": 7.338,
+      "end_sec": 629.076,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That's not someone who isn't trying. That's someone who can't sleep because the system keeps saying no."
+    },
+    {
+      "type": "pause",
+      "start_sec": 629.076,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 107,
+      "start_sec": 630.276,
+      "duration_sec": 6.613,
+      "end_sec": 636.889,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "A study by the Brookings Institution found that when identical resumes were submitted to AI hiring tools"
+    },
+    {
+      "type": "pause",
+      "start_sec": 636.889,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 108,
+      "start_sec": 637.089,
+      "duration_sec": 5.077,
+      "end_sec": 642.167,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "white-associated names were preferred eighty-five point one percent of the time."
+    },
+    {
+      "type": "pause",
+      "start_sec": 642.167,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 109,
+      "start_sec": 642.467,
+      "duration_sec": 9.065,
+      "end_sec": 651.532,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The algorithm doesn't need to be racist. It just needs to be accurate \u2014 accurate to a world that already is."
+    },
+    {
+      "type": "pause",
+      "start_sec": 651.532,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 110,
+      "start_sec": 651.682,
+      "duration_sec": 4.298,
+      "end_sec": 655.98,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "It sees zip codes. It sees the names of schools."
+    },
+    {
+      "type": "pause",
+      "start_sec": 655.98,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 111,
+      "start_sec": 656.18,
+      "duration_sec": 7.348,
+      "end_sec": 663.528,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "It sees gaps in employment that correlate with incarceration, which correlates with race, which correlates with poverty."
+    },
+    {
+      "type": "pause",
+      "start_sec": 663.528,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 112,
+      "start_sec": 664.328,
+      "duration_sec": 4.306,
+      "end_sec": 668.634,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "The machine doesn't see color. It sees everything color touches."
+    },
+    {
+      "type": "pause",
+      "start_sec": 668.634,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 113,
+      "start_sec": 669.834,
+      "duration_sec": 3.879,
+      "end_sec": 673.713,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Now I need to tell you about Kyle Behm."
+    },
+    {
+      "type": "pause",
+      "start_sec": 673.713,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 114,
+      "start_sec": 674.013,
+      "duration_sec": 3.873,
+      "end_sec": 677.886,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Because his story is the one that haunts me."
+    },
+    {
+      "type": "pause",
+      "start_sec": 677.886,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 115,
+      "start_sec": 678.686,
+      "duration_sec": 8.211,
+      "end_sec": 686.897,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "Kyle was a young man who struggled with bipolar disorder. He was in treatment. He was managing his condition."
+    },
+    {
+      "type": "pause",
+      "start_sec": 686.897,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 116,
+      "start_sec": 687.097,
+      "duration_sec": 8.188,
+      "end_sec": 695.285,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "He was trying to do what everyone tells you to do \u2014 get back out there get a job"
+    },
+    {
+      "type": "pause",
+      "start_sec": 695.285,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 117,
+      "start_sec": 695.485,
+      "duration_sec": 2.145,
+      "end_sec": 697.63,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "move forward with your life."
+    },
+    {
+      "type": "pause",
+      "start_sec": 697.63,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 118,
+      "start_sec": 697.93,
+      "duration_sec": 3.36,
+      "end_sec": 701.29,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "So he applied for entry-level positions. Hourly work."
+    },
+    {
+      "type": "pause",
+      "start_sec": 701.29,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 119,
+      "start_sec": 701.49,
+      "duration_sec": 7.335,
+      "end_sec": 708.825,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The bottom rung of the ladder \u2014 the place where everyone is supposed to get a start."
+    },
+    {
+      "type": "speech",
+      "index": 120,
+      "start_sec": 708.825,
+      "duration_sec": 9.502,
+      "end_sec": 718.328,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "But every application included a personality test. A long probing questionnaire about his moods his feelings his mental state \u2014 questions that"
+    },
+    {
+      "type": "pause",
+      "start_sec": 718.328,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 121,
+      "start_sec": 718.528,
+      "duration_sec": 4.739,
+      "end_sec": 723.267,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "for someone with a mental health condition were essentially a trap."
+    },
+    {
+      "type": "pause",
+      "start_sec": 723.267,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 122,
+      "start_sec": 723.567,
+      "duration_sec": 2.15,
+      "end_sec": 725.717,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Kyle failed every single one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 725.717,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 123,
+      "start_sec": 726.517,
+      "duration_sec": 6.48,
+      "end_sec": 732.997,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "Not because he couldn't do the work. Not because he wouldn't show up on time."
+    },
+    {
+      "type": "pause",
+      "start_sec": 732.997,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 124,
+      "start_sec": 733.197,
+      "duration_sec": 9.497,
+      "end_sec": 742.694,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "But because an algorithm decided his personality profile \u2014 shaped by a condition he was actively treating \u2014 made him a risk."
+    },
+    {
+      "type": "pause",
+      "start_sec": 742.694,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 125,
+      "start_sec": 743.894,
+      "duration_sec": 1.703,
+      "end_sec": 745.597,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "The rejections piled up."
+    },
+    {
+      "type": "pause",
+      "start_sec": 745.597,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 126,
+      "start_sec": 745.897,
+      "duration_sec": 2.155,
+      "end_sec": 748.052,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The sense of worthlessness grew."
+    },
+    {
+      "type": "pause",
+      "start_sec": 748.052,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 127,
+      "start_sec": 748.852,
+      "duration_sec": 2.152,
+      "end_sec": 751.004,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "And Kyle Behm attempted suicide."
+    },
+    {
+      "type": "pause",
+      "start_sec": 751.004,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 128,
+      "start_sec": 752.204,
+      "duration_sec": 7.371,
+      "end_sec": 759.575,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "His father, a lawyer, investigated. He discovered the personality tests were manufactured by a company called Kronos"
+    },
+    {
+      "type": "pause",
+      "start_sec": 759.575,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 129,
+      "start_sec": 759.775,
+      "duration_sec": 8.643,
+      "end_sec": 768.418,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "used by major retailers \u2014 companies you shop at every week \u2014 to screen out applicants at the front door."
+    },
+    {
+      "type": "pause",
+      "start_sec": 768.418,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 130,
+      "start_sec": 768.718,
+      "duration_sec": 3.447,
+      "end_sec": 772.164,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Not based on skills. Not based on experience."
+    },
+    {
+      "type": "pause",
+      "start_sec": 772.164,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 131,
+      "start_sec": 772.364,
+      "duration_sec": 8.075,
+      "end_sec": 780.439,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Based on answers that functioned, in practice, as an illegal mental health screening under the Americans with Disabilities Act."
+    },
+    {
+      "type": "pause",
+      "start_sec": 780.439,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 132,
+      "start_sec": 780.589,
+      "duration_sec": 4.331,
+      "end_sec": 784.92,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "Kyle's father filed complaints with the Equal Employment Opportunity Commission."
+    },
+    {
+      "type": "pause",
+      "start_sec": 784.92,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 133,
+      "start_sec": 785.72,
+      "duration_sec": 6.04,
+      "end_sec": 791.76,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "But here's the thing about fighting these systems. The companies have armies of lawyers."
+    },
+    {
+      "type": "pause",
+      "start_sec": 791.76,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 134,
+      "start_sec": 791.96,
+      "duration_sec": 5.183,
+      "end_sec": 797.143,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "They have studies they funded themselves that say the tests are valid."
+    },
+    {
+      "type": "pause",
+      "start_sec": 797.143,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 135,
+      "start_sec": 797.343,
+      "duration_sec": 8.207,
+      "end_sec": 805.55,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "They have decades of selling these tools to HR departments that don't understand the science but love the efficiency."
+    },
+    {
+      "type": "pause",
+      "start_sec": 805.55,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 136,
+      "start_sec": 805.85,
+      "duration_sec": 3.868,
+      "end_sec": 809.718,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "One family against that machine \u2014 David and Goliath..."
+    },
+    {
+      "type": "pause",
+      "start_sec": 809.718,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 137,
+      "start_sec": 809.918,
+      "duration_sec": 6.038,
+      "end_sec": 815.956,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "except Goliath has a legal team and David is recovering from a suicide attempt."
+    },
+    {
+      "type": "pause",
+      "start_sec": 815.956,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 138,
+      "start_sec": 817.156,
+      "duration_sec": 7.499,
+      "end_sec": 824.655,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "And when Kyle's father filed those complaints, something remarkable happened. The EEOC investigated. They found merit."
+    },
+    {
+      "type": "pause",
+      "start_sec": 824.655,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 139,
+      "start_sec": 824.955,
+      "duration_sec": 2.141,
+      "end_sec": 827.096,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "But the process took years."
+    },
+    {
+      "type": "pause",
+      "start_sec": 827.096,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 140,
+      "start_sec": 827.296,
+      "duration_sec": 8.211,
+      "end_sec": 835.506,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "And during those years, Kronos kept selling the same tests to the same companies, screening out the same people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 835.506,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 141,
+      "start_sec": 835.656,
+      "duration_sec": 6.903,
+      "end_sec": 842.559,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "The law moved at the speed of bureaucracy. The algorithm moved at the speed of light."
+    },
+    {
+      "type": "pause",
+      "start_sec": 842.559,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 142,
+      "start_sec": 842.859,
+      "duration_sec": 7.763,
+      "end_sec": 850.622,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That gap \u2014 between the harm and the remedy \u2014 is where millions of people live right now."
+    },
+    {
+      "type": "pause",
+      "start_sec": 850.622,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 143,
+      "start_sec": 851.822,
+      "duration_sec": 5.178,
+      "end_sec": 857.0,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "So if these systems are so harmful... why does nobody stop them?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 857.0,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 144,
+      "start_sec": 857.8,
+      "duration_sec": 5.269,
+      "end_sec": 863.069,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "Consider what happened at Cigna, one of the largest health insurers in the country."
+    },
+    {
+      "type": "pause",
+      "start_sec": 863.069,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 145,
+      "start_sec": 863.269,
+      "duration_sec": 7.435,
+      "end_sec": 870.704,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "An investigation revealed Cigna used an automated system that denied over sixty thousand claims... in a single month."
+    },
+    {
+      "type": "pause",
+      "start_sec": 870.704,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 146,
+      "start_sec": 871.004,
+      "duration_sec": 2.58,
+      "end_sec": 873.584,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Sixty thousand. One system. One month."
+    },
+    {
+      "type": "pause",
+      "start_sec": 873.584,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 147,
+      "start_sec": 874.384,
+      "duration_sec": 3.275,
+      "end_sec": 877.659,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "These weren't complex cases requiring careful medical judgment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 877.659,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 148,
+      "start_sec": 877.859,
+      "duration_sec": 9.07,
+      "end_sec": 886.929,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "They were processed in bulk, at speed, by a machine optimized not for patient care... but for the company's bottom line."
+    },
+    {
+      "type": "pause",
+      "start_sec": 886.929,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 149,
+      "start_sec": 887.229,
+      "duration_sec": 6.911,
+      "end_sec": 894.14,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And most of those sixty thousand people, faced with the exhaustion of appeals... simply gave up."
+    },
+    {
+      "type": "pause",
+      "start_sec": 894.14,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 150,
+      "start_sec": 894.94,
+      "duration_sec": 2.574,
+      "end_sec": 897.514,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "The algorithm was counting on that."
+    },
+    {
+      "type": "pause",
+      "start_sec": 897.514,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 151,
+      "start_sec": 898.714,
+      "duration_sec": 3.936,
+      "end_sec": 902.65,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "This is the fundamental asymmetry of the secret score economy."
+    },
+    {
+      "type": "pause",
+      "start_sec": 902.65,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 152,
+      "start_sec": 902.95,
+      "duration_sec": 6.91,
+      "end_sec": 909.86,
+      "word_count": 16,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "And here is the sentence I want you to remember \u2014 the one that explains everything."
+    },
+    {
+      "type": "pause",
+      "start_sec": 909.86,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 153,
+      "start_sec": 910.66,
+      "duration_sec": 5.601,
+      "end_sec": 916.261,
+      "word_count": 13,
+      "voice_register": "energized",
+      "pause_before_sec": 0.8,
+      "text": "You are the only one in this equation who doesn't know the score."
+    },
+    {
+      "type": "pause",
+      "start_sec": 916.261,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 154,
+      "start_sec": 917.461,
+      "duration_sec": 7.763,
+      "end_sec": 925.224,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "The companies know it. The landlords know it. The HR departments know it. The insurance adjusters know it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 925.224,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 155,
+      "start_sec": 925.524,
+      "duration_sec": 7.758,
+      "end_sec": 933.282,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "You \u2014 the person whose entire life it describes \u2014 are the only one kept in the dark."
+    },
+    {
+      "type": "pause",
+      "start_sec": 933.282,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 156,
+      "start_sec": 934.082,
+      "duration_sec": 5.161,
+      "end_sec": 939.243,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "That is not a flaw in the system. That is the system."
+    },
+    {
+      "type": "pause",
+      "start_sec": 939.243,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 157,
+      "start_sec": 940.443,
+      "duration_sec": 6.667,
+      "end_sec": 947.109,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "When SafeRent wrongly rejects a qualified tenant, SafeRent loses nothing. The tenant loses the apartment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 947.109,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 158,
+      "start_sec": 947.309,
+      "duration_sec": 6.731,
+      "end_sec": 954.04,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "When an AI hiring tool wrongly screens out a qualified candidate, the company moves to the next applicant."
+    },
+    {
+      "type": "pause",
+      "start_sec": 954.04,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 159,
+      "start_sec": 954.34,
+      "duration_sec": 7.777,
+      "end_sec": 962.117,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The candidate sits up at one fifty in the morning, submitting another application... wondering what's wrong with them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 962.117,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 160,
+      "start_sec": 963.317,
+      "duration_sec": 5.609,
+      "end_sec": 968.926,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "And that's perhaps the cruelest part. These systems don't just deny you opportunities."
+    },
+    {
+      "type": "pause",
+      "start_sec": 968.926,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 161,
+      "start_sec": 969.226,
+      "duration_sec": 2.132,
+      "end_sec": 971.358,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "They make you blame yourself."
+    },
+    {
+      "type": "pause",
+      "start_sec": 971.358,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 162,
+      "start_sec": 971.508,
+      "duration_sec": 7.776,
+      "end_sec": 979.284,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "You think you interviewed poorly. You think your application was weak. You think something is wrong with you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 979.284,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 163,
+      "start_sec": 980.084,
+      "duration_sec": 3.882,
+      "end_sec": 983.966,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "And there isn't. There's something wrong with the system."
+    },
+    {
+      "type": "pause",
+      "start_sec": 983.966,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 164,
+      "start_sec": 984.266,
+      "duration_sec": 8.628,
+      "end_sec": 992.894,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "But the system will never tell you that \u2014 because to the system you are a row in a spreadsheet"
+    },
+    {
+      "type": "pause",
+      "start_sec": 992.894,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 165,
+      "start_sec": 993.094,
+      "duration_sec": 6.462,
+      "end_sec": 999.556,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "a probability in a model a risk score that either clears the threshold... or doesn't."
+    },
+    {
+      "type": "pause",
+      "start_sec": 999.556,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 166,
+      "start_sec": 1000.356,
+      "duration_sec": 4.726,
+      "end_sec": 1005.082,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "The machine has no concept of a chance. It has thresholds."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1005.082,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 167,
+      "start_sec": 1006.282,
+      "duration_sec": 6.037,
+      "end_sec": 1012.32,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "You might be thinking \u2014 surely someone is watching these companies. Surely there's oversight."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1012.32,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 168,
+      "start_sec": 1012.62,
+      "duration_sec": 7.307,
+      "end_sec": 1019.926,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "New York City passed Local Law 144, requiring companies to audit their AI hiring tools for bias."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1019.926,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 169,
+      "start_sec": 1020.126,
+      "duration_sec": 8.523,
+      "end_sec": 1028.649,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Illinois passed BIPA for biometric data. Colorado passed an AI Act requiring disclosures. Europe is further ahead with its own AI Act."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1028.649,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 170,
+      "start_sec": 1028.799,
+      "duration_sec": 4.73,
+      "end_sec": 1033.529,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "But these are patches on a system that has no fabric."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1033.529,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 171,
+      "start_sec": 1033.829,
+      "duration_sec": 5.781,
+      "end_sec": 1039.61,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The vast majority of Americans have no legal protection against algorithmic discrimination."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1039.61,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 172,
+      "start_sec": 1039.81,
+      "duration_sec": 8.459,
+      "end_sec": 1048.269,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And the money behind these systems \u2014 nine point six billion dollars for RealPage alone \u2014 dwarfs every regulatory budget combined."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1048.269,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 173,
+      "start_sec": 1049.469,
+      "duration_sec": 4.307,
+      "end_sec": 1053.776,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "But here is what happened in January of this year."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1053.776,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 174,
+      "start_sec": 1054.076,
+      "duration_sec": 8.139,
+      "end_sec": 1062.215,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A twenty-three-year-old woman in Phoenix \u2014 I'll call her Diane, because her case is still active \u2014 applied for an apartment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1062.215,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 175,
+      "start_sec": 1062.415,
+      "duration_sec": 2.848,
+      "end_sec": 1065.263,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Good income, clean record, strong references."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1065.263,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 176,
+      "start_sec": 1065.563,
+      "duration_sec": 1.707,
+      "end_sec": 1067.269,
+      "word_count": 1,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Denied."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1067.269,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 177,
+      "start_sec": 1068.069,
+      "duration_sec": 9.078,
+      "end_sec": 1077.147,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "She requested her screening report, as is her legal right. And what she found was someone else's eviction on her file."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1077.147,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 178,
+      "start_sec": 1077.347,
+      "duration_sec": 7.333,
+      "end_sec": 1084.68,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "A stranger's debt, merged with her identity because of a similar name and a shared zip code."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1084.68,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 179,
+      "start_sec": 1084.98,
+      "duration_sec": 1.292,
+      "end_sec": 1086.272,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A database ghost."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1086.272,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 180,
+      "start_sec": 1086.422,
+      "duration_sec": 6.049,
+      "end_sec": 1092.471,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "She disputed it. Thirty days later, the error was removed. She got the apartment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1092.471,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 181,
+      "start_sec": 1093.271,
+      "duration_sec": 3.881,
+      "end_sec": 1097.152,
+      "word_count": 9,
+      "voice_register": "energized",
+      "pause_before_sec": 0.8,
+      "text": "But here's what Diane did that almost nobody does."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1097.152,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 182,
+      "start_sec": 1097.452,
+      "duration_sec": 5.61,
+      "end_sec": 1103.062,
+      "word_count": 13,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "She kept going. She filed a complaint with the Consumer Financial Protection Bureau."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1103.062,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 183,
+      "start_sec": 1103.262,
+      "duration_sec": 4.308,
+      "end_sec": 1107.57,
+      "word_count": 10,
+      "voice_register": "energized",
+      "pause_before_sec": 0.2,
+      "text": "She posted her screening report online, with the errors circled."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1107.57,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 184,
+      "start_sec": 1107.72,
+      "duration_sec": 6.9,
+      "end_sec": 1114.619,
+      "word_count": 16,
+      "voice_register": "energized",
+      "pause_before_sec": 0.15,
+      "text": "It went viral \u2014 not because her story was unusual... but because she had the receipts."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1114.619,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 185,
+      "start_sec": 1114.919,
+      "duration_sec": 8.633,
+      "end_sec": 1123.552,
+      "word_count": 20,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "Thousands of people in her comments saying the same thing: this happened to me. I didn't know I could check."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1123.552,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 186,
+      "start_sec": 1123.752,
+      "duration_sec": 2.998,
+      "end_sec": 1126.75,
+      "word_count": 7,
+      "voice_register": "energized",
+      "pause_before_sec": 0.2,
+      "text": "I didn't know I could fight it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1126.75,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 187,
+      "start_sec": 1127.95,
+      "duration_sec": 8.212,
+      "end_sec": 1136.161,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "That is the crack in the machine. Not legislation. Not regulation. Not some future where AI is magically fair."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1136.161,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 188,
+      "start_sec": 1136.961,
+      "duration_sec": 2.153,
+      "end_sec": 1139.114,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "The crack is you, knowing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1139.114,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 189,
+      "start_sec": 1140.314,
+      "duration_sec": 4.437,
+      "end_sec": 1144.752,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Because every one of these companies \u2014 SafeRent LexisNexis CoreLogic"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1144.752,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 190,
+      "start_sec": 1144.952,
+      "duration_sec": 9.498,
+      "end_sec": 1154.45,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Kronos \u2014 is legally required to show you your file if you ask. Under the Fair Credit Reporting Act, they must respond."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1154.45,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 191,
+      "start_sec": 1154.75,
+      "duration_sec": 3.424,
+      "end_sec": 1158.174,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Most people never ask. Ninety-seven percent never ask."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1158.174,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 192,
+      "start_sec": 1158.974,
+      "duration_sec": 4.753,
+      "end_sec": 1163.727,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "That three percent who do? They find errors almost every time."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1163.727,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 193,
+      "start_sec": 1164.027,
+      "duration_sec": 5.611,
+      "end_sec": 1169.638,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Because at eighty-three billion records... errors aren't the exception. They are the norm."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1169.638,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 194,
+      "start_sec": 1170.838,
+      "duration_sec": 3.744,
+      "end_sec": 1174.582,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "Mary Louis didn't know she could request her SafeRent file."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1174.582,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 195,
+      "start_sec": 1174.882,
+      "duration_sec": 5.781,
+      "end_sec": 1180.663,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "She does now. Carmen Arroyo didn't know a thirty-day dispute could have cleared her record."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1180.663,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 196,
+      "start_sec": 1180.963,
+      "duration_sec": 4.749,
+      "end_sec": 1185.712,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "She does now. And Diane \u2014 twenty-three years old no lawyer"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1185.712,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 197,
+      "start_sec": 1185.912,
+      "duration_sec": 6.481,
+      "end_sec": 1192.393,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "no connections \u2014 cracked her own case open with a single letter requesting her data."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1192.393,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 198,
+      "start_sec": 1193.593,
+      "duration_sec": 2.59,
+      "end_sec": 1196.183,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "You are being scored right now."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1196.183,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 199,
+      "start_sec": 1196.383,
+      "duration_sec": 8.209,
+      "end_sec": 1204.592,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "By companies you have never heard of, using data you never gave them, feeding algorithms you will never see."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1204.592,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 200,
+      "start_sec": 1204.892,
+      "duration_sec": 7.338,
+      "end_sec": 1212.23,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Those scores are deciding where you can live where you can work what medical care you receive"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1212.23,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 201,
+      "start_sec": 1212.43,
+      "duration_sec": 4.734,
+      "end_sec": 1217.164,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "and how much you pay for the roof over your head."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1217.164,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 202,
+      "start_sec": 1217.314,
+      "duration_sec": 5.158,
+      "end_sec": 1222.471,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.15,
+      "text": "They are doing this at scale, at speed... and in the dark."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1222.471,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 203,
+      "start_sec": 1223.671,
+      "duration_sec": 2.573,
+      "end_sec": 1226.244,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.2,
+      "text": "But Kyle Behm is still here."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1226.244,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 204,
+      "start_sec": 1226.544,
+      "duration_sec": 6.357,
+      "end_sec": 1232.902,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "He survived. His father's EEOC complaints forced Kronos to change how their tests were administered."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1232.902,
+      "duration_sec": 0.15
+    },
+    {
+      "type": "speech",
+      "index": 205,
+      "start_sec": 1233.052,
+      "duration_sec": 3.007,
+      "end_sec": 1236.058,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.15,
+      "text": "It wasn't enough. It is never enough."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1236.058,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 206,
+      "start_sec": 1236.358,
+      "duration_sec": 3.018,
+      "end_sec": 1239.376,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But Kyle got up. He applied again."
+    },
+    {
+      "type": "speech",
+      "index": 207,
+      "start_sec": 1239.376,
+      "duration_sec": 3.022,
+      "end_sec": 1242.399,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "And somewhere in this country right now"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1242.399,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 208,
+      "start_sec": 1242.599,
+      "duration_sec": 9.497,
+      "end_sec": 1252.096,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "another person with a treatable condition is sitting in front of a personality test that will decide their future in twelve minutes."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1252.096,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 209,
+      "start_sec": 1252.396,
+      "duration_sec": 8.637,
+      "end_sec": 1261.032,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "They don't know about Kyle. They don't know about the EEOC complaints. They don't know the test might be illegal."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1261.032,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 210,
+      "start_sec": 1261.832,
+      "duration_sec": 1.231,
+      "end_sec": 1263.063,
+      "word_count": 3,
+      "voice_register": "energized",
+      "pause_before_sec": 0.8,
+      "text": "But you do."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1263.063,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 211,
+      "start_sec": 1264.263,
+      "duration_sec": 5.6,
+      "end_sec": 1269.864,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 1.2,
+      "text": "You are the only one in this equation who doesn't know the score."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1269.864,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 212,
+      "start_sec": 1270.164,
+      "duration_sec": 2.572,
+      "end_sec": 1272.736,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That was true ten minutes ago."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1272.736,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 213,
+      "start_sec": 1273.536,
+      "duration_sec": 2.562,
+      "end_sec": 1276.098,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "It is no longer true now."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1276.098,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 214,
+      "start_sec": 1276.398,
+      "duration_sec": 10.355,
+      "end_sec": 1286.752,
+      "word_count": 24,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "And the single most dangerous thing about the secret score economy \u2014 the thing that makes the whole machine profitable \u2014 is the silence."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1286.752,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 215,
+      "start_sec": 1287.952,
+      "duration_sec": 1.675,
+      "end_sec": 1289.627,
+      "word_count": 2,
+      "voice_register": "energized",
+      "pause_before_sec": 1.2,
+      "text": "Break it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1289.627,
+      "duration_sec": 1.2
+    }
+  ],
+  "total_duration_sec": 1290.827,
+  "out": "audio/secret_scores/narration.wav",
+  "word_count_total": 2769,
+  "avg_wpm": 128.7
+}

@@ -511,6 +511,17 @@ def generate_narration(
 
         else:  # SpeechSegment
             speech_idx += 1
+
+            # Reload TTS every 40 segments to prevent memory leak / tensor drift
+            if speech_idx > 1 and speech_idx % 40 == 0:
+                print(f"  [Reloading F5-TTS to prevent memory issues...]")
+                import gc, torch
+                del tts
+                gc.collect()
+                if torch.backends.mps.is_available():
+                    torch.mps.empty_cache()
+                tts = _load_tts()
+
             reg = seg.voice if seg.voice in ref_clips else "neutral"
             ref_wav, ref_text = ref_clips[reg]
             word_count = len(seg.text.split())
