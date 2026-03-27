@@ -84,51 +84,52 @@ Key rules for the pipeline:
 - C-SPAN non-floor coverage requires license
 - Content ID claim ≠ strike (claim = shared revenue, strike = video removal)
 
-## What Was Completed This Session
+## Production Status: Secret Scores Video
 
-### All Done ✅
-1. **Script v4 rewrite** — Blind review 70→80. Added: Diane's story (callback), shoe-size tonal break, thesis line, CTA woven into stories.
-2. **Chrome-powered visual sourcer** (`pipeline/web_image_sourcer.py`) — Searches government archives + web, verifies with Claude Vision, downloads best matches. No Pixabay/Pexels.
-3. **Clip verifier** (`pipeline/clip_verifier.py`) — Extracts frames at intervals, Claude Vision confirms content match. Finds best 3-5s segment.
-4. **Fair use guard** (`pipeline/fair_use_guard.py`) — Max 5s clips, mandatory narration, mute source audio, 2+ transformative layers, attribution logging.
-5. **Orchestrator wiring** — Playbook quality gates at qa_script, director, footage, and assemble stages.
-6. **Bug fixes** — SFX file mapping (7 missing files), logging import, black frame warnings.
+### Completed ✅
+1. **Script v4** — Blind review ~80/100. Enhanced with 59 VOICE, 57 PAUSE, 51 BEAT markers
+2. **Storyboard + Director** — `storyboards/secret_scores_directed_v2.json` (full editorial pass)
+3. **Voice generation** — Narration rendered at 1.5x speed (`~/Desktop/SecretScores_Media/narration_150x.wav`)
+4. **67 video clips** — sourced and downloaded to `footage/fern_clone/secret_scores/clips/`
+5. **34 visual assets** — logos, data viz stats, news headlines, person placeholders in `~/Desktop/SecretScores_Media/assets/`
+6. **Music** — CC0 crime documentary track from Pixabay (`~/Desktop/SecretScores_Media/sfx/music_real_long.wav`)
+7. **FFmpeg assembler iterations** — V3 through V12, all committed. V12 = latest FFmpeg render (14.5 min)
+8. **DaVinci Resolve Studio 20.3.2** — Purchased, installed, project set up
+9. **News overlay** — ABC News-style breaking news overlay (v5) composited in Fusion over intro
+10. **Playbook gap analysis** — 17 gaps documented in `PLAYBOOK_GAPS.md`, partially integrated into `playbook/editing.json` and `playbook/intros.json`
+11. **Director validator** — `pipeline/director_validator.py` built
 
-## What's Still Not Done
+### Current Workflow: DaVinci Resolve (NO MORE FFmpeg assembly)
+- All editing now happens in DaVinci Resolve Studio, not FFmpeg
+- DaVinci project has: 67 clips on V1, premixed audio on A1, all media online
+- Audio bladed at ~11.8s (intro boundary) on A1
+- News overlay v5 composited via Fusion on intro clip
 
-### Pipeline Progress on Secret Scores
-- `scripts/raw_secret_scores_v4.txt` — Final script (blind review ~80/100)
-- `scripts/enhanced_secret_scores.txt` — Enhanced with 59 VOICE, 57 PAUSE, 51 BEAT markers
-- `storyboards/secret_scores.json` — Generated (in progress or complete)
-- `storyboards/secret_scores_directed.json` — Director pass (pending)
-- Voice, footage, assembly — Not yet run
+### What Still Needs Doing in DaVinci
+1. **Fix intro audio** — boost clip voices over music (was trying AI Voice Isolation when session crashed)
+2. **Add SFX** — impact hits between intro cuts, tension risers throughout
+3. **Add transitions** — dissolves, fades per director notes
+4. **Typewriter text effects** — Fusion-based text reveals on sync points
+5. **Place 26 visual assets on V2** — logos, data viz, headlines at correct segment positions
+6. **Color grading** — Color page pass
+7. **Fairlight audio polish** — sidechain ducking, EQ, final mix
 
-### Modules Switched from Ollama to Claude Max
-- `pipeline/script_enhancer.py` — `enhance_script()` uses Claude Opus primary
-- `pipeline/storyboard_generator.py` — `_llm_generate()` uses Claude Haiku primary
-- Both fall back to Ollama only if Claude CLI fails
-
-### Current Blocker: Voice Generation
-F5-TTS crashes on segment 13 with `RuntimeError: Sizes of tensors must match`.
-Long text chunks exceed the model's capacity. Fix needed in `pipeline/voice_generator.py`:
-- Add max chunk size cap (~20 words per chunk)
-- Split long sentences at commas/semicolons before sending to F5-TTS
-- The sentence splitter at line 279 exists but doesn't enforce a word limit
-
-### Next Session Should Do
-1. **Fix voice generator** — add max chunk size to prevent F5-TTS crashes
-2. **Run voice generation** on enhanced script (12 images + 9 clips already sourced)
-3. **Assemble video** — first end-to-end render
-4. **Final verification loop** — Scene-by-scene review before export
-5. **SFX library expansion** — Download more CC0 SFX to fill gaps
-6. **Merge decision** — When ready, merge `feature/learnbyleo-integration` into main working branch
+### Media Locations
+- All media: `~/Desktop/SecretScores_Media/`
+- Visual assets: `~/Desktop/SecretScores_Media/assets/` (manifest.json has full inventory)
+- SFX: `~/Desktop/SecretScores_Media/sfx/`
+- Clips: `footage/fern_clone/secret_scores/clips/`
+- Narration: `~/Desktop/SecretScores_Media/narration_150x.wav`
+- Editorial clip map: `editorial_clip_map_v2.json` (67 segments with timing)
 
 ## Tools & Access
 - **Claude Max** subscription (Opus available via `claude` CLI)
+- **DaVinci Resolve Studio 20.3.2** — Primary editing tool. External scripting enabled (Local). Use computer-use MCP to control.
+- **Adobe Photoshop 2024** — Graphics creation (news overlays, visual assets). Use computer-use MCP.
 - **Chrome MCP** — Full browser control (navigate, click, type, screenshot). Tab group ID may change between sessions. Use `tabs_context_mcp` to get current tabs.
-- **Computer-use MCP** — Desktop app control (Slack, etc.). Chrome is read-only through this tool; use Chrome MCP instead.
+- **Computer-use MCP** — Desktop app control (DaVinci, Photoshop, etc.). Chrome is read-only through this tool; use Chrome MCP instead.
 - **yt-dlp** — Updated to 2026.3.17, works with `--cookies-from-browser chrome`
-- **FFmpeg** — Available for video processing
+- **FFmpeg** — Available for video processing (but DaVinci is primary now)
 - **F5-TTS** — Voice generation with cloning
 - **Ollama** — Local LLM (qwen3:4b, qwen2.5vl) for vision tasks
 
