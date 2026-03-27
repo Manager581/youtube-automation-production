@@ -1,0 +1,383 @@
+{
+  "generated": "2026-03-27",
+  "total_assets": 47,
+  "notes": "Visual assets needed for 'You Have a Secret Score' documentary. Each segment currently uses generic YouTube B-roll clips. These specific assets would replace or overlay the generic footage.",
+  "assets": [
+    {
+      "seg_id": 4,
+      "asset_type": "person_photo",
+      "description": "Mary Louis - tenant who paid rent on time for 16 years but was rejected by algorithm",
+      "search_query": "Mary Louis tenant screening discrimination SafeRent Jacksonville",
+      "priority": "high",
+      "narration_context": "Mary Louis paid her rent on time for sixteen years..."
+    },
+    {
+      "seg_id": 5,
+      "asset_type": "document_screenshot",
+      "description": "Tenant screening rejection letter - generic or SafeRent adverse action notice",
+      "search_query": "tenant screening adverse action notice rejection letter SafeRent",
+      "priority": "medium",
+      "narration_context": "She got a rejection letter."
+    },
+    {
+      "seg_id": 8,
+      "asset_type": "document_screenshot",
+      "description": "Fair Credit Reporting Act Section 611 - consumer dispute rights text",
+      "search_query": "Fair Credit Reporting Act Section 611 dispute rights statute text",
+      "priority": "medium",
+      "narration_context": "Here's the thing, though. Mary had a legal right she didn't know about..."
+    },
+    {
+      "seg_id": 10,
+      "asset_type": "company_logo",
+      "description": "SafeRent Solutions logo",
+      "search_query": "SafeRent Solutions logo tenant screening company",
+      "priority": "high",
+      "narration_context": "The company is called SafeRent, formerly known as CoreLogic..."
+    },
+    {
+      "seg_id": 10,
+      "asset_type": "company_logo",
+      "description": "CoreLogic logo (SafeRent's former parent company)",
+      "search_query": "CoreLogic logo data analytics company",
+      "priority": "high",
+      "narration_context": "The company is called SafeRent, formerly known as CoreLogic..."
+    },
+    {
+      "seg_id": 11,
+      "asset_type": "news_headline",
+      "description": "Jacksonville federal lawsuit against SafeRent - news coverage or court filing",
+      "search_query": "Jacksonville Area Legal Aid lawsuit SafeRent tenant screening discrimination federal court",
+      "priority": "high",
+      "narration_context": "A score that, according to a federal lawsuit... systematically discriminated against..."
+    },
+    {
+      "seg_id": 12,
+      "asset_type": "data_visualization",
+      "description": "SafeRent $2.275 million settlement amount graphic",
+      "search_query": "SafeRent settlement 2.275 million tenant screening lawsuit",
+      "priority": "high",
+      "narration_context": "SafeRent settled that lawsuit for two point two seven five million dollars..."
+    },
+    {
+      "seg_id": 16,
+      "asset_type": "data_visualization",
+      "description": "Statistic: Only 3% of renters know which company screened them",
+      "search_query": "tenant screening awareness statistics renters screening company",
+      "priority": "high",
+      "narration_context": "Only three percent of renters know which company screened them..."
+    },
+    {
+      "seg_id": 19,
+      "asset_type": "data_visualization",
+      "description": "LexisNexis 83 billion records statistic graphic",
+      "search_query": "LexisNexis 83 billion records data broker consumer data",
+      "priority": "high",
+      "narration_context": "Because the company that ties all of this data together keeps eighty-three billion records..."
+    },
+    {
+      "seg_id": 19,
+      "asset_type": "company_logo",
+      "description": "LexisNexis Risk Solutions logo",
+      "search_query": "LexisNexis Risk Solutions logo data broker",
+      "priority": "high",
+      "narration_context": "Because the company that ties all of this data together keeps eighty-three billion records..."
+    },
+    {
+      "seg_id": 18,
+      "asset_type": "screenshot",
+      "description": "LexisNexis consumer disclosure request website - where viewers can request their own file",
+      "search_query": "LexisNexis consumer disclosure request personal report website",
+      "priority": "medium",
+      "narration_context": "Now. Before we go further — I want you to try something genuinely strange..."
+    },
+    {
+      "seg_id": 21,
+      "asset_type": "person_photo",
+      "description": "Carmen Arroyo - tenant discrimination victim whose son's dismissed charge haunted her",
+      "search_query": "Carmen Arroyo tenant screening discrimination housing",
+      "priority": "high",
+      "narration_context": "Which brings us to Carmen Arroyo..."
+    },
+    {
+      "seg_id": 22,
+      "asset_type": "document_screenshot",
+      "description": "Court record showing dismissed charge - illustrating how dismissed cases persist in databases",
+      "search_query": "dismissed criminal charge court record case dismissed database",
+      "priority": "medium",
+      "narration_context": "Carmen's son had been involved in a legal case — a charge that was fully dismissed..."
+    },
+    {
+      "seg_id": 27,
+      "asset_type": "data_visualization",
+      "description": "Transition graphic: Housing to Employment - showing algorithmic scoring spans multiple sectors",
+      "search_query": "algorithmic scoring housing employment sectors infographic",
+      "priority": "medium",
+      "narration_context": "So tenant screening is one corner of this world. What happens when you apply for a job?"
+    },
+    {
+      "seg_id": 30,
+      "asset_type": "person_photo",
+      "description": "Derek Mobley - Black man who applied to 150+ jobs, filtered out by hiring algorithms",
+      "search_query": "Derek Mobley hiring discrimination algorithm Workday lawsuit",
+      "priority": "high",
+      "narration_context": "So what does that future look like? Ask Derek Mobley."
+    },
+    {
+      "seg_id": 31,
+      "asset_type": "data_visualization",
+      "description": "Statistic: 150+ job applications submitted by Derek Mobley",
+      "search_query": "job application rejection statistics algorithmic hiring bias",
+      "priority": "medium",
+      "narration_context": "Derek is a Black man who applied to over a hundred and fifty jobs..."
+    },
+    {
+      "seg_id": 33,
+      "asset_type": "news_headline",
+      "description": "Brookings Institution study on resume discrimination by AI hiring tools",
+      "search_query": "Brookings Institution study resume discrimination AI hiring algorithm bias identical resumes",
+      "priority": "high",
+      "narration_context": "A study by the Brookings Institution found that when identical resumes were submitted..."
+    },
+    {
+      "seg_id": 33,
+      "asset_type": "company_logo",
+      "description": "Brookings Institution logo",
+      "search_query": "Brookings Institution logo think tank",
+      "priority": "medium",
+      "narration_context": "A study by the Brookings Institution found that when identical resumes were submitted..."
+    },
+    {
+      "seg_id": 35,
+      "asset_type": "person_photo",
+      "description": "Kyle Behm - young man with bipolar disorder rejected by personality tests in hiring",
+      "search_query": "Kyle Behm personality test hiring discrimination bipolar disorder Kronos",
+      "priority": "high",
+      "narration_context": "Now I need to tell you about Kyle Behm..."
+    },
+    {
+      "seg_id": 37,
+      "asset_type": "screenshot",
+      "description": "Pre-employment personality test interface - the kind Kyle Behm faced",
+      "search_query": "pre-employment personality test assessment screenshot Kronos hiring",
+      "priority": "medium",
+      "narration_context": "But every application included a personality test..."
+    },
+    {
+      "seg_id": 40,
+      "asset_type": "company_logo",
+      "description": "Kronos (now UKG) logo - company that made personality tests screening out disabled applicants",
+      "search_query": "Kronos Incorporated UKG workforce management logo",
+      "priority": "high",
+      "narration_context": "His father, a lawyer, investigated..."
+    },
+    {
+      "seg_id": 40,
+      "asset_type": "news_headline",
+      "description": "Kyle Behm father EEOC complaint against Kronos personality tests",
+      "search_query": "Behm EEOC complaint Kronos personality test disability discrimination",
+      "priority": "high",
+      "narration_context": "His father, a lawyer, investigated..."
+    },
+    {
+      "seg_id": 44,
+      "asset_type": "building_photo",
+      "description": "FTC building / Federal Trade Commission headquarters",
+      "search_query": "Federal Trade Commission FTC building headquarters Washington DC",
+      "priority": "medium",
+      "narration_context": "So if these systems are so harmful... why does nobody stop them?"
+    },
+    {
+      "seg_id": 45,
+      "asset_type": "company_logo",
+      "description": "Cigna health insurance logo",
+      "search_query": "Cigna health insurance logo corporation",
+      "priority": "high",
+      "narration_context": "Consider what happened at Cigna..."
+    },
+    {
+      "seg_id": 45,
+      "asset_type": "news_headline",
+      "description": "Cigna automated claim denial scandal - ProPublica or news coverage",
+      "search_query": "Cigna automated claim denial scandal algorithm 60000 claims ProPublica",
+      "priority": "high",
+      "narration_context": "Consider what happened at Cigna..."
+    },
+    {
+      "seg_id": 46,
+      "asset_type": "data_visualization",
+      "description": "Statistic: 60,000 claims denied by one system in one month at Cigna",
+      "search_query": "Cigna 60000 claims denied one month automated algorithm PXDX",
+      "priority": "high",
+      "narration_context": "Sixty thousand. One system. One month..."
+    },
+    {
+      "seg_id": 49,
+      "asset_type": "company_logo",
+      "description": "HireVue logo - AI video interview hiring platform",
+      "search_query": "HireVue logo AI hiring video interview platform",
+      "priority": "medium",
+      "narration_context": "The companies know it. The landlords know it..."
+    },
+    {
+      "seg_id": 49,
+      "asset_type": "company_logo",
+      "description": "Workday logo - HR software with algorithmic hiring",
+      "search_query": "Workday logo HR software hiring platform",
+      "priority": "medium",
+      "narration_context": "The companies know it. The landlords know it..."
+    },
+    {
+      "seg_id": 52,
+      "asset_type": "data_visualization",
+      "description": "Statistic: 49 million insurance claim denials in 2021 (federal data)",
+      "search_query": "49 million insurance claim denials 2021 federal data health insurance",
+      "priority": "high",
+      "narration_context": "And that's perhaps the cruelest part..."
+    },
+    {
+      "seg_id": 54,
+      "asset_type": "screenshot",
+      "description": "Senate hearing on FTC modernization - screenshot of hearing room",
+      "search_query": "Senate hearing FTC modernization consumer protection data brokers",
+      "priority": "medium",
+      "narration_context": "You might be thinking — surely someone is watching these companies..."
+    },
+    {
+      "seg_id": 55,
+      "asset_type": "document_screenshot",
+      "description": "NYC Local Law 144 - automated employment decision tools regulation text",
+      "search_query": "New York City Local Law 144 automated employment decision tools AI hiring regulation",
+      "priority": "high",
+      "narration_context": "New York City passed Local Law 144..."
+    },
+    {
+      "seg_id": 56,
+      "asset_type": "company_logo",
+      "description": "RealPage logo - property management software company",
+      "search_query": "RealPage logo property management software rental",
+      "priority": "high",
+      "narration_context": "And the money behind these systems — nine point six billion dollars for RealPage..."
+    },
+    {
+      "seg_id": 56,
+      "asset_type": "data_visualization",
+      "description": "Statistic: $9.6 billion RealPage valuation / acquisition price",
+      "search_query": "RealPage 9.6 billion Thoma Bravo acquisition property technology",
+      "priority": "high",
+      "narration_context": "And the money behind these systems — nine point six billion dollars for RealPage..."
+    },
+    {
+      "seg_id": 57,
+      "asset_type": "company_logo",
+      "description": "LexisNexis telematics / driving data tracking logo",
+      "search_query": "LexisNexis telematics driving data insurance score logo",
+      "priority": "medium",
+      "narration_context": "But here is what happened in January of this year."
+    },
+    {
+      "seg_id": 58,
+      "asset_type": "person_photo",
+      "description": "Young woman in Phoenix whose insurance was hiked due to LexisNexis telematics tracking",
+      "search_query": "LexisNexis telematics insurance rate hike Phoenix woman driving data",
+      "priority": "medium",
+      "narration_context": "A twenty-three-year-old woman in Phoenix..."
+    },
+    {
+      "seg_id": 59,
+      "asset_type": "document_screenshot",
+      "description": "LexisNexis consumer disclosure report / telematics driving report sample",
+      "search_query": "LexisNexis consumer disclosure driving report telematics score sample",
+      "priority": "high",
+      "narration_context": "She requested her screening report, as is her legal right..."
+    },
+    {
+      "seg_id": 60,
+      "asset_type": "person_photo",
+      "description": "Diane - the person who pushed back against LexisNexis telematics data",
+      "search_query": "Diane LexisNexis telematics insurance challenge pushback",
+      "priority": "medium",
+      "narration_context": "But here's what Diane did that almost nobody does..."
+    },
+    {
+      "seg_id": 62,
+      "asset_type": "company_logo",
+      "description": "SafeRent, LexisNexis, CoreLogic, Kronos logos montage - all named companies",
+      "search_query": "SafeRent LexisNexis CoreLogic Kronos logos tenant screening data broker",
+      "priority": "high",
+      "narration_context": "Because every one of these companies — SafeRent, LexisNexis, CoreLogic, Kronos..."
+    },
+    {
+      "seg_id": 63,
+      "asset_type": "data_visualization",
+      "description": "Statistic graphic: 3% check their screening reports, and errors found almost every time",
+      "search_query": "tenant screening report error rate consumer data accuracy statistics",
+      "priority": "medium",
+      "narration_context": "That three percent who do? They find errors almost every time..."
+    },
+    {
+      "seg_id": 64,
+      "asset_type": "person_photo",
+      "description": "Mary Louis callback - return to her story for emotional closure",
+      "search_query": "Mary Louis SafeRent tenant discrimination Jacksonville callback",
+      "priority": "high",
+      "narration_context": "Mary Louis didn't know she could request her SafeRent file..."
+    },
+    {
+      "seg_id": 64,
+      "asset_type": "document_screenshot",
+      "description": "SafeRent consumer file / tenant screening report sample document",
+      "search_query": "SafeRent tenant screening report consumer file sample disclosure",
+      "priority": "medium",
+      "narration_context": "Mary Louis didn't know she could request her SafeRent file..."
+    },
+    {
+      "seg_id": 66,
+      "asset_type": "person_photo",
+      "description": "Kyle Behm survival callback - he survived his suicide attempt",
+      "search_query": "Kyle Behm bipolar disorder hiring discrimination survival story",
+      "priority": "high",
+      "narration_context": "But Kyle Behm is still here. He survived..."
+    },
+    {
+      "seg_id": 0,
+      "asset_type": "data_visualization",
+      "description": "Animated or static graphic of car telematics data being collected - GPS tracking visualization",
+      "search_query": "car telematics GPS tracking data collection insurance visualization",
+      "priority": "medium",
+      "narration_context": "Something is following you. Right now, as you watch this..."
+    },
+    {
+      "seg_id": 1,
+      "asset_type": "data_visualization",
+      "description": "Data broker industry graphic showing shadow companies and data flows",
+      "search_query": "data broker industry map shadow companies consumer data flow infographic",
+      "priority": "medium",
+      "narration_context": "And the companies that created it? You've never heard of them. But they have heard of you..."
+    },
+    {
+      "seg_id": 29,
+      "asset_type": "screenshot",
+      "description": "Automated resume parsing / ATS software interface screenshot",
+      "search_query": "applicant tracking system ATS resume parsing software screenshot interface",
+      "priority": "medium",
+      "narration_context": "But increasingly... nobody read anything. Your resume was parsed by software..."
+    },
+    {
+      "seg_id": 43,
+      "asset_type": "data_visualization",
+      "description": "Timeline graphic showing years of regulatory delay while Kronos kept selling tests",
+      "search_query": "Kronos personality test EEOC investigation timeline years regulatory delay",
+      "priority": "medium",
+      "narration_context": "But the process took years. And during those years, Kronos kept selling..."
+    },
+    {
+      "seg_id": 47,
+      "asset_type": "data_visualization",
+      "description": "Asymmetry graphic: corporate power vs individual powerlessness in scoring economy",
+      "search_query": "corporate power asymmetry individual consumer data scoring economy infographic",
+      "priority": "medium",
+      "narration_context": "This is the fundamental asymmetry of the secret score economy."
+    }
+  ]
+}

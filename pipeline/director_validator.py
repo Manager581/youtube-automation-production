@@ -147,7 +147,7 @@ def validate(video_path, edit_map_path, director_path, playbook_dir, text_overla
     
     # ── CHECK 4: SFX Density ──
     print("\n── CHECK 4: SFX Density ──")
-    sfx_count = sum(1 for d in dir_segs if d.get('sfx', {}).get('type'))
+    sfx_count = sum(1 for d in dir_segs if (d.get('sfx') or {}).get('type'))
     sfx_pct = sfx_count / max(len(dir_segs), 1) * 100
     
     total_checks += 1
