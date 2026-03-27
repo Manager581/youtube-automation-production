@@ -191,27 +191,39 @@ Key rules for the pipeline:
 4. **Director audit** — mapped all 72 director segments vs timeline. Key finding: V1 clips are YouTube B-roll, NOT the director-specified visuals. Director SHOW descriptions need Wikimedia/custom images (not yet sourced).
 5. **SFX count validated** — 50 SFX placed (33 director-specified, 17 extra for coverage)
 
-### Director-Verified Wiring (session 2026-03-27 late afternoon)
-All 72 director segments mapped to timeline via word-count proportional timing:
-- **29 SFX** placed at director-correct segment positions (tension, shimmer, impact, rumble, whoosh)
-- **63 zoom targets** applied (face=1.35x, document_text=1.5x, person=1.25x, subject=1.15x)
-- **12 text reveal positions** documented (MARY LOUIS@61.8s, CARMEN ARROYO@277.5s, etc.) — need Fusion Text+ creation
-- **35 vignette clips** on V5 (Multiply 50%, H.264 tiles covering full 17.5 min)
-- **8 chapter cards** correctly ordered on V3 matching story arc transitions
-- **Music at -20dB** — clear narration dominance
+### Director-Verified Wiring (CORRECTED 2026-03-27 evening)
+**Critical fix**: discovered director has `_timeline_start_sec` fields with its OWN timing (0-422s).
+Mapped to our timeline via scale factor 2.04x (director 0s → timeline 11.8s, director 422s → timeline 872s).
+All elements re-placed at director-correct positions:
+- **33/33 SFX** placed at director-correct positions (was 29, now all 33 covered)
+- **12/12 text reveals** on V4 as ProRes 4444 alpha MOVs (MARY LOUIS, CARMEN ARROYO, ASK DEREK, KYLE BEHM, AND KYLE, AI, NEW, BUT, JANUARY, PHOENIX, MARY LOUIS callback, BUT KYLE)
+- **8 chapter cards** on V3 at director-mapped positions (TENANTS@42.6s, MACHINE@105s, DATA@171s, DRIVERS@212s, WORKERS@315s, PATIENTS@480s, FUTURE@585s, RECKONING@695s)
+- **63 zoom targets** applied to V1 clips
+- **Music ducking**: single pre-mixed WAV (-8dB intro/outro, -24dB under narration)
+- **35 vignette clips** on V5 (Multiply 50%)
+- **525 film grain clips** on V6 (Overlay 15%, 2s loops)
+- **12 dramatic character cards** on V2 (Mary Louis, Carmen Arroyo, Derek Mobley, Kyle Behm + rejection letter + stats + callbacks)
+
+### Segment Coverage Audit
+- V2 overlays: covers key segments (character intros, stats, logos)
+- SFX: 33/33 ✅
+- Text reveals: 12/12 ✅ (incl seg 16 with text=None skipped)
+- Chapter cards: 8/8 ✅
+- Zoom: 63/72 ✅
 
 ### Final Timeline State ("Secret Scores FAIR USE")
 | Track | Contents | Count |
 |-------|----------|-------|
-| V1 | B-roll clips (all ≤7s) | 150 |
-| V2 | Visual overlays (logos, stats, people) | 24 |
+| V1 | B-roll clips (all ≤7s, zoomed per director) | 150 |
+| V2 | Character cards + stat overlays + rejection letter | 25 |
 | V3 | Chapter title cards | 8 |
-| V4 | (reserved for Text+ titles) | 0 |
+| V4 | Text reveals (ProRes 4444 alpha) | 12 |
 | V5 | Vignette overlay (Multiply 50%) | 35 |
-| A1 | Narration | 1 |
-| A2 | Music (-20dB bed) | 1 |
-| A3 | SFX primary | 15 |
-| A4 | SFX secondary | 14 |
+| V6 | Film grain (Overlay 15%, 2s loops) | 525 |
+| A1 | Narration (0dB) | 1 |
+| A2 | Music (ducked: -8dB intro/outro, -24dB bed) | 1 |
+| A3 | SFX primary | ~17 |
+| A4 | SFX secondary | ~16 |
 
 ### Text Reveals + Music Ducking Complete (session 2026-03-27)
 - **12 text reveals on V4** — ProRes 4444 alpha, 3s each, correct chronological order
