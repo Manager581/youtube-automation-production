@@ -204,10 +204,17 @@ All elements re-placed at director-correct positions:
 - **525 film grain clips** on V6 (Overlay 15%, 2s loops)
 - **12 dramatic character cards** on V2 (Mary Louis, Carmen Arroyo, Derek Mobley, Kyle Behm + rejection letter + stats + callbacks)
 
-### Segment Coverage Audit
-- V2 overlays: covers key segments (character intros, stats, logos)
+### CRITICAL: Timing System
+All elements MUST use **narration word-count proportional timing** (single source of truth).
+- Director `_timeline_start_sec` is storyboard-relative (0-422s), NOT timeline position
+- V1 clip positions are from editorial clip map, NOT segment timing
+- Formula: `tl_sec = 11.8 + (words_before_segment / 2769) * 860.5`
+- This ensures overlays/text/SFX appear when narrator SAYS the words
+
+### Segment Coverage Audit (unified timing)
+- V2 overlays: 19 at narration positions + 1 news overlay + 4 extra from FCPXML = 24
 - SFX: 33/33 ✅
-- Text reveals: 12/12 ✅ (incl seg 16 with text=None skipped)
+- Text reveals: 12/12 ✅
 - Chapter cards: 8/8 ✅
 - Zoom: 63/72 ✅
 
