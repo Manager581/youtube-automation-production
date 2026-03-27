@@ -212,3 +212,13 @@ All 72 director segments mapped to timeline via word-count proportional timing:
 | A2 | Music (-20dB bed) | 1 |
 | A3 | SFX primary | 15 |
 | A4 | SFX secondary | 14 |
+
+### Text Reveals + Music Ducking Complete (session 2026-03-27)
+- **12 text reveals on V4** — ProRes 4444 alpha, 3s each, correct chronological order
+  MARY LOUIS@61.8s, CARMEN ARROYO@277.5s, ASK DEREK@406.2s, KYLE BEHM@459.6s,
+  AND KYLE@512.4s, AI@639.5s, NEW YORK CITY@688.0s, BUT HERE IS WHAT HAPPENED@713.8s,
+  JANUARY 2026@715.0s, PHOENIX@716.9s, MARY LOUIS (callback)@793.4s, BUT KYLE@829.4s
+- **Music ducking via pre-mixed WAV** — single file with FFmpeg volume automation:
+  intro 0-11.8s at -8dB (loud, no VO), narration 11.8-872.3s at -24dB (quiet bed),
+  outro 872.3+ at -8dB (loud, no VO)
+- **Text styling**: white with shadow, lower-third position, underline on names, 64px names/52px locations/72px dates
