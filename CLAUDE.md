@@ -263,3 +263,22 @@ Verified against LearnByLeo (editing, intros, retention), Fern Editorial Playboo
 - V6: 513 film grain clips
 - A1: Narration 860.5s, A2: Music ducked (-24dB under VO), A3+A4: 33 SFX
 - CDL color grade, 55 zoom targets, 19 Fusion fade comps
+
+### DaVinci API Root Causes Fixed (2026-03-27)
+**New file: `pipeline/davinci_helpers.py`** — reusable functions with all fixes baked in.
+
+Root causes discovered and fixed:
+1. **H.264 kills alpha** → Always use ProRes 4444 (`yuva444p10le`) for overlays with transparency
+2. **AddFusionComp() doesn't persist** → Bake fade-in/fade-out into video files via FFmpeg before import
+3. **CompositeMode string values don't work** → DaVinci uses numeric enums, not strings
+4. **AppendToTimeline ignores recordFrame** → Must place clips in chronological order
+5. **PNG stills default to 5s** → Convert to video first for longer durations
+6. **V1 clips extend past narration** → Always call `trim_timeline_to_narration()` after building
+
+Helper functions:
+- `render_overlay_with_fade()` — PNG → ProRes 4444 MOV with baked fades
+- `render_vignette_prores()` — radial vignette as ProRes 4444 (alpha preserved)
+- `create_chapter_card()` — opaque chapter cards (H.264 fine)
+- `create_text_reveal()` — lower-third text with alpha + fades
+- `create_ducked_music()` — pre-baked volume automation
+- `trim_timeline_to_narration()` — prevent dead tail after VO ends
