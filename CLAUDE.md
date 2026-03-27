@@ -190,3 +190,25 @@ Key rules for the pipeline:
 3. **Music dropped to -20dB** — was -12dB, narration was getting buried. Now music is background bed only.
 4. **Director audit** — mapped all 72 director segments vs timeline. Key finding: V1 clips are YouTube B-roll, NOT the director-specified visuals. Director SHOW descriptions need Wikimedia/custom images (not yet sourced).
 5. **SFX count validated** — 50 SFX placed (33 director-specified, 17 extra for coverage)
+
+### Director-Verified Wiring (session 2026-03-27 late afternoon)
+All 72 director segments mapped to timeline via word-count proportional timing:
+- **29 SFX** placed at director-correct segment positions (tension, shimmer, impact, rumble, whoosh)
+- **63 zoom targets** applied (face=1.35x, document_text=1.5x, person=1.25x, subject=1.15x)
+- **12 text reveal positions** documented (MARY LOUIS@61.8s, CARMEN ARROYO@277.5s, etc.) — need Fusion Text+ creation
+- **35 vignette clips** on V5 (Multiply 50%, H.264 tiles covering full 17.5 min)
+- **8 chapter cards** correctly ordered on V3 matching story arc transitions
+- **Music at -20dB** — clear narration dominance
+
+### Final Timeline State ("Secret Scores FAIR USE")
+| Track | Contents | Count |
+|-------|----------|-------|
+| V1 | B-roll clips (all ≤7s) | 150 |
+| V2 | Visual overlays (logos, stats, people) | 24 |
+| V3 | Chapter title cards | 8 |
+| V4 | (reserved for Text+ titles) | 0 |
+| V5 | Vignette overlay (Multiply 50%) | 35 |
+| A1 | Narration | 1 |
+| A2 | Music (-20dB bed) | 1 |
+| A3 | SFX primary | 15 |
+| A4 | SFX secondary | 14 |
