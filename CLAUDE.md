@@ -117,10 +117,13 @@ Key rules for the pipeline:
 ### DaVinci Control Method
 - **Computer-use MCP CANNOT see DaVinci Resolve** (bug: reports "not_installed" despite running)
 - Use **DaVinci Python scripting API** for timeline ops: `import DaVinciResolveScript as dvr`
-- Use **AppleScript/System Events** for UI clicks, page switching, keyboard shortcuts
-- Use **cliclick** (installed via brew) for precise mouse clicks
-- Use **screencapture -x -D 3** to capture DaVinci's display (LG ULTRAWIDE, display 3)
-- DaVinci window position: (1608, 88), size: (3344, 1346)
+- Use **AppleScript/System Events** for menu clicks, page switching. CRITICAL: check for modal dialogs first (`name of window 1`)
+- Use **cliclick** (installed via brew) for mouse clicks. Keyboard shortcuts DON'T work for blade/split (focus issue)
+- Use **screencapture -x -D 3** to capture DaVinci's display
+- **FCPXML export/import** for batch clip splitting (only reliable way to blade clips programmatically)
+- If DaVinci hangs: `killall -9 Resolve` then `open "/Applications/DaVinci Resolve/DaVinci Resolve.app"`
+- After restart: close "Create New Project" dialog (Esc) before API calls, then `pm.LoadProject("Secret Scores")`
+- DaVinci + Photoshop now on same LG monitor (display 3)
 
 ### LearnByLeo Playbook Audit (41% compliance — 29/70)
 Full audit run 2026-03-27. Key gaps vs playbook:
