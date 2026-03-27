@@ -122,15 +122,25 @@ Key rules for the pipeline:
 - Use **screencapture -x -D 3** to capture DaVinci's display (LG ULTRAWIDE, display 3)
 - DaVinci window position: (1608, 88), size: (3344, 1346)
 
+### LearnByLeo Playbook Audit (41% compliance — 29/70)
+Full audit run 2026-03-27. Key gaps vs playbook:
+1. **❌ Cut frequency** — avg 25.2s/clip (target 5-7s). 4 clips over 30s. Need to blade long clips.
+2. **❌ Attention guides** — 0/6 techniques (animate, darken, color shift, indicators, glow, scale). Need Fusion-based effects.
+3. **⚠️ Chapter transitions** — dissolves added but missing chapter cards, dramatic silence, music bridge (5-step sequence).
+4. **⚠️ Sound design** — 50 SFX placed but music has no dynamic ducking, no dramatic pauses, no stems.
+5. **⚠️ Visual variety** — no motion graphics, overlay PNGs don't animate in.
+6. **⚠️ Production polish** — color grade done but no vignette, film grain, or atmosphere.
+7. **⚠️ Intro** — Fusion comp exists but news overlay may not be connected. Intro is single 20s clip (should cut every ~4s).
+
 ### What Still Needs Doing in DaVinci
-1. ~~Fix intro audio~~ — A1 muted, levels set ✅
-2. ~~Add SFX~~ — 50 total SFX placed (A4 + A5) ✅
-3. ~~Add transitions~~ — 8 chapter dissolves ✅
-4. ~~Color grading~~ — CDL applied all clips ✅
-5. ~~Place visual assets~~ — 26 total on V2 + V3 ✅
-6. **Typewriter text effects** — Fusion-based text reveals on sync points (12 segments have sync_points)
-7. **Fine-tune audio mix** — play through, adjust per-section levels, check SFX timing
-8. **Final QA** — full playthrough, check transitions, verify overlay timing
+1. **DELETE untrimmed tail** — V1[68] is 711.7s of untrimmed "60 Minutes" source. Set to opacity 0 but needs manual delete. SELECT IT AND PRESS DELETE.
+2. **Blade long clips** — V1[15] (90.5s), V1[36] (59s), V1[66] (62.5s) need cutting to 5-10s segments
+3. **Animate overlays** — V2/V3 PNGs need Fusion fade-in/fade-out (not just pop)
+4. **Chapter cards** — White serif typewriter text on black between chapters (playbook 5-step transition)
+5. **Music ducking** — Fairlight sidechain compressor: duck A3 under A2 narration
+6. **Vignette + film grain** — Power Windows vignette + ResolveFX film grain
+7. **Verify intro Fusion comp** — Check if news_overlay_v5.png is properly composited
+8. **Typewriter text effects** — Fusion-based text reveals on 12 sync points
 
 ### Media Locations
 - All media: `~/Desktop/SecretScores_Media/`
