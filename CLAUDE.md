@@ -241,3 +241,14 @@ All elements MUST use **narration word-count proportional timing** (single sourc
   intro 0-11.8s at -8dB (loud, no VO), narration 11.8-872.3s at -24dB (quiet bed),
   outro 872.3+ at -8dB (loud, no VO)
 - **Text styling**: white with shadow, lower-third position, underline on names, 64px names/52px locations/72px dates
+
+### Final QA Pass (2026-03-27 evening)
+- ✅ Duration: 17.5 min (target 15-20)
+- ✅ Fair use: all V1 clips ≤7s (except 19.7s intro)
+- ✅ Audio: narration 11.8-872.3s, music 0-1008s (ducked), 33 SFX
+- ✅ Intro: news overlay compositing properly
+- ✅ Color grade: CDL on 149/150 clips
+- ✅ Vignette (V5) + film grain (V6) continuous
+- ✅ Finale overlays added: "YOU KNOW NOW", "YOU ARE THE ONLY ONE", "THE MOST DANGEROUS THING", "BREAK IT."
+- ⚠️ Largest overlay gap: 122s (some segments rely on V1 B-roll alone — acceptable for documentary pacing)
+- Fixed: 12 film grain clips trimmed past content end
