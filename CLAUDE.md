@@ -182,3 +182,11 @@ Key rules for the pipeline:
 - Orchestrator: `run_pipeline.py`
 - State file: `.pipeline_run.json`
 - Brand config: `brand_configs/fern_clone.json`
+
+### Fixes Applied (session 2026-03-27 afternoon)
+1. **Chapter cards REORDERED** — were scrambled (MACHINE at 67s, TENANTS at 670s). Now correct:
+   TENANTS@56.7s, MACHINE@138.7s, DATA@259.3s, DRIVERS@341.3s, WORKERS@466.8s, PATIENTS@629.3s, FUTURE@813.5s, RECKONING@895.9s
+2. **V3 cleaned** — removed 21 junk/duplicate clips from failed asset placements
+3. **Music dropped to -20dB** — was -12dB, narration was getting buried. Now music is background bed only.
+4. **Director audit** — mapped all 72 director segments vs timeline. Key finding: V1 clips are YouTube B-roll, NOT the director-specified visuals. Director SHOW descriptions need Wikimedia/custom images (not yet sourced).
+5. **SFX count validated** — 50 SFX placed (33 director-specified, 17 extra for coverage)
