@@ -2,7 +2,6 @@
   "schema_version": "1.0",
   "module": "editing",
   "description": "Four-pillar editing system: style matching, visual variety, continuity, and sound design",
-
   "principles": [
     {
       "id": "P-ED-01",
@@ -11,7 +10,7 @@
     },
     {
       "id": "P-ED-02",
-      "rule": "The core of editing is PACING — always as fast as possible for the genre",
+      "rule": "The core of editing is PACING \u2014 always as fast as possible for the genre",
       "implication": "Even slow-paced nature documentaries cut to new clips every 5 seconds minimum.",
       "benchmarks": {
         "entertainment": "2-3 seconds per cut",
@@ -22,24 +21,39 @@
     },
     {
       "id": "P-ED-03",
-      "rule": "Every moment should blend into the next seamlessly — editing should be invisible",
+      "rule": "Every moment should blend into the next seamlessly \u2014 editing should be invisible",
       "implication": "Graphics must animate in. Focus point continuity must be maintained. Transitions should feel natural."
     },
     {
       "id": "P-ED-04",
-      "rule": "Vary the energy level — contrast between hype-edited sections and mellow A-roll forces viewers back into focus",
+      "rule": "Vary the energy level \u2014 contrast between hype-edited sections and mellow A-roll forces viewers back into focus",
       "implication": "Most underrated editing tip. Monotone energy = viewer fatigue regardless of content quality."
     }
   ],
-
   "tactics": {
     "visual_variety": {
       "description": "Maximize attention through diverse visual elements",
       "footage_types": [
-        {"type": "a_roll", "description": "See and hear subject simultaneously. Personal, high attention. Use for important statements.", "priority": "important_moments"},
-        {"type": "b_roll", "description": "Extra footage separate from audio. Visual depiction of words. More interesting than A-roll — use as much as possible.", "priority": "majority_of_video"},
-        {"type": "stock_footage", "description": "Lazy version of B-roll. Use sparingly.", "priority": "gap_filler"},
-        {"type": "motion_graphics", "description": "Explain complex things quickly and clearly. High production value signal.", "priority": "explanations"}
+        {
+          "type": "a_roll",
+          "description": "See and hear subject simultaneously. Personal, high attention. Use for important statements.",
+          "priority": "important_moments"
+        },
+        {
+          "type": "b_roll",
+          "description": "Extra footage separate from audio. Visual depiction of words. More interesting than A-roll \u2014 use as much as possible.",
+          "priority": "majority_of_video"
+        },
+        {
+          "type": "stock_footage",
+          "description": "Lazy version of B-roll. Use sparingly.",
+          "priority": "gap_filler"
+        },
+        {
+          "type": "motion_graphics",
+          "description": "Explain complex things quickly and clearly. High production value signal.",
+          "priority": "explanations"
+        }
       ],
       "still_image_motion": {
         "description": "Give movement to still clips to prevent visual stagnation",
@@ -55,17 +69,125 @@
       "captions": {
         "rule": "Only for emphasis, 3 words or less at a time",
         "anti_pattern": "Do not use captions just to fill dead space"
+      },
+      "ken_burns_quantitative": {
+        "avg_zoom_rate_pct_per_sec": 5.4,
+        "zoom_in_pct": 36.5,
+        "zoom_out_pct": 23.7,
+        "static_pct": 20.0,
+        "pan_pct": 15.0,
+        "beat_sync_pct": 39.1,
+        "beat_offset_ms": 126.8,
+        "zoom_by_narrative_intensity": {
+          "exposition": [
+            1.0,
+            3.0
+          ],
+          "tension_build": [
+            3.0,
+            5.0
+          ],
+          "emotional_peak": [
+            5.0,
+            9.0
+          ],
+          "extreme_revelation": [
+            15.0,
+            25.0
+          ],
+          "zoom_out_scope": [
+            1.0,
+            3.0
+          ],
+          "zoom_out_exhale": [
+            3.0,
+            8.0
+          ],
+          "zoom_out_shock": [
+            5.0,
+            10.0
+          ]
+        },
+        "pan_direction_meaning": {
+          "right": "forward in time / reading",
+          "left": "backward in time",
+          "up": "reading document",
+          "down": "scrolling content"
+        }
+      },
+      "captions_quantitative": {
+        "animation": "slide_reveal",
+        "fade_in_ms": 511,
+        "zone_distribution": {
+          "upper": 0.48,
+          "center": 0.28,
+          "lower": 0.24
+        },
+        "avg_hold_sec": 8.36,
+        "color": "white_dominant_85pct",
+        "font_weight": "extra_bold",
+        "stroke_width_px": [
+          9,
+          10
+        ],
+        "on_solid_background_pct": 1.7,
+        "text_types": {
+          "source_citation": {
+            "format": "[number]",
+            "frequency": "every 30-60s during evidence"
+          },
+          "person_id": {
+            "format": "FULL NAME caps",
+            "trigger": "first mention"
+          },
+          "entity_label": {
+            "format": "Name caps",
+            "trigger": "introducing org/concept"
+          },
+          "location": {
+            "format": "Place name",
+            "trigger": "setting scene"
+          },
+          "quote": {
+            "format": "typewriter effect",
+            "trigger": "subject's own words"
+          }
+        }
       }
     },
     "six_attention_guides": {
       "description": "Six ways to guide viewer attention on images",
       "techniques": [
-        {"id": 1, "name": "animate_important_area", "description": "Animate the most important text/area — movement draws the eye"},
-        {"id": 2, "name": "darken_blur_surrounds", "description": "Darken or blur surrounding areas to isolate the subject"},
-        {"id": 3, "name": "color_shift", "description": "Shift hue to red (negative connotation) or yellow/green (positive)"},
-        {"id": 4, "name": "graphic_indicators", "description": "Circles, arrows, underlines pointing to the subject"},
-        {"id": 5, "name": "glow_effect", "description": "Make the subject glow to separate it from background"},
-        {"id": 6, "name": "scale_position", "description": "Scale and position adjustments to emphasize the subject"}
+        {
+          "id": 1,
+          "name": "animate_important_area",
+          "description": "Animate the most important text/area \u2014 movement draws the eye"
+        },
+        {
+          "id": 2,
+          "name": "darken_blur_surrounds",
+          "description": "Darken or blur surrounding areas to isolate the subject"
+        },
+        {
+          "id": 3,
+          "name": "color_shift",
+          "description": "Shift hue to red (negative connotation) or yellow/green (positive)"
+        },
+        {
+          "id": 4,
+          "name": "graphic_indicators",
+          "description": "Circles, arrows, underlines pointing to the subject"
+        },
+        {
+          "id": 5,
+          "name": "glow_effect",
+          "description": "Make the subject glow to separate it from background"
+        },
+        {
+          "id": 6,
+          "name": "scale_position",
+          "description": "Scale and position adjustments to emphasize the subject"
+        }
       ],
       "automation_hint": "Map these to storyboard segment intensity levels. High tension = techniques 1,2,3. Reveals = 4,5. Calm context = 6 only."
     },
@@ -75,17 +197,21 @@
         {
           "rule": "focus_point_continuity",
           "description": "In the last frame of clip 1 and first frame of clip 2, the viewer's eyes should be in roughly the same screen position",
-          "consequence_if_violated": "Jarring jump — viewer's eyes have to search for new focal point"
+          "consequence_if_violated": "Jarring jump \u2014 viewer's eyes have to search for new focal point"
         },
         {
           "rule": "animate_graphics_in",
           "description": "Graphics must move into the frame (animate in) or use a sound effect to explain their appearance",
-          "consequence_if_violated": "Graphics pop in from nowhere — breaks immersion"
+          "consequence_if_violated": "Graphics pop in from nowhere \u2014 breaks immersion"
         },
         {
           "rule": "full_screen_transitions",
           "description": "Use full-screen transitions for section/chapter changes",
-          "types": ["fade to black", "dissolve", "wipe"]
+          "types": [
+            "fade to black",
+            "dissolve",
+            "wipe"
+          ]
         },
         {
           "rule": "deliberate_breaks",
@@ -97,20 +223,93 @@
     "sound_design": {
       "description": "Immersive audio through layered sound design",
       "sfx_types": [
-        {"type": "whoosh", "use": "Movement, transitions, visual elements entering/exiting"},
-        {"type": "highlight", "use": "Emphasis on key words or visuals"},
-        {"type": "riser", "use": "Build tension/anticipation. ONLY before genuinely important moments."},
-        {"type": "hit", "use": "Release tension, emphasize major moments. Pair with risers."},
-        {"type": "drone", "use": "Create mystery and suspense. Background layer for tense sections."}
+        {
+          "type": "whoosh",
+          "use": "Movement, transitions, visual elements entering/exiting"
+        },
+        {
+          "type": "highlight",
+          "use": "Emphasis on key words or visuals"
+        },
+        {
+          "type": "riser",
+          "use": "Build tension/anticipation. ONLY before genuinely important moments."
+        },
+        {
+          "type": "hit",
+          "use": "Release tension, emphasize major moments. Pair with risers."
+        },
+        {
+          "type": "drone",
+          "use": "Create mystery and suspense. Background layer for tense sections."
+        }
       ],
       "music_strategy": [
-        {"rule": "mood_matching", "description": "Choose songs that match the mood of each segment (anticipation, innovation, excitement, dread)"},
-        {"rule": "segment_assignment", "description": "Separate video by subject changes, assign appropriate mood to each"},
-        {"rule": "abrupt_pause", "description": "Abruptly pause music for special moments — jolts attention"},
-        {"rule": "fade_out", "description": "Slowly fade music out to signal segment endings — creates anticipation"},
-        {"rule": "sync_to_events", "description": "Sync music hits/dips to video events (problem section has different energy than solution)"},
-        {"rule": "stems", "description": "Download separate song elements (stems) for precise control over drums, melody, bass"}
-      ]
+        {
+          "rule": "mood_matching",
+          "description": "Choose songs that match the mood of each segment (anticipation, innovation, excitement, dread)"
+        },
+        {
+          "rule": "segment_assignment",
+          "description": "Separate video by subject changes, assign appropriate mood to each"
+        },
+        {
+          "rule": "abrupt_pause",
+          "description": "Abruptly pause music for special moments \u2014 jolts attention"
+        },
+        {
+          "rule": "fade_out",
+          "description": "Slowly fade music out to signal segment endings \u2014 creates anticipation"
+        },
+        {
+          "rule": "sync_to_events",
+          "description": "Sync music hits/dips to video events (problem section has different energy than solution)"
+        },
+        {
+          "rule": "stems",
+          "description": "Download separate song elements (stems) for precise control over drums, melody, bass"
+        }
+      ],
+      "quantitative": {
+        "sfx_density_pct": 10.9,
+        "dominant_type": "impact_thud",
+        "loudness_ratio": 2.26,
+        "peak_offset_ms": -8.2,
+        "sfx_threshold_ratio": 1.8,
+        "density_by_intensity": {
+          "calm_exposition": {
+            "events_per_min": 0.6
+          },
+          "medium_narrative": {
+            "events_per_min": 9.0
+          },
+          "high_intensity": {
+            "events_per_min": 15.2
+          }
+        },
+        "verdict": "minimal_sfx \u2014 cuts are mostly clean audio transitions. SFX punctuate key moments only."
+      },
+      "music_quantitative": {
+        "target_bpm": 123,
+        "style": "dark cinematic, piano + strings",
+        "role": "continuous underscore",
+        "ducking": "duck under narration, raise during transitions/silence",
+        "dramatic_pauses": {
+          "frequency": "3-5 per chapter",
+          "duration_sec": [
+            1,
+            3
+          ],
+          "triggers": [
+            "After delivering a shocking fact",
+            "Before introducing a new character or era",
+            "At end of a rhetorical question",
+            "Before a chapter transition"
+          ]
+        },
+        "swells": "At chapter transitions and before dramatic pauses",
+        "drops": "Near-silence for most intimate/shocking revelations"
+      }
     },
     "production_polish": {
       "description": "Making the video look professionally produced",
@@ -121,59 +320,281 @@
         "Film grain for texture",
         "Consistent font and graphic style throughout"
       ]
+    },
+    "editing_rhythm": {
+      "description": "Bimodal cut distribution: rapid-fire bursts + long holds",
+      "cuts_per_min": 11.3,
+      "avg_segment_duration_sec": 5.33,
+      "segment_distribution": {
+        "under_1s": 0.49,
+        "1_to_3s": 0.35,
+        "3_to_6s": 0.013,
+        "over_6s": 0.145
+      },
+      "cut_types": {
+        "narrative_motivated": 0.44,
+        "visual_freshness": 0.56
+      },
+      "max_same_image_sec": 20,
+      "typical_image_refresh_sec": [
+        8,
+        12
+      ],
+      "rhythm_pattern": "10-20s hold \u2192 2-4s rapid burst \u2192 repeat",
+      "watop_comparison": {
+        "cuts_per_min": 17.7,
+        "avg_shot_sec": 6.5,
+        "intro_pace_sec": 5.0,
+        "explanation_pace_sec": 7.5,
+        "reveal_pace_sec": 5.5
+      }
+    },
+    "color_grading_formula": {
+      "description": "Fern-style dark cinematic look",
+      "ffmpeg_filter": "eq=contrast=0.78:brightness=-0.064:saturation=1.09",
+      "rgb_means": {
+        "R": 97.07,
+        "G": 93.07,
+        "B": 90.22
+      },
+      "luminance_mean": 93.72,
+      "saturation": 0.244,
+      "black_crush_pct": 24.7,
+      "highlight_clip_pct": 5.2,
+      "channel_shifts": {
+        "R": 0.016,
+        "B": -0.011
+      },
+      "key_insight": "Dark (luminance 94/255), slightly warm (R>G>B), heavy black crush"
+    },
+    "chapter_transitions": {
+      "description": "5-step chapter transition sequence",
+      "steps": [
+        {
+          "step": 1,
+          "name": "concluding_punch",
+          "duration_sec": [
+            2,
+            4
+          ],
+          "description": "Last sentence is punchy, emotionally loaded"
+        },
+        {
+          "step": 2,
+          "name": "dramatic_silence",
+          "duration_sec": [
+            2,
+            5
+          ],
+          "description": "Narration stops, music continues/swells"
+        },
+        {
+          "step": 3,
+          "name": "music_bridge",
+          "duration_sec": {
+            "major": [
+              20,
+              40
+            ],
+            "minor": [
+              5,
+              10
+            ]
+          },
+          "description": "Music fills gap, signals new chapter"
+        },
+        {
+          "step": 4,
+          "name": "chapter_card",
+          "duration_sec": [
+            2,
+            4
+          ],
+          "description": "White serif typewriter text on dark background"
+        },
+        {
+          "step": 5,
+          "name": "new_hook",
+          "description": "Fresh compelling line/image resets attention"
+        }
+      ],
+      "transition_types": {
+        "hard_cut": {
+          "pct": 87.5,
+          "use": "within chapter"
+        },
+        "fade_to_black": {
+          "pct": 10,
+          "use": "chapter boundaries"
+        },
+        "fade_to_white": {
+          "pct": 2.5,
+          "use": "rare, extreme moments"
+        }
+      }
+    },
+    "narrative_visual_mapping": {
+      "description": "Maps narrative function to exact visual choices",
+      "mappings": {
+        "establishing_context": {
+          "pct_of_video": [
+            59.6,
+            63.7
+          ],
+          "visual_type": "document_photo",
+          "motion": "slow zoom-in 1-3%/s",
+          "cut_pattern": "every 8-12s",
+          "emotional_tone": {
+            "neutral": 0.336,
+            "tense": 0.299,
+            "ominous": 0.117
+          }
+        },
+        "tension_build": {
+          "pct_of_video": [
+            8.5,
+            12.6
+          ],
+          "visual_type": "document_photo",
+          "motion": "faster zoom-in 5-9%/s",
+          "cut_pattern": "2-4s segments",
+          "emotional_tone": {
+            "tense": 0.888,
+            "ominous": 0.103
+          }
+        },
+        "evidence": {
+          "pct_of_video": [
+            10.4,
+            14.5
+          ],
+          "visual_type": "document_photo (88.7%)",
+          "motion": "zoom-in 1.5-5%/s",
+          "cut_pattern": "cut TO evidence on reference"
+        },
+        "character_intro": {
+          "pct_of_video": [
+            2.7,
+            11.7
+          ],
+          "visual_type": "documentary_photo (56.5%)",
+          "motion": "zoom-in to face 2-5%/s",
+          "cut_pattern": "cut when name spoken"
+        },
+        "hook": {
+          "pct_of_video": [
+            3.4,
+            3.8
+          ],
+          "visual_type": "document_photo/title_card",
+          "motion": "slow zoom-in 3-5%/s",
+          "cut_pattern": "HOLD \u2014 do not cut"
+        },
+        "revelation": {
+          "pct_of_video": [
+            0.2,
+            0.3
+          ],
+          "visual_type": "news_screenshot/document",
+          "motion": "extreme zoom 15-25%/s",
+          "cut_pattern": "cut at exact narration moment"
+        },
+        "transition": {
+          "pct_of_video": [
+            1.4,
+            2.0
+          ],
+          "visual_type": "black_screen (86.1%)",
+          "motion": "none/slow zoom-out",
+          "cut_pattern": "fade to black"
+        }
+      }
     }
   },
-
   "checklists": {
     "editing_quality": {
       "description": "Score the editing quality of a finished video",
       "criteria": [
-        {"name": "cut_frequency", "description": "New visual element every 5 seconds or less?", "weight": 0.15},
-        {"name": "b_roll_ratio", "description": "B-roll used for majority of video? A-roll reserved for important moments?", "weight": 0.10},
-        {"name": "sfx_density", "description": "Appropriate SFX (whoosh, highlight, riser, hit, drone) at key moments?", "weight": 0.15},
-        {"name": "music_mood_match", "description": "Music mood changes with content mood?", "weight": 0.10},
-        {"name": "energy_variation", "description": "Clear energy shifts between sections? Not monotone?", "weight": 0.15},
-        {"name": "focus_point_continuity", "description": "Eye position consistent across cuts?", "weight": 0.10},
-        {"name": "graphics_animated", "description": "All graphics animate in (not just appear)?", "weight": 0.05},
-        {"name": "attention_guides_used", "description": "At least 3 of the 6 attention guide techniques used?", "weight": 0.10},
-        {"name": "no_dead_space", "description": "Zero moments where nothing visually interesting is happening?", "weight": 0.10}
+        {
+          "name": "cut_frequency",
+          "description": "New visual element every 5 seconds or less?",
+          "weight": 0.15
+        },
+        {
+          "name": "b_roll_ratio",
+          "description": "B-roll used for majority of video? A-roll reserved for important moments?",
+          "weight": 0.1
+        },
+        {
+          "name": "sfx_density",
+          "description": "Appropriate SFX (whoosh, highlight, riser, hit, drone) at key moments?",
+          "weight": 0.15
+        },
+        {
+          "name": "music_mood_match",
+          "description": "Music mood changes with content mood?",
+          "weight": 0.1
+        },
+        {
+          "name": "energy_variation",
+          "description": "Clear energy shifts between sections? Not monotone?",
+          "weight": 0.15
+        },
+        {
+          "name": "focus_point_continuity",
+          "description": "Eye position consistent across cuts?",
+          "weight": 0.1
+        },
+        {
+          "name": "graphics_animated",
+          "description": "All graphics animate in (not just appear)?",
+          "weight": 0.05
+        },
+        {
+          "name": "attention_guides_used",
+          "description": "At least 3 of the 6 attention guide techniques used?",
+          "weight": 0.1
+        },
+        {
+          "name": "no_dead_space",
+          "description": "Zero moments where nothing visually interesting is happening?",
+          "weight": 0.1
+        }
       ]
     }
   },
-
   "anti_patterns": [
     {
       "id": "AP-ED-01",
       "mistake": "Same energy level throughout the entire video",
-      "consequence": "Viewer fatigue — even great content feels boring with monotone editing",
+      "consequence": "Viewer fatigue \u2014 even great content feels boring with monotone editing",
       "fix": "Alternate between hype-edited sections and mellow A-roll"
     },
     {
       "id": "AP-ED-02",
       "mistake": "Graphics appearing instantly without animation or sound",
-      "consequence": "Breaks immersion — viewer notices the editing",
+      "consequence": "Breaks immersion \u2014 viewer notices the editing",
       "fix": "Animate every graphic in. Add a subtle whoosh or highlight sound."
     },
     {
       "id": "AP-ED-03",
       "mistake": "Using risers before unimportant moments",
-      "consequence": "Trains the viewer to ignore tension signals — diminishes real reveals",
+      "consequence": "Trains the viewer to ignore tension signals \u2014 diminishes real reveals",
       "fix": "Only use risers before genuinely important moments"
     },
     {
       "id": "AP-ED-04",
       "mistake": "Using captions as subtitles rather than emphasis",
-      "consequence": "Visual noise — captions lose their punch when overused",
+      "consequence": "Visual noise \u2014 captions lose their punch when overused",
       "fix": "3 words or less, only for emphasis. Never to fill dead space."
     },
     {
       "id": "AP-ED-05",
       "mistake": "Visual variety that overwhelms instead of enhances",
-      "consequence": "Variety is like seasoning — too much ruins the experience",
+      "consequence": "Variety is like seasoning \u2014 too much ruins the experience",
       "fix": "Healthy amount enhances. Mood should fluctuate but not chaotically."
     }
   ],
-
   "sources": [
     "LearnByLeo: How to edit SO good your viewers get addicted to your videos",
     "LearnByLeo: How to get SO good at YouTube you can't stop going viral"

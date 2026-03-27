@@ -2,7 +2,6 @@
   "schema_version": "1.0",
   "module": "intros",
   "description": "Hook strategies, expectation alignment, pacing, and exceeding expectations",
-
   "principles": [
     {
       "id": "P-IN-01",
@@ -23,16 +22,20 @@
       "id": "P-IN-04",
       "rule": "After meeting expectations, RAISE the bar by revealing MORE than the title/thumbnail promised",
       "implication": "Sets a precedent that the rest of the video is worth watching. Builds viewer confidence."
+    },
+    {
+      "id": "P-IN-05",
+      "rule": "First 15 seconds must score 95%+ against ALL playbook criteria. Breakdown: 1-3s (hook/promise), 3-5s (prove it), 5-10s (raise stakes), 10-15s (cement commitment to watch)",
+      "implication": "The first 15 seconds are a cascading funnel. Each micro-window has a specific job. If any fails, the viewer leaves."
     }
   ],
-
   "tactics": {
     "pacing_to_genre": {
       "description": "Match intro pacing to the genre and thumbnail style",
       "examples": [
         {
           "genre": "action/entertainment",
-          "pacing": "Ultra-fast — 5 words in the first second, immediate visual payoff",
+          "pacing": "Ultra-fast \u2014 5 words in the first second, immediate visual payoff",
           "reference": "MrBeast: train emerging, horn sounds, yelling in first 2 seconds"
         },
         {
@@ -42,7 +45,7 @@
         },
         {
           "genre": "documentary/informational",
-          "pacing": "Medium — establish intrigue within 5-10 seconds, build tension",
+          "pacing": "Medium \u2014 establish intrigue within 5-10 seconds, build tension",
           "reference": "Open with the most dramatic moment or revelation, then context"
         }
       ],
@@ -50,13 +53,13 @@
     },
     "voiceover_intros": {
       "description": "Voiceovers enable strong audio AND strong visuals simultaneously",
-      "benefit": "Not constrained by talking head — can show the most compelling footage while delivering the hook",
+      "benefit": "Not constrained by talking head \u2014 can show the most compelling footage while delivering the hook",
       "rule": "Use camera/visual switches every ~4 seconds to retain visual engagement"
     },
     "storytelling_intros": {
       "description": "Present information in narrative order, not bland description",
       "example": "Instead of 'A bear killed 3 people': introduce the animal, build tension, THEN reveal the deaths",
-      "rule": "Rewrite intros up to 5 times — every sentence must be as meaningful as possible"
+      "rule": "Rewrite intros up to 5 times \u2014 every sentence must be as meaningful as possible"
     },
     "editing_enrichment": {
       "description": "Pack the intro with production value",
@@ -73,28 +76,130 @@
       "technique": "Reveal additional value beyond what the title/thumbnail promised",
       "example": "MrBeast: delivered the train crash in 5 seconds, then immediately revealed additional experiments (fireworks in a house, etc.)",
       "rule": "This sets the precedent that the viewer should stay for more surprises"
+    },
+    "first_15_seconds": {
+      "description": "The first 15 seconds broken into micro-windows, each with a specific job",
+      "windows": [
+        {
+          "window": "0-3s",
+          "job": "HOOK \u2014 Deliver the title/thumbnail promise. Viewer must see/hear the core concept.",
+          "requirements": [
+            "Visual directly tied to title",
+            "First words match promise",
+            "SFX on first frame",
+            "Music from frame 1"
+          ],
+          "score_weight": 0.35
+        },
+        {
+          "window": "3-5s",
+          "job": "PROVE IT \u2014 Show evidence this is real. Not just a claim, proof.",
+          "requirements": [
+            "Concrete visual proof",
+            "Specific fact/number/name",
+            "Energy builds from hook"
+          ],
+          "score_weight": 0.25
+        },
+        {
+          "window": "5-10s",
+          "job": "RAISE STAKES \u2014 Reveal it's WORSE than the title implied. Exceed expectations.",
+          "requirements": [
+            "New information beyond title promise",
+            "Emotional escalation",
+            "Visual variety (2+ cuts)"
+          ],
+          "score_weight": 0.25
+        },
+        {
+          "window": "10-15s",
+          "job": "CEMENT COMMITMENT \u2014 Make viewer feel they NEED to keep watching.",
+          "requirements": [
+            "Open loop / unanswered question",
+            "Hint at what's coming",
+            "Transition into story"
+          ],
+          "score_weight": 0.15
+        }
+      ],
+      "minimum_score": 0.95,
+      "rule": "Each window is scored independently. Overall first-15s score must be 95%+. If any window scores below 80%, the intro fails.",
+      "open_loops": {
+        "description": "The intro MUST plant at least 2 open loops (unanswered questions) that can only be resolved by watching the full video",
+        "methods": [
+          {
+            "type": "mystery",
+            "example": "What is this score? Who created it? Why don't you know about it?"
+          },
+          {
+            "type": "counterintuitive",
+            "example": "You have a perfect record \u2014 but a computer says you're a risk"
+          },
+          {
+            "type": "secret",
+            "example": "Companies know something about you that you don't know about yourself"
+          },
+          {
+            "type": "missing_piece",
+            "example": "There's a number attached to your name that changes everything"
+          }
+        ],
+        "minimum_loops": 2,
+        "rule": "If the first 15 seconds don't plant at least 2 open loops, the intro FAILS regardless of other scores"
+      },
+      "litmus_test": {
+        "description": "Every segment in the first 15s must pass the 3-part litmus test",
+        "questions": [
+          "Does the viewer know what is happening? (context)",
+          "Do they know why it is important? (stakes)",
+          "Do they know what could go wrong? (uncertainty)"
+        ],
+        "rule": "If any question is 'no' for any segment in first 15s, that segment must be fixed or replaced"
+      }
     }
   },
-
   "checklists": {
     "intro_quality": {
       "description": "Score the first 30 seconds of every video",
       "criteria": [
-        {"name": "expectation_match", "description": "Does the intro immediately address the promise made by title/thumbnail?", "weight": 0.25},
-        {"name": "feeling_match", "description": "Does the pacing/mood match the genre implied by the thumbnail?", "weight": 0.20},
-        {"name": "exceed_expectations", "description": "Does the intro reveal MORE than what was promised?", "weight": 0.15},
-        {"name": "visual_density", "description": "Are there new visuals every 4-5 seconds?", "weight": 0.15},
-        {"name": "audio_enrichment", "description": "Music, SFX, voiceover quality in first 30 seconds?", "weight": 0.10},
-        {"name": "no_filler", "description": "Zero wasted sentences? No 'hey guys' or 'welcome back'?", "weight": 0.15}
+        {
+          "name": "expectation_match",
+          "description": "Does the intro immediately address the promise made by title/thumbnail?",
+          "weight": 0.25
+        },
+        {
+          "name": "feeling_match",
+          "description": "Does the pacing/mood match the genre implied by the thumbnail?",
+          "weight": 0.2
+        },
+        {
+          "name": "exceed_expectations",
+          "description": "Does the intro reveal MORE than what was promised?",
+          "weight": 0.15
+        },
+        {
+          "name": "visual_density",
+          "description": "Are there new visuals every 4-5 seconds?",
+          "weight": 0.15
+        },
+        {
+          "name": "audio_enrichment",
+          "description": "Music, SFX, voiceover quality in first 30 seconds?",
+          "weight": 0.1
+        },
+        {
+          "name": "no_filler",
+          "description": "Zero wasted sentences? No 'hey guys' or 'welcome back'?",
+          "weight": 0.15
+        }
       ]
     }
   },
-
   "anti_patterns": [
     {
       "id": "AP-IN-01",
       "mistake": "Intro doesn't match the expectations set by title/thumbnail",
-      "consequence": "Massive early drop-off — 90% of viewership graphs show this",
+      "consequence": "Massive early drop-off \u2014 90% of viewership graphs show this",
       "fix": "Create title, thumbnail, and intro at the same time. Ask: what did I promise?"
     },
     {
@@ -112,11 +217,10 @@
     {
       "id": "AP-IN-04",
       "mistake": "Bland descriptive opening instead of narrative storytelling",
-      "consequence": "No emotional hook — viewer processes information without caring",
+      "consequence": "No emotional hook \u2014 viewer processes information without caring",
       "fix": "Present information in narrative order. Build tension before the reveal."
     }
   ],
-
   "sources": [
     "LearnByLeo: How to make intros that no one can look away from",
     "LearnByLeo: How to get SO good at YouTube you can't stop going viral"
