@@ -126,23 +126,23 @@ Key rules for the pipeline:
 - DaVinci + Photoshop now on same LG monitor (display 3)
 
 ### LearnByLeo Playbook Audit (updated 2026-03-27)
-**New "Secret Scores FAIR USE" timeline built** — all fair use + cut frequency issues fixed:
-1. **✅ Cut frequency / Fair use** — 150 clips, ALL ≤7s (except 19.7s intro). 711s untrimmed tail REMOVED.
-2. **✅ Intro** — news_overlay_v5 compositing as ProRes 4444 (alpha) on V2, full 19.7s. BREAKING NEWS banner visible.
-3. **❌ Attention guides** — 0/6 techniques. Need Fusion-based effects (darken, glow, color shift, indicators).
-4. **⚠️ Chapter transitions** — dissolves on old timeline only. New timeline needs chapter cards + music bridge.
-5. **⚠️ Sound design** — 50 SFX placed, music at -12dB, but no dynamic ducking or dramatic pauses.
-6. **⚠️ Visual variety** — 24 V2 overlays + 13 V3 overlays placed, but no animation (fade in/out).
-7. **⚠️ Production polish** — CDL color grade on all 149 clips. Still need vignette + film grain.
+**"Secret Scores FAIR USE" timeline — production-ready:**
+1. **✅ Cut frequency / Fair use** — 150 clips, ALL ≤7s (except 19.7s intro). 711s tail REMOVED.
+2. **✅ Intro** — news_overlay_v5 compositing as ProRes 4444 (alpha) on V2, 19.7s. BREAKING NEWS + LIVE badge.
+3. **✅ Chapter transitions** — 8 chapter cards on V3 (THE TENANTS / THE MACHINE / THE DATA / THE DRIVERS / THE WORKERS / THE PATIENTS / THE FUTURE / THE RECKONING). White serif on black, 2s each.
+4. **✅ Overlay animations** — 19 Fusion comps with fade-in/fade-out keyframes on V2 overlays.
+5. **✅ Color grade** — Enhanced CDL: crushed blacks (-0.03), high contrast (1.08 power), heavy desat (0.55) on 149 clips.
+6. **✅ Sound design** — 50 SFX (24 hits/risers + 26 tension/shimmer), Narration 0dB, Music -12dB, 12dB separation.
+7. **⚠️ Remaining (UI-only)** — Fairlight sidechain ducking, ResolveFX film grain, typewriter text effects, attention guides.
 
 ### What Still Needs Doing in DaVinci (use "Secret Scores FAIR USE" timeline)
 1. ~~DELETE untrimmed tail~~ ✅ Removed via FCPXML rebuild
 2. ~~Blade long clips~~ ✅ All clips ≤7s via FCPXML rebuild (150 clips)
 3. ~~Fix intro overlay~~ ✅ news_overlay_20s.mov (ProRes 4444 alpha) on V2, 19.7s
-4. **Animate overlays** — V2/V3 PNGs need Fusion fade-in/fade-out (not just pop)
-5. **Chapter cards** — White serif typewriter text on black between chapters
-6. **Music ducking** — Fairlight sidechain compressor: duck Music under Narration
-7. **Vignette + film grain** — Power Windows vignette + ResolveFX film grain
+4. ~~Animate overlays~~ ✅ 19 Fusion comps with fade keyframes
+5. ~~Chapter cards~~ ✅ 8 cards on V3, white serif on black, 2s each
+6. **Music ducking** — Fairlight sidechain compressor: duck Music under Narration (UI-only)
+7. **Vignette + film grain** — Power Windows vignette + ResolveFX film grain (UI-only)
 8. **Typewriter text effects** — Fusion-based text reveals on 12 sync points
 9. **Attention guides** — Darken/blur surrounds, color shifts, glow on key moments
 
