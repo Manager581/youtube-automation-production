@@ -101,18 +101,36 @@ Key rules for the pipeline:
 
 ### Current Workflow: DaVinci Resolve (NO MORE FFmpeg assembly)
 - All editing now happens in DaVinci Resolve Studio, not FFmpeg
-- DaVinci project has: 67 clips on V1, premixed audio on A1, all media online
-- Audio bladed at ~11.8s (intro boundary) on A1
+- DaVinci project: "Secret Scores", timeline: "Secret Scores FINAL"
+- **V1**: 69 clips (intro_clean.mp4 + 68 segments), ~17 min content
+- **V2**: 19 overlays (PNG assets at correct segment positions)
+- **V3**: 7 additional overlays (SafeRent logo, LexisNexis logo, Kronos logos, Cigna logo, RealPage stat, Kyle Behm callback)
+- **A1**: Premix (old) — DISABLED/MUTED
+- **A2**: Narration (narration_150x.wav) — 0 dB
+- **A3**: Music (music_real_long.wav) — -14 dB
+- **A4**: SFX original (24 hits + risers) — -12 dB
+- **A5**: SFX 2 (26 additional: tension, shimmer, impact, rumble, whoosh from director notes) — -15 dB
+- **Color grade**: CDL applied to all 69 V1 clips (Fern-style: desaturated 0.65, crushed blacks, cool blue shift)
+- **Transitions**: Cross dissolves at 8 chapter boundaries
 - News overlay v5 composited via Fusion on intro clip
 
+### DaVinci Control Method
+- **Computer-use MCP CANNOT see DaVinci Resolve** (bug: reports "not_installed" despite running)
+- Use **DaVinci Python scripting API** for timeline ops: `import DaVinciResolveScript as dvr`
+- Use **AppleScript/System Events** for UI clicks, page switching, keyboard shortcuts
+- Use **cliclick** (installed via brew) for precise mouse clicks
+- Use **screencapture -x -D 3** to capture DaVinci's display (LG ULTRAWIDE, display 3)
+- DaVinci window position: (1608, 88), size: (3344, 1346)
+
 ### What Still Needs Doing in DaVinci
-1. **Fix intro audio** — boost clip voices over music (was trying AI Voice Isolation when session crashed)
-2. **Add SFX** — impact hits between intro cuts, tension risers throughout
-3. **Add transitions** — dissolves, fades per director notes
-4. **Typewriter text effects** — Fusion-based text reveals on sync points
-5. **Place 26 visual assets on V2** — logos, data viz, headlines at correct segment positions
-6. **Color grading** — Color page pass
-7. **Fairlight audio polish** — sidechain ducking, EQ, final mix
+1. ~~Fix intro audio~~ — A1 muted, levels set ✅
+2. ~~Add SFX~~ — 50 total SFX placed (A4 + A5) ✅
+3. ~~Add transitions~~ — 8 chapter dissolves ✅
+4. ~~Color grading~~ — CDL applied all clips ✅
+5. ~~Place visual assets~~ — 26 total on V2 + V3 ✅
+6. **Typewriter text effects** — Fusion-based text reveals on sync points (12 segments have sync_points)
+7. **Fine-tune audio mix** — play through, adjust per-section levels, check SFX timing
+8. **Final QA** — full playthrough, check transitions, verify overlay timing
 
 ### Media Locations
 - All media: `~/Desktop/SecretScores_Media/`
@@ -124,7 +142,7 @@ Key rules for the pipeline:
 
 ## Tools & Access
 - **Claude Max** subscription (Opus available via `claude` CLI)
-- **DaVinci Resolve Studio 20.3.2** — Primary editing tool. External scripting enabled (Local). Use computer-use MCP to control.
+- **DaVinci Resolve Studio 20.3.2** — Primary editing tool. External scripting API + AppleScript/cliclick for UI. Computer-use MCP cannot see DaVinci (known bug).
 - **Adobe Photoshop 2024** — Graphics creation (news overlays, visual assets). Use computer-use MCP.
 - **Chrome MCP** — Full browser control (navigate, click, type, screenshot). Tab group ID may change between sessions. Use `tabs_context_mcp` to get current tabs.
 - **Computer-use MCP** — Desktop app control (DaVinci, Photoshop, etc.). Chrome is read-only through this tool; use Chrome MCP instead.
