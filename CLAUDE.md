@@ -282,3 +282,14 @@ Helper functions:
 - `create_text_reveal()` — lower-third text with alpha + fades
 - `create_ducked_music()` — pre-baked volume automation
 - `trim_timeline_to_narration()` — prevent dead tail after VO ends
+
+### Issues Found on Playback (2026-03-27 late)
+1. **Footage reuse**: "Algorithms AI" used 47x (274s) — fair use only checked per-clip duration, not per-source total
+   FIX: `verify_source_diversity()` added — checks max 30s per source. Added 16 new V2 overlays from unused images.
+2. **SFX inaudible**: tension=-39dB, whoosh=-49dB — never normalized
+   FIX: `normalize_sfx()` added — all SFX now at -12 LUFS. Replaced 33 quiet clips with loud versions.
+3. **No transitions**: DaVinci API has no AddTransition(). All 126 cuts are hard cuts.
+   FIX: Use FCPXML export/import for transitions (supports dissolves). Not yet applied.
+4. **No VO pauses**: voice_generator.py renders continuous WAV, ignores [BEAT][PAUSE] markers
+   FIX: Need VO post-processor to split WAV and insert silence gaps. Not yet applied.
+5. **V4 text reveals**: ProRes 4444 alpha verified (yuva444p12le). Should render correctly.

@@ -413,6 +413,100 @@ def verify_track_alignment(timeline, fps: int = 30, tolerance_sec: float = 5.0):
     return results
 
 
+def verify_source_diversity(timeline, max_total_per_source_sec: float = 30.0,
+                             fps: int = 30):
+    """
+    MANDATORY post-build check: verify no single source is over-used.
+
+    WHY: Secret Scores used "Algorithms AI" clip 47 times (274 seconds)
+    because the builder had a fallback that kept picking the same source.
+    Even though each clip was ≤7s (fair use per cut), 274s from one source
+    is a massive copyright risk and will get flagged.
+
+    Args:
+        timeline: DaVinci Timeline object
+        max_total_per_source_sec: Maximum total seconds from any single source
+        fps: Frame rate
+
+    Returns:
+        dict with 'passed' bool and 'sources' list
+    """
+    tl_start = timeline.GetStartFrame()
+    v1 = timeline.GetItemListInTrack('video', 1) or []
+
+    source_usage = {}
+    for clip in v1:
+        name = clip.GetName()
+        dur = (clip.GetEnd() - clip.GetStart()) / fps
+        if name not in source_usage:
+            source_usage[name] = {"count": 0, "total_sec": 0}
+        source_usage[name]["count"] += 1
+        source_usage[name]["total_sec"] += dur
+
+    results = {'passed': True, 'sources': []}
+    print(f"\nSOURCE DIVERSITY CHECK (max {max_total_per_source_sec}s per source)")
+    print(f"{'='*60}")
+
+    for name, data in sorted(source_usage.items(), key=lambda x: -x[1]["total_sec"]):
+        over = data["total_sec"] > max_total_per_source_sec
+        icon = '❌' if over else '✅'
+        if over:
+            results['passed'] = False
+        print(f"  {icon} {data['count']:3d}x {data['total_sec']:6.1f}s  {name[:55]}")
+        results['sources'].append({
+            'name': name,
+            'count': data['count'],
+            'total_sec': data['total_sec'],
+            'over_limit': over,
+        })
+
+    if not results['passed']:
+        over_sources = [s for s in results['sources'] if s['over_limit']]
+        print(f"\n  ❌ {len(over_sources)} sources exceed {max_total_per_source_sec}s limit")
+        print(f"  ACTION: Replace excess clips with images/overlays or different sources")
+    else:
+        print(f"\n  ✅ All sources within fair use limits")
+
+    return results
+
+
+def normalize_sfx(sfx_dir: str, target_lufs: float = -12.0):
+    """
+    Normalize all SFX files to a consistent loudness level.
+
+    WHY: Secret Scores SFX were at -39dB to -49dB (inaudible in the mix).
+    The pipeline had no normalization step, so raw downloaded/generated
+    SFX played at reference levels that were far too quiet.
+
+    Args:
+        sfx_dir: Directory containing SFX .wav files
+        target_lufs: Target loudness in LUFS (default -12 = clearly audible)
+
+    Returns:
+        dict mapping original filename to normalized filename
+    """
+    import subprocess
+
+    normalized = {}
+    for f in os.listdir(sfx_dir):
+        if not f.endswith('.wav') or f.endswith('_loud.wav'):
+            continue
+
+        src = os.path.join(sfx_dir, f)
+        dst = os.path.join(sfx_dir, f.replace('.wav', '_loud.wav'))
+
+        result = subprocess.run([
+            'ffmpeg', '-y', '-i', src,
+            '-af', f'loudnorm=I={target_lufs}:TP=-1.5:LRA=11',
+            dst,
+        ], capture_output=True, timeout=30)
+
+        if result.returncode == 0:
+            normalized[f] = os.path.basename(dst)
+
+    return normalized
+
+
 # =============================================================================
 # RULES FOR FUTURE PIPELINE CODE
 # =============================================================================
