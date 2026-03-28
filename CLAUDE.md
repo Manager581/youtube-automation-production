@@ -475,3 +475,7 @@ V3 clips show through V1 gaps because higher tracks render on top.
 Result: 17s remaining no-video (from 132s), essentially negligible.
 Timeline #2 "Secret Scores FAIR USE" is the canonical timeline.
 V1=136, V2=25 overlays (correct positions), V3=16 gap fills, A1-A4 audio.
+
+### Visual Playthrough (2026-03-28)
+Screenshots captured at 11 key moments (intro, Mary Louis, SafeRent, gap fills, Carmen, Derek, Kyle, Cigna, NYC Law, finale).
+DaVinci computer-use MCP reports "not_installed" for DaVinci Resolve — use screencapture + cliclick + osascript instead. DO NOT waste time on mcp__computer-use__request_access for DaVinci.
