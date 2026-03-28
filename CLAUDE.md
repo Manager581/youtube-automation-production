@@ -460,3 +460,10 @@ replacement monitor content. Needs manual swap on V1 (API places at end, not sta
 **External API** (`dvr.scriptapp("Resolve")`) — `AppendToTimeline` IGNORES `recordFrame`. Clips always go to END.
 **Internal API** (`app.GetResolve()` from Workspace > Scripts) — `AppendToTimeline` RESPECTS `recordFrame`. Clips go to the specified position!
 **Always use internal scripts** for clip placement. Save `.py` to `/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Edit/` and trigger via `osascript` menu click.
+
+### All Black Gaps Fixed (2026-03-27 late)
+- Restored intro_clean.mp4 (removed broken CLAIM DENIED overlay)
+- Filled all 9 V1 gaps (406s total) via FCPXML gap replacement
+- 159 V1 clips, 0 gaps, 25 V2 overlays preserved
+- FCPXML approach: export → replace <gap> elements with <asset-clip> references → reimport
+- This is the ONLY reliable way to fill mid-track gaps (API can't do it)
