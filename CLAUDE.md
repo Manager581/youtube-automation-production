@@ -439,3 +439,19 @@ at the END of the track, not at their target narration positions. The ONLY fix i
 2. Place each overlay one at a time on SEPARATE video tracks (V6, V7, V8...), OR  
 3. Accept that V2 overlays appear at wrong times and fix manually in DaVinci
 This is a fundamental DaVinci API limitation documented in davinci_helpers.py gotcha #3.
+
+### Known Issue: V2 Overlay Positions (UNFIXABLE via API)
+V2 overlays are nested inside V1 clips in FCPXML as child `<asset-clip>` elements.
+AppendToTimeline attaches them to the WRONG parent clip. The overlays show at wrong times.
+**This MUST be fixed manually in DaVinci Edit page** by dragging V2 clips to correct positions.
+The API cannot fix this. The FCPXML structure assigns overlays to parent clips, and the API
+appends children to whatever V1 clip is at the end of the track.
+
+### Intro Fix
+"CLAIM DENNED" → "CLAIM DENIED": intro_denied_fixed.mp4 created with perspective-warped
+replacement monitor content. Needs manual swap on V1 (API places at end, not start).
+
+### What's Ready for Manual Polish in DaVinci
+1. Drag V2 overlays to correct narration positions (they're labeled by segment)
+2. Drag intro_denied_fixed.mp4 to V1 position 0 (replacing intro_clean.mp4)
+3. All other elements (typewriter text V4, chapters V3, SFX, narration, music) are correct
