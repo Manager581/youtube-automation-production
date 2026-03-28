@@ -424,3 +424,18 @@ Duration: 15.8 min | 28 LearnByLeo pauses | 17 cross-dissolves
 - V2 now has 80 overlays | V1 gaps reduced to 12s
 - Unsplash usage: <15% of total content (within user's 15% cap)
 - Unique video sources: 30 (was 15)
+
+### Visual Verification (2026-03-27 final)
+Typewriter text: ✅ RENDERS — character-by-character reveal with cursor, ProRes 4444 alpha
+Intro overlay: ✅ RENDERS — BREAKING NEWS with CLAIM DENIED
+SFX: ✅ AUDIBLE — normalized to -12 LUFS
+V2 overlays: ⚠️ WRONG POSITIONS — AppendToTimeline bug puts them sequentially, not at target times
+Gap-fill images: ✅ RENDER — Unsplash images cover the former Algorithms AI gaps
+
+### KNOWN REMAINING ISSUE: V2 overlay positions
+AppendToTimeline() ignores recordFrame parameter. ALL V2 overlays are placed sequentially 
+at the END of the track, not at their target narration positions. The ONLY fix is:
+1. Export FCPXML → manually reorder clips → reimport, OR
+2. Place each overlay one at a time on SEPARATE video tracks (V6, V7, V8...), OR  
+3. Accept that V2 overlays appear at wrong times and fix manually in DaVinci
+This is a fundamental DaVinci API limitation documented in davinci_helpers.py gotcha #3.
