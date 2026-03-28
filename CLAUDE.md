@@ -308,3 +308,12 @@ Timeline: "Secret Scores FAIR USE" — 15.5 min, 27 dramatic pauses
 - Tracks aligned within 9s (V1=938s, A1=929s, A2=934s)
 - SFX normalized to -12 LUFS (were -39 to -49dB)
 - Pipeline code: davinci_helpers.py with verify_source_diversity, normalize_sfx, verify_track_alignment
+
+### LearnByLeo Pause System (replaces Fern-based pauses)
+Based on LearnByLeo playbook rules, NOT Fern:
+- **pause_for_anticipation**: pause BEFORE revelations/emotional peaks (director arc_position)
+- **dramatic_silence**: 3s at chapter transitions (LearnByLeo 5-step chapter transition, step 2)  
+- **energy variation**: longer pauses when tension > 0.5
+- **pockets_of_dopamine**: breaks every ~3 min if no natural pause exists
+Result: 28 pauses, 39.8s total (was 137/190s from script_enhancer, then 27/31s from Fern)
+Narration: 933.7s (15.6 min). All pauses driven by director's arc_position + tension_level.
