@@ -24,7 +24,7 @@ Usage:
     python -m pipeline_v2.director \\
         --script scripts/enhanced_secret_scores.txt \\
         --storyboard storyboards/secret_scores_storyboard.json \\
-        --footage footage/fern_clone/secret_scores/ \\
+        --footage footage/clips/ \\
         --images ~/Desktop/SecretScores_Media/segment_images/ \\
         --sfx ~/Desktop/SecretScores_Media/sfx/ \\
         --output storyboards/secret_scores_directed_v3.json
