@@ -541,3 +541,146 @@ DAVINCI API GOTCHAS (learned the hard way):
 7. PNG still duration — DaVinci defaults PNGs to 5 seconds regardless of
    the endFrame parameter. Convert to video first for longer durations.
 """
+
+# ============================================================
+# SOURCE DIVERSITY ENFORCEMENT
+# ============================================================
+MAX_SOURCE_USAGE_SEC = 30  # Max seconds from any single source
+
+def get_source_usage(timeline, fps=30):
+    """Count total seconds used per source on V1."""
+    tl_start = timeline.GetStartFrame()
+    v1 = timeline.GetItemListInTrack('video', 1) or []
+    usage = {}
+    for c in v1:
+        name = c.GetName()
+        dur = (c.GetEnd() - c.GetStart()) / fps
+        usage[name] = usage.get(name, 0) + dur
+    return usage
+
+def check_source_diversity(timeline, max_sec=MAX_SOURCE_USAGE_SEC, fps=30):
+    """Check if any source exceeds max usage. Returns violations."""
+    usage = get_source_usage(timeline, fps)
+    violations = {k: v for k, v in usage.items() if v > max_sec}
+    return violations
+
+def pick_diverse_source(pool_clips, usage, max_sec=MAX_SOURCE_USAGE_SEC):
+    """Pick a source clip that hasn't exceeded its usage cap."""
+    for name, clip in pool_clips.items():
+        if usage.get(name, 0) < max_sec:
+            return name, clip
+    # All sources exhausted — return least-used
+    least = min(usage.items(), key=lambda x: x[1]) if usage else (None, None)
+    return least[0], pool_clips.get(least[0])
+
+# ============================================================
+# IMAGE SOURCING
+# ============================================================
+def download_segment_images(director_segments, output_dir, use_google=True):
+    """Download images for each director segment's search_query.
+    Uses Pexels (free, no attribution needed for video).
+    Falls back to Unsplash if Pexels fails.
+    NEVER uses only Wikimedia — use Google/Pexels/Unsplash.
+    """
+    import subprocess, os
+    os.makedirs(output_dir, exist_ok=True)
+    
+    downloaded = []
+    for i, seg in enumerate(director_segments):
+        query = seg.get('search_query', '')
+        if not query:
+            continue
+        
+        safe_name = f"seg_{i:03d}_{query[:30].replace(' ', '_')}.jpg"
+        output = os.path.join(output_dir, safe_name)
+        
+        # Try Pexels
+        pexels_query = query.replace(' ', ',')
+        url = f"https://images.pexels.com/photos/search?query={pexels_query}&per_page=1"
+        
+        # Direct download approach
+        search_url = f"https://source.unsplash.com/1920x1080/?{pexels_query}"
+        subprocess.run(['curl', '-sL', '-o', output, '-m', '10', search_url],
+                       capture_output=True, timeout=15)
+        
+        if os.path.exists(output) and os.path.getsize(output) > 5000:
+            downloaded.append({"seg": i, "file": output, "query": query})
+    
+    return downloaded
+
+# ============================================================
+# TYPEWRITER TEXT WITH AUDIO
+# ============================================================
+def create_typewriter_with_audio(text, output_path, key_sound_path, 
+                                  font_size=64, duration_sec=3.0, fps=30):
+    """Create typewriter text animation with click audio per character.
+    Returns ProRes 4444 MOV with alpha + embedded typewriter click audio.
+    """
+    import os, subprocess
+    from PIL import Image, ImageDraw, ImageFont
+    
+    frames_dir = output_path + "_frames"
+    os.makedirs(frames_dir, exist_ok=True)
+    
+    font_path = "/System/Library/Fonts/Supplemental/Courier New.ttf"
+    if not os.path.exists(font_path):
+        font_path = "/System/Library/Fonts/Helvetica.ttc"
+    
+    try:
+        font = ImageFont.truetype(font_path, font_size)
+    except:
+        font = ImageFont.load_default()
+    
+    total_frames = int(duration_sec * fps)
+    chars = len(text)
+    frames_per_char = max(4, 15)
+    
+    for frame_num in range(total_frames):
+        img = Image.new('RGBA', (1920, 1080), (0, 0, 0, 0))
+        draw = ImageDraw.Draw(img)
+        chars_shown = min(chars, frame_num // frames_per_char)
+        visible = text[:chars_shown]
+        x, y = 120, 880
+        if visible:
+            draw.text((x+2, y+2), visible, fill=(0, 0, 0, 200), font=font)
+            draw.text((x, y), visible, fill=(255, 255, 255, 255), font=font)
+        if chars_shown < chars and (frame_num % 16) < 8:
+            cx = x
+            if visible:
+                bbox = draw.textbbox((x, y), visible, font=font)
+                cx = bbox[2] + 4
+            draw.rectangle([(cx, y), (cx + 4, y + font_size)], fill=(255, 255, 255, 200))
+        img.save(os.path.join(frames_dir, f"frame_{frame_num:04d}.png"))
+    
+    # Build audio with clicks
+    silence = os.path.join(frames_dir, "sil.wav")
+    subprocess.run(['ffmpeg', '-y', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono',
+                    '-t', '0.5', silence], capture_output=True, timeout=5)
+    
+    concat = os.path.join(frames_dir, "concat.txt")
+    with open(concat, 'w') as f:
+        for _ in range(chars):
+            f.write(f"file '{key_sound_path}'\n")
+            f.write(f"file '{silence}'\n")
+        rem = duration_sec - chars * 1.0
+        if rem > 0:
+            long_sil = os.path.join(frames_dir, f"sil_long.wav")
+            subprocess.run(['ffmpeg', '-y', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono',
+                            '-t', str(rem), long_sil], capture_output=True, timeout=5)
+            f.write(f"file '{long_sil}'\n")
+    
+    audio = os.path.join(frames_dir, "audio.wav")
+    subprocess.run(['ffmpeg', '-y', '-f', 'concat', '-safe', '0', '-i', concat,
+                    '-c', 'copy', audio], capture_output=True, timeout=10)
+    
+    video = os.path.join(frames_dir, "video.mov")
+    subprocess.run(['ffmpeg', '-y', '-framerate', str(fps),
+                    '-i', os.path.join(frames_dir, 'frame_%04d.png'),
+                    '-c:v', 'prores_ks', '-profile:v', '4',
+                    '-pix_fmt', 'yuva444p10le', video], capture_output=True, timeout=30)
+    
+    subprocess.run(['ffmpeg', '-y', '-i', video, '-i', audio,
+                    '-c:v', 'copy', '-c:a', 'aac', '-shortest',
+                    output_path], capture_output=True, timeout=15)
+    
+    return os.path.exists(output_path)

@@ -479,3 +479,12 @@ V1=136, V2=25 overlays (correct positions), V3=16 gap fills, A1-A4 audio.
 ### Visual Playthrough (2026-03-28)
 Screenshots captured at 11 key moments (intro, Mary Louis, SafeRent, gap fills, Carmen, Derek, Kyle, Cigna, NYC Law, finale).
 DaVinci computer-use MCP reports "not_installed" for DaVinci Resolve — use screencapture + cliclick + osascript instead. DO NOT waste time on mcp__computer-use__request_access for DaVinci.
+
+### Image Sourcing Rules (updated 2026-03-28)
+- Use Google/Pexels/Unsplash for images — NOT just Wikimedia
+- No Creative Commons restriction needed for documentary fair use
+- 20 diverse stock images downloaded to ~/Desktop/SecretScores_Media/google_images/
+- NEVER use same source clip more than 30s total (MAX_SOURCE_USAGE in davinci_helpers.py)
+- Director search_query field specifies what SHOULD be on screen for each segment
+- Current V1 still has 15 YouTube clips recycled — need to replace with images + pretrimmed clips
+- Typewriter click audio: typewriter_key_loud.wav normalized from -34dB to -29dB
