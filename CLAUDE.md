@@ -1,5 +1,33 @@
 # YouTube Automation Production — Session Handoff
 
+## ⚠️ CRITICAL RULES FOR NEW VIDEOS (read before doing anything)
+
+### DaVinci Resolve API Bugs (will silently break your build)
+1. **NEVER use H.264 for overlays with alpha** → ProRes 4444 only (`yuva444p10le`)
+2. **NEVER use AddFusionComp()** → bake fades into files via FFmpeg before import
+3. **AppendToTimeline ignores recordFrame** → place clips in chronological order
+4. **NEVER use Fusion for effects from external scripts** → everything baked into files
+5. **No AddTransition() in API** → use FCPXML export/modify/reimport
+6. **No Fairlight automation** → pre-bake music ducking into WAV files
+
+### Mandatory Post-Build Checks
+```python
+from pipeline.davinci_helpers import verify_track_alignment, verify_source_diversity, normalize_sfx
+verify_track_alignment(timeline)      # All tracks end within 5s of each other
+verify_source_diversity(timeline)     # Max 30s total from any single source
+normalize_sfx(sfx_dir)                # All SFX at -12 LUFS (raw files are often -40dB = silent)
+```
+
+### LearnByLeo is PRIMARY (not Fern)
+- Editing decisions: `playbook/editing.json` (LearnByLeo)
+- Pauses: BEFORE reveals (anticipation), not after. 3s silence at chapter transitions.
+- Fern playbook is reference data only, NOT the decision-maker for new videos.
+- Director's `arc_position` + `tension_level` drive pause placement via LearnByLeo rules.
+
+### Pipeline: `pipeline/davinci_helpers.py` has ALL helper functions
+See MEMORY.md for full function list and pipeline order.
+
+
 ## Project Overview
 Automated YouTube documentary video production pipeline. Takes a topic → researches → writes script → generates voice → sources footage → assembles video. Target style: Fern-like documentaries (true crime, mystery, investigative).
 
