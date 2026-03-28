@@ -323,6 +323,96 @@ def trim_timeline_to_narration(timeline, narr_end_sec: float,
                 print(f"  Trimmed {len(to_delete)} clips from {track_type.upper()} {t}")
 
 
+def verify_track_alignment(timeline, fps: int = 30, tolerance_sec: float = 5.0):
+    """
+    MANDATORY post-build check: verify all tracks end at approximately the same time.
+
+    WHY: Secret Scores had music running 2.5 min past narration, V1 clips
+    extending past VO, and no check caught it. This function should be called
+    after EVERY timeline build.
+
+    Returns:
+        dict with 'passed' bool, 'target_end' float, and 'tracks' list of dicts
+
+    Raises:
+        ValueError if any continuous track (V1, V2, A1, A2) is misaligned
+        beyond tolerance. Point-in-time tracks (V3 chapters, V4 text, A3/A4 SFX)
+        are allowed to end early since they're discrete events.
+    """
+    tl_start = timeline.GetStartFrame()
+
+    # Find narration end as the reference point
+    a1_clips = timeline.GetItemListInTrack('audio', 1) or []
+    if not a1_clips:
+        raise ValueError("No narration on A1 — cannot determine target end")
+
+    narr_end = (a1_clips[-1].GetEnd() - tl_start) / fps
+    target_end = narr_end + 5.0  # 5s buffer for music fade
+
+    # Continuous tracks MUST match target (within tolerance)
+    continuous_tracks = [
+        ('video', 1, 'V1 Footage'),
+        ('video', 2, 'V2 Overlays'),
+        ('audio', 2, 'A2 Music'),
+    ]
+    # Point-in-time tracks are OK ending early
+    discrete_tracks = [
+        ('video', 3, 'V3 Chapters'),
+        ('video', 4, 'V4 Text'),
+        ('audio', 3, 'A3 SFX'),
+        ('audio', 4, 'A4 SFX 2'),
+    ]
+
+    results = {'passed': True, 'target_end': target_end, 'tracks': []}
+    errors = []
+
+    for track_type, track_idx, label in continuous_tracks + discrete_tracks:
+        try:
+            clips = timeline.GetItemListInTrack(track_type, track_idx) or []
+        except Exception:
+            continue
+        if not clips:
+            continue
+
+        end = (clips[-1].GetEnd() - tl_start) / fps
+        diff = end - target_end
+        is_continuous = (track_type, track_idx, label) in continuous_tracks
+
+        entry = {
+            'track': label,
+            'end_sec': end,
+            'diff_sec': diff,
+            'status': 'ok',
+        }
+
+        if is_continuous and abs(diff) > tolerance_sec:
+            entry['status'] = 'ERROR'
+            errors.append(f"{label} ends at {end:.1f}s (target {target_end:.1f}s, Δ{diff:+.1f}s)")
+            results['passed'] = False
+        elif is_continuous and diff > tolerance_sec:
+            entry['status'] = 'TOO_LONG'
+            results['passed'] = False
+
+        results['tracks'].append(entry)
+
+    # Print report
+    print(f"\nTRACK ALIGNMENT CHECK (target: {target_end:.1f}s)")
+    print(f"{'='*60}")
+    for t in results['tracks']:
+        icon = '✅' if t['status'] == 'ok' else '❌'
+        print(f"  {icon} {t['track']}: {t['end_sec']:.1f}s (Δ{t['diff_sec']:+.1f}s)")
+
+    if errors:
+        print(f"\n  ERRORS:")
+        for e in errors:
+            print(f"    ❌ {e}")
+        print(f"\n  Call trim_timeline_to_narration() to fix.")
+    else:
+        print(f"\n  ✅ All tracks aligned within {tolerance_sec}s tolerance")
+
+    return results
+
+
 # =============================================================================
 # RULES FOR FUTURE PIPELINE CODE
 # =============================================================================

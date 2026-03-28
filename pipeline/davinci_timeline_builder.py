@@ -478,6 +478,22 @@ def main():
         if args.soundbites:
             apply_soundbite_punchthroughs(project, timeline, args.soundbites)
 
+        # MANDATORY: Trim all tracks to narration end and verify alignment
+        # This prevents the "dead tail" bug where V1/music extend past narration
+        from pipeline.davinci_helpers import trim_timeline_to_narration, verify_track_alignment
+
+        a1 = timeline.GetItemListInTrack('audio', 1) or []
+        if a1:
+            narr_end = (a1[-1].GetEnd() - timeline.GetStartFrame()) / 30
+            print(f"\nTrimming timeline to narration end ({narr_end:.1f}s + 5s buffer)...")
+            trim_timeline_to_narration(timeline, narr_end, buffer_sec=5.0)
+
+        print("\nVerifying track alignment...")
+        alignment = verify_track_alignment(timeline)
+        if not alignment['passed']:
+            print("\n⚠️  WARNING: Track alignment check FAILED.")
+            print("    Some tracks extend past narration. Review and fix before rendering.")
+
     # Save
     project.SaveProject()
     print("\nProject saved.")
