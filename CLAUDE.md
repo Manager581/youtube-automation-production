@@ -416,3 +416,11 @@ Duration: 15.8 min | 28 LearnByLeo pauses | 17 cross-dissolves
 10. Music: duck under narration, raise during transitions
 11. Fair use: ≤7s per clip, ≤30s total per source
 12. SFX must be normalized to -12 LUFS before use
+
+### Gap Fill (2026-03-27 late night)
+- Removed ALL 47 "Algorithms AI" clips (274s → 0s)
+- Downloaded 24 real images from Unsplash (CC0 commercial license)
+- 61 gap-fill clips placed on V2, covering 394 of 406 seconds of gaps
+- V2 now has 80 overlays | V1 gaps reduced to 12s
+- Unsplash usage: <15% of total content (within user's 15% cap)
+- Unique video sources: 30 (was 15)
