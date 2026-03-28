@@ -293,3 +293,18 @@ Helper functions:
 4. **No VO pauses**: voice_generator.py renders continuous WAV, ignores [BEAT][PAUSE] markers
    FIX: Need VO post-processor to split WAV and insert silence gaps. Not yet applied.
 5. **V4 text reveals**: ProRes 4444 alpha verified (yuva444p12le). Should render correctly.
+
+### VO Pause Pipeline Gap (2026-03-27)
+**Current:** script_enhancer adds [BEAT][PAUSE] → voice_generator ignores them → director runs after voice
+**Need:** Director should specify pause positions based on arc_position + tension_level.
+Pause rules from Fern playbook: 3-5 per chapter, 1-3s each, at reveals/transitions/shocking facts.
+Current fix: 27 Fern-style pauses manually mapped to director arc positions (was 137 from script_enhancer).
+**TODO:** Add `pause_inserter.py` that reads director output + rendered narration WAV → inserts silence at director-specified beats → outputs final narration. Pipeline: script → voice → director → pause_inserter → assembler.
+
+### Session Status (2026-03-27 late evening)
+Timeline: "Secret Scores FAIR USE" — 15.5 min, 27 dramatic pauses
+- V1: 134 clips, V2: 40 overlays, V3: 8 chapters, V4: 11 text reveals, V5: vignette
+- A1: narration (917.9s with pauses), A2: music (ducked, 934.6s), A3+A4: 33 loud SFX
+- Tracks aligned within 9s (V1=938s, A1=929s, A2=934s)
+- SFX normalized to -12 LUFS (were -39 to -49dB)
+- Pipeline code: davinci_helpers.py with verify_source_diversity, normalize_sfx, verify_track_alignment
