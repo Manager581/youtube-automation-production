@@ -455,3 +455,8 @@ replacement monitor content. Needs manual swap on V1 (API places at end, not sta
 1. Drag V2 overlays to correct narration positions (they're labeled by segment)
 2. Drag intro_denied_fixed.mp4 to V1 position 0 (replacing intro_clean.mp4)
 3. All other elements (typewriter text V4, chapters V3, SFX, narration, music) are correct
+
+### KEY DISCOVERY: Internal vs External DaVinci API
+**External API** (`dvr.scriptapp("Resolve")`) — `AppendToTimeline` IGNORES `recordFrame`. Clips always go to END.
+**Internal API** (`app.GetResolve()` from Workspace > Scripts) — `AppendToTimeline` RESPECTS `recordFrame`. Clips go to the specified position!
+**Always use internal scripts** for clip placement. Save `.py` to `/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Edit/` and trigger via `osascript` menu click.
