@@ -499,3 +499,27 @@ DaVinci computer-use MCP reports "not_installed" for DaVinci Resolve — use scr
 - Typewriter text with click audio on V4 (3 clips)
 - No Pixabay API key set — use Pexels direct URLs instead
 - RULE: Always use Pexels/Google for images, NOT just Wikimedia. Fair use covers documentary usage.
+
+### CURRENT STATE (2026-03-28 session end)
+**Active timeline: "Secret Scores FAIR USE" (#2)**
+- QA Score: 82% (15 pass, 3 warn, 2 fail)
+- V1: 136 clips, 3 gaps (132s), 15 unique sources — needs diversity fix
+- V2: 31 overlays (faded MOVs, correct positions)
+- V3: 16 clips (8 chapters + 8 gap fills)
+- V5: 94 vignette clips
+- A1: narration with LearnByLeo pauses (934s)
+- A2: music ducked
+- A3+A4: 33 SFX (boosted)
+- NO typewriter text or click audio on this timeline (was on a different one that got lost)
+
+### REMAINING WORK (for next session)
+1. **Source diversity**: Replace repeated YouTube clips with pretrimmed variants (215 available in footage/fern_clone/secret_scores/pretrimmed/)
+2. **Fill 3 V1 gaps**: Use V3 gap-fill approach (proven to work via internal DaVinci API)
+3. **Typewriter text + audio**: Re-create on V4/A5 (MOVs exist in ~/Desktop/SecretScores_Media/typewriter/)
+4. **Fair use**: Trim 4 clips >8s via FCPXML
+5. **Intro on-screen text**: Director specifies text for cold_open segments
+6. **Clip audio**: Mute all V1 clip audio during narration (11.8s+), keep for intro
+
+### CRITICAL LESSON: DO NOT create multiple timelines
+Every FCPXML import creates a new timeline. Multiple timelines cause confusion and lost work.
+ALWAYS work on "Secret Scores FAIR USE" (#2). Delete other timelines before starting work.
