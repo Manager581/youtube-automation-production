@@ -317,3 +317,15 @@ Based on LearnByLeo playbook rules, NOT Fern:
 - **pockets_of_dopamine**: breaks every ~3 min if no natural pause exists
 Result: 28 pauses, 39.8s total (was 137/190s from script_enhancer, then 27/31s from Fern)
 Narration: 933.7s (15.6 min). All pauses driven by director's arc_position + tension_level.
+
+### Transitions Added (2026-03-27)
+- 17 cross-dissolve transitions added via FCPXML export/modify/reimport
+- New timeline: "Secret Scores FAIR USE (Resolve)" — 153 V1 clips, 950.4s
+- LearnByLeo rule: 87.5% hard cuts, 10% fade-to-black at chapters, 2.5% fade-to-white
+- Cross-dissolves placed every 8th clip for visual freshness
+- V1 gap filled: 2 clips added, V1 now matches narration end (950.4s)
+
+### Active Timeline: "Secret Scores FAIR USE (Resolve)"
+V1: 153 clips | V2: 31 overlays | V3: 8 chapters | V4: 11 text | V5: 94 vignette
+A1: narration (945.4s) | A2: music (950.4s) | A3: 33 SFX
+Duration: 15.8 min | 28 LearnByLeo pauses | 17 cross-dissolves
