@@ -357,3 +357,62 @@ Narration: 933.7s (15.6 min). All pauses driven by director's arc_position + ten
 V1: 153 clips | V2: 31 overlays | V3: 8 chapters | V4: 11 text | V5: 94 vignette
 A1: narration (945.4s) | A2: music (950.4s) | A3: 33 SFX
 Duration: 15.8 min | 28 LearnByLeo pauses | 17 cross-dissolves
+
+## Full Pipeline Order (for new videos)
+1. `topic_radar.py` → find topic
+2. `research_brief.py` → structured brief  
+3. `story_validator.py` → GO/SKIP
+4. Claude Code interactive → write script
+5. `script_enhancer.py` → add [BEAT][PAUSE][VOICE] markers
+6. `check_fern_script.py` → QA gate (85+)
+7. `voice_generator.py` → render narration WAV (F5-TTS)
+8. `storyboard_generator.py` → visual brief per segment
+9. `director.py` → editorial decisions (arc, SFX, transitions, zoom, text)
+10. **INSERT PAUSES** → split narration WAV at director-specified beats (LearnByLeo rules)
+11. `music_sourcer.py` → download CC0 music
+12. **PRE-DUCK MUSIC** → `create_ducked_music()` trimmed to narration end + 5s
+13. **NORMALIZE SFX** → `normalize_sfx()` to -12 LUFS
+14. `footage_sourcer.py` + `footage_verifier.py` → source + verify footage
+15. `davinci_timeline_builder.py` → build timeline in DaVinci
+16. **POST-BUILD CHECKS** (MANDATORY):
+    - `verify_track_alignment()` — all tracks end within 5s
+    - `verify_source_diversity()` — max 30s per source  
+    - Visual check: play back intro, chapter cards, text reveals, SFX
+17. Render → `check_fern_video.py` → manual upload
+
+## davinci_helpers.py Function Reference
+- `render_overlay_with_fade(png, dir, dur, fade_in, fade_out)` — PNG → ProRes 4444 MOV with baked fades
+- `render_vignette_prores(path, dur)` — radial vignette as ProRes 4444
+- `create_chapter_card(title, dir, dur)` — opaque chapter card (H.264)
+- `create_text_reveal(text, dir, style, dur)` — lower-third text with alpha + baked fades
+- `create_ducked_music(src, dst, narr_start, narr_end)` — pre-baked volume automation
+- `trim_timeline_to_narration(timeline, narr_end)` — prevents dead tail after VO
+- `verify_track_alignment(timeline)` — all tracks must end together
+- `verify_source_diversity(timeline, max_sec=30)` — copyright check
+- `normalize_sfx(sfx_dir, target_lufs=-12)` — prevents inaudible SFX
+
+## DaVinci API Gotchas (10 items)
+1. H.264 kills alpha → ProRes 4444 only for overlays
+2. AddFusionComp() doesn't persist → bake effects into files
+3. AppendToTimeline ignores recordFrame → place chronologically
+4. PNG stills default to 5s → convert to video first
+5. CompositeMode uses numeric enums, not strings
+6. SetProperty("ZoomX") unreliable → apply zoom in FFmpeg
+7. SetCDL() works but can't verify via API
+8. No AddTransition() → FCPXML export/reimport
+9. No Fairlight automation → pre-bake ducking
+10. Blade/Split keyboard shortcuts don't work via automation → FCPXML
+
+## LearnByLeo Editing Rules (12 items)
+1. New visual every 5-7s (P-ED-02)
+2. Energy variation: hype → mellow cycling (P-ED-04)
+3. Graphics must animate in/out, never pop (AP-ED-02)
+4. Risers only before REAL reveals (AP-ED-03)
+5. Pause BEFORE reveals for anticipation
+6. Chapter transitions: 5-step (punch → silence → card → new energy → hook)
+7. Dopamine breaks every ~3 min
+8. 87.5% hard cut, 10% fade-to-black, 2.5% fade-to-white
+9. SFX: whoosh (movement), highlight (emphasis), impact (reveals)
+10. Music: duck under narration, raise during transitions
+11. Fair use: ≤7s per clip, ≤30s total per source
+12. SFX must be normalized to -12 LUFS before use
