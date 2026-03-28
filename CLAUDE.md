@@ -530,3 +530,16 @@ ALWAYS work on "Secret Scores FAIR USE" (#2). Delete other timelines before star
 Place them in chronological order → they land at correct positions.
 This was verified visually: Mary Louis at 61.8s confirmed on DaVinci viewer.
 ALWAYS sort by position before placing. Never rely on recordFrame parameter.
+
+### Transition Status (2026-03-28)
+- LearnByLeo says 87.5% hard cuts — hard cuts are CORRECT for this style
+- Cross dissolves only needed at chapter transitions (8 positions)
+- DaVinci needs clip handles for dissolves — pretrimmed clips may not have them
+- Cmd+T didn't work (clips need handles). Manual drag from effects panel needed.
+- V2 OVERLAY POSITIONING FIX: sort by timestamp before AppendToTimeline (CONFIRMED VISUALLY)
+
+### Audio Verification Needed (human must check)
+- SFX clips exist on A3/A4 (33 clips, boosted to -3 to -6dB)
+- Typewriter clicks exist on A5 (3 clips)  
+- Cannot verify if they're AUDIBLE in the mix without human playback
+- User should play at 10:40 and listen for typewriter clicks + tension SFX
