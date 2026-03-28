@@ -467,3 +467,11 @@ replacement monitor content. Needs manual swap on V1 (API places at end, not sta
 - 159 V1 clips, 0 gaps, 25 V2 overlays preserved
 - FCPXML approach: export → replace <gap> elements with <asset-clip> references → reimport
 - This is the ONLY reliable way to fill mid-track gaps (API can't do it)
+
+### Gap Fill Strategy (FINAL SOLUTION)
+V1 mid-track gaps CANNOT be filled via API (internal or external).
+Solution: Place gap-fill clips on V3 at the gap positions using internal API.
+V3 clips show through V1 gaps because higher tracks render on top.
+Result: 17s remaining no-video (from 132s), essentially negligible.
+Timeline #2 "Secret Scores FAIR USE" is the canonical timeline.
+V1=136, V2=25 overlays (correct positions), V3=16 gap fills, A1-A4 audio.
