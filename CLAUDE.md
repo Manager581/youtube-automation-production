@@ -547,3 +547,8 @@ ALWAYS sort by position before placing. Never rely on recordFrame parameter.
 ### Wind Sound Fix (2026-03-28)
 Cmd+T accidentally added 36 'Cross Fade 0 dB' audio transitions to A3/A4 SFX clips.
 These produced wind/swoosh sounds. All deleted. NEVER use Cmd+T — it affects audio tracks too.
+
+### Cmd+T Damage Cleanup (2026-03-28)
+Cmd+T added 122 video dissolves + 36 audio crossfades across ALL tracks.
+All deleted. NEVER use Cmd+T in DaVinci — it applies transitions to EVERY track.
+Final QA: 92% PASS (17 pass, 3 warn, 0 fail)
