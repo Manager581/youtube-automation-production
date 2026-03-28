@@ -523,3 +523,10 @@ DaVinci computer-use MCP reports "not_installed" for DaVinci Resolve — use scr
 ### CRITICAL LESSON: DO NOT create multiple timelines
 Every FCPXML import creates a new timeline. Multiple timelines cause confusion and lost work.
 ALWAYS work on "Secret Scores FAIR USE" (#2). Delete other timelines before starting work.
+
+### ROOT CAUSE: V2 Overlay Positioning (SOLVED 2026-03-28)
+**AppendToTimeline ignores recordFrame.** Clips are placed SEQUENTIALLY in the order called.
+**FIX:** Sort ALL overlays by target timestamp BEFORE calling AppendToTimeline.
+Place them in chronological order → they land at correct positions.
+This was verified visually: Mary Louis at 61.8s confirmed on DaVinci viewer.
+ALWAYS sort by position before placing. Never rely on recordFrame parameter.
