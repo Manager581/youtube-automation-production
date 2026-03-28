@@ -552,3 +552,43 @@ These produced wind/swoosh sounds. All deleted. NEVER use Cmd+T — it affects a
 Cmd+T added 122 video dissolves + 36 audio crossfades across ALL tracks.
 All deleted. NEVER use Cmd+T in DaVinci — it applies transitions to EVERY track.
 Final QA: 92% PASS (17 pass, 3 warn, 0 fail)
+
+## HOW TO START PIPELINE V2 (new session)
+
+### Quick start:
+```bash
+cd /Users/jefflawrence/Documents/youtube-automation-production
+python run_pipeline_v2.py --topic "Your Topic Here" --stage all
+```
+
+### Resume after interruption:
+```bash
+python run_pipeline_v2.py  # Auto-resumes from last completed stage
+```
+
+### Check status:
+```bash
+python run_pipeline_v2.py --status
+python run_pipeline_v2.py --list    # Show all 28 stages
+```
+
+### Run specific stage:
+```bash
+python run_pipeline_v2.py --stage director   # Resume from director stage
+python run_pipeline_v2.py --stage qa_video   # Just run QA
+```
+
+### Configure file paths:
+```bash
+python run_pipeline_v2.py --config config.json --topic "Secret Scores"
+```
+
+### Pipeline V2 stages (28 total):
+1-4: Discovery (topic, comments, research, validate)
+5-7: Script (write, enhance, QA)
+8-10: Audio (voice, QA, music)
+11-15: Visuals (footage, images, transcripts, vision, verify)
+16-19: Editorial (storyboard, director, validate segments, fill gaps)
+20-23: Assembly (pauses, duck music, normalize SFX, DaVinci build)
+24-26: Verification (director review, QA video, executive producer)
+27-28: Publish (render, upload)
