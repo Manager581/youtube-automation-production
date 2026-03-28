@@ -543,3 +543,7 @@ ALWAYS sort by position before placing. Never rely on recordFrame parameter.
 - Typewriter clicks exist on A5 (3 clips)  
 - Cannot verify if they're AUDIBLE in the mix without human playback
 - User should play at 10:40 and listen for typewriter clicks + tension SFX
+
+### Wind Sound Fix (2026-03-28)
+Cmd+T accidentally added 36 'Cross Fade 0 dB' audio transitions to A3/A4 SFX clips.
+These produced wind/swoosh sounds. All deleted. NEVER use Cmd+T — it affects audio tracks too.
