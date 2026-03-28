@@ -488,3 +488,14 @@ DaVinci computer-use MCP reports "not_installed" for DaVinci Resolve — use scr
 - Director search_query field specifies what SHOULD be on screen for each segment
 - Current V1 still has 15 YouTube clips recycled — need to replace with images + pretrimmed clips
 - Typewriter click audio: typewriter_key_loud.wav normalized from -34dB to -29dB
+
+### V1 Rebuilt with 72 Segment Images (2026-03-28)
+- Downloaded 72 images from Pexels (one per director segment)
+- Converted to 7s H.264 clips (51 successful, 21 used YouTube fallback)
+- V1 rebuilt: 160 clips, 0 gaps, 65 unique sources
+- Alternates segment images with YouTube clips (2:1 ratio)
+- YouTube clips capped at 30s per source via diversity check
+- V2 (25 overlays), A1 (narration), A2 (music) preserved
+- Typewriter text with click audio on V4 (3 clips)
+- No Pixabay API key set — use Pexels direct URLs instead
+- RULE: Always use Pexels/Google for images, NOT just Wikimedia. Fair use covers documentary usage.
