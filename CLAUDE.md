@@ -440,10 +440,10 @@ at the END of the track, not at their target narration positions. The ONLY fix i
 3. Accept that V2 overlays appear at wrong times and fix manually in DaVinci
 This is a fundamental DaVinci API limitation documented in davinci_helpers.py gotcha #3.
 
-### Known Issue: V2 Overlay Positions (UNFIXABLE via API)
-V2 overlays are nested inside V1 clips in FCPXML as child `<asset-clip>` elements.
-AppendToTimeline attaches them to the WRONG parent clip. The overlays show at wrong times.
-**This MUST be fixed manually in DaVinci Edit page** by dragging V2 clips to correct positions.
+### V2 Overlay Positions — FIXED via Internal API
+SOLVED: Use DaVinci internal scripts (Workspace > Scripts) instead of external API.
+Internal app.GetResolve() respects recordFrame. External dvr.scriptapp() does NOT.
+Save .py scripts to Fusion/Scripts/Edit/ folder, trigger via osascript menu click.
 The API cannot fix this. The FCPXML structure assigns overlays to parent clips, and the API
 appends children to whatever V1 clip is at the end of the track.
 
