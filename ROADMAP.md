@@ -21,7 +21,7 @@
 - footage_verifier.py — Claude vision verification
 - clip_analyzer.py — Best frame selection
 - web_image_sourcer.py — Chrome + Google + Pexels (no CC restriction)
-- topic_scorer.py — 4-test validation via Claude
+- topic_scorer.py — 7-test validation via Claude (calibrated against 10 proven competitor hits)
 - title_thumbnail_evaluator.py — 26 clickbait tactics
 - production_rules.py — LearnByLeo editing rules
 - fair_use_guard.py — Clip duration + source limits
@@ -38,6 +38,18 @@
 ```
 director → builder → director_review → gap_resolver → research_agent → vision_analyzer → director
 ```
+
+## ✅ BUILT (session 2026-03-28 evening)
+
+### Topic Scorer v2: 7-Test Framework
+- Calibrated by downloading + analyzing transcripts from 10 proven hits (1.8M-5.4M views)
+- Channels analyzed: Johnny Harris, Wendover Productions, ColdFusion, More Perfect Union
+- 3 new tests added: Blind Spot (9/10 = 3.7M+), Timeliness (news wave multiplier), Killer Stat (one shareable number)
+- GO threshold raised to 85+ (was 80+), all 7 tests must score 65+
+- Key finding: Blind Spot score is #1 predictor of virality for new channels
+- Brand config: `brand_configs/learnbyleo.json` created for topic_radar.py
+- Competitor transcripts + analysis: `/tmp/competitor_transcripts/`
+- Calibration data embedded in `pipeline_v2/topic_scorer.py` CALIBRATION_EXAMPLES constant
 
 ## 📋 FUTURE BUILDS (next sessions)
 

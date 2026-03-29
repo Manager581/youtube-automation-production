@@ -1,0 +1,198 @@
+Now I have all 10 transcripts. Let me produce the analysis.
+
+```json
+[
+  {
+    "title": "The $16 TRILLION Race to Mine the Ocean",
+    "channel": "Johnny Harris",
+    "views": 5425142,
+    "hook": "A $37 watermelon on the world's tiniest island (Nauru) opens the story — a nation that was once one of the richest in the world, then lost it all, now at the center of a $16 trillion race to mine apple-shaped metal balls off the ocean floor, complicated by a Trump executive order to bypass the global review process.",
+    "shock_facts": [
+      "Billions of apple-sized metal nodules (polymetallic nodules) sit 4-5km underwater, containing enough cobalt, nickel, and manganese to be worth an estimated $16 trillion",
+      "Nauru — population ~10,000 — used to be one of the richest countries in the world per capita, then lost everything, and is now directly tied to who controls this ocean mining",
+      "Trump signed an executive order to fast-track deep-sea mining, bypassing the international review process still under global debate",
+      "The nodules grow at only 1-2mm per million years — harvesting them is essentially irreversible on any human timescale",
+      "A single company (The Metals Company) is pursuing rights to mine a patch of ocean regulated by no government — only a contested international body"
+    ],
+    "blind_spot_score": 9,
+    "timeliness": "News wave (Trump executive order) layered on years-long investigative story — rare combination of evergreen + breaking",
+    "narrative_engine": "Curiosity + geopolitical mystery + underdog nation trapped by forces beyond their control — 'what happens to Nauru?' drives the entire runtime",
+    "personal_stakes": "Indirect but real — cobalt and nickel from these nodules power EV batteries and smartphones; the geopolitical fight shapes who controls critical minerals for the next century",
+    "why_it_worked": "Connects an utterly unknown $16 trillion story to a human-scale underdog (a $37 watermelon on a forgotten island) and a Trump policy twist, making a complex geopolitical issue feel personal and urgent."
+  },
+  {
+    "title": "How the Trucking Industry Got So Terrible",
+    "channel": "Wendover",
+    "views": 3520229,
+    "hook": "Immersive day-in-the-life of a Walmart trucker starting at 5am — laundry, pre-trip inspection, slip seating — framed as 'a good job in a terrible industry,' then methodically dismantles what makes the whole sector exploitative.",
+    "shock_facts": [
+      "Truckers are paid by the mile only — time spent waiting at loading docks, stuck in traffic, or doing mandatory pre-trip inspections is largely uncompensated",
+      "A 'good' Walmart trucking job requires tracking 12 separate pay metrics (miles, stops, drops, bridge fees, delay fees, layover fees) just to calculate a day's wage",
+      "The entire industry was deliberately structured to classify drivers as independent contractors to strip them of labor protections, even when they functionally work full-time for one company",
+      "Federally mandated 30-minute breaks are unpaid, yet cut into the hours-of-service clock that limits total driving time",
+      "Slip seating means drivers share trucks with strangers — no cab is ever 'yours,' reinforcing the non-employee classification"
+    ],
+    "blind_spot_score": 7,
+    "timeliness": "Evergreen structural story — no single news peg but speaks to ongoing supply chain anxiety and labor debates",
+    "narrative_engine": "Escalating reveal — opens sympathetically (here's a good job), then systematically exposes how the entire industry was engineered to extract maximum labor for minimum cost",
+    "personal_stakes": "Everything you buy was on a truck; understanding how drivers are treated explains why supply chains break and prices rise",
+    "why_it_worked": "Makes an invisible workforce suddenly visible by showing exactly how their day and pay works, then reveals the system was designed to exploit them — shifts viewer from consumer to witness."
+  },
+  {
+    "title": "How American Cars Got So Bad",
+    "channel": "Wendover",
+    "views": 2933676,
+    "hook": "2008: the CEOs of GM, Ford, and Chrysler drive hybrid cars to DC to beg Congress for a bailout — having arrived by private jet the previous time. A story of how America's most iconic industry humiliated itself.",
+    "shock_facts": [
+      "In 2006, Consumer Reports ranked the top 10 best cars in America — all 10 were Japanese",
+      "24% of all US automobile sales in 2006 were financed using home equity lines of credit, directly linking the housing collapse to the auto industry's implosion",
+      "The old General Motors literally ceased to exist — it filed for bankruptcy, became 'Motors Liquidation Company,' and sold its name to a new government-backed entity",
+      "Labor costs for American unionized autoworkers added roughly 8% to the price of each car versus non-unionized Japanese plants — a disadvantage that compounded for decades",
+      "Despite two oil crises in the 1970s clearly showing the risk of large vehicles, the Big Three doubled down on trucks and SUVs anyway — choosing short-term profit over survival"
+    ],
+    "blind_spot_score": 6,
+    "timeliness": "Evergreen — historical autopsy of a well-known decline with details most viewers never knew",
+    "narrative_engine": "Tragic escalation — each decision logically leads to the next, building toward inevitable collapse; satisfying because the outcome is already known but the path is surprising",
+    "personal_stakes": "Anyone who buys a car, cares about American manufacturing, or watched a factory town disappear feels this personally",
+    "why_it_worked": "Transforms a vague cultural awareness ('American cars got bad') into a specific, logical cause-and-effect story where the industry's hubris is the villain — deeply satisfying narrative closure."
+  },
+  {
+    "title": "The Downfall of Southwest Airlines",
+    "channel": "Wendover",
+    "views": 2692276,
+    "hook": "Southwest used to be the most beloved airline in America — 20% profit margins, free bags, no expiring credits, open seating. Then in one year, a hostile financial force dismantled 50 years of brand equity. It's a story about big finance destroying one of America's most beloved institutions.",
+    "shock_facts": [
+      "Southwest operated at 20% profit margins for most of the 2010s — in an industry where 5-10% is considered excellent",
+      "Southwest flew more domestic passengers than Lufthansa flies total, brought in more revenue than Air China, yet maintained a lower average fare than any comparable carrier",
+      "A private equity activist investor (Elliott Management) acquired a stake and forced the elimination of every single feature Southwest customers loved — checked bags, open seating, flight credit longevity — within one year",
+      "Southwest's founding was literally sketched on a cocktail napkin in 1966 — and its entire business model was built around a regulatory loophole (intrastate flights not governed by the Civil Aeronautics Board)",
+      "The new extra-legroom section was created by reducing everyone else's legroom by one inch — a literal redistribution of comfort from coach passengers to premium buyers"
+    ],
+    "blind_spot_score": 6,
+    "timeliness": "Recent (2024-2025 changes) + evergreen (private equity destruction pattern)",
+    "narrative_engine": "Betrayal narrative — the audience already feels wronged by Southwest; the video provides the villain (Elliott Management/activist investors) and explains the exact mechanism",
+    "personal_stakes": "Extremely direct — millions of Americans fly Southwest regularly and experienced these changes firsthand as customers",
+    "why_it_worked": "Names the specific villain (private equity) responsible for destroying something millions loved, converting diffuse customer anger into targeted outrage with a satisfying explanation."
+  },
+  {
+    "title": "The Windows 11 Crisis",
+    "channel": "ColdFusion",
+    "views": 2433064,
+    "hook": "Microsoft announces Windows is becoming an 'agentic AI operating system.' Users respond with fury. Comment with thousands of likes: 'Nobody wants this except the parties you're selling our data to without permission.' Is Windows still a tool for users, or a cash extraction machine?",
+    "shock_facts": [
+      "A programmer who had his software demoed on stage by Bill Gates says he hasn't seen backlash this bad since the transition from DOS 3.1 to Windows 1.0 in 1985",
+      "55% of Microsoft's $252 billion annual revenue — roughly $138 billion — now comes from cloud services, not Windows; Windows is being deliberately degraded to drive migration to Azure/Microsoft 365",
+      "Satya Nadella's strategy is explicitly to use Windows' 1 billion+ installed base as a captive audience to force users into Microsoft's subscription ecosystem — the worsening user experience is intentional, not accidental",
+      "Microsoft is inserting ads directly into the Windows UI while also requiring Microsoft accounts for basic functionality and forcing AI tools onto users who didn't ask for them",
+      "Windows still holds 70% of the desktop market with no viable mass-market alternative — meaning most users are effectively trapped"
+    ],
+    "blind_spot_score": 6,
+    "timeliness": "News wave (Windows 11 AI/agentic announcement) layered on years of accumulated frustration",
+    "narrative_engine": "Validation + corporate expose — viewers already feel the frustration; the video explains the deliberate strategy behind it, which is more infuriating than random incompetence",
+    "personal_stakes": "Maximum reach — 1 billion Windows devices means almost everyone watching has personally experienced this",
+    "why_it_worked": "Converts vague user frustration into a specific, documented corporate strategy — transforming 'Windows sucks now' into 'Microsoft is deliberately making Windows worse to extract money from you.'"
+  },
+  {
+    "title": "OpenAI is Suddenly in Trouble",
+    "channel": "ColdFusion",
+    "views": 2126166,
+    "hook": "OpenAI employees are showing up at the homes of former employees and critics, demanding to know everyone they've talked to. Then: OpenAI just announced ads in ChatGPT — the very thing Sam Altman called 'our last resort' just 15 months earlier.",
+    "shock_facts": [
+      "Sam Altman explicitly called ads 'kind of like a last resort for us' in October 2024 — OpenAI announced ads in January 2026, 15 months later",
+      "OpenAI's Sora video app was losing $15 million per day",
+      "OpenAI lost $12 billion in a single quarter while needing $143 billion to reach profitability",
+      "Nvidia walked back its supposed $100 billion investment commitment on camera: 'We never said we were going to invest a hundred billion dollars in one round. That never was said.'",
+      "A former Fidelity asset manager stated: 'I've watched companies implode for decades. This one has all the warning signs' — with bankruptcy predicted by 2027"
+    ],
+    "blind_spot_score": 6,
+    "timeliness": "Strong news wave — the ad announcement was the trigger; video rides a breaking moment",
+    "narrative_engine": "Schadenfreude + financial thriller — for every person who resented AI hype, this is the satisfying reversal; for believers, it's a genuine crisis to understand",
+    "personal_stakes": "Anyone who has changed careers, learned new tools, or been threatened with replacement by AI has a direct stake in whether ChatGPT survives or collapses",
+    "why_it_worked": "Captures the cognitive dissonance of the world's most hyped company visibly failing using their founder's own words as the indictment — the 'last resort' quote does all the work."
+  },
+  {
+    "title": "Replacing Humans with AI is Going Horribly Wrong",
+    "channel": "ColdFusion",
+    "views": 1804288,
+    "hook": "Taco Bell deployed AI ordering at 500+ locations to reduce mistakes and speed up orders. Instead, customers got baffling nonsense responses. McDonald's scrapped their AI drive-thru after it added bacon to someone's ice cream. This isn't isolated — it's systematic.",
+    "shock_facts": [
+      "An MIT report found only 5% of AI business pilots extract measurable value — meaning 95% of AI implementations fail to produce any profit or loss impact",
+      "An AI meeting note-taker 'made up' 5-20% of the meeting content even when given the actual transcript to summarize — writing things that were never said",
+      "All current generative AI is based on a single 2017 Google paper ('Attention Is All You Need') — the transformer architecture that fundamentally cannot know what it's saying, only predict the next word",
+      "A medical records AI confused doctors for patients, couldn't identify where faxes came from, and misassigned insurance data — staff spent more time correcting it than doing the original work",
+      "Nvidia dropped 3.5% and Palantir fell 9% on the same day the MIT AI failure report was published"
+    ],
+    "blind_spot_score": 7,
+    "timeliness": "Evergreen thesis with very timely specific examples — will remain relevant for years",
+    "narrative_engine": "Validation of skepticism — viewers who've felt AI is overhyped get their beliefs confirmed with data; creates a permission structure to distrust",
+    "personal_stakes": "Extremely personal — anyone who fears job loss to AI, anyone who's used frustrating AI at work, anyone who's interacted with AI customer service",
+    "why_it_worked": "The 95% failure stat is the entire video in one number — it gives AI skeptics a specific, sourced weapon to use in every argument, which drives sharing."
+  },
+  {
+    "title": "What Sam Altman Doesn't Want You To Know",
+    "channel": "More Perfect Union",
+    "views": 3807610,
+    "hook": "A clip of Sam Altman getting hostile and defensive when a friendly tech journalist asks a basic math question: how can you commit to $1 trillion in spending on $13 billion in revenue? The answer, it turns out, is that Altman has been lying to people his entire career.",
+    "shock_facts": [
+      "OpenAI has committed to spending over $1 trillion on AI infrastructure — against roughly $13 billion in annual revenue, meaning commitments exceed income by roughly 77x",
+      "Altman's first company, Loop, sold for millions despite having only 500 active users — he publicly claimed 'way more' and promised proof he never delivered",
+      "Up to 75% of Altman's personal investment fund (Hydrazine Capital) was invested in Y Combinator companies — despite his explicit promise not to cross-invest while running YC",
+      "Peter Thiel described Altman as someone who 'should be treated as more of a messiah figure' — a relationship that gave Altman millions in seed capital and institutional credibility",
+      "Altman claims to own no equity in OpenAI and barely takes his salary, while orchestrating deals that make him one of the most powerful asset-controllers in human history"
+    ],
+    "blind_spot_score": 8,
+    "timeliness": "Evergreen character study riding the peak of AI cultural dominance — the timing makes it maximally relevant",
+    "narrative_engine": "Investigative expose — each 'trust me bro' moment from Altman's career stacks on the next, building an unanswerable pattern of deception",
+    "personal_stakes": "Society-level stakes made viscerally personal: Altman is asking everyone to hand over their data, their energy infrastructure, and their economy in exchange for promises he has a documented history of not keeping",
+    "why_it_worked": "Takes the single most powerful figure in the AI moment and reveals he's been systematically lying since his first startup — the opening hostile interview clip hooks immediately, and each revelation escalates the indictment."
+  },
+  {
+    "title": "We Had 400 People Shop For Groceries",
+    "channel": "More Perfect Union",
+    "views": 3712280,
+    "hook": "What if you paid $2 for eggs, but your neighbor paid $240 at the exact same store at the exact same moment? A researcher studying Instacart wage disparities asked: if they do this to workers, what are they doing to consumers? 5 months and 400 volunteers later, they found out.",
+    "shock_facts": [
+      "A 400-person coordinated experiment at the same store, same moment, found up to 7 different price groups for the same basket of 20 items — with a spread of $10 between lowest and highest",
+      "Nearly 3 out of 4 products had different prices during the experiments — not random variation but systematic price tiers where each person paid the same price for every item in their assigned group",
+      "Eggs alone had 5 different prices simultaneously at the same store",
+      "'Surveillance pricing' — companies track your purchase history and personal data, then charge you the maximum amount they calculate you're willing to pay — is happening at physical grocery stores, not just online",
+      "Grocery prices are 30% higher than 2020, and algorithmic pricing systems are actively pushing prices higher independent of inflation — with no regulation preventing it"
+    ],
+    "blind_spot_score": 9,
+    "timeliness": "Perfectly timed to inflation anxiety — evergreen investigation with immediate economic relevance",
+    "narrative_engine": "Mystery investigation → proven conspiracy — the video is structured like a detective story, from hypothesis to 400-person proof, with the algorithm as the villain",
+    "personal_stakes": "Impossible to be more direct — you are almost certainly in one of these price groups right now, and you've been paying more than your neighbor for identical groceries without knowing it",
+    "why_it_worked": "Proves with rigorous real-world data that you personally are being secretly charged different prices than your neighbor for food — the combination of scientific methodology and immediate personal relevance is almost irresistible to share."
+  },
+  {
+    "title": "Why Vegas Doesn't Care If You Visit Anymore",
+    "channel": "More Perfect Union",
+    "views": 3577416,
+    "hook": "Vegas saw its worst tourism drop since the Great Recession in 2025. An Elvis wedding chapel operator went from 6-7 weddings a day to hoping for 6-7 a week. On the ground: empty floors where there should be 100 people. But the casino CEOs? Not worried at all. That gap is the story.",
+    "shock_facts": [
+      "Vegas saw a 7-12% drop in visitors in 2025 — the worst decline outside of the pandemic since the Great Recession, last seen right after 2008",
+      "MGM and Caesars together own 60-70% of the entire Las Vegas Strip — two companies control what feels like a city",
+      "Opening a hotel room mini fridge triggers an automatic $75 charge just for touching it",
+      "An Elvis impersonator and wedding chapel owner went from 6-7 weddings per day to 6-7 per week — a 7x collapse in business",
+      "Casino executives aren't losing sleep: they've restructured the business so that high-value guests (whales) subsidize losses from declining middle-class visitation — Vegas deliberately stopped caring if ordinary people show up"
+    ],
+    "blind_spot_score": 5,
+    "timeliness": "Timely 2025 tourism data + economic bellweather angle — works as both news and evergreen",
+    "narrative_engine": "Class anger + validation — viewers who felt priced out or nickeled-and-deathed by Vegas get a structural explanation; the 'they don't care if you come back' thesis is the provocative core",
+    "personal_stakes": "High personal resonance — tens of millions of Americans have been to Vegas or considered it; the explanation validates their experience of feeling squeezed",
+    "why_it_worked": "Validates what every middle-class Vegas visitor felt viscerally — you were being extracted from, not entertained — and reveals the deliberate corporate strategy that made ordinary people unwelcome in a place built for them."
+  }
+]
+```
+
+---
+
+**Cross-video patterns worth noting for your pipeline:**
+
+| Pattern | Best example | Implication for your content |
+|---|---|---|
+| **"You are the victim right now"** | Grocery pricing (you're in a price group TODAY) | Secret Scores already does this — lean into it harder in script |
+| **Founder's own words as indictment** | Sam Altman / "last resort" quote | Find a quote where a scoring company contradicted itself |
+| **95% failure / "all 10 were Japanese"** — single shocking stat that carries the whole video | AI failures, American cars | You need one number that IS the thesis — "your score is wrong 40% of the time" or similar |
+| **Named victims with callbacks** | Vegas workers (Elvis, Uber Mike, chef Chris) | Your script introduced Mary/Derek/Kyle but needs to return to them at the end |
+| **The gap between exec confidence and ground reality** | Vegas CEOs not worried vs. Elvis chapel collapsed | Scoring companies saying "fair and accurate" vs. someone denied housing because of it |

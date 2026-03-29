@@ -24,6 +24,17 @@ normalize_sfx(sfx_dir)                # All SFX at -12 LUFS (raw files are often
 - Fern playbook is reference data only, NOT the decision-maker for new videos.
 - Director's `arc_position` + `tension_level` drive pause placement via LearnByLeo rules.
 
+### Topic Scoring: 7-Test Framework (calibrated March 2026)
+`pipeline_v2/topic_scorer.py` — scores topics against 7 tests, calibrated by analyzing 10 proven hits (1.8M-5.4M views) from Johnny Harris, Wendover, ColdFusion, More Perfect Union.
+
+**Tests:** Fresh Perspective, Originality, Best Option, Title/Thumbnail + **Blind Spot** (9/10 correlates with 3.7M+), **Timeliness** (news wave = multiplier), **Killer Stat** (one shareable number that IS the video).
+
+**Thresholds:** GO = 85+ (all tests 65+). NEEDS_WORK = 60-84. SKIP = below 60.
+
+**Key finding:** New channel with zero brand equity needs topics 2x stronger than what established creators can get away with. Blind spot is the #1 predictor of virality for unknown channels.
+
+**Calibration data:** `analysis/competitor_calibration/` (transcripts + scores from 10 videos across 4 channels).
+
 ### Pipeline: `pipeline/davinci_helpers.py` has ALL helper functions
 See MEMORY.md for full function list and pipeline order.
 

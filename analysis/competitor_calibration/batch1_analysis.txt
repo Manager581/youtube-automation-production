@@ -1,0 +1,110 @@
+Here's the batch2 analysis:
+
+```json
+[
+  {
+    "title": "OpenAI is Suddenly in Trouble",
+    "channel": "ColdFusion",
+    "views": 2126166,
+    "hook": "OpenAI sent representatives to knock on doors of critics — same week they announced ads in ChatGPT, which Altman himself called 'a last resort.'",
+    "shock_facts": [
+      "OpenAI lost $12 billion in a single quarter",
+      "Sora alone is losing $15 million per day",
+      "A former Fidelity fund manager predicts OpenAI could go bankrupt by 2027",
+      "Microsoft is actively distancing itself and aiming to be 'self-sufficient in AI'",
+      "Nvidia walked back any $100B investment commitment on camera, visibly irritated"
+    ],
+    "blind_spot_score": 7,
+    "timeliness": "News wave — January 2026 ad announcement + investor backtrack",
+    "narrative_engine": "Escalating doom — each fact makes collapse more inevitable; outrage at intimidation of critics",
+    "personal_stakes": "If the most-used AI tool collapses or goes ad-supported, it affects everyone's workflow",
+    "why_it_worked": "Permission-to-doubt video about the most untouchable company in tech, backed by financial data most viewers had never seen assembled in one place."
+  },
+  {
+    "title": "Replacing Humans with AI is Going Horribly Wrong",
+    "channel": "ColdFusion",
+    "views": 1804288,
+    "hook": "Taco Bell's AI ordering made orders worse; McDonald's scrapped theirs entirely — then an MIT study found 95% of corporate AI pilots produce zero measurable profit.",
+    "shock_facts": [
+      "95% of AI implementation pilots show no measurable P&L impact (MIT study of 500 leaders)",
+      "AI note-takers fabricate 5–20% of meeting content even when given the actual transcript",
+      "Medical AI confused doctors with patients and made up insurance data — staff spent MORE time correcting it",
+      "A company replaced its scheduling team with AI; remaining staff now spend all their time auditing mistakes",
+      "The transformer architecture (2017 Google paper) just predicts the next word — it literally doesn't 'know' anything"
+    ],
+    "blind_spot_score": 6,
+    "timeliness": "Evergreen thesis with timely 2025–2026 corporate examples",
+    "narrative_engine": "Validation — accumulating failure stories confirming what skeptics suspected but couldn't quantify",
+    "personal_stakes": "Workers fear replacement by AI that doesn't work; remaining employees get extra work auditing it",
+    "why_it_worked": "Gave millions of frustrated workers hard data and Reddit testimony to say 'I knew it' — validated widespread suspicion with a credible MIT number."
+  },
+  {
+    "title": "What Sam Altman Doesn't Want You To Know",
+    "channel": "More Perfect Union",
+    "views": 3807610,
+    "hook": "Altman reacts with visible hostility when asked how a company with $13B/year revenue can commit to $1.4 trillion in spending — the video explains why he's so defensive.",
+    "shock_facts": [
+      "OpenAI committed $1.4 trillion in spending while generating only $13B/year revenue — less than 1% of spend",
+      "Altman's first company Looped had only 500 users when he claimed 'way more than any competitor'",
+      "Up to 75% of his VC fund was invested in YC companies while he was YC president — despite promising he wouldn't",
+      "He claims to own no OpenAI equity and barely takes a salary while controlling hundreds of billions in capital flows",
+      "OpenAI's nonprofit charter bars 'unduly concentrating power' — Altman is negotiating to own 7% of the for-profit conversion"
+    ],
+    "blind_spot_score": 8,
+    "timeliness": "Evergreen character study with urgent present-day stakes",
+    "narrative_engine": "Accumulating deception — each section reveals another documented lie",
+    "personal_stakes": "Altman is asking all of society to hand over data, infrastructure, water, and energy in exchange for future promises — viewers are the collateral",
+    "why_it_worked": "Systematic, evidence-based takedown of the world's most powerful tech figure using his own words — makes a rich visionary look like a career con man."
+  },
+  {
+    "title": "We Had 400 People Shop For Groceries",
+    "channel": "More Perfect Union",
+    "views": 3712280,
+    "hook": "A researcher discovered Instacart pays workers different wages for identical work — then asked: if they do this to workers, what are they doing to consumers? 400 people tested it simultaneously.",
+    "shock_facts": [
+      "Same 20-item cart at same store in same moment cost $114–$124 depending on who ordered",
+      "Nearly 3 out of 4 products had different prices across shoppers in the same window",
+      "One store showed 7 distinct price groups — same cart, same store, same moment",
+      "System groups shoppers into pricing buckets based on behavioral surveillance",
+      "Grocery retailers describe the goal openly: 'charge every single person the maximum amount we know they're willing to pay'"
+    ],
+    "blind_spot_score": 9,
+    "timeliness": "Evergreen — published during peak inflation anxiety",
+    "narrative_engine": "Investigation — methodical evidence-building from small test to 400-person study, detective story with shocking data reveal",
+    "personal_stakes": "Every viewer buys groceries; they may be paying more than their neighbor for identical items based on their data profile, with no way to know",
+    "why_it_worked": "Original investigative journalism that proved something people vaguely feared with rigorous, replicable methodology — viewers couldn't dismiss it as speculation."
+  },
+  {
+    "title": "Why Vegas Doesn't Care If You Visit Anymore",
+    "channel": "More Perfect Union",
+    "views": 3577416,
+    "hook": "Vegas saw its biggest tourism drop since the Great Recession — but casino CEOs aren't worried at all. Why don't they care?",
+    "shock_facts": [
+      "MGM and Caesars control 60–70% of the Strip and deliberately engineered a model targeting fewer, wealthier visitors",
+      "An Elvis chapel owner went from 6–7 weddings a day to hoping for 6–7 a week",
+      "Mini-bar sensors charge $75 just for opening the refrigerator door",
+      "The 7.5% visitor drop is being treated as a success by executives — fewer middle-class visitors means higher per-head revenue",
+      "Consumer confidence hit near-historic lows and household debt hit record highs in the same period"
+    ],
+    "blind_spot_score": 6,
+    "timeliness": "News wave (2025 Vegas decline) reframed with a deeper economic thesis",
+    "narrative_engine": "Class resentment + economic anxiety — Vegas as microcosm of being priced out of experiences that used to be for everyone",
+    "personal_stakes": "Vegas framed as a 'bellwether' — if regular people are squeezed out there, it signals broader economic fragility affecting everyone",
+    "why_it_worked": "Reframed a familiar 'Vegas is dying' news cycle into a class-warfare story — casinos aren't failing, they're succeeding by abandoning regular people."
+  }
+]
+```
+
+---
+
+**Cross-batch synthesis — the pattern that unifies all 10 videos:**
+
+| Pattern | Examples | Why it works |
+|---|---|---|
+| **Blind spot 8-9** outperforms everything | Grocery pricing (9), ocean mining (9), Altman (8) | Viewers share things that made them feel genuinely ignorant, not just angry |
+| **Original methodology** > opinion | 400 grocery shoppers, year-long ocean reporting | Unfalsifiable outrage is easy to dismiss; rigorous data isn't |
+| **Named villain with a mechanism** | Activist finance (Southwest), Nadella's cloud lock-in, Altman's documented lies | Explains betrayal as intentional — that's more shareable than incompetence |
+| **Personal stakes + invisible system** | Grocery algorithm, Windows extraction, trucker pay | Makes hidden infrastructure suddenly visible and threatening |
+| **Reframe a known news cycle** | Vegas decline, Windows frustration, AI hype | Gets algorithm boost from trending topic but adds the "real reason" depth that makes it last |
+
+The **More Perfect Union grocery video (3.7M)** is the most instructive for your pipeline — it's the same structural logic as "Secret Scores" (hidden system scoring you without consent) but with original research as the proof layer. That's the gap to close.

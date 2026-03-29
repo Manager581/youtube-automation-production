@@ -1,0 +1,166 @@
+{
+  "brand_id": "learnbyleo",
+  "channel": {
+    "lane": "Hidden systems, algorithms, and institutions that secretly control everyday life — told through real people affected by them",
+    "tone": "Investigative, accessible, urgent. Makes complex systems personal. The viewer should feel this affects THEM.",
+    "target_audience": "18-45, curious about how the world really works, systems thinkers, people who feel something is off"
+  },
+
+  "content_formula": {
+    "target_duration_min": 20,
+    "target_wpm": 155,
+    "curiosity_gaps_per_min": 0.5,
+    "curiosity_gap_avg_duration_sec": 35,
+    "dominant_emotions": ["outrage", "curiosity", "revelation", "urgency"],
+    "avoid_emotions": ["comedy", "nostalgia-only", "pure entertainment"],
+    "title_angles_ranked": [
+      {
+        "pattern": "HIDDEN_SYSTEM",
+        "avg_views": 8000000,
+        "template": "The [Hidden/Secret] [System/Score/Algorithm] That [Controls/Decides] Your [Life Aspect]",
+        "examples": ["The Secret Score That Controls Your Life"],
+        "keywords": ["secret", "hidden", "controls", "decides", "tracks"]
+      },
+      {
+        "pattern": "THEY_DONT_WANT",
+        "avg_views": 6000000,
+        "template": "[They/Company] Don't Want You to Know [Shocking Truth]",
+        "examples": ["What Insurance Companies Don't Want You to Know"],
+        "keywords": ["don't want", "won't tell", "hiding"]
+      },
+      {
+        "pattern": "WHY_BROKEN",
+        "avg_views": 7000000,
+        "template": "Why [Common Thing] Is [Actually Broken/Rigged/Dangerous]",
+        "examples": ["Why Your Food Is Slowly Killing You"],
+        "keywords": ["why", "actually", "really", "broken"]
+      },
+      {
+        "pattern": "NUMBER_SHOCK",
+        "avg_views": 5000000,
+        "template": "The [$Amount/Number] [Industry/Scam] Nobody Talks About",
+        "examples": ["The $200 Billion Industry Built on Your Data"],
+        "keywords": ["billion", "million", "nobody", "no one"]
+      },
+      {
+        "pattern": "PERSON_VS_SYSTEM",
+        "avg_views": 5500000,
+        "template": "The [Person] Who [Fought/Exposed] [Powerful System] (and [Consequence])",
+        "examples": ["The Woman Who Exposed Big Pharma's Biggest Lie"],
+        "keywords": ["exposed", "fought", "discovered", "revealed"]
+      }
+    ]
+  },
+
+  "topic_filters": {
+    "required_elements": [
+      "A system, algorithm, or institution that affects millions of ordinary people",
+      "Real victims or whistleblowers as human entry points",
+      "A reveal — something most viewers don't know about their own life",
+      "Stakes that feel personal — this could happen to YOU"
+    ],
+    "institutions": [
+      "insurance companies", "credit bureaus", "hospitals", "pharmaceutical companies",
+      "tech giants", "social media algorithms", "food industry", "water utilities",
+      "landlord algorithms", "hiring AI", "surveillance systems", "data brokers",
+      "police predictive algorithms", "prison industry", "student loan servicers",
+      "health insurance", "auto insurance", "background check companies",
+      "HOAs", "debt collectors", "gig economy platforms", "telecom companies",
+      "military contractors", "chemical companies", "lobbying firms"
+    ],
+    "themes": [
+      "algorithmic discrimination", "hidden scores", "data harvesting",
+      "corporate capture", "regulatory failure", "planned obsolescence",
+      "price fixing", "dark patterns", "surveillance capitalism",
+      "wage theft", "medical billing fraud", "insurance denial",
+      "environmental poisoning", "food additives", "water contamination",
+      "algorithmic justice", "predictive policing", "facial recognition",
+      "right to repair", "corporate lobbying", "revolving door",
+      "whistleblower retaliation", "non-compete abuse", "shrinkflation"
+    ],
+    "person_archetypes": [
+      "whistleblower who lost everything", "patient denied coverage",
+      "worker replaced by algorithm", "tenant rejected by AI",
+      "researcher who discovered the truth", "regulator who switched sides",
+      "family poisoned by corporation", "activist vs billion-dollar company"
+    ],
+    "hard_avoid": [
+      "pure politics (partisan)", "celebrity gossip", "sports",
+      "gaming", "product reviews", "crypto speculation",
+      "conspiracy theories without evidence", "anti-vax"
+    ],
+    "soft_avoid": [
+      "topics already done as Secret Scores",
+      "stories with no human victim angle",
+      "stories requiring only one source"
+    ]
+  },
+
+  "already_covered": [
+    "Secret credit scores", "tenant screening algorithms", "insurance scoring",
+    "hiring AI discrimination", "predictive policing", "data brokers"
+  ],
+
+  "research_sources": {
+    "reddit": [
+      "technology", "privacy", "antiwork", "legaladvice",
+      "personalfinance", "todayilearned", "Damnthatsinteresting",
+      "YouShouldKnow", "explainlikeimfive", "news",
+      "science", "environment", "healthcare"
+    ],
+    "google_news_keywords": [
+      "algorithm discrimination lawsuit",
+      "corporate whistleblower exposed",
+      "FDA recall hidden dangers",
+      "data broker selling personal data",
+      "insurance company denied coverage death",
+      "water contamination lawsuit",
+      "food industry lobbying FDA",
+      "AI hiring bias discrimination",
+      "hospital pricing secret charges",
+      "pharmaceutical company fraud"
+    ],
+    "youtube_competitor_channels": [
+      "Johnny Harris", "Wendover Productions", "Kurzgesagt",
+      "Vox", "More Perfect Union", "The Infographics Show",
+      "ColdFusion", "Coffeezilla"
+    ],
+    "tiktok_accounts": [
+      "@maboroshidotcom", "@underthedesknews", "@publiccitizen"
+    ]
+  },
+
+  "visual_style": {
+    "color_grade": "dark_cinematic",
+    "brightness": "dark",
+    "primary_footage_types": ["news_screenshot", "document_photo", "data_visualization", "archival_footage"],
+    "forbidden": ["stock_footage", "AI_generated_video"],
+    "thumbnail": {
+      "background": "dark or high-contrast",
+      "text_words": "1-4 maximum",
+      "text_rule": "The most shocking single fact — makes viewer feel personally affected",
+      "font": "Heavy bold sans-serif",
+      "example_words": ["YOUR DATA", "DENIED", "EXPOSED", "POISONED", "THEY KNOW"]
+    }
+  },
+
+  "audio_style": {
+    "music_type": "atmospheric_tension",
+    "music_source": "Pixabay CC0",
+    "dominant_sounds": ["tension_pad", "riser", "impact", "shimmer"],
+    "forbidden": ["upbeat", "comedy", "pop"]
+  },
+
+  "production": {
+    "voiceover": "F5-TTS cloned voice — measured, authoritative, urgent on reveals",
+    "footage_sources": [
+      "Wikimedia Commons",
+      "Internet Archive",
+      "Government archives",
+      "News clips via yt-dlp (fair use, max 5s)",
+      "Court/hearing footage",
+      "Pexels (free stock for establishing shots only)"
+    ],
+    "forbidden_sources": ["Pixabay images", "AI-generated video"]
+  }
+}
