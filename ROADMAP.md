@@ -73,12 +73,15 @@ director → builder → director_review → gap_resolver → research_agent →
 - Added comment analysis workflow: yt-dlp → JSON → keyword filter → sort by likes → extract insights
 
 ### New Video: "Why Breaking the Law Is Profitable"
-- Research brief: `research/breaking_law_brief.md`
-- 6-act structure, ~35 minutes, 7 case studies
-- RealPage $0 settlement (THIS WEEK) + AI scraping wars + Boeing/Meta/Wells Fargo/Purdue
-- Killer stat: $1 trillion in corporate fines since 2000
-- Sponsor fit: privacy/data protection (Incogni, DeleteMe, NordVPN)
-- Pipeline state: stages 1-2 complete, stage 3 (research brief) written
+- **Script v45**: `scripts/raw_breaking_law_v45.txt` — 4,224 words (~30 min), 87-91/100 LearnByLeo score
+- Research facts: `research/breaking_law_profitable_facts.md` (10 case studies, all verified)
+- 7 chapters: THE FORMULA → THE DATA → THE MACHINES → THE RENT → THE RECKONING
+- Focus: Facebook/AI/Reddit = 70% of script, historical (Ford/WF/Purdue) = 17% setup
+- 4 named characters with callbacks: Grimshaw (Ford), Guitron (Wells Fargo), Esquivel (AI), Vialpondo (RealPage)
+- Thesis: "The law doesn't prevent corporate crime. It prices it." — withheld until Purdue, echoed at close
+- Killer stats: $1T in fines since 2000, recidivists get SMALLER fines, Zuckerberg gained $1.1B from fine announcement
+- Sponsor fit: privacy/data protection (Incogni, DeleteMe, NordVPN, Proton)
+- **Pipeline state**: script DONE (stage 5), enhancer running (stage 6), stages 7-28 pending
 
 ### Source Credits Policy
 - Added to pipeline: always credit original journalists when using their reporting
@@ -88,10 +91,16 @@ director → builder → director_review → gap_resolver → research_agent →
 ## 📋 FUTURE BUILDS (next sessions)
 
 ### Immediate (this video)
-- [ ] Recalibrate scorer for business/tech niche (lower blind spot weight, add analysis depth test)
-- [ ] Write script for "Why Breaking the Law Is Profitable"
+- [x] Write script for "Why Breaking the Law Is Profitable" — v45, 87-91/100
+- [ ] Run enhancer + script QA gate (stage 6-7)
+- [ ] Voice generation (stage 8-9)
+- [ ] Source footage + images (stage 11-15)
+- [ ] Director pass (stage 16-19)
+- [ ] DaVinci build (stage 20-23)
+- [ ] Final QA + render (stage 24-28)
 - [ ] Source credits field in director schema
 - [ ] Sponsor integration placeholder in script structure
+- [ ] Recalibrate scorer for business/tech niche
 
 ### Technical Debt
 - [ ] run_pipeline_v2.py: remove pipeline/ v1 fallbacks (topic_radar, comments_miner, etc. need v2 versions)

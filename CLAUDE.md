@@ -673,3 +673,39 @@ LearnByLeo QA: 17 pass, 3 warn, 0 fail
 - 4 clips >30s continuous (gap-adjacent)
 
 Next: Manual playthrough in DaVinci → fix anything that looks/sounds off → render
+
+## NEW VIDEO: "Why Breaking the Law Is Profitable" (2026-03-29)
+
+### Channel Pivot
+- Shifted from Fern-style investigative to **ColdFusion/HMW business documentary**
+- No original journalism required — all public data, court filings, verified reporting
+- RPM: $10-25 (business/tech) vs $5-10 (true crime)
+- Upload cadence: frequent (pipeline does topic→video in days)
+
+### Topic Scorer v3: 8-Test Framework (Calibrated)
+- Calibrated against 10 proven competitor hits (1.8M-5.4M views)
+- Channels: Johnny Harris, Wendover, ColdFusion, How Money Works, More Perfect Union
+- 8 tests: fresh_perspective, originality, best_option, title_thumbnail, blind_spot, timeliness, killer_stat, five_second_title
+- GO threshold: 85+ with all tests ≥65
+- Key finding: blind spot score = #1 predictor of virality for new channels
+- Desk-research filter: excludes topics requiring original journalism
+
+### Script Status
+- **Script v45**: `scripts/raw_breaking_law_v45.txt` — 4,224 words (~30 min)
+- **Score**: 87-91/100 across multiple blind LearnByLeo QA passes
+- **Structure**: 7 chapters — FORMULA → DATA → MACHINES → RENT → RECKONING
+- **Focus**: Facebook/AI/Reddit/RealPage = 70% of script. Ford/WF/Purdue = 17% setup.
+- **Characters**: Grimshaw (Ford), Guitron (Wells Fargo), Esquivel (AI scraping), Vialpondo (RealPage)
+- **Thesis**: "The law doesn't prevent corporate crime. It prices it." — withheld until Purdue, echoed at close
+- **Key moments**: "Senator, we run ads" reframed as formula protecting itself. GDPR as dopamine pocket. Sugar dissolved in water. Price-per-life escalation ($200K→$9K→$57→$3K→?).
+- **Research**: `research/breaking_law_profitable_facts.md` — all stats verified via web search
+
+### Pipeline Stage
+- Stages 1-5: COMPLETE (topic → research → script)
+- Stage 6: IN PROGRESS (script enhancer)
+- Stages 7-28: PENDING (QA → voice → footage → director → DaVinci → render)
+
+### Sponsor Candidates
+- DeleteMe/Incogni (data broker removal — directly relevant)
+- Proton (privacy suite — strong brand alignment)
+- NordVPN (largest budget, decent fit)
