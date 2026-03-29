@@ -1,0 +1,111 @@
+Last month, Marquita Davis lost her apartment. Not because she stopped paying rent. Because an algorithm decided she should pay more.
+
+Marquita is a medical assistant in Dallas. Two kids, seven and eleven. Same unit for three years, never missed a payment. Then her rent jumped thirty percent overnight. Twelve hundred to fifteen hundred dollars. Same apartment. Same job. She moved her kids into her mother's living room.
+
+Her landlord didn't set the price. A company called RealPage did. RealPage takes confidential pricing data from competing landlords and uses it to coordinate rent increases across more than ten million apartments. Ninety percent of landlords followed the algorithm's recommendation. The Department of Justice called it price fixing. The settlement this week? Zero dollars. No fine. No compensation. No admission of guilt. A company generating one point six billion in revenue walked away clean.
+
+And the companies doing this right now — scraping your data, your posts, your conversations to build AI — they watched this happen. They've already done the math. They know the fine will be less than the profit. They know it because every company before them proved it.
+
+This is why breaking the law is profitable.
+
+[BEAT]
+
+Before I show you the new version of this formula — the one that might be impossible to undo — I need to show you the old one. Fast. Because the pattern has been running for fifty years and the math has never changed.
+
+In 1977, Ford discovered the Pinto's fuel tank ruptured in rear-end collisions. People burned to death. Ford's engineers found the flaw before the car shipped. Someone in the boardroom wrote a memo. Fixing every Pinto on the road: a hundred and thirty-seven million dollars. Expected wrongful death payouts: forty-nine point five million. They shipped the car. This is where the formula was written. If the fine is less than the profit, proceed.
+
+Meta proved it scales. In 2018, Facebook let a quiz app harvest the data of eighty-seven million users — names, locations, likes, messages, political leanings — and sell it to Cambridge Analytica, who turned it into voter-targeting weapons. Facebook had signed a consent decree promising to stop exactly this. They broke it anyway. The FTC fined them five billion dollars. Sounds massive. It was nine percent of one year's revenue. The day the fine was announced, Facebook's stock went up. Not down. Up. The market added seven billion in value. The punishment made Facebook two billion dollars richer than if the government had done nothing. Your data was in that harvest. Not hypothetically. Actually. If you had a Facebook account in 2018, your information was packaged and priced and the total cost to the company that sold it made them more valuable.
+
+Here's a thought experiment. What if you could pay nine percent of your income and be legally immune for a year? Speed everywhere. Skip your taxes. Park wherever you want. The answer is so obvious it's embarrassing. That's the deal Meta got. Except they didn't ask you first.
+
+[BEAT]
+
+Boeing proved the formula survives death. October 2018, Lion Air Flight 610 crashed thirteen minutes after takeoff. A hundred and eighty-nine dead. Five months later, Ethiopian Airlines Flight 302. A hundred and fifty-seven dead. Same plane. Same flaw — a system called MCAS that shoved the nose toward the ground when a single sensor failed. Samya Stumo was twenty-four, heading to Kenya for global health work. Boeing knew. Internal messages said the plane was designed by clowns. The settlement: two and a half billion dollars. That's sixteen days of Boeing's annual revenue. No executive went to prison.
+
+Purdue Pharma proved you can move the money first. In Kermit, West Virginia — population four hundred — a single pharmacy received twelve million hydrocodone pills in three years. Six hundred thousand Americans dead from opioid overdoses. Before Purdue declared bankruptcy, the Sacklers transferred billions in personal wealth out of the company. They saw the lawsuits coming. They moved the money. The settlement: seven point four billion. That works out to about twelve thousand dollars per death. Ford valued a life at two hundred thousand in 1977. The formula didn't just survive fifty years. It got cheaper.
+
+Five decades. Five industries. Every fine was less than the profit. Every company survived. That was the old formula.
+
+Now let me show you the new one.
+
+[PAUSE]
+
+In October 2025, a Reddit engineer did something clever. They created a post — an ordinary-looking post about a fictional company — and made it visible only through Google's search index. You couldn't find it by browsing Reddit. You couldn't stumble on it. The only way to reach it was through a search engine crawler. It was bait. A tripwire designed to catch one specific thing: an AI company scraping Reddit's content without permission.
+
+Within hours, Perplexity AI cited the post. Word for word. The trap worked.
+
+Reddit's legal team sent a cease-and-desist letter. Standard procedure — stop scraping our content, or we'll sue. Here's what happened next. Perplexity's citations to Reddit content didn't go down. They went up. Forty times. They didn't scrape a little more. They scraped forty times more. After being caught. After receiving a formal legal demand to stop.
+
+Think about what that means. Step back. A company is caught stealing. They receive a letter saying stop. Their response is to steal forty times as much. This isn't arrogance. This is math. They'd calculated that the data was worth more than any fine. That the model being trained on that data was worth more than any lawsuit. And that once the data is inside the model, there is no retrieving it.
+
+This is the part of the story where everything changes.
+
+If you've ever posted on Reddit, commented on YouTube, written a blog, tweeted anything, left a review — your words are in training datasets right now. Not hypothetically. Provably. Common Crawl, the dataset most large language models train on, contains over two hundred and fifty billion web pages. Your content is in there. The companies building hundred-billion-dollar products on your words did not ask your permission.
+
+[BEAT]
+
+As of March 2026, there are ninety active copyright lawsuits against AI companies. Ninety. Let me walk you through what those lawsuits have actually accomplished.
+
+Anthropic — the company behind the AI assistant Claude — downloaded millions of pirated books from shadow libraries to train their model. Settled in September 2025 for one point five billion dollars. Sounds like a lot. Anthropic's valuation: over sixty billion. The settlement was two point five percent. The model trained on those stolen books kept running the next day. Then Universal Music sued them again in January 2026 for three point one billion more. The first settlement didn't even cover all the theft.
+
+OpenAI. The New York Times sued for billions. A judge ordered twenty million ChatGPT conversation logs handed over as evidence. Meanwhile, OpenAI raised six point six billion in new funding. Their valuation hit a hundred and fifty-seven billion. The investors did not blink. The lawsuits aren't obstacles. They're overhead. Background noise on the balance sheet while the models keep training.
+
+Three of five major Hollywood studios have sued Midjourney. Disney sent Google a cease-and-desist over AI-generated content. Getty Images sued Stability AI. The Authors Guild filed a class action representing thousands of writers.
+
+Ninety lawsuits. Not one AI company has slowed down.
+
+A children's book author named Sarah spent twelve years building her career. Seven published books. School visits. A modest living built word by word. Then a reader sent her a screenshot — a chatbot had generated a story in her exact style. Her sentence rhythm, her paragraph structure, the voice she'd spent a decade developing. All seven books scraped. She joined a class action. Her legal fees will likely exceed her share of any settlement. The model that absorbed her voice is running right now.
+
+[PAUSE]
+
+Now here is the part that kept me up at night. Not because it's the biggest case, but because it's the one where you can't undo the damage. Even if you want to. Even if a court orders you to.
+
+Every case I showed you in the history section had one thing in common. The violation could be reversed. Ford recalled the Pinto. Meta could delete the data. Boeing grounded the fleet. Purdue pulled the pills. Expensive, slow, and usually nobody did it voluntarily — but the off switch existed.
+
+With AI, there is no off switch.
+
+Scraped data is woven into a model during training like sugar dissolved in water. You cannot un-dissolve it. You cannot identify which outputs came from which training inputs. You cannot extract Sarah's writing style from the model any more than you can extract the eggs from a baked cake. The violation is the product. Every response the AI generates, every image it creates, every line of code it writes — all of it is built on data that was taken without permission and can never be returned.
+
+Even if every AI company loses every lawsuit — all ninety of them — they keep the models.
+
+The fine doesn't punish the theft. It becomes the retroactive purchase price for data that was already consumed. Scrape now. Train the model. Make it indispensable to millions of users. Settle later. The model can't be untrained. The fine is just the cost of raw materials, paid after the factory is already built and running.
+
+This is the formula perfected. Not Ford's version — clumsy, obvious, a memo with signatures you can wave in court. This is frictionless. Automated. The entire internet scraped in weeks. Trillions of words consumed. And by the time the legal system catches up — years from now, maybe a decade — the models will be infrastructure. As embedded in daily life as electricity. Too big to shut down. Too valuable to punish meaningfully.
+
+"Move fast and break things" was never about software. It was about the law.
+
+[BEAT]
+
+And it's happening to you. Right now. Not in the abstract.
+
+The next generation of AI models — training as you watch this — are being trained on your conversations with chatbots. Your emails processed by AI assistants. Your photos uploaded to platforms with updated terms of service you didn't read. Your voice, recorded by smart speakers. Your face, captured in the background of someone else's photo.
+
+Marquita Davis asked an AI chatbot for advice about her rent situation last month. That conversation is training data now. When the lawsuit comes — and it will — the model will already be built. Her words, like yours, purchased at whatever price the court eventually sets. Which, if fifty years of data tells us anything, will be less than the profit.
+
+Your data. Their product. Your fine. Zero dollars.
+
+[PAUSE]
+
+So come back to Marquita. Come back to RealPage and that zero-dollar settlement. Now you understand why the fine was nothing. The system isn't broken. The system is working exactly as designed. Every case in this video follows the same equation. Fine minus profit. And every time, the answer is the same.
+
+Wells Fargo proved you don't even need a villain. They set sales quotas — eight products per customer, nearly impossible to hit honestly. A teller opens a savings account for a customer who came in to deposit a check. The customer doesn't know. The teller watched two coworkers get fired last month. Multiply by five thousand three hundred employees. Three point five million fake accounts. Nobody decided to commit fraud. The system decided. Three billion in fines. Two weeks of revenue. The CEO retired with full benefits.
+
+No memo. No conspiracy. No villain. Just a system that rewards the math.
+
+[BEAT]
+
+So is the formula unbeatable?
+
+No. Because someone already broke it.
+
+The European Union passed GDPR and did one thing differently. Fines scale to four percent of global annual revenue. Not a subsidiary. Not a negotiated number. Everything, worldwide. When Ireland fined Meta one point two billion euros, Meta didn't fight it. Within weeks, they rewrote their data transfer agreements, shut down a cross-border pipeline they'd run for a decade, and rebuilt their European infrastructure from scratch. The same company that shrugged off a five-billion-dollar American fine moved heaven and earth over a European one. Because four percent of global revenue made the violation more expensive than the profit for the first time.
+
+Proportional fines. Criminal liability for executives, not the people at the bottom. Disgorgement — forcing companies to return every dollar earned from the violation.
+
+The tools exist. The question has never been how to fix this. The question is why we haven't. And the answer is the same math. The companies that benefit from the formula fund the campaigns, staff the advisory boards, and lobby the committees that write the rules. Every attempt to import proportional fines into the United States has died before reaching a vote.
+
+Marquita Davis is still in her mother's living room. Her kids still share a bedroom. The algorithm that raised her rent is still running. And last month, she asked an AI chatbot what she could do about it. That conversation is in a training dataset now. The model is already being built. The company that builds it has done the math. The fine — if it ever comes — will be less than the profit.
+
+Now you know the math.
+
+Sources: ProPublica, Good Jobs First Violation Tracker, DOJ press releases, FTC enforcement actions, Copyright Alliance AI lawsuit database.

@@ -99,7 +99,7 @@ Only add markers between existing sentences or at natural breath points.
 RAW SCRIPT:
 {script_text}"""
 
-    enhanced = query_claude(prompt, timeout=180)
+    enhanced = query_claude(prompt, timeout=600)
 
     if not enhanced:
         print("WARNING: Claude returned empty response, returning original script",
@@ -148,7 +148,7 @@ Flag issues like:
 - "long_gap": more than 3 minutes of content without a payoff
 
 SCRIPT:
-{script_text[:8000]}"""
+{script_text[:20000]}"""
 
     result = query_claude(prompt, timeout=120)
     try:
@@ -194,7 +194,7 @@ Return JSON:
 }}
 
 SCRIPT:
-{script_text[:8000]}"""
+{script_text[:20000]}"""
 
     result = query_claude(prompt, timeout=120)
     try:
