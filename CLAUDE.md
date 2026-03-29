@@ -24,19 +24,68 @@ normalize_sfx(sfx_dir)                # All SFX at -12 LUFS (raw files are often
 - Fern playbook is reference data only, NOT the decision-maker for new videos.
 - Director's `arc_position` + `tension_level` drive pause placement via LearnByLeo rules.
 
-### Topic Scoring: 7-Test Framework (calibrated March 2026)
-`pipeline_v2/topic_scorer.py` — scores topics against 7 tests, calibrated by analyzing 10 proven hits (1.8M-5.4M views) from Johnny Harris, Wendover, ColdFusion, More Perfect Union.
+### Channel Pivot: Business/Tech Documentary (March 2026)
+- **OLD**: Fern-style investigative true crime/mystery
+- **NEW**: ColdFusion/How Money Works style business/tech documentary
+- **WHY**: No original journalism = can't compete with ProPublica. Business data is public (SEC, DOJ, court filings). RPM is 2-3x higher ($10-25 vs $5-10). Same cinematic style, higher revenue.
+- **UPLOAD CADENCE**: Daily/frequent. Pipeline can go topic→video in days, not months.
+- **COMPETITIVE ADVANTAGE**: Speed (ride news waves same week), production value (LearnByLeo editing + DaVinci), data assembly (Claude synthesizes filings/patents/earnings faster than humans)
+- **REFERENCE CHANNELS**: ColdFusion (5M subs, $2.1K/day), How Money Works (2.6M subs), PolyMatter, The Plain Bagel, Slidebean
+- Magnates Media peaked ~2023, declining views since — don't calibrate against them
 
-**Tests:** Fresh Perspective, Originality, Best Option, Title/Thumbnail + **Blind Spot** (9/10 correlates with 3.7M+), **Timeliness** (news wave = multiplier), **Killer Stat** (one shareable number that IS the video).
+### Topic Scoring: 8-Test Framework (calibrated March 2026)
+`pipeline_v2/topic_scorer.py` — scores topics against 8 tests, calibrated by analyzing 10 proven hits from desk-research channels (ColdFusion, How Money Works, Wendover, Magnates Media).
 
-**Thresholds:** GO = 85+ (all tests 65+). NEEDS_WORK = 60-84. SKIP = below 60.
+**Tests:** Fresh Perspective, Originality, Best Option, Title/Thumbnail, **Blind Spot**, **Timeliness** (news wave = multiplier), **Killer Stat** (one shareable number), **5-Second Title Test** (cold viewer instantly knows what's at stake for THEM).
 
-**Key finding:** New channel with zero brand equity needs topics 2x stronger than what established creators can get away with. Blind spot is the #1 predictor of virality for unknown channels.
+**Verdict:** GO 85+ (all 8 tests ≥65), NEEDS_WORK 60-84, SKIP <60.
+**NOTE**: Scorer is calibrated for investigative exposé. Business/tech docs work differently — "analysis depth" matters more than blind spot. Recalibration pending for business niche.
 
-**Calibration data:** `analysis/competitor_calibration/` (transcripts + scores from 10 videos across 4 channels).
+### Source Credits Policy
+- ALWAYS credit original journalists/channels when using their reporting
+- On-screen lower-third: "First reported by [outlet]"
+- Description links to original source
+- Recommend viewers watch original reporting
+- This is ethical AND fair use armor AND goodwill (journalists share videos that credit them)
+
+### Sponsor Strategy
+- Privacy/data protection: Incogni, DeleteMe, NordVPN, ExpressVPN, Aura
+- Natural tie-in with corporate data exploitation topics
+- Mid-roll after Meta/AI scraping sections
 
 ### Pipeline: `pipeline/davinci_helpers.py` has ALL helper functions
 See MEMORY.md for full function list and pipeline order.
+
+## CURRENT VIDEO: "Why Breaking the Law Is Profitable" (March 2026)
+
+### Topic & Angle
+- **Title**: Why Breaking the Law Is Profitable
+- **Thesis**: For the biggest companies, fines are a line item — they budget for breaking the law because the penalty is always less than the profit
+- **Format**: 30-40 min business documentary, ColdFusion/HMW style
+- **Audience validation**: 507-like comment "If the penalty is a fine, it's legal for a price"
+- **Timeliness**: RealPage $0 settlement (March 27, 2026), AI scraping lawsuits ongoing
+- **Research brief**: `research/breaking_law_brief.md`
+
+### Case Studies
+1. **RealPage** (THIS WEEK) — $0 fine for coordinating rent across 10M apartments. $1.6B/yr revenue.
+2. **Meta** — $5B fine = 9% of revenue. Stock went UP.
+3. **Boeing** — 346 dead, $2.5B fine = 16 days revenue. No exec jailed.
+4. **Wells Fargo** — 3.5M fake accounts, $3B fine = ~2 weeks revenue.
+5. **Purdue Pharma** — 600K+ opioid deaths, $7.4B settlement. Sacklers kept billions.
+6. **AI Scraping** — Anthropic $1.5B settlement, OpenAI/Perplexity/Google lawsuits ongoing. 90 active cases.
+7. **Ford Pinto** — historical anchor. $137M fix vs $49.5M deaths. They chose deaths. 1977.
+
+### Killer Stats
+- $1 TRILLION in corporate fines since 2000 (Good Jobs First)
+- 127 companies have each paid $1B+ in penalties
+- Recidivist companies get SMALLER fines as % of revenue
+- $0 — RealPage's penalty for 10M apartments of price coordination
+
+### Pipeline State
+- `.pipeline_v2_state.json` — Stages 1-2 (topic, comments) complete
+- Next: Stage 3 (research) — brief written, needs validation
+- Media dir: `media/breaking_law/`
+- Comments mined: `comments/hmw_break_law.info.json`, `comments/hmw_find_out.info.json`
 
 
 ## Project Overview

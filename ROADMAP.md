@@ -51,11 +51,50 @@ director → builder → director_review → gap_resolver → research_agent →
 - Competitor transcripts + analysis: `/tmp/competitor_transcripts/`
 - Calibration data embedded in `pipeline_v2/topic_scorer.py` CALIBRATION_EXAMPLES constant
 
+## ✅ BUILT (session 2026-03-29)
+
+### Channel Pivot: Business/Tech Documentary
+- Shifted from Fern-style investigative to ColdFusion/HMW business documentary
+- Reason: no original journalism = can't compete with ProPublica on investigative. Business data is public.
+- RPM: $10-25 (business/tech) vs $5-10 (true crime). 2-3x revenue per view.
+- Upload cadence: daily/frequent (pipeline does topic→video in days)
+- Reference channels: ColdFusion, How Money Works, PolyMatter, The Plain Bagel, Slidebean
+
+### Topic Scorer v3: 8-Test Framework
+- Added 8th test: **5-Second Title Test** — can a cold viewer read the title and instantly know what's at stake for THEM?
+- Secret Scores scored 85/100 on title test (highest), validating the test design
+- "Broadridge" scored ~30 (nobody knows what it is) — correctly identified as bad topic
+- GO threshold: 85+ with all 8 tests ≥65
+- Business niche recalibration still pending (blind spot weight should be lower for analysis-depth topics)
+
+### Comment Mining Infrastructure
+- Mined 797 comments from HMW "Break The Law" + 1679 from "Find Out Stage"
+- Key audience signal (507 likes): "If the penalty is a fine, it's legal for a price"
+- Added comment analysis workflow: yt-dlp → JSON → keyword filter → sort by likes → extract insights
+
+### New Video: "Why Breaking the Law Is Profitable"
+- Research brief: `research/breaking_law_brief.md`
+- 6-act structure, ~35 minutes, 7 case studies
+- RealPage $0 settlement (THIS WEEK) + AI scraping wars + Boeing/Meta/Wells Fargo/Purdue
+- Killer stat: $1 trillion in corporate fines since 2000
+- Sponsor fit: privacy/data protection (Incogni, DeleteMe, NordVPN)
+- Pipeline state: stages 1-2 complete, stage 3 (research brief) written
+
+### Source Credits Policy
+- Added to pipeline: always credit original journalists when using their reporting
+- On-screen lower-third + description links
+- Ethical + fair use armor + goodwill (journalists share videos that credit them)
+
 ## 📋 FUTURE BUILDS (next sessions)
+
+### Immediate (this video)
+- [ ] Recalibrate scorer for business/tech niche (lower blind spot weight, add analysis depth test)
+- [ ] Write script for "Why Breaking the Law Is Profitable"
+- [ ] Source credits field in director schema
+- [ ] Sponsor integration placeholder in script structure
 
 ### Technical Debt
 - [ ] run_pipeline_v2.py: remove pipeline/ v1 fallbacks (topic_radar, comments_miner, etc. need v2 versions)
-- [ ] CLAUDE.md: full rewrite for pipeline_v2
 - [ ] MEMORY.md: remove all Fern/Ollama references
 
 ### Features
@@ -67,6 +106,8 @@ director → builder → director_review → gap_resolver → research_agent →
 - [ ] Music mood matcher (director picks music MOMENTS, not just one track)
 - [ ] Voice register controller (render each segment with matched emotion)
 - [ ] A/B title testing (live test on YouTube)
+- [ ] Comment miner v2: auto-analyze competitor comments for topic validation
+- [ ] News peg detector: monitor DOJ/FTC/SEC press releases for fresh stories
 
 ## How to Start
 ```bash

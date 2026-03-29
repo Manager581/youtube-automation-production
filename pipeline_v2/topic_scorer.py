@@ -2,7 +2,7 @@
 """
 topic_scorer.py — Score topic viability using Claude + LearnByLeo ideation.json.
 
-7-Test Validation Framework (calibrated against 10 proven hits with 1.8M-5.4M views):
+8-Test Validation Framework (calibrated against 10 proven hits with 1.8M-5.4M views):
 
   ORIGINAL 4 (from LearnByLeo playbook):
   1. Fresh Perspective Test — does the idea still feel good after reflection?
@@ -10,13 +10,14 @@ topic_scorer.py — Score topic viability using Claude + LearnByLeo ideation.jso
   3. Best Option Test — is this a 5-10x outlier candidate?
   4. Title/Thumbnail Test — can we create a compelling title+thumbnail?
 
-  NEW 3 (from competitor calibration, March 2026):
+  NEW 4 (from competitor calibration, March 2026):
   5. Blind Spot Test — does the viewer already assume this exists? (9-10/10 = 3.7M+, 5-6/10 = 2.4M)
   6. Timeliness Test — is there a current news wave to ride?
   7. Killer Stat Test — is there ONE shareable number that IS the video?
+  8. 5-Second Title Test — can a cold viewer read the title and instantly know what's at stake FOR THEM?
 
 Verdict thresholds:
-  - GO: overall 85+ AND all 7 tests score 65+
+  - GO: overall 85+ AND all 8 tests score 65+
   - NEEDS_WORK: 60-84
   - SKIP: below 60
 
@@ -39,16 +40,31 @@ from pipeline_v2.llm import query_claude
 # Calibration data from competitor analysis (March 2026)
 # Used in the prompt to anchor scoring against real-world performance
 CALIBRATION_EXAMPLES = """
-CALIBRATION — these are PROVEN hits. Use them to anchor your scoring:
-- "We Had 400 People Shop For Groceries" (3.7M views): Blind Spot 9/10 — nobody knew stores charge different people different prices simultaneously. Killer stat: "same cart, 7 different prices, same store, same moment"
-- "The $16 TRILLION Race to Mine the Ocean" (5.4M views): Blind Spot 9/10 — nobody knew $16T in metal nodules sit on the ocean floor. Killer stat: "$16 trillion"
-- "What Sam Altman Doesn't Want You To Know" (3.8M views): Blind Spot 8/10 — documented pattern of lies assembled for first time. Killer stat: "$1.4T committed on $13B revenue"
-- "How the Trucking Industry Got So Terrible" (3.5M views): Blind Spot 7/10 — invisible pay structure nobody outside trucking knows. Killer stat: "paid by mile only — waiting, inspections, traffic = $0"
-- "Gold Explained, Finally" (4.9M views): Blind Spot 4/10 BUT Timeliness 10/10 — gold hit $4,000/oz that week. Proves timeliness can compensate for lower novelty.
-- "The Downfall of Southwest Airlines" (2.7M views): Blind Spot 6/10 — named villain (Elliott Management PE) behind a beloved brand's destruction.
+CALIBRATION — these are PROVEN desk-research hits (no original journalism, no on-location,
+no interviews). All made from public documents, filings, and existing reporting.
+Use them to anchor your scoring:
 
-PATTERN: Blind Spot 9+ = 3.7M+. Blind Spot 5-6 = 2.4-3.6M. Timeliness multiplies everything.
-Topics where the audience already assumes "yeah someone's doing that" score 3-4/10 on Blind Spot and underperform.
+TIER 1 — desk-research channels (1.5-2.6M views, realistic for new channel):
+- "We Don't Know How Epstein Got So Rich" (2.6M, How Money Works): Blind Spot 8/10 — assembled financial trail nobody had combined. Killer stat: specific dollar figures from public records.
+- "The INSANE Truth About IKEA" (2.4M, Magnates Media): Blind Spot 7/10 — hidden corporate structure. Killer stat: "IKEA is technically a charity"
+- "The Windows 11 Crisis" (2.4M, ColdFusion): Blind Spot 6/10 — deliberate strategy behind universal frustration. Killer stat: "55% of Microsoft revenue is cloud, not Windows"
+- "OpenAI is Suddenly in Trouble" (2.1M, ColdFusion): Blind Spot 7/10 — financial collapse data nobody assembled. Killer stat: "$12 billion lost in one quarter"
+- "Replacing Humans with AI Going Wrong" (1.8M, ColdFusion): Blind Spot 7/10 — failure data nobody compiled. Killer stat: "95% of AI implementations fail"
+- "The $47 Billion Cult" (1.9M, Magnates Media): Blind Spot 8/10 — unknown corporate cult story. Strong narrative.
+
+TIER 2 — bigger channels doing desk research (2.7-3.8M views, brand halo helps):
+- "What Sam Altman Doesn't Want You To Know" (3.8M, More Perfect Union): Blind Spot 8/10 — public lies assembled into pattern. Killer stat: "$1.4T committed on $13B revenue"
+- "How the Trucking Industry Got So Terrible" (3.5M, Wendover): Blind Spot 7/10 — invisible pay structure. Killer stat: "paid by mile only"
+- "The Downfall of Southwest Airlines" (2.7M, Wendover): Blind Spot 6/10 — named villain (PE firm). Killer stat: "20% margins destroyed by one hedge fund"
+
+PATTERNS FOR DESK RESEARCH:
+- Realistic ceiling for new channel: 1.5-2.5M views
+- Blind Spot 7-8/10 = 2M+ (data assembly or unknown corporate stories)
+- Blind Spot 6/10 = 1.5-2.5M (named villain behind known frustration)
+- Timeliness is a multiplier — topic + news wave = 2-3x views
+- Named villain > abstract system (always)
+- ONE killer stat that fits in a text message is required for sharing
+- "Corporate expose" and "data assembly" are the two formats that work without original journalism
 """
 
 
@@ -100,7 +116,7 @@ TOPIC: {topic}
 
 {CALIBRATION_EXAMPLES}
 
-Apply the 7-Test Validation Framework. Score each test 0-100:
+Apply the 8-Test Validation Framework. Score each test 0-100:
 
 TESTS 1-4 (LearnByLeo playbook):
 {four_tests}
@@ -138,6 +154,23 @@ The kind of stat someone would text a friend or post on social media.
 - Score 50-69: Multiple decent stats but no single knockout
 - Score 30-49: Stats exist but aren't surprising
 - Score 0-29: No quantifiable shock factor
+
+TEST 8 — 5-SECOND TITLE TEST (critical for cold audiences):
+Can someone with ZERO context read the title and instantly understand what's at stake for THEM?
+Within 5 seconds of reading the title, the viewer must know: (a) what the thing is,
+(b) that it's hidden/secret/unknown, and (c) that it affects THEM personally.
+- Score 90+: "The Secret Score That Controls Your Life" — instant clarity, personal stakes, mystery
+- Score 70-89: Clear topic + stakes but requires a moment of thought
+- Score 50-69: Interesting but viewer might ask "why should I care?"
+- Score 30-49: Viewer has to already know the topic to understand the title (like "Broadridge")
+- Score 0-29: Title is confusing or requires domain knowledge
+Key test: Show the title to a random person on the street. Do they say "tell me more"
+or "I don't get it"? If the TOPIC ITSELF requires explanation, the title will always fail.
+Examples:
+  PASS: "The Secret Score That Controls Your Life" — everyone has a life, everyone fears secret control
+  PASS: "Why New Cars Keep Spying on You" — everyone drives, "spying" = instant personal threat
+  FAIL: "The Company That Processes 80% of Corporate Votes" — most people don't vote on corporate things
+  FAIL: "How PBMs Control Drug Prices" — nobody knows what a PBM is
 
 TITLE/THUMBNAIL TACTICS (first 10 of 26):
 {title_tactics}
@@ -184,6 +217,15 @@ Return valid JSON:
       "reasoning": "...",
       "best_stat": "the single most shareable stat/fact",
       "suggestions": ["..."]
+    }},
+    "five_second_title_test": {{
+      "score": 0-100,
+      "reasoning": "...",
+      "street_test": "what a random person on the street would say after reading the best title",
+      "instant_clarity": true/false,
+      "personal_stakes": true/false,
+      "requires_domain_knowledge": true/false,
+      "suggestions": ["..."]
     }}
   }},
   "title_suggestions": [
@@ -206,12 +248,20 @@ Return valid JSON:
 }}
 
 VERDICT RULES (strict — new channel with no brand equity):
-- GO (85+): All 7 tests score 65+ AND overall is 85+. This topic will work even without an established audience.
+- GO (85+): All 8 tests score 65+ AND overall is 85+. This topic will work even without an established audience.
 - NEEDS_WORK (60-84): Some tests pass but needs refinement. Could work with a stronger angle or better timing.
 - SKIP (below 60): Fundamental problems — audience already knows this, no killer stat, or no personal stakes.
 
-Be HARSH. An established creator can make "Gold Explained" work at 4.9M views because of brand.
-We cannot. Our topic must be inherently compelling to a cold audience."""
+Be HARSH but REALISTIC. We are a desk-research channel — no original journalism, no on-location
+filming, no original interviews. All content made from public documents, filings, existing reporting,
+and archival footage. The realistic ceiling is 1.5-2.5M views for a new desk-research channel.
+
+Desk-research formats that work: corporate expose (assemble public data into damning narrative),
+unknown story (find something massive nobody has covered), named villain (put a face on shared
+frustration), and data assembly (compile scattered facts into one shocking picture).
+
+An established creator can make "Gold Explained" work at 4.9M views because of brand + timeliness.
+We cannot rely on brand. Our topic must be inherently compelling to a cold audience."""
 
     response = query_claude(prompt, timeout=180)
 
@@ -224,7 +274,8 @@ We cannot. Our topic must be inherently compelling to a cold audience."""
             tests = result.get("tests", {})
             min_test = min((t.get("score", 0) for t in tests.values()), default=0)
 
-            if score >= 85 and min_test >= 65:
+            # Require all 8 tests present and passing
+            if score >= 85 and min_test >= 65 and len(tests) >= 8:
                 result["verdict"] = "GO"
             elif score >= 60:
                 result["verdict"] = "NEEDS_WORK"
