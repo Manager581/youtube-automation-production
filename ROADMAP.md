@@ -1,6 +1,8 @@
 # Pipeline V2 Roadmap
 
-## ✅ BUILT (this session — 2026-03-28)
+## ✅ BUILT (session 2026-03-28)
+
+### Secret Scores Video: 92% PASS, ready for playthrough
 
 ### Core Pipeline (21 scripts in pipeline_v2/)
 - llm.py — Claude Code CLI (brain, no Ollama)

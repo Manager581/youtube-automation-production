@@ -592,3 +592,24 @@ python run_pipeline_v2.py --config config.json --topic "Secret Scores"
 20-23: Assembly (pauses, duck music, normalize SFX, DaVinci build)
 24-26: Verification (director review, QA video, executive producer)
 27-28: Publish (render, upload)
+
+## SECRET SCORES VIDEO — FINAL STATUS (2026-03-28)
+**Timeline: "Secret Scores FAIR USE" — 92% PASS, READY FOR PLAYTHROUGH**
+
+LearnByLeo QA: 17 pass, 3 warn, 0 fail
+- V1: 136 clips, intro at 0s
+- V2: 15 overlays (correct positions, faded MOVs)
+- V3: 16 clips (8 chapters + 8 gap fills)
+- V4: 11 text reveals (typewriter on V4)
+- V5: 94 vignette clips
+- A1: Narration with LearnByLeo pauses (934s / 15.6 min)
+- A2: Music ducked (-24dB under VO)
+- A3+A4: 33 SFX (boosted to -3 to -6dB)
+- A5: 3 typewriter click audio
+
+3 warnings (acceptable):
+- 5 small visual gaps (V3 covers most)
+- 29 unique sources (1 short of 30)
+- 4 clips >30s continuous (gap-adjacent)
+
+Next: Manual playthrough in DaVinci → fix anything that looks/sounds off → render
