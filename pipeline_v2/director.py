@@ -336,41 +336,85 @@ Output a JSON array of {len(segments)} objects. ONLY JSON, no other text."""
     return prompt
 
 
-def direct_segments(segments, clips, images, sfx, playbook):
-    """Use Claude to make all editorial decisions."""
-    
-    playbook_rules = get_editing_rules(playbook)
-    prompt = build_director_prompt(segments, clips, images, sfx, playbook_rules)
-    
-    print(f"  Sending {len(segments)} segments to Claude for editorial decisions...")
-    print(f"  (This may take 30-60 seconds)")
-    
-    response = query_claude(prompt, timeout=180)
-    
+def _parse_json_response(response):
+    """Parse JSON array from Claude response, handling markdown wrapping."""
     if not response:
-        print("  ERROR: Claude returned empty response")
         return None
-    
-    # Parse JSON from response
     try:
-        # Find JSON array in response
         json_match = re.search(r'\[[\s\S]*\]', response)
         if json_match:
-            decisions = json.loads(json_match.group())
-            return decisions
-        else:
-            return json.loads(response)
-    except json.JSONDecodeError as e:
-        print(f"  ERROR: Could not parse Claude response as JSON: {e}")
-        # Try to salvage partial response
+            return json.loads(json_match.group())
+        return json.loads(response)
+    except json.JSONDecodeError:
         try:
-            # Sometimes Claude wraps in markdown
             clean = re.sub(r'```json\s*', '', response)
             clean = re.sub(r'```\s*', '', clean)
             return json.loads(clean)
         except:
-            print(f"  Response preview: {response[:200]}")
             return None
+
+
+def direct_segments(segments, clips, images, sfx, playbook):
+    """Use Claude to make all editorial decisions, batched to avoid timeouts."""
+
+    playbook_rules = get_editing_rules(playbook)
+
+    # Batch segments into groups of ~30 to avoid Claude CLI timeouts
+    BATCH_SIZE = 30
+    all_decisions = []
+
+    for batch_start in range(0, len(segments), BATCH_SIZE):
+        batch_end = min(batch_start + BATCH_SIZE, len(segments))
+        batch = segments[batch_start:batch_end]
+
+        print(f"  Batch {batch_start//BATCH_SIZE + 1}: segments {batch_start}-{batch_end-1} ({len(batch)} segs)...")
+
+        prompt = build_director_prompt(batch, clips, images, sfx, playbook_rules)
+        # Add batch context
+        prompt = prompt.replace(
+            f"For EACH segment (0 to {len(batch)-1})",
+            f"For EACH segment (segments {batch_start} to {batch_end-1} of {len(segments)} total)"
+        )
+
+        response = query_claude(prompt, timeout=300)
+
+        if not response:
+            print(f"  ERROR: Batch {batch_start//BATCH_SIZE + 1} returned empty. Retrying...")
+            response = query_claude(prompt, timeout=300)
+
+        if not response:
+            print(f"  ERROR: Batch {batch_start//BATCH_SIZE + 1} failed twice. Using defaults.")
+            for i, seg in enumerate(batch):
+                all_decisions.append({
+                    "visual_file": None,
+                    "visual_type": "still_image",
+                    "sfx_file": None,
+                    "text_overlay": None,
+                    "transition_in": "cut",
+                    "transition_out": "cut",
+                    "arc_position": "context_setup",
+                    "tension_level": 0.3,
+                    "zoom_target": "wide",
+                    "chapter_card": None,
+                    "notes": "DEFAULT — Claude failed to process this batch"
+                })
+            continue
+
+        decisions = _parse_json_response(response)
+        if decisions:
+            print(f"  ✅ Got {len(decisions)} decisions")
+            all_decisions.extend(decisions)
+        else:
+            print(f"  ERROR: Could not parse response. Preview: {response[:200]}")
+            for seg in batch:
+                all_decisions.append({
+                    "visual_file": None, "visual_type": "still_image",
+                    "arc_position": "context_setup", "tension_level": 0.3,
+                    "notes": "PARSE FAILED"
+                })
+
+    print(f"  Total decisions: {len(all_decisions)}")
+    return all_decisions
 
 
 # ── Validation ────────────────────────────────────────────────────────────

@@ -1,0 +1,1066 @@
+{
+  "schema_version": "2.0",
+  "total_segments": 83,
+  "total_scenes": 13,
+  "scenes": [
+    {
+      "scene_id": 1,
+      "title": "The Formula Breaks \u2014 GDPR",
+      "segments": [
+        {
+          "segment_index": 30,
+          "text": "But something happened in 2023 that proves the formula can break. Ireland fined Meta one point two billion euros under Europe's GDPR \u2014 a law that scales fines to four percent of global annual revenue. Not a negotiated number. Not a fixed ceiling. A percentage.",
+          "duration_sec": 21.8,
+          "show": "EU flag or Irish government building, then GDPR text document with \u20ac1.2B figure highlighted, then close-up of '4%' as text reveal",
+          "search_query": "GDPR European data protection regulation document official",
+          "composition": {
+            "bg": {
+              "search_query": "European Parliament Brussels building exterior",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "GDPR fine document 1.2 billion euros Meta 2023",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "document",
+          "attention_guide": "animate_important_area",
+          "sync_points": [
+            {
+              "word": "GDPR",
+              "type": "entity_label"
+            },
+            {
+              "word": "one point two billion euros",
+              "type": "stat"
+            },
+            {
+              "word": "four percent",
+              "type": "stat"
+            }
+          ]
+        },
+        {
+          "segment_index": 31,
+          "text": "And Facebook \u2014 the same Facebook that turned a five-billion-dollar American fine into a stock rally \u2014 panicked.",
+          "duration_sec": 8.2,
+          "show": "Side-by-side split: FTC $5B fine headline on left, stock chart going UP on right \u2014 then hard cut to red/falling graph",
+          "search_query": "Facebook Meta FTC 5 billion fine 2019 stock price reaction",
+          "composition": {
+            "bg": {
+              "search_query": "Facebook Meta headquarters Menlo Park exterior",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "stock market chart red decline crash",
+              "type": "document"
+            }
+          },
+          "content_type": "news_screenshot",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "panicked",
+              "type": "emphasis"
+            }
+          ]
+        },
+        {
+          "segment_index": 32,
+          "text": "Within weeks, they rewrote their entire data transfer infrastructure. They shut down a pipeline they'd run for a decade. They rebuilt their European architecture from scratch. They didn't fight it in court for years. They didn't issue a press release and wait for it to blow over. They fixed it.",
+          "duration_sec": 29.4,
+          "show": "Server room / data center infrastructure, then engineers at computers, then network architecture diagram \u2014 emphasize speed and scale of rebuild",
+          "search_query": "data center server infrastructure network rebuild engineering",
+          "composition": {
+            "bg": {
+              "search_query": "large scale data center servers rows blue light",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": "software engineers working computers office",
+              "type": "person"
+            }
+          },
+          "content_type": "archival_footage",
+          "shot_type": "slow_pan",
+          "focal_point": "location",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "Within weeks",
+              "type": "emphasis"
+            },
+            {
+              "word": "a decade",
+              "type": "emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "title": "One Variable Changed Everything",
+      "segments": [
+        {
+          "segment_index": 33,
+          "text": "Sit with that for a second. The formula \u2014 the one that has survived five decades, across every industry, through every administration \u2014 broke. In Europe. Because someone changed one variable: they made the fine proportional.",
+          "duration_sec": 17.4,
+          "show": "Extreme close-up of a single variable in a mathematical formula, then slow zoom out to reveal full equation \u2014 metaphor for the one change. Then cut to EU Parliament voting chamber.",
+          "search_query": "mathematical formula variable equation blackboard",
+          "composition": {
+            "bg": {
+              "search_query": "blackboard chalk mathematical formula economics",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_out",
+          "focal_point": "center",
+          "attention_guide": "glow_effect",
+          "sync_points": [
+            {
+              "word": "five decades",
+              "type": "emphasis"
+            },
+            {
+              "word": "broke",
+              "type": "emphasis"
+            },
+            {
+              "word": "proportional",
+              "type": "entity_label"
+            }
+          ]
+        },
+        {
+          "segment_index": 34,
+          "text": "Same company. Same executives. Same data. The only difference was the math. And when the math changed, the behavior changed overnight.",
+          "duration_sec": 10.0,
+          "show": "Split-screen or rapid cuts: Mark Zuckerberg photo (same face), Meta logo (same company), data server (same data) \u2014 then abrupt cut to calendar showing overnight timeline",
+          "search_query": "Mark Zuckerberg congressional testimony 2023",
+          "composition": {
+            "bg": {
+              "search_query": "Mark Zuckerberg testimony US Congress hearing",
+              "type": "person"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "face",
+          "attention_guide": "scale_position",
+          "sync_points": [
+            {
+              "word": "Same company",
+              "type": "emphasis"
+            },
+            {
+              "word": "overnight",
+              "type": "emphasis"
+            }
+          ]
+        },
+        {
+          "segment_index": 35,
+          "text": "So at this point in the story, you might be thinking: okay, the formula exists, but there are limits. Europe found the off switch. Proportional fines work. The system can be fixed. Companies can be forced to change. Maybe \u2014 just maybe \u2014 we're figuring this out.",
+          "duration_sec": 23.1,
+          "show": "Wide shot of European Parliament or scales of justice \u2014 hopeful framing, warm color grade shift, slight zoom out to suggest breathing room \u2014 then hold on a beat of silence",
+          "search_query": "European Parliament voting chamber wide shot",
+          "composition": {
+            "bg": {
+              "search_query": "European Parliament hemicycle chamber Strasbourg",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "archival_footage",
+          "shot_type": "zoom_out",
+          "focal_point": "location",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "off switch",
+              "type": "emphasis"
+            },
+            {
+              "word": "figuring this out",
+              "type": "emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "title": "Chapter Transition \u2014 THE MACHINES",
+      "segments": [
+        {
+          "segment_index": 36,
+          "text": "I wish that were the end of the video. Here's a thought experiment. What if you could take anything you wanted from anyone \u2014 their writing, their art, their music, their photographs, their private conversations \u2014 and the only consequence was paying a fine you'd already budgeted for?",
+          "duration_sec": 28.9,
+          "show": "CHAPTER CARD: 'THE MACHINES' on black (2s). Then: hands reaching to take many objects \u2014 books, photos, artwork \u2014 abstracted. Darkening vignette. Cold color grade returns.",
+          "search_query": "abstract taking stealing intellectual property concept art",
+          "composition": {
+            "bg": {
+              "search_query": "dark abstract digital data streams flowing network",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "center",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "THE MACHINES",
+              "type": "chapter_card"
+            },
+            {
+              "word": "thought experiment",
+              "type": "emphasis"
+            }
+          ]
+        },
+        {
+          "segment_index": 37,
+          "text": "You'd take everything. Obviously. Everyone would. That's not a thought experiment. That's the AI industry's business model.",
+          "duration_sec": 9.8,
+          "show": "AI company logos (OpenAI, Anthropic, Google, Meta AI, Perplexity) arranged in a grid \u2014 then zoom in hard on the grid as thesis line lands. High tension.",
+          "search_query": "artificial intelligence company logos OpenAI Google Meta AI",
+          "composition": {
+            "bg": {
+              "search_query": "artificial intelligence technology abstract neural network",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": "OpenAI ChatGPT logo technology",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "center",
+          "attention_guide": "animate_important_area",
+          "sync_points": [
+            {
+              "word": "AI industry's business model",
+              "type": "emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "title": "The Reddit Trap",
+      "segments": [
+        {
+          "segment_index": 38,
+          "text": "In October 2025, a Reddit engineer did something clever. They created a post \u2014 ordinary-looking, about a fictional company \u2014 and made it visible only through Google's search index. You couldn't find it by browsing Reddit. You couldn't stumble on it. The only way to read it was to be a bot, scraping the web.",
+          "duration_sec": 30.6,
+          "show": "Reddit logo/interface screenshot, then a single forum post highlighted, then Google search results page \u2014 diagram showing the honeypot trap mechanism",
+          "search_query": "Reddit forum post honeypot fake company scraping trap 2025",
+          "composition": {
+            "bg": {
+              "search_query": "Reddit website interface screenshot forum posts",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": "Google search results page web scraping bot",
+              "type": "document"
+            }
+          },
+          "content_type": "news_screenshot",
+          "shot_type": "slow_pan",
+          "focal_point": "document",
+          "attention_guide": "graphic_indicators",
+          "sync_points": [
+            {
+              "word": "October 2025",
+              "type": "date"
+            },
+            {
+              "word": "Reddit",
+              "type": "entity_label"
+            },
+            {
+              "word": "honeypot",
+              "type": "entity_label"
+            }
+          ]
+        },
+        {
+          "segment_index": 39,
+          "text": "Within hours, Perplexity AI cited the post. Word for word. The trap worked. Reddit sent a cease-and-desist letter. Standard procedure \u2014 stop scraping, or we sue. And here is what happened next.",
+          "duration_sec": 15.7,
+          "show": "Perplexity AI interface screenshot with the fabricated content visible, then cease-and-desist letter document \u2014 hold on the final line before cut",
+          "search_query": "Perplexity AI search results citation scraping lawsuit 2025",
+          "composition": {
+            "bg": {
+              "search_query": "Perplexity AI website interface search results",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": "cease and desist letter legal document closeup",
+              "type": "document"
+            }
+          },
+          "content_type": "news_screenshot",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "animate_important_area",
+          "sync_points": [
+            {
+              "word": "Perplexity AI",
+              "type": "entity_label"
+            },
+            {
+              "word": "Word for word",
+              "type": "emphasis"
+            },
+            {
+              "word": "here is what happened next",
+              "type": "emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "title": "Forty Times More",
+      "segments": [
+        {
+          "segment_index": 40,
+          "text": "Perplexity's scraping of Reddit content didn't decrease. It increased. By a factor of forty. Not a little more. Forty times more. After being caught. After receiving a formal legal demand to stop.",
+          "duration_sec": 15.2,
+          "show": "Bar graph animating upward \u2014 a single bar shooting from baseline to 40x height in one punch. Red color. Hold on '40x'. Extreme zoom into the number.",
+          "search_query": "bar chart graph dramatic spike increase data visualization",
+          "composition": {
+            "bg": {
+              "search_query": "data chart bar graph dramatic increase spike visualization",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "center",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "forty",
+              "type": "stat"
+            },
+            {
+              "word": "Forty times more",
+              "type": "stat"
+            },
+            {
+              "word": "After being caught",
+              "type": "emphasis"
+            }
+          ]
+        },
+        {
+          "segment_index": 41,
+          "text": "Most companies, when caught, slow down. Issue a statement. Hire a compliance officer. Perplexity sped up. Forty times. It's like getting a speeding ticket and immediately doing donuts in the parking lot of the police station.",
+          "duration_sec": 15.9,
+          "show": "Split: left side shows 'compliance officer' corporate stock image slowing down, right side shows a car doing donuts \u2014 absurdist visual matching the analogy",
+          "search_query": "car doing donuts parking lot spinning tires",
+          "composition": {
+            "bg": {
+              "search_query": "police station parking lot exterior daytime",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "car tire screeching donuts burnout spinning",
+              "type": "object"
+            }
+          },
+          "content_type": "archival_footage",
+          "shot_type": "static",
+          "focal_point": "center",
+          "attention_guide": "scale_position",
+          "sync_points": [
+            {
+              "word": "Forty times",
+              "type": "stat"
+            },
+            {
+              "word": "donuts in the parking lot of the police station",
+              "type": "emphasis"
+            }
+          ]
+        },
+        {
+          "segment_index": 42,
+          "text": "But it's not arrogance. It's arithmetic. They did the math. The data was worth more than any fine. The model being trained on that data was worth more than any lawsuit. And once the data is inside the model \u2014",
+          "duration_sec": 17.6,
+          "show": "Calculator or spreadsheet: fine amount on one side, model valuation on the other \u2014 the valuation number is astronomically larger. Slow zoom into the asymmetry.",
+          "search_query": "AI model valuation billions investment training data cost analysis",
+          "composition": {
+            "bg": {
+              "search_query": "financial spreadsheet numbers calculation cost benefit analysis",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": "artificial intelligence training data neural network diagram",
+              "type": "abstract"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "animate_important_area",
+          "sync_points": [
+            {
+              "word": "arithmetic",
+              "type": "emphasis"
+            },
+            {
+              "word": "once the data is inside the model",
+              "type": "emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 6,
+      "title": "Sugar Dissolved in Water",
+      "segments": [
+        {
+          "segment_index": 43,
+          "text": "There is no getting it out. Sugar dissolved in water. You cannot separate them.",
+          "duration_sec": 10.0,
+          "show": "EXTREME close-up macro shot: sugar crystals dropping into a glass of water, dissolving, disappearing \u2014 hold on clear water. No text. Let the image breathe. Silence under narration.",
+          "search_query": "sugar dissolving in water macro close up crystal liquid",
+          "composition": {
+            "bg": {
+              "search_query": "sugar dissolving water glass macro photography clear liquid",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "archival_footage",
+          "shot_type": "zoom_in",
+          "focal_point": "center",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "Sugar dissolved in water",
+              "type": "emphasis"
+            }
+          ]
+        },
+        {
+          "segment_index": 44,
+          "text": "When Ford got caught, they could recall the car. When Facebook got caught, they could \u2014 in theory \u2014 delete the data. When Purdue got caught, they could stop manufacturing the pills. The damage was reversible. Expensive, slow, and nobody ever did it voluntarily. But the",
+          "duration_sec": 22.0,
+          "show": "Three-part rapid cut sequence: Ford Pinto recall notice \u2192 Facebook data deletion interface screenshot \u2192 Purdue Pharma pill bottles being destroyed. Then cut to black on 'But the...' \u2014 deliberate cliffhanger.",
+          "search_query": "Ford Pinto recall notice 1978 automotive defect",
+          "composition": {
+            "bg": {
+              "search_query": "Ford Pinto automobile recall safety defect 1970s archival",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": "Facebook data deletion privacy settings screenshot",
+              "type": "document"
+            }
+          },
+          "content_type": "news_screenshot",
+          "shot_type": "slow_pan",
+          "focal_point": "document",
+          "attention_guide": "graphic_indicators",
+          "sync_points": [
+            {
+              "word": "Ford",
+              "type": "entity_label"
+            },
+            {
+              "word": "Facebook",
+              "type": "entity_label"
+            },
+            {
+              "word": "Purdue",
+              "type": "entity_label"
+            },
+            {
+              "word": "reversible",
+              "type": "emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 7,
+      "title": "The Formula's Logical Conclusion",
+      "segments": [
+        {
+          "segment_index": 60,
+          "text": "[PAUSE:2.0] So what happens when the formula reaches its logical conclusion? [PAUSE:1.5] What happens when the fine is zero?",
+          "duration_sec": 10.8,
+          "show": "A blank line on a legal settlement document where the fine amount should be \u2014 the dollar field is empty. Extreme slow zoom into the void.",
+          "search_query": "DOJ settlement agreement fine amount blank court document",
+          "composition": {
+            "bg": {
+              "search_query": "legal settlement document close-up fine line",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "graphic_indicators",
+          "sync_points": []
+        },
+        {
+          "segment_index": 61,
+          "text": "Chris Vialpondo is a renter in Seattle's Lower Queen Anne neighborhood. In 2022, he opened a notice from his property manager and learned his rent had increased by fifty percent. [BEAT] Same apartment. Same neighborhood. Same job. He was already working two jobs to make rent. [BEAT] Fifty percent more.",
+          "duration_sec": 53.1,
+          "show": "Open on Seattle skyline / Lower Queen Anne neighborhood. Cut to a rent increase notice letter (recreation or stylized doc). Cut to apartment building exterior \u2014 ordinary, working-class. Cut to man working at a desk late at night, two job notices on screen. Cut to close-up of the number '50%' on the notice. [NOTE: 53s \u2014 requires 7\u20139 visual cuts in edit at 5\u20137s each]",
+          "search_query": "Seattle Lower Queen Anne neighborhood apartment buildings street",
+          "composition": {
+            "bg": {
+              "search_query": "Seattle Queen Anne neighborhood apartment exterior 2022",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "rent increase notice letter document close-up",
+              "type": "document"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "location",
+          "attention_guide": "scale_position",
+          "sync_points": [
+            {
+              "word": "Chris Vialpondo",
+              "type": "person_id"
+            },
+            {
+              "word": "Lower Queen Anne",
+              "type": "location"
+            },
+            {
+              "word": "fifty percent",
+              "type": "stat_caption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 8,
+      "title": "The Algorithm",
+      "segments": [
+        {
+          "segment_index": 62,
+          "text": "[VOICE:tense] RealPage. [BEAT] A company that takes confidential pricing data from competing landlords \u2014 data that competitors are not legally supposed to share \u2014 and feeds it into an algorithm that recommends rent prices across more than thirteen million apartments. Ninety percent of landlords follow it.",
+          "duration_sec": 40.4,
+          "show": "Open on RealPage corporate logo on a glass office building. Cut to data flowing between nodes \u2014 a network visualization of landlords feeding data in. Cut to an algorithm price-setting dashboard UI (motion graphic). Cut to a heat map of the US with 13 million dots lighting up apartment units. [NOTE: 40s \u2014 requires 5\u20136 visual cuts]",
+          "search_query": "RealPage software company office building corporate headquarters",
+          "composition": {
+            "bg": {
+              "search_query": "corporate software company glass office building exterior",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "data network nodes algorithm visualization motion graphic",
+              "type": "abstract"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "RealPage",
+              "type": "entity_label"
+            },
+            {
+              "word": "thirteen million apartments",
+              "type": "stat_caption"
+            },
+            {
+              "word": "Ninety percent",
+              "type": "stat_caption"
+            }
+          ]
+        },
+        {
+          "segment_index": 63,
+          "text": "Chris spoke publicly at the Washington state attorney general's press conference. He said: \"The most painful and revolting part about all of it is that all of the money I spent unnecessarily is now in the pockets of those who need it the least.\"",
+          "duration_sec": 18.9,
+          "show": "Washington state attorney general's office press conference podium. Cut to close-up of a microphone with a man at a podium \u2014 ordinary person speaking into official mics. Hold on the quote appearing as typewriter text overlay against a dark frame.",
+          "search_query": "Washington state attorney general press conference podium microphone 2024",
+          "composition": {
+            "bg": {
+              "search_query": "government press conference podium microphone official",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "static",
+          "focal_point": "face",
+          "attention_guide": "glow_effect",
+          "sync_points": [
+            {
+              "word": "Chris",
+              "type": "person_id"
+            },
+            {
+              "word": "The most painful and revolting part",
+              "type": "quote"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 9,
+      "title": "The Settlement That Wasn't",
+      "segments": [
+        {
+          "segment_index": 64,
+          "text": "[VOICE:measured] The DOJ sued and announced a settlement in November 2025. RealPage has to modify its software. Landlords have to be allowed to set prices below the algorithm's floor. [BEAT] No fine. No compensation to renters. No admission of guilt.",
+          "duration_sec": 16.8,
+          "show": "DOJ seal / Department of Justice building exterior. Cut to settlement document front page \u2014 zoom into the terms section. Cut to a three-item list on screen (motion graphic): 'NO FINE / NO COMPENSATION / NO ADMISSION' \u2014 each appearing in sequence, in red, like line items being crossed off.",
+          "search_query": "Department of Justice building Washington DC exterior seal",
+          "composition": {
+            "bg": {
+              "search_query": "Department of Justice building Washington DC",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "legal settlement document terms section DOJ antitrust",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "November 2025",
+              "type": "date"
+            },
+            {
+              "word": "No fine",
+              "type": "stat_caption"
+            },
+            {
+              "word": "No compensation to renters",
+              "type": "stat_caption"
+            },
+            {
+              "word": "No admission of guilt",
+              "type": "stat_caption"
+            }
+          ]
+        },
+        {
+          "segment_index": 65,
+          "text": "[VOICE:neutral] To be clear: a company was found to have coordinated rent prices for millions of apartments, and the settlement was essentially \"please update your software.\" [BEAT] If you got caught fixing prices at a farmers' market, you'd face harsher consequences. Eight hundred thousand leases impacted.",
+          "duration_sec": 22.4,
+          "show": "Split visual: left side \u2014 a corporate tech dashboard (RealPage-style UI). Right side \u2014 a farmers' market stall with handwritten price signs. Cut to close-up of lease document with 800,000 highlighted in bold. The contrast should feel absurd.",
+          "search_query": "farmers market price stall handwritten signs small vendor",
+          "composition": {
+            "bg": {
+              "search_query": "farmers market outdoor vendor stall price tags",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "software dashboard rental pricing interface corporate",
+              "type": "abstract"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "center",
+          "attention_guide": "graphic_indicators",
+          "sync_points": [
+            {
+              "word": "please update your software",
+              "type": "quote"
+            },
+            {
+              "word": "Eight hundred thousand",
+              "type": "stat_caption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "title": "The Counterattack",
+      "segments": [
+        {
+          "segment_index": 66,
+          "text": "[VOICE:tense] And after getting caught fixing rent for millions of people, RealPage's first move was to sue the state of New York for passing a law that banned algorithmic rent-setting.",
+          "duration_sec": 12.4,
+          "show": "New York State Capitol building exterior \u2014 imposing, wide shot. Cut to a legal filing document: 'RealPage v. State of New York' \u2014 zoom slowly into the case name. Color grade shifts colder.",
+          "search_query": "New York State Capitol Albany building exterior government",
+          "composition": {
+            "bg": {
+              "search_query": "New York State Capitol Albany building exterior",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "federal court filing document lawsuit cover page",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "New York",
+              "type": "location"
+            },
+            {
+              "word": "RealPage",
+              "type": "entity_label"
+            }
+          ]
+        },
+        {
+          "segment_index": 67,
+          "text": "[BEAT] And then RealPage did something that tells you everything about how the formula works when it's fully internalized. New York State passed a law banning algorithmic rent-setting \u2014 the first state to say, explicitly, that this practice is illegal. RealPage's response was not to comply. Not to modify. They sued.",
+          "duration_sec": 36.6,
+          "show": "Open on New York state legislature floor session \u2014 wide shot, official proceeding. Cut to headline: 'New York bans algorithmic rent pricing' \u2014 news screenshot. Cut to RealPage logo again, this time on a dark background with red tinge. Cut to the lawsuit filing document \u2014 slow zoom, focus on the word 'COMPLAINT'. End on tight zoom of the word 'sued' appearing as caption. [NOTE: 36s \u2014 5 visual cuts minimum]",
+          "search_query": "New York state legislature assembly floor session vote",
+          "composition": {
+            "bg": {
+              "search_query": "New York state legislature assembly chamber floor official",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "algorithmic rent ban law headline newspaper",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "New York State",
+              "type": "location"
+            },
+            {
+              "word": "first state",
+              "type": "stat_caption"
+            },
+            {
+              "word": "They sued",
+              "type": "quote"
+            }
+          ]
+        },
+        {
+          "segment_index": 68,
+          "text": "[PAUSE:1.5] That's not a company that got caught and feels chastened. [BEAT] That's a company that did the math and concluded \u2014 correctly, so far \u2014 that the system will let them continue.",
+          "duration_sec": 15.3,
+          "show": "Hold on a dark, near-black frame with a single cold light source \u2014 boardroom atmosphere. Cut to a close-up of a printed spreadsheet or financial model \u2014 columns of numbers. Slow, deliberate zoom into the center of the page. No faces. The math is the character.",
+          "search_query": "corporate financial model spreadsheet numbers profit calculation close-up",
+          "composition": {
+            "bg": {
+              "search_query": "corporate boardroom dark interior cold light",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "financial spreadsheet profit calculation printed document",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "did the math",
+              "type": "quote"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 11,
+      "title": "The Formula Doesn't Care",
+      "segments": [
+        {
+          "segment_index": 69,
+          "text": "Richard Grimshaw lost his fingers, his ear, and his childhood because Ford decided a hundred and thirty-seven million was too expensive. [BEAT] Chris Vialpondo works two jobs because an algorithm decided fifty percent more was the right number. [BEAT] The formula doesn't care whether it's a car or a contract.",
+          "duration_sec": 23.7,
+          "show": "Split-screen or rapid intercut: left \u2014 black-and-white archival Pinto fire image; right \u2014 Seattle apartment building. Cut to close-up of burned hands / injury (archival, respectful). Cut to a rent invoice with '50%' circled in red. End on a wide shot of an empty highway at night \u2014 the formula as infrastructure, indifferent.",
+          "search_query": "Ford Pinto fire crash archival 1970s news photograph",
+          "composition": {
+            "bg": {
+              "search_query": "Ford Pinto fire crash aftermath 1970s archival news photo",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": "Seattle apartment rental notice document 2022",
+              "type": "document"
+            }
+          },
+          "content_type": "archival_footage",
+          "shot_type": "zoom_out",
+          "focal_point": "document",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "Richard Grimshaw",
+              "type": "person_id"
+            },
+            {
+              "word": "Chris Vialpondo",
+              "type": "person_id"
+            },
+            {
+              "word": "hundred and thirty-seven million",
+              "type": "stat_caption"
+            },
+            {
+              "word": "fifty percent",
+              "type": "stat_caption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "title": "THE RECKONING \u2014 Chapter Transition + Europe",
+      "segments": [
+        {
+          "segment_index": 70,
+          "text": "[PAUSE:2.0] And sometimes, the price is zero. [PAUSE:2.5] [CHAPTER: THE RECKONING] [VOICE:tense] Europe figured this out. [BEAT] Four percent of global revenue. Proportional. Automatic. No ceiling. [PAUSE:1.0] When the fine scales with the company, the formula breaks. Facebook shrugged off a five-billion-dollar fine. Under GDPR, the same behavior costs Meta twelve billion \u2014 and it hurt.",
+          "duration_sec": 45.8,
+          "show": "CHAPTER TRANSITION SEQUENCE: (1) Hold on the '$0' caption, 2s silence. (2) Fade to black. (3) White serif typewriter text on black: 'THE RECKONING'. (4) Fade in: European Parliament Strasbourg exterior \u2014 wide, imposing, dawn light. Cut to GDPR regulation document. Cut to EU Commission press conference / Margrethe Vestager. Cut to Meta stock price chart dropping on a screen. Cut to headline: 'Meta hit with \u20ac1.2 billion GDPR fine'. [NOTE: 45s \u2014 7+ cuts after chapter card]",
+          "search_query": "European Parliament Strasbourg building exterior architecture",
+          "composition": {
+            "bg": {
+              "search_query": "European Parliament Strasbourg exterior architecture dawn",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "GDPR General Data Protection Regulation document official EU",
+              "type": "document"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "location",
+          "attention_guide": "animate_important_area",
+          "sync_points": [
+            {
+              "word": "THE RECKONING",
+              "type": "chapter_card"
+            },
+            {
+              "word": "Four percent of global revenue",
+              "type": "stat_caption"
+            },
+            {
+              "word": "GDPR",
+              "type": "entity_label"
+            },
+            {
+              "word": "twelve billion",
+              "type": "stat_caption"
+            }
+          ]
+        },
+        {
+          "segment_index": 71,
+          "text": "And the answer is the same math that runs everything else in this video. [BEAT] The companies that benefit from the formula fund the campaigns, staff the advisory boards, draft the legislation. The fine stays small because the people who pay it set the ceiling.",
+          "duration_sec": 19.4,
+          "show": "US Capitol building \u2014 wide, exterior. Cut to a lobbying disclosure form (public document) \u2014 slow zoom into dollar amounts. Cut to corporate executives seated around a government advisory board table. End on tight zoom on the phrase 'the people who pay it set the ceiling' \u2014 caption hold.",
+          "search_query": "US Capitol building exterior Washington DC lobbying",
+          "composition": {
+            "bg": {
+              "search_query": "US Capitol building exterior dome Washington DC",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "lobbying disclosure financial report corporate political donation",
+              "type": "document"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "graphic_indicators",
+          "sync_points": [
+            {
+              "word": "fund the campaigns",
+              "type": "stat_caption"
+            },
+            {
+              "word": "set the ceiling",
+              "type": "quote"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "title": "The Math With a Face",
+      "segments": [
+        {
+          "segment_index": 72,
+          "text": "[PAUSE:2.0] [VOICE:tense] Let me show you what the math looks like when you put a face on it.",
+          "duration_sec": 8.9,
+          "show": "Black frame, silence for 2s. Then: a slow fade-in on a blurred human silhouette. The face comes into focus \u2014 not anyone specific, but a symbol. A single harsh light source. Hold. No cuts. This is anticipation.",
+          "search_query": "human silhouette dramatic backlight shadow portrait anonymous",
+          "composition": {
+            "bg": {
+              "search_query": "dark dramatic portrait backlit silhouette human figure",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "static",
+          "focal_point": "face",
+          "attention_guide": "glow_effect",
+          "sync_points": [
+            {
+              "word": "put a face on it",
+              "type": "quote"
+            }
+          ]
+        },
+        {
+          "segment_index": 73,
+          "text": "Richard Grimshaw survived the Pinto fire. He grew up carrying scars that covered his body and a verdict that was supposed to change things \u2014 one hundred and twenty-five million dollars, reduced to three point five million. [PAUSE:1.0] The message was: we've done the math, and your pain has a price.",
+          "duration_sec": 25.5,
+          "show": "Richard Grimshaw archival photo or courtroom sketch \u2014 close-up, respectful. Cut to the original Grimshaw v. Ford jury verdict document \u2014 zoom into the '$125 million' amount. Cut to the judge's reduced verdict \u2014 '$3.5 million' in cold type. End on Grimshaw's face if available, or hands. The reduction is the story.",
+          "search_query": "Grimshaw v Ford Motor Company 1978 court verdict documents California",
+          "composition": {
+            "bg": {
+              "search_query": "1978 California court verdict document Grimshaw Ford Pinto fire settlement",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": "burn survivor scar recovery close-up archival photo",
+              "type": "person"
+            }
+          },
+          "content_type": "archival_footage",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "darken_blur_surrounds",
+          "sync_points": [
+            {
+              "word": "Richard Grimshaw",
+              "type": "person_id"
+            },
+            {
+              "word": "one hundred and twenty-five million dollars",
+              "type": "stat_caption"
+            },
+            {
+              "word": "three point five million",
+              "type": "stat_caption"
+            },
+            {
+              "word": "your pain has a price",
+              "type": "quote"
+            }
+          ]
+        },
+        {
+          "segment_index": 74,
+          "text": "Yesenia Guitron called the ethics hotline and was fired for it. She never worked in banking again. [BEAT] Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars.",
+          "duration_sec": 12.5,
+          "show": "A phone \u2014 an old desk phone or corporate hotline unit \u2014 in an empty office. Slow zoom in. Cut to a termination letter document, close-up on the signature line. Cut to Wells Fargo corporate headquarters exterior. End on a motion graphic: two lines \u2014 'Yesenia Guitron: fired' and 'Carrie Tolstedt: $57 million' \u2014 appearing in sequence, white on black, no decoration needed.",
+          "search_query": "corporate office ethics hotline phone desk empty office",
+          "composition": {
+            "bg": {
+              "search_query": "empty corporate office desk phone termination letter document",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "Wells Fargo bank building exterior corporate headquarters",
+              "type": "location"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "color_shift",
+          "sync_points": [
+            {
+              "word": "Yesenia Guitron",
+              "type": "person_id"
+            },
+            {
+              "word": "never worked in banking again",
+              "type": "quote"
+            },
+            {
+              "word": "Carrie Tolstedt",
+              "type": "person_id"
+            },
+            {
+              "word": "fifty-seven million dollars",
+              "type": "stat_caption"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

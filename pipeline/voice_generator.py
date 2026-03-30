@@ -70,9 +70,9 @@ WPM_STRETCH_MAX = 2.0   # ffmpeg atempo max
 # Each register's reference clip has a different natural speaking rate.
 # These multipliers normalize all registers to ~139 WPM.
 REGISTER_SPEED = {
-    "neutral":   1.16,
-    "tense":     1.15,
-    "energized": 1.10,
+    "neutral":   0.75,
+    "tense":     0.78,
+    "energized": 0.80,
 }
 
 
@@ -528,6 +528,26 @@ def generate_narration(
 
             chunk_wav = tmp_dir / f'seg_{speech_idx:04d}.wav'
             print(f"  [{speech_idx}/{speech_count}] [{reg}] {word_count}w: {seg.text[:55]}…")
+
+            # Resume support: skip if chunk already exists
+            if chunk_wav.exists() and chunk_wav.stat().st_size > 1000:
+                print(f"  [SKIP] {chunk_wav.name} already exists ({chunk_wav.stat().st_size} bytes)")
+                dur = _get_wav_duration(chunk_wav)
+                manifest["segments"].append({
+                    "type": "speech",
+                    "index": speech_idx,
+                    "start_sec": round(cursor, 3),
+                    "duration_sec": round(dur, 3),
+                    "end_sec": round(cursor + dur, 3),
+                    "word_count": word_count,
+                    "voice_register": reg,
+                    "pause_before_sec": round(pending_pause_dur, 3),
+                    "text": seg.text,
+                })
+                pending_pause_dur = 0.0
+                wav_parts.append(chunk_wav)
+                cursor += dur
+                continue
 
             try:
                 reg_speed = REGISTER_SPEED.get(reg, 1.15)

@@ -1,0 +1,153 @@
+On March 27th, 2026 — two days ago — a company called RealPage settled a federal lawsuit with the Department of Justice. The charge was extraordinary. The DOJ proved that RealPage built an algorithm that coordinated rent prices across more than ten million apartments in the United States. Not suggested prices. Coordinated them. Their software took confidential data from competing landlords — data that those landlords are legally forbidden from sharing with each other — and used it to tell every one of them how much to charge. Ninety percent of landlords followed the algorithm's recommendations. Rents went up. Across the country. In lockstep. For years.
+
+The settlement? Zero dollars.
+
+No financial penalty. No admission of guilt. No compensation for renters. The company that was caught fixing rent for ten million apartments — a company that generates one point six billion dollars in annual revenue, owned by a private equity firm that bought it for ten point two billion — walked away without paying a single cent. They agreed to stop using nonpublic data. They accepted a court-appointed monitor. And that was it.
+
+RealPage is still operating today. The algorithm is still running. And your rent is still high.
+
+And here's what scares me. This problem isn't getting better. Every decade, as technology makes it easier to break the law at scale — and harder for regulators to keep up — the gap between the crime and the punishment gets wider. What started with paper fraud in the nineties became algorithmic rent-fixing in the twenties. And now, with artificial intelligence, we've reached a version of this that might be impossible to reverse. Companies are stealing the entire internet to train their models, and by the time the lawsuits land, the models are already built. The data can't be extracted. The crime can't be undone. The fine becomes the purchase price for what they stole.
+
+But I'm getting ahead of myself. Let me show you how we got here.
+
+You might hear this and think RealPage is an exception. It's not. It's the rule. For the biggest companies in the world, breaking the law isn't a risk — it's a line item. A cost they budget for. A rational business decision they make every single quarter.
+
+Since the year 2000, American corporations have paid over one trillion dollars in fines, penalties, and settlements. One trillion. Here's a number that puts that in perspective. One hundred and twenty-seven companies have each paid more than one billion dollars in penalties during that period. Not once. Repeatedly. And here's the part that should make you angry: those repeat offenders — the companies that get caught again and again — they receive smaller fines as a percentage of their revenue than first-time offenders. The system literally rewards recidivism. The more you break the law, the less you pay.
+
+The calculation is simple: Will the fine be less than the profit? If yes, proceed. Every Fortune 500 company has run this math, even if they won't say it out loud. I'm going to show you exactly how it works. Six companies. Six violations. Six moments where someone in a corner office decided that breaking the law was the rational choice. And then I'm going to show you why the newest version of this — happening right now, in the age of artificial intelligence — might be the most dangerous yet.
+
+This is why breaking the law is profitable.
+
+Let's start with the case that made the stock market cheer.
+
+In July 2019, the Federal Trade Commission announced the largest privacy penalty in history. Facebook — now Meta — had been caught violating a 2012 consent decree. The consent decree was itself a punishment. Facebook had already been caught deceiving users about their privacy, had already promised the government they would stop, and had already signed a legally binding agreement to protect user data. They broke that agreement. Not subtly. Not accidentally. They broke it because Cambridge Analytica came along and Facebook realized that sharing user data with third parties was enormously profitable.
+
+The fine was five billion dollars.
+
+Five billion dollars. Say it slowly. It's a number that's supposed to make you feel like justice was served. The FTC called it historic. Record-breaking. A message to every company in America. And if you stop there, at the headline, you'd believe them.
+
+But here's what happened next. On the same day the fine was announced, Facebook's stock price went up. Not down. Up. Investors didn't see a punishment — they saw certainty. The fine was nine percent of one year's revenue. That's it. Nine percent. To put that in perspective: if you make a hundred thousand dollars a year and you get a nine-thousand-dollar fine for breaking the law, would that stop you from doing it again? Especially if what you did made you billions?
+
+The market understood something the FTC didn't. Facebook could afford to break the law every single year and pay this fine every single year and still be one of the most profitable companies on earth. The five-billion-dollar fine wasn't a deterrent. It was a pricing signal. It told every company in America exactly how much it costs to violate your users' privacy. And that cost, as it turns out, is extremely reasonable.
+
+Facebook's message to the market was clear: we broke the law, we paid the toll, we're fine. Literally.
+
+But Meta at least paid something. Let's talk about what happens when three hundred and forty-six people die.
+
+On October 29th, 2018, Lion Air Flight 610 crashed into the Java Sea thirteen minutes after takeoff. All one hundred and eighty-nine people on board were killed. Five months later, Ethiopian Airlines Flight 302 crashed six minutes after takeoff. One hundred and fifty-seven dead. Same plane. Same software flaw. A system called MCAS that pushed the nose down based on a single faulty sensor.
+
+But here's why this is a calculation story, not an accident story. Boeing's engineers flagged the MCAS problem before the plane was certified. Internal messages show employees writing: "This airplane is designed by clowns, who in turn are supervised by monkeys." They knew. But fixing the software properly would have required re-certification — estimated cost: five hundred million to one billion dollars. So Boeing hid the flaw from the FAA. They shipped the plane. And then one hundred and eighty-nine people died. And then — because the fix still hadn't been made — one hundred and fifty-seven more.
+
+The DOJ settlement came in January 2021. Two and a half billion dollars. But look at where the money went: two hundred and forty-three million in criminal penalties, one point seven seven billion to airline customers — not the victims' families, the airlines — and five hundred million for a victim fund. No executive went to prison.
+
+Now let's do the math Boeing already did. Their annual revenue, even in a pandemic year, was fifty-eight point two billion dollars. That's a hundred and fifty-nine million per day. The settlement for three hundred and forty-six deaths? Sixteen days of revenue. The fix that would have saved those lives? Less than the settlement they ended up paying. They didn't just choose to break the law — they chose the more expensive option because it let them ship faster.
+
+And then the DOJ found that Boeing violated the terms of that settlement. They broke the agreement about how they broke the law that killed three hundred and forty-six people. Boeing is still one of only two companies in the world that build commercial aircraft. They're still getting government contracts. The stock recovered.
+
+The next one is personal. Because it happened to millions of people who trusted their bank.
+
+Between 2002 and 2016, Wells Fargo employees created approximately three point five million unauthorized accounts. They signed customers up for credit cards they never applied for. They opened checking accounts in people's names without permission. They generated fake email addresses to enroll customers in online banking without their knowledge. And they did all of this because Wells Fargo's corporate culture demanded cross-selling — employees had quotas to meet, and the pressure to hit those quotas was so intense that the only way to survive was to cheat.
+
+Five thousand three hundred employees were fired for doing what management incentivized them to do. The CEO? He retired. With his full benefits.
+
+The total fines? Approximately three billion dollars. Wells Fargo's annual revenue at the time? Roughly eighty billion dollars. Three billion divided by eighty billion. That's three point eight percent. Two weeks of revenue for the privilege of defrauding three point five million customers over fourteen years.
+
+Do you want to know what the real cost of compliance would have been? The Ponemon Institute published a study showing that the average cost of regulatory compliance for a financial institution is five point four seven million dollars per year. The average cost of non-compliance — when you get caught — is fourteen point eight million. It's cheaper to comply. But that's the average company. For a company the size of Wells Fargo, the compliance cost is higher, but the profit from non-compliance is astronomically higher. They ran the numbers. They made their choice.
+
+Now I need to take you back in time. Because this isn't new. The calculation I'm describing — the one where a company weighs human lives against dollars and chooses the dollars — it has a origin story. And it's been documented since 1977.
+
+The Ford Pinto was a compact car with a design flaw that Ford's engineers identified before it ever went to market. The fuel tank was positioned in a way that made it vulnerable to rupture in rear-end collisions. When ruptured, the car caught fire. People burned to death inside their vehicles.
+
+Ford knew about this. And Ford did something that would later become infamous in every business ethics class in every MBA program in the world. They wrote a memo. The memo calculated the cost of fixing the design flaw across every Pinto on the road: one hundred and thirty-seven million dollars. Then it calculated the expected cost of wrongful death lawsuits, burn injuries, and vehicle damage from the fires: forty-nine point five million dollars.
+
+One hundred and thirty-seven million to fix it. Forty-nine million to let people die. The memo recommended against the fix.
+
+This is not conspiracy theory. This is a document that was presented in court. Ford's internal cost-benefit analysis explicitly valued a human life at two hundred thousand dollars — a figure they got from the National Highway Traffic Safety Administration's own guidelines at the time. They used the government's own number to justify letting their customers burn.
+
+And here's what happened. Ford paid. Lawsuits came. People died. The Pinto was eventually recalled. But Ford was never meaningfully punished. The criminal trial in Indiana — yes, a corporation was actually put on trial for reckless homicide, one of the only times in American history — ended in acquittal. Ford paid civil settlements that were, collectively, a fraction of what the fix would have cost.
+
+The lesson that corporate America took from the Ford Pinto was not "don't let people die." The lesson was "run the numbers first." And every company on this list has been running those numbers ever since.
+
+Now let me tell you about the Sackler family. Because their story breaks the pattern in the worst possible way.
+
+Purdue Pharma, the company they controlled, aggressively marketed OxyContin knowing it was highly addictive. Internal documents show they knew the drug was being abused. They knew people were dying. They funded campaigns to change how doctors thought about pain. They pushed doctors to prescribe higher doses. And they made billions.
+
+More than six hundred thousand Americans have died from opioid overdoses since the crisis began. Six hundred thousand. That's more than the population of Baltimore.
+
+In 2025, the Sackler family agreed to pay seven point four billion dollars in a settlement with every state in the union. Seven point four billion sounds like a lot. But the Sackler family's estimated personal wealth — the money they pulled out of Purdue before it went bankrupt — is estimated at eleven to thirteen billion dollars. They're paying a portion of their fortune while keeping the rest. No Sackler went to prison. No Sackler was criminally charged. They filed for bankruptcy through the company, shielded themselves through corporate structure, and emerged with billions in personal wealth intact.
+
+Here's the calculation, stripped of all sentiment: the Sacklers earned roughly thirty-five billion dollars from OxyContin over its lifetime. They're paying back seven point four billion. That's a seventy-nine percent profit margin. On a product that killed six hundred thousand people.
+
+If that's justice, what does injustice look like?
+
+There's a pattern here, and I want to make sure you see it clearly. Because the numbers tell a story that the headlines don't.
+
+RealPage: one point six billion in annual revenue. Penalty: zero dollars. Zero percent.
+Meta: fifty-five point eight billion in revenue. Penalty: five billion. Nine percent.
+Boeing: fifty-eight point two billion in revenue. Penalty: two point five billion. Four point three percent.
+Wells Fargo: eighty billion in revenue. Penalty: three billion. Three point eight percent.
+Purdue Pharma: thirty-five billion lifetime revenue from OxyContin. Settlement: seven point four billion. Twenty-one percent — the highest on this list, and it took six hundred thousand deaths and a coalition of fifty states to get there.
+
+The pattern is undeniable. The bigger the company, the smaller the fine as a percentage of revenue. And across the board, the fine is always — always — less than the profit from the violation. The law doesn't prevent corporate crime. It prices it.
+
+And this brings us to what I think is the most important chapter of this story. Because everything I've just told you — Meta, Boeing, Wells Fargo, Purdue, RealPage — those are cases where the violation already happened, the damage was already done, and the fine was assessed after the fact. But what if I told you there's an entire industry right now, today, in 2026, that is breaking the law on an industrial scale, openly, knowingly, and deliberately — because they've already done the math?
+
+I'm talking about artificial intelligence. And the calculation has never been more explicit.
+
+Right now, as of March 2026, there are ninety active copyright lawsuits against AI companies. Ninety. OpenAI, Anthropic, Google, Meta, Stability AI, Midjourney, Perplexity — every major AI company is being sued for the same fundamental act: they scraped the entire internet without permission, ingested billions of copyrighted works — books, articles, images, music, code — and used all of it to train the models that they now sell for billions of dollars.
+
+And here's what makes this different from every other case I've told you about. In every previous example, the violation was in the past. The company did something wrong, got caught, and paid a fraction of their profits. With AI, the violation is the product. The scraped data is baked into the model. You can't un-train GPT. You can't extract the New York Times from Claude. The training data is inseparable from the product. Which means even if every AI company loses every lawsuit, they keep the models. The fine becomes the purchase price for the data they stole.
+
+Let me show you how explicit the math is.
+
+In September 2025, Anthropic — the company that makes Claude — settled a class action for one point five billion dollars. Authors proved that Anthropic downloaded millions of pirated books from shadow libraries to train their AI. The settlement was the largest AI copyright recovery in history. Sounds like accountability. But Anthropic's valuation at the time was over sixty billion dollars. The settlement was two point five percent of the company's value. The model trained on those pirated books? Still running. Every conversation with Claude draws on that training data.
+
+And then, in January 2026, Universal Music, Concord Music, and ABKCO filed another lawsuit against Anthropic. This one for three point one billion dollars. The accusation: that Claude was built on a foundation of torrented piracy. The lawsuits are stacking up. But the model keeps running. And Anthropic keeps raising money.
+
+OpenAI's situation is even more brazen. The New York Times sued for billions, alleging OpenAI ingested millions of their copyrighted articles. In January 2026, a federal judge ordered OpenAI to hand over twenty million anonymized ChatGPT logs as part of discovery. Twenty million conversations. This is the largest discovery order in AI history. And while the legal process grinds on — a process that could take years — OpenAI raised another six point six billion dollars in funding. Their valuation hit a hundred and fifty-seven billion. The lawsuits aren't slowing them down. They're background noise.
+
+And then there's Perplexity. Reddit caught them red-handed. Here's how. Reddit created a post that was indexable by Google's search engine but otherwise invisible — a trap. Within hours, Perplexity's AI surfaced material from that post. Caught. But here's the stunning part: after Reddit sent Perplexity a cease-and-desist letter in May 2024, Perplexity's citations to Reddit increased forty-fold. They didn't stop scraping after being told to stop. They scraped more. Because they did the math. The data is worth more than any fine.
+
+This is the new playbook. Scrape now. Ingested the world's knowledge. Train the model. Make it indispensable. And when the lawsuits come — and they always come — settle for a fraction of the value you've created. The model can't be untrained. The data can't be extracted. The product exists. The fine is just the price of the raw material you took without asking.
+
+It's the Meta playbook, the Boeing playbook, the Wells Fargo playbook — but faster, bigger, and more deliberate than ever. Because AI companies aren't even pretending anymore. They know the math works. They've watched every other industry prove it.
+
+And it's about to get worse. Because the next generation of AI models — the ones being trained right now, in 2026 — are being trained on you. Not on books from shadow libraries or articles from the New York Times. On your conversations with chatbots. Your emails scanned by AI assistants. Your photos processed by AI editors. Your voice cloned by AI tools you signed up for without reading the terms of service.
+
+The data these companies are collecting right now is more personal, more intimate, and more valuable than anything that came before. And when the lawsuits come — and they will come — the models will already be trained. The data will already be ingested. The products will already be on the market. And the settlement will be a fraction of the profits. Just like every time before.
+
+This is what "move fast and break things" always meant. It never meant break software. It meant break the law. Ship the product. Apologize later. Pay the fine. Keep the money.
+
+So. One trillion dollars in corporate fines since 2000. One hundred and twenty-seven companies that have each paid over a billion dollars and are still operating. Repeat offenders who pay smaller fines, not larger ones. And now, an entirely new industry — perhaps the most transformative technology since the internet — built on the explicit calculation that the penalty will always be less than the profit.
+
+There's a comment that went viral under a video about this phenomenon. It got five hundred likes in a few hours, and it said something that I think captures this entire system in a single sentence: "Business 101: If the penalty is a fine, it's legal for a price."
+
+That's not cynicism. That's the operating system of modern capitalism. And every company on this list is running it.
+
+But here's what I think is the most dangerous part of all of this. Not the fines. Not the deaths. Not the stolen data. It's that the system is getting better at being broken. The fines are getting more sophisticated — not bigger relative to the crimes, but more precisely calibrated to be just painful enough that the public thinks justice was served, and just small enough that the company's business model is never actually threatened. A five-billion-dollar fine sounds like a lot until you learn it's nine percent of one year's revenue. A two-and-a-half-billion-dollar settlement sounds serious until you learn it's sixteen days. A seven-point-four-billion-dollar opioid settlement sounds historic until you learn the family kept most of their fortune.
+
+The fines aren't failing. They're performing exactly as designed. They create the appearance of accountability without the substance. They allow politicians to hold press conferences. They allow regulators to write "record-breaking" in their press releases. And they allow companies to write a check and move on.
+
+But it doesn't have to be this way.
+
+Some of the smartest legal minds in the country have proposed solutions. Fines proportional to revenue, not fixed dollar amounts — the European Union already does this under GDPR, where penalties can reach four percent of global annual revenue. Criminal liability for executives — not just the company pays, but the people who made the decision face personal consequences. Disgorgement of profits — you don't just pay a fine, you give back every dollar you earned from the violation. And structural remedies — forced breakups, consent decrees with teeth, industry bans for repeat offenders.
+
+None of this is radical. It's just math. If the penalty exceeds the profit, the calculation changes. If executives face prison, the decision changes. If the fine is four percent of global revenue every year until compliance, instead of a one-time payment negotiated down over five years, the incentive changes.
+
+But until that happens — until the math changes — every company in the world will keep doing exactly what RealPage did, what Meta did, what Boeing did, what the Sacklers did, what every AI company is doing right now. They'll break the law. They'll make their money. And they'll pay the fine.
+
+Because right now, breaking the law is profitable. And until it isn't, nothing changes.
+
+I want to credit the journalists and researchers who made this video possible. ProPublica broke the RealPage rent algorithm story in 2022. Good Jobs First maintains the database that tracks the trillion dollars in corporate penalties. The Copyright Alliance tracks every AI lawsuit. These are links in the description — go read their original reporting.
+
+And I want to leave you with one final thought. The Ford Pinto memo was written in 1977. That was forty-nine years ago. In forty-nine years, the practice it invented has not been eliminated. It has been perfected. The spreadsheets got more sophisticated. The lawyers got more expensive. The settlements got more precisely calibrated. But the fundamental calculation — will the fine be less than the profit? — has never changed.
+
+The only thing that changes it is math. Not outrage. Not articles. Not videos. Math. When the penalty exceeds the profit, companies will stop. Not because they become moral. Because they become rational in a different direction.
+
+The EU figured this out. GDPR fines are four percent of global annual revenue. Not four percent of the subsidiary. Not four percent of last quarter. Four percent of everything. Meta's entire business model had to change in Europe. The math changed, and the behavior followed.
+
+We know what works. The question has never been "how do we fix this?" The question is "why haven't we?"
+
+And I think you already know the answer to that one too.
+
+Now you know the math. The question is: what are you going to do with it?

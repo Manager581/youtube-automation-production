@@ -1,7 +1,20 @@
 {
-  "stage": "topic",
-  "topic": "Frank Olson CIA scientist LSD murder cover-up",
-  "slug": "frank_olson_cia_scientist_lsd_murder_cover_up",
-  "completed": [],
-  "paths": {}
+    "stage": "storyboard",
+    "topic": "Why Breaking the Law Is Profitable",
+    "slug": "breaking_law_profitable",
+    "completed": ["topic", "comments", "research", "validate", "script", "enhance", "qa_script", "voice", "qa_voice", "music"],
+    "config": {
+        "script_path": "scripts/enhanced_breaking_law_v45.txt",
+        "narration_path": "audio/breaking_law/narration.wav",
+        "music_path": "assets/music/breaking_law_track.mp3",
+        "storyboard_path": "storyboards/breaking_law_storyboard.json",
+        "footage_dir": "footage/breaking_law/clips/",
+        "image_dir": "footage/breaking_law/images/",
+        "transcript_path": "footage/breaking_law/transcripts.json"
+    },
+    "paths": {
+        "script": "scripts/enhanced_breaking_law_v45.txt",
+        "narration": "audio/breaking_law/narration.wav",
+        "music": "assets/music/breaking_law_track.mp3"
+    }
 }

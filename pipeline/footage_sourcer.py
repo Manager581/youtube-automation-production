@@ -397,11 +397,16 @@ def source_wikimedia_for_story(query: str, entities: dict,
 # ── Storyboard integration ───────────────────────────────────────────────────
 
 def load_storyboard(storyboard_path: str) -> list:
-    """Load storyboard JSON and return list of segment dicts."""
+    """Load storyboard JSON and return list of segment dicts.
+    Handles both v1 (flat list) and v2 (dict with scenes) formats."""
     path = Path(storyboard_path)
     if not path.exists():
         raise FileNotFoundError(f"Storyboard not found: {path}")
-    return json.loads(path.read_text())
+    data = json.loads(path.read_text())
+    # v2 format: dict with 'scenes' key containing nested segments
+    if isinstance(data, dict) and "scenes" in data:
+        return data["scenes"]
+    return data
 
 
 def _group_storyboard_by_query(storyboard: list) -> dict:
@@ -415,7 +420,15 @@ def _group_storyboard_by_query(storyboard: list) -> dict:
     This ensures composite segments get multiple images sourced.
     """
     groups: dict[str, list] = {}
-    for i, seg in enumerate(storyboard):
+    # Flatten nested scenes if storyboard is v2 format
+    flat_segments = []
+    for item in storyboard:
+        if isinstance(item, dict) and "segments" in item:
+            # v2 scene wrapper — extract inner segments
+            flat_segments.extend(item["segments"])
+        elif isinstance(item, dict):
+            flat_segments.append(item)
+    for i, seg in enumerate(flat_segments):
         if seg.get("shot_type") == "chapter_card":
             continue
         tagged_seg = {**seg, "segment_index": i}

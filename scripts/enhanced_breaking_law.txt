@@ -1,0 +1,17 @@
+Done. Enhanced script written to `scripts/enhanced_breaking_law.txt`.
+
+Here's a summary of the marker logic applied:
+
+**Key structural decisions:**
+
+- **Opening** `[VOICE:tense]` — RealPage facts delivered as a slow-building indictment, not neutral info
+- **`[PAUSE:3.0]` before "The settlement? Zero dollars."** — longest pause in the script, maximum anticipation for the biggest reveal
+- **Pattern section** (the numbered list) — `[BEAT]` between every company/penalty pair so each number lands separately; doesn't blur into a data dump
+- **`[PAUSE:1.5]` before "The calculation is simple"** — signals the thesis statement is coming; viewer leans in
+- **Boeing** — `[PAUSE:1.5]` + `[PAUSE:1.0]` building to "Sixteen days of revenue" so the number hits like a gut punch, not a statistic
+- **Ford Pinto** — `[VOICE:neutral]` for the clinical memo description, then `[VOICE:tense]` for "Forty-nine million to let people die" — the contrast is the point
+- **Sackler 79% profit margin** — `[PAUSE:1.0]` before it, then `[BEAT]` after to let "On a product that killed six hundred thousand people" sit
+- **AI chapter** — `[VOICE:energized]` because this is the urgent, current-events section; Perplexity trap story gets a `[PAUSE:1.5]` before the "forty-fold increase" reveal
+- **Conclusion** cycles back down: `[VOICE:neutral]` → `[VOICE:tense]` → final `[PAUSE:2.0]` before the closing line
+
+**Voice register arc:** tense → neutral → energized → neutral → tense → neutral → tense → neutral → tense → neutral → energized → tense → energized → neutral → tense → neutral → energized → neutral → tense → neutral

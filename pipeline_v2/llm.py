@@ -14,7 +14,7 @@ import json
 import sys
 import os
 
-def query_claude(prompt, max_tokens=4096, timeout=120):
+def query_claude(prompt, max_tokens=4096, timeout=300):
     """Query Claude via Claude Code CLI (free on Claude Max).
     
     Args:
@@ -26,14 +26,22 @@ def query_claude(prompt, max_tokens=4096, timeout=120):
         str: Claude's response text
     """
     try:
+        # Pipe prompt via stdin to avoid OS arg length limits
+        print(f"  [LLM] Sending {len(prompt)} chars to Claude CLI (timeout={timeout}s)...", file=sys.stderr)
         result = subprocess.run(
-            ["claude", "-p", prompt, "--output-format", "text"],
-            capture_output=True, text=True, timeout=timeout
+            ["claude", "-p", "-", "--output-format", "text"],
+            capture_output=True, text=True, timeout=timeout,
+            input=prompt
         )
+        print(f"  [LLM] RC={result.returncode}, stdout={len(result.stdout)} chars, stderr={len(result.stderr)} chars", file=sys.stderr)
+
         if result.returncode == 0:
+            if not result.stdout.strip():
+                print(f"  [LLM] WARNING: RC=0 but stdout is empty!", file=sys.stderr)
+                print(f"  [LLM] stderr: {result.stderr[:500]}", file=sys.stderr)
             return result.stdout.strip()
         else:
-            print(f"Claude CLI error: {result.stderr[:200]}", file=sys.stderr)
+            print(f"Claude CLI error (rc={result.returncode}): {result.stderr[:500]}", file=sys.stderr)
             return ""
     except FileNotFoundError:
         print("ERROR: 'claude' CLI not found. Install Claude Code.", file=sys.stderr)

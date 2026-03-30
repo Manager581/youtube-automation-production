@@ -1,0 +1,304 @@
+{
+  "schema_version": "2.0",
+  "video_title": "Why Breaking the Law Is Profitable",
+  "segment_range": [75, 82],
+  "chapter": "THE RECKONING",
+  "scenes": [
+    {
+      "scene_id": 14,
+      "title": "The Name Still on the Wall",
+      "narrative_function": "revelation",
+      "tension_level": 0.8,
+      "segments": [
+        {
+          "segment_index": 75,
+          "text": "The Sackler name is still on a wing of the Guggenheim Museum in New York City. The Metropolitan Museum took theirs down after public outcry. The Guggenheim hasn't. You can walk into one of the most prestigious cultural institutions in the world, look up at the wall, and read the name.",
+          "duration_sec": 33.6,
+          "show": "Guggenheim Museum exterior NYC, then interior rotunda, slow reveal of SACKLER text on wall — hold on the name. Cut to Metropolitan Museum exterior. Cut back to Guggenheim interior — the name still there.",
+          "search_query": "Guggenheim Museum New York exterior Solomon Guggenheim",
+          "composition": {
+            "bg": {
+              "search_query": "Guggenheim Museum New York City exterior spiral architecture Frank Lloyd Wright",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "Sackler Wing museum name plaque wall lettering",
+              "type": "object"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "location",
+          "attention_guide": "glow_effect",
+          "cut_pattern": "hold 8-10s per image, pan right across institution facade",
+          "sync_points": [
+            {"word": "Sackler", "type": "name", "style": "caps_white", "attention": "color_shift_red"},
+            {"word": "Guggenheim Museum", "type": "entity_label"},
+            {"word": "Metropolitan Museum", "type": "entity_label"},
+            {"word": "New York City", "type": "location"}
+          ],
+          "director_notes": "Hold on the Sackler name on wall. Viewer needs to SIT with this. No music swell — let silence do the work. Zoom extremely slowly into the nameplate. This is not a fast reveal — it's a slow burn."
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
+      "title": "The Formula Gets You a Plaque",
+      "narrative_function": "character_callback",
+      "tension_level": 0.75,
+      "segments": [
+        {
+          "segment_index": 76,
+          "text": "That's the formula. It even gets you a plaque. Elliana Esquivel is still making art in Charlotte. She pivoted to 3D — not because she chose to, but because the alternative was watching her style get reproduced for free. If the settlement arrives, her share will be under three hundred dollars.",
+          "duration_sec": 26.1,
+          "show": "BEAT on black after 'formula' beat. Then: Charlotte NC skyline or art studio. Artist at work — 3D rendering on screen. Small dollar figure graphic: '$300' isolated. Cut to AI-generated art gallery showing images identical in style to human originals.",
+          "search_query": "artist working 3D digital art studio creative professional",
+          "composition": {
+            "bg": {
+              "search_query": "Charlotte North Carolina skyline aerial urban",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "digital artist 3D modeling computer studio work",
+              "type": "person"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "face",
+          "attention_guide": "darken_blur_surrounds",
+          "cut_pattern": "pause on black 1.5s before 'Elliana', cut to Charlotte, cut to studio close-up",
+          "sync_points": [
+            {"word": "Elliana Esquivel", "type": "name", "style": "caps_white_lower_third"},
+            {"word": "Charlotte", "type": "location"},
+            {"word": "under three hundred dollars", "type": "stat", "style": "large_number_center", "attention": "color_shift_red"}
+          ],
+          "director_notes": "The $300 number needs to land hard. Full-screen text, hold 2s. The contrast with Sackler billions is the entire point. No flourish needed — just show the number."
+        },
+        {
+          "segment_index": 77,
+          "text": "Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted. The models built on it were refined.",
+          "duration_sec": 12.1,
+          "show": "Facebook app UI on phone screen. Data visualization — points accumulating. Dark server room imagery. Timeline graphic: 2014 → 2024 → today. 'NEVER DELETED' as text emphasis.",
+          "search_query": "Facebook data privacy surveillance social media tracking 2014",
+          "composition": {
+            "bg": {
+              "search_query": "server room data center dark blue lights surveillance technology",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": "smartphone Facebook app social media profile data",
+              "type": "object"
+            }
+          },
+          "content_type": "document_photo",
+          "shot_type": "zoom_in",
+          "focal_point": "document",
+          "attention_guide": "color_shift",
+          "cut_pattern": "fast cuts 3-4s each — data, servers, timeline. Urgency.",
+          "sync_points": [
+            {"word": "Seventy-four percent", "type": "stat", "style": "large_number"},
+            {"word": "2014", "type": "date"},
+            {"word": "never deleted", "type": "quote", "style": "typewriter_caps", "attention": "glow_effect"}
+          ],
+          "director_notes": "Fast rhythm here. This is rapid-fire evidence delivery. Each cut lands a new accusation. '74%' on screen. Then '2014'. Then 'NEVER DELETED' typewriter. No breathing room."
+        },
+        {
+          "segment_index": 78,
+          "text": "Chris Vialpondo is still in Seattle. Still working two jobs. The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula.",
+          "duration_sec": 14.2,
+          "show": "Seattle skyline, gritty — rain, grey sky. Apartment building exterior. RealPage algorithm visualization — numbers cascading. Then hold on: a person at two different workplaces. On-screen text: '+50%' rent graphic.",
+          "search_query": "Seattle apartment building rental housing working class neighborhood",
+          "composition": {
+            "bg": {
+              "search_query": "Seattle Washington skyline grey sky urban apartment buildings rental",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": "person working two jobs exhausted overworked American worker",
+              "type": "person"
+            }
+          },
+          "content_type": "documentary_photo",
+          "shot_type": "slow_pan",
+          "focal_point": "location",
+          "attention_guide": "darken_blur_surrounds",
+          "cut_pattern": "slow pan across Seattle skyline 6s, cut to apartment 4s, cut to +50% graphic 3s",
+          "sync_points": [
+            {"word": "Chris Vialpondo", "type": "name", "style": "caps_white_lower_third"},
+            {"word": "Seattle", "type": "location"},
+            {"word": "fifty percent", "type": "stat", "style": "large_number_red", "attention": "color_shift_red"},
+            {"word": "It was a formula", "type": "quote", "style": "typewriter", "attention": "glow_effect"}
+          ],
+          "director_notes": "The callback to Chris must feel like a gut punch — we met him earlier, now we check in and NOTHING has changed. Slow, heavy visual pacing. The algorithm is still running. Let that land."
+        }
+      ]
+    },
+    {
+      "scene_id": 16,
+      "title": "The Price of a Life — Escalating",
+      "narrative_function": "revelation",
+      "tension_level": 0.95,
+      "segments": [
+        {
+          "segment_index": 79,
+          "text": "The Grush-Saunby memo put a dollar value on a human life in 1977. Two hundred thousand dollars. Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars. The AI settlements value each stolen book at three dollars.",
+          "duration_sec": 27.6,
+          "show": "Motion graphic: escalating price list. Each value appears one at a time, stacked. FORD 1977: $200,000 / PURDUE: $9,000 / FACEBOOK: $57 / AI: $3. Each number smaller than the last — descending value of human life and creative work. Dark background, stark white numbers.",
+          "search_query": "Ford Pinto 1977 internal memo cost benefit analysis Grimshaw",
+          "composition": {
+            "bg": {
+              "search_query": "dark background abstract data visualization corporate document ledger",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": "price list ledger dollar signs corporate fine calculation",
+              "type": "document"
+            }
+          },
+          "content_type": "motion_graphics",
+          "shot_type": "static",
+          "focal_point": "document",
+          "attention_guide": "animate_important_area",
+          "cut_pattern": "hold each number 3-4s as narrator speaks it. Slow zoom into the list as it grows.",
+          "sync_points": [
+            {"word": "1977", "type": "date"},
+            {"word": "Two hundred thousand dollars", "type": "stat", "style": "large_number_white"},
+            {"word": "nine thousand", "type": "stat", "style": "large_number_orange"},
+            {"word": "fifty-seven dollars", "type": "stat", "style": "large_number_red"},
+            {"word": "three dollars", "type": "stat", "style": "large_number_dark_red", "attention": "color_shift_red"}
+          ],
+          "director_notes": "THIS IS THE PAYOFF VISUAL. Motion graphic required — not stock footage. Each line appears as narrator says the number. The stacking visual makes the descent undeniable. $200K → $9K → $57 → $3. No music. Just the numbers dropping. This is the thesis visualized."
+        }
+      ]
+    },
+    {
+      "scene_id": 17,
+      "title": "You Won't Like the Number",
+      "narrative_function": "emotional_peak",
+      "tension_level": 1.0,
+      "segments": [
+        {
+          "segment_index": 80,
+          "text": "They'll get priced. And if fifty years of history tells you anything — you won't like the number.",
+          "duration_sec": 11.7,
+          "show": "HOLD on the price list graphic from seg 79. Then slow zoom into '??' — the future price not yet written. Black screen. One question mark. Fade to black.",
+          "search_query": "question mark unknown future corporate liability",
+          "composition": {
+            "bg": {
+              "search_query": "black background dark void empty nothing",
+              "type": "abstract"
+            },
+            "fg": {
+              "search_query": "question mark symbol uncertainty future unknown",
+              "type": "object"
+            }
+          },
+          "content_type": "motion_graphics",
+          "shot_type": "zoom_in",
+          "focal_point": "center",
+          "attention_guide": "darken_blur_surrounds",
+          "cut_pattern": "HOLD price list 3s, then cut to black with '?' — hold 4s, fade to black",
+          "sync_points": [
+            {"word": "fifty years", "type": "stat", "style": "emphasis"},
+            {"word": "you won't like the number", "type": "quote", "style": "typewriter_white_center", "attention": "glow_effect"}
+          ],
+          "director_notes": "Maximum tension. The PAUSE markers are load-bearing. Hold silence after 'you won't like the number' — let the viewer sit with it. The question mark on black is the visual. Nothing else needed. Do not undercut this with music swell."
+        }
+      ]
+    },
+    {
+      "scene_id": 18,
+      "title": "The Thesis",
+      "narrative_function": "climax",
+      "tension_level": 0.9,
+      "segments": [
+        {
+          "segment_index": 81,
+          "text": "The law doesn't prevent corporate crime. It prices it. The question was never whether they'd break the law.",
+          "duration_sec": 10.7,
+          "show": "Black screen. Title card approach — white serif text appears word by word: 'THE LAW DOESN'T PREVENT CORPORATE CRIME.' Pause. New line: 'IT PRICES IT.' Hold. Cut to court building exterior — cold, imposing. Final line on black: 'The question was never whether they'd break the law.'",
+          "search_query": "US federal courthouse exterior columned building law justice",
+          "composition": {
+            "bg": {
+              "search_query": "United States federal courthouse columns marble exterior dark sky",
+              "type": "location"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "motion_graphics",
+          "shot_type": "static",
+          "focal_point": "center",
+          "attention_guide": "animate_important_area",
+          "cut_pattern": "typewriter text on black 5s, hard cut to courthouse 3s, back to black + text 3s",
+          "sync_points": [
+            {"word": "The law doesn't prevent corporate crime", "type": "quote", "style": "typewriter_caps_center", "attention": "glow_effect"},
+            {"word": "It prices it", "type": "quote", "style": "typewriter_caps_center_large", "attention": "glow_effect"}
+          ],
+          "director_notes": "THE THESIS LINE. This is the sentence the entire video has been building toward. It must land visually with maximum weight. White on black. Typewriter reveal. 'IT PRICES IT.' — hold 3 full seconds after the last letter appears. No rush. This is the whole video in four words. The PAUSE markers in the script are mandatory."
+        }
+      ]
+    },
+    {
+      "scene_id": 19,
+      "title": "Sources & Resolution",
+      "narrative_function": "aftermath",
+      "tension_level": 0.4,
+      "segments": [
+        {
+          "segment_index": 82,
+          "text": "The question is what you're worth. Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC, DOJ, ProPublica, Copyright Alliance, CDC, European Data Protection Board, Washington State AG, WCNC Charlotte, Good Jobs First Violation Tracker, AlixPartners (2019).",
+          "duration_sec": 18.4,
+          "show": "First line 'The question is what you're worth' — still on black or courthouse. Then slow fade to: sources list scrolling on screen, white text on dark background. Simultaneously: a montage of all characters mentioned — Grimshaw, Guitron, Esquivel, Vialpondo — brief flashes. End on dark frame with channel branding/CTA.",
+          "search_query": "legal document source citation court filing federal government report",
+          "composition": {
+            "bg": {
+              "search_query": "dark background legal documents court filings government reports stack",
+              "type": "document"
+            },
+            "fg": {
+              "search_query": null,
+              "type": "null"
+            }
+          },
+          "content_type": "motion_graphics",
+          "shot_type": "slow_pan",
+          "focal_point": "document",
+          "attention_guide": "scale_position",
+          "cut_pattern": "thesis line 4s on black, dissolve to sources scroll 8s, fade to end card 6s",
+          "sync_points": [
+            {"word": "what you're worth", "type": "quote", "style": "typewriter_white_center"},
+            {"word": "NHTSA", "type": "entity_label", "style": "source_citation"},
+            {"word": "Grimshaw v. Ford Motor Co.", "type": "entity_label", "style": "source_citation"},
+            {"word": "Good Jobs First", "type": "entity_label", "style": "source_citation"}
+          ],
+          "director_notes": "The sources roll IS the final visual — it signals journalistic rigor, which is a trust signal for this audience. Sources list should be readable, not rushed. Slow scroll or stacked cards. The final 3 seconds should be end-card territory: channel logo + 'subscribe' CTA + related video card. Consider ending with a single frame: the Sackler name on the Guggenheim wall — full circle callback to seg 75."
+        }
+      ]
+    }
+  ],
+  "chapter_notes": {
+    "chapter": "THE RECKONING",
+    "arc_position": "climax_to_resolution",
+    "overall_pacing": "Slow and heavy. No fast cuts here. Every second of screen time earns its weight. The audience has watched 25+ minutes of escalating evidence — now they need to feel the full weight of the thesis.",
+    "audio_strategy": {
+      "music": "Drop to near-silence or single piano note before thesis. No orchestral swell — that would feel manipulative. Let silence do the emotional work.",
+      "sfx": "Minimal. One impact sound at the thesis reveal max. Typewriter clicks for text reveals.",
+      "narration_pauses": "ALL [PAUSE] and [BEAT] markers are mandatory. Do not trim. The silence IS the content."
+    },
+    "key_visual_moments": [
+      "Sackler name on museum wall (seg 75) — slow zoom into the letters",
+      "$300 payment for Elliana (seg 76) — full-screen number, held",
+      "Price-per-life descending graphic (seg 79) — motion graphic, stacked, no substitutions",
+      "Thesis text on black (seg 81) — typewriter reveal, held 3s after last letter",
+      "Sources roll ending with Guggenheim callback (seg 82)"
+    ],
+    "motion_graphic_required": {
+      "segment": 79,
+      "description": "Price-per-life escalation table. Must be custom motion graphic — no stock footage substitute. Four rows: Ford 1977 $200K / Purdue $9K / Facebook $57 / AI scraping $3. Each row appears on beat with narration. Descending font size OR descending color brightness to visually encode the devaluation."
+    }
+  }
+}

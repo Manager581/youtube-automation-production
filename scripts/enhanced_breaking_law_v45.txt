@@ -1,0 +1,371 @@
+[VOICE:tense]
+In 2019, Facebook was fined five billion dollars. [BEAT] The largest penalty in FTC history. [BEAT] Eighty-seven million people's data — harvested, profiled, and sold to a political targeting firm without their knowledge. [BEAT] And on the day the fine was announced, [PAUSE:1.0] Facebook's stock went up. The market added six billion dollars in value. Mark Zuckerberg personally gained one point one billion dollars in a single day. [BEAT] The punishment made the company richer than if the government had done nothing.
+
+[PAUSE:1.5]
+How is that possible?
+
+[PAUSE:1.5]
+
+To understand, you need to go back to 1977. Because someone had to discover this trick. [BEAT] And the discovery started with a car on fire.
+
+[BEAT]
+
+[CHAPTER: THE FORMULA]
+
+[VOICE:measured]
+
+In 1977, Ford knew the Pinto's fuel tank ruptured in rear-end collisions. They had the crash test data. Two engineers wrote a cost-benefit analysis — an actual document, with actual numbers. [BEAT] Fix every Pinto: one hundred and thirty-seven million dollars. Expected wrongful death payouts: forty-nine point five million. [PAUSE:1.5] They shipped the car.
+
+A thirteen-year-old boy named Richard Grimshaw was a passenger in a Pinto that was rear-ended in San Bernardino. The fuel tank ruptured. [BEAT] The driver burned to death. Richard survived — barely. [BEAT] Burned over his entire body. Lost parts of his fingers. Lost his left ear. Years of skin grafts. [BEAT] A childhood replaced by hospital rooms. The jury awarded one hundred and twenty-five million dollars in punitive damages — the largest in American history. The judge reduced it to three point five million. Ford was acquitted of criminal homicide. [BEAT] No executive went to prison.
+
+The fine was three point five million dollars. Ford kept selling cars. No one went to prison. [BEAT] And somewhere in a boardroom, someone noticed something. [PAUSE:1.5] The cost of getting caught was less than the cost of doing the right thing.
+
+[BEAT]
+
+[VOICE:neutral]
+
+That might have been an isolated scandal. A single bad company making a single bad calculation. [PAUSE:1.0] Except it wasn't.
+
+[VOICE:tense]
+
+In 2010, a twenty-four-year-old bank teller named Yesenia Guitron did something dangerous. [BEAT] She told the truth. She'd watched her colleagues at Wells Fargo open accounts that customers never asked for — credit cards ordered to addresses that didn't exist, savings accounts funded by moving money between other accounts without permission. She knew why they did it. There was a quota: every customer should have eight products. "Eight is Great." [BEAT] Miss the number and you get a warning. Miss it again and you get fired. So the tellers cheated. Because the alternative was unemployment.
+
+Yesenia called the company's ethics hotline and reported the fraud. [BEAT] Wells Fargo terminated her the same week. She never found steady work in banking again. Her name went on an industry blacklist — a record that follows you like a scar.
+
+[VOICE:measured]
+
+Three point five million fake accounts. Five thousand three hundred tellers fired for opening them. And the woman who designed the quota — Carrie Tolstedt, head of Community Banking — kept fifty-seven million dollars and got zero prison time. She served her sentence at home. [BEAT] Ford's formula required a memo. Wells Fargo's didn't even require a decision — just a number and a threat.
+
+Ford needed a document to do this. Wells Fargo only needed a quota. [PAUSE:1.5] The next company didn't need either. It just needed a head start.
+
+Purdue Pharma saw the lawsuits coming a decade early and withdrew ten point seven billion dollars from the company before anyone could calculate the fine. [BEAT] Richard Sackler promised a, quote, blizzard of prescriptions at OxyContin's launch. In Kermit, West Virginia — population four hundred — a single pharmacy received nine million opioid pills in two years. [BEAT] The pharmacist went to prison. The Sacklers moved their money. [BEAT] More than eight hundred thousand Americans died. The settlement: seven point four billion. The family's remaining fortune: thirteen billion. [PAUSE:1.5] Nine thousand dollars per death. Ford valued a life at two hundred thousand in 1977. The Sacklers got it down to nine thousand.
+
+[PAUSE:2.0]
+
+[VOICE:tense]
+
+The fine is cheaper than the profit. Every time. [BEAT] Without exception.
+
+[BEAT]
+
+The law doesn't prevent corporate crime. [BEAT] It prices it.
+
+[VOICE:measured]
+
+And the price keeps dropping. Since 2000, corporations have paid over one trillion dollars in fines and settlements in the United States alone. One hundred and twenty-seven companies have each paid more than a billion. [PAUSE:1.5] And here's the number that should end every argument about whether the system works: [BEAT] companies caught repeatedly pay smaller fines as a percentage of their revenue over time. Not larger. Smaller. [BEAT] The more you violate, the better the deal gets.
+
+Each company added one feature to the original calculation. Ford added a memo. Wells Fargo added plausible deniability. Purdue added preemption. Facebook added scale. [BEAT] But every one of them had something in common — the damage, at least in theory, could be reversed. Ford could recall the car. Wells Fargo could close the accounts. Purdue could stop making the pills.
+
+[PAUSE:2.0]
+Then the formula met the internet. And the damage became permanent.
+
+[PAUSE:2.0]
+
+[CHAPTER: THE DATA]
+
+[VOICE:neutral]
+
+Facebook was the bridge between the old formula and the new one.
+
+In 2013, a Cambridge University researcher named Aleksandr Kogan built a personality quiz app. Two hundred and seventy thousand people downloaded it. [BEAT] But Facebook's API — the system that connects apps to the platform — gave the quiz access to not just those users' data, but all of their friends' data too. Every like, every post, every photo, every connection. [BEAT] Two hundred and seventy thousand downloads became eighty-seven million people's data harvested in weeks.
+
+[VOICE:measured]
+
+Facebook knew this was possible. [BEAT] It was a feature, not a bug — they'd designed the API to be open because open APIs drive engagement, and engagement drives advertising revenue. In 2014, they quietly changed the rules. But they never enforced deletion of the data already taken.
+
+Cambridge Analytica used that data to build voter profiles so precise they could predict what would make you angry before you felt it. [BEAT] They were hired by the Trump campaign. They were hired by groups supporting Brexit.
+
+[VOICE:tense]
+
+Eighty-seven million people's personalities — measured, modeled, and weaponized — for the price of a free quiz they never took. [BEAT] And most of them still don't know. A 2019 Pew survey found that seventy-four percent of Facebook users didn't know the platform maintained a list of their interests and traits for ad targeting. They didn't know they'd been profiled. They didn't know their data had been sold. [BEAT] They just knew that their feed felt different in 2016 — angrier, more anxious, more polarized — and they assumed that was the world changing. [PAUSE:1.0] It wasn't the world. It was the algorithm. Tuned by their own data, sold without their consent, deployed to shape an election.
+
+[BEAT]
+
+[VOICE:neutral]
+
+When the story broke in March 2018, Zuckerberg was summoned before Congress. He wore a suit. He said sorry. And then something happened that tells you everything about why the formula survives.
+
+A United States senator — a person with the power to regulate the most valuable company on Earth — looked at Mark Zuckerberg and asked: "How does Facebook make money if the product is free?"
+
+[VOICE:measured]
+
+Zuckerberg paused. [BEAT] And said: "Senator, we run ads."
+
+[BEAT]
+
+The room laughed. The internet turned it into a meme. For weeks, the clip circulated as comedy — an old senator, a young CEO, a punchline about boomers not understanding technology.
+
+[VOICE:neutral]
+
+And it was funny. It genuinely was. The man in charge of regulating the most valuable company on Earth didn't know how it made money. That's objectively absurd. It's the kind of thing you'd write into a satire and worry it was too on the nose.
+
+[PAUSE:2.0]
+
+[VOICE:tense]
+
+But here's what nobody said at the time. [BEAT] That hearing was the formula protecting itself. The people who set the fines — who write the regulations, who are supposed to be the ceiling on corporate behavior — didn't understand the business model of the company they were interrogating. [BEAT] And Zuckerberg knew it. He sat there, patient and composed, and explained his own business to the people who were supposed to be punishing him. He wasn't being grilled. He was giving a tutorial. [BEAT] And everyone watched it happen and laughed — because it was easier to laugh than to realize what it meant.
+
+[PAUSE:1.5]
+The people who set the fines don't understand what they're fining. [BEAT] The companies being fined have always known that.
+
+[VOICE:measured]
+
+The FTC investigated for over a year. In July 2019, they announced the largest fine in their history: five billion dollars.
+
+[PAUSE:1.0]
+Here is what five billion dollars means to Facebook. Revenue that year: seventy point seven billion. [BEAT] The fine was seven percent. Net profit: eighteen point five billion. The fine was about twenty-seven percent of one year's profit — paid once, for a violation that ran for years and compromised eighty-seven million people.
+
+The FTC vote was three to two. Party line. The two dissenting commissioners didn't think the fine was too harsh. [PAUSE:1.0] They thought it was too lenient. They wanted to sue, not settle. They wanted to hold Zuckerberg personally liable. [BEAT] They lost.
+
+[VOICE:tense]
+
+On July twelfth, when the fine amount leaked, Facebook's stock rose one percent. The market had expected worse. [BEAT] Investors were relieved. Mark Zuckerberg's net worth increased by one point one billion dollars that day. [PAUSE:1.5] He made more from the announcement of the fine than the fine cost the company. [BEAT] The market's verdict was clear: this is the ceiling. This is the worst it gets. [PAUSE:1.0] And the worst it gets is a good day.
+
+[BEAT]
+
+[VOICE:neutral]
+
+[VOICE:neutral]
+
+Now. After everything I've just shown you — Ford, Wells Fargo, Purdue, Facebook — you'd be forgiven for thinking the formula is unbeatable. That this is just how it works. Fine, settle, move on. Nobody learns. Nothing changes.
+
+[PAUSE:2.0]
+But something happened in 2023 that proves the formula can break.
+
+[VOICE:measured]
+
+Ireland fined Meta one point two billion euros under Europe's GDPR — a law that scales fines to four percent of global annual revenue. Not a negotiated number. Not a fixed ceiling. [BEAT] A percentage.
+
+And Facebook — the same Facebook that turned a five-billion-dollar American fine into a stock rally — [BEAT] panicked.
+
+Within weeks, they rewrote their entire data transfer infrastructure. They shut down a pipeline they'd run for a decade. They rebuilt their European architecture from scratch. [BEAT] They didn't fight it in court for years. They didn't issue a press release and wait for it to blow over. They fixed it. Immediately. [PAUSE:1.5] Because for the first time, the violation was more expensive than the profit.
+
+[BEAT]
+
+[VOICE:neutral]
+
+Sit with that for a second. The formula — the one that has survived five decades, across every industry, through every administration — [PAUSE:1.5] broke. In Europe. Because someone changed one variable: they made the fine proportional.
+
+[BEAT]
+Same company. Same executives. Same data. [BEAT] The only difference was the math. And when the math changed, the behavior changed overnight.
+
+[VOICE:tense]
+
+[PAUSE:2.0]
+
+[VOICE:neutral]
+
+So at this point in the story, you might be thinking: okay, the formula exists, but there are limits. Europe found the off switch. Proportional fines work. The system can be fixed. Companies can be forced to change. [PAUSE:1.0] Maybe — just maybe — we're figuring it out.
+
+[PAUSE:1.5]
+I wish that were the end of the video.
+
+[CHAPTER: THE MACHINES]
+
+[VOICE:measured]
+
+Here's a thought experiment. What if you could take anything you wanted from anyone — their writing, their art, their music, their photographs, their private conversations — and the only consequence was paying a fraction of what it was worth, years after you'd already used it to build a product worth billions?
+
+[PAUSE:1.5]
+You'd take everything. Obviously. Everyone would.
+
+[BEAT]
+That's not a thought experiment. [BEAT] That's the AI industry's business model.
+
+[BEAT]
+
+[VOICE:measured]
+
+In October 2025, a Reddit engineer did something clever. They created a post — ordinary-looking, about a fictional company — and made it visible only through Google's search index. You couldn't find it by browsing Reddit. You couldn't stumble on it. [BEAT] The only way to reach it was through a crawler. It was bait. A tripwire designed to catch one thing: an AI company scraping Reddit's content without permission.
+
+[PAUSE:1.5]
+Within hours, Perplexity AI cited the post. Word for word.
+
+[BEAT]
+The trap worked.
+
+Reddit sent a cease-and-desist letter. Standard procedure — stop scraping, or we sue. And here is what happened next.
+
+[VOICE:tense]
+
+Perplexity's scraping of Reddit content didn't decrease. [PAUSE:1.0] It increased. By a factor of forty. [BEAT] Not a little more. Forty times more. After being caught. After receiving a formal legal demand to stop.
+
+[VOICE:neutral]
+
+Most companies, when caught, slow down. Issue a statement. Hire a compliance officer. [BEAT] Perplexity sped up. Forty times. It's like getting a speeding ticket and immediately doing donuts in the parking lot of the police station.
+
+[VOICE:tense]
+
+But it's not arrogance. [BEAT] It's arithmetic. They did the math. The data was worth more than any fine. The model being trained on that data was worth more than any lawsuit. And once the data is inside the model —
+
+[BEAT]
+
+[PAUSE:2.0]
+There is no getting it out.
+
+[PAUSE:1.5]
+
+Sugar dissolved in water. You cannot separate them.
+
+[BEAT]
+
+[VOICE:measured]
+
+When Ford got caught, they could recall the car. When Facebook got caught, they could — in theory — delete the data. When Purdue got caught, they could stop manufacturing the pills. The damage was reversible. [BEAT] Expensive, slow, and nobody ever did it voluntarily. But the off switch existed.
+
+[PAUSE:2.0]
+With AI, there is no off switch. When a model trains on scraped data, that data dissolves into the model's parameters like sugar dissolved in water. You cannot un-dissolve it. You cannot identify which outputs came from which inputs. You cannot point to a sentence and say "that came from Reddit" or "that came from a children's book published in 2019." [BEAT] The data becomes the model. The violation becomes the product. Every response the AI generates, every image it creates, every answer it provides — built on content taken without permission and impossible to return.
+
+Even if every AI company loses every lawsuit, they keep the models. The models keep running. The products keep generating revenue. [BEAT] The fine doesn't undo the training. It just pays for the data after the fact — like shoplifting and mailing a check later. [BEAT] Except the check is always less than the retail price.
+
+And the people who try to stop it? [BEAT] Remember Yesenia Guitron — the Wells Fargo teller who called the ethics hotline and was fired for it? The formula punishes the people who resist it. It rewards the people who run it. That pattern repeats in every industry, in every decade.
+
+[PAUSE:2.0]
+
+[VOICE:neutral]
+
+Reddit filed a federal lawsuit in October 2025. But Perplexity is one company. [PAUSE:1.0] What about the rest of the industry?
+
+[BEAT]
+
+[VOICE:neutral]
+
+I want to tell you about Elliana Esquivel. Because her story is the one that makes this real — and the one that shows you how the formula works when it's happening to a person, not a company.
+
+[VOICE:measured]
+
+Elliana is an illustrator in Charlotte, North Carolina. Self-taught. She spent years building a career in minimalistic line work — psychological, introspective, distinctive. [BEAT] The kind of art you'd recognize on a bookshelf. She illustrated covers for HarperCollins, Little Brown, and Faber and Faber. She designed album art for Universal Music Group. She created promotional work for Hulu. Art was her full-time job for four years. She'd built something.
+
+[PAUSE:1.5]
+Then she visited a website called Have I Been Trained. It's a tool that lets creators check whether their work was scraped into the LAION-5B dataset — the five-billion-image training set used by Stability AI's Stable Diffusion and other image generators.
+
+[PAUSE:1.5]
+Almost her entire portfolio was in there.
+
+[VOICE:tense]
+
+Every illustration she'd spent months creating. Every piece that defined her style. Scraped, indexed, and fed into a model that anyone could now use to generate images that look like her work — for free. [BEAT] A publisher she'd worked with for two years emailed to say they were "exploring AI-generated options" for their next cover. Her commissions dropped. Her online sales fell. The style she'd spent a decade developing could now be approximated in seconds by typing a sentence into a box. [BEAT] She started pivoting to 3D art — not because she wanted to, but because she hoped three-dimensional work would be harder to scrape.
+
+When someone asked her about getting her work removed from the dataset, she said it was pointless. Quote: "It'll just get scraped again, and it'll end up back on the website." [BEAT] She called it, quote, a dystopian thing to be dealing with.
+
+[VOICE:neutral]
+
+Elliana isn't suing anyone. She can't afford to. Over seventy copyright lawsuits are active against AI companies as of March 2026 — Anthropic settled for one point five billion, OpenAI is fighting the New York Times, and not one company has slowed down. [BEAT] The largest settlement in history paid out roughly three thousand dollars per stolen work.
+
+[PAUSE:1.0]
+Three thousand dollars. [BEAT] That's what Elliana's illustrations are worth in this market — years of work, commissions for HarperCollins, Universal Music, Hulu — priced at the same rate as a single scraped novel. If the class-action settlement arrives, her share might cover a month of rent. [BEAT] The model keeps generating images in her style. The violation is the product. The fine — if it ever arrives — is a fraction of what her career was worth.
+
+[PAUSE:2.0]
+
+[VOICE:neutral]
+
+And this brings us to you. Because if you've ever posted on Reddit, commented on YouTube, written a blog, tweeted, left a review, uploaded a photo, published anything anywhere on the open internet — [PAUSE:1.0] your content is in training datasets right now. Not hypothetically. [BEAT] Provably. Common Crawl, the dataset most large language models train on, contains over two hundred and fifty billion web pages. [BEAT] Your words are in there. The companies building hundred-billion-dollar products on your words did not ask your permission.
+
+[VOICE:tense]
+Ford's formula was clumsy — a memo with signatures. Wells Fargo's was structural — a quota with plausible deniability. Purdue's was preemptive — move the money before the fine. Facebook's was mathematical — the fine is smaller than the profit.
+
+[PAUSE:1.5]
+AI's formula is all of those things. Plus one more: [BEAT] irreversible. Scrape now. Train the model. Make it indispensable. Settle later. The model can't be untrained. [BEAT] The fine is just the cost of raw materials, paid after the factory is already built and too valuable to demolish.
+
+[BEAT]
+
+[CHAPTER: THE RENT]
+
+[VOICE:neutral]
+
+Ford paid three point five million. Wells Fargo paid three billion. Purdue paid seven point four billion. Facebook paid five billion. [BEAT] Those numbers got bigger — but so did the profits. The ratio never changed. [BEAT] The fine was always less than the take.
+
+[PAUSE:2.0]
+So what happens when the formula reaches its logical conclusion? [PAUSE:1.5] What happens when the fine is zero?
+
+Chris Vialpondo is a renter in Seattle's Lower Queen Anne neighborhood. In 2022, he opened a notice from his property manager and learned his rent had increased by fifty percent. [BEAT] Same apartment. Same neighborhood. Same job. He was already working two jobs to make rent. [BEAT] Fifty percent meant the difference between getting by and going under. It meant counting every grocery trip. It meant the constant math of which bill gets paid this week and which one waits. He reached out to his property manager — the human being he thought had set the price — and was told nothing could be done. [PAUSE:1.5] Because his property manager hadn't set the price. A company he'd never heard of had.
+
+[VOICE:tense]
+
+RealPage. [BEAT] A company that takes confidential pricing data from competing landlords — data that competitors are not legally supposed to share — and feeds it into an algorithm that recommends rent prices across more than thirteen million apartments. Ninety percent of landlords follow the recommendation. [BEAT] The result: coordinated rent increases across buildings that are supposed to be competing with each other. The Department of Justice found that the algorithm costs renters an average of seventy dollars a month more — and over a hundred dollars a month in six major metro areas.
+
+Chris spoke publicly at the Washington state attorney general's press conference. He said: "The most painful and revolting part about all of it is that all of the money I spent unnecessarily is now in the pockets of those who need it the least."
+
+[VOICE:measured]
+
+The DOJ sued and announced a settlement in November 2025. RealPage has to modify its software. Landlords have to be allowed to set prices below the algorithm's floor. [BEAT] No fine. No compensation to renters. No admission of guilt.
+
+[VOICE:neutral]
+
+To be clear: a company was found to have coordinated rent prices for millions of apartments, and the settlement was essentially "please update your software." [BEAT] If you got caught fixing prices at a farmers' market, you'd face harsher consequences. Eight hundred thousand leases in Washington alone were priced by the algorithm.
+
+[VOICE:tense]
+
+And after getting caught fixing rent for millions of people, RealPage's first move was to sue the state of New York for passing a law that banned algorithmic rent-setting.
+
+[BEAT]
+
+And then RealPage did something that tells you everything about how the formula works when it's fully internalized. New York State passed a law banning algorithmic rent-setting — the first state to say, explicitly, that this practice is illegal. RealPage's response was not to comply. Not to modify their business. [PAUSE:1.0] They sued New York. The company that was just caught coordinating rent prices for millions of people went to court to argue that the state didn't have the right to stop them.
+
+[PAUSE:1.5]
+That's not a company that got caught and feels chastened. [BEAT] That's a company that did the math and concluded — correctly, so far — that the system will let them continue.
+
+Richard Grimshaw lost his fingers, his ear, and his childhood because Ford decided a hundred and thirty-seven million was too expensive. [BEAT] Chris Vialpondo works two jobs because an algorithm decided fifty percent more was the right number. [BEAT] The formula doesn't care whether it's a car or an apartment. It just runs the math.
+
+[PAUSE:2.0]
+And sometimes, the price is zero.
+
+[PAUSE:2.5]
+
+[CHAPTER: THE RECKONING]
+
+[VOICE:tense]
+
+Europe figured this out. [BEAT] Four percent of global revenue. Proportional. Automatic. No ceiling. [PAUSE:1.0] When the fine scales with the company, the formula breaks. Facebook shrugged off a five-billion-dollar American fine and panicked over a European one. [BEAT] The tools exist. Criminal liability for executives — not the tellers, the architects. Disgorgement — hand back every dollar earned from the violation, not a negotiated fraction. [BEAT] The legal frameworks are built. The question has never been how. [PAUSE:1.5] The question is why.
+
+And the answer is the same math that runs everything else in this video. [BEAT] The companies that benefit from the formula fund the campaigns, staff the advisory boards, draft the legislation. The fine stays small because the people who pay it set the ceiling.
+
+[PAUSE:2.0]
+
+[VOICE:tense]
+
+Let me show you what the math looks like when you put a face on it.
+
+Richard Grimshaw survived the Pinto fire. He grew up carrying scars that covered his body and a verdict that was supposed to change things — one hundred and twenty-five million dollars, reduced to three point five million. [PAUSE:1.0] The message was: we've done the math, and your pain has a price. [BEAT] Ford paid it and moved on.
+
+Yesenia Guitron called the ethics hotline and was fired for it. She never worked in banking again. [BEAT] Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars.
+
+[VOICE:neutral]
+
+The Sackler name is still on a wing of the Guggenheim Museum in New York City. The Metropolitan Museum took theirs down after public outcry. [BEAT] The Guggenheim hasn't. You can walk into one of the most prestigious cultural institutions in the world, look up at the wall, and read the name of a family that earned their fortune from a drug that killed eight hundred thousand people. [BEAT] They kept thirteen billion. And they kept the wall.
+
+[PAUSE:1.5]
+That's the formula. [BEAT] It even gets you a plaque.
+
+[VOICE:measured]
+
+Elliana Esquivel is still making art in Charlotte. She pivoted to 3D — not because she chose to, but because the alternative was watching her style get reproduced for free. [BEAT] If the settlement arrives, her share might cover a month of rent. The model keeps running.
+
+Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted. [BEAT] The models built on it were refined.
+
+Chris Vialpondo is still in Seattle. Still working two jobs. [BEAT] The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula.
+
+[BEAT]
+
+[VOICE:measured]
+
+The Grush-Saunby memo put a dollar value on a human life in 1977. [BEAT] Two hundred thousand dollars. Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars. The AI settlements value each stolen book at three thousand dollars. [BEAT] Elliana's illustrations? Not priced yet. Your Reddit posts? Your YouTube comments? Your blog from 2016?
+
+[PAUSE:2.0]
+They'll get priced. [BEAT] And if fifty years of history tells you anything — [PAUSE:1.5] you won't like the number.
+
+[PAUSE:2.0]
+
+[VOICE:tense]
+
+The law doesn't prevent corporate crime. [BEAT] It prices it.
+
+[BEAT]
+
+The question was never whether they'd break the law.
+
+[PAUSE:2.5]
+
+The question is what you're worth.
+
+Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC, DOJ, ProPublica, Copyright Alliance, CDC, European Data Protection Board, Washington State AG, WCNC Charlotte, Good Jobs First Violation Tracker, AlixPartners (2019).
