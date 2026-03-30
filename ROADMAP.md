@@ -90,14 +90,44 @@ director → builder → director_review → gap_resolver → research_agent →
 
 ## 📋 FUTURE BUILDS (next sessions)
 
-### Immediate (this video)
-- [x] Write script for "Why Breaking the Law Is Profitable" — v45, 87-91/100
-- [ ] Run enhancer + script QA gate (stage 6-7)
-- [ ] Voice generation (stage 8-9)
-- [ ] Source footage + images (stage 11-15)
-- [ ] Director pass (stage 16-19)
-- [ ] DaVinci build (stage 20-23)
-- [ ] Final QA + render (stage 24-28)
+### Breaking Law Video Progress (session 2026-03-30)
+- [x] Script v45 — 4,366 words, 95+ LearnByLeo score
+- [x] Enhancer — [BEAT][PAUSE][VOICE] markers added
+- [x] Script QA — 95+ score, all playbook checks pass
+- [x] Voice — F5-TTS 17.4 min, resume patch (skip existing chunks)
+- [x] Voice QA — PASS (1 warning: peak near 0dBFS)
+- [x] Music — CC0 Pixabay track, ducked (-24dB under VO)
+- [x] Footage — 12 video clips (yt-dlp)
+- [x] Images — 51 images (Pexels/Google/Wikimedia)
+- [x] Storyboard — 13 scenes, 83 segments
+- [ ] **Transcripts** — RUNNING (stage 13)
+- [ ] **Vision analysis** — RUNNING (stage 14)
+- [ ] **Verify footage** — pending (stage 15)
+- [ ] **Fill gaps** — pending (stage 19)
+- [ ] **Re-run director** with transcript+vision data (stage 17)
+- [ ] **Re-validate segments** (stage 18)
+- [ ] **DaVinci build** — needs computer-use MCP for clip positioning (stage 23)
+- [ ] **Director review** — read back timeline, verify (stage 24)
+- [ ] **QA video** — 20 LearnByLeo checks (stage 25)
+- [ ] **Executive producer** — 11 cross-reference checks (stage 26)
+- [ ] Render + upload (stages 27-28)
+
+### Bugs Fixed (session 2026-03-30)
+- **llm.py**: stdin pipe for large prompts (was passing 21K chars as CLI arg)
+- **director.py**: batched processing — 4×30 segments (was timing out at 103)
+- **voice_generator.py**: resume/skip-existing patch (process kept getting killed)
+- **footage_sourcer.py**: v2 storyboard compat (nested scenes vs flat segments)
+- **davinci_timeline_builder.py**: clip_start_sec None handling
+- **davinci_timeline_builder.py**: simultaneous A1+A2 placement (music after narration fix)
+- **DaVinci AppendToTimeline**: STILL ignores recordFrame — need FCPXML or computer-use MCP
+
+### Critical Discovery: Director Was Blind
+- Director was picking clips by FILENAME only — no transcripts, no vision descriptions
+- Stages 13-15 (transcripts, vision, verify) were skipped before director ran
+- Must ALWAYS run 13→14→15→17 in sequence — director needs full clip knowledge
+- Pipeline v2 stage ordering is CORRECT, we just skipped stages
+
+### Immediate TODO
 - [ ] Source credits field in director schema
 - [ ] Sponsor integration placeholder in script structure
 - [ ] Recalibrate scorer for business/tech niche

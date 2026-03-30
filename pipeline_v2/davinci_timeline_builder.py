@@ -295,41 +295,53 @@ def build_timeline(resolve, project, mp, segments, pool, narration_path, music_p
                     "trackIndex": 3,
                 }])
     
-    # ── A1: Narration ──
-    if narration_path and os.path.basename(narration_path) in pool:
-        mp.AppendToTimeline([{
-            "mediaPoolItem": pool[os.path.basename(narration_path)],
+    # ── A1: Narration + A2: Music — place SIMULTANEOUSLY ──
+    # AppendToTimeline places audio sequentially. To get music starting
+    # at the same time as narration, place them in one call together.
+    audio_items = []
+    narr_name = os.path.basename(narration_path) if narration_path else None
+    music_name = os.path.basename(music_path) if music_path else None
+
+    if narr_name and narr_name in pool:
+        audio_items.append({
+            "mediaPoolItem": pool[narr_name],
             "mediaType": 2,
             "trackIndex": 1,
-        }])
-        print(f"  A1: Narration placed")
-    
-    # ── A2: Music (ducked) ──
-    if music_path and os.path.basename(music_path) in pool:
-        mp.AppendToTimeline([{
-            "mediaPoolItem": pool[os.path.basename(music_path)],
+        })
+        print(f"  A1: Narration queued")
+
+    if music_name and music_name in pool:
+        audio_items.append({
+            "mediaPoolItem": pool[music_name],
             "mediaType": 2,
             "trackIndex": 2,
-        }])
-        print(f"  A2: Music placed")
-    
+        })
+        print(f"  A2: Music queued")
+
+    if audio_items:
+        mp.AppendToTimeline(audio_items)
+        print(f"  A1+A2: Placed together (same start frame)")
+
     # ── A3/A4: SFX ──
-    # Sort SFX chronologically, alternate between A3 and A4
+    # SFX must be placed chronologically. Since AppendToTimeline is sequential,
+    # we interleave A3/A4 so overlapping SFX don't collide.
+    # We also create silence gaps by placing SFX with gap clips between them.
     sfx_list = []
     cumulative = 0
     for i, seg in enumerate(segments):
         words = seg.get("word_count", len(seg.get("text", "").split()))
         seg_start = 11.8 + (cumulative / total_words) * narr_dur if total_words else 0
         cumulative += words
-        
+
         sfx = seg.get("sfx")
         if sfx and sfx.get("file"):
             sfx_list.append((seg_start, sfx["file"]))
-    
+
     sfx_list.sort(key=lambda x: x[0])
-    
+
     print(f"  A3/A4: {len(sfx_list)} SFX...")
-    
+
+    # Place SFX sorted chronologically, alternating tracks
     for idx, (pos, sfx_file) in enumerate(sfx_list):
         if sfx_file in pool:
             track = 3 if idx % 2 == 0 else 4
