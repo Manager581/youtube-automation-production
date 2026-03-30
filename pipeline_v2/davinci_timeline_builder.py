@@ -195,7 +195,7 @@ def build_timeline(resolve, project, mp, segments, pool, narration_path, music_p
             # Enforce fair use: max 7s, max 3 uses per source
             source_usage[vf] = source_usage.get(vf, 0) + 1
             
-            clip_start = int(seg.get("clip_start_sec", 0) * FPS)
+            clip_start = int((seg.get("clip_start_sec") or 0) * FPS)
             clip_end = clip_start + int(MAX_CLIP_DURATION * FPS)
             
             mp.AppendToTimeline([{
