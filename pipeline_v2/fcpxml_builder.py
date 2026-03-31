@@ -572,13 +572,17 @@ class FCPXMLBuilder:
             lc_dur = lc["duration_sec"]
             lc_abs_offset = self.tc_start + lc_offset
 
-            # Audio clips: attach ALL to the TRAILING GAP (last spine element).
-            # DaVinci only groups audio clips on the same track when they share
-            # a <gap> parent — NOT when they're children of a <clip>.
+            # Audio clips placement strategy:
+            # - Narration (lane 5): attach to FIRST spine element so it starts
+            #   at the same time as V1 clips
+            # - SFX (lanes 7,8): attach to trailing gap (DaVinci groups them)
             # Video lane clips: attach to the overlapping spine element.
             parent_el = None
-            if lc["is_audio"] and spine_xml_elements:
-                parent_el = spine_xml_elements[-1][0]  # trailing gap
+            if lc["is_audio"]:
+                if lc.get("lane") == LANE_A1_NARRATION and spine_xml_elements:
+                    parent_el = spine_xml_elements[0][0]  # first clip
+                elif spine_xml_elements:
+                    parent_el = spine_xml_elements[-1][0]  # trailing gap
             else:
                 for xml_el, tl_start, tl_end in spine_xml_elements:
                     if tl_start <= lc_offset < tl_end:
@@ -594,14 +598,18 @@ class FCPXMLBuilder:
                 continue
 
             # Build the lane clip element
-            # CRITICAL: In FCPXML, lane child offsets are ABSOLUTE timeline
-            # positions (same coordinate space as spine clip offsets), NOT
-            # relative to the parent. DaVinci interprets them this way.
+            # Narration (lane 5) attached to first clip: use offset=0 so it
+            # starts at the same time as V1. Other lane clips use absolute offsets.
+            if lc.get("lane") == LANE_A1_NARRATION:
+                clip_offset = "0/1s"
+            else:
+                clip_offset = sec_to_rational(lc_abs_offset)
+
             lane_attrs = {
                 "ref": lc["ref"],
                 "name": lc["name"],
                 "lane": str(lc["lane"]),
-                "offset": sec_to_rational(lc_abs_offset),
+                "offset": clip_offset,
                 "duration": dur_to_rational(lc_dur),
                 "start": sec_to_rational(lc.get("start_sec", 0) or 0),
                 "enabled": "1",
