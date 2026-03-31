@@ -463,7 +463,7 @@ class FCPXMLBuilder:
         # to spine clips or gaps via the lane attribute.
 
         # Build spine elements (clips + gaps)
-        spine_elements = []  # list of (element, tl_start_sec, tl_end_sec)
+        spine_elements = []  # list of (element, tl_start_sec, tl_end_sec, src_start_sec)
         cursor = 0.0  # current position in timeline-relative seconds
 
         for clip in self._v1_clips:
@@ -486,12 +486,14 @@ class FCPXMLBuilder:
             spine_elements.append(("gap", cursor, total_dur, trailing_dur, None))
 
         # ── Render spine elements into XML ──
-        spine_xml_elements = []  # parallel list of XML elements
+        spine_xml_elements = []  # parallel list of (xml_element, tl_start, tl_end, src_start_sec)
 
         for elem_type, tl_start, tl_end, dur, clip_data in spine_elements:
             abs_offset = self.tc_start + tl_start  # absolute timeline position
+            src_start = 0.0  # source start for this spine element
 
             if elem_type == "gap":
+                src_start = self.tc_start  # gaps use tc_start as their start
                 el = SubElement(spine, "gap", {
                     "name": "Gap",
                     "offset": sec_to_rational(abs_offset),
@@ -502,6 +504,7 @@ class FCPXMLBuilder:
                 filepath = clip_data["filepath"]
 
                 if is_image_file(filepath):
+                    src_start = 0.0
                     # Still image: use <video> element directly
                     el = SubElement(spine, "video", {
                         "ref": clip_data["ref"],
@@ -550,6 +553,7 @@ class FCPXMLBuilder:
                         # setting volume to 0 — FCPXML uses adjust-volume
                         SubElement(el, "adjust-volume", amount="0dB")
                 else:
+                    src_start = 0.0
                     # Fallback: treat as generic asset-clip
                     el = SubElement(spine, "asset-clip", {
                         "ref": clip_data["ref"],
@@ -560,7 +564,7 @@ class FCPXMLBuilder:
                         "enabled": "1",
                     })
 
-            spine_xml_elements.append((el, tl_start, tl_end))
+            spine_xml_elements.append((el, tl_start, tl_end, src_start))
 
         # ── Attach lane clips to spine elements ──
         # For each lane clip, find the spine element that contains its offset
@@ -570,7 +574,6 @@ class FCPXMLBuilder:
         for lc in self._lane_clips:
             lc_offset = lc["offset_sec"]
             lc_dur = lc["duration_sec"]
-            lc_abs_offset = self.tc_start + lc_offset
 
             # Audio clips placement strategy:
             # - Narration (lane 5): attach to FIRST spine element so it starts
@@ -578,32 +581,40 @@ class FCPXMLBuilder:
             # - SFX (lanes 7,8): attach to trailing gap (DaVinci groups them)
             # Video lane clips: attach to the overlapping spine element.
             parent_el = None
+            parent_tl_start = 0.0
+            parent_src_start = 0.0
             if lc["is_audio"]:
                 if lc.get("lane") == LANE_A1_NARRATION and spine_xml_elements:
-                    parent_el = spine_xml_elements[0][0]  # first clip
+                    parent_el, parent_tl_start, _, parent_src_start = spine_xml_elements[0]
                 elif spine_xml_elements:
-                    parent_el = spine_xml_elements[-1][0]  # trailing gap
+                    parent_el, parent_tl_start, _, parent_src_start = spine_xml_elements[-1]
             else:
-                for xml_el, tl_start, tl_end in spine_xml_elements:
+                for xml_el, tl_start, tl_end, src_start in spine_xml_elements:
                     if tl_start <= lc_offset < tl_end:
                         parent_el = xml_el
+                        parent_tl_start = tl_start
+                        parent_src_start = src_start
                         break
 
             # Fallback: attach to last spine element (trailing gap)
             if parent_el is None and spine_xml_elements:
-                parent_el = spine_xml_elements[-1][0]
+                parent_el, parent_tl_start, _, parent_src_start = spine_xml_elements[-1]
 
             if parent_el is None:
                 print(f"  WARNING: No spine element for lane clip at {lc_offset:.1f}s: {lc['name']}")
                 continue
 
             # Build the lane clip element
-            # Narration (lane 5) attached to first clip: use offset=0 so it
-            # starts at the same time as V1. Other lane clips use absolute offsets.
+            # FCPXML 1.9: lane clip offset must be RELATIVE to the parent spine
+            # clip, expressed in the parent's local time coordinate space.
+            # Formula: parent_src_start + (lc_timeline_position - parent_tl_start)
+            # For narration attached to first clip: offset=parent_src_start so it
+            # starts at the same time as the parent clip.
             if lc.get("lane") == LANE_A1_NARRATION:
-                clip_offset = "0/1s"
+                clip_offset = sec_to_rational(parent_src_start)
             else:
-                clip_offset = sec_to_rational(lc_abs_offset)
+                relative_sec = parent_src_start + (lc_offset - parent_tl_start)
+                clip_offset = sec_to_rational(relative_sec)
 
             lane_attrs = {
                 "ref": lc["ref"],
