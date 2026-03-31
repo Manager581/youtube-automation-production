@@ -700,10 +700,42 @@ Next: Manual playthrough in DaVinci → fix anything that looks/sounds off → r
 - **Key moments**: "Senator, we run ads" reframed as formula protecting itself. GDPR as dopamine pocket. Sugar dissolved in water. Price-per-life escalation ($200K→$9K→$57→$3K→?).
 - **Research**: `research/breaking_law_profitable_facts.md` — all stats verified via web search
 
-### Pipeline Stage
-- Stages 1-5: COMPLETE (topic → research → script)
-- Stage 6: IN PROGRESS (script enhancer)
-- Stages 7-28: PENDING (QA → voice → footage → director → DaVinci → render)
+### Pipeline Stage (updated 2026-03-31)
+- Stages 1-7: ✅ COMPLETE (topic → research → script → enhance → QA 95+)
+- Stage 8-9: ✅ Voice generated (F5-TTS 17.4min, 186 clips, resume patch)
+- Stage 10: ✅ Music sourced (CC0 Pixabay, ducked, premixed with narration+SFX)
+- Stages 11-15: ✅ Footage (12 clips + 51 images), transcripts, vision analysis, verified
+- Stages 16-19: ✅ Storyboard (83 segments), director (103 segments with vision data), validated, gaps filled (30 new images)
+- Stage 23: ✅ DaVinci timeline "Breaking Law FINAL" imported via FCPXML
+- Stages 24-26: ✅ Director review + exec producer ran (3/11 — missing polish layers)
+
+### Current DaVinci Timeline: "Breaking Law FINAL"
+| Track | Contents | Count | Status |
+|-------|----------|-------|--------|
+| V1 | B-roll clips (avg 5.6s, 10.6 cuts/min) | 186 | ✅ |
+| V2 | Text overlays | 0 | ❌ Need to create + place |
+| V3 | Chapter cards | 0 | ❌ Need to create + place |
+| A1 | Narration + music + SFX (premixed) | 1 | ✅ |
+| — | Color grade | — | ❌ CDL didn't apply via API |
+| — | Transitions | — | ❌ No cross-dissolves |
+| — | Vignette | — | ❌ Not yet added |
+| — | Film grain | — | ❌ Not yet added |
+
+Duration: 17.5 min | Track alignment: 1.8s ✅ | V1 gaps: 0 ✅ | 54 unique sources ✅
+
+### Pipeline Architecture Fix (2026-03-31)
+- Gates now BLOCK on failure (exit 1) with auto-retry (max 2 attempts)
+- 8 gate stages enforce quality before proceeding
+- New `exec_producer_pre` gate runs BEFORE DaVinci build
+- FCPXML builder (`pipeline_v2/fcpxml_builder.py`) bypasses all DaVinci API positioning bugs
+- Audio premixing solved A1/A2 alignment issue permanently
+
+### Remaining Work
+1. Create chapter cards (6) + text overlays (72) as ProRes MOVs
+2. Rebuild FCPXML with overlays on V2/V3 at correct positions
+3. Apply color grade via DaVinci Color page
+4. Add vignette + film grain overlays
+5. Render + upload
 
 ### Sponsor Candidates
 - DeleteMe/Incogni (data broker removal — directly relevant)
