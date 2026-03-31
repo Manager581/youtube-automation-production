@@ -145,15 +145,22 @@ Return ONLY valid JSON:
         # Build segment lookup
         seg_lookup = {s.get("segment_index", i): s for i, s in enumerate(segments)}
 
-        clips = manifest.get("clips", [])
+        # Combine clips + images from manifest
+        clips = manifest.get("clips", []) + manifest.get("images", [])
         results = []
         passed = 0
         failed = 0
         removed = []
 
         for clip in clips:
-            local_path = clip.get("local_path", "")
+            local_path = clip.get("path", clip.get("local_path", ""))
+            # Extract segment index from path (e.g., .../seg_013/...) or from field
             seg_idx = clip.get("segment_index", 0)
+            if seg_idx == 0 and "/seg_" in local_path:
+                import re as _re
+                m = _re.search(r'/seg_(\d+)/', local_path)
+                if m:
+                    seg_idx = int(m.group(1))
             segment = seg_lookup.get(seg_idx, {"text": "", "show": ""})
 
             print(f"  Verifying: {Path(local_path).name} (seg {seg_idx})...", end=" ")

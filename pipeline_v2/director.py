@@ -583,6 +583,8 @@ def main():
     parser.add_argument('--footage', nargs='+', default=[], help='Footage directories to scan')
     parser.add_argument('--images', nargs='+', default=[], help='Image directories to scan')
     parser.add_argument('--sfx', default='', help='SFX directory')
+    parser.add_argument('--transcripts', help='Transcripts JSON (from transcript_extractor)')
+    parser.add_argument('--vision', help='Vision manifest JSON (from vision_analyzer)')
     parser.add_argument('--output', required=True, help='Output JSON path')
     args = parser.parse_args()
     
@@ -611,6 +613,49 @@ def main():
     if not clips and not images:
         print(f"\n   WARNING: No footage or images found!")
         print(f"   Run footage_sourcer and web_image_sourcer first.")
+
+    # Enrich with transcripts
+    if args.transcripts and os.path.exists(args.transcripts):
+        with open(args.transcripts) as f:
+            transcripts_data = json.load(f)
+        transcript_lookup = {}
+        for t in transcripts_data.get("clips", transcripts_data if isinstance(transcripts_data, list) else []):
+            fname = t.get("filename", "")
+            transcript_lookup[fname] = t.get("transcript", t.get("text", ""))
+        enriched = 0
+        for clip in clips:
+            t = transcript_lookup.get(clip.get("filename", ""))
+            if t and not clip.get("transcript"):
+                clip["transcript"] = t[:2000]
+                clip["transcript_preview"] = t[:200]
+                enriched += 1
+        print(f"   Transcripts enriched: {enriched}/{len(clips)} clips")
+
+    # Enrich with vision descriptions
+    if args.vision and os.path.exists(args.vision):
+        with open(args.vision) as f:
+            vision_data = json.load(f)
+        # Enrich clips
+        vision_clips = {v.get("filename", ""): v for v in vision_data.get("clips", [])}
+        for clip in clips:
+            v = vision_clips.get(clip.get("filename", ""))
+            if v:
+                descs = v.get("frame_descriptions", [])
+                clip["vision_description"] = " | ".join(
+                    d.get("description", "")[:150] for d in descs[:3]
+                )
+                clip["topics"] = v.get("topics", [])
+                clip["best_moments"] = v.get("best_moments", [])
+        # Enrich images
+        vision_images = {v.get("filename", ""): v for v in vision_data.get("images", [])}
+        for img in images:
+            v = vision_images.get(img.get("filename", ""))
+            if v:
+                img["vision_description"] = v.get("description", "")[:300]
+                img["topics"] = v.get("topics", [])
+        enriched_clips = sum(1 for c in clips if c.get("vision_description"))
+        enriched_imgs = sum(1 for i in images if i.get("vision_description"))
+        print(f"   Vision enriched: {enriched_clips}/{len(clips)} clips, {enriched_imgs}/{len(images)} images")
     
     # Load playbook
     playbook = load_playbook()

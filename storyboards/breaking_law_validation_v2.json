@@ -1,0 +1,891 @@
+{
+  "director_path": "/Users/jefflawrence/Documents/youtube-automation-production/storyboards/breaking_law_directed_v2.json",
+  "overall": {
+    "total_score": 7.2,
+    "segments_evaluated": 35,
+    "segments_passed": 21,
+    "segments_warned": 14,
+    "segments_failed": 0,
+    "green_purple_balance": {
+      "rule": "P-SC-01",
+      "description": "Green: 58 (56%), Purple: 40 (39%), Transitions: 26 | Issues: 28 runs of 8+ same-color segments (monotonous)",
+      "score": 7,
+      "verdict": "warn",
+      "fix": "28 runs of 8+ same-color segments (monotonous)"
+    },
+    "worst_segments": [
+      {
+        "segment_idx": 42,
+        "score": 5.0,
+        "verdict": "warn",
+        "text_preview": "So at this point in the story, you might be thinking: okay, ",
+        "issues": [
+          {
+            "rule": "P-ED-04",
+            "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+            "fix": "Seg 42: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+          },
+          {
+            "rule": "P-ED-02",
+            "description": "Cut too slow: ~18.8s (47 words)",
+            "fix": "Seg 42: Segment WAY too long (18.8s). Must split to maintain viewer attention."
+          },
+          {
+            "rule": "P-RD-04",
+            "description": "MISMATCH\nThe narration is about regulatory limits and corporate accountability (European fines, fixing data systems), but the visual is a Grimshaw v Ford Motor Company legal case image which is unrelated to European data regulation or the scoring system being discussed.",
+            "fix": "Replace visual for seg 42: narration and image don't match"
+          },
+          {
+            "rule": "P-RD-01",
+            "description": "PARTIAL\n\nQuestion 3 fails \u2014 the segment closes with tentative hope (\"maybe we're figuring it out\") but doesn't introduce what could go wrong or what threat lurks ahead to create genuine uncertainty.",
+            "fix": "Seg 42: Strengthen stakes or add uncertainty"
+          }
+        ]
+      },
+      {
+        "segment_idx": 54,
+        "score": 5.0,
+        "verdict": "warn",
+        "text_preview": "But it's not arrogance. It's arithmetic. They did the math. ",
+        "issues": [
+          {
+            "rule": "P-ED-04",
+            "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+            "fix": "Seg 54: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+          },
+          {
+            "rule": "P-ED-02",
+            "description": "Cut too slow: ~16.0s (40 words)",
+            "fix": "Seg 54: Segment WAY too long (16.0s). Must split to maintain viewer attention."
+          },
+          {
+            "rule": "P-RD-04",
+            "description": "MISMATCH\nThe narration describes corporate data valuation and legal/financial calculations, but the visual shows a European Parliament voting chamber.",
+            "fix": "Replace visual for seg 54: narration and image don't match"
+          },
+          {
+            "rule": "P-RD-01",
+            "description": "PARTIAL\n\nQuestions 1 and 3 pass, but question 2 fails \u2014 the viewer doesn't yet know *what* data or *which model* is being discussed, so the importance of \"the math\" is abstract rather than grounded.",
+            "fix": "Seg 54: Strengthen stakes or add uncertainty"
+          }
+        ]
+      },
+      {
+        "segment_idx": 57,
+        "score": 5.0,
+        "verdict": "warn",
+        "text_preview": "When Ford got caught, they could recall the car. When Facebo",
+        "issues": [
+          {
+            "rule": "P-ED-04",
+            "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+            "fix": "Seg 57: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+          },
+          {
+            "rule": "P-ED-02",
+            "description": "Cut too slow: ~19.6s (49 words)",
+            "fix": "Seg 57: Segment WAY too long (19.6s). Must split to maintain viewer attention."
+          },
+          {
+            "rule": "P-RD-04",
+            "description": "MISMATCH\nThe narration discusses corporate accountability (Ford, Facebook, Purdue Pharma) but the visual shows the European Parliament building, which has no connection to these American corporate scandals.",
+            "fix": "Replace visual for seg 57: narration and image don't match"
+          },
+          {
+            "rule": "P-RD-01",
+            "description": "PARTIAL\n\nQuestions 1 and 2 pass clearly, but question 3 fails \u2014 the segment explains reversibility without establishing what irreversible threat is coming, leaving no active uncertainty.",
+            "fix": "Seg 57: Strengthen stakes or add uncertainty"
+          }
+        ]
+      },
+      {
+        "segment_idx": 39,
+        "score": 5.8,
+        "verdict": "warn",
+        "text_preview": "Within weeks, they rewrote their entire data transfer infras",
+        "issues": [
+          {
+            "rule": "P-ED-04",
+            "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+            "fix": "Seg 39: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+          },
+          {
+            "rule": "P-ED-02",
+            "description": "Cut too slow: ~25.6s (64 words)",
+            "fix": "Seg 39: Segment WAY too long (25.6s). Must split to maintain viewer attention."
+          },
+          {
+            "rule": "P-RD-04",
+            "description": "PARTIAL\nA corporate/financial image loosely relates to infrastructure and business decisions, but doesn't visually represent data transfer systems, pipelines, or European architecture rebuilding.",
+            "fix": "Find a closer visual match for: Within weeks, they rewrote their entire data transfer infras"
+          },
+          {
+            "rule": "P-RD-01",
+            "description": "PARTIAL\n\nViewer knows what happened and why it matters, but uncertainty is low \u2014 the outcome is already resolved (\"they fixed it\"), eliminating dramatic tension.",
+            "fix": "Seg 39: Strengthen stakes or add uncertainty"
+          }
+        ]
+      },
+      {
+        "segment_idx": 45,
+        "score": 5.8,
+        "verdict": "warn",
+        "text_preview": "Here's a thought experiment. What if you could take anything",
+        "issues": [
+          {
+            "rule": "P-ED-04",
+            "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+            "fix": "Seg 45: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+          },
+          {
+            "rule": "P-ED-02",
+            "description": "Cut too slow: ~20.8s (52 words)",
+            "fix": "Seg 45: Segment WAY too long (20.8s). Must split to maintain viewer attention."
+          },
+          {
+            "rule": "P-RD-04",
+            "description": "PARTIAL\nThe abstract image loosely relates to the concept of taking/theft, but it's a generic placeholder that doesn't specifically illustrate the thought experiment about appropriating writing, art, music, or private conversations.",
+            "fix": "Find a closer visual match for: Here's a thought experiment. What if you could take anything"
+          },
+          {
+            "rule": "P-RD-01",
+            "description": "PARTIAL\n\nQuestions 2 and 3 fail: the stakes of why this matters to the viewer aren't established, and there's no uncertainty or threat introduced \u2014 it reads as abstract hypothetical rather than a building tension.",
+            "fix": "Seg 45: Strengthen stakes or add uncertainty"
+          }
+        ]
+      }
+    ]
+  },
+  "segments": [
+    {
+      "segment_idx": 0,
+      "score": 8.7,
+      "verdict": "pass",
+      "text_preview": "In 2019, Facebook was fined five billion dollars. The larges",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~30.8s (77 words)",
+          "fix": "Seg 0: Segment WAY too long (30.8s). Must split to maintain viewer attention."
+        }
+      ]
+    },
+    {
+      "segment_idx": 3,
+      "score": 7.0,
+      "verdict": "pass",
+      "text_preview": "[CHAPTER: THE FORMULA]",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too fast: ~1.2s (3 words)",
+          "fix": "Seg 3: Segment too short (1.2s). Merge with adjacent."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL \u2014 The mathematical formula image is contextually related to \"THE FORMULA\" chapter title, but a chapter card should be a clean title card (white text on black), not a formula image.",
+          "fix": "Find a closer visual match for: [CHAPTER: THE FORMULA]"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "FAIL\n\nA chapter title card with no narration content cannot be evaluated \u2014 it contains no information, importance signal, or uncertainty for questions 1, 2, or 3.",
+          "fix": "Seg 3: Viewer won't know why to care \u2014 add context or cut"
+        }
+      ]
+    },
+    {
+      "segment_idx": 6,
+      "score": 7.0,
+      "verdict": "pass",
+      "text_preview": "The fine was three point five million dollars. Ford kept sel",
+      "issues": [
+        {
+          "rule": "AP-ED-03",
+          "description": "SFX borderline: aftermath at tension 0.6 \u2014 Dry thud on '$3.5M fine, kept selling, no prison' \u2014 the impact IS the injustice",
+          "fix": "Seg 6: SFX at medium tension (0.6) may dilute impact. Consider removing."
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~16.0s (40 words)",
+          "fix": "Seg 6: Segment WAY too long (16.0s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "AP-ED-02",
+          "description": "Text overlay '$3.5 MILLION' uses static+cut (will pop)",
+          "fix": "Seg 6: Use typewriter/lower_third style or fade_from_black transition for graphics"
+        }
+      ]
+    },
+    {
+      "segment_idx": 9,
+      "score": 7.8,
+      "verdict": "pass",
+      "text_preview": "Yesenia called the company's ethics hotline and reported the",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~16.4s (41 words)",
+          "fix": "Seg 9: Segment WAY too long (16.4s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nThe silhouette captures isolation and powerlessness thematically, but doesn't show the corporate/banking context of termination or blacklisting being narrated.",
+          "fix": "Find a closer visual match for: Yesenia called the company's ethics hotline and reported the"
+        }
+      ]
+    },
+    {
+      "segment_idx": 12,
+      "score": 7.8,
+      "verdict": "pass",
+      "text_preview": "Purdue Pharma saw the lawsuits coming a decade early and wit",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~43.2s (108 words)",
+          "fix": "Seg 12: Segment WAY too long (43.2s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nThe settlement document visual relates to legal/financial accountability but doesn't specifically show the pre-lawsuit asset withdrawal or the Sackler family's deliberate financial maneuver being narrated.",
+          "fix": "Find a closer visual match for: Purdue Pharma saw the lawsuits coming a decade early and wit"
+        }
+      ]
+    },
+    {
+      "segment_idx": 15,
+      "score": 7.0,
+      "verdict": "pass",
+      "text_preview": "And the price keeps dropping. Since 2000, corporations have ",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~30.0s (75 words)",
+          "fix": "Seg 15: Segment WAY too long (30.0s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\n\nA bar chart graph could work for the \"$1 trillion in fines\" corporate data, but a generic chart image doesn't specifically show the corporate fine trend being narrated \u2014 it's thematically adjacent but not directly illustrative.",
+          "fix": "Find a closer visual match for: And the price keeps dropping. Since 2000, corporations have "
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 1 and 2 pass (corporate fines = system accountability), but question 3 fails \u2014 the sentence cuts off mid-word, eliminating any uncertainty hook.",
+          "fix": "Seg 15: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 18,
+      "score": 7.8,
+      "verdict": "pass",
+      "text_preview": "[CHAPTER: THE DATA]",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too fast: ~1.2s (3 words)",
+          "fix": "Seg 18: Segment too short (1.2s). Merge with adjacent."
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "FAIL\n\nA chapter title card answers none of the three questions \u2014 it identifies a topic but gives no situation, no stakes, and no uncertainty.",
+          "fix": "Seg 18: Viewer won't know why to care \u2014 add context or cut"
+        }
+      ]
+    },
+    {
+      "segment_idx": 21,
+      "score": 7.0,
+      "verdict": "pass",
+      "text_preview": "Facebook knew this was possible. It was a feature, not a bug",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~18.8s (47 words)",
+          "fix": "Seg 21: Segment WAY too long (18.8s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nA generic data center video is too abstract and visually disconnected from the Facebook API/Cambridge Analytica narrative \u2014 it shows IT infrastructure rather than anything related to Facebook, social data, or the open API concept being described.",
+          "fix": "Replace visual for seg 21: narration and image don't match"
+        }
+      ]
+    },
+    {
+      "segment_idx": 24,
+      "score": 8.7,
+      "verdict": "pass",
+      "text_preview": "When the story broke in March 2018, Zuckerberg was summoned ",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~12.8s (32 words)",
+          "fix": "Seg 24: Segment WAY too long (12.8s). Must split to maintain viewer attention."
+        }
+      ]
+    },
+    {
+      "segment_idx": 27,
+      "score": 7.0,
+      "verdict": "pass",
+      "text_preview": "The room laughed. The internet turned it into a meme. For we",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~12.4s (31 words)",
+          "fix": "Seg 27: Segment WAY too long (12.4s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nEuropean Parliament atmosphere shots evoke \"the room that laughed\" legislatively, but the narration specifically references a US Senate hearing with a young CEO (Zuckerberg/similar), making EU Parliament a geographic mismatch even if the institutional mood aligns.",
+          "fix": "Find a closer visual match for: The room laughed. The internet turned it into a meme. For we"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 1 and 2 pass, but question 3 fails \u2014 there's no uncertainty or sense of what could go wrong; it reads as resolved comedy with no forward tension.",
+          "fix": "Seg 27: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 30,
+      "score": 7.5,
+      "verdict": "pass",
+      "text_preview": "The people who set the fines don't understand what they're f",
+      "issues": [
+        {
+          "rule": "P-RD-04",
+          "description": "No visual assigned to narration segment",
+          "fix": "Assign a visual file that matches the narration content"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestion 1 fails: \"the fines\" and \"the companies\" lack referent \u2014 the viewer doesn't know what specific system, industry, or actors are being discussed.",
+          "fix": "Seg 30: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 33,
+      "score": 6.7,
+      "verdict": "warn",
+      "text_preview": "The FTC vote was three to two. Party line. The two dissentin",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 33: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~16.4s (41 words)",
+          "fix": "Seg 33: Segment WAY too long (16.4s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\n\nThe image shows AI/tech imagery which loosely relates to a regulatory vote about a tech company, but doesn't specifically depict the FTC, commissioners, voting proceedings, or Zuckerberg being held accountable.",
+          "fix": "Find a closer visual match for: The FTC vote was three to two. Party line. The two dissentin"
+        }
+      ]
+    },
+    {
+      "segment_idx": 36,
+      "score": 6.3,
+      "verdict": "warn",
+      "text_preview": "But something happened in 2023 that proves the formula can b",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 36: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nThe European Parliament building has no connection to a narrative about a formula breaking in 2023.",
+          "fix": "Replace visual for seg 36: narration and image don't match"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nThe viewer knows something happened and senses stakes, but lacks clarity on *what* happened (question 1) and *what formula* is being referenced (question 2).",
+          "fix": "Seg 36: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 39,
+      "score": 5.8,
+      "verdict": "warn",
+      "text_preview": "Within weeks, they rewrote their entire data transfer infras",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 39: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~25.6s (64 words)",
+          "fix": "Seg 39: Segment WAY too long (25.6s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nA corporate/financial image loosely relates to infrastructure and business decisions, but doesn't visually represent data transfer systems, pipelines, or European architecture rebuilding.",
+          "fix": "Find a closer visual match for: Within weeks, they rewrote their entire data transfer infras"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nViewer knows what happened and why it matters, but uncertainty is low \u2014 the outcome is already resolved (\"they fixed it\"), eliminating dramatic tension.",
+          "fix": "Seg 39: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 42,
+      "score": 5.0,
+      "verdict": "warn",
+      "text_preview": "So at this point in the story, you might be thinking: okay, ",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 42: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~18.8s (47 words)",
+          "fix": "Seg 42: Segment WAY too long (18.8s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nThe narration is about regulatory limits and corporate accountability (European fines, fixing data systems), but the visual is a Grimshaw v Ford Motor Company legal case image which is unrelated to European data regulation or the scoring system being discussed.",
+          "fix": "Replace visual for seg 42: narration and image don't match"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestion 3 fails \u2014 the segment closes with tentative hope (\"maybe we're figuring it out\") but doesn't introduce what could go wrong or what threat lurks ahead to create genuine uncertainty.",
+          "fix": "Seg 42: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 45,
+      "score": 5.8,
+      "verdict": "warn",
+      "text_preview": "Here's a thought experiment. What if you could take anything",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 45: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~20.8s (52 words)",
+          "fix": "Seg 45: Segment WAY too long (20.8s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nThe abstract image loosely relates to the concept of taking/theft, but it's a generic placeholder that doesn't specifically illustrate the thought experiment about appropriating writing, art, music, or private conversations.",
+          "fix": "Find a closer visual match for: Here's a thought experiment. What if you could take anything"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 2 and 3 fail: the stakes of why this matters to the viewer aren't established, and there's no uncertainty or threat introduced \u2014 it reads as abstract hypothetical rather than a building tension.",
+          "fix": "Seg 45: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 48,
+      "score": 5.8,
+      "verdict": "warn",
+      "text_preview": "In October 2025, a Reddit engineer did something clever. The",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 48: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~27.6s (69 words)",
+          "fix": "Seg 48: Segment WAY too long (27.6s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nA data center/server image loosely relates to a tech/internet company story, but doesn't specifically represent Reddit, Google's search index, or the \"invisible post\" concept being described.",
+          "fix": "Find a closer visual match for: In October 2025, a Reddit engineer did something clever. The"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 1 and 2 pass, but question 3 fails \u2014 there's no uncertainty yet about what could go wrong or what's at stake.",
+          "fix": "Seg 48: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 51,
+      "score": 7.2,
+      "verdict": "pass",
+      "text_preview": "Reddit sent a cease-and-desist letter. Standard procedure \u2014 ",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 51: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nThe narration describes a legal/corporate action (cease-and-desist letter from Reddit), while the visual shows a car doing donuts in a parking lot, which has no relevance to that context.",
+          "fix": "Replace visual for seg 51: narration and image don't match"
+        }
+      ]
+    },
+    {
+      "segment_idx": 54,
+      "score": 5.0,
+      "verdict": "warn",
+      "text_preview": "But it's not arrogance. It's arithmetic. They did the math. ",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 54: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~16.0s (40 words)",
+          "fix": "Seg 54: Segment WAY too long (16.0s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nThe narration describes corporate data valuation and legal/financial calculations, but the visual shows a European Parliament voting chamber.",
+          "fix": "Replace visual for seg 54: narration and image don't match"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 1 and 3 pass, but question 2 fails \u2014 the viewer doesn't yet know *what* data or *which model* is being discussed, so the importance of \"the math\" is abstract rather than grounded.",
+          "fix": "Seg 54: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 57,
+      "score": 5.0,
+      "verdict": "warn",
+      "text_preview": "When Ford got caught, they could recall the car. When Facebo",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.3 -> 0.3 (both context_setup)",
+          "fix": "Seg 57: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~19.6s (49 words)",
+          "fix": "Seg 57: Segment WAY too long (19.6s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nThe narration discusses corporate accountability (Ford, Facebook, Purdue Pharma) but the visual shows the European Parliament building, which has no connection to these American corporate scandals.",
+          "fix": "Replace visual for seg 57: narration and image don't match"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 1 and 2 pass clearly, but question 3 fails \u2014 the segment explains reversibility without establishing what irreversible threat is coming, leaving no active uncertainty.",
+          "fix": "Seg 57: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 60,
+      "score": 8.0,
+      "verdict": "pass",
+      "text_preview": "And the people who try to stop it? Remember Yesenia Guitron ",
+      "issues": [
+        {
+          "rule": "AP-ED-03",
+          "description": "SFX borderline: tension_build at tension 0.7 \u2014 beat marker on 'try to stop it' \u2014 punch emphasis on the consequence of resistance",
+          "fix": "Seg 60: SFX at medium tension (0.7) may dilute impact. Consider removing."
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~20.0s (50 words)",
+          "fix": "Seg 60: Segment WAY too long (20.0s). Must split to maintain viewer attention."
+        }
+      ]
+    },
+    {
+      "segment_idx": 63,
+      "score": 5.8,
+      "verdict": "warn",
+      "text_preview": "Elliana is an illustrator in Charlotte, North Carolina. Self",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Flat energy: 0.4 -> 0.4 (both context_setup)",
+          "fix": "Seg 63: Monotone energy \u2014 vary tension_level or arc_position to break viewer fatigue"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~27.2s (68 words)",
+          "fix": "Seg 63: Segment WAY too long (27.2s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL \u2014 The IP video is thematically relevant to an illustrator's creative work, but the narration is introducing a specific person and her artistic identity, not discussing legal concepts.",
+          "fix": "Find a closer visual match for: Elliana is an illustrator in Charlotte, North Carolina. Self"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestion 3 fails \u2014 there is no uncertainty or hint of what could go wrong; this is pure context-setting with no implied threat to Elliana's career or art.",
+          "fix": "Seg 63: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 66,
+      "score": 6.5,
+      "verdict": "warn",
+      "text_preview": "Every illustration she'd spent months creating. Every piece ",
+      "issues": [
+        {
+          "rule": "P-ED-04",
+          "description": "Slight energy shift: 0.8 -> 0.9 (both revelation)",
+          "fix": "Seg 66: Consider shifting arc or tension to create more contrast with previous segment"
+        },
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~42.0s (105 words)",
+          "fix": "Seg 66: Segment WAY too long (42.0s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "MISMATCH\nServer racks in a data center have no visual connection to an artist's illustrations being scraped \u2014 the segment needs imagery of digital art, a portfolio, or AI image generation.",
+          "fix": "Replace visual for seg 66: narration and image don't match"
+        }
+      ]
+    },
+    {
+      "segment_idx": 69,
+      "score": 6.8,
+      "verdict": "warn",
+      "text_preview": "Three thousand dollars. That's what Elliana's illustrations ",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~30.4s (76 words)",
+          "fix": "Seg 69: Segment WAY too long (30.4s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "AP-ED-02",
+          "description": "Text overlay '$3,000' uses static+cut (will pop)",
+          "fix": "Seg 69: Use typewriter/lower_third style or fade_from_black transition for graphics"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestion 3 is weak \u2014 \"might cover a month of rent\" gestures at uncertainty but the threat feels resolved/deflating rather than actively open-ended; what could still go wrong for Elliana isn't clearly at stake.",
+          "fix": "Seg 69: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 72,
+      "score": 6.8,
+      "verdict": "warn",
+      "text_preview": "AI's formula is all of those things. Plus one more: irrevers",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~18.8s (47 words)",
+          "fix": "Seg 72: Segment WAY too long (18.8s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "AP-ED-02",
+          "description": "Text overlay 'IRREVERSIBLE.' uses static+cut (will pop)",
+          "fix": "Seg 72: Use typewriter/lower_third style or fade_from_black transition for graphics"
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL \u2014 The valuation footage supports \"indispensable\" but doesn't visually represent the core argument about irreversibility or the \"scrape/train/settle\" sequence.",
+          "fix": "Find a closer visual match for: AI's formula is all of those things. Plus one more: irrevers"
+        }
+      ]
+    },
+    {
+      "segment_idx": 75,
+      "score": 8.2,
+      "verdict": "pass",
+      "text_preview": "So what happens when the formula reaches its logical conclus",
+      "issues": [
+        {
+          "rule": "AP-ED-02",
+          "description": "Text overlay 'WHAT HAPPENS WHEN TH' uses static+cut (will pop)",
+          "fix": "Seg 75: Use typewriter/lower_third style or fade_from_black transition for graphics"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nThe viewer knows something important is happening (#2 implied by rhetorical escalation), but #1 fails \u2014 \"the formula\" and \"the fine is zero\" lack context without the preceding segment, and #3 is present only as an unanswered question, not felt uncertainty about a specific consequence.",
+          "fix": "Seg 75: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 78,
+      "score": 6.8,
+      "verdict": "warn",
+      "text_preview": "Chris spoke publicly at the Washington state attorney genera",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~17.6s (44 words)",
+          "fix": "Seg 78: Segment WAY too long (17.6s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "AP-ED-02",
+          "description": "Text overlay '\"THE MOST PAINFUL AN' uses static+cut (will pop)",
+          "fix": "Seg 78: Use typewriter/lower_third style or fade_from_black transition for graphics"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestion 3 fails \u2014 the quote resolves Chris's situation as past harm already done, leaving no forward uncertainty about what could still go wrong.",
+          "fix": "Seg 78: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 81,
+      "score": 9.3,
+      "verdict": "pass",
+      "text_preview": "And after getting caught fixing rent for millions of people,",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut slightly slow: ~11.6s (29 words)",
+          "fix": "Seg 81: Segment long (11.6s). Consider splitting."
+        }
+      ]
+    },
+    {
+      "segment_idx": 84,
+      "score": 7.8,
+      "verdict": "pass",
+      "text_preview": "Richard Grimshaw lost his fingers, his ear, and his childhoo",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~21.2s (53 words)",
+          "fix": "Seg 84: Segment WAY too long (21.2s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nQuestions 1 and 2 pass clearly, but question 3 fails \u2014 the segment ends with \"I\" mid-sentence, leaving no forward uncertainty or open question to sustain viewer tension.",
+          "fix": "Seg 84: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 87,
+      "score": 7.7,
+      "verdict": "pass",
+      "text_preview": "Europe figured this out. Four percent of global revenue. Pro",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~31.2s (78 words)",
+          "fix": "Seg 87: Segment WAY too long (31.2s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "AP-ED-02",
+          "description": "Text overlay '4% OF GLOBAL REVENUE' uses static+cut (will pop)",
+          "fix": "Seg 87: Use typewriter/lower_third style or fade_from_black transition for graphics"
+        }
+      ]
+    },
+    {
+      "segment_idx": 90,
+      "score": 7.8,
+      "verdict": "pass",
+      "text_preview": "Richard Grimshaw survived the Pinto fire. He grew up carryin",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~22.4s (56 words)",
+          "fix": "Seg 90: Segment WAY too long (22.4s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nThe image likely shows legal/court document imagery which relates to the Grimshaw v Ford case mentioned in narration, but it doesn't visually depict Richard Grimshaw himself or his burn scars, which are the emotional focus of the narration.",
+          "fix": "Find a closer visual match for: Richard Grimshaw survived the Pinto fire. He grew up carryin"
+        }
+      ]
+    },
+    {
+      "segment_idx": 93,
+      "score": 8.3,
+      "verdict": "pass",
+      "text_preview": "That's the formula. It even gets you a plaque.",
+      "issues": [
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\n\nA mathematical formula image is conceptually clever (corporate calculus as literal math), but it's abstract and disconnected from the \"plaque\" punchline \u2014 the sardonic beat would land harder with something more literal (a trophy, award ceremony, or the actual Sackler plaque).",
+          "fix": "Find a closer visual match for: That's the formula. It even gets you a plaque."
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nThe viewer likely lacks context for \"the formula\" (question 1 fails \u2014 unclear what is happening without prior segment context).",
+          "fix": "Seg 93: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 96,
+      "score": 8.7,
+      "verdict": "pass",
+      "text_preview": "Chris Vialpondo is still in Seattle. Still working two jobs.",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~12.8s (32 words)",
+          "fix": "Seg 96: Segment WAY too long (12.8s). Must split to maintain viewer attention."
+        }
+      ]
+    },
+    {
+      "segment_idx": 99,
+      "score": 9.2,
+      "verdict": "pass",
+      "text_preview": "The law doesn't prevent corporate crime. It prices it.",
+      "issues": [
+        {
+          "rule": "P-RD-01",
+          "description": "PARTIAL\n\nViewer knows what's happening (#1) and why it matters (#2), but the uncertainty (#3) is absent \u2014 there's no hint of what could go wrong or what's at stake next.",
+          "fix": "Seg 99: Strengthen stakes or add uncertainty"
+        }
+      ]
+    },
+    {
+      "segment_idx": 102,
+      "score": 6.5,
+      "verdict": "warn",
+      "text_preview": "Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC,",
+      "issues": [
+        {
+          "rule": "P-ED-02",
+          "description": "Cut too slow: ~12.4s (31 words)",
+          "fix": "Seg 102: Segment WAY too long (12.4s). Must split to maintain viewer attention."
+        },
+        {
+          "rule": "P-RD-04",
+          "description": "PARTIAL\nThe sources card concept fits the narration (listing documentary sources), but a data center server infrastructure photo doesn't visually represent a sources/legal document card.",
+          "fix": "Find a closer visual match for: Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC,"
+        },
+        {
+          "rule": "P-RD-01",
+          "description": "FAIL\n\nThis is a citation list, not narration \u2014 it fails all three questions: no event is described, no importance is conveyed, and there is no uncertainty or stakes.",
+          "fix": "Seg 102: Viewer won't know why to care \u2014 add context or cut"
+        }
+      ]
+    }
+  ]
+}
