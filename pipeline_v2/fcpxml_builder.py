@@ -255,7 +255,8 @@ class FCPXMLBuilder:
             "start": "0/1s",
         }
 
-        file_url = "file://" + filepath.replace(" ", "%20")
+        abs_filepath = os.path.abspath(filepath)
+        file_url = "file://" + abs_filepath.replace(" ", "%20")
 
         if is_image_file(filepath):
             # Still image — no duration, no audio
@@ -463,27 +464,44 @@ class FCPXMLBuilder:
         # to spine clips or gaps via the lane attribute.
 
         # Build spine elements (clips + gaps)
+        # Use frame-accurate Fraction math throughout to avoid float rounding
+        # that causes 1-frame overlaps (DaVinci "Trimming item" warnings).
         spine_elements = []  # list of (element, tl_start_sec, tl_end_sec, src_start_sec)
-        cursor = 0.0  # current position in timeline-relative seconds
+        cursor_frames = 0  # current position in frames (integer, no rounding errors)
 
         for clip in self._v1_clips:
-            clip_start = clip["offset_sec"]
-            clip_dur = clip["duration_sec"]
-            clip_end = clip_start + clip_dur
+            clip_start_frames = round(clip["offset_sec"] * FPS)
+            clip_dur_frames = max(round(clip["duration_sec"] * FPS), 1)
 
             # Insert gap if there's dead space before this clip
-            if clip_start > cursor + 0.001:
-                gap_dur = clip_start - cursor
-                spine_elements.append(("gap", cursor, clip_start, gap_dur, None))
-                cursor = clip_start
+            if clip_start_frames > cursor_frames:
+                gap_dur_frames = clip_start_frames - cursor_frames
+                gap_start_sec = cursor_frames / FPS
+                gap_end_sec = clip_start_frames / FPS
+                spine_elements.append(("gap", gap_start_sec, gap_end_sec,
+                                       gap_dur_frames / FPS, None))
+                cursor_frames = clip_start_frames
+            elif clip_start_frames < cursor_frames:
+                # Clip overlaps previous — advance start to cursor to prevent overlap
+                clip_dur_frames -= (cursor_frames - clip_start_frames)
+                clip_start_frames = cursor_frames
+                if clip_dur_frames <= 0:
+                    continue
 
-            spine_elements.append(("clip", clip_start, clip_end, clip_dur, clip))
-            cursor = clip_end
+            clip_start_sec = cursor_frames / FPS
+            clip_end_frames = cursor_frames + clip_dur_frames
+            clip_end_sec = clip_end_frames / FPS
 
-        # Append a trailing gap to anchor any lane clips that extend beyond V1
-        if total_dur > cursor:
-            trailing_dur = total_dur - cursor
-            spine_elements.append(("gap", cursor, total_dur, trailing_dur, None))
+            spine_elements.append(("clip", clip_start_sec, clip_end_sec,
+                                   clip_dur_frames / FPS, clip))
+            cursor_frames = clip_end_frames
+
+        cursor = cursor_frames / FPS  # convert back for trailing gap
+
+        # Always append a trailing gap — ALL non-narration lane clips attach here
+        # (matches DaVinci's own export format). Duration must be non-zero.
+        trailing_dur = max(total_dur - cursor, 1.0)
+        spine_elements.append(("gap", cursor, cursor + trailing_dur, trailing_dur, None))
 
         # ── Render spine elements into XML ──
         spine_xml_elements = []  # parallel list of (xml_element, tl_start, tl_end, src_start_sec)
@@ -567,54 +585,39 @@ class FCPXMLBuilder:
             spine_xml_elements.append((el, tl_start, tl_end, src_start))
 
         # ── Attach lane clips to spine elements ──
-        # For each lane clip, find the spine element that contains its offset
-        # time and attach it as a child element with the lane attribute.
-        # If no spine element covers the time, attach to the trailing gap.
+        # DaVinci export format: narration on FIRST spine clip, everything
+        # else on the TRAILING GAP.
+        #
+        # FCPXML lane clip positioning:
+        #   timeline_pos = parent.offset + (lane.offset - parent.start)
+        #
+        # For trailing gap:  gap.offset = tc_start + cursor
+        #                     gap.start  = tc_start
+        # Solving for lane.offset to place clip at tc_start + lc_offset:
+        #   lane.offset = tc_start + lc_offset - cursor
+
+        trailing_gap_el = spine_xml_elements[-1][0] if spine_xml_elements else None
+        # cursor = content-relative position where trailing gap starts
+        # (= total V1 clip duration, captured from spine building above)
+        trailing_gap_cursor = spine_xml_elements[-1][1] if spine_xml_elements else 0.0
 
         for lc in self._lane_clips:
             lc_offset = lc["offset_sec"]
             lc_dur = lc["duration_sec"]
 
-            # Audio clips placement strategy:
-            # - Narration (lane 5): attach to FIRST spine element so it starts
-            #   at the same time as V1 clips
-            # - SFX (lanes 7,8): attach to trailing gap (DaVinci groups them)
-            # Video lane clips: attach to the overlapping spine element.
-            parent_el = None
-            parent_tl_start = 0.0
-            parent_src_start = 0.0
-            if lc["is_audio"]:
-                if lc.get("lane") == LANE_A1_NARRATION and spine_xml_elements:
-                    parent_el, parent_tl_start, _, parent_src_start = spine_xml_elements[0]
-                elif spine_xml_elements:
-                    parent_el, parent_tl_start, _, parent_src_start = spine_xml_elements[-1]
+            if lc.get("lane") == LANE_A1_NARRATION and spine_xml_elements:
+                # Narration: attach to FIRST spine clip (matches DaVinci export)
+                parent_el = spine_xml_elements[0][0]
+                clip_offset = sec_to_rational(spine_xml_elements[0][3])  # parent's src_start
             else:
-                for xml_el, tl_start, tl_end, src_start in spine_xml_elements:
-                    if tl_start <= lc_offset < tl_end:
-                        parent_el = xml_el
-                        parent_tl_start = tl_start
-                        parent_src_start = src_start
-                        break
-
-            # Fallback: attach to last spine element (trailing gap)
-            if parent_el is None and spine_xml_elements:
-                parent_el, parent_tl_start, _, parent_src_start = spine_xml_elements[-1]
-
-            if parent_el is None:
-                print(f"  WARNING: No spine element for lane clip at {lc_offset:.1f}s: {lc['name']}")
-                continue
-
-            # Build the lane clip element
-            # FCPXML 1.9: lane clip offset must be RELATIVE to the parent spine
-            # clip, expressed in the parent's local time coordinate space.
-            # Formula: parent_src_start + (lc_timeline_position - parent_tl_start)
-            # For narration attached to first clip: offset=parent_src_start so it
-            # starts at the same time as the parent clip.
-            if lc.get("lane") == LANE_A1_NARRATION:
-                clip_offset = sec_to_rational(parent_src_start)
-            else:
-                relative_sec = parent_src_start + (lc_offset - parent_tl_start)
-                clip_offset = sec_to_rational(relative_sec)
+                # Everything else: trailing gap
+                parent_el = trailing_gap_el
+                if parent_el is None:
+                    print(f"  WARNING: No spine element for lane clip at {lc_offset:.1f}s: {lc['name']}")
+                    continue
+                # Offset in gap's local time so clip appears at correct
+                # timeline position: tc_start + lc_offset - cursor
+                clip_offset = sec_to_rational(self.tc_start + lc_offset - trailing_gap_cursor)
 
             lane_attrs = {
                 "ref": lc["ref"],
@@ -990,8 +993,12 @@ def build_from_director(director_path: str, narration_path: str = None,
     return output_path
 
 
-def import_into_resolve(fcpxml_path: str):
-    """Import the FCPXML into DaVinci Resolve via scripting API."""
+def import_into_resolve(fcpxml_path: str, timeline_name: str = None):
+    """Import the FCPXML into DaVinci Resolve via scripting API.
+
+    IMPORTANT: Must pass timelineName in the options dict — without it,
+    ImportTimelineFromFile returns None for FCPXML files.
+    """
     print(f"\n  Importing FCPXML into DaVinci Resolve...")
 
     resolve_modules = "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Developer/Scripting/Modules/"
@@ -1009,7 +1016,10 @@ def import_into_resolve(fcpxml_path: str):
         mp = project.GetMediaPool()
 
         abs_path = os.path.abspath(fcpxml_path)
-        result = mp.ImportTimelineFromFile(abs_path)
+        name = timeline_name or os.path.splitext(os.path.basename(fcpxml_path))[0]
+
+        # MUST pass timelineName — without it, API returns None for FCPXML
+        result = mp.ImportTimelineFromFile(abs_path, {"timelineName": name})
 
         if result:
             print(f"  Imported timeline: {result.GetName()}")
@@ -1029,15 +1039,153 @@ def import_into_resolve(fcpxml_path: str):
             return True
         else:
             print("  ERROR: ImportTimelineFromFile returned None")
+            print("  (Even with timelineName option — check if DaVinci is on Edit page)")
             return False
 
     except ImportError:
         print("  ERROR: DaVinci Resolve scripting module not found.")
-        print("  Install DaVinci Resolve or check RESOLVE_MODULES path.")
         return False
     except Exception as e:
         print(f"  ERROR: {e}")
         return False
+
+
+def import_via_applescript(fcpxml_path: str, timeline_name: str = None) -> bool:
+    """Import FCPXML into DaVinci Resolve via AppleScript through Terminal.
+
+    The DaVinci API's ImportTimelineFromFile returns None for FCPXML files.
+    This function uses AppleScript to drive the UI: File > Import > Timeline,
+    navigate to the file via Cmd+Shift+G, and confirm the import dialog.
+    Must run through Terminal.app (which has accessibility permissions).
+    """
+    import time
+
+    abs_path = os.path.abspath(fcpxml_path)
+    if not os.path.exists(abs_path):
+        print(f"  ERROR: FCPXML not found: {abs_path}")
+        return False
+
+    # Get pre-import timeline count
+    resolve_modules = "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Developer/Scripting/Modules/"
+    if resolve_modules not in sys.path:
+        sys.path.append(resolve_modules)
+    try:
+        import DaVinciResolveScript as dvr
+        resolve = dvr.scriptapp("Resolve")
+        project = resolve.GetProjectManager().GetCurrentProject()
+        pre_count = project.GetTimelineCount()
+    except Exception:
+        pre_count = 0
+
+    # Build AppleScript
+    script = f'''
+    -- Put file path on clipboard for Cmd+Shift+G paste
+    do shell script "echo -n '{abs_path}' | pbcopy"
+
+    tell application "DaVinci Resolve" to activate
+    delay 1
+
+    -- Dismiss any stale dialogs
+    tell application "System Events"
+        key code 53
+        delay 0.3
+    end tell
+
+    -- File > Import > Timeline...
+    tell application "System Events"
+        tell process "DaVinci Resolve"
+            click menu item "Timeline\\u2026" of menu 1 of menu item "Import" of menu "File" of menu bar 1
+        end tell
+    end tell
+    delay 4
+
+    -- Navigate to file via Cmd+Shift+G
+    tell application "System Events"
+        keystroke "g" using {{shift down, command down}}
+        delay 2
+        keystroke "a" using {{command down}}
+        delay 0.3
+        keystroke "v" using {{command down}}
+        delay 1
+        keystroke return
+        delay 3
+        keystroke return
+    end tell
+    delay 5
+
+    -- Handle the Import settings dialog (set timeline name, click Ok)
+    tell application "System Events"
+        tell process "DaVinci Resolve"
+            try
+                set importWin to window "Import a Timeline From File"
+                set value of text field 2 of importWin to "{timeline_name or 'Breaking Law FINAL'}"
+                delay 0.5
+                click button "Ok" of importWin
+            end try
+        end tell
+    end tell
+    delay 8
+
+    -- Handle missing clips dialog (click No)
+    tell application "System Events"
+        tell process "DaVinci Resolve"
+            repeat 3 times
+                try
+                    click button "No" of window "Message"
+                    delay 2
+                end try
+            end repeat
+            -- Close Log if open
+            try
+                click button "Close" of window "Log"
+            end try
+        end tell
+    end tell
+    '''
+
+    # Write and run through Terminal
+    script_path = "/tmp/davinci_fcpxml_import.scpt"
+    with open(script_path, "w") as f:
+        f.write(script)
+
+    print(f"  Running AppleScript import via Terminal...")
+    result = subprocess.run(
+        ["osascript", "-e",
+         f'tell application "Terminal" to do script "osascript {script_path} 2>&1"'],
+        capture_output=True, text=True, timeout=10
+    )
+
+    # Wait for import to complete
+    print(f"  Waiting for DaVinci import (up to 60s)...")
+    for i in range(12):
+        time.sleep(5)
+        try:
+            resolve = dvr.scriptapp("Resolve")
+            project = resolve.GetProjectManager().GetCurrentProject()
+            post_count = project.GetTimelineCount()
+            if post_count > pre_count:
+                # Find and switch to the new timeline
+                for idx in range(1, post_count + 1):
+                    tl = project.GetTimelineByIndex(idx)
+                    if tl.GetName() not in [project.GetTimelineByIndex(j).GetName()
+                                            for j in range(1, pre_count + 1)]:
+                        project.SetCurrentTimeline(tl)
+                        print(f"  Imported timeline: {tl.GetName()}")
+                        clip_count = 0
+                        for tt in ('video', 'audio'):
+                            for t in range(1, tl.GetTrackCount(tt) + 1):
+                                clips = tl.GetItemListInTrack(tt, t) or []
+                                if clips:
+                                    prefix = 'V' if tt == 'video' else 'A'
+                                    print(f"    {prefix}{t}: {len(clips)} clips")
+                                    clip_count += len(clips)
+                        print(f"  Total clips: {clip_count}")
+                        return True
+        except Exception:
+            pass
+
+    print(f"  WARNING: Timeline count unchanged after 60s")
+    return False
 
 
 # ─── CLI ─────────────────────────────────────────────────────────────────────
@@ -1111,7 +1259,11 @@ Examples:
     if args.import_resolve:
         success = import_into_resolve(output)
         if not success:
-            return 1
+            print("  API import failed — trying AppleScript UI import...")
+            success = import_via_applescript(output)
+            if not success:
+                print("  ERROR: Both API and AppleScript import failed.")
+                return 1
 
     print(f"\n  Done.")
     return 0

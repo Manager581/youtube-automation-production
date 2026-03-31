@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 executive_producer.py — Watches the final DaVinci timeline and verifies
 everything the director specified actually made it to screen.
@@ -575,12 +576,19 @@ def run_review(timeline, director_segments, playbook, verbose=True):
 
 
 def main():
+    import sys
+    # Force UTF-8 stdout to prevent ASCII encode errors with clip names
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
     parser = argparse.ArgumentParser(description="Executive Producer — verify everything works together")
     parser.add_argument('--director', help='Path to director JSON output')
     parser.add_argument('--fix', action='store_true', help='Auto-fix issues where possible')
     parser.add_argument('--report', help='Save report to JSON file')
     args = parser.parse_args()
-    
+
     print(f"\n{BOLD}Executive Producer — Final Review{RESET}")
     print("=" * 60)
     

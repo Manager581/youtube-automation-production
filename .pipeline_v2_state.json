@@ -1,43 +1,35 @@
 {
   "topic": "Why Breaking the Law Is Profitable",
-  "topic_details": {
-    "title": "Why Breaking the Law Is Profitable",
-    "angle": "For the biggest companies, fines are a line item — they budget for breaking the law because the penalty is always less than the profit. RealPage ($0 fine this week), Meta ($5B = 9% of revenue), Boeing (346 dead = 11 days revenue), AI scraping wars (scrape now, pay later, keep the model).",
-    "format": "30-40 min business documentary, ColdFusion/HMW style with Fern-level production",
-    "niche": "business/tech documentary",
-    "rpm_target": "$10-25 CPM",
-    "sponsor_angle": "Privacy/data protection (NordVPN, DeleteMe, Incogni)",
-    "scorer_result": "72/100 — overridden by audience validation (507-like comment confirms thesis)",
-    "audience_validation": "HMW 'Break The Law' 797 comments, 'Find Out Stage' 1679 comments — top comments confirm 'fines = cost of business' thesis",
-    "case_studies": [
-      "RealPage: $1.6B/yr revenue, $0 DOJ fine (March 2026, THIS WEEK)",
-      "Meta/Facebook: $5B FTC fine = 9% of annual revenue, stock went UP",
-      "AI Scraping: Reddit v Perplexity, OpenAI lawsuits — scrape now, pay later",
-      "Boeing: 346 dead, $2.5B settlement = 11 days revenue",
-      "Wells Fargo: millions of fake accounts, $3B fine = 2 weeks revenue",
-      "Purdue Pharma: 600K+ opioid deaths, Sacklers kept billions"
-    ],
-    "killer_stats": [
-      "$0 — RealPage's fine for coordinating rent across 10M apartments",
-      "$5B Meta fine — stock went UP the day it was announced",
-      "11 days — Boeing's $2.5B fine as proportion of revenue after 346 deaths"
-    ]
-  },
-  "completed": ["topic", "comments"],
-  "current": null,
+  "topic_details": {},
+  "completed": [
+    "topic",
+    "comments",
+    "research",
+    "validate",
+    "script",
+    "enhance",
+    "qa_script",
+    "voice",
+    "align"
+  ],
+  "current": "qa_voice",
   "config": {
     "media_dir": "media/breaking_law/",
-    "script_path": "scripts/raw_breaking_law.txt",
+    "script_path": "scripts/raw_breaking_law_v45.txt",
     "enhanced_script_path": "scripts/enhanced_breaking_law.txt",
     "storyboard_path": "storyboards/breaking_law_storyboard.json",
-    "director_path": "storyboards/breaking_law_directed.json",
-    "narration_path": "media/breaking_law/narration.wav",
-    "music_path": "media/breaking_law/music.wav",
-    "footage_dir": "media/breaking_law/footage/",
-    "image_dir": "media/breaking_law/images/",
+    "director_path": "storyboards/breaking_law_directed_v2.json",
+    "narration_path": "audio/breaking_law/narration.wav",
+    "music_path": "audio/breaking_law/music_ducked.wav",
+    "footage_dir": "footage/breaking_law/clips/",
+    "image_dir": "footage/breaking_law/images/",
     "sfx_dir": "assets/sfx/",
     "transcript_path": "media/breaking_law/transcripts.json",
     "vision_manifest": "media/breaking_law/vision_manifest.json",
-    "gap_fill_dir": "media/breaking_law/gap_fills/"
+    "gap_fill_dir": "footage/breaking_law/gap_fills/images/",
+    "overlay_dir": "assets/breaking_law/overlays/",
+    "chapter_dir": "assets/breaking_law/chapters/",
+    "fcpxml_path": "timeline_final_v9.fcpxml",
+    "alignment_path": "audio/breaking_law/narration_alignment.json"
   }
 }

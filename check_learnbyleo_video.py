@@ -243,9 +243,15 @@ def run_checks(timeline, playbook):
 
 
 def main():
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
     print(f"\n{BOLD}LearnByLeo Video QA Checker{RESET}")
     print("=" * 60)
-    
+
     timeline = connect()
     print(f"Timeline: {timeline.GetName()}")
     print(f"Duration: {(timeline.GetEndFrame() - timeline.GetStartFrame()) / 30 / 60:.1f} min\n")

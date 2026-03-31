@@ -145,7 +145,24 @@ director → builder → director_review → gap_resolver → research_agent →
 - Must ALWAYS run 13→14→15→17 in sequence — director needs full clip knowledge
 - Pipeline v2 stage ordering is CORRECT, we just skipped stages
 
+### Pipeline V2 Overhaul (session 2026-03-31 evening)
+- [x] **narration_aligner.py** — Whisper word-level forced alignment (replaces 150 WPM estimates)
+- [x] **Director upgrade** — vision descriptions now in Claude prompt (was loaded but unused), `music_state` per segment, asset sufficiency check (exits 1 if < 0.8x coverage), Whisper alignment timestamps
+- [x] **FCPXML builder fixes** — absolute file paths (`os.path.abspath`), API import with `timelineName` option (was returning None), lane clips on trailing gap with correct offset math
+- [x] **Pipeline orchestrator** — added `align` stage, 1800s timeout (was 600s), UTF-8 subprocess env, wired gapfilled director JSON + alignment path
+- [x] **Footage sourcer** — MIN_VIABLE_CLIPS raised from 2 to 15
+- [x] **Unicode fix** — `sys.stdout.reconfigure(encoding='utf-8')` in all DaVinci-reading scripts
+
+Key bugs found:
+- DaVinci `ImportTimelineFromFile` returns None unless you pass `{"timelineName": "..."}` option
+- FCPXML `file://` URLs must be absolute — relative paths cause silent clip drops on import
+- Director was picking clips by filename only — vision data loaded but never passed to Claude's prompt
+- Director timing estimated at 150 WPM linear — Whisper gives actual word-level timestamps
+- Never hack around pipeline gates — produces Frankenstein videos
+
 ### Immediate TODO
+- [ ] Director second pass (self-review for source reuse, thin coverage)
+- [ ] Music sourcing: source 3-5 CC0 tracks, director assigns `music_state` per segment
 - [ ] Source credits field in director schema
 - [ ] Sponsor integration placeholder in script structure
 - [ ] Recalibrate scorer for business/tech niche

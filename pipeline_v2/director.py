@@ -259,15 +259,20 @@ def get_editing_rules(playbook):
 def build_director_prompt(segments, clips, images, sfx, playbook_rules):
     """Build the master prompt for Claude to make all editorial decisions."""
     
-    # Summarize available assets
+    # Summarize available assets — include vision descriptions so director
+    # can make informed visual choices (not just filename matching)
     clip_summary = "\n".join(
-        f"  - {c['filename'][:50]} ({c['duration']:.0f}s) {c['transcript_preview'][:100]}"
+        f"  - {c['filename'][:50]} ({c['duration']:.0f}s)"
+        f" [{c.get('vision_description', 'no description')[:120]}]"
+        f" Transcript: {c.get('transcript_preview', 'none')[:80]}"
         for c in clips[:30]
     )
-    
+
     image_summary = "\n".join(
-        f"  - {img['filename'][:50]} ({img['size_kb']:.0f}KB)"
-        for img in images[:50]
+        f"  - {img['filename'][:50]}"
+        f" [{img.get('vision_description', 'no description')[:120]}]"
+        f" Topics: {', '.join(img.get('topics', [])[:3])}"
+        for img in images[:80]
     )
     
     sfx_summary = "\n".join(
@@ -320,6 +325,7 @@ For EACH segment (0 to {len(segments)-1}), output a JSON object with these field
 - "tension_level": 0.0 to 1.0
 - "zoom_target": "face" / "document" / "subject" / "wide" / null
 - "chapter_card": if this starts a new chapter, the chapter title (e.g., "THE TENANTS"), otherwise null
+- "music_state": "playing" (music audible) / "ducking" (music low under VO) / "silent" (no music) / "rising" (music swelling for impact) / "transition" (music bridges between sections)
 - "notes": brief editorial note explaining your choices
 
 CRITICAL RULES:
@@ -486,20 +492,37 @@ def validate_decisions(decisions, clips, images, sfx):
 
 # ── Output ────────────────────────────────────────────────────────────────
 
-def build_output(segments, decisions, clips, images, sfx):
-    """Build the final director output JSON."""
-    
-    # Calculate timing
+def build_output(segments, decisions, clips, images, sfx, alignment=None):
+    """Build the final director output JSON.
+
+    Args:
+        alignment: Optional narration alignment JSON (from narration_aligner.py).
+                   If provided, uses exact Whisper timestamps instead of estimates.
+    """
     total_words = sum(s["word_count"] for s in segments)
-    narr_duration = total_words / 2.5  # ~150 WPM estimate
-    
+
+    # Use Whisper alignment if available, else estimate at ~150 WPM
+    if alignment:
+        from pipeline_v2.narration_aligner import match_script_to_alignment
+        segments = match_script_to_alignment(segments, alignment)
+        narr_duration = alignment.get("duration_sec", total_words / 2.5)
+        print(f"  Using Whisper alignment: {narr_duration:.1f}s")
+    else:
+        narr_duration = total_words / 2.5  # ~150 WPM estimate
+        print(f"  WARNING: No alignment — estimating timing at ~150 WPM ({narr_duration:.0f}s)")
+
     output_segments = []
     cumulative_words = 0
-    
+
     for i, (seg, dec) in enumerate(zip(segments, decisions)):
-        start_sec = (cumulative_words / total_words) * narr_duration if total_words > 0 else 0
-        cumulative_words += seg["word_count"]
-        end_sec = (cumulative_words / total_words) * narr_duration if total_words > 0 else 0
+        # Prefer Whisper timestamps if available on the segment
+        if seg.get("_timeline_start_sec") is not None:
+            start_sec = seg["_timeline_start_sec"]
+            end_sec = seg.get("_timeline_end_sec", start_sec + seg["word_count"] / 2.5)
+        else:
+            start_sec = (cumulative_words / total_words) * narr_duration if total_words > 0 else 0
+            cumulative_words += seg["word_count"]
+            end_sec = (cumulative_words / total_words) * narr_duration if total_words > 0 else 0
         
         output_seg = {
             "text": seg["text"],
@@ -533,8 +556,9 @@ def build_output(segments, decisions, clips, images, sfx):
             "zoom_target": dec.get("zoom_target"),
             "chapter_card": dec.get("chapter_card"),
             
+            "music_state": dec.get("music_state", "ducking"),
             "notes": dec.get("notes", ""),
-            
+
             # Timing
             "_timeline_start_sec": start_sec,
             "_timeline_end_sec": end_sec,
@@ -585,6 +609,7 @@ def main():
     parser.add_argument('--sfx', default='', help='SFX directory')
     parser.add_argument('--transcripts', help='Transcripts JSON (from transcript_extractor)')
     parser.add_argument('--vision', help='Vision manifest JSON (from vision_analyzer)')
+    parser.add_argument('--alignment', help='Narration alignment JSON (from narration_aligner)')
     parser.add_argument('--output', required=True, help='Output JSON path')
     args = parser.parse_args()
     
@@ -611,8 +636,21 @@ def main():
     print(f"   SFX: {len(sfx)}")
     
     if not clips and not images:
-        print(f"\n   WARNING: No footage or images found!")
+        print(f"\n   ERROR: No footage or images found!")
         print(f"   Run footage_sourcer and web_image_sourcer first.")
+        return 1
+
+    # Asset sufficiency check — need enough unique assets to avoid repetition
+    total_assets = len(clips) + len(images)
+    coverage_ratio = total_assets / max(len(segments), 1)
+    print(f"   Asset coverage: {total_assets} assets for {len(segments)} segments ({coverage_ratio:.1f}x)")
+    if coverage_ratio < 0.8:
+        print(f"\n   ERROR: Insufficient assets ({coverage_ratio:.1f}x < 0.8x minimum)")
+        print(f"   Need at least {int(len(segments) * 0.8)} assets, have {total_assets}")
+        print(f"   Run footage_sourcer and web_image_sourcer to get more.")
+        return 1
+    if len(clips) < 10:
+        print(f"   WARNING: Only {len(clips)} video clips. 15+ recommended for a documentary.")
 
     # Enrich with transcripts
     if args.transcripts and os.path.exists(args.transcripts):
@@ -680,9 +718,17 @@ def main():
         decisions.append({"visual_file": None, "arc_position": "context_setup", "tension_level": 0.3})
     decisions = decisions[:len(segments)]
     
+    # Load narration alignment if available
+    alignment = None
+    if args.alignment and os.path.exists(args.alignment):
+        with open(args.alignment) as f:
+            alignment = json.load(f)
+        print(f"   Alignment: {alignment.get('total_words', 0)} words, "
+              f"{alignment.get('duration_sec', 0):.1f}s")
+
     # Build output
     print(f"\n5. Building output...")
-    output = build_output(segments, decisions, clips, images, sfx)
+    output = build_output(segments, decisions, clips, images, sfx, alignment=alignment)
     
     with open(args.output, 'w') as f:
         json.dump(output, f, indent=2)

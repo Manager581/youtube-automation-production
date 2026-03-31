@@ -46,6 +46,7 @@ STAGES = [
 
     # PHASE 3: AUDIO
     ("voice",           "Generate voice (F5-TTS)",              "pipeline/voice_generator.py"),
+    ("align",           "Word-level narration alignment (Whisper)", "pipeline_v2/narration_aligner.py"),
     ("qa_voice",        "Voice QA (LearnByLeo)",                "check_learnbyleo_voice.py"),
     ("music",           "Source music (Pixabay CC0)",            "pipeline/music_sourcer.py"),
 
@@ -67,7 +68,7 @@ STAGES = [
     ("duck_music",      "Pre-duck music under narration",       None),  # Inline
     ("normalize_sfx",   "Normalize SFX to -12 LUFS",           None),  # Inline
     ("exec_producer_pre", "Pre-build executive producer gate",  "pipeline_v2/executive_producer.py"),
-    ("davinci_build",   "Build DaVinci timeline",               "pipeline_v2/davinci_timeline_builder.py"),
+    ("davinci_build",   "Build FCPXML + import to DaVinci",     "pipeline_v2/fcpxml_builder.py"),
 
     # PHASE 7: VERIFICATION — closed loop
     ("director_review", "Director reviews DaVinci timeline",    "pipeline_v2/director_review.py"),
@@ -109,7 +110,7 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
-def run_script(script_path, extra_args=None, timeout=600):
+def run_script(script_path, extra_args=None, timeout=1800):
     """Run a pipeline script and return (exit_code, output)."""
     cmd = [PYTHON, str(PROJECT_ROOT / script_path)]
     if extra_args:
@@ -118,7 +119,8 @@ def run_script(script_path, extra_args=None, timeout=600):
     print(f"  {GRAY}$ {' '.join(cmd[:3])}...{RESET}")
     
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
+                                env={**os.environ, "PYTHONIOENCODING": "utf-8"})
         if result.stdout:
             for line in result.stdout.strip().split('\n')[-5:]:
                 print(f"  {line}")
@@ -219,6 +221,10 @@ def build_stage_args(stage_name, state):
         "enhance": ["--script", config.get("script_path", "scripts/raw_script.txt")],
         "qa_script": [config.get("script_path", "scripts/raw_script.txt")],
         "voice": [],
+        "align": ["--narration", config.get("narration_path", "audio/narration.wav"),
+                  "--script", config.get("script_path", "scripts/raw_script.txt"),
+                  "--output", config.get("alignment_path", "audio/narration_alignment.json"),
+                  "--model", "base"],
         "qa_voice": [config.get("narration_path", "audio/narration.wav")],
         "music": [],
         "footage": [],
@@ -235,14 +241,22 @@ def build_stage_args(stage_name, state):
                       "--footage", config.get("footage_dir", "footage/"),
                       "--images", config.get("image_dir", "images/"),
                       "--sfx", config.get("sfx_dir", "assets/sfx/"),
+                      "--alignment", config.get("alignment_path", "audio/narration_alignment.json"),
                       "--output", config.get("director_path", "storyboards/directed_v3.json")],
         "validate_segments": ["--director", config.get("director_path", "storyboards/directed_v3.json")],
         "fill_gaps": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
                        "--output-dir", config.get("gap_fill_dir", "footage/gap_fills/")],
         "davinci_build": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
                            "--narration", config.get("narration_path", "audio/narration.wav"),
-                           "--music", config.get("music_path", "assets/music/track.wav"),
-                           "--sfx-dir", config.get("sfx_dir", "assets/sfx/")],
+                           "--music", config.get("music_path", "audio/music_ducked.wav"),
+                           "--sfx-dir", config.get("sfx_dir", "assets/sfx/"),
+                           "--output", config.get("fcpxml_path", "timeline_final.fcpxml"),
+                           "--search-dir", config.get("overlay_dir", "assets/overlays/"),
+                           "--search-dir", config.get("chapter_dir", "assets/chapters/"),
+                           "--search-dir", config.get("footage_dir", "footage/"),
+                           "--search-dir", config.get("image_dir", "footage/images/"),
+                           "--search-dir", config.get("gap_fill_dir", "footage/gap_fills/"),
+                           "--import-resolve"],
         "director_review": ["--director", config.get("director_path", "storyboards/directed_v3.json")],
         "qa_video": [],
         "exec_producer_pre": [],

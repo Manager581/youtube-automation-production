@@ -39,7 +39,7 @@ GREEN = "\033[92m"; YELLOW = "\033[93m"; RED = "\033[91m"
 BOLD = "\033[1m"; RESET = "\033[0m"; GRAY = "\033[90m"
 
 # Minimum confidence to consider a gap truly resolved
-MIN_CONFIDENCE = 0.6
+MIN_CONFIDENCE = 0.3
 
 # Directories to search for existing visual files
 SEARCH_DIRS = [
@@ -292,7 +292,7 @@ def _pick_best_match(narration, analyzed_candidates):
         f'"reason": "no match" }}'
     )
 
-    response = query_claude(prompt, timeout=45)
+    response = query_claude(prompt, timeout=120)
     if not response:
         # Fallback: pick the first candidate
         return {

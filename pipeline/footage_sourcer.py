@@ -51,7 +51,7 @@ SEARCH_TIMEOUT_SEC = 20
 
 # If total found < this, print a warning and flag output for animation fallback
 MIN_VIABLE_IMAGES = 10    # Wikimedia images
-MIN_VIABLE_CLIPS  = 2     # video clips
+MIN_VIABLE_CLIPS  = 15    # video clips — need enough B-roll for documentary
 
 # Per-segment: if 0 images AND 0 clips found, flag as NEEDS_ANIMATION
 # The assembly step will call animation_generator.py for flagged segments

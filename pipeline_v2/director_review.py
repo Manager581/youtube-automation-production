@@ -561,6 +561,12 @@ def request_new_footage(mismatches, decisions):
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def main():
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
     parser = argparse.ArgumentParser(
         description="Director Review — verify timeline matches director decisions"
     )
