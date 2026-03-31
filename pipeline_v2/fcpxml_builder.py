@@ -425,14 +425,28 @@ class FCPXMLBuilder:
             last = self._v1_clips[-1]
             total_dur = last["offset_sec"] + last["duration_sec"]
 
-        # Include lane clips in duration calculation
+        # Include narration in duration calculation (narration is the source of truth)
+        narr_dur = 0
         for lc in self._lane_clips:
-            end = lc["offset_sec"] + lc["duration_sec"]
-            if end > total_dur:
-                total_dur = end
+            if lc.get("lane") == LANE_A1_NARRATION:
+                narr_dur = lc["offset_sec"] + lc["duration_sec"]
+                break
+
+        # Cap total duration to narration length (prevents runaway from bad offsets)
+        if narr_dur > 0:
+            total_dur = max(total_dur, narr_dur)
+            # Clamp lane clips that extend past narration
+            for lc in self._lane_clips:
+                if lc["offset_sec"] > narr_dur:
+                    lc["offset_sec"] = min(lc["offset_sec"], narr_dur - lc["duration_sec"])
+        else:
+            for lc in self._lane_clips:
+                end = lc["offset_sec"] + lc["duration_sec"]
+                if end > total_dur:
+                    total_dur = end
 
         # Add a small buffer
-        total_dur += 2.0
+        total_dur += 5.0
 
         sequence = SubElement(project, "sequence", {
             "format": fmt_id,
@@ -558,12 +572,18 @@ class FCPXMLBuilder:
             lc_dur = lc["duration_sec"]
             lc_abs_offset = self.tc_start + lc_offset
 
-            # Find which spine element to attach to
+            # Audio clips: attach ALL to the TRAILING GAP (last spine element).
+            # DaVinci only groups audio clips on the same track when they share
+            # a <gap> parent — NOT when they're children of a <clip>.
+            # Video lane clips: attach to the overlapping spine element.
             parent_el = None
-            for xml_el, tl_start, tl_end in spine_xml_elements:
-                if tl_start <= lc_offset < tl_end:
-                    parent_el = xml_el
-                    break
+            if lc["is_audio"] and spine_xml_elements:
+                parent_el = spine_xml_elements[-1][0]  # trailing gap
+            else:
+                for xml_el, tl_start, tl_end in spine_xml_elements:
+                    if tl_start <= lc_offset < tl_end:
+                        parent_el = xml_el
+                        break
 
             # Fallback: attach to last spine element (trailing gap)
             if parent_el is None and spine_xml_elements:
