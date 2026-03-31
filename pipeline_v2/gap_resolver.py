@@ -38,6 +38,9 @@ from pipeline_v2.web_image_sourcer import search_google_images
 GREEN = "\033[92m"; YELLOW = "\033[93m"; RED = "\033[91m"
 BOLD = "\033[1m"; RESET = "\033[0m"; GRAY = "\033[90m"
 
+# Minimum confidence to consider a gap truly resolved
+MIN_CONFIDENCE = 0.6
+
 # Directories to search for existing visual files
 SEARCH_DIRS = [
     PROJECT_ROOT / "footage",
@@ -451,19 +454,32 @@ def main():
         output_path, updates = update_director(args.director, resolved)
         print(f"\n  {GREEN}Updated {updates} segments in: {output_path}{RESET}")
 
+    # Check confidence threshold — low-confidence resolutions are not truly resolved
+    low_confidence = [r for r in resolved if r.get("confidence", 0) < MIN_CONFIDENCE]
+    high_confidence = [r for r in resolved if r.get("confidence", 0) >= MIN_CONFIDENCE]
+
     # Summary
     print(f"\n{'='*60}")
     print(f"  {BOLD}GAP RESOLUTION SUMMARY{RESET}")
     print(f"  Total gaps: {len(gaps)}")
-    print(f"  Resolved:   {GREEN}{len(resolved)}{RESET}")
-    print(f"  Unresolved: {RED}{len(unresolved)}{RESET}")
+    print(f"  Resolved (confident):   {GREEN}{len(high_confidence)}{RESET}")
+    if low_confidence:
+        print(f"  Resolved (low conf):    {YELLOW}{len(low_confidence)}{RESET} "
+              f"(below {MIN_CONFIDENCE:.0%} threshold)")
+    print(f"  Unresolved:             {RED}{len(unresolved)}{RESET}")
 
     if resolved:
         avg_conf = sum(r["confidence"] for r in resolved) / len(resolved)
         print(f"  Avg confidence: {avg_conf:.0%}")
 
+    if low_confidence:
+        print(f"\n  {YELLOW}Low-confidence resolutions (< {MIN_CONFIDENCE:.0%}):{RESET}")
+        for lc in low_confidence:
+            print(f"    Seg {lc['segment_idx']}: {lc.get('confidence', 0):.0%} — "
+                  f"\"{lc['search_query'][:50]}\"")
+
     if unresolved:
-        print(f"\n  {YELLOW}Unresolved segments (need manual sourcing):{RESET}")
+        print(f"\n  {RED}Unresolved segments (need manual sourcing):{RESET}")
         for u in unresolved:
             print(f"    Seg {u['segment_idx']}: \"{u['search_query'][:50]}\"")
 
@@ -473,7 +489,10 @@ def main():
             "director_path": args.director,
             "total_gaps": len(gaps),
             "resolved_count": len(resolved),
+            "resolved_confident": len(high_confidence),
+            "resolved_low_confidence": len(low_confidence),
             "unresolved_count": len(unresolved),
+            "min_confidence_threshold": MIN_CONFIDENCE,
             "resolved": resolved,
             "unresolved": [
                 {"segment_idx": u["segment_idx"], "search_query": u["search_query"],
@@ -485,13 +504,15 @@ def main():
             json.dump(report, f, indent=2)
         print(f"\n  Report saved: {args.report}")
 
-    # Verdict
-    if unresolved:
-        print(f"\n  {YELLOW}{BOLD}VERDICT: {len(unresolved)} gaps remain — "
-              f"source manually or run again with different queries{RESET}")
+    # Verdict — fail if any gaps are unresolved OR resolved below confidence threshold
+    total_bad = len(unresolved) + len(low_confidence)
+    if total_bad > 0:
+        print(f"\n  {RED}{BOLD}VERDICT: {total_bad} gaps not confidently resolved — "
+              f"{len(unresolved)} unresolved, {len(low_confidence)} below "
+              f"{MIN_CONFIDENCE:.0%} confidence{RESET}")
         return 1
     else:
-        print(f"\n  {GREEN}{BOLD}VERDICT: All gaps filled{RESET}")
+        print(f"\n  {GREEN}{BOLD}VERDICT: All gaps filled with high confidence{RESET}")
         return 0
 
 

@@ -154,7 +154,6 @@ Return ONLY valid JSON:
 
         for clip in clips:
             local_path = clip.get("path", clip.get("local_path", ""))
-            # Extract segment index from path (e.g., .../seg_013/...) or from field
             seg_idx = clip.get("segment_index", 0)
             if seg_idx == 0 and "/seg_" in local_path:
                 import re as _re
@@ -236,6 +235,23 @@ def main():
     if args.report:
         verifier.save_report(report, args.report)
 
+    # Exit code: fail if more than 20% of footage fails verification
+    MAX_FAIL_RATE = 0.2
+    total = report['total']
+    if total > 0:
+        fail_rate = report['failed'] / total
+        if fail_rate > MAX_FAIL_RATE:
+            print(f"\n  VERDICT: FAIL — {fail_rate:.0%} of footage failed "
+                  f"(threshold: {MAX_FAIL_RATE:.0%})")
+            return 1
+        else:
+            print(f"\n  VERDICT: PASS — {fail_rate:.0%} failure rate "
+                  f"within {MAX_FAIL_RATE:.0%} threshold")
+            return 0
+    else:
+        print(f"\n  VERDICT: WARN — no footage to verify")
+        return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

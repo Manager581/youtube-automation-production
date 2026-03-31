@@ -38,45 +38,63 @@ STAGES = [
     ("comments",        "Mine audience signals",                "pipeline/comments_miner.py"),
     ("research",        "Build research brief",                 "pipeline/research_brief.py"),
     ("validate",        "Story validation (GO/SKIP)",           "pipeline/story_validator.py"),
-    
+
     # PHASE 2: SCRIPT
     ("script",          "Write script (Claude Code interactive)", None),  # Manual
     ("enhance",         "Add [BEAT][PAUSE][VOICE] markers",     "pipeline_v2/script_enhancer.py"),
     ("qa_script",       "Script QA (LearnByLeo)",               "check_learnbyleo_script.py"),
-    
+
     # PHASE 3: AUDIO
     ("voice",           "Generate voice (F5-TTS)",              "pipeline/voice_generator.py"),
     ("qa_voice",        "Voice QA (LearnByLeo)",                "check_learnbyleo_voice.py"),
     ("music",           "Source music (Pixabay CC0)",            "pipeline/music_sourcer.py"),
-    
+
     # PHASE 4: VISUALS — sourcing
     ("footage",         "Source footage (yt-dlp)",              "pipeline/footage_sourcer.py"),
     ("images",          "Source images (Chrome/Pexels/Google)",  "pipeline_v2/web_image_sourcer.py"),
     ("transcripts",     "Extract clip transcripts",             "pipeline_v2/transcript_extractor.py"),
     ("vision",          "Analyze all clips/images (Claude vision)", "pipeline_v2/vision_analyzer.py"),
     ("verify_footage",  "Verify footage matches queries",       "pipeline_v2/footage_verifier.py"),
-    
+
     # PHASE 5: EDITORIAL — director sees everything
     ("storyboard",      "Generate visual storyboard",           "pipeline_v2/storyboard_generator.py"),
     ("director",        "Director: pick exact files + editorial", "pipeline_v2/director.py"),
     ("validate_segments", "Validate each segment vs LearnByLeo", "pipeline_v2/segment_validator.py"),
     ("fill_gaps",       "Fill footage gaps automatically",      "pipeline_v2/gap_resolver.py"),
-    
+
     # PHASE 6: ASSEMBLY
     ("pause_insert",    "Insert VO pauses (LearnByLeo rules)",  None),  # Inline
     ("duck_music",      "Pre-duck music under narration",       None),  # Inline
     ("normalize_sfx",   "Normalize SFX to -12 LUFS",           None),  # Inline
+    ("exec_producer_pre", "Pre-build executive producer gate",  "pipeline_v2/executive_producer.py"),
     ("davinci_build",   "Build DaVinci timeline",               "pipeline_v2/davinci_timeline_builder.py"),
-    
+
     # PHASE 7: VERIFICATION — closed loop
     ("director_review", "Director reviews DaVinci timeline",    "pipeline_v2/director_review.py"),
     ("qa_video",        "Video QA (LearnByLeo, 20 checks)",    "check_learnbyleo_video.py"),
     ("exec_producer",   "Executive producer final review",      "pipeline_v2/executive_producer.py"),
-    
+
     # PHASE 8: PUBLISH
     ("render",          "Render in DaVinci (manual)",           None),  # Manual
     ("upload",          "Upload to YouTube (manual)",           None),  # Manual
 ]
+
+# ── Quality Gate Stages ──
+# These stages are quality checks. On failure, the pipeline retries by re-running
+# the associated FIX_STAGE first, then re-checking. Max GATE_MAX_RETRIES attempts.
+GATE_STAGES = {
+    # gate_stage: [fix_stages_to_rerun]
+    "qa_script":          ["enhance"],
+    "qa_voice":           ["voice"],
+    "verify_footage":     ["images", "footage"],
+    "validate_segments":  ["director"],
+    "fill_gaps":          ["images", "fill_gaps"],
+    "exec_producer_pre":  ["director", "fill_gaps"],
+    "director_review":    ["davinci_build"],
+    "exec_producer":      ["davinci_build"],
+}
+
+GATE_MAX_RETRIES = 2
 
 
 def load_state():
@@ -227,6 +245,7 @@ def build_stage_args(stage_name, state):
                            "--sfx-dir", config.get("sfx_dir", "assets/sfx/")],
         "director_review": ["--director", config.get("director_path", "storyboards/directed_v3.json")],
         "qa_video": [],
+        "exec_producer_pre": [],
         "exec_producer": [],
     }
     
@@ -234,37 +253,88 @@ def build_stage_args(stage_name, state):
 
 
 def run_all(state, start_from=None):
-    """Run all stages in order, starting from a specific stage."""
-    
+    """Run all stages in order, starting from a specific stage.
+
+    Quality gate stages (defined in GATE_STAGES) get automatic retry:
+    on failure, the associated fix stages are re-run, then the gate is
+    re-checked. Up to GATE_MAX_RETRIES attempts before the pipeline stops.
+    """
+
     started = start_from is None
-    
+
     for name, desc, script in STAGES:
         if not started:
             if name == start_from:
                 started = True
             else:
                 continue
-        
+
         if name in state.get("completed", []):
-            print(f"  {GRAY}⏭  {name} — already completed{RESET}")
+            print(f"  {GRAY}skip  {name} — already completed{RESET}")
             continue
-        
+
         state["current"] = name
         save_state(state)
-        
+
         rc = run_stage(name, state)
-        
+
         if rc == 0:
             state["completed"].append(name)
             state["current"] = None
             save_state(state)
-        else:
-            print(f"\n{RED}{BOLD}Pipeline stopped at: {name}{RESET}")
-            print(f"Fix the issue, then resume: python run_pipeline_v2.py --stage {name}")
-            save_state(state)
-            return 1
-    
-    print(f"\n{GREEN}{BOLD}🎬 Pipeline complete!{RESET}")
+            continue
+
+        # ── Gate retry logic ──
+        if name in GATE_STAGES:
+            fix_stages = GATE_STAGES[name]
+            retries = 0
+
+            while rc != 0 and retries < GATE_MAX_RETRIES:
+                retries += 1
+                print(f"\n{YELLOW}{BOLD}Gate '{name}' failed — "
+                      f"retry {retries}/{GATE_MAX_RETRIES}{RESET}")
+                print(f"  Re-running fix stages: {', '.join(fix_stages)}")
+
+                # Re-run each fix stage
+                fix_ok = True
+                for fix_name in fix_stages:
+                    # Remove from completed so it re-runs
+                    if fix_name in state.get("completed", []):
+                        state["completed"].remove(fix_name)
+                        save_state(state)
+
+                    fix_rc = run_stage(fix_name, state)
+                    if fix_rc == 0:
+                        state["completed"].append(fix_name)
+                        save_state(state)
+                    else:
+                        print(f"  {RED}Fix stage '{fix_name}' failed — "
+                              f"cannot retry gate{RESET}")
+                        fix_ok = False
+                        break
+
+                if not fix_ok:
+                    break
+
+                # Re-check the gate
+                print(f"\n  Re-checking gate: {name}...")
+                rc = run_stage(name, state)
+
+            if rc == 0:
+                state["completed"].append(name)
+                state["current"] = None
+                save_state(state)
+                continue
+
+        # Gate exhausted retries or non-gate stage failed
+        print(f"\n{RED}{BOLD}Pipeline stopped at: {name}{RESET}")
+        if name in GATE_STAGES:
+            print(f"Gate failed after {GATE_MAX_RETRIES} retries.")
+        print(f"Fix the issue, then resume: python run_pipeline_v2.py --stage {name}")
+        save_state(state)
+        return 1
+
+    print(f"\n{GREEN}{BOLD}Pipeline complete!{RESET}")
     return 0
 
 
@@ -272,24 +342,28 @@ def list_stages():
     """List all pipeline stages."""
     print(f"\n{BOLD}Pipeline V2 Stages:{RESET}")
     print(f"{'='*60}")
-    
-    phase = ""
+
+    # Build phase boundaries from stage names
+    phase_map = {
+        "topic": "PHASE 1: DISCOVERY",
+        "script": "PHASE 2: SCRIPT",
+        "voice": "PHASE 3: AUDIO",
+        "footage": "PHASE 4: VISUALS",
+        "storyboard": "PHASE 5: EDITORIAL",
+        "pause_insert": "PHASE 6: ASSEMBLY",
+        "director_review": "PHASE 7: VERIFICATION",
+        "render": "PHASE 8: PUBLISH",
+    }
+
     for i, (name, desc, script) in enumerate(STAGES):
-        # Phase headers
-        if i == 0: print(f"\n  {BOLD}PHASE 1: DISCOVERY{RESET}")
-        elif i == 4: print(f"\n  {BOLD}PHASE 2: SCRIPT{RESET}")
-        elif i == 7: print(f"\n  {BOLD}PHASE 3: AUDIO{RESET}")
-        elif i == 10: print(f"\n  {BOLD}PHASE 4: VISUALS{RESET}")
-        elif i == 15: print(f"\n  {BOLD}PHASE 5: EDITORIAL{RESET}")
-        elif i == 19: print(f"\n  {BOLD}PHASE 6: ASSEMBLY{RESET}")
-        elif i == 23: print(f"\n  {BOLD}PHASE 7: VERIFICATION{RESET}")
-        elif i == 26: print(f"\n  {BOLD}PHASE 8: PUBLISH{RESET}")
-        
+        if name in phase_map:
+            print(f"\n  {BOLD}{phase_map[name]}{RESET}")
+
         manual = " (manual)" if script is None and name in ("script", "render", "upload") else ""
         inline = " (inline)" if script is None and name not in ("script", "render", "upload") else ""
-        source = f"pipeline_v2/" if script and "pipeline_v2" in script else ""
-        
-        print(f"  {i+1:2d}. {name:20s} {desc}{manual}{inline}")
+        gate = " [GATE]" if name in GATE_STAGES else ""
+
+        print(f"  {i+1:2d}. {name:22s} {desc}{manual}{inline}{gate}")
 
 
 def show_status(state):

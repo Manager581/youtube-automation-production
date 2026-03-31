@@ -751,8 +751,9 @@ def main():
               f"fix before building timeline{RESET}")
         return 1
     elif overall["segments_warned"] > overall["segments_evaluated"] * 0.3:
-        print(f"\n  {YELLOW}{BOLD}VERDICT: Many warnings — review before build{RESET}")
-        return 0
+        print(f"\n  {YELLOW}{BOLD}VERDICT: Too many warnings — "
+              f"not ready to build{RESET}")
+        return 1
     else:
         print(f"\n  {GREEN}{BOLD}VERDICT: Ready to build{RESET}")
         return 0
