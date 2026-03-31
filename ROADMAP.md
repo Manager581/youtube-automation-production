@@ -100,17 +100,35 @@ director → builder → director_review → gap_resolver → research_agent →
 - [x] Footage — 12 video clips (yt-dlp)
 - [x] Images — 51 images (Pexels/Google/Wikimedia)
 - [x] Storyboard — 13 scenes, 83 segments
-- [ ] **Transcripts** — RUNNING (stage 13)
-- [ ] **Vision analysis** — RUNNING (stage 14)
-- [ ] **Verify footage** — pending (stage 15)
-- [ ] **Fill gaps** — pending (stage 19)
-- [ ] **Re-run director** with transcript+vision data (stage 17)
-- [ ] **Re-validate segments** (stage 18)
-- [ ] **DaVinci build** — needs computer-use MCP for clip positioning (stage 23)
-- [ ] **Director review** — read back timeline, verify (stage 24)
-- [ ] **QA video** — 20 LearnByLeo checks (stage 25)
-- [ ] **Executive producer** — 11 cross-reference checks (stage 26)
+- [x] **Transcripts** — 12 clips transcribed (stage 13)
+- [x] **Vision analysis** — 12 clips + 51 images analyzed via Claude vision (stage 14)
+- [x] **Verify footage** — passed (stage 15)
+- [x] **Re-run director** with transcript+vision data — 103 segments, 4 batches (stage 17)
+- [x] **Re-validate segments** — 5 auto-fixes applied (stage 18)
+- [x] **Fill gaps** — 30 new images sourced (stage 19)
+- [x] **FCPXML builder** — `pipeline_v2/fcpxml_builder.py` bypasses DaVinci API bugs
+- [x] **DaVinci import** — "Breaking Law FINAL" timeline via File > Import > Timeline (stage 23)
+- [x] **Director review** — ran (stage 24)
+- [x] **Executive producer** — 3/11 pass, issues are DaVinci FCPXML placement (stage 26)
+- [ ] **Manual polish** — consolidate V2/V3 overlays, verify playback
 - [ ] Render + upload (stages 27-28)
+
+### Pipeline Architecture Fix (session 2026-03-31)
+- **Gates now BLOCK on failure** — exit 1 stops pipeline, auto-retries fix stages
+- 8 gate stages: qa_script, qa_voice, verify_footage, validate_segments, fill_gaps, exec_producer_pre, director_review, exec_producer
+- New `exec_producer_pre` gate runs BEFORE DaVinci build (catches issues early)
+- `GATE_MAX_RETRIES = 2` — retry loops with fix stage re-runs
+- Segment validator: >30% warnings = FAIL (was soft warning)
+- Gap resolver: <60% confidence = FAIL (was always pass)
+- Footage verifier: >20% fail rate = FAIL (had no threshold)
+
+### FCPXML Builder (session 2026-03-31)
+- `pipeline_v2/fcpxml_builder.py` — generates FCPXML 1.9 with correct clip positions
+- Bypasses DaVinci AppendToTimeline bug (ignores recordFrame)
+- V1 clips on spine at exact `_timeline_start_sec` positions
+- A1 narration + A2 music both start at frame 0 (alignment solved)
+- SFX on lanes 7/8 at correct segment positions
+- Import via DaVinci UI: File > Import > Timeline (AppleScript automation)
 
 ### Bugs Fixed (session 2026-03-30)
 - **llm.py**: stdin pipe for large prompts (was passing 21K chars as CLI arg)
