@@ -1,0 +1,5169 @@
+{
+  "timeline": "Production",
+  "duration": 4526.2,
+  "director_segments": 103,
+  "mismatches": 103,
+  "total_issues": 284,
+  "details": [
+    {
+      "segment": 0,
+      "text_preview": "In 2019, Facebook was fined five billion dollars. The larges",
+      "issues": [
+        {
+          "check": "text_overlay",
+          "expected": "$5 BILLION",
+          "actual": "MISSING",
+          "time": 11.8,
+          "severity": "WARN",
+          "message": "Text overlay '$5 BILLION' expected on V2 near 11.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 1,
+      "text_preview": "How is that possible?",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg",
+          "actual": "wiki_0_1977_burning_car_fir.jpg",
+          "time": 28.145,
+          "severity": "WARN",
+          "message": "V1 @ 28.1s shows 'wiki_0_1977_burning_car_fir.jpg' but director wants 'pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 28.145,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 28.1s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 27.73,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 27.7s (Impact lands the rhetorical question \u2014 pause creates anticipation, SFX makes it hit), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "HOW IS THAT POSSIBLE?",
+          "actual": "MISSING",
+          "time": 27.73,
+          "severity": "WARN",
+          "message": "Text overlay 'HOW IS THAT POSSIBLE?' expected on V4 near 27.7s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 2,
+      "text_preview": "To understand, you need to go back to 1977. Because someone ",
+      "issues": [
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 31.144999999999996,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 31.1s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "1977",
+          "actual": "MISSING",
+          "time": 28.56,
+          "severity": "WARN",
+          "message": "Text overlay '1977' expected on V2 near 28.6s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 3,
+      "text_preview": "[CHAPTER: THE FORMULA]",
+      "issues": [
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 34.04,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 34.0s but should be muted"
+        },
+        {
+          "check": "chapter_card",
+          "expected": "THE FORMULA",
+          "actual": "MISSING",
+          "time": 31.729999999999997,
+          "severity": "WARN",
+          "message": "Chapter card 'THE FORMULA' expected on V3 near 31.7s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 4,
+      "text_preview": "In 1977, Ford knew the Pinto's fuel tank ruptured in rear-en",
+      "issues": [
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 39.730000000000004,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 39.7s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "FORD MOTOR COMPANY \u2014 1977",
+          "actual": "MISSING",
+          "time": 34.35,
+          "severity": "WARN",
+          "message": "Text overlay 'FORD MOTOR COMPANY \u2014 1977' expected on V2 near 34.4s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 5,
+      "text_preview": "A thirteen-year-old boy named Richard Grimshaw was a passeng",
+      "issues": [
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 54.73,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 54.7s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "glass_shatter_new_loud.wav",
+          "actual": "MISSING",
+          "time": 45.11,
+          "severity": "WARN",
+          "message": "SFX 'glass_shatter_new_loud.wav' expected near 45.1s (Crash/fire image + shattering glass before the Grimshaw rear-end collision \u2014 SFX before the reveal for anticipation), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "RICHARD GRIMSHAW \u2014 AGE 13",
+          "actual": "MISSING",
+          "time": 45.11,
+          "severity": "WARN",
+          "message": "Text overlay 'RICHARD GRIMSHAW \u2014 AGE 13' expected on V2 near 45.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 6,
+      "text_preview": "The fine was three point five million dollars. Ford kept sel",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "actual": "pexels_5668473_burned_child_hospital_skin_gra.jpg",
+          "time": 68.485,
+          "severity": "WARN",
+          "message": "V1 @ 68.5s shows 'pexels_5668473_burned_child_hospital_skin_gra.jpg' but director wants 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 68.485,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 68.5s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 64.35,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 64.3s (Dry thud on '$3.5M fine, kept selling, no prison' \u2014 the impact IS the injustice), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "$3.5 MILLION",
+          "actual": "MISSING",
+          "time": 64.35,
+          "severity": "WARN",
+          "message": "Text overlay '$3.5 MILLION' expected on V2 near 64.3s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 7,
+      "text_preview": "That might have been an isolated scandal. A single bad compa",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Understanding_Intellectual_Property_IP.mp4",
+          "actual": "pexels_5668473_burned_child_hospital_skin_gra.jpg",
+          "time": 74.58500000000001,
+          "severity": "WARN",
+          "message": "V1 @ 74.6s shows 'pexels_5668473_burned_child_hospital_skin_gra.jpg' but director wants 'Understanding_Intellectual_Property_IP.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 74.58500000000001,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 74.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 8,
+      "text_preview": "In 2010, a twenty-four-year-old bank teller named Yesenia Gu",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "actual": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "time": 86.17,
+          "severity": "WARN",
+          "message": "V1 @ 86.2s shows 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg' but director wants 'pexels_269077_corporate_office_ethics_hotlin.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 86.17,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 86.2s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "YESENIA GUITRON",
+          "actual": "MISSING",
+          "time": 76.55,
+          "severity": "WARN",
+          "message": "Text overlay 'YESENIA GUITRON' expected on V2 near 76.5s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 9,
+      "text_preview": "Yesenia called the company's ethics hotline and reported the",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "actual": "Understanding_Intellectual_Property_IP.mp4",
+          "time": 100.035,
+          "severity": "WARN",
+          "message": "V1 @ 100.0s shows 'Understanding_Intellectual_Property_IP.mp4' but director wants 'pexels_1181354_human_silhouette_dramatic_back.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 100.035,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 100.0s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 95.79,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 95.8s (Hard impact on 'Wells Fargo terminated her the same week' \u2014 the most brutal fact in this arc), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "TERMINATED",
+          "actual": "MISSING",
+          "time": 95.79,
+          "severity": "WARN",
+          "message": "Text overlay 'TERMINATED' expected on V4 near 95.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 10,
+      "text_preview": "Three point five million fake accounts. Five thousand three ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+          "actual": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "time": 110.9,
+          "severity": "WARN",
+          "message": "V1 @ 110.9s shows 'pexels_269077_corporate_office_ethics_hotlin.jpg' but director wants 'pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 110.9,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 110.9s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "3.5 MILLION FAKE ACCOUNTS",
+          "actual": "MISSING",
+          "time": 104.28,
+          "severity": "WARN",
+          "message": "Text overlay '3.5 MILLION FAKE ACCOUNTS' expected on V2 near 104.3s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 11,
+      "text_preview": "Ford needed a document to do this. Wells Fargo only needed a",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_corporate_office_quota_pressur.jpg",
+          "actual": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "time": 120.10499999999999,
+          "severity": "WARN",
+          "message": "V1 @ 120.1s shows 'pexels_269077_corporate_office_ethics_hotlin.jpg' but director wants 'pexels_5668473_corporate_office_quota_pressur.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 120.10499999999999,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 120.1s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 12,
+      "text_preview": "Purdue Pharma saw the lawsuits coming a decade early and wit",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "actual": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "time": 133.86,
+          "severity": "WARN",
+          "message": "V1 @ 133.9s shows 'pexels_1181354_human_silhouette_dramatic_back.jpg' but director wants 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 133.86,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 133.9s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 122.69,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 122.7s (Purdue withdrew $10.7B BEFORE lawsuits \u2014 the formula perfected. Impact before the number lands.), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "$10.7 BILLION \u2014 WITHDRAWN BEFORE LAWSUITS",
+          "actual": "MISSING",
+          "time": 122.69,
+          "severity": "WARN",
+          "message": "Text overlay '$10.7 BILLION \u2014 WITHDRAWN BEFORE LAWSUIT' expected on V4 near 122.7s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 13,
+      "text_preview": "The fine is cheaper than the profit. Every time. Without exc",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+          "actual": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+          "time": 146.17000000000002,
+          "severity": "WARN",
+          "message": "V1 @ 146.2s shows 'pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg' but director wants 'Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 146.17000000000002,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 146.2s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE FINE IS CHEAPER THAN THE PROFIT.",
+          "actual": "MISSING",
+          "time": 145.03,
+          "severity": "WARN",
+          "message": "Text overlay 'THE FINE IS CHEAPER THAN THE PROFIT.' expected on V2 near 145.0s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 14,
+      "text_preview": "The law doesn't prevent corporate crime. It prices it.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_crime_fines_legal_lo.jpg",
+          "actual": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+          "time": 148.24,
+          "severity": "WARN",
+          "message": "V1 @ 148.2s shows 'pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg' but director wants 'pexels_269077_corporate_crime_fines_legal_lo.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 148.24,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 148.2s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 147.31,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 147.3s (Final impact on the video's quotable thesis \u2014 the law prices crime rather than prevents it), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
+          "actual": "MISSING",
+          "time": 147.31,
+          "severity": "WARN",
+          "message": "Text overlay 'THE LAW DOESN'T PREVENT CORPORATE CRIME.' expected on V4 near 147.3s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 15,
+      "text_preview": "And the price keeps dropping. Since 2000, corporations have ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_corporate_fines_settlement_mon.jpg",
+          "actual": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+          "time": 156.925,
+          "severity": "WARN",
+          "message": "V1 @ 156.9s shows 'pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg' but director wants 'pexels_5668473_corporate_fines_settlement_mon.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 156.925,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 156.9s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "$1 TRILLION IN FINES \u2014 SINCE 2000",
+          "actual": "MISSING",
+          "time": 149.17,
+          "severity": "WARN",
+          "message": "Text overlay '$1 TRILLION IN FINES \u2014 SINCE 2000' expected on V2 near 149.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 16,
+      "text_preview": "Each company added one feature to the original calculation. ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Understanding_Intellectual_Property_IP.mp4",
+          "actual": "pexels_5668473_corporate_office_quota_pressur.jpg",
+          "time": 170.89,
+          "severity": "WARN",
+          "message": "V1 @ 170.9s shows 'pexels_5668473_corporate_office_quota_pressur.jpg' but director wants 'Understanding_Intellectual_Property_IP.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 170.89,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 170.9s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 17,
+      "text_preview": "Then the formula met the internet. And the damage became per",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "actual": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "time": 178.235,
+          "severity": "WARN",
+          "message": "V1 @ 178.2s shows 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg' but director wants 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 178.235,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 178.2s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THEN THE FORMULA MET THE INTERNET.",
+          "actual": "MISSING",
+          "time": 177.1,
+          "severity": "WARN",
+          "message": "Text overlay 'THEN THE FORMULA MET THE INTERNET.' expected on V2 near 177.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 18,
+      "text_preview": "[CHAPTER: THE DATA]",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_325229_data_center_server_infrastruct.jpg",
+          "actual": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "time": 179.68,
+          "severity": "WARN",
+          "message": "V1 @ 179.7s shows 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg' but director wants 'pexels_325229_data_center_server_infrastruct.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 179.68,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 179.7s but should be muted"
+        },
+        {
+          "check": "chapter_card",
+          "expected": "THE DATA",
+          "actual": "MISSING",
+          "time": 177.37,
+          "severity": "WARN",
+          "message": "Chapter card 'THE DATA' expected on V3 near 177.4s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 19,
+      "text_preview": "Facebook was the bridge between the old formula and the new ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Facebook_to_pay_5_billion_fine.mp4",
+          "actual": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "time": 181.235,
+          "severity": "WARN",
+          "message": "V1 @ 181.2s shows 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg' but director wants 'Facebook_to_pay_5_billion_fine.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 181.235,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 181.2s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 20,
+      "text_preview": "In 2013, a Cambridge University researcher named Aleksandr K",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_GDPR_European_data_protection_.jpg",
+          "actual": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "time": 190.135,
+          "severity": "WARN",
+          "message": "V1 @ 190.1s shows 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg' but director wants 'pexels_5668473_GDPR_European_data_protection_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 190.135,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 190.1s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "ALEKSANDR KOGAN \u2014 CAMBRIDGE UNIVERSITY, 2013",
+          "actual": "MISSING",
+          "time": 182.48,
+          "severity": "WARN",
+          "message": "Text overlay 'ALEKSANDR KOGAN \u2014 CAMBRIDGE UNIVERSITY, ' expected on V2 near 182.5s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 21,
+      "text_preview": "Facebook knew this was possible. It was a feature, not a bug",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "actual": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "time": 202.64999999999998,
+          "severity": "WARN",
+          "message": "V1 @ 202.6s shows 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg' but director wants 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 202.64999999999998,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 202.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 22,
+      "text_preview": "Cambridge Analytica used that data to build voter profiles s",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "actual": "pexels_269077_corporate_crime_fines_legal_lo.jpg",
+          "time": 211.33499999999998,
+          "severity": "WARN",
+          "message": "V1 @ 211.3s shows 'pexels_269077_corporate_crime_fines_legal_lo.jpg' but director wants 'Extraordinary_security_surrounds_US_Capitol.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 211.33499999999998,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 211.3s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "CAMBRIDGE ANALYTICA",
+          "actual": "MISSING",
+          "time": 207.51,
+          "severity": "WARN",
+          "message": "Text overlay 'CAMBRIDGE ANALYTICA' expected on V2 near 207.5s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 23,
+      "text_preview": "Eighty-seven million people's personalities \u2014 measured, mode",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "actual": "pexels_5668473_corporate_fines_settlement_mon.jpg",
+          "time": 226.95499999999998,
+          "severity": "WARN",
+          "message": "V1 @ 227.0s shows 'pexels_5668473_corporate_fines_settlement_mon.jpg' but director wants 'pexels_5668473_abstract_taking_stealing_intel.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 226.95499999999998,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 227.0s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 215.16,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 215.2s (87 million personalities weaponized is the second major revelation \u2014 needs the hardest impact of the DATA chapter), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "87 MILLION PEOPLE",
+          "actual": "MISSING",
+          "time": 215.16,
+          "severity": "WARN",
+          "message": "Text overlay '87 MILLION PEOPLE' expected on V4 near 215.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 24,
+      "text_preview": "When the story broke in March 2018, Zuckerberg was summoned ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_1_Zuckerberg_Congress_.jpg",
+          "actual": "Understanding_Intellectual_Property_IP.mp4",
+          "time": 242.06,
+          "severity": "WARN",
+          "message": "V1 @ 242.1s shows 'Understanding_Intellectual_Property_IP.mp4' but director wants 'wiki_1_Zuckerberg_Congress_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 242.06,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 242.1s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "MARCH 2018",
+          "actual": "MISSING",
+          "time": 238.75,
+          "severity": "WARN",
+          "message": "Text overlay 'MARCH 2018' expected on V2 near 238.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 25,
+      "text_preview": "A United States senator \u2014 a person with the power to regulat",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_0_Senator_questioning_.jpg",
+          "actual": "Understanding_Intellectual_Property_IP.mp4",
+          "time": 248.99,
+          "severity": "WARN",
+          "message": "V1 @ 249.0s shows 'Understanding_Intellectual_Property_IP.mp4' but director wants 'wiki_0_Senator_questioning_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 248.99,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 249.0s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 26,
+      "text_preview": "Zuckerberg paused. And said: \"Senator, we run ads.\"",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Facebook_to_pay_5_billion_fine.mp4",
+          "actual": "Understanding_Intellectual_Property_IP.mp4",
+          "time": 253.435,
+          "severity": "WARN",
+          "message": "V1 @ 253.4s shows 'Understanding_Intellectual_Property_IP.mp4' but director wants 'Facebook_to_pay_5_billion_fine.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 253.435,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 253.4s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "typewriter_key_loud.wav",
+          "actual": "MISSING",
+          "time": 252.61,
+          "severity": "WARN",
+          "message": "SFX 'typewriter_key_loud.wav' expected near 252.6s (The 'Senator, we run ads' quote is the video's iconic moment \u2014 typewriter click stamps it into history), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "\"SENATOR, WE RUN ADS.\"",
+          "actual": "MISSING",
+          "time": 252.61,
+          "severity": "WARN",
+          "message": "Text overlay '\"SENATOR, WE RUN ADS.\"' expected on V4 near 252.6s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 27,
+      "text_preview": "The room laughed. The internet turned it into a meme. For we",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 257.47,
+          "severity": "WARN",
+          "message": "V1 @ 257.5s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'More_atmosphere_shots_from_European_Parliament.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 257.47,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 257.5s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 28,
+      "text_preview": "And it was funny. It genuinely was. The man in charge of reg",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "actual": "pexels_5668473_GDPR_European_data_protection_.jpg",
+          "time": 265.435,
+          "severity": "WARN",
+          "message": "V1 @ 265.4s shows 'pexels_5668473_GDPR_European_data_protection_.jpg' but director wants 'More_atmosphere_shots_from_European_Parliament.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 265.435,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 265.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 29,
+      "text_preview": "But here's what nobody said at the time. That hearing was th",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "actual": "pexels_5668473_GDPR_European_data_protection_.jpg",
+          "time": 280.74,
+          "severity": "WARN",
+          "message": "V1 @ 280.7s shows 'pexels_5668473_GDPR_European_data_protection_.jpg' but director wants 'Extraordinary_security_surrounds_US_Capitol.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 280.74,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 280.7s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 270.19,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 270.2s (Final revelation: the hearing WAS the formula protecting itself \u2014 the biggest conceptual reframe of the video, needs the hardest landing), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE FORMULA PROTECTS ITSELF.",
+          "actual": "MISSING",
+          "time": 270.19,
+          "severity": "WARN",
+          "message": "Text overlay 'THE FORMULA PROTECTS ITSELF.' expected on V4 near 270.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 30,
+      "text_preview": "The people who set the fines don't understand what they're f",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_regulatory_fine_corporate_acco.jpg",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 293.26,
+          "severity": "WARN",
+          "message": "V1 @ 293.3s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'pexels_5668473_regulatory_fine_corporate_acco.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 293.26,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 293.3s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 31,
+      "text_preview": "The FTC investigated for over a year. In July 2019, they ann",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_2_FTC_headquarters_Was.jpg",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 297.4,
+          "severity": "WARN",
+          "message": "V1 @ 297.4s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'wiki_2_FTC_headquarters_Was.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 297.4,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 297.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 32,
+      "text_preview": "Here is what five billion dollars means to Facebook. Revenue",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_1_Facebook_headquarter.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 304.95,
+          "severity": "WARN",
+          "message": "V1 @ 304.9s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'wiki_1_Facebook_headquarter.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 304.95,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 304.9s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 33,
+      "text_preview": "The FTC vote was three to two. Party line. The two dissentin",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_artificial_intelligence_compan.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 314.57,
+          "severity": "WARN",
+          "message": "V1 @ 314.6s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'pexels_5668473_artificial_intelligence_compan.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 314.57,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 314.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 34,
+      "text_preview": "On July twelfth, when the fine amount leaked, Facebook's sto",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_2_Facebook_stock_marke.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 326.36,
+          "severity": "WARN",
+          "message": "V1 @ 326.4s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'wiki_2_Facebook_stock_marke.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 326.36,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 326.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 35,
+      "text_preview": "Now. After everything I've just shown you \u2014 Ford, Wells Farg",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 337.84000000000003,
+          "severity": "WARN",
+          "message": "V1 @ 337.8s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 337.84000000000003,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 337.8s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 36,
+      "text_preview": "But something happened in 2023 that proves the formula can b",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_documentary_evidence_formula_b.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 342.90999999999997,
+          "severity": "WARN",
+          "message": "V1 @ 342.9s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'pexels_5668473_documentary_evidence_formula_b.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 342.90999999999997,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 342.9s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 37,
+      "text_preview": "Ireland fined Meta one point two billion euros under Europe'",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Perplexity_AI_search_results_c.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 347.565,
+          "severity": "WARN",
+          "message": "V1 @ 347.6s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'pexels_5668473_Perplexity_AI_search_results_c.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 347.565,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 347.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 38,
+      "text_preview": "And Facebook \u2014 the same Facebook that turned a five-billion-",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_208724_US_Capitol_building_exterior_W.jpg",
+          "actual": "wiki_1_Zuckerberg_Congress_.jpg",
+          "time": 352.945,
+          "severity": "WARN",
+          "message": "V1 @ 352.9s shows 'wiki_1_Zuckerberg_Congress_.jpg' but director wants 'pexels_208724_US_Capitol_building_exterior_W.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 352.945,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 352.9s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 39,
+      "text_preview": "Within weeks, they rewrote their entire data transfer infras",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_2_corporate_data_cente.jpg",
+          "actual": "wiki_0_Senator_questioning_.jpg",
+          "time": 361.43,
+          "severity": "WARN",
+          "message": "V1 @ 361.4s shows 'wiki_0_Senator_questioning_.jpg' but director wants 'wiki_2_corporate_data_cente.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 361.43,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 361.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 40,
+      "text_preview": "Sit with that for a second. The formula \u2014 the one that has s",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_proportional_justice_scales_Eu.jpg",
+          "actual": "wiki_0_Senator_questioning_.jpg",
+          "time": 371.77,
+          "severity": "WARN",
+          "message": "V1 @ 371.8s shows 'wiki_0_Senator_questioning_.jpg' but director wants 'pexels_5668473_proportional_justice_scales_Eu.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 371.77,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 371.8s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 41,
+      "text_preview": "Same company. Same executives. Same data. The only differenc",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_executives_identical.jpg",
+          "actual": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "time": 377.66499999999996,
+          "severity": "WARN",
+          "message": "V1 @ 377.7s shows 'More_atmosphere_shots_from_European_Parliament.mp4' but director wants 'pexels_269077_corporate_executives_identical.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 377.66499999999996,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 377.7s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 42,
+      "text_preview": "So at this point in the story, you might be thinking: okay, ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+          "actual": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "time": 384.7,
+          "severity": "WARN",
+          "message": "V1 @ 384.7s shows 'More_atmosphere_shots_from_European_Parliament.mp4' but director wants 'pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 384.7,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 384.7s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 43,
+      "text_preview": "I wish that were the end of the video.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_somber_documentary_filmmaker_r.jpg",
+          "actual": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "time": 390.49,
+          "severity": "WARN",
+          "message": "V1 @ 390.5s shows 'More_atmosphere_shots_from_European_Parliament.mp4' but director wants 'pexels_5668473_somber_documentary_filmmaker_r.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 390.49,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 390.5s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 44,
+      "text_preview": "[CHAPTER: THE MACHINES]",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+          "actual": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "time": 391.735,
+          "severity": "WARN",
+          "message": "V1 @ 391.7s shows 'More_atmosphere_shots_from_European_Parliament.mp4' but director wants 'pexels_5668473_Reddit_forum_post_honeypot_fak.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 391.735,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 391.7s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 45,
+      "text_preview": "Here's a thought experiment. What if you could take anything",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_documentary_writer_stealing_cr.jpg",
+          "actual": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "time": 397.425,
+          "severity": "WARN",
+          "message": "V1 @ 397.4s shows 'More_atmosphere_shots_from_European_Parliament.mp4' but director wants 'pexels_5668473_documentary_writer_stealing_cr.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 397.425,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 397.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 46,
+      "text_preview": "You'd take everything. Obviously. Everyone would.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181354_person_choosing_taking_all_mon.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 403.42,
+          "severity": "WARN",
+          "message": "V1 @ 403.4s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'pexels_1181354_person_choosing_taking_all_mon.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 403.42,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 403.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 47,
+      "text_preview": "That's not a thought experiment. That's the AI industry's bu",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "OpenAI_Google_agree_to_watermark_AI_content.mp4",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 405.18,
+          "severity": "WARN",
+          "message": "V1 @ 405.2s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'OpenAI_Google_agree_to_watermark_AI_content.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 405.18,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 405.2s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 48,
+      "text_preview": "In October 2025, a Reddit engineer did something clever. The",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_577585_data_center_server_infrastruct.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 413.455,
+          "severity": "WARN",
+          "message": "V1 @ 413.5s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'pexels_577585_data_center_server_infrastruct.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 413.455,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 413.5s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 49,
+      "text_preview": "Within hours, Perplexity AI cited the post. Word for word.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_577585_journalist_screenshot_AI_plagi.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 421.625,
+          "severity": "WARN",
+          "message": "V1 @ 421.6s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'pexels_577585_journalist_screenshot_AI_plagi.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 421.625,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 421.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 50,
+      "text_preview": "The trap worked.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 422.97,
+          "severity": "WARN",
+          "message": "V1 @ 423.0s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'pexels_1181467_human_silhouette_dramatic_back.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 422.97,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 423.0s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 51,
+      "text_preview": "Reddit sent a cease-and-desist letter. Standard procedure \u2014 ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_car_doing_donuts_parking_lot_s.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 425.245,
+          "severity": "WARN",
+          "message": "V1 @ 425.2s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'pexels_5668473_car_doing_donuts_parking_lot_s.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 425.245,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 425.2s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 52,
+      "text_preview": "Perplexity's scraping of Reddit content didn't decrease. It ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_577585_internet_scraping_legal_disput.jpg",
+          "actual": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "time": 430.525,
+          "severity": "WARN",
+          "message": "V1 @ 430.5s shows 'Extraordinary_security_surrounds_US_Capitol.mp4' but director wants 'pexels_577585_internet_scraping_legal_disput.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 430.525,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 430.5s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 53,
+      "text_preview": "Most companies, when caught, slow down. Issue a statement. H",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_577585_GDPR_European_data_protection_.jpg",
+          "actual": "pexels_5668473_regulatory_fine_corporate_acco.jpg",
+          "time": 437.55999999999995,
+          "severity": "WARN",
+          "message": "V1 @ 437.6s shows 'pexels_5668473_regulatory_fine_corporate_acco.jpg' but director wants 'pexels_577585_GDPR_European_data_protection_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 437.55999999999995,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 437.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 54,
+      "text_preview": "But it's not arrogance. It's arithmetic. They did the math. ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_European_Parliament_voting_cha.jpg",
+          "actual": "wiki_1_Facebook_headquarter.jpg",
+          "time": 445.41999999999996,
+          "severity": "WARN",
+          "message": "V1 @ 445.4s shows 'wiki_1_Facebook_headquarter.jpg' but director wants 'pexels_5668473_European_Parliament_voting_cha.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 445.41999999999996,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 445.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 55,
+      "text_preview": "There is no getting it out.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181354_scarred_wound_permanent_damage.jpg",
+          "actual": "wiki_1_Facebook_headquarter.jpg",
+          "time": 450.18,
+          "severity": "WARN",
+          "message": "V1 @ 450.2s shows 'wiki_1_Facebook_headquarter.jpg' but director wants 'pexels_1181354_scarred_wound_permanent_damage.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 450.18,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 450.2s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 56,
+      "text_preview": "Sugar dissolved in water. You cannot separate them.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_microscopic_sugar_dissolving_w.jpg",
+          "actual": "wiki_1_Facebook_headquarter.jpg",
+          "time": 451.625,
+          "severity": "WARN",
+          "message": "V1 @ 451.6s shows 'wiki_1_Facebook_headquarter.jpg' but director wants 'pexels_5668473_microscopic_sugar_dissolving_w.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 451.625,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 451.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 57,
+      "text_preview": "When Ford got caught, they could recall the car. When Facebo",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_corporate_damage_control_scand.jpg",
+          "actual": "wiki_1_Facebook_headquarter.jpg",
+          "time": 457.52,
+          "severity": "WARN",
+          "message": "V1 @ 457.5s shows 'wiki_1_Facebook_headquarter.jpg' but director wants 'pexels_5668473_corporate_damage_control_scand.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 457.52,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 457.5s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 58,
+      "text_preview": "With AI, there is no off switch. When a model trains on scra",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_New_York_state_legislature_ass.jpg",
+          "actual": "pexels_5668473_artificial_intelligence_compan.jpg",
+          "time": 472.41999999999996,
+          "severity": "WARN",
+          "message": "V1 @ 472.4s shows 'pexels_5668473_artificial_intelligence_compan.jpg' but director wants 'pexels_5668473_New_York_state_legislature_ass.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 472.41999999999996,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 472.4s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 59,
+      "text_preview": "Even if every AI company loses every lawsuit, they keep the ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_577585_AI_model_valuation_billions_in.jpg",
+          "actual": "wiki_2_Facebook_stock_marke.jpg",
+          "time": 487.83500000000004,
+          "severity": "WARN",
+          "message": "V1 @ 487.8s shows 'wiki_2_Facebook_stock_marke.jpg' but director wants 'pexels_577585_AI_model_valuation_billions_in.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 487.83500000000004,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 487.8s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 60,
+      "text_preview": "And the people who try to stop it? Remember Yesenia Guitron ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "actual": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "time": 498.59000000000003,
+          "severity": "WARN",
+          "message": "V1 @ 498.6s shows 'pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg' but director wants 'pexels_269077_corporate_office_ethics_hotlin.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 498.59000000000003,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 498.6s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 493.42,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 493.4s (beat marker on 'try to stop it' \u2014 punch emphasis on the consequence of resistance), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "YESENIA GUITRON",
+          "actual": "MISSING",
+          "time": 493.42,
+          "severity": "WARN",
+          "message": "Text overlay 'YESENIA GUITRON' expected on V2 near 493.4s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 61,
+      "text_preview": "Reddit filed a federal lawsuit in October 2025. But Perplexi",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+          "actual": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "time": 505.83,
+          "severity": "WARN",
+          "message": "V1 @ 505.8s shows 'pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg' but director wants 'pexels_5668473_Reddit_forum_post_honeypot_fak.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 505.83,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 505.8s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 62,
+      "text_preview": "I want to tell you about Elliana Esquivel. Because her story",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "actual": "pexels_5668473_documentary_evidence_formula_b.jpg",
+          "time": 511.83,
+          "severity": "WARN",
+          "message": "V1 @ 511.8s shows 'pexels_5668473_documentary_evidence_formula_b.jpg' but director wants 'pexels_1181354_human_silhouette_dramatic_back.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 511.83,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 511.8s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "ELLIANA ESQUIVEL",
+          "actual": "MISSING",
+          "time": 507.9,
+          "severity": "WARN",
+          "message": "Text overlay 'ELLIANA ESQUIVEL' expected on V2 near 507.9s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 63,
+      "text_preview": "Elliana is an illustrator in Charlotte, North Carolina. Self",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Understanding_Intellectual_Property_IP.mp4",
+          "actual": "pexels_5668473_Perplexity_AI_search_results_c.jpg",
+          "time": 522.7950000000001,
+          "severity": "WARN",
+          "message": "V1 @ 522.8s shows 'pexels_5668473_Perplexity_AI_search_results_c.jpg' but director wants 'Understanding_Intellectual_Property_IP.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 522.7950000000001,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 522.8s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "CHARLOTTE, NC",
+          "actual": "MISSING",
+          "time": 515.76,
+          "severity": "WARN",
+          "message": "Text overlay 'CHARLOTTE, NC' expected on V2 near 515.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 64,
+      "text_preview": "Then she visited a website called Have I Been Trained. It's ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "actual": "wiki_2_corporate_data_cente.jpg",
+          "time": 534.0699999999999,
+          "severity": "WARN",
+          "message": "V1 @ 534.1s shows 'wiki_2_corporate_data_cente.jpg' but director wants 'pexels_5668473_abstract_taking_stealing_intel.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 534.0699999999999,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 534.1s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "HAVE I BEEN TRAINED",
+          "actual": "MISSING",
+          "time": 529.83,
+          "severity": "WARN",
+          "message": "Text overlay 'HAVE I BEEN TRAINED' expected on V4 near 529.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 65,
+      "text_preview": "Almost her entire portfolio was in there.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_financial_documents_scattered_.jpg",
+          "actual": "wiki_2_corporate_data_cente.jpg",
+          "time": 539.035,
+          "severity": "WARN",
+          "message": "V1 @ 539.0s shows 'wiki_2_corporate_data_cente.jpg' but director wants 'pexels_5668473_financial_documents_scattered_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 539.035,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 539.0s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 538.31,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 538.3s (pause BEFORE the reveal per LearnByLeo \u2014 then loud impact fires when 'almost her entire portfolio' lands), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "ALMOST ALL OF IT.",
+          "actual": "MISSING",
+          "time": 538.31,
+          "severity": "WARN",
+          "message": "Text overlay 'ALMOST ALL OF IT.' expected on V2 near 538.3s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 66,
+      "text_preview": "Every illustration she'd spent months creating. Every piece ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "actual": "wiki_2_corporate_data_cente.jpg",
+          "time": 550.62,
+          "severity": "WARN",
+          "message": "V1 @ 550.6s shows 'wiki_2_corporate_data_cente.jpg' but director wants 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 550.62,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 550.6s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "glass_shatter_new.wav",
+          "actual": "MISSING",
+          "time": 539.76,
+          "severity": "WARN",
+          "message": "SFX 'glass_shatter_new.wav' expected near 539.8s (double beat \u2014 glass shatter on 'scraped, indexed' makes the machine feel violent and irreversible), not found on A3/A4/A5"
+        }
+      ]
+    },
+    {
+      "segment": 67,
+      "text_preview": "When someone asked her about getting her work removed from t",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "actual": "pexels_269077_corporate_executives_identical.jpg",
+          "time": 565.825,
+          "severity": "WARN",
+          "message": "V1 @ 565.8s shows 'pexels_269077_corporate_executives_identical.jpg' but director wants 'pexels_1181467_human_silhouette_dramatic_back.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 565.825,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 565.8s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "\"IT'LL JUST GET REPLACED.\"",
+          "actual": "MISSING",
+          "time": 561.48,
+          "severity": "WARN",
+          "message": "Text overlay '\"IT'LL JUST GET REPLACED.\"' expected on V2 near 561.5s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 68,
+      "text_preview": "Elliana isn't suing anyone. She can't afford to. Over sevent",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_copyright_lawsuit_courtroom_ga.jpg",
+          "actual": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+          "time": 576.065,
+          "severity": "WARN",
+          "message": "V1 @ 576.1s shows 'pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg' but director wants 'pexels_5668473_copyright_lawsuit_courtroom_ga.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 576.065,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 576.1s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "70+ LAWSUITS",
+          "actual": "MISSING",
+          "time": 570.17,
+          "severity": "WARN",
+          "message": "Text overlay '70+ LAWSUITS' expected on V2 near 570.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 69,
+      "text_preview": "Three thousand dollars. That's what Elliana's illustrations ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_artist_illustration_portfolio_.jpg",
+          "actual": "pexels_5668473_documentary_writer_stealing_cr.jpg",
+          "time": 589.8199999999999,
+          "severity": "WARN",
+          "message": "V1 @ 589.8s shows 'pexels_5668473_documentary_writer_stealing_cr.jpg' but director wants 'pexels_5668473_artist_illustration_portfolio_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 589.8199999999999,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 589.8s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 581.96,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 582.0s (double beat then pause \u2014 impact fires exactly when '$3,000' drops; the contrast against AI valuations is the entire argument), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "$3,000",
+          "actual": "MISSING",
+          "time": 581.96,
+          "severity": "WARN",
+          "message": "Text overlay '$3,000' expected on V2 near 582.0s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 70,
+      "text_preview": "And this brings us to you. Because if you've ever posted on ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "OpenAI_Google_agree_to_watermark_AI_content.mp4",
+          "actual": "pexels_1181354_person_choosing_taking_all_mon.jpg",
+          "time": 606.165,
+          "severity": "WARN",
+          "message": "V1 @ 606.2s shows 'pexels_1181354_person_choosing_taking_all_mon.jpg' but director wants 'OpenAI_Google_agree_to_watermark_AI_content.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 606.165,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 606.2s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 71,
+      "text_preview": "Ford's formula was clumsy \u2014 a memo with signatures. Wells Fa",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_corporate_executives_boardroom.jpg",
+          "actual": "pexels_577585_data_center_server_infrastruct.jpg",
+          "time": 618.785,
+          "severity": "WARN",
+          "message": "V1 @ 618.8s shows 'pexels_577585_data_center_server_infrastruct.jpg' but director wants 'pexels_5668473_corporate_executives_boardroom.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 618.785,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 618.8s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 72,
+      "text_preview": "AI's formula is all of those things. Plus one more: irrevers",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+          "actual": "pexels_577585_data_center_server_infrastruct.jpg",
+          "time": 627.785,
+          "severity": "WARN",
+          "message": "V1 @ 627.8s shows 'pexels_577585_data_center_server_infrastruct.jpg' but director wants 'Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 627.785,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 627.8s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 622.92,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 622.9s (double beat then pause \u2014 loud impact fires on IRREVERSIBLE, the thesis word of the AI section), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "IRREVERSIBLE.",
+          "actual": "MISSING",
+          "time": 622.92,
+          "severity": "WARN",
+          "message": "Text overlay 'IRREVERSIBLE.' expected on V2 near 622.9s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 73,
+      "text_preview": "[CHAPTER: THE RENT]",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "actual": "pexels_577585_journalist_screenshot_AI_plagi.jpg",
+          "time": 632.96,
+          "severity": "WARN",
+          "message": "V1 @ 633.0s shows 'pexels_577585_journalist_screenshot_AI_plagi.jpg' but director wants 'pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 632.96,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 633.0s but should be muted"
+        },
+        {
+          "check": "chapter_card",
+          "expected": "THE RENT",
+          "actual": "MISSING",
+          "time": 630.65,
+          "severity": "WARN",
+          "message": "Chapter card 'THE RENT' expected on V3 near 630.6s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 74,
+      "text_preview": "Ford paid three point five million. Wells Fargo paid three b",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_fines_profit_scales_.jpg",
+          "actual": "pexels_5668473_car_doing_donuts_parking_lot_s.jpg",
+          "time": 637.7149999999999,
+          "severity": "WARN",
+          "message": "V1 @ 637.7s shows 'pexels_5668473_car_doing_donuts_parking_lot_s.jpg' but director wants 'pexels_269077_corporate_fines_profit_scales_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 637.7149999999999,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 637.7s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 75,
+      "text_preview": "So what happens when the formula reaches its logical conclus",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "actual": "pexels_577585_internet_scraping_legal_disput.jpg",
+          "time": 643.92,
+          "severity": "WARN",
+          "message": "V1 @ 643.9s shows 'pexels_577585_internet_scraping_legal_disput.jpg' but director wants 'pexels_5668473_DOJ_settlement_agreement_fine_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 643.92,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 643.9s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 642.16,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 642.2s (impact before 'fine is zero' \u2014 the conceptual revelation that changes the chapter's entire stakes), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "WHAT HAPPENS WHEN THE FINE IS ZERO?",
+          "actual": "MISSING",
+          "time": 642.16,
+          "severity": "WARN",
+          "message": "Text overlay 'WHAT HAPPENS WHEN THE FINE IS ZERO?' expected on V2 near 642.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 76,
+      "text_preview": "Chris Vialpondo is a renter in Seattle's Lower Queen Anne ne",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "actual": "pexels_577585_GDPR_European_data_protection_.jpg",
+          "time": 657.885,
+          "severity": "WARN",
+          "message": "V1 @ 657.9s shows 'pexels_577585_GDPR_European_data_protection_.jpg' but director wants 'pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 657.885,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 657.9s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "CHRIS VIALPONDO",
+          "actual": "MISSING",
+          "time": 645.68,
+          "severity": "WARN",
+          "message": "Text overlay 'CHRIS VIALPONDO' expected on V2 near 645.7s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 77,
+      "text_preview": "RealPage. A company that takes confidential pricing data fro",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1370704_RealPage_rent_algorithm_landlo.jpg",
+          "actual": "pexels_5668473_microscopic_sugar_dissolving_w.jpg",
+          "time": 679.605,
+          "severity": "WARN",
+          "message": "V1 @ 679.6s shows 'pexels_5668473_microscopic_sugar_dissolving_w.jpg' but director wants 'pexels_1370704_RealPage_rent_algorithm_landlo.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 679.605,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 679.6s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "glass_shatter_new_loud.wav",
+          "actual": "MISSING",
+          "time": 670.09,
+          "severity": "WARN",
+          "message": "SFX 'glass_shatter_new_loud.wav' expected near 670.1s (double beat \u2014 loud glass shatter on RealPage; this is the villain reveal), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "REALPAGE",
+          "actual": "MISSING",
+          "time": 670.09,
+          "severity": "WARN",
+          "message": "Text overlay 'REALPAGE' expected on V4 near 670.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 78,
+      "text_preview": "Chris spoke publicly at the Washington state attorney genera",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Washington_state_attorney_gene.jpg",
+          "actual": "pexels_5668473_corporate_damage_control_scand.jpg",
+          "time": 693.675,
+          "severity": "WARN",
+          "message": "V1 @ 693.7s shows 'pexels_5668473_corporate_damage_control_scand.jpg' but director wants 'pexels_5668473_Washington_state_attorney_gene.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 693.675,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 693.7s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "\"THE MOST PAINFUL AND REVOLTING THING.\"",
+          "actual": "MISSING",
+          "time": 689.12,
+          "severity": "WARN",
+          "message": "Text overlay '\"THE MOST PAINFUL AND REVOLTING THING.\"' expected on V2 near 689.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 79,
+      "text_preview": "The DOJ sued and announced a settlement in November 2025. Re",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_DOJ_antitrust_settlement_corpo.jpg",
+          "actual": "pexels_5668473_New_York_state_legislature_ass.jpg",
+          "time": 702.1600000000001,
+          "severity": "WARN",
+          "message": "V1 @ 702.2s shows 'pexels_5668473_New_York_state_legislature_ass.jpg' but director wants 'pexels_5668473_DOJ_antitrust_settlement_corpo.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 702.1600000000001,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 702.2s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "DOJ v. REALPAGE \u2014 NOV. 2025",
+          "actual": "MISSING",
+          "time": 698.23,
+          "severity": "WARN",
+          "message": "Text overlay 'DOJ v. REALPAGE \u2014 NOV. 2025' expected on V2 near 698.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 80,
+      "text_preview": "To be clear: a company was found to have coordinated rent pr",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_antitrust_price_fixing_corpora.jpg",
+          "actual": "pexels_5668473_New_York_state_legislature_ass.jpg",
+          "time": 711.365,
+          "severity": "WARN",
+          "message": "V1 @ 711.4s shows 'pexels_5668473_New_York_state_legislature_ass.jpg' but director wants 'pexels_5668473_antitrust_price_fixing_corpora.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 711.365,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 711.4s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 706.09,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 706.1s (beat \u2014 impact fires on 'essentially nothing'; exposes the hollowness of the settlement), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "ESSENTIALLY NOTHING.",
+          "actual": "MISSING",
+          "time": 706.09,
+          "severity": "WARN",
+          "message": "Text overlay 'ESSENTIALLY NOTHING.' expected on V2 near 706.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 81,
+      "text_preview": "And after getting caught fixing rent for millions of people,",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1370704_RealPage_lawsuit_New_York_rent.jpg",
+          "actual": "pexels_5668473_New_York_state_legislature_ass.jpg",
+          "time": 719.64,
+          "severity": "WARN",
+          "message": "V1 @ 719.6s shows 'pexels_5668473_New_York_state_legislature_ass.jpg' but director wants 'pexels_1370704_RealPage_lawsuit_New_York_rent.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 719.64,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 719.6s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 82,
+      "text_preview": "And then RealPage did something that tells you everything ab",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_New_York_state_legislature_ass.jpg",
+          "actual": "pexels_577585_AI_model_valuation_billions_in.jpg",
+          "time": 731.12,
+          "severity": "WARN",
+          "message": "V1 @ 731.1s shows 'pexels_577585_AI_model_valuation_billions_in.jpg' but director wants 'pexels_5668473_New_York_state_legislature_ass.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 731.12,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 731.1s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "glass_shatter_new.wav",
+          "actual": "MISSING",
+          "time": 722.64,
+          "severity": "WARN",
+          "message": "SFX 'glass_shatter_new.wav' expected near 722.6s (pause BEFORE the audacity of suing the government \u2014 glass shatter on the revelation), not found on A3/A4/A5"
+        }
+      ]
+    },
+    {
+      "segment": 83,
+      "text_preview": "That's not a company that got caught and feels chastened. Th",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_executives_boardroom.jpg",
+          "actual": "pexels_577585_AI_model_valuation_billions_in.jpg",
+          "time": 742.81,
+          "severity": "WARN",
+          "message": "V1 @ 742.8s shows 'pexels_577585_AI_model_valuation_billions_in.jpg' but director wants 'pexels_269077_corporate_executives_boardroom.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 742.81,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 742.8s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 739.6,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 739.6s (beat \u2014 impact on 'concluded correctly' exposes the cold rationality behind the formula), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE MATH WORKS.",
+          "actual": "MISSING",
+          "time": 739.6,
+          "severity": "WARN",
+          "message": "Text overlay 'THE MATH WORKS.' expected on V2 near 739.6s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 84,
+      "text_preview": "Richard Grimshaw lost his fingers, his ear, and his childhoo",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg",
+          "actual": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "time": 751.5,
+          "severity": "WARN",
+          "message": "V1 @ 751.5s shows 'pexels_269077_corporate_office_ethics_hotlin.jpg' but director wants 'pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 751.5,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 751.5s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 746.02,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 746.0s (double beat \u2014 loud impact fires on 'lost his fingers, his ear, and his childhood'; the injury list is the beat), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "RICHARD GRIMSHAW",
+          "actual": "MISSING",
+          "time": 746.02,
+          "severity": "WARN",
+          "message": "Text overlay 'RICHARD GRIMSHAW' expected on V2 near 746.0s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 85,
+      "text_preview": "And sometimes, the price is zero.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+          "actual": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "time": 757.6,
+          "severity": "WARN",
+          "message": "V1 @ 757.6s shows 'pexels_269077_corporate_office_ethics_hotlin.jpg' but director wants 'pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 757.6,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 757.6s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "SOMETIMES THE PRICE IS ZERO.",
+          "actual": "MISSING",
+          "time": 756.98,
+          "severity": "WARN",
+          "message": "Text overlay 'SOMETIMES THE PRICE IS ZERO.' expected on V2 near 757.0s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 86,
+      "text_preview": "[CHAPTER: THE RECKONING]",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_dark_courtroom_justice_gavel_d.jpg",
+          "actual": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "time": 758.53,
+          "severity": "WARN",
+          "message": "V1 @ 758.5s shows 'pexels_269077_corporate_office_ethics_hotlin.jpg' but director wants 'pexels_5668473_dark_courtroom_justice_gavel_d.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 758.53,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 758.5s but should be muted"
+        },
+        {
+          "check": "chapter_card",
+          "expected": "THE RECKONING",
+          "actual": "MISSING",
+          "time": 756.22,
+          "severity": "WARN",
+          "message": "Chapter card 'THE RECKONING' expected on V3 near 756.2s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 87,
+      "text_preview": "Europe figured this out. Four percent of global revenue. Pro",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "More_atmosphere_shots_from_European_Parliament.mp4",
+          "actual": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+          "time": 766.9100000000001,
+          "severity": "WARN",
+          "message": "V1 @ 766.9s shows 'pexels_5668473_Reddit_forum_post_honeypot_fak.jpg' but director wants 'More_atmosphere_shots_from_European_Parliament.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 766.9100000000001,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 766.9s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 758.84,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 758.8s (triple beat then double pause \u2014 impact fires on '4%'; the number that offers hope after the despair), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "4% OF GLOBAL REVENUE.",
+          "actual": "MISSING",
+          "time": 758.84,
+          "severity": "WARN",
+          "message": "Text overlay '4% OF GLOBAL REVENUE.' expected on V2 near 758.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 88,
+      "text_preview": "And the answer is the same math that runs everything else in",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "actual": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "time": 779.53,
+          "severity": "WARN",
+          "message": "V1 @ 779.5s shows 'pexels_1181354_human_silhouette_dramatic_back.jpg' but director wants 'Extraordinary_security_surrounds_US_Capitol.mp4'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 779.53,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 779.5s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 89,
+      "text_preview": "Let me show you what the math looks like when you put a face",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "actual": "Understanding_Intellectual_Property_IP.mp4",
+          "time": 785.735,
+          "severity": "WARN",
+          "message": "V1 @ 785.7s shows 'Understanding_Intellectual_Property_IP.mp4' but director wants 'pexels_1181354_human_silhouette_dramatic_back.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 785.735,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 785.7s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 90,
+      "text_preview": "Richard Grimshaw survived the Pinto fire. He grew up carryin",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+          "actual": "Understanding_Intellectual_Property_IP.mp4",
+          "time": 793.185,
+          "severity": "WARN",
+          "message": "V1 @ 793.2s shows 'Understanding_Intellectual_Property_IP.mp4' but director wants 'pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 793.185,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 793.2s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 787.39,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 787.4s (weight of Grimshaw verdict \u2014 scars plus legal outcome arriving together), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "GRIMSHAW v. FORD MOTOR CO.",
+          "actual": "MISSING",
+          "time": 787.39,
+          "severity": "WARN",
+          "message": "Text overlay 'GRIMSHAW v. FORD MOTOR CO.' expected on V4 near 787.4s, not found"
+        },
+        {
+          "check": "chapter_card",
+          "expected": "THE RECKONING",
+          "actual": "MISSING",
+          "time": 785.39,
+          "severity": "WARN",
+          "message": "Chapter card 'THE RECKONING' expected on V3 near 785.4s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 91,
+      "text_preview": "Yesenia Guitron called the ethics hotline and was fired for ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 801.875,
+          "severity": "WARN",
+          "message": "V1 @ 801.9s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'pexels_269077_corporate_office_ethics_hotlin.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 801.875,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 801.9s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 798.98,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 799.0s (punch on 'fired for it' \u2014 the institutional betrayal of a whistleblower), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "FIRED FOR CALLING THE ETHICS HOTLINE",
+          "actual": "MISSING",
+          "time": 798.98,
+          "severity": "WARN",
+          "message": "Text overlay 'FIRED FOR CALLING THE ETHICS HOTLINE' expected on V4 near 799.0s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 92,
+      "text_preview": "The Sackler name is still on a wing of the Guggenheim Museum",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg",
+          "actual": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "time": 812.63,
+          "severity": "WARN",
+          "message": "V1 @ 812.6s shows 'pexels_5668473_abstract_taking_stealing_intel.jpg' but director wants 'pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 812.63,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 812.6s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE SACKLER NAME IS STILL ON THE GUGGENHEIM",
+          "actual": "MISSING",
+          "time": 804.77,
+          "severity": "WARN",
+          "message": "Text overlay 'THE SACKLER NAME IS STILL ON THE GUGGENH' expected on V2 near 804.8s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 93,
+      "text_preview": "That's the formula. It even gets you a plaque.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_documentary_award_plaque_cerem.jpg",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 821.425,
+          "severity": "WARN",
+          "message": "V1 @ 821.4s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'pexels_5668473_documentary_award_plaque_cerem.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 821.425,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 821.4s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "typewriter_key_loud.wav",
+          "actual": "MISSING",
+          "time": 820.49,
+          "severity": "WARN",
+          "message": "SFX 'typewriter_key_loud.wav' expected near 820.5s (typewriter click on 'the formula' \u2014 sardonic callback to the math of human life), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THAT'S THE FORMULA.",
+          "actual": "MISSING",
+          "time": 820.49,
+          "severity": "WARN",
+          "message": "Text overlay 'THAT'S THE FORMULA.' expected on V4 near 820.5s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 94,
+      "text_preview": "Elliana Esquivel is still making art in Charlotte. She pivot",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 827.115,
+          "severity": "WARN",
+          "message": "V1 @ 827.1s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'pexels_5668473_abstract_taking_stealing_intel.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 827.115,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 827.1s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "ELLIANA ESQUIVEL",
+          "actual": "MISSING",
+          "time": 822.36,
+          "severity": "WARN",
+          "message": "Text overlay 'ELLIANA ESQUIVEL' expected on V2 near 822.4s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 95,
+      "text_preview": "Seventy-four percent of Facebook users still don't know the ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_RealPage_software_company_offi.jpg",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 834.665,
+          "severity": "WARN",
+          "message": "V1 @ 834.7s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'pexels_269077_RealPage_software_company_offi.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 834.665,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 834.7s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new.wav",
+          "actual": "MISSING",
+          "time": 831.87,
+          "severity": "WARN",
+          "message": "SFX 'impact_new.wav' expected near 831.9s (impact landing on '74%' \u2014 the scale of ignorance is the reveal), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "74% OF FACEBOOK USERS DON'T KNOW",
+          "actual": "MISSING",
+          "time": 831.87,
+          "severity": "WARN",
+          "message": "Text overlay '74% OF FACEBOOK USERS DON'T KNOW' expected on V4 near 831.9s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 96,
+      "text_preview": "Chris Vialpondo is still in Seattle. Still working two jobs.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "actual": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+          "time": 840.77,
+          "severity": "WARN",
+          "message": "V1 @ 840.8s shows 'Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4' but director wants 'pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 840.77,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 840.8s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "CHRIS VIALPONDO \u2014 SEATTLE",
+          "actual": "MISSING",
+          "time": 837.46,
+          "severity": "WARN",
+          "message": "Text overlay 'CHRIS VIALPONDO \u2014 SEATTLE' expected on V2 near 837.5s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 97,
+      "text_preview": "The Grush-Saunby memo put a dollar value on a human life in ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_corporate_document_money_value.jpg",
+          "actual": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "time": 850.3900000000001,
+          "severity": "WARN",
+          "message": "V1 @ 850.4s shows 'pexels_1181467_human_silhouette_dramatic_back.jpg' but director wants 'pexels_5668473_corporate_document_money_value.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 850.3900000000001,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 850.4s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 844.08,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 844.1s (loud impact on '$200,000' \u2014 a dollar value on a human life in 1977 must land hard), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "$200,000",
+          "actual": "MISSING",
+          "time": 844.08,
+          "severity": "WARN",
+          "message": "Text overlay '$200,000' expected on V4 near 844.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 98,
+      "text_preview": "They'll get priced. And if fifty years of history tells you ",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_5668473_farmers_market_price_stall_han.jpg",
+          "actual": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "time": 858.56,
+          "severity": "WARN",
+          "message": "V1 @ 858.6s shows 'pexels_1181467_human_silhouette_dramatic_back.jpg' but director wants 'pexels_5668473_farmers_market_price_stall_han.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 858.56,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 858.6s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 856.7,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 856.7s (pre-reveal impact \u2014 'you won't like the number' is the promise of a number to come), not found on A3/A4/A5"
+        }
+      ]
+    },
+    {
+      "segment": 99,
+      "text_preview": "The law doesn't prevent corporate crime. It prices it.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_269077_corporate_executives_boardroom.jpg",
+          "actual": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "time": 861.3499999999999,
+          "severity": "WARN",
+          "message": "V1 @ 861.3s shows 'pexels_1181467_human_silhouette_dramatic_back.jpg' but director wants 'pexels_269077_corporate_executives_boardroom.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 861.3499999999999,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 861.3s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 860.42,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 860.4s (loudest impact in the film \u2014 'IT PRICES IT' is the thesis landing), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
+          "actual": "MISSING",
+          "time": 860.42,
+          "severity": "WARN",
+          "message": "Text overlay 'THE LAW DOESN'T PREVENT CORPORATE CRIME.' expected on V4 near 860.4s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 100,
+      "text_preview": "The question was never whether they'd break the law.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_208724_US_Capitol_building_exterior_W.jpg",
+          "actual": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "time": 863.2149999999999,
+          "severity": "WARN",
+          "message": "V1 @ 863.2s shows 'pexels_1181467_human_silhouette_dramatic_back.jpg' but director wants 'pexels_208724_US_Capitol_building_exterior_W.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 863.2149999999999,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 863.2s but should be muted"
+        }
+      ]
+    },
+    {
+      "segment": 101,
+      "text_preview": "The question is what you're worth.",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "wiki_0_Ford_Pinto_recall_no.jpg",
+          "actual": "pexels_5668473_copyright_lawsuit_courtroom_ga.jpg",
+          "time": 864.77,
+          "severity": "WARN",
+          "message": "V1 @ 864.8s shows 'pexels_5668473_copyright_lawsuit_courtroom_ga.jpg' but director wants 'wiki_0_Ford_Pinto_recall_no.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 864.77,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 864.8s but should be muted"
+        },
+        {
+          "check": "sfx",
+          "expected": "impact_new_loud.wav",
+          "actual": "MISSING",
+          "time": 864.15,
+          "severity": "WARN",
+          "message": "SFX 'impact_new_loud.wav' expected near 864.1s (final impact of the film \u2014 'what you're worth' is the last thing the viewer hears), not found on A3/A4/A5"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "THE QUESTION IS WHAT YOU'RE WORTH.",
+          "actual": "MISSING",
+          "time": 864.15,
+          "severity": "WARN",
+          "message": "Text overlay 'THE QUESTION IS WHAT YOU'RE WORTH.' expected on V4 near 864.1s, not found"
+        }
+      ]
+    },
+    {
+      "segment": 102,
+      "text_preview": "Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC,",
+      "issues": [
+        {
+          "check": "visual_file",
+          "expected": "pexels_325229_data_center_server_infrastruct.jpg",
+          "actual": "pexels_5668473_copyright_lawsuit_courtroom_ga.jpg",
+          "time": 868.595,
+          "severity": "WARN",
+          "message": "V1 @ 868.6s shows 'pexels_5668473_copyright_lawsuit_courtroom_ga.jpg' but director wants 'pexels_325229_data_center_server_infrastruct.jpg'"
+        },
+        {
+          "check": "clip_audio",
+          "expected": "muted",
+          "actual": "playing",
+          "time": 868.595,
+          "severity": "WARN",
+          "message": "V1 clip audio playing at 868.6s but should be muted"
+        },
+        {
+          "check": "text_overlay",
+          "expected": "SOURCES",
+          "actual": "MISSING",
+          "time": 865.39,
+          "severity": "WARN",
+          "message": "Text overlay 'SOURCES' expected on V2 near 865.4s, not found"
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 11.8,
+      "text": "$5 BILLION",
+      "segment": 0,
+      "instruction": "ADD text overlay '$5 BILLION' to V2/V4 at 12s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 28.145,
+      "file": "pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg",
+      "old_file": "wiki_0_1977_burning_car_fir.jpg",
+      "segment": 1,
+      "instruction": "DELETE V1 clip at 28s and REPLACE with pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 28.145,
+      "segment": 1,
+      "instruction": "MUTE V1 clip audio at 28s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 27.73,
+      "file": "impact_new_loud.wav",
+      "segment": 1,
+      "instruction": "ADD impact_new_loud.wav to A3 at 28s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 27.73,
+      "text": "HOW IS THAT POSSIBLE?",
+      "segment": 1,
+      "instruction": "ADD text overlay 'HOW IS THAT POSSIBLE?' to V2/V4 at 28s"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 31.144999999999996,
+      "segment": 2,
+      "instruction": "MUTE V1 clip audio at 31s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 28.56,
+      "text": "1977",
+      "segment": 2,
+      "instruction": "ADD text overlay '1977' to V2/V4 at 29s"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 34.04,
+      "segment": 3,
+      "instruction": "MUTE V1 clip audio at 34s"
+    },
+    {
+      "action": "ADD",
+      "track": "V3",
+      "time": 31.729999999999997,
+      "text": "THE FORMULA",
+      "segment": 3,
+      "instruction": "ADD chapter card 'THE FORMULA' to V3 at 32s"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 39.730000000000004,
+      "segment": 4,
+      "instruction": "MUTE V1 clip audio at 40s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 34.35,
+      "text": "FORD MOTOR COMPANY \u2014 1977",
+      "segment": 4,
+      "instruction": "ADD text overlay 'FORD MOTOR COMPANY \u2014 1977' to V2/V4 at 34s"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 54.73,
+      "segment": 5,
+      "instruction": "MUTE V1 clip audio at 55s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 45.11,
+      "file": "glass_shatter_new_loud.wav",
+      "segment": 5,
+      "instruction": "ADD glass_shatter_new_loud.wav to A3 at 45s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 45.11,
+      "text": "RICHARD GRIMSHAW \u2014 AGE 13",
+      "segment": 5,
+      "instruction": "ADD text overlay 'RICHARD GRIMSHAW \u2014 AGE 13' to V2/V4 at 45s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 68.485,
+      "file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "old_file": "pexels_5668473_burned_child_hospital_skin_gra.jpg",
+      "segment": 6,
+      "instruction": "DELETE V1 clip at 68s and REPLACE with pexels_5668473_DOJ_settlement_agreement_fine_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 68.485,
+      "segment": 6,
+      "instruction": "MUTE V1 clip audio at 68s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 64.35,
+      "file": "impact_new.wav",
+      "segment": 6,
+      "instruction": "ADD impact_new.wav to A3 at 64s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 64.35,
+      "text": "$3.5 MILLION",
+      "segment": 6,
+      "instruction": "ADD text overlay '$3.5 MILLION' to V2/V4 at 64s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 74.58500000000001,
+      "file": "Understanding_Intellectual_Property_IP.mp4",
+      "old_file": "pexels_5668473_burned_child_hospital_skin_gra.jpg",
+      "segment": 7,
+      "instruction": "DELETE V1 clip at 75s and REPLACE with Understanding_Intellectual_Property_IP.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 74.58500000000001,
+      "segment": 7,
+      "instruction": "MUTE V1 clip audio at 75s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 86.17,
+      "file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "old_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "segment": 8,
+      "instruction": "DELETE V1 clip at 86s and REPLACE with pexels_269077_corporate_office_ethics_hotlin.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 86.17,
+      "segment": 8,
+      "instruction": "MUTE V1 clip audio at 86s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 76.55,
+      "text": "YESENIA GUITRON",
+      "segment": 8,
+      "instruction": "ADD text overlay 'YESENIA GUITRON' to V2/V4 at 77s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 100.035,
+      "file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+      "old_file": "Understanding_Intellectual_Property_IP.mp4",
+      "segment": 9,
+      "instruction": "DELETE V1 clip at 100s and REPLACE with pexels_1181354_human_silhouette_dramatic_back.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 100.035,
+      "segment": 9,
+      "instruction": "MUTE V1 clip audio at 100s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 95.79,
+      "file": "impact_new_loud.wav",
+      "segment": 9,
+      "instruction": "ADD impact_new_loud.wav to A3 at 96s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 95.79,
+      "text": "TERMINATED",
+      "segment": 9,
+      "instruction": "ADD text overlay 'TERMINATED' to V2/V4 at 96s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 110.9,
+      "file": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+      "old_file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "segment": 10,
+      "instruction": "DELETE V1 clip at 111s and REPLACE with pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 110.9,
+      "segment": 10,
+      "instruction": "MUTE V1 clip audio at 111s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 104.28,
+      "text": "3.5 MILLION FAKE ACCOUNTS",
+      "segment": 10,
+      "instruction": "ADD text overlay '3.5 MILLION FAKE ACCOUNTS' to V2/V4 at 104s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 120.10499999999999,
+      "file": "pexels_5668473_corporate_office_quota_pressur.jpg",
+      "old_file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "segment": 11,
+      "instruction": "DELETE V1 clip at 120s and REPLACE with pexels_5668473_corporate_office_quota_pressur.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 120.10499999999999,
+      "segment": 11,
+      "instruction": "MUTE V1 clip audio at 120s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 133.86,
+      "file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "old_file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+      "segment": 12,
+      "instruction": "DELETE V1 clip at 134s and REPLACE with pexels_5668473_DOJ_settlement_agreement_fine_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 133.86,
+      "segment": 12,
+      "instruction": "MUTE V1 clip audio at 134s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 122.69,
+      "file": "impact_new_loud.wav",
+      "segment": 12,
+      "instruction": "ADD impact_new_loud.wav to A3 at 123s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 122.69,
+      "text": "$10.7 BILLION \u2014 WITHDRAWN BEFORE LAWSUITS",
+      "segment": 12,
+      "instruction": "ADD text overlay '$10.7 BILLION \u2014 WITHDRAWN BEFO' to V2/V4 at 123s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 146.17000000000002,
+      "file": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "old_file": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+      "segment": 13,
+      "instruction": "DELETE V1 clip at 146s and REPLACE with Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 146.17000000000002,
+      "segment": 13,
+      "instruction": "MUTE V1 clip audio at 146s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 145.03,
+      "text": "THE FINE IS CHEAPER THAN THE PROFIT.",
+      "segment": 13,
+      "instruction": "ADD text overlay 'THE FINE IS CHEAPER THAN THE P' to V2/V4 at 145s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 148.24,
+      "file": "pexels_269077_corporate_crime_fines_legal_lo.jpg",
+      "old_file": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+      "segment": 14,
+      "instruction": "DELETE V1 clip at 148s and REPLACE with pexels_269077_corporate_crime_fines_legal_lo.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 148.24,
+      "segment": 14,
+      "instruction": "MUTE V1 clip audio at 148s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 147.31,
+      "file": "impact_new_loud.wav",
+      "segment": 14,
+      "instruction": "ADD impact_new_loud.wav to A3 at 147s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 147.31,
+      "text": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
+      "segment": 14,
+      "instruction": "ADD text overlay 'THE LAW DOESN'T PREVENT CORPOR' to V2/V4 at 147s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 156.925,
+      "file": "pexels_5668473_corporate_fines_settlement_mon.jpg",
+      "old_file": "pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg",
+      "segment": 15,
+      "instruction": "DELETE V1 clip at 157s and REPLACE with pexels_5668473_corporate_fines_settlement_mon.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 156.925,
+      "segment": 15,
+      "instruction": "MUTE V1 clip audio at 157s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 149.17,
+      "text": "$1 TRILLION IN FINES \u2014 SINCE 2000",
+      "segment": 15,
+      "instruction": "ADD text overlay '$1 TRILLION IN FINES \u2014 SINCE 2' to V2/V4 at 149s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 170.89,
+      "file": "Understanding_Intellectual_Property_IP.mp4",
+      "old_file": "pexels_5668473_corporate_office_quota_pressur.jpg",
+      "segment": 16,
+      "instruction": "DELETE V1 clip at 171s and REPLACE with Understanding_Intellectual_Property_IP.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 170.89,
+      "segment": 16,
+      "instruction": "MUTE V1 clip audio at 171s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 178.235,
+      "file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "old_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "segment": 17,
+      "instruction": "DELETE V1 clip at 178s and REPLACE with Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 178.235,
+      "segment": 17,
+      "instruction": "MUTE V1 clip audio at 178s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 177.1,
+      "text": "THEN THE FORMULA MET THE INTERNET.",
+      "segment": 17,
+      "instruction": "ADD text overlay 'THEN THE FORMULA MET THE INTER' to V2/V4 at 177s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 179.68,
+      "file": "pexels_325229_data_center_server_infrastruct.jpg",
+      "old_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "segment": 18,
+      "instruction": "DELETE V1 clip at 180s and REPLACE with pexels_325229_data_center_server_infrastruct.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 179.68,
+      "segment": 18,
+      "instruction": "MUTE V1 clip audio at 180s"
+    },
+    {
+      "action": "ADD",
+      "track": "V3",
+      "time": 177.37,
+      "text": "THE DATA",
+      "segment": 18,
+      "instruction": "ADD chapter card 'THE DATA' to V3 at 177s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 181.235,
+      "file": "Facebook_to_pay_5_billion_fine.mp4",
+      "old_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "segment": 19,
+      "instruction": "DELETE V1 clip at 181s and REPLACE with Facebook_to_pay_5_billion_fine.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 181.235,
+      "segment": 19,
+      "instruction": "MUTE V1 clip audio at 181s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 190.135,
+      "file": "pexels_5668473_GDPR_European_data_protection_.jpg",
+      "old_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "segment": 20,
+      "instruction": "DELETE V1 clip at 190s and REPLACE with pexels_5668473_GDPR_European_data_protection_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 190.135,
+      "segment": 20,
+      "instruction": "MUTE V1 clip audio at 190s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 182.48,
+      "text": "ALEKSANDR KOGAN \u2014 CAMBRIDGE UNIVERSITY, 2013",
+      "segment": 20,
+      "instruction": "ADD text overlay 'ALEKSANDR KOGAN \u2014 CAMBRIDGE UN' to V2/V4 at 182s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 202.64999999999998,
+      "file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "old_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "segment": 21,
+      "instruction": "DELETE V1 clip at 203s and REPLACE with Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 202.64999999999998,
+      "segment": 21,
+      "instruction": "MUTE V1 clip audio at 203s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 211.33499999999998,
+      "file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "old_file": "pexels_269077_corporate_crime_fines_legal_lo.jpg",
+      "segment": 22,
+      "instruction": "DELETE V1 clip at 211s and REPLACE with Extraordinary_security_surrounds_US_Capitol.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 211.33499999999998,
+      "segment": 22,
+      "instruction": "MUTE V1 clip audio at 211s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 207.51,
+      "text": "CAMBRIDGE ANALYTICA",
+      "segment": 22,
+      "instruction": "ADD text overlay 'CAMBRIDGE ANALYTICA' to V2/V4 at 208s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 226.95499999999998,
+      "file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "old_file": "pexels_5668473_corporate_fines_settlement_mon.jpg",
+      "segment": 23,
+      "instruction": "DELETE V1 clip at 227s and REPLACE with pexels_5668473_abstract_taking_stealing_intel.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 226.95499999999998,
+      "segment": 23,
+      "instruction": "MUTE V1 clip audio at 227s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 215.16,
+      "file": "impact_new_loud.wav",
+      "segment": 23,
+      "instruction": "ADD impact_new_loud.wav to A3 at 215s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 215.16,
+      "text": "87 MILLION PEOPLE",
+      "segment": 23,
+      "instruction": "ADD text overlay '87 MILLION PEOPLE' to V2/V4 at 215s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 242.06,
+      "file": "wiki_1_Zuckerberg_Congress_.jpg",
+      "old_file": "Understanding_Intellectual_Property_IP.mp4",
+      "segment": 24,
+      "instruction": "DELETE V1 clip at 242s and REPLACE with wiki_1_Zuckerberg_Congress_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 242.06,
+      "segment": 24,
+      "instruction": "MUTE V1 clip audio at 242s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 238.75,
+      "text": "MARCH 2018",
+      "segment": 24,
+      "instruction": "ADD text overlay 'MARCH 2018' to V2/V4 at 239s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 248.99,
+      "file": "wiki_0_Senator_questioning_.jpg",
+      "old_file": "Understanding_Intellectual_Property_IP.mp4",
+      "segment": 25,
+      "instruction": "DELETE V1 clip at 249s and REPLACE with wiki_0_Senator_questioning_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 248.99,
+      "segment": 25,
+      "instruction": "MUTE V1 clip audio at 249s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 253.435,
+      "file": "Facebook_to_pay_5_billion_fine.mp4",
+      "old_file": "Understanding_Intellectual_Property_IP.mp4",
+      "segment": 26,
+      "instruction": "DELETE V1 clip at 253s and REPLACE with Facebook_to_pay_5_billion_fine.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 253.435,
+      "segment": 26,
+      "instruction": "MUTE V1 clip audio at 253s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 252.61,
+      "file": "typewriter_key_loud.wav",
+      "segment": 26,
+      "instruction": "ADD typewriter_key_loud.wav to A3 at 253s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 252.61,
+      "text": "\"SENATOR, WE RUN ADS.\"",
+      "segment": 26,
+      "instruction": "ADD text overlay '\"SENATOR, WE RUN ADS.\"' to V2/V4 at 253s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 257.47,
+      "file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 27,
+      "instruction": "DELETE V1 clip at 257s and REPLACE with More_atmosphere_shots_from_European_Parliament.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 257.47,
+      "segment": 27,
+      "instruction": "MUTE V1 clip audio at 257s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 265.435,
+      "file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "old_file": "pexels_5668473_GDPR_European_data_protection_.jpg",
+      "segment": 28,
+      "instruction": "DELETE V1 clip at 265s and REPLACE with More_atmosphere_shots_from_European_Parliament.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 265.435,
+      "segment": 28,
+      "instruction": "MUTE V1 clip audio at 265s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 280.74,
+      "file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "old_file": "pexels_5668473_GDPR_European_data_protection_.jpg",
+      "segment": 29,
+      "instruction": "DELETE V1 clip at 281s and REPLACE with Extraordinary_security_surrounds_US_Capitol.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 280.74,
+      "segment": 29,
+      "instruction": "MUTE V1 clip audio at 281s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 270.19,
+      "file": "impact_new_loud.wav",
+      "segment": 29,
+      "instruction": "ADD impact_new_loud.wav to A3 at 270s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 270.19,
+      "text": "THE FORMULA PROTECTS ITSELF.",
+      "segment": 29,
+      "instruction": "ADD text overlay 'THE FORMULA PROTECTS ITSELF.' to V2/V4 at 270s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 293.26,
+      "file": "pexels_5668473_regulatory_fine_corporate_acco.jpg",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 30,
+      "instruction": "DELETE V1 clip at 293s and REPLACE with pexels_5668473_regulatory_fine_corporate_acco.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 293.26,
+      "segment": 30,
+      "instruction": "MUTE V1 clip audio at 293s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 297.4,
+      "file": "wiki_2_FTC_headquarters_Was.jpg",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 31,
+      "instruction": "DELETE V1 clip at 297s and REPLACE with wiki_2_FTC_headquarters_Was.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 297.4,
+      "segment": 31,
+      "instruction": "MUTE V1 clip audio at 297s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 304.95,
+      "file": "wiki_1_Facebook_headquarter.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 32,
+      "instruction": "DELETE V1 clip at 305s and REPLACE with wiki_1_Facebook_headquarter.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 304.95,
+      "segment": 32,
+      "instruction": "MUTE V1 clip audio at 305s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 314.57,
+      "file": "pexels_5668473_artificial_intelligence_compan.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 33,
+      "instruction": "DELETE V1 clip at 315s and REPLACE with pexels_5668473_artificial_intelligence_compan.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 314.57,
+      "segment": 33,
+      "instruction": "MUTE V1 clip audio at 315s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 326.36,
+      "file": "wiki_2_Facebook_stock_marke.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 34,
+      "instruction": "DELETE V1 clip at 326s and REPLACE with wiki_2_Facebook_stock_marke.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 326.36,
+      "segment": 34,
+      "instruction": "MUTE V1 clip audio at 326s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 337.84000000000003,
+      "file": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 35,
+      "instruction": "DELETE V1 clip at 338s and REPLACE with pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 337.84000000000003,
+      "segment": 35,
+      "instruction": "MUTE V1 clip audio at 338s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 342.90999999999997,
+      "file": "pexels_5668473_documentary_evidence_formula_b.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 36,
+      "instruction": "DELETE V1 clip at 343s and REPLACE with pexels_5668473_documentary_evidence_formula_b.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 342.90999999999997,
+      "segment": 36,
+      "instruction": "MUTE V1 clip audio at 343s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 347.565,
+      "file": "pexels_5668473_Perplexity_AI_search_results_c.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 37,
+      "instruction": "DELETE V1 clip at 348s and REPLACE with pexels_5668473_Perplexity_AI_search_results_c.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 347.565,
+      "segment": 37,
+      "instruction": "MUTE V1 clip audio at 348s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 352.945,
+      "file": "pexels_208724_US_Capitol_building_exterior_W.jpg",
+      "old_file": "wiki_1_Zuckerberg_Congress_.jpg",
+      "segment": 38,
+      "instruction": "DELETE V1 clip at 353s and REPLACE with pexels_208724_US_Capitol_building_exterior_W.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 352.945,
+      "segment": 38,
+      "instruction": "MUTE V1 clip audio at 353s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 361.43,
+      "file": "wiki_2_corporate_data_cente.jpg",
+      "old_file": "wiki_0_Senator_questioning_.jpg",
+      "segment": 39,
+      "instruction": "DELETE V1 clip at 361s and REPLACE with wiki_2_corporate_data_cente.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 361.43,
+      "segment": 39,
+      "instruction": "MUTE V1 clip audio at 361s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 371.77,
+      "file": "pexels_5668473_proportional_justice_scales_Eu.jpg",
+      "old_file": "wiki_0_Senator_questioning_.jpg",
+      "segment": 40,
+      "instruction": "DELETE V1 clip at 372s and REPLACE with pexels_5668473_proportional_justice_scales_Eu.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 371.77,
+      "segment": 40,
+      "instruction": "MUTE V1 clip audio at 372s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 377.66499999999996,
+      "file": "pexels_269077_corporate_executives_identical.jpg",
+      "old_file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "segment": 41,
+      "instruction": "DELETE V1 clip at 378s and REPLACE with pexels_269077_corporate_executives_identical.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 377.66499999999996,
+      "segment": 41,
+      "instruction": "MUTE V1 clip audio at 378s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 384.7,
+      "file": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+      "old_file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "segment": 42,
+      "instruction": "DELETE V1 clip at 385s and REPLACE with pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 384.7,
+      "segment": 42,
+      "instruction": "MUTE V1 clip audio at 385s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 390.49,
+      "file": "pexels_5668473_somber_documentary_filmmaker_r.jpg",
+      "old_file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "segment": 43,
+      "instruction": "DELETE V1 clip at 390s and REPLACE with pexels_5668473_somber_documentary_filmmaker_r.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 390.49,
+      "segment": 43,
+      "instruction": "MUTE V1 clip audio at 390s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 391.735,
+      "file": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+      "old_file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "segment": 44,
+      "instruction": "DELETE V1 clip at 392s and REPLACE with pexels_5668473_Reddit_forum_post_honeypot_fak.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 391.735,
+      "segment": 44,
+      "instruction": "MUTE V1 clip audio at 392s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 397.425,
+      "file": "pexels_5668473_documentary_writer_stealing_cr.jpg",
+      "old_file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "segment": 45,
+      "instruction": "DELETE V1 clip at 397s and REPLACE with pexels_5668473_documentary_writer_stealing_cr.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 397.425,
+      "segment": 45,
+      "instruction": "MUTE V1 clip audio at 397s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 403.42,
+      "file": "pexels_1181354_person_choosing_taking_all_mon.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 46,
+      "instruction": "DELETE V1 clip at 403s and REPLACE with pexels_1181354_person_choosing_taking_all_mon.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 403.42,
+      "segment": 46,
+      "instruction": "MUTE V1 clip audio at 403s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 405.18,
+      "file": "OpenAI_Google_agree_to_watermark_AI_content.mp4",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 47,
+      "instruction": "DELETE V1 clip at 405s and REPLACE with OpenAI_Google_agree_to_watermark_AI_content.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 405.18,
+      "segment": 47,
+      "instruction": "MUTE V1 clip audio at 405s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 413.455,
+      "file": "pexels_577585_data_center_server_infrastruct.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 48,
+      "instruction": "DELETE V1 clip at 413s and REPLACE with pexels_577585_data_center_server_infrastruct.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 413.455,
+      "segment": 48,
+      "instruction": "MUTE V1 clip audio at 413s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 421.625,
+      "file": "pexels_577585_journalist_screenshot_AI_plagi.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 49,
+      "instruction": "DELETE V1 clip at 422s and REPLACE with pexels_577585_journalist_screenshot_AI_plagi.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 421.625,
+      "segment": 49,
+      "instruction": "MUTE V1 clip audio at 422s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 422.97,
+      "file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 50,
+      "instruction": "DELETE V1 clip at 423s and REPLACE with pexels_1181467_human_silhouette_dramatic_back.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 422.97,
+      "segment": 50,
+      "instruction": "MUTE V1 clip audio at 423s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 425.245,
+      "file": "pexels_5668473_car_doing_donuts_parking_lot_s.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 51,
+      "instruction": "DELETE V1 clip at 425s and REPLACE with pexels_5668473_car_doing_donuts_parking_lot_s.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 425.245,
+      "segment": 51,
+      "instruction": "MUTE V1 clip audio at 425s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 430.525,
+      "file": "pexels_577585_internet_scraping_legal_disput.jpg",
+      "old_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "segment": 52,
+      "instruction": "DELETE V1 clip at 431s and REPLACE with pexels_577585_internet_scraping_legal_disput.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 430.525,
+      "segment": 52,
+      "instruction": "MUTE V1 clip audio at 431s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 437.55999999999995,
+      "file": "pexels_577585_GDPR_European_data_protection_.jpg",
+      "old_file": "pexels_5668473_regulatory_fine_corporate_acco.jpg",
+      "segment": 53,
+      "instruction": "DELETE V1 clip at 438s and REPLACE with pexels_577585_GDPR_European_data_protection_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 437.55999999999995,
+      "segment": 53,
+      "instruction": "MUTE V1 clip audio at 438s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 445.41999999999996,
+      "file": "pexels_5668473_European_Parliament_voting_cha.jpg",
+      "old_file": "wiki_1_Facebook_headquarter.jpg",
+      "segment": 54,
+      "instruction": "DELETE V1 clip at 445s and REPLACE with pexels_5668473_European_Parliament_voting_cha.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 445.41999999999996,
+      "segment": 54,
+      "instruction": "MUTE V1 clip audio at 445s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 450.18,
+      "file": "pexels_1181354_scarred_wound_permanent_damage.jpg",
+      "old_file": "wiki_1_Facebook_headquarter.jpg",
+      "segment": 55,
+      "instruction": "DELETE V1 clip at 450s and REPLACE with pexels_1181354_scarred_wound_permanent_damage.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 450.18,
+      "segment": 55,
+      "instruction": "MUTE V1 clip audio at 450s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 451.625,
+      "file": "pexels_5668473_microscopic_sugar_dissolving_w.jpg",
+      "old_file": "wiki_1_Facebook_headquarter.jpg",
+      "segment": 56,
+      "instruction": "DELETE V1 clip at 452s and REPLACE with pexels_5668473_microscopic_sugar_dissolving_w.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 451.625,
+      "segment": 56,
+      "instruction": "MUTE V1 clip audio at 452s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 457.52,
+      "file": "pexels_5668473_corporate_damage_control_scand.jpg",
+      "old_file": "wiki_1_Facebook_headquarter.jpg",
+      "segment": 57,
+      "instruction": "DELETE V1 clip at 458s and REPLACE with pexels_5668473_corporate_damage_control_scand.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 457.52,
+      "segment": 57,
+      "instruction": "MUTE V1 clip audio at 458s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 472.41999999999996,
+      "file": "pexels_5668473_New_York_state_legislature_ass.jpg",
+      "old_file": "pexels_5668473_artificial_intelligence_compan.jpg",
+      "segment": 58,
+      "instruction": "DELETE V1 clip at 472s and REPLACE with pexels_5668473_New_York_state_legislature_ass.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 472.41999999999996,
+      "segment": 58,
+      "instruction": "MUTE V1 clip audio at 472s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 487.83500000000004,
+      "file": "pexels_577585_AI_model_valuation_billions_in.jpg",
+      "old_file": "wiki_2_Facebook_stock_marke.jpg",
+      "segment": 59,
+      "instruction": "DELETE V1 clip at 488s and REPLACE with pexels_577585_AI_model_valuation_billions_in.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 487.83500000000004,
+      "segment": 59,
+      "instruction": "MUTE V1 clip audio at 488s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 498.59000000000003,
+      "file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "old_file": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+      "segment": 60,
+      "instruction": "DELETE V1 clip at 499s and REPLACE with pexels_269077_corporate_office_ethics_hotlin.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 498.59000000000003,
+      "segment": 60,
+      "instruction": "MUTE V1 clip audio at 499s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 493.42,
+      "file": "impact_new.wav",
+      "segment": 60,
+      "instruction": "ADD impact_new.wav to A3 at 493s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 493.42,
+      "text": "YESENIA GUITRON",
+      "segment": 60,
+      "instruction": "ADD text overlay 'YESENIA GUITRON' to V2/V4 at 493s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 505.83,
+      "file": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+      "old_file": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+      "segment": 61,
+      "instruction": "DELETE V1 clip at 506s and REPLACE with pexels_5668473_Reddit_forum_post_honeypot_fak.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 505.83,
+      "segment": 61,
+      "instruction": "MUTE V1 clip audio at 506s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 511.83,
+      "file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+      "old_file": "pexels_5668473_documentary_evidence_formula_b.jpg",
+      "segment": 62,
+      "instruction": "DELETE V1 clip at 512s and REPLACE with pexels_1181354_human_silhouette_dramatic_back.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 511.83,
+      "segment": 62,
+      "instruction": "MUTE V1 clip audio at 512s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 507.9,
+      "text": "ELLIANA ESQUIVEL",
+      "segment": 62,
+      "instruction": "ADD text overlay 'ELLIANA ESQUIVEL' to V2/V4 at 508s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 522.7950000000001,
+      "file": "Understanding_Intellectual_Property_IP.mp4",
+      "old_file": "pexels_5668473_Perplexity_AI_search_results_c.jpg",
+      "segment": 63,
+      "instruction": "DELETE V1 clip at 523s and REPLACE with Understanding_Intellectual_Property_IP.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 522.7950000000001,
+      "segment": 63,
+      "instruction": "MUTE V1 clip audio at 523s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 515.76,
+      "text": "CHARLOTTE, NC",
+      "segment": 63,
+      "instruction": "ADD text overlay 'CHARLOTTE, NC' to V2/V4 at 516s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 534.0699999999999,
+      "file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "old_file": "wiki_2_corporate_data_cente.jpg",
+      "segment": 64,
+      "instruction": "DELETE V1 clip at 534s and REPLACE with pexels_5668473_abstract_taking_stealing_intel.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 534.0699999999999,
+      "segment": 64,
+      "instruction": "MUTE V1 clip audio at 534s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 529.83,
+      "text": "HAVE I BEEN TRAINED",
+      "segment": 64,
+      "instruction": "ADD text overlay 'HAVE I BEEN TRAINED' to V2/V4 at 530s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 539.035,
+      "file": "pexels_5668473_financial_documents_scattered_.jpg",
+      "old_file": "wiki_2_corporate_data_cente.jpg",
+      "segment": 65,
+      "instruction": "DELETE V1 clip at 539s and REPLACE with pexels_5668473_financial_documents_scattered_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 539.035,
+      "segment": 65,
+      "instruction": "MUTE V1 clip audio at 539s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 538.31,
+      "file": "impact_new_loud.wav",
+      "segment": 65,
+      "instruction": "ADD impact_new_loud.wav to A3 at 538s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 538.31,
+      "text": "ALMOST ALL OF IT.",
+      "segment": 65,
+      "instruction": "ADD text overlay 'ALMOST ALL OF IT.' to V2/V4 at 538s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 550.62,
+      "file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "old_file": "wiki_2_corporate_data_cente.jpg",
+      "segment": 66,
+      "instruction": "DELETE V1 clip at 551s and REPLACE with Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 550.62,
+      "segment": 66,
+      "instruction": "MUTE V1 clip audio at 551s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 539.76,
+      "file": "glass_shatter_new.wav",
+      "segment": 66,
+      "instruction": "ADD glass_shatter_new.wav to A3 at 540s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 565.825,
+      "file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+      "old_file": "pexels_269077_corporate_executives_identical.jpg",
+      "segment": 67,
+      "instruction": "DELETE V1 clip at 566s and REPLACE with pexels_1181467_human_silhouette_dramatic_back.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 565.825,
+      "segment": 67,
+      "instruction": "MUTE V1 clip audio at 566s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 561.48,
+      "text": "\"IT'LL JUST GET REPLACED.\"",
+      "segment": 67,
+      "instruction": "ADD text overlay '\"IT'LL JUST GET REPLACED.\"' to V2/V4 at 561s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 576.065,
+      "file": "pexels_5668473_copyright_lawsuit_courtroom_ga.jpg",
+      "old_file": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+      "segment": 68,
+      "instruction": "DELETE V1 clip at 576s and REPLACE with pexels_5668473_copyright_lawsuit_courtroom_ga.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 576.065,
+      "segment": 68,
+      "instruction": "MUTE V1 clip audio at 576s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 570.17,
+      "text": "70+ LAWSUITS",
+      "segment": 68,
+      "instruction": "ADD text overlay '70+ LAWSUITS' to V2/V4 at 570s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 589.8199999999999,
+      "file": "pexels_5668473_artist_illustration_portfolio_.jpg",
+      "old_file": "pexels_5668473_documentary_writer_stealing_cr.jpg",
+      "segment": 69,
+      "instruction": "DELETE V1 clip at 590s and REPLACE with pexels_5668473_artist_illustration_portfolio_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 589.8199999999999,
+      "segment": 69,
+      "instruction": "MUTE V1 clip audio at 590s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 581.96,
+      "file": "impact_new.wav",
+      "segment": 69,
+      "instruction": "ADD impact_new.wav to A3 at 582s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 581.96,
+      "text": "$3,000",
+      "segment": 69,
+      "instruction": "ADD text overlay '$3,000' to V2/V4 at 582s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 606.165,
+      "file": "OpenAI_Google_agree_to_watermark_AI_content.mp4",
+      "old_file": "pexels_1181354_person_choosing_taking_all_mon.jpg",
+      "segment": 70,
+      "instruction": "DELETE V1 clip at 606s and REPLACE with OpenAI_Google_agree_to_watermark_AI_content.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 606.165,
+      "segment": 70,
+      "instruction": "MUTE V1 clip audio at 606s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 618.785,
+      "file": "pexels_5668473_corporate_executives_boardroom.jpg",
+      "old_file": "pexels_577585_data_center_server_infrastruct.jpg",
+      "segment": 71,
+      "instruction": "DELETE V1 clip at 619s and REPLACE with pexels_5668473_corporate_executives_boardroom.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 618.785,
+      "segment": 71,
+      "instruction": "MUTE V1 clip audio at 619s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 627.785,
+      "file": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "old_file": "pexels_577585_data_center_server_infrastruct.jpg",
+      "segment": 72,
+      "instruction": "DELETE V1 clip at 628s and REPLACE with Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 627.785,
+      "segment": 72,
+      "instruction": "MUTE V1 clip audio at 628s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 622.92,
+      "file": "impact_new_loud.wav",
+      "segment": 72,
+      "instruction": "ADD impact_new_loud.wav to A3 at 623s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 622.92,
+      "text": "IRREVERSIBLE.",
+      "segment": 72,
+      "instruction": "ADD text overlay 'IRREVERSIBLE.' to V2/V4 at 623s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 632.96,
+      "file": "pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg",
+      "old_file": "pexels_577585_journalist_screenshot_AI_plagi.jpg",
+      "segment": 73,
+      "instruction": "DELETE V1 clip at 633s and REPLACE with pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 632.96,
+      "segment": 73,
+      "instruction": "MUTE V1 clip audio at 633s"
+    },
+    {
+      "action": "ADD",
+      "track": "V3",
+      "time": 630.65,
+      "text": "THE RENT",
+      "segment": 73,
+      "instruction": "ADD chapter card 'THE RENT' to V3 at 631s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 637.7149999999999,
+      "file": "pexels_269077_corporate_fines_profit_scales_.jpg",
+      "old_file": "pexels_5668473_car_doing_donuts_parking_lot_s.jpg",
+      "segment": 74,
+      "instruction": "DELETE V1 clip at 638s and REPLACE with pexels_269077_corporate_fines_profit_scales_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 637.7149999999999,
+      "segment": 74,
+      "instruction": "MUTE V1 clip audio at 638s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 643.92,
+      "file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+      "old_file": "pexels_577585_internet_scraping_legal_disput.jpg",
+      "segment": 75,
+      "instruction": "DELETE V1 clip at 644s and REPLACE with pexels_5668473_DOJ_settlement_agreement_fine_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 643.92,
+      "segment": 75,
+      "instruction": "MUTE V1 clip audio at 644s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 642.16,
+      "file": "impact_new.wav",
+      "segment": 75,
+      "instruction": "ADD impact_new.wav to A3 at 642s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 642.16,
+      "text": "WHAT HAPPENS WHEN THE FINE IS ZERO?",
+      "segment": 75,
+      "instruction": "ADD text overlay 'WHAT HAPPENS WHEN THE FINE IS ' to V2/V4 at 642s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 657.885,
+      "file": "pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg",
+      "old_file": "pexels_577585_GDPR_European_data_protection_.jpg",
+      "segment": 76,
+      "instruction": "DELETE V1 clip at 658s and REPLACE with pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 657.885,
+      "segment": 76,
+      "instruction": "MUTE V1 clip audio at 658s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 645.68,
+      "text": "CHRIS VIALPONDO",
+      "segment": 76,
+      "instruction": "ADD text overlay 'CHRIS VIALPONDO' to V2/V4 at 646s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 679.605,
+      "file": "pexels_1370704_RealPage_rent_algorithm_landlo.jpg",
+      "old_file": "pexels_5668473_microscopic_sugar_dissolving_w.jpg",
+      "segment": 77,
+      "instruction": "DELETE V1 clip at 680s and REPLACE with pexels_1370704_RealPage_rent_algorithm_landlo.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 679.605,
+      "segment": 77,
+      "instruction": "MUTE V1 clip audio at 680s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 670.09,
+      "file": "glass_shatter_new_loud.wav",
+      "segment": 77,
+      "instruction": "ADD glass_shatter_new_loud.wav to A3 at 670s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 670.09,
+      "text": "REALPAGE",
+      "segment": 77,
+      "instruction": "ADD text overlay 'REALPAGE' to V2/V4 at 670s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 693.675,
+      "file": "pexels_5668473_Washington_state_attorney_gene.jpg",
+      "old_file": "pexels_5668473_corporate_damage_control_scand.jpg",
+      "segment": 78,
+      "instruction": "DELETE V1 clip at 694s and REPLACE with pexels_5668473_Washington_state_attorney_gene.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 693.675,
+      "segment": 78,
+      "instruction": "MUTE V1 clip audio at 694s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 689.12,
+      "text": "\"THE MOST PAINFUL AND REVOLTING THING.\"",
+      "segment": 78,
+      "instruction": "ADD text overlay '\"THE MOST PAINFUL AND REVOLTIN' to V2/V4 at 689s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 702.1600000000001,
+      "file": "pexels_5668473_DOJ_antitrust_settlement_corpo.jpg",
+      "old_file": "pexels_5668473_New_York_state_legislature_ass.jpg",
+      "segment": 79,
+      "instruction": "DELETE V1 clip at 702s and REPLACE with pexels_5668473_DOJ_antitrust_settlement_corpo.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 702.1600000000001,
+      "segment": 79,
+      "instruction": "MUTE V1 clip audio at 702s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 698.23,
+      "text": "DOJ v. REALPAGE \u2014 NOV. 2025",
+      "segment": 79,
+      "instruction": "ADD text overlay 'DOJ v. REALPAGE \u2014 NOV. 2025' to V2/V4 at 698s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 711.365,
+      "file": "pexels_5668473_antitrust_price_fixing_corpora.jpg",
+      "old_file": "pexels_5668473_New_York_state_legislature_ass.jpg",
+      "segment": 80,
+      "instruction": "DELETE V1 clip at 711s and REPLACE with pexels_5668473_antitrust_price_fixing_corpora.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 711.365,
+      "segment": 80,
+      "instruction": "MUTE V1 clip audio at 711s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 706.09,
+      "file": "impact_new.wav",
+      "segment": 80,
+      "instruction": "ADD impact_new.wav to A3 at 706s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 706.09,
+      "text": "ESSENTIALLY NOTHING.",
+      "segment": 80,
+      "instruction": "ADD text overlay 'ESSENTIALLY NOTHING.' to V2/V4 at 706s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 719.64,
+      "file": "pexels_1370704_RealPage_lawsuit_New_York_rent.jpg",
+      "old_file": "pexels_5668473_New_York_state_legislature_ass.jpg",
+      "segment": 81,
+      "instruction": "DELETE V1 clip at 720s and REPLACE with pexels_1370704_RealPage_lawsuit_New_York_rent.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 719.64,
+      "segment": 81,
+      "instruction": "MUTE V1 clip audio at 720s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 731.12,
+      "file": "pexels_5668473_New_York_state_legislature_ass.jpg",
+      "old_file": "pexels_577585_AI_model_valuation_billions_in.jpg",
+      "segment": 82,
+      "instruction": "DELETE V1 clip at 731s and REPLACE with pexels_5668473_New_York_state_legislature_ass.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 731.12,
+      "segment": 82,
+      "instruction": "MUTE V1 clip audio at 731s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 722.64,
+      "file": "glass_shatter_new.wav",
+      "segment": 82,
+      "instruction": "ADD glass_shatter_new.wav to A3 at 723s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 742.81,
+      "file": "pexels_269077_corporate_executives_boardroom.jpg",
+      "old_file": "pexels_577585_AI_model_valuation_billions_in.jpg",
+      "segment": 83,
+      "instruction": "DELETE V1 clip at 743s and REPLACE with pexels_269077_corporate_executives_boardroom.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 742.81,
+      "segment": 83,
+      "instruction": "MUTE V1 clip audio at 743s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 739.6,
+      "file": "impact_new.wav",
+      "segment": 83,
+      "instruction": "ADD impact_new.wav to A3 at 740s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 739.6,
+      "text": "THE MATH WORKS.",
+      "segment": 83,
+      "instruction": "ADD text overlay 'THE MATH WORKS.' to V2/V4 at 740s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 751.5,
+      "file": "pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg",
+      "old_file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "segment": 84,
+      "instruction": "DELETE V1 clip at 752s and REPLACE with pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 751.5,
+      "segment": 84,
+      "instruction": "MUTE V1 clip audio at 752s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 746.02,
+      "file": "impact_new_loud.wav",
+      "segment": 84,
+      "instruction": "ADD impact_new_loud.wav to A3 at 746s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 746.02,
+      "text": "RICHARD GRIMSHAW",
+      "segment": 84,
+      "instruction": "ADD text overlay 'RICHARD GRIMSHAW' to V2/V4 at 746s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 757.6,
+      "file": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+      "old_file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "segment": 85,
+      "instruction": "DELETE V1 clip at 758s and REPLACE with pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 757.6,
+      "segment": 85,
+      "instruction": "MUTE V1 clip audio at 758s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 756.98,
+      "text": "SOMETIMES THE PRICE IS ZERO.",
+      "segment": 85,
+      "instruction": "ADD text overlay 'SOMETIMES THE PRICE IS ZERO.' to V2/V4 at 757s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 758.53,
+      "file": "pexels_5668473_dark_courtroom_justice_gavel_d.jpg",
+      "old_file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "segment": 86,
+      "instruction": "DELETE V1 clip at 759s and REPLACE with pexels_5668473_dark_courtroom_justice_gavel_d.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 758.53,
+      "segment": 86,
+      "instruction": "MUTE V1 clip audio at 759s"
+    },
+    {
+      "action": "ADD",
+      "track": "V3",
+      "time": 756.22,
+      "text": "THE RECKONING",
+      "segment": 86,
+      "instruction": "ADD chapter card 'THE RECKONING' to V3 at 756s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 766.9100000000001,
+      "file": "More_atmosphere_shots_from_European_Parliament.mp4",
+      "old_file": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+      "segment": 87,
+      "instruction": "DELETE V1 clip at 767s and REPLACE with More_atmosphere_shots_from_European_Parliament.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 766.9100000000001,
+      "segment": 87,
+      "instruction": "MUTE V1 clip audio at 767s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 758.84,
+      "file": "impact_new.wav",
+      "segment": 87,
+      "instruction": "ADD impact_new.wav to A3 at 759s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 758.84,
+      "text": "4% OF GLOBAL REVENUE.",
+      "segment": 87,
+      "instruction": "ADD text overlay '4% OF GLOBAL REVENUE.' to V2/V4 at 759s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 779.53,
+      "file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "old_file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+      "segment": 88,
+      "instruction": "DELETE V1 clip at 780s and REPLACE with Extraordinary_security_surrounds_US_Capitol.mp4"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 779.53,
+      "segment": 88,
+      "instruction": "MUTE V1 clip audio at 780s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 785.735,
+      "file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+      "old_file": "Understanding_Intellectual_Property_IP.mp4",
+      "segment": 89,
+      "instruction": "DELETE V1 clip at 786s and REPLACE with pexels_1181354_human_silhouette_dramatic_back.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 785.735,
+      "segment": 89,
+      "instruction": "MUTE V1 clip audio at 786s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 793.185,
+      "file": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+      "old_file": "Understanding_Intellectual_Property_IP.mp4",
+      "segment": 90,
+      "instruction": "DELETE V1 clip at 793s and REPLACE with pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 793.185,
+      "segment": 90,
+      "instruction": "MUTE V1 clip audio at 793s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 787.39,
+      "file": "impact_new.wav",
+      "segment": 90,
+      "instruction": "ADD impact_new.wav to A3 at 787s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 787.39,
+      "text": "GRIMSHAW v. FORD MOTOR CO.",
+      "segment": 90,
+      "instruction": "ADD text overlay 'GRIMSHAW v. FORD MOTOR CO.' to V2/V4 at 787s"
+    },
+    {
+      "action": "ADD",
+      "track": "V3",
+      "time": 785.39,
+      "text": "THE RECKONING",
+      "segment": 90,
+      "instruction": "ADD chapter card 'THE RECKONING' to V3 at 785s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 801.875,
+      "file": "pexels_269077_corporate_office_ethics_hotlin.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 91,
+      "instruction": "DELETE V1 clip at 802s and REPLACE with pexels_269077_corporate_office_ethics_hotlin.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 801.875,
+      "segment": 91,
+      "instruction": "MUTE V1 clip audio at 802s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 798.98,
+      "file": "impact_new_loud.wav",
+      "segment": 91,
+      "instruction": "ADD impact_new_loud.wav to A3 at 799s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 798.98,
+      "text": "FIRED FOR CALLING THE ETHICS HOTLINE",
+      "segment": 91,
+      "instruction": "ADD text overlay 'FIRED FOR CALLING THE ETHICS H' to V2/V4 at 799s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 812.63,
+      "file": "pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg",
+      "old_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "segment": 92,
+      "instruction": "DELETE V1 clip at 813s and REPLACE with pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 812.63,
+      "segment": 92,
+      "instruction": "MUTE V1 clip audio at 813s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 804.77,
+      "text": "THE SACKLER NAME IS STILL ON THE GUGGENHEIM",
+      "segment": 92,
+      "instruction": "ADD text overlay 'THE SACKLER NAME IS STILL ON T' to V2/V4 at 805s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 821.425,
+      "file": "pexels_5668473_documentary_award_plaque_cerem.jpg",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 93,
+      "instruction": "DELETE V1 clip at 821s and REPLACE with pexels_5668473_documentary_award_plaque_cerem.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 821.425,
+      "segment": 93,
+      "instruction": "MUTE V1 clip audio at 821s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 820.49,
+      "file": "typewriter_key_loud.wav",
+      "segment": 93,
+      "instruction": "ADD typewriter_key_loud.wav to A3 at 820s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 820.49,
+      "text": "THAT'S THE FORMULA.",
+      "segment": 93,
+      "instruction": "ADD text overlay 'THAT'S THE FORMULA.' to V2/V4 at 820s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 827.115,
+      "file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 94,
+      "instruction": "DELETE V1 clip at 827s and REPLACE with pexels_5668473_abstract_taking_stealing_intel.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 827.115,
+      "segment": 94,
+      "instruction": "MUTE V1 clip audio at 827s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 822.36,
+      "text": "ELLIANA ESQUIVEL",
+      "segment": 94,
+      "instruction": "ADD text overlay 'ELLIANA ESQUIVEL' to V2/V4 at 822s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 834.665,
+      "file": "pexels_269077_RealPage_software_company_offi.jpg",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 95,
+      "instruction": "DELETE V1 clip at 835s and REPLACE with pexels_269077_RealPage_software_company_offi.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 834.665,
+      "segment": 95,
+      "instruction": "MUTE V1 clip audio at 835s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 831.87,
+      "file": "impact_new.wav",
+      "segment": 95,
+      "instruction": "ADD impact_new.wav to A3 at 832s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 831.87,
+      "text": "74% OF FACEBOOK USERS DON'T KNOW",
+      "segment": 95,
+      "instruction": "ADD text overlay '74% OF FACEBOOK USERS DON'T KN' to V2/V4 at 832s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 840.77,
+      "file": "pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg",
+      "old_file": "Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4",
+      "segment": 96,
+      "instruction": "DELETE V1 clip at 841s and REPLACE with pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 840.77,
+      "segment": 96,
+      "instruction": "MUTE V1 clip audio at 841s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 837.46,
+      "text": "CHRIS VIALPONDO \u2014 SEATTLE",
+      "segment": 96,
+      "instruction": "ADD text overlay 'CHRIS VIALPONDO \u2014 SEATTLE' to V2/V4 at 837s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 850.3900000000001,
+      "file": "pexels_5668473_corporate_document_money_value.jpg",
+      "old_file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+      "segment": 97,
+      "instruction": "DELETE V1 clip at 850s and REPLACE with pexels_5668473_corporate_document_money_value.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 850.3900000000001,
+      "segment": 97,
+      "instruction": "MUTE V1 clip audio at 850s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 844.08,
+      "file": "impact_new_loud.wav",
+      "segment": 97,
+      "instruction": "ADD impact_new_loud.wav to A3 at 844s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 844.08,
+      "text": "$200,000",
+      "segment": 97,
+      "instruction": "ADD text overlay '$200,000' to V2/V4 at 844s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 858.56,
+      "file": "pexels_5668473_farmers_market_price_stall_han.jpg",
+      "old_file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+      "segment": 98,
+      "instruction": "DELETE V1 clip at 859s and REPLACE with pexels_5668473_farmers_market_price_stall_han.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 858.56,
+      "segment": 98,
+      "instruction": "MUTE V1 clip audio at 859s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 856.7,
+      "file": "impact_new_loud.wav",
+      "segment": 98,
+      "instruction": "ADD impact_new_loud.wav to A3 at 857s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 861.3499999999999,
+      "file": "pexels_269077_corporate_executives_boardroom.jpg",
+      "old_file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+      "segment": 99,
+      "instruction": "DELETE V1 clip at 861s and REPLACE with pexels_269077_corporate_executives_boardroom.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 861.3499999999999,
+      "segment": 99,
+      "instruction": "MUTE V1 clip audio at 861s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 860.42,
+      "file": "impact_new_loud.wav",
+      "segment": 99,
+      "instruction": "ADD impact_new_loud.wav to A3 at 860s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 860.42,
+      "text": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
+      "segment": 99,
+      "instruction": "ADD text overlay 'THE LAW DOESN'T PREVENT CORPOR' to V2/V4 at 860s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 863.2149999999999,
+      "file": "pexels_208724_US_Capitol_building_exterior_W.jpg",
+      "old_file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+      "segment": 100,
+      "instruction": "DELETE V1 clip at 863s and REPLACE with pexels_208724_US_Capitol_building_exterior_W.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 863.2149999999999,
+      "segment": 100,
+      "instruction": "MUTE V1 clip audio at 863s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 864.77,
+      "file": "wiki_0_Ford_Pinto_recall_no.jpg",
+      "old_file": "pexels_5668473_copyright_lawsuit_courtroom_ga.jpg",
+      "segment": 101,
+      "instruction": "DELETE V1 clip at 865s and REPLACE with wiki_0_Ford_Pinto_recall_no.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 864.77,
+      "segment": 101,
+      "instruction": "MUTE V1 clip audio at 865s"
+    },
+    {
+      "action": "ADD",
+      "track": "A3",
+      "time": 864.15,
+      "file": "impact_new_loud.wav",
+      "segment": 101,
+      "instruction": "ADD impact_new_loud.wav to A3 at 864s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 864.15,
+      "text": "THE QUESTION IS WHAT YOU'RE WORTH.",
+      "segment": 101,
+      "instruction": "ADD text overlay 'THE QUESTION IS WHAT YOU'RE WO' to V2/V4 at 864s"
+    },
+    {
+      "action": "REPLACE",
+      "track": "V1",
+      "time": 868.595,
+      "file": "pexels_325229_data_center_server_infrastruct.jpg",
+      "old_file": "pexels_5668473_copyright_lawsuit_courtroom_ga.jpg",
+      "segment": 102,
+      "instruction": "DELETE V1 clip at 869s and REPLACE with pexels_325229_data_center_server_infrastruct.jpg"
+    },
+    {
+      "action": "MUTE",
+      "track": "V1",
+      "time": 868.595,
+      "segment": 102,
+      "instruction": "MUTE V1 clip audio at 869s"
+    },
+    {
+      "action": "ADD",
+      "track": "V2",
+      "time": 865.39,
+      "text": "SOURCES",
+      "segment": 102,
+      "instruction": "ADD text overlay 'SOURCES' to V2/V4 at 865s"
+    }
+  ]
+}
