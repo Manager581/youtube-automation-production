@@ -805,34 +805,20 @@ def build_from_director(director_path: str, narration_path: str = None,
 
         tl_start = seg.get("_timeline_start_sec", 0) or 0
 
-        # Look for pre-rendered overlay files
-        # Typewriter overlays should be MOV files with alpha
+        # Look for pre-rendered overlay files (case-insensitive fuzzy match)
         overlay_filename = None
-        if text_style == "typewriter":
-            # Look for typewriter MOV
-            safe_name = text_overlay[:15].replace(" ", "_").replace("/", "_")
-            candidates = [
-                f"tw_{safe_name}.mov",
-                f"typewriter_{safe_name}.mov",
-            ]
-            for candidate in candidates:
-                fp = find_media_file(candidate, all_search_dirs)
-                if fp:
-                    overlay_filename = fp
+        import re as _re
+        safe_key = _re.sub(r'[^a-zA-Z0-9]', '_', text_overlay[:30]).strip('_').lower()
+        # Search all overlay dirs for any file containing our safe key
+        for search_dir in all_search_dirs:
+            if not os.path.isdir(search_dir):
+                continue
+            for fname in os.listdir(search_dir):
+                if safe_key[:15] in fname.lower() and fname.endswith('.mov'):
+                    overlay_filename = os.path.join(search_dir, fname)
                     break
-
-        if text_style in ("static", "lower_third"):
-            safe_name = text_overlay[:20].replace(" ", "_").replace("/", "_").replace("$", "")
-            candidates = [
-                f"text_{safe_name}.mov",
-                f"overlay_{safe_name}.mov",
-                f"text_{safe_name}.png",
-            ]
-            for candidate in candidates:
-                fp = find_media_file(candidate, all_search_dirs)
-                if fp:
-                    overlay_filename = fp
-                    break
+            if overlay_filename:
+                break
 
         if overlay_filename:
             # Determine overlay duration
