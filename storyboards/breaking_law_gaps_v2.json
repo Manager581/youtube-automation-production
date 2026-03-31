@@ -1,0 +1,348 @@
+{
+  "director_path": "/Users/jefflawrence/Documents/youtube-automation-production/storyboards/breaking_law_directed_v2.json",
+  "total_gaps": 42,
+  "resolved_count": 42,
+  "resolved_confident": 29,
+  "resolved_low_confidence": 13,
+  "unresolved_count": 0,
+  "min_confidence_threshold": 0.6,
+  "resolved": [
+    {
+      "segment_idx": 2,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_1977_Ford_Pinto_car_fire_accid.jpg",
+      "picked_filename": "pexels_5668473_1977_Ford_Pinto_car_fire_accid.jpg",
+      "search_query": "1977 Ford Pinto car fire accident",
+      "confidence": 0.97,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 3,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_boardroom_executive_.jpg",
+      "picked_filename": "pexels_269077_corporate_boardroom_executive_.jpg",
+      "search_query": "corporate boardroom executive meeting documentary",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 4,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_Ford_Pinto_crash_tes.jpg",
+      "picked_filename": "wiki_0_Ford_Pinto_crash_tes.jpg",
+      "search_query": "Ford Pinto crash test fuel tank fire 1977",
+      "confidence": 0.85,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 5,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Ford_Pinto_fire_crash_burn_vic.jpg",
+      "picked_filename": "pexels_5668473_Ford_Pinto_fire_crash_burn_vic.jpg",
+      "search_query": "Ford Pinto fire crash burn victim aftermath documentary",
+      "confidence": 0.95,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 10,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_Wells_Fargo_executive_corporat.jpg",
+      "picked_filename": "pexels_269077_Wells_Fargo_executive_corporat.jpg",
+      "search_query": "Wells Fargo executive corporate banking scandal",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 11,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_corporate_executives.jpg",
+      "picked_filename": "wiki_0_corporate_executives.jpg",
+      "search_query": "corporate executives boardroom pressure quota meeting",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 14,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_crime_fine_payment_e.jpg",
+      "picked_filename": "pexels_269077_corporate_crime_fine_payment_e.jpg",
+      "search_query": "corporate crime fine payment executive boardroom",
+      "confidence": 0.85,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 15,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_fines_trillion_dolla.jpg",
+      "picked_filename": "pexels_269077_corporate_fines_trillion_dolla.jpg",
+      "search_query": "corporate fines trillion dollars financial penalties graph",
+      "confidence": 0.92,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 24,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668858_Zuckerberg_Congress_hearing_te.jpg",
+      "picked_filename": "pexels_5668858_Zuckerberg_Congress_hearing_te.jpg",
+      "search_query": "Zuckerberg Congress hearing testimony suit 2018",
+      "confidence": 0.97,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 25,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_1_Mark_Zuckerberg_Sena.jpg",
+      "picked_filename": "wiki_1_Mark_Zuckerberg_Sena.jpg",
+      "search_query": "Mark Zuckerberg Senate hearing testimony 2018",
+      "confidence": 0.92,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 30,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_regulatory_capture_c.jpg",
+      "picked_filename": "wiki_0_regulatory_capture_c.jpg",
+      "search_query": "regulatory capture corporate lobbying government oversight",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 31,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_208724_FTC_headquarters_Washington_DC.jpg",
+      "picked_filename": "pexels_208724_FTC_headquarters_Washington_DC.jpg",
+      "search_query": "FTC headquarters Washington DC government building",
+      "confidence": 0.82,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 32,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_Facebook_headquarters_corporat.jpg",
+      "picked_filename": "pexels_269077_Facebook_headquarters_corporat.jpg",
+      "search_query": "Facebook headquarters corporate campus aerial view",
+      "confidence": 0.95,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 34,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Facebook_stock_market_trading_.jpg",
+      "picked_filename": "pexels_5668473_Facebook_stock_market_trading_.jpg",
+      "search_query": "Facebook stock market trading floor celebration",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 36,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668858_corporate_scandal_whistleblowe.jpg",
+      "picked_filename": "pexels_5668858_corporate_scandal_whistleblowe.jpg",
+      "search_query": "corporate scandal whistleblower testimony courtroom 2023",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 39,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_data_infrastructure_.jpg",
+      "picked_filename": "pexels_269077_corporate_data_infrastructure_.jpg",
+      "search_query": "corporate data infrastructure overhaul European compliance rebuild",
+      "confidence": 0.6,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 40,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_1_European_parliament_.jpg",
+      "picked_filename": "wiki_1_European_parliament_.jpg",
+      "search_query": "European parliament building business regulation fine",
+      "confidence": 0.82,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 41,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_executives_data_anal.jpg",
+      "picked_filename": "pexels_269077_corporate_executives_data_anal.jpg",
+      "search_query": "corporate executives data analysis behavioral change",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 43,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_somber_documentary_filmmaker_r.jpg",
+      "picked_filename": "pexels_5668473_somber_documentary_filmmaker_r.jpg",
+      "search_query": "somber documentary filmmaker reflection empty room",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 45,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_theft_intellectual_p.jpg",
+      "picked_filename": "pexels_269077_corporate_theft_intellectual_p.jpg",
+      "search_query": "corporate theft intellectual property courtroom documentary",
+      "confidence": 0.55,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 46,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_greed_executives_tak.jpg",
+      "picked_filename": "pexels_269077_corporate_greed_executives_tak.jpg",
+      "search_query": "corporate greed executives taking everything money",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 49,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_577585_journalist_article_plagiarism_.jpg",
+      "picked_filename": "pexels_577585_journalist_article_plagiarism_.jpg",
+      "search_query": "journalist article plagiarism AI content theft screen",
+      "confidence": 0.55,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 52,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_577585_web_crawler_data_center_server.jpg",
+      "picked_filename": "pexels_577585_web_crawler_data_center_server.jpg",
+      "search_query": "web crawler data center servers blinking lights",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 55,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_toxic_contamination_industrial.jpg",
+      "picked_filename": "pexels_5668473_toxic_contamination_industrial.jpg",
+      "search_query": "toxic contamination industrial wasteland landscape",
+      "confidence": 0.82,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 56,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_sugar_dissolving_water_macro_c.jpg",
+      "picked_filename": "pexels_5668473_sugar_dissolving_water_macro_c.jpg",
+      "search_query": "sugar dissolving water macro close-up documentary",
+      "confidence": 0.98,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 57,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_corporate_data_delet.jpg",
+      "picked_filename": "wiki_0_corporate_data_delet.jpg",
+      "search_query": "corporate data deletion privacy accountability documentary",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 65,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_worried_investor_stock_market_.jpg",
+      "picked_filename": "pexels_5668473_worried_investor_stock_market_.jpg",
+      "search_query": "worried investor stock market portfolio loss",
+      "confidence": 0.85,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 68,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_copyright_lawsuit_courtroom_do.jpg",
+      "picked_filename": "pexels_5668473_copyright_lawsuit_courtroom_do.jpg",
+      "search_query": "copyright lawsuit courtroom documents AI technology",
+      "confidence": 0.82,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 69,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_artist_illustration_copyright_.jpg",
+      "picked_filename": "pexels_5668473_artist_illustration_copyright_.jpg",
+      "search_query": "artist illustration copyright lawsuit documentary",
+      "confidence": 0.85,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 71,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_corporate_documents_.jpg",
+      "picked_filename": "wiki_0_corporate_documents_.jpg",
+      "search_query": "corporate documents financial fraud executive boardroom",
+      "confidence": 0.72,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 74,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_financial_fines_prof.jpg",
+      "picked_filename": "pexels_5668473_corporate_financial_fines_prof.jpg",
+      "search_query": "corporate financial fines profit records documentary boardroom",
+      "confidence": 0.62,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 77,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_1370704_RealPage_algorithm_rent_price_.jpg",
+      "picked_filename": "pexels_1370704_RealPage_algorithm_rent_price_.jpg",
+      "search_query": "RealPage algorithm rent price coordination apartments",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 79,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_DOJ_settlement_agreement_docum.jpg",
+      "picked_filename": "pexels_5668473_DOJ_settlement_agreement_docum.jpg",
+      "search_query": "DOJ settlement agreement document signing courtroom",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 80,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_price_fixing_antitru.jpg",
+      "picked_filename": "pexels_5668473_corporate_price_fixing_antitru.jpg",
+      "search_query": "corporate price fixing antitrust settlement courtroom documents",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 81,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_1370704_RealPage_lawsuit_New_York_rent.jpg",
+      "picked_filename": "pexels_1370704_RealPage_lawsuit_New_York_rent.jpg",
+      "search_query": "RealPage lawsuit New York rent algorithm courtroom",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 83,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_executive_confident_.jpg",
+      "picked_filename": "pexels_269077_corporate_executive_confident_.jpg",
+      "search_query": "corporate executive confident boardroom calculating",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 84,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Ford_Pinto_crash_victim_injury.jpg",
+      "picked_filename": "pexels_5668473_Ford_Pinto_crash_victim_injury.jpg",
+      "search_query": "Ford Pinto crash victim injury documentary footage",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 86,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_accountability_justi.jpg",
+      "picked_filename": "pexels_5668473_corporate_accountability_justi.jpg",
+      "search_query": "corporate accountability justice scales courtroom documentary",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 92,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Sackler_family_name_museum_art.jpg",
+      "picked_filename": "pexels_5668473_Sackler_family_name_museum_art.jpg",
+      "search_query": "Sackler family name museum art institution legacy",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 93,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_award_plaque_ceremon.jpg",
+      "picked_filename": "pexels_269077_corporate_award_plaque_ceremon.jpg",
+      "search_query": "corporate award plaque ceremony executive recognition",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 97,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_accountability_dolla.jpg",
+      "picked_filename": "pexels_5668473_corporate_accountability_dolla.jpg",
+      "search_query": "corporate accountability dollar value human life documentary",
+      "confidence": 0.3,
+      "attempt": 1
+    },
+    {
+      "segment_idx": 99,
+      "picked_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_boardroom_executive_.jpg",
+      "picked_filename": "pexels_5668473_corporate_boardroom_executive_.jpg",
+      "search_query": "corporate boardroom executive signing legal documents",
+      "confidence": 0.3,
+      "attempt": 1
+    }
+  ],
+  "unresolved": []
+}

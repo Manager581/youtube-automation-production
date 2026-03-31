@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fcpxml>
+<?xml version='1.0' encoding='UTF-8'?>
 <fcpxml version="1.9">
     <resources>
         <format id="r158" name="FFVideoFormat1080p24" frameDuration="1/24s" width="1920" height="1080" />
@@ -8,27 +7,27 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4" />
         </asset>
         <format id="r3" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r2" name="pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r3">
+        <asset id="r2" name="pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r3">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_001/pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg" />
         </asset>
         <format id="r5" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r4" name="wiki_0_1977_burning_car_fir.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r5">
+        <asset id="r4" name="wiki_0_1977_burning_car_fir.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r5">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_1977_burning_car_fir.jpg" />
         </asset>
         <format id="r7" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r6" name="pexels_5668473_dark_data_algorithms_surveilla.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r7">
+        <asset id="r6" name="pexels_5668473_dark_data_algorithms_surveilla.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r7">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_dark_data_algorithms_surveilla.jpg" />
         </asset>
         <format id="r9" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r8" name="pexels_5668858_Ford_Pinto_fuel_tank_crash_tes.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r9">
+        <asset id="r8" name="pexels_5668858_Ford_Pinto_fuel_tank_crash_tes.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r9">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668858_Ford_Pinto_fuel_tank_crash_tes.jpg" />
         </asset>
         <format id="r11" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r10" name="pexels_5668473_burned_child_hospital_skin_gra.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r11">
+        <asset id="r10" name="pexels_5668473_burned_child_hospital_skin_gra.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r11">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_burned_child_hospital_skin_gra.jpg" />
         </asset>
         <format id="r13" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r12" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r13">
+        <asset id="r12" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r13">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_015/pexels_5668473_DOJ_settlement_agreement_fine_.jpg" />
         </asset>
         <format id="r15" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
@@ -36,19 +35,19 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/fern_clone/corporate_fine_penalty_legal_settlement/Understanding_Intellectual_Property_IP.mp4" />
         </asset>
         <format id="r17" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r16" name="pexels_269077_corporate_office_ethics_hotlin.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r17">
+        <asset id="r16" name="pexels_269077_corporate_office_ethics_hotlin.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r17">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_029/pexels_269077_corporate_office_ethics_hotlin.jpg" />
         </asset>
         <format id="r19" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r18" name="pexels_1181354_human_silhouette_dramatic_back.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r19">
+        <asset id="r18" name="pexels_1181354_human_silhouette_dramatic_back.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r19">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181354_human_silhouette_dramatic_back.jpg" />
         </asset>
         <format id="r21" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r20" name="pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r21">
+        <asset id="r20" name="pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r21">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Wells_Fargo_fake_accounts_bank.jpg" />
         </asset>
         <format id="r23" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r22" name="pexels_5668473_corporate_office_quota_pressur.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r23">
+        <asset id="r22" name="pexels_5668473_corporate_office_quota_pressur.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r23">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_office_quota_pressur.jpg" />
         </asset>
         <format id="r25" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
@@ -56,11 +55,11 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" />
         </asset>
         <format id="r27" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r26" name="pexels_269077_corporate_crime_fines_legal_lo.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r27">
+        <asset id="r26" name="pexels_269077_corporate_crime_fines_legal_lo.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r27">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_crime_fines_legal_lo.jpg" />
         </asset>
         <format id="r29" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r28" name="pexels_5668473_corporate_fines_settlement_mon.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r29">
+        <asset id="r28" name="pexels_5668473_corporate_fines_settlement_mon.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r29">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_fines_settlement_mon.jpg" />
         </asset>
         <format id="r31" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
@@ -68,11 +67,11 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/fern_clone/corporate_fine_penalty_legal_settlement/Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" />
         </asset>
         <format id="r33" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r32" name="pexels_325229_data_center_server_infrastruct.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r33">
+        <asset id="r32" name="pexels_325229_data_center_server_infrastruct.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r33">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_002/pexels_325229_data_center_server_infrastruct.jpg" />
         </asset>
         <format id="r35" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r34" name="pexels_5668473_GDPR_European_data_protection_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r35">
+        <asset id="r34" name="pexels_5668473_GDPR_European_data_protection_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r35">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_000/pexels_5668473_GDPR_European_data_protection_.jpg" />
         </asset>
         <format id="r37" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
@@ -80,15 +79,15 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Extraordinary_security_surrounds_US_Capitol.mp4" />
         </asset>
         <format id="r39" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r38" name="pexels_5668473_abstract_taking_stealing_intel.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r39">
+        <asset id="r38" name="pexels_5668473_abstract_taking_stealing_intel.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r39">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_006/pexels_5668473_abstract_taking_stealing_intel.jpg" />
         </asset>
         <format id="r41" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r40" name="wiki_1_Zuckerberg_Congress_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r41">
+        <asset id="r40" name="wiki_1_Zuckerberg_Congress_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r41">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_1_Zuckerberg_Congress_.jpg" />
         </asset>
         <format id="r43" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r42" name="wiki_0_Senator_questioning_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r43">
+        <asset id="r42" name="wiki_0_Senator_questioning_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r43">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_0_Senator_questioning_.jpg" />
         </asset>
         <format id="r45" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
@@ -96,71 +95,71 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/fern_clone/corporate_fine_penalty_legal_settlement/More_atmosphere_shots_from_European_Parliament.mp4" />
         </asset>
         <format id="r47" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r46" name="pexels_5668473_regulatory_fine_corporate_acco.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r47">
+        <asset id="r46" name="pexels_5668473_regulatory_fine_corporate_acco.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r47">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_regulatory_fine_corporate_acco.jpg" />
         </asset>
         <format id="r49" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r48" name="wiki_2_FTC_headquarters_Was.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r49">
+        <asset id="r48" name="wiki_2_FTC_headquarters_Was.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r49">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_2_FTC_headquarters_Was.jpg" />
         </asset>
         <format id="r51" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r50" name="wiki_1_Facebook_headquarter.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r51">
+        <asset id="r50" name="wiki_1_Facebook_headquarter.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r51">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_1_Facebook_headquarter.jpg" />
         </asset>
         <format id="r53" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r52" name="pexels_5668473_artificial_intelligence_compan.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r53">
+        <asset id="r52" name="pexels_5668473_artificial_intelligence_compan.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r53">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_007/pexels_5668473_artificial_intelligence_compan.jpg" />
         </asset>
         <format id="r55" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r54" name="wiki_2_Facebook_stock_marke.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r55">
+        <asset id="r54" name="wiki_2_Facebook_stock_marke.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r55">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_2_Facebook_stock_marke.jpg" />
         </asset>
         <format id="r57" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r56" name="pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r57">
+        <asset id="r56" name="pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r57">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_016/pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg" />
         </asset>
         <format id="r59" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r58" name="pexels_5668473_documentary_evidence_formula_b.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r59">
+        <asset id="r58" name="pexels_5668473_documentary_evidence_formula_b.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r59">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_documentary_evidence_formula_b.jpg" />
         </asset>
         <format id="r61" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r60" name="pexels_5668473_Perplexity_AI_search_results_c.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r61">
+        <asset id="r60" name="pexels_5668473_Perplexity_AI_search_results_c.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r61">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_009/pexels_5668473_Perplexity_AI_search_results_c.jpg" />
         </asset>
         <format id="r63" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r62" name="pexels_208724_US_Capitol_building_exterior_W.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r63">
+        <asset id="r62" name="pexels_208724_US_Capitol_building_exterior_W.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r63">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_026/pexels_208724_US_Capitol_building_exterior_W.jpg" />
         </asset>
         <format id="r65" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r64" name="wiki_2_corporate_data_cente.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r65">
+        <asset id="r64" name="wiki_2_corporate_data_cente.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r65">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/wiki_2_corporate_data_cente.jpg" />
         </asset>
         <format id="r67" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r66" name="pexels_5668473_proportional_justice_scales_Eu.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r67">
+        <asset id="r66" name="pexels_5668473_proportional_justice_scales_Eu.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r67">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_proportional_justice_scales_Eu.jpg" />
         </asset>
         <format id="r69" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r68" name="pexels_269077_corporate_executives_identical.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r69">
+        <asset id="r68" name="pexels_269077_corporate_executives_identical.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r69">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_executives_identical.jpg" />
         </asset>
         <format id="r71" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r70" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r71">
+        <asset id="r70" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r71">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_028/pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" />
         </asset>
         <format id="r73" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r72" name="pexels_5668473_somber_documentary_filmmaker_r.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r73">
+        <asset id="r72" name="pexels_5668473_somber_documentary_filmmaker_r.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r73">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_somber_documentary_filmmaker_r.jpg" />
         </asset>
         <format id="r75" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r74" name="pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r75">
+        <asset id="r74" name="pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r75">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_008/pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" />
         </asset>
         <format id="r77" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r76" name="pexels_5668473_documentary_writer_stealing_cr.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r77">
+        <asset id="r76" name="pexels_5668473_documentary_writer_stealing_cr.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r77">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_documentary_writer_stealing_cr.jpg" />
         </asset>
         <format id="r79" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r78" name="pexels_1181354_person_choosing_taking_all_mon.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r79">
+        <asset id="r78" name="pexels_1181354_person_choosing_taking_all_mon.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r79">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_1181354_person_choosing_taking_all_mon.jpg" />
         </asset>
         <format id="r81" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
@@ -168,135 +167,135 @@
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/fern_clone/corporate_fine_penalty_legal_settlement/OpenAI_Google_agree_to_watermark_AI_content.mp4" />
         </asset>
         <format id="r83" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r82" name="pexels_577585_data_center_server_infrastruct.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r83">
+        <asset id="r82" name="pexels_577585_data_center_server_infrastruct.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r83">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_002/pexels_577585_data_center_server_infrastruct.jpg" />
         </asset>
         <format id="r85" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r84" name="pexels_577585_journalist_screenshot_AI_plagi.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r85">
+        <asset id="r84" name="pexels_577585_journalist_screenshot_AI_plagi.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r85">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_577585_journalist_screenshot_AI_plagi.jpg" />
         </asset>
         <format id="r87" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r86" name="pexels_1181467_human_silhouette_dramatic_back.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r87">
+        <asset id="r86" name="pexels_1181467_human_silhouette_dramatic_back.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r87">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181467_human_silhouette_dramatic_back.jpg" />
         </asset>
         <format id="r89" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r88" name="pexels_5668473_car_doing_donuts_parking_lot_s.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r89">
+        <asset id="r88" name="pexels_5668473_car_doing_donuts_parking_lot_s.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r89">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_011/pexels_5668473_car_doing_donuts_parking_lot_s.jpg" />
         </asset>
         <format id="r91" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r90" name="pexels_577585_internet_scraping_legal_disput.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r91">
+        <asset id="r90" name="pexels_577585_internet_scraping_legal_disput.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r91">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_577585_internet_scraping_legal_disput.jpg" />
         </asset>
         <format id="r93" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r92" name="pexels_577585_GDPR_European_data_protection_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r93">
+        <asset id="r92" name="pexels_577585_GDPR_European_data_protection_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r93">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_000/pexels_577585_GDPR_European_data_protection_.jpg" />
         </asset>
         <format id="r95" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r94" name="pexels_5668473_European_Parliament_voting_cha.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r95">
+        <asset id="r94" name="pexels_5668473_European_Parliament_voting_cha.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r95">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_005/pexels_5668473_European_Parliament_voting_cha.jpg" />
         </asset>
         <format id="r97" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r96" name="pexels_1181354_scarred_wound_permanent_damage.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r97">
+        <asset id="r96" name="pexels_1181354_scarred_wound_permanent_damage.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r97">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_1181354_scarred_wound_permanent_damage.jpg" />
         </asset>
         <format id="r99" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r98" name="pexels_5668473_microscopic_sugar_dissolving_w.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r99">
+        <asset id="r98" name="pexels_5668473_microscopic_sugar_dissolving_w.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r99">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_microscopic_sugar_dissolving_w.jpg" />
         </asset>
         <format id="r101" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r100" name="pexels_5668473_corporate_damage_control_scand.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r101">
+        <asset id="r100" name="pexels_5668473_corporate_damage_control_scand.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r101">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_damage_control_scand.jpg" />
         </asset>
         <format id="r103" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r102" name="pexels_5668473_New_York_state_legislature_ass.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r103">
+        <asset id="r102" name="pexels_5668473_New_York_state_legislature_ass.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r103">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_022/pexels_5668473_New_York_state_legislature_ass.jpg" />
         </asset>
         <format id="r105" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r104" name="pexels_577585_AI_model_valuation_billions_in.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r105">
+        <asset id="r104" name="pexels_577585_AI_model_valuation_billions_in.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r105">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_012/pexels_577585_AI_model_valuation_billions_in.jpg" />
         </asset>
         <format id="r107" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r106" name="pexels_5668473_financial_documents_scattered_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r107">
+        <asset id="r106" name="pexels_5668473_financial_documents_scattered_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r107">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_financial_documents_scattered_.jpg" />
         </asset>
         <format id="r109" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r108" name="pexels_5668473_copyright_lawsuit_courtroom_ga.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r109">
+        <asset id="r108" name="pexels_5668473_copyright_lawsuit_courtroom_ga.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r109">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_copyright_lawsuit_courtroom_ga.jpg" />
         </asset>
         <format id="r111" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r110" name="pexels_5668473_artist_illustration_portfolio_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r111">
+        <asset id="r110" name="pexels_5668473_artist_illustration_portfolio_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r111">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_artist_illustration_portfolio_.jpg" />
         </asset>
         <format id="r113" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r112" name="pexels_5668473_corporate_executives_boardroom.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r113">
+        <asset id="r112" name="pexels_5668473_corporate_executives_boardroom.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r113">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_executives_boardroom.jpg" />
         </asset>
         <format id="r115" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r114" name="pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r115">
+        <asset id="r114" name="pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r115">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_016/pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg" />
         </asset>
         <format id="r117" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r116" name="pexels_269077_corporate_fines_profit_scales_.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r117">
+        <asset id="r116" name="pexels_269077_corporate_fines_profit_scales_.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r117">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_fines_profit_scales_.jpg" />
         </asset>
         <format id="r119" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r118" name="pexels_1370704_RealPage_rent_algorithm_landlo.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r119">
+        <asset id="r118" name="pexels_1370704_RealPage_rent_algorithm_landlo.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r119">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_1370704_RealPage_rent_algorithm_landlo.jpg" />
         </asset>
         <format id="r121" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r120" name="pexels_5668473_Washington_state_attorney_gene.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r121">
+        <asset id="r120" name="pexels_5668473_Washington_state_attorney_gene.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r121">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_018/pexels_5668473_Washington_state_attorney_gene.jpg" />
         </asset>
         <format id="r123" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r122" name="pexels_5668473_DOJ_antitrust_settlement_corpo.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r123">
+        <asset id="r122" name="pexels_5668473_DOJ_antitrust_settlement_corpo.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r123">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_DOJ_antitrust_settlement_corpo.jpg" />
         </asset>
         <format id="r125" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r124" name="pexels_5668473_antitrust_price_fixing_corpora.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r125">
+        <asset id="r124" name="pexels_5668473_antitrust_price_fixing_corpora.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r125">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_antitrust_price_fixing_corpora.jpg" />
         </asset>
         <format id="r127" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r126" name="pexels_1370704_RealPage_lawsuit_New_York_rent.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r127">
+        <asset id="r126" name="pexels_1370704_RealPage_lawsuit_New_York_rent.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r127">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_1370704_RealPage_lawsuit_New_York_rent.jpg" />
         </asset>
         <format id="r129" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r128" name="pexels_269077_corporate_executives_boardroom.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r129">
+        <asset id="r128" name="pexels_269077_corporate_executives_boardroom.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r129">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_269077_corporate_executives_boardroom.jpg" />
         </asset>
         <format id="r131" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r130" name="pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r131">
+        <asset id="r130" name="pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r131">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Ford_Pinto_crash_survivor_disf.jpg" />
         </asset>
         <format id="r133" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r132" name="pexels_5668473_dark_courtroom_justice_gavel_d.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r133">
+        <asset id="r132" name="pexels_5668473_dark_courtroom_justice_gavel_d.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r133">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_dark_courtroom_justice_gavel_d.jpg" />
         </asset>
         <format id="r135" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r134" name="pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r135">
+        <asset id="r134" name="pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r135">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_Guggenheim_Museum_Sackler_Wing.jpg" />
         </asset>
         <format id="r137" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r136" name="pexels_5668473_documentary_award_plaque_cerem.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r137">
+        <asset id="r136" name="pexels_5668473_documentary_award_plaque_cerem.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r137">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_documentary_award_plaque_cerem.jpg" />
         </asset>
         <format id="r139" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r138" name="pexels_269077_RealPage_software_company_offi.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r139">
+        <asset id="r138" name="pexels_269077_RealPage_software_company_offi.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r139">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_017/pexels_269077_RealPage_software_company_offi.jpg" />
         </asset>
         <format id="r141" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r140" name="pexels_5668473_corporate_document_money_value.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r141">
+        <asset id="r140" name="pexels_5668473_corporate_document_money_value.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r141">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/gap_fills/images/pexels_5668473_corporate_document_money_value.jpg" />
         </asset>
         <format id="r143" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r142" name="pexels_5668473_farmers_market_price_stall_han.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r143">
+        <asset id="r142" name="pexels_5668473_farmers_market_price_stall_han.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r143">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_020/pexels_5668473_farmers_market_price_stall_han.jpg" />
         </asset>
         <format id="r145" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r144" name="wiki_0_Ford_Pinto_recall_no.jpg" start="0/1s" duration="0/1s" hasVideo="1" format="r145">
+        <asset id="r144" name="wiki_0_Ford_Pinto_recall_no.jpg" start="0/1s" duration="240/24s" hasVideo="1" format="r145">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_014/wiki_0_Ford_Pinto_recall_no.jpg" />
         </asset>
         <format id="r147" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-        <asset id="r146" name="text_1977.png" start="0/1s" duration="0/1s" hasVideo="1" format="r147">
+        <asset id="r146" name="text_1977.png" start="0/1s" duration="240/24s" hasVideo="1" format="r147">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Desktop/SecretScores_Media/assets_faded/text_1977.png" />
         </asset>
         <format id="r149" name="FFVideoFormatRateUndefined" width="1920" height="1080" />

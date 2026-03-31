@@ -2,7 +2,7 @@
 <!DOCTYPE fcpxml>
 <fcpxml version="1.9">
     <resources>
-        <format id="r158" name="FFVideoFormat1080p24" frameDuration="1/24s" width="1920" height="1080" />
+        <format id="r162" name="FFVideoFormat1080p24" frameDuration="1/24s" width="1920" height="1080" />
         <format id="r1" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
         <asset id="r0" name="Facebook_to_pay_5_billion_fine.mp4" start="0/1s" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1273/24s" format="r1">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4" />
@@ -315,22 +315,63 @@
         <asset id="r154" name="chapter_the_reckoning_2s.mov" start="0/1s" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s" format="r155">
             <media-rep kind="original-media" src="file:///Users/jefflawrence/Desktop/SecretScores_Media/chapter_cards/chapter_the_reckoning_2s.mov" />
         </asset>
-        <asset id="r156" name="narration_music_sfx.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="25127/24s">
-            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration_music_sfx.wav" />
+        <asset id="r156" name="narration_with_music.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="25127/24s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration_with_music.wav" />
         </asset>
-        <asset id="r157" name="typewriter_key_loud.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="1/2s">
-            <media-rep kind="original-media" src="file:///Users/jefflawrence/Desktop/SecretScores_Media/sfx/typewriter_key_loud.wav" />
+        <asset id="r157" name="impact_new_loud.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="19/24s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new_loud.wav" />
+        </asset>
+        <asset id="r158" name="glass_shatter_new_loud.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="3/2s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/glass_shatter_new_loud.wav" />
+        </asset>
+        <asset id="r159" name="impact_new.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="19/24s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav" />
+        </asset>
+        <asset id="r160" name="typewriter_key_loud.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="1/2s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/typewriter_key_loud.wav" />
+        </asset>
+        <asset id="r161" name="glass_shatter_new.wav" start="0/1s" hasAudio="1" audioSources="1" audioChannels="1" duration="3/2s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/glass_shatter_new.wav" />
         </asset>
     </resources>
     <library>
         <event name="Production">
             <project name="Production">
-                <sequence format="r158" duration="40027/24s" tcStart="3600/1s" tcFormat="NDF">
+                <sequence format="r162" duration="40027/24s" tcStart="3600/1s" tcFormat="NDF">
                     <spine>
                         <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="3600/1s" duration="7/1s" start="0/1s" tcFormat="NDF" enabled="1" format="r1">
                             <adjust-transform scale="1 1" position="0 0" anchor="0 0" />
                             <video ref="r0" offset="0/1s" duration="1273/24s" start="0/1s" />
-                            <asset-clip ref="r156" name="narration" lane="5" offset="0/1s" duration="25127/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r156" name="narration" lane="5" offset="3600/1s" duration="25127/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="87139/24s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r158" name="glass_shatter_new_loud.wav" lane="8" offset="43973/12s" duration="3/2s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="44419/12s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="8" offset="45149/12s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="45773/12s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="8" offset="3862/1s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="95837/24s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r160" name="typewriter_key_loud.wav" lane="8" offset="48787/12s" duration="1/2s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="49195/12s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="8" offset="108749/24s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="4618/1s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r161" name="glass_shatter_new.wav" lane="8" offset="110899/24s" duration="3/2s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="8" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r158" name="glass_shatter_new_loud.wav" lane="8" offset="111491/24s" duration="3/2s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r161" name="glass_shatter_new.wav" lane="8" offset="111491/24s" duration="3/2s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="8" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="8" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r160" name="typewriter_key_loud.wav" lane="8" offset="111515/24s" duration="1/2s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r159" name="impact_new.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="8" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="8" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
+                            <asset-clip ref="r157" name="impact_new_loud.wav" lane="7" offset="27877/6s" duration="19/24s" start="0/1s" enabled="1" />
                         </clip>
                         <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="3607/1s" duration="7/1s" start="7/1s" tcFormat="NDF" enabled="1" format="r1">
                             <adjust-transform scale="1 1" position="0 0" anchor="0 0" />
@@ -1342,10 +1383,7 @@
                         <video ref="r32" name="pexels_325229_data_center_server_infrastruct.jpg" offset="63089/12s" duration="65/12s" start="0/1s" enabled="1">
                             <adjust-transform scale="1 1" position="0 0" anchor="0 0" />
                         </video>
-                        <gap name="Gap" offset="126307/24s" duration="5/1s" start="3600/1s">
-                            <asset-clip ref="r157" name="typewriter_key_loud.wav" lane="7" offset="48787/12s" duration="1/2s" start="0/1s" enabled="1" />
-                            <asset-clip ref="r157" name="typewriter_key_loud.wav" lane="8" offset="111515/24s" duration="1/2s" start="0/1s" enabled="1" />
-                        </gap>
+                        <gap name="Gap" offset="126307/24s" duration="5/1s" start="3600/1s" />
                     </spine>
                 </sequence>
             </project>

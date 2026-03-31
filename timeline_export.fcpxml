@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.9">
+    <resources>
+        <format frameDuration="1/24s" height="1080" name="FFVideoFormat1080p24" id="r0" width="1920"/>
+        <format frameDuration="1001/30000s" height="720" name="FFVideoFormat720p2997" id="r1" width="1280"/>
+        <format height="1280" name="FFVideoFormatRateUndefined" id="r3" width="1920"/>
+        <format height="1273" name="FFVideoFormatRateUndefined" id="r5" width="960"/>
+        <format frameDuration="1/30s" height="720" name="FFVideoFormat960x720p30" id="r7" width="960"/>
+        <format height="1345" name="FFVideoFormatRateUndefined" id="r14" width="1920"/>
+        <format height="797" name="FFVideoFormatRateUndefined" id="r17" width="500"/>
+        <format height="1440" name="FFVideoFormatRateUndefined" id="r20" width="1920"/>
+        <format height="672" name="FFVideoFormatRateUndefined" id="r25" width="1920"/>
+        <format frameDuration="1001/24000s" height="720" name="FFVideoFormat720p2398" id="r27" width="1280"/>
+        <format frameDuration="1/30s" height="720" name="FFVideoFormat720p30" id="r29" width="1280"/>
+        <format frameDuration="1/25s" height="360" name="FFVideoFormatRateUndefined" id="r36" width="640"/>
+        <format height="1242" name="FFVideoFormatRateUndefined" id="r38" width="960"/>
+        <format height="1282" name="FFVideoFormatRateUndefined" id="r53" width="1920"/>
+        <format frameDuration="1/24s" height="720" name="FFVideoFormat720p24" id="r59" width="1280"/>
+        <format height="752" name="FFVideoFormatRateUndefined" id="r61" width="500"/>
+        <format height="906" name="FFVideoFormatRateUndefined" id="r72" width="500"/>
+        <format height="1358" name="FFVideoFormatRateUndefined" id="r91" width="960"/>
+        <format height="1238" name="FFVideoFormatRateUndefined" id="r94" width="1920"/>
+        <format height="822" name="FFVideoFormatRateUndefined" id="r98" width="500"/>
+        <format height="960" name="FFVideoFormatRateUndefined" id="r101" width="1280"/>
+        <format frameDuration="1/25s" height="720" name="FFVideoFormat720p25" id="r108" width="1280"/>
+        <format height="828" name="FFVideoFormatRateUndefined" id="r115" width="500"/>
+        <format height="1238" name="FFVideoFormatRateUndefined" id="r118" width="960"/>
+        <format frameDuration="1/30s" height="1080" name="FFVideoFormat1080p30" id="r127" width="1920"/>
+        <asset duration="1590589/30000s" audioSources="1" audioChannels="2" name="Facebook_to_pay_5_billion_fine.mp4" id="r2" format="r1" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg" id="r4" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_001/pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_mathematical_formula.jpg" id="r6" format="r5" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_003/wiki_0_mathematical_formula.jpg"/>
+        </asset>
+        <asset duration="2689/15s" audioSources="1" audioChannels="2" name="Blackboard.mp4" id="r8" format="r7" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Blackboard.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg" id="r9" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_014/pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Ford_Pinto_fire_crash_archival.jpg" id="r10" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_024/pexels_5668473_Ford_Pinto_fire_crash_archival.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" id="r11" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_028/pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_mathematical_formula_variable_.jpg" id="r12" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_003/pexels_5668473_mathematical_formula_variable_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_corporate_office_ethics_hotlin.jpg" id="r13" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_029/pexels_269077_corporate_office_ethics_hotlin.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_Department_of_Justice_building.jpg" id="r15" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_019/pexels_208724_Department_of_Justice_building.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_corporate_financial_model_spre.jpg" id="r16" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_023/pexels_269077_corporate_financial_model_spre.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_corporate_financial_.jpg" id="r18" format="r17" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_023/wiki_0_corporate_financial_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" id="r19" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_015/pexels_5668473_DOJ_settlement_agreement_fine_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_577585_bar_chart_graph_dramatic_spike.jpg" id="r21" format="r20" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_010/pexels_577585_bar_chart_graph_dramatic_spike.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_mathematical_formula.jpg" id="r22" format="r5" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_003/wiki_0_mathematical_formula.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_corporate_financial_model_spre.jpg" id="r23" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_023/pexels_269077_corporate_financial_model_spre.jpg"/>
+        </asset>
+        <asset duration="2689/15s" audioSources="1" audioChannels="2" name="Blackboard.mp4" id="r24" format="r7" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Blackboard.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_325229_data_center_server_infrastruct.jpg" id="r26" format="r25" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_002/pexels_325229_data_center_server_infrastruct.jpg"/>
+        </asset>
+        <asset duration="379379/4800s" audioSources="1" audioChannels="2" name="Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" id="r28" format="r27" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4"/>
+        </asset>
+        <asset duration="725/6s" audioSources="1" audioChannels="2" name="Facebook_says_FTC_agreement_is_a_fundamental_shift_in_approa.mp4" id="r30" format="r29" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_says_FTC_agreement_is_a_fundamental_shift_in_approa.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_abstract_taking_stealing_intel.jpg" id="r31" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_006/pexels_5668473_abstract_taking_stealing_intel.jpg"/>
+        </asset>
+        <asset duration="379379/4800s" audioSources="1" audioChannels="2" name="Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" id="r32" format="r27" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" id="r33" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_008/pexels_5668473_Reddit_forum_post_honeypot_fak.jpg"/>
+        </asset>
+        <asset duration="1590589/30000s" audioSources="1" audioChannels="2" name="Facebook_to_pay_5_billion_fine.mp4" id="r34" format="r1" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" id="r35" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_004/pexels_5668858_Mark_Zuckerberg_congressional_.jpg"/>
+        </asset>
+        <asset duration="4822/25s" audioSources="1" audioChannels="2" name="Extraordinary_security_surrounds_US_Capitol.mp4" id="r37" format="r36" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Extraordinary_security_surrounds_US_Capitol.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_Mark_Zuckerberg_cong.jpg" id="r39" format="r38" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_004/wiki_0_Mark_Zuckerberg_cong.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_mathematical_formula_variable_.jpg" id="r40" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_003/pexels_5668473_mathematical_formula_variable_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_European_Parliament_voting_cha.jpg" id="r41" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_005/pexels_5668473_European_Parliament_voting_cha.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_US_Capitol_building_exterior_W.jpg" id="r42" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_026/pexels_208724_US_Capitol_building_exterior_W.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_corporate_financial_model_spre.jpg" id="r43" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_023/pexels_269077_corporate_financial_model_spre.jpg"/>
+        </asset>
+        <asset duration="1590589/30000s" audioSources="1" audioChannels="2" name="Facebook_to_pay_5_billion_fine.mp4" id="r44" format="r1" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4"/>
+        </asset>
+        <asset duration="2689/15s" audioSources="1" audioChannels="2" name="Blackboard.mp4" id="r45" format="r7" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Blackboard.mp4"/>
+        </asset>
+        <asset duration="4822/25s" audioSources="1" audioChannels="2" name="Extraordinary_security_surrounds_US_Capitol.mp4" id="r46" format="r36" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Extraordinary_security_surrounds_US_Capitol.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_577585_bar_chart_graph_dramatic_spike.jpg" id="r47" format="r20" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_010/pexels_577585_bar_chart_graph_dramatic_spike.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_corporate_financial_.jpg" id="r48" format="r17" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_023/wiki_0_corporate_financial_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_GDPR_European_data_protection_.jpg" id="r49" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_000/pexels_5668473_GDPR_European_data_protection_.jpg"/>
+        </asset>
+        <asset duration="2411/25s" audioSources="1" audioChannels="2" name="More_atmosphere_shots_from_European_Parliament.mp4" id="r50" format="r36" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/More_atmosphere_shots_from_European_Parliament.mp4"/>
+        </asset>
+        <asset duration="2411/25s" audioSources="1" audioChannels="2" name="More_atmosphere_shots_from_European_Parliament.mp4" id="r51" format="r36" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/More_atmosphere_shots_from_European_Parliament.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_325229_data_center_server_infrastruct.jpg" id="r52" format="r25" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_002/pexels_325229_data_center_server_infrastruct.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_1181354_human_silhouette_dramatic_back.jpg" id="r54" format="r53" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181354_human_silhouette_dramatic_back.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_mathematical_formula.jpg" id="r55" format="r5" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_003/wiki_0_mathematical_formula.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_European_Parliament_Strasbourg.jpg" id="r56" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_025/pexels_208724_European_Parliament_Strasbourg.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_1181467_human_silhouette_dramatic_back.jpg" id="r57" format="r53" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181467_human_silhouette_dramatic_back.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_artificial_intelligence_compan.jpg" id="r58" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_007/pexels_5668473_artificial_intelligence_compan.jpg"/>
+        </asset>
+        <asset duration="1069/8s" audioSources="1" audioChannels="2" name="Understanding_Intellectual_Property_IP.mp4" id="r60" format="r59" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Understanding_Intellectual_Property_IP.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_abstract_taking_stea.jpg" id="r62" format="r61" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_006/wiki_0_abstract_taking_stea.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_artificial_intelligence_compan.jpg" id="r63" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_007/pexels_5668473_artificial_intelligence_compan.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" id="r64" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_008/pexels_5668473_Reddit_forum_post_honeypot_fak.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Perplexity_AI_search_results_c.jpg" id="r65" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_009/pexels_5668473_Perplexity_AI_search_results_c.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_artificial_intellige.jpg" id="r66" format="r38" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_007/wiki_0_artificial_intellige.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" id="r67" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_015/pexels_5668473_DOJ_settlement_agreement_fine_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_577585_bar_chart_graph_dramatic_spike.jpg" id="r68" format="r20" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_010/pexels_577585_bar_chart_graph_dramatic_spike.jpg"/>
+        </asset>
+        <asset duration="1069/8s" audioSources="1" audioChannels="2" name="Understanding_Intellectual_Property_IP.mp4" id="r69" format="r59" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Understanding_Intellectual_Property_IP.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_car_doing_donuts_parking_lot_s.jpg" id="r70" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_011/pexels_5668473_car_doing_donuts_parking_lot_s.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_sugar_dissolving_in_water_macr.jpg" id="r71" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_013/pexels_5668473_sugar_dissolving_in_water_macr.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_sugar_dissolving_in_.jpg" id="r73" format="r72" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_013/wiki_0_sugar_dissolving_in_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg" id="r74" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_014/pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg"/>
+        </asset>
+        <asset duration="2411/25s" audioSources="1" audioChannels="2" name="More_atmosphere_shots_from_European_Parliament.mp4" id="r75" format="r36" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/More_atmosphere_shots_from_European_Parliament.mp4"/>
+        </asset>
+        <asset duration="379379/4800s" audioSources="1" audioChannels="2" name="Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" id="r76" format="r27" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_corporate_office_ethics_hotlin.jpg" id="r77" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_029/pexels_269077_corporate_office_ethics_hotlin.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Perplexity_AI_search_results_c.jpg" id="r78" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_009/pexels_5668473_Perplexity_AI_search_results_c.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_1181354_human_silhouette_dramatic_back.jpg" id="r79" format="r53" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181354_human_silhouette_dramatic_back.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_abstract_taking_stealing_intel.jpg" id="r80" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_006/pexels_5668473_abstract_taking_stealing_intel.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_artificial_intellige.jpg" id="r81" format="r38" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_007/wiki_0_artificial_intellige.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_sugar_dissolving_in_water_macr.jpg" id="r82" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_013/pexels_5668473_sugar_dissolving_in_water_macr.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_abstract_taking_stea.jpg" id="r83" format="r61" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_006/wiki_0_abstract_taking_stea.jpg"/>
+        </asset>
+        <asset duration="1069/8s" audioSources="1" audioChannels="2" name="Understanding_Intellectual_Property_IP.mp4" id="r84" format="r59" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Understanding_Intellectual_Property_IP.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" id="r85" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_015/pexels_5668473_DOJ_settlement_agreement_fine_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Washington_state_attorney_gene.jpg" id="r86" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_018/pexels_5668473_Washington_state_attorney_gene.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_1181467_human_silhouette_dramatic_back.jpg" id="r87" format="r53" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181467_human_silhouette_dramatic_back.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_New_York_State_Capitol_Albany_.jpg" id="r88" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_021/pexels_208724_New_York_State_Capitol_Albany_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_mathematical_formula_variable_.jpg" id="r89" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_003/pexels_5668473_mathematical_formula_variable_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_farmers_market_price_stall_han.jpg" id="r90" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_020/pexels_5668473_farmers_market_price_stall_han.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_European_Parliament_.jpg" id="r92" format="r91" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_005/wiki_0_European_Parliament_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_577585_GDPR_European_data_protection_.jpg" id="r93" format="r20" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_000/pexels_577585_GDPR_European_data_protection_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg" id="r95" format="r94" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_016/pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_RealPage_software_company_offi.jpg" id="r96" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_017/pexels_269077_RealPage_software_company_offi.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Washington_state_attorney_gene.jpg" id="r97" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_018/pexels_5668473_Washington_state_attorney_gene.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_Department_of_Justic.jpg" id="r99" format="r98" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_019/wiki_0_Department_of_Justic.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_Department_of_Justice_building.jpg" id="r100" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_019/pexels_208724_Department_of_Justice_building.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_New_York_State_Capit.jpg" id="r102" format="r101" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_021/wiki_0_New_York_State_Capit.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_New_York_state_legislature_ass.jpg" id="r103" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_022/pexels_5668473_New_York_state_legislature_ass.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_RealPage_software_company_offi.jpg" id="r104" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_017/pexels_208724_RealPage_software_company_offi.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" id="r105" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_028/pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_car_doing_donuts_par.jpg" id="r106" format="r38" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_011/wiki_0_car_doing_donuts_par.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_European_Parliament_Strasbourg.jpg" id="r107" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_025/pexels_208724_European_Parliament_Strasbourg.jpg"/>
+        </asset>
+        <asset duration="152/1s" audioSources="1" audioChannels="2" name="European_Parliament_approves_mega_package_of_EU_climate_meas.mp4" id="r109" format="r108" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/European_Parliament_approves_mega_package_of_EU_climate_meas.mp4"/>
+        </asset>
+        <asset duration="152/1s" audioSources="1" audioChannels="2" name="European_Parliament_approves_mega_package_of_EU_climate_meas.mp4" id="r110" format="r108" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/European_Parliament_approves_mega_package_of_EU_climate_meas.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Ford_Pinto_fire_crash_archival.jpg" id="r111" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_024/pexels_5668473_Ford_Pinto_fire_crash_archival.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" id="r112" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_028/pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_269077_corporate_office_ethics_hotlin.jpg" id="r113" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_029/pexels_269077_corporate_office_ethics_hotlin.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_New_York_State_Capit.jpg" id="r114" format="r101" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_021/wiki_0_New_York_State_Capit.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_US_Capitol_building_.jpg" id="r116" format="r115" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_026/wiki_0_US_Capitol_building_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_artificial_intelligence_compan.jpg" id="r117" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_007/pexels_5668473_artificial_intelligence_compan.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="wiki_0_Ford_Pinto_recall_no.jpg" id="r119" format="r118" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_014/wiki_0_Ford_Pinto_recall_no.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg" id="r120" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_016/pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg" id="r121" format="r3" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_014/pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_577585_AI_model_valuation_billions_in.jpg" id="r122" format="r20" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_012/pexels_577585_AI_model_valuation_billions_in.jpg"/>
+        </asset>
+        <asset duration="152/1s" audioSources="1" audioChannels="2" name="European_Parliament_approves_mega_package_of_EU_climate_meas.mp4" id="r123" format="r108" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/European_Parliament_approves_mega_package_of_EU_climate_meas.mp4"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_208724_US_Capitol_building_exterior_W.jpg" id="r124" format="r14" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_026/pexels_208724_US_Capitol_building_exterior_W.jpg"/>
+        </asset>
+        <asset duration="0/1s" name="pexels_1181354_human_silhouette_dramatic_back.jpg" id="r125" format="r53" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_027/pexels_1181354_human_silhouette_dramatic_back.jpg"/>
+        </asset>
+        <asset duration="2411/25s" audioSources="1" audioChannels="2" name="More_atmosphere_shots_from_European_Parliament.mp4" id="r126" format="r36" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/More_atmosphere_shots_from_European_Parliament.mp4"/>
+        </asset>
+        <asset duration="2/1s" name="chapter_the_formula_2s.mov" id="r128" format="r127" hasVideo="1" start="0/1s">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Desktop/SecretScores_Media/chapter_cards/chapter_the_formula_2s.mov"/>
+        </asset>
+        <asset duration="3/1s" audioSources="1" audioChannels="1" name="tw_1_HOW_IS_THA.mov" id="r129" format="r127" hasVideo="1" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Desktop/SecretScores_Media/typewriter/tw_1_HOW_IS_THA.mov"/>
+        </asset>
+        <asset duration="392612/375s" audioSources="1" audioChannels="1" name="narration.wav" id="r130" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration.wav"/>
+        </asset>
+        <asset duration="129244487/666000s" audioSources="1" audioChannels="2" name="music_ducked.wav" id="r131" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_ducked.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r132" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r133" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r134" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r135" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r136" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r137" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r138" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="3/2s" audioSources="1" audioChannels="1" name="glass_shatter_new.wav" id="r139" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/glass_shatter_new.wav"/>
+        </asset>
+        <asset duration="3/2s" audioSources="1" audioChannels="1" name="glass_shatter_new.wav" id="r140" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/glass_shatter_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r141" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r142" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r143" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r144" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r145" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r146" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r147" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r148" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+        <asset duration="4/5s" audioSources="1" audioChannels="1" name="impact_new.wav" id="r149" start="0/1s" hasAudio="1">
+            <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/impact_new.wav"/>
+        </asset>
+    </resources>
+    <library>
+        <event name="Production (Resolve)">
+            <project name="Production (Resolve)">
+                <sequence tcFormat="NDF" duration="10059/8s" tcStart="3600/1s" format="r0">
+                    <spine>
+                        <clip tcFormat="NDF" duration="7/1s" name="Facebook_to_pay_5_billion_fine.mp4" enabled="1" offset="3600/1s" format="r1" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r2" duration="1590589/30000s" offset="0/1s" start="0/1s"/>
+                            <asset-clip ref="r130" duration="25127/24s" lane="5" name="narration.wav" enabled="1" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r4" duration="5/1s" name="pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg" enabled="1" offset="3607/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r6" duration="5/1s" name="wiki_0_mathematical_formula.jpg" enabled="1" offset="3612/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="7/1s" name="Blackboard.mp4" enabled="1" offset="3617/1s" format="r7" start="5/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r8" duration="2689/15s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r9" duration="5/1s" name="pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg" enabled="1" offset="3624/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r10" duration="5/1s" name="pexels_5668473_Ford_Pinto_fire_crash_archival.jpg" enabled="1" offset="3629/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r11" duration="5/1s" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" enabled="1" offset="3634/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r12" duration="5/1s" name="pexels_5668473_mathematical_formula_variable_.jpg" enabled="1" offset="3639/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r13" duration="5/1s" name="pexels_269077_corporate_office_ethics_hotlin.jpg" enabled="1" offset="3644/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r15" duration="5/1s" name="pexels_208724_Department_of_Justice_building.jpg" enabled="1" offset="3649/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r16" duration="5/1s" name="pexels_269077_corporate_financial_model_spre.jpg" enabled="1" offset="3654/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r18" duration="5/1s" name="wiki_0_corporate_financial_.jpg" enabled="1" offset="3659/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r19" duration="5/1s" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" enabled="1" offset="3664/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r21" duration="5/1s" name="pexels_577585_bar_chart_graph_dramatic_spike.jpg" enabled="1" offset="3669/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r22" duration="5/1s" name="wiki_0_mathematical_formula.jpg" enabled="1" offset="3674/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r23" duration="5/1s" name="pexels_269077_corporate_financial_model_spre.jpg" enabled="1" offset="3679/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="7/1s" name="Blackboard.mp4" enabled="1" offset="3684/1s" format="r7" start="45/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r24" duration="2689/15s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r26" duration="5/1s" name="pexels_325229_data_center_server_infrastruct.jpg" enabled="1" offset="3691/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="35/4s" name="Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" enabled="1" offset="3696/1s" format="r27" start="1001/100s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r28" duration="379379/4800s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <clip tcFormat="NDF" duration="7/1s" name="Facebook_says_FTC_agreement_is_a_fundamental_shift_in_approa.mp4" enabled="1" offset="14819/4s" format="r29" start="12/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r30" duration="725/6s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r31" duration="5/1s" name="pexels_5668473_abstract_taking_stealing_intel.jpg" enabled="1" offset="14847/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="35/4s" name="Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" enabled="1" offset="14867/4s" format="r27" start="1001/20s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r32" duration="379379/4800s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r33" duration="5/1s" name="pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" enabled="1" offset="7451/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="7/1s" name="Facebook_to_pay_5_billion_fine.mp4" enabled="1" offset="7461/2s" format="r1" start="1001/40s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r34" duration="1590589/30000s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r35" duration="5/1s" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" enabled="1" offset="7475/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="67/8s" name="Extraordinary_security_surrounds_US_Capitol.mp4" enabled="1" offset="7485/2s" format="r36" start="24/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r37" duration="4822/25s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r39" duration="5/1s" name="wiki_0_Mark_Zuckerberg_cong.jpg" enabled="1" offset="30007/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r40" duration="5/1s" name="pexels_5668473_mathematical_formula_variable_.jpg" enabled="1" offset="30047/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r41" duration="5/1s" name="pexels_5668473_European_Parliament_voting_cha.jpg" enabled="1" offset="30087/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r42" duration="5/1s" name="pexels_208724_US_Capitol_building_exterior_W.jpg" enabled="1" offset="30127/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r43" duration="5/1s" name="pexels_269077_corporate_financial_model_spre.jpg" enabled="1" offset="30167/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="7/1s" name="Facebook_to_pay_5_billion_fine.mp4" enabled="1" offset="30207/8s" format="r1" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r44" duration="1590589/30000s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <clip tcFormat="NDF" duration="7/1s" name="Blackboard.mp4" enabled="1" offset="30263/8s" format="r7" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r45" duration="2689/15s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <clip tcFormat="NDF" duration="67/8s" name="Extraordinary_security_surrounds_US_Capitol.mp4" enabled="1" offset="30319/8s" format="r36" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r46" duration="4822/25s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r47" duration="5/1s" name="pexels_577585_bar_chart_graph_dramatic_spike.jpg" enabled="1" offset="15193/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r48" duration="5/1s" name="wiki_0_corporate_financial_.jpg" enabled="1" offset="15213/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r49" duration="5/1s" name="pexels_5668473_GDPR_European_data_protection_.jpg" enabled="1" offset="15233/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="67/8s" name="More_atmosphere_shots_from_European_Parliament.mp4" enabled="1" offset="15253/4s" format="r36" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r50" duration="2411/25s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <clip tcFormat="NDF" duration="67/8s" name="More_atmosphere_shots_from_European_Parliament.mp4" enabled="1" offset="30573/8s" format="r36" start="24/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r51" duration="2411/25s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r52" duration="5/1s" name="pexels_325229_data_center_server_infrastruct.jpg" enabled="1" offset="3830/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r54" duration="5/1s" name="pexels_1181354_human_silhouette_dramatic_back.jpg" enabled="1" offset="3835/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r55" duration="5/1s" name="wiki_0_mathematical_formula.jpg" enabled="1" offset="3840/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r56" duration="5/1s" name="pexels_208724_European_Parliament_Strasbourg.jpg" enabled="1" offset="3845/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r57" duration="5/1s" name="pexels_1181467_human_silhouette_dramatic_back.jpg" enabled="1" offset="3850/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r58" duration="5/1s" name="pexels_5668473_artificial_intelligence_compan.jpg" enabled="1" offset="3855/1s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="35/4s" name="Understanding_Intellectual_Property_IP.mp4" enabled="1" offset="3860/1s" format="r59" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r60" duration="1069/8s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r62" duration="5/1s" name="wiki_0_abstract_taking_stea.jpg" enabled="1" offset="15475/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r63" duration="5/1s" name="pexels_5668473_artificial_intelligence_compan.jpg" enabled="1" offset="15495/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r64" duration="5/1s" name="pexels_5668473_Reddit_forum_post_honeypot_fak.jpg" enabled="1" offset="15515/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r65" duration="5/1s" name="pexels_5668473_Perplexity_AI_search_results_c.jpg" enabled="1" offset="15535/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r66" duration="5/1s" name="wiki_0_artificial_intellige.jpg" enabled="1" offset="15555/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r67" duration="5/1s" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" enabled="1" offset="15575/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r68" duration="5/1s" name="pexels_577585_bar_chart_graph_dramatic_spike.jpg" enabled="1" offset="15595/4s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="35/4s" name="Understanding_Intellectual_Property_IP.mp4" enabled="1" offset="15615/4s" format="r59" start="325/4s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r69" duration="1069/8s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r70" duration="5/1s" name="pexels_5668473_car_doing_donuts_parking_lot_s.jpg" enabled="1" offset="7825/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r71" duration="5/1s" name="pexels_5668473_sugar_dissolving_in_water_macr.jpg" enabled="1" offset="7835/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r73" duration="5/1s" name="wiki_0_sugar_dissolving_in_.jpg" enabled="1" offset="7845/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r74" duration="5/1s" name="pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg" enabled="1" offset="7855/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="67/8s" name="More_atmosphere_shots_from_European_Parliament.mp4" enabled="1" offset="7865/2s" format="r36" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r75" duration="2411/25s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <clip tcFormat="NDF" duration="35/4s" name="Understanding_Your_Data_Center_IT_Equipment_-_In_60_Seconds.mp4" enabled="1" offset="31527/8s" format="r27" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r76" duration="379379/4800s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r77" duration="5/1s" name="pexels_269077_corporate_office_ethics_hotlin.jpg" enabled="1" offset="31597/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r78" duration="5/1s" name="pexels_5668473_Perplexity_AI_search_results_c.jpg" enabled="1" offset="31637/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r79" duration="5/1s" name="pexels_1181354_human_silhouette_dramatic_back.jpg" enabled="1" offset="31677/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r80" duration="5/1s" name="pexels_5668473_abstract_taking_stealing_intel.jpg" enabled="1" offset="31717/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r81" duration="5/1s" name="wiki_0_artificial_intellige.jpg" enabled="1" offset="31757/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r82" duration="5/1s" name="pexels_5668473_sugar_dissolving_in_water_macr.jpg" enabled="1" offset="31797/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r83" duration="5/1s" name="wiki_0_abstract_taking_stea.jpg" enabled="1" offset="31837/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="35/4s" name="Understanding_Intellectual_Property_IP.mp4" enabled="1" offset="31877/8s" format="r59" start="15/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r84" duration="1069/8s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r85" duration="5/1s" name="pexels_5668473_DOJ_settlement_agreement_fine_.jpg" enabled="1" offset="31947/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r86" duration="5/1s" name="pexels_5668473_Washington_state_attorney_gene.jpg" enabled="1" offset="31987/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r87" duration="5/1s" name="pexels_1181467_human_silhouette_dramatic_back.jpg" enabled="1" offset="32027/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r88" duration="5/1s" name="pexels_208724_New_York_State_Capitol_Albany_.jpg" enabled="1" offset="32067/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r89" duration="5/1s" name="pexels_5668473_mathematical_formula_variable_.jpg" enabled="1" offset="32107/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r90" duration="5/1s" name="pexels_5668473_farmers_market_price_stall_han.jpg" enabled="1" offset="32147/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r92" duration="5/1s" name="wiki_0_European_Parliament_.jpg" enabled="1" offset="32187/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r93" duration="5/1s" name="pexels_577585_GDPR_European_data_protection_.jpg" enabled="1" offset="32227/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r95" duration="5/1s" name="pexels_323780_Seattle_Lower_Queen_Anne_neigh.jpg" enabled="1" offset="32267/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r96" duration="5/1s" name="pexels_269077_RealPage_software_company_offi.jpg" enabled="1" offset="32307/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r97" duration="5/1s" name="pexels_5668473_Washington_state_attorney_gene.jpg" enabled="1" offset="32347/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r99" duration="5/1s" name="wiki_0_Department_of_Justic.jpg" enabled="1" offset="32387/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r100" duration="5/1s" name="pexels_208724_Department_of_Justice_building.jpg" enabled="1" offset="32427/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r102" duration="5/1s" name="wiki_0_New_York_State_Capit.jpg" enabled="1" offset="32467/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r103" duration="5/1s" name="pexels_5668473_New_York_state_legislature_ass.jpg" enabled="1" offset="32507/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r104" duration="5/1s" name="pexels_208724_RealPage_software_company_offi.jpg" enabled="1" offset="32547/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r105" duration="5/1s" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" enabled="1" offset="32587/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r106" duration="5/1s" name="wiki_0_car_doing_donuts_par.jpg" enabled="1" offset="32627/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r107" duration="5/1s" name="pexels_208724_European_Parliament_Strasbourg.jpg" enabled="1" offset="32667/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="67/8s" name="European_Parliament_approves_mega_package_of_EU_climate_meas.mp4" enabled="1" offset="32707/8s" format="r108" start="108/5s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r109" duration="152/1s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <clip tcFormat="NDF" duration="67/8s" name="European_Parliament_approves_mega_package_of_EU_climate_meas.mp4" enabled="1" offset="16387/4s" format="r108" start="42/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r110" duration="152/1s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r111" duration="5/1s" name="pexels_5668473_Ford_Pinto_fire_crash_archival.jpg" enabled="1" offset="32841/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r112" duration="5/1s" name="pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg" enabled="1" offset="32881/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r113" duration="5/1s" name="pexels_269077_corporate_office_ethics_hotlin.jpg" enabled="1" offset="32921/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r114" duration="5/1s" name="wiki_0_New_York_State_Capit.jpg" enabled="1" offset="32961/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r116" duration="5/1s" name="wiki_0_US_Capitol_building_.jpg" enabled="1" offset="33001/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r117" duration="5/1s" name="pexels_5668473_artificial_intelligence_compan.jpg" enabled="1" offset="33041/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r119" duration="5/1s" name="wiki_0_Ford_Pinto_recall_no.jpg" enabled="1" offset="33081/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r120" duration="5/1s" name="pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg" enabled="1" offset="33121/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r121" duration="5/1s" name="pexels_5668473_Ford_Pinto_recall_notice_1978_.jpg" enabled="1" offset="33161/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r122" duration="5/1s" name="pexels_577585_AI_model_valuation_billions_in.jpg" enabled="1" offset="33201/8s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="67/8s" name="European_Parliament_approves_mega_package_of_EU_climate_meas.mp4" enabled="1" offset="33241/8s" format="r108" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r123" duration="152/1s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <video ref="r124" duration="5/1s" name="pexels_208724_US_Capitol_building_exterior_W.jpg" enabled="1" offset="8327/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <video ref="r125" duration="5/1s" name="pexels_1181354_human_silhouette_dramatic_back.jpg" enabled="1" offset="8337/2s" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                        </video>
+                        <clip tcFormat="NDF" duration="67/8s" name="More_atmosphere_shots_from_European_Parliament.mp4" enabled="1" offset="8347/2s" format="r36" start="0/1s">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            <video ref="r126" duration="2411/25s" offset="0/1s" start="0/1s"/>
+                        </clip>
+                        <gap duration="1351/2s" name="Gap" offset="33455/8s" start="3600/1s">
+                            <asset-clip tcFormat="NDF" ref="r128" duration="2/1s" lane="2" name="chapter_the_formula_2s.mov" enabled="1" offset="3600/1s" format="r127" start="0/1s">
+                                <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                            </asset-clip>
+                            <clip tcFormat="NDF" duration="3/1s" lane="3" name="tw_1_HOW_IS_THA.mov" enabled="1" offset="3600/1s" format="r127" start="0/1s">
+                                <adjust-transform scale="1 1" position="0 0" anchor="0 0"/>
+                                <video ref="r129" duration="3/1s" offset="0/1s" start="0/1s"/>
+                            </clip>
+                            <asset-clip ref="r131" duration="4657/24s" lane="6" name="music_ducked.wav" enabled="1" offset="32521/8s" start="0/1s"/>
+                            <asset-clip ref="r132" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="102221/24s" start="0/1s"/>
+                            <asset-clip ref="r133" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="34087/8s" start="0/1s"/>
+                            <asset-clip ref="r134" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="102301/24s" start="0/1s"/>
+                            <asset-clip ref="r135" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="102341/24s" start="0/1s"/>
+                            <asset-clip ref="r136" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="34127/8s" start="0/1s"/>
+                            <asset-clip ref="r137" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="102421/24s" start="0/1s"/>
+                            <asset-clip ref="r138" duration="19/24s" lane="7" name="impact_new.wav" enabled="1" offset="102461/24s" start="0/1s"/>
+                            <asset-clip ref="r139" duration="3/2s" lane="7" name="glass_shatter_new.wav" enabled="1" offset="34167/8s" start="0/1s"/>
+                            <asset-clip ref="r140" duration="3/2s" lane="7" name="glass_shatter_new.wav" enabled="1" offset="102557/24s" start="0/1s"/>
+                            <asset-clip ref="r141" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="102241/24s" start="0/1s"/>
+                            <asset-clip ref="r142" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="102281/24s" start="0/1s"/>
+                            <asset-clip ref="r143" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="34107/8s" start="0/1s"/>
+                            <asset-clip ref="r144" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="102361/24s" start="0/1s"/>
+                            <asset-clip ref="r145" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="102401/24s" start="0/1s"/>
+                            <asset-clip ref="r146" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="34147/8s" start="0/1s"/>
+                            <asset-clip ref="r147" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="102481/24s" start="0/1s"/>
+                            <asset-clip ref="r148" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="34179/8s" start="0/1s"/>
+                            <asset-clip ref="r149" duration="19/24s" lane="8" name="impact_new.wav" enabled="1" offset="102593/24s" start="0/1s"/>
+                        </gap>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>
