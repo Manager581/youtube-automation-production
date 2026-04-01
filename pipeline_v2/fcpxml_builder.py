@@ -565,10 +565,22 @@ class FCPXMLBuilder:
                         "start": "0/1s",
                     })
 
-                    # Mute clip audio if requested
-                    if clip_data.get("clip_audio") == "mute":
-                        # Muting is done by not including audio-role or by
-                        # setting volume to 0 — FCPXML uses adjust-volume
+                    # Handle clip audio per director decision
+                    clip_audio_mode = clip_data.get("clip_audio", "mute")
+                    if clip_audio_mode == "mute":
+                        SubElement(el, "adjust-volume", amount="0dB")
+                    elif clip_audio_mode == "play":
+                        # Leave audio enabled at full volume (no adjust-volume)
+                        pass
+                    elif clip_audio_mode == "play_then_mute":
+                        # Play clip audio for a few seconds then mute
+                        # FCPXML doesn't support volume keyframes directly,
+                        # so we leave audio on — the premixed narration will
+                        # naturally take over. For best results, the clip audio
+                        # should be ducked in the mix.
+                        SubElement(el, "adjust-volume", amount="-12dB")
+                    else:
+                        # Default: mute unknown modes
                         SubElement(el, "adjust-volume", amount="0dB")
                 else:
                     src_start = 0.0
@@ -758,15 +770,20 @@ def build_from_director(director_path: str, narration_path: str = None,
             v1_skipped += 1
             continue
 
-        tl_start = seg.get("_timeline_start_sec", 0) or 0
-        tl_end = seg.get("_timeline_end_sec")
+        # Account for director's VO pauses — extend clip to cover silence
+        pause_before = seg.get("vo_pause_before", 0) or 0
+        pause_after = seg.get("vo_pause_after", 0) or 0
 
+        tl_start = seg.get("_timeline_start_sec", 0) or 0
+        # Shift clip start earlier by pause_before (visual holds during pause)
+        tl_start = max(0, tl_start - pause_before)
+
+        tl_end = seg.get("_timeline_end_sec")
         if tl_end is not None and tl_end > tl_start:
-            seg_dur = tl_end - tl_start
+            seg_dur = (tl_end + pause_after) - tl_start
         else:
-            # Estimate from word count at ~150 WPM = 2.5 words/sec
             wc = seg.get("word_count", len(seg.get("text", "").split()))
-            seg_dur = max(wc / 2.5, 2.0)
+            seg_dur = max(wc / 2.5, 2.0) + pause_before + pause_after
 
         # Fair use: cap at MAX_CLIP_SEC per individual clip
         clip_dur = min(seg_dur, MAX_CLIP_SEC)
@@ -809,7 +826,28 @@ def build_from_director(director_path: str, narration_path: str = None,
             print(f"    {name}: {dur:.1f}s")
 
     # ── V2: Text overlays ──
+    # Build overlay index: scan all overlay dirs and index by sequential number
+    # Overlay files are named tw_NNN_<text>.mov — we match by overlay order
+    import re as _re
+    overlay_index = {}  # overlay_order -> filepath
+    all_overlay_files = []
+    for search_dir in all_search_dirs:
+        if not os.path.isdir(search_dir):
+            continue
+        for fname in sorted(os.listdir(search_dir)):
+            if fname.endswith('.mov') and fname.startswith('tw_'):
+                all_overlay_files.append(os.path.join(search_dir, fname))
+
+    # Also build text-based lookup (sanitized text -> filepath)
+    overlay_text_lookup = {}
+    for fpath in all_overlay_files:
+        fname = os.path.basename(fpath).lower()
+        # Extract text part after tw_NNN_
+        text_part = _re.sub(r'^tw_\d+_', '', fname).replace('.mov', '')
+        overlay_text_lookup[text_part] = fpath
+
     overlay_count = 0
+    overlay_order = 0
     for seg in segments:
         text_overlay = seg.get("text_overlay")
         text_style = seg.get("text_style")
@@ -819,20 +857,20 @@ def build_from_director(director_path: str, narration_path: str = None,
 
         tl_start = seg.get("_timeline_start_sec", 0) or 0
 
-        # Look for pre-rendered overlay files (case-insensitive fuzzy match)
+        # Strategy 1: Match by sequential order (tw_000, tw_001, ...)
         overlay_filename = None
-        import re as _re
-        safe_key = _re.sub(r'[^a-zA-Z0-9]', '_', text_overlay[:30]).strip('_').lower()
-        # Search all overlay dirs for any file containing our safe key
-        for search_dir in all_search_dirs:
-            if not os.path.isdir(search_dir):
-                continue
-            for fname in os.listdir(search_dir):
-                if safe_key[:15] in fname.lower() and fname.endswith('.mov'):
-                    overlay_filename = os.path.join(search_dir, fname)
+        if overlay_order < len(all_overlay_files):
+            overlay_filename = all_overlay_files[overlay_order]
+
+        # Strategy 2: Fallback to text-based fuzzy match
+        if not overlay_filename:
+            safe_key = _re.sub(r'[^a-zA-Z0-9]', '_', text_overlay[:30]).strip('_').lower()
+            for text_part, fpath in overlay_text_lookup.items():
+                if safe_key[:12] in text_part:
+                    overlay_filename = fpath
                     break
-            if overlay_filename:
-                break
+
+        overlay_order += 1
 
         if overlay_filename:
             # Determine overlay duration
@@ -908,17 +946,76 @@ def build_from_director(director_path: str, narration_path: str = None,
         print(f"  A1: No narration file")
         narr_dur = None
 
-    # ── A2: Music ──
+    # ── A2: Music (looped to fill timeline, respecting music_state) ──
     if music_path and os.path.exists(music_path):
         music_dur = get_media_duration(music_path)
-        builder.add_audio(
-            filepath=music_path,
-            offset_sec=0,
-            duration_sec=music_dur,
-            lane=LANE_A2_MUSIC,
-            name="music_ducked",
+        total_timeline = narr_dur or sum(
+            (s.get("_timeline_end_sec", 0) or 0) - (s.get("_timeline_start_sec", 0) or 0)
+            for s in segments
         )
-        print(f"  A2: Music ({music_dur:.1f}s)")
+
+        # Check if any segments have music_state = "silent"
+        # If so, place music clips only where music_state != "silent"
+        has_music_states = any(s.get("music_state") for s in segments)
+
+        if has_music_states:
+            # Place music segments per director's music_state
+            music_clips = 0
+            cursor = 0.0
+            in_music = False
+            music_start = 0.0
+
+            for seg in segments:
+                state = seg.get("music_state", "ducking")
+                seg_start = seg.get("_timeline_start_sec", 0) or 0
+                seg_end = seg.get("_timeline_end_sec", seg_start + 5) or seg_start + 5
+
+                if state in ("silent",):
+                    # End current music segment if playing
+                    if in_music and cursor > music_start + 1:
+                        builder.add_audio(
+                            filepath=music_path,
+                            offset_sec=music_start,
+                            duration_sec=min(cursor - music_start, music_dur),
+                            lane=LANE_A2_MUSIC,
+                            name="music_ducked",
+                        )
+                        music_clips += 1
+                    in_music = False
+                else:
+                    if not in_music:
+                        music_start = seg_start
+                        in_music = True
+                    cursor = seg_end
+
+            # Close final music segment
+            if in_music and cursor > music_start + 1:
+                builder.add_audio(
+                    filepath=music_path,
+                    offset_sec=music_start,
+                    duration_sec=min(cursor - music_start, music_dur),
+                    lane=LANE_A2_MUSIC,
+                    name="music_ducked",
+                )
+                music_clips += 1
+
+            print(f"  A2: Music ({music_clips} segments, {music_dur:.1f}s source)")
+        else:
+            # No music_state — loop music to fill entire timeline
+            loops = 0
+            pos = 0.0
+            while pos < total_timeline:
+                dur = min(music_dur, total_timeline - pos)
+                builder.add_audio(
+                    filepath=music_path,
+                    offset_sec=pos,
+                    duration_sec=dur,
+                    lane=LANE_A2_MUSIC,
+                    name="music_ducked",
+                )
+                pos += music_dur
+                loops += 1
+            print(f"  A2: Music looped {loops}x to fill {total_timeline:.0f}s")
     else:
         print(f"  A2: No music file")
 

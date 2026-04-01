@@ -25,7 +25,8 @@
     "duck_music",
     "normalize_sfx",
     "exec_producer_pre",
-    "director"
+    "director",
+    "davinci_build"
   ],
   "current": "director_review",
   "config": {

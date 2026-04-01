@@ -148,18 +148,36 @@ def run_inline_stage(stage_name, state):
     
     elif stage_name == "duck_music":
         print(f"  Pre-ducking music under narration...")
-        # Call create_ducked_music from davinci_helpers
-        print(f"  {YELLOW}(Music ducking handled by davinci_timeline_builder){RESET}")
+        config = state.get("config", {})
+        music_raw = config.get("music_path", "").replace("_ducked", "_raw")
+        narration = config.get("narration_path", "")
+        music_out = config.get("music_path", "audio/music_ducked.wav")
+
+        if os.path.exists(music_raw) and os.path.exists(narration):
+            try:
+                from pipeline_v2.davinci_helpers import create_ducked_music
+                create_ducked_music(music_raw, narration, music_out)
+                print(f"  {GREEN}Ducked music: {music_out}{RESET}")
+            except Exception as e:
+                print(f"  {YELLOW}Ducking failed ({e}), using existing file{RESET}")
+        elif os.path.exists(music_out):
+            print(f"  Using existing ducked music: {music_out}")
+        else:
+            print(f"  {YELLOW}No music files found — skipping ducking{RESET}")
         return 0
-    
+
     elif stage_name == "normalize_sfx":
         print(f"  Normalizing SFX to -12 LUFS...")
         sfx_dir = state.get("config", {}).get("sfx_dir", "")
         if sfx_dir and os.path.exists(sfx_dir):
-            from pipeline_v2.davinci_helpers import normalize_sfx
-            normalize_sfx(sfx_dir)
+            try:
+                from pipeline_v2.davinci_helpers import normalize_sfx
+                normalize_sfx(sfx_dir)
+                print(f"  {GREEN}SFX normalized{RESET}")
+            except Exception as e:
+                print(f"  {YELLOW}SFX normalization failed: {e}{RESET}")
         else:
-            print(f"  {YELLOW}(SFX dir not set — will normalize during build){RESET}")
+            print(f"  {YELLOW}SFX dir not found: {sfx_dir}{RESET}")
         return 0
     
     return 0
