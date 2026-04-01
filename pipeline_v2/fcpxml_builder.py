@@ -753,10 +753,26 @@ def build_from_director(director_path: str, narration_path: str = None,
     builder = FCPXMLBuilder(fps=fps, width=width, height=height)
 
     # ── V1: Main footage from director segments ──
+    # Pre-compute: extend each segment's duration to fill gaps until next segment
+    # This prevents black screen between segments (visual holds during pauses)
+    for i, seg in enumerate(segments):
+        tl_start = seg.get("_timeline_start_sec", 0) or 0
+        tl_end = seg.get("_timeline_end_sec", 0) or 0
+        if i < len(segments) - 1:
+            next_start = segments[i + 1].get("_timeline_start_sec", 0) or 0
+            if next_start > tl_end:
+                # Extend this segment to fill the gap
+                seg["_timeline_end_sec_extended"] = next_start
+            else:
+                seg["_timeline_end_sec_extended"] = tl_end
+        else:
+            seg["_timeline_end_sec_extended"] = tl_end
+
     print(f"\n  V1: Processing {len(segments)} segments...")
     v1_count = 0
     v1_skipped = 0
     source_usage = {}  # track fair use compliance
+    MAX_SOURCE_SEC = 20.0  # max total usage per source (copyright safety)
 
     for seg in segments:
         vf = seg.get("visual_file")
@@ -770,20 +786,28 @@ def build_from_director(director_path: str, narration_path: str = None,
             v1_skipped += 1
             continue
 
+        # Check source diversity — skip if this source is over limit
+        current_usage = source_usage.get(vf, 0)
+        if current_usage >= MAX_SOURCE_SEC and not is_image_file(filepath):
+            # Video clips: hard cap at MAX_SOURCE_SEC for copyright
+            # Images: allow reuse (no copyright on screen duration)
+            v1_skipped += 1
+            continue
+
         # Account for director's VO pauses — extend clip to cover silence
         pause_before = seg.get("vo_pause_before", 0) or 0
-        pause_after = seg.get("vo_pause_after", 0) or 0
 
         tl_start = seg.get("_timeline_start_sec", 0) or 0
-        # Shift clip start earlier by pause_before (visual holds during pause)
         tl_start = max(0, tl_start - pause_before)
 
-        tl_end = seg.get("_timeline_end_sec")
+        # Use extended end (fills gap to next segment)
+        tl_end = seg.get("_timeline_end_sec_extended",
+                         seg.get("_timeline_end_sec"))
         if tl_end is not None and tl_end > tl_start:
-            seg_dur = (tl_end + pause_after) - tl_start
+            seg_dur = tl_end - tl_start
         else:
             wc = seg.get("word_count", len(seg.get("text", "").split()))
-            seg_dur = max(wc / 2.5, 2.0) + pause_before + pause_after
+            seg_dur = max(wc / 2.5, 2.0)
 
         # Fair use: cap at MAX_CLIP_SEC per individual clip
         clip_dur = min(seg_dur, MAX_CLIP_SEC)
@@ -946,76 +970,32 @@ def build_from_director(director_path: str, narration_path: str = None,
         print(f"  A1: No narration file")
         narr_dur = None
 
-    # ── A2: Music (looped to fill timeline, respecting music_state) ──
+    # ── A2: Music (loop to fill full timeline — no gaps) ──
     if music_path and os.path.exists(music_path):
         music_dur = get_media_duration(music_path)
-        total_timeline = narr_dur or sum(
-            (s.get("_timeline_end_sec", 0) or 0) - (s.get("_timeline_start_sec", 0) or 0)
+        total_timeline = narr_dur or max(
+            (s.get("_timeline_end_sec_extended", s.get("_timeline_end_sec", 0)) or 0)
             for s in segments
         )
 
-        # Check if any segments have music_state = "silent"
-        # If so, place music clips only where music_state != "silent"
-        has_music_states = any(s.get("music_state") for s in segments)
-
-        if has_music_states:
-            # Place music segments per director's music_state
-            music_clips = 0
-            cursor = 0.0
-            in_music = False
-            music_start = 0.0
-
-            for seg in segments:
-                state = seg.get("music_state", "ducking")
-                seg_start = seg.get("_timeline_start_sec", 0) or 0
-                seg_end = seg.get("_timeline_end_sec", seg_start + 5) or seg_start + 5
-
-                if state in ("silent",):
-                    # End current music segment if playing
-                    if in_music and cursor > music_start + 1:
-                        builder.add_audio(
-                            filepath=music_path,
-                            offset_sec=music_start,
-                            duration_sec=min(cursor - music_start, music_dur),
-                            lane=LANE_A2_MUSIC,
-                            name="music_ducked",
-                        )
-                        music_clips += 1
-                    in_music = False
-                else:
-                    if not in_music:
-                        music_start = seg_start
-                        in_music = True
-                    cursor = seg_end
-
-            # Close final music segment
-            if in_music and cursor > music_start + 1:
-                builder.add_audio(
-                    filepath=music_path,
-                    offset_sec=music_start,
-                    duration_sec=min(cursor - music_start, music_dur),
-                    lane=LANE_A2_MUSIC,
-                    name="music_ducked",
-                )
-                music_clips += 1
-
-            print(f"  A2: Music ({music_clips} segments, {music_dur:.1f}s source)")
-        else:
-            # No music_state — loop music to fill entire timeline
-            loops = 0
-            pos = 0.0
-            while pos < total_timeline:
-                dur = min(music_dur, total_timeline - pos)
-                builder.add_audio(
-                    filepath=music_path,
-                    offset_sec=pos,
-                    duration_sec=dur,
-                    lane=LANE_A2_MUSIC,
-                    name="music_ducked",
-                )
-                pos += music_dur
-                loops += 1
-            print(f"  A2: Music looped {loops}x to fill {total_timeline:.0f}s")
+        # Always loop music to cover the full timeline
+        # (music_state can be used for volume automation in DaVinci later)
+        loops = 0
+        pos = 0.0
+        while pos < total_timeline:
+            dur = min(music_dur, total_timeline - pos)
+            if dur < 1:
+                break
+            builder.add_audio(
+                filepath=music_path,
+                offset_sec=pos,
+                duration_sec=dur,
+                lane=LANE_A2_MUSIC,
+                name="music_ducked",
+            )
+            pos += music_dur
+            loops += 1
+        print(f"  A2: Music looped {loops}x to fill {total_timeline:.0f}s ({music_dur:.0f}s per loop)")
     else:
         print(f"  A2: No music file")
 
