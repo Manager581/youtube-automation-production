@@ -160,9 +160,62 @@ Key bugs found:
 - Director timing estimated at 150 WPM linear — Whisper gives actual word-level timestamps
 - Never hack around pipeline gates — produces Frankenstein videos
 
-### Immediate TODO
+### Breaking Law Video — Session 2026-03-31 night
+- [x] FCPXML overlay offset fix (lane clips on trailing gap, correct math)
+- [x] FCPXML absolute file paths (os.path.abspath)
+- [x] DaVinci API import fix (timelineName parameter required)
+- [x] Whisper narration aligner (word-level timestamps)
+- [x] Director upgrade (vision in prompt, music_state, alignment, sufficiency check)
+- [x] Segment validator auto-fix + re-validate
+- [x] Overlay matching (sequential index, 44/50 found)
+- [x] clip_audio modes (play, play_then_mute, mute)
+- [x] V1 gap fill (extend clips to next segment boundary)
+- [x] Music loop to 100% timeline coverage
+- [x] Unicode fixes (_safe_str, _sanitize_strings, encoding='utf-8')
+- [ ] **BLOCKER: Narration WAV is broken** — F5-TTS hallucinated "what your life looks like" 88 times. MUST regenerate
+- [ ] Source 15+ video clips (only 3 exist) — fix footage_sourcer args
+- [ ] Source 3-5 CC0 music tracks — fix music_sourcer args
+- [ ] Source 15+ varied SFX (only 6 unique sounds)
+- [ ] Image diversity enforcement in builder (currently no cap on images)
+- [ ] Chapter card styling (current: plain white-on-black)
+- [ ] Voice QA: add hallucination detection (repeated phrase check in Whisper output)
 - [ ] Director second pass (self-review for source reuse, thin coverage)
-- [ ] Music sourcing: source 3-5 CC0 tracks, director assigns `music_state` per segment
+- [ ] exec_producer_pre: should check director JSON, not stale DaVinci timeline
+
+### How to Resume (next session)
+```bash
+cd /Users/jefflawrence/Documents/youtube-automation-production
+
+# 1. Regenerate narration (WITH wpm normalization)
+venv/bin/python pipeline/voice_generator.py \
+  --script scripts/raw_breaking_law_v45.txt \
+  --output audio/breaking_law/narration.wav \
+  --wpm-normalize
+
+# 2. Re-run Whisper alignment
+SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())") \
+venv/bin/python -m pipeline_v2.narration_aligner \
+  --narration audio/breaking_law/narration.wav \
+  --script scripts/raw_breaking_law_v45.txt \
+  --output audio/breaking_law/narration_alignment.json
+
+# 3. Check alignment for hallucination (should be 0 repeats)
+venv/bin/python -c "
+import json
+with open('audio/breaking_law/narration_alignment.json') as f:
+    a = json.load(f)
+texts = [s['text'].strip().lower()[:30] for s in a['sentences']]
+dupes = len(texts) - len(set(texts))
+print(f'Sentences: {len(texts)}, Duplicate prefixes: {dupes}')
+assert dupes < 5, f'HALLUCINATION DETECTED: {dupes} repeated sentences'
+"
+
+# 4. Fix footage_sourcer and music_sourcer args in run_pipeline_v2.py
+# 5. Reset pipeline state to stage 8 (voice)
+# 6. Run pipeline: venv/bin/python run_pipeline_v2.py --stage voice
+```
+
+### Immediate TODO
 - [ ] Source credits field in director schema
 - [ ] Sponsor integration placeholder in script structure
 - [ ] Recalibrate scorer for business/tech niche

@@ -81,11 +81,33 @@ See MEMORY.md for full function list and pipeline order.
 - Recidivist companies get SMALLER fines as % of revenue
 - $0 — RealPage's penalty for 10M apartments of price coordination
 
-### Pipeline State
-- `.pipeline_v2_state.json` — Stages 1-2 (topic, comments) complete
-- Next: Stage 3 (research) — brief written, needs validation
-- Media dir: `media/breaking_law/`
-- Comments mined: `comments/hmw_break_law.info.json`, `comments/hmw_find_out.info.json`
+### Pipeline State (as of 2026-03-31)
+- **Script v45**: DONE (4,366 words, 95+ score)
+- **Voice**: BROKEN — F5-TTS hallucinated, repeats "what your life looks like" 88 times. MUST regenerate WITH `--wpm-normalize` (not `--no-wpm-normalize`)
+- **NEXT SESSION MUST START HERE**: Re-run voice generation (stage 8), then stages 8-28
+- `.pipeline_v2_state.json` — reset to stage 7 (qa_script done, voice needs re-run)
+- Media dir: `footage/breaking_law/`, `audio/breaking_law/`
+- Director JSON: `storyboards/breaking_law_directed_v2_gapfilled.json` (113 segments)
+- Narration alignment: `audio/breaking_law/narration_alignment.json` (Whisper, will need re-run after new VO)
+- FCPXML: `timeline_FINAL2.fcpxml` (latest working build)
+
+### Critical Issues for Next Session
+1. **Narration must be regenerated** — current WAV has 88 hallucinated repeats + garbled speed
+2. **Need 15+ video clips** — only 3 exist, rest are still images. footage_sourcer args need fixing in `run_pipeline_v2.py`
+3. **Need 3-5 music tracks** — only 1 exists (194s). music_sourcer args need fixing
+4. **Source diversity** — some images used 900s+. Builder has 20s cap for video but not images
+5. **SFX need variety** — only 6 unique sounds for 30 placements. Need 15+ varied SFX
+6. **Chapter cards** — plain white-on-black. Need styled template
+7. **Add voice QA for hallucination detection** — check for repeated phrases in Whisper output
+
+### What Works (don't re-build)
+- Script (v45, 95+ score) ✅
+- FCPXML builder (overlay matching, absolute paths, gap fill, music loop, API import with timelineName) ✅
+- Whisper aligner (word-level timestamps, tiktoken patched for Python 3.13) ✅
+- Director (vision in prompt, music_state, alignment timestamps, sufficiency check) ✅
+- Pipeline orchestrator (gates, retries, 3600s timeout, UTF-8) ✅
+- Segment validator (auto-fix + re-validate) ✅
+- 276 images + 140 overlay MOVs + 4 chapter card MOVs ✅
 
 
 ## Project Overview
