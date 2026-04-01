@@ -83,8 +83,8 @@ See MEMORY.md for full function list and pipeline order.
 
 ### Pipeline State (as of 2026-03-31)
 - **Script v45**: DONE (4,366 words, 95+ score)
-- **Voice**: BROKEN — F5-TTS hallucinated, repeats "what your life looks like" 88 times. MUST regenerate WITH `--wpm-normalize` (not `--no-wpm-normalize`)
-- **NEXT SESSION MUST START HERE**: Re-run voice generation (stage 8), then stages 8-28
+- **Voice**: REGENERATING — old narration had 88 hallucinated repeats. New gen running (40s/segment, 247 total, ~2.7 hrs on M5 CPU). Output: `audio/breaking_law/narration_v2.wav`
+- **NEXT SESSION**: Check if `narration_v2.wav` exists. If yes, copy to `narration.wav`, run Whisper alignment, then pipeline stages 8-28. If not, restart voice gen (see ROADMAP.md)
 - `.pipeline_v2_state.json` — reset to stage 7 (qa_script done, voice needs re-run)
 - Media dir: `footage/breaking_law/`, `audio/breaking_law/`
 - Director JSON: `storyboards/breaking_law_directed_v2_gapfilled.json` (113 segments)
