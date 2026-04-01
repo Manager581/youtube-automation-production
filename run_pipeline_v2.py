@@ -110,7 +110,7 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
-def run_script(script_path, extra_args=None, timeout=1800):
+def run_script(script_path, extra_args=None, timeout=3600):
     """Run a pipeline script and return (exit_code, output)."""
     cmd = [PYTHON, str(PROJECT_ROOT / script_path)]
     if extra_args:
@@ -120,6 +120,7 @@ def run_script(script_path, extra_args=None, timeout=1800):
     
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
+                                encoding="utf-8", errors="replace",
                                 env={**os.environ, "PYTHONIOENCODING": "utf-8"})
         if result.stdout:
             for line in result.stdout.strip().split('\n')[-5:]:
@@ -226,8 +227,13 @@ def build_stage_args(stage_name, state):
                   "--output", config.get("alignment_path", "audio/narration_alignment.json"),
                   "--model", "base"],
         "qa_voice": [config.get("narration_path", "audio/narration.wav")],
-        "music": [],
-        "footage": [],
+        "music": ["--script", config.get("script_path", "scripts/raw_script.txt"),
+                  "--mood", "tense dramatic documentary",
+                  "--count", "3",
+                  "--out", config.get("music_path", "audio/music_ducked.wav")],
+        "footage": ["--brand", "learnbyleo",
+                    "--brief", config.get("storyboard_path", "storyboards/storyboard.json"),
+                    "--download"],
         "images": ["--storyboard", config.get("storyboard_path", "storyboards/storyboard.json"),
                     "--output", config.get("image_dir", "images/")],
         "transcripts": ["--clips", config.get("footage_dir", "footage/"),
@@ -240,10 +246,12 @@ def build_stage_args(stage_name, state):
         "director": ["--script", config.get("script_path", "scripts/enhanced_script.txt"),
                       "--footage", config.get("footage_dir", "footage/"),
                       "--images", config.get("image_dir", "images/"),
+                      config.get("gap_fill_dir", "footage/gap_fills/"),
                       "--sfx", config.get("sfx_dir", "assets/sfx/"),
                       "--alignment", config.get("alignment_path", "audio/narration_alignment.json"),
                       "--output", config.get("director_path", "storyboards/directed_v3.json")],
-        "validate_segments": ["--director", config.get("director_path", "storyboards/directed_v3.json")],
+        "validate_segments": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
+                              "--fix-decisions"],
         "fill_gaps": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
                        "--output-dir", config.get("gap_fill_dir", "footage/gap_fills/")],
         "davinci_build": ["--director", config.get("director_path", "storyboards/directed_v3.json"),

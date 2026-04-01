@@ -90,13 +90,24 @@ def load_playbook():
     return modules
 
 
+def _safe_str(val):
+    """Safely convert DaVinci API return values to Python str.
+    DaVinci's IPC can return bytes or str with non-ASCII chars
+    that cause ascii_decode errors in subprocess pipes."""
+    if val is None:
+        return ""
+    if isinstance(val, bytes):
+        return val.decode('utf-8', errors='replace')
+    return str(val)
+
+
 def get_timeline_state(timeline):
     """Extract complete state of the DaVinci timeline."""
     fps = 30
     tl_start = timeline.GetStartFrame()
     
     state = {
-        "name": timeline.GetName(),
+        "name": _safe_str(timeline.GetName()),
         "duration": (timeline.GetEndFrame() - tl_start) / fps,
         "tracks": {},
     }
@@ -105,7 +116,7 @@ def get_timeline_state(timeline):
         count = timeline.GetTrackCount(track_type)
         for t in range(1, count + 1):
             clips = timeline.GetItemListInTrack(track_type, t) or []
-            track_name = timeline.GetTrackName(track_type, t)
+            track_name = _safe_str(timeline.GetTrackName(track_type, t))
             track_key = f"{label}{t}"
             
             state["tracks"][track_key] = {
@@ -118,7 +129,7 @@ def get_timeline_state(timeline):
                 clip_start = (c.GetStart() - tl_start) / fps
                 clip_end = (c.GetEnd() - tl_start) / fps
                 state["tracks"][track_key]["clips"].append({
-                    "name": c.GetName(),
+                    "name": _safe_str(c.GetName()),
                     "start": clip_start,
                     "end": clip_end,
                     "duration": clip_end - clip_start,
@@ -597,7 +608,7 @@ def main():
     if not timeline:
         return 1
     
-    print(f"Timeline: {timeline.GetName()}")
+    print(f"Timeline: {_safe_str(timeline.GetName())}")
     
     # Load director output
     director_segments = load_director(args.director)

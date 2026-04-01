@@ -1018,6 +1018,13 @@ def import_into_resolve(fcpxml_path: str, timeline_name: str = None):
         abs_path = os.path.abspath(fcpxml_path)
         name = timeline_name or os.path.splitext(os.path.basename(fcpxml_path))[0]
 
+        # Delete existing timeline with same name (re-import scenario)
+        for i in range(project.GetTimelineCount(), 0, -1):
+            tl = project.GetTimelineByIndex(i)
+            if tl and tl.GetName() == name:
+                print(f"  Deleting existing timeline: {name}")
+                mp.DeleteTimelines([tl])
+
         # MUST pass timelineName — without it, API returns None for FCPXML
         result = mp.ImportTimelineFromFile(abs_path, {"timelineName": name})
 
@@ -1257,10 +1264,11 @@ Examples:
     )
 
     if args.import_resolve:
-        success = import_into_resolve(output)
+        tl_name = os.path.splitext(os.path.basename(output))[0].replace("_", " ").title()
+        success = import_into_resolve(output, timeline_name=tl_name)
         if not success:
             print("  API import failed — trying AppleScript UI import...")
-            success = import_via_applescript(output)
+            success = import_via_applescript(output, timeline_name=tl_name)
             if not success:
                 print("  ERROR: Both API and AppleScript import failed.")
                 return 1

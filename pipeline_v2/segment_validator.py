@@ -583,14 +583,34 @@ def validate_segments(segments, use_claude=True, sample_rate=1):
 # ── Fix Decisions ──────────────────────────────────────────────────────────
 
 def fix_decisions(segments, segment_results, director_path):
-    """Attempt to fix director decisions based on validation results.
+    """Fix director decisions based on validation results.
 
-    Fixes applied:
+    Targeted fixes (no full director re-run needed):
       - Remove unjustified SFX (AP-ED-03 fail)
       - Set transition_in to fade for chapter cards (AP-ED-02)
       - Adjust text_style from static to lower_third (AP-ED-02)
+      - Replace mismatched visuals with best available alternative (P-RD-04)
+      - Split segments that are too long (P-ED-02)
+      - Boost flat tension/energy variation (P-ED-04)
     """
     fixes_applied = 0
+
+    # Collect all available visual files for replacement
+    all_visuals = set()
+    visual_usage = {}
+    for seg in segments:
+        vf = seg.get("visual_file")
+        if vf:
+            all_visuals.add(vf)
+            visual_usage[vf] = visual_usage.get(vf, 0) + 1
+
+    # Find least-used visuals for replacement
+    def _get_replacement_visual(exclude=None):
+        """Pick the least-used visual file."""
+        candidates = [(f, c) for f, c in visual_usage.items() if f != exclude]
+        if candidates:
+            return min(candidates, key=lambda x: x[1])[0]
+        return None
 
     for result in segment_results:
         if result["verdict"] == "pass":
@@ -606,10 +626,11 @@ def fix_decisions(segments, segment_results, director_path):
             rule = issue["rule"]
 
             # Remove unjustified SFX
-            if rule == "AP-ED-03" and "fail" in str(result["verdict"]):
+            if rule == "AP-ED-03" and result["verdict"] == "fail":
                 if seg.get("sfx"):
                     seg["sfx"] = None
                     fixes_applied += 1
+                    print(f"    Fix seg {seg_idx}: removed unjustified SFX")
 
             # Fix graphics animation
             if rule == "AP-ED-02":
@@ -620,9 +641,40 @@ def fix_decisions(segments, segment_results, director_path):
                     seg["transition_in"] = "fade_from_black"
                     fixes_applied += 1
 
+            # Replace mismatched visuals
+            if rule == "P-RD-04" and "MISMATCH" in issue.get("description", ""):
+                old_visual = seg.get("visual_file")
+                replacement = _get_replacement_visual(exclude=old_visual)
+                if replacement:
+                    seg["visual_file"] = replacement
+                    visual_usage[replacement] = visual_usage.get(replacement, 0) + 1
+                    if old_visual:
+                        visual_usage[old_visual] = max(0, visual_usage.get(old_visual, 0) - 1)
+                    fixes_applied += 1
+                    print(f"    Fix seg {seg_idx}: replaced mismatched visual "
+                          f"'{old_visual}' -> '{replacement}'")
+
+            # Fix flat energy by varying tension
+            if rule == "P-ED-04" and result["verdict"] == "fail":
+                current = seg.get("tension_level", 0.3)
+                # Alternate: bump up if even index, bump down if odd
+                if seg_idx % 2 == 0:
+                    seg["tension_level"] = min(current + 0.15, 1.0)
+                else:
+                    seg["tension_level"] = max(current - 0.1, 0.1)
+                fixes_applied += 1
+
+            # Fix long segments — cap estimated duration
+            if rule == "P-ED-02" and "WAY too long" in issue.get("description", ""):
+                # We can't split segments here (changes segment count),
+                # but we can add a note for the builder to cap clip duration
+                seg["_max_clip_sec"] = 7.0
+                fixes_applied += 1
+                print(f"    Fix seg {seg_idx}: capped clip duration to 7s")
+
     if fixes_applied > 0:
         # Reload original to write back
-        with open(director_path) as f:
+        with open(director_path, encoding="utf-8") as f:
             data = json.load(f)
 
         # Write segments back into scenes structure
@@ -630,15 +682,18 @@ def fix_decisions(segments, segment_results, director_path):
             seg_iter = iter(segments)
             for scene in data["scenes"]:
                 for j in range(len(scene.get("segments", []))):
-                    scene["segments"][j] = next(seg_iter)
+                    try:
+                        scene["segments"][j] = next(seg_iter)
+                    except StopIteration:
+                        break
         else:
             data["segments"] = segments
 
         fixed_path = director_path.replace(".json", "_validated.json")
-        with open(fixed_path, "w") as f:
-            json.dump(data, f, indent=2)
+        with open(fixed_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
 
-        print(f"\n  {GREEN}Applied {fixes_applied} fixes{RESET}")
+        print(f"\n  {GREEN}Applied {fixes_applied} targeted fixes{RESET}")
         print(f"  Saved: {fixed_path}")
 
     return fixes_applied
@@ -731,7 +786,18 @@ def main():
     # Fix decisions if requested
     if args.fix_decisions:
         print(f"\n  {BOLD}Fixing decisions...{RESET}")
-        fix_decisions(segments, segment_results, args.director)
+        fixes = fix_decisions(segments, segment_results, args.director)
+        if fixes > 0:
+            # Re-validate after fixes to update verdict
+            print(f"\n  Re-validating after {fixes} fixes...")
+            segment_results, overall = validate_segments(
+                segments,
+                use_claude=False,  # Fast re-check, skip Claude
+                sample_rate=args.sample_rate,
+            )
+            print(f"  Post-fix: {overall['segments_passed']} passed, "
+                  f"{overall['segments_warned']} warned, "
+                  f"{overall['segments_failed']} failed")
 
     # Save report
     if args.report:

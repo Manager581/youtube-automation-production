@@ -38,6 +38,15 @@ def connect():
         sys.exit(1)
     return timeline
 
+def _safe_str(val):
+    """Safely convert DaVinci API return values to Python str."""
+    if val is None:
+        return ""
+    if isinstance(val, bytes):
+        return val.decode('utf-8', errors='replace')
+    return str(val)
+
+
 def load_playbook():
     """Load all LearnByLeo playbook modules."""
     modules = {}
@@ -82,7 +91,7 @@ def run_checks(timeline, playbook):
     
     # ── P-ED-03: Editing invisible (graphics animate, not pop) ──
     # Check if V2 overlays are faded MOVs (not raw PNGs)
-    faded = sum(1 for c in v2 if 'faded' in c.GetName() or '.mov' in c.GetName())
+    faded = sum(1 for c in v2 if 'faded' in _safe_str(c.GetName()) or '.mov' in _safe_str(c.GetName()))
     if faded >= len(v2) * 0.8:
         results.append(("PASS", "P-ED-03 Graphics animate", f"{faded}/{len(v2)} V2 clips have fade animation"))
     else:
@@ -110,7 +119,7 @@ def run_checks(timeline, playbook):
             results.append(("WARN", "AP-ED-01 No monotone energy", f"Max SFX gap: {max_gap:.0f}s (> 2min)"))
     
     # ── AP-ED-02: Graphics don't pop ──
-    png_count = sum(1 for c in v2 if c.GetName().endswith('.png'))
+    png_count = sum(1 for c in v2 if _safe_str(c.GetName()).endswith('.png'))
     if png_count == 0:
         results.append(("PASS", "AP-ED-02 No popping graphics", "All V2 are MOVs with fades"))
     else:
@@ -137,7 +146,7 @@ def run_checks(timeline, playbook):
         results.append(("FAIL", "Sound design: Music", "No music track"))
     
     # ── Chapter transitions ──
-    chapter_clips = [c for c in v3 if 'chapter' in c.GetName().lower()]
+    chapter_clips = [c for c in v3 if 'chapter' in _safe_str(c.GetName()).lower()]
     if len(chapter_clips) >= 5:
         results.append(("PASS", "Chapter transitions", f"{len(chapter_clips)} chapter cards"))
     elif len(chapter_clips) >= 3:
@@ -152,7 +161,7 @@ def run_checks(timeline, playbook):
         results.append(("FAIL", "P-IN-01 Intro exists", "First V1 clip is not intro"))
     
     # ── P-IN-05: Intro enrichment (overlay on intro) ──
-    intro_overlay = any('news_overlay' in c.GetName() for c in v2)
+    intro_overlay = any('news_overlay' in _safe_str(c.GetName()) for c in v2)
     if intro_overlay:
         results.append(("PASS", "P-IN-05 Intro enrichment", "News overlay on intro"))
     else:
@@ -193,7 +202,7 @@ def run_checks(timeline, playbook):
     # ── Source diversity ──
     sources = {}
     for c in list(v1) + list(v3):
-        n = c.GetName()
+        n = _safe_str(c.GetName())
         sources[n] = sources.get(n, 0) + 1
     max_repeat = max(sources.values()) if sources else 0
     unique = len(sources)
@@ -214,7 +223,7 @@ def run_checks(timeline, playbook):
             clip_durs.append(next_start - this_start)
         else:
             clip_durs.append(7)  # last clip default
-    over_8 = sum(1 for i, c in enumerate(v1) if clip_durs[i] > 8 and 'intro' not in c.GetName().lower())
+    over_8 = sum(1 for i, c in enumerate(v1) if clip_durs[i] > 8 and 'intro' not in _safe_str(c.GetName()).lower())
     if over_8 == 0:
         results.append(("PASS", "Fair use: clip duration", "All clips ≤30s continuous (excl intro)"))
     else:
@@ -253,7 +262,7 @@ def main():
     print("=" * 60)
 
     timeline = connect()
-    print(f"Timeline: {timeline.GetName()}")
+    print(f"Timeline: {_safe_str(timeline.GetName())}")
     print(f"Duration: {(timeline.GetEndFrame() - timeline.GetStartFrame()) / 30 / 60:.1f} min\n")
     
     playbook = load_playbook()

@@ -60,6 +60,15 @@ def connect_resolve():
 
 # ── Read Timeline ──────────────────────────────────────────────────────────
 
+def _safe_str(val):
+    """Safely convert DaVinci API return values to Python str."""
+    if val is None:
+        return ""
+    if isinstance(val, bytes):
+        return val.decode('utf-8', errors='replace')
+    return str(val)
+
+
 def read_davinci_timeline(timeline):
     """Connect to DaVinci, extract full timeline state (all tracks, clip names,
     positions, durations).
@@ -71,7 +80,7 @@ def read_davinci_timeline(timeline):
     tl_start = timeline.GetStartFrame()
 
     state = {
-        "name": timeline.GetName(),
+        "name": _safe_str(timeline.GetName()),
         "duration": (timeline.GetEndFrame() - tl_start) / FPS,
         "fps": FPS,
         "tl_start_frame": tl_start,
@@ -82,7 +91,7 @@ def read_davinci_timeline(timeline):
         count = timeline.GetTrackCount(track_type)
         for t in range(1, count + 1):
             clips_raw = timeline.GetItemListInTrack(track_type, t) or []
-            track_name = timeline.GetTrackName(track_type, t)
+            track_name = _safe_str(timeline.GetTrackName(track_type, t))
             track_key = f"{label}{t}"
 
             clip_list = []
@@ -90,7 +99,7 @@ def read_davinci_timeline(timeline):
                 clip_start = (c.GetStart() - tl_start) / FPS
                 clip_end = (c.GetEnd() - tl_start) / FPS
                 clip_list.append({
-                    "name": c.GetName(),
+                    "name": _safe_str(c.GetName()),
                     "start": round(clip_start, 3),
                     "end": round(clip_end, 3),
                     "duration": round(clip_end - clip_start, 3),
@@ -109,10 +118,22 @@ def read_davinci_timeline(timeline):
 
 # ── Load Director Decisions ────────────────────────────────────────────────
 
+def _sanitize_strings(obj):
+    """Replace non-ASCII chars in all strings to avoid DaVinci IPC encoding errors."""
+    if isinstance(obj, str):
+        return obj.encode('ascii', errors='replace').decode('ascii')
+    elif isinstance(obj, dict):
+        return {k: _sanitize_strings(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [_sanitize_strings(v) for v in obj]
+    return obj
+
+
 def load_director_decisions(path):
     """Load the v3 director output JSON. Returns (raw_data, flat_segments)."""
-    with open(path) as f:
+    with open(path, encoding='utf-8') as f:
         data = json.load(f)
+    data = _sanitize_strings(data)
 
     segments = []
     if "scenes" in data:
@@ -600,7 +621,7 @@ def main():
     if not timeline:
         return 1
 
-    print(f"  Timeline: {timeline.GetName()}")
+    print(f"  Timeline: {_safe_str(timeline.GetName())}")
 
     # Read timeline state
     print(f"\n  Reading timeline state...")
