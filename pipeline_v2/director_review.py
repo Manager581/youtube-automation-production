@@ -148,40 +148,40 @@ def load_director_decisions(path):
 # ── Compute Segment Timing ────────────────────────────────────────────────
 
 def _compute_timing(segments):
-    """Map each director segment to expected timeline position."""
+    """Map each director segment to expected timeline position.
+
+    Uses _timeline_start_sec / _timeline_end_sec from the director JSON
+    directly — these come from Whisper alignment (exact word timestamps).
+    Falls back to word-count estimation only if alignment data is missing.
+    """
     total_words = sum(
         len(s.get("text", s.get("narration", "")).split()) for s in segments
     )
     if total_words == 0:
         return []
 
-    # Check for pre-computed timing
+    # Check for pre-computed timing from Whisper alignment
     has_timing = segments[0].get("_timeline_start_sec") is not None
 
     timings = []
-    narr_start = 11.8  # typical intro offset
-    narr_dur = 860.0   # default estimate
     cumulative_words = 0
 
-    if has_timing:
-        dir_max = max(
-            (s.get("_timeline_end_sec", 0) for s in segments), default=1
-        )
-        scale = narr_dur / dir_max if dir_max > 0 else 1
-    else:
-        scale = 1
+    if not has_timing:
+        # Estimate total duration at ~150 WPM
+        narr_dur = total_words / 2.5
 
     for i, seg in enumerate(segments):
         text = seg.get("text", seg.get("narration", ""))
         words = len(text.split())
 
         if has_timing:
-            start = narr_start + seg.get("_timeline_start_sec", 0) * scale
-            end = narr_start + seg.get("_timeline_end_sec", 0) * scale
+            # Use Whisper-aligned timestamps directly — no scaling, no offset
+            start = seg.get("_timeline_start_sec", 0)
+            end = seg.get("_timeline_end_sec", start + words / 2.5)
         else:
-            start = narr_start + (cumulative_words / total_words) * narr_dur
+            start = (cumulative_words / total_words) * narr_dur
             cumulative_words += words
-            end = narr_start + (cumulative_words / total_words) * narr_dur
+            end = (cumulative_words / total_words) * narr_dur
 
         timings.append({
             "seg_idx": i,
