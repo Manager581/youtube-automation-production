@@ -476,6 +476,8 @@ def normalize_sfx(sfx_dir: str, target_lufs: float = -12.0):
         result = subprocess.run([
             'ffmpeg', '-y', '-i', src,
             '-af', f'loudnorm=I={target_lufs}:TP=-1.5:LRA=11',
+            '-ar', '48000',  # Force 48kHz (loudnorm upsamples to 192kHz = buzzy)
+            '-ac', '2',      # Stereo output for DaVinci compatibility
             dst,
         ], capture_output=True, timeout=30)
 

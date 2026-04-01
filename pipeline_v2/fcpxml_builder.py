@@ -786,11 +786,11 @@ def build_from_director(director_path: str, narration_path: str = None,
             v1_skipped += 1
             continue
 
-        # Check source diversity — skip if this source is over limit
+        # Check source diversity — cap both video and image reuse
         current_usage = source_usage.get(vf, 0)
-        if current_usage >= MAX_SOURCE_SEC and not is_image_file(filepath):
-            # Video clips: hard cap at MAX_SOURCE_SEC for copyright
-            # Images: allow reuse (no copyright on screen duration)
+        if current_usage >= MAX_SOURCE_SEC:
+            # Both video clips and images: cap at MAX_SOURCE_SEC
+            # Repeated images look amateur; repeated video clips risk copyright
             v1_skipped += 1
             continue
 

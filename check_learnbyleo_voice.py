@@ -345,6 +345,49 @@ def check_vocal_variation(audio_path: Path):
     return rms_range, "PASS", f"RMS range {rms_range:.1f} dB across {len(rms_values)} chunks (good variation)"
 
 
+def check_hallucination(audio_path: Path, alignment_path: Path = None):
+    """
+    Detect TTS hallucination: repeated phrases that F5-TTS injects.
+    Uses Whisper alignment JSON if available, otherwise runs quick transcription.
+    A hallucinating TTS will repeat the same phrase 5+ times across the narration.
+    """
+    sentences = []
+
+    if alignment_path and alignment_path.exists():
+        try:
+            data = json.loads(alignment_path.read_text())
+            sentences = [s["text"].strip().lower() for s in data.get("sentences", [])]
+        except Exception:
+            pass
+
+    if not sentences:
+        # No alignment — skip (Whisper would need to run which is slow)
+        return None, "SKIP", "No alignment JSON — run narration_aligner first for hallucination check"
+
+    # Check for repeated phrases (first 30 chars as key)
+    phrase_counts = {}
+    for text in sentences:
+        key = text[:30]
+        phrase_counts[key] = phrase_counts.get(key, 0) + 1
+
+    # Find the most repeated phrase
+    worst_phrase = max(phrase_counts.items(), key=lambda x: x[1])
+    worst_count = worst_phrase[1]
+    worst_text = worst_phrase[0]
+
+    if worst_count >= 10:
+        return worst_count, "FAIL", (
+            f"HALLUCINATION: \"{worst_text}...\" repeated {worst_count} times. "
+            f"F5-TTS injected a phantom phrase. MUST regenerate narration."
+        )
+    elif worst_count >= 5:
+        return worst_count, "WARN", (
+            f"Possible hallucination: \"{worst_text}...\" repeated {worst_count} times. "
+            f"Check narration for unwanted repeated phrases."
+        )
+    return worst_count, "PASS", f"No hallucination detected (max repeat: {worst_count}x)"
+
+
 # ── Output helpers ───────────────────────────────────────────────────────────
 
 def print_check(name: str, status: str, message: str):
@@ -377,6 +420,11 @@ def run_checks(audio_path: Path, script_path: Path | None, manifest_path: Path |
 
     _, s, m = check_vocal_variation(audio_path)
     results.append(print_check("Vocal variation", s, m))
+
+    # Hallucination check (requires alignment JSON from narration_aligner)
+    alignment_path = audio_path.parent / "narration_alignment.json"
+    _, s, m = check_hallucination(audio_path, alignment_path)
+    results.append(print_check("Hallucination check", s, m))
 
     return results
 

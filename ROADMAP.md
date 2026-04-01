@@ -186,11 +186,13 @@ Key bugs found:
 ```bash
 cd /Users/jefflawrence/Documents/youtube-automation-production
 
-# 1. Regenerate narration (WITH wpm normalization)
+# 1. Regenerate narration (default = WITH wpm normalization, do NOT use --no-wpm-normalize)
+SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())") \
 venv/bin/python pipeline/voice_generator.py \
+  --ref-audio assets/voice/voice_neutral_ref_short.wav \
+  --ref-text "It's the summer of 1995. A package arrives at a home of a timber industry lobby." \
   --script scripts/raw_breaking_law_v45.txt \
-  --output audio/breaking_law/narration.wav \
-  --wpm-normalize
+  --out audio/breaking_law/narration.wav
 
 # 2. Re-run Whisper alignment
 SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())") \
