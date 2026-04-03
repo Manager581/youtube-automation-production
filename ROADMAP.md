@@ -182,39 +182,51 @@ Key bugs found:
 - [ ] Director second pass (self-review for source reuse, thin coverage)
 - [ ] exec_producer_pre: should check director JSON, not stale DaVinci timeline
 
-### How to Resume (next session)
+### How to Resume (next session) — Chapter-by-Chapter Assembly
+
+ALL assets are ready. Do NOT re-run voice, director, footage, or image stages. Go straight to assembly.
+
+**Strategy:** Build each chapter as a separate FCPXML, import one at a time into DaVinci, verify each looks right before moving on. This prevents the monolithic builder from cycling images or carpet-bombing SFX.
+
+**The 5 chapters** (from director v4):
+1. **INTRO + THE FORMULA** (0-250s) — Ford Pinto, Grimshaw, Wells Fargo, Purdue
+2. **THE DATA** (250-460s) — Facebook, Cambridge Analytica, Zuckerberg hearing
+3. **THE MACHINES** (460-680s) — AI scraping, training data, copyright
+4. **THE RENT** (680-900s) — RealPage, rent algorithms, settlements
+5. **THE RECKONING** (900-1200s) — GDPR, proportional fines, Eliana Esquivel, thesis
+
+**For each chapter:**
+1. Extract segments from `storyboards/breaking_law_directed_v4.json` for that time range
+2. Pick UNIQUE visuals for each segment (no repeats within chapter)
+3. Place 1-2 SFX MAX per chapter at key dramatic moments (using Whisper word timestamps)
+4. Assign that chapter's music track (track 1→ch1, track 2→ch2, etc.)
+5. Build FCPXML for just that chapter
+6. Import into DaVinci via API (`ImportTimelineFromFile` with `timelineName`)
+7. Verify it looks right
+8. Move to next chapter
+
+**Key files:**
+```
+storyboards/breaking_law_directed_v4.json   — director decisions (113 segments)
+audio/breaking_law/narration.wav            — clean narration (20 min)
+audio/breaking_law/narration_alignment.json — word-level timestamps
+footage/breaking_law/clips/                 — 23 video clips (transcribed)
+footage/breaking_law/images/                — images in seg_NNN/ subdirs
+footage/breaking_law/gap_fills/images/      — 251 gap-fill images
+assets/breaking_law/overlays/               — 75 overlay MOVs (tw_NNN_*.mov)
+assets/breaking_law/chapters/               — 5 chapter card MOVs
+assets/sfx/                                 — 18 normalized SFX WAVs (*_loud.wav)
+audio/breaking_law/music_tracks/            — 4 music WAVs (tense/investigative/emotional/dark)
+```
+
+**Environment:**
 ```bash
 cd /Users/jefflawrence/Documents/youtube-automation-production
-
-# 1. Regenerate narration (default = WITH wpm normalization, do NOT use --no-wpm-normalize)
-SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())") \
-venv/bin/python pipeline/voice_generator.py \
-  --ref-audio assets/voice/voice_neutral_ref_short.wav \
-  --ref-text "It's the summer of 1995. A package arrives at a home of a timber industry lobby." \
-  --script scripts/raw_breaking_law_v45.txt \
-  --out audio/breaking_law/narration.wav
-
-# 2. Re-run Whisper alignment
-SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())") \
-venv/bin/python -m pipeline_v2.narration_aligner \
-  --narration audio/breaking_law/narration.wav \
-  --script scripts/raw_breaking_law_v45.txt \
-  --output audio/breaking_law/narration_alignment.json
-
-# 3. Check alignment for hallucination (should be 0 repeats)
-venv/bin/python -c "
-import json
-with open('audio/breaking_law/narration_alignment.json') as f:
-    a = json.load(f)
-texts = [s['text'].strip().lower()[:30] for s in a['sentences']]
-dupes = len(texts) - len(set(texts))
-print(f'Sentences: {len(texts)}, Duplicate prefixes: {dupes}')
-assert dupes < 5, f'HALLUCINATION DETECTED: {dupes} repeated sentences'
-"
-
-# 4. Fix footage_sourcer and music_sourcer args in run_pipeline_v2.py
-# 5. Reset pipeline state to stage 8 (voice)
-# 6. Run pipeline: venv/bin/python run_pipeline_v2.py --stage voice
+export PATH="/opt/homebrew/bin:/Users/jefflawrence/.local/bin:$PATH"
+# Python: venv/bin/python (NOT system python)
+# DaVinci API: PYTHONPATH="/Library/Application Support/Blackmagic Design/DaVinci Resolve/Developer/Scripting/Modules"
+# Whisper SSL fix: SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())")
+# DaVinci import: mp.ImportTimelineFromFile(path, {"timelineName": "..."})  ← MUST pass timelineName
 ```
 
 ### Immediate TODO

@@ -83,8 +83,11 @@ See MEMORY.md for full function list and pipeline order.
 
 ### Pipeline State (as of 2026-03-31)
 - **Script v45**: DONE (4,366 words, 95+ score)
-- **Voice**: REGENERATING — old narration had 88 hallucinated repeats. New gen running (40s/segment, 247 total, ~2.7 hrs on M5 CPU). Output: `audio/breaking_law/narration_v2.wav`
-- **NEXT SESSION**: Check if `narration_v2.wav` exists. If yes, copy to `narration.wav`, run Whisper alignment, then pipeline stages 8-28. If not, restart voice gen (see ROADMAP.md)
+- **Voice**: DONE — `audio/breaking_law/narration.wav` (20 min, 0 hallucination, clean)
+- **Assets**: ALL READY — 23 video clips (transcribed), 447 images (vision-analyzed), 75 overlay MOVs, 5 chapter cards, 18 SFX (48kHz), 4 music tracks
+- **Director v4**: DONE — `storyboards/breaking_law_directed_v4.json` (full data: transcripts + vision + alignment)
+- **BLOCKER**: Assembly is broken. FCPXML builder cycles same images (5+ min holds), SFX carpet-bombs intro, V1 clips loop. API build can't position overlays/SFX.
+- **NEXT SESSION**: Build chapter-by-chapter. See ROADMAP.md "Chapter-by-Chapter Assembly Plan"
 - `.pipeline_v2_state.json` — reset to stage 7 (qa_script done, voice needs re-run)
 - Media dir: `footage/breaking_law/`, `audio/breaking_law/`
 - Director JSON: `storyboards/breaking_law_directed_v2_gapfilled.json` (113 segments)
@@ -92,22 +95,30 @@ See MEMORY.md for full function list and pipeline order.
 - FCPXML: `timeline_FINAL2.fcpxml` (latest working build)
 
 ### Critical Issues for Next Session
-1. **Narration must be regenerated** — current WAV has 88 hallucinated repeats + garbled speed
-2. **Need 15+ video clips** — only 3 exist, rest are still images. footage_sourcer args need fixing in `run_pipeline_v2.py`
-3. **Need 3-5 music tracks** — only 1 exists (194s). music_sourcer args need fixing
-4. **Source diversity** — some images used 900s+. Builder has 20s cap for video but not images
-5. **SFX need variety** — only 6 unique sounds for 30 placements. Need 15+ varied SFX
-6. **Chapter cards** — plain white-on-black. Need styled template
-7. **Add voice QA for hallucination detection** — check for repeated phrases in Whisper output
+1. **Assembly must be done chapter-by-chapter** — FCPXML builder is too dumb for full-video assembly
+2. **V2 overlays + SFX need FCPXML** — API can't position them. Build per-chapter FCPXML with only that chapter's overlays/SFX
+3. **Music**: 4 tracks exist but need to be assigned per chapter (1 per chapter, not looped)
+4. **Chapter cards**: plain white-on-black. Need styled template
+5. **SFX timing**: should land on specific words (use Whisper alignment), not segment boundaries
 
 ### What Works (don't re-build)
-- Script (v45, 95+ score) ✅
-- FCPXML builder (overlay matching, absolute paths, gap fill, music loop, API import with timelineName) ✅
-- Whisper aligner (word-level timestamps, tiktoken patched for Python 3.13) ✅
-- Director (vision in prompt, music_state, alignment timestamps, sufficiency check) ✅
-- Pipeline orchestrator (gates, retries, 3600s timeout, UTF-8) ✅
-- Segment validator (auto-fix + re-validate) ✅
-- 276 images + 140 overlay MOVs + 4 chapter card MOVs ✅
+- Script v45 (95+ score) ✅
+- Narration WAV (20 min, clean, no hallucination) ✅
+- Whisper alignment (word-level timestamps for every sentence) ✅
+- Director v4 (transcripts + vision + alignment, 33 clips, 69 SFX, 5 chapters) ✅
+- 23 video clips (transcribed via Whisper) ✅
+- 447 images (vision-analyzed via Claude) ✅
+- 75 overlay MOVs (ProRes 4444, alpha, fade effects) ✅
+- 5 chapter card MOVs ✅
+- 18 SFX files (48kHz, normalized to -12 LUFS) ✅
+- 4 music tracks (tense, investigative, emotional, dark) ✅
+- DaVinci API import with `timelineName` parameter ✅
+- Pipeline gates + hallucination detection ✅
+
+### What's BROKEN (must rebuild)
+- FCPXML builder: cycles same image for 5+ min in gap fills, carpet-bombs SFX at segment boundaries, V1 clips loop the same source
+- DaVinci API: AppendToTimeline ignores recordFrame — can't position overlays/SFX
+- Assembly approach: needs chapter-by-chapter, not monolithic
 
 
 ## Project Overview
