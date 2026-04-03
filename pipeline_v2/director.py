@@ -263,16 +263,15 @@ def build_director_prompt(segments, clips, images, sfx, playbook_rules):
     # can make informed visual choices (not just filename matching)
     clip_summary = "\n".join(
         f"  - {c['filename'][:50]} ({c['duration']:.0f}s)"
-        f" [{c.get('vision_description', 'no description')[:120]}]"
-        f" Transcript: {c.get('transcript_preview', 'none')[:80]}"
-        for c in clips[:30]
+        f" [{c.get('vision_description', '')[:80]}]"
+        f" Says: {c.get('transcript_preview', '')[:60]}"
+        for c in clips[:25]
     )
 
     image_summary = "\n".join(
         f"  - {img['filename'][:50]}"
-        f" [{img.get('vision_description', 'no description')[:120]}]"
-        f" Topics: {', '.join(img.get('topics', [])[:3])}"
-        for img in images[:80]
+        f" [{img.get('vision_description', '')[:60]}]"
+        for img in images[:50]
     )
     
     sfx_summary = "\n".join(
