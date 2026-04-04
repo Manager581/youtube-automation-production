@@ -146,7 +146,7 @@ class FCPXMLBuilderV2:
         self._assets[abspath] = (asset_id, fmt_id)
         return asset_id, fmt_id
 
-    def build(self, segments, chapter_map, narration_path, sfx_by_chapter, music_by_chapter):
+    def build(self, segments, chapter_map, narration_path, sfx_by_chapter, music_by_chapter, alignment=None):
         """Build complete FCPXML ElementTree.
 
         Args:
@@ -173,14 +173,25 @@ class FCPXMLBuilderV2:
                     dur = get_duration(path) if not is_image(path) else None
                     media_cache[vf] = (path, dur)
 
+        # ── Pre-process: close gaps between segments ──
+        # Extend each segment's end to the next segment's start.
+        # This prevents orphan narration sentences from creating black holes.
+        active_segs = [s for s in segments
+                       if s.get("text", "").strip() and not s["text"].startswith("[")]
+        for i in range(len(active_segs) - 1):
+            gap = active_segs[i + 1]["_narr_start"] - active_segs[i]["_narr_end"]
+            if gap > 0.1:
+                active_segs[i]["_narr_end"] = active_segs[i + 1]["_narr_start"]
+
+        # Cap last segment at narration duration
+        narr_total = alignment.get("duration_sec", active_segs[-1]["_narr_end"])
+        if active_segs[-1]["_narr_end"] > narr_total:
+            active_segs[-1]["_narr_end"] = narr_total
+
         # ── Build V1 spine clips ──
         print("  Building V1 spine...")
         v1_clips = []
-        for seg in segments:
-            text = seg.get("text", "")
-            if text.startswith("[") and seg["_narr_end"] == seg["_narr_start"]:
-                continue  # skip stage directions
-
+        for seg in active_segs:
             vf = seg.get("visual_file")
             if not vf or vf not in media_cache:
                 continue
@@ -188,13 +199,62 @@ class FCPXMLBuilderV2:
             path, source_dur = media_cache[vf]
             seg_dur = max(seg["_narr_end"] - seg["_narr_start"], 0.5)
 
+            clip_start = seg.get("clip_start_sec") or 0
+
             if is_image(path):
-                # Image: hold for segment duration (FCPXML controls this, not DaVinci default)
-                clip_dur = min(seg_dur, 20.0)  # cap at 20s per editing rules
+                # Image: if segment > 7s, split into multiple 5-7s sub-clips
+                # using different images from the media pool for visual variety
+                if seg_dur > 7.5:
+                    # First sub-clip: director's chosen image (5s)
+                    sub_dur = min(5.0, seg_dur)
+                    v1_clips.append({
+                        "path": path,
+                        "offset": seg["_narr_start"],
+                        "duration": sub_dur,
+                        "start": 0,
+                        "name": os.path.basename(path),
+                        "clip_audio": "mute",
+                        "clip_audio_duration": None,
+                        "transition_in": seg.get("transition_in", "cut"),
+                        "zoom_target": seg.get("zoom_target", "wide"),
+                        "is_image": True,
+                        "seg": seg,
+                    })
+                    # Remaining sub-clips: rotate through different images
+                    # Build list of all available images (excluding current)
+                    avail_images = [p for n, (p, _) in media_cache.items()
+                                   if is_image(p) and p != path]
+                    img_rot_idx = hash(path) % max(len(avail_images), 1)  # start at different position per segment
+
+                    filled = sub_dur
+                    while filled < seg_dur - 1.0:
+                        if avail_images:
+                            alt_img = avail_images[img_rot_idx % len(avail_images)]
+                            img_rot_idx += 1
+                        else:
+                            alt_img = path
+
+                        chunk = min(6.0, seg_dur - filled)
+                        v1_clips.append({
+                            "path": alt_img,
+                            "offset": seg["_narr_start"] + filled,
+                            "duration": chunk,
+                            "start": 0,
+                            "name": os.path.basename(alt_img),
+                            "clip_audio": "mute",
+                            "clip_audio_duration": None,
+                            "transition_in": "cut",
+                            "zoom_target": seg.get("zoom_target", "wide"),
+                            "is_image": True,
+                            "seg": seg,
+                        })
+                        filled += chunk
+                    continue  # skip the normal append below
+
+                clip_dur = seg_dur
                 clip_start = 0
             else:
-                # Video: use up to segment duration, capped at source
-                clip_start = seg.get("clip_start_sec") or 0
+                # Video: use up to segment duration, capped at source length
                 available = (source_dur or 60) - clip_start
                 clip_dur = min(seg_dur, available)
 
@@ -212,12 +272,18 @@ class FCPXMLBuilderV2:
                 "seg": seg,
             })
 
-        # Fill V1 gaps: if a clip ends before the next starts, extend it
+            # If video clip is shorter than segment, fill remaining time
+            # by extending the clip (last frame holds) or adding next visual
+            if not is_image(path) and clip_dur < seg_dur - 1.0:
+                remaining = seg_dur - clip_dur
+                v1_clips[-1]["duration"] = seg_dur  # extend to fill
+
+        # Final safety: ensure no gaps between consecutive V1 clips
         for i in range(len(v1_clips) - 1):
-            gap = v1_clips[i + 1]["offset"] - (v1_clips[i]["offset"] + v1_clips[i]["duration"])
-            if gap > 0.1:
-                # Extend current clip to fill gap (image holds, video holds last frame)
-                v1_clips[i]["duration"] += gap
+            clip_end = v1_clips[i]["offset"] + v1_clips[i]["duration"]
+            next_start = v1_clips[i + 1]["offset"]
+            if next_start > clip_end + 0.05:
+                v1_clips[i]["duration"] = next_start - v1_clips[i]["offset"]
 
         print(f"  V1: {len(v1_clips)} clips")
 
@@ -246,29 +312,41 @@ class FCPXMLBuilderV2:
             overlay_count += 1
         print(f"  V2: {overlay_count} overlays")
 
-        # V3: Chapter cards
+        # V3: Chapter cards — use MOV files from chapters/ directory
         card_count = 0
         for seg in segments:
             card = seg.get("chapter_card")
             if not card:
                 continue
-            card_name = f"chapter_{card.lower().replace(' ', '_')}.mov"
+            # Map chapter name to filename
+            card_slug = card.lower().replace(' ', '_')
+            card_name = f"chapter_{card_slug}.mov"
             card_path = str(CHAPTER_CARD_DIR / card_name)
             if not os.path.exists(card_path):
-                continue
+                # Try without "the_" prefix
+                card_name2 = f"chapter_{card_slug.replace('the_', '')}.mov"
+                card_path2 = str(CHAPTER_CARD_DIR / card_name2)
+                if os.path.exists(card_path2):
+                    card_path = card_path2
+                    card_name = card_name2
+                else:
+                    print(f"    WARNING: chapter card not found: {card_name}")
+                    continue
+
             card_dur = get_duration(card_path) or 3.0
-            # Place 2s before content
-            card_offset = max(0, seg["_narr_start"] - 2.0)
+            # Place AT the chapter start (not before — the visual fills the gap)
+            card_offset = seg["_narr_start"]
             lane_clips.append({
                 "lane": LANE_CHAPTER,
                 "offset": card_offset,
-                "duration": card_dur,
+                "duration": min(card_dur, 4.0),
                 "path": card_path,
                 "start": 0,
                 "name": card_name,
                 "is_audio": False,
             })
             card_count += 1
+            print(f"    Card: {card_name} at {card_offset:.1f}s")
         print(f"  V3: {card_count} chapter cards")
 
         # A1: Narration
@@ -302,15 +380,17 @@ class FCPXMLBuilderV2:
             })
         print(f"  A2: {len(music_by_chapter)} music tracks")
 
-        # A3/A4: SFX
+        # A3/A4: SFX — alternate lanes globally (not per-chapter)
         sfx_count = 0
-        for ch_num, sfx_list in sfx_by_chapter.items():
-            for idx, (sfx_time, sfx_file) in enumerate(sfx_list):
+        sfx_global_idx = 0
+        for ch_num in sorted(sfx_by_chapter.keys()):
+            sfx_list = sfx_by_chapter[ch_num]
+            for sfx_time, sfx_file in sfx_list:
                 sfx_path = str(SFX_DIR / sfx_file)
                 if not os.path.exists(sfx_path):
                     continue
                 sfx_dur = get_duration(sfx_path) or 2.0
-                lane = LANE_SFX1 if idx % 2 == 0 else LANE_SFX2
+                lane = LANE_SFX1 if sfx_global_idx % 2 == 0 else LANE_SFX2
                 lane_clips.append({
                     "lane": lane,
                     "offset": sfx_time,
@@ -321,7 +401,8 @@ class FCPXMLBuilderV2:
                     "is_audio": True,
                 })
                 sfx_count += 1
-        print(f"  A3/A4: {sfx_count} SFX")
+                sfx_global_idx += 1
+        print(f"  A3/A4: {sfx_count} SFX ({sfx_global_idx} total, alternating lanes)")
 
         # ── Generate XML ──
         print("  Generating FCPXML...")
@@ -488,51 +569,28 @@ class FCPXMLBuilderV2:
             "start": to_rational(gap_offset),
         })
 
-        # ── Attach lane clips to the spine elements they overlap with ──
-        # Build a list of (xml_element, seq_start, seq_end) for all spine elements
-        spine_elements = []
-        for child in spine:
-            tag = child.tag
-            offset_str = child.get("offset", "0/1s")
-            dur_str = child.get("duration", "0/1s")
-            # Parse rational time
-            def parse_rat(s):
-                s = s.rstrip('s')
-                if '/' in s:
-                    num, den = s.split('/')
-                    return float(num) / float(den)
-                return float(s)
-            off = parse_rat(offset_str)
-            dur = parse_rat(dur_str)
-            spine_elements.append((child, off, off + dur))
+        # ── Attach ALL lane clips to the FIRST spine element ──
+        # FCPXML lane clip offsets are relative to the parent's content timebase.
+        # The first spine element starts at TC_START with start=0 (for images)
+        # or start=clip_start (for video). We use the first spine element as parent
+        # and calculate offsets relative to it.
+        first_spine_el = list(spine)[0]
+        first_start_str = first_spine_el.get("start", "0/1s").rstrip('s')
+        if '/' in first_start_str:
+            _n, _d = first_start_str.split('/')
+            first_content_start = float(_n) / float(_d)
+        else:
+            first_content_start = float(first_start_str)
 
+        attached = 0
         for lc in lane_clips:
-            abs_time = TC_START + lc["offset"]  # absolute sequence time
             abspath = os.path.abspath(lc["path"])
             asset_id, _ = self._assets.get(abspath, (None, None))
             if not asset_id:
                 continue
 
-            # Find the spine element that contains this lane clip's start time
-            parent = trailing_gap
-            parent_offset = gap_offset
-            parent_start_content = gap_offset  # trailing gap start
-            for el, el_off, el_end in spine_elements:
-                if el_off <= abs_time < el_end:
-                    parent = el
-                    parent_offset = el_off
-                    # Parse the parent's "start" attribute (source in-point)
-                    start_str = el.get("start", "0/1s").rstrip('s')
-                    if '/' in start_str:
-                        n, d = start_str.split('/')
-                        parent_start_content = float(n) / float(d)
-                    else:
-                        parent_start_content = float(start_str)
-                    break
-
-            # Lane clip offset is RELATIVE to parent's content timebase:
-            # lane_offset = parent_start_content + (abs_time - parent_offset)
-            lane_offset = parent_start_content + (abs_time - parent_offset)
+            # Offset = first element's content start + desired timeline position
+            lane_offset = first_content_start + lc["offset"]
 
             attrs = {
                 "ref": asset_id,
@@ -544,17 +602,19 @@ class FCPXMLBuilderV2:
             }
 
             if lc["is_audio"]:
-                # Use asset-clip for audio lanes (not <audio> which is for embedded audio)
                 attrs["role"] = "dialogue"
-                SubElement(parent, "asset-clip", attrs)
+                SubElement(first_spine_el, "asset-clip", attrs)
             else:
-                vid = SubElement(parent, "video", attrs)
+                vid = SubElement(first_spine_el, "video", attrs)
                 if lc["lane"] == LANE_OVERLAY:
                     SubElement(vid, "adjust-transform", {
                         "position": "0 0",
                         "scale": "1 1",
                         "anchor": "0 0",
                     })
+            attached += 1
+
+        print(f"  Attached {attached} lane clips to first spine element")
 
         # Pretty print
         indent(root, space="  ")
@@ -618,6 +678,7 @@ def main():
         narration_path=NARRATION_PATH,
         sfx_by_chapter=sfx_by_chapter,
         music_by_chapter=music_by_chapter,
+        alignment=align,
     )
 
     # Write
