@@ -2,13 +2,19 @@
 
 ## ⚠️ CRITICAL RULES FOR NEW VIDEOS (read before doing anything)
 
+### Tool Policy (revised 2026-04-04)
+1. **FCPXML**: ALLOWED for timeline assembly. FCPXML places clips at exact timecodes — DaVinci imports it perfectly. The OLD builder (`fcpxml_builder.py`) has logic bugs — use `fcpxml_builder_v2.py` instead.
+2. **FFmpeg**: ALLOWED for audio processing (time-stretch, normalization, format conversion). NOT allowed for video compositing/rendering — that's DaVinci's job.
+3. **DaVinci API**: Use for import, media pool operations, property setting (zoom, volume), render. CANNOT position clips at arbitrary timecodes (AppendToTimeline is sequential-only).
+4. **Computer-use MCP**: CAN access DaVinci (bundle ID: `com.blackmagic-design.DaVinciResolve`, display: LG ULTRAWIDE). Use for verification and manual polish, not bulk placement.
+
 ### DaVinci Resolve API Bugs (will silently break your build)
-1. **NEVER use H.264 for overlays with alpha** → ProRes 4444 only (`yuva444p10le`)
-2. **NEVER use AddFusionComp()** → bake fades into files via FFmpeg before import
-3. **AppendToTimeline ignores recordFrame** → place clips in chronological order
-4. **NEVER use Fusion for effects from external scripts** → everything baked into files
-5. **No AddTransition() in API** → use FCPXML export/modify/reimport
-6. **No Fairlight automation** → pre-bake music ducking into WAV files
+1. **NEVER use H.264 for overlays with alpha** → ProRes 4444 only
+2. **NEVER use AddFusionComp()** → use DaVinci built-in effects only
+3. **AppendToTimeline ignores recordFrame** → place clips in chronological order (sequential append)
+4. **NEVER use Fusion for effects from external scripts** → use DaVinci built-in effects
+5. **No AddTransition() in API** → add transitions via AppleScript UI automation
+6. **No Fairlight automation via API** → use AppleScript UI or pre-ducked WAV files
 
 ### Mandatory Post-Build Checks
 ```python
@@ -86,39 +92,53 @@ See MEMORY.md for full function list and pipeline order.
 - **Voice**: DONE — `audio/breaking_law/narration.wav` (20 min, 0 hallucination, clean)
 - **Assets**: ALL READY — 23 video clips (transcribed), 447 images (vision-analyzed), 75 overlay MOVs, 5 chapter cards, 18 SFX (48kHz), 4 music tracks
 - **Director v4**: DONE — `storyboards/breaking_law_directed_v4.json` (full data: transcripts + vision + alignment)
-- **BLOCKER**: Assembly is broken. FCPXML builder cycles same images (5+ min holds), SFX carpet-bombs intro, V1 clips loop. API build can't position overlays/SFX.
-- **NEXT SESSION**: Build chapter-by-chapter. See ROADMAP.md "Chapter-by-Chapter Assembly Plan"
-- `.pipeline_v2_state.json` — reset to stage 7 (qa_script done, voice needs re-run)
-- Media dir: `footage/breaking_law/`, `audio/breaking_law/`
-- Director JSON: `storyboards/breaking_law_directed_v2_gapfilled.json` (113 segments)
-- Narration alignment: `audio/breaking_law/narration_alignment.json` (Whisper, will need re-run after new VO)
-- FCPXML: `timeline_FINAL2.fcpxml` (latest working build)
-
-### Critical Issues for Next Session
-1. **Assembly must be done chapter-by-chapter** — FCPXML builder is too dumb for full-video assembly
-2. **V2 overlays + SFX need FCPXML** — API can't position them. Build per-chapter FCPXML with only that chapter's overlays/SFX
-3. **Music**: 4 tracks exist but need to be assigned per chapter (1 per chapter, not looped)
-4. **Chapter cards**: plain white-on-black. Need styled template
-5. **SFX timing**: should land on specific words (use Whisper alignment), not segment boundaries
+- **Voice**: Regenerated at 150 WPM (was 205 WPM). File: `audio/breaking_law/narration.wav` (27.3 min). Backup: `narration_205wpm_backup.wav`
+- **Whisper alignment**: Re-run on 150 WPM narration. 667 sentences, 151 WPM avg. File: `audio/breaking_law/narration_alignment.json`
+- **BLOCKER**: Assembly — DaVinci Python API CANNOT position clips at arbitrary timecodes (AppendToTimeline is sequential-only). Computer-use MCP CAN see DaVinci (bundle ID: `com.blackmagic-design.DaVinciResolve`) but manual placement of 164 assets is impractical.
+- **SOLUTION**: Build new custom FCPXML builder v2 from scratch. FCPXML places everything at exact timecodes and DaVinci imports it perfectly. The OLD builder had logic bugs (cycling images, SFX carpet-bombing) — the FORMAT was never the problem.
+- **NEXT SESSION**: Build `pipeline_v2/fcpxml_builder_v2.py` — see ROADMAP.md
 
 ### What Works (don't re-build)
 - Script v45 (95+ score) ✅
-- Narration WAV (20 min, clean, no hallucination) ✅
-- Whisper alignment (word-level timestamps for every sentence) ✅
-- Director v4 (transcripts + vision + alignment, 33 clips, 69 SFX, 5 chapters) ✅
+- Narration WAV at 150 WPM (27.3 min, clean) ✅
+- Whisper alignment at 150 WPM (word-level timestamps, 667 sentences) ✅
+- Director v4 (transcripts + vision + alignment, 113 segments) ✅
 - 23 video clips (transcribed via Whisper) ✅
 - 447 images (vision-analyzed via Claude) ✅
 - 75 overlay MOVs (ProRes 4444, alpha, fade effects) ✅
 - 5 chapter card MOVs ✅
 - 18 SFX files (48kHz, normalized to -12 LUFS) ✅
-- 4 music tracks (tense, investigative, emotional, dark) ✅
-- DaVinci API import with `timelineName` parameter ✅
+- 4 music tracks (tense, investigative, emotional, dark + ducked versions) ✅
 - Pipeline gates + hallucination detection ✅
+- `chapter_assembler.py` — narration-to-segment matching, chapter splitting (reusable) ✅
+- `audio_mixer.py` — pure Python narration+music stereo mixer (reusable) ✅
 
 ### What's BROKEN (must rebuild)
-- FCPXML builder: cycles same image for 5+ min in gap fills, carpet-bombs SFX at segment boundaries, V1 clips loop the same source
-- DaVinci API: AppendToTimeline ignores recordFrame — can't position overlays/SFX
-- Assembly approach: needs chapter-by-chapter, not monolithic
+- OLD `fcpxml_builder.py`: cycles same image for 5+ min, carpet-bombs SFX, loops V1 clips. DO NOT USE.
+- DaVinci API: AppendToTimeline ignores recordFrame — CANNOT position overlays/SFX/chapter cards. Only useful for bulk import + property setting (zoom, volume).
+- Computer-use MCP: CAN see DaVinci but too slow for 164 asset placements. Use for verification only.
+
+### Assembly Plan: Custom FCPXML Builder v2
+Build `pipeline_v2/fcpxml_builder_v2.py` from scratch. Reads director v4 + Whisper alignment directly.
+
+**What it places (ALL at exact timecodes):**
+- V1: Director's exact visual picks. Video clips at natural duration (up to source length). Images at 5-7s with Ken Burns zoom parameters. No gap-filling with random images.
+- V2: 50 text overlay MOVs at narration-synced positions
+- V3: 5 chapter card MOVs at chapter transitions
+- A1: Full narration WAV (150 WPM, 27.3 min)
+- A2: Music per chapter (ducked WAVs, one per chapter section)
+- A3/A4: 2 SFX per chapter at Whisper word timestamps (not segment boundaries)
+- Clip audio: play/play_then_mute/mute per director (volume keyframes for play_then_mute)
+- Transitions: fade_from_black at start, dissolves at chapter boundaries
+
+**Editing rules enforced:**
+- 5-7s per cut (documentary pacing from LearnByLeo)
+- No same image repeated back-to-back
+- Max 2 SFX per chapter (highest tension moments only)
+- Ken Burns zoom on every still image (1.05x static or zoompan params)
+- Music state per segment (playing/ducking/silent)
+
+**Import:** `DaVinci API ImportTimelineFromFile(path, {"timelineName": "Breaking Law FINAL"})` or File > Import > Timeline via AppleScript
 
 
 ## Project Overview

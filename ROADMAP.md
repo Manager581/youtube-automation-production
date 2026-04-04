@@ -182,51 +182,85 @@ Key bugs found:
 - [ ] Director second pass (self-review for source reuse, thin coverage)
 - [ ] exec_producer_pre: should check director JSON, not stale DaVinci timeline
 
-### How to Resume (next session) — Chapter-by-Chapter Assembly
+### Session 2026-04-04: Assembly Breakthrough
 
-ALL assets are ready. Do NOT re-run voice, director, footage, or image stages. Go straight to assembly.
+**Key findings:**
+- DaVinci Python API CANNOT position clips at arbitrary timecodes (AppendToTimeline is sequential-only). Spent hours fighting this — it's a fundamental API limitation.
+- Computer-use MCP CAN access DaVinci (bundle ID: `com.blackmagic-design.DaVinciResolve`) but too slow for 164 asset placements.
+- FCPXML format is NOT the problem — it places everything perfectly. The OLD builder code had logic bugs.
+- Voice regenerated at 150 WPM (was 205 WPM — way too fast). FFmpeg atempo used for time-stretch.
+- Whisper alignment re-run on 150 WPM narration (667 sentences, 151 WPM avg).
+- `chapter_assembler.py` written — narration-to-segment matching, chapter splitting logic (reusable for future videos)
+- `audio_mixer.py` written — pure Python stereo mixer for narration+music (no FFmpeg needed)
 
-**Strategy:** Build each chapter as a separate FCPXML, import one at a time into DaVinci, verify each looks right before moving on. This prevents the monolithic builder from cycling images or carpet-bombing SFX.
+**Decision: Build custom FCPXML builder v2 from scratch**
 
-**The 5 chapters** (from director v4):
-1. **INTRO + THE FORMULA** (0-250s) — Ford Pinto, Grimshaw, Wells Fargo, Purdue
-2. **THE DATA** (250-460s) — Facebook, Cambridge Analytica, Zuckerberg hearing
-3. **THE MACHINES** (460-680s) — AI scraping, training data, copyright
-4. **THE RENT** (680-900s) — RealPage, rent algorithms, settlements
-5. **THE RECKONING** (900-1200s) — GDPR, proportional fines, Eliana Esquivel, thesis
+The old `fcpxml_builder.py` has unfixable logic — cycling images, SFX carpet-bombing, clip looping. Building fresh from director v4 + Whisper alignment.
 
-**For each chapter:**
-1. Extract segments from `storyboards/breaking_law_directed_v4.json` for that time range
-2. Pick UNIQUE visuals for each segment (no repeats within chapter)
-3. Place 1-2 SFX MAX per chapter at key dramatic moments (using Whisper word timestamps)
-4. Assign that chapter's music track (track 1→ch1, track 2→ch2, etc.)
-5. Build FCPXML for just that chapter
-6. Import into DaVinci via API (`ImportTimelineFromFile` with `timelineName`)
-7. Verify it looks right
-8. Move to next chapter
+### How to Resume (next session) — FCPXML Builder v2
+
+**Build `pipeline_v2/fcpxml_builder_v2.py` from scratch.** Do NOT modify the old builder.
+
+**Inputs:**
+- `storyboards/breaking_law_directed_v4.json` — director decisions (113 segments)
+- `audio/breaking_law/narration_alignment.json` — Whisper word-level timestamps (150 WPM)
+- `audio/breaking_law/narration.wav` — 150 WPM narration (27.3 min)
+
+**What it must place (ALL at exact FCPXML timecodes):**
+1. **V1**: Director's exact visual picks per segment. Video clips at `min(seg_duration, source_duration)`. Images at 5-7s. No gap-filling with random images — if a segment is 30s with a 5s image, hold the image for 5s then advance to the next segment's visual early.
+2. **V2**: 50 text overlay MOVs (`assets/breaking_law/overlays/tw_*.mov`) at narration-synced positions. Use `find_overlay_file()` from `chapter_assembler.py` for text→filename mapping.
+3. **V3**: 5 chapter card MOVs at chapter transitions. 3s duration each, 2s before content.
+4. **A1**: Full narration WAV (`narration.wav`, 27.3 min at 150 WPM).
+5. **A2**: Music per chapter (ducked WAVs: `track_01_tense_ducked.wav` etc.). One track per chapter section, crossfade at transitions.
+6. **A3/A4**: Max 2 SFX per chapter (10 total). Place at Whisper WORD timestamps for dramatic moments, not segment boundaries. Use `pick_chapter_sfx()` from `chapter_assembler.py`.
+7. **Clip audio**: `play` = no volume adjustment. `play_then_mute` = volume keyframes (full → ducked at `clip_audio_duration`). `mute` = `<adjust-volume amount="0dB"/>`.
+8. **Transitions**: `fade_from_black` at start, `dissolve` at chapter boundaries, `cut` everywhere else.
+9. **Ken Burns**: `zoom_target` field → FCPXML transform keyframes (1.0→1.05 over clip duration for slow zoom).
+
+**Editing rules to enforce (from `playbook/editing.json`):**
+- 5-7s per cut (documentary pacing)
+- No same image back-to-back
+- Max 2 SFX per chapter
+- Ken Burns zoom on every still image
+- Music state per segment (playing/ducking/silent)
+
+**Import into DaVinci:**
+```python
+mp.ImportTimelineFromFile(fcpxml_path, {"timelineName": "Breaking Law FINAL"})
+```
+If API returns None, fall back to AppleScript File > Import > Timeline.
+
+**Reusable components from this session:**
+- `chapter_assembler.py` — `match_segments_to_narration()`, `split_into_chapters()`, `find_overlay_file()`, `pick_chapter_sfx()`, `find_media_file()`
+- `audio_mixer.py` — `mix_chapter_audio()` stereo mixer
+- `_OVERLAY_MANUAL` dict — text→filename mapping for all 50 overlays
 
 **Key files:**
 ```
 storyboards/breaking_law_directed_v4.json   — director decisions (113 segments)
-audio/breaking_law/narration.wav            — clean narration (20 min)
-audio/breaking_law/narration_alignment.json — word-level timestamps
+audio/breaking_law/narration.wav            — 150 WPM narration (27.3 min)
+audio/breaking_law/narration_alignment.json — word-level timestamps (667 sentences)
+audio/breaking_law/narration_205wpm_backup.wav — backup of original 205 WPM
 footage/breaking_law/clips/                 — 23 video clips (transcribed)
 footage/breaking_law/images/                — images in seg_NNN/ subdirs
 footage/breaking_law/gap_fills/images/      — 251 gap-fill images
-assets/breaking_law/overlays/               — 75 overlay MOVs (tw_NNN_*.mov)
-assets/breaking_law/chapters/               — 5 chapter card MOVs
+assets/breaking_law/overlays/               — 50 overlay MOVs (tw_NNN_*.mov)
+assets/breaking_law/chapters/               — 4 chapter card MOVs
 assets/sfx/                                 — 18 normalized SFX WAVs (*_loud.wav)
-audio/breaking_law/music_tracks/            — 4 music WAVs (tense/investigative/emotional/dark)
+audio/breaking_law/music_tracks/            — 4 music WAVs + ducked versions
+pipeline_v2/chapter_assembler.py            — narration matching, chapter splitting, overlay lookup
+pipeline_v2/audio_mixer.py                  — stereo narration+music mixer
 ```
 
 **Environment:**
 ```bash
 cd /Users/jefflawrence/Documents/youtube-automation-production
-export PATH="/opt/homebrew/bin:/Users/jefflawrence/.local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 # Python: venv/bin/python (NOT system python)
 # DaVinci API: PYTHONPATH="/Library/Application Support/Blackmagic Design/DaVinci Resolve/Developer/Scripting/Modules"
+# FFmpeg: /opt/homebrew/bin/ffmpeg (allowed for audio only)
 # Whisper SSL fix: SSL_CERT_FILE=$(venv/bin/python -c "import certifi; print(certifi.where())")
-# DaVinci import: mp.ImportTimelineFromFile(path, {"timelineName": "..."})  ← MUST pass timelineName
+# DaVinci computer-use: bundle ID com.blackmagic-design.DaVinciResolve, display LG ULTRAWIDE (1)
 ```
 
 ### Immediate TODO
