@@ -182,7 +182,26 @@ Key bugs found:
 - [ ] Director second pass (self-review for source reuse, thin coverage)
 - [ ] exec_producer_pre: should check director JSON, not stale DaVinci timeline
 
-### Session 2026-04-04: Assembly Breakthrough
+### Session 2026-04-04: Assembly Breakthrough + FCPXML Builder v2
+
+**Completed:**
+- [x] Narration regenerated at 175 WPM (ColdFusion/HMW pace). Was 205 (too fast) → 150 (too slow) → 175 ✓
+- [x] Whisper alignment on 175 WPM (609 sentences, 176 WPM avg)
+- [x] Text-similarity matching fixed in `chapter_assembler.py` — handles spelled-out numbers vs digits ("thirteen" → "13")
+- [x] `fcpxml_builder_v2.py` built from scratch — places ALL elements at exact timecodes
+- [x] FCPXML import confirmed — V1 (98 clips), V2 (75 overlays), V3 (4 chapter cards), A1 (narration), A2 (6 music), A3/A4 (12 SFX) all placed
+- [x] DaVinci computer-use MCP working (bundle ID: `com.blackmagic-design.DaVinciResolve`)
+- [x] Exec producer checks automated — found 25 issues
+
+**Known issues (fix next session):**
+- [ ] 11 long image holds (>20s single image — editing rules say max 20s). Need sub-segmenting: split into 5-7s cuts with diverse images
+- [ ] 13 V1 gaps (up to 35s black screen). Caused by gaps between matched segments. Builder must fill with extended clips or cutaways
+- [ ] Coverage overshoot (V1 ends 1521s vs narration 1404s). Cap V1 at narration end
+- [ ] First frame is black (fade_from_black transition). Remove — start on Facebook clip immediately
+- [ ] Chapter card at 43s shows `wiki_0_mathematical_formula.jpg` instead of `chapter_the_formula.mov`
+- [ ] A4 only has 1 SFX (should have 6). Lane attachment bug for some SFX
+
+**Session 2026-04-04 earlier: Assembly Attempts (failed approaches documented)**
 
 **Key findings:**
 - DaVinci Python API CANNOT position clips at arbitrary timecodes (AppendToTimeline is sequential-only). Spent hours fighting this — it's a fundamental API limitation.

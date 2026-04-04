@@ -111,24 +111,55 @@ MAX_IMAGE_HOLD_SEC = 15.0  # images can hold longer (no fair use concern)
 # ─── Text normalization for matching ────────────────────────────────────────
 
 def normalize_text(text):
-    """Normalize text for fuzzy matching between director and narration."""
+    """Normalize text for fuzzy matching between director and narration.
+
+    Handles the core matching problem: director uses spelled-out numbers
+    ("thirteen-year-old") while Whisper transcribes digits ("13 year old").
+    """
     t = text.lower()
-    # Remove punctuation
+    # Remove punctuation and hyphens
+    t = t.replace('-', ' ').replace('—', ' ').replace("'", "").replace("'", "")
     t = re.sub(r'[^\w\s]', '', t)
     # Normalize whitespace
     t = re.sub(r'\s+', ' ', t).strip()
-    # Common number word → digit mappings
-    replacements = {
-        'five billion': '5 billion',
-        'one point one billion': '11 billion',
-        'eighty seven million': '87 million',
-        'three point five million': '35 million',
-        'one trillion': '1 trillion',
-        'six billion': '6 billion',
+
+    # Number word → digit (comprehensive)
+    number_words = {
+        'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',
+        'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9',
+        'ten': '10', 'eleven': '11', 'twelve': '12', 'thirteen': '13',
+        'fourteen': '14', 'fifteen': '15', 'sixteen': '16', 'seventeen': '17',
+        'eighteen': '18', 'nineteen': '19', 'twenty': '20', 'thirty': '30',
+        'forty': '40', 'fifty': '50', 'sixty': '60', 'seventy': '70',
+        'eighty': '80', 'ninety': '90', 'hundred': '100', 'thousand': '000',
     }
-    for word, digit in replacements.items():
-        t = t.replace(word, digit)
+    words = t.split()
+    normalized_words = []
+    for w in words:
+        if w in number_words:
+            normalized_words.append(number_words[w])
+        else:
+            normalized_words.append(w)
+    t = ' '.join(normalized_words)
+
+    # Compound number phrases
+    t = t.replace('20 4', '24')
+    t = t.replace('13 year old', '13 year old')  # already fine
+    t = t.replace('point 5', '.5').replace('point 1', '.1')
+    t = t.replace('point 4', '.4').replace('point 7', '.7')
+
     return t
+
+
+def text_similarity(a, b):
+    """Compute word-overlap similarity between two normalized strings."""
+    words_a = set(normalize_text(a).split())
+    words_b = set(normalize_text(b).split())
+    if not words_a or not words_b:
+        return 0.0
+    overlap = words_a & words_b
+    # Jaccard-like but weighted toward the shorter text
+    return len(overlap) / min(len(words_a), len(words_b))
 
 
 def first_n_words(text, n=6):
@@ -156,24 +187,26 @@ def load_alignment():
 
 
 def match_segments_to_narration(segments, alignment):
-    """Match each director segment to narration timing via sequential word-count matching.
+    """Match director segments to narration timing using text similarity + word count.
 
-    Both director segments and narration sentences follow the same script order.
-    Instead of fuzzy text matching (fails because Whisper transcribes numbers/names
-    differently), we consume narration sentences by word count to match each segment.
+    Strategy: for each director segment, find the narration sentence that best
+    matches its opening words (text similarity). If no good match, fall back to
+    word-count consumption. Never go backwards in the sentence list.
+
+    This handles the core problem: director uses "thirteen-year-old" while
+    Whisper transcribes "13 year old".
 
     Returns segments with added `_narr_start` and `_narr_end` fields.
     """
     sentences = alignment["sentences"]
-    sent_idx = 0  # current position in sentences
+    sent_idx = 0
     matched = []
 
     for seg in segments:
         seg_text = seg.get("text", "")
 
-        # Skip stage directions like [CHAPTER: THE FORMULA]
+        # Skip stage directions
         if not seg_text.strip() or seg_text.strip().startswith("["):
-            # Use previous segment's end as this segment's time
             if matched:
                 seg["_narr_start"] = matched[-1]["_narr_end"]
                 seg["_narr_end"] = matched[-1]["_narr_end"]
@@ -184,40 +217,78 @@ def match_segments_to_narration(segments, alignment):
             continue
 
         seg_word_count = len(seg_text.split())
+        seg_norm = normalize_text(seg_text)
+        seg_first = ' '.join(seg_norm.split()[:4])
 
-        # Record where this segment starts in narration
-        if sent_idx < len(sentences):
-            seg["_narr_start"] = sentences[sent_idx]["start"]
-        elif matched:
-            seg["_narr_start"] = matched[-1]["_narr_end"]
-        else:
-            seg["_narr_start"] = 0.0
+        # ── Step 1: Try text-similarity match ──
+        # Search forward from sent_idx for a sentence whose first words match
+        best_match = None
+        best_score = 0
+        search_window = min(20, len(sentences) - sent_idx)
 
-        # Consume sentences until we've covered ~this segment's word count
-        consumed_words = 0
-        end_idx = sent_idx
-        target_words = max(seg_word_count * 0.85, 3)  # 85% threshold
+        for j in range(sent_idx, sent_idx + search_window):
+            if j >= len(sentences):
+                break
+            sent_norm = normalize_text(sentences[j]["text"])
+            sent_first = ' '.join(sent_norm.split()[:4])
 
-        while end_idx < len(sentences) and consumed_words < target_words:
-            sent_words = len(sentences[end_idx]["text"].split())
-            consumed_words += sent_words
-            end_idx += 1
+            # Check first-words overlap
+            if seg_first and sent_first:
+                # Compare first 15 chars of normalized text
+                if (seg_first[:12] in sent_first or sent_first[:12] in seg_first):
+                    best_match = j
+                    best_score = 1.0
+                    break
+                # Word overlap score
+                score = text_similarity(seg_text[:50], sentences[j]["text"][:50])
+                if score > best_score and score >= 0.4:
+                    best_match = j
+                    best_score = score
 
-        # The end time is the end of the last consumed sentence
-        if end_idx > sent_idx and end_idx <= len(sentences):
+        if best_match is not None:
+            # Found a text match — record start time
+            seg["_narr_start"] = sentences[best_match]["start"]
+            sent_idx = best_match
+
+            # Consume sentences to cover this segment's word count
+            consumed = 0
+            end_idx = best_match
+            target = max(seg_word_count * 0.8, 3)
+            while end_idx < len(sentences) and consumed < target:
+                consumed += len(sentences[end_idx]["text"].split())
+                end_idx += 1
+
             seg["_narr_end"] = sentences[end_idx - 1]["end"]
-        elif matched:
-            seg["_narr_end"] = seg["_narr_start"] + (seg_word_count / 3.0)
+            sent_idx = end_idx
         else:
-            seg["_narr_end"] = seg_word_count / 3.0
+            # ── Step 2: Fallback — consume by word count ──
+            if sent_idx < len(sentences):
+                seg["_narr_start"] = sentences[sent_idx]["start"]
+            elif matched:
+                seg["_narr_start"] = matched[-1]["_narr_end"]
+            else:
+                seg["_narr_start"] = 0.0
 
-        sent_idx = end_idx
+            consumed = 0
+            end_idx = sent_idx
+            target = max(seg_word_count * 0.8, 3)
+            while end_idx < len(sentences) and consumed < target:
+                consumed += len(sentences[end_idx]["text"].split())
+                end_idx += 1
+
+            if end_idx > sent_idx:
+                seg["_narr_end"] = sentences[end_idx - 1]["end"]
+            else:
+                seg["_narr_end"] = seg["_narr_start"] + (seg_word_count / 3.0)
+
+            sent_idx = end_idx
+
         matched.append(seg)
 
-    # Sanity check: ensure monotonically increasing times
+    # Sanity: monotonically increasing
     for i in range(1, len(matched)):
-        if matched[i]["_narr_start"] < matched[i-1]["_narr_start"]:
-            matched[i]["_narr_start"] = matched[i-1]["_narr_end"]
+        if matched[i]["_narr_start"] < matched[i - 1]["_narr_start"]:
+            matched[i]["_narr_start"] = matched[i - 1]["_narr_end"]
         if matched[i]["_narr_end"] < matched[i]["_narr_start"]:
             matched[i]["_narr_end"] = matched[i]["_narr_start"] + 1.0
 

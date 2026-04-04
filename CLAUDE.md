@@ -92,8 +92,11 @@ See MEMORY.md for full function list and pipeline order.
 - **Voice**: DONE — `audio/breaking_law/narration.wav` (20 min, 0 hallucination, clean)
 - **Assets**: ALL READY — 23 video clips (transcribed), 447 images (vision-analyzed), 75 overlay MOVs, 5 chapter cards, 18 SFX (48kHz), 4 music tracks
 - **Director v4**: DONE — `storyboards/breaking_law_directed_v4.json` (full data: transcripts + vision + alignment)
-- **Voice**: Regenerated at 150 WPM (was 205 WPM). File: `audio/breaking_law/narration.wav` (27.3 min). Backup: `narration_205wpm_backup.wav`
-- **Whisper alignment**: Re-run on 150 WPM narration. 667 sentences, 151 WPM avg. File: `audio/breaking_law/narration_alignment.json`
+- **Voice**: Regenerated at 175 WPM (was 205→150→175). File: `audio/breaking_law/narration.wav` (23.4 min). Backups: `narration_205wpm_backup.wav`, `narration_150wpm_backup.wav`
+- **Whisper alignment**: Re-run on 175 WPM narration. 609 sentences, 176 WPM avg. File: `audio/breaking_law/narration_alignment.json`
+- **FCPXML builder v2**: `pipeline_v2/fcpxml_builder_v2.py` — places ALL elements at exact timecodes. Working. Import confirmed.
+- **Text-similarity matching FIXED**: `chapter_assembler.py` now matches by text similarity (handles spelled-out numbers vs digits). Was broken before (word-count only → drift after segment 10).
+- **Exec producer found 25 issues**: 11 long image holds (>20s), 13 V1 gaps (up to 35s black screen), coverage overshoot. All fixable in builder.
 - **BLOCKER**: Assembly — DaVinci Python API CANNOT position clips at arbitrary timecodes (AppendToTimeline is sequential-only). Computer-use MCP CAN see DaVinci (bundle ID: `com.blackmagic-design.DaVinciResolve`) but manual placement of 164 assets is impractical.
 - **SOLUTION**: Build new custom FCPXML builder v2 from scratch. FCPXML places everything at exact timecodes and DaVinci imports it perfectly. The OLD builder had logic bugs (cycling images, SFX carpet-bombing) — the FORMAT was never the problem.
 - **NEXT SESSION**: Build `pipeline_v2/fcpxml_builder_v2.py` — see ROADMAP.md
