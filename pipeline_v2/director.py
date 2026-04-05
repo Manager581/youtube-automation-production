@@ -261,17 +261,18 @@ def build_director_prompt(segments, clips, images, sfx, playbook_rules):
     
     # Summarize available assets — include vision descriptions so director
     # can make informed visual choices (not just filename matching)
+    # Show ALL clips and ALL images (not capped) with longer descriptions
     clip_summary = "\n".join(
         f"  - {c['filename'][:50]} ({c['duration']:.0f}s)"
-        f" [{c.get('vision_description', '')[:80]}]"
-        f" Says: {c.get('transcript_preview', '')[:60]}"
-        for c in clips[:25]
+        f" [{c.get('vision_description', '')[:120]}]"
+        f" Says: {c.get('transcript_preview', '')[:80]}"
+        for c in clips
     )
 
     image_summary = "\n".join(
-        f"  - {img['filename'][:50]}"
-        f" [{img.get('vision_description', '')[:60]}]"
-        for img in images[:50]
+        f"  - {img['filename'][:60]}"
+        f" [{img.get('vision_description', '')[:120]}]"
+        for img in images
     )
     
     sfx_summary = "\n".join(
@@ -289,7 +290,7 @@ def build_director_prompt(segments, clips, images, sfx, playbook_rules):
             beats_str = f" [markers: {', '.join(b['type'] for b in seg['beats'])}]"
         seg_text += f"  Seg {i} [{seg['voice_register']}]{beats_str}: {seg['text'][:120]}...\n"
     
-    prompt = f"""You are an editorial director for a YouTube documentary. You must make EVERY creative decision for each segment.
+    prompt = f"""You are an editorial director for a ColdFusion/How Money Works style YouTube documentary. You make EVERY creative decision.
 
 SCRIPT ({len(segments)} segments):
 {seg_text}
@@ -306,35 +307,68 @@ AVAILABLE SFX ({len(sfx)} files):
 LEARNBYLEO EDITING RULES:
 {rules_text}
 
-For EACH segment (0 to {len(segments)-1}), output a JSON object with these fields:
-- "visual_file": exact filename to show (from clips or images above). PICK THE BEST MATCH for what's being said.
-- "visual_type": "video_clip" or "still_image"
-- "clip_start_sec": if video_clip, what second to start from (pick the most relevant moment)
-- "clip_audio": "mute" (during narration) or "play" (for interview quotes/dramatic moments) or "play_then_mute" (play clip audio for X seconds then mute)
-- "clip_audio_duration": if "play_then_mute", how many seconds of clip audio to play
-- "vo_pause_before": seconds to pause VO BEFORE this segment starts (0 for none, 0.5-3.0 for dramatic pause)
-- "vo_pause_after": seconds to pause VO AFTER this segment ends
-- "sfx_file": exact SFX filename to play at segment start, or null
-- "sfx_motivation": why this SFX (e.g., "tension before reveal", "impact on rejection")
-- "text_overlay": text to show on screen, or null
-- "text_style": "typewriter" or "static" or "lower_third"
-- "transition_in": "cut" or "dissolve" or "fade_from_black"
-- "transition_out": "cut" or "dissolve" or "fade_to_black"
-- "arc_position": "cold_open" / "context_setup" / "tension_build" / "revelation" / "emotional_peak" / "aftermath" / "chapter_transition"
-- "tension_level": 0.0 to 1.0
-- "zoom_target": "face" / "document" / "subject" / "wide" / null
-- "chapter_card": if this starts a new chapter, the chapter title (e.g., "THE TENANTS"), otherwise null
-- "music_state": "playing" (music audible) / "ducking" (music low under VO) / "silent" (no music) / "rising" (music swelling for impact) / "transition" (music bridges between sections)
-- "notes": brief editorial note explaining your choices
+## YOUR TASK: SUB-EDIT each segment into VISUAL BEATS
 
-CRITICAL RULES:
-1. NEVER use the same clip file more than 3 times across all segments
-2. Match visuals to narration content (if talking about Mary Louis, show related footage)
-3. Use clip audio ONLY for powerful interview quotes — mute during regular narration
-4. Pause VO BEFORE reveals (LearnByLeo: anticipation), not after
-5. SFX only at genuine dramatic moments — not every segment
-6. Chapter cards at major topic shifts (5-step transition)
-7. Vary the energy: tension_build → revelation → aftermath cycling
+Each script segment may contain MULTIPLE sentences. You must sub-divide each segment into 5-7 second VISUAL BEATS. Each beat gets its own visual that SPECIFICALLY supports what the VO says during those seconds.
+
+For example, if a segment says: "Facebook was fined five billion dollars. On the day the fine was announced, Facebook's stock went up. Mark Zuckerberg personally gained one point one billion dollars."
+That's THREE visual beats:
+1. Facebook fine news footage (0-5s)
+2. Facebook stock chart going UP (5-10s)
+3. Zuckerberg looking wealthy/powerful (10-15s)
+
+NOT one clip for 15 seconds. ColdFusion cuts every 5-7 seconds with a NEW visual.
+
+## OUTPUT FORMAT
+
+For EACH segment, output a JSON object with a "beats" array containing 1+ visual beats:
+
+{{
+  "segment_index": 0,
+  "beats": [
+    {{
+      "text": "the narration text for this beat",
+      "visual_file": "exact_filename.mp4 or .jpg",
+      "visual_type": "video_clip" or "still_image",
+      "clip_start_sec": 0,
+      "clip_audio": "mute",
+      "clip_audio_duration": null,
+      "zoom_target": "wide"
+    }},
+    {{
+      "text": "next sentence or phrase",
+      "visual_file": "different_file.jpg",
+      "visual_type": "still_image",
+      "clip_start_sec": null,
+      "clip_audio": "mute",
+      "clip_audio_duration": null,
+      "zoom_target": "face"
+    }}
+  ],
+  "vo_pause_before": 0,
+  "vo_pause_after": 0,
+  "sfx": {{"file": "impact_01_loud.wav", "motivation": "reason"}} or null,
+  "text_overlay": "KEY STAT" or null,
+  "text_style": "static",
+  "transition_in": "cut",
+  "transition_out": "cut",
+  "arc_position": "context_setup",
+  "tension_level": 0.5,
+  "chapter_card": null,
+  "music_state": "ducking",
+  "notes": "editorial reasoning"
+}}
+
+## CRITICAL RULES
+
+1. **NEVER use the same image/clip more than 2 times** across the entire video. Track what you've used.
+2. **ENTITY MATCHING**: When the narration mentions a named entity (Facebook, Ford, Zuckerberg, Wells Fargo, Purdue, RealPage), the visual MUST show that specific entity. DO NOT use generic "corporate boardroom" footage when the VO names a specific company. Search the available images for the entity name in the filename.
+3. **EVERY 5-7 seconds must have a NEW visual** — sub-divide long segments into beats. Each beat's visual must MATCH the words being spoken in those seconds.
+4. Use clip audio ONLY for powerful moments — mute during regular narration
+5. Pause VO BEFORE reveals (anticipation), not after
+6. SFX only at genuine dramatic moments — max 2 per chapter
+7. Chapter cards at major topic shifts
+8. Text overlays for key stats, names, and dramatic lines — NOT on every segment
 
 Output a JSON array of {len(segments)} objects. ONLY JSON, no other text."""
 
@@ -453,8 +487,8 @@ def validate_decisions(decisions, clips, images, sfx):
         vf = dec.get("visual_file", "")
         usage_count[vf] = usage_count.get(vf, 0) + 1
         
-        # Cap usage at 3
-        if usage_count[vf] > 3:
+        # Cap usage at 2 (documentary quality — avoid repetition)
+        if usage_count[vf] > 2:
             # Pick least-used alternative
             least_used = min(all_files, key=lambda f: usage_count.get(f, 0))
             dec["visual_file"] = least_used
