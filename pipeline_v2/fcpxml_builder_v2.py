@@ -290,11 +290,14 @@ class FCPXMLBuilderV2:
         # ── Collect lane clips ──
         lane_clips = []  # (lane, offset, duration, path, start, name, is_audio, extra)
 
-        # V2: Overlays
+        # V2: Overlays (skip the $5B overlay at intro — it's a black card that covers the news clip)
         overlay_count = 0
         for seg in segments:
             ov_text = seg.get("text_overlay")
             if not ov_text:
+                continue
+            # Skip the $5B overlay at intro — black card covers the Facebook news clip
+            if ov_text.startswith("$5,000,000,000") and seg["_narr_start"] < 5.0:
                 continue
             ov_path = find_overlay_file(ov_text)
             if not ov_path:

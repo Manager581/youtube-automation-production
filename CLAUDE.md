@@ -97,14 +97,22 @@ See MEMORY.md for full function list and pipeline order.
 - **FCPXML builder v2**: `pipeline_v2/fcpxml_builder_v2.py` — places ALL elements at exact timecodes. Working. Import confirmed.
 - **Text-similarity matching FIXED**: `chapter_assembler.py` now matches by text similarity (handles spelled-out numbers vs digits). Was broken before (word-count only → drift after segment 10).
 - **Exec producer found 25 issues**: 11 long image holds (>20s), 13 V1 gaps (up to 35s black screen), coverage overshoot. All fixable in builder.
-- **BLOCKER**: Assembly — DaVinci Python API CANNOT position clips at arbitrary timecodes (AppendToTimeline is sequential-only). Computer-use MCP CAN see DaVinci (bundle ID: `com.blackmagic-design.DaVinciResolve`) but manual placement of 164 assets is impractical.
-- **SOLUTION**: Build new custom FCPXML builder v2 from scratch. FCPXML places everything at exact timecodes and DaVinci imports it perfectly. The OLD builder had logic bugs (cycling images, SFX carpet-bombing) — the FORMAT was never the problem.
-- **NEXT SESSION**: Build `pipeline_v2/fcpxml_builder_v2.py` — see ROADMAP.md
+- **FCPXML builder v2**: BUILT and imports correctly. V1 gaps fixed, image splitting added. But visual QUALITY issues remain (see diagnosis below).
+- **Narration patched**: 9 F5-TTS hallucinations silenced (including chapter transition garble)
+- **NEXT SESSION**: Fix director + builder visual quality issues. See `DIAGNOSIS_2026-04-04.md` and ROADMAP.md
+
+### 6 Root Causes Diagnosed (2026-04-04) — see DIAGNOSIS_2026-04-04.md
+1. **Director picks ONE visual per 15-40s segment** — needs sub-editing into 5-7s beats with visual per sentence
+2. **18 images used 3+ times** — director has no usage cap / deduplication
+3. **41 visual-narration mismatches** — generic stock footage when specific entity footage needed (e.g., "stock went up" shows generic trading floor, not Facebook stock chart)
+4. **251 gap-fill images exist but director never sees them** — gap resolver runs AFTER director. Director needs re-run with full pool
+5. **FCPXML builder splits long images with RANDOM alternatives** — needs keyword-filtered topical images
+6. **Exec producer doesn't check visual-narration content sync** — only checks structure, not semantics
 
 ### What Works (don't re-build)
 - Script v45 (95+ score) ✅
-- Narration WAV at 150 WPM (27.3 min, clean) ✅
-- Whisper alignment at 150 WPM (word-level timestamps, 667 sentences) ✅
+- Narration WAV at 175 WPM (23.4 min, patched) ✅
+- Whisper alignment at 175 WPM (word-level timestamps, 609 sentences) ✅
 - Director v4 (transcripts + vision + alignment, 113 segments) ✅
 - 23 video clips (transcribed via Whisper) ✅
 - 447 images (vision-analyzed via Claude) ✅
@@ -116,10 +124,12 @@ See MEMORY.md for full function list and pipeline order.
 - `chapter_assembler.py` — narration-to-segment matching, chapter splitting (reusable) ✅
 - `audio_mixer.py` — pure Python narration+music stereo mixer (reusable) ✅
 
-### What's BROKEN (must rebuild)
-- OLD `fcpxml_builder.py`: cycles same image for 5+ min, carpet-bombs SFX, loops V1 clips. DO NOT USE.
-- DaVinci API: AppendToTimeline ignores recordFrame — CANNOT position overlays/SFX/chapter cards. Only useful for bulk import + property setting (zoom, volume).
-- Computer-use MCP: CAN see DaVinci but too slow for 164 asset placements. Use for verification only.
+### What's BROKEN (must fix — see DIAGNOSIS_2026-04-04.md)
+- **Director v4**: picks ONE visual per 15-40s segment (needs 5-7s per beat). Uses 18 images 3+ times. Doesn't see gap-fill images (251 unused). Picks generic stock footage instead of entity-specific visuals. MUST re-run director with sub-editing + full image pool + usage cap + entity matching.
+- **FCPXML builder v2**: splits long images with random alternatives (needs keyword filtering). Otherwise working.
+- **Voice generator**: chunk boundary splits create robotic breaks. `[CHAPTER]` and `[PAUSE]` markers get spoken as garble. Needs sentence-boundary chunking + hallucination detection gate.
+- **Exec producer**: doesn't check visual-narration content sync. Needs semantic matching check.
+- OLD `fcpxml_builder.py`: DO NOT USE. Superseded by v2.
 
 ### Assembly Plan: Custom FCPXML Builder v2
 Build `pipeline_v2/fcpxml_builder_v2.py` from scratch. Reads director v4 + Whisper alignment directly.

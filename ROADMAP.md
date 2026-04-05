@@ -193,10 +193,30 @@ Key bugs found:
 - [x] DaVinci computer-use MCP working (bundle ID: `com.blackmagic-design.DaVinciResolve`)
 - [x] Exec producer checks automated — found 25 issues
 
-**Known issues (fix next session):**
-- [ ] 11 long image holds (>20s single image — editing rules say max 20s). Need sub-segmenting: split into 5-7s cuts with diverse images
-- [ ] 13 V1 gaps (up to 35s black screen). Caused by gaps between matched segments. Builder must fill with extended clips or cutaways
-- [ ] Coverage overshoot (V1 ends 1521s vs narration 1404s). Cap V1 at narration end
+**Fixed (later in same session):**
+- [x] V1 gaps (13 black screen gaps) — extend each segment to next segment's start
+- [x] Long image holds — split >7.5s images into 5-6s sub-clips
+- [x] Chapter cards — use MOV files from chapters/ directory
+- [x] $5B intro overlay removed (was covering the news clip)
+- [x] Narration patched — 9 F5-TTS hallucinations silenced
+- [x] SFX lane alternation fixed (global not per-chapter)
+
+**6 Root Causes Diagnosed (see DIAGNOSIS_2026-04-04.md):**
+1. Director picks ONE visual per 15-40s segment (needs 5-7s sub-editing per sentence)
+2. 18 images used 3+ times (no usage cap in director)
+3. 41 visual-narration mismatches (generic stock footage instead of entity-specific)
+4. 251 gap-fill images never seen by director (runs before gap resolver)
+5. FCPXML builder splits long images with RANDOM alternatives (needs keyword filter)
+6. Exec producer doesn't check visual-narration content sync
+
+**Fix plan for next session (in priority order):**
+- [ ] **Fix #5**: Keyword-filter split images in fcpxml_builder_v2.py (20 min)
+- [ ] **Fix #2**: Add visual usage cap to director (max 2 per clip) (15 min)
+- [ ] **Fix #4**: Re-run director with gap-fill images in pool (10 min + director runtime)
+- [ ] **Fix #1**: Sub-edit director segments into 5-7s visual beats (2-3 hours — fundamental change to director.py)
+- [ ] **Fix #3**: Entity matching in director (narration mentions "Facebook" → visual MUST contain Facebook) (1 hour)
+- [ ] **Fix #6**: Add content sync check to exec producer (1 hour)
+- [ ] **Voice fix**: Sentence-boundary chunking in voice_generator.py + hallucination detection gate
 - [ ] First frame is black (fade_from_black transition). Remove — start on Facebook clip immediately
 - [ ] Chapter card at 43s shows `wiki_0_mathematical_formula.jpg` instead of `chapter_the_formula.mov`
 - [ ] A4 only has 1 SFX (should have 6). Lane attachment bug for some SFX
