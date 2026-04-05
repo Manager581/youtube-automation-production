@@ -1,0 +1,3562 @@
+{
+  "schema_version": "3.0",
+  "directed": true,
+  "director": "pipeline_v2 (Claude + LearnByLeo)",
+  "segment_count": 113,
+  "scene_count": 89,
+  "total_words": 4167,
+  "estimated_duration_sec": 1199.38,
+  "assets_used": {
+    "clips": 33,
+    "images": 32,
+    "sfx": 18
+  },
+  "scenes": [
+    {
+      "arc": "cold_open",
+      "segments": [
+        {
+          "text": "In 2019, Facebook was fined five billion dollars. The largest penalty in FTC history. Eighty-seven million people's data \u2014 harvested, profiled, and sold to a political targeting firm without their knowledge. And on the day the fine was announced, Facebook's stock went up. The market added six billion dollars in value. Mark Zuckerberg personally gained one point one billion dollars in a single day. The punishment made the company richer than if the government had done nothing.",
+          "voice_register": "neutral",
+          "word_count": 77,
+          "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 3,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "$5,000,000,000",
+          "text_style": "static",
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "cold_open",
+          "tension_level": 0.4,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "playing",
+          "notes": "Open on news footage of fine announcement. Let 3s of anchor audio ground the viewer in reality before VO takes over. Dollar figure slammed onscreen as static text \u2014 no animation, blunt weight.",
+          "_timeline_start_sec": 0.0,
+          "_timeline_end_sec": 33.8
+        },
+        {
+          "text": "How is that possible?",
+          "voice_register": "neutral",
+          "word_count": 4,
+          "visual_file": "pexels_5668858_Mark_Zuckerberg_congressional_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_01_loud.wav",
+            "motivation": "rhetorical hook lands harder in silence \u2014 shimmer signals a reframe is coming",
+            "type": "shimmer"
+          },
+          "text_overlay": "HOW?",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "cold_open",
+          "tension_level": 0.5,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "1s pause before the question so the $5B figure breathes. Zuckerberg's face under the klieg lights IS the answer visually. Shimmer SFX underscores the rhetorical pivot.",
+          "_timeline_start_sec": 33.8,
+          "_timeline_end_sec": 37.88
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "To understand, you need to go back to 1977. Because someone had to discover this trick. And the discovery started with a car on fire.",
+          "voice_register": "neutral",
+          "word_count": 25,
+          "visual_file": "corporate_fines_cost_of_doing_business.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_02_loud.wav",
+            "motivation": "time-jump whoosh cues the viewer we're rewinding to 1977",
+            "type": "whoosh"
+          },
+          "text_overlay": "1977",
+          "text_style": "static",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.3,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Dissolve in signals time shift. Whoosh SFX + year card = cinematic rewind. Hosts-at-desk footage stands in for 'experts talking about fines' \u2014 abstract enough to not mislead.",
+          "_timeline_start_sec": 68.94,
+          "_timeline_end_sec": 83.78
+        }
+      ]
+    },
+    {
+      "arc": "chapter_transition",
+      "segments": [
+        {
+          "text": "[CHAPTER: THE FORMULA]",
+          "voice_register": "neutral",
+          "word_count": 3,
+          "visual_file": "wiki_0_mathematical_formula.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0.5,
+          "sfx": {
+            "file": "impact_01_loud.wav",
+            "motivation": "chapter punch \u2014 single hard impact before silence, per LearnByLeo 5-step chapter transition",
+            "type": "impact"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "fade_from_black",
+          "transition_out": "fade_to_black",
+          "arc_position": "chapter_transition",
+          "tension_level": 0.35,
+          "zoom_target": null,
+          "chapter_card": "THE FORMULA",
+          "music_state": "transition",
+          "notes": "Full 5-step chapter transition: (1) impact SFX punch, (2) 0.5s silence, (3) chapter card on dark background, (4) fade out, (5) new energy begins seg 4. Music swells briefly then cuts.",
+          "_timeline_start_sec": 0.0,
+          "_timeline_end_sec": 0.863484521238301
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "In 1977, Ford knew the Pinto's fuel tank ruptured in rear-end collisions. They had the crash test data. Two engineers wrote a cost-benefit analysis \u2014 an actual document, with actual numbers. Fix every Pinto: one hundred and thirty-seven million dollars. Expected wrongful death payouts: forty-nine point five million. They shipped the car.",
+          "voice_register": "measured",
+          "word_count": 52,
+          "visual_file": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "CRASH TEST DATA, 1977",
+          "text_style": "typewriter",
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.5,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Typewriter reveals 'CRASH TEST DATA, 1977' as VO describes the engineers writing their memo. Dark archival footage + typewriter text sells the documentary authenticity.",
+          "_timeline_start_sec": 85.18,
+          "_timeline_end_sec": 105.84
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "A thirteen-year-old boy named Richard Grimshaw was a passenger in a Pinto that was rear-ended in San Bernardino. The fuel tank ruptured. The driver burned to death. Richard survived \u2014 barely. Burned over his entire body. Lost parts of his fingers. Lost his left ear. Years of skin grafts. A childhood replaced by hospital rooms. The jury awarded one hundred and twenty-five million dollars in punitive damages \u2014 the largest in American history. The judge reduced it to three point five million. Ford was acquitted of criminal homicide. No executive went to prison.",
+          "voice_register": "measured",
+          "word_count": 93,
+          "visual_file": "pexels_5668473_Ford_Pinto_fire_crash_archival.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_02_loud.wav",
+            "motivation": "body impact SFX on burned car image \u2014 auditory stand-in for the crash that scarred Grimshaw",
+            "type": "impact"
+          },
+          "text_overlay": "RICHARD GRIMSHAW\nAGE 13",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.75,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "0.5s pause before the boy's name drops \u2014 anticipation before the human cost is revealed. Burned car photo is more visceral than clean archival. Lower-third names him immediately.",
+          "_timeline_start_sec": 105.84,
+          "_timeline_end_sec": 143.3
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "The fine was three point five million dollars. Ford kept selling cars. No one went to prison. And somewhere in a boardroom, someone noticed something. The cost of getting caught was less than the cost of doing the right thing.",
+          "voice_register": "measured",
+          "word_count": 40,
+          "visual_file": "Department_of_Justice_building.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 4,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "FINE: $3,500,000",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "DOJ building \u2014 the system that extracted $3.5M and called it justice. Fine amount slammed as static text, not animated, because this number should feel obscenely small and inert.",
+          "_timeline_start_sec": 144.38,
+          "_timeline_end_sec": 161.78
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "That might have been an isolated scandal. A single bad company making a single bad calculation. Except it wasn't.",
+          "voice_register": "neutral",
+          "word_count": 19,
+          "visual_file": "corporate_fines_cost_of_doing_business.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 12,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "low rumble under 'it wasn't' \u2014 signals something much larger is building",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.55,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Second use of hosts-at-desk \u2014 now feels like 'experts cataloguing a pattern' rather than a single case. Rumble SFX on 'Except it wasn't' signals the widening scope.",
+          "_timeline_start_sec": 161.78,
+          "_timeline_end_sec": 172.24
+        },
+        {
+          "text": "In 2010, a twenty-four-year-old bank teller named Yesenia Guitron did something dangerous. She told the truth. She'd watched her colleagues at Wells Fargo open accounts that customers never asked for \u2014 credit cards ordered to addresses that didn't exist, savings accounts funded by moving money between other accounts without permission. She knew why they did it. There was a quota: every customer should have eight products. \"Eight is Great.\" Miss the number and you get a warning. Miss it again and you get fired. So the tellers cheated. Because the alternative was unemployment.",
+          "voice_register": "tense",
+          "word_count": 93,
+          "visual_file": "Wells_Fargo_fake_accounts_scandal.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "YESENIA GUITRON\nBank Teller, 2010",
+          "text_style": "lower_third",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.65,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Dissolve in marks the shift to a new case study. Wells Fargo footage grounds us in that institution. Lower-third introduces her as a real person immediately \u2014 the human anchor.",
+          "_timeline_start_sec": 197.9,
+          "_timeline_end_sec": 237.4
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Yesenia called the company's ethics hotline and reported the fraud. Wells Fargo terminated her the same week. She never found steady work in banking again. Her name went on an industry blacklist \u2014 a record that follows you like a scar.",
+          "voice_register": "tense",
+          "word_count": 41,
+          "visual_file": "corporate_whistleblower.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_02_loud.wav",
+            "motivation": "impact on the word 'terminated' \u2014 the system punishing truth-telling is the shock",
+            "type": "impact"
+          },
+          "text_overlay": "TERMINATED",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.8,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Music goes silent as she gets fired \u2014 LearnByLeo says silence at emotional peaks hits harder than music. 'TERMINATED' static on screen is brutal and clean.",
+          "_timeline_start_sec": 237.4,
+          "_timeline_end_sec": 258.5
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "Three point five million fake accounts. Five thousand three hundred tellers fired for opening them. And the woman who designed the quota \u2014 Carrie Tolstedt, head of Community Banking \u2014 kept fifty-seven million dollars and got zero prison time. She served her sentence at home. Ford's formula required a memo. Wells Fargo's didn't even require a decision \u2014 just a number and a threat.",
+          "voice_register": "measured",
+          "word_count": 64,
+          "visual_file": "pexels_269077_corporate_financial_model_spre.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "3,500,000 FAKE ACCOUNTS\n5,300 TELLERS FIRED",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.65,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Spreadsheet image while numbers typewrite in \u2014 the corporate accounting aesthetic mirrors how Wells Fargo treated the fraud as a line item. Two-line typewriter build creates a data-reveal rhythm.",
+          "_timeline_start_sec": 258.5,
+          "_timeline_end_sec": 283.06
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "Ford needed a document to do this. Wells Fargo only needed a quota. The next company didn't need either. It just needed a head start.",
+          "voice_register": "measured",
+          "word_count": 25,
+          "visual_file": "corporate_boardroom_meeting_stock.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_01_loud.wav",
+            "motivation": "whoosh signals the formula leveling up to its next iteration \u2014 'next company didn't need either'",
+            "type": "whoosh"
+          },
+          "text_overlay": "THE FORMULA EVOLVES",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Boardroom as the locus of the formula \u2014 faceless, institutional. Whoosh SFX on 'next company' punctuates each escalation step. Text overlay names what VO is implying.",
+          "_timeline_start_sec": 283.5,
+          "_timeline_end_sec": 299.58
+        },
+        {
+          "text": "Purdue Pharma saw the lawsuits coming a decade early and withdrew ten point seven billion dollars from the company before anyone could calculate the fine. Richard Sackler promised a, quote, blizzard of prescriptions at OxyContin's launch. In Kermit, West Virginia \u2014 population four hundred \u2014 a single pharmacy received nine million opioid pills in two years. The pharmacist went to prison. The Sacklers moved their money. More than eight hundred thousand Americans died. The settlement: seven point four billion. The family's remaining fortune: thirteen billion. Nine thousand dollars per death. Ford valued a life at two hundred thousand in 1977. The Sacklers got it down to nine thousand.",
+          "voice_register": "measured",
+          "word_count": 108,
+          "visual_file": "Purdue_Pharma_opioid_Sackler_family.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 8,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_02_loud.wav",
+            "motivation": "deep rumble under '$10.7 billion withdrawn' \u2014 this number is almost incomprehensible, the rumble conveys dread",
+            "type": "rumble"
+          },
+          "text_overlay": "$10,700,000,000\nWITHDRAWN BEFORE BANKRUPTCY",
+          "text_style": "static",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.8,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Purdue documentary footage. The number on screen is the thesis made concrete \u2014 they saw the lawsuits coming and emptied the vault. Rumble plays under 'decade early' for maximum dread.",
+          "_timeline_start_sec": 299.58,
+          "_timeline_end_sec": 333.1
+        },
+        {
+          "text": "[PAUSE]",
+          "voice_register": "measured",
+          "word_count": 1,
+          "visual_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 3.0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.9,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "This is the [PAUSE] segment. 3 full seconds of silence on a DOJ settlement document \u2014 the viewer sits with Ford, Wells Fargo, Purdue. Music silent. No text. Let the weight accumulate before the thesis lands.",
+          "_timeline_start_sec": 0.863484521238301,
+          "_timeline_end_sec": 1.1513126949844013
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "The fine is cheaper than the profit. Every time. Without exception.",
+          "voice_register": "tense",
+          "word_count": 11,
+          "visual_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_new_loud.wav",
+            "motivation": "hard impact as the thesis drops \u2014 'every time, without exception' is the reveal",
+            "type": "impact"
+          },
+          "text_overlay": "PROFIT > FINE\nEVERY TIME.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.9,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Stay on the settlement document \u2014 the visual IS the argument. Impact SFX as the absolute ('Without exception') lands. Keep music silent so the words hit air. Text confirms what VO says.",
+          "_timeline_start_sec": 333.1,
+          "_timeline_end_sec": 339.78
+        },
+        {
+          "text": "The law doesn't prevent corporate crime. It prices it.",
+          "voice_register": "tense",
+          "word_count": 9,
+          "visual_file": "courtroom_justice_gavel.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "glass_shatter_01_loud.wav",
+            "motivation": "glass shatter is the thesis line shattering the myth of the law as deterrent \u2014 the single most important SFX in the video",
+            "type": "other"
+          },
+          "text_overlay": "THE LAW DOESN'T PREVENT CRIME.\nIT PRICES IT.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.95,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "1s pause for anticipation. Gavel coming down as the thesis line drops \u2014 perfect visual metaphor. Glass shatter destroys the myth. This is THE moment of the first half. Music rises briefly then cuts back to silence. Text stays on screen a beat longer than VO.",
+          "_timeline_start_sec": 347.08,
+          "_timeline_end_sec": 351.96
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "And the price keeps dropping. Since 2000, corporations have paid over one trillion dollars in fines and settlements in the United States alone. One hundred and twenty-seven companies have each paid more than a billion. And here's the number that should end every argument about whether the system works: companies caught repeatedly pay smaller fines as a percentage of their revenue over time. Not larger. Smaller. The more you violate, the better the deal gets.",
+          "voice_register": "measured",
+          "word_count": 75,
+          "visual_file": "Wall_Street_trading_floor.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "$1,000,000,000,000\nin corporate fines since 2000",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.7,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Wall Street trading floor = where the math is done. Trillion-dollar figure typewriting in creates a data-reveal moment after the thesis. Music resumes quietly as we move from revelation into evidence.",
+          "_timeline_start_sec": 358.58,
+          "_timeline_end_sec": 381.14
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Each company added one feature to the original calculation. Ford added a memo. Wells Fargo added plausible deniability. Purdue added preemption. Facebook added scale. But every one of them had something in common \u2014 the damage, at least in theory, could be reversed. Ford could recall the car. Wells Fargo could close the accounts. Purdue could stop making the pills.",
+          "voice_register": "measured",
+          "word_count": 60,
+          "visual_file": "corporate_boardroom_meeting_stock.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 8,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "THE FORMULA",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Second boardroom use \u2014 now it IS the formula being named. VO recapping each company's 'feature' as the camera watches faceless executives. Static 'THE FORMULA' text underscores the systemic nature.",
+          "_timeline_start_sec": 381.14,
+          "_timeline_end_sec": 400.48
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "Then the formula met the internet. And the damage became permanent.",
+          "voice_register": "measured",
+          "word_count": 11,
+          "visual_file": "data_center_servers.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_03_loud.wav",
+            "motivation": "whoosh signals the pivot to the digital era \u2014 the formula jumping to internet scale",
+            "type": "whoosh"
+          },
+          "text_overlay": "THEN THE INTERNET HAPPENED.",
+          "text_style": "static",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.7,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "transition",
+          "notes": "Dissolve into server corridors \u2014 we're entering the digital era. Whoosh + text card functions as a mini-pivot before the chapter transition. Music shifts to signal new chapter energy incoming.",
+          "_timeline_start_sec": 400.48,
+          "_timeline_end_sec": 405.84
+        },
+        {
+          "text": "[PAUSE]",
+          "voice_register": "measured",
+          "word_count": 1,
+          "visual_file": "pexels_325229_data_center_server_infrastruct.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_03_loud.wav",
+            "motivation": "low rumble under the 2s silence \u2014 the dread of permanent damage building before chapter break",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "tension_build",
+          "tension_level": 0.75,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Second [PAUSE] segment. 2s hold on data center with rising music and deep rumble \u2014 the dread of 'permanent damage' lands before we fade to black into THE DATA chapter card.",
+          "_timeline_start_sec": 1.1513126949844013,
+          "_timeline_end_sec": 1.4391408687305016
+        }
+      ]
+    },
+    {
+      "arc": "chapter_transition",
+      "segments": [
+        {
+          "text": "[CHAPTER: THE DATA]",
+          "voice_register": "measured",
+          "word_count": 3,
+          "visual_file": "pexels_577585_data_center_server_infrastruct.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0.5,
+          "sfx": {
+            "file": "impact_01_loud.wav",
+            "motivation": "chapter punch \u2014 impact before silence in the 5-step chapter transition",
+            "type": "impact"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "fade_from_black",
+          "transition_out": "fade_to_black",
+          "arc_position": "chapter_transition",
+          "tension_level": 0.5,
+          "zoom_target": null,
+          "chapter_card": "THE DATA",
+          "music_state": "transition",
+          "notes": "5-step chapter transition: (1) impact SFX, (2) 0.5s silence, (3) THE DATA chapter card on dark server background, (4) fade to black, (5) new energy at seg 21. Slightly lower tension reset before Facebook arc climbs again.",
+          "_timeline_start_sec": 1.4391408687305016,
+          "_timeline_end_sec": 2.3026253899688025
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Facebook was the bridge between the old formula and the new one.",
+          "voice_register": "neutral",
+          "word_count": 12,
+          "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 6,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "FACEBOOK\nThe Bridge",
+          "text_style": "lower_third",
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.5,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Return to Facebook footage \u2014 we're back where we started but now we understand WHY. Lower-third 'The Bridge' signals to viewers that this isn't recap, it's the connective tissue. New chapter energy, slightly calmer before the Cambridge Analytica details escalate.",
+          "_timeline_start_sec": 406.36,
+          "_timeline_end_sec": 411.56
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "In 2013, a Cambridge University researcher named Aleksandr Kogan built a personality quiz app. Two hundred and seventy thousand people downloaded it. But Facebook's API \u2014 the system that connects apps to the platform \u2014 gave the quiz access to not just those users' data, but all of their friends' data too. Every like, every post, every photo, every connection. Two hundred and seventy thousand downloads became eighty-seven million people's data harvested in weeks.",
+          "voice_register": "neutral",
+          "word_count": 74,
+          "visual_file": "pexels_5668473_Facebook_Meta_FTC_5_billion_fi.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "typewriter_key_loud.wav",
+            "motivation": "typewriter SFX as data accumulates \u2014 270K becomes 87M, the sound of scale being logged",
+            "type": "typewriter"
+          },
+          "text_overlay": "270,000 \u2192 87,000,000",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.7,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Phone with Facebook app is the 'innocent object' that became a data weapon. Typewriter SFX as the numbers typewrite in \u2014 each digit of 87,000,000 landing with a keystroke. The gap between 270K and 87M should feel obscene.",
+          "_timeline_start_sec": 438.0,
+          "_timeline_end_sec": 462.54
+        },
+        {
+          "text": "Facebook knew this was possible. It was a feature, not a bug \u2014 they'd designed the API to be open because open APIs drive engagement, and engagement drives advertising revenue. In 2014, they quietly changed the rules. But they never enforced deletion of the data already taken.",
+          "voice_register": "measured",
+          "word_count": 47,
+          "visual_file": "data_center_servers.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_02_loud.wav",
+            "motivation": "shimmer on 'feature, not a bug' \u2014 sounds like a realization crystallizing, which is what this moment IS",
+            "type": "shimmer"
+          },
+          "text_overlay": "FEATURE.\nNOT BUG.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.75,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Server corridors \u2014 the infrastructure of the intentional design. Shimmer SFX on the reframe moment. 'FEATURE. NOT BUG.' as static text is a deliberate callback to tech industry language weaponized against users.",
+          "_timeline_start_sec": 469.6,
+          "_timeline_end_sec": 485.04
+        },
+        {
+          "text": "Cambridge Analytica used that data to build voter profiles so precise they could predict what would make you angry before you felt it. They were hired by the Trump campaign. They were hired by groups supporting Brexit.",
+          "voice_register": "measured",
+          "word_count": 37,
+          "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 4,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "VOTER PROFILES\nBuilt from your personality",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.8,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Cambridge Analytica documentary footage is the ideal B-roll for this specific claim. Lower-third names what the profiles were FOR \u2014 voter manipulation \u2014 before VO makes it explicit.",
+          "_timeline_start_sec": 485.04,
+          "_timeline_end_sec": 499.18
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Eighty-seven million people's personalities \u2014 measured, modeled, and weaponized \u2014 for the price of a free quiz they never took. And most of them still don't know. A 2019 Pew survey found that seventy-four percent of Facebook users didn't know the platform maintained a list of their interests and traits for ad targeting. They didn't know they'd been profiled. They didn't know their data had been sold. They just knew that their feed felt different in 2016 \u2014 angrier, more anxious, more polarized \u2014 and they assumed that was the world changing. It wasn't the world. It was the algorithm. Tuned by their own data, sold without their consent, deployed to shape an election.",
+          "voice_register": "tense",
+          "word_count": 114,
+          "visual_file": "pexels_325229_data_center_server_infrastruct.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_new_loud.wav",
+            "motivation": "impact on 'weaponized' \u2014 the word is the reveal, the SFX confirms the horror",
+            "type": "impact"
+          },
+          "text_overlay": "87,000,000 PEOPLE",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.9,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "0.5s pause before 'weaponized' \u2014 LearnByLeo anticipation rule. Music goes silent as the human scale of 87M hits. Data center image recontextualizes: the server corridors aren't infrastructure, they're the crime scene. Number on screen in cold white text.",
+          "_timeline_start_sec": 499.18,
+          "_timeline_end_sec": 534.32
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "When the story broke in March 2018, Zuckerberg was summoned before Congress. He wore a suit. He said sorry. And then something happened that tells you everything about why the formula survives.",
+          "voice_register": "neutral",
+          "word_count": 32,
+          "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 2,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "MARCH 2018",
+          "text_style": "lower_third",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.7,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Dissolve into hearing \u2014 signals time jump to the Congressional moment. 2s of hearing room ambient audio (murmur, clicks) before VO takes over gives the viewer the space of a real room. Lower-third dates it.",
+          "_timeline_start_sec": 544.08,
+          "_timeline_end_sec": 555.98
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "A United States senator \u2014 a person with the power to regulate the most valuable company on Earth \u2014 looked at Mark Zuckerberg and asked: \"How does Facebook make money if the product is free?\"",
+          "voice_register": "neutral",
+          "word_count": 35,
+          "visual_file": "US_Capitol_building_Congress.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_03_loud.wav",
+            "motivation": "low rumble under the description of a senator's power \u2014 the institution IS the stakes",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.75,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Capitol building as the visual embodiment of 'person with the power to regulate.' Rumble SFX underscores the gravity of what's about to NOT happen. Wideshot \u2014 institutional scale against one man.",
+          "_timeline_start_sec": 571.72,
+          "_timeline_end_sec": 582.64
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "Zuckerberg paused. And said: \"Senator, we run ads.\"",
+          "voice_register": "measured",
+          "word_count": 8,
+          "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 12,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 4,
+          "vo_pause_before": 1.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_03_loud.wav",
+            "motivation": "shimmer just before the line drops \u2014 the crystallization of the entire video's thesis into four words",
+            "type": "shimmer"
+          },
+          "text_overlay": "\"Senator, we run ads.\"",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.85,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "1.5s pause before the line \u2014 maximum anticipation. Shimmer SFX. Then 4s of actual hearing audio if Zuckerberg's voice/pause is audible. Quote text appears the moment he says it. Close on face \u2014 the smug calm IS the formula personified. Music stays silent. This line is the second thesis of the video.",
+          "_timeline_start_sec": 582.64,
+          "_timeline_end_sec": 587.64
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "The room laughed. The internet turned it into a meme. For weeks, the clip circulated as comedy \u2014 an old senator, a young CEO, a punchline about boomers not understanding technology.",
+          "voice_register": "measured",
+          "word_count": 31,
+          "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 15,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "dissolve",
+          "arc_position": "aftermath",
+          "tension_level": 0.55,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Dissolve out signals the ironic deflation \u2014 the room laughed, the internet made it a meme, nothing changed. Cambridge Analytica footage as B-roll for 'the internet circulated it' fits thematically. Music resumes \u2014 the machine keeps running. Tension drops to 0.55: the aftermath of a moment that should have been a reckoning but wasn't.",
+          "_timeline_start_sec": 591.04,
+          "_timeline_end_sec": 601.42
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "And it was funny. It genuinely was. The man in charge of regulating the most valuable company on Earth didn't know how it made money. That's objectively absurd. It's the kind of thing you'd write into a satire and worry it was too on the nose.",
+          "voice_register": "neutral",
+          "word_count": 46,
+          "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 3,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.3,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Zuckerberg hearing is the perfect visual anchor. Brief clip audio establishes atmosphere, then mute under VO. Face zoom on the man who didn't know how the internet worked.",
+          "_timeline_start_sec": 602.62,
+          "_timeline_end_sec": 620.8
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "neutral",
+          "word_count": 1,
+          "visual_file": "pexels_5668858_Mark_Zuckerberg_congressional_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_01_loud.wav",
+            "motivation": "pause beat \u2014 shimmer signals the reframe about to happen",
+            "type": "shimmer"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.45,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "This IS the pause segment. Hold on Zuckerberg photo, 2s silence. Shimmer SFX signals a perspective shift incoming. Anticipation before the reframe.",
+          "_timeline_start_sec": 2.3026253899688025,
+          "_timeline_end_sec": 2.5904535637149033
+        },
+        {
+          "text": "But here's what nobody said at the time. That hearing was the formula protecting itself. The people who set the fines \u2014 who write the regulations, who are supposed to be the ceiling on corporate behavior \u2014 didn't understand the business model of the company they were interrogating. And Zuckerberg knew it. He sat there, patient and composed, and explained his own business to the people who were supposed to be punishing him. He wasn't being grilled. He was giving a tutorial. And everyone watched it happen and laughed \u2014 because it was easier to laugh than to realize what it meant.",
+          "voice_register": "tense",
+          "word_count": 102,
+          "visual_file": "Extraordinary_security_surrounds_US_Capitol.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "the formula protecting itself \u2014 needs weight and foreboding",
+            "type": "rumble"
+          },
+          "text_overlay": "THE FORMULA PROTECTING ITSELF",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.7,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Capitol exterior reframes the hearing \u2014 the system regulating itself. Rumble SFX + lower third crystallizes the thesis. Wide shot conveys institutional scale.",
+          "_timeline_start_sec": 626.84,
+          "_timeline_end_sec": 656.32
+        },
+        {
+          "text": "The people who set the fines don't understand what they're fining. The companies being fined have always known that.",
+          "voice_register": "tense",
+          "word_count": 19,
+          "visual_file": "corporate_fines_cost_of_doing_business.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 4,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.75,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Two men discussing fines is a literal visual for 'people who set fines don't understand what they're fining.' Unintentional irony is the editorial joke. No SFX \u2014 let the image work.",
+          "_timeline_start_sec": 658.5,
+          "_timeline_end_sec": 666.8
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "The FTC investigated for over a year. In July 2019, they announced the largest fine in their history: five billion dollars.",
+          "voice_register": "measured",
+          "word_count": 21,
+          "visual_file": "Facebook_FTC_5_billion_dollar_fine.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 4,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.6,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "FTC official at podium \u2014 clip audio for credibility ('This settlement is the result of an exhaustive investigation') then mute. Official tone before we undercut it with the 7% stat.",
+          "_timeline_start_sec": 670.48,
+          "_timeline_end_sec": 679.74
+        },
+        {
+          "text": "Here is what five billion dollars means to Facebook. Revenue that year: seventy point seven billion. The fine was seven percent. Net profit: eighteen point five billion. The fine was about twenty-seven percent of one year's profit \u2014 paid once, for a violation that ran for years and compromised eighty-seven million people.",
+          "voice_register": "measured",
+          "word_count": 52,
+          "visual_file": "pexels_269077_corporate_financial_model_spre.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_01_loud.wav",
+            "motivation": "$5B = 7% of revenue \u2014 this stat is the gut punch, needs a hit",
+            "type": "impact"
+          },
+          "text_overlay": "$5B = 7% OF ANNUAL REVENUE",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.65,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Spreadsheet close-up grounds the abstraction in financial reality. Impact SFX + static text makes the percentage land. Static over typewriter \u2014 this is a calculated figure, not a breaking story.",
+          "_timeline_start_sec": 679.74,
+          "_timeline_end_sec": 695.58
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "The FTC vote was three to two. Party line. The two dissenting commissioners didn't think the fine was too harsh. They thought it was too lenient. They wanted to sue, not settle. They wanted to hold Zuckerberg personally liable. They lost.",
+          "voice_register": "measured",
+          "word_count": 41,
+          "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "FTC VOTE: 3\u20132",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.5,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Second Facebook clip for the partisan vote detail. Lower third shows 3-2 split. The kicker \u2014 dissenters thought it was too SMALL \u2014 pays off the viewer who reads the overlay.",
+          "_timeline_start_sec": 697.96,
+          "_timeline_end_sec": 711.56
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "On July twelfth, when the fine amount leaked, Facebook's stock rose one percent. The market had expected worse. Investors were relieved. Mark Zuckerberg's net worth increased by one point one billion dollars that day. He made more from the announcement of the fine than the fine cost the company. The market's verdict was clear: this is the ceiling. This is the worst it gets. And the worst it gets is a good day.",
+          "voice_register": "tense",
+          "word_count": 73,
+          "visual_file": "Wall_Street_trading_floor.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_02_loud.wav",
+            "motivation": "stock rising on a $5B fine is the perverse punchline \u2014 impact punctuates the absurdity",
+            "type": "impact"
+          },
+          "text_overlay": "STOCK ROSE 1%",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.8,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Wall Street floor for the stock rally reveal. 1s pause before for LearnByLeo anticipation. Impact SFX on the stat. Music rises briefly \u2014 the market literally celebrated. Wide shot for institutional scope.",
+          "_timeline_start_sec": 731.42,
+          "_timeline_end_sec": 755.34
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "Now. After everything I've just shown you \u2014 Ford, Wells Fargo, Purdue, Facebook \u2014 you'd be forgiven for thinking the formula is unbeatable. That this is just how it works. Fine, settle, move on. Nobody learns. Nothing changes.",
+          "voice_register": "neutral",
+          "word_count": 38,
+          "visual_file": "courtroom_justice_gavel.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.3,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Gavel dissolve signals the transition to the 'what if' pivot. Lower energy after the stock reveal \u2014 the system worked exactly as designed. Dissolve slows us down before the GDPR reframe.",
+          "_timeline_start_sec": 762.64,
+          "_timeline_end_sec": 776.86
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "But something happened in 2023 that proves the formula can break.",
+          "voice_register": "neutral",
+          "word_count": 11,
+          "visual_file": "pexels_5668473_GDPR_European_data_protection_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_02_loud.wav",
+            "motivation": "something changed \u2014 shimmer signals new information entering",
+            "type": "shimmer"
+          },
+          "text_overlay": "BUT SOMETHING HAPPENED IN 2023",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.6,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "GDPR document signals the European legal shift. 1.5s pause for anticipation before the pivot. Shimmer + lower third sets up the counterexample cleanly.",
+          "_timeline_start_sec": 784.12,
+          "_timeline_end_sec": 789.4
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "Ireland fined Meta one point two billion euros under Europe's GDPR \u2014 a law that scales fines to four percent of global annual revenue. Not a negotiated number. Not a fixed ceiling. A percentage.",
+          "voice_register": "measured",
+          "word_count": 34,
+          "visual_file": "GDPR_Meta_Ireland_billion_fine.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 3,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "\u20ac1.2 BILLION",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.65,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Ireland fine announcement clip. Brief clip audio for news credibility. Static text shows the number prominently. The 4% of global revenue mechanic is the key \u2014 it scales with size.",
+          "_timeline_start_sec": 789.4,
+          "_timeline_end_sec": 800.74
+        },
+        {
+          "text": "And Facebook \u2014 the same Facebook that turned a five-billion-dollar American fine into a stock rally \u2014 panicked.",
+          "voice_register": "measured",
+          "word_count": 18,
+          "visual_file": "pexels_5668858_Mark_Zuckerberg_congressional_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_new_loud.wav",
+            "motivation": "Facebook PANICKED is the reveal \u2014 needs a hit before the explanation",
+            "type": "impact"
+          },
+          "text_overlay": "FACEBOOK PANICKED.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.7,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Callback to Zuckerberg face \u2014 the man who was unflappable in Senate now has the company panicking. Impact SFX + bold 'PANICKED' text overlay. The contrast with the hearing is the editorial point.",
+          "_timeline_start_sec": 803.7,
+          "_timeline_end_sec": 811.9
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Within weeks, they rewrote their entire data transfer infrastructure. They shut down a pipeline they'd run for a decade. They rebuilt their European architecture from scratch. They didn't fight it in court for years. They didn't issue a press release and wait for it to blow over. They fixed it. Immediately. Because for the first time, the violation was more expensive than the profit.",
+          "voice_register": "measured",
+          "word_count": 64,
+          "visual_file": "pexels_325229_data_center_server_infrastruct.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.75,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Symmetrical server corridor for 'rewrote their entire data transfer infrastructure.' The physical scale of what they were forced to dismantle hits differently when you understand the stakes. No SFX \u2014 image carries it.",
+          "_timeline_start_sec": 811.9,
+          "_timeline_end_sec": 832.88
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "Sit with that for a second. The formula \u2014 the one that has survived five decades, across every industry, through every administration \u2014 broke. In Europe. Because someone changed one variable: they made the fine proportional.",
+          "voice_register": "neutral",
+          "word_count": 36,
+          "visual_file": "pexels_5668473_mathematical_formula_variable_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.5,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Handwritten math formulas for 'the formula survived five decades.' The formula IS math \u2014 literalizing the metaphor visually. No SFX, no text \u2014 let the narration breathe.",
+          "_timeline_start_sec": 833.14,
+          "_timeline_end_sec": 845.24
+        },
+        {
+          "text": "Same company. Same executives. Same data. The only difference was the math. And when the math changed, the behavior changed overnight.",
+          "voice_register": "neutral",
+          "word_count": 21,
+          "visual_file": "pexels_577585_data_center_server_infrastruct.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "SAME COMPANY. SAME DATA. DIFFERENT MATH.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.45,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Second data center angle for 'same company, same data' \u2014 the visual rhyme reinforces the point. Static text overlay drives home the thesis. The only variable that changed was the fine math.",
+          "_timeline_start_sec": 845.24,
+          "_timeline_end_sec": 855.14
+        }
+      ]
+    },
+    {
+      "arc": "chapter_transition",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "tense",
+          "word_count": 1,
+          "visual_file": "pexels_5668473_European_Parliament_voting_cha.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 3.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_01_loud.wav",
+            "motivation": "chapter transition incoming \u2014 whoosh punctuates the silence before black",
+            "type": "whoosh"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "chapter_transition",
+          "tension_level": 0.3,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "transition",
+          "notes": "PAUSE segment before THE MACHINES chapter. 3s pause on European Parliament \u2014 the 'off switch' Europe found. Whoosh + fade to black leads into chapter card. Music transitions.",
+          "_timeline_start_sec": 2.5904535637149033,
+          "_timeline_end_sec": 2.8782817374610032
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "So at this point in the story, you might be thinking: okay, the formula exists, but there are limits. Europe found the off switch. Proportional fines work. The system can be fixed. Companies can be forced to change. Maybe \u2014 just maybe \u2014 we're figuring it out.",
+          "voice_register": "neutral",
+          "word_count": 47,
+          "visual_file": "pexels_208724_US_Capitol_building_exterior_W.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.35,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Capitol for 'you might think there are limits, Europe found the off switch.' Sets up the false hope \u2014 we're about to take that comfort away. Measured tone before the dread.",
+          "_timeline_start_sec": 888.54,
+          "_timeline_end_sec": 903.74
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "I wish that were the end of the video.",
+          "voice_register": "neutral",
+          "word_count": 9,
+          "visual_file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_02_loud.wav",
+            "motivation": "'I wish that were the end of the video' signals dread \u2014 rumble underscores the ominous pivot",
+            "type": "rumble"
+          },
+          "text_overlay": "I WISH THAT WERE THE END OF THE VIDEO.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "tension_build",
+          "tension_level": 0.55,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Lone silhouette for existential dread. Rumble SFX + static text + fade to black is the perfect punch before the chapter card. Music rises into the black. This sentence IS the hook.",
+          "_timeline_start_sec": 903.74,
+          "_timeline_end_sec": 909.02
+        }
+      ]
+    },
+    {
+      "arc": "chapter_transition",
+      "segments": [
+        {
+          "text": "[CHAPTER: THE MACHINES]",
+          "voice_register": "neutral",
+          "word_count": 3,
+          "visual_file": "data_center_servers.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_02_loud.wav",
+            "motivation": "chapter transition \u2014 new energy after card, whoosh signals arrival",
+            "type": "whoosh"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "chapter_transition",
+          "tension_level": 0.2,
+          "zoom_target": "wide",
+          "chapter_card": "THE MACHINES",
+          "music_state": "transition",
+          "notes": "Chapter card THE MACHINES. Data center servers are the literal subject \u2014 AI training infrastructure at scale. Fade from black after chapter card, whoosh for new section energy.",
+          "_timeline_start_sec": 2.8782817374610032,
+          "_timeline_end_sec": 3.7417662586993043
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Here's a thought experiment. What if you could take anything you wanted from anyone \u2014 their writing, their art, their music, their photographs, their private conversations \u2014 and the only consequence was paying a fraction of what it was worth, years after you'd already used it to build a product worth billions?",
+          "voice_register": "measured",
+          "word_count": 52,
+          "visual_file": "digital_artist_workspace.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.4,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Digital artist at work for the thought experiment \u2014 'their writing, their art, their music.' This is the physical act of creation being described. Present tense, human scale.",
+          "_timeline_start_sec": 909.36,
+          "_timeline_end_sec": 925.1
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "You'd take everything. Obviously. Everyone would.",
+          "voice_register": "measured",
+          "word_count": 6,
+          "visual_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "YOU'D TAKE EVERYTHING.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.5,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Abstract gavel image + 'YOU'D TAKE EVERYTHING' bold static overlay. Short sentence needs punchy visual. Text is doing the heavy lifting here \u2014 four words that indict the viewer before the indict.",
+          "_timeline_start_sec": 925.1,
+          "_timeline_end_sec": 929.8
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "That's not a thought experiment. That's the AI industry's business model.",
+          "voice_register": "measured",
+          "word_count": 11,
+          "visual_file": "AI_scraping_copyright_training_data.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 3,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_01_loud.wav",
+            "motivation": "central thesis reveal of the AI section \u2014 deserves a hit",
+            "type": "impact"
+          },
+          "text_overlay": "THAT'S THE AI INDUSTRY'S BUSINESS MODEL.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.7,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "AI scraping copyright clip is the exact visual. Brief clip audio for framing context, then mute. Impact SFX + static overlay drops the accusation. No qualifier \u2014 'that's the business model' is the declarative.",
+          "_timeline_start_sec": 931.02,
+          "_timeline_end_sec": 938.24
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "In October 2025, a Reddit engineer did something clever. They created a post \u2014 ordinary-looking, about a fictional company \u2014 and made it visible only through Google's search index. You couldn't find it by browsing Reddit. You couldn't stumble on it. The only way to reach it was through a crawler. It was bait. A tripwire designed to catch one thing: an AI company scraping Reddit's content without permission.",
+          "voice_register": "measured",
+          "word_count": 69,
+          "visual_file": "Reddit_frontpage_browsing.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.55,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Reddit browsing for the honeypot story setup. Familiar site establishes normalcy before the trap. No SFX \u2014 narrative buildup needs clean pacing. The ordinary precedes the clever.",
+          "_timeline_start_sec": 951.06,
+          "_timeline_end_sec": 975.54
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "Within hours, Perplexity AI cited the post. Word for word.",
+          "voice_register": "measured",
+          "word_count": 10,
+          "visual_file": "pexels_5668473_Perplexity_AI_search_results_c.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "typewriter_key_loud.wav",
+            "motivation": "'word for word' \u2014 typewriter sound is visceral for AI copy-paste plagiarism",
+            "type": "typewriter"
+          },
+          "text_overlay": "WORD FOR WORD.",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.7,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Perplexity screenshot + 1s pause + typewriter SFX + typewriter text style. The typing effect mimics the AI reproducing the content. The irony is literal and visual. Pause before for anticipation.",
+          "_timeline_start_sec": 976.04,
+          "_timeline_end_sec": 982.1
+        },
+        {
+          "text": "The trap worked.",
+          "voice_register": "measured",
+          "word_count": 3,
+          "visual_file": "pexels_5668473_Reddit_forum_post_honeypot_fak.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_02_loud.wav",
+            "motivation": "two-word reveal \u2014 'The trap worked' needs maximum impact for minimum words",
+            "type": "impact"
+          },
+          "text_overlay": "THE TRAP WORKED.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.75,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Reddit post for the trap reveal. 1.5s pause before \u2014 maximum LearnByLeo anticipation for the shortest sentence. Impact SFX + bold static text. Three words do all the work.",
+          "_timeline_start_sec": 982.1,
+          "_timeline_end_sec": 985.44
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "Reddit sent a cease-and-desist letter. Standard procedure \u2014 stop scraping, or we sue. And here is what happened next.",
+          "voice_register": "measured",
+          "word_count": 19,
+          "visual_file": "courtroom_justice_gavel.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 4,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 1.5,
+          "sfx": null,
+          "text_overlay": "AND HERE IS WHAT HAPPENED NEXT.",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.8,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Gavel for cease-and-desist. Lower third sets the cliffhanger. Pause AFTER for dread \u2014 the pause after creates suspense before the 40x reveal. Music rises into the reveal. Used twice total \u2014 within limit.",
+          "_timeline_start_sec": 985.44,
+          "_timeline_end_sec": 994.42
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Perplexity's scraping of Reddit content didn't decrease. It increased. By a factor of forty. Not a little more. Forty times more. After being caught. After receiving a formal legal demand to stop.",
+          "voice_register": "tense",
+          "word_count": 32,
+          "visual_file": "pexels_577585_bar_chart_graph_dramatic_spike.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "glass_shatter_01_loud.wav",
+            "motivation": "40x increase shatters every expectation about corporate behavior after C&D \u2014 glass shatter is the right sound",
+            "type": "other"
+          },
+          "text_overlay": "40X INCREASE",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.9,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Bar chart spike is literal and perfect. Glass shatter SFX: this breaks every assumption about corporate compliance. Static '40X INCREASE' text is unavoidable. 1s pause before for maximum anticipation.",
+          "_timeline_start_sec": 994.42,
+          "_timeline_end_sec": 1006.84
+        },
+        {
+          "text": "Most companies, when caught, slow down. Issue a statement. Hire a compliance officer. Perplexity sped up. Forty times. It's like getting a speeding ticket and immediately doing donuts in the parking lot of the police station.",
+          "voice_register": "neutral",
+          "word_count": 36,
+          "visual_file": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Re.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.85,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Bloomberg AI valuation for 'Perplexity sped up \u2014 forty times.' AI company valuations in the billions make the arithmetic legible. They were building toward that number. Most companies slow down. These people are different.",
+          "_timeline_start_sec": 1006.84,
+          "_timeline_end_sec": 1020.8
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "But it's not arrogance. It's arithmetic. They did the math. The data was worth more than any fine. The model being trained on that data was worth more than any lawsuit. And once the data is inside the model \u2014",
+          "voice_register": "tense",
+          "word_count": 40,
+          "visual_file": "pexels_577585_AI_model_valuation_billions_in.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_03_loud.wav",
+            "motivation": "the arithmetic is the horror \u2014 low rumble for existential dread, not shock",
+            "type": "rumble"
+          },
+          "text_overlay": "THE DATA WAS WORTH MORE THAN ANY FINE.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.9,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "AI valuation image + rumble SFX + 'THE DATA WAS WORTH MORE THAN ANY FINE' is the thesis of the entire chapter crystallized. Rumble over impact \u2014 this isn't shock, it's dread. The math always wins.",
+          "_timeline_start_sec": 1020.8,
+          "_timeline_end_sec": 1034.26
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "There is no getting it out.",
+          "voice_register": "tense",
+          "word_count": 6,
+          "visual_file": "pexels_5668473_sugar_dissolving_in_water_macr.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "permanence of dissolved data \u2014 the rumble is inescapable, like the data that cannot be removed",
+            "type": "rumble"
+          },
+          "text_overlay": "THERE IS NO GETTING IT OUT.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.95,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Sugar dissolving in water IS the metaphor \u2014 once it's in the model, you cannot unmix it. 2s pause before for maximum weight. Rumble SFX for inescapability. Static text + fade to black. Perfect chapter close.",
+          "_timeline_start_sec": 1034.26,
+          "_timeline_end_sec": 1040.34
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "tense",
+          "word_count": 1,
+          "visual_file": "pexels_5668473_sugar_dissolving_in_water_macr.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "low drone builds dread before the sugar metaphor lands \u2014 audience knows something is coming",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "fade_from_black",
+          "transition_out": "dissolve",
+          "arc_position": "tension_build",
+          "tension_level": 0.8,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Script [PAUSE] marker \u2014 let the previous chapter's weight settle. Sugar macro primes the central metaphor of seg 1. Music drops entirely. Rumble enters late to signal something irreversible is being named.",
+          "_timeline_start_sec": 3.7417662586993043,
+          "_timeline_end_sec": 4.029594432445405
+        },
+        {
+          "text": "Sugar dissolved in water. You cannot separate them.",
+          "voice_register": "tense",
+          "word_count": 8,
+          "visual_file": "pexels_5668473_sugar_dissolving_in_water_macr.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_01_loud.wav",
+            "motivation": "ethereal shimmer matches the dissolution metaphor \u2014 crystalline then gone, irreversible",
+            "type": "shimmer"
+          },
+          "text_overlay": "Sugar dissolved in water.",
+          "text_style": "typewriter",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.8,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Hold the sugar macro with slow push-in zoom. Typewriter text on screen forces the viewer to read the thesis line while hearing it. Shimmer SFX on the word 'dissolved' reinforces the metaphor's emotional register.",
+          "_timeline_start_sec": 1040.34,
+          "_timeline_end_sec": 1044.24
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "When Ford got caught, they could recall the car. When Facebook got caught, they could \u2014 in theory \u2014 delete the data. When Purdue got caught, they could stop manufacturing the pills. The damage was reversible. Expensive, slow, and nobody ever did it voluntarily. But the off switch existed.",
+          "voice_register": "measured",
+          "word_count": 49,
+          "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.5,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Ford/Facebook/AI comparison \u2014 Cambridge Analytica grounds the Facebook data scandal visually. VO carries the tri-part argument. Mute clip audio. Energy deliberately pulls back from seg 1 to let the analogy breathe.",
+          "_timeline_start_sec": 1054.42,
+          "_timeline_end_sec": 1069.84
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "With AI, there is no off switch. When a model trains on scraped data, that data dissolves into the model's parameters like sugar dissolved in water. You cannot un-dissolve it. You cannot identify which outputs came from which inputs. You cannot point to a sentence and say \"that came from Reddit\" or \"that came from a children's book published in 2019.\" The data becomes the model. The violation becomes the product. Every response the AI generates, every image it creates, every answer it provides \u2014 built on content taken without permission and impossible to return.",
+          "voice_register": "measured",
+          "word_count": 95,
+          "visual_file": "pexels_269077_justice_department_corporate_s.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 8,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_02_loud.wav",
+            "motivation": "subsonic machine rumble under 'no off switch' \u2014 the physical reality of unstoppable infrastructure",
+            "type": "rumble"
+          },
+          "text_overlay": "No off switch.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.7,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Data center corridors = the physical body of AI. Static text overlay 'No off switch.' lands the thesis as a visual anchor. Rumble builds under the revelation that training is permanent.",
+          "_timeline_start_sec": 1069.84,
+          "_timeline_end_sec": 1099.7
+        },
+        {
+          "text": "Even if every AI company loses every lawsuit, they keep the models. The models keep running. The products keep generating revenue. The fine doesn't undo the training. It just pays for the data after the fact \u2014 like shoplifting and mailing a check later. Except the check is always less than the retail price.",
+          "voice_register": "measured",
+          "word_count": 54,
+          "visual_file": "pexels_577585_data_center_server_infrastruct.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Even if every lawsuit is won \u2014 models keep running. Still image of server hall with slow zoom gives cold, mechanical dread. No SFX, let VO carry the inevitability argument without competition.",
+          "_timeline_start_sec": 1131.68,
+          "_timeline_end_sec": 1148.26
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "And the people who try to stop it? Remember Yesenia Guitron \u2014 the Wells Fargo teller who called the ethics hotline and was fired for it? The formula punishes the people who resist it. It rewards the people who run it. That pattern repeats in every industry, in every decade.",
+          "voice_register": "measured",
+          "word_count": 50,
+          "visual_file": "corporate_whistleblower.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_01_loud.wav",
+            "motivation": "whoosh on the pivot back to Guitron \u2014 snapping from abstract tech argument to human cost",
+            "type": "whoosh"
+          },
+          "text_overlay": "YESENIA GUITRON",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.75,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Half-second pause before 'Remember Yesenia Guitron' \u2014 LearnByLeo anticipation rule. Lower-third name card grounds the callback. Whistleblower clip is viscerally appropriate. Whoosh signals a hard emotional gear shift.",
+          "_timeline_start_sec": 1179.5,
+          "_timeline_end_sec": 1194.5
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "measured",
+          "word_count": 1,
+          "visual_file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_03_loud.wav",
+            "motivation": "deep rumble in the deliberate pause \u2014 signals pivot from abstract thesis to personal character story",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "dissolve",
+          "transition_out": "dissolve",
+          "arc_position": "aftermath",
+          "tension_level": 0.55,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Script [PAUSE] \u2014 2s silence with isolated silhouette. Rumble enters late to signal we are moving to a new character. Music drops out entirely. Dissolve in and out softens the transition, priming emotional register for Elliana.",
+          "_timeline_start_sec": 4.029594432445405,
+          "_timeline_end_sec": 4.3174226061915055
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Reddit filed a federal lawsuit in October 2025. But Perplexity is one company. What about the rest of the industry?",
+          "voice_register": "neutral",
+          "word_count": 20,
+          "visual_file": "Reddit_frontpage_browsing.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 4,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.35,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Reddit lawsuit re-establishes structural context. Literal and grounding after the pause. Energy drops deliberately \u2014 this is the runway before Elliana's story. Reddit frontpage is visually immediate and recognizable.",
+          "_timeline_start_sec": 1194.5,
+          "_timeline_end_sec": 1199.38
+        },
+        {
+          "text": "I want to tell you about Elliana Esquivel. Because her story is the one that makes this real \u2014 and the one that shows you how the formula works when it's happening to a person, not a company.",
+          "voice_register": "neutral",
+          "word_count": 38,
+          "visual_file": "digital_artist_workspace.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_02_loud.wav",
+            "motivation": "soft shimmer introduces Elliana \u2014 intimate, delicate, a life before it was taken",
+            "type": "shimmer"
+          },
+          "text_overlay": "ELLIANA ESQUIVEL",
+          "text_style": "lower_third",
+          "transition_in": "dissolve",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.3,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Introduce Elliana with warmth before the devastation arrives. Half-beat pause per LearnByLeo anticipation rule. Lower-third name card. Shimmer is gentle, aspirational \u2014 her life before the scrape. Dissolve in signals new character energy.",
+          "_timeline_start_sec": 4.3174226061915055,
+          "_timeline_end_sec": 15.254893208543319
+        },
+        {
+          "text": "Elliana is an illustrator in Charlotte, North Carolina. Self-taught. She spent years building a career in minimalistic line work \u2014 psychological, introspective, distinctive. The kind of art you'd recognize on a bookshelf. She illustrated covers for HarperCollins, Little Brown, and Faber and Faber. She designed album art for Universal Music Group. She created promotional work for Hulu. Art was her full-time job for four years. She'd built something.",
+          "voice_register": "measured",
+          "word_count": 68,
+          "visual_file": "digital_artist_workspace.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 14,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "Charlotte, North Carolina",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.3,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Continue building Elliana's world \u2014 show her at work building her portfolio. Different start point for visual variety (second use). Location lower-third grounds the character geographically. No SFX, let the VO paint the picture.",
+          "_timeline_start_sec": 15.254893208543319,
+          "_timeline_end_sec": 34.827209023278144
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "Then she visited a website called Have I Been Trained. It's a tool that lets creators check whether their work was scraped into the LAION-5B dataset \u2014 the five-billion-image training set used by Stability AI's Stable Diffusion and other image generators.",
+          "voice_register": "measured",
+          "word_count": 41,
+          "visual_file": "AI_scraping_copyright_training_data.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 6,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_02_loud.wav",
+            "motivation": "whoosh on 'Have I Been Trained' \u2014 the tool that revealed the violation, sudden discovery energy",
+            "type": "whoosh"
+          },
+          "text_overlay": "Have I Been Trained",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.55,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "The moment of discovery. Typewriter text of the website name creates a documentary identification effect. Whoosh signals entry into new territory. Half-beat pause before the revelation that everything is in there.",
+          "_timeline_start_sec": 34.827209023278144,
+          "_timeline_end_sec": 46.62816414686826
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "Almost her entire portfolio was in there.",
+          "voice_register": "measured",
+          "word_count": 7,
+          "visual_file": "pexels_5668473_abstract_taking_stealing_intel.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_new_loud.wav",
+            "motivation": "impact hit on 'almost her entire portfolio' \u2014 the gut punch of violation",
+            "type": "impact"
+          },
+          "text_overlay": "Almost all of it.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.8,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "1-second pause before this line \u2014 maximum LearnByLeo anticipation before the reveal. Impact SFX on the cut. Large static text overlay echoes and amplifies the VO. The gavel image reinforces the legal/theft framing subliminally.",
+          "_timeline_start_sec": 46.62816414686826,
+          "_timeline_end_sec": 48.642961363090954
+        },
+        {
+          "text": "Every illustration she'd spent months creating. Every piece that defined her style. Scraped, indexed, and fed into a model that anyone could now use to generate images that look like her work \u2014 for free. A publisher she'd worked with for two years emailed to say they were \"exploring AI-generated options\" for their next cover. Her commissions dropped. Her online sales fell. The style she'd spent a decade developing could now be approximated in seconds by typing a sentence into a box. She started pivoting to 3D art \u2014 not because she wanted to, but because she hoped three-dimensional work would be harder to scrape.",
+          "voice_register": "tense",
+          "word_count": 105,
+          "visual_file": "pexels_5668473_artificial_intelligence_compan.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "body_impact_01_loud.wav",
+            "motivation": "heavy body impact on 'scraped, indexed, and fed' \u2014 visceral physical metaphor for consumption",
+            "type": "impact"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.9,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Peak violation moment \u2014 years of work consumed. Body impact SFX is deliberately physical; 'fed into a model' has the undertone of ingestion, violence. No text overlay \u2014 let the VO carry full weight without distraction.",
+          "_timeline_start_sec": 48.642961363090954,
+          "_timeline_end_sec": 78.8649196064315
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "When someone asked her about getting her work removed from the dataset, she said it was pointless. Quote: \"It'll just get scraped again, and it'll end up back on the website.\" She called it, quote, a dystopian thing to be dealing with.",
+          "voice_register": "tense",
+          "word_count": 42,
+          "visual_file": "pexels_269077_corporate_office_quota_pressur.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 22,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "\"It'll just get put back in.\"",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.9,
+          "zoom_target": "face",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Elliana's quote is the emotional apex of her arc. Typewriter reveal of her exact words while showing the artist at work creates devastating dissonance. Third and final use of the clip at a new start point. No SFX \u2014 the quote stands alone.",
+          "_timeline_start_sec": 78.8649196064315,
+          "_timeline_end_sec": 90.9537029037677
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "Elliana isn't suing anyone. She can't afford to. Over seventy copyright lawsuits are active against AI companies as of March 2026 \u2014 Anthropic settled for one point five billion, OpenAI is fighting the New York Times, and not one company has slowed down. The largest settlement in history paid out roughly three thousand dollars per stolen work.",
+          "voice_register": "neutral",
+          "word_count": 57,
+          "visual_file": "wiki_2_corporate_office_quo.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "70+ active lawsuits",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.5,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Energy deliberately settles \u2014 Elliana cannot afford to fight, but 70+ others are trying. Gavel clip grounds the legal dimension. Static stat overlay widens the lens from one person to a movement. Aftermath beat lets the audience process.",
+          "_timeline_start_sec": 90.9537029037677,
+          "_timeline_end_sec": 107.35990880729543
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "Three thousand dollars. That's what Elliana's illustrations are worth in this market \u2014 years of work, commissions for HarperCollins, Universal Music, Hulu \u2014 priced at the same rate as a single scraped novel. If the class-action settlement arrives, her share might cover a month of rent. The model keeps generating images in her style. The violation is the product. The fine \u2014 if it ever arrives \u2014 is a fraction of what her career was worth.",
+          "voice_register": "neutral",
+          "word_count": 76,
+          "visual_file": "pexels_577585_bar_chart_graph_dramatic_spike.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_01_loud.wav",
+            "motivation": "impact on the $3,000 figure \u2014 years of work reduced to an absurdly small number",
+            "type": "impact"
+          },
+          "text_overlay": "$3,000",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.65,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "The $3,000 is the killer stat for this character arc. Large static text overlay. Half-beat pause for anticipation. Impact SFX before the number. Chart/graph image reinforces the reductive logic of market pricing applied to human creative work.",
+          "_timeline_start_sec": 107.35990880729543,
+          "_timeline_end_sec": 129.23485001199904
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "neutral",
+          "word_count": 1,
+          "visual_file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_03_loud.wav",
+            "motivation": "shimmer in the silence \u2014 transitional pivot energy, something larger is being named",
+            "type": "shimmer"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "dissolve",
+          "transition_out": "dissolve",
+          "arc_position": "aftermath",
+          "tension_level": 0.45,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Script [PAUSE] \u2014 2s silence before the direct viewer address. Different silhouette image from seg 6 for visual variety. Music drops to silence. Shimmer signals a pivot is imminent. Dissolves on both ends soften the transition.",
+          "_timeline_start_sec": 129.23485001199904,
+          "_timeline_end_sec": 129.52267818574515
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "And this brings us to you. Because if you've ever posted on Reddit, commented on YouTube, written a blog, tweeted, left a review, uploaded a photo, published anything anywhere on the open internet \u2014 your content is in training datasets right now. Not hypothetically. Provably. Common Crawl, the dataset most large language models train on, contains over two hundred and fifty billion web pages. Your words are in there. The companies building hundred-billion-dollar products on your words did not ask your permission.",
+          "voice_register": "neutral",
+          "word_count": 82,
+          "visual_file": "pexels_1181354_human_silhouette_dramatic_back.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_03_loud.wav",
+            "motivation": "whoosh on the direct viewer address \u2014 pulls the audience into the story personally",
+            "type": "whoosh"
+          },
+          "text_overlay": "This is about you.",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "The 'this brings us to you' turn is the video's personal stake pivot. Half-beat pause per LearnByLeo. Typewriter 'This is about you.' makes it impossible to ignore. Music begins rising to signal the argument is escalating toward a conclusion.",
+          "_timeline_start_sec": 129.52267818574515,
+          "_timeline_end_sec": 153.12458843292538
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Ford's formula was clumsy \u2014 a memo with signatures. Wells Fargo's was structural \u2014 a quota with plausible deniability. Purdue's was preemptive \u2014 move the money before the fine. Facebook's was mathematical \u2014 the fine is smaller than the profit.",
+          "voice_register": "neutral",
+          "word_count": 40,
+          "visual_file": "pexels_5668473_dark_courtroom_justice_gavel_d.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.5,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "The formula comparison \u2014 Ford clumsy, WF structural, AI irreversible. Talking-head clip grounds the 'cost of doing business' framing analytically. Music ducks under VO. This segment is expository \u2014 visual supports without distracting.",
+          "_timeline_start_sec": 153.12458843292538,
+          "_timeline_end_sec": 164.6377153827694
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "AI's formula is all of those things. Plus one more: irreversible. Scrape now. Train the model. Make it indispensable. Settle later. The model can't be untrained. The fine is just the cost of raw materials, paid after the factory is already built and too valuable to demolish.",
+          "voice_register": "neutral",
+          "word_count": 47,
+          "visual_file": "pexels_269077_corporate_fine_profit_chart_fi.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0.5,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "subsonic rumble under 'irreversible' \u2014 the word that defines AI's formula over all others",
+            "type": "rumble"
+          },
+          "text_overlay": "IRREVERSIBLE.",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "revelation",
+          "tension_level": 0.75,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Final word before chapter transition. All-caps static IRREVERSIBLE. Rumble underscores permanence. Half-beat tail after the word. Fade to black sets up the chapter card cleanly \u2014 LearnByLeo chapter transition step 1.",
+          "_timeline_start_sec": 164.6377153827694,
+          "_timeline_end_sec": 178.1656395488361
+        }
+      ]
+    },
+    {
+      "arc": "chapter_transition",
+      "segments": [
+        {
+          "text": "[CHAPTER: THE RENT]",
+          "voice_register": "neutral",
+          "word_count": 3,
+          "visual_file": "apartment_housing_crisis_rent.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_04_loud.wav",
+            "motivation": "punch whoosh on chapter card \u2014 step 1 of LearnByLeo 5-step chapter transition",
+            "type": "whoosh"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "chapter_transition",
+          "tension_level": 0.3,
+          "zoom_target": "wide",
+          "chapter_card": "THE RENT",
+          "music_state": "transition",
+          "notes": "Full LearnByLeo 5-step chapter transition: (1) whoosh punch from previous fade-to-black, (2) 2s silence with fade-from-black, (3) chapter card THE RENT, (4) housing crisis footage as new energy, (5) hook into Chris Vialpondo. Music bridges the sections.",
+          "_timeline_start_sec": 178.1656395488361,
+          "_timeline_end_sec": 179.02912407007443
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Ford paid three point five million. Wells Fargo paid three billion. Purdue paid seven point four billion. Facebook paid five billion. Those numbers got bigger \u2014 but so did the profits. The ratio never changed. The fine was always less than the take.",
+          "voice_register": "neutral",
+          "word_count": 43,
+          "visual_file": "pexels_269077_corporate_financial_model_spre.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "$3.5M \u2192 $3B \u2192 $7.4B \u2192 $5B",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.4,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Escalating fine sequence is a data moment. Financial spreadsheet image grounds the corporate accounting logic. Typewriter reveals the fine progression \u2014 the numbers arriving one by one create visual drama out of raw figures.",
+          "_timeline_start_sec": 179.02912407007443,
+          "_timeline_end_sec": 191.40573554115673
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "So what happens when the formula reaches its logical conclusion? What happens when the fine is zero?",
+          "voice_register": "neutral",
+          "word_count": 17,
+          "visual_file": "pexels_5668473_DOJ_settlement_agreement_fine_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_02_loud.wav",
+            "motivation": "low rumble building under the rhetorical question \u2014 dread, not resolution",
+            "type": "rumble"
+          },
+          "text_overlay": "What if the fine is zero?",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.75,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "1-second pause before the central rhetorical question of the chapter \u2014 maximum anticipation. Typewriter question on settlement image. Rumble builds underneath. The question is left hanging intentionally \u2014 the answer comes at seg 27.",
+          "_timeline_start_sec": 191.40573554115673,
+          "_timeline_end_sec": 196.29881449484043
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Chris Vialpondo is a renter in Seattle's Lower Queen Anne neighborhood. In 2022, he opened a notice from his property manager and learned his rent had increased by fifty percent. Same apartment. Same neighborhood. Same job. He was already working two jobs to make rent. Fifty percent meant the difference between getting by and going under. It meant counting every grocery trip. It meant the constant math of which bill gets paid this week and which one waits. He reached out to his property manager \u2014 the human being he thought had set the price \u2014 and was told nothing could be done. Because his property manager hadn't set the price. A company he'd never heard of had.",
+          "voice_register": "neutral",
+          "word_count": 118,
+          "visual_file": "pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "CHRIS VIALPONDO \u2014 Seattle, WA",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.4,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Ground Chris Vialpondo in his neighborhood with an aerial shot \u2014 place him in the world before the violation. Lower-third introduces the character. Half-beat pause before the personal story. Establish intimacy before the outrage.",
+          "_timeline_start_sec": 196.29881449484043,
+          "_timeline_end_sec": 230.26253899688027
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "RealPage. A company that takes confidential pricing data from competing landlords \u2014 data that competitors are not legally supposed to share \u2014 and feeds it into an algorithm that recommends rent prices across more than thirteen million apartments. Ninety percent of landlords follow the recommendation. The result: coordinated rent increases across buildings that are supposed to be competing with each other. The Department of Justice found that the algorithm costs renters an average of seventy dollars a month more \u2014 and over a hundred dollars a month in six major metro areas.",
+          "voice_register": "tense",
+          "word_count": 92,
+          "visual_file": "RealPage_rent_price_fixing_algorithm.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 0,
+          "clip_audio": "play_then_mute",
+          "clip_audio_duration": 4,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_02_loud.wav",
+            "motivation": "heavy impact on 'RealPage' \u2014 villain reveal, corporate name landing like an indictment",
+            "type": "impact"
+          },
+          "text_overlay": "REALPAGE",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.9,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Villain reveal. Play 4 seconds of clip audio (investigators speaking) \u2014 the actual documentary voice adds authenticity \u2014 then mute under VO. Heavy impact SFX. Typewriter text of company name frames them as defendant. Half-beat pause for anticipation.",
+          "_timeline_start_sec": 230.26253899688027,
+          "_timeline_end_sec": 256.7427309815215
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Chris spoke publicly at the Washington state attorney general's press conference. He said: \"The most painful and revolting part about all of it is that all of the money I spent unnecessarily is now in the pockets of those who need it the least.\"",
+          "voice_register": "tense",
+          "word_count": 44,
+          "visual_file": "apartment_housing_crisis_rent.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 18,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "\"The most painful and revolting thing...\"",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.95,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Peak emotional tension of the chapter \u2014 Chris's direct quote. Typewriter reveal of his opening words creates a documentary quote card effect while housing footage maintains visual context. Second use of the clip at a new start point.",
+          "_timeline_start_sec": 256.7427309815215,
+          "_timeline_end_sec": 269.4071706263499
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "The DOJ sued and announced a settlement in November 2025. RealPage has to modify its software. Landlords have to be allowed to set prices below the algorithm's floor. No fine. No compensation to renters. No admission of guilt.",
+          "voice_register": "measured",
+          "word_count": 38,
+          "visual_file": "Department_of_Justice_building.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 8,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "DOJ Settlement \u2014 November 2025",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.5,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Energy deliberately drops \u2014 settlement announcement. DOJ building provides institutional gravitas and false resolution before the $0 reveal. Lower-third timestamps the event. No SFX \u2014 institutional silence before the gut punch of seg 27.",
+          "_timeline_start_sec": 269.4071706263499,
+          "_timeline_end_sec": 280.34464122870173
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "To be clear: a company was found to have coordinated rent prices for millions of apartments, and the settlement was essentially \"please update your software.\" If you got caught fixing prices at a farmers' market, you'd face harsher consequences. Eight hundred thousand leases in Washington alone were priced by the algorithm.",
+          "voice_register": "neutral",
+          "word_count": 51,
+          "visual_file": "pexels_5668858_RealPage_lawsuit_New_York_rent.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "glass_shatter_01_loud.wav",
+            "motivation": "glass shatter on '$0' \u2014 the fine that shatters the entire concept of legal accountability",
+            "type": "other"
+          },
+          "text_overlay": "$0",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.9,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "The chapter's killer stat. 1.5s pause before the reveal \u2014 longest pause yet, maximum anticipation. Music drops to complete silence. Glass shatter SFX. Large static '$0' on screen. This answers the rhetorical question posed in seg 22. The settlement image used again grounds the irony.",
+          "_timeline_start_sec": 280.34464122870173,
+          "_timeline_end_sec": 295.0238780897528
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "And after getting caught fixing rent for millions of people, RealPage's first move was to sue the state of New York for passing a law that banned algorithmic rent-setting.",
+          "voice_register": "neutral",
+          "word_count": 29,
+          "visual_file": "pexels_208724_New_York_State_Capitol_Albany_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_05_loud.wav",
+            "motivation": "whoosh on the audacity pivot \u2014 RealPage suing the state it victimized",
+            "type": "whoosh"
+          },
+          "text_overlay": "RealPage sues New York.",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.8,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "The audacity of suing the state that tried to hold them accountable demands a whoosh and typewriter text to let the irony detonate. NY State Capitol grounds the counter-attack geographically. Music begins rising \u2014 building to the final chapter beat.",
+          "_timeline_start_sec": 295.0238780897528,
+          "_timeline_end_sec": 303.37089512838975
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "And then RealPage did something that tells you everything about how the formula works when it's fully internalized. New York State passed a law banning algorithmic rent-setting \u2014 the first state to say, explicitly, that this practice is illegal. RealPage's response was not to comply. Not to modify their business. They sued New York. The company that was just caught coordinating rent prices for millions of people went to court to argue that the state didn't have the right to stop them.",
+          "voice_register": "tense",
+          "word_count": 82,
+          "visual_file": "corporate_boardroom_meeting_stock.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 1.5,
+          "sfx": {
+            "file": "impact_new_loud.wav",
+            "motivation": "final impact \u2014 the formula fully internalized, no shame, no retreat, no reckoning",
+            "type": "impact"
+          },
+          "text_overlay": "The formula. Fully internalized.",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.95,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Closing beat of the chapter. Corporate boardroom is the formula's natural habitat. Half-beat pause before, 1.5s tail after to let the impact land. Typewriter text echoes the thesis. Impact SFX. Fade to black signals the end of this chapter arc and the transition to what comes next.",
+          "_timeline_start_sec": 303.37089512838975,
+          "_timeline_end_sec": 326.97280537557003
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "That's not a company that got caught and feels chastened. That's a company that did the math and concluded \u2014 correctly, so far \u2014 that the system will let them continue.",
+          "voice_register": "tense",
+          "word_count": 31,
+          "visual_file": "pexels_208724_European_Parliament_Strasbourg.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "low rumble underscores the cold corporate calculation \u2014 the machinery of the formula",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.9,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Half-second pause before 'correctly' \u2014 the word needs room. Boardroom wide shot keeps the corporate machinery visible while narrator delivers the indictment. Rumble SFX runs beneath the whole segment.",
+          "_timeline_start_sec": 326.97280537557003,
+          "_timeline_end_sec": 335.8954787616991
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Richard Grimshaw lost his fingers, his ear, and his childhood because Ford decided a hundred and thirty-seven million was too expensive. Chris Vialpondo works two jobs because an algorithm decided fifty percent more was the right number. The formula doesn't care whether it's a car or an apartment. It just runs the math.",
+          "voice_register": "tense",
+          "word_count": 53,
+          "visual_file": "pexels_5668473_Ford_Pinto_fire_crash_archival.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_01_loud.wav",
+            "motivation": "single hard impact on 'Richard Grimshaw' \u2014 the human cost arriving with weight",
+            "type": "impact"
+          },
+          "text_overlay": "RICHARD GRIMSHAW\n1972\u2013",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.95,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Full second of silence before the human cost hits. Burned Pinto is visceral \u2014 the math made flesh. Impact SFX on his name. Music swells under the catalogue of what he lost: fingers, ear, childhood. The numbers become a body.",
+          "_timeline_start_sec": 335.8954787616991,
+          "_timeline_end_sec": 351.1503719702424
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "And sometimes, the price is zero.",
+          "voice_register": "tense",
+          "word_count": 6,
+          "visual_file": "pexels_5668473_mathematical_formula_variable_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "glass_shatter_01_loud.wav",
+            "motivation": "glass shattering on 'zero' \u2014 the concept of justice breaking apart",
+            "type": "other"
+          },
+          "text_overlay": "$0",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 1.0,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Longest pause before 'zero' in this section \u2014 this is the thesis crystallizing. Glass shatter SFX. '$0' appears stark and alone, white on black. Music drops to complete silence. The formula written in its purest form.",
+          "_timeline_start_sec": 351.1503719702424,
+          "_timeline_end_sec": 352.877341012719
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "tense",
+          "word_count": 1,
+          "visual_file": "wiki_2_RealPage_lawsuit_cou.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.0,
+          "vo_pause_after": 2.0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.85,
+          "zoom_target": null,
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Pure breath. '$0' has landed. Human silhouette holds the void. No SFX, no music, no text. Viewer sits in silence before the chapter card arrives. This pause does the work no narration can.",
+          "_timeline_start_sec": 352.877341012719,
+          "_timeline_end_sec": 353.1651691864651
+        }
+      ]
+    },
+    {
+      "arc": "chapter_transition",
+      "segments": [
+        {
+          "text": "[CHAPTER: THE RECKONING]",
+          "voice_register": "tense",
+          "word_count": 3,
+          "visual_file": "pexels_208724_Department_of_Justice_building.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_01_loud.wav",
+            "motivation": "chapter card punch \u2014 LearnByLeo 5-step opener: punch before the card",
+            "type": "whoosh"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "chapter_transition",
+          "tension_level": 0.7,
+          "zoom_target": null,
+          "chapter_card": "THE RECKONING",
+          "music_state": "transition",
+          "notes": "5-step transition: punch (whoosh) \u2192 silence handled by seg 3 \u2192 card (THE RECKONING) \u2192 new energy \u2192 hook. Dramatic nighttime DOJ image behind the card. Music bridges into new section. The title lands like a verdict.",
+          "_timeline_start_sec": 353.1651691864651,
+          "_timeline_end_sec": 354.0286537077034
+        }
+      ]
+    },
+    {
+      "arc": "context_setup",
+      "segments": [
+        {
+          "text": "Europe figured this out. Four percent of global revenue. Proportional. Automatic. No ceiling. When the fine scales with the company, the formula breaks. Facebook shrugged off a five-billion-dollar American fine and panicked over a European one. The tools exist. Criminal liability for executives \u2014 not the tellers, the architects. Disgorgement \u2014 hand back every dollar earned from the violation, not a negotiated fraction. The legal frameworks are built. The question has never been how. The question is why.",
+          "voice_register": "tense",
+          "word_count": 78,
+          "visual_file": "pexels_5668473_European_Parliament_voting_cha.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_01_loud.wav",
+            "motivation": "shimmer on 'Europe figured this out' \u2014 rare moment of functional governance, a glimmer",
+            "type": "shimmer"
+          },
+          "text_overlay": "4% OF GLOBAL REVENUE",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "context_setup",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Energy deliberately resets post-chapter-card. European Parliament chamber shows governance that actually works \u2014 a contrast to everything just documented. Shimmer = rare positive note. Typewriter text emphasizes the proportional penalty as narrator says it.",
+          "_timeline_start_sec": 354.0286537077034,
+          "_timeline_end_sec": 376.47925125989923
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "And the answer is the same math that runs everything else in this video. The companies that benefit from the formula fund the campaigns, staff the advisory boards, draft the legislation. The fine stays small because the people who pay it set the ceiling.",
+          "voice_register": "tense",
+          "word_count": 44,
+          "visual_file": "wiki_2_regulatory_capture_c.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_02_loud.wav",
+            "motivation": "rumble returns as the formula re-emerges \u2014 same machinery, still running",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.85,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Back to the formula. Two men at a desk discussing corporate penalties \u2014 exactly right for 'same math runs everything else in this video.' The companies that fund the lobbying are the companies being fined. Rumble marks the formula's return.",
+          "_timeline_start_sec": 376.47925125989923,
+          "_timeline_end_sec": 389.14369090472763
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "tense",
+          "word_count": 1,
+          "visual_file": "pexels_577585_bar_chart_graph_dramatic_spike.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.5,
+          "vo_pause_after": 1.5,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.8,
+          "zoom_target": null,
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "Second pause. Glasses resting on a financial spreadsheet \u2014 the abstraction of the math. Full silence. Viewer breathes before the camera turns to human faces. This pause is the hinge between the systemic and the personal.",
+          "_timeline_start_sec": 389.14369090472763,
+          "_timeline_end_sec": 389.43151907847374
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "Let me show you what the math looks like when you put a face on it.",
+          "voice_register": "tense",
+          "word_count": 16,
+          "visual_file": "pexels_1181467_human_silhouette_dramatic_back.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_02_loud.wav",
+            "motivation": "transitional whoosh into the human reckoning \u2014 the pivot from abstract to personal",
+            "type": "whoosh"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.75,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Two silhouettes \u2014 the human scale. 'Put a face on it' matched to people imagery. Whoosh SFX marks the pivot. Music rises to signal the new register: we're about to meet the people the formula priced. Energy shift is intentional.",
+          "_timeline_start_sec": 389.43151907847374,
+          "_timeline_end_sec": 394.03676985841133
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "Richard Grimshaw survived the Pinto fire. He grew up carrying scars that covered his body and a verdict that was supposed to change things \u2014 one hundred and twenty-five million dollars, reduced to three point five million. The message was: we've done the math, and your pain has a price. Ford paid it and moved on.",
+          "voice_register": "tense",
+          "word_count": 56,
+          "visual_file": "pexels_5668473_Grimshaw_v_Ford_Motor_Company_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_02_loud.wav",
+            "motivation": "mournful shimmer \u2014 the verdict that was supposed to change things didn't",
+            "type": "shimmer"
+          },
+          "text_overlay": "RICHARD GRIMSHAW",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.9,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Amber Pinto \u2014 the car that survived better than the boy who burned in it. Shimmer is ironic, mournful. Lower-third name card grounds this as a real person who still carries the scars. Music drops under VO for intimacy. Let the words carry the weight.",
+          "_timeline_start_sec": 394.03676985841133,
+          "_timeline_end_sec": 410.15514758819296
+        },
+        {
+          "text": "Yesenia Guitron called the ethics hotline and was fired for it. She never worked in banking again. Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars.",
+          "voice_register": "tense",
+          "word_count": 28,
+          "visual_file": "Wells_Fargo_fake_accounts_scandal.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 8,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_02_loud.wav",
+            "motivation": "impact on 'fired' \u2014 the injustice of her fate vs. Tolstedt's $125M landing hard",
+            "type": "impact"
+          },
+          "text_overlay": "YESENIA GUITRON",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.9,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Wells Fargo footage is the exact institution \u2014 right bank, right scandal. Impact SFX hits on 'fired.' She called the hotline. She lost everything. Tolstedt kept $125M. The gap between those two fates is the formula's cruelest math.",
+          "_timeline_start_sec": 410.15514758819296,
+          "_timeline_end_sec": 418.2143364530838
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "The Sackler name is still on a wing of the Guggenheim Museum in New York City. The Metropolitan Museum took theirs down after public outcry. The Guggenheim hasn't. You can walk into one of the most prestigious cultural institutions in the world, look up at the wall, and read the name of a family that earned their fortune from a drug that killed eight hundred thousand people. They kept thirteen billion. And they kept the wall.",
+          "voice_register": "neutral",
+          "word_count": 76,
+          "visual_file": "pexels_208724_New_York_State_Capitol_Albany_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "THE SACKLER NAME",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.6,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "New York institution \u2014 close enough to the Guggenheim context. Typewriter text on 'THE SACKLER NAME' makes it feel engraved, permanent. No SFX \u2014 quiet outrage works better here. The Met took theirs down. The Guggenheim didn't. That gap is the story.",
+          "_timeline_start_sec": 418.2143364530838,
+          "_timeline_end_sec": 440.0892776577874
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "That's the formula. It even gets you a plaque.",
+          "voice_register": "neutral",
+          "word_count": 9,
+          "visual_file": "pexels_5668473_mathematical_formula_variable_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "typewriter_key_loud.wav",
+            "motivation": "typewriter click on 'plaque' \u2014 the sardonic engraving of the formula's ultimate reward",
+            "type": "typewriter"
+          },
+          "text_overlay": "THE FORMULA",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.7,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Dark comedy beat. Typewriter SFX makes 'THE FORMULA' feel stamped, bureaucratic, official. Mathematical formulas image is the perfect visual \u2014 the cold equation that earns you a museum wing. 'It even gets you a plaque' should land like a punchline that makes you sick.",
+          "_timeline_start_sec": 440.0892776577874,
+          "_timeline_end_sec": 442.6797312215023
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "Elliana Esquivel is still making art in Charlotte. She pivoted to 3D \u2014 not because she chose to, but because the alternative was watching her style get reproduced for free. If the settlement arrives, her share might cover a month of rent. The model keeps running.",
+          "voice_register": "measured",
+          "word_count": 46,
+          "visual_file": "wiki_0_corporate_data_delet.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 2,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "ELLIANA ESQUIVEL",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.6,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Digital artist workspace \u2014 perfect for Elliana who pivoted to 3D. 'Not because she chose to, but because the alternative was worse' \u2014 muted clip audio keeps it somber. No SFX, no music swell. This is the fatigue of surviving when the system doesn't care you survived.",
+          "_timeline_start_sec": 442.6797312215023,
+          "_timeline_end_sec": 455.91982721382294
+        },
+        {
+          "text": "Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted. The models built on it were refined.",
+          "voice_register": "measured",
+          "word_count": 27,
+          "visual_file": "wiki_0_Mark_Zuckerberg_Sena.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 5,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "shimmer_03_loud.wav",
+            "motivation": "shimmer on '74%' \u2014 a statistic almost too large to believe, ringing like an alarm",
+            "type": "shimmer"
+          },
+          "text_overlay": "74% STILL DON'T KNOW",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.65,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Cambridge Analytica footage matches Facebook data harvesting directly. '74% don't know' is the killer stat \u2014 static text slap makes it hit harder than typewriter. Shimmer SFX underlines the surreal scale. The data from 2014 was never deleted. It's still running.",
+          "_timeline_start_sec": 455.91982721382294,
+          "_timeline_end_sec": 463.69118790496765
+        },
+        {
+          "text": "Chris Vialpondo is still in Seattle. Still working two jobs. The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula.",
+          "voice_register": "measured",
+          "word_count": 32,
+          "visual_file": "pexels_208724_Seattle_Lower_Queen_Anne_neigh.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_03_loud.wav",
+            "motivation": "low rumble \u2014 the algorithm still running beneath the city, a server hum that never stops",
+            "type": "rumble"
+          },
+          "text_overlay": "CHRIS VIALPONDO",
+          "text_style": "lower_third",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.7,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Seattle aerial \u2014 exact match. 'Algorithm that raised his rent is still running' \u2014 low rumble SFX like a server hum, the machine beneath the city that never sleeps. Still working two jobs. His first name in the algorithm's math is a variable. Lower-third makes him a person.",
+          "_timeline_start_sec": 463.69118790496765,
+          "_timeline_end_sec": 472.90168946484283
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "The Grush-Saunby memo put a dollar value on a human life in 1977. Two hundred thousand dollars. Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars. The AI settlements value each stolen book at three thousand dollars. Elliana's illustrations? Not priced yet. Your Reddit posts? Your YouTube comments? Your blog from 2016?",
+          "voice_register": "measured",
+          "word_count": 61,
+          "visual_file": "wiki_0_Ford_Pinto_recall_no.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "impact_new_loud.wav",
+            "motivation": "single heavy impact as the life-value countdown begins \u2014 the weight of each number",
+            "type": "impact"
+          },
+          "text_overlay": "$200,000 \u2192 $9,000 \u2192 $57 \u2192 $3,000",
+          "text_style": "typewriter",
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 0.85,
+          "zoom_target": "document",
+          "chapter_card": null,
+          "music_state": "ducking",
+          "notes": "Official Ford recall document \u2014 the paper that put the first price on Grimshaw. Typewriter text counts down the life values as each case is named: $200K \u2192 $9K \u2192 $57 \u2192 $3K. One impact SFX up front, then let the numbers fall in silence. Half-second pause before this brutal escalation.",
+          "_timeline_start_sec": 472.90168946484283,
+          "_timeline_end_sec": 490.45920806335494
+        }
+      ]
+    },
+    {
+      "arc": "tension_build",
+      "segments": [
+        {
+          "text": "They'll get priced. And if fifty years of history tells you anything \u2014 you won't like the number.",
+          "voice_register": "measured",
+          "word_count": 18,
+          "visual_file": "Wall_Street_trading_floor.mp4",
+          "visual_type": "video_clip",
+          "clip_start_sec": 4,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0.5,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "rumble_01_loud.wav",
+            "motivation": "rumble builds under 'you won't like the number' \u2014 dread accumulating toward the thesis",
+            "type": "rumble"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "tension_build",
+          "tension_level": 0.9,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "Trading floor \u2014 the market that prices everything, including lives. 'You won't like the number' lands over the noise of commerce. Rumble builds. Music rises hard. This is the penultimate beat before the thesis detonates. Everything accelerates from here.",
+          "_timeline_start_sec": 490.45920806335494,
+          "_timeline_end_sec": 495.6401151907848
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "[PAUSE]",
+          "voice_register": "measured",
+          "word_count": 1,
+          "visual_file": "wiki_0_person_choosing_taki.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 2.5,
+          "vo_pause_after": 1.0,
+          "sfx": null,
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "aftermath",
+          "tension_level": 0.95,
+          "zoom_target": null,
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "The longest pause in the film. 2.5 seconds of complete silence before the thesis. No music. No SFX. No text. Just the human silhouette against the void. The viewer has to sit knowing something is coming. This is where anticipation does everything. Then the thesis detonates.",
+          "_timeline_start_sec": 495.6401151907848,
+          "_timeline_end_sec": 495.9279433645309
+        }
+      ]
+    },
+    {
+      "arc": "revelation",
+      "segments": [
+        {
+          "text": "The law doesn't prevent corporate crime. It prices it.",
+          "voice_register": "tense",
+          "word_count": 9,
+          "visual_file": "pexels_269077_corporate_theft_intellectual_p.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 3,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "glass_shatter_new_loud.wav",
+            "motivation": "glass shattering \u2014 the illusion of justice breaking apart on the thesis line",
+            "type": "other"
+          },
+          "text_overlay": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
+          "text_style": "typewriter",
+          "transition_in": "fade_from_black",
+          "transition_out": "cut",
+          "arc_position": "revelation",
+          "tension_level": 1.0,
+          "zoom_target": "subject",
+          "chapter_card": null,
+          "music_state": "silent",
+          "notes": "THE thesis statement. Glass shatter SFX fires before the line \u2014 not after. Gavel in frame, then typewriter text appears letter by letter as narrator speaks. Fade from black makes it feel like resurrection from the silence. Everything this film built toward, in one sentence. Music stays silent \u2014 the words must stand alone.",
+          "_timeline_start_sec": 495.9279433645309,
+          "_timeline_end_sec": 498.5183969282458
+        }
+      ]
+    },
+    {
+      "arc": "emotional_peak",
+      "segments": [
+        {
+          "text": "The question was never whether they'd break the law.",
+          "voice_register": "tense",
+          "word_count": 9,
+          "visual_file": "wiki_3_Senator_questioning_.jpg",
+          "visual_type": "video_clip",
+          "clip_start_sec": 10,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "whoosh_03_loud.wav",
+            "motivation": "whoosh cuts to the boardroom \u2014 the question shifts to the people who made the calculation",
+            "type": "whoosh"
+          },
+          "text_overlay": null,
+          "text_style": null,
+          "transition_in": "cut",
+          "transition_out": "cut",
+          "arc_position": "emotional_peak",
+          "tension_level": 0.95,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "The question pivots: 'never whether they'd break the law' \u2014 cut to the boardroom where that calculation was always already made. Whoosh SFX marks the shift. Music rises hard into the finale. The answer has always been made in this room, by these people, at these tables.",
+          "_timeline_start_sec": 498.5183969282458,
+          "_timeline_end_sec": 501.1088504919607
+        },
+        {
+          "text": "The question is what you're worth.",
+          "voice_register": "tense",
+          "word_count": 6,
+          "visual_file": "pexels_5668473_car_doing_donuts_parking_lot_s.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 1.0,
+          "vo_pause_after": 0,
+          "sfx": {
+            "file": "body_impact_01_loud.wav",
+            "motivation": "body impact \u2014 the cost of the formula is a body; the viewer is being asked to feel their own worth",
+            "type": "impact"
+          },
+          "text_overlay": "WHAT ARE YOU WORTH?",
+          "text_style": "static",
+          "transition_in": "cut",
+          "transition_out": "fade_to_black",
+          "arc_position": "emotional_peak",
+          "tension_level": 1.0,
+          "zoom_target": "wide",
+          "chapter_card": null,
+          "music_state": "rising",
+          "notes": "The gut punch. Full second before 'what you're worth.' Body impact SFX on the last word. Static text: 'WHAT ARE YOU WORTH?' \u2014 the question turned on the viewer, direct address, no escape. Single human silhouette. Fade to black. Music cuts to silence on the cut. The film ends here.",
+          "_timeline_start_sec": 501.1088504919607,
+          "_timeline_end_sec": 502.8358195344373
+        }
+      ]
+    },
+    {
+      "arc": "aftermath",
+      "segments": [
+        {
+          "text": "Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC, DOJ, ProPublica, Copyright Alliance, CDC, European Data Protection Board, Washington State AG, WCNC Charlotte, Good Jobs First Violation Tracker, AlixPartners (2019).",
+          "voice_register": "tense",
+          "word_count": 31,
+          "visual_file": "pexels_269077_Wells_Fargo_executive_banking_.jpg",
+          "visual_type": "still_image",
+          "clip_start_sec": null,
+          "clip_audio": "mute",
+          "clip_audio_duration": null,
+          "vo_pause_before": 0,
+          "vo_pause_after": 0,
+          "sfx": null,
+          "text_overlay": "SOURCES",
+          "text_style": "static",
+          "transition_in": "fade_from_black",
+          "transition_out": "fade_to_black",
+          "arc_position": "aftermath",
+          "tension_level": 0.1,
+          "zoom_target": null,
+          "chapter_card": null,
+          "music_state": "playing",
+          "notes": "Clean credits sequence over a DOJ settlement document \u2014 the paper trail this whole film was built on. Music returns soft and resolved. Sources roll quietly. Fade to black closes the film. The gavel. The document. The math.",
+          "_timeline_start_sec": 502.8358195344373,
+          "_timeline_end_sec": 511.7584929205664
+        }
+      ]
+    }
+  ]
+}
