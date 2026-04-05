@@ -167,12 +167,21 @@ class FCPXMLBuilderV2:
         media_cache = {}  # filename → (abspath, duration)
 
         for seg in segments:
+            # Resolve visual_file (v4 schema)
             vf = seg.get("visual_file")
             if vf:
                 path = find_media_file(vf)
                 if path:
                     dur = get_duration(path) if not is_image(path) else None
                     media_cache[vf] = (path, dur)
+            # Resolve beats visual files (v5 schema)
+            for beat in seg.get("beats", []):
+                bvf = beat.get("visual_file")
+                if bvf and bvf not in media_cache:
+                    path = find_media_file(bvf)
+                    if path:
+                        dur = get_duration(path) if not is_image(path) else None
+                        media_cache[bvf] = (path, dur)
 
         # ── Pre-process: close gaps between segments ──
         # Extend each segment's end to the next segment's start.
@@ -190,15 +199,107 @@ class FCPXMLBuilderV2:
             active_segs[-1]["_narr_end"] = narr_total
 
         # ── Build V1 spine clips ──
+        # Supports BOTH schemas:
+        #   v4 (old): one "visual_file" per segment
+        #   v5 (new): "beats" array with multiple visuals per segment
         print("  Building V1 spine...")
         v1_clips = []
         for seg in active_segs:
+            seg_start = seg["_narr_start"]
+            seg_end = seg["_narr_end"]
+            seg_dur = max(seg_end - seg_start, 0.5)
+
+            # Check for v5 beats schema
+            beats = seg.get("beats")
+            if beats and isinstance(beats, list) and len(beats) > 0:
+                # v5: multiple visual beats per segment
+                num_beats = len(beats)
+                beat_dur = seg_dur / num_beats  # distribute evenly
+
+                for b_idx, beat in enumerate(beats):
+                    vf = beat.get("visual_file")
+                    if not vf or vf not in media_cache:
+                        continue
+                    path, source_dur = media_cache[vf]
+                    b_start = seg_start + (b_idx * beat_dur)
+                    b_dur = beat_dur
+                    clip_start_sec = beat.get("clip_start_sec") or 0
+
+                    if is_image(path):
+                        if b_dur > 7.5:
+                            # Split long image beats further
+                            seg_text_lower = beat.get("text", seg.get("text", "")).lower()
+                            seg_keywords = set(re.findall(r'[a-z]{4,}', seg_text_lower))
+                            seg_keywords -= {'that', 'this', 'with', 'from', 'they', 'their',
+                                             'were', 'have', 'been', 'what', 'when', 'than',
+                                             'more', 'most', 'just', 'only', 'also', 'into'}
+
+                            # First sub-clip: director's chosen image
+                            v1_clips.append({
+                                "path": path, "offset": b_start,
+                                "duration": min(5.0, b_dur), "start": 0,
+                                "name": os.path.basename(path),
+                                "clip_audio": beat.get("clip_audio", "mute"),
+                                "clip_audio_duration": beat.get("clip_audio_duration"),
+                                "transition_in": "cut",
+                                "zoom_target": beat.get("zoom_target", "wide"),
+                                "is_image": True, "seg": seg,
+                            })
+                            filled = 5.0
+                            avail = [(sum(1 for kw in seg_keywords if kw in n.lower()), p)
+                                     for n, (p, _) in media_cache.items()
+                                     if is_image(p) and p != path]
+                            avail.sort(key=lambda x: -x[0])
+                            avail = [p for _, p in avail] or [path]
+                            rot = 0
+                            while filled < b_dur - 1.0:
+                                alt = avail[rot % len(avail)]
+                                rot += 1
+                                chunk = min(6.0, b_dur - filled)
+                                v1_clips.append({
+                                    "path": alt, "offset": b_start + filled,
+                                    "duration": chunk, "start": 0,
+                                    "name": os.path.basename(alt),
+                                    "clip_audio": "mute", "clip_audio_duration": None,
+                                    "transition_in": "cut",
+                                    "zoom_target": beat.get("zoom_target", "wide"),
+                                    "is_image": True, "seg": seg,
+                                })
+                                filled += chunk
+                        else:
+                            v1_clips.append({
+                                "path": path, "offset": b_start,
+                                "duration": b_dur, "start": 0,
+                                "name": os.path.basename(path),
+                                "clip_audio": beat.get("clip_audio", "mute"),
+                                "clip_audio_duration": beat.get("clip_audio_duration"),
+                                "transition_in": "cut",
+                                "zoom_target": beat.get("zoom_target", "wide"),
+                                "is_image": True, "seg": seg,
+                            })
+                    else:
+                        available = (source_dur or 60) - clip_start_sec
+                        use_dur = min(b_dur, available)
+                        v1_clips.append({
+                            "path": path, "offset": b_start,
+                            "duration": use_dur, "start": clip_start_sec,
+                            "name": os.path.basename(path),
+                            "clip_audio": beat.get("clip_audio", "mute"),
+                            "clip_audio_duration": beat.get("clip_audio_duration"),
+                            "transition_in": "cut",
+                            "zoom_target": beat.get("zoom_target", "wide"),
+                            "is_image": False, "seg": seg,
+                        })
+                        if use_dur < b_dur - 1.0:
+                            v1_clips[-1]["duration"] = b_dur  # extend to fill
+                continue  # skip the v4 fallback below
+
+            # v4 fallback: single visual_file per segment
             vf = seg.get("visual_file")
             if not vf or vf not in media_cache:
                 continue
 
             path, source_dur = media_cache[vf]
-            seg_dur = max(seg["_narr_end"] - seg["_narr_start"], 0.5)
 
             clip_start = seg.get("clip_start_sec") or 0
 
