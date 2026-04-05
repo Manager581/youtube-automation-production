@@ -483,6 +483,19 @@ def validate_decisions(decisions, clips, images, sfx):
     fixed = 0
     
     for i, dec in enumerate(decisions):
+        # Validate beats visual files (v5 schema)
+        beats = dec.get("beats")
+        if beats and isinstance(beats, list):
+            for beat in beats:
+                bvf = beat.get("visual_file", "")
+                if bvf and bvf not in all_files:
+                    # Find closest match
+                    for name in all_files:
+                        if any(w in name.lower() for w in bvf.lower().split('_')[:3] if len(w) > 3):
+                            beat["visual_file"] = name
+                            fixed += 1
+                            break
+
         # Validate visual_file exists
         vf = dec.get("visual_file", "")
         if vf and vf not in all_files:
@@ -570,17 +583,25 @@ def build_output(segments, decisions, clips, images, sfx, alignment=None):
             cumulative_words += seg["word_count"]
             end_sec = (cumulative_words / total_words) * narr_duration if total_words > 0 else 0
         
+        # Extract beats if present (v5 schema)
+        beats = dec.get("beats")
+        # If beats exist, use first beat's visual as the segment visual_file
+        first_beat_visual = None
+        if beats and isinstance(beats, list) and len(beats) > 0:
+            first_beat_visual = beats[0].get("visual_file")
+
         output_seg = {
             "text": seg["text"],
             "voice_register": seg["voice_register"],
             "word_count": seg["word_count"],
-            
-            # Director decisions
-            "visual_file": dec.get("visual_file"),
-            "visual_type": dec.get("visual_type", "video_clip"),
-            "clip_start_sec": dec.get("clip_start_sec", 0),
-            "clip_audio": dec.get("clip_audio", "mute"),
-            "clip_audio_duration": dec.get("clip_audio_duration", 0),
+
+            # Director decisions — beats override visual_file
+            "visual_file": dec.get("visual_file") or first_beat_visual,
+            "visual_type": dec.get("visual_type") or (beats[0].get("visual_type", "still_image") if beats else "still_image"),
+            "clip_start_sec": dec.get("clip_start_sec") or (beats[0].get("clip_start_sec", 0) if beats else 0),
+            "clip_audio": dec.get("clip_audio") or (beats[0].get("clip_audio", "mute") if beats else "mute"),
+            "clip_audio_duration": dec.get("clip_audio_duration") or (beats[0].get("clip_audio_duration", 0) if beats else 0),
+            "beats": beats,  # Pass through beats array for v5 FCPXML builder
             
             "vo_pause_before": dec.get("vo_pause_before", 0),
             "vo_pause_after": dec.get("vo_pause_after", 0),
