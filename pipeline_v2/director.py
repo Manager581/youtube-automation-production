@@ -261,7 +261,8 @@ def build_director_prompt(segments, clips, images, sfx, playbook_rules):
     
     # Summarize available assets — include vision descriptions so director
     # can make informed visual choices (not just filename matching)
-    # Show ALL clips and ALL images (not capped) with longer descriptions
+    # Include ALL clips with full descriptions, cap images at 150 with 80-char descriptions
+    # (428 images × 120 chars = 51K chars — too big for Claude CLI)
     clip_summary = "\n".join(
         f"  - {c['filename'][:50]} ({c['duration']:.0f}s)"
         f" [{c.get('vision_description', '')[:120]}]"
@@ -269,10 +270,22 @@ def build_director_prompt(segments, clips, images, sfx, playbook_rules):
         for c in clips
     )
 
+    # Sort images by filename relevance — entity-named images first
+    # (Facebook_stock, Zuckerberg, Ford_Pinto, etc.) before generic ones
+    entity_keywords = ['facebook', 'zuckerberg', 'ford', 'pinto', 'wells_fargo',
+                       'purdue', 'sackler', 'realpage', 'cambridge', 'analytica',
+                       'grimshaw', 'guitron', 'esquivel', 'vialpondo', 'gdpr',
+                       'stock', 'fine', 'billion', 'doj', 'capitol', 'congress']
+    def image_priority(img):
+        fname = img['filename'].lower()
+        score = sum(1 for kw in entity_keywords if kw in fname)
+        return -score  # negative so higher score sorts first
+    sorted_images = sorted(images, key=image_priority)
+
     image_summary = "\n".join(
         f"  - {img['filename'][:60]}"
-        f" [{img.get('vision_description', '')[:120]}]"
-        for img in images
+        f" [{img.get('vision_description', '')[:80]}]"
+        for img in sorted_images[:150]
     )
     
     sfx_summary = "\n".join(
@@ -399,7 +412,7 @@ def direct_segments(segments, clips, images, sfx, playbook):
     playbook_rules = get_editing_rules(playbook)
 
     # Batch segments into groups of ~30 to avoid Claude CLI timeouts
-    BATCH_SIZE = 30
+    BATCH_SIZE = 15  # Smaller batches = smaller prompts = faster Claude responses
     all_decisions = []
 
     for batch_start in range(0, len(segments), BATCH_SIZE):
@@ -415,11 +428,11 @@ def direct_segments(segments, clips, images, sfx, playbook):
             f"For EACH segment (segments {batch_start} to {batch_end-1} of {len(segments)} total)"
         )
 
-        response = query_claude(prompt, timeout=300)
+        response = query_claude(prompt, timeout=1800)
 
         if not response:
             print(f"  ERROR: Batch {batch_start//BATCH_SIZE + 1} returned empty. Retrying...")
-            response = query_claude(prompt, timeout=300)
+            response = query_claude(prompt, timeout=1800)
 
         if not response:
             print(f"  ERROR: Batch {batch_start//BATCH_SIZE + 1} failed twice. Using defaults.")

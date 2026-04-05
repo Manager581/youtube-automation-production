@@ -26,6 +26,7 @@ Requires: ffprobe in PATH for video clip durations.
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 from fractions import Fraction
@@ -220,11 +221,32 @@ class FCPXMLBuilderV2:
                         "is_image": True,
                         "seg": seg,
                     })
-                    # Remaining sub-clips: rotate through different images
-                    # Build list of all available images (excluding current)
-                    avail_images = [p for n, (p, _) in media_cache.items()
-                                   if is_image(p) and p != path]
-                    img_rot_idx = hash(path) % max(len(avail_images), 1)  # start at different position per segment
+                    # Remaining sub-clips: use TOPICALLY RELEVANT images
+                    # Extract keywords from narration text to filter images
+                    seg_text_lower = seg.get("text", "").lower()
+                    seg_keywords = set(re.findall(r'[a-z]{4,}', seg_text_lower))
+                    seg_keywords -= {'that', 'this', 'with', 'from', 'they', 'their',
+                                     'were', 'have', 'been', 'what', 'when', 'than',
+                                     'more', 'most', 'just', 'only', 'also', 'into',
+                                     'over', 'would', 'could', 'should', 'about'}
+
+                    # Score each available image by keyword overlap with filename
+                    avail_images = []
+                    for n, (p, _) in media_cache.items():
+                        if not is_image(p) or p == path:
+                            continue
+                        fname_words = set(re.findall(r'[a-z]{4,}', n.lower()))
+                        score = len(seg_keywords & fname_words)
+                        avail_images.append((score, p))
+
+                    # Sort by relevance (highest score first), then shuffle within same score
+                    avail_images.sort(key=lambda x: -x[0])
+                    avail_images = [p for _, p in avail_images]
+
+                    if not avail_images:
+                        avail_images = [p for n, (p, _) in media_cache.items()
+                                       if is_image(p) and p != path]
+                    img_rot_idx = 0
 
                     filled = sub_dur
                     while filled < seg_dur - 1.0:
