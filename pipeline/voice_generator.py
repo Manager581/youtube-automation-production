@@ -52,7 +52,7 @@ from typing import Optional
 # ---------------------------------------------------------------------------
 # Constants — Fern production spec
 # ---------------------------------------------------------------------------
-TARGET_WPM       = 138.7   # Fern's measured avg across 3 videos (127 / 151 / 138)
+TARGET_WPM       = 175.0   # ColdFusion/HMW pace (was 138.7 Fern — too slow for business documentary)
 CHUNK_WORD_LIMIT = 22      # target words per F5-TTS chunk (reduced from 35 — tensor mismatch on longer batches)
 CHUNK_WORD_MIN   = 5       # don't make a chunk this tiny
 
@@ -211,9 +211,9 @@ def parse_script(raw: str) -> list[Segment]:
     current_voice = "neutral"
     current_text_parts: list[str] = []
 
-    # Tokenise: split on any tag
+    # Tokenise: split on any tag (including [CHAPTER:...] and bare [PAUSE])
     token_re = re.compile(
-        r'(\[PAUSE:[\d.]+\]|\[BEAT\]|\[BREATH\]|\[VOICE:\w+\])',
+        r'(\[PAUSE:[\d.]+\]|\[PAUSE\]|\[BEAT\]|\[BREATH\]|\[VOICE:\w+\]|\[CHAPTER:[^\]]*\])',
         re.IGNORECASE,
     )
 
@@ -257,6 +257,16 @@ def parse_script(raw: str) -> list[Segment]:
             m = re.match(r'\[VOICE:(\w+)\]', tok, re.IGNORECASE)
             if m:
                 current_voice = m.group(1).lower()
+
+        elif upper.startswith('[CHAPTER:'):
+            # Chapter markers produce a 3s dramatic silence (LearnByLeo 5-step transition)
+            flush_text()
+            segments.append(PauseSegment(duration=3.0))
+
+        elif upper == '[PAUSE]':
+            # Bare [PAUSE] without duration — treat as 1.5s pause
+            flush_text()
+            segments.append(PauseSegment(duration=1.5))
 
         else:
             current_text_parts.append(tok)
