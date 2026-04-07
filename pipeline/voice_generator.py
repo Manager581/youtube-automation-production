@@ -522,15 +522,21 @@ def generate_narration(
         else:  # SpeechSegment
             speech_idx += 1
 
-            # Reload TTS every 40 segments to prevent memory leak / tensor drift
-            if speech_idx > 1 and speech_idx % 40 == 0:
-                print(f"  [Reloading F5-TTS to prevent memory issues...]")
+            # Reload TTS every 10 segments to prevent OOM on M5 24GB
+            if speech_idx > 1 and speech_idx % 10 == 0:
+                print(f"  [Reloading F5-TTS to free memory (chunk {speech_idx})...]")
                 import gc, torch
                 del tts
                 gc.collect()
                 if torch.backends.mps.is_available():
                     torch.mps.empty_cache()
                 tts = _load_tts()
+            # Also clear MPS cache every 5 chunks (lightweight, no reload)
+            elif speech_idx > 1 and speech_idx % 5 == 0:
+                import gc, torch
+                gc.collect()
+                if torch.backends.mps.is_available():
+                    torch.mps.empty_cache()
 
             reg = seg.voice if seg.voice in ref_clips else "neutral"
             ref_wav, ref_text = ref_clips[reg]
