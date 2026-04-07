@@ -37,6 +37,7 @@ import os
 import re
 import subprocess
 import sys
+from collections import Counter, defaultdict
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -374,14 +375,19 @@ For EACH segment, output a JSON object with a "beats" array containing 1+ visual
 
 ## CRITICAL RULES
 
-1. **NEVER use the same image/clip more than 2 times** across the entire video. Track what you've used.
-2. **ENTITY MATCHING**: When the narration mentions a named entity (Facebook, Ford, Zuckerberg, Wells Fargo, Purdue, RealPage), the visual MUST show that specific entity. DO NOT use generic "corporate boardroom" footage when the VO names a specific company. Search the available images for the entity name in the filename.
-3. **EVERY 5-7 seconds must have a NEW visual** — sub-divide long segments into beats. Each beat's visual must MATCH the words being spoken in those seconds.
-4. Use clip audio ONLY for powerful moments — mute during regular narration
-5. Pause VO BEFORE reveals (anticipation), not after
-6. SFX only at genuine dramatic moments — max 2 per chapter
-7. Chapter cards at major topic shifts
-8. Text overlays for key stats, names, and dramatic lines — NOT on every segment
+1. **COLD OPEN / INTRO FORMAT**: The FIRST 3 beats of segment 0 MUST be 3 different VIDEO CLIPS (not images) with clip_audio="play" and clip_audio_duration=5. These clips play THEIR OWN AUDIO (news anchors, reporters) for 5 seconds each to showcase the topic before the VO starts. Pick the 3 most impactful news/documentary clips from the available videos. NO chapter cards in the intro. The VO narrator is SILENT during these 15 seconds.
+2. **NEVER use the same image/clip more than 2 times** across the entire video. Track what you've used.
+3. **ENTITY MATCHING**: When the narration mentions a named entity (Facebook, Ford, Zuckerberg, Wells Fargo, Purdue, RealPage), the visual MUST show that specific entity. DO NOT use generic "corporate boardroom" footage when the VO names a specific company. Search the available images for the entity name in the filename.
+4. **EVERY 5-7 seconds must have a NEW visual** — sub-divide long segments into beats. Each beat's visual must MATCH the words being spoken in those seconds.
+5. clip_audio rules (MUST follow):
+   - "play": Use for interview clips, news anchors speaking, dramatic ambient sound (explosions, protests, courtroom audio). Duration: 2-5 seconds. The VO will be SILENT during these moments.
+   - "play_then_mute": Use for opening hook clips (first 3s of a news report to establish context, then VO takes over). Set clip_audio_duration to the number of seconds.
+   - "mute": Everything else (B-roll, stock footage, establishing shots, generic visuals).
+   Target: 6-8 "play" or "play_then_mute" moments across the entire video (including the 3 intro clips). At least one per chapter.
+6. Pause VO BEFORE reveals (anticipation), not after
+7. SFX only at genuine dramatic moments — max 2 per chapter
+8. Chapter cards ONLY where the script contains [CHAPTER: ...] markers. Do NOT invent new chapter cards. Do NOT place chapter cards on segments that contain regular narration text.
+9. Text overlays for key stats, names, and dramatic lines — NOT on every segment
 
 Output a JSON array of {len(segments)} objects. ONLY JSON, no other text."""
 
@@ -412,8 +418,9 @@ def direct_segments(segments, clips, images, sfx, playbook):
     playbook_rules = get_editing_rules(playbook)
 
     # Batch segments into groups of ~30 to avoid Claude CLI timeouts
-    BATCH_SIZE = 15  # Smaller batches = smaller prompts = faster Claude responses
+    BATCH_SIZE = 8  # Smaller batches = better beats quality + fewer timeouts
     all_decisions = []
+    used_visuals = Counter()  # Cross-batch visual usage tracker
 
     for batch_start in range(0, len(segments), BATCH_SIZE):
         batch_end = min(batch_start + BATCH_SIZE, len(segments))
@@ -423,10 +430,12 @@ def direct_segments(segments, clips, images, sfx, playbook):
 
         prompt = build_director_prompt(batch, clips, images, sfx, playbook_rules)
         # Add batch context
-        prompt = prompt.replace(
-            f"For EACH segment (0 to {len(batch)-1})",
-            f"For EACH segment (segments {batch_start} to {batch_end-1} of {len(segments)} total)"
-        )
+        prompt += f"\n\nBATCH CONTEXT: You are processing segments {batch_start} to {batch_end-1} of {len(segments)} total. Segment indices in your output should start at 0 (relative to this batch)."
+
+        # Inject overused visuals from previous batches
+        overused = [f for f, count in used_visuals.items() if count >= 2]
+        if overused:
+            prompt += f"\n\nALREADY USED 2+ TIMES (do NOT pick these again):\n" + "\n".join(f"  - {f}" for f in overused)
 
         response = query_claude(prompt, timeout=1800)
 
@@ -454,7 +463,24 @@ def direct_segments(segments, clips, images, sfx, playbook):
 
         decisions = _parse_json_response(response)
         if decisions:
-            print(f"  ✅ Got {len(decisions)} decisions")
+            # Normalize SFX format: prompt asks for {"sfx": {"file": ..., "motivation": ...}}
+            # but code expects flat sfx_file / sfx_motivation
+            for dec in decisions:
+                sfx_obj = dec.get("sfx")
+                if isinstance(sfx_obj, dict):
+                    dec["sfx_file"] = sfx_obj.get("file")
+                    dec["sfx_motivation"] = sfx_obj.get("motivation", "")
+            beats_count = sum(len(d.get("beats", []) or []) for d in decisions)
+            print(f"  ✅ Got {len(decisions)} decisions ({beats_count} total beats)")
+            # Accumulate visual usage across batches
+            for dec in decisions:
+                vf = dec.get("visual_file", "")
+                if vf:
+                    used_visuals[vf] += 1
+                for beat in (dec.get("beats") or []):
+                    bvf = beat.get("visual_file", "")
+                    if bvf:
+                        used_visuals[bvf] += 1
             all_decisions.extend(decisions)
         else:
             print(f"  ERROR: Could not parse response. Preview: {response[:200]}")
@@ -543,9 +569,65 @@ def validate_decisions(decisions, clips, images, sfx):
         dec.setdefault("transition_in", "cut")
         dec.setdefault("transition_out", "cut")
     
+    # Fix 3: Strip invented or duplicate chapter cards
+    VALID_CHAPTERS = {"THE FORMULA", "THE DATA", "THE MACHINES", "THE RENT", "THE RECKONING"}
+    seen_chapters = set()
+    for dec in decisions:
+        cc = dec.get("chapter_card")
+        if cc:
+            if cc not in VALID_CHAPTERS:
+                print(f"  Stripped invented chapter: '{cc}'")
+                dec["chapter_card"] = None
+            elif cc in seen_chapters:
+                print(f"  Stripped duplicate chapter: '{cc}'")
+                dec["chapter_card"] = None
+            else:
+                seen_chapters.add(cc)
+
+    # Fix 4: Enforce usage cap on beats visual files too
+    for i, dec in enumerate(decisions):
+        beats = dec.get("beats")
+        if beats and isinstance(beats, list):
+            for beat in beats:
+                bvf = beat.get("visual_file", "")
+                if bvf:
+                    usage_count[bvf] = usage_count.get(bvf, 0) + 1
+                    if usage_count[bvf] > 2:
+                        # Find alternative from same type
+                        target_set = image_names if bvf in image_names else clip_names
+                        alternatives = [(usage_count.get(f, 0), f) for f in target_set]
+                        alternatives.sort()
+                        if alternatives:
+                            beat["visual_file"] = alternatives[0][1]
+                            usage_count[alternatives[0][1]] = usage_count.get(alternatives[0][1], 0) + 1
+                            fixed += 1
+
+    # Fix 5: Enforce SFX cap — max 2 per chapter
+    current_chapter = "UNKNOWN"
+    sfx_by_chapter = defaultdict(list)
+    for i, dec in enumerate(decisions):
+        cc = dec.get("chapter_card")
+        if cc:
+            current_chapter = cc
+        sfx_val = dec.get("sfx_file") or (dec.get("sfx", {}) or {}).get("file")
+        if sfx_val:
+            tension = dec.get("tension_level", 0.5)
+            sfx_by_chapter[current_chapter].append((i, tension))
+
+    for chapter, sfx_list in sfx_by_chapter.items():
+        if len(sfx_list) > 2:
+            # Keep top 2 by tension_level, null the rest
+            sfx_list.sort(key=lambda x: -x[1])
+            for idx, _ in sfx_list[2:]:
+                decisions[idx]["sfx_file"] = None
+                if "sfx" in decisions[idx]:
+                    decisions[idx]["sfx"] = None
+                fixed += 1
+            print(f"  Capped SFX in chapter '{chapter}': kept {2}, removed {len(sfx_list)-2}")
+
     if fixed:
         print(f"  Fixed {fixed} invalid references in director output")
-    
+
     return decisions
 
 

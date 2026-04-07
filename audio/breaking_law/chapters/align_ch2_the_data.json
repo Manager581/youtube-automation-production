@@ -1,0 +1,6494 @@
+{
+  "narration_path": "/Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/chapters/voice_ch2_the_data.wav",
+  "model": "base",
+  "duration_sec": 362.12,
+  "total_words": 1171,
+  "avg_wpm": 194.0,
+  "sentences": [
+    {
+      "id": 0,
+      "text": "The main center has been in the main center for 17 years, from 2000 to 2000, and I don't even know what it's like in the Canadian University of South Carolina.",
+      "start": 4.34,
+      "end": 10.68,
+      "words": [
+        {
+          "word": "The",
+          "start": 4.34,
+          "end": 4.74
+        },
+        {
+          "word": "main",
+          "start": 4.74,
+          "end": 4.86
+        },
+        {
+          "word": "center",
+          "start": 4.86,
+          "end": 5.16
+        },
+        {
+          "word": "has",
+          "start": 5.16,
+          "end": 5.46
+        },
+        {
+          "word": "been",
+          "start": 5.46,
+          "end": 5.6
+        },
+        {
+          "word": "in",
+          "start": 5.6,
+          "end": 5.74
+        },
+        {
+          "word": "the",
+          "start": 5.74,
+          "end": 5.8
+        },
+        {
+          "word": "main",
+          "start": 5.8,
+          "end": 5.98
+        },
+        {
+          "word": "center",
+          "start": 5.98,
+          "end": 6.14
+        },
+        {
+          "word": "for",
+          "start": 6.14,
+          "end": 6.54
+        },
+        {
+          "word": "17",
+          "start": 6.54,
+          "end": 7.06
+        },
+        {
+          "word": "years,",
+          "start": 7.06,
+          "end": 7.66
+        },
+        {
+          "word": "from",
+          "start": 7.86,
+          "end": 7.96
+        },
+        {
+          "word": "2000",
+          "start": 7.96,
+          "end": 8.26
+        },
+        {
+          "word": "to",
+          "start": 8.26,
+          "end": 8.66
+        },
+        {
+          "word": "2000,",
+          "start": 8.66,
+          "end": 8.66
+        },
+        {
+          "word": "and",
+          "start": 8.78,
+          "end": 8.78
+        },
+        {
+          "word": "I",
+          "start": 8.78,
+          "end": 8.86
+        },
+        {
+          "word": "don't",
+          "start": 8.86,
+          "end": 8.92
+        },
+        {
+          "word": "even",
+          "start": 8.92,
+          "end": 9.04
+        },
+        {
+          "word": "know",
+          "start": 9.04,
+          "end": 9.18
+        },
+        {
+          "word": "what",
+          "start": 9.18,
+          "end": 9.18
+        },
+        {
+          "word": "it's",
+          "start": 9.18,
+          "end": 9.26
+        },
+        {
+          "word": "like",
+          "start": 9.26,
+          "end": 9.4
+        },
+        {
+          "word": "in",
+          "start": 9.4,
+          "end": 9.78
+        },
+        {
+          "word": "the",
+          "start": 9.78,
+          "end": 9.8
+        },
+        {
+          "word": "Canadian",
+          "start": 9.8,
+          "end": 9.8
+        },
+        {
+          "word": "University",
+          "start": 9.8,
+          "end": 10.14
+        },
+        {
+          "word": "of",
+          "start": 10.14,
+          "end": 10.5
+        },
+        {
+          "word": "South",
+          "start": 10.5,
+          "end": 10.5
+        },
+        {
+          "word": "Carolina.",
+          "start": 10.5,
+          "end": 10.68
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "The main center has been in the main center for 17 years, for 17 years, no I'm gonna have a fine, but face to face is a pain.",
+      "start": 12.26,
+      "end": 19.4,
+      "words": [
+        {
+          "word": "The",
+          "start": 12.26,
+          "end": 12.66
+        },
+        {
+          "word": "main",
+          "start": 12.66,
+          "end": 12.9
+        },
+        {
+          "word": "center",
+          "start": 12.9,
+          "end": 13.34
+        },
+        {
+          "word": "has",
+          "start": 13.34,
+          "end": 13.64
+        },
+        {
+          "word": "been",
+          "start": 13.64,
+          "end": 13.64
+        },
+        {
+          "word": "in",
+          "start": 13.64,
+          "end": 13.74
+        },
+        {
+          "word": "the",
+          "start": 13.74,
+          "end": 13.84
+        },
+        {
+          "word": "main",
+          "start": 13.84,
+          "end": 14.0
+        },
+        {
+          "word": "center",
+          "start": 14.0,
+          "end": 14.0
+        },
+        {
+          "word": "for",
+          "start": 14.0,
+          "end": 14.08
+        },
+        {
+          "word": "17",
+          "start": 14.08,
+          "end": 14.88
+        },
+        {
+          "word": "years,",
+          "start": 14.88,
+          "end": 15.44
+        },
+        {
+          "word": "for",
+          "start": 15.48,
+          "end": 15.74
+        },
+        {
+          "word": "17",
+          "start": 15.74,
+          "end": 16.24
+        },
+        {
+          "word": "years,",
+          "start": 16.24,
+          "end": 16.64
+        },
+        {
+          "word": "no",
+          "start": 16.78,
+          "end": 16.94
+        },
+        {
+          "word": "I'm",
+          "start": 16.94,
+          "end": 17.12
+        },
+        {
+          "word": "gonna",
+          "start": 17.12,
+          "end": 17.26
+        },
+        {
+          "word": "have",
+          "start": 17.26,
+          "end": 17.54
+        },
+        {
+          "word": "a",
+          "start": 17.54,
+          "end": 17.54
+        },
+        {
+          "word": "fine,",
+          "start": 17.54,
+          "end": 17.9
+        },
+        {
+          "word": "but",
+          "start": 18.12,
+          "end": 18.2
+        },
+        {
+          "word": "face",
+          "start": 18.2,
+          "end": 18.58
+        },
+        {
+          "word": "to",
+          "start": 18.58,
+          "end": 18.8
+        },
+        {
+          "word": "face",
+          "start": 18.8,
+          "end": 18.88
+        },
+        {
+          "word": "is",
+          "start": 18.88,
+          "end": 18.88
+        },
+        {
+          "word": "a",
+          "start": 18.88,
+          "end": 18.98
+        },
+        {
+          "word": "pain.",
+          "start": 18.98,
+          "end": 19.4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The main center has been in the main center for 17 years, no I've been able to find it.",
+      "start": 25.54,
+      "end": 30.6,
+      "words": [
+        {
+          "word": "The",
+          "start": 25.54,
+          "end": 25.94
+        },
+        {
+          "word": "main",
+          "start": 25.94,
+          "end": 26.14
+        },
+        {
+          "word": "center",
+          "start": 26.14,
+          "end": 26.52
+        },
+        {
+          "word": "has",
+          "start": 26.52,
+          "end": 26.78
+        },
+        {
+          "word": "been",
+          "start": 26.78,
+          "end": 26.9
+        },
+        {
+          "word": "in",
+          "start": 26.9,
+          "end": 27.04
+        },
+        {
+          "word": "the",
+          "start": 27.04,
+          "end": 27.16
+        },
+        {
+          "word": "main",
+          "start": 27.16,
+          "end": 27.6
+        },
+        {
+          "word": "center",
+          "start": 27.6,
+          "end": 27.62
+        },
+        {
+          "word": "for",
+          "start": 27.62,
+          "end": 28.02
+        },
+        {
+          "word": "17",
+          "start": 28.02,
+          "end": 28.38
+        },
+        {
+          "word": "years,",
+          "start": 28.38,
+          "end": 28.74
+        },
+        {
+          "word": "no",
+          "start": 28.86,
+          "end": 28.96
+        },
+        {
+          "word": "I've",
+          "start": 28.96,
+          "end": 29.18
+        },
+        {
+          "word": "been",
+          "start": 29.18,
+          "end": 29.32
+        },
+        {
+          "word": "able",
+          "start": 29.32,
+          "end": 29.46
+        },
+        {
+          "word": "to",
+          "start": 29.46,
+          "end": 29.56
+        },
+        {
+          "word": "find",
+          "start": 29.56,
+          "end": 29.84
+        },
+        {
+          "word": "it.",
+          "start": 29.84,
+          "end": 30.6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The main center has been in the main center for 17 years, no I've been able to find it, no I don't believe it, it's not the thing that's gonna happen.",
+      "start": 30.6,
+      "end": 39.38,
+      "words": [
+        {
+          "word": "The",
+          "start": 30.6,
+          "end": 30.88
+        },
+        {
+          "word": "main",
+          "start": 30.88,
+          "end": 31.16
+        },
+        {
+          "word": "center",
+          "start": 31.16,
+          "end": 31.62
+        },
+        {
+          "word": "has",
+          "start": 31.62,
+          "end": 31.86
+        },
+        {
+          "word": "been",
+          "start": 31.86,
+          "end": 32.0
+        },
+        {
+          "word": "in",
+          "start": 32.0,
+          "end": 32.2
+        },
+        {
+          "word": "the",
+          "start": 32.2,
+          "end": 32.48
+        },
+        {
+          "word": "main",
+          "start": 32.48,
+          "end": 32.9
+        },
+        {
+          "word": "center",
+          "start": 32.9,
+          "end": 32.9
+        },
+        {
+          "word": "for",
+          "start": 32.9,
+          "end": 34.96
+        },
+        {
+          "word": "17",
+          "start": 34.96,
+          "end": 35.96
+        },
+        {
+          "word": "years,",
+          "start": 35.96,
+          "end": 36.46
+        },
+        {
+          "word": "no",
+          "start": 36.64,
+          "end": 36.76
+        },
+        {
+          "word": "I've",
+          "start": 36.76,
+          "end": 36.94
+        },
+        {
+          "word": "been",
+          "start": 36.94,
+          "end": 37.08
+        },
+        {
+          "word": "able",
+          "start": 37.08,
+          "end": 37.22
+        },
+        {
+          "word": "to",
+          "start": 37.22,
+          "end": 37.38
+        },
+        {
+          "word": "find",
+          "start": 37.38,
+          "end": 37.48
+        },
+        {
+          "word": "it,",
+          "start": 37.48,
+          "end": 37.64
+        },
+        {
+          "word": "no",
+          "start": 37.74,
+          "end": 37.84
+        },
+        {
+          "word": "I",
+          "start": 37.84,
+          "end": 37.94
+        },
+        {
+          "word": "don't",
+          "start": 37.94,
+          "end": 37.94
+        },
+        {
+          "word": "believe",
+          "start": 37.94,
+          "end": 38.18
+        },
+        {
+          "word": "it,",
+          "start": 38.18,
+          "end": 38.46
+        },
+        {
+          "word": "it's",
+          "start": 38.46,
+          "end": 38.68
+        },
+        {
+          "word": "not",
+          "start": 38.68,
+          "end": 38.84
+        },
+        {
+          "word": "the",
+          "start": 38.84,
+          "end": 39.04
+        },
+        {
+          "word": "thing",
+          "start": 39.04,
+          "end": 39.06
+        },
+        {
+          "word": "that's",
+          "start": 39.06,
+          "end": 39.26
+        },
+        {
+          "word": "gonna",
+          "start": 39.26,
+          "end": 39.38
+        },
+        {
+          "word": "happen.",
+          "start": 39.38,
+          "end": 39.38
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "The main center has been doing this for 17 years, for 17 years, no I'm gonna find it in the end of the year, for about a month.",
+      "start": 40.98,
+      "end": 55.2,
+      "words": [
+        {
+          "word": "The",
+          "start": 40.98,
+          "end": 41.42
+        },
+        {
+          "word": "main",
+          "start": 41.42,
+          "end": 41.66
+        },
+        {
+          "word": "center",
+          "start": 41.66,
+          "end": 41.94
+        },
+        {
+          "word": "has",
+          "start": 41.94,
+          "end": 41.94
+        },
+        {
+          "word": "been",
+          "start": 41.94,
+          "end": 42.3
+        },
+        {
+          "word": "doing",
+          "start": 42.3,
+          "end": 42.48
+        },
+        {
+          "word": "this",
+          "start": 42.48,
+          "end": 42.68
+        },
+        {
+          "word": "for",
+          "start": 42.68,
+          "end": 42.8
+        },
+        {
+          "word": "17",
+          "start": 42.8,
+          "end": 43.24
+        },
+        {
+          "word": "years,",
+          "start": 43.24,
+          "end": 43.56
+        },
+        {
+          "word": "for",
+          "start": 43.68,
+          "end": 43.76
+        },
+        {
+          "word": "17",
+          "start": 43.76,
+          "end": 44.14
+        },
+        {
+          "word": "years,",
+          "start": 44.14,
+          "end": 44.48
+        },
+        {
+          "word": "no",
+          "start": 44.64,
+          "end": 44.74
+        },
+        {
+          "word": "I'm",
+          "start": 44.74,
+          "end": 44.88
+        },
+        {
+          "word": "gonna",
+          "start": 44.88,
+          "end": 44.88
+        },
+        {
+          "word": "find",
+          "start": 44.88,
+          "end": 45.1
+        },
+        {
+          "word": "it",
+          "start": 45.1,
+          "end": 45.32
+        },
+        {
+          "word": "in",
+          "start": 45.32,
+          "end": 45.34
+        },
+        {
+          "word": "the",
+          "start": 45.34,
+          "end": 45.46
+        },
+        {
+          "word": "end",
+          "start": 45.46,
+          "end": 46.44
+        },
+        {
+          "word": "of",
+          "start": 46.44,
+          "end": 47.68
+        },
+        {
+          "word": "the",
+          "start": 47.68,
+          "end": 47.68
+        },
+        {
+          "word": "year,",
+          "start": 47.68,
+          "end": 51.2
+        },
+        {
+          "word": "for",
+          "start": 51.2,
+          "end": 53.68
+        },
+        {
+          "word": "about",
+          "start": 53.68,
+          "end": 54.3
+        },
+        {
+          "word": "a",
+          "start": 54.3,
+          "end": 54.58
+        },
+        {
+          "word": "month.",
+          "start": 54.58,
+          "end": 55.2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "The main center has been doing this for 17 years, 17 years.",
+      "start": 55.2,
+      "end": 59.4,
+      "words": [
+        {
+          "word": "The",
+          "start": 55.2,
+          "end": 55.36
+        },
+        {
+          "word": "main",
+          "start": 55.36,
+          "end": 55.66
+        },
+        {
+          "word": "center",
+          "start": 55.66,
+          "end": 56.14
+        },
+        {
+          "word": "has",
+          "start": 56.14,
+          "end": 56.36
+        },
+        {
+          "word": "been",
+          "start": 56.36,
+          "end": 56.64
+        },
+        {
+          "word": "doing",
+          "start": 56.64,
+          "end": 56.92
+        },
+        {
+          "word": "this",
+          "start": 56.92,
+          "end": 57.2
+        },
+        {
+          "word": "for",
+          "start": 57.2,
+          "end": 57.34
+        },
+        {
+          "word": "17",
+          "start": 57.34,
+          "end": 57.98
+        },
+        {
+          "word": "years,",
+          "start": 57.98,
+          "end": 58.44
+        },
+        {
+          "word": "17",
+          "start": 58.68,
+          "end": 58.86
+        },
+        {
+          "word": "years.",
+          "start": 58.86,
+          "end": 59.4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The main center across the table, we're looking at them differently, and he needs to decide on it, and I 87 million people's personality has measured model and weaponized for the price of frequency they never took.",
+      "start": 59.78,
+      "end": 66.26,
+      "words": [
+        {
+          "word": "The",
+          "start": 59.78,
+          "end": 60.0
+        },
+        {
+          "word": "main",
+          "start": 60.0,
+          "end": 60.04
+        },
+        {
+          "word": "center",
+          "start": 60.04,
+          "end": 60.16
+        },
+        {
+          "word": "across",
+          "start": 60.16,
+          "end": 60.36
+        },
+        {
+          "word": "the",
+          "start": 60.36,
+          "end": 60.52
+        },
+        {
+          "word": "table,",
+          "start": 60.52,
+          "end": 60.64
+        },
+        {
+          "word": "we're",
+          "start": 60.72,
+          "end": 60.78
+        },
+        {
+          "word": "looking",
+          "start": 60.78,
+          "end": 60.88
+        },
+        {
+          "word": "at",
+          "start": 60.88,
+          "end": 60.98
+        },
+        {
+          "word": "them",
+          "start": 60.98,
+          "end": 61.02
+        },
+        {
+          "word": "differently,",
+          "start": 61.02,
+          "end": 61.28
+        },
+        {
+          "word": "and",
+          "start": 61.42,
+          "end": 61.48
+        },
+        {
+          "word": "he",
+          "start": 61.48,
+          "end": 61.54
+        },
+        {
+          "word": "needs",
+          "start": 61.54,
+          "end": 61.64
+        },
+        {
+          "word": "to",
+          "start": 61.64,
+          "end": 61.72
+        },
+        {
+          "word": "decide",
+          "start": 61.72,
+          "end": 61.96
+        },
+        {
+          "word": "on",
+          "start": 61.96,
+          "end": 62.14
+        },
+        {
+          "word": "it,",
+          "start": 62.14,
+          "end": 62.22
+        },
+        {
+          "word": "and",
+          "start": 62.28,
+          "end": 62.3
+        },
+        {
+          "word": "I",
+          "start": 62.3,
+          "end": 62.3
+        },
+        {
+          "word": "87",
+          "start": 62.3,
+          "end": 62.66
+        },
+        {
+          "word": "million",
+          "start": 62.66,
+          "end": 62.9
+        },
+        {
+          "word": "people's",
+          "start": 62.9,
+          "end": 63.24
+        },
+        {
+          "word": "personality",
+          "start": 63.24,
+          "end": 63.62
+        },
+        {
+          "word": "has",
+          "start": 63.62,
+          "end": 63.8
+        },
+        {
+          "word": "measured",
+          "start": 63.8,
+          "end": 64.06
+        },
+        {
+          "word": "model",
+          "start": 64.06,
+          "end": 64.32
+        },
+        {
+          "word": "and",
+          "start": 64.32,
+          "end": 64.48
+        },
+        {
+          "word": "weaponized",
+          "start": 64.48,
+          "end": 64.86
+        },
+        {
+          "word": "for",
+          "start": 64.86,
+          "end": 65.04
+        },
+        {
+          "word": "the",
+          "start": 65.04,
+          "end": 65.1
+        },
+        {
+          "word": "price",
+          "start": 65.1,
+          "end": 65.24
+        },
+        {
+          "word": "of",
+          "start": 65.24,
+          "end": 65.36
+        },
+        {
+          "word": "frequency",
+          "start": 65.36,
+          "end": 65.64
+        },
+        {
+          "word": "they",
+          "start": 65.64,
+          "end": 65.88
+        },
+        {
+          "word": "never",
+          "start": 65.88,
+          "end": 65.98
+        },
+        {
+          "word": "took.",
+          "start": 65.98,
+          "end": 66.26
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "And most of them decide right now.",
+      "start": 67.08,
+      "end": 68.84,
+      "words": [
+        {
+          "word": "And",
+          "start": 67.08,
+          "end": 67.48
+        },
+        {
+          "word": "most",
+          "start": 67.48,
+          "end": 67.7
+        },
+        {
+          "word": "of",
+          "start": 67.7,
+          "end": 67.94
+        },
+        {
+          "word": "them",
+          "start": 67.94,
+          "end": 67.98
+        },
+        {
+          "word": "decide",
+          "start": 67.98,
+          "end": 68.3
+        },
+        {
+          "word": "right",
+          "start": 68.3,
+          "end": 68.58
+        },
+        {
+          "word": "now.",
+          "start": 68.58,
+          "end": 68.84
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "The main center across the table, we're looking at he needs to decide right now.",
+      "start": 69.32,
+      "end": 71.98,
+      "words": [
+        {
+          "word": "The",
+          "start": 69.32,
+          "end": 69.64
+        },
+        {
+          "word": "main",
+          "start": 69.64,
+          "end": 69.78
+        },
+        {
+          "word": "center",
+          "start": 69.78,
+          "end": 69.98
+        },
+        {
+          "word": "across",
+          "start": 69.98,
+          "end": 70.3
+        },
+        {
+          "word": "the",
+          "start": 70.3,
+          "end": 70.5
+        },
+        {
+          "word": "table,",
+          "start": 70.5,
+          "end": 70.6
+        },
+        {
+          "word": "we're",
+          "start": 70.72,
+          "end": 70.72
+        },
+        {
+          "word": "looking",
+          "start": 70.72,
+          "end": 70.92
+        },
+        {
+          "word": "at",
+          "start": 70.92,
+          "end": 71.06
+        },
+        {
+          "word": "he",
+          "start": 71.06,
+          "end": 71.08
+        },
+        {
+          "word": "needs",
+          "start": 71.08,
+          "end": 71.3
+        },
+        {
+          "word": "to",
+          "start": 71.3,
+          "end": 71.38
+        },
+        {
+          "word": "decide",
+          "start": 71.38,
+          "end": 71.6
+        },
+        {
+          "word": "right",
+          "start": 71.6,
+          "end": 71.8
+        },
+        {
+          "word": "now.",
+          "start": 71.8,
+          "end": 71.98
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "A 2009 P-SER, he found that 74% of Facebook users didn't know the platform maintain a list of their interest and traits for targeting.",
+      "start": 72.12,
+      "end": 77.92,
+      "words": [
+        {
+          "word": "A",
+          "start": 72.12,
+          "end": 72.16
+        },
+        {
+          "word": "2009",
+          "start": 72.16,
+          "end": 72.74
+        },
+        {
+          "word": "P",
+          "start": 72.74,
+          "end": 73.0
+        },
+        {
+          "word": "-SER,",
+          "start": 73.0,
+          "end": 73.16
+        },
+        {
+          "word": "he",
+          "start": 73.16,
+          "end": 73.26
+        },
+        {
+          "word": "found",
+          "start": 73.26,
+          "end": 73.42
+        },
+        {
+          "word": "that",
+          "start": 73.42,
+          "end": 73.54
+        },
+        {
+          "word": "74",
+          "start": 73.54,
+          "end": 73.96
+        },
+        {
+          "word": "%",
+          "start": 73.96,
+          "end": 74.22
+        },
+        {
+          "word": "of",
+          "start": 74.22,
+          "end": 74.34
+        },
+        {
+          "word": "Facebook",
+          "start": 74.34,
+          "end": 74.62
+        },
+        {
+          "word": "users",
+          "start": 74.62,
+          "end": 74.96
+        },
+        {
+          "word": "didn't",
+          "start": 74.96,
+          "end": 75.24
+        },
+        {
+          "word": "know",
+          "start": 75.24,
+          "end": 75.38
+        },
+        {
+          "word": "the",
+          "start": 75.38,
+          "end": 75.5
+        },
+        {
+          "word": "platform",
+          "start": 75.5,
+          "end": 75.82
+        },
+        {
+          "word": "maintain",
+          "start": 75.82,
+          "end": 76.14
+        },
+        {
+          "word": "a",
+          "start": 76.14,
+          "end": 76.32
+        },
+        {
+          "word": "list",
+          "start": 76.32,
+          "end": 76.44
+        },
+        {
+          "word": "of",
+          "start": 76.44,
+          "end": 76.58
+        },
+        {
+          "word": "their",
+          "start": 76.58,
+          "end": 76.72
+        },
+        {
+          "word": "interest",
+          "start": 76.72,
+          "end": 76.94
+        },
+        {
+          "word": "and",
+          "start": 76.94,
+          "end": 77.16
+        },
+        {
+          "word": "traits",
+          "start": 77.16,
+          "end": 77.38
+        },
+        {
+          "word": "for",
+          "start": 77.38,
+          "end": 77.58
+        },
+        {
+          "word": "targeting.",
+          "start": 77.58,
+          "end": 77.92
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Across the table, we're looking at him differently, he needs to decide right now, they didn't know their data had been sold.",
+      "start": 78.48,
+      "end": 82.94,
+      "words": [
+        {
+          "word": "Across",
+          "start": 78.48,
+          "end": 78.8
+        },
+        {
+          "word": "the",
+          "start": 78.8,
+          "end": 79.04
+        },
+        {
+          "word": "table,",
+          "start": 79.04,
+          "end": 79.24
+        },
+        {
+          "word": "we're",
+          "start": 79.36,
+          "end": 79.4
+        },
+        {
+          "word": "looking",
+          "start": 79.4,
+          "end": 79.6
+        },
+        {
+          "word": "at",
+          "start": 79.6,
+          "end": 79.84
+        },
+        {
+          "word": "him",
+          "start": 79.84,
+          "end": 79.94
+        },
+        {
+          "word": "differently,",
+          "start": 79.94,
+          "end": 80.06
+        },
+        {
+          "word": "he",
+          "start": 80.2,
+          "end": 80.2
+        },
+        {
+          "word": "needs",
+          "start": 80.2,
+          "end": 80.38
+        },
+        {
+          "word": "to",
+          "start": 80.38,
+          "end": 80.48
+        },
+        {
+          "word": "decide",
+          "start": 80.48,
+          "end": 80.78
+        },
+        {
+          "word": "right",
+          "start": 80.78,
+          "end": 80.98
+        },
+        {
+          "word": "now,",
+          "start": 80.98,
+          "end": 81.14
+        },
+        {
+          "word": "they",
+          "start": 81.2,
+          "end": 81.3
+        },
+        {
+          "word": "didn't",
+          "start": 81.3,
+          "end": 81.54
+        },
+        {
+          "word": "know",
+          "start": 81.54,
+          "end": 81.7
+        },
+        {
+          "word": "their",
+          "start": 81.7,
+          "end": 81.9
+        },
+        {
+          "word": "data",
+          "start": 81.9,
+          "end": 82.18
+        },
+        {
+          "word": "had",
+          "start": 82.18,
+          "end": 82.5
+        },
+        {
+          "word": "been",
+          "start": 82.5,
+          "end": 82.64
+        },
+        {
+          "word": "sold.",
+          "start": 82.64,
+          "end": 82.94
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Him differently, he needs to decide right now, they just knew that their feed felt different in 2016.",
+      "start": 83.56,
+      "end": 87.78,
+      "words": [
+        {
+          "word": "Him",
+          "start": 83.56,
+          "end": 83.66
+        },
+        {
+          "word": "differently,",
+          "start": 83.66,
+          "end": 84.04
+        },
+        {
+          "word": "he",
+          "start": 84.16,
+          "end": 84.28
+        },
+        {
+          "word": "needs",
+          "start": 84.28,
+          "end": 84.46
+        },
+        {
+          "word": "to",
+          "start": 84.46,
+          "end": 84.54
+        },
+        {
+          "word": "decide",
+          "start": 84.54,
+          "end": 84.78
+        },
+        {
+          "word": "right",
+          "start": 84.78,
+          "end": 84.98
+        },
+        {
+          "word": "now,",
+          "start": 84.98,
+          "end": 85.2
+        },
+        {
+          "word": "they",
+          "start": 85.56,
+          "end": 85.64
+        },
+        {
+          "word": "just",
+          "start": 85.64,
+          "end": 85.8
+        },
+        {
+          "word": "knew",
+          "start": 85.8,
+          "end": 85.94
+        },
+        {
+          "word": "that",
+          "start": 85.94,
+          "end": 86.08
+        },
+        {
+          "word": "their",
+          "start": 86.08,
+          "end": 86.2
+        },
+        {
+          "word": "feed",
+          "start": 86.2,
+          "end": 86.34
+        },
+        {
+          "word": "felt",
+          "start": 86.34,
+          "end": 86.52
+        },
+        {
+          "word": "different",
+          "start": 86.52,
+          "end": 86.82
+        },
+        {
+          "word": "in",
+          "start": 86.82,
+          "end": 87.0
+        },
+        {
+          "word": "2016.",
+          "start": 87.0,
+          "end": 87.78
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "He needs to decide right now, more polarized, and they assume that was the world changing, it wasn't the world, it was the algorithm.",
+      "start": 88.4,
+      "end": 94.56,
+      "words": [
+        {
+          "word": "He",
+          "start": 88.4,
+          "end": 88.64
+        },
+        {
+          "word": "needs",
+          "start": 88.64,
+          "end": 88.9
+        },
+        {
+          "word": "to",
+          "start": 88.9,
+          "end": 89.0
+        },
+        {
+          "word": "decide",
+          "start": 89.0,
+          "end": 89.32
+        },
+        {
+          "word": "right",
+          "start": 89.32,
+          "end": 89.6
+        },
+        {
+          "word": "now,",
+          "start": 89.6,
+          "end": 89.8
+        },
+        {
+          "word": "more",
+          "start": 89.98,
+          "end": 90.1
+        },
+        {
+          "word": "polarized,",
+          "start": 90.1,
+          "end": 90.72
+        },
+        {
+          "word": "and",
+          "start": 91.12,
+          "end": 91.16
+        },
+        {
+          "word": "they",
+          "start": 91.16,
+          "end": 91.3
+        },
+        {
+          "word": "assume",
+          "start": 91.3,
+          "end": 91.64
+        },
+        {
+          "word": "that",
+          "start": 91.64,
+          "end": 91.84
+        },
+        {
+          "word": "was",
+          "start": 91.84,
+          "end": 91.96
+        },
+        {
+          "word": "the",
+          "start": 91.96,
+          "end": 92.06
+        },
+        {
+          "word": "world",
+          "start": 92.06,
+          "end": 92.26
+        },
+        {
+          "word": "changing,",
+          "start": 92.26,
+          "end": 92.76
+        },
+        {
+          "word": "it",
+          "start": 93.04,
+          "end": 93.06
+        },
+        {
+          "word": "wasn't",
+          "start": 93.06,
+          "end": 93.3
+        },
+        {
+          "word": "the",
+          "start": 93.3,
+          "end": 93.44
+        },
+        {
+          "word": "world,",
+          "start": 93.44,
+          "end": 93.68
+        },
+        {
+          "word": "it",
+          "start": 93.8,
+          "end": 93.84
+        },
+        {
+          "word": "was",
+          "start": 93.84,
+          "end": 93.96
+        },
+        {
+          "word": "the",
+          "start": 93.96,
+          "end": 94.12
+        },
+        {
+          "word": "algorithm.",
+          "start": 94.12,
+          "end": 94.56
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "He needs to decide right now, tuned by their own data, sold it, and deployed to shape an election.",
+      "start": 94.56,
+      "end": 99.52,
+      "words": [
+        {
+          "word": "He",
+          "start": 94.56,
+          "end": 95.4
+        },
+        {
+          "word": "needs",
+          "start": 95.4,
+          "end": 95.92
+        },
+        {
+          "word": "to",
+          "start": 95.92,
+          "end": 96.1
+        },
+        {
+          "word": "decide",
+          "start": 96.1,
+          "end": 96.3
+        },
+        {
+          "word": "right",
+          "start": 96.3,
+          "end": 96.58
+        },
+        {
+          "word": "now,",
+          "start": 96.58,
+          "end": 96.78
+        },
+        {
+          "word": "tuned",
+          "start": 96.96,
+          "end": 97.08
+        },
+        {
+          "word": "by",
+          "start": 97.08,
+          "end": 97.24
+        },
+        {
+          "word": "their",
+          "start": 97.24,
+          "end": 97.38
+        },
+        {
+          "word": "own",
+          "start": 97.38,
+          "end": 97.6
+        },
+        {
+          "word": "data,",
+          "start": 97.6,
+          "end": 97.82
+        },
+        {
+          "word": "sold",
+          "start": 98.0,
+          "end": 98.12
+        },
+        {
+          "word": "it,",
+          "start": 98.12,
+          "end": 98.28
+        },
+        {
+          "word": "and",
+          "start": 98.34,
+          "end": 98.5
+        },
+        {
+          "word": "deployed",
+          "start": 98.5,
+          "end": 98.68
+        },
+        {
+          "word": "to",
+          "start": 98.68,
+          "end": 98.9
+        },
+        {
+          "word": "shape",
+          "start": 98.9,
+          "end": 99.08
+        },
+        {
+          "word": "an",
+          "start": 99.08,
+          "end": 99.22
+        },
+        {
+          "word": "election.",
+          "start": 99.22,
+          "end": 99.52
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "The main center has been doing this for 17 years, for 17 years, no one will find this sort of broken March 2018.",
+      "start": 100.64,
+      "end": 106.1,
+      "words": [
+        {
+          "word": "The",
+          "start": 100.64,
+          "end": 100.74
+        },
+        {
+          "word": "main",
+          "start": 100.74,
+          "end": 100.86
+        },
+        {
+          "word": "center",
+          "start": 100.86,
+          "end": 101.16
+        },
+        {
+          "word": "has",
+          "start": 101.16,
+          "end": 101.42
+        },
+        {
+          "word": "been",
+          "start": 101.42,
+          "end": 101.6
+        },
+        {
+          "word": "doing",
+          "start": 101.6,
+          "end": 101.8
+        },
+        {
+          "word": "this",
+          "start": 101.8,
+          "end": 102.04
+        },
+        {
+          "word": "for",
+          "start": 102.04,
+          "end": 102.14
+        },
+        {
+          "word": "17",
+          "start": 102.14,
+          "end": 102.52
+        },
+        {
+          "word": "years,",
+          "start": 102.52,
+          "end": 102.8
+        },
+        {
+          "word": "for",
+          "start": 102.9,
+          "end": 102.98
+        },
+        {
+          "word": "17",
+          "start": 102.98,
+          "end": 103.34
+        },
+        {
+          "word": "years,",
+          "start": 103.34,
+          "end": 103.62
+        },
+        {
+          "word": "no",
+          "start": 103.72,
+          "end": 103.82
+        },
+        {
+          "word": "one",
+          "start": 103.82,
+          "end": 103.94
+        },
+        {
+          "word": "will",
+          "start": 103.94,
+          "end": 104.02
+        },
+        {
+          "word": "find",
+          "start": 104.02,
+          "end": 104.36
+        },
+        {
+          "word": "this",
+          "start": 104.36,
+          "end": 104.58
+        },
+        {
+          "word": "sort",
+          "start": 104.58,
+          "end": 104.82
+        },
+        {
+          "word": "of",
+          "start": 104.82,
+          "end": 104.9
+        },
+        {
+          "word": "broken",
+          "start": 104.9,
+          "end": 105.2
+        },
+        {
+          "word": "March",
+          "start": 105.2,
+          "end": 105.42
+        },
+        {
+          "word": "2018.",
+          "start": 105.42,
+          "end": 106.1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "The main center has been doing this for 17 years, and for 17 years.",
+      "start": 107.14,
+      "end": 111.08,
+      "words": [
+        {
+          "word": "The",
+          "start": 107.14,
+          "end": 107.24
+        },
+        {
+          "word": "main",
+          "start": 107.24,
+          "end": 107.42
+        },
+        {
+          "word": "center",
+          "start": 107.42,
+          "end": 107.74
+        },
+        {
+          "word": "has",
+          "start": 107.74,
+          "end": 108.04
+        },
+        {
+          "word": "been",
+          "start": 108.04,
+          "end": 108.14
+        },
+        {
+          "word": "doing",
+          "start": 108.14,
+          "end": 108.22
+        },
+        {
+          "word": "this",
+          "start": 108.22,
+          "end": 108.46
+        },
+        {
+          "word": "for",
+          "start": 108.46,
+          "end": 108.88
+        },
+        {
+          "word": "17",
+          "start": 108.88,
+          "end": 109.18
+        },
+        {
+          "word": "years,",
+          "start": 109.18,
+          "end": 109.76
+        },
+        {
+          "word": "and",
+          "start": 109.82,
+          "end": 109.94
+        },
+        {
+          "word": "for",
+          "start": 109.94,
+          "end": 110.2
+        },
+        {
+          "word": "17",
+          "start": 110.2,
+          "end": 110.68
+        },
+        {
+          "word": "years.",
+          "start": 110.68,
+          "end": 111.08
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "The main center has been doing this for 17 years, for 17 years, no one will find the United States center, a person, the power to regularly, the most valuable company on our food.",
+      "start": 111.68,
+      "end": 123.04,
+      "words": [
+        {
+          "word": "The",
+          "start": 111.68,
+          "end": 112.12
+        },
+        {
+          "word": "main",
+          "start": 112.12,
+          "end": 112.36
+        },
+        {
+          "word": "center",
+          "start": 112.36,
+          "end": 112.84
+        },
+        {
+          "word": "has",
+          "start": 112.84,
+          "end": 113.26
+        },
+        {
+          "word": "been",
+          "start": 113.26,
+          "end": 113.46
+        },
+        {
+          "word": "doing",
+          "start": 113.46,
+          "end": 113.66
+        },
+        {
+          "word": "this",
+          "start": 113.66,
+          "end": 113.9
+        },
+        {
+          "word": "for",
+          "start": 113.9,
+          "end": 114.04
+        },
+        {
+          "word": "17",
+          "start": 114.04,
+          "end": 114.48
+        },
+        {
+          "word": "years,",
+          "start": 114.48,
+          "end": 114.94
+        },
+        {
+          "word": "for",
+          "start": 115.06,
+          "end": 115.18
+        },
+        {
+          "word": "17",
+          "start": 115.18,
+          "end": 115.66
+        },
+        {
+          "word": "years,",
+          "start": 115.66,
+          "end": 116.22
+        },
+        {
+          "word": "no",
+          "start": 116.42,
+          "end": 116.56
+        },
+        {
+          "word": "one",
+          "start": 116.56,
+          "end": 116.68
+        },
+        {
+          "word": "will",
+          "start": 116.68,
+          "end": 116.82
+        },
+        {
+          "word": "find",
+          "start": 116.82,
+          "end": 117.32
+        },
+        {
+          "word": "the",
+          "start": 117.32,
+          "end": 117.56
+        },
+        {
+          "word": "United",
+          "start": 117.56,
+          "end": 117.76
+        },
+        {
+          "word": "States",
+          "start": 117.76,
+          "end": 118.12
+        },
+        {
+          "word": "center,",
+          "start": 118.12,
+          "end": 118.7
+        },
+        {
+          "word": "a",
+          "start": 119.02,
+          "end": 119.02
+        },
+        {
+          "word": "person,",
+          "start": 119.02,
+          "end": 119.44
+        },
+        {
+          "word": "the",
+          "start": 119.68,
+          "end": 119.72
+        },
+        {
+          "word": "power",
+          "start": 119.72,
+          "end": 120.0
+        },
+        {
+          "word": "to",
+          "start": 120.0,
+          "end": 120.24
+        },
+        {
+          "word": "regularly,",
+          "start": 120.24,
+          "end": 120.46
+        },
+        {
+          "word": "the",
+          "start": 120.46,
+          "end": 120.78
+        },
+        {
+          "word": "most",
+          "start": 120.78,
+          "end": 120.98
+        },
+        {
+          "word": "valuable",
+          "start": 120.98,
+          "end": 121.32
+        },
+        {
+          "word": "company",
+          "start": 121.32,
+          "end": 122.04
+        },
+        {
+          "word": "on",
+          "start": 122.04,
+          "end": 122.38
+        },
+        {
+          "word": "our",
+          "start": 122.38,
+          "end": 122.58
+        },
+        {
+          "word": "food.",
+          "start": 122.58,
+          "end": 123.04
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "text": "For Santa, we're in Montenegro, so for 17 years, for 17 years.",
+      "start": 123.76,
+      "end": 129.76,
+      "words": [
+        {
+          "word": "For",
+          "start": 123.76,
+          "end": 124.24
+        },
+        {
+          "word": "Santa,",
+          "start": 124.24,
+          "end": 124.64
+        },
+        {
+          "word": "we're",
+          "start": 124.84,
+          "end": 125.04
+        },
+        {
+          "word": "in",
+          "start": 125.04,
+          "end": 125.28
+        },
+        {
+          "word": "Montenegro,",
+          "start": 125.28,
+          "end": 125.56
+        },
+        {
+          "word": "so",
+          "start": 125.56,
+          "end": 127.18
+        },
+        {
+          "word": "for",
+          "start": 127.18,
+          "end": 127.42
+        },
+        {
+          "word": "17",
+          "start": 127.42,
+          "end": 127.88
+        },
+        {
+          "word": "years,",
+          "start": 127.88,
+          "end": 128.44
+        },
+        {
+          "word": "for",
+          "start": 128.74,
+          "end": 129.0
+        },
+        {
+          "word": "17",
+          "start": 129.0,
+          "end": 129.16
+        },
+        {
+          "word": "years.",
+          "start": 129.16,
+          "end": 129.76
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "text": "The main center has been doing this for 17 years, and for 17 years, no one will find it for weeks, the clips through it is comedy.",
+      "start": 130.12,
+      "end": 136.72,
+      "words": [
+        {
+          "word": "The",
+          "start": 130.12,
+          "end": 130.6
+        },
+        {
+          "word": "main",
+          "start": 130.6,
+          "end": 130.7
+        },
+        {
+          "word": "center",
+          "start": 130.7,
+          "end": 130.88
+        },
+        {
+          "word": "has",
+          "start": 130.88,
+          "end": 131.18
+        },
+        {
+          "word": "been",
+          "start": 131.18,
+          "end": 131.36
+        },
+        {
+          "word": "doing",
+          "start": 131.36,
+          "end": 131.48
+        },
+        {
+          "word": "this",
+          "start": 131.48,
+          "end": 131.62
+        },
+        {
+          "word": "for",
+          "start": 131.62,
+          "end": 131.96
+        },
+        {
+          "word": "17",
+          "start": 131.96,
+          "end": 131.96
+        },
+        {
+          "word": "years,",
+          "start": 131.96,
+          "end": 132.14
+        },
+        {
+          "word": "and",
+          "start": 132.38,
+          "end": 132.38
+        },
+        {
+          "word": "for",
+          "start": 132.38,
+          "end": 132.52
+        },
+        {
+          "word": "17",
+          "start": 132.52,
+          "end": 132.94
+        },
+        {
+          "word": "years,",
+          "start": 132.94,
+          "end": 133.52
+        },
+        {
+          "word": "no",
+          "start": 133.64,
+          "end": 133.82
+        },
+        {
+          "word": "one",
+          "start": 133.82,
+          "end": 133.98
+        },
+        {
+          "word": "will",
+          "start": 133.98,
+          "end": 134.04
+        },
+        {
+          "word": "find",
+          "start": 134.04,
+          "end": 134.48
+        },
+        {
+          "word": "it",
+          "start": 134.48,
+          "end": 134.64
+        },
+        {
+          "word": "for",
+          "start": 134.64,
+          "end": 134.84
+        },
+        {
+          "word": "weeks,",
+          "start": 134.84,
+          "end": 135.14
+        },
+        {
+          "word": "the",
+          "start": 135.36,
+          "end": 135.4
+        },
+        {
+          "word": "clips",
+          "start": 135.4,
+          "end": 135.66
+        },
+        {
+          "word": "through",
+          "start": 135.66,
+          "end": 135.88
+        },
+        {
+          "word": "it",
+          "start": 135.88,
+          "end": 136.06
+        },
+        {
+          "word": "is",
+          "start": 136.06,
+          "end": 136.22
+        },
+        {
+          "word": "comedy.",
+          "start": 136.22,
+          "end": 136.72
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "text": "And January, and this sort of, the main center has been doing this for 17 years, for 17 years, no one's been able to find it in charge of regularly, the most valuable company.",
+      "start": 137.84,
+      "end": 147.52,
+      "words": [
+        {
+          "word": "And",
+          "start": 137.84,
+          "end": 138.06
+        },
+        {
+          "word": "January,",
+          "start": 138.06,
+          "end": 138.64
+        },
+        {
+          "word": "and",
+          "start": 138.94,
+          "end": 138.94
+        },
+        {
+          "word": "this",
+          "start": 138.94,
+          "end": 139.16
+        },
+        {
+          "word": "sort",
+          "start": 139.16,
+          "end": 139.36
+        },
+        {
+          "word": "of,",
+          "start": 139.36,
+          "end": 139.54
+        },
+        {
+          "word": "the",
+          "start": 139.96,
+          "end": 140.22
+        },
+        {
+          "word": "main",
+          "start": 140.22,
+          "end": 140.58
+        },
+        {
+          "word": "center",
+          "start": 140.58,
+          "end": 140.98
+        },
+        {
+          "word": "has",
+          "start": 140.98,
+          "end": 141.24
+        },
+        {
+          "word": "been",
+          "start": 141.24,
+          "end": 141.32
+        },
+        {
+          "word": "doing",
+          "start": 141.32,
+          "end": 141.44
+        },
+        {
+          "word": "this",
+          "start": 141.44,
+          "end": 141.66
+        },
+        {
+          "word": "for",
+          "start": 141.66,
+          "end": 141.8
+        },
+        {
+          "word": "17",
+          "start": 141.8,
+          "end": 142.18
+        },
+        {
+          "word": "years,",
+          "start": 142.18,
+          "end": 142.64
+        },
+        {
+          "word": "for",
+          "start": 142.68,
+          "end": 142.8
+        },
+        {
+          "word": "17",
+          "start": 142.8,
+          "end": 143.28
+        },
+        {
+          "word": "years,",
+          "start": 143.28,
+          "end": 143.56
+        },
+        {
+          "word": "no",
+          "start": 143.68,
+          "end": 143.8
+        },
+        {
+          "word": "one's",
+          "start": 143.8,
+          "end": 143.96
+        },
+        {
+          "word": "been",
+          "start": 143.96,
+          "end": 144.08
+        },
+        {
+          "word": "able",
+          "start": 144.08,
+          "end": 144.22
+        },
+        {
+          "word": "to",
+          "start": 144.22,
+          "end": 144.3
+        },
+        {
+          "word": "find",
+          "start": 144.3,
+          "end": 144.54
+        },
+        {
+          "word": "it",
+          "start": 144.54,
+          "end": 144.8
+        },
+        {
+          "word": "in",
+          "start": 144.8,
+          "end": 144.98
+        },
+        {
+          "word": "charge",
+          "start": 144.98,
+          "end": 145.32
+        },
+        {
+          "word": "of",
+          "start": 145.32,
+          "end": 145.64
+        },
+        {
+          "word": "regularly,",
+          "start": 145.64,
+          "end": 145.9
+        },
+        {
+          "word": "the",
+          "start": 146.2,
+          "end": 146.36
+        },
+        {
+          "word": "most",
+          "start": 146.36,
+          "end": 146.64
+        },
+        {
+          "word": "valuable",
+          "start": 146.64,
+          "end": 147.52
+        },
+        {
+          "word": "company.",
+          "start": 147.52,
+          "end": 147.52
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "text": "The main center has been doing this for 17 years, no one's been able to find it.",
+      "start": 147.52,
+      "end": 153.88,
+      "words": [
+        {
+          "word": "The",
+          "start": 147.52,
+          "end": 147.76
+        },
+        {
+          "word": "main",
+          "start": 147.76,
+          "end": 148.16
+        },
+        {
+          "word": "center",
+          "start": 148.16,
+          "end": 148.86
+        },
+        {
+          "word": "has",
+          "start": 148.86,
+          "end": 149.2
+        },
+        {
+          "word": "been",
+          "start": 149.2,
+          "end": 149.46
+        },
+        {
+          "word": "doing",
+          "start": 149.46,
+          "end": 149.68
+        },
+        {
+          "word": "this",
+          "start": 149.68,
+          "end": 149.98
+        },
+        {
+          "word": "for",
+          "start": 149.98,
+          "end": 150.18
+        },
+        {
+          "word": "17",
+          "start": 150.18,
+          "end": 150.48
+        },
+        {
+          "word": "years,",
+          "start": 150.48,
+          "end": 151.14
+        },
+        {
+          "word": "no",
+          "start": 151.34,
+          "end": 151.64
+        },
+        {
+          "word": "one's",
+          "start": 151.64,
+          "end": 152.0
+        },
+        {
+          "word": "been",
+          "start": 152.0,
+          "end": 152.22
+        },
+        {
+          "word": "able",
+          "start": 152.22,
+          "end": 152.42
+        },
+        {
+          "word": "to",
+          "start": 152.42,
+          "end": 152.44
+        },
+        {
+          "word": "find",
+          "start": 152.44,
+          "end": 152.82
+        },
+        {
+          "word": "it.",
+          "start": 152.82,
+          "end": 153.88
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "text": "It definitely needs to decide right now, and he's what nobody said at the time, that hearing was the formula protecting itself.",
+      "start": 154.8,
+      "end": 159.6,
+      "words": [
+        {
+          "word": "It",
+          "start": 154.8,
+          "end": 155.14
+        },
+        {
+          "word": "definitely",
+          "start": 155.14,
+          "end": 155.28
+        },
+        {
+          "word": "needs",
+          "start": 155.28,
+          "end": 155.54
+        },
+        {
+          "word": "to",
+          "start": 155.54,
+          "end": 155.7
+        },
+        {
+          "word": "decide",
+          "start": 155.7,
+          "end": 156.02
+        },
+        {
+          "word": "right",
+          "start": 156.02,
+          "end": 156.22
+        },
+        {
+          "word": "now,",
+          "start": 156.22,
+          "end": 156.3
+        },
+        {
+          "word": "and",
+          "start": 156.32,
+          "end": 156.4
+        },
+        {
+          "word": "he's",
+          "start": 156.4,
+          "end": 156.52
+        },
+        {
+          "word": "what",
+          "start": 156.52,
+          "end": 156.62
+        },
+        {
+          "word": "nobody",
+          "start": 156.62,
+          "end": 156.88
+        },
+        {
+          "word": "said",
+          "start": 156.88,
+          "end": 157.14
+        },
+        {
+          "word": "at",
+          "start": 157.14,
+          "end": 157.28
+        },
+        {
+          "word": "the",
+          "start": 157.28,
+          "end": 157.36
+        },
+        {
+          "word": "time,",
+          "start": 157.36,
+          "end": 157.6
+        },
+        {
+          "word": "that",
+          "start": 157.6,
+          "end": 157.84
+        },
+        {
+          "word": "hearing",
+          "start": 157.84,
+          "end": 158.1
+        },
+        {
+          "word": "was",
+          "start": 158.1,
+          "end": 158.28
+        },
+        {
+          "word": "the",
+          "start": 158.28,
+          "end": 158.42
+        },
+        {
+          "word": "formula",
+          "start": 158.42,
+          "end": 158.74
+        },
+        {
+          "word": "protecting",
+          "start": 158.74,
+          "end": 159.1
+        },
+        {
+          "word": "itself.",
+          "start": 159.1,
+          "end": 159.6
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "text": "He needs to decide right now, that people who set the fines, sitting at the scene across the table, we're looking at him, he needs to decide right now, he's supposed to be the ceiling and corporate behavior,",
+      "start": 160.24,
+      "end": 168.82,
+      "words": [
+        {
+          "word": "He",
+          "start": 160.24,
+          "end": 160.52
+        },
+        {
+          "word": "needs",
+          "start": 160.52,
+          "end": 160.76
+        },
+        {
+          "word": "to",
+          "start": 160.76,
+          "end": 160.86
+        },
+        {
+          "word": "decide",
+          "start": 160.86,
+          "end": 161.16
+        },
+        {
+          "word": "right",
+          "start": 161.16,
+          "end": 161.42
+        },
+        {
+          "word": "now,",
+          "start": 161.42,
+          "end": 161.74
+        },
+        {
+          "word": "that",
+          "start": 162.22,
+          "end": 162.38
+        },
+        {
+          "word": "people",
+          "start": 162.38,
+          "end": 162.58
+        },
+        {
+          "word": "who",
+          "start": 162.58,
+          "end": 162.8
+        },
+        {
+          "word": "set",
+          "start": 162.8,
+          "end": 162.94
+        },
+        {
+          "word": "the",
+          "start": 162.94,
+          "end": 163.1
+        },
+        {
+          "word": "fines,",
+          "start": 163.1,
+          "end": 163.44
+        },
+        {
+          "word": "sitting",
+          "start": 164.2,
+          "end": 164.5
+        },
+        {
+          "word": "at",
+          "start": 164.5,
+          "end": 164.66
+        },
+        {
+          "word": "the",
+          "start": 164.66,
+          "end": 164.72
+        },
+        {
+          "word": "scene",
+          "start": 164.72,
+          "end": 164.8
+        },
+        {
+          "word": "across",
+          "start": 164.8,
+          "end": 165.06
+        },
+        {
+          "word": "the",
+          "start": 165.06,
+          "end": 165.26
+        },
+        {
+          "word": "table,",
+          "start": 165.26,
+          "end": 165.54
+        },
+        {
+          "word": "we're",
+          "start": 165.58,
+          "end": 165.66
+        },
+        {
+          "word": "looking",
+          "start": 165.66,
+          "end": 165.86
+        },
+        {
+          "word": "at",
+          "start": 165.86,
+          "end": 165.98
+        },
+        {
+          "word": "him,",
+          "start": 165.98,
+          "end": 166.1
+        },
+        {
+          "word": "he",
+          "start": 166.1,
+          "end": 166.4
+        },
+        {
+          "word": "needs",
+          "start": 166.4,
+          "end": 166.58
+        },
+        {
+          "word": "to",
+          "start": 166.58,
+          "end": 166.7
+        },
+        {
+          "word": "decide",
+          "start": 166.7,
+          "end": 166.88
+        },
+        {
+          "word": "right",
+          "start": 166.88,
+          "end": 167.12
+        },
+        {
+          "word": "now,",
+          "start": 167.12,
+          "end": 167.2
+        },
+        {
+          "word": "he's",
+          "start": 167.24,
+          "end": 167.34
+        },
+        {
+          "word": "supposed",
+          "start": 167.34,
+          "end": 167.46
+        },
+        {
+          "word": "to",
+          "start": 167.46,
+          "end": 167.62
+        },
+        {
+          "word": "be",
+          "start": 167.62,
+          "end": 167.72
+        },
+        {
+          "word": "the",
+          "start": 167.72,
+          "end": 167.84
+        },
+        {
+          "word": "ceiling",
+          "start": 167.84,
+          "end": 168.06
+        },
+        {
+          "word": "and",
+          "start": 168.06,
+          "end": 168.18
+        },
+        {
+          "word": "corporate",
+          "start": 168.18,
+          "end": 168.4
+        },
+        {
+          "word": "behavior,",
+          "start": 168.4,
+          "end": 168.82
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "text": "didn't understand the business model of the company that we're interrogating.",
+      "start": 168.82,
+      "end": 171.28,
+      "words": [
+        {
+          "word": "didn't",
+          "start": 168.82,
+          "end": 169.08
+        },
+        {
+          "word": "understand",
+          "start": 169.08,
+          "end": 169.34
+        },
+        {
+          "word": "the",
+          "start": 169.34,
+          "end": 169.48
+        },
+        {
+          "word": "business",
+          "start": 169.48,
+          "end": 169.72
+        },
+        {
+          "word": "model",
+          "start": 169.72,
+          "end": 169.94
+        },
+        {
+          "word": "of",
+          "start": 169.94,
+          "end": 170.2
+        },
+        {
+          "word": "the",
+          "start": 170.2,
+          "end": 170.2
+        },
+        {
+          "word": "company",
+          "start": 170.2,
+          "end": 170.44
+        },
+        {
+          "word": "that",
+          "start": 170.44,
+          "end": 170.62
+        },
+        {
+          "word": "we're",
+          "start": 170.62,
+          "end": 170.68
+        },
+        {
+          "word": "interrogating.",
+          "start": 170.68,
+          "end": 171.28
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "text": "Sitting across the table looking differently, he needs to decide right now, and he sat there, patient, and composed, explained his own business, the people who were supposed to be punishing him.",
+      "start": 172.08,
+      "end": 180.12,
+      "words": [
+        {
+          "word": "Sitting",
+          "start": 172.08,
+          "end": 172.52
+        },
+        {
+          "word": "across",
+          "start": 172.52,
+          "end": 172.96
+        },
+        {
+          "word": "the",
+          "start": 172.96,
+          "end": 173.2
+        },
+        {
+          "word": "table",
+          "start": 173.2,
+          "end": 173.42
+        },
+        {
+          "word": "looking",
+          "start": 173.42,
+          "end": 173.66
+        },
+        {
+          "word": "differently,",
+          "start": 173.66,
+          "end": 174.06
+        },
+        {
+          "word": "he",
+          "start": 174.22,
+          "end": 174.22
+        },
+        {
+          "word": "needs",
+          "start": 174.22,
+          "end": 174.38
+        },
+        {
+          "word": "to",
+          "start": 174.38,
+          "end": 174.46
+        },
+        {
+          "word": "decide",
+          "start": 174.46,
+          "end": 174.74
+        },
+        {
+          "word": "right",
+          "start": 174.74,
+          "end": 175.06
+        },
+        {
+          "word": "now,",
+          "start": 175.06,
+          "end": 175.28
+        },
+        {
+          "word": "and",
+          "start": 175.38,
+          "end": 175.44
+        },
+        {
+          "word": "he",
+          "start": 175.44,
+          "end": 175.52
+        },
+        {
+          "word": "sat",
+          "start": 175.52,
+          "end": 175.7
+        },
+        {
+          "word": "there,",
+          "start": 175.7,
+          "end": 175.98
+        },
+        {
+          "word": "patient,",
+          "start": 176.12,
+          "end": 176.4
+        },
+        {
+          "word": "and",
+          "start": 176.42,
+          "end": 176.54
+        },
+        {
+          "word": "composed,",
+          "start": 176.54,
+          "end": 176.76
+        },
+        {
+          "word": "explained",
+          "start": 176.94,
+          "end": 177.28
+        },
+        {
+          "word": "his",
+          "start": 177.28,
+          "end": 177.5
+        },
+        {
+          "word": "own",
+          "start": 177.5,
+          "end": 177.66
+        },
+        {
+          "word": "business,",
+          "start": 177.66,
+          "end": 178.08
+        },
+        {
+          "word": "the",
+          "start": 178.08,
+          "end": 178.38
+        },
+        {
+          "word": "people",
+          "start": 178.38,
+          "end": 178.7
+        },
+        {
+          "word": "who",
+          "start": 178.7,
+          "end": 178.88
+        },
+        {
+          "word": "were",
+          "start": 178.88,
+          "end": 178.92
+        },
+        {
+          "word": "supposed",
+          "start": 178.92,
+          "end": 179.08
+        },
+        {
+          "word": "to",
+          "start": 179.08,
+          "end": 179.3
+        },
+        {
+          "word": "be",
+          "start": 179.3,
+          "end": 179.36
+        },
+        {
+          "word": "punishing",
+          "start": 179.36,
+          "end": 179.76
+        },
+        {
+          "word": "him.",
+          "start": 179.76,
+          "end": 180.12
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "text": "He needs to decide right now, he wasn't being juridory, we're looking at him differently, he needs to decide right now, and everyone watched it happen and laugh, because it was easier to laugh and to realize what it meant.",
+      "start": 180.62,
+      "end": 190.4,
+      "words": [
+        {
+          "word": "He",
+          "start": 180.62,
+          "end": 180.9
+        },
+        {
+          "word": "needs",
+          "start": 180.9,
+          "end": 181.1
+        },
+        {
+          "word": "to",
+          "start": 181.1,
+          "end": 181.22
+        },
+        {
+          "word": "decide",
+          "start": 181.22,
+          "end": 181.48
+        },
+        {
+          "word": "right",
+          "start": 181.48,
+          "end": 181.72
+        },
+        {
+          "word": "now,",
+          "start": 181.72,
+          "end": 181.9
+        },
+        {
+          "word": "he",
+          "start": 182.14,
+          "end": 182.22
+        },
+        {
+          "word": "wasn't",
+          "start": 182.22,
+          "end": 182.48
+        },
+        {
+          "word": "being",
+          "start": 182.48,
+          "end": 182.68
+        },
+        {
+          "word": "juridory,",
+          "start": 182.68,
+          "end": 183.2
+        },
+        {
+          "word": "we're",
+          "start": 183.48,
+          "end": 184.08
+        },
+        {
+          "word": "looking",
+          "start": 184.08,
+          "end": 184.28
+        },
+        {
+          "word": "at",
+          "start": 184.28,
+          "end": 184.4
+        },
+        {
+          "word": "him",
+          "start": 184.4,
+          "end": 184.48
+        },
+        {
+          "word": "differently,",
+          "start": 184.48,
+          "end": 184.84
+        },
+        {
+          "word": "he",
+          "start": 184.98,
+          "end": 185.06
+        },
+        {
+          "word": "needs",
+          "start": 185.06,
+          "end": 185.28
+        },
+        {
+          "word": "to",
+          "start": 185.28,
+          "end": 185.4
+        },
+        {
+          "word": "decide",
+          "start": 185.4,
+          "end": 185.66
+        },
+        {
+          "word": "right",
+          "start": 185.66,
+          "end": 185.92
+        },
+        {
+          "word": "now,",
+          "start": 185.92,
+          "end": 186.18
+        },
+        {
+          "word": "and",
+          "start": 186.44,
+          "end": 186.54
+        },
+        {
+          "word": "everyone",
+          "start": 186.54,
+          "end": 186.72
+        },
+        {
+          "word": "watched",
+          "start": 186.72,
+          "end": 187.08
+        },
+        {
+          "word": "it",
+          "start": 187.08,
+          "end": 187.22
+        },
+        {
+          "word": "happen",
+          "start": 187.22,
+          "end": 187.56
+        },
+        {
+          "word": "and",
+          "start": 187.56,
+          "end": 187.72
+        },
+        {
+          "word": "laugh,",
+          "start": 187.72,
+          "end": 187.92
+        },
+        {
+          "word": "because",
+          "start": 188.14,
+          "end": 188.26
+        },
+        {
+          "word": "it",
+          "start": 188.26,
+          "end": 188.4
+        },
+        {
+          "word": "was",
+          "start": 188.4,
+          "end": 188.54
+        },
+        {
+          "word": "easier",
+          "start": 188.54,
+          "end": 188.86
+        },
+        {
+          "word": "to",
+          "start": 188.86,
+          "end": 189.0
+        },
+        {
+          "word": "laugh",
+          "start": 189.0,
+          "end": 189.24
+        },
+        {
+          "word": "and",
+          "start": 189.24,
+          "end": 189.44
+        },
+        {
+          "word": "to",
+          "start": 189.44,
+          "end": 189.52
+        },
+        {
+          "word": "realize",
+          "start": 189.52,
+          "end": 189.78
+        },
+        {
+          "word": "what",
+          "start": 189.78,
+          "end": 190.08
+        },
+        {
+          "word": "it",
+          "start": 190.08,
+          "end": 190.22
+        },
+        {
+          "word": "meant.",
+          "start": 190.22,
+          "end": 190.4
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "text": "Sitting across the table, we're looking at him differently, the people who set the fines, don't understand what they're finding, the companies being fine, have always known that.",
+      "start": 191.0,
+      "end": 197.1,
+      "words": [
+        {
+          "word": "Sitting",
+          "start": 191.0,
+          "end": 191.28
+        },
+        {
+          "word": "across",
+          "start": 191.28,
+          "end": 191.6
+        },
+        {
+          "word": "the",
+          "start": 191.6,
+          "end": 191.84
+        },
+        {
+          "word": "table,",
+          "start": 191.84,
+          "end": 192.1
+        },
+        {
+          "word": "we're",
+          "start": 192.14,
+          "end": 192.2
+        },
+        {
+          "word": "looking",
+          "start": 192.2,
+          "end": 192.42
+        },
+        {
+          "word": "at",
+          "start": 192.42,
+          "end": 192.54
+        },
+        {
+          "word": "him",
+          "start": 192.54,
+          "end": 192.62
+        },
+        {
+          "word": "differently,",
+          "start": 192.62,
+          "end": 192.86
+        },
+        {
+          "word": "the",
+          "start": 193.04,
+          "end": 193.06
+        },
+        {
+          "word": "people",
+          "start": 193.06,
+          "end": 193.22
+        },
+        {
+          "word": "who",
+          "start": 193.22,
+          "end": 193.36
+        },
+        {
+          "word": "set",
+          "start": 193.36,
+          "end": 193.54
+        },
+        {
+          "word": "the",
+          "start": 193.54,
+          "end": 193.68
+        },
+        {
+          "word": "fines,",
+          "start": 193.68,
+          "end": 193.94
+        },
+        {
+          "word": "don't",
+          "start": 194.06,
+          "end": 194.12
+        },
+        {
+          "word": "understand",
+          "start": 194.12,
+          "end": 194.4
+        },
+        {
+          "word": "what",
+          "start": 194.4,
+          "end": 194.58
+        },
+        {
+          "word": "they're",
+          "start": 194.58,
+          "end": 194.74
+        },
+        {
+          "word": "finding,",
+          "start": 194.74,
+          "end": 195.06
+        },
+        {
+          "word": "the",
+          "start": 195.14,
+          "end": 195.22
+        },
+        {
+          "word": "companies",
+          "start": 195.22,
+          "end": 195.44
+        },
+        {
+          "word": "being",
+          "start": 195.44,
+          "end": 195.7
+        },
+        {
+          "word": "fine,",
+          "start": 195.7,
+          "end": 195.98
+        },
+        {
+          "word": "have",
+          "start": 196.1,
+          "end": 196.2
+        },
+        {
+          "word": "always",
+          "start": 196.2,
+          "end": 196.6
+        },
+        {
+          "word": "known",
+          "start": 196.6,
+          "end": 196.88
+        },
+        {
+          "word": "that.",
+          "start": 196.88,
+          "end": 197.1
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "text": "Meadows 70 years or so in teen",
+      "start": 197.1,
+      "end": 199.32,
+      "words": [
+        {
+          "word": "Meadows",
+          "start": 197.1,
+          "end": 198.0
+        },
+        {
+          "word": "70",
+          "start": 198.0,
+          "end": 198.26
+        },
+        {
+          "word": "years",
+          "start": 198.26,
+          "end": 198.72
+        },
+        {
+          "word": "or",
+          "start": 198.72,
+          "end": 198.82
+        },
+        {
+          "word": "so",
+          "start": 198.82,
+          "end": 198.92
+        },
+        {
+          "word": "in",
+          "start": 198.92,
+          "end": 199.1
+        },
+        {
+          "word": "teen",
+          "start": 199.1,
+          "end": 199.32
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "text": "Bernie is, and for some years,",
+      "start": 199.32,
+      "end": 200.92,
+      "words": [
+        {
+          "word": "Bernie",
+          "start": 199.32,
+          "end": 199.68
+        },
+        {
+          "word": "is,",
+          "start": 199.68,
+          "end": 200.04
+        },
+        {
+          "word": "and",
+          "start": 200.1,
+          "end": 200.18
+        },
+        {
+          "word": "for",
+          "start": 200.18,
+          "end": 200.36
+        },
+        {
+          "word": "some",
+          "start": 200.36,
+          "end": 200.6
+        },
+        {
+          "word": "years,",
+          "start": 200.6,
+          "end": 200.92
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "text": "no, he's been able to find the efficiency investigator for over year and loss.",
+      "start": 201.02,
+      "end": 204.16,
+      "words": [
+        {
+          "word": "no,",
+          "start": 201.02,
+          "end": 201.16
+        },
+        {
+          "word": "he's",
+          "start": 201.22,
+          "end": 201.32
+        },
+        {
+          "word": "been",
+          "start": 201.32,
+          "end": 201.44
+        },
+        {
+          "word": "able",
+          "start": 201.44,
+          "end": 201.62
+        },
+        {
+          "word": "to",
+          "start": 201.62,
+          "end": 201.72
+        },
+        {
+          "word": "find",
+          "start": 201.72,
+          "end": 201.94
+        },
+        {
+          "word": "the",
+          "start": 201.94,
+          "end": 202.16
+        },
+        {
+          "word": "efficiency",
+          "start": 202.16,
+          "end": 202.5
+        },
+        {
+          "word": "investigator",
+          "start": 202.5,
+          "end": 202.96
+        },
+        {
+          "word": "for",
+          "start": 202.96,
+          "end": 203.24
+        },
+        {
+          "word": "over",
+          "start": 203.24,
+          "end": 203.48
+        },
+        {
+          "word": "year",
+          "start": 203.48,
+          "end": 203.72
+        },
+        {
+          "word": "and",
+          "start": 203.72,
+          "end": 203.86
+        },
+        {
+          "word": "loss.",
+          "start": 203.86,
+          "end": 204.16
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "text": "Meadows 70 years or so in teenager",
+      "start": 204.84,
+      "end": 206.98,
+      "words": [
+        {
+          "word": "Meadows",
+          "start": 204.84,
+          "end": 205.32
+        },
+        {
+          "word": "70",
+          "start": 205.32,
+          "end": 205.56
+        },
+        {
+          "word": "years",
+          "start": 205.56,
+          "end": 206.16
+        },
+        {
+          "word": "or",
+          "start": 206.16,
+          "end": 206.16
+        },
+        {
+          "word": "so",
+          "start": 206.16,
+          "end": 206.44
+        },
+        {
+          "word": "in",
+          "start": 206.44,
+          "end": 206.7
+        },
+        {
+          "word": "teenager",
+          "start": 206.7,
+          "end": 206.98
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "text": "Bernie's been doing this University ofож so far, he loves you.",
+      "start": 210.1,
+      "end": 219.22,
+      "words": [
+        {
+          "word": "Bernie's",
+          "start": 210.1,
+          "end": 210.64
+        },
+        {
+          "word": "been",
+          "start": 210.64,
+          "end": 210.76
+        },
+        {
+          "word": "doing",
+          "start": 210.76,
+          "end": 214.06
+        },
+        {
+          "word": "this",
+          "start": 214.06,
+          "end": 214.38
+        },
+        {
+          "word": "University",
+          "start": 214.38,
+          "end": 214.78
+        },
+        {
+          "word": "ofож",
+          "start": 214.78,
+          "end": 215.66
+        },
+        {
+          "word": "so",
+          "start": 215.66,
+          "end": 215.66
+        },
+        {
+          "word": "far,",
+          "start": 215.66,
+          "end": 216.84
+        },
+        {
+          "word": "he",
+          "start": 219.22,
+          "end": 219.22
+        },
+        {
+          "word": "loves",
+          "start": 219.22,
+          "end": 219.22
+        },
+        {
+          "word": "you.",
+          "start": 219.22,
+          "end": 219.22
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "text": "Bernie is based in Sam глубany Industries Company, as seeds of innovative developments in community singing and singing and singing.",
+      "start": 219.22,
+      "end": 221.12,
+      "words": [
+        {
+          "word": "Bernie",
+          "start": 219.22,
+          "end": 219.74
+        },
+        {
+          "word": "is",
+          "start": 219.74,
+          "end": 220.06
+        },
+        {
+          "word": "based",
+          "start": 220.06,
+          "end": 220.18
+        },
+        {
+          "word": "in",
+          "start": 220.18,
+          "end": 220.18
+        },
+        {
+          "word": "Sam",
+          "start": 220.18,
+          "end": 220.18
+        },
+        {
+          "word": "глубany",
+          "start": 220.18,
+          "end": 220.24
+        },
+        {
+          "word": "Industries",
+          "start": 220.24,
+          "end": 220.24
+        },
+        {
+          "word": "Company,",
+          "start": 220.24,
+          "end": 220.24
+        },
+        {
+          "word": "as",
+          "start": 220.24,
+          "end": 220.24
+        },
+        {
+          "word": "seeds",
+          "start": 220.24,
+          "end": 220.24
+        },
+        {
+          "word": "of",
+          "start": 220.24,
+          "end": 220.44
+        },
+        {
+          "word": "innovative",
+          "start": 220.44,
+          "end": 221.12
+        },
+        {
+          "word": "developments",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "in",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "community",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "singing",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "and",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "singing",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "and",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "singing.",
+          "start": 221.12,
+          "end": 221.12
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "text": "Meadows 70 years or 17 years and counseling is no longer a good dream.",
+      "start": 221.12,
+      "end": 225.68,
+      "words": [
+        {
+          "word": "Meadows",
+          "start": 221.12,
+          "end": 221.12
+        },
+        {
+          "word": "70",
+          "start": 221.12,
+          "end": 221.7
+        },
+        {
+          "word": "years",
+          "start": 221.7,
+          "end": 222.14
+        },
+        {
+          "word": "or",
+          "start": 222.14,
+          "end": 222.28
+        },
+        {
+          "word": "17",
+          "start": 222.28,
+          "end": 222.8
+        },
+        {
+          "word": "years",
+          "start": 222.8,
+          "end": 223.0
+        },
+        {
+          "word": "and",
+          "start": 223.0,
+          "end": 223.22
+        },
+        {
+          "word": "counseling",
+          "start": 223.22,
+          "end": 223.34
+        },
+        {
+          "word": "is",
+          "start": 223.34,
+          "end": 223.34
+        },
+        {
+          "word": "no",
+          "start": 223.34,
+          "end": 223.34
+        },
+        {
+          "word": "longer",
+          "start": 223.34,
+          "end": 224.62
+        },
+        {
+          "word": "a",
+          "start": 224.62,
+          "end": 225.68
+        },
+        {
+          "word": "good",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "dream.",
+          "start": 225.68,
+          "end": 225.68
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "text": "Meadows 70 years or 17 years and traditional firms now work in foreign firm finance healthcare park.",
+      "start": 225.68,
+      "end": 226.36,
+      "words": [
+        {
+          "word": "Meadows",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "70",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "years",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "or",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "17",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "years",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "and",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "traditional",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "firms",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "now",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "work",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "in",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "foreign",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "firm",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "finance",
+          "start": 225.68,
+          "end": 225.68
+        },
+        {
+          "word": "healthcare",
+          "start": 225.68,
+          "end": 226.36
+        },
+        {
+          "word": "park.",
+          "start": 226.36,
+          "end": 226.36
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "text": "Meadows 70 years or 18 years and teachers, leading companies like Tradria, while GSB2000 are doing business there,",
+      "start": 226.54,
+      "end": 227.08,
+      "words": [
+        {
+          "word": "Meadows",
+          "start": 226.54,
+          "end": 227.08
+        },
+        {
+          "word": "70",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "years",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "or",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "18",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "years",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "and",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "teachers,",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "leading",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "companies",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "like",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "Tradria,",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "while",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "GSB2000",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "are",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "doing",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "business",
+          "start": 227.08,
+          "end": 227.08
+        },
+        {
+          "word": "there,",
+          "start": 227.08,
+          "end": 227.08
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "text": "The man has said it has been doing this for the 17 years,",
+      "start": 227.08,
+      "end": 229.58,
+      "words": [
+        {
+          "word": "The",
+          "start": 227.08,
+          "end": 227.26
+        },
+        {
+          "word": "man",
+          "start": 227.26,
+          "end": 227.26
+        },
+        {
+          "word": "has",
+          "start": 227.26,
+          "end": 227.26
+        },
+        {
+          "word": "said",
+          "start": 227.26,
+          "end": 227.28
+        },
+        {
+          "word": "it",
+          "start": 227.28,
+          "end": 227.48
+        },
+        {
+          "word": "has",
+          "start": 227.48,
+          "end": 227.74
+        },
+        {
+          "word": "been",
+          "start": 227.74,
+          "end": 228.02
+        },
+        {
+          "word": "doing",
+          "start": 228.02,
+          "end": 228.34
+        },
+        {
+          "word": "this",
+          "start": 228.34,
+          "end": 228.66
+        },
+        {
+          "word": "for",
+          "start": 228.66,
+          "end": 228.86
+        },
+        {
+          "word": "the",
+          "start": 228.86,
+          "end": 229.0
+        },
+        {
+          "word": "17",
+          "start": 229.0,
+          "end": 229.3
+        },
+        {
+          "word": "years,",
+          "start": 229.3,
+          "end": 229.58
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "text": "for the 17 years, no one has been able to find him.",
+      "start": 229.68,
+      "end": 231.84,
+      "words": [
+        {
+          "word": "for",
+          "start": 229.68,
+          "end": 229.74
+        },
+        {
+          "word": "the",
+          "start": 229.74,
+          "end": 230.02
+        },
+        {
+          "word": "17",
+          "start": 230.02,
+          "end": 230.02
+        },
+        {
+          "word": "years,",
+          "start": 230.02,
+          "end": 230.44
+        },
+        {
+          "word": "no",
+          "start": 230.58,
+          "end": 230.72
+        },
+        {
+          "word": "one",
+          "start": 230.72,
+          "end": 230.8
+        },
+        {
+          "word": "has",
+          "start": 230.8,
+          "end": 230.92
+        },
+        {
+          "word": "been",
+          "start": 230.92,
+          "end": 231.02
+        },
+        {
+          "word": "able",
+          "start": 231.02,
+          "end": 231.14
+        },
+        {
+          "word": "to",
+          "start": 231.14,
+          "end": 231.22
+        },
+        {
+          "word": "find",
+          "start": 231.22,
+          "end": 231.54
+        },
+        {
+          "word": "him.",
+          "start": 231.54,
+          "end": 231.84
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "text": "The man has said him during the 17 years of the 17 years,",
+      "start": 232.26,
+      "end": 235.48,
+      "words": [
+        {
+          "word": "The",
+          "start": 232.26,
+          "end": 232.5
+        },
+        {
+          "word": "man",
+          "start": 232.5,
+          "end": 232.68
+        },
+        {
+          "word": "has",
+          "start": 232.68,
+          "end": 232.88
+        },
+        {
+          "word": "said",
+          "start": 232.88,
+          "end": 233.04
+        },
+        {
+          "word": "him",
+          "start": 233.04,
+          "end": 233.2
+        },
+        {
+          "word": "during",
+          "start": 233.2,
+          "end": 233.5
+        },
+        {
+          "word": "the",
+          "start": 233.5,
+          "end": 233.66
+        },
+        {
+          "word": "17",
+          "start": 233.66,
+          "end": 234.06
+        },
+        {
+          "word": "years",
+          "start": 234.06,
+          "end": 234.44
+        },
+        {
+          "word": "of",
+          "start": 234.44,
+          "end": 234.62
+        },
+        {
+          "word": "the",
+          "start": 234.62,
+          "end": 234.72
+        },
+        {
+          "word": "17",
+          "start": 234.72,
+          "end": 235.06
+        },
+        {
+          "word": "years,",
+          "start": 235.06,
+          "end": 235.48
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "text": "no one has said that he would find him.",
+      "start": 235.5,
+      "end": 236.9,
+      "words": [
+        {
+          "word": "no",
+          "start": 235.5,
+          "end": 235.68
+        },
+        {
+          "word": "one",
+          "start": 235.68,
+          "end": 235.78
+        },
+        {
+          "word": "has",
+          "start": 235.78,
+          "end": 235.9
+        },
+        {
+          "word": "said",
+          "start": 235.9,
+          "end": 236.14
+        },
+        {
+          "word": "that",
+          "start": 236.14,
+          "end": 236.28
+        },
+        {
+          "word": "he",
+          "start": 236.28,
+          "end": 236.28
+        },
+        {
+          "word": "would",
+          "start": 236.28,
+          "end": 236.36
+        },
+        {
+          "word": "find",
+          "start": 236.36,
+          "end": 236.68
+        },
+        {
+          "word": "him.",
+          "start": 236.68,
+          "end": 236.9
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "text": "For the men sitting in the matrily,",
+      "start": 237.38,
+      "end": 238.66,
+      "words": [
+        {
+          "word": "For",
+          "start": 237.38,
+          "end": 237.7
+        },
+        {
+          "word": "the",
+          "start": 237.7,
+          "end": 237.8
+        },
+        {
+          "word": "men",
+          "start": 237.8,
+          "end": 237.9
+        },
+        {
+          "word": "sitting",
+          "start": 237.9,
+          "end": 238.12
+        },
+        {
+          "word": "in",
+          "start": 238.12,
+          "end": 238.28
+        },
+        {
+          "word": "the",
+          "start": 238.28,
+          "end": 238.32
+        },
+        {
+          "word": "matrily,",
+          "start": 238.32,
+          "end": 238.66
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "text": "he needs to decide right now.",
+      "start": 238.78,
+      "end": 239.6,
+      "words": [
+        {
+          "word": "he",
+          "start": 238.78,
+          "end": 238.8
+        },
+        {
+          "word": "needs",
+          "start": 238.8,
+          "end": 238.94
+        },
+        {
+          "word": "to",
+          "start": 238.94,
+          "end": 239.04
+        },
+        {
+          "word": "decide",
+          "start": 239.04,
+          "end": 239.2
+        },
+        {
+          "word": "right",
+          "start": 239.2,
+          "end": 239.4
+        },
+        {
+          "word": "now.",
+          "start": 239.4,
+          "end": 239.6
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "text": "On July 12th, from the final month,",
+      "start": 239.82,
+      "end": 241.0,
+      "words": [
+        {
+          "word": "On",
+          "start": 239.82,
+          "end": 239.88
+        },
+        {
+          "word": "July",
+          "start": 239.88,
+          "end": 240.08
+        },
+        {
+          "word": "12th,",
+          "start": 240.08,
+          "end": 240.54
+        },
+        {
+          "word": "from",
+          "start": 240.54,
+          "end": 240.6
+        },
+        {
+          "word": "the",
+          "start": 240.6,
+          "end": 240.66
+        },
+        {
+          "word": "final",
+          "start": 240.66,
+          "end": 240.86
+        },
+        {
+          "word": "month,",
+          "start": 240.86,
+          "end": 241.0
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "text": "Lake Facebook stock rose,",
+      "start": 241.1,
+      "end": 241.98,
+      "words": [
+        {
+          "word": "Lake",
+          "start": 241.1,
+          "end": 241.16
+        },
+        {
+          "word": "Facebook",
+          "start": 241.16,
+          "end": 241.48
+        },
+        {
+          "word": "stock",
+          "start": 241.48,
+          "end": 241.82
+        },
+        {
+          "word": "rose,",
+          "start": 241.82,
+          "end": 241.98
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "text": "one person the market expected",
+      "start": 241.98,
+      "end": 243.04,
+      "words": [
+        {
+          "word": "one",
+          "start": 241.98,
+          "end": 242.18
+        },
+        {
+          "word": "person",
+          "start": 242.18,
+          "end": 242.38
+        },
+        {
+          "word": "the",
+          "start": 242.38,
+          "end": 242.52
+        },
+        {
+          "word": "market",
+          "start": 242.52,
+          "end": 242.7
+        },
+        {
+          "word": "expected",
+          "start": 242.7,
+          "end": 243.04
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "text": "worse investor would release it.",
+      "start": 243.04,
+      "end": 244.16,
+      "words": [
+        {
+          "word": "worse",
+          "start": 243.04,
+          "end": 243.28
+        },
+        {
+          "word": "investor",
+          "start": 243.28,
+          "end": 243.62
+        },
+        {
+          "word": "would",
+          "start": 243.62,
+          "end": 243.74
+        },
+        {
+          "word": "release",
+          "start": 243.74,
+          "end": 243.94
+        },
+        {
+          "word": "it.",
+          "start": 243.94,
+          "end": 244.16
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "text": "He needs to decide right now.",
+      "start": 244.7,
+      "end": 245.94,
+      "words": [
+        {
+          "word": "He",
+          "start": 244.7,
+          "end": 244.94
+        },
+        {
+          "word": "needs",
+          "start": 244.94,
+          "end": 245.12
+        },
+        {
+          "word": "to",
+          "start": 245.12,
+          "end": 245.22
+        },
+        {
+          "word": "decide",
+          "start": 245.22,
+          "end": 245.48
+        },
+        {
+          "word": "right",
+          "start": 245.48,
+          "end": 245.7
+        },
+        {
+          "word": "now.",
+          "start": 245.7,
+          "end": 245.94
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "text": "Mark Zerber was never worth increased",
+      "start": 246.26,
+      "end": 247.22,
+      "words": [
+        {
+          "word": "Mark",
+          "start": 246.26,
+          "end": 246.42
+        },
+        {
+          "word": "Zerber",
+          "start": 246.42,
+          "end": 246.64
+        },
+        {
+          "word": "was",
+          "start": 246.64,
+          "end": 246.74
+        },
+        {
+          "word": "never",
+          "start": 246.74,
+          "end": 246.82
+        },
+        {
+          "word": "worth",
+          "start": 246.82,
+          "end": 247.04
+        },
+        {
+          "word": "increased",
+          "start": 247.04,
+          "end": 247.22
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "text": "by a 1.1 billion dollars that day.",
+      "start": 247.22,
+      "end": 248.82,
+      "words": [
+        {
+          "word": "by",
+          "start": 247.22,
+          "end": 247.42
+        },
+        {
+          "word": "a",
+          "start": 247.42,
+          "end": 247.5
+        },
+        {
+          "word": "1",
+          "start": 247.5,
+          "end": 247.58
+        },
+        {
+          "word": ".1",
+          "start": 247.58,
+          "end": 247.9
+        },
+        {
+          "word": "billion",
+          "start": 247.9,
+          "end": 248.04
+        },
+        {
+          "word": "dollars",
+          "start": 248.04,
+          "end": 248.4
+        },
+        {
+          "word": "that",
+          "start": 248.4,
+          "end": 248.58
+        },
+        {
+          "word": "day.",
+          "start": 248.58,
+          "end": 248.82
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "text": "Differently, he needs to decide right now.",
+      "start": 249.58,
+      "end": 251.14,
+      "words": [
+        {
+          "word": "Differently,",
+          "start": 249.58,
+          "end": 249.98
+        },
+        {
+          "word": "he",
+          "start": 250.08,
+          "end": 250.08
+        },
+        {
+          "word": "needs",
+          "start": 250.08,
+          "end": 250.18
+        },
+        {
+          "word": "to",
+          "start": 250.18,
+          "end": 250.36
+        },
+        {
+          "word": "decide",
+          "start": 250.36,
+          "end": 250.66
+        },
+        {
+          "word": "right",
+          "start": 250.66,
+          "end": 250.94
+        },
+        {
+          "word": "now.",
+          "start": 250.94,
+          "end": 251.14
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "text": "He made more from the announced from the fine",
+      "start": 251.24,
+      "end": 252.88,
+      "words": [
+        {
+          "word": "He",
+          "start": 251.24,
+          "end": 251.3
+        },
+        {
+          "word": "made",
+          "start": 251.3,
+          "end": 251.46
+        },
+        {
+          "word": "more",
+          "start": 251.46,
+          "end": 251.7
+        },
+        {
+          "word": "from",
+          "start": 251.7,
+          "end": 251.9
+        },
+        {
+          "word": "the",
+          "start": 251.9,
+          "end": 252.04
+        },
+        {
+          "word": "announced",
+          "start": 252.04,
+          "end": 252.3
+        },
+        {
+          "word": "from",
+          "start": 252.3,
+          "end": 252.5
+        },
+        {
+          "word": "the",
+          "start": 252.5,
+          "end": 252.62
+        },
+        {
+          "word": "fine",
+          "start": 252.62,
+          "end": 252.88
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "text": "than the fine cost of coming.",
+      "start": 252.88,
+      "end": 254.0,
+      "words": [
+        {
+          "word": "than",
+          "start": 252.88,
+          "end": 253.12
+        },
+        {
+          "word": "the",
+          "start": 253.12,
+          "end": 253.24
+        },
+        {
+          "word": "fine",
+          "start": 253.24,
+          "end": 253.48
+        },
+        {
+          "word": "cost",
+          "start": 253.48,
+          "end": 253.68
+        },
+        {
+          "word": "of",
+          "start": 253.68,
+          "end": 253.84
+        },
+        {
+          "word": "coming.",
+          "start": 253.84,
+          "end": 254.0
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "text": "He needs to decide right now.",
+      "start": 254.56,
+      "end": 256.22,
+      "words": [
+        {
+          "word": "He",
+          "start": 254.56,
+          "end": 254.94
+        },
+        {
+          "word": "needs",
+          "start": 254.94,
+          "end": 255.14
+        },
+        {
+          "word": "to",
+          "start": 255.14,
+          "end": 255.34
+        },
+        {
+          "word": "decide",
+          "start": 255.34,
+          "end": 255.64
+        },
+        {
+          "word": "right",
+          "start": 255.64,
+          "end": 255.94
+        },
+        {
+          "word": "now.",
+          "start": 255.94,
+          "end": 256.22
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "text": "The market's work was clear, this is the gets.",
+      "start": 257.02,
+      "end": 259.04,
+      "words": [
+        {
+          "word": "The",
+          "start": 256.84,
+          "end": 257.08
+        },
+        {
+          "word": "market's",
+          "start": 257.08,
+          "end": 257.6
+        },
+        {
+          "word": "work",
+          "start": 257.6,
+          "end": 257.78
+        },
+        {
+          "word": "was",
+          "start": 257.78,
+          "end": 258.02
+        },
+        {
+          "word": "clear,",
+          "start": 258.02,
+          "end": 258.3
+        },
+        {
+          "word": "this",
+          "start": 258.4,
+          "end": 258.58
+        },
+        {
+          "word": "is",
+          "start": 258.58,
+          "end": 258.76
+        },
+        {
+          "word": "the",
+          "start": 258.76,
+          "end": 258.88
+        },
+        {
+          "word": "gets.",
+          "start": 258.88,
+          "end": 259.04
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "text": "Right now I'm the worst hill's to decide right now",
+      "start": 260.06,
+      "end": 262.68,
+      "words": [
+        {
+          "word": "Right",
+          "start": 260.06,
+          "end": 260.3
+        },
+        {
+          "word": "now",
+          "start": 260.3,
+          "end": 260.58
+        },
+        {
+          "word": "I'm",
+          "start": 260.58,
+          "end": 260.76
+        },
+        {
+          "word": "the",
+          "start": 260.76,
+          "end": 260.86
+        },
+        {
+          "word": "worst",
+          "start": 260.86,
+          "end": 261.12
+        },
+        {
+          "word": "hill's",
+          "start": 261.12,
+          "end": 261.58
+        },
+        {
+          "word": "to",
+          "start": 261.58,
+          "end": 261.7
+        },
+        {
+          "word": "decide",
+          "start": 261.7,
+          "end": 261.98
+        },
+        {
+          "word": "right",
+          "start": 261.98,
+          "end": 262.32
+        },
+        {
+          "word": "now",
+          "start": 262.32,
+          "end": 262.68
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "text": "that the man is sitting as been doing this for the 18 years,",
+      "start": 263.18,
+      "end": 266.04,
+      "words": [
+        {
+          "word": "that",
+          "start": 263.18,
+          "end": 263.66
+        },
+        {
+          "word": "the",
+          "start": 263.66,
+          "end": 263.78
+        },
+        {
+          "word": "man",
+          "start": 263.78,
+          "end": 263.84
+        },
+        {
+          "word": "is",
+          "start": 263.84,
+          "end": 264.0
+        },
+        {
+          "word": "sitting",
+          "start": 264.0,
+          "end": 264.24
+        },
+        {
+          "word": "as",
+          "start": 264.24,
+          "end": 264.52
+        },
+        {
+          "word": "been",
+          "start": 264.52,
+          "end": 264.7
+        },
+        {
+          "word": "doing",
+          "start": 264.7,
+          "end": 264.9
+        },
+        {
+          "word": "this",
+          "start": 264.9,
+          "end": 265.12
+        },
+        {
+          "word": "for",
+          "start": 265.12,
+          "end": 265.34
+        },
+        {
+          "word": "the",
+          "start": 265.34,
+          "end": 265.54
+        },
+        {
+          "word": "18",
+          "start": 265.54,
+          "end": 265.72
+        },
+        {
+          "word": "years,",
+          "start": 265.72,
+          "end": 266.04
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "text": "for the 17 years, no one has been able to find better after",
+      "start": 266.04,
+      "end": 269.24,
+      "words": [
+        {
+          "word": "for",
+          "start": 266.04,
+          "end": 266.28
+        },
+        {
+          "word": "the",
+          "start": 266.28,
+          "end": 266.5
+        },
+        {
+          "word": "17",
+          "start": 266.5,
+          "end": 266.8
+        },
+        {
+          "word": "years,",
+          "start": 266.8,
+          "end": 267.14
+        },
+        {
+          "word": "no",
+          "start": 267.14,
+          "end": 267.42
+        },
+        {
+          "word": "one",
+          "start": 267.42,
+          "end": 267.54
+        },
+        {
+          "word": "has",
+          "start": 267.54,
+          "end": 267.64
+        },
+        {
+          "word": "been",
+          "start": 267.64,
+          "end": 267.8
+        },
+        {
+          "word": "able",
+          "start": 267.8,
+          "end": 267.92
+        },
+        {
+          "word": "to",
+          "start": 267.92,
+          "end": 268.06
+        },
+        {
+          "word": "find",
+          "start": 268.06,
+          "end": 268.4
+        },
+        {
+          "word": "better",
+          "start": 268.4,
+          "end": 268.82
+        },
+        {
+          "word": "after",
+          "start": 268.82,
+          "end": 269.24
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "text": "everything I've just shown you.",
+      "start": 269.24,
+      "end": 270.84,
+      "words": [
+        {
+          "word": "everything",
+          "start": 269.24,
+          "end": 269.76
+        },
+        {
+          "word": "I've",
+          "start": 269.76,
+          "end": 270.06
+        },
+        {
+          "word": "just",
+          "start": 270.06,
+          "end": 270.22
+        },
+        {
+          "word": "shown",
+          "start": 270.22,
+          "end": 270.56
+        },
+        {
+          "word": "you.",
+          "start": 270.56,
+          "end": 270.84
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "text": "The man has said, has been doing this for the 19 years.",
+      "start": 271.4,
+      "end": 274.2,
+      "words": [
+        {
+          "word": "The",
+          "start": 271.4,
+          "end": 271.72
+        },
+        {
+          "word": "man",
+          "start": 271.72,
+          "end": 271.98
+        },
+        {
+          "word": "has",
+          "start": 271.98,
+          "end": 272.14
+        },
+        {
+          "word": "said,",
+          "start": 272.14,
+          "end": 272.36
+        },
+        {
+          "word": "has",
+          "start": 272.44,
+          "end": 272.56
+        },
+        {
+          "word": "been",
+          "start": 272.56,
+          "end": 272.72
+        },
+        {
+          "word": "doing",
+          "start": 272.72,
+          "end": 272.92
+        },
+        {
+          "word": "this",
+          "start": 272.92,
+          "end": 273.16
+        },
+        {
+          "word": "for",
+          "start": 273.16,
+          "end": 273.32
+        },
+        {
+          "word": "the",
+          "start": 273.32,
+          "end": 273.48
+        },
+        {
+          "word": "19",
+          "start": 273.48,
+          "end": 273.82
+        },
+        {
+          "word": "years.",
+          "start": 273.82,
+          "end": 274.2
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "text": "For the 19 years, can hear his name,",
+      "start": 274.36,
+      "end": 278.7,
+      "words": [
+        {
+          "word": "For",
+          "start": 274.36,
+          "end": 274.46
+        },
+        {
+          "word": "the",
+          "start": 274.46,
+          "end": 274.66
+        },
+        {
+          "word": "19",
+          "start": 274.66,
+          "end": 274.94
+        },
+        {
+          "word": "years,",
+          "start": 274.94,
+          "end": 277.72
+        },
+        {
+          "word": "can",
+          "start": 277.76,
+          "end": 277.94
+        },
+        {
+          "word": "hear",
+          "start": 277.94,
+          "end": 278.36
+        },
+        {
+          "word": "his",
+          "start": 278.36,
+          "end": 278.58
+        },
+        {
+          "word": "name,",
+          "start": 278.58,
+          "end": 278.7
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "text": "the man they have been doing the $0習as & recit?",
+      "start": 278.76,
+      "end": 280.52,
+      "words": [
+        {
+          "word": "the",
+          "start": 278.76,
+          "end": 278.76
+        },
+        {
+          "word": "man",
+          "start": 278.76,
+          "end": 278.76
+        },
+        {
+          "word": "they",
+          "start": 278.76,
+          "end": 278.76
+        },
+        {
+          "word": "have",
+          "start": 278.76,
+          "end": 278.76
+        },
+        {
+          "word": "been",
+          "start": 278.76,
+          "end": 278.92
+        },
+        {
+          "word": "doing",
+          "start": 278.92,
+          "end": 279.24
+        },
+        {
+          "word": "the",
+          "start": 279.24,
+          "end": 279.52
+        },
+        {
+          "word": "$0習as",
+          "start": 279.52,
+          "end": 279.52
+        },
+        {
+          "word": "&",
+          "start": 279.52,
+          "end": 279.88
+        },
+        {
+          "word": "recit?",
+          "start": 279.88,
+          "end": 280.52
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "text": "The man who is sitting in the matrily by $9000.",
+      "start": 280.52,
+      "end": 281.78,
+      "words": [
+        {
+          "word": "The",
+          "start": 280.52,
+          "end": 280.84
+        },
+        {
+          "word": "man",
+          "start": 280.84,
+          "end": 281.16
+        },
+        {
+          "word": "who",
+          "start": 281.16,
+          "end": 281.42
+        },
+        {
+          "word": "is",
+          "start": 281.42,
+          "end": 281.58
+        },
+        {
+          "word": "sitting",
+          "start": 281.58,
+          "end": 281.78
+        },
+        {
+          "word": "in",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "the",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "matrily",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "by",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "$9000.",
+          "start": 281.78,
+          "end": 281.78
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "text": "The man who is sitting in the meetings",
+      "start": 281.78,
+      "end": 281.94,
+      "words": [
+        {
+          "word": "The",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "man",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "who",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "is",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "sitting",
+          "start": 281.78,
+          "end": 281.78
+        },
+        {
+          "word": "in",
+          "start": 281.78,
+          "end": 281.94
+        },
+        {
+          "word": "the",
+          "start": 281.94,
+          "end": 281.94
+        },
+        {
+          "word": "meetings",
+          "start": 281.94,
+          "end": 281.94
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "text": "",
+      "start": 281.94,
+      "end": 281.94,
+      "words": []
+    },
+    {
+      "id": 64,
+      "text": "",
+      "start": 281.94,
+      "end": 281.94,
+      "words": []
+    },
+    {
+      "id": 65,
+      "text": "has been doing this for the 19 years or $0習as education.",
+      "start": 281.94,
+      "end": 285.08,
+      "words": [
+        {
+          "word": "has",
+          "start": 281.94,
+          "end": 281.94
+        },
+        {
+          "word": "been",
+          "start": 281.94,
+          "end": 282.2
+        },
+        {
+          "word": "doing",
+          "start": 282.2,
+          "end": 282.5
+        },
+        {
+          "word": "this",
+          "start": 282.5,
+          "end": 282.8
+        },
+        {
+          "word": "for",
+          "start": 282.8,
+          "end": 283.0
+        },
+        {
+          "word": "the",
+          "start": 283.0,
+          "end": 283.46
+        },
+        {
+          "word": "19",
+          "start": 283.46,
+          "end": 283.52
+        },
+        {
+          "word": "years",
+          "start": 283.52,
+          "end": 283.8
+        },
+        {
+          "word": "or",
+          "start": 283.8,
+          "end": 284.1
+        },
+        {
+          "word": "$0習as",
+          "start": 284.1,
+          "end": 284.86
+        },
+        {
+          "word": "education.",
+          "start": 284.86,
+          "end": 285.08
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "text": "I don't find that all in point to bullying your own.",
+      "start": 285.08,
+      "end": 288.4,
+      "words": [
+        {
+          "word": "I",
+          "start": 285.08,
+          "end": 285.7
+        },
+        {
+          "word": "don't",
+          "start": 285.7,
+          "end": 285.9
+        },
+        {
+          "word": "find",
+          "start": 285.9,
+          "end": 286.24
+        },
+        {
+          "word": "that",
+          "start": 286.24,
+          "end": 286.54
+        },
+        {
+          "word": "all",
+          "start": 286.54,
+          "end": 286.72
+        },
+        {
+          "word": "in",
+          "start": 286.72,
+          "end": 286.88
+        },
+        {
+          "word": "point",
+          "start": 286.88,
+          "end": 287.08
+        },
+        {
+          "word": "to",
+          "start": 287.08,
+          "end": 287.38
+        },
+        {
+          "word": "bullying",
+          "start": 287.38,
+          "end": 287.74
+        },
+        {
+          "word": "your",
+          "start": 287.74,
+          "end": 287.98
+        },
+        {
+          "word": "own.",
+          "start": 287.98,
+          "end": 288.4
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "text": "But for some years, no one has been able to find a Facebook.",
+      "start": 289.02,
+      "end": 297.76,
+      "words": [
+        {
+          "word": "But",
+          "start": 289.02,
+          "end": 289.18
+        },
+        {
+          "word": "for",
+          "start": 289.18,
+          "end": 289.42
+        },
+        {
+          "word": "some",
+          "start": 289.42,
+          "end": 289.56
+        },
+        {
+          "word": "years,",
+          "start": 289.56,
+          "end": 289.98
+        },
+        {
+          "word": "no",
+          "start": 290.18,
+          "end": 290.34
+        },
+        {
+          "word": "one",
+          "start": 290.34,
+          "end": 290.52
+        },
+        {
+          "word": "has",
+          "start": 290.52,
+          "end": 290.66
+        },
+        {
+          "word": "been",
+          "start": 290.66,
+          "end": 291.48
+        },
+        {
+          "word": "able",
+          "start": 291.48,
+          "end": 293.86
+        },
+        {
+          "word": "to",
+          "start": 293.86,
+          "end": 296.74
+        },
+        {
+          "word": "find",
+          "start": 296.74,
+          "end": 297.02
+        },
+        {
+          "word": "a",
+          "start": 297.02,
+          "end": 297.22
+        },
+        {
+          "word": "Facebook.",
+          "start": 297.22,
+          "end": 297.76
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "text": "The man who sent it has been doing this for 17 years.",
+      "start": 299.16,
+      "end": 301.64,
+      "words": [
+        {
+          "word": "The",
+          "start": 299.16,
+          "end": 299.16
+        },
+        {
+          "word": "man",
+          "start": 299.16,
+          "end": 299.34
+        },
+        {
+          "word": "who",
+          "start": 299.34,
+          "end": 299.58
+        },
+        {
+          "word": "sent",
+          "start": 299.58,
+          "end": 299.72
+        },
+        {
+          "word": "it",
+          "start": 299.72,
+          "end": 299.9
+        },
+        {
+          "word": "has",
+          "start": 299.9,
+          "end": 300.14
+        },
+        {
+          "word": "been",
+          "start": 300.14,
+          "end": 300.14
+        },
+        {
+          "word": "doing",
+          "start": 300.14,
+          "end": 300.26
+        },
+        {
+          "word": "this",
+          "start": 300.26,
+          "end": 300.48
+        },
+        {
+          "word": "for",
+          "start": 300.48,
+          "end": 300.64
+        },
+        {
+          "word": "17",
+          "start": 300.64,
+          "end": 301.24
+        },
+        {
+          "word": "years.",
+          "start": 301.24,
+          "end": 301.64
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "text": "For 17 years, no one has been able to find a Facebook.",
+      "start": 301.84,
+      "end": 304.44,
+      "words": [
+        {
+          "word": "For",
+          "start": 301.84,
+          "end": 302.0
+        },
+        {
+          "word": "17",
+          "start": 302.0,
+          "end": 302.54
+        },
+        {
+          "word": "years,",
+          "start": 302.54,
+          "end": 302.92
+        },
+        {
+          "word": "no",
+          "start": 303.08,
+          "end": 303.2
+        },
+        {
+          "word": "one",
+          "start": 303.2,
+          "end": 303.3
+        },
+        {
+          "word": "has",
+          "start": 303.3,
+          "end": 303.38
+        },
+        {
+          "word": "been",
+          "start": 303.38,
+          "end": 303.62
+        },
+        {
+          "word": "able",
+          "start": 303.62,
+          "end": 303.62
+        },
+        {
+          "word": "to",
+          "start": 303.62,
+          "end": 303.62
+        },
+        {
+          "word": "find",
+          "start": 303.62,
+          "end": 303.7
+        },
+        {
+          "word": "a",
+          "start": 303.7,
+          "end": 304.22
+        },
+        {
+          "word": "Facebook.",
+          "start": 304.22,
+          "end": 304.44
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "text": "The man who sent it has sent it has been doing this for 17 years.",
+      "start": 305.6,
+      "end": 315.06,
+      "words": [
+        {
+          "word": "The",
+          "start": 305.6,
+          "end": 306.08
+        },
+        {
+          "word": "man",
+          "start": 306.08,
+          "end": 306.08
+        },
+        {
+          "word": "who",
+          "start": 306.08,
+          "end": 306.3
+        },
+        {
+          "word": "sent",
+          "start": 306.3,
+          "end": 306.84
+        },
+        {
+          "word": "it",
+          "start": 306.84,
+          "end": 307.14
+        },
+        {
+          "word": "has",
+          "start": 307.14,
+          "end": 307.3
+        },
+        {
+          "word": "sent",
+          "start": 307.3,
+          "end": 307.54
+        },
+        {
+          "word": "it",
+          "start": 307.54,
+          "end": 307.7
+        },
+        {
+          "word": "has",
+          "start": 307.7,
+          "end": 308.66
+        },
+        {
+          "word": "been",
+          "start": 308.66,
+          "end": 308.9
+        },
+        {
+          "word": "doing",
+          "start": 308.9,
+          "end": 309.58
+        },
+        {
+          "word": "this",
+          "start": 309.58,
+          "end": 312.88
+        },
+        {
+          "word": "for",
+          "start": 312.88,
+          "end": 313.02
+        },
+        {
+          "word": "17",
+          "start": 313.02,
+          "end": 313.48
+        },
+        {
+          "word": "years.",
+          "start": 313.48,
+          "end": 315.06
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "text": "No one has been able to find it.",
+      "start": 315.06,
+      "end": 317.04,
+      "words": [
+        {
+          "word": "No",
+          "start": 315.06,
+          "end": 315.28
+        },
+        {
+          "word": "one",
+          "start": 315.28,
+          "end": 315.46
+        },
+        {
+          "word": "has",
+          "start": 315.46,
+          "end": 315.76
+        },
+        {
+          "word": "been",
+          "start": 315.76,
+          "end": 315.76
+        },
+        {
+          "word": "able",
+          "start": 315.76,
+          "end": 315.76
+        },
+        {
+          "word": "to",
+          "start": 315.76,
+          "end": 315.92
+        },
+        {
+          "word": "find",
+          "start": 315.92,
+          "end": 316.22
+        },
+        {
+          "word": "it.",
+          "start": 316.22,
+          "end": 317.04
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "text": "And for 17 years, no one has been able to find it because for 17 years,",
+      "start": 317.04,
+      "end": 320.9,
+      "words": [
+        {
+          "word": "And",
+          "start": 317.04,
+          "end": 317.28
+        },
+        {
+          "word": "for",
+          "start": 317.28,
+          "end": 317.44
+        },
+        {
+          "word": "17",
+          "start": 317.44,
+          "end": 318.02
+        },
+        {
+          "word": "years,",
+          "start": 318.02,
+          "end": 318.32
+        },
+        {
+          "word": "no",
+          "start": 318.32,
+          "end": 318.58
+        },
+        {
+          "word": "one",
+          "start": 318.58,
+          "end": 318.7
+        },
+        {
+          "word": "has",
+          "start": 318.7,
+          "end": 318.82
+        },
+        {
+          "word": "been",
+          "start": 318.82,
+          "end": 318.82
+        },
+        {
+          "word": "able",
+          "start": 318.82,
+          "end": 318.82
+        },
+        {
+          "word": "to",
+          "start": 318.82,
+          "end": 318.94
+        },
+        {
+          "word": "find",
+          "start": 318.94,
+          "end": 319.22
+        },
+        {
+          "word": "it",
+          "start": 319.22,
+          "end": 319.4
+        },
+        {
+          "word": "because",
+          "start": 319.4,
+          "end": 319.56
+        },
+        {
+          "word": "for",
+          "start": 319.56,
+          "end": 319.68
+        },
+        {
+          "word": "17",
+          "start": 319.68,
+          "end": 320.44
+        },
+        {
+          "word": "years,",
+          "start": 320.44,
+          "end": 320.9
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "text": "man who sent it has been doing this for 17 years.",
+      "start": 323.64,
+      "end": 326.86,
+      "words": [
+        {
+          "word": "man",
+          "start": 323.64,
+          "end": 324.12
+        },
+        {
+          "word": "who",
+          "start": 324.12,
+          "end": 324.32
+        },
+        {
+          "word": "sent",
+          "start": 324.32,
+          "end": 324.6
+        },
+        {
+          "word": "it",
+          "start": 324.6,
+          "end": 324.76
+        },
+        {
+          "word": "has",
+          "start": 324.76,
+          "end": 324.9
+        },
+        {
+          "word": "been",
+          "start": 324.9,
+          "end": 325.06
+        },
+        {
+          "word": "doing",
+          "start": 325.06,
+          "end": 325.32
+        },
+        {
+          "word": "this",
+          "start": 325.32,
+          "end": 325.6
+        },
+        {
+          "word": "for",
+          "start": 325.6,
+          "end": 325.78
+        },
+        {
+          "word": "17",
+          "start": 325.78,
+          "end": 326.48
+        },
+        {
+          "word": "years.",
+          "start": 326.48,
+          "end": 326.86
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "text": "For 17 years, no one has been able to find it because someone changed one variable.",
+      "start": 327.08,
+      "end": 335.96,
+      "words": [
+        {
+          "word": "For",
+          "start": 327.08,
+          "end": 327.1
+        },
+        {
+          "word": "17",
+          "start": 327.1,
+          "end": 327.5
+        },
+        {
+          "word": "years,",
+          "start": 327.5,
+          "end": 327.9
+        },
+        {
+          "word": "no",
+          "start": 328.1,
+          "end": 328.18
+        },
+        {
+          "word": "one",
+          "start": 328.18,
+          "end": 328.84
+        },
+        {
+          "word": "has",
+          "start": 328.84,
+          "end": 330.12
+        },
+        {
+          "word": "been",
+          "start": 330.12,
+          "end": 333.8
+        },
+        {
+          "word": "able",
+          "start": 333.8,
+          "end": 333.94
+        },
+        {
+          "word": "to",
+          "start": 333.94,
+          "end": 334.04
+        },
+        {
+          "word": "find",
+          "start": 334.04,
+          "end": 334.32
+        },
+        {
+          "word": "it",
+          "start": 334.32,
+          "end": 334.54
+        },
+        {
+          "word": "because",
+          "start": 334.54,
+          "end": 334.78
+        },
+        {
+          "word": "someone",
+          "start": 334.78,
+          "end": 335.08
+        },
+        {
+          "word": "changed",
+          "start": 335.08,
+          "end": 335.36
+        },
+        {
+          "word": "one",
+          "start": 335.36,
+          "end": 335.62
+        },
+        {
+          "word": "variable.",
+          "start": 335.62,
+          "end": 335.96
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "text": "We made the five portions the same data.",
+      "start": 335.96,
+      "end": 337.84,
+      "words": [
+        {
+          "word": "We",
+          "start": 335.96,
+          "end": 336.18
+        },
+        {
+          "word": "made",
+          "start": 336.18,
+          "end": 336.28
+        },
+        {
+          "word": "the",
+          "start": 336.28,
+          "end": 336.42
+        },
+        {
+          "word": "five",
+          "start": 336.42,
+          "end": 336.6
+        },
+        {
+          "word": "portions",
+          "start": 336.6,
+          "end": 337.06
+        },
+        {
+          "word": "the",
+          "start": 337.06,
+          "end": 337.32
+        },
+        {
+          "word": "same",
+          "start": 337.32,
+          "end": 337.52
+        },
+        {
+          "word": "data.",
+          "start": 337.52,
+          "end": 337.84
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "text": "The man who sent it has been doing this for 17 years.",
+      "start": 338.5,
+      "end": 341.14,
+      "words": [
+        {
+          "word": "The",
+          "start": 338.5,
+          "end": 338.88
+        },
+        {
+          "word": "man",
+          "start": 338.88,
+          "end": 339.02
+        },
+        {
+          "word": "who",
+          "start": 339.02,
+          "end": 339.02
+        },
+        {
+          "word": "sent",
+          "start": 339.02,
+          "end": 339.02
+        },
+        {
+          "word": "it",
+          "start": 339.02,
+          "end": 339.14
+        },
+        {
+          "word": "has",
+          "start": 339.14,
+          "end": 339.28
+        },
+        {
+          "word": "been",
+          "start": 339.28,
+          "end": 339.38
+        },
+        {
+          "word": "doing",
+          "start": 339.38,
+          "end": 339.6
+        },
+        {
+          "word": "this",
+          "start": 339.6,
+          "end": 339.84
+        },
+        {
+          "word": "for",
+          "start": 339.84,
+          "end": 340.0
+        },
+        {
+          "word": "17",
+          "start": 340.0,
+          "end": 340.8
+        },
+        {
+          "word": "years.",
+          "start": 340.8,
+          "end": 341.14
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "text": "And for 17 years, no one has been able to find it.",
+      "start": 343.2,
+      "end": 347.78,
+      "words": [
+        {
+          "word": "And",
+          "start": 343.2,
+          "end": 343.76
+        },
+        {
+          "word": "for",
+          "start": 343.76,
+          "end": 343.98
+        },
+        {
+          "word": "17",
+          "start": 343.98,
+          "end": 344.22
+        },
+        {
+          "word": "years,",
+          "start": 344.22,
+          "end": 346.6
+        },
+        {
+          "word": "no",
+          "start": 346.68,
+          "end": 346.92
+        },
+        {
+          "word": "one",
+          "start": 346.92,
+          "end": 347.24
+        },
+        {
+          "word": "has",
+          "start": 347.24,
+          "end": 347.48
+        },
+        {
+          "word": "been",
+          "start": 347.48,
+          "end": 347.62
+        },
+        {
+          "word": "able",
+          "start": 347.62,
+          "end": 347.62
+        },
+        {
+          "word": "to",
+          "start": 347.62,
+          "end": 347.62
+        },
+        {
+          "word": "find",
+          "start": 347.62,
+          "end": 347.64
+        },
+        {
+          "word": "it.",
+          "start": 347.64,
+          "end": 347.78
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "text": "And for 17 years, no one has been able to find it because for 17 years, no one has been able to find it.",
+      "start": 349.72,
+      "end": 362.12,
+      "words": [
+        {
+          "word": "And",
+          "start": 349.72,
+          "end": 350.28
+        },
+        {
+          "word": "for",
+          "start": 350.28,
+          "end": 350.84
+        },
+        {
+          "word": "17",
+          "start": 350.84,
+          "end": 351.74
+        },
+        {
+          "word": "years,",
+          "start": 351.74,
+          "end": 352.32
+        },
+        {
+          "word": "no",
+          "start": 352.48,
+          "end": 353.52
+        },
+        {
+          "word": "one",
+          "start": 353.52,
+          "end": 353.66
+        },
+        {
+          "word": "has",
+          "start": 353.66,
+          "end": 353.94
+        },
+        {
+          "word": "been",
+          "start": 353.94,
+          "end": 354.04
+        },
+        {
+          "word": "able",
+          "start": 354.04,
+          "end": 354.04
+        },
+        {
+          "word": "to",
+          "start": 354.04,
+          "end": 354.04
+        },
+        {
+          "word": "find",
+          "start": 354.04,
+          "end": 354.06
+        },
+        {
+          "word": "it",
+          "start": 354.06,
+          "end": 354.9
+        },
+        {
+          "word": "because",
+          "start": 354.9,
+          "end": 355.12
+        },
+        {
+          "word": "for",
+          "start": 355.12,
+          "end": 358.18
+        },
+        {
+          "word": "17",
+          "start": 358.18,
+          "end": 358.18
+        },
+        {
+          "word": "years,",
+          "start": 358.18,
+          "end": 360.58
+        },
+        {
+          "word": "no",
+          "start": 360.58,
+          "end": 360.58
+        },
+        {
+          "word": "one",
+          "start": 360.58,
+          "end": 360.58
+        },
+        {
+          "word": "has",
+          "start": 360.58,
+          "end": 360.58
+        },
+        {
+          "word": "been",
+          "start": 360.58,
+          "end": 360.58
+        },
+        {
+          "word": "able",
+          "start": 360.58,
+          "end": 360.58
+        },
+        {
+          "word": "to",
+          "start": 360.58,
+          "end": 362.12
+        },
+        {
+          "word": "find",
+          "start": 362.12,
+          "end": 362.12
+        },
+        {
+          "word": "it.",
+          "start": 362.12,
+          "end": 362.12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,585 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 6.816,
+      "end_sec": 6.816,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Reddit filed a federal lawsuit in October 2025. But Perplexity is one company. What about the rest of the industry?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 6.816,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 7.116,
+      "duration_sec": 2.677,
+      "end_sec": 9.793,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "I want to tell you about Elliana Esquivel."
+    },
+    {
+      "type": "pause",
+      "start_sec": 9.793,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 9.993,
+      "duration_sec": 10.239,
+      "end_sec": 20.233,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Because her story is the one that makes this real \u2014 and the one that shows you how the formula works when it's happening to a person not a company."
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 20.233,
+      "duration_sec": 3.065,
+      "end_sec": 23.297,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Elliana is an illustrator in Charlotte, North Carolina. Self-taught."
+    },
+    {
+      "type": "pause",
+      "start_sec": 23.297,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 23.497,
+      "duration_sec": 4.781,
+      "end_sec": 28.278,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "She spent years building a career in minimalistic line work \u2014 psychological, introspective, distinctive."
+    },
+    {
+      "type": "pause",
+      "start_sec": 28.278,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 28.478,
+      "duration_sec": 6.824,
+      "end_sec": 35.301,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The kind of art you'd recognize on a bookshelf. She illustrated covers for HarperCollins, Little Brown, and Faber and Faber."
+    },
+    {
+      "type": "pause",
+      "start_sec": 35.301,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 35.501,
+      "duration_sec": 7.507,
+      "end_sec": 43.008,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "She designed album art for Universal Music Group. She created promotional work for Hulu. Art was her full-time job for four years."
+    },
+    {
+      "type": "pause",
+      "start_sec": 43.008,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 43.208,
+      "duration_sec": 4.414,
+      "end_sec": 47.622,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "She'd built something. Then she visited a website called Have I Been Trained."
+    },
+    {
+      "type": "pause",
+      "start_sec": 47.622,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 47.822,
+      "duration_sec": 10.613,
+      "end_sec": 58.435,
+      "word_count": 31,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It's a tool that lets creators check whether their work was scraped into the LAION-5B dataset \u2014 the five-billion-image training set used by Stability AI's Stable Diffusion and other image generators."
+    },
+    {
+      "type": "pause",
+      "start_sec": 58.435,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 58.635,
+      "duration_sec": 2.354,
+      "end_sec": 60.989,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Almost her entire portfolio was in there."
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 60.989,
+      "duration_sec": 4.781,
+      "end_sec": 65.77,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Every illustration she'd spent months creating. Every piece that defined her style. Scraped indexed"
+    },
+    {
+      "type": "pause",
+      "start_sec": 65.77,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 65.97,
+      "duration_sec": 7.179,
+      "end_sec": 73.149,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "and fed into a model that anyone could now use to generate images that look like her work \u2014 for free."
+    },
+    {
+      "type": "pause",
+      "start_sec": 73.149,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 73.349,
+      "duration_sec": 6.836,
+      "end_sec": 80.186,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "A publisher she'd worked with for two years emailed to say they were \"exploring AI-generated options\" for their next cover."
+    },
+    {
+      "type": "pause",
+      "start_sec": 80.186,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 80.386,
+      "duration_sec": 2.382,
+      "end_sec": 82.767,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Her commissions dropped. Her online sales fell."
+    },
+    {
+      "type": "pause",
+      "start_sec": 82.767,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 82.967,
+      "duration_sec": 6.833,
+      "end_sec": 89.8,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The style she'd spent a decade developing could now be approximated in seconds by typing a sentence into a box."
+    },
+    {
+      "type": "pause",
+      "start_sec": 89.8,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 90.0,
+      "duration_sec": 4.084,
+      "end_sec": 94.085,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "She started pivoting to 3D art \u2014 not because she wanted to"
+    },
+    {
+      "type": "pause",
+      "start_sec": 94.085,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 94.285,
+      "duration_sec": 3.751,
+      "end_sec": 98.035,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "but because she hoped three-dimensional work would be harder to scrape."
+    },
+    {
+      "type": "pause",
+      "start_sec": 98.035,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 98.235,
+      "duration_sec": 5.809,
+      "end_sec": 104.044,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "When someone asked her about getting her work removed from the dataset, she said it was pointless."
+    },
+    {
+      "type": "pause",
+      "start_sec": 104.044,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 104.244,
+      "duration_sec": 6.143,
+      "end_sec": 110.387,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Quote: \"It'll just get scraped again and it'll end up back on the website.\" She called it quote"
+    },
+    {
+      "type": "pause",
+      "start_sec": 110.387,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 110.587,
+      "duration_sec": 2.388,
+      "end_sec": 112.976,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "a dystopian thing to be dealing with."
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 112.976,
+      "duration_sec": 2.702,
+      "end_sec": 115.678,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Elliana isn't suing anyone. She can't afford to."
+    },
+    {
+      "type": "pause",
+      "start_sec": 115.678,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 115.878,
+      "duration_sec": 7.178,
+      "end_sec": 123.055,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Over seventy copyright lawsuits are active against AI companies as of March 2026 \u2014 Anthropic settled for one point five billion"
+    },
+    {
+      "type": "pause",
+      "start_sec": 123.055,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 123.255,
+      "duration_sec": 4.752,
+      "end_sec": 128.007,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "OpenAI is fighting the New York Times and not one company has slowed down."
+    },
+    {
+      "type": "pause",
+      "start_sec": 128.007,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 128.207,
+      "duration_sec": 5.799,
+      "end_sec": 134.006,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The largest settlement in history paid out roughly three thousand dollars per stolen work. Three thousand dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 134.006,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 134.206,
+      "duration_sec": 6.137,
+      "end_sec": 140.343,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "That's what Elliana's illustrations are worth in this market \u2014 years of work commissions for HarperCollins Universal Music"
+    },
+    {
+      "type": "pause",
+      "start_sec": 140.343,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 140.543,
+      "duration_sec": 4.074,
+      "end_sec": 144.617,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Hulu \u2014 priced at the same rate as a single scraped novel."
+    },
+    {
+      "type": "pause",
+      "start_sec": 144.617,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 144.817,
+      "duration_sec": 7.145,
+      "end_sec": 151.963,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "If the class-action settlement arrives, her share might cover a month of rent. The model keeps generating images in her style."
+    },
+    {
+      "type": "pause",
+      "start_sec": 151.963,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 152.163,
+      "duration_sec": 7.498,
+      "end_sec": 159.661,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The violation is the product. The fine \u2014 if it ever arrives \u2014 is a fraction of what her career was worth."
+    },
+    {
+      "type": "pause",
+      "start_sec": 159.661,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 161.161,
+      "duration_sec": 6.811,
+      "end_sec": 167.972,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "And this brings us to you. Because if you've ever posted on Reddit commented on YouTube written a blog tweeted"
+    },
+    {
+      "type": "pause",
+      "start_sec": 167.972,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 168.172,
+      "duration_sec": 7.506,
+      "end_sec": 175.678,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "left a review uploaded a photo published anything anywhere on the open internet \u2014 your content is in training datasets right now."
+    },
+    {
+      "type": "pause",
+      "start_sec": 175.678,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 175.878,
+      "duration_sec": 7.506,
+      "end_sec": 183.384,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Not hypothetically. Provably. Common Crawl, the dataset most large language models train on, contains over two hundred and fifty billion web pages."
+    },
+    {
+      "type": "pause",
+      "start_sec": 183.384,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 183.584,
+      "duration_sec": 6.136,
+      "end_sec": 189.719,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Your words are in there. The companies building hundred-billion-dollar products on your words did not ask your permission."
+    },
+    {
+      "type": "pause",
+      "start_sec": 189.719,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 189.919,
+      "duration_sec": 6.478,
+      "end_sec": 196.398,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Ford's formula was clumsy \u2014 a memo with signatures. Wells Fargo's was structural \u2014 a quota with plausible deniability."
+    },
+    {
+      "type": "pause",
+      "start_sec": 196.398,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 196.598,
+      "duration_sec": 7.166,
+      "end_sec": 203.764,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Purdue's was preemptive \u2014 move the money before the fine. Facebook's was mathematical \u2014 the fine is smaller than the profit."
+    },
+    {
+      "type": "pause",
+      "start_sec": 203.764,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 203.964,
+      "duration_sec": 7.185,
+      "end_sec": 211.149,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "AI's formula is all of those things. Plus one more: irreversible. Scrape now. Train the model. Make it indispensable. Settle later."
+    },
+    {
+      "type": "pause",
+      "start_sec": 211.149,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 211.349,
+      "duration_sec": 1.678,
+      "end_sec": 213.027,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The model can't be untrained."
+    },
+    {
+      "type": "pause",
+      "start_sec": 213.027,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 213.227,
+      "duration_sec": 7.154,
+      "end_sec": 220.381,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The fine is just the cost of raw materials, paid after the factory is already built and too valuable to demolish."
+    },
+    {
+      "type": "pause",
+      "start_sec": 220.381,
+      "duration_sec": 0.3
+    }
+  ],
+  "total_duration_sec": 220.681,
+  "out": "audio/breaking_law/chapters/voice_ch3b_the_machines.wav",
+  "word_count_total": 623,
+  "avg_wpm": 169.4
+}

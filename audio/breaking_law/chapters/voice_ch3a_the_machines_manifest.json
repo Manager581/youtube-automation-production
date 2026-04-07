@@ -1,0 +1,516 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 7.156,
+      "end_sec": 7.156,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Here's a thought experiment. What if you could take anything you wanted from anyone \u2014 their writing their art their music"
+    },
+    {
+      "type": "pause",
+      "start_sec": 7.156,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 7.356,
+      "duration_sec": 6.452,
+      "end_sec": 13.808,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "their photographs their private conversations \u2014 and the only consequence was paying a fraction of what it was worth"
+    },
+    {
+      "type": "pause",
+      "start_sec": 13.808,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 14.008,
+      "duration_sec": 6.139,
+      "end_sec": 20.148,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "years after you'd already used it to build a product worth billions? You'd take everything. Obviously. Everyone would."
+    },
+    {
+      "type": "pause",
+      "start_sec": 20.148,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 20.348,
+      "duration_sec": 3.748,
+      "end_sec": 24.095,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "That's not a thought experiment. That's the AI industry's business model."
+    },
+    {
+      "type": "pause",
+      "start_sec": 24.095,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 24.395,
+      "duration_sec": 3.07,
+      "end_sec": 27.466,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "In October 2025, a Reddit engineer did something clever."
+    },
+    {
+      "type": "pause",
+      "start_sec": 27.466,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 27.666,
+      "duration_sec": 6.835,
+      "end_sec": 34.501,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They created a post \u2014 ordinary-looking, about a fictional company \u2014 and made it visible only through Google's search index."
+    },
+    {
+      "type": "pause",
+      "start_sec": 34.501,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 34.701,
+      "duration_sec": 7.499,
+      "end_sec": 42.2,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "You couldn't find it by browsing Reddit. You couldn't stumble on it. The only way to reach it was through a crawler."
+    },
+    {
+      "type": "pause",
+      "start_sec": 42.2,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 42.4,
+      "duration_sec": 6.122,
+      "end_sec": 48.522,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It was bait. A tripwire designed to catch one thing: an AI company scraping Reddit's content without permission."
+    },
+    {
+      "type": "pause",
+      "start_sec": 48.522,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 48.722,
+      "duration_sec": 6.139,
+      "end_sec": 54.861,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Within hours, Perplexity AI cited the post. Word for word. The trap worked. Reddit sent a cease-and-desist letter."
+    },
+    {
+      "type": "pause",
+      "start_sec": 54.861,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 55.061,
+      "duration_sec": 4.729,
+      "end_sec": 59.79,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Standard procedure \u2014 stop scraping, or we sue. And here is what happened next."
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 59.79,
+      "duration_sec": 7.196,
+      "end_sec": 66.987,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Perplexity's scraping of Reddit content didn't decrease. It increased. By a factor of forty. Not a little more. Forty times more."
+    },
+    {
+      "type": "pause",
+      "start_sec": 66.987,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 67.187,
+      "duration_sec": 3.75,
+      "end_sec": 70.937,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "After being caught. After receiving a formal legal demand to stop."
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 70.937,
+      "duration_sec": 6.142,
+      "end_sec": 77.079,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Most companies, when caught, slow down. Issue a statement. Hire a compliance officer. Perplexity sped up. Forty times."
+    },
+    {
+      "type": "pause",
+      "start_sec": 77.079,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 77.279,
+      "duration_sec": 6.143,
+      "end_sec": 83.421,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It's like getting a speeding ticket and immediately doing donuts in the parking lot of the police station."
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 83.421,
+      "duration_sec": 6.165,
+      "end_sec": 89.586,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "But it's not arrogance. It's arithmetic. They did the math. The data was worth more than any fine."
+    },
+    {
+      "type": "pause",
+      "start_sec": 89.586,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 89.786,
+      "duration_sec": 7.528,
+      "end_sec": 97.315,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The model being trained on that data was worth more than any lawsuit. And once the data is inside the model \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 97.315,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 97.615,
+      "duration_sec": 2.018,
+      "end_sec": 99.633,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "There is no getting it out."
+    },
+    {
+      "type": "pause",
+      "start_sec": 99.633,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 101.133,
+      "duration_sec": 2.721,
+      "end_sec": 103.854,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "Sugar dissolved in water. You cannot separate them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 103.854,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 104.154,
+      "duration_sec": 7.505,
+      "end_sec": 111.658,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "When Ford got caught, they could recall the car. When Facebook got caught, they could \u2014 in theory \u2014 delete the data."
+    },
+    {
+      "type": "pause",
+      "start_sec": 111.658,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 111.858,
+      "duration_sec": 7.507,
+      "end_sec": 119.365,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "When Purdue got caught, they could stop manufacturing the pills. The damage was reversible. Expensive, slow, and nobody ever did it voluntarily."
+    },
+    {
+      "type": "pause",
+      "start_sec": 119.365,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 119.565,
+      "duration_sec": 4.062,
+      "end_sec": 123.627,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "But the off switch existed. With AI, there is no off switch."
+    },
+    {
+      "type": "pause",
+      "start_sec": 123.627,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 123.827,
+      "duration_sec": 6.476,
+      "end_sec": 130.303,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "When a model trains on scraped data, that data dissolves into the model's parameters like sugar dissolved in water."
+    },
+    {
+      "type": "pause",
+      "start_sec": 130.303,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 130.503,
+      "duration_sec": 4.434,
+      "end_sec": 134.937,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "You cannot un-dissolve it. You cannot identify which outputs came from which inputs."
+    },
+    {
+      "type": "pause",
+      "start_sec": 134.937,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 135.137,
+      "duration_sec": 9.22,
+      "end_sec": 144.357,
+      "word_count": 27,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "You cannot point to a sentence and say \"that came from Reddit\" or \"that came from a children's book published in 2019.\" The data becomes the model."
+    },
+    {
+      "type": "pause",
+      "start_sec": 144.357,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 144.557,
+      "duration_sec": 4.771,
+      "end_sec": 149.328,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The violation becomes the product. Every response the AI generates every image it creates"
+    },
+    {
+      "type": "pause",
+      "start_sec": 149.328,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 149.528,
+      "duration_sec": 5.107,
+      "end_sec": 154.635,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "every answer it provides \u2014 built on content taken without permission and impossible to return."
+    },
+    {
+      "type": "pause",
+      "start_sec": 154.635,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 154.835,
+      "duration_sec": 7.163,
+      "end_sec": 161.998,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Even if every AI company loses every lawsuit, they keep the models. The models keep running. The products keep generating revenue."
+    },
+    {
+      "type": "pause",
+      "start_sec": 161.998,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 162.198,
+      "duration_sec": 1.996,
+      "end_sec": 164.194,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The fine doesn't undo the training."
+    },
+    {
+      "type": "pause",
+      "start_sec": 164.194,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 164.394,
+      "duration_sec": 5.781,
+      "end_sec": 170.175,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It just pays for the data after the fact \u2014 like shoplifting and mailing a check later."
+    },
+    {
+      "type": "pause",
+      "start_sec": 170.175,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 170.375,
+      "duration_sec": 6.139,
+      "end_sec": 176.514,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Except the check is always less than the retail price. And the people who try to stop it?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 176.514,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 176.714,
+      "duration_sec": 6.133,
+      "end_sec": 182.847,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Remember Yesenia Guitron \u2014 the Wells Fargo teller who called the ethics hotline and was fired for it?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 182.847,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 183.047,
+      "duration_sec": 5.107,
+      "end_sec": 188.153,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The formula punishes the people who resist it. It rewards the people who run it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 188.153,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 188.353,
+      "duration_sec": 3.045,
+      "end_sec": 191.398,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "That pattern repeats in every industry, in every decade."
+    }
+  ],
+  "total_duration_sec": 191.398,
+  "out": "audio/breaking_law/chapters/voice_ch3a_the_machines.wav",
+  "word_count_total": 540,
+  "avg_wpm": 169.3
+}

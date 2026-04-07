@@ -1,0 +1,505 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 3.797,
+      "end_sec": 3.797,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Europe figured this out. Four percent of global revenue. Proportional. Automatic. No ceiling."
+    },
+    {
+      "type": "pause",
+      "start_sec": 3.797,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 3.997,
+      "duration_sec": 3.407,
+      "end_sec": 7.405,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "When the fine scales with the company, the formula breaks."
+    },
+    {
+      "type": "pause",
+      "start_sec": 7.405,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 7.605,
+      "duration_sec": 5.46,
+      "end_sec": 13.064,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Facebook shrugged off a five-billion-dollar American fine and panicked over a European one. The tools exist."
+    },
+    {
+      "type": "pause",
+      "start_sec": 13.064,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 13.264,
+      "duration_sec": 3.406,
+      "end_sec": 16.671,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Criminal liability for executives \u2014 not the tellers, the architects."
+    },
+    {
+      "type": "pause",
+      "start_sec": 16.671,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 16.871,
+      "duration_sec": 6.498,
+      "end_sec": 23.369,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Disgorgement \u2014 hand back every dollar earned from the violation, not a negotiated fraction. The legal frameworks are built."
+    },
+    {
+      "type": "pause",
+      "start_sec": 23.369,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 23.569,
+      "duration_sec": 3.406,
+      "end_sec": 26.975,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The question has never been how. The question is why."
+    },
+    {
+      "type": "pause",
+      "start_sec": 26.975,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 27.175,
+      "duration_sec": 4.774,
+      "end_sec": 31.949,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "And the answer is the same math that runs everything else in this video."
+    },
+    {
+      "type": "pause",
+      "start_sec": 31.949,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 32.149,
+      "duration_sec": 5.811,
+      "end_sec": 37.96,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The companies that benefit from the formula fund the campaigns, staff the advisory boards, draft the legislation."
+    },
+    {
+      "type": "pause",
+      "start_sec": 37.96,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 38.16,
+      "duration_sec": 4.431,
+      "end_sec": 42.591,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The fine stays small because the people who pay it set the ceiling."
+    },
+    {
+      "type": "pause",
+      "start_sec": 42.591,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 44.091,
+      "duration_sec": 7.52,
+      "end_sec": 51.61,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "Let me show you what the math looks like when you put a face on it. Richard Grimshaw survived the Pinto fire."
+    },
+    {
+      "type": "pause",
+      "start_sec": 51.61,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 51.81,
+      "duration_sec": 8.553,
+      "end_sec": 60.363,
+      "word_count": 25,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "He grew up carrying scars that covered his body and a verdict that was supposed to change things \u2014 one hundred and twenty-five million dollars"
+    },
+    {
+      "type": "pause",
+      "start_sec": 60.363,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 60.563,
+      "duration_sec": 6.504,
+      "end_sec": 67.067,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "reduced to three point five million. The message was: we've done the math, and your pain has a price."
+    },
+    {
+      "type": "pause",
+      "start_sec": 67.067,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 67.267,
+      "duration_sec": 5.8,
+      "end_sec": 73.066,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Ford paid it and moved on. Yesenia Guitron called the ethics hotline and was fired for it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 73.066,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 73.266,
+      "duration_sec": 5.814,
+      "end_sec": 79.081,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "She never worked in banking again. Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars."
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 79.081,
+      "duration_sec": 5.444,
+      "end_sec": 84.524,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "The Sackler name is still on a wing of the Guggenheim Museum in New York City."
+    },
+    {
+      "type": "pause",
+      "start_sec": 84.524,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 84.724,
+      "duration_sec": 4.091,
+      "end_sec": 88.815,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The Metropolitan Museum took theirs down after public outcry. The Guggenheim hasn't."
+    },
+    {
+      "type": "pause",
+      "start_sec": 88.815,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 89.015,
+      "duration_sec": 6.468,
+      "end_sec": 95.483,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "You can walk into one of the most prestigious cultural institutions in the world look up at the wall"
+    },
+    {
+      "type": "pause",
+      "start_sec": 95.483,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 95.683,
+      "duration_sec": 6.818,
+      "end_sec": 102.501,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "and read the name of a family that earned their fortune from a drug that killed eight hundred thousand people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 102.501,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 102.701,
+      "duration_sec": 6.124,
+      "end_sec": 108.825,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They kept thirteen billion. And they kept the wall. That's the formula. It even gets you a plaque."
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 108.825,
+      "duration_sec": 2.705,
+      "end_sec": 111.53,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Elliana Esquivel is still making art in Charlotte."
+    },
+    {
+      "type": "pause",
+      "start_sec": 111.53,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 111.73,
+      "duration_sec": 7.495,
+      "end_sec": 119.225,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "She pivoted to 3D \u2014 not because she chose to, but because the alternative was watching her style get reproduced for free."
+    },
+    {
+      "type": "pause",
+      "start_sec": 119.225,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 119.425,
+      "duration_sec": 5.446,
+      "end_sec": 124.871,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "If the settlement arrives, her share might cover a month of rent. The model keeps running."
+    },
+    {
+      "type": "pause",
+      "start_sec": 124.871,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 125.071,
+      "duration_sec": 6.839,
+      "end_sec": 131.911,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted."
+    },
+    {
+      "type": "pause",
+      "start_sec": 131.911,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 132.111,
+      "duration_sec": 5.777,
+      "end_sec": 137.888,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The models built on it were refined. Chris Vialpondo is still in Seattle. Still working two jobs."
+    },
+    {
+      "type": "pause",
+      "start_sec": 137.888,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 138.088,
+      "duration_sec": 7.5,
+      "end_sec": 145.588,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula."
+    },
+    {
+      "type": "pause",
+      "start_sec": 145.588,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 145.888,
+      "duration_sec": 5.797,
+      "end_sec": 151.685,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The Grush-Saunby memo put a dollar value on a human life in 1977. Two hundred thousand dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 151.685,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 151.885,
+      "duration_sec": 6.143,
+      "end_sec": 158.028,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 158.028,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 158.228,
+      "duration_sec": 7.528,
+      "end_sec": 165.756,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The AI settlements value each stolen book at three thousand dollars. Elliana's illustrations? Not priced yet. Your Reddit posts? Your YouTube comments?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 165.756,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 165.956,
+      "duration_sec": 7.495,
+      "end_sec": 173.451,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Your blog from 2016? They'll get priced. And if fifty years of history tells you anything \u2014 you won't like the number."
+    },
+    {
+      "type": "pause",
+      "start_sec": 173.451,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 174.951,
+      "duration_sec": 6.156,
+      "end_sec": 181.107,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "The law doesn't prevent corporate crime. It prices it. The question was never whether they'd break the law."
+    },
+    {
+      "type": "pause",
+      "start_sec": 181.107,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 181.307,
+      "duration_sec": 7.183,
+      "end_sec": 188.49,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The question is what you're worth. Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981) FTC SEC DOJ ProPublica Copyright Alliance CDC"
+    },
+    {
+      "type": "pause",
+      "start_sec": 188.49,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 188.69,
+      "duration_sec": 5.589,
+      "end_sec": 194.279,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "European Data Protection Board Washington State AG WCNC Charlotte Good Jobs First Violation Tracker AlixPartners (2019)."
+    }
+  ],
+  "total_duration_sec": 194.279,
+  "out": "audio/breaking_law/chapters/voice_ch5_the_reckoning.wav",
+  "word_count_total": 546,
+  "avg_wpm": 168.6
+}

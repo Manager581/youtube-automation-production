@@ -1,0 +1,944 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 4.062,
+      "end_sec": 4.062,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Facebook was the bridge between the old formula and the new one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 4.062,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 4.262,
+      "duration_sec": 7.522,
+      "end_sec": 11.785,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "In 2013, a Cambridge University researcher named Aleksandr Kogan built a personality quiz app. Two hundred and seventy thousand people downloaded it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 11.785,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 11.985,
+      "duration_sec": 7.836,
+      "end_sec": 19.821,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "But Facebook's API \u2014 the system that connects apps to the platform \u2014 gave the quiz access to not just those users' data"
+    },
+    {
+      "type": "pause",
+      "start_sec": 19.821,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 20.021,
+      "duration_sec": 5.095,
+      "end_sec": 25.116,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "but all of their friends' data too. Every like, every post, every photo, every connection."
+    },
+    {
+      "type": "pause",
+      "start_sec": 25.116,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 25.316,
+      "duration_sec": 4.784,
+      "end_sec": 30.1,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Two hundred and seventy thousand downloads became eighty-seven million people's data harvested in weeks."
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 30.1,
+      "duration_sec": 3.035,
+      "end_sec": 33.135,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Facebook knew this was possible. It was a feature"
+    },
+    {
+      "type": "pause",
+      "start_sec": 33.135,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 33.335,
+      "duration_sec": 7.166,
+      "end_sec": 40.501,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "not a bug \u2014 they'd designed the API to be open because open APIs drive engagement and engagement drives advertising revenue."
+    },
+    {
+      "type": "pause",
+      "start_sec": 40.501,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 40.701,
+      "duration_sec": 5.802,
+      "end_sec": 46.503,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "In 2014, they quietly changed the rules. But they never enforced deletion of the data already taken."
+    },
+    {
+      "type": "pause",
+      "start_sec": 46.503,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 46.703,
+      "duration_sec": 7.842,
+      "end_sec": 54.545,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Cambridge Analytica used that data to build voter profiles so precise they could predict what would make you angry before you felt it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 54.545,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 54.745,
+      "duration_sec": 4.764,
+      "end_sec": 59.509,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They were hired by the Trump campaign. They were hired by groups supporting Brexit."
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 59.509,
+      "duration_sec": 6.834,
+      "end_sec": 66.343,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Eighty-seven million people's personalities \u2014 measured, modeled, and weaponized \u2014 for the price of a free quiz they never took."
+    },
+    {
+      "type": "pause",
+      "start_sec": 66.343,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 66.543,
+      "duration_sec": 2.367,
+      "end_sec": 68.91,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "And most of them still don't know."
+    },
+    {
+      "type": "pause",
+      "start_sec": 68.91,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 69.11,
+      "duration_sec": 8.893,
+      "end_sec": 78.003,
+      "word_count": 26,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "A 2019 Pew survey found that seventy-four percent of Facebook users didn't know the platform maintained a list of their interests and traits for ad targeting."
+    },
+    {
+      "type": "pause",
+      "start_sec": 78.003,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 78.203,
+      "duration_sec": 4.796,
+      "end_sec": 82.999,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "They didn't know they'd been profiled. They didn't know their data had been sold."
+    },
+    {
+      "type": "pause",
+      "start_sec": 82.999,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 83.199,
+      "duration_sec": 4.795,
+      "end_sec": 87.994,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "They just knew that their feed felt different in 2016 \u2014 angrier more anxious"
+    },
+    {
+      "type": "pause",
+      "start_sec": 87.994,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 88.194,
+      "duration_sec": 6.505,
+      "end_sec": 94.699,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "more polarized \u2014 and they assumed that was the world changing. It wasn't the world. It was the algorithm."
+    },
+    {
+      "type": "pause",
+      "start_sec": 94.699,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 94.899,
+      "duration_sec": 4.792,
+      "end_sec": 99.69,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Tuned by their own data, sold without their consent, deployed to shape an election."
+    },
+    {
+      "type": "pause",
+      "start_sec": 99.69,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 99.99,
+      "duration_sec": 6.485,
+      "end_sec": 106.475,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "When the story broke in March 2018, Zuckerberg was summoned before Congress. He wore a suit. He said sorry."
+    },
+    {
+      "type": "pause",
+      "start_sec": 106.475,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 106.675,
+      "duration_sec": 4.431,
+      "end_sec": 111.106,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And then something happened that tells you everything about why the formula survives."
+    },
+    {
+      "type": "pause",
+      "start_sec": 111.106,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 111.306,
+      "duration_sec": 11.965,
+      "end_sec": 123.271,
+      "word_count": 35,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "A United States senator \u2014 a person with the power to regulate the most valuable company on Earth \u2014 looked at Mark Zuckerberg and asked: \"How does Facebook make money if the product is free?\""
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 123.271,
+      "duration_sec": 2.709,
+      "end_sec": 125.981,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Zuckerberg paused. And said: \"Senator, we run ads.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 125.981,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 126.281,
+      "duration_sec": 3.39,
+      "end_sec": 129.671,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The room laughed. The internet turned it into a meme."
+    },
+    {
+      "type": "pause",
+      "start_sec": 129.671,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 129.871,
+      "duration_sec": 7.166,
+      "end_sec": 137.037,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "For weeks, the clip circulated as comedy \u2014 an old senator, a young CEO, a punchline about boomers not understanding technology."
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 137.037,
+      "duration_sec": 2.363,
+      "end_sec": 139.399,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "And it was funny. It genuinely was."
+    },
+    {
+      "type": "pause",
+      "start_sec": 139.399,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 139.599,
+      "duration_sec": 7.153,
+      "end_sec": 146.752,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The man in charge of regulating the most valuable company on Earth didn't know how it made money. That's objectively absurd."
+    },
+    {
+      "type": "pause",
+      "start_sec": 146.752,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 146.952,
+      "duration_sec": 6.117,
+      "end_sec": 153.07,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It's the kind of thing you'd write into a satire and worry it was too on the nose."
+    },
+    {
+      "type": "pause",
+      "start_sec": 153.07,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 154.57,
+      "duration_sec": 5.115,
+      "end_sec": 159.685,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "But here's what nobody said at the time. That hearing was the formula protecting itself."
+    },
+    {
+      "type": "pause",
+      "start_sec": 159.685,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 159.885,
+      "duration_sec": 3.749,
+      "end_sec": 163.635,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The people who set the fines \u2014 who write the regulations"
+    },
+    {
+      "type": "pause",
+      "start_sec": 163.635,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 163.834,
+      "duration_sec": 7.54,
+      "end_sec": 171.375,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "who are supposed to be the ceiling on corporate behavior \u2014 didn't understand the business model of the company they were interrogating."
+    },
+    {
+      "type": "pause",
+      "start_sec": 171.375,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 171.575,
+      "duration_sec": 8.567,
+      "end_sec": 180.141,
+      "word_count": 25,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "And Zuckerberg knew it. He sat there, patient and composed, and explained his own business to the people who were supposed to be punishing him."
+    },
+    {
+      "type": "pause",
+      "start_sec": 180.141,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 180.341,
+      "duration_sec": 3.07,
+      "end_sec": 183.411,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "He wasn't being grilled. He was giving a tutorial."
+    },
+    {
+      "type": "pause",
+      "start_sec": 183.411,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 183.611,
+      "duration_sec": 6.851,
+      "end_sec": 190.462,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "And everyone watched it happen and laughed \u2014 because it was easier to laugh than to realize what it meant."
+    },
+    {
+      "type": "pause",
+      "start_sec": 190.462,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 190.662,
+      "duration_sec": 6.505,
+      "end_sec": 197.167,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The people who set the fines don't understand what they're fining. The companies being fined have always known that."
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 197.167,
+      "duration_sec": 7.16,
+      "end_sec": 204.326,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "The FTC investigated for over a year. In July 2019, they announced the largest fine in their history: five billion dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 204.326,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 204.526,
+      "duration_sec": 7.171,
+      "end_sec": 211.698,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Here is what five billion dollars means to Facebook. Revenue that year: seventy point seven billion. The fine was seven percent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 211.698,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 211.898,
+      "duration_sec": 6.482,
+      "end_sec": 218.38,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Net profit: eighteen point five billion. The fine was about twenty-seven percent of one year's profit \u2014 paid once"
+    },
+    {
+      "type": "pause",
+      "start_sec": 218.38,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 218.58,
+      "duration_sec": 7.17,
+      "end_sec": 225.749,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "for a violation that ran for years and compromised eighty-seven million people. The FTC vote was three to two. Party line."
+    },
+    {
+      "type": "pause",
+      "start_sec": 225.749,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 38,
+      "start_sec": 225.949,
+      "duration_sec": 5.785,
+      "end_sec": 231.734,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The two dissenting commissioners didn't think the fine was too harsh. They thought it was too lenient."
+    },
+    {
+      "type": "pause",
+      "start_sec": 231.734,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 39,
+      "start_sec": 231.934,
+      "duration_sec": 5.096,
+      "end_sec": 237.03,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They wanted to sue, not settle. They wanted to hold Zuckerberg personally liable. They lost."
+    },
+    {
+      "type": "speech",
+      "index": 40,
+      "start_sec": 237.03,
+      "duration_sec": 7.183,
+      "end_sec": 244.214,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "On July twelfth, when the fine amount leaked, Facebook's stock rose one percent. The market had expected worse. Investors were relieved."
+    },
+    {
+      "type": "pause",
+      "start_sec": 244.214,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 41,
+      "start_sec": 244.414,
+      "duration_sec": 4.443,
+      "end_sec": 248.857,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Mark Zuckerberg's net worth increased by one point one billion dollars that day."
+    },
+    {
+      "type": "pause",
+      "start_sec": 248.857,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 42,
+      "start_sec": 249.057,
+      "duration_sec": 5.115,
+      "end_sec": 254.172,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "He made more from the announcement of the fine than the fine cost the company."
+    },
+    {
+      "type": "pause",
+      "start_sec": 254.172,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 43,
+      "start_sec": 254.372,
+      "duration_sec": 5.11,
+      "end_sec": 259.482,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "The market's verdict was clear: this is the ceiling. This is the worst it gets."
+    },
+    {
+      "type": "pause",
+      "start_sec": 259.482,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 44,
+      "start_sec": 259.682,
+      "duration_sec": 3.048,
+      "end_sec": 262.73,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "And the worst it gets is a good day."
+    },
+    {
+      "type": "pause",
+      "start_sec": 262.73,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 45,
+      "start_sec": 263.03,
+      "duration_sec": 7.847,
+      "end_sec": 270.877,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Now. After everything I've just shown you \u2014 Ford, Wells Fargo, Purdue, Facebook \u2014 you'd be forgiven for thinking the formula is unbeatable."
+    },
+    {
+      "type": "pause",
+      "start_sec": 270.877,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 46,
+      "start_sec": 271.077,
+      "duration_sec": 5.098,
+      "end_sec": 276.175,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "That this is just how it works. Fine, settle, move on. Nobody learns. Nothing changes."
+    },
+    {
+      "type": "pause",
+      "start_sec": 276.175,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 47,
+      "start_sec": 276.375,
+      "duration_sec": 3.757,
+      "end_sec": 280.132,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "But something happened in 2023 that proves the formula can break."
+    },
+    {
+      "type": "speech",
+      "index": 48,
+      "start_sec": 280.132,
+      "duration_sec": 8.19,
+      "end_sec": 288.322,
+      "word_count": 24,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Ireland fined Meta one point two billion euros under Europe's GDPR \u2014 a law that scales fines to four percent of global annual revenue."
+    },
+    {
+      "type": "pause",
+      "start_sec": 288.322,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 49,
+      "start_sec": 288.522,
+      "duration_sec": 3.393,
+      "end_sec": 291.915,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Not a negotiated number. Not a fixed ceiling. A percentage."
+    },
+    {
+      "type": "pause",
+      "start_sec": 291.915,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 50,
+      "start_sec": 292.115,
+      "duration_sec": 6.135,
+      "end_sec": 298.25,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And Facebook \u2014 the same Facebook that turned a five-billion-dollar American fine into a stock rally \u2014 panicked."
+    },
+    {
+      "type": "pause",
+      "start_sec": 298.25,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 51,
+      "start_sec": 298.45,
+      "duration_sec": 6.478,
+      "end_sec": 304.929,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Within weeks, they rewrote their entire data transfer infrastructure. They shut down a pipeline they'd run for a decade."
+    },
+    {
+      "type": "pause",
+      "start_sec": 304.929,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 52,
+      "start_sec": 305.129,
+      "duration_sec": 5.104,
+      "end_sec": 310.233,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They rebuilt their European architecture from scratch. They didn't fight it in court for years."
+    },
+    {
+      "type": "pause",
+      "start_sec": 310.233,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 53,
+      "start_sec": 310.433,
+      "duration_sec": 5.794,
+      "end_sec": 316.226,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "They didn't issue a press release and wait for it to blow over. They fixed it. Immediately."
+    },
+    {
+      "type": "pause",
+      "start_sec": 316.226,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 54,
+      "start_sec": 316.426,
+      "duration_sec": 4.415,
+      "end_sec": 320.841,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Because for the first time, the violation was more expensive than the profit."
+    },
+    {
+      "type": "pause",
+      "start_sec": 320.841,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 55,
+      "start_sec": 321.141,
+      "duration_sec": 2.021,
+      "end_sec": 323.163,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Sit with that for a second."
+    },
+    {
+      "type": "pause",
+      "start_sec": 323.163,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 56,
+      "start_sec": 323.363,
+      "duration_sec": 6.84,
+      "end_sec": 330.203,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The formula \u2014 the one that has survived five decades, across every industry, through every administration \u2014 broke. In Europe."
+    },
+    {
+      "type": "pause",
+      "start_sec": 330.203,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 57,
+      "start_sec": 330.403,
+      "duration_sec": 7.522,
+      "end_sec": 337.925,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Because someone changed one variable: they made the fine proportional. Same company. Same executives. Same data. The only difference was the math."
+    },
+    {
+      "type": "pause",
+      "start_sec": 337.925,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 58,
+      "start_sec": 338.125,
+      "duration_sec": 3.04,
+      "end_sec": 341.165,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And when the math changed, the behavior changed overnight."
+    },
+    {
+      "type": "pause",
+      "start_sec": 341.165,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 59,
+      "start_sec": 342.665,
+      "duration_sec": 6.482,
+      "end_sec": 349.147,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "So at this point in the story, you might be thinking: okay, the formula exists, but there are limits."
+    },
+    {
+      "type": "pause",
+      "start_sec": 349.147,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 60,
+      "start_sec": 349.347,
+      "duration_sec": 6.464,
+      "end_sec": 355.811,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Europe found the off switch. Proportional fines work. The system can be fixed. Companies can be forced to change."
+    },
+    {
+      "type": "pause",
+      "start_sec": 355.811,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 61,
+      "start_sec": 356.011,
+      "duration_sec": 6.13,
+      "end_sec": 362.142,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Maybe \u2014 just maybe \u2014 we're figuring it out. I wish that were the end of the video."
+    }
+  ],
+  "total_duration_sec": 362.142,
+  "out": "audio/breaking_law/chapters/voice_ch2_the_data.wav",
+  "word_count_total": 1022,
+  "avg_wpm": 169.3
+}

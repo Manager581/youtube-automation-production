@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.9">
+  <resources>
+    <format id="r1" name="FFVideoFormat1080p2398" frameDuration="1001/24000s" width="1920" height="1080"/>
+    <asset id="clip1" name="Facebook_fine" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4" start="0/1s" duration="53041/1000s" hasVideo="1" hasAudio="1" format="r1"/>
+    <asset id="img1" name="GDPR_image" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_000/pexels_5668473_GDPR_European_data_protection_.jpg" start="0/1s" duration="0/1s" hasVideo="1" hasAudio="0" format="r1"/>
+    <asset id="narr1" name="narration" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration.wav" start="0/1s" duration="1404700/1000s" hasVideo="0" hasAudio="1"/>
+  </resources>
+  <library>
+    <event name="Test Features">
+      <project name="Test Features Timeline">
+        <sequence format="r1" duration="30030/1001s" tcStart="0/1s">
+          <spine>
+            <!-- CLIP 1: Video with play_then_mute (volume keyframes) — 0-10s -->
+            <asset-clip ref="clip1" name="Facebook_fine" offset="0/1s" start="0/1s" duration="10010/1001s">
+              <!-- Volume: full for 3s, then mute -->
+              <adjust-volume>
+                <param name="amount">
+                  <keyframe time="0/1s" value="0dB"/>
+                  <keyframe time="3003/1001s" value="0dB"/>
+                  <keyframe time="3504/1001s" value="-96dB"/>
+                  <keyframe time="10010/1001s" value="-96dB"/>
+                </param>
+              </adjust-volume>
+            </asset-clip>
+
+            <!-- TRANSITION: Cross Dissolve between clip1 and img1 -->
+            <transition name="Cross Dissolve" offset="9009/1001s" duration="1001/1001s"/>
+
+            <!-- CLIP 2: Image with MUTED audio (-96dB) + Ken Burns keyframes — 10-20s -->
+            <asset-clip ref="img1" name="GDPR_image" offset="10010/1001s" start="0/1s" duration="10010/1001s">
+              <!-- MUTE: -96dB (NOT 0dB) -->
+              <adjust-volume amount="-96dB"/>
+              <!-- Ken Burns: zoom from 1.0 to 1.05 over duration -->
+              <adjust-transform>
+                <param name="scale">
+                  <keyframe time="0/1s" value="1.0 1.0"/>
+                  <keyframe time="10010/1001s" value="1.05 1.05"/>
+                </param>
+              </adjust-transform>
+            </asset-clip>
+
+            <!-- TRANSITION: Fade to Color (black) at end -->
+            <transition name="Fade to Color" offset="19019/1001s" duration="1001/1001s">
+              <param name="Color" value="0 0 0"/>
+            </transition>
+
+            <!-- CLIP 3: Same video clip, fully MUTED (-96dB) — 20-30s -->
+            <asset-clip ref="clip1" name="Facebook_fine_muted" offset="20020/1001s" start="5005/1001s" duration="10010/1001s">
+              <adjust-volume amount="-96dB"/>
+            </asset-clip>
+
+            <!-- LANE: Narration on audio lane, starting at 0 -->
+            <audio ref="narr1" name="narration" lane="1" offset="0/1s" start="0/1s" duration="30030/1001s" role="dialogue"/>
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>

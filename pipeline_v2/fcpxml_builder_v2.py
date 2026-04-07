@@ -13,7 +13,7 @@ at its exact timecode:
 
 Clip audio: play / play_then_mute / mute per director decisions.
 Transitions: fade_from_black, dissolve, cut.
-Ken Burns: static zoom on still images (ZoomX/ZoomY in transform).
+Ken Burns: animated zoom on still images (keyframed scale transform).
 
 Usage:
   cd /Users/jefflawrence/Documents/youtube-automation-production
@@ -29,6 +29,7 @@ import os
 import re
 import subprocess
 import sys
+from collections import defaultdict
 from fractions import Fraction
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, ElementTree, indent
@@ -38,7 +39,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline_v2.chapter_assembler import (
     load_director, load_alignment, match_segments_to_narration,
     split_into_chapters, find_overlay_file, pick_chapter_sfx,
-    find_media_file, deduplicate_visuals, CHAPTERS,
+    find_media_file, CHAPTERS,
 )
 
 # ─── Constants ──────────────────────────────────────────────────────────────
@@ -49,7 +50,7 @@ TC_START = 3600  # 01:00:00:00
 WIDTH = 1920
 HEIGHT = 1080
 
-NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
+NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_gapped.wav"
 SFX_DIR = PROJECT_ROOT / "assets" / "sfx"
 OVERLAY_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "overlays"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
@@ -62,6 +63,15 @@ LANE_NARRATION = 3 # A1  (using 3-6 to avoid DaVinci lane conflicts)
 LANE_MUSIC = 4     # A2
 LANE_SFX1 = 5      # A3
 LANE_SFX2 = 6      # A4
+
+# Fix 6: Valid chapter names — reject any invented ones
+VALID_CHAPTERS = {"THE FORMULA", "THE DATA", "THE MACHINES", "THE RENT", "THE RECKONING"}
+
+# Fix 8: Normalize non-standard music_state values to valid states
+MUSIC_STATE_MAP = {
+    "raise": "playing", "rising": "playing", "building": "playing",
+    "full": "playing", "transition": "ducking",
+}
 
 
 # ─── Time helpers ───────────────────────────────────────────────────────────
@@ -113,6 +123,13 @@ def is_audio(path):
 def file_url(path):
     """Convert absolute path to file:// URL."""
     return "file://" + os.path.abspath(path).replace(" ", "%20")
+
+
+def _normalize_music_state(state):
+    """Fix 8: Normalize non-standard music_state values."""
+    if not state:
+        return state
+    return MUSIC_STATE_MAP.get(state, state)
 
 
 # ─── FCPXML Builder ────────────────────────────────────────────────────────
@@ -167,6 +184,10 @@ class FCPXMLBuilderV2:
         media_cache = {}  # filename → (abspath, duration)
 
         for seg in segments:
+            # Fix 8: normalize music_state on each segment
+            if "music_state" in seg:
+                seg["music_state"] = _normalize_music_state(seg.get("music_state"))
+
             # Resolve visual_file (v4 schema)
             vf = seg.get("visual_file")
             if vf:
@@ -175,7 +196,7 @@ class FCPXMLBuilderV2:
                     dur = get_duration(path) if not is_image(path) else None
                     media_cache[vf] = (path, dur)
             # Resolve beats visual files (v5 schema)
-            for beat in seg.get("beats", []):
+            for beat in (seg.get("beats") or []):
                 bvf = beat.get("visual_file")
                 if bvf and bvf not in media_cache:
                     path = find_media_file(bvf)
@@ -186,12 +207,19 @@ class FCPXMLBuilderV2:
         # ── Pre-process: close gaps between segments ──
         # Extend each segment's end to the next segment's start.
         # This prevents orphan narration sentences from creating black holes.
+        # Fix 6: Also filter out marker-only segments (chapter_card + [CHAPTER:...] text)
         active_segs = [s for s in segments
-                       if s.get("text", "").strip() and not s["text"].startswith("[")]
+                       if s.get("text", "").strip()
+                       and not s["text"].startswith("[")
+                       and not (s.get("chapter_card") and s.get("text", "").startswith("[CHAPTER:"))]
         for i in range(len(active_segs) - 1):
             gap = active_segs[i + 1]["_narr_start"] - active_segs[i]["_narr_end"]
             if gap > 0.1:
                 active_segs[i]["_narr_end"] = active_segs[i + 1]["_narr_start"]
+
+        # Force first segment to start at 0 (no black gap at start)
+        if active_segs and active_segs[0]["_narr_start"] > 0:
+            active_segs[0]["_narr_start"] = 0
 
         # Cap last segment at narration duration
         narr_total = alignment.get("duration_sec", active_segs[-1]["_narr_end"])
@@ -439,11 +467,24 @@ class FCPXMLBuilderV2:
         print(f"  V2: {overlay_count} overlays")
 
         # V3: Chapter cards — use MOV files from chapters/ directory
+        # Fix 6: Only place valid chapter cards, skip duplicates and invented names
         card_count = 0
+        seen_chapters = set()
         for seg in segments:
             card = seg.get("chapter_card")
             if not card:
                 continue
+            # Fix 6: Skip invented chapter names
+            card_upper = card.upper().strip()
+            if card_upper not in VALID_CHAPTERS:
+                print(f"    SKIP invented chapter card: '{card}'")
+                continue
+            # Fix 6: Skip duplicate chapter cards
+            if card_upper in seen_chapters:
+                print(f"    SKIP duplicate chapter card: '{card}'")
+                continue
+            seen_chapters.add(card_upper)
+
             # Map chapter name to filename
             card_slug = card.lower().replace(' ', '_')
             card_name = f"chapter_{card_slug}.mov"
@@ -507,11 +548,16 @@ class FCPXMLBuilderV2:
         print(f"  A2: {len(music_by_chapter)} music tracks")
 
         # A3/A4: SFX — alternate lanes globally (not per-chapter)
+        # Fix 7: Cap SFX at 2 per chapter
         sfx_count = 0
         sfx_global_idx = 0
+        sfx_placed_by_chapter = defaultdict(int)
         for ch_num in sorted(sfx_by_chapter.keys()):
             sfx_list = sfx_by_chapter[ch_num]
             for sfx_time, sfx_file in sfx_list:
+                # Fix 7: enforce max 2 SFX per chapter
+                if sfx_placed_by_chapter[ch_num] >= 2:
+                    continue
                 sfx_path = str(SFX_DIR / sfx_file)
                 if not os.path.exists(sfx_path):
                     continue
@@ -528,6 +574,7 @@ class FCPXMLBuilderV2:
                 })
                 sfx_count += 1
                 sfx_global_idx += 1
+                sfx_placed_by_chapter[ch_num] += 1
         print(f"  A3/A4: {sfx_count} SFX ({sfx_global_idx} total, alternating lanes)")
 
         # ── Generate XML ──
@@ -607,12 +654,42 @@ class FCPXMLBuilderV2:
 
         spine = SubElement(sequence, "spine")
 
-        # ── Build spine (V1) ──
+        # ── Build spine (V1) with transitions (Fix 4) ──
         cursor = 0  # current position in seconds
+        prev_clip = None  # track previous clip for transitions
+        # Build a lookup: chapter start times for detecting chapter boundaries
+        chapter_starts = set()
+        for ch_num, segs in chapter_map.items():
+            if segs:
+                chapter_starts.add(round(segs[0]["_narr_start"], 2))
 
-        for clip in v1_clips:
+        for clip_idx, clip in enumerate(v1_clips):
             clip_offset = clip["offset"]
             clip_dur = clip["duration"]
+
+            # Fix 4: Insert transition at chapter boundaries (between clips)
+            trans = clip.get("transition_in", "cut")
+            insert_transition = False
+
+            if trans == "fade_from_black" and clip_idx == 0:
+                # Fade from black at the very start
+                insert_transition = True
+            elif trans == "dissolve" and prev_clip is not None:
+                insert_transition = True
+            elif prev_clip is not None and round(clip_offset, 2) in chapter_starts:
+                # Chapter boundary — insert cross dissolve
+                insert_transition = True
+
+            if insert_transition:
+                trans_dur = 1.0  # 1 second = 24/24s at 24fps
+                trans_offset = TC_START + clip_offset - (trans_dur / 2)
+                if trans == "fade_from_black" and clip_idx == 0:
+                    trans_offset = TC_START + clip_offset
+                SubElement(spine, "transition", {
+                    "name": "Cross Dissolve",
+                    "offset": to_rational(max(trans_offset, TC_START)),
+                    "duration": to_dur(trans_dur),
+                })
 
             # Insert gap if needed before this clip
             if clip_offset > cursor + 0.02:
@@ -641,13 +718,29 @@ class FCPXMLBuilderV2:
                     "duration": to_dur(clip_dur),
                     "start": "0/1s",
                 })
-                # Ken Burns: slight zoom
-                zoom = "1.05 1.05" if clip["zoom_target"] in ("face", "document") else "1.03 1.03"
-                SubElement(el, "adjust-transform", {
-                    "position": "0 0",
-                    "scale": zoom,
-                    "anchor": "0 0",
-                })
+                # Fix 5: Animated Ken Burns with keyframed scale transform
+                zoom_target = clip.get("zoom_target", "wide")
+                xform = SubElement(el, "adjust-transform")
+
+                # Anchor point based on zoom target
+                if zoom_target == "face":
+                    anchor = "0 -200"  # upper third
+                elif zoom_target == "document":
+                    anchor = "-200 0"  # left side
+                else:
+                    anchor = "0 0"     # center (wide)
+
+                # Position param (static)
+                SubElement(xform, "param", name="position", value="0 0")
+                SubElement(xform, "param", name="anchor", value=anchor)
+
+                # Scale param with keyframes for animated zoom
+                scale_param = SubElement(xform, "param", name="scale")
+                SubElement(scale_param, "keyframe", time="0/1s", value="1.0 1.0")
+                if zoom_target in ("face", "document"):
+                    SubElement(scale_param, "keyframe", time=to_dur(clip_dur), value="1.05 1.05")
+                else:
+                    SubElement(scale_param, "keyframe", time=to_dur(clip_dur), value="1.03 1.03")
             else:
                 el = SubElement(spine, "clip", {
                     "name": clip["name"],
@@ -668,21 +761,21 @@ class FCPXMLBuilderV2:
                 # Clip audio handling
                 ca = clip["clip_audio"]
                 if ca == "mute":
-                    SubElement(el, "adjust-volume", amount="0dB")
+                    # Fix 1: -96dB = true silence (0dB was unity gain)
+                    SubElement(el, "adjust-volume", amount="-96dB")
                 elif ca == "play":
                     pass  # full volume
                 elif ca == "play_then_mute":
-                    SubElement(el, "adjust-volume", amount="-12dB")
+                    # Fix 2: Volume keyframes — play at 0dB then ramp to silence
+                    cad = clip.get("clip_audio_duration") or 3
+                    vol = SubElement(el, "adjust-volume")
+                    param = SubElement(vol, "param", name="amount")
+                    SubElement(param, "keyframe", time="0/1s", value="0dB")
+                    SubElement(param, "keyframe", time=to_rational(cad), value="0dB")
+                    SubElement(param, "keyframe", time=to_rational(cad + 0.5), value="-96dB")
+                    SubElement(param, "keyframe", time=to_dur(clip_dur), value="-96dB")
 
-            # Transition
-            trans = clip.get("transition_in", "cut")
-            if trans == "fade_from_black" and cursor < 1:
-                # Add fade in at very start
-                pass  # DaVinci auto-applies this on import sometimes
-            elif trans == "dissolve":
-                # Cross dissolve: attach to previous spine element
-                pass  # Would need transition element between spine clips
-
+            prev_clip = clip
             cursor += clip_dur
 
         # ── Trailing gap (extends timeline to cover full narration) ──
@@ -696,10 +789,9 @@ class FCPXMLBuilderV2:
         })
 
         # ── Attach ALL lane clips to the FIRST spine element ──
-        # FCPXML lane clip offsets are relative to the parent's content timebase.
-        # The first spine element starts at TC_START with start=0 (for images)
-        # or start=clip_start (for video). We use the first spine element as parent
-        # and calculate offsets relative to it.
+        # Lane clips attached to a spine element use offsets relative to the
+        # parent element's content timebase. The first spine element (a gap)
+        # has start=TC_START, so lane offsets = TC_START + desired timeline position.
         first_spine_el = list(spine)[0]
         first_start_str = first_spine_el.get("start", "0/1s").rstrip('s')
         if '/' in first_start_str:
@@ -715,7 +807,7 @@ class FCPXMLBuilderV2:
             if not asset_id:
                 continue
 
-            # Offset = first element's content start + desired timeline position
+            # Lane offset = parent's content start + desired timeline position
             lane_offset = first_content_start + lc["offset"]
 
             attrs = {
@@ -826,17 +918,17 @@ def main():
                 mp = proj.GetMediaPool()
                 result = mp.ImportTimelineFromFile(output_path, {"timelineName": "Breaking Law FINAL"})
                 if result:
-                    print(f"  ✅ Imported as '{result.GetName()}'")
+                    print(f"  Imported as '{result.GetName()}'")
                     proj.SetCurrentTimeline(result)
                     resolve.OpenPage("edit")
                 else:
-                    print("  ❌ ImportTimelineFromFile returned None")
-                    print("  → Try File > Import > Timeline manually")
+                    print("  ImportTimelineFromFile returned None")
+                    print("  -> Try File > Import > Timeline manually")
             else:
                 print("  Cannot connect to DaVinci")
         except Exception as e:
             print(f"  Import error: {e}")
-            print("  → Try File > Import > Timeline manually")
+            print("  -> Try File > Import > Timeline manually")
 
     print("\nDone!")
 

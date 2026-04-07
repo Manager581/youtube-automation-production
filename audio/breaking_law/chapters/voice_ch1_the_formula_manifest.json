@@ -1,0 +1,681 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 6.14,
+      "end_sec": 6.14,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "In 1977, Ford knew the Pinto's fuel tank ruptured in rear-end collisions. They had the crash test data."
+    },
+    {
+      "type": "pause",
+      "start_sec": 6.14,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 6.34,
+      "duration_sec": 7.534,
+      "end_sec": 13.874,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Two engineers wrote a cost-benefit analysis \u2014 an actual document, with actual numbers. Fix every Pinto: one hundred and thirty-seven million dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 13.874,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 14.074,
+      "duration_sec": 4.086,
+      "end_sec": 18.16,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Expected wrongful death payouts: forty-nine point five million. They shipped the car."
+    },
+    {
+      "type": "pause",
+      "start_sec": 18.16,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 18.36,
+      "duration_sec": 7.507,
+      "end_sec": 25.867,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "A thirteen-year-old boy named Richard Grimshaw was a passenger in a Pinto that was rear-ended in San Bernardino. The fuel tank ruptured."
+    },
+    {
+      "type": "pause",
+      "start_sec": 25.867,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 26.067,
+      "duration_sec": 6.472,
+      "end_sec": 32.539,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The driver burned to death. Richard survived \u2014 barely. Burned over his entire body. Lost parts of his fingers."
+    },
+    {
+      "type": "pause",
+      "start_sec": 32.539,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 32.739,
+      "duration_sec": 4.76,
+      "end_sec": 37.499,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Lost his left ear. Years of skin grafts. A childhood replaced by hospital rooms."
+    },
+    {
+      "type": "pause",
+      "start_sec": 37.499,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 37.699,
+      "duration_sec": 6.135,
+      "end_sec": 43.834,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The jury awarded one hundred and twenty-five million dollars in punitive damages \u2014 the largest in American history."
+    },
+    {
+      "type": "pause",
+      "start_sec": 43.834,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 44.034,
+      "duration_sec": 6.821,
+      "end_sec": 50.855,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The judge reduced it to three point five million. Ford was acquitted of criminal homicide. No executive went to prison."
+    },
+    {
+      "type": "pause",
+      "start_sec": 50.855,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 51.055,
+      "duration_sec": 5.793,
+      "end_sec": 56.849,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The fine was three point five million dollars. Ford kept selling cars. No one went to prison."
+    },
+    {
+      "type": "pause",
+      "start_sec": 56.849,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 57.049,
+      "duration_sec": 2.72,
+      "end_sec": 59.768,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And somewhere in a boardroom, someone noticed something."
+    },
+    {
+      "type": "pause",
+      "start_sec": 59.768,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 59.968,
+      "duration_sec": 5.093,
+      "end_sec": 65.061,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The cost of getting caught was less than the cost of doing the right thing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 65.061,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 65.361,
+      "duration_sec": 6.456,
+      "end_sec": 71.817,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "That might have been an isolated scandal. A single bad company making a single bad calculation. Except it wasn't."
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 71.817,
+      "duration_sec": 4.981,
+      "end_sec": 76.799,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "In 2010, a twenty-four-year-old bank teller named Yesenia Guitron did something dangerous. She told the truth."
+    },
+    {
+      "type": "pause",
+      "start_sec": 76.799,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 76.999,
+      "duration_sec": 7.863,
+      "end_sec": 84.862,
+      "word_count": 23,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "She'd watched her colleagues at Wells Fargo open accounts that customers never asked for \u2014 credit cards ordered to addresses that didn't exist"
+    },
+    {
+      "type": "pause",
+      "start_sec": 84.862,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 85.062,
+      "duration_sec": 5.807,
+      "end_sec": 90.868,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "savings accounts funded by moving money between other accounts without permission. She knew why they did it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 90.868,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 91.068,
+      "duration_sec": 7.178,
+      "end_sec": 98.246,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "There was a quota: every customer should have eight products. \"Eight is Great.\" Miss the number and you get a warning."
+    },
+    {
+      "type": "pause",
+      "start_sec": 98.246,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 98.446,
+      "duration_sec": 5.465,
+      "end_sec": 103.911,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Miss it again and you get fired. So the tellers cheated. Because the alternative was unemployment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 103.911,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 104.111,
+      "duration_sec": 5.807,
+      "end_sec": 109.918,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Yesenia called the company's ethics hotline and reported the fraud. Wells Fargo terminated her the same week."
+    },
+    {
+      "type": "pause",
+      "start_sec": 109.918,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 110.118,
+      "duration_sec": 2.724,
+      "end_sec": 112.842,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "She never found steady work in banking again."
+    },
+    {
+      "type": "pause",
+      "start_sec": 112.842,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 113.042,
+      "duration_sec": 5.46,
+      "end_sec": 118.501,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.2,
+      "text": "Her name went on an industry blacklist \u2014 a record that follows you like a scar."
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 118.501,
+      "duration_sec": 5.115,
+      "end_sec": 123.616,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Three point five million fake accounts. Five thousand three hundred tellers fired for opening them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 123.616,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 123.816,
+      "duration_sec": 3.389,
+      "end_sec": 127.205,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And the woman who designed the quota \u2014 Carrie Tolstedt"
+    },
+    {
+      "type": "pause",
+      "start_sec": 127.205,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 127.405,
+      "duration_sec": 6.818,
+      "end_sec": 134.223,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "head of Community Banking \u2014 kept fifty-seven million dollars and got zero prison time. She served her sentence at home."
+    },
+    {
+      "type": "pause",
+      "start_sec": 134.223,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 134.423,
+      "duration_sec": 6.477,
+      "end_sec": 140.9,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Ford's formula required a memo. Wells Fargo's didn't even require a decision \u2014 just a number and a threat."
+    },
+    {
+      "type": "pause",
+      "start_sec": 140.9,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 141.1,
+      "duration_sec": 6.478,
+      "end_sec": 147.578,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Ford needed a document to do this. Wells Fargo only needed a quota. The next company didn't need either."
+    },
+    {
+      "type": "pause",
+      "start_sec": 147.578,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 147.778,
+      "duration_sec": 2.017,
+      "end_sec": 149.795,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "It just needed a head start."
+    },
+    {
+      "type": "pause",
+      "start_sec": 149.795,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 149.995,
+      "duration_sec": 8.53,
+      "end_sec": 158.525,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Purdue Pharma saw the lawsuits coming a decade early and withdrew ten point seven billion dollars from the company before anyone could calculate the fine."
+    },
+    {
+      "type": "pause",
+      "start_sec": 158.525,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 158.725,
+      "duration_sec": 3.749,
+      "end_sec": 162.474,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Richard Sackler promised a, quote, blizzard of prescriptions at OxyContin's launch."
+    },
+    {
+      "type": "pause",
+      "start_sec": 162.474,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 162.674,
+      "duration_sec": 6.838,
+      "end_sec": 169.512,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "In Kermit, West Virginia \u2014 population four hundred \u2014 a single pharmacy received nine million opioid pills in two years."
+    },
+    {
+      "type": "pause",
+      "start_sec": 169.512,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 169.712,
+      "duration_sec": 5.794,
+      "end_sec": 175.506,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The pharmacist went to prison. The Sacklers moved their money. More than eight hundred thousand Americans died."
+    },
+    {
+      "type": "pause",
+      "start_sec": 175.506,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 175.706,
+      "duration_sec": 5.814,
+      "end_sec": 181.52,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The settlement: seven point four billion. The family's remaining fortune: thirteen billion. Nine thousand dollars per death."
+    },
+    {
+      "type": "pause",
+      "start_sec": 181.52,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 181.72,
+      "duration_sec": 6.136,
+      "end_sec": 187.855,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Ford valued a life at two hundred thousand in 1977. The Sacklers got it down to nine thousand."
+    },
+    {
+      "type": "pause",
+      "start_sec": 187.855,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 189.355,
+      "duration_sec": 3.768,
+      "end_sec": 193.123,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "The fine is cheaper than the profit. Every time. Without exception."
+    },
+    {
+      "type": "pause",
+      "start_sec": 193.123,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 193.423,
+      "duration_sec": 3.063,
+      "end_sec": 196.486,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The law doesn't prevent corporate crime. It prices it."
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 196.486,
+      "duration_sec": 1.678,
+      "end_sec": 198.164,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "And the price keeps dropping."
+    },
+    {
+      "type": "pause",
+      "start_sec": 198.164,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 198.364,
+      "duration_sec": 6.153,
+      "end_sec": 204.518,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Since 2000, corporations have paid over one trillion dollars in fines and settlements in the United States alone."
+    },
+    {
+      "type": "pause",
+      "start_sec": 204.518,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 204.718,
+      "duration_sec": 4.076,
+      "end_sec": 208.793,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "One hundred and twenty-seven companies have each paid more than a billion."
+    },
+    {
+      "type": "pause",
+      "start_sec": 208.793,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 38,
+      "start_sec": 208.993,
+      "duration_sec": 9.542,
+      "end_sec": 218.536,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And here's the number that should end every argument about whether the system works: companies caught repeatedly pay smaller fines as a percentage of their revenue over time."
+    },
+    {
+      "type": "pause",
+      "start_sec": 218.536,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 39,
+      "start_sec": 218.736,
+      "duration_sec": 7.161,
+      "end_sec": 225.896,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Not larger. Smaller. The more you violate, the better the deal gets. Each company added one feature to the original calculation."
+    },
+    {
+      "type": "pause",
+      "start_sec": 225.896,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 40,
+      "start_sec": 226.096,
+      "duration_sec": 5.135,
+      "end_sec": 231.232,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Ford added a memo. Wells Fargo added plausible deniability. Purdue added preemption. Facebook added scale."
+    },
+    {
+      "type": "pause",
+      "start_sec": 231.232,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 41,
+      "start_sec": 231.432,
+      "duration_sec": 6.437,
+      "end_sec": 237.869,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "But every one of them had something in common \u2014 the damage, at least in theory, could be reversed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 237.869,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 42,
+      "start_sec": 238.069,
+      "duration_sec": 5.786,
+      "end_sec": 243.855,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Ford could recall the car. Wells Fargo could close the accounts. Purdue could stop making the pills."
+    },
+    {
+      "type": "pause",
+      "start_sec": 243.855,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 43,
+      "start_sec": 244.055,
+      "duration_sec": 3.74,
+      "end_sec": 247.794,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Then the formula met the internet. And the damage became permanent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 247.794,
+      "duration_sec": 1.5
+    }
+  ],
+  "total_duration_sec": 249.294,
+  "out": "audio/breaking_law/chapters/voice_ch1_the_formula.wav",
+  "word_count_total": 701,
+  "avg_wpm": 168.7
+}

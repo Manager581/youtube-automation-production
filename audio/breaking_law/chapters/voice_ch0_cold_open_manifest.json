@@ -1,0 +1,120 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 4.77,
+      "end_sec": 4.77,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "In 2019, Facebook was fined five billion dollars. The largest penalty in FTC history."
+    },
+    {
+      "type": "pause",
+      "start_sec": 4.77,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 4.97,
+      "duration_sec": 5.795,
+      "end_sec": 10.765,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Eighty-seven million people's data \u2014 harvested, profiled, and sold to a political targeting firm without their knowledge."
+    },
+    {
+      "type": "pause",
+      "start_sec": 10.765,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 10.965,
+      "duration_sec": 6.812,
+      "end_sec": 17.776,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And on the day the fine was announced, Facebook's stock went up. The market added six billion dollars in value."
+    },
+    {
+      "type": "pause",
+      "start_sec": 17.776,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 17.976,
+      "duration_sec": 4.418,
+      "end_sec": 22.394,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "Mark Zuckerberg personally gained one point one billion dollars in a single day."
+    },
+    {
+      "type": "pause",
+      "start_sec": 22.394,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 22.594,
+      "duration_sec": 5.789,
+      "end_sec": 28.383,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "The punishment made the company richer than if the government had done nothing. How is that possible?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 28.383,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 28.583,
+      "duration_sec": 5.457,
+      "end_sec": 34.04,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "To understand, you need to go back to 1977. Because someone had to discover this trick."
+    },
+    {
+      "type": "pause",
+      "start_sec": 34.04,
+      "duration_sec": 0.2
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 34.24,
+      "duration_sec": 3.007,
+      "end_sec": 37.247,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.2,
+      "text": "And the discovery started with a car on fire."
+    },
+    {
+      "type": "pause",
+      "start_sec": 37.247,
+      "duration_sec": 0.3
+    }
+  ],
+  "total_duration_sec": 37.547,
+  "out": "audio/breaking_law/chapters/voice_ch0_cold_open.wav",
+  "word_count_total": 106,
+  "avg_wpm": 169.4
+}

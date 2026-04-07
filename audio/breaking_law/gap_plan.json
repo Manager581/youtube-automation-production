@@ -1,0 +1,256 @@
+{
+  "original_duration_sec": 1404.729,
+  "gapped_duration_sec": 1519.729,
+  "gap_count": 31,
+  "total_silence_added_sec": 115.0,
+  "gaps": [
+    {
+      "index": 0,
+      "original_position_sec": 4.0,
+      "gapped_position_sec": 4.0,
+      "duration_sec": 5.0,
+      "visual_file": "Facebook_FTC_5_billion_dollar_fine.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 1,
+      "original_position_sec": 10.513,
+      "gapped_position_sec": 15.513,
+      "duration_sec": 5.0,
+      "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 2,
+      "original_position_sec": 17.027,
+      "gapped_position_sec": 27.027,
+      "duration_sec": 5.0,
+      "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 3,
+      "original_position_sec": 27.265,
+      "gapped_position_sec": 42.265,
+      "duration_sec": 4.0,
+      "visual_file": "Wells_Fargo_fake_accounts_scandal.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 4,
+      "original_position_sec": 38.673,
+      "gapped_position_sec": 57.673,
+      "duration_sec": 3.0,
+      "visual_file": "Reddit_frontpage_browsing.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 5,
+      "original_position_sec": 45.518,
+      "gapped_position_sec": 67.518,
+      "duration_sec": 4.0,
+      "visual_file": "digital_artist_workspace.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 6,
+      "original_position_sec": 95.447,
+      "gapped_position_sec": 121.447,
+      "duration_sec": 3.0,
+      "visual_file": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 7,
+      "original_position_sec": 185.33,
+      "gapped_position_sec": 214.33,
+      "duration_sec": 3.0,
+      "visual_file": "courtroom_justice_gavel.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 8,
+      "original_position_sec": 228.96,
+      "gapped_position_sec": 260.96,
+      "duration_sec": 3.0,
+      "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 9,
+      "original_position_sec": 237.54,
+      "gapped_position_sec": 272.54,
+      "duration_sec": 4.0,
+      "visual_file": "Wells_Fargo_fake_accounts_scandal.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 10,
+      "original_position_sec": 251.89,
+      "gapped_position_sec": 290.89,
+      "duration_sec": 4.0,
+      "visual_file": "apartment_housing_crisis_rent.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 11,
+      "original_position_sec": 352.852,
+      "gapped_position_sec": 395.852,
+      "duration_sec": 5.0,
+      "visual_file": "corporate_boardroom_meeting_stock.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 12,
+      "original_position_sec": 365.22,
+      "gapped_position_sec": 413.22,
+      "duration_sec": 4.0,
+      "visual_file": "Purdue_Pharma_opioid_Sackler_family.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 13,
+      "original_position_sec": 373.386,
+      "gapped_position_sec": 425.386,
+      "duration_sec": 3.0,
+      "visual_file": "corporate_fines_cost_of_doing_business.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 14,
+      "original_position_sec": 418.5,
+      "gapped_position_sec": 473.5,
+      "duration_sec": 3.0,
+      "visual_file": "courtroom_justice_gavel.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 15,
+      "original_position_sec": 434.134,
+      "gapped_position_sec": 492.134,
+      "duration_sec": 3.0,
+      "visual_file": "Facebook_FTC_5_billion_dollar_fine.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 16,
+      "original_position_sec": 459.631,
+      "gapped_position_sec": 520.631,
+      "duration_sec": 5.0,
+      "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 17,
+      "original_position_sec": 468.285,
+      "gapped_position_sec": 534.285,
+      "duration_sec": 3.0,
+      "visual_file": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 18,
+      "original_position_sec": 502.411,
+      "gapped_position_sec": 571.411,
+      "duration_sec": 3.0,
+      "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 19,
+      "original_position_sec": 528.26,
+      "gapped_position_sec": 600.26,
+      "duration_sec": 4.0,
+      "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 20,
+      "original_position_sec": 613.167,
+      "gapped_position_sec": 689.167,
+      "duration_sec": 3.0,
+      "visual_file": "Wall_Street_trading_floor.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 21,
+      "original_position_sec": 652.14,
+      "gapped_position_sec": 731.14,
+      "duration_sec": 3.0,
+      "visual_file": "US_Capitol_building_Congress.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 22,
+      "original_position_sec": 806.8,
+      "gapped_position_sec": 888.8,
+      "duration_sec": 4.0,
+      "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 23,
+      "original_position_sec": 942.44,
+      "gapped_position_sec": 1028.44,
+      "duration_sec": 4.0,
+      "visual_file": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 24,
+      "original_position_sec": 997.7,
+      "gapped_position_sec": 1087.7,
+      "duration_sec": 3.0,
+      "visual_file": "corporate_fines_cost_of_doing_business.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 25,
+      "original_position_sec": 1096.59,
+      "gapped_position_sec": 1189.59,
+      "duration_sec": 4.0,
+      "visual_file": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 26,
+      "original_position_sec": 1119.327,
+      "gapped_position_sec": 1216.327,
+      "duration_sec": 4.0,
+      "visual_file": "digital_artist_workspace.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 27,
+      "original_position_sec": 1185.9,
+      "gapped_position_sec": 1286.9,
+      "duration_sec": 3.0,
+      "visual_file": "AI_scraping_copyright_training_data.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 28,
+      "original_position_sec": 1195.98,
+      "gapped_position_sec": 1299.98,
+      "duration_sec": 4.0,
+      "visual_file": "Reddit_frontpage_browsing.mp4",
+      "clip_audio": "play_then_mute"
+    },
+    {
+      "index": 29,
+      "original_position_sec": 1237.58,
+      "gapped_position_sec": 1345.58,
+      "duration_sec": 4.0,
+      "visual_file": "Wall_Street_trading_floor.mp4",
+      "clip_audio": "play"
+    },
+    {
+      "index": 30,
+      "original_position_sec": 1428.86,
+      "gapped_position_sec": 1540.86,
+      "duration_sec": 3.0,
+      "visual_file": "corporate_boardroom_meeting_stock.mp4",
+      "clip_audio": "play"
+    }
+  ]
+}

@@ -40,9 +40,9 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 # ─── Project paths ──────────────────────────────────────────────────────────
 
-DIRECTOR_PATH = PROJECT_ROOT / "storyboards" / "breaking_law_directed_v4.json"
-ALIGNMENT_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_alignment.json"
-NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
+DIRECTOR_PATH = PROJECT_ROOT / "storyboards" / "breaking_law_directed_v6.json"
+ALIGNMENT_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_gapped_alignment.json"
+NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_gapped.wav"
 SFX_DIR = PROJECT_ROOT / "assets" / "sfx"
 OVERLAY_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "overlays"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
@@ -171,12 +171,52 @@ def first_n_words(text, n=6):
 # ─── Data loading ───────────────────────────────────────────────────────────
 
 def load_director():
-    """Load director v4 JSON, flatten segments."""
+    """Load director v5 JSON, flatten segments and expand beats.
+
+    For each segment with beats, split the segment's time range evenly
+    among beats. Each beat becomes its own segment with visual fields from
+    the beat and metadata (text, voice_register, sfx, chapter_card, etc.)
+    from the parent. Segments with no beats pass through unchanged.
+    """
     with open(DIRECTOR_PATH) as f:
         data = json.load(f)
-    segments = []
+
+    raw_segments = []
     for scene in data.get("scenes", []):
-        segments.extend(scene.get("segments", []))
+        raw_segments.extend(scene.get("segments", []))
+
+    # Expand beats into individual visual-cut segments
+    segments = []
+    for seg in raw_segments:
+        beats = seg.get("beats")
+        if beats and len(beats) > 0:
+            seg_start = seg.get("_timeline_start_sec", 0.0)
+            seg_end = seg.get("_timeline_end_sec", seg_start + 1.0)
+            seg_duration = seg_end - seg_start
+            beat_duration = seg_duration / len(beats) if len(beats) > 0 else seg_duration
+
+            for i, beat in enumerate(beats):
+                expanded = dict(seg)  # shallow copy parent fields
+                # Override with beat-specific visual fields
+                expanded["visual_file"] = beat.get("visual_file", seg.get("visual_file"))
+                expanded["visual_type"] = beat.get("visual_type", seg.get("visual_type"))
+                expanded["clip_audio"] = beat.get("clip_audio", seg.get("clip_audio"))
+                expanded["clip_start_sec"] = beat.get("clip_start_sec", seg.get("clip_start_sec"))
+                if "clip_audio_duration" in beat:
+                    expanded["clip_audio_duration"] = beat["clip_audio_duration"]
+                if "zoom_target" in beat:
+                    expanded["zoom_target"] = beat["zoom_target"]
+                if beat.get("text"):
+                    expanded["text"] = beat["text"]
+                # Set beat's time slice
+                expanded["_timeline_start_sec"] = seg_start + i * beat_duration
+                expanded["_timeline_end_sec"] = seg_start + (i + 1) * beat_duration
+                # Mark as already flattened
+                expanded["beats"] = None
+                segments.append(expanded)
+        else:
+            segments.append(seg)
+
     return data, segments
 
 
@@ -285,6 +325,18 @@ def match_segments_to_narration(segments, alignment):
 
         matched.append(seg)
 
+    # Fix zero-word segments (e.g. [CHAPTER: THE FORMULA]) that got timestamp 0
+    for i in range(1, len(matched)):
+        seg = matched[i]
+        if seg.get("_timeline_start_sec", -1) == 0 or (seg["_narr_start"] == 0 and i > 0):
+            seg["_narr_start"] = matched[i - 1]["_narr_end"]
+            seg_text = seg.get("text", "").strip()
+            # Chapter cards and stage directions get 1 second
+            if not seg_text or seg_text.startswith("["):
+                seg["_narr_end"] = seg["_narr_start"] + 1.0
+            elif seg["_narr_end"] <= seg["_narr_start"]:
+                seg["_narr_end"] = seg["_narr_start"] + 1.0
+
     # Sanity: monotonically increasing
     for i in range(1, len(matched)):
         if matched[i]["_narr_start"] < matched[i - 1]["_narr_start"]:
@@ -297,8 +349,22 @@ def match_segments_to_narration(segments, alignment):
 
 # ─── Chapter splitting ──────────────────────────────────────────────────────
 
+VALID_CHAPTERS = {
+    "COLD OPEN",
+    "THE FORMULA",
+    "THE DATA",
+    "THE MACHINES",
+    "THE RENT",
+    "THE RECKONING",
+}
+
+
 def split_into_chapters(segments):
     """Split segments into chapters based on chapter_card markers.
+
+    Only recognizes VALID_CHAPTERS. Unknown chapter names (e.g. THE SACKLERS,
+    THE EXCEPTION, THE MACHINE) are ignored -- their segments stay in the
+    current chapter.
 
     Returns dict: {chapter_number: [segments]}
     """
@@ -308,9 +374,12 @@ def split_into_chapters(segments):
     for seg in segments:
         card = seg.get("chapter_card")
         if card:
-            # Map chapter card text to chapter number
-            card_upper = card.upper()
-            if "FORMULA" in card_upper:
+            card_upper = card.upper().strip()
+            # Validate against known chapters before switching
+            if card_upper not in VALID_CHAPTERS:
+                # Unknown chapter card -- ignore it, stay in current chapter
+                pass
+            elif "FORMULA" in card_upper:
                 current_chapter = 1
             elif "DATA" in card_upper:
                 current_chapter = 2
