@@ -11,8 +11,39 @@ Usage:
 
 import subprocess
 import json
+import shutil
 import sys
 import os
+
+# Find claude CLI binary — check PATH first, then known install locations
+def _find_claude_binary():
+    # Check PATH
+    found = shutil.which("claude")
+    if found:
+        return found
+    # Known install locations on macOS
+    candidates = [
+        os.path.expanduser("~/Library/Application Support/Claude/claude-code/2.1.92/claude.app/Contents/MacOS/claude"),
+        os.path.expanduser("~/.vscode/extensions/anthropic.claude-code-2.1.96-darwin-arm64/resources/native-binary/claude"),
+        os.path.expanduser("~/.vscode/extensions/anthropic.claude-code-2.1.94-darwin-arm64/resources/native-binary/claude"),
+        os.path.expanduser("~/.vscode/extensions/anthropic.claude-code-2.1.92-darwin-arm64/resources/native-binary/claude"),
+    ]
+    for c in candidates:
+        if os.path.isfile(c) and os.access(c, os.X_OK):
+            return c
+    # Glob for any version
+    import glob
+    for pattern in [
+        os.path.expanduser("~/Library/Application Support/Claude/claude-code/*/claude.app/Contents/MacOS/claude"),
+        os.path.expanduser("~/.vscode/extensions/anthropic.claude-code-*-darwin-arm64/resources/native-binary/claude"),
+    ]:
+        matches = sorted(glob.glob(pattern), reverse=True)  # newest first
+        if matches:
+            return matches[0]
+    return "claude"  # fallback — will error with clear message
+
+CLAUDE_BIN = _find_claude_binary()
+
 
 def query_claude(prompt, max_tokens=4096, timeout=300):
     """Query Claude via Claude Code CLI (free on Claude Max).
@@ -29,7 +60,7 @@ def query_claude(prompt, max_tokens=4096, timeout=300):
         # Pipe prompt via stdin to avoid OS arg length limits
         print(f"  [LLM] Sending {len(prompt)} chars to Claude CLI (timeout={timeout}s)...", file=sys.stderr)
         result = subprocess.run(
-            ["claude", "-p", "-", "--output-format", "text"],
+            [CLAUDE_BIN, "-p", "-", "--output-format", "text"],
             capture_output=True, text=True, timeout=timeout,
             input=prompt
         )
@@ -63,7 +94,7 @@ def query_claude_json(prompt, timeout=120):
     """
     try:
         result = subprocess.run(
-            ["claude", "-p", prompt, "--output-format", "json"],
+            [CLAUDE_BIN, "-p", prompt, "--output-format", "json"],
             capture_output=True, text=True, timeout=timeout
         )
         if result.returncode == 0:

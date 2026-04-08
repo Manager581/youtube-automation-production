@@ -1,0 +1,512 @@
+{
+  "clips": {
+    "Facebook_FTC_5_billion_dollar_fine.mp4": {
+      "filename": "Facebook_FTC_5_billion_dollar_fine.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "FTC official speaking at press conference about Facebook settlement — primary source testimony",
+      "quotable_moments": [
+        {
+          "text": "Facebook betrayed the trust of its users and deceived them about their ability to control their personal information",
+          "editorial_value": 9,
+          "reason": "Direct accusation from FTC — strongest official condemnation quote"
+        },
+        {
+          "text": "This is a watershed moment in privacy enforcement and privacy governance",
+          "editorial_value": 8,
+          "reason": "FTC framing the fine as historic — supports the 'cost of doing business' counter-argument"
+        },
+        {
+          "text": "Facebook shared users' information with every developer of an application installed by users' friends",
+          "editorial_value": 8,
+          "reason": "Explains the actual violation — specific and damning"
+        }
+      ],
+      "entities": [
+        {"name": "Facebook", "type": "company", "context": "subject of FTC enforcement action"},
+        {"name": "FTC", "type": "agency", "context": "enforcing body announcing settlement"}
+      ],
+      "best_for": ["evidence", "revelation"],
+      "full_transcript": "This settlement is the result of an exhaustive investigation, which concluded that Facebook betrayed the trust of its users and deceived them about their ability to control their personal information. This is a watershed moment in privacy enforcement and privacy governance. Despite offering users privacy settings that promised to share their information with friends only, Facebook, in fact, shared users' information with every developer of an application installed by users' friends."
+    },
+    "Facebook_to_pay_5_billion_fine.mp4": {
+      "filename": "Facebook_to_pay_5_billion_fine.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "News anchor reporting on Facebook fine — broadcast news A-roll with clear statement of fine amount",
+      "quotable_moments": [
+        {
+          "text": "Facebook now has to pay five billion dollars as part of a settlement with the Federal Trade Commission",
+          "editorial_value": 9,
+          "reason": "Clean statement of the core fact — perfect for intro clip audio"
+        },
+        {
+          "text": "The social media giant that most of us use on a daily basis has now been slapped with the largest fine in FTC history",
+          "editorial_value": 8,
+          "reason": "Frames scale and personal relevance — news anchor delivery adds authority"
+        }
+      ],
+      "entities": [
+        {"name": "Facebook", "type": "company", "context": "fined by FTC"},
+        {"name": "FTC", "type": "agency", "context": "issuing record fine"}
+      ],
+      "best_for": ["hook", "evidence"],
+      "full_transcript": "For the social media giant that most of us use on a daily basis has now been slapped with the largest fine in FTC history. Facebook now has to pay five billion dollars as part of a settlement with the Federal Trade Commission."
+    },
+    "Mark_Zuckerberg_Senate_hearing_2018.mp4": {
+      "filename": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "Zuckerberg testifying before Senate — primary source footage of the central figure",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "Mark Zuckerberg", "type": "person", "context": "testifying before Senate"},
+        {"name": "Facebook", "type": "company", "context": "Zuckerberg's company under scrutiny"},
+        {"name": "Senate", "type": "agency", "context": "conducting hearing"}
+      ],
+      "best_for": ["character_intro", "evidence", "hook"],
+      "full_transcript": ""
+    },
+    "Cambridge_Analytica_scandal_explained.mp4": {
+      "filename": "Cambridge_Analytica_scandal_explained.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "News explainer with Zuckerberg's own words — includes his apology and Cambridge Analytica context",
+      "quotable_moments": [
+        {
+          "text": "This was a major breach of trust, and I'm really sorry that this happened",
+          "editorial_value": 9,
+          "reason": "Zuckerberg's own apology — powerful when narrator says the fine didn't change behavior"
+        },
+        {
+          "text": "We have a basic responsibility to protect people's data, and if we can't do that, then we don't deserve to have the opportunity to serve people",
+          "editorial_value": 8,
+          "reason": "Zuckerberg's promise — ironic given subsequent violations"
+        },
+        {
+          "text": "Facebook is scrambling to contain the fallout over a data privacy scandal",
+          "editorial_value": 7,
+          "reason": "News anchor framing — establishes crisis context"
+        }
+      ],
+      "entities": [
+        {"name": "Facebook", "type": "company", "context": "data privacy scandal"},
+        {"name": "Mark Zuckerberg", "type": "person", "context": "apologizing for breach"},
+        {"name": "Cambridge Analytica", "type": "company", "context": "data harvesting scandal"}
+      ],
+      "best_for": ["evidence", "character_intro", "revelation"],
+      "full_transcript": "By now you've probably heard that Facebook is scrambling to contain the fallout over a data privacy scandal. Mark Zuckerberg finally addressed the story on Wednesday, but only after a delete Facebook campaign had started to gain momentum around the world. So this was a major breach of trust, and I'm really sorry that this happened. You know, we have a basic responsibility to protect people's data, and if we can't do that, then we don't deserve to have the opportunity to serve people."
+    },
+    "Wells_Fargo_fake_accounts_scandal.mp4": {
+      "filename": "Wells_Fargo_fake_accounts_scandal.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "YouTube explainer covering the scandal — not primary source but has strong summary quotes",
+      "quotable_moments": [
+        {
+          "text": "Wells Fargo employees created millions of unauthorized accounts on behalf of their customers",
+          "editorial_value": 9,
+          "reason": "Core fact stated clearly — the one sentence that explains the entire scandal"
+        }
+      ],
+      "entities": [
+        {"name": "Wells Fargo", "type": "company", "context": "fake accounts scandal"}
+      ],
+      "best_for": ["evidence", "exposition"],
+      "full_transcript": "Here's a comment that's been sticking with me. Can you make a vid about Wells Fargo? Hasn't there been a scandal with them? Well yes, there most definitely has been a scandal with them. One that can potentially be relevant to all of our lives. Wells Fargo employees created millions of unauthorized accounts on behalf of their customers."
+    },
+    "Purdue_Pharma_opioid_Sackler_family.mp4": {
+      "filename": "Purdue_Pharma_opioid_Sackler_family.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "News/documentary footage about opioid epidemic with emotional testimony about Sackler family",
+      "quotable_moments": [
+        {
+          "text": "We are in the middle of an epidemic, an epidemic. In fact, it's called the worst public health epidemic in our history",
+          "editorial_value": 9,
+          "reason": "Emotional opener establishing human cost — powerful for clip audio"
+        },
+        {
+          "text": "There's eight members of the Sackler family caused much of the opioid epidemic",
+          "editorial_value": 8,
+          "reason": "Direct accusation naming the family — personalizes corporate wrongdoing"
+        },
+        {
+          "text": "Imagine a medical industry that's supposed to keep a nation healthy, but becomes so completely corrupt that it causes an epidemic",
+          "editorial_value": 9,
+          "reason": "Frames the moral outrage — perfect for the 'formula' chapter"
+        }
+      ],
+      "entities": [
+        {"name": "Purdue Pharma", "type": "company", "context": "manufacturer of OxyContin"},
+        {"name": "Sackler Family", "type": "person", "context": "family behind Purdue Pharma"},
+        {"name": "OxyContin", "type": "product", "context": "opioid drug causing epidemic"}
+      ],
+      "best_for": ["evidence", "hook", "revelation"],
+      "full_transcript": "We are in the middle of an epidemic, an epidemic. In fact, it's called the worst public health epidemic in our history. There's eight members of the Sackler family caused much of the opioid epidemic. And the case is shining a spotlight on the powerful family behind the drug maker. They were all hellbent on becoming super rich. Imagine a medical industry that's supposed to keep a nation healthy, but becomes so completely corrupt that it causes an epidemic."
+    },
+    "GDPR_Meta_Ireland_billion_fine.mp4": {
+      "filename": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "News report on EU record fine against Meta — establishes international enforcement",
+      "quotable_moments": [
+        {
+          "text": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars",
+          "editorial_value": 9,
+          "reason": "States the largest GDPR fine ever — key evidence for 'fines don't work' thesis"
+        }
+      ],
+      "entities": [
+        {"name": "Meta", "type": "company", "context": "fined under GDPR"},
+        {"name": "Facebook", "type": "company", "context": "Meta's platform"},
+        {"name": "GDPR", "type": "legislation", "context": "EU data protection regulation"},
+        {"name": "European Union", "type": "agency", "context": "enforcing GDPR"}
+      ],
+      "best_for": ["evidence", "revelation"],
+      "full_transcript": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars. Islands regulators said that the company was ordered to stop transferring data collected from Facebook users in Europe to the United States. This is a major gumbling against the social media company for violating European Union data protection rules."
+    },
+    "RealPage_rent_price_fixing_algorithm.mp4": {
+      "filename": "RealPage_rent_price_fixing_algorithm.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "Investigative report with specific data about rent price-fixing algorithm — primary evidence",
+      "quotable_moments": [
+        {
+          "text": "The prices were allegedly being set by one entity, an algorithm owned by a company called RealPage",
+          "editorial_value": 9,
+          "reason": "Reveals the algorithm — the 'machine' in 'The Machines' chapter"
+        },
+        {
+          "text": "Rents are up 76% since 2016. Something is off",
+          "editorial_value": 8,
+          "reason": "Killer stat with personal stakes — everyone pays rent"
+        }
+      ],
+      "entities": [
+        {"name": "RealPage", "type": "company", "context": "rent price-fixing algorithm"},
+        {"name": "Phoenix", "type": "location", "context": "where investigation began"}
+      ],
+      "best_for": ["evidence", "revelation", "hook"],
+      "full_transcript": "It's late 2023, the Phoenix area. Investigators of the State Attorney General's Office are looking at apartment rents. They're up 76% since 2016. Something is off. These four building rents are 12% higher than others, but they offer similar amenities. They have different landlords, so you'd think they should be competing with one another. But they weren't. The prices were allegedly being set by one entity, an algorithm owned by a company called RealPage."
+    },
+    "corporate_fines_cost_of_doing_business.mp4": {
+      "filename": "corporate_fines_cost_of_doing_business.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Commentary on fines as cost of doing business — supports thesis directly",
+      "quotable_moments": [
+        {
+          "text": "I want to talk about the $615,000 in penalties for companies that faked anti-net neutrality comments",
+          "editorial_value": 7,
+          "reason": "Example of trivially small fine — supports thesis"
+        }
+      ],
+      "entities": [
+        {"name": "FCC", "type": "agency", "context": "net neutrality enforcement"}
+      ],
+      "best_for": ["exposition", "evidence"],
+      "full_transcript": "I want to talk about the $615,000 in penalties for companies that faked anti-net neutrality comments. Yeah, what's going on with that? Okay. This is wild. This is like some next level BS."
+    },
+    "corporate_whistleblower.mp4": {
+      "filename": "corporate_whistleblower.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "News montage about whistleblowers with strong emotional quotes — supports reckoning chapter",
+      "quotable_moments": [
+        {
+          "text": "Behind every major fraud, if you look hard enough, you will find a whistleblower",
+          "editorial_value": 8,
+          "reason": "Powerful thesis statement about systemic accountability"
+        },
+        {
+          "text": "Whistleblowers are everywhere. And whether we think they're traitors or heroes, their impact is undeniable",
+          "editorial_value": 7,
+          "reason": "Sets up moral complexity — good for the reckoning"
+        }
+      ],
+      "entities": [
+        {"name": "Edward Snowden", "type": "person", "context": "referenced as example whistleblower"}
+      ],
+      "best_for": ["exposition", "character_intro"],
+      "full_transcript": "Breaking news tonight, the whistleblower complains. He's saying that he should be given the death card. Whistleblowers are everywhere. And whether we think they're traitors or heroes, their impact is undeniable. They are the voices of our conscience. Behind every major fraud, if you look hard enough, you will find a whistleblower."
+    },
+    "apartment_housing_crisis_rent.mp4": {
+      "filename": "apartment_housing_crisis_rent.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "Documentary on housing crisis with personal testimony — supports rent chapter",
+      "quotable_moments": [
+        {
+          "text": "Nothing is in the budget that I thought nothing is in my price range and something is wrong",
+          "editorial_value": 7,
+          "reason": "Personal impact of rent crisis — humanizes the data"
+        }
+      ],
+      "entities": [
+        {"name": "Housing Crisis", "type": "event", "context": "rent affordability"}
+      ],
+      "best_for": ["exposition", "evidence"],
+      "full_transcript": "On this edition of the 5th estate, nothing is in the budget that I thought nothing is in my price range and something is wrong."
+    },
+    "Ford_Pinto_fuel_tank_explosion_1977.mp4": {
+      "filename": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Archival footage of Ford Pinto — no transcript but iconic visual evidence",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "Ford", "type": "company", "context": "Pinto fuel tank defect"},
+        {"name": "Ford Pinto", "type": "product", "context": "1977 fuel tank explosion"}
+      ],
+      "best_for": ["evidence", "hook"],
+      "full_transcript": ""
+    },
+    "US_Capitol_building_Congress.mp4": {
+      "filename": "US_Capitol_building_Congress.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Establishing shot of Capitol building — B-roll for legislative/congressional context",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "US Congress", "type": "agency", "context": "legislative body"},
+        {"name": "Capitol Building", "type": "location", "context": "seat of Congress"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "The United States Capitol Building, the home of American democracy and global symbol of representative government."
+    },
+    "Department_of_Justice_building.mp4": {
+      "filename": "Department_of_Justice_building.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Establishing shot of DOJ building — B-roll for legal/enforcement context",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "DOJ", "type": "agency", "context": "Department of Justice building"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "Since its doors first opened in 1934, the United States Department of Justice Building has served as the headquarters for the nation's chief law enforcement agency."
+    },
+    "Wall_Street_trading_floor.mp4": {
+      "filename": "Wall_Street_trading_floor.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Trading floor footage — B-roll for financial/stock market context",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "Wall Street", "type": "location", "context": "financial markets"},
+        {"name": "NYSE", "type": "company", "context": "New York Stock Exchange"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "Welcome. I'm Ted Weisberg and I want to welcome you to the New York for the New York Stock Exchange."
+    },
+    "corporate_boardroom_meeting_stock.mp4": {
+      "filename": "corporate_boardroom_meeting_stock.mp4",
+      "roll_type": "stock",
+      "roll_reasoning": "Generic corporate boardroom footage — stock B-roll, no editorial value beyond filler",
+      "quotable_moments": [],
+      "entities": [],
+      "best_for": ["exposition"],
+      "full_transcript": ""
+    },
+    "courtroom_justice_gavel.mp4": {
+      "filename": "courtroom_justice_gavel.mp4",
+      "roll_type": "stock",
+      "roll_reasoning": "Generic courtroom gavel footage — stock B-roll for legal context",
+      "quotable_moments": [],
+      "entities": [],
+      "best_for": ["exposition"],
+      "full_transcript": "Ever wondered why judges use a gavel in court? That loud strike isn't just for attention."
+    },
+    "data_center_servers.mp4": {
+      "filename": "data_center_servers.mp4",
+      "roll_type": "stock",
+      "roll_reasoning": "Generic data center footage — stock B-roll for technology context",
+      "quotable_moments": [],
+      "entities": [],
+      "best_for": ["exposition"],
+      "full_transcript": "What is a server? So that is the topic of this video. Now a server is basically a computer that provides data to other computers."
+    },
+    "digital_artist_workspace.mp4": {
+      "filename": "digital_artist_workspace.mp4",
+      "roll_type": "stock",
+      "roll_reasoning": "Generic workspace footage — not relevant to documentary thesis",
+      "quotable_moments": [],
+      "entities": [],
+      "best_for": ["exposition"],
+      "full_transcript": "Hey, it's been a while, hasn't it? I've got a bit of a confession to make."
+    },
+    "AI_scraping_copyright_training_data.mp4": {
+      "filename": "AI_scraping_copyright_training_data.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Commentary on AI copyright issues — tangentially related to corporate law-breaking",
+      "quotable_moments": [
+        {
+          "text": "This copyright report is so huge. I am basically at this point where I think I need to file a lawsuit on behalf of independent artists",
+          "editorial_value": 6,
+          "reason": "AI copyright angle — supports broader thesis about corporations breaking rules"
+        }
+      ],
+      "entities": [
+        {"name": "AI", "type": "event", "context": "copyright/training data scraping"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "So you guys asked me to do a deep dive on this copyright report and I'm so glad that I did. This copyright report is so huge."
+    },
+    "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4": {
+      "filename": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "roll_type": "a_roll",
+      "roll_reasoning": "Bloomberg news report — professional financial reporting",
+      "quotable_moments": [
+        {
+          "text": "Dell says it'll generate around $50 billion in AI server revenue in the current fiscal year",
+          "editorial_value": 6,
+          "reason": "Scale of tech industry — contextual"
+        }
+      ],
+      "entities": [
+        {"name": "OpenAI", "type": "company", "context": "record valuation"},
+        {"name": "Bloomberg", "type": "company", "context": "news source"},
+        {"name": "Meta", "type": "company", "context": "AI chip deal"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "This is a Bloomberg Money Minute. Continuing in its efforts to secure more computing power."
+    },
+    "Extraordinary_security_surrounds_US_Capitol.mp4": {
+      "filename": "Extraordinary_security_surrounds_US_Capitol.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Capitol security footage — B-roll for government/security context",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "Capitol Building", "type": "location", "context": "security measures"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "It's higher above me because I'm just the dirt the whole is to the pole."
+    },
+    "Reddit_frontpage_browsing.mp4": {
+      "filename": "Reddit_frontpage_browsing.mp4",
+      "roll_type": "b_roll",
+      "roll_reasoning": "Reddit browsing footage — B-roll for social media/internet context",
+      "quotable_moments": [],
+      "entities": [
+        {"name": "Reddit", "type": "company", "context": "social media platform"}
+      ],
+      "best_for": ["exposition"],
+      "full_transcript": "Reddit is one of the most popular sites on the internet, but it can be a beast in terms of figuring out how to use it."
+    }
+  },
+  "images": {},
+  "entity_index": {
+    "Facebook": {
+      "clips": [
+        {"filename": "Facebook_FTC_5_billion_dollar_fine.mp4", "roll_type": "a_roll", "best_quote": "Facebook betrayed the trust of its users and deceived them about their ability to control their personal information"},
+        {"filename": "Facebook_to_pay_5_billion_fine.mp4", "roll_type": "a_roll", "best_quote": "Facebook now has to pay five billion dollars as part of a settlement with the Federal Trade Commission"},
+        {"filename": "Cambridge_Analytica_scandal_explained.mp4", "roll_type": "a_roll", "best_quote": "This was a major breach of trust, and I'm really sorry that this happened"},
+        {"filename": "GDPR_Meta_Ireland_billion_fine.mp4", "roll_type": "a_roll", "best_quote": "Facebook owner Meta was fined a record 1.2 billion euros"}
+      ],
+      "images": [],
+      "best_a_roll": "Facebook_FTC_5_billion_dollar_fine.mp4",
+      "best_b_roll": null
+    },
+    "Mark Zuckerberg": {
+      "clips": [
+        {"filename": "Mark_Zuckerberg_Senate_hearing_2018.mp4", "roll_type": "a_roll", "best_quote": null},
+        {"filename": "Cambridge_Analytica_scandal_explained.mp4", "roll_type": "a_roll", "best_quote": "This was a major breach of trust, and I'm really sorry that this happened"}
+      ],
+      "images": [],
+      "best_a_roll": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+      "best_b_roll": null
+    },
+    "FTC": {
+      "clips": [
+        {"filename": "Facebook_FTC_5_billion_dollar_fine.mp4", "roll_type": "a_roll", "best_quote": "This is a watershed moment in privacy enforcement"},
+        {"filename": "Facebook_to_pay_5_billion_fine.mp4", "roll_type": "a_roll", "best_quote": "The largest fine in FTC history"}
+      ],
+      "images": [],
+      "best_a_roll": "Facebook_FTC_5_billion_dollar_fine.mp4",
+      "best_b_roll": null
+    },
+    "Wells Fargo": {
+      "clips": [
+        {"filename": "Wells_Fargo_fake_accounts_scandal.mp4", "roll_type": "b_roll", "best_quote": "Wells Fargo employees created millions of unauthorized accounts on behalf of their customers"}
+      ],
+      "images": [],
+      "best_a_roll": null,
+      "best_b_roll": "Wells_Fargo_fake_accounts_scandal.mp4"
+    },
+    "Purdue Pharma": {
+      "clips": [
+        {"filename": "Purdue_Pharma_opioid_Sackler_family.mp4", "roll_type": "a_roll", "best_quote": "We are in the middle of an epidemic, an epidemic. In fact, it's called the worst public health epidemic in our history"}
+      ],
+      "images": [],
+      "best_a_roll": "Purdue_Pharma_opioid_Sackler_family.mp4",
+      "best_b_roll": null
+    },
+    "Sackler Family": {
+      "clips": [
+        {"filename": "Purdue_Pharma_opioid_Sackler_family.mp4", "roll_type": "a_roll", "best_quote": "There's eight members of the Sackler family caused much of the opioid epidemic"}
+      ],
+      "images": [],
+      "best_a_roll": "Purdue_Pharma_opioid_Sackler_family.mp4",
+      "best_b_roll": null
+    },
+    "RealPage": {
+      "clips": [
+        {"filename": "RealPage_rent_price_fixing_algorithm.mp4", "roll_type": "a_roll", "best_quote": "The prices were allegedly being set by one entity, an algorithm owned by a company called RealPage"}
+      ],
+      "images": [],
+      "best_a_roll": "RealPage_rent_price_fixing_algorithm.mp4",
+      "best_b_roll": null
+    },
+    "Cambridge Analytica": {
+      "clips": [
+        {"filename": "Cambridge_Analytica_scandal_explained.mp4", "roll_type": "a_roll", "best_quote": "Facebook is scrambling to contain the fallout over a data privacy scandal"}
+      ],
+      "images": [],
+      "best_a_roll": "Cambridge_Analytica_scandal_explained.mp4",
+      "best_b_roll": null
+    },
+    "DOJ": {
+      "clips": [
+        {"filename": "Department_of_Justice_building.mp4", "roll_type": "b_roll", "best_quote": null}
+      ],
+      "images": [],
+      "best_a_roll": null,
+      "best_b_roll": "Department_of_Justice_building.mp4"
+    },
+    "Ford": {
+      "clips": [
+        {"filename": "Ford_Pinto_fuel_tank_explosion_1977.mp4", "roll_type": "b_roll", "best_quote": null}
+      ],
+      "images": [],
+      "best_a_roll": null,
+      "best_b_roll": "Ford_Pinto_fuel_tank_explosion_1977.mp4"
+    },
+    "GDPR": {
+      "clips": [
+        {"filename": "GDPR_Meta_Ireland_billion_fine.mp4", "roll_type": "a_roll", "best_quote": "Facebook owner Meta was fined a record 1.2 billion euros"}
+      ],
+      "images": [],
+      "best_a_roll": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "best_b_roll": null
+    },
+    "Edward Snowden": {
+      "clips": [
+        {"filename": "corporate_whistleblower.mp4", "roll_type": "a_roll", "best_quote": "Behind every major fraud, if you look hard enough, you will find a whistleblower"}
+      ],
+      "images": [],
+      "best_a_roll": "corporate_whistleblower.mp4",
+      "best_b_roll": null
+    },
+    "US Congress": {
+      "clips": [
+        {"filename": "US_Capitol_building_Congress.mp4", "roll_type": "b_roll", "best_quote": null}
+      ],
+      "images": [],
+      "best_a_roll": null,
+      "best_b_roll": "US_Capitol_building_Congress.mp4"
+    },
+    "Wall Street": {
+      "clips": [
+        {"filename": "Wall_Street_trading_floor.mp4", "roll_type": "b_roll", "best_quote": null}
+      ],
+      "images": [],
+      "best_a_roll": null,
+      "best_b_roll": "Wall_Street_trading_floor.mp4"
+    }
+  },
+  "stats": {
+    "total_clips": 23,
+    "a_roll_clips": 10,
+    "b_roll_clips": 9,
+    "stock_clips": 4,
+    "total_images": 0,
+    "total_entities": 14,
+    "total_quotable_moments": 18
+  }
+}
