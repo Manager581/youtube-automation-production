@@ -625,6 +625,23 @@ def validate_decisions(decisions, clips, images, sfx):
                 fixed += 1
             print(f"  Capped SFX in chapter '{chapter}': kept {2}, removed {len(sfx_list)-2}")
 
+    # Advisory: log clip audio count for review (no forced muting)
+    clip_audio_count = 0
+    for dec in decisions:
+        ca = dec.get("clip_audio", "mute")
+        beats = dec.get("beats")
+        if beats and isinstance(beats, list):
+            clip_audio_count += sum(1 for b in beats if b.get("clip_audio") in ("play", "play_then_mute"))
+        elif ca in ("play", "play_then_mute"):
+            clip_audio_count += 1
+
+    total_dur = sum(d.get("_timeline_end_sec", 0) - d.get("_timeline_start_sec", 0) for d in decisions)
+    video_min = total_dur / 60 if total_dur > 0 else 20
+    recommended = max(3, int(video_min / 3))
+    print(f"  Clip audio: {clip_audio_count} moments for {video_min:.0f}-min video (guideline: ~{recommended})")
+    if clip_audio_count > recommended * 2:
+        print(f"  WARNING: High clip audio density — review director prompt or source brief")
+
     if fixed:
         print(f"  Fixed {fixed} invalid references in director output")
 

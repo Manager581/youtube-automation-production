@@ -171,12 +171,11 @@ def first_n_words(text, n=6):
 # ─── Data loading ───────────────────────────────────────────────────────────
 
 def load_director():
-    """Load director v5 JSON, flatten segments and expand beats.
+    """Load director JSON, return raw segments with beats INTACT.
 
-    For each segment with beats, split the segment's time range evenly
-    among beats. Each beat becomes its own segment with visual fields from
-    the beat and metadata (text, voice_register, sfx, chapter_card, etc.)
-    from the parent. Segments with no beats pass through unchanged.
+    The FCPXML builder handles beat expansion internally (v5 schema).
+    This function does NOT flatten beats — callers that need flat segments
+    should use load_director_flat() instead.
     """
     with open(DIRECTOR_PATH) as f:
         data = json.load(f)
@@ -185,7 +184,22 @@ def load_director():
     for scene in data.get("scenes", []):
         raw_segments.extend(scene.get("segments", []))
 
-    # Expand beats into individual visual-cut segments
+    return data, raw_segments
+
+
+def load_director_flat():
+    """Load director JSON, flatten segments and expand beats.
+
+    For each segment with beats, split the segment's time range evenly
+    among beats. Each beat becomes its own segment with visual fields from
+    the beat and metadata (text, voice_register, sfx, chapter_card, etc.)
+    from the parent. Segments with no beats pass through unchanged.
+
+    Use this for consumers that need one-visual-per-segment (e.g. verify_director,
+    clip_audio_planner). The FCPXML builder should use load_director() instead.
+    """
+    data, raw_segments = load_director()
+
     segments = []
     for seg in raw_segments:
         beats = seg.get("beats")

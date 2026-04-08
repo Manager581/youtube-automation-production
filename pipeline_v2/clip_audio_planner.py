@@ -39,6 +39,11 @@ DEFAULT_GAP_PLAN = PROJECT_ROOT / "audio" / "breaking_law" / "gap_plan.json"
 
 DEFAULT_CLIP_AUDIO_DURATION = 3.0  # seconds
 
+# Advisory guideline: ~1 clip audio moment per 3 minutes of video.
+# NOT a hard cap. The director makes editorial choices; the planner
+# only warns if the count seems high for the video length.
+CLIP_AUDIO_PER_MINUTE = 1 / 3  # 1 moment per 3 minutes
+
 
 def flatten_segments(data):
     """Flatten scenes -> segments, expanding beats."""
@@ -103,6 +108,18 @@ def find_gap_points(segments):
         else:
             merged.append(gap)
 
+    # Advisory: warn if count seems high for the video length
+    if merged:
+        video_dur_min = merged[-1]["timeline_sec"] / 60
+        recommended = max(3, int(video_dur_min * CLIP_AUDIO_PER_MINUTE))
+        if len(merged) > recommended * 2:
+            print(f"  WARNING: {len(merged)} clip audio moments for a {video_dur_min:.0f}-min video "
+                  f"(guideline: ~{recommended}). The director may be over-selecting.")
+            print(f"  Review the moments and adjust the director prompt if needed.")
+        else:
+            print(f"  Clip audio: {len(merged)} moments for {video_dur_min:.0f}-min video "
+                  f"(guideline: ~{recommended})")
+
     return merged
 
 
@@ -113,7 +130,7 @@ def get_wav_duration(wav_path):
         return wf.getnframes() / wf.getframerate()
 
 
-def gap_mode(director_path, narration_path, output_path, gap_plan_path):
+def gap_mode(director_path, narration_path, output_path, gap_plan_path, intro_spec_path=None):
     """Insert silence gaps into narration.wav at clip audio points using ffmpeg."""
     # Load director
     with open(director_path) as f:
@@ -122,6 +139,22 @@ def gap_mode(director_path, narration_path, output_path, gap_plan_path):
     segments = flatten_segments(data)
     gaps = find_gap_points(segments)
 
+    # Account for intro clip audio moments
+    intro_moments = 0
+    if intro_spec_path and Path(intro_spec_path).exists():
+        try:
+            from pipeline_v2.intro_builder import load_intro
+            intro = load_intro(intro_spec_path)
+            if intro:
+                intro_moments = sum(
+                    1 for s in intro["segments"]
+                    if s["clip_audio"] in ("play", "play_then_mute")
+                )
+                print(f"  Intro has {intro_moments} clip audio moment(s) "
+                      f"(VO starts at {intro['vo_start_offset']:.1f}s)")
+        except Exception:
+            pass
+
     if not gaps:
         print("No clip_audio play/play_then_mute moments found. Copying narration as-is.")
         import shutil
@@ -129,8 +162,9 @@ def gap_mode(director_path, narration_path, output_path, gap_plan_path):
         return
 
     original_dur = get_wav_duration(narration_path)
+    total_moments = len(gaps) + intro_moments
     print(f"Original narration: {original_dur:.1f}s")
-    print(f"Found {len(gaps)} gap points")
+    print(f"Found {len(gaps)} director gap points + {intro_moments} intro moments = {total_moments} total")
 
     # Get narration sample rate
     import wave
@@ -334,6 +368,8 @@ def main():
                         help="Output path")
     parser.add_argument("--gap-plan", type=str, default=str(DEFAULT_GAP_PLAN),
                         help="Path for gap_plan.json output (gap mode)")
+    parser.add_argument("--intro-spec", type=str, default=None,
+                        help="Path to intro spec JSON (for clip audio budget awareness)")
     args = parser.parse_args()
 
     director_path = Path(args.director)
@@ -349,7 +385,7 @@ def main():
 
         output_path = Path(args.output) if args.output else DEFAULT_OUTPUT
         gap_plan_path = Path(args.gap_plan)
-        gap_mode(director_path, narration_path, output_path, gap_plan_path)
+        gap_mode(director_path, narration_path, output_path, gap_plan_path, args.intro_spec)
 
     elif args.mode == "inject-markers":
         if not args.script:

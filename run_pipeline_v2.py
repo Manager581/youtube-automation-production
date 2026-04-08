@@ -18,6 +18,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -33,42 +34,52 @@ BOLD = "\033[1m"; RESET = "\033[0m"; GRAY = "\033[90m"
 
 # ── Pipeline Stages (in order) ──
 STAGES = [
-    # PHASE 1: DISCOVERY
+    # PHASE 1: DISCOVERY + SOURCE SCAN
     ("topic",           "Find topic candidates",                "pipeline/topic_radar.py"),
     ("comments",        "Mine audience signals",                "pipeline/comments_miner.py"),
-    ("research",        "Build research brief",                 "pipeline/research_brief.py"),
-    ("validate",        "Story validation (GO/SKIP)",           "pipeline/story_validator.py"),
+    ("research",        "Build research brief (entities + leads)", "pipeline/research_brief.py"),
+    ("source_scan",     "Quick source scan (YouTube/Archive)",  "pipeline_v2/source_scanner.py"),
+    ("topic_score",     "Score topic (8 tests + sources)",      "pipeline_v2/topic_scorer.py"),
+    ("validate",        "Story validation (GO/SKIP) [GATE]",   "pipeline/story_validator.py"),
 
-    # PHASE 2: SCRIPT
+    # PHASE 2: FULL SOURCING (only runs if topic passes)
+    ("footage",         "Download footage (yt-dlp)",            "pipeline/footage_sourcer.py"),
+    ("images",          "Source images (Pexels/Google/Wikimedia)", "pipeline_v2/web_image_sourcer.py"),
+    ("transcripts",     "Transcribe all clips (subtitles/Whisper)", "pipeline_v2/transcript_extractor.py"),
+    ("vision",          "Analyze clips/images (Claude vision)", "pipeline_v2/vision_analyzer.py"),
+    ("verify_footage",  "Verify footage matches queries [GATE]", "pipeline_v2/footage_verifier.py"),
+    ("source_brief",    "Build source brief for script writer", "pipeline_v2/source_brief_builder.py"),
+
+    # PHASE 3: SCRIPT (writer sees source brief)
     ("script",          "Write script (Claude Code interactive)", None),  # Manual
     ("enhance",         "Add [BEAT][PAUSE][VOICE] markers",     "pipeline_v2/script_enhancer.py"),
-    ("qa_script",       "Script QA (LearnByLeo)",               "check_learnbyleo_script.py"),
+    ("qa_script",       "Script QA (LearnByLeo) [GATE]",       "check_learnbyleo_script.py"),
 
-    # PHASE 3: AUDIO
+    # PHASE 4: AUDIO
     ("voice",           "Generate voice (F5-TTS)",              "pipeline/voice_generator.py"),
     ("align",           "Word-level narration alignment (Whisper)", "pipeline_v2/narration_aligner.py"),
-    ("qa_voice",        "Voice QA (LearnByLeo)",                "check_learnbyleo_voice.py"),
+    ("voice_smooth",    "Smooth VO chunk boundaries",           "pipeline_v2/voice_smoother.py"),
+    ("qa_voice",        "Voice QA (LearnByLeo) [GATE]",        "check_learnbyleo_voice.py"),
     ("music",           "Source music (Pixabay CC0)",            "pipeline/music_sourcer.py"),
-
-    # PHASE 4: VISUALS — sourcing
-    ("footage",         "Source footage (yt-dlp)",              "pipeline/footage_sourcer.py"),
-    ("images",          "Source images (Chrome/Pexels/Google)",  "pipeline_v2/web_image_sourcer.py"),
-    ("transcripts",     "Extract clip transcripts",             "pipeline_v2/transcript_extractor.py"),
-    ("vision",          "Analyze all clips/images (Claude vision)", "pipeline_v2/vision_analyzer.py"),
-    ("verify_footage",  "Verify footage matches queries",       "pipeline_v2/footage_verifier.py"),
 
     # PHASE 5: EDITORIAL — director sees everything
     ("storyboard",      "Generate visual storyboard",           "pipeline_v2/storyboard_generator.py"),
-    ("director",        "Director: pick exact files + editorial", "pipeline_v2/director.py"),
-    ("validate_segments", "Validate each segment vs LearnByLeo", "pipeline_v2/segment_validator.py"),
+    ("director",        "Director: pick files + editorial",     "pipeline_v2/director.py"),
+    ("verify_director", "Verify director output [GATE]",       "pipeline_v2/verify_director.py"),
+    ("validate_segments", "Validate segments vs LearnByLeo [GATE]", "pipeline_v2/segment_validator.py"),
     ("fill_gaps",       "Fill footage gaps automatically",      "pipeline_v2/gap_resolver.py"),
+
+    # PHASE 5b: CLIP AUDIO + INTRO
+    ("clip_audio_plan", "Plan clip audio gaps (max 8)",         "pipeline_v2/clip_audio_planner.py"),
+    ("intro_build",     "Build intro from locked spec",         "pipeline_v2/intro_builder.py"),
 
     # PHASE 6: ASSEMBLY
     ("pause_insert",    "Insert VO pauses (LearnByLeo rules)",  None),  # Inline
     ("duck_music",      "Pre-duck music under narration",       None),  # Inline
     ("normalize_sfx",   "Normalize SFX to -12 LUFS",           None),  # Inline
     ("exec_producer_pre", "Pre-build executive producer gate",  "pipeline_v2/executive_producer.py"),
-    ("davinci_build",   "Build FCPXML + import to DaVinci",     "pipeline_v2/fcpxml_builder.py"),
+    ("davinci_build",   "Build FCPXML + import to DaVinci",     "pipeline_v2/fcpxml_builder_v2.py"),
+    ("verify_fcpxml",   "Verify FCPXML output [GATE]",         "pipeline_v2/verify_fcpxml.py"),
 
     # PHASE 7: VERIFICATION — closed loop
     ("director_review", "Director reviews DaVinci timeline",    "pipeline_v2/director_review.py"),
@@ -85,12 +96,15 @@ STAGES = [
 # the associated FIX_STAGE first, then re-checking. Max GATE_MAX_RETRIES attempts.
 GATE_STAGES = {
     # gate_stage: [fix_stages_to_rerun]
+    "validate":           ["research", "source_scan"],
     "qa_script":          ["enhance"],
     "qa_voice":           ["voice"],
     "verify_footage":     ["images", "footage"],
+    "verify_director":    ["director"],
     "validate_segments":  ["director"],
     "fill_gaps":          ["images", "fill_gaps"],
     "exec_producer_pre":  ["director", "fill_gaps"],
+    "verify_fcpxml":      ["davinci_build"],
     "director_review":    ["davinci_build"],
     "exec_producer":      ["davinci_build"],
 }
@@ -232,11 +246,18 @@ def build_stage_args(stage_name, state):
     config = state.get("config", {})
     topic = state.get("topic", "")
     
+    slug = re.sub(r'[^a-z0-9]+', '_', topic.lower()).strip('_')[:40] if topic else "unknown"
+
     args_map = {
         "topic": ["--brand", "learnbyleo"],
         "comments": [],
-        "research": [],
-        "validate": [],
+        "research": ["--brand", "learnbyleo", "--query", topic] if topic else [],
+        "source_scan": (["--brief", config.get("brief_path", f"research/learnbyleo/briefs/{slug}.json")]
+                        if config.get("brief_path")
+                        else ["--topic", topic] if topic else []),
+        "topic_score": [topic] if topic else [],
+        "validate": ["--query", topic, "--brand", "learnbyleo"] if topic else [],
+        "source_brief": ["--transcripts", config.get("transcript_path", f"media/{slug}/transcripts.json")],
         "enhance": ["--script", config.get("script_path", "scripts/raw_script.txt")],
         "qa_script": [config.get("script_path", "scripts/raw_script.txt")],
         "voice": ["--ref-audio", "assets/voice/voice_neutral_ref_short.wav",
@@ -270,22 +291,21 @@ def build_stage_args(stage_name, state):
                       config.get("gap_fill_dir", "footage/gap_fills/"),
                       "--sfx", config.get("sfx_dir", "assets/sfx/"),
                       "--alignment", config.get("alignment_path", "audio/narration_alignment.json"),
+                      "--transcripts", config.get("transcript_path", f"media/{topic}/transcripts.json"),
                       "--output", config.get("director_path", "storyboards/directed_v3.json")],
+        "verify_director": ["--director", config.get("director_path", "storyboards/directed_v3.json")],
         "validate_segments": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
                               "--fix-decisions"],
         "fill_gaps": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
                        "--output-dir", config.get("gap_fill_dir", "footage/gap_fills/")],
-        "davinci_build": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
-                           "--narration", config.get("narration_path", "audio/narration.wav"),
-                           "--music", config.get("music_path", "audio/music_ducked.wav"),
-                           "--sfx-dir", config.get("sfx_dir", "assets/sfx/"),
-                           "--output", config.get("fcpxml_path", "timeline_final.fcpxml"),
-                           "--search-dir", config.get("overlay_dir", "assets/overlays/"),
-                           "--search-dir", config.get("chapter_dir", "assets/chapters/"),
-                           "--search-dir", config.get("footage_dir", "footage/"),
-                           "--search-dir", config.get("image_dir", "footage/images/"),
-                           "--search-dir", config.get("gap_fill_dir", "footage/gap_fills/"),
+        "clip_audio_plan": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
+                            "--narration", config.get("narration_path", "audio/narration.wav")],
+        "intro_build": ["--spec", config.get("intro_spec", "storyboards/intro_spec_locked.json")],
+        "voice_smooth": ["--narration", config.get("narration_path", "audio/narration.wav"),
+                         "--manifest", config.get("narration_path", "audio/narration.wav").replace(".wav", "_manifest.json")],
+        "davinci_build": ["--output", config.get("fcpxml_path", "timeline_final.fcpxml"),
                            "--import-resolve"],
+        "verify_fcpxml": ["--fcpxml", config.get("fcpxml_path", "timeline_final.fcpxml")],
         "director_review": ["--director", config.get("director_path", "storyboards/directed_v3.json")],
         "qa_video": [],
         "exec_producer_pre": [],
@@ -388,11 +408,12 @@ def list_stages():
 
     # Build phase boundaries from stage names
     phase_map = {
-        "topic": "PHASE 1: DISCOVERY",
-        "script": "PHASE 2: SCRIPT",
-        "voice": "PHASE 3: AUDIO",
-        "footage": "PHASE 4: VISUALS",
+        "topic": "PHASE 1: DISCOVERY + SOURCE SCAN",
+        "footage": "PHASE 2: FULL SOURCING",
+        "script": "PHASE 3: SCRIPT",
+        "voice": "PHASE 4: AUDIO",
         "storyboard": "PHASE 5: EDITORIAL",
+        "clip_audio_plan": "PHASE 5b: CLIP AUDIO + INTRO",
         "pause_insert": "PHASE 6: ASSEMBLY",
         "director_review": "PHASE 7: VERIFICATION",
         "render": "PHASE 8: PUBLISH",

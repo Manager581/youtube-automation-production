@@ -187,10 +187,11 @@ def _print_overlap_result(overlap: dict):
 # ---------------------------------------------------------------------------
 
 WEIGHTS = {
-    "factual_depth":   0.30,   # content is king — most important
-    "viral_hook":      0.30,   # no hook = no views, doesn't matter how good the content is
-    "story_arc":       0.20,   # narrative completeness
-    "visual_assets":   0.10,   # nice to have, not blocking (animation fills gap)
+    "factual_depth":   0.25,   # content is king — most important
+    "viral_hook":      0.25,   # no hook = no views, doesn't matter how good the content is
+    "story_arc":       0.15,   # narrative completeness
+    "source_footage":  0.20,   # available video clips with speech — drives clip audio quality
+    "visual_assets":   0.05,   # still images (Wikimedia) — supplementary
     "public_interest": 0.10,   # trending is a bonus, not a requirement
 }
 
@@ -663,6 +664,63 @@ def count_news_articles(query: str) -> int:
 
 
 # ---------------------------------------------------------------------------
+# Source footage scoring (uses source_scanner)
+# ---------------------------------------------------------------------------
+
+def _score_source_footage(query: str, entities: list = None) -> DimensionResult:
+    """Score available source footage using the source scanner.
+
+    Runs a quick YouTube/Archive scan (no downloads) and scores based on:
+    - Total clips found
+    - Clips with likely speech (interviews, news)
+    - Source diversity (unique channels)
+    - Primary source footage (hearings, C-SPAN)
+    """
+    try:
+        from pipeline_v2.source_scanner import scan_sources
+        entity_dict = None
+        if entities:
+            entity_dict = {"people_orgs": entities[:5]}
+        inventory = scan_sources(query, entity_dict, verbose=False)
+
+        score = inventory.get("overall_score", 0)
+        profile = inventory.get("footage_profile", "unknown")
+        counts = inventory.get("counts", {})
+
+        evidence = [
+            f"YouTube clips: {counts.get('total_clips', 0)} "
+            f"({counts.get('clips_with_speech', 0)} with speech)",
+            f"Unique channels: {counts.get('unique_channels', 0)}",
+            f"News clips: {counts.get('news_clips', 0)}",
+            f"Primary source: {counts.get('primary_source_clips', 0)}",
+            f"Footage profile: {profile}",
+        ]
+
+        if score >= 70:
+            verdict = "STRONG"
+        elif score >= 40:
+            verdict = "MODERATE"
+        else:
+            verdict = "WEAK"
+
+        notes = []
+        if counts.get("clips_with_speech", 0) < 3:
+            notes.append("Few clips with speech — limited clip audio potential")
+        if counts.get("unique_channels", 0) < 2:
+            notes.append("Low source diversity — most clips from same channel")
+
+        return DimensionResult(score=score, verdict=verdict, evidence=evidence, notes=notes)
+
+    except Exception as e:
+        # Fallback if source scanner fails — return neutral score
+        return DimensionResult(
+            score=50, verdict="MODERATE",
+            evidence=[f"Source scan failed: {e}"],
+            notes=["Could not run source scan — using neutral score"],
+        )
+
+
+# ---------------------------------------------------------------------------
 # Master validation
 # ---------------------------------------------------------------------------
 
@@ -752,11 +810,15 @@ def validate_story(query: str, brand_id: str = "fern_clone",
     dim_arc = score_story_arc(all_text, wiki.get("sections", []))
     _print_dim("Story Arc", dim_arc)
 
-    print("[4/5] Counting Wikimedia images...")
+    print("[4/6] Scanning source footage (YouTube/Archive)...")
+    dim_source = _score_source_footage(query, entities)
+    _print_dim("Source Footage", dim_source)
+
+    print("[5/6] Counting Wikimedia images...")
     dim_visuals = count_wikimedia_assets(query, entities)
     _print_dim("Visual Assets", dim_visuals)
 
-    print("[5/5] Checking public interest...")
+    print("[6/6] Checking public interest...")
     dim_interest = score_public_interest(query)
     _print_dim("Public Interest", dim_interest)
 
@@ -765,6 +827,7 @@ def validate_story(query: str, brand_id: str = "fern_clone",
         "factual_depth":   dim_depth,
         "viral_hook":      dim_hooks,
         "story_arc":       dim_arc,
+        "source_footage":  dim_source,
         "visual_assets":   dim_visuals,
         "public_interest": dim_interest,
     }

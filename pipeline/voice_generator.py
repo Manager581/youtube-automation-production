@@ -53,13 +53,16 @@ from typing import Optional
 # Constants — Fern production spec
 # ---------------------------------------------------------------------------
 TARGET_WPM       = 175.0   # ColdFusion/HMW pace (was 138.7 Fern — too slow for business documentary)
-CHUNK_WORD_LIMIT = 22      # target words per F5-TTS chunk (reduced from 35 — tensor mismatch on longer batches)
-CHUNK_WORD_MIN   = 5       # don't make a chunk this tiny
+CHUNK_WORD_LIMIT = 40      # paragraph-level chunks (was 22 — caused robotic splits at every sentence)
+CHUNK_WORD_MIN   = 8       # don't make a chunk this tiny
 
 # Default pause durations (seconds)
 PAUSE_BEAT   = 0.30
 PAUSE_BREATH = 0.15
-PAUSE_CHUNK  = 0.20   # gap between chunks that share the same voice register
+PAUSE_CHUNK  = 0.0    # no artificial gap between chunks (crossfade handles transitions)
+
+# Crossfade between speech chunks (seconds)
+CROSSFADE_DURATION = 0.08  # 80ms crossfade at chunk boundaries
 
 # WPM normalization: if generated chunk is >15% off target, time-stretch it
 WPM_TOLERANCE = 0.15
@@ -345,17 +348,88 @@ def _make_silence(duration_sec: float, sample_rate: int = 24000) -> Path:
     return tmp
 
 
-def _concat_wavs(wav_paths: list[Path], out_path: Path) -> None:
-    list_file = out_path.parent / '_concat_list.txt'
-    with open(list_file, 'w') as f:
-        for p in wav_paths:
-            f.write(f"file '{p.resolve()}'\n")
-    cmd = ['ffmpeg', '-y', '-f', 'concat', '-safe', '0',
-           '-i', str(list_file), '-ar', '24000', '-ac', '1', str(out_path)]
-    r = subprocess.run(cmd, capture_output=True, text=True)
-    list_file.unlink(missing_ok=True)
-    if r.returncode != 0:
-        raise RuntimeError(f"ffmpeg concat failed:\n{r.stderr}")
+def _concat_wavs(wav_paths: list[Path], out_path: Path, crossfade: float = 0.0) -> None:
+    """Concatenate WAV files. If crossfade > 0, apply crossfade between consecutive files."""
+    if crossfade > 0 and len(wav_paths) >= 2:
+        _concat_with_crossfade(wav_paths, out_path, crossfade)
+    else:
+        list_file = out_path.parent / '_concat_list.txt'
+        with open(list_file, 'w') as f:
+            for p in wav_paths:
+                f.write(f"file '{p.resolve()}'\n")
+        cmd = ['ffmpeg', '-y', '-f', 'concat', '-safe', '0',
+               '-i', str(list_file), '-ar', '24000', '-ac', '1', str(out_path)]
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        list_file.unlink(missing_ok=True)
+        if r.returncode != 0:
+            raise RuntimeError(f"ffmpeg concat failed:\n{r.stderr}")
+
+
+def _concat_with_crossfade(wav_paths: list[Path], out_path: Path, fade_dur: float) -> None:
+    """Concatenate with crossfade between consecutive WAV files.
+
+    Uses ffmpeg acrossfade filter. For >2 files, chains them pairwise
+    through intermediate files.
+    """
+    if len(wav_paths) < 2:
+        import shutil
+        shutil.copy2(str(wav_paths[0]), str(out_path))
+        return
+
+    # For many files, chain pairwise through temp files
+    tmp_dir = out_path.parent / '_xfade_tmp'
+    tmp_dir.mkdir(exist_ok=True)
+
+    current = str(wav_paths[0])
+    for i, next_wav in enumerate(wav_paths[1:]):
+        is_last = (i == len(wav_paths) - 2)
+        out_file = str(out_path) if is_last else str(tmp_dir / f'xfade_{i:04d}.wav')
+
+        # Check if files are long enough for crossfade
+        try:
+            dur_current = _get_wav_duration(Path(current))
+            dur_next = _get_wav_duration(next_wav)
+        except Exception:
+            dur_current = dur_next = 1.0
+
+        effective_fade = min(fade_dur, dur_current * 0.3, dur_next * 0.3)
+        if effective_fade < 0.01:
+            # Too short to crossfade — just concat
+            list_file = tmp_dir / f'_concat_{i}.txt'
+            with open(list_file, 'w') as f:
+                f.write(f"file '{Path(current).resolve()}'\n")
+                f.write(f"file '{next_wav.resolve()}'\n")
+            cmd = ['ffmpeg', '-y', '-f', 'concat', '-safe', '0',
+                   '-i', str(list_file), '-ar', '24000', '-ac', '1', out_file]
+        else:
+            cmd = [
+                'ffmpeg', '-y',
+                '-i', current,
+                '-i', str(next_wav),
+                '-filter_complex',
+                f'acrossfade=d={effective_fade:.3f}:c1=tri:c2=tri',
+                '-ar', '24000', '-ac', '1',
+                out_file,
+            ]
+
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        if r.returncode != 0:
+            # Fallback to hard concat if crossfade fails
+            list_file = tmp_dir / f'_concat_{i}.txt'
+            with open(list_file, 'w') as f:
+                f.write(f"file '{Path(current).resolve()}'\n")
+                f.write(f"file '{next_wav.resolve()}'\n")
+            cmd = ['ffmpeg', '-y', '-f', 'concat', '-safe', '0',
+                   '-i', str(list_file), '-ar', '24000', '-ac', '1', out_file]
+            subprocess.run(cmd, capture_output=True, text=True)
+
+        current = out_file
+
+    # Cleanup
+    for p in tmp_dir.iterdir():
+        if p.name != out_path.name:
+            p.unlink(missing_ok=True)
+    tmp_dir.rmdir()
 
 
 def _time_stretch(wav_path: Path, ratio: float) -> Path:
@@ -610,9 +684,9 @@ def generate_narration(
             wav_parts.append(chunk_wav)
             cursor += dur
 
-    print("  Concatenating segments...")
+    print("  Concatenating segments with crossfade...")
     wav_out = out_path if out_path.suffix == '.wav' else out_path.with_suffix('.wav')
-    _concat_wavs(wav_parts, wav_out)
+    _concat_wavs(wav_parts, wav_out, crossfade=CROSSFADE_DURATION)
 
     manifest["total_duration_sec"] = round(cursor, 3)
     manifest["word_count_total"] = sum(

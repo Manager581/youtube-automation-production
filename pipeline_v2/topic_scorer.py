@@ -282,6 +282,51 @@ We cannot rely on brand. Our topic must be inherently compelling to a cold audie
             else:
                 result["verdict"] = "SKIP"
 
+            # --- Add source availability test (real data, not Claude) ---
+            try:
+                from pipeline_v2.source_scanner import scan_sources
+                print("  Running source availability scan...")
+                inventory = scan_sources(topic, verbose=False)
+                source_score = inventory.get("overall_score", 50)
+                profile = inventory.get("footage_profile", "unknown")
+                counts = inventory.get("counts", {})
+
+                result["tests"]["source_availability_test"] = {
+                    "score": source_score,
+                    "reasoning": (
+                        f"Found {counts.get('total_clips', 0)} clips "
+                        f"({counts.get('clips_with_speech', 0)} with speech), "
+                        f"{counts.get('unique_channels', 0)} unique channels. "
+                        f"Profile: {profile}."
+                    ),
+                    "footage_profile": profile,
+                    "counts": counts,
+                    "clip_audio_candidates": inventory.get("clip_audio_candidates", [])[:3],
+                }
+
+                # Blend source score into overall (10% weight)
+                original_score = result["overall_score"]
+                blended = int(original_score * 0.90 + source_score * 0.10)
+                result["overall_score"] = blended
+                result["source_footage_profile"] = profile
+
+                # Re-evaluate verdict with blended score
+                tests = result.get("tests", {})
+                min_test = min((t.get("score", 0) for t in tests.values()), default=0)
+                if blended >= 85 and min_test >= 65 and len(tests) >= 8:
+                    result["verdict"] = "GO"
+                elif blended >= 60:
+                    result["verdict"] = "NEEDS_WORK"
+                else:
+                    result["verdict"] = "SKIP"
+
+            except Exception as e:
+                result["tests"]["source_availability_test"] = {
+                    "score": 50,
+                    "reasoning": f"Source scan failed: {e}",
+                    "footage_profile": "unknown",
+                }
+
             return result
     except (json.JSONDecodeError, AttributeError):
         pass

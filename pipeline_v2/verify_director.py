@@ -186,7 +186,20 @@ def run_checks(data, segments):
     else:
         failures.append(f"Only {play_count} clip_audio play moments (need >= 3)")
 
-    # --- 7. Every visual_file exists on disk ---
+    # --- 7b. Clip audio advisory — warn if density seems high ---
+    # Guideline: ~1 moment per 3 minutes of video
+    total_dur = segments[-1].get("_timeline_end_sec", 0) if segments else 0
+    video_min = total_dur / 60 if total_dur > 0 else 20
+    recommended = max(3, int(video_min / 3))
+    if play_count > recommended * 2:
+        # Not a FAIL — just a warning. Director makes editorial choices.
+        passes.append(f"clip_audio: {play_count} moments (high for {video_min:.0f}-min video, "
+                      f"guideline ~{recommended} — review director prompt)")
+    else:
+        passes.append(f"clip_audio density: {play_count} moments / {video_min:.0f} min "
+                      f"(guideline ~{recommended})")
+
+    # --- 8. Every visual_file exists on disk ---
     missing_files = []
     checked = set()
     for seg in segments:
