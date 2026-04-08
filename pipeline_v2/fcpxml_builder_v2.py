@@ -840,52 +840,182 @@ class FCPXMLBuilderV2:
         return ElementTree(root)
 
 
+# ─── Paper Edit Support ──────────────────────────────────────────────────────
+
+# LearnByLeo pacing rules by narrative function
+PACING_RULES = {
+    "exposition":     {"cut_dur": 10.0, "zoom_rate": 2.0},
+    "tension_build":  {"cut_dur": 3.0,  "zoom_rate": 4.0},
+    "evidence":       {"cut_dur": 6.0,  "zoom_rate": 3.0},
+    "character_intro": {"cut_dur": 6.0, "zoom_rate": 3.5},
+    "hook":           {"cut_dur": 15.0, "zoom_rate": 4.0},
+    "revelation":     {"cut_dur": 2.5,  "zoom_rate": 20.0},
+    "transition":     {"cut_dur": 3.0,  "zoom_rate": 0.5},
+}
+
+
+def compute_ken_burns_from_tension(tension, narrative_function):
+    """Compute Ken Burns zoom scale from tension + narrative function.
+
+    Returns (start_scale, end_scale) for keyframes.
+    """
+    rules = PACING_RULES.get(narrative_function, PACING_RULES["exposition"])
+    base_rate = rules["zoom_rate"]
+    # Tension modulates: 0.0 = base rate, 1.0 = 2x base rate
+    rate = base_rate * (1.0 + tension * 0.5)
+    # Convert %/s rate to scale over a typical 6s beat
+    duration = 6.0
+    end_scale = 1.0 + (rate / 100) * duration
+    return 1.0, round(end_scale, 4)
+
+
+def load_paper_edit(path):
+    """Load an approved paper edit and convert to builder-compatible segments.
+
+    Returns (segments, chapter_map, sfx_by_chapter, music_by_chapter) in the
+    same format as load_director() output, so the existing build() method works.
+    """
+    with open(path) as f:
+        paper_edit = json.load(f)
+
+    beats = paper_edit.get("beats", [])
+    segments = []
+    current_chapter_num = 0
+    chapter_names = {}
+
+    for beat in beats:
+        chapter = beat.get("chapter", "COLD OPEN")
+        if chapter not in chapter_names:
+            chapter_names[chapter] = len(chapter_names)
+
+        ch_num = chapter_names[chapter]
+
+        # Convert paper edit beat to builder segment format
+        seg = {
+            "text": beat.get("text", ""),
+            "_narr_start": beat.get("start_sec", 0),
+            "_narr_end": beat.get("end_sec", 0),
+            "visual_file": beat.get("visual_file", ""),
+            "visual_type": beat.get("visual_type", "still_image"),
+            "clip_audio": beat.get("clip_audio", "mute"),
+            "clip_audio_duration": beat.get("clip_audio_duration"),
+            "clip_start_sec": beat.get("clip_in_point", 0),
+            "transition_in": beat.get("transition_in", "cut"),
+            "text_overlay": beat.get("text_overlay"),
+            "tension_level": beat.get("tension_level", 0.5),
+            "arc_position": beat.get("narrative_function", "exposition"),
+            "music_state": beat.get("music_state", "ducking"),
+            "chapter_card": chapter if beat.get("is_chapter_marker") else None,
+            "beats": None,  # paper edit beats are already flat
+            "_chapter_num": ch_num,
+        }
+
+        # Compute zoom from tension + narrative function
+        nf = beat.get("narrative_function", "exposition")
+        tension = beat.get("tension_level", 0.5)
+        zoom_speed = beat.get("zoom_speed_pct_per_sec")
+        if zoom_speed:
+            duration = seg["_narr_end"] - seg["_narr_start"]
+            seg["zoom_target"] = beat.get("zoom_target", "wide")
+            seg["_zoom_end_scale"] = 1.0 + (zoom_speed / 100) * max(duration, 1)
+        else:
+            _, end_scale = compute_ken_burns_from_tension(tension, nf)
+            seg["zoom_target"] = beat.get("zoom_target", "wide")
+            seg["_zoom_end_scale"] = end_scale
+
+        # SFX
+        sfx_file = beat.get("sfx")
+        if sfx_file:
+            seg["sfx"] = {"file": sfx_file, "motivation": beat.get("sfx_motivation", "")}
+            seg["sfx_file"] = sfx_file
+
+        segments.append(seg)
+
+    # Build chapter_map
+    chapter_map = defaultdict(list)
+    for seg in segments:
+        chapter_map[seg["_chapter_num"]].append(seg)
+
+    # SFX per chapter
+    sfx_by_chapter = {}
+    for ch_num, ch_segs in chapter_map.items():
+        sfx_list = []
+        for seg in ch_segs:
+            if seg.get("sfx_file"):
+                sfx_list.append((seg["_narr_start"], seg["sfx_file"]))
+        sfx_by_chapter[ch_num] = sfx_list
+
+    # Music per chapter (use defaults)
+    music_by_chapter = {}
+    for ch_num, ch_segs in chapter_map.items():
+        ch_start = ch_segs[0]["_narr_start"]
+        ch_end = ch_segs[-1]["_narr_end"]
+        if ch_num < len(CHAPTERS):
+            music_file = CHAPTERS[ch_num].get("music", "track_01_tense_ducked.wav")
+        else:
+            music_file = "track_01_tense_ducked.wav"
+        music_by_chapter[ch_num] = (music_file, ch_start, ch_end)
+
+    return segments, dict(chapter_map), sfx_by_chapter, music_by_chapter
+
+
 # ─── Main ───────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description="FCPXML Builder v2")
     parser.add_argument("--output", default="timeline_v2.fcpxml", help="Output FCPXML file")
     parser.add_argument("--import-resolve", action="store_true", help="Import into DaVinci after building")
+    parser.add_argument("--paper-edit", default=None, help="Path to approved paper edit JSON (new workflow)")
     args = parser.parse_args()
 
     print("=" * 60)
     print("  FCPXML Builder v2")
     print("=" * 60)
 
-    # Load data
-    print("\nLoading director v4...")
-    _, raw_segs = load_director()
+    if args.paper_edit:
+        # NEW WORKFLOW: Load from approved paper edit
+        print(f"\nLoading paper edit: {args.paper_edit}")
+        all_segments, chapter_map, sfx_by_chapter, music_by_chapter = load_paper_edit(args.paper_edit)
+        print(f"  {len(all_segments)} beats across {len(chapter_map)} chapters")
+        for ch_num, segs in sorted(chapter_map.items()):
+            print(f"  Ch{ch_num}: {len(segs)} beats, "
+                  f"{segs[0]['_narr_start']:.1f}-{segs[-1]['_narr_end']:.1f}s")
+        align = None
+    else:
+        # LEGACY WORKFLOW: Load from director JSON
+        print("\nLoading director v4...")
+        _, raw_segs = load_director()
 
-    print("Loading narration alignment (150 WPM)...")
-    align = load_alignment()
-    print(f"  {len(align['sentences'])} sentences, {align['duration_sec']:.1f}s")
+        print("Loading narration alignment (150 WPM)...")
+        align = load_alignment()
+        print(f"  {len(align['sentences'])} sentences, {align['duration_sec']:.1f}s")
 
-    print("Matching segments to narration...")
-    matched = match_segments_to_narration(raw_segs, align)
+        print("Matching segments to narration...")
+        matched = match_segments_to_narration(raw_segs, align)
 
-    print("Splitting into chapters...")
-    chapter_map = split_into_chapters(matched)
-    for ch_num, segs in sorted(chapter_map.items()):
-        print(f"  Ch{ch_num} {CHAPTERS[ch_num]['name']}: {len(segs)} segs, "
-              f"{segs[0]['_narr_start']:.1f}-{segs[-1]['_narr_end']:.1f}s")
+        print("Splitting into chapters...")
+        chapter_map = split_into_chapters(matched)
+        for ch_num, segs in sorted(chapter_map.items()):
+            print(f"  Ch{ch_num} {CHAPTERS[ch_num]['name']}: {len(segs)} segs, "
+                  f"{segs[0]['_narr_start']:.1f}-{segs[-1]['_narr_end']:.1f}s")
 
-    # Flatten all segments (in order)
-    all_segments = []
-    for ch_num in sorted(chapter_map.keys()):
-        all_segments.extend(chapter_map[ch_num])
+        # Flatten all segments (in order)
+        all_segments = []
+        for ch_num in sorted(chapter_map.keys()):
+            all_segments.extend(chapter_map[ch_num])
 
-    # SFX per chapter
-    sfx_by_chapter = {}
-    for ch_num, segs in chapter_map.items():
-        sfx_by_chapter[ch_num] = pick_chapter_sfx(segs)
+        # SFX per chapter
+        sfx_by_chapter = {}
+        for ch_num, segs in chapter_map.items():
+            sfx_by_chapter[ch_num] = pick_chapter_sfx(segs)
 
-    # Music per chapter
-    music_by_chapter = {}
-    for ch_num, segs in chapter_map.items():
-        ch_start = segs[0]["_narr_start"]
-        ch_end = segs[-1]["_narr_end"]
-        music_file = CHAPTERS[ch_num]["music"]
-        music_by_chapter[ch_num] = (music_file, ch_start, ch_end)
+        # Music per chapter
+        music_by_chapter = {}
+        for ch_num, segs in chapter_map.items():
+            ch_start = segs[0]["_narr_start"]
+            ch_end = segs[-1]["_narr_end"]
+            music_file = CHAPTERS[ch_num]["music"]
+            music_by_chapter[ch_num] = (music_file, ch_start, ch_end)
 
     # Build
     print(f"\nBuilding FCPXML...")
