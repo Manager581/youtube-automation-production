@@ -228,15 +228,17 @@ def run_checks(fcpxml_path, expected_narr_dur=None, min_v1_clips=200, skip_ffpro
     # Check 6: non-overlap within same lane (audio lanes only — overlays may intentionally overlap)
     overlap_errors = []
     # Audio lanes: narration (3), music (4), sfx (5, 6)
+    # Music lane (4) allows 3s overlap for crossfade looping
     audio_lanes = {3, 4, 5, 6}
     for lane, clips in lane_clips_by_lane.items():
         if lane not in audio_lanes:
             continue  # skip visual lanes — overlays/chapters can overlap
+        tolerance = 3.0 if lane == 4 else 0.5  # music lane allows crossfade overlap
         sorted_clips = sorted(clips, key=lambda c: c['offset'])
         for i in range(1, len(sorted_clips)):
             prev = sorted_clips[i - 1]
             curr = sorted_clips[i]
-            if curr['offset'] < prev['end'] - 0.5:  # 0.5s tolerance for transitions
+            if curr['offset'] < prev['end'] - tolerance:
                 overlap_errors.append(
                     f"Lane {lane}: '{prev['name']}' (ends {prev['end']:.2f}) "
                     f"overlaps '{curr['name']}' (starts {curr['offset']:.2f})")

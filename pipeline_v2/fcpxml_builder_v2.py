@@ -534,22 +534,37 @@ class FCPXMLBuilderV2:
             })
             print(f"  A1: narration ({narr_dur:.1f}s)")
 
-        # A2: Music per chapter
+        # A2: Music per chapter — loop tracks to fill full chapter duration
+        MUSIC_CROSSFADE = 2.0  # seconds overlap between loops
+        music_clip_count = 0
         for ch_num, (music_file, ch_start, ch_end) in music_by_chapter.items():
             music_path = str(MUSIC_DIR / music_file)
             if not os.path.exists(music_path):
                 continue
-            music_dur = min(get_duration(music_path) or 200, ch_end - ch_start)
-            lane_clips.append({
-                "lane": LANE_MUSIC,
-                "offset": ch_start,
-                "duration": music_dur,
-                "path": music_path,
-                "start": 0,
-                "name": music_file,
-                "is_audio": True,
-            })
-        print(f"  A2: {len(music_by_chapter)} music tracks")
+            track_dur = get_duration(music_path) or 200
+            chapter_dur = ch_end - ch_start
+            if chapter_dur <= 0:
+                continue
+
+            # Loop the track to fill the chapter
+            cursor = ch_start
+            while cursor < ch_end:
+                remaining = ch_end - cursor
+                clip_dur = min(track_dur, remaining)
+                lane_clips.append({
+                    "lane": LANE_MUSIC,
+                    "offset": cursor,
+                    "duration": clip_dur,
+                    "path": music_path,
+                    "start": 0,
+                    "name": music_file,
+                    "is_audio": True,
+                })
+                music_clip_count += 1
+                cursor += track_dur - MUSIC_CROSSFADE  # overlap for smooth loop
+                if clip_dur < 5:  # don't place tiny tail clips
+                    break
+        print(f"  A2: {music_clip_count} music clips across {len(music_by_chapter)} chapters")
 
         # A3/A4: SFX — alternate lanes globally (not per-chapter)
         # Fix 7: Cap SFX at 2 per chapter
