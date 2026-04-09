@@ -791,17 +791,43 @@ class FCPXMLBuilderV2:
             "start": to_rational(gap_offset),
         })
 
-        # ── Attach ALL lane clips to the FIRST spine element ──
-        # Lane clips attached to a spine element use offsets relative to the
-        # parent element's content timebase. The first spine element (a gap)
-        # has start=TC_START, so lane offsets = TC_START + desired timeline position.
-        first_spine_el = list(spine)[0]
-        first_start_str = first_spine_el.get("start", "0/1s").rstrip('s')
-        if '/' in first_start_str:
-            _n, _d = first_start_str.split('/')
-            first_content_start = float(_n) / float(_d)
-        else:
-            first_content_start = float(first_start_str)
+        # ── Attach lane clips to their PARENT spine clips ──
+        # DaVinci requires lane clips to be children of the spine clip that
+        # covers their timeline position. Attaching everything to the first
+        # element causes DaVinci to ignore audio lanes entirely.
+        #
+        # For each lane clip, find the spine clip whose offset range contains
+        # the lane clip's start time, then attach as a child with relative offset.
+
+        # Build index of spine clips with their timeline ranges
+        spine_elements = list(spine)
+        spine_ranges = []  # [(element, start_sec, end_sec, content_start_sec)]
+        for el in spine_elements:
+            offset_str = el.get("offset", "0/1s")
+            dur_str = el.get("duration", "0/1s")
+            start_str = el.get("start", "0/1s")
+
+            offset_sec = float(Fraction(offset_str.rstrip('s')))
+            dur_sec = float(Fraction(dur_str.rstrip('s')))
+            content_start = float(Fraction(start_str.rstrip('s')))
+
+            spine_ranges.append((el, offset_sec, offset_sec + dur_sec, content_start))
+
+        def find_parent_spine(timeline_sec, skip_transitions=False):
+            """Find the spine element that covers this timeline position."""
+            for el, start, end, cs in spine_ranges:
+                if skip_transitions and el.tag == "transition":
+                    continue
+                if start <= timeline_sec < end:
+                    return el, start, cs
+            # Fallback: first non-transition spine element
+            for el, start, _, cs in spine_ranges:
+                if el.tag != "transition":
+                    return el, start, cs
+            if spine_ranges:
+                el, start, _, cs = spine_ranges[0]
+                return el, start, cs
+            return None, 0, 0
 
         attached = 0
         for lc in lane_clips:
@@ -810,23 +836,39 @@ class FCPXMLBuilderV2:
             if not asset_id:
                 continue
 
-            # Lane offset = parent's content start + desired timeline position
-            lane_offset = first_content_start + lc["offset"]
+            # Find which spine clip covers this lane clip's start
+            # Audio lane clips must skip transitions (DaVinci ignores audio on transitions)
+            lc_timeline_sec = TC_START + lc["offset"]
+            parent_el, parent_offset, parent_content_start = find_parent_spine(
+                lc_timeline_sec, skip_transitions=lc["is_audio"]
+            )
+            if parent_el is None:
+                continue
+
+            # Lane clip offset is relative to the parent's content timebase
+            # offset_in_parent = parent_content_start + (lane_timeline_pos - parent_offset)
+            rel_offset = parent_content_start + (lc_timeline_sec - parent_offset)
 
             attrs = {
                 "ref": asset_id,
                 "name": lc["name"],
                 "lane": str(lc["lane"]),
-                "offset": to_rational(lane_offset),
+                "offset": to_rational(rel_offset),
                 "duration": to_dur(lc["duration"]),
                 "start": to_rational(lc["start"]),
             }
 
             if lc["is_audio"]:
-                attrs["role"] = "dialogue"
-                SubElement(first_spine_el, "asset-clip", attrs)
+                # Assign distinct roles so DaVinci creates separate audio tracks
+                if lc["lane"] == LANE_NARRATION:
+                    attrs["role"] = "dialogue"
+                elif lc["lane"] == LANE_MUSIC:
+                    attrs["role"] = "music"
+                else:
+                    attrs["role"] = "effects"
+                SubElement(parent_el, "asset-clip", attrs)
             else:
-                vid = SubElement(first_spine_el, "video", attrs)
+                vid = SubElement(parent_el, "video", attrs)
                 if lc["lane"] == LANE_OVERLAY:
                     SubElement(vid, "adjust-transform", {
                         "position": "0 0",
