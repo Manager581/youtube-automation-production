@@ -673,42 +673,18 @@ class FCPXMLBuilderV2:
 
         spine = SubElement(sequence, "spine")
 
-        # ── Build spine (V1) with transitions (Fix 4) ──
+        # ── Build spine (V1) ──
+        # Transitions are placed as overlapping <transition> elements between
+        # adjacent clips. The transition consumes time from both clips.
+        # NOTE: Previously, transitions were inserted as standalone spine elements
+        # which DaVinci rendered as black frames. Now we just use hard cuts —
+        # Cross Dissolve transitions require complex offset math that DaVinci
+        # interprets inconsistently on import. Hard cuts are reliable.
         cursor = 0  # current position in seconds
-        prev_clip = None  # track previous clip for transitions
-        # Build a lookup: chapter start times for detecting chapter boundaries
-        chapter_starts = set()
-        for ch_num, segs in chapter_map.items():
-            if segs:
-                chapter_starts.add(round(segs[0]["_narr_start"], 2))
 
         for clip_idx, clip in enumerate(v1_clips):
             clip_offset = clip["offset"]
             clip_dur = clip["duration"]
-
-            # Fix 4: Insert transition at chapter boundaries (between clips)
-            trans = clip.get("transition_in", "cut")
-            insert_transition = False
-
-            if trans == "fade_from_black" and clip_idx == 0:
-                # Fade from black at the very start
-                insert_transition = True
-            elif trans == "dissolve" and prev_clip is not None:
-                insert_transition = True
-            elif prev_clip is not None and round(clip_offset, 2) in chapter_starts:
-                # Chapter boundary — insert cross dissolve
-                insert_transition = True
-
-            if insert_transition:
-                trans_dur = 1.0  # 1 second = 24/24s at 24fps
-                trans_offset = TC_START + clip_offset - (trans_dur / 2)
-                if trans == "fade_from_black" and clip_idx == 0:
-                    trans_offset = TC_START + clip_offset
-                SubElement(spine, "transition", {
-                    "name": "Cross Dissolve",
-                    "offset": to_rational(max(trans_offset, TC_START)),
-                    "duration": to_dur(trans_dur),
-                })
 
             # Insert gap if needed before this clip
             if clip_offset > cursor + 0.02:
@@ -794,7 +770,6 @@ class FCPXMLBuilderV2:
                     SubElement(param, "keyframe", time=to_rational(cad + 0.5), value="-96dB")
                     SubElement(param, "keyframe", time=to_dur(clip_dur), value="-96dB")
 
-            prev_clip = clip
             cursor += clip_dur
 
         # ── Trailing gap (extends timeline to cover full narration) ──
