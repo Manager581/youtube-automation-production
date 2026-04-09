@@ -950,6 +950,39 @@ def load_paper_edit(path):
         if dropped:
             print(f"  Dropped {dropped} phantom beats past narration end ({narr_dur:.1f}s)")
 
+    # Apply intro spec — override cold open beats with locked intro decisions
+    intro_spec_path = PROJECT_ROOT / "storyboards" / "intro_spec_locked.json"
+    if intro_spec_path.exists():
+        from pipeline_v2.intro_builder import load_intro
+        intro = load_intro(str(intro_spec_path))
+        if intro and intro["segments"]:
+            intro_end = intro["total_duration"]
+            # Replace paper edit beats that fall within the intro time range
+            intro_segs = intro["segments"]
+            kept_beats = [b for b in beats if b.get("start_sec", 0) >= intro_end or b.get("is_chapter_marker")]
+            # Convert intro segments to paper edit beat format
+            intro_beats = []
+            for iseg in intro_segs:
+                intro_beats.append({
+                    "text": iseg.get("text", ""),
+                    "start_sec": iseg["start_sec"],
+                    "end_sec": iseg["end_sec"],
+                    "chapter": "COLD OPEN",
+                    "voice": "tense",
+                    "narrative_function": "hook",
+                    "visual_file": iseg["visual_file"],
+                    "visual_type": iseg.get("visual_type", "video_clip"),
+                    "clip_audio": iseg.get("clip_audio", "mute"),
+                    "clip_audio_duration": iseg.get("clip_audio_duration"),
+                    "transition_in": iseg.get("transition_in", "cut"),
+                    "text_overlay": iseg.get("overlay_text") if iseg.get("overlay_text") not in (None, "NONE", "NONE (removed — $5B black card covers news clip)") else None,
+                    "tension_level": 0.8,
+                    "zoom_target": "wide",
+                    "sfx": iseg.get("sfx_file"),
+                })
+            beats = intro_beats + kept_beats
+            print(f"  Intro: {len(intro_beats)} segments replacing cold open (0-{intro_end:.1f}s)")
+
     segments = []
     current_chapter_num = 0
     chapter_names = {}
