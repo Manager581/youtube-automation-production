@@ -49,6 +49,9 @@ CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
 MUSIC_DIR = PROJECT_ROOT / "audio" / "breaking_law" / "music_tracks"
 FOOTAGE_DIRS = [
     PROJECT_ROOT / "footage" / "breaking_law" / "clips",
+    PROJECT_ROOT / "footage" / "breaking_law" / "stills",             # ffmpeg key frames from clips
+    PROJECT_ROOT / "footage" / "breaking_law" / "images_v2" / "web",  # Wikipedia/Commons
+    PROJECT_ROOT / "footage" / "breaking_law" / "images_v2" / "wikimedia",
     PROJECT_ROOT / "footage" / "breaking_law" / "images",
     PROJECT_ROOT / "footage" / "breaking_law" / "gap_fills" / "images",
 ]

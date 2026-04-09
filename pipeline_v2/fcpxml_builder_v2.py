@@ -222,7 +222,10 @@ class FCPXMLBuilderV2:
             active_segs[0]["_narr_start"] = 0
 
         # Cap last segment at narration duration
-        narr_total = alignment.get("duration_sec", active_segs[-1]["_narr_end"])
+        if alignment:
+            narr_total = alignment.get("duration_sec", active_segs[-1]["_narr_end"])
+        else:
+            narr_total = active_segs[-1]["_narr_end"]
         if active_segs[-1]["_narr_end"] > narr_total:
             active_segs[-1]["_narr_end"] = narr_total
 

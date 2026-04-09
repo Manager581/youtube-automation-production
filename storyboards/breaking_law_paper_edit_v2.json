@@ -24,213 +24,6 @@
       "zoom_speed_pct_per_sec": 4.4
     },
     {
-      "text": "Let me show you what the math looks like when you put a face on it. Richard Grimshaw survived the Pinto fire. He grew up carrying scars that covered his body and a verdict that was supposed to change things \u2014 one hundred and twenty-five million dollars, reduced to three point five million. [PAUSE:1.0] The message was: we've done the math, and your pain has a price. [BEAT] Ford paid it and moved on. Yesenia Guitron called the ethics hotline and was fired for it. She never worked in banking again. [BEAT] Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "tense",
-      "narrative_function": "hook",
-      "visual_file": "Wells_Fargo_fake_accounts_scandal_still_1s.jpg",
-      "visual_type": "a_roll",
-      "why": "Beat 9 names three specific people: Grimshaw (Pinto victim), Guitron (Wells Fargo whistleblower fired for reporting fraud), and Tolstedt (Wells Fargo exec who kept $57M). Guitron IS the Wells Fargo scandal \u2014 this still from the Wells Fargo expos\u00e9 anchors her story specifically. Ford Pinto stills are exhausted; this beat's emotional weight is carried by Guitron and Tolstedt, both Wells Fargo characters, making this the correct primary visual.",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": "CARRIE TOLSTEDT KEPT $57,000,000",
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "fade_from_black",
-      "tension_level": 0.95,
-      "zoom_target": "face",
-      "beat_id": "beat_0001",
-      "zoom_speed_pct_per_sec": 4.9
-    },
-    {
-      "text": "The Sackler name is still on a wing of the Guggenheim Museum in New York City. The Metropolitan Museum took theirs down after public outcry. [BEAT] The Guggenheim hasn't. You can walk into one of the most prestigious cultural institutions in the world, look up at the wall, and read the name of a family that earned their fortune from a drug that killed eight hundred thousand people. [BEAT] They kept thirteen billion. And they kept the wall.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "neutral",
-      "narrative_function": "revelation",
-      "visual_file": "Purdue_Pharma_opioid_Sackler_family_still_23s.jpg",
-      "visual_type": "b_roll",
-      "why": "Narration names the Sackler family and their $13B fortune from opioids \u2014 this Purdue still grounds the abstract institutional shame (a museum wall bearing their name) in the corporate entity responsible for 800K deaths",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": "$13 BILLION KEPT",
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "cut",
-      "tension_level": 0.9,
-      "zoom_target": "face",
-      "beat_id": "beat_0002",
-      "zoom_speed_pct_per_sec": 24.0
-    },
-    {
-      "text": "That's the formula. [BEAT] It even gets you a plaque.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "neutral",
-      "narrative_function": "revelation",
-      "visual_file": "corporate_boardroom_meeting_stock_still_2s.jpg",
-      "visual_type": "stock",
-      "why": "'That's the formula. It even gets you a plaque.' \u2014 the boardroom is where these cost-benefit calculations are made; the punchline about institutional reward lands harder against an image of calculated corporate power than against any individual entity",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": null,
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "cut",
-      "tension_level": 0.95,
-      "zoom_target": "wide",
-      "beat_id": "beat_0003",
-      "zoom_speed_pct_per_sec": 24.5
-    },
-    {
-      "text": "Elliana Esquivel is still making art in Charlotte. She pivoted to 3D \u2014 not because she chose to, but because the alternative was watching her style get reproduced for free. [BEAT] If the settlement arrives, her share might cover a month of rent. The model keeps running. Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted. [BEAT] The models built on it were refined. Chris Vialpondo is still in Seattle. Still working two jobs. [BEAT] The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "measured",
-      "narrative_function": "character_intro",
-      "visual_file": "digital_artist_workspace_still_1s.jpg",
-      "visual_type": "a_roll",
-      "why": "Narration returns to Elliana Esquivel \u2014 a digital artist forced to pivot to 3D because her style was scraped without consent. The digital workspace grounds her ongoing reality; she's still working, still affected, settlement not yet arrived",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": "74% OF FACEBOOK USERS DON'T KNOW THEY'RE BEING PROFILED",
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "cut",
-      "tension_level": 0.75,
-      "zoom_target": "face",
-      "beat_id": "beat_0004",
-      "zoom_speed_pct_per_sec": 2.5
-    },
-    {
-      "text": "The Grush-Saunby memo put a dollar value on a human life in 1977. [BEAT] Two hundred thousand dollars. Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars. The AI settlements value each stolen book at three thousand dollars. [BEAT] Elliana's illustrations? Not priced yet. Your Reddit posts? Your YouTube comments? Your blog from 2016?",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "measured",
-      "narrative_function": "evidence",
-      "visual_file": "Purdue_Pharma_opioid_Sackler_family_still_45s.jpg",
-      "visual_type": "b_roll",
-      "why": "The escalating price-per-life sequence \u2014 $200K to $9K to $57 to $3K \u2014 peaks morally at Purdue's $9K-per-opioid-death. Holding on Purdue imagery while the text overlay shows the full descent makes the devaluation of human life viscerally readable",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": "$200K \u2192 $9K \u2192 $57 \u2192 $3K",
-      "sfx": "impact",
-      "sfx_motivation": "The price-per-life sequence is the video's central data revelation \u2014 a single hard impact hit as the final number lands registers the devaluation as a physical blow",
-      "transition_in": "cut",
-      "tension_level": 1.0,
-      "zoom_target": "document",
-      "beat_id": "beat_0005",
-      "zoom_speed_pct_per_sec": 5.0
-    },
-    {
-      "text": "They'll get priced. [BEAT] And if fifty years of history tells you anything \u2014 [PAUSE:1.5] you won't like the number.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "measured",
-      "narrative_function": "tension_build",
-      "visual_file": "Wall_Street_trading_floor_still_16s.jpg",
-      "visual_type": "a_roll",
-      "why": "'You won't like the number' \u2014 Wall Street is the system that prices everything, including people. The trading floor visually embodies the financial logic that assigns dollar values to harm and makes those numbers feel inevitable, not accidental",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": null,
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "cut",
-      "tension_level": 0.85,
-      "zoom_target": "wide",
-      "beat_id": "beat_0006",
-      "zoom_speed_pct_per_sec": 4.7
-    },
-    {
-      "text": "The law doesn't prevent corporate crime. [BEAT] It prices it.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "tense",
-      "narrative_function": "revelation",
-      "visual_file": "Department_of_Justice_building_still_8s.jpg",
-      "visual_type": "b_roll",
-      "why": "THE thesis line: 'The law doesn't prevent corporate crime. It prices it.' The DOJ building is the physical embodiment of law \u2014 placing it here creates the video's defining irony: the institution built to enforce justice is the backdrop when we expose justice's failure",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
-      "sfx": "rumble",
-      "sfx_motivation": "The thesis statement is the entire argument of the video distilled to one sentence \u2014 a low sustained rumble gives it the gravitational weight it carries",
-      "transition_in": "dissolve",
-      "tension_level": 1.0,
-      "zoom_target": "wide",
-      "beat_id": "beat_0007",
-      "zoom_speed_pct_per_sec": 25.0
-    },
-    {
-      "text": "The question was never whether they'd break the law.",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "tense",
-      "narrative_function": "tension_build",
-      "visual_file": "US_Capitol_building_Congress_still_1s.jpg",
-      "visual_type": "b_roll",
-      "why": "'The question was never whether they'd break the law' \u2014 Congress is the body that chose to write laws corporations could price rather than laws that stopped them. The Capitol makes institutional complicity visible without stating it explicitly",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": null,
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "cut",
-      "tension_level": 0.9,
-      "zoom_target": "wide",
-      "beat_id": "beat_0008",
-      "zoom_speed_pct_per_sec": 4.8
-    },
-    {
-      "text": "The question is what you're worth. Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC, DOJ, ProPublica, Copyright Alliance, CDC, European Data Protection Board, Washington State AG, WCNC Charlotte, Good Jobs First Violation Tracker, AlixPartners (2019).",
-      "start_sec": 0,
-      "end_sec": 5.0,
-      "duration": 5.0,
-      "chapter": "THE RECKONING",
-      "voice": "tense",
-      "narrative_function": "exposition",
-      "visual_file": "courtroom_justice_gavel_still_17s.jpg",
-      "visual_type": "stock",
-      "why": "Sources card closes on a courtroom gavel \u2014 the symbol of justice that opened the video's legal framing. Closing on it is a quiet callback: the gavel is still there, law still exists, but the preceding 30 minutes have reframed what it actually does",
-      "clip_audio": "mute",
-      "clip_audio_quote": null,
-      "clip_audio_duration": null,
-      "text_overlay": null,
-      "sfx": null,
-      "sfx_motivation": null,
-      "transition_in": "cut",
-      "tension_level": 0.2,
-      "zoom_target": "wide",
-      "beat_id": "beat_0009",
-      "zoom_speed_pct_per_sec": 1.4
-    },
-    {
       "text": "[BEAT] Eighty-seven million people's data \u2014 harvested, profiled, and sold to a political targeting firm without their knowledge.",
       "start_sec": 6.966,
       "end_sec": 15.325,
@@ -250,7 +43,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0010",
+      "beat_id": "beat_0001",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -273,7 +66,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "wide",
-      "beat_id": "beat_0011",
+      "beat_id": "beat_0002",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -296,7 +89,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "document",
-      "beat_id": "beat_0012",
+      "beat_id": "beat_0003",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -319,7 +112,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0013",
+      "beat_id": "beat_0004",
       "zoom_speed_pct_per_sec": 2.7
     },
     {
@@ -342,7 +135,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0014",
+      "beat_id": "beat_0005",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -365,7 +158,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0015",
+      "beat_id": "beat_0006",
       "zoom_speed_pct_per_sec": 4.0
     },
     {
@@ -388,7 +181,7 @@
       "transition_in": "cut",
       "tension_level": 0.35,
       "zoom_target": "wide",
-      "beat_id": "beat_0016",
+      "beat_id": "beat_0007",
       "zoom_speed_pct_per_sec": 1.7
     },
     {
@@ -411,8 +204,24 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0017",
+      "beat_id": "beat_0008",
       "zoom_speed_pct_per_sec": 24.0
+    },
+    {
+      "text": "[CHAPTER: THE FORMULA]",
+      "start_sec": 53.8,
+      "end_sec": 56.8,
+      "duration": 3.0,
+      "chapter": "THE FORMULA",
+      "is_chapter_marker": true,
+      "narrative_function": "transition",
+      "visual_file": "chapter_the_formula.mov",
+      "visual_type": "chapter_card",
+      "why": "Chapter card marks new section",
+      "clip_audio": "mute",
+      "tension_level": 0.5,
+      "beat_id": "beat_0009",
+      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "In 1977, Ford knew the Pinto's fuel tank ruptured in rear-end collisions. They had the crash test data.",
@@ -434,24 +243,8 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0018",
+      "beat_id": "beat_0010",
       "zoom_speed_pct_per_sec": 3.9499999999999997
-    },
-    {
-      "text": "[CHAPTER: THE FORMULA]",
-      "start_sec": 53.8,
-      "end_sec": 56.8,
-      "duration": 3.0,
-      "chapter": "THE FORMULA",
-      "is_chapter_marker": true,
-      "narrative_function": "transition",
-      "visual_file": "chapter_the_formula.mov",
-      "visual_type": "chapter_card",
-      "why": "Chapter card marks new section",
-      "clip_audio": "mute",
-      "tension_level": 0.5,
-      "beat_id": "beat_0019",
-      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "Two engineers wrote a cost-benefit analysis \u2014 an actual document, with actual numbers.",
@@ -473,7 +266,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0020",
+      "beat_id": "beat_0011",
       "zoom_speed_pct_per_sec": 3.25
     },
     {
@@ -496,7 +289,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0021",
+      "beat_id": "beat_0012",
       "zoom_speed_pct_per_sec": 22.5
     },
     {
@@ -519,7 +312,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0022",
+      "beat_id": "beat_0013",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -542,7 +335,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0023",
+      "beat_id": "beat_0014",
       "zoom_speed_pct_per_sec": 2.4
     },
     {
@@ -565,7 +358,7 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "wide",
-      "beat_id": "beat_0024",
+      "beat_id": "beat_0015",
       "zoom_speed_pct_per_sec": 5.0
     },
     {
@@ -588,7 +381,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0025",
+      "beat_id": "beat_0016",
       "zoom_speed_pct_per_sec": 4.6
     },
     {
@@ -611,7 +404,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0026",
+      "beat_id": "beat_0017",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -634,7 +427,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0027",
+      "beat_id": "beat_0018",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -657,7 +450,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0028",
+      "beat_id": "beat_0019",
       "zoom_speed_pct_per_sec": 3.6
     },
     {
@@ -680,7 +473,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0029",
+      "beat_id": "beat_0020",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -703,7 +496,7 @@
       "transition_in": "dissolve",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0030",
+      "beat_id": "beat_0021",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -726,7 +519,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0031",
+      "beat_id": "beat_0022",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -749,7 +542,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0032",
+      "beat_id": "beat_0023",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -772,7 +565,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "face",
-      "beat_id": "beat_0033",
+      "beat_id": "beat_0024",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -795,7 +588,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "document",
-      "beat_id": "beat_0034",
+      "beat_id": "beat_0025",
       "zoom_speed_pct_per_sec": 3.775
     },
     {
@@ -818,7 +611,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0035",
+      "beat_id": "beat_0026",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -841,7 +634,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0036",
+      "beat_id": "beat_0027",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -864,7 +657,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0037",
+      "beat_id": "beat_0028",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -887,7 +680,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0038",
+      "beat_id": "beat_0029",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -910,7 +703,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0039",
+      "beat_id": "beat_0030",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -933,7 +726,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "face",
-      "beat_id": "beat_0040",
+      "beat_id": "beat_0031",
       "zoom_speed_pct_per_sec": 2.3
     },
     {
@@ -956,7 +749,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "document",
-      "beat_id": "beat_0041",
+      "beat_id": "beat_0032",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -979,7 +772,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "document",
-      "beat_id": "beat_0042",
+      "beat_id": "beat_0033",
       "zoom_speed_pct_per_sec": 3.6
     },
     {
@@ -1002,7 +795,7 @@
       "transition_in": "cut",
       "tension_level": 0.72,
       "zoom_target": "wide",
-      "beat_id": "beat_0043",
+      "beat_id": "beat_0034",
       "zoom_speed_pct_per_sec": 4.4399999999999995
     },
     {
@@ -1025,7 +818,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "face",
-      "beat_id": "beat_0044",
+      "beat_id": "beat_0035",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -1048,7 +841,7 @@
       "transition_in": "dissolve",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0045",
+      "beat_id": "beat_0036",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -1071,7 +864,7 @@
       "transition_in": "cut",
       "tension_level": 0.82,
       "zoom_target": "face",
-      "beat_id": "beat_0046",
+      "beat_id": "beat_0037",
       "zoom_speed_pct_per_sec": 2.6399999999999997
     },
     {
@@ -1094,7 +887,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0047",
+      "beat_id": "beat_0038",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -1117,7 +910,7 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "wide",
-      "beat_id": "beat_0048",
+      "beat_id": "beat_0039",
       "zoom_speed_pct_per_sec": 25.0
     },
     {
@@ -1140,7 +933,7 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "face",
-      "beat_id": "beat_0049",
+      "beat_id": "beat_0040",
       "zoom_speed_pct_per_sec": 25.0
     },
     {
@@ -1163,7 +956,7 @@
       "transition_in": "cut",
       "tension_level": 0.88,
       "zoom_target": "wide",
-      "beat_id": "beat_0050",
+      "beat_id": "beat_0041",
       "zoom_speed_pct_per_sec": 23.8
     },
     {
@@ -1186,7 +979,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0051",
+      "beat_id": "beat_0042",
       "zoom_speed_pct_per_sec": 4.8
     },
     {
@@ -1209,7 +1002,7 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "wide",
-      "beat_id": "beat_0052",
+      "beat_id": "beat_0043",
       "zoom_speed_pct_per_sec": 25.0
     },
     {
@@ -1232,7 +1025,7 @@
       "transition_in": "cut",
       "tension_level": 0.88,
       "zoom_target": "wide",
-      "beat_id": "beat_0053",
+      "beat_id": "beat_0044",
       "zoom_speed_pct_per_sec": 4.76
     },
     {
@@ -1255,7 +1048,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "document",
-      "beat_id": "beat_0054",
+      "beat_id": "beat_0045",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -1278,7 +1071,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0055",
+      "beat_id": "beat_0046",
       "zoom_speed_pct_per_sec": 3.775
     },
     {
@@ -1301,7 +1094,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0056",
+      "beat_id": "beat_0047",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -1324,7 +1117,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0057",
+      "beat_id": "beat_0048",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -1347,7 +1140,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0058",
+      "beat_id": "beat_0049",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -1370,7 +1163,7 @@
       "transition_in": "cut",
       "tension_level": 0.82,
       "zoom_target": "document",
-      "beat_id": "beat_0059",
+      "beat_id": "beat_0050",
       "zoom_speed_pct_per_sec": 4.369999999999999
     },
     {
@@ -1393,7 +1186,7 @@
       "transition_in": "cut",
       "tension_level": 0.3,
       "zoom_target": "wide",
-      "beat_id": "beat_0060",
+      "beat_id": "beat_0051",
       "zoom_speed_pct_per_sec": 1.6
     },
     {
@@ -1416,7 +1209,7 @@
       "transition_in": "cut",
       "tension_level": 0.35,
       "zoom_target": "document",
-      "beat_id": "beat_0061",
+      "beat_id": "beat_0052",
       "zoom_speed_pct_per_sec": 2.7249999999999996
     },
     {
@@ -1439,8 +1232,24 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0062",
+      "beat_id": "beat_0053",
       "zoom_speed_pct_per_sec": 22.0
+    },
+    {
+      "text": "[CHAPTER: THE DATA]",
+      "start_sec": 379.28,
+      "end_sec": 382.28,
+      "duration": 3.0,
+      "chapter": "THE DATA",
+      "is_chapter_marker": true,
+      "narrative_function": "transition",
+      "visual_file": "chapter_the_data.mov",
+      "visual_type": "chapter_card",
+      "why": "Chapter card marks new section",
+      "clip_audio": "mute",
+      "tension_level": 0.5,
+      "beat_id": "beat_0054",
+      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "Facebook was the bridge between the old formula and the new one.",
@@ -1462,24 +1271,8 @@
       "transition_in": "cut",
       "tension_level": 0.4,
       "zoom_target": "wide",
-      "beat_id": "beat_0063",
+      "beat_id": "beat_0055",
       "zoom_speed_pct_per_sec": 1.8
-    },
-    {
-      "text": "[CHAPTER: THE DATA]",
-      "start_sec": 379.28,
-      "end_sec": 382.28,
-      "duration": 3.0,
-      "chapter": "THE DATA",
-      "is_chapter_marker": true,
-      "narrative_function": "transition",
-      "visual_file": "chapter_the_data.mov",
-      "visual_type": "chapter_card",
-      "why": "Chapter card marks new section",
-      "clip_audio": "mute",
-      "tension_level": 0.5,
-      "beat_id": "beat_0064",
-      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "In 2013, a Cambridge University researcher named Aleksandr Kogan built a personality quiz app.",
@@ -1501,7 +1294,7 @@
       "transition_in": "cut",
       "tension_level": 0.45,
       "zoom_target": "document",
-      "beat_id": "beat_0065",
+      "beat_id": "beat_0056",
       "zoom_speed_pct_per_sec": 1.9
     },
     {
@@ -1524,7 +1317,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "document",
-      "beat_id": "beat_0066",
+      "beat_id": "beat_0057",
       "zoom_speed_pct_per_sec": 3.25
     },
     {
@@ -1547,7 +1340,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "face",
-      "beat_id": "beat_0067",
+      "beat_id": "beat_0058",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -1570,7 +1363,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "face",
-      "beat_id": "beat_0068",
+      "beat_id": "beat_0059",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -1593,7 +1386,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0069",
+      "beat_id": "beat_0060",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -1616,7 +1409,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0070",
+      "beat_id": "beat_0061",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -1639,7 +1432,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0071",
+      "beat_id": "beat_0062",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -1662,7 +1455,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "document",
-      "beat_id": "beat_0072",
+      "beat_id": "beat_0063",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -1685,7 +1478,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0073",
+      "beat_id": "beat_0064",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -1708,7 +1501,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0074",
+      "beat_id": "beat_0065",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -1731,7 +1524,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0075",
+      "beat_id": "beat_0066",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -1754,7 +1547,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "wide",
-      "beat_id": "beat_0076",
+      "beat_id": "beat_0067",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -1777,7 +1570,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "document",
-      "beat_id": "beat_0077",
+      "beat_id": "beat_0068",
       "zoom_speed_pct_per_sec": 3.6
     },
     {
@@ -1800,7 +1593,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0078",
+      "beat_id": "beat_0069",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -1823,7 +1616,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0079",
+      "beat_id": "beat_0070",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -1846,7 +1639,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0080",
+      "beat_id": "beat_0071",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -1869,7 +1662,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "document",
-      "beat_id": "beat_0081",
+      "beat_id": "beat_0072",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -1892,7 +1685,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "face",
-      "beat_id": "beat_0082",
+      "beat_id": "beat_0073",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -1915,7 +1708,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "face",
-      "beat_id": "beat_0083",
+      "beat_id": "beat_0074",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -1938,7 +1731,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0084",
+      "beat_id": "beat_0075",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -1961,7 +1754,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0085",
+      "beat_id": "beat_0076",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -1984,7 +1777,7 @@
       "transition_in": "cut",
       "tension_level": 0.35,
       "zoom_target": "wide",
-      "beat_id": "beat_0086",
+      "beat_id": "beat_0077",
       "zoom_speed_pct_per_sec": 1.7
     },
     {
@@ -2007,7 +1800,7 @@
       "transition_in": "cut",
       "tension_level": 0.3,
       "zoom_target": "wide",
-      "beat_id": "beat_0087",
+      "beat_id": "beat_0078",
       "zoom_speed_pct_per_sec": 1.6
     },
     {
@@ -2030,7 +1823,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0088",
+      "beat_id": "beat_0079",
       "zoom_speed_pct_per_sec": 4.0
     },
     {
@@ -2053,7 +1846,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0089",
+      "beat_id": "beat_0080",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -2076,7 +1869,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0090",
+      "beat_id": "beat_0081",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -2099,7 +1892,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0091",
+      "beat_id": "beat_0082",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -2122,7 +1915,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0092",
+      "beat_id": "beat_0083",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -2145,7 +1938,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0093",
+      "beat_id": "beat_0084",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -2168,7 +1961,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0094",
+      "beat_id": "beat_0085",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -2191,7 +1984,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "face",
-      "beat_id": "beat_0095",
+      "beat_id": "beat_0086",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -2214,7 +2007,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0096",
+      "beat_id": "beat_0087",
       "zoom_speed_pct_per_sec": 22.5
     },
     {
@@ -2237,7 +2030,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0097",
+      "beat_id": "beat_0088",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -2260,7 +2053,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0098",
+      "beat_id": "beat_0089",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -2283,7 +2076,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0099",
+      "beat_id": "beat_0090",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -2306,7 +2099,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0100",
+      "beat_id": "beat_0091",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -2329,7 +2122,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0101",
+      "beat_id": "beat_0092",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -2352,7 +2145,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "document",
-      "beat_id": "beat_0102",
+      "beat_id": "beat_0093",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -2375,7 +2168,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "face",
-      "beat_id": "beat_0103",
+      "beat_id": "beat_0094",
       "zoom_speed_pct_per_sec": 3.775
     },
     {
@@ -2398,7 +2191,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0104",
+      "beat_id": "beat_0095",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -2421,7 +2214,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0105",
+      "beat_id": "beat_0096",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -2444,7 +2237,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0106",
+      "beat_id": "beat_0097",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -2467,7 +2260,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0107",
+      "beat_id": "beat_0098",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -2490,7 +2283,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0108",
+      "beat_id": "beat_0099",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -2513,7 +2306,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "wide",
-      "beat_id": "beat_0109",
+      "beat_id": "beat_0100",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -2536,7 +2329,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "wide",
-      "beat_id": "beat_0110",
+      "beat_id": "beat_0101",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -2559,7 +2352,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0111",
+      "beat_id": "beat_0102",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -2582,7 +2375,7 @@
       "transition_in": "cut",
       "tension_level": 0.45,
       "zoom_target": "wide",
-      "beat_id": "beat_0112",
+      "beat_id": "beat_0103",
       "zoom_speed_pct_per_sec": 1.9
     },
     {
@@ -2605,7 +2398,7 @@
       "transition_in": "cut",
       "tension_level": 0.55,
       "zoom_target": "wide",
-      "beat_id": "beat_0113",
+      "beat_id": "beat_0104",
       "zoom_speed_pct_per_sec": 4.1
     },
     {
@@ -2628,7 +2421,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0114",
+      "beat_id": "beat_0105",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -2651,7 +2444,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0115",
+      "beat_id": "beat_0106",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -2674,7 +2467,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "document",
-      "beat_id": "beat_0116",
+      "beat_id": "beat_0107",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -2697,7 +2490,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "face",
-      "beat_id": "beat_0117",
+      "beat_id": "beat_0108",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -2720,7 +2513,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0118",
+      "beat_id": "beat_0109",
       "zoom_speed_pct_per_sec": 3.6
     },
     {
@@ -2743,7 +2536,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0119",
+      "beat_id": "beat_0110",
       "zoom_speed_pct_per_sec": 3.775
     },
     {
@@ -2766,7 +2559,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0120",
+      "beat_id": "beat_0111",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -2789,7 +2582,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0121",
+      "beat_id": "beat_0112",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -2812,7 +2605,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0122",
+      "beat_id": "beat_0113",
       "zoom_speed_pct_per_sec": 4.6
     },
     {
@@ -2835,7 +2628,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0123",
+      "beat_id": "beat_0114",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -2858,7 +2651,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0124",
+      "beat_id": "beat_0115",
       "zoom_speed_pct_per_sec": 3.775
     },
     {
@@ -2881,7 +2674,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "document",
-      "beat_id": "beat_0125",
+      "beat_id": "beat_0116",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -2904,7 +2697,7 @@
       "transition_in": "cut",
       "tension_level": 0.35,
       "zoom_target": "wide",
-      "beat_id": "beat_0126",
+      "beat_id": "beat_0117",
       "zoom_speed_pct_per_sec": 1.7
     },
     {
@@ -2927,7 +2720,7 @@
       "transition_in": "cut",
       "tension_level": 0.4,
       "zoom_target": "wide",
-      "beat_id": "beat_0127",
+      "beat_id": "beat_0118",
       "zoom_speed_pct_per_sec": 1.8
     },
     {
@@ -2950,7 +2743,7 @@
       "transition_in": "dissolve",
       "tension_level": 0.55,
       "zoom_target": "wide",
-      "beat_id": "beat_0128",
+      "beat_id": "beat_0119",
       "zoom_speed_pct_per_sec": 4.1
     },
     {
@@ -2973,8 +2766,24 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "face",
-      "beat_id": "beat_0129",
+      "beat_id": "beat_0120",
       "zoom_speed_pct_per_sec": 4.4
+    },
+    {
+      "text": "[CHAPTER: THE MACHINES]",
+      "start_sec": 743.8,
+      "end_sec": 746.8,
+      "duration": 3.0,
+      "chapter": "THE MACHINES",
+      "is_chapter_marker": true,
+      "narrative_function": "transition",
+      "visual_file": "chapter_the_machines.mov",
+      "visual_type": "chapter_card",
+      "why": "Chapter card marks new section",
+      "clip_audio": "mute",
+      "tension_level": 0.5,
+      "beat_id": "beat_0121",
+      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "Here's a thought experiment.",
@@ -2996,24 +2805,8 @@
       "transition_in": "fade_from_black",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0130",
+      "beat_id": "beat_0122",
       "zoom_speed_pct_per_sec": 4.0
-    },
-    {
-      "text": "[CHAPTER: THE MACHINES]",
-      "start_sec": 743.8,
-      "end_sec": 746.8,
-      "duration": 3.0,
-      "chapter": "THE MACHINES",
-      "is_chapter_marker": true,
-      "narrative_function": "transition",
-      "visual_file": "chapter_the_machines.mov",
-      "visual_type": "chapter_card",
-      "why": "Chapter card marks new section",
-      "clip_audio": "mute",
-      "tension_level": 0.5,
-      "beat_id": "beat_0131",
-      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "What if you could take anything you wanted from anyone \u2014 their writing, their art, their music, their photographs, their private conversations \u2014 and the only consequence was paying a fraction of what it was worth, years after you'd already used it to build a product worth billions?",
@@ -3035,7 +2828,7 @@
       "transition_in": "fade_from_black",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0132",
+      "beat_id": "beat_0123",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -3058,7 +2851,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0133",
+      "beat_id": "beat_0124",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -3081,7 +2874,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0134",
+      "beat_id": "beat_0125",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -3104,7 +2897,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0135",
+      "beat_id": "beat_0126",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -3127,7 +2920,7 @@
       "transition_in": "cut",
       "tension_level": 0.55,
       "zoom_target": "document",
-      "beat_id": "beat_0136",
+      "beat_id": "beat_0127",
       "zoom_speed_pct_per_sec": 4.1
     },
     {
@@ -3150,7 +2943,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0137",
+      "beat_id": "beat_0128",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -3173,7 +2966,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0138",
+      "beat_id": "beat_0129",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -3196,7 +2989,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0139",
+      "beat_id": "beat_0130",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -3219,7 +3012,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0140",
+      "beat_id": "beat_0131",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -3242,7 +3035,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0141",
+      "beat_id": "beat_0132",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -3265,7 +3058,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0142",
+      "beat_id": "beat_0133",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -3288,7 +3081,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "wide",
-      "beat_id": "beat_0143",
+      "beat_id": "beat_0134",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -3311,7 +3104,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0144",
+      "beat_id": "beat_0135",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -3334,7 +3127,7 @@
       "transition_in": "cut",
       "tension_level": 0.88,
       "zoom_target": "wide",
-      "beat_id": "beat_0145",
+      "beat_id": "beat_0136",
       "zoom_speed_pct_per_sec": 23.8
     },
     {
@@ -3357,7 +3150,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0146",
+      "beat_id": "beat_0137",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -3380,7 +3173,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "wide",
-      "beat_id": "beat_0147",
+      "beat_id": "beat_0138",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -3403,7 +3196,7 @@
       "transition_in": "cut",
       "tension_level": 0.78,
       "zoom_target": "wide",
-      "beat_id": "beat_0148",
+      "beat_id": "beat_0139",
       "zoom_speed_pct_per_sec": 4.23
     },
     {
@@ -3426,7 +3219,7 @@
       "transition_in": "cut",
       "tension_level": 0.92,
       "zoom_target": "face",
-      "beat_id": "beat_0149",
+      "beat_id": "beat_0140",
       "zoom_speed_pct_per_sec": 4.84
     },
     {
@@ -3449,7 +3242,7 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "face",
-      "beat_id": "beat_0150",
+      "beat_id": "beat_0141",
       "zoom_speed_pct_per_sec": 25.0
     },
     {
@@ -3472,7 +3265,7 @@
       "transition_in": "dissolve",
       "tension_level": 0.6,
       "zoom_target": "face",
-      "beat_id": "beat_0151",
+      "beat_id": "beat_0142",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -3495,7 +3288,7 @@
       "transition_in": "cut",
       "tension_level": 0.55,
       "zoom_target": "wide",
-      "beat_id": "beat_0152",
+      "beat_id": "beat_0143",
       "zoom_speed_pct_per_sec": 4.1
     },
     {
@@ -3518,7 +3311,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "document",
-      "beat_id": "beat_0153",
+      "beat_id": "beat_0144",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -3541,7 +3334,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0154",
+      "beat_id": "beat_0145",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -3564,7 +3357,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "document",
-      "beat_id": "beat_0155",
+      "beat_id": "beat_0146",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -3587,7 +3380,7 @@
       "transition_in": "cut",
       "tension_level": 0.92,
       "zoom_target": "wide",
-      "beat_id": "beat_0156",
+      "beat_id": "beat_0147",
       "zoom_speed_pct_per_sec": 24.200000000000003
     },
     {
@@ -3610,7 +3403,7 @@
       "transition_in": "cut",
       "tension_level": 0.78,
       "zoom_target": "wide",
-      "beat_id": "beat_0157",
+      "beat_id": "beat_0148",
       "zoom_speed_pct_per_sec": 2.56
     },
     {
@@ -3633,7 +3426,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0158",
+      "beat_id": "beat_0149",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -3656,7 +3449,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0159",
+      "beat_id": "beat_0150",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -3679,7 +3472,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0160",
+      "beat_id": "beat_0151",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -3702,7 +3495,7 @@
       "transition_in": "cut",
       "tension_level": 0.87,
       "zoom_target": "face",
-      "beat_id": "beat_0161",
+      "beat_id": "beat_0152",
       "zoom_speed_pct_per_sec": 4.545
     },
     {
@@ -3725,7 +3518,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0162",
+      "beat_id": "beat_0153",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -3748,7 +3541,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0163",
+      "beat_id": "beat_0154",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -3771,7 +3564,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0164",
+      "beat_id": "beat_0155",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -3794,7 +3587,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "face",
-      "beat_id": "beat_0165",
+      "beat_id": "beat_0156",
       "zoom_speed_pct_per_sec": 4.6
     },
     {
@@ -3817,7 +3610,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0166",
+      "beat_id": "beat_0157",
       "zoom_speed_pct_per_sec": 2.5
     },
     {
@@ -3840,7 +3633,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0167",
+      "beat_id": "beat_0158",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -3863,7 +3656,7 @@
       "transition_in": "cut",
       "tension_level": 0.55,
       "zoom_target": "wide",
-      "beat_id": "beat_0168",
+      "beat_id": "beat_0159",
       "zoom_speed_pct_per_sec": 2.1
     },
     {
@@ -3886,7 +3679,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0169",
+      "beat_id": "beat_0160",
       "zoom_speed_pct_per_sec": 3.775
     },
     {
@@ -3909,7 +3702,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0170",
+      "beat_id": "beat_0161",
       "zoom_speed_pct_per_sec": 4.8
     },
     {
@@ -3932,7 +3725,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "face",
-      "beat_id": "beat_0171",
+      "beat_id": "beat_0162",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -3955,7 +3748,7 @@
       "transition_in": "cut",
       "tension_level": 0.3,
       "zoom_target": "wide",
-      "beat_id": "beat_0172",
+      "beat_id": "beat_0163",
       "zoom_speed_pct_per_sec": 3.6
     },
     {
@@ -3978,7 +3771,7 @@
       "transition_in": "cut",
       "tension_level": 0.2,
       "zoom_target": "face",
-      "beat_id": "beat_0173",
+      "beat_id": "beat_0164",
       "zoom_speed_pct_per_sec": 1.4
     },
     {
@@ -4001,7 +3794,7 @@
       "transition_in": "cut",
       "tension_level": 0.25,
       "zoom_target": "document",
-      "beat_id": "beat_0174",
+      "beat_id": "beat_0165",
       "zoom_speed_pct_per_sec": 1.5
     },
     {
@@ -4024,7 +3817,7 @@
       "transition_in": "cut",
       "tension_level": 0.25,
       "zoom_target": "document",
-      "beat_id": "beat_0175",
+      "beat_id": "beat_0166",
       "zoom_speed_pct_per_sec": 1.5
     },
     {
@@ -4047,7 +3840,7 @@
       "transition_in": "cut",
       "tension_level": 0.3,
       "zoom_target": "wide",
-      "beat_id": "beat_0176",
+      "beat_id": "beat_0167",
       "zoom_speed_pct_per_sec": 2.55
     },
     {
@@ -4070,7 +3863,7 @@
       "transition_in": "cut",
       "tension_level": 0.3,
       "zoom_target": "wide",
-      "beat_id": "beat_0177",
+      "beat_id": "beat_0168",
       "zoom_speed_pct_per_sec": 1.6
     },
     {
@@ -4093,7 +3886,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0178",
+      "beat_id": "beat_0169",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -4116,7 +3909,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "face",
-      "beat_id": "beat_0179",
+      "beat_id": "beat_0170",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -4139,7 +3932,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0180",
+      "beat_id": "beat_0171",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -4162,7 +3955,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "wide",
-      "beat_id": "beat_0181",
+      "beat_id": "beat_0172",
       "zoom_speed_pct_per_sec": 4.7
     },
     {
@@ -4185,7 +3978,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0182",
+      "beat_id": "beat_0173",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -4208,7 +4001,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0183",
+      "beat_id": "beat_0174",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -4231,7 +4024,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "document",
-      "beat_id": "beat_0184",
+      "beat_id": "beat_0175",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -4254,7 +4047,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0185",
+      "beat_id": "beat_0176",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -4277,7 +4070,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0186",
+      "beat_id": "beat_0177",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -4300,7 +4093,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0187",
+      "beat_id": "beat_0178",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -4323,7 +4116,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0188",
+      "beat_id": "beat_0179",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -4346,7 +4139,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0189",
+      "beat_id": "beat_0180",
       "zoom_speed_pct_per_sec": 4.6
     },
     {
@@ -4369,7 +4162,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "document",
-      "beat_id": "beat_0190",
+      "beat_id": "beat_0181",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -4392,7 +4185,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0191",
+      "beat_id": "beat_0182",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -4415,7 +4208,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0192",
+      "beat_id": "beat_0183",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -4438,7 +4231,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0193",
+      "beat_id": "beat_0184",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -4461,7 +4254,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0194",
+      "beat_id": "beat_0185",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -4484,7 +4277,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0195",
+      "beat_id": "beat_0186",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -4507,7 +4300,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0196",
+      "beat_id": "beat_0187",
       "zoom_speed_pct_per_sec": 4.6
     },
     {
@@ -4530,7 +4323,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0197",
+      "beat_id": "beat_0188",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -4553,7 +4346,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0198",
+      "beat_id": "beat_0189",
       "zoom_speed_pct_per_sec": 2.3
     },
     {
@@ -4576,7 +4369,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "document",
-      "beat_id": "beat_0199",
+      "beat_id": "beat_0190",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -4599,7 +4392,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0200",
+      "beat_id": "beat_0191",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -4622,7 +4415,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0201",
+      "beat_id": "beat_0192",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -4645,7 +4438,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "document",
-      "beat_id": "beat_0202",
+      "beat_id": "beat_0193",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -4668,7 +4461,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0203",
+      "beat_id": "beat_0194",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -4691,7 +4484,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "document",
-      "beat_id": "beat_0204",
+      "beat_id": "beat_0195",
       "zoom_speed_pct_per_sec": 22.5
     },
     {
@@ -4714,7 +4507,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0205",
+      "beat_id": "beat_0196",
       "zoom_speed_pct_per_sec": 4.7
     },
     {
@@ -4737,7 +4530,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0206",
+      "beat_id": "beat_0197",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -4760,8 +4553,24 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0207",
+      "beat_id": "beat_0198",
       "zoom_speed_pct_per_sec": 2.4
+    },
+    {
+      "text": "[CHAPTER: THE RENT]",
+      "start_sec": 1167.94,
+      "end_sec": 1170.94,
+      "duration": 3.0,
+      "chapter": "THE RENT",
+      "is_chapter_marker": true,
+      "narrative_function": "transition",
+      "visual_file": "chapter_the_rent.mov",
+      "visual_type": "chapter_card",
+      "why": "Chapter card marks new section",
+      "clip_audio": "mute",
+      "tension_level": 0.5,
+      "beat_id": "beat_0199",
+      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "Ford paid three point five million. Wells Fargo paid three billion. Purdue paid seven point four billion.",
@@ -4783,24 +4592,8 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0208",
+      "beat_id": "beat_0200",
       "zoom_speed_pct_per_sec": 3.775
-    },
-    {
-      "text": "[CHAPTER: THE RENT]",
-      "start_sec": 1167.94,
-      "end_sec": 1170.94,
-      "duration": 3.0,
-      "chapter": "THE RENT",
-      "is_chapter_marker": true,
-      "narrative_function": "transition",
-      "visual_file": "chapter_the_rent.mov",
-      "visual_type": "chapter_card",
-      "why": "Chapter card marks new section",
-      "clip_audio": "mute",
-      "tension_level": 0.5,
-      "beat_id": "beat_0209",
-      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "Facebook paid five billion. [BEAT] Those numbers got bigger \u2014 but so did the profits. The ratio never changed.",
@@ -4822,7 +4615,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "document",
-      "beat_id": "beat_0210",
+      "beat_id": "beat_0201",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -4845,7 +4638,7 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "wide",
-      "beat_id": "beat_0211",
+      "beat_id": "beat_0202",
       "zoom_speed_pct_per_sec": 25.0
     },
     {
@@ -4868,7 +4661,7 @@
       "transition_in": "dissolve",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0212",
+      "beat_id": "beat_0203",
       "zoom_speed_pct_per_sec": 4.8
     },
     {
@@ -4891,7 +4684,7 @@
       "transition_in": "cut",
       "tension_level": 0.3,
       "zoom_target": "face",
-      "beat_id": "beat_0213",
+      "beat_id": "beat_0204",
       "zoom_speed_pct_per_sec": 1.6
     },
     {
@@ -4914,7 +4707,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "face",
-      "beat_id": "beat_0214",
+      "beat_id": "beat_0205",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -4937,7 +4730,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0215",
+      "beat_id": "beat_0206",
       "zoom_speed_pct_per_sec": 4.2
     },
     {
@@ -4960,7 +4753,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "face",
-      "beat_id": "beat_0216",
+      "beat_id": "beat_0207",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -4983,7 +4776,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "wide",
-      "beat_id": "beat_0217",
+      "beat_id": "beat_0208",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -5006,7 +4799,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "face",
-      "beat_id": "beat_0218",
+      "beat_id": "beat_0209",
       "zoom_speed_pct_per_sec": 2.2
     },
     {
@@ -5029,7 +4822,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "wide",
-      "beat_id": "beat_0219",
+      "beat_id": "beat_0210",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -5052,7 +4845,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "face",
-      "beat_id": "beat_0220",
+      "beat_id": "beat_0211",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -5075,7 +4868,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "document",
-      "beat_id": "beat_0221",
+      "beat_id": "beat_0212",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -5098,7 +4891,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "wide",
-      "beat_id": "beat_0222",
+      "beat_id": "beat_0213",
       "zoom_speed_pct_per_sec": 23.5
     },
     {
@@ -5121,7 +4914,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "face",
-      "beat_id": "beat_0223",
+      "beat_id": "beat_0214",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -5144,7 +4937,7 @@
       "transition_in": "cut",
       "tension_level": 0.6,
       "zoom_target": "wide",
-      "beat_id": "beat_0224",
+      "beat_id": "beat_0215",
       "zoom_speed_pct_per_sec": 3.6
     },
     {
@@ -5167,7 +4960,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0225",
+      "beat_id": "beat_0216",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -5190,7 +4983,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "face",
-      "beat_id": "beat_0226",
+      "beat_id": "beat_0217",
       "zoom_speed_pct_per_sec": 3.9499999999999997
     },
     {
@@ -5213,7 +5006,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0227",
+      "beat_id": "beat_0218",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -5236,7 +5029,7 @@
       "transition_in": "cut",
       "tension_level": 0.92,
       "zoom_target": "document",
-      "beat_id": "beat_0228",
+      "beat_id": "beat_0219",
       "zoom_speed_pct_per_sec": 24.200000000000003
     },
     {
@@ -5259,7 +5052,7 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "document",
-      "beat_id": "beat_0229",
+      "beat_id": "beat_0220",
       "zoom_speed_pct_per_sec": 24.5
     },
     {
@@ -5282,7 +5075,7 @@
       "transition_in": "cut",
       "tension_level": 0.82,
       "zoom_target": "wide",
-      "beat_id": "beat_0230",
+      "beat_id": "beat_0221",
       "zoom_speed_pct_per_sec": 23.2
     },
     {
@@ -5305,7 +5098,7 @@
       "transition_in": "cut",
       "tension_level": 0.72,
       "zoom_target": "document",
-      "beat_id": "beat_0231",
+      "beat_id": "beat_0222",
       "zoom_speed_pct_per_sec": 4.02
     },
     {
@@ -5328,7 +5121,7 @@
       "transition_in": "cut",
       "tension_level": 0.88,
       "zoom_target": "wide",
-      "beat_id": "beat_0232",
+      "beat_id": "beat_0223",
       "zoom_speed_pct_per_sec": 4.76
     },
     {
@@ -5351,7 +5144,7 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0233",
+      "beat_id": "beat_0224",
       "zoom_speed_pct_per_sec": 4.4
     },
     {
@@ -5374,7 +5167,7 @@
       "transition_in": "cut",
       "tension_level": 0.5,
       "zoom_target": "wide",
-      "beat_id": "beat_0234",
+      "beat_id": "beat_0225",
       "zoom_speed_pct_per_sec": 2.0
     },
     {
@@ -5397,7 +5190,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0235",
+      "beat_id": "beat_0226",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -5420,7 +5213,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0236",
+      "beat_id": "beat_0227",
       "zoom_speed_pct_per_sec": 4.125
     },
     {
@@ -5443,7 +5236,7 @@
       "transition_in": "cut",
       "tension_level": 0.65,
       "zoom_target": "face",
-      "beat_id": "beat_0237",
+      "beat_id": "beat_0228",
       "zoom_speed_pct_per_sec": 4.3
     },
     {
@@ -5466,7 +5259,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0238",
+      "beat_id": "beat_0229",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -5489,7 +5282,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0239",
+      "beat_id": "beat_0230",
       "zoom_speed_pct_per_sec": 2.7
     },
     {
@@ -5512,7 +5305,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "face",
-      "beat_id": "beat_0240",
+      "beat_id": "beat_0231",
       "zoom_speed_pct_per_sec": 2.6
     },
     {
@@ -5535,7 +5328,7 @@
       "transition_in": "cut",
       "tension_level": 0.75,
       "zoom_target": "wide",
-      "beat_id": "beat_0241",
+      "beat_id": "beat_0232",
       "zoom_speed_pct_per_sec": 4.5
     },
     {
@@ -5558,8 +5351,24 @@
       "transition_in": "cut",
       "tension_level": 1.0,
       "zoom_target": "wide",
-      "beat_id": "beat_0242",
+      "beat_id": "beat_0233",
       "zoom_speed_pct_per_sec": 25.0
+    },
+    {
+      "text": "[CHAPTER: THE RECKONING]",
+      "start_sec": 1387.32,
+      "end_sec": 1390.32,
+      "duration": 3.0,
+      "chapter": "THE RECKONING",
+      "is_chapter_marker": true,
+      "narrative_function": "transition",
+      "visual_file": "chapter_the_reckoning.mov",
+      "visual_type": "chapter_card",
+      "why": "Chapter card marks new section",
+      "clip_audio": "mute",
+      "tension_level": 0.5,
+      "beat_id": "beat_0234",
+      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "Europe figured this out. [BEAT] Four percent of global revenue. Proportional. Automatic. No ceiling.",
@@ -5581,24 +5390,8 @@
       "transition_in": "cut",
       "tension_level": 0.7,
       "zoom_target": "wide",
-      "beat_id": "beat_0243",
+      "beat_id": "beat_0235",
       "zoom_speed_pct_per_sec": 3.9499999999999997
-    },
-    {
-      "text": "[CHAPTER: THE RECKONING]",
-      "start_sec": 1387.32,
-      "end_sec": 1390.32,
-      "duration": 3.0,
-      "chapter": "THE RECKONING",
-      "is_chapter_marker": true,
-      "narrative_function": "transition",
-      "visual_file": "chapter_the_reckoning.mov",
-      "visual_type": "chapter_card",
-      "why": "Chapter card marks new section",
-      "clip_audio": "mute",
-      "tension_level": 0.5,
-      "beat_id": "beat_0244",
-      "zoom_speed_pct_per_sec": 2.0
     },
     {
       "text": "[PAUSE:1.0] When the fine scales with the company, the formula breaks.",
@@ -5620,7 +5413,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0245",
+      "beat_id": "beat_0236",
       "zoom_speed_pct_per_sec": 23.0
     },
     {
@@ -5643,7 +5436,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "document",
-      "beat_id": "beat_0246",
+      "beat_id": "beat_0237",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -5666,7 +5459,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "face",
-      "beat_id": "beat_0247",
+      "beat_id": "beat_0238",
       "zoom_speed_pct_per_sec": 4.7
     },
     {
@@ -5689,7 +5482,7 @@
       "transition_in": "cut",
       "tension_level": 0.8,
       "zoom_target": "wide",
-      "beat_id": "beat_0248",
+      "beat_id": "beat_0239",
       "zoom_speed_pct_per_sec": 4.300000000000001
     },
     {
@@ -5712,7 +5505,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "document",
-      "beat_id": "beat_0249",
+      "beat_id": "beat_0240",
       "zoom_speed_pct_per_sec": 4.8
     },
     {
@@ -5735,7 +5528,7 @@
       "transition_in": "cut",
       "tension_level": 0.9,
       "zoom_target": "wide",
-      "beat_id": "beat_0250",
+      "beat_id": "beat_0241",
       "zoom_speed_pct_per_sec": 24.0
     },
     {
@@ -5758,7 +5551,7 @@
       "transition_in": "cut",
       "tension_level": 0.85,
       "zoom_target": "wide",
-      "beat_id": "beat_0251",
+      "beat_id": "beat_0242",
       "zoom_speed_pct_per_sec": 4.475
     },
     {
@@ -5781,8 +5574,215 @@
       "transition_in": "cut",
       "tension_level": 0.95,
       "zoom_target": "face",
-      "beat_id": "beat_0252",
+      "beat_id": "beat_0243",
       "zoom_speed_pct_per_sec": 24.5
+    },
+    {
+      "text": "Let me show you what the math looks like when you put a face on it. Richard Grimshaw survived the Pinto fire. He grew up carrying scars that covered his body and a verdict that was supposed to change things \u2014 one hundred and twenty-five million dollars, reduced to three point five million. [PAUSE:1.0] The message was: we've done the math, and your pain has a price. [BEAT] Ford paid it and moved on. Yesenia Guitron called the ethics hotline and was fired for it. She never worked in banking again. [BEAT] Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars.",
+      "start_sec": 1404.7,
+      "end_sec": 1409.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "tense",
+      "narrative_function": "hook",
+      "visual_file": "Wells_Fargo_fake_accounts_scandal_still_1s.jpg",
+      "visual_type": "a_roll",
+      "why": "Beat 9 names three specific people: Grimshaw (Pinto victim), Guitron (Wells Fargo whistleblower fired for reporting fraud), and Tolstedt (Wells Fargo exec who kept $57M). Guitron IS the Wells Fargo scandal \u2014 this still from the Wells Fargo expos\u00e9 anchors her story specifically. Ford Pinto stills are exhausted; this beat's emotional weight is carried by Guitron and Tolstedt, both Wells Fargo characters, making this the correct primary visual.",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": "CARRIE TOLSTEDT KEPT $57,000,000",
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "fade_from_black",
+      "tension_level": 0.95,
+      "zoom_target": "face",
+      "beat_id": "beat_0244",
+      "zoom_speed_pct_per_sec": 4.9
+    },
+    {
+      "text": "The Sackler name is still on a wing of the Guggenheim Museum in New York City. The Metropolitan Museum took theirs down after public outcry. [BEAT] The Guggenheim hasn't. You can walk into one of the most prestigious cultural institutions in the world, look up at the wall, and read the name of a family that earned their fortune from a drug that killed eight hundred thousand people. [BEAT] They kept thirteen billion. And they kept the wall.",
+      "start_sec": 1409.7,
+      "end_sec": 1414.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "neutral",
+      "narrative_function": "revelation",
+      "visual_file": "Purdue_Pharma_opioid_Sackler_family_still_23s.jpg",
+      "visual_type": "b_roll",
+      "why": "Narration names the Sackler family and their $13B fortune from opioids \u2014 this Purdue still grounds the abstract institutional shame (a museum wall bearing their name) in the corporate entity responsible for 800K deaths",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": "$13 BILLION KEPT",
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "cut",
+      "tension_level": 0.9,
+      "zoom_target": "face",
+      "beat_id": "beat_0245",
+      "zoom_speed_pct_per_sec": 24.0
+    },
+    {
+      "text": "That's the formula. [BEAT] It even gets you a plaque.",
+      "start_sec": 1414.7,
+      "end_sec": 1419.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "neutral",
+      "narrative_function": "revelation",
+      "visual_file": "corporate_boardroom_meeting_stock_still_2s.jpg",
+      "visual_type": "stock",
+      "why": "'That's the formula. It even gets you a plaque.' \u2014 the boardroom is where these cost-benefit calculations are made; the punchline about institutional reward lands harder against an image of calculated corporate power than against any individual entity",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": null,
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "cut",
+      "tension_level": 0.95,
+      "zoom_target": "wide",
+      "beat_id": "beat_0246",
+      "zoom_speed_pct_per_sec": 24.5
+    },
+    {
+      "text": "Elliana Esquivel is still making art in Charlotte. She pivoted to 3D \u2014 not because she chose to, but because the alternative was watching her style get reproduced for free. [BEAT] If the settlement arrives, her share might cover a month of rent. The model keeps running. Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted. [BEAT] The models built on it were refined. Chris Vialpondo is still in Seattle. Still working two jobs. [BEAT] The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula.",
+      "start_sec": 1419.7,
+      "end_sec": 1424.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "measured",
+      "narrative_function": "character_intro",
+      "visual_file": "digital_artist_workspace_still_1s.jpg",
+      "visual_type": "a_roll",
+      "why": "Narration returns to Elliana Esquivel \u2014 a digital artist forced to pivot to 3D because her style was scraped without consent. The digital workspace grounds her ongoing reality; she's still working, still affected, settlement not yet arrived",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": "74% OF FACEBOOK USERS DON'T KNOW THEY'RE BEING PROFILED",
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "cut",
+      "tension_level": 0.75,
+      "zoom_target": "face",
+      "beat_id": "beat_0247",
+      "zoom_speed_pct_per_sec": 2.5
+    },
+    {
+      "text": "The Grush-Saunby memo put a dollar value on a human life in 1977. [BEAT] Two hundred thousand dollars. Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars. The AI settlements value each stolen book at three thousand dollars. [BEAT] Elliana's illustrations? Not priced yet. Your Reddit posts? Your YouTube comments? Your blog from 2016?",
+      "start_sec": 1424.7,
+      "end_sec": 1429.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "measured",
+      "narrative_function": "evidence",
+      "visual_file": "Purdue_Pharma_opioid_Sackler_family_still_45s.jpg",
+      "visual_type": "b_roll",
+      "why": "The escalating price-per-life sequence \u2014 $200K to $9K to $57 to $3K \u2014 peaks morally at Purdue's $9K-per-opioid-death. Holding on Purdue imagery while the text overlay shows the full descent makes the devaluation of human life viscerally readable",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": "$200K \u2192 $9K \u2192 $57 \u2192 $3K",
+      "sfx": "impact",
+      "sfx_motivation": "The price-per-life sequence is the video's central data revelation \u2014 a single hard impact hit as the final number lands registers the devaluation as a physical blow",
+      "transition_in": "cut",
+      "tension_level": 1.0,
+      "zoom_target": "document",
+      "beat_id": "beat_0248",
+      "zoom_speed_pct_per_sec": 5.0
+    },
+    {
+      "text": "They'll get priced. [BEAT] And if fifty years of history tells you anything \u2014 [PAUSE:1.5] you won't like the number.",
+      "start_sec": 1429.7,
+      "end_sec": 1434.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "measured",
+      "narrative_function": "tension_build",
+      "visual_file": "Wall_Street_trading_floor_still_16s.jpg",
+      "visual_type": "a_roll",
+      "why": "'You won't like the number' \u2014 Wall Street is the system that prices everything, including people. The trading floor visually embodies the financial logic that assigns dollar values to harm and makes those numbers feel inevitable, not accidental",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": null,
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "cut",
+      "tension_level": 0.85,
+      "zoom_target": "wide",
+      "beat_id": "beat_0249",
+      "zoom_speed_pct_per_sec": 4.7
+    },
+    {
+      "text": "The law doesn't prevent corporate crime. [BEAT] It prices it.",
+      "start_sec": 1434.7,
+      "end_sec": 1439.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "tense",
+      "narrative_function": "revelation",
+      "visual_file": "Department_of_Justice_building_still_8s.jpg",
+      "visual_type": "b_roll",
+      "why": "THE thesis line: 'The law doesn't prevent corporate crime. It prices it.' The DOJ building is the physical embodiment of law \u2014 placing it here creates the video's defining irony: the institution built to enforce justice is the backdrop when we expose justice's failure",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": "THE LAW DOESN'T PREVENT CORPORATE CRIME. IT PRICES IT.",
+      "sfx": "rumble",
+      "sfx_motivation": "The thesis statement is the entire argument of the video distilled to one sentence \u2014 a low sustained rumble gives it the gravitational weight it carries",
+      "transition_in": "dissolve",
+      "tension_level": 1.0,
+      "zoom_target": "wide",
+      "beat_id": "beat_0250",
+      "zoom_speed_pct_per_sec": 25.0
+    },
+    {
+      "text": "The question was never whether they'd break the law.",
+      "start_sec": 1439.7,
+      "end_sec": 1444.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "tense",
+      "narrative_function": "tension_build",
+      "visual_file": "US_Capitol_building_Congress_still_1s.jpg",
+      "visual_type": "b_roll",
+      "why": "'The question was never whether they'd break the law' \u2014 Congress is the body that chose to write laws corporations could price rather than laws that stopped them. The Capitol makes institutional complicity visible without stating it explicitly",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": null,
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "cut",
+      "tension_level": 0.9,
+      "zoom_target": "wide",
+      "beat_id": "beat_0251",
+      "zoom_speed_pct_per_sec": 4.8
+    },
+    {
+      "text": "The question is what you're worth. Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC, DOJ, ProPublica, Copyright Alliance, CDC, European Data Protection Board, Washington State AG, WCNC Charlotte, Good Jobs First Violation Tracker, AlixPartners (2019).",
+      "start_sec": 1444.7,
+      "end_sec": 1449.7,
+      "duration": 5.0,
+      "chapter": "THE RECKONING",
+      "voice": "tense",
+      "narrative_function": "exposition",
+      "visual_file": "courtroom_justice_gavel_still_17s.jpg",
+      "visual_type": "stock",
+      "why": "Sources card closes on a courtroom gavel \u2014 the symbol of justice that opened the video's legal framing. Closing on it is a quiet callback: the gavel is still there, law still exists, but the preceding 30 minutes have reframed what it actually does",
+      "clip_audio": "mute",
+      "clip_audio_quote": null,
+      "clip_audio_duration": null,
+      "text_overlay": null,
+      "sfx": null,
+      "sfx_motivation": null,
+      "transition_in": "cut",
+      "tension_level": 0.2,
+      "zoom_target": "wide",
+      "beat_id": "beat_0252",
+      "zoom_speed_pct_per_sec": 1.4
     }
   ],
   "stats": {
