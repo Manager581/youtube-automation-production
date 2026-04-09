@@ -36,6 +36,8 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 # Default to the latest production FCPXML
 DEFAULT_FCPXML = PROJECT_ROOT / "timeline_v6_final.fcpxml"
+# Check narration: use original narration.wav (no gaps).
+# narration_gapped.wav caused persistent timecode drift and is no longer used.
 NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
 
 
@@ -416,7 +418,27 @@ def run_checks(fcpxml_path, expected_narr_dur=None, min_v1_clips=200, skip_ffpro
     else:
         failures.append("Could not determine timeline duration")
 
-    # --- 11. Lane assignment summary ---
+    # --- 11. Narration-visual sync check ---
+    # The narration WAV and the last V1 clip should end within 60s of each other.
+    # If they don't, timecodes are from a different narration file (the gap bug).
+    if spine_clips and expected_narr_dur:
+        last_clip_end = max(
+            parse_rational_time(c.get("offset", "0/1s")) +
+            parse_rational_time(c.get("duration", "0/1s")) - tc_start
+            for c in spine_clips
+        )
+        sync_diff = abs(last_clip_end - expected_narr_dur)
+        if sync_diff < 60:
+            passes.append(
+                f"Narration-visual sync OK: last clip at {last_clip_end:.1f}s, "
+                f"narration {expected_narr_dur:.1f}s (diff {sync_diff:.1f}s)")
+        else:
+            failures.append(
+                f"Narration-visual DESYNC: last clip at {last_clip_end:.1f}s, "
+                f"narration {expected_narr_dur:.1f}s (diff {sync_diff:.1f}s > 60s). "
+                f"Check that NARRATION_PATH matches the alignment used for timecodes.")
+
+    # --- 12. Lane assignment summary ---
     lane_summary = {}
     for lane, clips in sorted(lane_clips_by_lane.items()):
         lane_summary[lane] = len(clips)

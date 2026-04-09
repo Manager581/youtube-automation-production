@@ -70,7 +70,8 @@ STAGES = [
     ("fill_gaps",       "Fill footage gaps automatically",      "pipeline_v2/gap_resolver.py"),
 
     # PHASE 5b: AUDIO PLANNING
-    ("clip_audio_plan", "Plan clip audio gaps",                 "pipeline_v2/clip_audio_planner.py"),
+    # clip_audio_plan REMOVED — narration gaps caused persistent timecode drift.
+    # Clip audio is handled by FCPXML volume keyframes (play/play_then_mute at -96dB).
     ("ambient_plan",    "Plan ambient bed layer",               "pipeline_v2/ambient_bed.py"),
     ("intro_build",     "Build intro from locked spec",         "pipeline_v2/intro_builder.py"),
 
@@ -303,8 +304,7 @@ def build_stage_args(stage_name, state):
                          "--auto-approve", "0.85"],
         "fill_gaps": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
                        "--output-dir", config.get("gap_fill_dir", "footage/gap_fills/")],
-        "clip_audio_plan": ["--director", config.get("director_path", "storyboards/directed_v3.json"),
-                            "--narration", config.get("narration_path", "audio/narration.wav")],
+        # clip_audio_plan REMOVED — see PHASE 5b comment
         "ambient_plan": ["--paper-edit", config.get("paper_edit_approved_path", f"storyboards/{slug}_paper_edit_approved.json"),
                          "--output", config.get("ambient_plan_path", f"storyboards/{slug}_ambient_plan.json")],
         "intro_build": ["--spec", config.get("intro_spec", "storyboards/intro_spec_locked.json")],
@@ -421,7 +421,7 @@ def list_stages():
         "script": "PHASE 3: SCRIPT",
         "voice": "PHASE 4: AUDIO",
         "selects": "PHASE 5: EDITORIAL (paper edit)",
-        "clip_audio_plan": "PHASE 5b: AUDIO PLANNING",
+        "ambient_plan": "PHASE 5b: AUDIO PLANNING",
         "pause_insert": "PHASE 6: ASSEMBLY",
         "director_review": "PHASE 7: VERIFICATION",
         "render": "PHASE 8: PUBLISH",
