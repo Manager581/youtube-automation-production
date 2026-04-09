@@ -246,8 +246,9 @@ def tag_selects(transcripts_path, vision_path, output_path):
     images_tagged = {}
     # Collect all image files from footage dirs
     image_dirs = [
-        PROJECT_ROOT / "footage" / "breaking_law" / "images",
-        PROJECT_ROOT / "footage" / "breaking_law" / "gap_fills",
+        PROJECT_ROOT / "footage" / "breaking_law" / "stills",             # ffmpeg key frames from clips
+        PROJECT_ROOT / "footage" / "breaking_law" / "images_v2" / "web",  # Wikipedia/Commons downloads
+        PROJECT_ROOT / "footage" / "breaking_law" / "images_v2" / "wikimedia",  # Wikimedia search
     ]
     for img_dir in image_dirs:
         if not img_dir.exists():

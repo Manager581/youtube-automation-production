@@ -258,6 +258,24 @@ def build_batch_prompt(beats, selects, batch_idx, total_batches, used_visuals):
         for m in moments[:2]:
             clip_summary += f"\n    QUOTE (value {m['editorial_value']}/10): \"{m['text'][:100]}\""
 
+    # Image inventory for the prompt
+    image_summary = ""
+    images = selects.get("images", {})
+    if images:
+        # Group images by entity/topic for compact display
+        image_lines = []
+        for filename, img in sorted(images.items()):
+            entities = [e["name"] for e in img.get("entities", [])]
+            desc = img.get("description", "")[:60]
+            value = img.get("editorial_value", 3)
+            ent_str = f" [{', '.join(entities)}]" if entities else ""
+            image_lines.append(f"  {filename}{ent_str} (val={value}) {desc}")
+        # Cap at 200 lines to avoid prompt overflow
+        if len(image_lines) > 200:
+            image_lines = image_lines[:200]
+            image_lines.append(f"  ... and {len(images) - 200} more images")
+        image_summary = "\n".join(image_lines)
+
     # Beat texts for this batch
     beats_text = ""
     for i, beat in enumerate(beats):
@@ -277,6 +295,9 @@ ENTITY INDEX (match visuals by CONTENT, not filename):
 
 AVAILABLE CLIPS (with full transcripts):
 {clip_summary}
+
+AVAILABLE IMAGES (stills + web):
+{image_summary if image_summary else "(no images available)"}
 {overused_str}
 
 BEATS TO EDIT:
@@ -317,6 +338,9 @@ RULES:
 5. NEVER use the same visual file more than 2 times across the entire video.
 6. Text overlays for key stats and names only, not every beat.
 7. SFX only at genuine dramatic moments (max 2 per chapter).
+8. USE IMAGES HEAVILY — stills and web images should be ~60% of visual picks. Clips for key moments only.
+9. Prefer specific images (named entities, buildings, documents) over generic ones.
+10. Video stills (filename ending _still_Ns.jpg) show specific frames from source clips — use them when you want a freeze-frame or the clip's visual without its audio.
 
 Return a JSON array of {len(beats)} objects. ONLY JSON, no other text."""
 
@@ -364,7 +388,7 @@ def generate_paper_edit(script_path, alignment_path, selects_path, output_json, 
 
     # Process content beats through Claude in batches
     content_beats = [b for b in all_beats if not b.get("is_chapter_marker")]
-    batch_size = 15
+    batch_size = 10  # smaller batches = fewer timeouts with Claude CLI
     used_visuals = {}
     edited_beats = []
 
@@ -377,19 +401,29 @@ def generate_paper_edit(script_path, alignment_path, selects_path, output_json, 
               f"{batch[0]['start_sec']:.0f}-{batch[-1]['end_sec']:.0f}s)...")
 
         prompt = build_batch_prompt(batch, selects, current_batch, total_batches, used_visuals)
-        response = query_claude(prompt, timeout=300)
 
-        # Parse response
-        try:
-            match = re.search(r'\[.*\]', response, re.DOTALL)
-            if match:
-                decisions = json.loads(match.group())
-            else:
-                print(f"    WARNING: Could not parse JSON from response")
-                decisions = []
-        except json.JSONDecodeError as e:
-            print(f"    WARNING: JSON parse error: {e}")
-            decisions = []
+        # Retry up to 3 times on timeout/parse failure
+        decisions = []
+        for attempt in range(3):
+            response = query_claude(prompt, timeout=600)
+            if not response:
+                print(f"    Attempt {attempt+1}/3: empty response, retrying...")
+                continue
+            try:
+                match = re.search(r'\[.*\]', response, re.DOTALL)
+                if match:
+                    decisions = json.loads(match.group())
+                    if len(decisions) >= len(batch) * 0.5:  # at least half the beats
+                        break
+                    else:
+                        print(f"    Attempt {attempt+1}/3: only {len(decisions)}/{len(batch)} decisions, retrying...")
+                else:
+                    print(f"    Attempt {attempt+1}/3: no JSON array in response, retrying...")
+            except json.JSONDecodeError as e:
+                print(f"    Attempt {attempt+1}/3: JSON parse error: {e}, retrying...")
+
+        if not decisions:
+            print(f"    FAILED after 3 attempts — beats will have no decisions")
 
         # Merge decisions into beats
         for i, beat in enumerate(batch):
