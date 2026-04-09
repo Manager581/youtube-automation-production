@@ -36,9 +36,9 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 # Default to the latest production FCPXML
 DEFAULT_FCPXML = PROJECT_ROOT / "timeline_v6_final.fcpxml"
-# Check narration: use original narration.wav (no gaps).
+# Check narration: use smoothed narration (same duration as narration.wav, crossfaded boundaries).
 # narration_gapped.wav caused persistent timecode drift and is no longer used.
-NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
+NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_smoothed.wav"
 
 
 def parse_rational_time(time_str):

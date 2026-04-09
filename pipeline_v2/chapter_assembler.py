@@ -88,7 +88,7 @@ CHAPTERS = [
         "name": "THE MACHINES",
         "timeline_name": "Ch3 - THE MACHINES",
         "music": "track_04_dark_ducked.wav",
-        "chapter_card": None,  # no card file for machines
+        "chapter_card": "chapter_the_machines.mov",
     },
     {
         "number": 4,

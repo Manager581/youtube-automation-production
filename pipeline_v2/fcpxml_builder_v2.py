@@ -50,7 +50,8 @@ TC_START = 3600  # 01:00:00:00
 WIDTH = 1920
 HEIGHT = 1080
 
-NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
+# Use smoothed narration (crossfaded chunk boundaries, same duration as narration.wav)
+NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_smoothed.wav"
 SFX_DIR = PROJECT_ROOT / "assets" / "sfx"
 OVERLAY_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "overlays"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
@@ -924,6 +925,16 @@ def load_paper_edit(path):
         paper_edit = json.load(f)
 
     beats = paper_edit.get("beats", [])
+
+    # Drop phantom beats past narration end
+    narr_dur = get_duration(str(NARRATION_PATH))
+    if narr_dur:
+        before = len(beats)
+        beats = [b for b in beats if b.get("start_sec", 0) < narr_dur or b.get("is_chapter_marker")]
+        dropped = before - len(beats)
+        if dropped:
+            print(f"  Dropped {dropped} phantom beats past narration end ({narr_dur:.1f}s)")
+
     segments = []
     current_chapter_num = 0
     chapter_names = {}
@@ -936,13 +947,20 @@ def load_paper_edit(path):
         ch_num = chapter_names[chapter]
 
         # Convert paper edit beat to builder segment format
+        visual = beat.get("visual_file", "")
+        clip_audio = beat.get("clip_audio", "mute")
+
+        # Force mute on still images — they have no audio track
+        if clip_audio != "mute" and is_image(visual):
+            clip_audio = "mute"
+
         seg = {
             "text": beat.get("text", ""),
             "_narr_start": beat.get("start_sec", 0),
             "_narr_end": beat.get("end_sec", 0),
-            "visual_file": beat.get("visual_file", ""),
+            "visual_file": visual,
             "visual_type": beat.get("visual_type", "still_image"),
-            "clip_audio": beat.get("clip_audio", "mute"),
+            "clip_audio": clip_audio,
             "clip_audio_duration": beat.get("clip_audio_duration"),
             "clip_start_sec": beat.get("clip_in_point", 0),
             "transition_in": beat.get("transition_in", "cut"),
