@@ -50,8 +50,8 @@ TC_START = 3600  # 01:00:00:00
 WIDTH = 1920
 HEIGHT = 1080
 
-# Use smoothed narration (crossfaded chunk boundaries, same duration as narration.wav)
-NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration_smoothed.wav"
+# Use original narration (narration_smoothed.wav is 79% silent — voice smoother bug)
+NARRATION_PATH = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
 SFX_DIR = PROJECT_ROOT / "assets" / "sfx"
 OVERLAY_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "overlays"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
