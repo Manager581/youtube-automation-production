@@ -1,0 +1,325 @@
+{
+  "summary": {
+    "total_clips": 23,
+    "clips_with_transcripts": 20,
+    "total_quotable_moments": 31,
+    "clip_audio_candidates": 1,
+    "gaps": [
+      "No interview footage \u2014 limited first-person perspectives",
+      "Only 1 clip audio candidates \u2014 may need narration-heavy approach"
+    ],
+    "overall_score": 77,
+    "footage_profile": "source-rich",
+    "verdict": "GO"
+  },
+  "categories": {
+    "interviews": [],
+    "news_segments": [],
+    "hearings": [
+      {
+        "filename": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+        "title": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+        "category": "hearings",
+        "has_transcript": false,
+        "word_count": 0
+      },
+      {
+        "filename": "US_Capitol_building_Congress.mp4",
+        "title": "US_Capitol_building_Congress.mp4",
+        "category": "hearings",
+        "has_transcript": true,
+        "word_count": 144,
+        "transcript_preview": "The United States Capitol Building, the home of American democracy and global symbol of freedom, is one of the most recognizable buildings in the world. The Capitol Building itself reflects the histor"
+      }
+    ],
+    "explainers": [
+      {
+        "filename": "AI_scraping_copyright_training_data.mp4",
+        "title": "AI_scraping_copyright_training_data.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 194,
+        "transcript_preview": "So you guys asked me to do a deep dive on this copyright report and I'm so glad that I did. This copyright report is so huge. I am basically at this point where I think I need to file a lawsuit on beh"
+      },
+      {
+        "filename": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+        "title": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 154,
+        "transcript_preview": "This is a Bloomberg Money Minute. Continuing in its efforts to secure more computing power and talent for AI development, OpenAI is raising a record breaking $110 billion in new investments at a $730 "
+      },
+      {
+        "filename": "Cambridge_Analytica_scandal_explained.mp4",
+        "title": "Cambridge_Analytica_scandal_explained.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 171,
+        "transcript_preview": "By now you've probably heard that Facebook is scrambling to contain the fallout over a data privacy scandal. Mark Zuckerberg finally addressed the story on Wednesday, but only after a delete Facebook "
+      },
+      {
+        "filename": "Department_of_Justice_building.mp4",
+        "title": "Department_of_Justice_building.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 112,
+        "transcript_preview": "Since its doors first opened in 1934, the United States Department of Justice Building has stood as a monument to justice itself. This historic structure houses a unique collection of art and architec"
+      },
+      {
+        "filename": "Extraordinary_security_surrounds_US_Capitol.mp4",
+        "title": "Extraordinary_security_surrounds_US_Capitol.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 48,
+        "transcript_preview": "It's higher above me because I'm just the dirt the whole is to the pole So let me find out what's going on here Yeah, I'm with you I'm with you, so it's not too special But if you need me to completel"
+      },
+      {
+        "filename": "Facebook_FTC_5_billion_dollar_fine.mp4",
+        "title": "Facebook_FTC_5_billion_dollar_fine.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 129,
+        "transcript_preview": "This settlement is the result of an exhaustive investigation, which concluded that Facebook betrayed the trust of its users and deceived them about their ability to control their personal information."
+      },
+      {
+        "filename": "Facebook_to_pay_5_billion_fine.mp4",
+        "title": "Facebook_to_pay_5_billion_fine.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 130,
+        "transcript_preview": "For the social media giant that most of us use on a daily basis has now been slapped with a record breaking fine for privacy violations. Facebook now has to pay $5 billion as part of a settlement with"
+      },
+      {
+        "filename": "GDPR_Meta_Ireland_billion_fine.mp4",
+        "title": "GDPR_Meta_Ireland_billion_fine.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 158,
+        "transcript_preview": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars. Islands regulators said that the company was ordered to stop transferring data collected from Facebook u"
+      },
+      {
+        "filename": "Purdue_Pharma_opioid_Sackler_family.mp4",
+        "title": "Purdue_Pharma_opioid_Sackler_family.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 169,
+        "transcript_preview": "We are in the middle of an epidemic, an epidemic. In fact, it's called the worst public health epidemic in our history. There's eight members of the Sackler family caused much of the opioid epidemic. "
+      },
+      {
+        "filename": "RealPage_rent_price_fixing_algorithm.mp4",
+        "title": "RealPage_rent_price_fixing_algorithm.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 161,
+        "transcript_preview": "It's late 2023, the Phoenix area. Investigators of the State Attorney General's Office are looking at apartment rents. They're up 76% since 2016. Something is off. These four building rents are 12% hi"
+      },
+      {
+        "filename": "Reddit_frontpage_browsing.mp4",
+        "title": "Reddit_frontpage_browsing.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 181,
+        "transcript_preview": "Reddit is one of the most popular sites on the internet, but it can be a beast if you don't know how to use it. Here's how to navigate Reddit and hopefully keep you away from the trolls. So what even "
+      },
+      {
+        "filename": "Wall_Street_trading_floor.mp4",
+        "title": "Wall_Street_trading_floor.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 173,
+        "transcript_preview": "Welcome. I'm Ted Weisberg and I want to welcome you to the New York for the New York Stock Exchange and I'm going to take you on a tour of the exchange. We're in what we call the main room and you nee"
+      },
+      {
+        "filename": "Wells_Fargo_fake_accounts_scandal.mp4",
+        "title": "Wells_Fargo_fake_accounts_scandal.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 183,
+        "transcript_preview": "Here's a comment that's been sticking with me. Can you make a vid about Wells Fargo? Hasn't there been a scandal with them? Well yes, there most definitely has been a scandal with them. One that can p"
+      },
+      {
+        "filename": "apartment_housing_crisis_rent.mp4",
+        "title": "apartment_housing_crisis_rent.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 155,
+        "transcript_preview": "On this edition of the 5th estate, nothing is in the budget that I thought nothing. I need $30,000 to rent a house, which I don't have. Families struggling to keep up with skyrocketing rents. We were "
+      },
+      {
+        "filename": "corporate_fines_cost_of_doing_business.mp4",
+        "title": "corporate_fines_cost_of_doing_business.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 110,
+        "transcript_preview": "I want to talk about the $615,000 in penalties for companies that faked anti-net neutrality comments. Yeah, what's going on with that? Okay. This is wild. This is like some next level BS. This explain"
+      },
+      {
+        "filename": "corporate_whistleblower.mp4",
+        "title": "corporate_whistleblower.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 157,
+        "transcript_preview": "Breaking news tonight, the whistleblower complains. He's saying that he should be given the death card. Well, as far as I'm concerned, he's a traitor. Whistleblowers in any part of the government are "
+      },
+      {
+        "filename": "courtroom_justice_gavel.mp4",
+        "title": "courtroom_justice_gavel.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 47,
+        "transcript_preview": "Ever wondered why judges use a gavel in court? That loud strike isn't just for attention. It symbolizes authority, discipline, and order inside the courtroom. In fact, one strike can silence the entir"
+      },
+      {
+        "filename": "data_center_servers.mp4",
+        "title": "data_center_servers.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 159,
+        "transcript_preview": "What is a server? So that is the topic of this video. Now a server is basically a dedicated computer that provides services on behalf of clients, such as ordinary desktop computers or workstations. So"
+      },
+      {
+        "filename": "digital_artist_workspace.mp4",
+        "title": "digital_artist_workspace.mp4",
+        "category": "explainers",
+        "has_transcript": true,
+        "word_count": 172,
+        "transcript_preview": "Hey, it's been a while, hasn't it? I've got a bit of a confession to make. I think I might have gotten a bit too tect-out lately. Too many gadgets, too many settings, and way too little time. But here"
+      }
+    ],
+    "b_roll": [
+      {
+        "filename": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+        "title": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+        "category": "b_roll",
+        "has_transcript": false,
+        "word_count": 0
+      },
+      {
+        "filename": "corporate_boardroom_meeting_stock.mp4",
+        "title": "corporate_boardroom_meeting_stock.mp4",
+        "category": "b_roll",
+        "has_transcript": false,
+        "word_count": 0
+      }
+    ]
+  },
+  "top_quotes": [
+    {
+      "text": "OpenAI says its chat GPT has more than 900 million weekly active users and more than 50 million subscribers.",
+      "word_count": 19,
+      "score": 6,
+      "source_clip": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "Dell says it'll generate around $50 billion in AI server revenue in the current fiscal year.",
+      "word_count": 16,
+      "score": 6,
+      "source_clip": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "In 1930, Congress appropriated $10 million towards the construction of a Department Building located between 9th and 10th streets and Constitution and Pennsylvania Avenue.",
+      "word_count": 24,
+      "score": 6,
+      "source_clip": "Department_of_Justice_building.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "Facebook now has to pay $5 billion as part of a settlement with the Federal Trade Commission.",
+      "word_count": 17,
+      "score": 6,
+      "source_clip": "Facebook_to_pay_5_billion_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars.",
+      "word_count": 17,
+      "score": 6,
+      "source_clip": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "Meanwhile, Meta Platform signed a multi-billion dollar deal to rent artificial intelligence chips from Google to develop new AI models.",
+      "word_count": 20,
+      "score": 4,
+      "source_clip": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "The multi-year deal combs as companies pour billions into chips and AI infrastructure to meet demand for artificial intelligence.",
+      "word_count": 19,
+      "score": 4,
+      "source_clip": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "Wells Fargo employees created millions of unauthorized accounts on behalf of their customers.",
+      "word_count": 13,
+      "score": 4,
+      "source_clip": "Wells_Fargo_fake_accounts_scandal.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "His design for the Capitol was selected by President George Washington in 1793 to be built to top Jenkins Hill.",
+      "word_count": 20,
+      "score": 3,
+      "source_clip": "US_Capitol_building_Congress.mp4",
+      "category": "hearings"
+    },
+    {
+      "text": "Despite offering users privacy settings that promised to share their information with friends only, Facebook, in fact, shared users' information with every developer of an application installed by users' friends.",
+      "word_count": 30,
+      "score": 3,
+      "source_clip": "Facebook_FTC_5_billion_dollar_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "It also must outline changes to privacy policies and practices and add multiple layers of oversight and accountability.",
+      "word_count": 18,
+      "score": 3,
+      "source_clip": "Facebook_to_pay_5_billion_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "Islands regulators said that the company was ordered to stop transferring data collected from Facebook users in Europe to the United States.",
+      "word_count": 22,
+      "score": 3,
+      "source_clip": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "The Irish Data Protection Commission on DPC which acts on behalf of the European Union said on Monday that the European Data Protection Board or EDPB ordered it to collect the administrative fine.",
+      "word_count": 33,
+      "score": 3,
+      "source_clip": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "In response, Meta said that it was disappointed to have been singled out.",
+      "word_count": 13,
+      "score": 3,
+      "source_clip": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "category": "explainers"
+    },
+    {
+      "text": "In a block post, Meta president of Global Apesnik, Clegg and Chief Legal Officer Jennifer News said and I quote, the ability for data to be transferred across borders is fundamental to how the global open internet works.",
+      "word_count": 38,
+      "score": 3,
+      "source_clip": "GDPR_Meta_Ireland_billion_fine.mp4",
+      "category": "explainers"
+    }
+  ],
+  "clip_audio_candidates": [
+    {
+      "filename": "US_Capitol_building_Congress.mp4",
+      "category": "hearings",
+      "word_count": 144,
+      "top_quote": "His design for the Capitol was selected by President George Washington in 1793 to be built to top Jenkins Hill."
+    }
+  ],
+  "gaps": [
+    "No interview footage \u2014 limited first-person perspectives",
+    "Only 1 clip audio candidates \u2014 may need narration-heavy approach"
+  ]
+}

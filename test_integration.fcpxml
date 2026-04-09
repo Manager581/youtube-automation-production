@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.9">
+  <resources>
+    <format id="r0" name="FFVideoFormat1080p24" frameDuration="1/24s" width="1920" height="1080" />
+    <format id="r2" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r1" name="Facebook_to_pay_5_billion_fine.mp4" start="0/1s" format="r2" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1273/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4" />
+    </asset>
+    <format id="r4" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r3" name="Department_of_Justice_building.mp4" start="0/1s" format="r4" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Department_of_Justice_building.mp4" />
+    </asset>
+    <format id="r6" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r5" name="pexels_5668473_GDPR_European_data_protection_.jpg" start="0/1s" format="r6" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_000/pexels_5668473_GDPR_European_data_protection_.jpg" />
+    </asset>
+    <format id="r8" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r7" name="narration.wav" start="0/1s" format="r8" hasAudio="1" audioSources="1" audioChannels="1" duration="33713/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration.wav" />
+    </asset>
+    <format id="r10" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r9" name="track_01_tense_ducked.wav" start="0/1s" format="r10" hasAudio="1" audioSources="1" audioChannels="1" duration="4657/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_01_tense_ducked.wav" />
+    </asset>
+    <format id="r12" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r11" name="tw_000_5_billion.mov" start="0/1s" format="r12" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_000_5_billion.mov" />
+    </asset>
+    <format id="r14" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r13" name="chapter_the_formula.mov" start="0/1s" format="r14" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_formula.mov" />
+    </asset>
+    <format id="r16" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r15" name="body_impact_01.mp3" start="0/1s" format="r16" hasAudio="1" audioSources="1" audioChannels="1" duration="1/2s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/body_impact_01.mp3" />
+    </asset>
+    <format id="r18" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r17" name="body_impact_01_loud.wav" start="0/1s" format="r18" hasAudio="1" audioSources="1" audioChannels="1" duration="1/2s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/body_impact_01_loud.wav" />
+    </asset>
+  </resources>
+  <library>
+    <event name="Integration Test">
+      <project name="Test Features Timeline">
+        <sequence format="r0" duration="65/1s" tcStart="3600/1s" tcFormat="NDF">
+          <spine>
+            <clip name="Facebook_fine_MUTED" offset="3600/1s" duration="10/1s" start="0/1s" tcFormat="NDF">
+              <video ref="r1" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <adjust-volume amount="-96dB" />
+              <asset-clip ref="r7" name="narration.wav" lane="3" offset="0/1s" duration="60/1s" start="0/1s" role="dialogue" />
+              <asset-clip ref="r9" name="track_01_tense_ducked.wav" lane="4" offset="15/1s" duration="30/1s" start="0/1s" role="dialogue" />
+              <asset-clip ref="r15" name="body_impact_01.mp3" lane="5" offset="5/1s" duration="1/2s" start="0/1s" role="dialogue" />
+              <asset-clip ref="r17" name="body_impact_01_loud.wav" lane="6" offset="25/1s" duration="1/2s" start="0/1s" role="dialogue" />
+              <video ref="r11" name="tw_000_5_billion.mov" lane="1" offset="10/1s" duration="3/1s" start="0/1s">
+                <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
+              </video>
+              <video ref="r13" name="chapter_the_formula.mov" lane="2" offset="30/1s" duration="2/1s" start="0/1s" />
+            </clip>
+            <transition name="Cross Dissolve" offset="7219/2s" duration="1/1s" />
+            <clip name="DOJ_building_PLAY" offset="3610/1s" duration="10/1s" start="0/1s" tcFormat="NDF">
+              <video ref="r3" offset="0/1s" duration="1441/24s" start="0/1s" />
+            </clip>
+            <clip name="Facebook_fine_PLAY_THEN_MUTE" offset="3620/1s" duration="10/1s" start="10/1s" tcFormat="NDF">
+              <video ref="r1" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <adjust-volume>
+                <param name="amount">
+                  <keyframe time="0/1s" value="0dB" />
+                  <keyframe time="3/1s" value="0dB" />
+                  <keyframe time="7/2s" value="-96dB" />
+                  <keyframe time="10/1s" value="-96dB" />
+                </param>
+              </adjust-volume>
+            </clip>
+            <video ref="r5" name="GDPR_image_KEN_BURNS" offset="3630/1s" duration="15/1s" start="0/1s">
+              <adjust-transform>
+                <param name="position" value="0 0" />
+                <param name="anchor" value="0 0" />
+                <param name="scale">
+                  <keyframe time="0/1s" value="1.0 1.0" />
+                  <keyframe time="15/1s" value="1.05 1.05" />
+                </param>
+              </adjust-transform>
+            </video>
+            <clip name="DOJ_building_MUTED" offset="3645/1s" duration="15/1s" start="5/1s" tcFormat="NDF">
+              <video ref="r3" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <adjust-volume amount="-96dB" />
+            </clip>
+            <gap name="Gap" offset="3660/1s" duration="5/1s" start="3660/1s" />
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>

@@ -323,8 +323,38 @@ export PATH="/opt/homebrew/bin:$PATH"
 - [ ] Comment miner v2: auto-analyze competitor comments for topic validation
 - [ ] News peg detector: monitor DOJ/FTC/SEC press releases for fresh stories
 
+## Session 2026-04-09: Assembly Rebuild
+
+### ✅ DONE
+- Image sourcer (no Pexels) — 180 video stills + 89 Wikipedia/Wikimedia
+- Paper edit v2 — 253 beats, 160 unique visuals, 0 overuse
+- Narration sync fix — use narration.wav/smoothed, removed gap pipeline
+- 8 assembly fixes: phantom beats, music looping, intro wiring, machines card, smoothed VO, image mute
+- Integration test: 29/29 pass. Verify FCPXML: 16/16 pass.
+- "Breaking Law FINAL v5" in DaVinci — 202 clips, 58 overlays, 4 chapter cards, narration, music, SFX
+
+### ⚠️ OPEN ISSUES
+1. **VO not audible in DaVinci** — A1 has narration at correct position/duration per API. User hears ~3 words then silence. Needs manual DaVinci investigation (track mute? volume?).
+2. **Intro clip audio** — only 1 of 3 intro clips plays own audio. Update intro_spec to play_then_mute on all 3.
+3. **1 missing visual** — eu_parliament_wiki.png (SVG issue, fixed on disk, needs reimport)
+
+### Next Session
+1. Diagnose DaVinci audio playback issue (is A1 muted? volume at 0?)
+2. Update intro_spec for 3 clips with own audio
+3. Listen to full narration_smoothed.wav in a media player — confirm it sounds right outside DaVinci
+4. If DaVinci audio still broken: try exporting the FCPXML from DaVinci and re-importing (forces relink)
+
 ## How to Start
 ```bash
 cd /Users/jefflawrence/Documents/youtube-automation-production
 python run_pipeline_v2.py --topic "Your Topic" --stage all
+
+# Run assembly test
+python -m pipeline_v2.test_assembly
+
+# Build FCPXML from paper edit
+python -m pipeline_v2.fcpxml_builder_v2 --paper-edit storyboards/breaking_law_paper_edit_v2.json --output timeline_breaking_law_v2.fcpxml
+
+# Verify FCPXML
+python -m pipeline_v2.verify_fcpxml --fcpxml timeline_breaking_law_v2.fcpxml --min-v1-clips 100
 ```
