@@ -44,7 +44,7 @@ STAGES = [
 
     # PHASE 2: FULL SOURCING (only runs if topic passes)
     ("footage",         "Download footage (yt-dlp)",            "pipeline/footage_sourcer.py"),
-    ("images",          "Source images (Pexels/Google/Wikimedia)", "pipeline_v2/web_image_sourcer.py"),
+    ("images",          "Source images (stills/Wikimedia/Google)", "pipeline_v2/image_sourcer.py"),
     ("transcripts",     "Transcribe all clips (subtitles/Whisper)", "pipeline_v2/transcript_extractor.py"),
     ("vision",          "Analyze clips/images (Claude vision)", "pipeline_v2/vision_analyzer.py"),
     ("verify_footage",  "Verify footage matches queries [GATE]", "pipeline_v2/footage_verifier.py"),
@@ -276,8 +276,11 @@ def build_stage_args(stage_name, state):
         "footage": ["--brand", "learnbyleo",
                     "--brief", config.get("storyboard_path", "storyboards/storyboard.json"),
                     "--download"],
-        "images": ["--storyboard", config.get("storyboard_path", "storyboards/storyboard.json"),
-                    "--output", config.get("image_dir", "images/")],
+        "images": ["full",
+                    "--clips-dir", config.get("footage_dir", "footage/breaking_law/clips"),
+                    "--paper-edit", config.get("paper_edit_path", f"storyboards/{slug}_paper_edit.json"),
+                    "--output-dir", config.get("image_dir", f"footage/{slug}/images_v2"),
+                    "--stills-dir", config.get("stills_dir", f"footage/{slug}/stills")],
         "transcripts": ["--clips", config.get("footage_dir", "footage/"),
                         "--output", config.get("transcript_path", "transcripts.json")],
         "vision": ["--clips", config.get("footage_dir", "footage/"),
