@@ -3,340 +3,340 @@
   <resources>
     <format id="r0" name="FFVideoFormat1080p24" frameDuration="1/24s" width="1920" height="1080" />
     <format id="r2" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r1" name="tw_042_that_s_the_formula.mov" start="0/1s" format="r2" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_042_that_s_the_formula.mov" />
-    </asset>
-    <format id="r4" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r3" name="chapter_the_data.mov" start="0/1s" format="r4" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_data.mov" />
-    </asset>
-    <format id="r6" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r5" name="tw_047_the_law_doesn_t_prevent_corpor.mov" start="0/1s" format="r6" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_047_the_law_doesn_t_prevent_corpor.mov" />
-    </asset>
-    <format id="r8" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r7" name="tw_003_ford_motor_company___1977.mov" start="0/1s" format="r8" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_003_ford_motor_company___1977.mov" />
-    </asset>
-    <format id="r10" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r9" name="doj_building_wiki.jpg" start="0/1s" format="r10" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/doj_building_wiki.jpg" />
-    </asset>
-    <format id="r12" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r11" name="Cambridge_Analytica_scandal_explained.mp4" start="0/1s" format="r12" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Cambridge_Analytica_scandal_explained.mp4" />
-    </asset>
-    <format id="r14" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r13" name="tw_031_realpage.mov" start="0/1s" format="r14" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_031_realpage.mov" />
-    </asset>
-    <format id="r16" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r15" name="tw_036_richard_grimshaw.mov" start="0/1s" format="r16" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_036_richard_grimshaw.mov" />
-    </asset>
-    <format id="r18" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r17" name="digital_artist_workspace.mp4" start="0/1s" format="r18" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/digital_artist_workspace.mp4" />
-    </asset>
-    <format id="r20" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r19" name="RealPage_rent_price_fixing_algorithm.mp4" start="0/1s" format="r20" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/RealPage_rent_price_fixing_algorithm.mp4" />
-    </asset>
-    <format id="r22" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r21" name="tw_002_1977.mov" start="0/1s" format="r22" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_002_1977.mov" />
-    </asset>
-    <format id="r24" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r23" name="corporate_boardroom_commons_0.jpg" start="0/1s" format="r24" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/corporate_boardroom_commons_0.jpg" />
-    </asset>
-    <format id="r26" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r25" name="tw_022_charlotte__nc.mov" start="0/1s" format="r26" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_022_charlotte__nc.mov" />
-    </asset>
-    <format id="r28" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r27" name="cambridge_analytica_scandal_wiki_0.jpg" start="0/1s" format="r28" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/cambridge_analytica_scandal_wiki_0.jpg" />
-    </asset>
-    <format id="r30" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r29" name="tw_017_march_2018.mov" start="0/1s" format="r30" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_017_march_2018.mov" />
-    </asset>
-    <format id="r32" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r31" name="chapter_the_rent.mov" start="0/1s" format="r32" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_rent.mov" />
-    </asset>
-    <format id="r34" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r33" name="tw_000_5_billion.mov" start="0/1s" format="r34" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_000_5_billion.mov" />
-    </asset>
-    <format id="r36" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r35" name="whoosh_02_loud.wav" start="0/1s" format="r36" hasAudio="1" audioSources="1" audioChannels="1" duration="49/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/whoosh_02_loud.wav" />
-    </asset>
-    <format id="r38" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r37" name="tw_033_doj_v__realpage___nov__2025.mov" start="0/1s" format="r38" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_033_doj_v__realpage___nov__2025.mov" />
-    </asset>
-    <format id="r40" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r39" name="tw_016_87_million_people.mov" start="0/1s" format="r40" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_016_87_million_people.mov" />
-    </asset>
-    <format id="r42" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r41" name="tw_021_elliana_esquivel.mov" start="0/1s" format="r42" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_021_elliana_esquivel.mov" />
-    </asset>
-    <format id="r44" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r43" name="narration.wav" start="0/1s" format="r44" hasAudio="1" audioSources="1" audioChannels="1" duration="33713/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration.wav" />
-    </asset>
-    <format id="r46" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r45" name="tw_035_the_math_works.mov" start="0/1s" format="r46" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_035_the_math_works.mov" />
-    </asset>
-    <format id="r48" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r47" name="tw_023_have_i_been_trained.mov" start="0/1s" format="r48" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_023_have_i_been_trained.mov" />
-    </asset>
-    <format id="r50" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r49" name="data_center_servers.mp4" start="0/1s" format="r50" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/data_center_servers.mp4" />
-    </asset>
-    <format id="r52" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r51" name="courtroom_gavel_commons_0.jpg" start="0/1s" format="r52" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/courtroom_gavel_commons_0.jpg" />
-    </asset>
-    <format id="r54" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r53" name="tw_045_chris_vialpondo___seattle.mov" start="0/1s" format="r54" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_045_chris_vialpondo___seattle.mov" />
-    </asset>
-    <format id="r56" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r55" name="track_04_dark_ducked.wav" start="0/1s" format="r56" hasAudio="1" audioSources="1" audioChannels="1" duration="210/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_04_dark_ducked.wav" />
-    </asset>
-    <format id="r58" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r57" name="Ford_Pinto_fuel_tank_explosion_1977.mp4" start="0/1s" format="r58" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="14/3s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Ford_Pinto_fuel_tank_explosion_1977.mp4" />
-    </asset>
-    <format id="r60" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r59" name="corporate_fines_cost_of_doing_business.mp4" start="0/1s" format="r60" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_fines_cost_of_doing_business.mp4" />
-    </asset>
-    <format id="r62" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r61" name="US_Capitol_building_Congress.mp4" start="0/1s" format="r62" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/US_Capitol_building_Congress.mp4" />
-    </asset>
-    <format id="r64" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r63" name="track_03_emotional_ducked.wav" start="0/1s" format="r64" hasAudio="1" audioSources="1" audioChannels="1" duration="116/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_03_emotional_ducked.wav" />
-    </asset>
-    <format id="r66" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r65" name="tw_024_almost_all_of_it.mov" start="0/1s" format="r66" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_024_almost_all_of_it.mov" />
-    </asset>
-    <format id="r68" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r67" name="Facebook_to_pay_5_billion_fine.mp4" start="0/1s" format="r68" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1273/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4" />
-    </asset>
-    <format id="r70" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r69" name="corporate_whistleblower.mp4" start="0/1s" format="r70" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_whistleblower.mp4" />
-    </asset>
-    <format id="r72" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r71" name="Mark_Zuckerberg_Senate_hearing_2018.mp4" start="0/1s" format="r72" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Mark_Zuckerberg_Senate_hearing_2018.mp4" />
-    </asset>
-    <format id="r74" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r73" name="AI_scraping_copyright_training_data.mp4" start="0/1s" format="r74" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/AI_scraping_copyright_training_data.mp4" />
-    </asset>
-    <format id="r76" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r75" name="shimmer_01_loud.wav" start="0/1s" format="r76" hasAudio="1" audioSources="1" audioChannels="1" duration="31/12s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/shimmer_01_loud.wav" />
-    </asset>
-    <format id="r78" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r77" name="Wall_Street_trading_floor.mp4" start="0/1s" format="r78" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wall_Street_trading_floor.mp4" />
-    </asset>
-    <format id="r80" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r79" name="eu_parliament_wiki.png" start="0/1s" format="r80" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/eu_parliament_wiki.png" />
-    </asset>
-    <format id="r82" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r81" name="corporate_boardroom_commons_1.jpg" start="0/1s" format="r82" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/corporate_boardroom_commons_1.jpg" />
-    </asset>
-    <format id="r84" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r83" name="apartment_housing_crisis_rent.mp4" start="0/1s" format="r84" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/apartment_housing_crisis_rent.mp4" />
-    </asset>
-    <format id="r86" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r85" name="tw_041_the_sackler_name_is_still_on_t.mov" start="0/1s" format="r86" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_041_the_sackler_name_is_still_on_t.mov" />
-    </asset>
-    <format id="r88" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r87" name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" start="0/1s" format="r88" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="721/12s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" />
-    </asset>
-    <format id="r90" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r89" name="corporate_boardroom_meeting_stock.mp4" start="0/1s" format="r90" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="313/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_boardroom_meeting_stock.mp4" />
-    </asset>
-    <format id="r92" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r91" name="tw_018_senator__we_run_ads.mov" start="0/1s" format="r92" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_018_senator__we_run_ads.mov" />
-    </asset>
-    <format id="r94" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" start="0/1s" format="r94" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_004/pexels_5668858_Mark_Zuckerberg_congressional_.jpg" />
-    </asset>
-    <format id="r96" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r95" name="Reddit_frontpage_browsing.mp4" start="0/1s" format="r96" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Reddit_frontpage_browsing.mp4" />
-    </asset>
-    <format id="r98" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" start="0/1s" format="r98" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_010_the_fine_is_cheaper_than_the_p.mov" />
-    </asset>
-    <format id="r100" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r99" name="eu_parliament_commons_1.jpg" start="0/1s" format="r100" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/eu_parliament_commons_1.jpg" />
-    </asset>
-    <format id="r102" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r101" name="facebook_hq_commons_0.jpg" start="0/1s" format="r102" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/facebook_hq_commons_0.jpg" />
-    </asset>
-    <format id="r104" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r103" name="artist_illustration_commons_0.jpg" start="0/1s" format="r104" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/artist_illustration_commons_0.jpg" />
-    </asset>
-    <format id="r106" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r105" name="tw_012_1_trillion_in_fines___since_2.mov" start="0/1s" format="r106" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_012_1_trillion_in_fines___since_2.mov" />
-    </asset>
-    <format id="r108" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r107" name="chapter_the_formula.mov" start="0/1s" format="r108" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_formula.mov" />
-    </asset>
-    <format id="r110" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r109" name="track_02_investigative_ducked.wav" start="0/1s" format="r110" hasAudio="1" audioSources="1" audioChannels="1" duration="210/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_02_investigative_ducked.wav" />
-    </asset>
-    <format id="r112" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r111" name="eu_parliament_commons_0.jpg" start="0/1s" format="r112" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/eu_parliament_commons_0.jpg" />
-    </asset>
-    <format id="r114" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r113" name="GDPR_Meta_Ireland_billion_fine.mp4" start="0/1s" format="r114" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/GDPR_Meta_Ireland_billion_fine.mp4" />
-    </asset>
-    <format id="r116" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r115" name="tw_026_70__lawsuits.mov" start="0/1s" format="r116" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_026_70__lawsuits.mov" />
-    </asset>
-    <format id="r118" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r117" name="common_crawl_commons_0.jpg" start="0/1s" format="r118" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/common_crawl_commons_0.jpg" />
-    </asset>
-    <format id="r120" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r119" name="tw_034_essentially_nothing.mov" start="0/1s" format="r120" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_034_essentially_nothing.mov" />
-    </asset>
-    <format id="r122" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r121" name="artist_illustration_commons_1.jpg" start="0/1s" format="r122" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/artist_illustration_commons_1.jpg" />
-    </asset>
-    <format id="r124" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r123" name="cambridge_analytica_scandal_wiki_1.jpg" start="0/1s" format="r124" hasVideo="1" duration="0/1s">
+    <asset id="r1" name="cambridge_analytica_scandal_wiki_1.jpg" start="0/1s" format="r2" hasVideo="1" duration="0/1s">
       <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/cambridge_analytica_scandal_wiki_1.jpg" />
     </asset>
-    <format id="r126" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r125" name="tw_014_aleksandr_kogan___cambridge_un.mov" start="0/1s" format="r126" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_014_aleksandr_kogan___cambridge_un.mov" />
+    <format id="r4" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r3" name="Ford_Pinto_fuel_tank_explosion_1977.mp4" start="0/1s" format="r4" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="14/3s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Ford_Pinto_fuel_tank_explosion_1977.mp4" />
     </asset>
-    <format id="r128" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r127" name="chapter_the_reckoning.mov" start="0/1s" format="r128" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_reckoning.mov" />
-    </asset>
-    <format id="r130" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r129" name="tw_004_richard_grimshaw___age_13.mov" start="0/1s" format="r130" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_004_richard_grimshaw___age_13.mov" />
-    </asset>
-    <format id="r132" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r131" name="tw_008_3_5_million_fake_accounts.mov" start="0/1s" format="r132" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_008_3_5_million_fake_accounts.mov" />
-    </asset>
-    <format id="r134" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r133" name="tw_030_chris_vialpondo.mov" start="0/1s" format="r134" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_030_chris_vialpondo.mov" />
-    </asset>
-    <format id="r136" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r135" name="Department_of_Justice_building.mp4" start="0/1s" format="r136" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Department_of_Justice_building.mp4" />
-    </asset>
-    <format id="r138" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r137" name="courtroom_justice_gavel.mp4" start="0/1s" format="r138" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="481/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/courtroom_justice_gavel.mp4" />
-    </asset>
-    <format id="r140" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r139" name="Wells_Fargo_fake_accounts_scandal.mp4" start="0/1s" format="r140" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wells_Fargo_fake_accounts_scandal.mp4" />
-    </asset>
-    <format id="r142" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r141" name="cambridge_analytica_commons_0.jpg" start="0/1s" format="r142" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/cambridge_analytica_commons_0.jpg" />
-    </asset>
-    <format id="r144" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r143" name="Facebook_FTC_5_billion_dollar_fine.mp4" start="0/1s" format="r144" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_FTC_5_billion_dollar_fine.mp4" />
-    </asset>
-    <format id="r146" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r145" name="tw_040_fired_for_calling_the_ethics_h.mov" start="0/1s" format="r146" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_040_fired_for_calling_the_ethics_h.mov" />
-    </asset>
-    <format id="r148" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r147" name="tw_028_irreversible.mov" start="0/1s" format="r148" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_028_irreversible.mov" />
-    </asset>
-    <format id="r150" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r149" name="data_center_commons_1.jpg" start="0/1s" format="r150" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/data_center_commons_1.jpg" />
-    </asset>
-    <format id="r152" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r151" name="chapter_the_machines.mov" start="0/1s" format="r152" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_machines.mov" />
-    </asset>
-    <format id="r154" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r153" name="tw_009_10_7_billion___withdrawn_befo.mov" start="0/1s" format="r154" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_009_10_7_billion___withdrawn_befo.mov" />
-    </asset>
-    <format id="r156" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r155" name="tw_027_3_000.mov" start="0/1s" format="r156" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_027_3_000.mov" />
-    </asset>
-    <format id="r158" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r157" name="common_crawl_commons_1.png" start="0/1s" format="r158" hasVideo="1" duration="0/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/common_crawl_commons_1.png" />
-    </asset>
-    <format id="r160" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r159" name="tw_005_3_5_million.mov" start="0/1s" format="r160" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+    <format id="r6" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r5" name="tw_005_3_5_million.mov" start="0/1s" format="r6" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
       <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_005_3_5_million.mov" />
     </asset>
-    <format id="r162" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r161" name="tw_001_how_is_that_possible.mov" start="0/1s" format="r162" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
-      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_001_how_is_that_possible.mov" />
+    <format id="r8" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r7" name="tw_045_chris_vialpondo___seattle.mov" start="0/1s" format="r8" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_045_chris_vialpondo___seattle.mov" />
     </asset>
-    <format id="r164" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r163" name="Purdue_Pharma_opioid_Sackler_family.mp4" start="0/1s" format="r164" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
+    <format id="r10" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r9" name="Wells_Fargo_fake_accounts_scandal.mp4" start="0/1s" format="r10" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wells_Fargo_fake_accounts_scandal.mp4" />
+    </asset>
+    <format id="r12" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r11" name="eu_parliament_commons_0.jpg" start="0/1s" format="r12" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/eu_parliament_commons_0.jpg" />
+    </asset>
+    <format id="r14" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r13" name="AI_scraping_copyright_training_data.mp4" start="0/1s" format="r14" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/AI_scraping_copyright_training_data.mp4" />
+    </asset>
+    <format id="r16" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r15" name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" start="0/1s" format="r16" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="721/12s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" />
+    </asset>
+    <format id="r18" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r17" name="tw_047_the_law_doesn_t_prevent_corpor.mov" start="0/1s" format="r18" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_047_the_law_doesn_t_prevent_corpor.mov" />
+    </asset>
+    <format id="r20" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r19" name="tw_026_70__lawsuits.mov" start="0/1s" format="r20" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_026_70__lawsuits.mov" />
+    </asset>
+    <format id="r22" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r21" name="tw_000_5_billion.mov" start="0/1s" format="r22" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_000_5_billion.mov" />
+    </asset>
+    <format id="r24" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r23" name="Cambridge_Analytica_scandal_explained.mp4" start="0/1s" format="r24" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Cambridge_Analytica_scandal_explained.mp4" />
+    </asset>
+    <format id="r26" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r25" name="tw_012_1_trillion_in_fines___since_2.mov" start="0/1s" format="r26" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_012_1_trillion_in_fines___since_2.mov" />
+    </asset>
+    <format id="r28" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r27" name="tw_018_senator__we_run_ads.mov" start="0/1s" format="r28" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_018_senator__we_run_ads.mov" />
+    </asset>
+    <format id="r30" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r29" name="tw_023_have_i_been_trained.mov" start="0/1s" format="r30" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_023_have_i_been_trained.mov" />
+    </asset>
+    <format id="r32" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r31" name="tw_027_3_000.mov" start="0/1s" format="r32" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_027_3_000.mov" />
+    </asset>
+    <format id="r34" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r33" name="facebook_hq_commons_0.jpg" start="0/1s" format="r34" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/facebook_hq_commons_0.jpg" />
+    </asset>
+    <format id="r36" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r35" name="GDPR_Meta_Ireland_billion_fine.mp4" start="0/1s" format="r36" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/GDPR_Meta_Ireland_billion_fine.mp4" />
+    </asset>
+    <format id="r38" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r37" name="eu_parliament_wiki.png" start="0/1s" format="r38" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/eu_parliament_wiki.png" />
+    </asset>
+    <format id="r40" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r39" name="tw_033_doj_v__realpage___nov__2025.mov" start="0/1s" format="r40" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_033_doj_v__realpage___nov__2025.mov" />
+    </asset>
+    <format id="r42" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r41" name="corporate_boardroom_meeting_stock.mp4" start="0/1s" format="r42" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="313/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_boardroom_meeting_stock.mp4" />
+    </asset>
+    <format id="r44" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" start="0/1s" format="r44" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_010_the_fine_is_cheaper_than_the_p.mov" />
+    </asset>
+    <format id="r46" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r45" name="common_crawl_commons_1.png" start="0/1s" format="r46" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/common_crawl_commons_1.png" />
+    </asset>
+    <format id="r48" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r47" name="Reddit_frontpage_browsing.mp4" start="0/1s" format="r48" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Reddit_frontpage_browsing.mp4" />
+    </asset>
+    <format id="r50" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r49" name="whoosh_02_loud.wav" start="0/1s" format="r50" hasAudio="1" audioSources="1" audioChannels="1" duration="49/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/whoosh_02_loud.wav" />
+    </asset>
+    <format id="r52" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r51" name="tw_021_elliana_esquivel.mov" start="0/1s" format="r52" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_021_elliana_esquivel.mov" />
+    </asset>
+    <format id="r54" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r53" name="Facebook_FTC_5_billion_dollar_fine.mp4" start="0/1s" format="r54" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_FTC_5_billion_dollar_fine.mp4" />
+    </asset>
+    <format id="r56" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r55" name="Purdue_Pharma_opioid_Sackler_family.mp4" start="0/1s" format="r56" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
       <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Purdue_Pharma_opioid_Sackler_family.mp4" />
     </asset>
-    <format id="r166" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r165" name="tw_038_4__of_global_revenue.mov" start="0/1s" format="r166" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+    <format id="r58" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r57" name="tw_038_4__of_global_revenue.mov" start="0/1s" format="r58" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
       <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_038_4__of_global_revenue.mov" />
     </asset>
-    <format id="r168" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
-    <asset id="r167" name="track_01_tense_ducked.wav" start="0/1s" format="r168" hasAudio="1" audioSources="1" audioChannels="1" duration="4657/24s">
+    <format id="r60" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r59" name="tw_008_3_5_million_fake_accounts.mov" start="0/1s" format="r60" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_008_3_5_million_fake_accounts.mov" />
+    </asset>
+    <format id="r62" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r61" name="corporate_whistleblower.mp4" start="0/1s" format="r62" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_whistleblower.mp4" />
+    </asset>
+    <format id="r64" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r63" name="tw_028_irreversible.mov" start="0/1s" format="r64" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_028_irreversible.mov" />
+    </asset>
+    <format id="r66" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r65" name="track_04_dark_ducked.wav" start="0/1s" format="r66" hasAudio="1" audioSources="1" audioChannels="1" duration="210/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_04_dark_ducked.wav" />
+    </asset>
+    <format id="r68" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r67" name="corporate_boardroom_commons_0.jpg" start="0/1s" format="r68" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/corporate_boardroom_commons_0.jpg" />
+    </asset>
+    <format id="r70" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r69" name="artist_illustration_commons_1.jpg" start="0/1s" format="r70" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/artist_illustration_commons_1.jpg" />
+    </asset>
+    <format id="r72" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r71" name="tw_031_realpage.mov" start="0/1s" format="r72" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_031_realpage.mov" />
+    </asset>
+    <format id="r74" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r73" name="Department_of_Justice_building.mp4" start="0/1s" format="r74" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Department_of_Justice_building.mp4" />
+    </asset>
+    <format id="r76" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r75" name="tw_036_richard_grimshaw.mov" start="0/1s" format="r76" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_036_richard_grimshaw.mov" />
+    </asset>
+    <format id="r78" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r77" name="tw_017_march_2018.mov" start="0/1s" format="r78" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_017_march_2018.mov" />
+    </asset>
+    <format id="r80" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r79" name="cambridge_analytica_commons_0.jpg" start="0/1s" format="r80" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/cambridge_analytica_commons_0.jpg" />
+    </asset>
+    <format id="r82" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r81" name="track_01_tense_ducked.wav" start="0/1s" format="r82" hasAudio="1" audioSources="1" audioChannels="1" duration="4657/24s">
       <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_01_tense_ducked.wav" />
+    </asset>
+    <format id="r84" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r83" name="shimmer_01_loud.wav" start="0/1s" format="r84" hasAudio="1" audioSources="1" audioChannels="1" duration="31/12s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/sfx/shimmer_01_loud.wav" />
+    </asset>
+    <format id="r86" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r85" name="courtroom_justice_gavel.mp4" start="0/1s" format="r86" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="481/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/courtroom_justice_gavel.mp4" />
+    </asset>
+    <format id="r88" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r87" name="tw_004_richard_grimshaw___age_13.mov" start="0/1s" format="r88" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_004_richard_grimshaw___age_13.mov" />
+    </asset>
+    <format id="r90" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r89" name="corporate_fines_cost_of_doing_business.mp4" start="0/1s" format="r90" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_fines_cost_of_doing_business.mp4" />
+    </asset>
+    <format id="r92" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r91" name="tw_003_ford_motor_company___1977.mov" start="0/1s" format="r92" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_003_ford_motor_company___1977.mov" />
+    </asset>
+    <format id="r94" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r93" name="eu_parliament_commons_1.jpg" start="0/1s" format="r94" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/eu_parliament_commons_1.jpg" />
+    </asset>
+    <format id="r96" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r95" name="chapter_the_machines.mov" start="0/1s" format="r96" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_machines.mov" />
+    </asset>
+    <format id="r98" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r97" name="tw_030_chris_vialpondo.mov" start="0/1s" format="r98" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_030_chris_vialpondo.mov" />
+    </asset>
+    <format id="r100" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r99" name="tw_041_the_sackler_name_is_still_on_t.mov" start="0/1s" format="r100" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_041_the_sackler_name_is_still_on_t.mov" />
+    </asset>
+    <format id="r102" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r101" name="apartment_housing_crisis_rent.mp4" start="0/1s" format="r102" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/apartment_housing_crisis_rent.mp4" />
+    </asset>
+    <format id="r104" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r103" name="tw_022_charlotte__nc.mov" start="0/1s" format="r104" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_022_charlotte__nc.mov" />
+    </asset>
+    <format id="r106" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r105" name="tw_035_the_math_works.mov" start="0/1s" format="r106" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_035_the_math_works.mov" />
+    </asset>
+    <format id="r108" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r107" name="common_crawl_commons_0.jpg" start="0/1s" format="r108" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/common_crawl_commons_0.jpg" />
+    </asset>
+    <format id="r110" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r109" name="chapter_the_rent.mov" start="0/1s" format="r110" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_rent.mov" />
+    </asset>
+    <format id="r112" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r111" name="chapter_the_formula.mov" start="0/1s" format="r112" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_formula.mov" />
+    </asset>
+    <format id="r114" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r113" name="data_center_servers.mp4" start="0/1s" format="r114" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/data_center_servers.mp4" />
+    </asset>
+    <format id="r116" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r115" name="Wall_Street_trading_floor.mp4" start="0/1s" format="r116" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wall_Street_trading_floor.mp4" />
+    </asset>
+    <format id="r118" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r117" name="chapter_the_reckoning.mov" start="0/1s" format="r118" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_reckoning.mov" />
+    </asset>
+    <format id="r120" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r119" name="tw_009_10_7_billion___withdrawn_befo.mov" start="0/1s" format="r120" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_009_10_7_billion___withdrawn_befo.mov" />
+    </asset>
+    <format id="r122" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r121" name="Facebook_to_pay_5_billion_fine.mp4" start="0/1s" format="r122" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1273/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4" />
+    </asset>
+    <format id="r124" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r123" name="corporate_boardroom_commons_1.jpg" start="0/1s" format="r124" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/corporate_boardroom_commons_1.jpg" />
+    </asset>
+    <format id="r126" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r125" name="artist_illustration_commons_0.jpg" start="0/1s" format="r126" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/artist_illustration_commons_0.jpg" />
+    </asset>
+    <format id="r128" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r127" name="tw_001_how_is_that_possible.mov" start="0/1s" format="r128" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_001_how_is_that_possible.mov" />
+    </asset>
+    <format id="r130" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r129" name="doj_building_wiki.jpg" start="0/1s" format="r130" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/doj_building_wiki.jpg" />
+    </asset>
+    <format id="r132" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r131" name="Mark_Zuckerberg_Senate_hearing_2018.mp4" start="0/1s" format="r132" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Mark_Zuckerberg_Senate_hearing_2018.mp4" />
+    </asset>
+    <format id="r134" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r133" name="tw_016_87_million_people.mov" start="0/1s" format="r134" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_016_87_million_people.mov" />
+    </asset>
+    <format id="r136" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r135" name="RealPage_rent_price_fixing_algorithm.mp4" start="0/1s" format="r136" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/RealPage_rent_price_fixing_algorithm.mp4" />
+    </asset>
+    <format id="r138" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r137" name="tw_040_fired_for_calling_the_ethics_h.mov" start="0/1s" format="r138" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_040_fired_for_calling_the_ethics_h.mov" />
+    </asset>
+    <format id="r140" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r139" name="tw_014_aleksandr_kogan___cambridge_un.mov" start="0/1s" format="r140" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_014_aleksandr_kogan___cambridge_un.mov" />
+    </asset>
+    <format id="r142" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r141" name="narration.wav" start="0/1s" format="r142" hasAudio="1" audioSources="1" audioChannels="1" duration="33713/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/narration.wav" />
+    </asset>
+    <format id="r144" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r143" name="tw_002_1977.mov" start="0/1s" format="r144" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_002_1977.mov" />
+    </asset>
+    <format id="r146" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r145" name="courtroom_gavel_commons_0.jpg" start="0/1s" format="r146" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/courtroom_gavel_commons_0.jpg" />
+    </asset>
+    <format id="r148" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" start="0/1s" format="r148" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images/seg_004/pexels_5668858_Mark_Zuckerberg_congressional_.jpg" />
+    </asset>
+    <format id="r150" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r149" name="tw_034_essentially_nothing.mov" start="0/1s" format="r150" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_034_essentially_nothing.mov" />
+    </asset>
+    <format id="r152" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r151" name="digital_artist_workspace.mp4" start="0/1s" format="r152" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="60/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/digital_artist_workspace.mp4" />
+    </asset>
+    <format id="r154" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r153" name="data_center_commons_1.jpg" start="0/1s" format="r154" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/data_center_commons_1.jpg" />
+    </asset>
+    <format id="r156" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r155" name="chapter_the_data.mov" start="0/1s" format="r156" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="2/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/chapters/chapter_the_data.mov" />
+    </asset>
+    <format id="r158" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r157" name="tw_024_almost_all_of_it.mov" start="0/1s" format="r158" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_024_almost_all_of_it.mov" />
+    </asset>
+    <format id="r160" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r159" name="track_03_emotional_ducked.wav" start="0/1s" format="r160" hasAudio="1" audioSources="1" audioChannels="1" duration="116/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_03_emotional_ducked.wav" />
+    </asset>
+    <format id="r162" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r161" name="US_Capitol_building_Congress.mp4" start="0/1s" format="r162" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="1441/24s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/US_Capitol_building_Congress.mp4" />
+    </asset>
+    <format id="r164" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r163" name="cambridge_analytica_scandal_wiki_0.jpg" start="0/1s" format="r164" hasVideo="1" duration="0/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/images_v2/web/cambridge_analytica_scandal_wiki_0.jpg" />
+    </asset>
+    <format id="r166" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r165" name="track_02_investigative_ducked.wav" start="0/1s" format="r166" hasAudio="1" audioSources="1" audioChannels="1" duration="210/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/audio/breaking_law/music_tracks/track_02_investigative_ducked.wav" />
+    </asset>
+    <format id="r168" name="FFVideoFormatRateUndefined" width="1920" height="1080" />
+    <asset id="r167" name="tw_042_that_s_the_formula.mov" start="0/1s" format="r168" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" duration="3/1s">
+      <media-rep kind="original-media" src="file:///Users/jefflawrence/Documents/youtube-automation-production/assets/breaking_law/overlays/tw_042_that_s_the_formula.mov" />
     </asset>
   </resources>
   <library>
@@ -345,7 +345,7 @@
         <sequence format="r0" duration="33953/24s" tcStart="3600/1s" tcFormat="NDF">
           <spine>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="3600/1s" duration="397/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -354,31 +354,31 @@
                   <keyframe time="397/12s" value="-96dB" />
                 </param>
               </adjust-volume>
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="2433/8s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="2433/8s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r5" name="tw_047_the_law_doesn_t_prevent_corpor.mov" lane="1" offset="5333/12s" duration="3/1s" start="0/1s">
+              <video ref="r17" name="tw_047_the_law_doesn_t_prevent_corpor.mov" lane="1" offset="5333/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r39" name="tw_016_87_million_people.mov" lane="1" offset="4729/8s" duration="3/1s" start="0/1s">
+              <video ref="r133" name="tw_016_87_million_people.mov" lane="1" offset="4729/8s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r45" name="tw_035_the_math_works.mov" lane="1" offset="19331/24s" duration="3/1s" start="0/1s">
+              <video ref="r105" name="tw_035_the_math_works.mov" lane="1" offset="19331/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r37" name="tw_033_doj_v__realpage___nov__2025.mov" lane="1" offset="2810/3s" duration="3/1s" start="0/1s">
+              <video ref="r39" name="tw_033_doj_v__realpage___nov__2025.mov" lane="1" offset="2810/3s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r33" name="tw_000_5_billion.mov" lane="1" offset="991/1s" duration="3/1s" start="0/1s">
+              <video ref="r21" name="tw_000_5_billion.mov" lane="1" offset="991/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="30917/24s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="30917/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <asset-clip ref="r43" name="narration.wav" lane="3" offset="0/1s" duration="33713/24s" start="0/1s" role="dialogue" />
-              <asset-clip ref="r167" name="track_01_tense_ducked.wav" lane="4" offset="0/1s" duration="1291/24s" start="0/1s" role="music" />
+              <asset-clip ref="r141" name="narration.wav" lane="3" offset="0/1s" duration="33713/24s" start="0/1s" enabled="1" />
+              <asset-clip ref="r81" name="track_01_tense_ducked.wav" lane="4" offset="0/1s" duration="1291/24s" start="0/1s" enabled="1" />
             </clip>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="43597/12s" duration="17/12s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="43597/12s" duration="17/12s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -387,13 +387,13 @@
                   <keyframe time="17/12s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <video ref="r161" name="tw_001_how_is_that_possible.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r127" name="tw_001_how_is_that_possible.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <asset-clip ref="r75" name="shimmer_01_loud.wav" lane="5" offset="0/1s" duration="31/12s" start="0/1s" role="effects" />
+              <asset-clip ref="r83" name="shimmer_01_loud.wav" lane="5" offset="0/1s" duration="31/12s" start="0/1s" enabled="1" />
             </video>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="7269/2s" duration="463/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -402,36 +402,36 @@
                   <keyframe time="463/24s" value="-96dB" />
                 </param>
               </adjust-volume>
-              <video ref="r21" name="tw_002_1977.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r143" name="tw_002_1977.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r21" name="tw_002_1977.mov" lane="1" offset="173/12s" duration="3/1s" start="0/1s">
+              <video ref="r143" name="tw_002_1977.mov" lane="1" offset="173/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <asset-clip ref="r35" name="whoosh_02_loud.wav" lane="6" offset="0/1s" duration="49/24s" start="0/1s" role="effects" />
+              <asset-clip ref="r49" name="whoosh_02_loud.wav" lane="6" offset="0/1s" duration="49/24s" start="0/1s" enabled="1" />
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="87691/24s" duration="205/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r107" name="chapter_the_formula.mov" lane="2" offset="0/1s" duration="2/1s" start="0/1s" />
-              <asset-clip ref="r167" name="track_01_tense_ducked.wav" lane="4" offset="0/1s" duration="4657/24s" start="0/1s" role="music" />
+              <video ref="r111" name="chapter_the_formula.mov" lane="2" offset="0/1s" duration="2/1s" start="0/1s" />
+              <asset-clip ref="r81" name="track_01_tense_ducked.wav" lane="4" offset="0/1s" duration="4657/24s" start="0/1s" enabled="1" />
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="10987/3s" duration="205/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r15" name="tw_036_richard_grimshaw.mov" lane="1" offset="205/12s" duration="3/1s" start="0/1s">
+              <video ref="r75" name="tw_036_richard_grimshaw.mov" lane="1" offset="205/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="44153/12s" duration="205/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="88511/24s" duration="19/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r51" name="courtroom_gavel_commons_0.jpg" offset="44369/12s" duration="5/1s" start="0/1s">
+            <video ref="r145" name="courtroom_gavel_commons_0.jpg" offset="44369/12s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -441,7 +441,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="44429/12s" duration="9/2s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="44429/12s" duration="9/2s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -450,19 +450,19 @@
                   <keyframe time="9/2s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <video ref="r1" name="tw_042_that_s_the_formula.mov" lane="1" offset="9/2s" duration="3/1s" start="0/1s">
+              <video ref="r167" name="tw_042_that_s_the_formula.mov" lane="1" offset="9/2s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
             <clip name="courtroom_justice_gavel.mp4" offset="44483/12s" duration="205/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="89171/24s" duration="47/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r23" name="corporate_boardroom_commons_0.jpg" offset="44773/12s" duration="5/1s" start="0/1s">
+            <video ref="r67" name="corporate_boardroom_commons_0.jpg" offset="44773/12s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -472,7 +472,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r81" name="corporate_boardroom_commons_1.jpg" offset="44833/12s" duration="6/1s" start="0/1s">
+            <video ref="r123" name="corporate_boardroom_commons_1.jpg" offset="44833/12s" duration="6/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -482,7 +482,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="44905/12s" duration="77/24s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="44905/12s" duration="77/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -493,18 +493,18 @@
               </adjust-transform>
             </video>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="11236/3s" duration="10/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="11266/3s" duration="53/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r145" name="tw_040_fired_for_calling_the_ethics_h.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r137" name="tw_040_fired_for_calling_the_ethics_h.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="90287/24s" duration="317/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -515,41 +515,41 @@
               </adjust-volume>
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="22651/6s" duration="149/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="30251/8s" duration="59/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_whistleblower.mp4" offset="90931/24s" duration="109/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r69" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_whistleblower.mp4" offset="30419/8s" duration="53/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r69" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="3809/1s" duration="7/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r131" name="tw_008_3_5_million_fake_accounts.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r59" name="tw_008_3_5_million_fake_accounts.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="3816/1s" duration="269/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="22963/6s" duration="67/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="91987/24s" duration="157/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r9" name="doj_building_wiki.jpg" offset="92143/24s" duration="5/1s" start="0/1s">
+            <video ref="r129" name="doj_building_wiki.jpg" offset="92143/24s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -559,7 +559,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="92263/24s" duration="13/3s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="92263/24s" duration="13/3s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -568,28 +568,28 @@
                   <keyframe time="13/3s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <asset-clip ref="r167" name="track_01_tense_ducked.wav" lane="4" offset="19/12s" duration="1597/12s" start="0/1s" role="music" />
+              <asset-clip ref="r81" name="track_01_tense_ducked.wav" lane="4" offset="19/12s" duration="1601/12s" start="0/1s" enabled="1" />
             </video>
             <clip name="Purdue_Pharma_opioid_Sackler_family.mp4" offset="30789/8s" duration="67/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r163" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r55" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Purdue_Pharma_opioid_Sackler_family.mp4" offset="46217/12s" duration="69/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r163" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r55" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r153" name="tw_009_10_7_billion___withdrawn_befo.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r119" name="tw_009_10_7_billion___withdrawn_befo.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r129" name="tw_004_richard_grimshaw___age_13.mov" lane="1" offset="35/3s" duration="3/1s" start="0/1s">
+              <video ref="r87" name="tw_004_richard_grimshaw___age_13.mov" lane="1" offset="35/3s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Purdue_Pharma_opioid_Sackler_family.mp4" offset="11606/3s" duration="109/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r163" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r55" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Purdue_Pharma_opioid_Sackler_family.mp4" offset="31095/8s" duration="67/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r163" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r55" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -600,21 +600,21 @@
               </adjust-volume>
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="15581/4s" duration="53/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wall_Street_trading_floor.mp4" offset="31233/8s" duration="125/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r77" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r115" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Department_of_Justice_building.mp4" offset="11728/3s" duration="6/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r135" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r73" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r5" name="tw_047_the_law_doesn_t_prevent_corpor.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r17" name="tw_047_the_law_doesn_t_prevent_corpor.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
-            <video ref="r23" name="corporate_boardroom_commons_0.jpg" offset="11746/3s" duration="17/8s" start="0/1s">
+            <video ref="r67" name="corporate_boardroom_commons_0.jpg" offset="11746/3s" duration="17/8s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -623,40 +623,40 @@
                   <keyframe time="17/8s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <video ref="r105" name="tw_012_1_trillion_in_fines___since_2.mov" lane="1" offset="17/8s" duration="3/1s" start="0/1s">
+              <video ref="r25" name="tw_012_1_trillion_in_fines___since_2.mov" lane="1" offset="17/8s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="94019/24s" duration="91/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r105" name="tw_012_1_trillion_in_fines___since_2.mov" lane="1" offset="91/12s" duration="3/1s" start="0/1s">
+              <video ref="r25" name="tw_012_1_trillion_in_fines___since_2.mov" lane="1" offset="91/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="94201/24s" duration="53/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r105" name="tw_012_1_trillion_in_fines___since_2.mov" lane="1" offset="121/24s" duration="3/1s" start="0/1s">
+              <video ref="r25" name="tw_012_1_trillion_in_fines___since_2.mov" lane="1" offset="121/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="94625/24s" duration="131/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="23689/6s" duration="91/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="GDPR_Meta_Ireland_billion_fine.mp4" offset="15823/4s" duration="263/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r113" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r35" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
-            <video ref="r51" name="courtroom_gavel_commons_0.jpg" offset="95201/24s" duration="43/6s" start="0/1s">
+            <video ref="r145" name="courtroom_gavel_commons_0.jpg" offset="95201/24s" duration="43/6s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -667,12 +667,12 @@
               </adjust-transform>
             </video>
             <clip name="data_center_servers.mp4" offset="31791/8s" duration="65/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r3" name="chapter_the_data.mov" lane="2" offset="65/12s" duration="2/1s" start="0/1s" />
-              <asset-clip ref="r109" name="track_02_investigative_ducked.wav" lane="4" offset="65/12s" duration="210/1s" start="0/1s" role="music" />
+              <video ref="r155" name="chapter_the_data.mov" lane="2" offset="65/12s" duration="2/1s" start="0/1s" />
+              <asset-clip ref="r165" name="track_02_investigative_ducked.wav" lane="4" offset="65/12s" duration="210/1s" start="0/1s" enabled="1" />
             </clip>
-            <video ref="r101" name="facebook_hq_commons_0.jpg" offset="95503/24s" duration="23/6s" start="0/1s">
+            <video ref="r33" name="facebook_hq_commons_0.jpg" offset="95503/24s" duration="23/6s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -681,11 +681,11 @@
                   <keyframe time="23/6s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <video ref="r125" name="tw_014_aleksandr_kogan___cambridge_un.mov" lane="1" offset="23/6s" duration="3/1s" start="0/1s">
+              <video ref="r139" name="tw_014_aleksandr_kogan___cambridge_un.mov" lane="1" offset="23/6s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
-            <video ref="r141" name="cambridge_analytica_commons_0.jpg" offset="31865/8s" duration="107/24s" start="0/1s">
+            <video ref="r79" name="cambridge_analytica_commons_0.jpg" offset="31865/8s" duration="107/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -696,21 +696,21 @@
               </adjust-transform>
             </video>
             <clip name="Cambridge_Analytica_scandal_explained.mp4" offset="47851/12s" duration="299/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r11" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r23" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Cambridge_Analytica_scandal_explained.mp4" offset="96001/24s" duration="22/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r11" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r23" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r39" name="tw_016_87_million_people.mov" lane="1" offset="31/12s" duration="3/1s" start="0/1s">
+              <video ref="r133" name="tw_016_87_million_people.mov" lane="1" offset="31/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="48089/12s" duration="233/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r123" name="cambridge_analytica_scandal_wiki_1.jpg" offset="32137/8s" duration="16/3s" start="0/1s">
+            <video ref="r1" name="cambridge_analytica_scandal_wiki_1.jpg" offset="32137/8s" duration="16/3s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -721,7 +721,7 @@
               </adjust-transform>
             </video>
             <clip name="Cambridge_Analytica_scandal_explained.mp4" offset="48269/12s" duration="73/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r11" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r23" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -731,7 +731,7 @@
                 </param>
               </adjust-volume>
             </clip>
-            <video ref="r27" name="cambridge_analytica_scandal_wiki_0.jpg" offset="48415/12s" duration="5/1s" start="0/1s">
+            <video ref="r163" name="cambridge_analytica_scandal_wiki_0.jpg" offset="48415/12s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -740,11 +740,11 @@
                   <keyframe time="5/1s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <video ref="r39" name="tw_016_87_million_people.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r133" name="tw_016_87_million_people.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="48475/12s" duration="115/24s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="48475/12s" duration="115/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -755,10 +755,10 @@
               </adjust-transform>
             </video>
             <clip name="Facebook_FTC_5_billion_dollar_fine.mp4" offset="48533/12s" duration="73/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r143" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r53" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r149" name="data_center_commons_1.jpg" offset="8107/2s" duration="5/1s" start="0/1s">
+            <video ref="r153" name="data_center_commons_1.jpg" offset="8107/2s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -768,7 +768,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="8117/2s" duration="6/1s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="8117/2s" duration="6/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -778,7 +778,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r51" name="courtroom_gavel_commons_0.jpg" offset="8129/2s" duration="37/6s" start="0/1s">
+            <video ref="r145" name="courtroom_gavel_commons_0.jpg" offset="8129/2s" duration="37/6s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -788,7 +788,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r27" name="cambridge_analytica_scandal_wiki_0.jpg" offset="12212/3s" duration="61/12s" start="0/1s">
+            <video ref="r163" name="cambridge_analytica_scandal_wiki_0.jpg" offset="12212/3s" duration="61/12s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -799,114 +799,113 @@
               </adjust-transform>
             </video>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="16303/4s" duration="151/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r29" name="tw_017_march_2018.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r77" name="tw_017_march_2018.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="97969/24s" duration="103/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="12259/3s" duration="139/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+            <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="12259/3s" duration="93/8s" start="0/1s" tcFormat="NDF">
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r161" name="tw_001_how_is_that_possible.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r127" name="tw_001_how_is_that_possible.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
-            <gap name="Gap" offset="49175/12s" duration="1/24s" start="3600/1s" />
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="98351/24s" duration="29/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r91" name="tw_018_senator__we_run_ads.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r27" name="tw_018_senator__we_run_ads.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="32803/8s" duration="83/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="24623/6s" duration="181/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wall_Street_trading_floor.mp4" offset="32891/8s" duration="59/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r77" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r115" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r7" name="tw_003_ford_motor_company___1977.mov" lane="1" offset="29/12s" duration="3/1s" start="0/1s">
+              <video ref="r91" name="tw_003_ford_motor_company___1977.mov" lane="1" offset="29/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="98731/24s" duration="151/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="49441/12s" duration="25/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="32969/8s" duration="157/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="12383/3s" duration="23/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="49601/12s" duration="329/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Mark_Zuckerberg_Senate_hearing_2018.mp4" offset="33177/8s" duration="91/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r71" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r131" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Cambridge_Analytica_scandal_explained.mp4" offset="99713/24s" duration="89/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r11" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r23" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="24995/6s" duration="26/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r33" name="tw_000_5_billion.mov" lane="1" offset="26/3s" duration="3/1s" start="0/1s">
+              <video ref="r21" name="tw_000_5_billion.mov" lane="1" offset="26/3s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Facebook_FTC_5_billion_dollar_fine.mp4" offset="8349/2s" duration="37/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r143" offset="0/1s" duration="1441/24s" start="0/1s" />
-              <video ref="r161" name="tw_001_how_is_that_possible.mov" lane="1" offset="49/8s" duration="3/1s" start="0/1s">
+              <video ref="r53" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r127" name="tw_001_how_is_that_possible.mov" lane="1" offset="49/8s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="33445/8s" duration="251/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <asset-clip ref="r109" name="track_02_investigative_ducked.wav" lane="4" offset="20/3s" duration="3749/24s" start="0/1s" role="music" />
+              <asset-clip ref="r165" name="track_02_investigative_ducked.wav" lane="4" offset="20/3s" duration="3757/24s" start="0/1s" enabled="1" />
             </clip>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="33529/8s" duration="28/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Facebook_FTC_5_billion_dollar_fine.mp4" offset="100811/24s" duration="391/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r143" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r53" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wall_Street_trading_floor.mp4" offset="16867/4s" duration="107/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r77" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r115" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="8487/2s" duration="1/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <gap name="Gap" offset="4244/1s" duration="179/24s" start="3600/1s" />
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="102035/24s" duration="67/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r111" name="eu_parliament_commons_0.jpg" offset="25559/6s" duration="91/24s" start="0/1s">
+            <video ref="r11" name="eu_parliament_commons_0.jpg" offset="25559/6s" duration="91/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -917,7 +916,7 @@
               </adjust-transform>
             </video>
             <clip name="GDPR_Meta_Ireland_billion_fine.mp4" offset="34109/8s" duration="175/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r113" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r35" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -926,16 +925,16 @@
                   <keyframe time="175/24s" value="-96dB" />
                 </param>
               </adjust-volume>
-              <video ref="r165" name="tw_038_4__of_global_revenue.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r57" name="tw_038_4__of_global_revenue.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="GDPR_Meta_Ireland_billion_fine.mp4" offset="51251/12s" duration="10/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r113" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r35" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="17097/4s" duration="23/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -946,10 +945,10 @@
               </adjust-volume>
             </clip>
             <clip name="data_center_servers.mp4" offset="102721/24s" duration="23/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r99" name="eu_parliament_commons_1.jpg" offset="102859/24s" duration="39/8s" start="0/1s">
+            <video ref="r93" name="eu_parliament_commons_1.jpg" offset="102859/24s" duration="39/8s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -960,24 +959,24 @@
               </adjust-transform>
             </video>
             <clip name="GDPR_Meta_Ireland_billion_fine.mp4" offset="12872/3s" duration="113/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r113" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r35" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="41/8s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="41/8s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="103201/24s" duration="55/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="12907/3s" duration="29/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r1" name="tw_042_that_s_the_formula.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r167" name="tw_042_that_s_the_formula.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
-            <video ref="r111" name="eu_parliament_commons_0.jpg" offset="51715/12s" duration="119/24s" start="0/1s">
+            <video ref="r11" name="eu_parliament_commons_0.jpg" offset="51715/12s" duration="119/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -986,19 +985,19 @@
                   <keyframe time="119/24s" value="1.03 1.03" />
                 </param>
               </adjust-transform>
-              <video ref="r165" name="tw_038_4__of_global_revenue.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r57" name="tw_038_4__of_global_revenue.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
             <clip name="GDPR_Meta_Ireland_billion_fine.mp4" offset="103549/24s" duration="185/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r113" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r35" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="103735/24s" duration="20/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r99" name="eu_parliament_commons_1.jpg" offset="103895/24s" duration="5/1s" start="0/1s">
+            <video ref="r93" name="eu_parliament_commons_1.jpg" offset="103895/24s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -1008,7 +1007,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="104015/24s" duration="65/12s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="104015/24s" duration="65/12s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -1019,78 +1018,78 @@
               </adjust-transform>
             </video>
             <clip name="corporate_whistleblower.mp4" offset="34715/8s" duration="107/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r69" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r151" name="chapter_the_machines.mov" lane="2" offset="53/12s" duration="2/1s" start="0/1s" />
-              <asset-clip ref="r55" name="track_04_dark_ducked.wav" lane="4" offset="53/12s" duration="210/1s" start="0/1s" role="music" />
+              <video ref="r95" name="chapter_the_machines.mov" lane="2" offset="53/12s" duration="2/1s" start="0/1s" />
+              <asset-clip ref="r65" name="track_04_dark_ducked.wav" lane="4" offset="53/12s" duration="210/1s" start="0/1s" enabled="1" />
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="104251/24s" duration="7/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="104279/24s" duration="29/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="8719/2s" duration="11/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r1" name="tw_042_that_s_the_formula.mov" lane="1" offset="11/4s" duration="3/1s" start="0/1s">
+              <video ref="r167" name="tw_042_that_s_the_formula.mov" lane="1" offset="11/4s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="17449/4s" duration="143/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="26209/6s" duration="25/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="13114/3s" duration="167/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="105079/24s" duration="217/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="13162/3s" duration="137/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r65" name="tw_024_almost_all_of_it.mov" lane="1" offset="137/24s" duration="3/1s" start="0/1s">
+              <video ref="r157" name="tw_024_almost_all_of_it.mov" lane="1" offset="137/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="105433/24s" duration="11/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="105521/24s" duration="73/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="105667/24s" duration="21/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="105731/24s" duration="49/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="52939/12s" duration="107/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="4416/1s" duration="143/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="106127/24s" duration="149/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="26569/6s" duration="209/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -1101,58 +1100,58 @@
               </adjust-volume>
             </clip>
             <clip name="data_center_servers.mp4" offset="35495/8s" duration="143/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="26657/6s" duration="107/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="106735/24s" duration="55/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r147" name="tw_028_irreversible.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r63" name="tw_028_irreversible.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="53395/12s" duration="23/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Ford_Pinto_fuel_tank_explosion_1977.mp4" offset="106883/24s" duration="23/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r57" offset="0/1s" duration="14/3s" start="0/1s" />
+              <video ref="r3" offset="0/1s" duration="14/3s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="106951/24s" duration="33/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Purdue_Pharma_opioid_Sackler_family.mp4" offset="53525/12s" duration="107/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r163" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r55" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="13408/3s" duration="55/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="13415/3s" duration="25/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="53735/12s" duration="103/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="107573/24s" duration="37/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="107795/24s" duration="5/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="53917/12s" duration="95/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -1163,42 +1162,42 @@
               </adjust-volume>
             </clip>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="4501/1s" duration="127/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="108151/24s" duration="95/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="18041/4s" duration="109/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r145" name="tw_040_fired_for_calling_the_ethics_h.mov" lane="1" offset="95/8s" duration="3/1s" start="0/1s">
+              <video ref="r137" name="tw_040_fired_for_calling_the_ethics_h.mov" lane="1" offset="95/8s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="54341/12s" duration="119/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="13600/3s" duration="79/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="13610/3s" duration="293/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r41" name="tw_021_elliana_esquivel.mov" lane="1" offset="293/24s" duration="3/1s" start="0/1s">
+              <video ref="r51" name="tw_021_elliana_esquivel.mov" lane="1" offset="293/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="36391/8s" duration="3/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <asset-clip ref="r55" name="track_04_dark_ducked.wav" lane="4" offset="35/12s" duration="210/1s" start="0/1s" role="music" />
+              <asset-clip ref="r65" name="track_04_dark_ducked.wav" lane="4" offset="35/12s" duration="210/1s" start="0/1s" enabled="1" />
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="36415/8s" duration="35/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -1209,13 +1208,13 @@
               </adjust-volume>
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="109525/24s" duration="73/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r25" name="tw_022_charlotte__nc.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r103" name="tw_022_charlotte__nc.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
-            <video ref="r103" name="artist_illustration_commons_0.jpg" offset="54799/12s" duration="5/1s" start="0/1s">
+            <video ref="r125" name="artist_illustration_commons_0.jpg" offset="54799/12s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1225,7 +1224,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r9" name="doj_building_wiki.jpg" offset="54859/12s" duration="37/12s" start="0/1s">
+            <video ref="r129" name="doj_building_wiki.jpg" offset="54859/12s" duration="37/12s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1236,22 +1235,22 @@
               </adjust-transform>
             </video>
             <clip name="digital_artist_workspace.mp4" offset="13724/3s" duration="77/12s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="54973/12s" duration="49/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r47" name="tw_023_have_i_been_trained.mov" lane="1" offset="73/12s" duration="3/1s" start="0/1s">
+              <video ref="r29" name="tw_023_have_i_been_trained.mov" lane="1" offset="73/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="data_center_servers.mp4" offset="27523/6s" duration="91/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="4591/1s" duration="73/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -1262,18 +1261,18 @@
               </adjust-volume>
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="36825/8s" duration="5/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="13817/3s" duration="25/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="110635/24s" duration="365/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r103" name="artist_illustration_commons_0.jpg" offset="4625/1s" duration="29/12s" start="0/1s">
+            <video ref="r125" name="artist_illustration_commons_0.jpg" offset="4625/1s" duration="29/12s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1284,18 +1283,18 @@
               </adjust-transform>
             </video>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="55529/12s" duration="365/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="37141/8s" duration="47/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="9297/2s" duration="9/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r121" name="artist_illustration_commons_1.jpg" offset="9315/2s" duration="71/24s" start="0/1s">
+            <video ref="r69" name="artist_illustration_commons_1.jpg" offset="9315/2s" duration="71/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1304,41 +1303,41 @@
                   <keyframe time="71/24s" value="1.05 1.05" />
                 </param>
               </adjust-transform>
-              <video ref="r115" name="tw_026_70__lawsuits.mov" lane="1" offset="71/24s" duration="3/1s" start="0/1s">
+              <video ref="r19" name="tw_026_70__lawsuits.mov" lane="1" offset="71/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
             <clip name="Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4" offset="111851/24s" duration="443/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r87" offset="0/1s" duration="721/12s" start="0/1s" />
+              <video ref="r15" offset="0/1s" duration="721/12s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r155" name="tw_027_3_000.mov" lane="1" offset="155/12s" duration="3/1s" start="0/1s">
+              <video ref="r31" name="tw_027_3_000.mov" lane="1" offset="155/12s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="digital_artist_workspace.mp4" offset="56147/12s" duration="287/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r17" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r151" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r155" name="tw_027_3_000.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r31" name="tw_027_3_000.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="apartment_housing_crisis_rent.mp4" offset="37527/8s" duration="19/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r83" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r101" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="37603/8s" duration="151/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="112961/24s" duration="17/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Reddit_frontpage_browsing.mp4" offset="28253/6s" duration="105/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r95" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r47" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
-            <video ref="r157" name="common_crawl_commons_1.png" offset="113327/24s" duration="17/12s" start="0/1s">
+            <video ref="r45" name="common_crawl_commons_1.png" offset="113327/24s" duration="17/12s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1348,7 +1347,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r117" name="common_crawl_commons_0.jpg" offset="37787/8s" duration="5/1s" start="0/1s">
+            <video ref="r107" name="common_crawl_commons_0.jpg" offset="37787/8s" duration="5/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1357,11 +1356,11 @@
                   <keyframe time="5/1s" value="1.05 1.05" />
                 </param>
               </adjust-transform>
-              <video ref="r33" name="tw_000_5_billion.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r21" name="tw_000_5_billion.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </video>
-            <video ref="r157" name="common_crawl_commons_1.png" offset="37827/8s" duration="6/1s" start="0/1s">
+            <video ref="r45" name="common_crawl_commons_1.png" offset="37827/8s" duration="6/1s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1371,7 +1370,7 @@
                 </param>
               </adjust-transform>
             </video>
-            <video ref="r93" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="37875/8s" duration="67/24s" start="0/1s">
+            <video ref="r147" name="pexels_5668858_Mark_Zuckerberg_congressional_.jpg" offset="37875/8s" duration="67/24s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="-200 0" />
@@ -1382,76 +1381,76 @@
               </adjust-transform>
             </video>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="28423/6s" duration="43/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Purdue_Pharma_opioid_Sackler_family.mp4" offset="14233/3s" duration="91/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r163" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r55" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Facebook_FTC_5_billion_dollar_fine.mp4" offset="37985/8s" duration="13/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r143" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r53" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="AI_scraping_copyright_training_data.mp4" offset="114059/24s" duration="19/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r73" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r13" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="data_center_servers.mp4" offset="114211/24s" duration="55/6s" start="0/1s" tcFormat="NDF">
-              <video ref="r49" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r113" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r45" name="tw_035_the_math_works.mov" lane="1" offset="55/6s" duration="3/1s" start="0/1s">
+              <video ref="r105" name="tw_035_the_math_works.mov" lane="1" offset="55/6s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r31" name="chapter_the_rent.mov" lane="2" offset="55/6s" duration="2/1s" start="0/1s" />
-              <asset-clip ref="r55" name="track_04_dark_ducked.wav" lane="4" offset="1/1s" duration="49/6s" start="0/1s" role="music" />
-              <asset-clip ref="r63" name="track_03_emotional_ducked.wav" lane="4" offset="55/6s" duration="116/1s" start="0/1s" role="music" />
+              <video ref="r109" name="chapter_the_rent.mov" lane="2" offset="55/6s" duration="2/1s" start="0/1s" />
+              <asset-clip ref="r65" name="track_04_dark_ducked.wav" lane="4" offset="1/1s" duration="49/6s" start="0/1s" enabled="1" />
+              <asset-clip ref="r159" name="track_03_emotional_ducked.wav" lane="4" offset="55/6s" duration="116/1s" start="0/1s" enabled="1" />
             </clip>
             <clip name="Department_of_Justice_building.mp4" offset="114431/24s" duration="61/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r135" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r73" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="57307/12s" duration="13/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="205/24s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="205/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r119" name="tw_034_essentially_nothing.mov" lane="1" offset="311/24s" duration="3/1s" start="0/1s">
+              <video ref="r149" name="tw_034_essentially_nothing.mov" lane="1" offset="311/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="114925/24s" duration="19/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="apartment_housing_crisis_rent.mp4" offset="38359/8s" duration="31/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r83" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r101" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r133" name="tw_030_chris_vialpondo.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r97" name="tw_030_chris_vialpondo.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="apartment_housing_crisis_rent.mp4" offset="19195/4s" duration="149/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r83" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r101" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="apartment_housing_crisis_rent.mp4" offset="57809/12s" duration="45/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r83" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r101" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="apartment_housing_crisis_rent.mp4" offset="115753/24s" duration="359/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r83" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r101" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r13" name="tw_031_realpage.mov" lane="1" offset="359/24s" duration="3/1s" start="0/1s">
+              <video ref="r71" name="tw_031_realpage.mov" lane="1" offset="359/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="4838/1s" duration="293/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume>
                 <param name="amount">
                   <keyframe time="0/1s" value="0dB" />
@@ -1460,103 +1459,103 @@
                   <keyframe time="293/24s" value="-96dB" />
                 </param>
               </adjust-volume>
-              <video ref="r159" name="tw_005_3_5_million.mov" lane="1" offset="7/24s" duration="3/1s" start="0/1s">
+              <video ref="r5" name="tw_005_3_5_million.mov" lane="1" offset="7/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="29101/6s" duration="15/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Department_of_Justice_building.mp4" offset="14573/3s" duration="233/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r135" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r73" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r85" name="tw_041_the_sackler_name_is_still_on_t.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r99" name="tw_041_the_sackler_name_is_still_on_t.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="38939/8s" duration="83/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="apartment_housing_crisis_rent.mp4" offset="29225/6s" duration="47/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r83" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r101" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r37" name="tw_033_doj_v__realpage___nov__2025.mov" lane="1" offset="281/24s" duration="3/1s" start="0/1s">
+              <video ref="r39" name="tw_033_doj_v__realpage___nov__2025.mov" lane="1" offset="281/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <asset-clip ref="r63" name="track_03_emotional_ducked.wav" lane="4" offset="133/12s" duration="2521/24s" start="0/1s" role="music" />
+              <asset-clip ref="r159" name="track_03_emotional_ducked.wav" lane="4" offset="133/12s" duration="843/8s" start="0/1s" enabled="1" />
             </clip>
             <clip name="Department_of_Justice_building.mp4" offset="117181/24s" duration="45/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r135" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r73" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="117317/24s" duration="20/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="39159/8s" duration="37/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="58757/12s" duration="331/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="117845/24s" duration="107/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="14744/3s" duration="229/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="RealPage_rent_price_fixing_algorithm.mp4" offset="118181/24s" duration="143/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r19" offset="0/1s" duration="60/1s" start="0/1s" />
+              <video ref="r135" offset="0/1s" duration="60/1s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="US_Capitol_building_Congress.mp4" offset="29581/6s" duration="167/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r61" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r161" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r13" name="tw_031_realpage.mov" lane="1" offset="167/24s" duration="3/1s" start="0/1s">
+              <video ref="r71" name="tw_031_realpage.mov" lane="1" offset="167/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="39497/8s" duration="127/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Department_of_Justice_building.mp4" offset="59309/12s" duration="233/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r135" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r73" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="39617/8s" duration="281/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r15" name="tw_036_richard_grimshaw.mov" lane="1" offset="281/24s" duration="3/1s" start="0/1s">
+              <video ref="r75" name="tw_036_richard_grimshaw.mov" lane="1" offset="281/24s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="corporate_fines_cost_of_doing_business.mp4" offset="29783/6s" duration="43/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r59" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r89" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r53" name="tw_045_chris_vialpondo___seattle.mov" lane="1" offset="23/3s" duration="3/1s" start="0/1s">
+              <video ref="r7" name="tw_045_chris_vialpondo___seattle.mov" lane="1" offset="23/3s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="Wall_Street_trading_floor.mp4" offset="14956/3s" duration="2/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r77" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r115" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r97" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r43" name="tw_010_the_fine_is_cheaper_than_the_p.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r165" name="tw_038_4__of_global_revenue.mov" lane="1" offset="2/1s" duration="3/1s" start="0/1s">
+              <video ref="r57" name="tw_038_4__of_global_revenue.mov" lane="1" offset="2/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
-              <video ref="r127" name="chapter_the_reckoning.mov" lane="2" offset="2/1s" duration="2/1s" start="0/1s" />
-              <asset-clip ref="r167" name="track_01_tense_ducked.wav" lane="4" offset="2/1s" duration="179/8s" start="0/1s" role="music" />
+              <video ref="r117" name="chapter_the_reckoning.mov" lane="2" offset="2/1s" duration="2/1s" start="0/1s" />
+              <asset-clip ref="r81" name="track_01_tense_ducked.wav" lane="4" offset="2/1s" duration="179/8s" start="0/1s" enabled="1" />
             </clip>
-            <video ref="r79" name="eu_parliament_wiki.png" offset="14962/3s" duration="27/8s" start="0/1s">
+            <video ref="r37" name="eu_parliament_wiki.png" offset="14962/3s" duration="27/8s" start="0/1s">
               <adjust-transform>
                 <param name="position" value="0 0" />
                 <param name="anchor" value="0 0" />
@@ -1567,34 +1566,34 @@
               </adjust-transform>
             </video>
             <clip name="Facebook_to_pay_5_billion_fine.mp4" offset="119777/24s" duration="55/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r67" offset="0/1s" duration="1273/24s" start="0/1s" />
+              <video ref="r121" offset="0/1s" duration="1273/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
-              <video ref="r1" name="tw_042_that_s_the_formula.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
+              <video ref="r167" name="tw_042_that_s_the_formula.mov" lane="1" offset="0/1s" duration="3/1s" start="0/1s">
                 <adjust-transform position="0 0" scale="1 1" anchor="0 0" />
               </video>
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="119833/24s" duration="11/8s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Department_of_Justice_building.mp4" offset="39955/8s" duration="65/24s" start="0/1s" tcFormat="NDF">
-              <video ref="r135" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r73" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="courtroom_justice_gavel.mp4" offset="59965/12s" duration="3/2s" start="0/1s" tcFormat="NDF">
-              <video ref="r137" offset="0/1s" duration="481/24s" start="0/1s" />
+              <video ref="r85" offset="0/1s" duration="481/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wall_Street_trading_floor.mp4" offset="59983/12s" duration="13/3s" start="0/1s" tcFormat="NDF">
-              <video ref="r77" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r115" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="corporate_boardroom_meeting_stock.mp4" offset="60035/12s" duration="7/4s" start="0/1s" tcFormat="NDF">
-              <video ref="r89" offset="0/1s" duration="313/24s" start="0/1s" />
+              <video ref="r41" offset="0/1s" duration="313/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <clip name="Wells_Fargo_fake_accounts_scandal.mp4" offset="120113/24s" duration="5/1s" start="0/1s" tcFormat="NDF">
-              <video ref="r139" offset="0/1s" duration="1441/24s" start="0/1s" />
+              <video ref="r9" offset="0/1s" duration="1441/24s" start="0/1s" />
               <adjust-volume amount="-96dB" />
             </clip>
             <gap name="Gap" offset="120233/24s" duration="5/1s" start="120233/24s" />

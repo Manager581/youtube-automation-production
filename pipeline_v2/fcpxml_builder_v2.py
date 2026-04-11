@@ -850,13 +850,10 @@ class FCPXMLBuilderV2:
             }
 
             if lc["is_audio"]:
-                # Assign distinct roles so DaVinci creates separate audio tracks
-                if lc["lane"] == LANE_NARRATION:
-                    attrs["role"] = "dialogue"
-                elif lc["lane"] == LANE_MUSIC:
-                    attrs["role"] = "music"
-                else:
-                    attrs["role"] = "effects"
+                # Match DaVinci's own export format: enabled=1, no role attribute.
+                # DaVinci ignores lane audio without enabled=1 on import.
+                # Role attributes caused DaVinci to collapse all audio to one track.
+                attrs["enabled"] = "1"
                 SubElement(parent_el, "asset-clip", attrs)
             else:
                 vid = SubElement(parent_el, "video", attrs)
@@ -957,6 +954,20 @@ def load_paper_edit(path):
                 })
             beats = intro_beats + kept_beats
             print(f"  Intro: {len(intro_beats)} segments replacing cold open (0-{intro_end:.1f}s)")
+
+    # Close gaps between beats — extend each beat's end to meet the next beat's start.
+    # Whisper alignment leaves small gaps (0.1-0.5s) between sentences that cause
+    # black frames on the timeline. Total gap across 250 beats is ~23s.
+    content_beats = [b for b in beats if not b.get("is_chapter_marker")]
+    gaps_closed = 0
+    for i in range(len(content_beats) - 1):
+        curr_end = content_beats[i].get("end_sec", 0)
+        next_start = content_beats[i + 1].get("start_sec", 0)
+        if 0 < next_start - curr_end < 2.0:  # close gaps up to 2s
+            content_beats[i]["end_sec"] = next_start
+            gaps_closed += 1
+    if gaps_closed:
+        print(f"  Closed {gaps_closed} gaps between beats (no black frames)")
 
     segments = []
     current_chapter_num = 0
