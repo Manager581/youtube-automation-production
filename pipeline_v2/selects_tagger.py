@@ -16,6 +16,7 @@ import argparse
 import json
 import os
 import re
+from pathlib import Path
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -127,18 +128,46 @@ ONLY output JSON, nothing else."""
     }
 
 
-def tag_image(image_filename, vision_entry):
-    """Tag an image using vision manifest data (no Claude call)."""
+def tag_image(image_filename, vision_entry, image_path=None):
+    """Tag an image using (in order of preference):
+      1. <image>.content.json sidecar (written by scripts/label_stills.py) — vision-verified truth
+      2. vision_entry from the vision manifest
+      3. filename heuristics (last-resort, the source of the filename-lies bug)
+
+    Returns None if the sidecar explicitly marks the image as unusable — the
+    caller should drop it from the pool instead of showing the director a
+    lying description.
+    """
     desc = ""
     mood = "neutral"
     topics = []
+    sidecar_entities = []
+    sidecar_subject = None
 
-    if vision_entry:
+    # 1. Trust the content.json sidecar if present
+    if image_path is not None:
+        sidecar = Path(str(image_path) + ".content.json")
+        if sidecar.exists():
+            try:
+                content = json.loads(sidecar.read_text())
+                if not content.get("usable_for_documentary", True):
+                    return None  # Quarantine: keep it out of the director's pool
+                sidecar_subject = content.get("subject")
+                for ent in content.get("entities") or []:
+                    sidecar_entities.append({"name": str(ent), "type": "content_verified"})
+                if sidecar_subject:
+                    desc = sidecar_subject
+            except (json.JSONDecodeError, OSError):
+                pass  # Fall through to vision_entry / filename
+
+    # 2. Vision manifest as fallback
+    if not desc and vision_entry:
         desc = vision_entry.get("description", "")
         mood = vision_entry.get("mood", "neutral")
         topics = vision_entry.get("topics", [])
 
-    # Extract entities from filename
+    # 3. Filename heuristics — last resort (this is the source of the lie,
+    # kept only so the pipeline doesn't crash on un-labeled legacy images)
     name_parts = image_filename.replace("_", " ").replace("-", " ").lower()
     entity_keywords = {
         "facebook": "company", "meta": "company", "zuckerberg": "person",
@@ -149,13 +178,16 @@ def tag_image(image_filename, vision_entry):
         "opioid": "event", "whistleblower": "person",
     }
 
-    entities = []
-    for kw, etype in entity_keywords.items():
-        if kw in name_parts:
-            entities.append({"name": kw.title(), "type": etype})
+    entities = list(sidecar_entities)  # Start with vision-verified entities
+    if not entities:  # Only fall back to filename guessing if no sidecar entities
+        for kw, etype in entity_keywords.items():
+            if kw in name_parts:
+                entities.append({"name": kw.title(), "type": etype})
 
-    # Score editorial value
+    # Score editorial value — vision-verified content ranks higher than filename guesses
     value = 3  # base
+    if sidecar_subject:
+        value += 2  # vision-verified description
     if entities:
         value += 2  # entity-specific is more valuable
     if desc and len(desc) > 50:
@@ -250,16 +282,27 @@ def tag_selects(transcripts_path, vision_path, output_path):
         PROJECT_ROOT / "footage" / "breaking_law" / "images_v2" / "web",  # Wikipedia/Commons downloads
         PROJECT_ROOT / "footage" / "breaking_law" / "images_v2" / "wikimedia",  # Wikimedia search
     ]
+    quarantined = 0
     for img_dir in image_dirs:
         if not img_dir.exists():
             continue
         for root, _, files in os.walk(img_dir):
             for f in files:
-                if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                    vision_entry = vision_images.get(f)
-                    images_tagged[f] = tag_image(f, vision_entry)
+                if not f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+                    continue
+                full_path = Path(root) / f
+                vision_entry = vision_images.get(f)
+                tagged = tag_image(f, vision_entry, image_path=full_path)
+                if tagged is None:
+                    # Quarantined by content.json (is_ad, watermarked, reaction, etc.)
+                    quarantined += 1
+                    continue
+                images_tagged[f] = tagged
 
-    print(f"  Tagged {len(images_tagged)} images")
+    msg = f"  Tagged {len(images_tagged)} images"
+    if quarantined:
+        msg += f" ({quarantined} quarantined by content.json sidecar)"
+    print(msg)
 
     # Build entity index
     entity_index = build_entity_index(clips_tagged, images_tagged)

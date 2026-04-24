@@ -56,15 +56,37 @@ def get_video_duration(path):
         return 0
 
 
-def extract_stills(clips_dir, output_dir, timestamps_per_clip=6):
+def extract_stills(clips_dir, output_dir, timestamps_per_clip=6, validate_at_ingest=True):
     """Extract key frames from each video clip at evenly-spaced intervals.
 
     For a 60s clip with timestamps_per_clip=6, extracts frames at 5s, 15s, 25s, 35s, 45s, 55s.
     Names: {clip_stem}_still_{timestamp}s.jpg
+
+    If validate_at_ingest=True (default), every extracted frame is vision-labeled
+    via scripts/label_stills.py — unusable frames (ads, reactions, watermarked AI
+    slop, comment screenshots, title cards) are moved to <output_dir>/rejected/
+    with their sidecar so downstream code never sees the junk. This fixes the
+    filename-lies problem at the source: the filename says "Wells_Fargo..." but
+    the frame at 1s was an M&M's ad, so it gets quarantined instead of shipped
+    to the director LLM.
     """
     clips_dir = Path(clips_dir)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    rejected_dir = output_dir / "rejected"
+    if validate_at_ingest:
+        rejected_dir.mkdir(parents=True, exist_ok=True)
+
+    # Lazy-import so image_sourcer can still be imported when label_stills
+    # dependencies are unavailable in a minimal environment.
+    _label_still = None
+    if validate_at_ingest:
+        try:
+            sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+            from label_stills import label_still as _label_still  # type: ignore
+        except ImportError as e:
+            print(f"  [warn] validate_at_ingest requested but label_stills import failed: {e}")
+            _label_still = None
 
     clips = sorted(clips_dir.glob("*.mp4"))
     if not clips:
@@ -72,13 +94,13 @@ def extract_stills(clips_dir, output_dir, timestamps_per_clip=6):
         return []
 
     all_stills = []
+    rejected = 0
     for clip in clips:
         duration = get_video_duration(clip)
         if duration < 2:
             continue
 
         stem = clip.stem
-        # Space frames evenly, avoiding first/last second
         interval = max(1, (duration - 2) / timestamps_per_clip)
         timestamps = [1 + i * interval for i in range(timestamps_per_clip)
                       if 1 + i * interval < duration - 0.5]
@@ -93,18 +115,37 @@ def extract_stills(clips_dir, output_dir, timestamps_per_clip=6):
             try:
                 subprocess.run(
                     [FFMPEG, "-ss", f"{ts:.2f}", "-i", str(clip),
-                     "-vframes", "1", "-q:v", "2",  # high quality JPEG
+                     "-vframes", "1", "-q:v", "2",
                      "-y", str(out_path)],
                     capture_output=True, timeout=30
                 )
-                if out_path.exists() and out_path.stat().st_size > 5000:
-                    all_stills.append(str(out_path))
-                else:
+                if not (out_path.exists() and out_path.stat().st_size > 5000):
                     out_path.unlink(missing_ok=True)
+                    continue
+
+                # Vision-validate the just-extracted frame
+                if _label_still is not None:
+                    label = _label_still(out_path)
+                    if "_error" not in label and not label.get("usable_for_documentary", True):
+                        # Quarantine the frame + its sidecar so the main pool
+                        # only contains frames a documentary editor would use.
+                        sidecar = out_path.with_suffix(out_path.suffix + ".content.json")
+                        out_path.rename(rejected_dir / out_name)
+                        if sidecar.exists():
+                            sidecar.rename(rejected_dir / sidecar.name)
+                        rejected += 1
+                        reason = label.get("notes", "flagged as unusable")
+                        print(f"    [reject] {out_name}: {reason[:90]}")
+                        continue
+
+                all_stills.append(str(out_path))
             except Exception as e:
                 print(f"    Failed to extract {out_name}: {e}")
 
-    print(f"  Extracted {len(all_stills)} stills from {len(clips)} clips")
+    msg = f"  Extracted {len(all_stills)} usable stills from {len(clips)} clips"
+    if validate_at_ingest:
+        msg += f" (rejected {rejected} ads/reactions/watermarked)"
+    print(msg)
     return all_stills
 
 

@@ -106,21 +106,38 @@ def query_claude_json(prompt, timeout=120):
 
 def query_claude_vision(prompt, image_path, timeout=120):
     """Query Claude with an image for vision analysis.
-    
-    Args:
-        prompt: Text prompt describing what to analyze
-        image_path: Path to image file
-        timeout: Seconds before timeout
-    
-    Returns:
-        str: Claude's response
+
+    Uses the Claude Code CLI's Read tool to actually load the image bytes —
+    without --allowedTools Read, the CLI receives the path as plain text and
+    cannot see the image. Absolute paths only (CLI rejects relative paths).
     """
     if not os.path.exists(image_path):
         print(f"Image not found: {image_path}", file=sys.stderr)
         return ""
-    
-    full_prompt = f"[Image: {image_path}]\n\n{prompt}"
-    return query_claude(full_prompt, timeout=timeout)
+
+    abs_path = os.path.abspath(image_path)
+    full_prompt = (
+        f"Use the Read tool on this image file, then answer the question below.\n\n"
+        f"Image: {abs_path}\n\n"
+        f"Question:\n{prompt}"
+    )
+
+    try:
+        print(f"  [LLM-vision] Sending {len(full_prompt)} chars + 1 image to Claude CLI (timeout={timeout}s)...", file=sys.stderr)
+        result = subprocess.run(
+            [CLAUDE_BIN, "-p", "-", "--output-format", "text",
+             "--allowedTools", "Read"],
+            capture_output=True, text=True, timeout=timeout,
+            input=full_prompt,
+        )
+        print(f"  [LLM-vision] RC={result.returncode}, stdout={len(result.stdout)} chars", file=sys.stderr)
+        if result.returncode == 0:
+            return result.stdout.strip()
+        print(f"Claude vision error (rc={result.returncode}): {result.stderr[:500]}", file=sys.stderr)
+        return ""
+    except subprocess.TimeoutExpired:
+        print(f"Claude vision timed out after {timeout}s", file=sys.stderr)
+        return ""
 
 
 if __name__ == "__main__":

@@ -1,289 +1,275 @@
 #!/usr/bin/env python3
 """
-web_image_sourcer.py — Image & clip sourcer with full Chrome + Google access.
+web_image_sourcer.py — Per-beat image sourcing with Claude-vision verification.
 
-Sources images from ANY web source (Google Images, Pexels, Pixabay, Unsplash,
-news sites, government archives). NO Creative Commons restriction — all usage
-is documentary fair use.
+Sources (all free, no paid APIs):
+  1. DuckDuckGo Images — aggregates Google/Bing/Wikimedia/web results (primary)
+  2. Wikimedia Commons — direct API (fallback)
 
-Uses Claude vision to verify downloaded images match the search query.
+Removed (project rules):
+  - Pexels (generic stock photos, not documentary-appropriate)
+  - Pixabay (same)
+  - Hardcoded keyword→photo-ID maps (fake search)
 
-Sources (in priority order):
-1. Google Images (via Chrome MCP) — best variety, any image
-2. Pexels (direct API, free, no key needed)
-3. Pixabay (API, needs PIXABAY_API_KEY env var)
-4. Wikimedia Commons (free API)
-5. Government archives (NARA, LOC, archive.org)
+Every downloaded candidate is checked with Claude vision against the beat's
+intent. Mismatches are flagged so the director can re-query or fall back.
 
 Usage:
-    python -m pipeline_v2.web_image_sourcer --query "court documents legal" --output images/
-    python -m pipeline_v2.web_image_sourcer --storyboard storyboards/directed.json --output images/
+    # Single query (smoke test)
+    python -m pipeline_v2.web_image_sourcer --query "Yesenia Guitron Wells Fargo" --output images/
+
+    # Source images for specific beats in a paper edit
+    python -m pipeline_v2.web_image_sourcer \\
+        --paper-edit storyboards/breaking_law_paper_edit_v10.json \\
+        --beat beat_0023 --beat beat_0033 \\
+        --output images/breaking_law_replacements/
 """
 
 import argparse
 import json
 import os
-import subprocess
+import re
 import sys
 import urllib.parse
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent
-
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
-from pipeline_v2.llm import query_claude, query_claude_vision
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from pipeline_v2.llm import query_claude_vision  # noqa: E402
+
+# Reuse the proven DDG + Wikimedia code from scripts/source_images_free.py
+# rather than re-implementing (Rule 1: no parallel solutions)
+from source_images_free import (  # noqa: E402
+    download_from_ddg,
+    download_from_wikimedia,
+    MIN_SIZE_BYTES,
+)
+from pipeline_v2.llm import query_claude  # noqa: E402
 
 
-# ── Source Configurations ───────────────────────────────────────────────────
+# ── Sourcing ────────────────────────────────────────────────────────────────
 
-def search_google_images(query, output_dir, max_results=5):
-    """Search Google Images via Chrome browser.
-    
-    Uses Chrome MCP tools if available, falls back to direct URL download.
-    No Creative Commons filter — documentary fair use covers all usage.
+def source_candidates(query, output_dir, max_candidates=5):
+    """Fetch up to `max_candidates` image candidates for a query.
+
+    Tries DDG first (aggregates Google/Bing/Wikimedia). Falls back to direct
+    Wikimedia API if DDG returns nothing.
+
+    Returns list of {path: Path, source: str, title: str}.
     """
-    results = []
-    
-    # Try Pexels first (reliable direct download)
-    pexels_results = search_pexels(query, output_dir, max_results)
-    results.extend(pexels_results)
-    
-    if len(results) >= max_results:
-        return results[:max_results]
-    
-    # Try Pixabay
-    pixabay_results = search_pixabay(query, output_dir, max_results - len(results))
-    results.extend(pixabay_results)
-    
-    if len(results) >= max_results:
-        return results[:max_results]
-    
-    # Try Wikimedia
-    wiki_results = search_wikimedia(query, output_dir, max_results - len(results))
-    results.extend(wiki_results)
-    
-    return results[:max_results]
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    safe_label = re.sub(r'[^a-zA-Z0-9]+', '_', query)[:40].strip('_') or "query"
 
+    candidates = []
 
-def search_pexels(query, output_dir, max_results=3):
-    """Search Pexels using curated photo IDs for common documentary topics."""
-    results = []
-    
-    # Keyword to Pexels photo ID mapping for common documentary visuals
-    pexels_map = {
-        "document": 5668473, "court": 159832, "government": 208724,
-        "data": 577585, "algorithm": 546819, "server": 325229,
-        "surveillance": 572056, "apartment": 323780, "rent": 1370704,
-        "portrait": 1181354, "silhouette": 1181467, "eye": 1486064,
-        "resume": 7567529, "hiring": 3184292, "rejection": 7176026,
-        "insurance": 7688336, "corporate": 269077, "papers": 159711,
-        "laptop": 7567529, "chains": 5668882, "office": 269077,
-        "camera": 572056, "building": 208724, "code": 546819,
-        "screen": 577585, "denied": 7176026, "test": 5668858,
-        "map": 1181354, "network": 1181467, "person": 1181354,
-        "man": 1181354, "woman": 1181354, "city": 323780,
-    }
-    
-    query_lower = query.lower()
-    matched_ids = set()
-    
-    for keyword, photo_id in pexels_map.items():
-        if keyword in query_lower and photo_id not in matched_ids:
-            matched_ids.add(photo_id)
-            if len(matched_ids) >= max_results:
-                break
-    
-    if not matched_ids:
-        matched_ids = {5668473}  # Default: document photo
-    
-    for photo_id in list(matched_ids)[:max_results]:
-        url = f"https://images.pexels.com/photos/{photo_id}/pexels-photo-{photo_id}.jpeg?auto=compress&cs=tinysrgb&w=1920"
-        safe_name = query[:30].replace(' ', '_').replace('/', '_')
-        filename = f"pexels_{photo_id}_{safe_name}.jpg"
-        filepath = os.path.join(output_dir, filename)
-        
-        result = subprocess.run(
-            ['curl', '-sL', '-o', filepath, '-m', '15', url],
-            capture_output=True, timeout=20
-        )
-        
-        if os.path.exists(filepath) and os.path.getsize(filepath) > 10000:
-            results.append({"file": filepath, "source": "pexels", "query": query})
-    
-    return results
-
-
-def search_pixabay(query, output_dir, max_results=3):
-    """Search Pixabay API (needs PIXABAY_API_KEY env var)."""
-    api_key = os.environ.get('PIXABAY_API_KEY', '')
-    if not api_key:
-        return []
-    
-    results = []
-    encoded = urllib.parse.quote(query[:100])
-    url = f"https://pixabay.com/api/?key={api_key}&q={encoded}&image_type=photo&per_page={max_results}&min_width=1280"
-    
-    try:
-        result = subprocess.run(['curl', '-s', url], capture_output=True, text=True, timeout=10)
-        data = json.loads(result.stdout)
-        hits = data.get('hits', [])
-        
-        for i, hit in enumerate(hits[:max_results]):
-            img_url = hit.get('largeImageURL', '')
-            if img_url:
-                safe_name = query[:20].replace(' ', '_')
-                filename = f"pixabay_{i}_{safe_name}.jpg"
-                filepath = os.path.join(output_dir, filename)
-                
-                subprocess.run(['curl', '-sL', '-o', filepath, '-m', '10', img_url],
-                               capture_output=True, timeout=15)
-                
-                if os.path.exists(filepath) and os.path.getsize(filepath) > 10000:
-                    results.append({"file": filepath, "source": "pixabay", "query": query})
-    except (json.JSONDecodeError, subprocess.TimeoutExpired):
-        pass
-    
-    return results
-
-
-def search_wikimedia(query, output_dir, max_results=3):
-    """Search Wikimedia Commons API (free, no key needed)."""
-    results = []
-    encoded = urllib.parse.quote(query[:100])
-    url = (f"https://commons.wikimedia.org/w/api.php?action=query"
-           f"&generator=search&gsrsearch={encoded}&gsrnamespace=6"
-           f"&prop=imageinfo&iiprop=url|size&iiurlwidth=1920&format=json")
-    
-    try:
-        result = subprocess.run(['curl', '-s', url], capture_output=True, text=True, timeout=10)
-        data = json.loads(result.stdout)
-        pages = data.get('query', {}).get('pages', {})
-        
-        for i, (_, page) in enumerate(list(pages.items())[:max_results]):
-            imageinfo = page.get('imageinfo', [{}])[0]
-            thumb_url = imageinfo.get('thumburl', '')
-            if thumb_url:
-                safe_name = query[:20].replace(' ', '_')
-                filename = f"wiki_{i}_{safe_name}.jpg"
-                filepath = os.path.join(output_dir, filename)
-                
-                subprocess.run(['curl', '-sL', '-o', filepath, '-m', '10', thumb_url],
-                               capture_output=True, timeout=15)
-                
-                if os.path.exists(filepath) and os.path.getsize(filepath) > 10000:
-                    results.append({"file": filepath, "source": "wikimedia", "query": query})
-    except (json.JSONDecodeError, subprocess.TimeoutExpired):
-        pass
-    
-    return results
-
-
-def search_chrome(query, output_dir, max_results=3):
-    """Search Google Images via Chrome browser (MCP tools).
-    
-    This uses the Claude-in-Chrome MCP to navigate Google Images,
-    find relevant images, and download them. No CC restriction.
-    
-    Falls back to direct Pexels/Pixabay if Chrome MCP unavailable.
-    """
-    # Chrome MCP access is handled by the Claude Code session
-    # When running interactively, Claude can use mcp__Claude_in_Chrome tools
-    # When running as a script, fall back to API-based sources
-    
-    print(f"  Chrome search: '{query}' (use interactively for best results)")
-    print(f"  Falling back to API sources...")
-    return search_google_images(query, output_dir, max_results)
-
-
-def verify_image(image_path, expected_query):
-    """Verify an image matches the expected content using Claude vision."""
-    if not os.path.exists(image_path):
-        return False, "File not found"
-    
-    response = query_claude_vision(
-        f"Does this image match the search query '{expected_query}'? "
-        f"Reply with just YES or NO and a one-sentence reason.",
-        image_path
+    # Primary: DDG
+    ddg_paths = download_from_ddg(
+        query, output_dir, safe_label,
+        count=max_candidates * 3,
+        target_saves=max_candidates,
     )
-    
-    if response and 'yes' in response.lower()[:10]:
-        return True, response
-    return False, response
+    for p in ddg_paths:
+        candidates.append({"path": Path(p), "source": "ddg", "title": ""})
+
+    # Fallback: direct Wikimedia
+    if len(candidates) < max_candidates:
+        wiki_needed = max_candidates - len(candidates)
+        wiki_paths = download_from_wikimedia(
+            query, output_dir, safe_label,
+            count=wiki_needed,
+        )
+        for p in wiki_paths:
+            candidates.append({"path": Path(p), "source": "wikimedia", "title": ""})
+
+    return candidates
 
 
-def source_for_storyboard(storyboard_path, output_dir, verify=True):
-    """Download images for all segments in a directed storyboard.
-    
-    Reads each segment's search_query and downloads matching images.
-    Optionally verifies each image with Claude vision.
+# ── Vision verification ─────────────────────────────────────────────────────
+
+def verify_image(image_path, beat_context):
+    """Claude-vision check: does this image fit the beat?
+
+    `beat_context` is free text: narration, editorial intent, subject keywords.
+    Returns (bool_ok, reason_text).
     """
-    with open(storyboard_path) as f:
-        data = json.load(f)
-    
-    segments = []
-    if 'scenes' in data:
-        for scene in data['scenes']:
-            segments.extend(scene.get('segments', []))
-    else:
-        segments = data.get('segments', [])
-    
-    os.makedirs(output_dir, exist_ok=True)
-    
-    downloaded = []
-    for i, seg in enumerate(segments):
-        query = seg.get('search_query', '')
-        if not query:
-            continue
-        
-        seg_dir = os.path.join(output_dir, f"seg_{i:03d}")
-        os.makedirs(seg_dir, exist_ok=True)
-        
-        results = search_google_images(query, seg_dir, max_results=2)
-        
-        if verify and results:
-            for r in results:
-                ok, reason = verify_image(r['file'], query)
-                r['verified'] = ok
-                r['reason'] = reason
-                if not ok:
-                    print(f"  ⚠️ Seg {i}: image didn't match query: {reason[:50]}")
-        
-        downloaded.extend(results)
-        
-        if (i + 1) % 10 == 0:
-            print(f"  Progress: {i+1}/{len(segments)} segments ({len(downloaded)} images)")
-    
-    print(f"\nTotal: {len(downloaded)} images for {len(segments)} segments")
-    return downloaded
+    path = Path(image_path)
+    if not path.exists() or path.stat().st_size < MIN_SIZE_BYTES:
+        return False, f"File missing or too small ({path})"
 
+    prompt = (
+        "You are verifying an image for a documentary video.\n\n"
+        f"The beat this image will illustrate:\n---\n{beat_context}\n---\n\n"
+        "Examine the image. Does it visually support this beat for a viewer?\n"
+        "Reject if: the image is an ad, sponsor logo, YouTube comment screenshot, "
+        "subscribe/reaction overlay, unrelated stock footage, or wrong subject.\n"
+        "Accept if: the image shows the people, places, events, documents, or "
+        "concrete visuals the narration refers to.\n\n"
+        "Reply with exactly one line: `YES: <reason>` or `NO: <reason>`."
+    )
+
+    response = query_claude_vision(prompt, str(path)) or ""
+    verdict = response.strip().split("\n", 1)[0]
+    ok = verdict.lower().startswith("yes")
+    return ok, verdict
+
+
+# ── Per-beat + per-paper-edit ────────────────────────────────────────────────
+
+def build_query_for_beat(beat):
+    """Ask Claude to craft a focused image-search query from the beat.
+
+    Raw narration and director notes contain editorial language ("cut to",
+    "establish") and ambiguous names ("Ford" → Doug Ford vs Henry Ford vs
+    Ford Motor Co). A short Claude pass produces a query with concrete nouns,
+    proper entities, and time-period context that DDG can actually match.
+    """
+    narration = (beat.get("text") or "").strip()
+    narration = re.sub(r"\[[^\]]+\]", " ", narration)
+    narration = re.sub(r"\s+", " ", narration)[:400]
+    why = (beat.get("why") or "").strip()[:300]
+    chapter = (beat.get("chapter") or "").strip()
+
+    prompt = (
+        "You are picking a documentary B-roll image via Google/DDG search.\n"
+        "Write ONE image-search query of 3–8 words.\n"
+        "Rules:\n"
+        "  • Use proper nouns (people, companies, places, events).\n"
+        "  • Add the year or era when relevant (e.g. 'Ford Pinto 1977').\n"
+        "  • Disambiguate common names ('Ford Motor Company', not just 'Ford').\n"
+        "  • NO editorial/cinematography terms (cut, freeze, establish, hold).\n"
+        "  • NO quotes, NO punctuation, NO explanation — just the query words.\n\n"
+        f"Narration: {narration}\n"
+        f"Director note: {why}\n"
+        f"Chapter: {chapter}\n\n"
+        "Query:"
+    )
+    response = query_claude(prompt, max_tokens=50, timeout=45) or ""
+    # Strip quotes, fencing, trailing punctuation
+    q = response.strip().strip('"').strip("'").strip('`').strip()
+    q = q.split("\n")[0].strip()
+    q = re.sub(r'^(query|search):\s*', '', q, flags=re.I)
+    q = q[:120]
+    if not q:
+        # Fallback: narration minus brackets
+        q = narration[:100].rstrip('.').rstrip(',')
+    return q
+
+
+def source_for_beat(beat, output_dir, max_candidates=5, verify=True):
+    """Source + verify images for one beat. Returns summary dict."""
+    query = build_query_for_beat(beat)
+    if not query:
+        return {"beat_id": beat.get("beat_id"), "query": "", "candidates": []}
+
+    bid = beat.get("beat_id", "beat_unknown")
+    beat_dir = Path(output_dir) / bid
+    candidates = source_candidates(query, beat_dir, max_candidates=max_candidates)
+
+    beat_context = (
+        f"Narration: {beat.get('text', '')}\n"
+        f"Director's intent: {beat.get('why', '')}\n"
+        f"Chapter: {beat.get('chapter', '')}"
+    )
+
+    results = []
+    for c in candidates:
+        if verify:
+            ok, reason = verify_image(c["path"], beat_context)
+        else:
+            ok, reason = True, "(verification skipped)"
+        results.append({
+            "file": str(c["path"]),
+            "source": c["source"],
+            "verified": ok,
+            "reason": reason,
+        })
+
+    return {
+        "beat_id": bid,
+        "query": query,
+        "candidates": results,
+    }
+
+
+def source_for_paper_edit(paper_edit_path, output_dir, beat_ids=None,
+                          max_candidates=5, verify=True):
+    """Source images for specific beats (or all) in a paper edit.
+
+    Writes a summary JSON report to <output_dir>/_source_report.json.
+    """
+    with open(paper_edit_path) as f:
+        pe = json.load(f)
+
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    beat_ids = set(beat_ids) if beat_ids else None
+    summary = []
+
+    for beat in pe.get("beats", []):
+        bid = beat.get("beat_id", "")
+        if beat_ids and bid not in beat_ids:
+            continue
+        result = source_for_beat(beat, output_dir,
+                                 max_candidates=max_candidates,
+                                 verify=verify)
+        summary.append(result)
+        verified = sum(1 for c in result["candidates"] if c["verified"])
+        print(f"  [{bid}] '{result['query'][:60]}' → {verified}/{len(result['candidates'])} verified")
+
+    report_path = output_dir / "_source_report.json"
+    report_path.write_text(json.dumps(summary, indent=2))
+    return summary, report_path
+
+
+# ── CLI ──────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Web image sourcer — Google/Pexels/Pixabay/Wikimedia")
-    parser.add_argument('--query', help='Single search query')
-    parser.add_argument('--storyboard', help='Path to directed storyboard JSON')
-    parser.add_argument('--output', default='images/', help='Output directory')
-    parser.add_argument('--max', type=int, default=3, help='Max images per query')
-    parser.add_argument('--no-verify', action='store_true', help='Skip Claude vision verification')
-    parser.add_argument('--chrome', action='store_true', help='Use Chrome browser for search')
-    args = parser.parse_args()
-    
-    os.makedirs(args.output, exist_ok=True)
-    
-    if args.storyboard:
-        results = source_for_storyboard(args.storyboard, args.output, verify=not args.no_verify)
-    elif args.query:
-        if args.chrome:
-            results = search_chrome(args.query, args.output, args.max)
-        else:
-            results = search_google_images(args.query, args.output, args.max)
-        
-        for r in results:
-            print(f"  ✅ {r['source']}: {os.path.basename(r['file'])}")
-    else:
-        parser.print_help()
-        return 1
-    
-    return 0
+    p = argparse.ArgumentParser(
+        description="Web image sourcer — DDG + Wikimedia + Claude-vision verification",
+    )
+    p.add_argument('--query', help='Single search query (smoke test)')
+    p.add_argument('--paper-edit', help='Paper edit JSON; source for selected beats')
+    p.add_argument('--beat', action='append', default=[],
+                   help='Beat ID to process (repeatable). If omitted, all beats.')
+    p.add_argument('--output', default='images/', help='Output directory')
+    p.add_argument('--max', type=int, default=5, help='Max candidates per query')
+    p.add_argument('--no-verify', action='store_true', help='Skip vision verification')
+    args = p.parse_args()
+
+    if args.paper_edit:
+        summary, report_path = source_for_paper_edit(
+            args.paper_edit, args.output,
+            beat_ids=args.beat or None,
+            max_candidates=args.max,
+            verify=not args.no_verify,
+        )
+        verified = sum(1 for s in summary for c in s["candidates"] if c["verified"])
+        total = sum(len(s["candidates"]) for s in summary)
+        print(f"\nBeats processed: {len(summary)}")
+        print(f"Candidates verified: {verified}/{total}")
+        print(f"Report: {report_path}")
+        return 0
+
+    if args.query:
+        out = Path(args.output)
+        out.mkdir(parents=True, exist_ok=True)
+        candidates = source_candidates(args.query, out, max_candidates=args.max)
+        print(f"\n{len(candidates)} candidates downloaded for '{args.query}':")
+        for c in candidates:
+            if args.no_verify:
+                print(f"  · {c['path'].name} ({c['source']})")
+                continue
+            ok, reason = verify_image(c["path"], args.query)
+            icon = '✅' if ok else '❌'
+            print(f"  {icon} {c['path'].name} ({c['source']}): {reason[:100]}")
+        return 0
+
+    p.print_help()
+    return 1
 
 
 if __name__ == "__main__":
