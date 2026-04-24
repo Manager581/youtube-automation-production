@@ -1,0 +1,249 @@
+# The $0 Fine — RealPage standalone
+# ~12 min script. 3 soundbite anchors from existing corpus.
+# Branch: realpage-standalone. NO omnibus files touched.
+#
+# Soundbite anchors:
+#   ANCHOR 1 (news anchor): "That's old-fashioned price fixing using new technology."
+#     clip: RealPage_rent_price_fixing_algorithm.mp4 (3.3s)
+#   ANCHOR 2 (AG/investigator): "We allege an effective housing cartel."
+#     clip: RealPage_rent_price_fixing_algorithm.mp4 (2.4s)
+#   ANCHOR 3 (housing expert): "These firms are making such extravagant profits.
+#     The idea that they need to raise rents, it's kind of insulting actually."
+#     clip: apartment_housing_crisis_rent.mp4 (8.7s)
+#
+# [VERIFY BEFORE UPLOAD] markers flag claims that need 10-min fact check.
+# Specifically the SETTLEMENT AMOUNT — scorer claimed "$0" on March 27 2026.
+# I've written TWO cold open versions. User picks based on verification.
+# ============================================================================
+
+# ── COLD OPEN — VERSION A (if $0 verifies) ─────────────────────────────────
+
+[VISUAL: Phoenix skyline, late afternoon. Apartment building. Her name on a lease.]
+
+In late 2023, investigators in the Phoenix Attorney General's office noticed something.
+
+Rents in the area were up seventy-six percent in seven years.
+
+Four apartment buildings — different owners, different operators — had landed within twelve percent of each other on price. Not close in some categories. Close in all of them.
+
+The buildings were supposed to be competing with each other. They were acting like the same landlord.
+
+Because, in a sense, they were.
+
+[PAUSE]
+
+The investigators eventually traced every one of those prices back to the same source. An algorithm.
+
+[VISUAL: "REALPAGE" logo, then "YieldStar"]
+
+The company is called RealPage. The software is called YieldStar. And by the time anyone at the federal level caught up to it, that algorithm was setting rents on an estimated ten million American apartments.
+
+[VISUAL: full-screen black, white text]
+
+[CARD: $0]
+
+[VISUAL: the card holds for 2 full seconds]
+
+That is what RealPage paid in federal penalties for coordinating rent across ten million American homes.
+
+[VERIFY BEFORE UPLOAD: confirm DOJ / settlement figure. Scorer claimed
+ $0 settlement on or around March 27 2026. If the number is small but non-zero,
+ swap in the actual figure — the sentence still works. If the case is still
+ ongoing, reframe as "is paying" → "will pay" → "may pay nothing."]
+
+# ── COLD OPEN — VERSION B (safer, works without $0) ────────────────────────
+# Use this if $0 does not verify.
+#
+# [Same open through "ten million American apartments."]
+# [VISUAL: black, white text]
+# [CARD: the fine vs the rent extracted, side by side]
+# "That is what RealPage paid in federal penalties — set against what the
+#  algorithm extracted from renters over the same years."
+# [VERIFY BEFORE UPLOAD: replace with actual numbers.]
+# ────────────────────────────────────────────────────────────────────────────
+
+[BEAT]
+
+# ── THESIS (0:45–1:00) ─────────────────────────────────────────────────────
+
+This video is about what that number means.
+
+Not the rent number. The fine number.
+
+Because the gap between those two numbers — what the algorithm extracted from renters, and what the federal government charged to stop it — is the story. And the story is not about a loophole. It's about a price.
+
+[BEAT]
+
+# ── ACT 1: WHAT THE ALGORITHM DID (1:00–4:00) ──────────────────────────────
+
+Start with the product itself.
+
+YieldStar is a revenue management platform. Landlords pay a subscription, hand over their rent rolls, their occupancy data, their move-outs, their renewals — everything they know about the units they own. In return, YieldStar tells them what to charge. Unit by unit. Day by day.
+
+On its own, that is nothing new. Hotels have priced rooms this way for thirty years. Airlines do the same thing with seats.
+
+But apartments are not seats. You do not choose to rent an apartment tonight because Wednesdays are off-peak. You rent because your current lease is ending, your job is here, your kid's school is here, and moving costs an average of twelve hundred dollars even if nothing breaks.
+
+A renter is not a shopper. A renter is a hostage with ninety days' notice.
+
+[BEAT]
+
+What RealPage added to the formula was the thing that made it illegal.
+
+The algorithm did not just price one landlord's units. It priced across landlords. To use YieldStar, you had to share your own data with the pool. Your rents, your specials, your vacancies — all of it, fed into a single model that then told you, and your competitors, what everyone should charge.
+
+If you were a single landlord with a YieldStar subscription, you were not making a pricing decision. You were accepting one.
+
+If you were in a market where every major landlord used it — and by 2022, in some cities, that was most of them — the market was no longer a market. It was a shared spreadsheet.
+
+[BEAT — briefly hold on a title card: "one shared spreadsheet"]
+
+[SOUNDBITE_ANCHOR_1: news anchor, 3.3s]
+[clip: RealPage_rent_price_fixing_algorithm.mp4, 30.8–34.1s, clip_audio: play]
+# "That's old-fashioned price fixing using new technology."
+
+[BEAT]
+
+Price fixing is not a complicated crime. Two companies that are supposed to compete agree, directly or indirectly, to set prices together. It has been illegal in the United States since the Sherman Antitrust Act of 1890. It is one of the oldest named white-collar crimes in the country.
+
+The prosecutor investigating RealPage did not have to invent a new category of harm. He had to prove that the old one was still happening.
+
+[SOUNDBITE_ANCHOR_2: AG/investigator, 2.4s]
+[clip: RealPage_rent_price_fixing_algorithm.mp4, 34.1–36.5s, clip_audio: play]
+# "We allege an effective housing cartel."
+
+[BEAT]
+
+Cartel. That is the word.
+
+Not platform, not marketplace, not efficiency tool. Cartel. A coordinated scheme among competitors to fix the price of something millions of people are forced to buy.
+
+The allegation was filed in federal court. Over thirty separate lawsuits piled in behind it from renters, states, and municipalities. The Department of Justice joined the case in August 2024.
+
+[BEAT]
+
+# ── ACT 2: THE MATH OF THE CRIME (4:00–7:30) ──────────────────────────────
+
+Now the math.
+
+[VERIFY BEFORE UPLOAD: every number in this section. Ranges below are
+ well-reported but confirm current figures against current DOJ filings
+ and ProPublica's 2022 investigation.]
+
+RealPage has been in the rental pricing business since the early 2000s. YieldStar specifically became the dominant product after RealPage acquired it from LePage Partners in 2017. By the early 2020s, independent investigations — most notably by ProPublica — estimated that YieldStar or its sister products priced somewhere between sixteen and twenty percent of all large multi-family apartments in the United States.
+
+In certain metro areas, the concentration was much higher. In Seattle, an estimated seventy percent of apartments in some neighborhoods ran through the system. In Denver, similar. In parts of Phoenix — where the attorney general's office first flagged the pattern — the number pushed past eighty percent.
+
+Translate that into rent.
+
+Economists looking at YieldStar-saturated markets have consistently found a rent premium that ranges, depending on the study, from about three percent at the low end to nine percent at the high end, relative to comparable non-algorithmic markets.
+
+Take the midpoint. Five percent.
+
+On ten million apartments — the most widely cited figure for YieldStar's footprint at peak — a five percent rent premium is, conservatively, billions of dollars a year. Not across a decade. Every year.
+
+[VISUAL: simple stack chart. rent premium bar towering over fine bar.]
+
+[BEAT]
+
+Now compare that to the consequences for getting caught.
+
+[VERIFY BEFORE UPLOAD: confirm current settlement/enforcement status.
+ If $0 verifies, lean in. If small but non-zero, state the number and
+ still frame against annual extraction. If still pending, reframe to
+ "the likely outcome" and cite the typical antitrust settlement scale.]
+
+Whatever you believe about the severity of the crime, the number on the other side of the ledger is — at best — a rounding error against the annual rent extraction. At worst, it is zero. RealPage, the company, continues to operate. Its landlord clients continue to subscribe. The algorithm continues to run. Nothing was recalled. Nothing was seized. No executive went to prison.
+
+This is the arithmetic the rest of the video is about.
+
+[BEAT]
+
+Because the math is not an accident.
+
+[BEAT]
+
+# ── ACT 2.5: WHY THIS MATH WAS ALWAYS GOING TO HAPPEN (7:30–9:30) ──────────
+
+Federal antitrust law has two big enforcement tools. One is civil damages — private parties sue and the defendant pays. The other is criminal prosecution — the Department of Justice charges executives and they face prison.
+
+Criminal prosecution for price fixing is rare. It used to be common — in the 1960s, the government put real executives in real prison cells for fixing real prices. It stopped being common around 1980, and it has been declining in aggressiveness ever since. In 2021 alone, the DOJ closed the smallest number of criminal antitrust cases in the agency's modern history.
+
+Civil damages, meanwhile, have a ceiling that tracks the violator's revenue — not the harm. A firm that makes twenty billion dollars a year can face damages scaled to that revenue. A firm that makes three hundred million dollars a year — which is roughly RealPage's scale — faces a much smaller ceiling, even if the harm it enabled was in the tens of billions.
+
+The cost of the crime is set by what the company made from it. The fine is set by what the company can afford to pay.
+
+[BEAT]
+
+[VISUAL: the renter from the cold open. Same apartment. Same lease.]
+
+A renter in Phoenix is not an abstraction in this equation. She is the revenue.
+
+Her rent went up seventy-six percent. Her wages did not. The market, by every normal economic definition, stopped functioning for her around 2019. And the people who built the system that stopped it from functioning have — as of the filing of this video — paid less for doing so than she paid in a single year of rent.
+
+[BEAT]
+
+[SOUNDBITE_ANCHOR_3: housing expert, 8.7s]
+[clip: apartment_housing_crisis_rent.mp4, 39.0–47.7s, clip_audio: play]
+# "These firms are making such extravagant profits. The idea that they need to raise rents, it's kind of insulting actually."
+
+[BEAT]
+
+# ── ACT 3: THE ONE THING THAT CHANGED IT (9:30–11:30) ──────────────────────
+
+There is one counter-example, and it is worth sitting with.
+
+In 2023, the European Union fined Meta — the company that owns Facebook — one point two billion euros for a privacy violation. The fine was calculated under the GDPR framework, which scales penalties as a percentage of global annual revenue. Not a fixed cap. Not a negotiated ceiling. A percentage.
+
+Within weeks of that fine, Meta — the same company that had spent over a decade treating U.S. privacy enforcement as a cost of doing business — rewrote its entire European data transfer architecture. They shut down a pipeline they had operated for years. They rebuilt the whole system.
+
+They did it because, for the first time, the number on the fine side of the ledger was bigger than the number on the continue-operating side.
+
+The formula broke. In one jurisdiction. Because one variable changed. Not the severity of the violation. Not the public outrage. The math.
+
+[BEAT]
+
+This is what an effective fine looks like. It is not a number designed to register moral seriousness. It is a number designed to make the next executive meeting about the same behavior end differently.
+
+The United States has never had that number. Not for housing. Not for rent algorithms. Not for antitrust. The fines are calibrated to be survivable. They are calibrated to be a line item.
+
+That is not a bug. That is the design.
+
+[BEAT]
+
+# ── CLOSE (11:30–12:00) ────────────────────────────────────────────────────
+
+[VISUAL: Phoenix. The renter again. This time, a wide shot of the block.]
+
+You cannot watch a Phoenix apartment complex and see a cartel. You cannot stand in front of a RealPage sign and feel the way you feel in front of an opioid manufacturer or a crashed 737 or a burned Pinto. The harm here is spread out across ten million doors, taken in five-percent increments, invisible to any one renter.
+
+But it is there. It has been there for a decade. And the company that built it — as of the filing of this video — has paid, at best, a rounding error against what it extracted. At worst, zero.
+
+That is not a story about a loophole. It is a story about a price.
+
+[PAUSE]
+
+And the only thing that changes it is making the price too high to pay.
+
+[BEAT]
+
+[END CARD]
+
+# ── END OF SCRIPT ──────────────────────────────────────────────────────────
+
+# WORDCOUNT TARGET (excluding soundbites): ~1950 words @ 175 WPM = ~11:10
+# Plus 3 soundbites totaling ~14.4s
+# Plus ~40s of silence / visual beats built in
+# Total runtime estimate: 11:45 – 12:15
+
+# FACTUAL DEPENDENCIES (to verify in 10 min before narration regen):
+# 1. RealPage settlement status / fine amount as of upload date
+# 2. "10 million apartments" — confirm ProPublica's most recent number
+# 3. Phoenix AG's "76% rent increase since 2016" claim — from the clip itself
+# 4. ProPublica 2022 investigation cite
+# 5. DOJ joined August 2024 cite
+# 6. Meta €1.2B GDPR — 2023, confirm
+# 7. 2021 DOJ criminal antitrust claim — may need to soften if stale
+
+# Every other claim is either from the on-screen soundbites themselves
+# or well-reported enough to stand without a specific citation in the video.

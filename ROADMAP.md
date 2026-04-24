@@ -1,5 +1,28 @@
 # Pipeline V2 Roadmap
 
+## 🔴 OPEN ISSUES — deferred for later (noted 2026-04-16)
+
+### ROBOTIC VO (F5-TTS artifacts)
+- **Symptom**: Narration throughout sounds robotic — user complaint on v8
+- **Confirmed NOT the renderer**: audio peak 1.24 only 0.001% clipped, RMS within 1dB of source narration.wav. Distortion is IN the source wav.
+- **Real cause**: F5-TTS voice generation artifacts — chunk boundary seams, inconsistent prosody, clones sound robotic without `--wpm-normalize` and proper voice smoothing
+- **Fix options**:
+  1. Regenerate narration with better F5-TTS settings (reference clip, wpm normalize, smoother)
+  2. Switch TTS engine (11Labs, Play.HT — both paid, ask user first)
+  3. Fix `voice_smoother.py` bug (MEMORY notes 79% silence output was a bug that's still un-fixed for the smoothed version)
+  4. Post-process narration with DeReverb + smoothing (rnnoise, iZotope RX)
+- **Blocking**: not blocking current renders but user will keep complaining until fixed
+
+### BEATS TOO LONG (14s static holds)
+- **Symptom**: 46 beats >8s, 15 beats >10s, max 14.1s. User complaint: "pauses too long on pictures"
+- **Confirmed data**: Paper edit has these as single-visual beats. Static image for 14s is boring regardless of zoom
+- **Real cause**: Paper edit generator doesn't split long beats into multiple visuals
+- **Fix options**:
+  1. Add `split_long_beats.py` stage — any beat >8s gets split into 2-3 sub-beats, each with a different visual from available footage
+  2. Modify `paper_edit_generator.py` to respect a max_beat_duration constraint (~6s)
+  3. Have director re-run on the long beats specifically, supplying 2-3 visuals each
+- **Blocking**: creates visual monotony, not blocking rendering but affects watch time
+
 ## ✅ BUILT (session 2026-03-28)
 
 ### Secret Scores Video: 92% PASS, ready for playthrough

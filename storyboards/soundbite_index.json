@@ -1,0 +1,666 @@
+{
+  "created_at": "2026-04-22 11:32:05",
+  "transcript_source": "/Users/jefflawrence/Documents/youtube-automation-production/media/breaking_law/transcripts.json",
+  "total_clips": 20,
+  "clips": [
+    {
+      "clip_id": "AI_scraping_copyright_training_data",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/AI_scraping_copyright_training_data.mp4",
+      "duration_sec": 60.000363,
+      "full_text": "So you guys asked me to do a deep dive on this copyright report and I'm so glad that I did. This copyright report is so huge. I am basically at this point where I think I need to file a lawsuit on behalf of independent artists. I'm going to explain why. Look, here's what happened. They copyright office, the head boss in charge, who is the person that reports to Congress, to federal agencies. Basically, and says, hey, this is what should happen related to copyright. They put out these reports. Th",
+      "soundbites": [
+        {
+          "quote": "I am basically at this point where I think I need to file a lawsuit on behalf of independent artists.",
+          "start_sec": 6.8,
+          "end_sec": 12.4,
+          "speaker_guess": "content creator / music rights commentator",
+          "claim": "A commentator declares the AI copyright situation severe enough to warrant legal action for independent artists",
+          "relevance": "medium"
+        },
+        {
+          "quote": "what about all the independent artists who have their music trained on without permission, who we're not going to get paid?",
+          "start_sec": 51.5,
+          "end_sec": 60.0,
+          "speaker_guess": "content creator / music rights commentator",
+          "claim": "Independent artists had their music used for AI training without consent and will receive no compensation",
+          "relevance": "high"
+        }
+      ]
+    },
+    {
+      "clip_id": "Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Bloomberg_Money_Minute_OpenAI_Valued_At_730B_In_Record_Fundi.mp4",
+      "duration_sec": 60.101,
+      "full_text": "This is a Bloomberg Money Minute. Continuing in its efforts to secure more computing power and talent for AI development, OpenAI is raising a record breaking $110 billion in new investments at a $730 billion valuation, including $30 billion from Nvidia, $30 billion from Softbank, and $50 billion from Amazon. OpenAI says its chat GPT has more than 900 million weekly active users and more than 50 million subscribers. Meanwhile, Meta Platform signed a multi-billion dollar deal to rent artificial in",
+      "soundbites": []
+    },
+    {
+      "clip_id": "Cambridge_Analytica_scandal_explained",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Cambridge_Analytica_scandal_explained.mp4",
+      "duration_sec": 60.06,
+      "full_text": "By now you've probably heard that Facebook is scrambling to contain the fallout over a data privacy scandal. Mark Zuckerberg finally addressed the story on Wednesday, but only after a delete Facebook campaign had started to gain momentum around the world. So this was a major breach of trust, and I'm really sorry that this happened. You know, we have a basic responsibility to protect people's data, and if we can't do that, then we don't deserve to have the opportunity to serve people. So how do w",
+      "soundbites": [
+        {
+          "quote": "So this was a major breach of trust, and I'm really sorry that this happened.",
+          "start_sec": 15.3,
+          "end_sec": 19.9,
+          "speaker_guess": "CEO (Mark Zuckerberg)",
+          "claim": "Zuckerberg personally admitted Cambridge Analytica was a 'major breach of trust' \u2014 on camera, in his own words",
+          "relevance": "high"
+        },
+        {
+          "quote": "You know, we have a basic responsibility to protect people's data, and if we can't do that, then we don't deserve to have the opportunity to serve people.",
+          "start_sec": 19.9,
+          "end_sec": 29.2,
+          "speaker_guess": "CEO (Mark Zuckerberg)",
+          "claim": "Zuckerberg set his own standard \u2014 'we don't deserve to serve people' if we can't protect data \u2014 which narrator can contrast with the $5B fine and stock going up",
+          "relevance": "high"
+        },
+        {
+          "quote": "So on March 16th, the New York Times and the Guardian reported that a data mining firm named Cambridge Analytica, which had worked on Donald Trump's presidential campaign, had improperly obtained access to more than 50 million user profiles.",
+          "start_sec": 35.4,
+          "end_sec": 49.9,
+          "speaker_guess": "news anchor",
+          "claim": "Establishes the scale (50M profiles) and the Cambridge Analytica-Trump campaign link as reported fact",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "Department_of_Justice_building",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Department_of_Justice_building.mp4",
+      "duration_sec": 60.06,
+      "full_text": "Since its doors first opened in 1934, the United States Department of Justice Building has stood as a monument to justice itself. This historic structure houses a unique collection of art and architecture that illustrates the roles as occupants play in preserving our nation's laws and interests. In 1930, Congress appropriated $10 million towards the construction of a Department Building located between 9th and 10th streets and Constitution and Pennsylvania Avenue. Like other buildings in the Fed",
+      "soundbites": []
+    },
+    {
+      "clip_id": "Extraordinary_security_surrounds_US_Capitol",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Extraordinary_security_surrounds_US_Capitol.mp4",
+      "duration_sec": 192.921,
+      "full_text": "It's higher above me because I'm just the dirt the whole is to the pole So let me find out what's going on here Yeah, I'm with you I'm with you, so it's not too special But if you need me to completely confirm, you know my identity",
+      "soundbites": []
+    },
+    {
+      "clip_id": "Facebook_FTC_5_billion_dollar_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_FTC_5_billion_dollar_fine.mp4",
+      "duration_sec": 60.04,
+      "full_text": "This settlement is the result of an exhaustive investigation, which concluded that Facebook betrayed the trust of its users and deceived them about their ability to control their personal information. This is a watershed moment in privacy enforcement and privacy governance. Despite offering users privacy settings that promised to share their information with friends only, Facebook, in fact, shared users' information with every developer of an application installed by users' friends. In other wor",
+      "soundbites": [
+        {
+          "quote": "Facebook betrayed the trust of its users and deceived them about their ability to control their personal information.",
+          "start_sec": 7.0,
+          "end_sec": 14.3,
+          "speaker_guess": "FTC official",
+          "claim": "Federal regulator officially declared Facebook deceived users about privacy control",
+          "relevance": "high"
+        },
+        {
+          "quote": "For most Facebook users, their data privacy was set not by their own choices, but by the choices of their most click-happy friends.",
+          "start_sec": 34.6,
+          "end_sec": 45.1,
+          "speaker_guess": "FTC official",
+          "claim": "FTC explains Facebook's privacy settings were effectively meaningless for most users",
+          "relevance": "high"
+        },
+        {
+          "quote": "Facebook also deceived Americans about how it would use their gathered phone numbers, and about when facial recognition technology was active on their Facebook accounts.",
+          "start_sec": 45.1,
+          "end_sec": 57.1,
+          "speaker_guess": "FTC official",
+          "claim": "FTC lists specific deceptive practices beyond the main privacy violation",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "Facebook_to_pay_5_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4",
+      "duration_sec": 53.041,
+      "full_text": "For the social media giant that most of us use on a daily basis has now been slapped with a record breaking fine for privacy violations. Facebook now has to pay $5 billion as part of a settlement with the Federal Trade Commission. It also must outline changes to privacy policies and practices and add multiple layers of oversight and accountability. Facebook betrayed the trust of its users and deceived them about their ability to control their personal information. This enforcement action provide",
+      "soundbites": [
+        {
+          "quote": "Facebook betrayed the trust of its users and deceived them about their ability to control their personal information.",
+          "start_sec": 23.9,
+          "end_sec": 31.9,
+          "speaker_guess": "FTC official",
+          "claim": "FTC officially declared Facebook deceived users about privacy controls",
+          "relevance": "high"
+        },
+        {
+          "quote": "we have agreed to pay our historic fine, but even more important, we're going to make some major structural changes to how we build products and run this company",
+          "start_sec": 37.0,
+          "end_sec": 53.0,
+          "speaker_guess": "news anchor quoting Mark Zuckerberg",
+          "claim": "Zuckerberg framed the $5B fine as secondary to structural changes \u2014 minimizing the penalty",
+          "relevance": "high"
+        },
+        {
+          "quote": "Facebook now has to pay $5 billion as part of a settlement with the Federal Trade Commission.",
+          "start_sec": 9.3,
+          "end_sec": 15.7,
+          "speaker_guess": "news anchor",
+          "claim": "States the record $5B fine as fact \u2014 usable as chapter opener for the Facebook case study",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "GDPR_Meta_Ireland_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/GDPR_Meta_Ireland_billion_fine.mp4",
+      "duration_sec": 60.04,
+      "full_text": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars. Islands regulators said that the company was ordered to stop transferring data collected from Facebook users in Europe to the United States. This is a major gumbling against the social media company for violating European Union data protection rules. The Irish Data Protection Commission on DPC which acts on behalf of the European Union said on Monday that the European Data Protection Board or EDPB ord",
+      "soundbites": [
+        {
+          "quote": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars.",
+          "start_sec": 0.0,
+          "end_sec": 6.0,
+          "speaker_guess": "news anchor",
+          "claim": "Meta received the largest GDPR fine ever recorded \u2014 $1.3 billion \u2014 for transferring EU user data to the US.",
+          "relevance": "high"
+        },
+        {
+          "quote": "In response, Meta said that it was disappointed to have been singled out. The tech giant called the ruling flawed, unjustified and sets a dangerous precedent for the countless other companies.",
+          "start_sec": 34.1,
+          "end_sec": 46.1,
+          "speaker_guess": "news anchor reporting Meta's statement",
+          "claim": "Meta's response to a $1.3B fine was not contrition but defiance \u2014 framing themselves as a victim of unfair targeting.",
+          "relevance": "high"
+        },
+        {
+          "quote": "the ability for data to be transferred across borders is fundamental to how the global open internet works.",
+          "start_sec": 46.1,
+          "end_sec": 60.0,
+          "speaker_guess": "Meta executive statement (Nick Clegg / Jennifer Newstead)",
+          "claim": "Meta's own executives justified the data transfers as essential infrastructure \u2014 implicitly arguing the law itself is the problem, not their behavior.",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "Purdue_Pharma_opioid_Sackler_family",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Purdue_Pharma_opioid_Sackler_family.mp4",
+      "duration_sec": 60.000363,
+      "full_text": "We are in the middle of an epidemic, an epidemic. In fact, it's called the worst public health epidemic in our history. There's eight members of the Sackler family caused much of the opioid epidemic. And the case is shining a spotlight on the powerful family behind the drug maker. They were all hellbent on becoming super rich. Imagine a medical industry that's supposed to keep a nation healthy, but becomes so completely corrupt that it causes an epidemic. This has become a reality in the United ",
+      "soundbites": [
+        {
+          "quote": "They were all hellbent on becoming super rich.",
+          "start_sec": 17.4,
+          "end_sec": 20.3,
+          "speaker_guess": "news anchor or documentary narrator",
+          "claim": "Characterizes Sackler family motivation as pure greed, not medical mission",
+          "relevance": "medium"
+        },
+        {
+          "quote": "In the United States, drug overdoses are the leading cause of death in people under 50.",
+          "start_sec": 43.2,
+          "end_sec": 48.6,
+          "speaker_guess": "news anchor or documentary narrator",
+          "claim": "Establishes scale of opioid death toll with a specific demographic stat",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "RealPage_rent_price_fixing_algorithm",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/RealPage_rent_price_fixing_algorithm.mp4",
+      "duration_sec": 60.018292,
+      "full_text": "It's late 2023, the Phoenix area. Investigators of the State Attorney General's Office are looking at apartment rents. They're up 76% since 2016. Something is off. These four building rents are 12% higher than others, but they offer similar amenities. They have different landlords, so you'd think they should be competing with one another. But they weren't. The prices were allegedly being set by one entity, an algorithm owned by a company called RealPage. In fact, this was happening everywhere in",
+      "soundbites": [
+        {
+          "quote": "That's old-fashioned price fixing using new technology.",
+          "start_sec": 30.8,
+          "end_sec": 34.1,
+          "speaker_guess": "news anchor or reporter",
+          "claim": "Frames RealPage's algorithm as price fixing, not innovation",
+          "relevance": "high"
+        },
+        {
+          "quote": "We allege an effect at housing cartel.",
+          "start_sec": 34.1,
+          "end_sec": 36.5,
+          "speaker_guess": "official or attorney general investigator",
+          "claim": "Government official explicitly calls RealPage's conduct a housing cartel",
+          "relevance": "high"
+        },
+        {
+          "quote": "It's alleged that all of these different units, their prices were set by one single algorithm, which sounds bad.",
+          "start_sec": 39.8,
+          "end_sec": 46.6,
+          "speaker_guess": "news anchor",
+          "claim": "Confirms single algorithm controlling prices across competing units nationwide",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "Reddit_frontpage_browsing",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Reddit_frontpage_browsing.mp4",
+      "duration_sec": 60.000363,
+      "full_text": "Reddit is one of the most popular sites on the internet, but it can be a beast if you don't know how to use it. Here's how to navigate Reddit and hopefully keep you away from the trolls. So what even is Reddit? Reddit is a website with communities called subreddits, where people with similar interests can connect, share, and discuss various topics. Here's how to get started. On your desktop, head over to reddit.com, create an account by clicking Log In, then sign up on the homepage. Enter your e",
+      "soundbites": []
+    },
+    {
+      "clip_id": "US_Capitol_building_Congress",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/US_Capitol_building_Congress.mp4",
+      "duration_sec": 60.041667,
+      "full_text": "The United States Capitol Building, the home of American democracy and global symbol of freedom, is one of the most recognizable buildings in the world. The Capitol Building itself reflects the history of America, growing and evolving with the nation since its first cornerstone was laid. The person first credited with the title of architect of the Capitol was Dr. William Thornton. His design for the Capitol was selected by President George Washington in 1793 to be built to top Jenkins Hill. On S",
+      "soundbites": []
+    },
+    {
+      "clip_id": "Wall_Street_trading_floor",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wall_Street_trading_floor.mp4",
+      "duration_sec": 60.06,
+      "full_text": "Welcome. I'm Ted Weisberg and I want to welcome you to the New York for the New York Stock Exchange and I'm going to take you on a tour of the exchange. We're in what we call the main room and you need to look at this beautiful ceiling because this is a spectacular room that has been here as long as the exchange has been here, which is well over a hundred years. The special cerotha kiosks that we see around us, trading different stocks and the brokers communicating with their clients are lined a",
+      "soundbites": []
+    },
+    {
+      "clip_id": "Wells_Fargo_fake_accounts_scandal",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wells_Fargo_fake_accounts_scandal.mp4",
+      "duration_sec": 60.06,
+      "full_text": "Here's a comment that's been sticking with me. Can you make a vid about Wells Fargo? Hasn't there been a scandal with them? Well yes, there most definitely has been a scandal with them. One that can potentially be relevant to all of our lives. So I feel it's important for everyone to at least know a little bit about it. That's my motivation here, simply put, for years. Wells Fargo employees created millions of unauthorized accounts on behalf of their customers. And here's what I mean by that. A ",
+      "soundbites": [
+        {
+          "quote": "Wells Fargo employees created millions of unauthorized accounts on behalf of their customers.",
+          "start_sec": 21.9,
+          "end_sec": 27.5,
+          "speaker_guess": "YouTube commentator / documentary-style narrator",
+          "claim": "Wells Fargo systematically created accounts without customer knowledge or consent",
+          "relevance": "medium"
+        },
+        {
+          "quote": "They wouldn't even tell them they did it, which of course is very illegal, and it's almost unbelievable to me.",
+          "start_sec": 42.9,
+          "end_sec": 49.5,
+          "speaker_guess": "YouTube commentator / documentary-style narrator",
+          "claim": "Wells Fargo concealed unauthorized account creation from customers",
+          "relevance": "low"
+        }
+      ]
+    },
+    {
+      "clip_id": "apartment_housing_crisis_rent",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/apartment_housing_crisis_rent.mp4",
+      "duration_sec": 60.026633,
+      "full_text": "On this edition of the 5th estate, nothing is in the budget that I thought nothing. I need $30,000 to rent a house, which I don't have. Families struggling to keep up with skyrocketing rents. We were just seeing nothing that was even remotely affordable. It was almost like getting punched in a gut. Forced to compete for fewer and fewer affordable homes. We're going to see more and more clients priced out of living in their communities. I worry. We say rent, I say rent, we say rent, we say rent, ",
+      "soundbites": [
+        {
+          "quote": "These firms are making such extravagant profits. The idea that they need to raise rents, it's kind of insulting actually.",
+          "start_sec": 39.0,
+          "end_sec": 47.7,
+          "speaker_guess": "expert commentator or housing advocate",
+          "claim": "Expert characterizes landlord rent increases as unjustified given their profit levels",
+          "relevance": "high"
+        },
+        {
+          "quote": "Nobody is talking about the renters. Nobody.",
+          "start_sec": 53.9,
+          "end_sec": 57.0,
+          "speaker_guess": "renter or housing advocate",
+          "claim": "Renters feel invisible in the policy conversation despite being most affected",
+          "relevance": "medium"
+        },
+        {
+          "quote": "I need $30,000 to rent a house, which I don't have.",
+          "start_sec": 6.0,
+          "end_sec": 9.7,
+          "speaker_guess": "renter (individual affected)",
+          "claim": "Concrete dollar figure illustrating the unaffordability crisis for ordinary renters",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "corporate_fines_cost_of_doing_business",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_fines_cost_of_doing_business.mp4",
+      "duration_sec": 60.06,
+      "full_text": "I want to talk about the $615,000 in penalties for companies that faked anti-net neutrality comments. Yeah, what's going on with that? Okay. This is wild. This is like some next level BS. This explains not all, but at least some of how obviously beneficial things like net neutrality, like right to repair, don't just immediately happen where everyone just goes, oh yeah, that would be good. Let's do that. Let's talk about this. Three companies, LCX Digital Media, LEEDID and EFFICIANT IFFICINT Inc,",
+      "soundbites": [
+        {
+          "quote": "I want to talk about the $615,000 in penalties for companies that faked anti-net neutrality comments.",
+          "start_sec": 0.0,
+          "end_sec": 9.3,
+          "speaker_guess": "YouTuber/commentator",
+          "claim": "A $615K fine was the total penalty for companies that ran a fraudulent astroturfing campaign against net neutrality",
+          "relevance": "medium"
+        },
+        {
+          "quote": "Three companies, LCX Digital Media, LEEDID and EFFICIANT IFFICINT Inc, were hired by the broadband industry to enroll consumers in a campaign to repeal net neutrality rules in 2017.",
+          "start_sec": 38.9,
+          "end_sec": 55.6,
+          "speaker_guess": "YouTuber/commentator",
+          "claim": "Broadband industry hired firms to fake public opposition to net neutrality \u2014 a named, specific astroturfing operation",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "corporate_whistleblower",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_whistleblower.mp4",
+      "duration_sec": 60.06,
+      "full_text": "Breaking news tonight, the whistleblower complains. He's saying that he should be given the death card. Well, as far as I'm concerned, he's a traitor. Whistleblowers in any part of the government are important. And he mentioned Derek Snowden. A traitor! Whistleblowers are everywhere. And whether we think they're traitors or heroes, their impact is undeniable. They are the voices of our conscience. Behind every major fraud. If you look hard enough, you will find it whistleblower. Whistleblowers w",
+      "soundbites": [
+        {
+          "quote": "Whistleblowers were responsible for exposing more fraud than internal audit departments, internal compliance departments, and law enforcement combined.",
+          "start_sec": 27.6,
+          "end_sec": 36.4,
+          "speaker_guess": "expert commentator",
+          "claim": "Whistleblowers outperform all official oversight mechanisms combined in exposing fraud",
+          "relevance": "high"
+        },
+        {
+          "quote": "In the aftermath of the 2008 financial crisis, and the failure to detect one of the most atrocious Ponzi schemes in history, the Dodd-Frank law was passed.",
+          "start_sec": 38.4,
+          "end_sec": 47.4,
+          "speaker_guess": "news anchor or narrator",
+          "claim": "Dodd-Frank was a legislative response to systemic failure to catch fraud",
+          "relevance": "medium"
+        }
+      ]
+    },
+    {
+      "clip_id": "courtroom_justice_gavel",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/courtroom_justice_gavel.mp4",
+      "duration_sec": 20.033333,
+      "full_text": "Ever wondered why judges use a gavel in court? That loud strike isn't just for attention. It symbolizes authority, discipline, and order inside the courtroom. In fact, one strike can silence the entire room. The gavel is not just wood, it's the sound of justice being heard.",
+      "soundbites": []
+    },
+    {
+      "clip_id": "data_center_servers",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/data_center_servers.mp4",
+      "duration_sec": 60.000363,
+      "full_text": "What is a server? So that is the topic of this video. Now a server is basically a dedicated computer that provides services on behalf of clients, such as ordinary desktop computers or workstations. So it's a centralized machine where multiple clients connect to either over the internet or in a local area network and they connect to a server for a specific service. So for example, that service could be to retrieve a website, to access data or email and so on. Now a server could be dedicated to ha",
+      "soundbites": []
+    },
+    {
+      "clip_id": "digital_artist_workspace",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/digital_artist_workspace.mp4",
+      "duration_sec": 60.018292,
+      "full_text": "Hey, it's been a while, hasn't it? I've got a bit of a confession to make. I think I might have gotten a bit too tect-out lately. Too many gadgets, too many settings, and way too little time. But here's the strange thing. With all the tech in my space, the thing that still ends up feeling the most satisfying, that special part of my day that never fails to fulfill me, is just drawing. So how does this happen? How do you spend years of reviewing products, building the best setups and creating tut",
+      "soundbites": []
+    }
+  ],
+  "all_soundbites": [
+    {
+      "quote": "I am basically at this point where I think I need to file a lawsuit on behalf of independent artists.",
+      "start_sec": 6.8,
+      "end_sec": 12.4,
+      "speaker_guess": "content creator / music rights commentator",
+      "claim": "A commentator declares the AI copyright situation severe enough to warrant legal action for independent artists",
+      "relevance": "medium",
+      "clip_id": "AI_scraping_copyright_training_data",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/AI_scraping_copyright_training_data.mp4"
+    },
+    {
+      "quote": "what about all the independent artists who have their music trained on without permission, who we're not going to get paid?",
+      "start_sec": 51.5,
+      "end_sec": 60.0,
+      "speaker_guess": "content creator / music rights commentator",
+      "claim": "Independent artists had their music used for AI training without consent and will receive no compensation",
+      "relevance": "high",
+      "clip_id": "AI_scraping_copyright_training_data",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/AI_scraping_copyright_training_data.mp4"
+    },
+    {
+      "quote": "So this was a major breach of trust, and I'm really sorry that this happened.",
+      "start_sec": 15.3,
+      "end_sec": 19.9,
+      "speaker_guess": "CEO (Mark Zuckerberg)",
+      "claim": "Zuckerberg personally admitted Cambridge Analytica was a 'major breach of trust' \u2014 on camera, in his own words",
+      "relevance": "high",
+      "clip_id": "Cambridge_Analytica_scandal_explained",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Cambridge_Analytica_scandal_explained.mp4"
+    },
+    {
+      "quote": "You know, we have a basic responsibility to protect people's data, and if we can't do that, then we don't deserve to have the opportunity to serve people.",
+      "start_sec": 19.9,
+      "end_sec": 29.2,
+      "speaker_guess": "CEO (Mark Zuckerberg)",
+      "claim": "Zuckerberg set his own standard \u2014 'we don't deserve to serve people' if we can't protect data \u2014 which narrator can contrast with the $5B fine and stock going up",
+      "relevance": "high",
+      "clip_id": "Cambridge_Analytica_scandal_explained",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Cambridge_Analytica_scandal_explained.mp4"
+    },
+    {
+      "quote": "So on March 16th, the New York Times and the Guardian reported that a data mining firm named Cambridge Analytica, which had worked on Donald Trump's presidential campaign, had improperly obtained access to more than 50 million user profiles.",
+      "start_sec": 35.4,
+      "end_sec": 49.9,
+      "speaker_guess": "news anchor",
+      "claim": "Establishes the scale (50M profiles) and the Cambridge Analytica-Trump campaign link as reported fact",
+      "relevance": "medium",
+      "clip_id": "Cambridge_Analytica_scandal_explained",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Cambridge_Analytica_scandal_explained.mp4"
+    },
+    {
+      "quote": "Facebook betrayed the trust of its users and deceived them about their ability to control their personal information.",
+      "start_sec": 7.0,
+      "end_sec": 14.3,
+      "speaker_guess": "FTC official",
+      "claim": "Federal regulator officially declared Facebook deceived users about privacy control",
+      "relevance": "high",
+      "clip_id": "Facebook_FTC_5_billion_dollar_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_FTC_5_billion_dollar_fine.mp4"
+    },
+    {
+      "quote": "For most Facebook users, their data privacy was set not by their own choices, but by the choices of their most click-happy friends.",
+      "start_sec": 34.6,
+      "end_sec": 45.1,
+      "speaker_guess": "FTC official",
+      "claim": "FTC explains Facebook's privacy settings were effectively meaningless for most users",
+      "relevance": "high",
+      "clip_id": "Facebook_FTC_5_billion_dollar_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_FTC_5_billion_dollar_fine.mp4"
+    },
+    {
+      "quote": "Facebook also deceived Americans about how it would use their gathered phone numbers, and about when facial recognition technology was active on their Facebook accounts.",
+      "start_sec": 45.1,
+      "end_sec": 57.1,
+      "speaker_guess": "FTC official",
+      "claim": "FTC lists specific deceptive practices beyond the main privacy violation",
+      "relevance": "medium",
+      "clip_id": "Facebook_FTC_5_billion_dollar_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_FTC_5_billion_dollar_fine.mp4"
+    },
+    {
+      "quote": "Facebook betrayed the trust of its users and deceived them about their ability to control their personal information.",
+      "start_sec": 23.9,
+      "end_sec": 31.9,
+      "speaker_guess": "FTC official",
+      "claim": "FTC officially declared Facebook deceived users about privacy controls",
+      "relevance": "high",
+      "clip_id": "Facebook_to_pay_5_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4"
+    },
+    {
+      "quote": "we have agreed to pay our historic fine, but even more important, we're going to make some major structural changes to how we build products and run this company",
+      "start_sec": 37.0,
+      "end_sec": 53.0,
+      "speaker_guess": "news anchor quoting Mark Zuckerberg",
+      "claim": "Zuckerberg framed the $5B fine as secondary to structural changes \u2014 minimizing the penalty",
+      "relevance": "high",
+      "clip_id": "Facebook_to_pay_5_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4"
+    },
+    {
+      "quote": "Facebook now has to pay $5 billion as part of a settlement with the Federal Trade Commission.",
+      "start_sec": 9.3,
+      "end_sec": 15.7,
+      "speaker_guess": "news anchor",
+      "claim": "States the record $5B fine as fact \u2014 usable as chapter opener for the Facebook case study",
+      "relevance": "medium",
+      "clip_id": "Facebook_to_pay_5_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Facebook_to_pay_5_billion_fine.mp4"
+    },
+    {
+      "quote": "Facebook owner Meta was fined a record 1.2 billion euros which is equal to 1.3 billion dollars.",
+      "start_sec": 0.0,
+      "end_sec": 6.0,
+      "speaker_guess": "news anchor",
+      "claim": "Meta received the largest GDPR fine ever recorded \u2014 $1.3 billion \u2014 for transferring EU user data to the US.",
+      "relevance": "high",
+      "clip_id": "GDPR_Meta_Ireland_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/GDPR_Meta_Ireland_billion_fine.mp4"
+    },
+    {
+      "quote": "In response, Meta said that it was disappointed to have been singled out. The tech giant called the ruling flawed, unjustified and sets a dangerous precedent for the countless other companies.",
+      "start_sec": 34.1,
+      "end_sec": 46.1,
+      "speaker_guess": "news anchor reporting Meta's statement",
+      "claim": "Meta's response to a $1.3B fine was not contrition but defiance \u2014 framing themselves as a victim of unfair targeting.",
+      "relevance": "high",
+      "clip_id": "GDPR_Meta_Ireland_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/GDPR_Meta_Ireland_billion_fine.mp4"
+    },
+    {
+      "quote": "the ability for data to be transferred across borders is fundamental to how the global open internet works.",
+      "start_sec": 46.1,
+      "end_sec": 60.0,
+      "speaker_guess": "Meta executive statement (Nick Clegg / Jennifer Newstead)",
+      "claim": "Meta's own executives justified the data transfers as essential infrastructure \u2014 implicitly arguing the law itself is the problem, not their behavior.",
+      "relevance": "medium",
+      "clip_id": "GDPR_Meta_Ireland_billion_fine",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/GDPR_Meta_Ireland_billion_fine.mp4"
+    },
+    {
+      "quote": "They were all hellbent on becoming super rich.",
+      "start_sec": 17.4,
+      "end_sec": 20.3,
+      "speaker_guess": "news anchor or documentary narrator",
+      "claim": "Characterizes Sackler family motivation as pure greed, not medical mission",
+      "relevance": "medium",
+      "clip_id": "Purdue_Pharma_opioid_Sackler_family",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Purdue_Pharma_opioid_Sackler_family.mp4"
+    },
+    {
+      "quote": "In the United States, drug overdoses are the leading cause of death in people under 50.",
+      "start_sec": 43.2,
+      "end_sec": 48.6,
+      "speaker_guess": "news anchor or documentary narrator",
+      "claim": "Establishes scale of opioid death toll with a specific demographic stat",
+      "relevance": "medium",
+      "clip_id": "Purdue_Pharma_opioid_Sackler_family",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Purdue_Pharma_opioid_Sackler_family.mp4"
+    },
+    {
+      "quote": "That's old-fashioned price fixing using new technology.",
+      "start_sec": 30.8,
+      "end_sec": 34.1,
+      "speaker_guess": "news anchor or reporter",
+      "claim": "Frames RealPage's algorithm as price fixing, not innovation",
+      "relevance": "high",
+      "clip_id": "RealPage_rent_price_fixing_algorithm",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/RealPage_rent_price_fixing_algorithm.mp4"
+    },
+    {
+      "quote": "We allege an effect at housing cartel.",
+      "start_sec": 34.1,
+      "end_sec": 36.5,
+      "speaker_guess": "official or attorney general investigator",
+      "claim": "Government official explicitly calls RealPage's conduct a housing cartel",
+      "relevance": "high",
+      "clip_id": "RealPage_rent_price_fixing_algorithm",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/RealPage_rent_price_fixing_algorithm.mp4"
+    },
+    {
+      "quote": "It's alleged that all of these different units, their prices were set by one single algorithm, which sounds bad.",
+      "start_sec": 39.8,
+      "end_sec": 46.6,
+      "speaker_guess": "news anchor",
+      "claim": "Confirms single algorithm controlling prices across competing units nationwide",
+      "relevance": "medium",
+      "clip_id": "RealPage_rent_price_fixing_algorithm",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/RealPage_rent_price_fixing_algorithm.mp4"
+    },
+    {
+      "quote": "Wells Fargo employees created millions of unauthorized accounts on behalf of their customers.",
+      "start_sec": 21.9,
+      "end_sec": 27.5,
+      "speaker_guess": "YouTube commentator / documentary-style narrator",
+      "claim": "Wells Fargo systematically created accounts without customer knowledge or consent",
+      "relevance": "medium",
+      "clip_id": "Wells_Fargo_fake_accounts_scandal",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wells_Fargo_fake_accounts_scandal.mp4"
+    },
+    {
+      "quote": "They wouldn't even tell them they did it, which of course is very illegal, and it's almost unbelievable to me.",
+      "start_sec": 42.9,
+      "end_sec": 49.5,
+      "speaker_guess": "YouTube commentator / documentary-style narrator",
+      "claim": "Wells Fargo concealed unauthorized account creation from customers",
+      "relevance": "low",
+      "clip_id": "Wells_Fargo_fake_accounts_scandal",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/Wells_Fargo_fake_accounts_scandal.mp4"
+    },
+    {
+      "quote": "These firms are making such extravagant profits. The idea that they need to raise rents, it's kind of insulting actually.",
+      "start_sec": 39.0,
+      "end_sec": 47.7,
+      "speaker_guess": "expert commentator or housing advocate",
+      "claim": "Expert characterizes landlord rent increases as unjustified given their profit levels",
+      "relevance": "high",
+      "clip_id": "apartment_housing_crisis_rent",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/apartment_housing_crisis_rent.mp4"
+    },
+    {
+      "quote": "Nobody is talking about the renters. Nobody.",
+      "start_sec": 53.9,
+      "end_sec": 57.0,
+      "speaker_guess": "renter or housing advocate",
+      "claim": "Renters feel invisible in the policy conversation despite being most affected",
+      "relevance": "medium",
+      "clip_id": "apartment_housing_crisis_rent",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/apartment_housing_crisis_rent.mp4"
+    },
+    {
+      "quote": "I need $30,000 to rent a house, which I don't have.",
+      "start_sec": 6.0,
+      "end_sec": 9.7,
+      "speaker_guess": "renter (individual affected)",
+      "claim": "Concrete dollar figure illustrating the unaffordability crisis for ordinary renters",
+      "relevance": "medium",
+      "clip_id": "apartment_housing_crisis_rent",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/apartment_housing_crisis_rent.mp4"
+    },
+    {
+      "quote": "I want to talk about the $615,000 in penalties for companies that faked anti-net neutrality comments.",
+      "start_sec": 0.0,
+      "end_sec": 9.3,
+      "speaker_guess": "YouTuber/commentator",
+      "claim": "A $615K fine was the total penalty for companies that ran a fraudulent astroturfing campaign against net neutrality",
+      "relevance": "medium",
+      "clip_id": "corporate_fines_cost_of_doing_business",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_fines_cost_of_doing_business.mp4"
+    },
+    {
+      "quote": "Three companies, LCX Digital Media, LEEDID and EFFICIANT IFFICINT Inc, were hired by the broadband industry to enroll consumers in a campaign to repeal net neutrality rules in 2017.",
+      "start_sec": 38.9,
+      "end_sec": 55.6,
+      "speaker_guess": "YouTuber/commentator",
+      "claim": "Broadband industry hired firms to fake public opposition to net neutrality \u2014 a named, specific astroturfing operation",
+      "relevance": "medium",
+      "clip_id": "corporate_fines_cost_of_doing_business",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_fines_cost_of_doing_business.mp4"
+    },
+    {
+      "quote": "Whistleblowers were responsible for exposing more fraud than internal audit departments, internal compliance departments, and law enforcement combined.",
+      "start_sec": 27.6,
+      "end_sec": 36.4,
+      "speaker_guess": "expert commentator",
+      "claim": "Whistleblowers outperform all official oversight mechanisms combined in exposing fraud",
+      "relevance": "high",
+      "clip_id": "corporate_whistleblower",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_whistleblower.mp4"
+    },
+    {
+      "quote": "In the aftermath of the 2008 financial crisis, and the failure to detect one of the most atrocious Ponzi schemes in history, the Dodd-Frank law was passed.",
+      "start_sec": 38.4,
+      "end_sec": 47.4,
+      "speaker_guess": "news anchor or narrator",
+      "claim": "Dodd-Frank was a legislative response to systemic failure to catch fraud",
+      "relevance": "medium",
+      "clip_id": "corporate_whistleblower",
+      "clip_path": "/Users/jefflawrence/Documents/youtube-automation-production/footage/breaking_law/clips/corporate_whistleblower.mp4"
+    }
+  ],
+  "total_soundbites": 28,
+  "high_relevance_count": 13
+}

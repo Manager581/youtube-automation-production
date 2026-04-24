@@ -1,0 +1,62 @@
+{
+  "topic_scored": "The Price of Breaking the Law — Why Every Corporate Harm Becomes a Line Item the Company Can Afford",
+  "overall_score": 57,
+  "verdict": "SKIP",
+  "critical_failures": {
+    "blind_spot": {
+      "score": 48,
+      "problem": "Ford Pinto memo is taught in business ethics. 'If the penalty is a fine, it's legal' is a meme. John Oliver has done this. The audience already has the thesis before clicking.",
+      "dinner_party_reaction": "'Yeah, I mean, we all know that's how it works. Did you see the John Oliver segment?'"
+    },
+    "source_availability": {
+      "score": 21,
+      "note": "MISLEADING — scanner ran a fresh search on the title phrase and found 2 clips. Our actual corpus has 20+ clips including Meta, RealPage, AI. Ignore this score for our situation."
+    }
+  },
+  "passing_tests": {
+    "timeliness": 80,
+    "killer_stat": 75,
+    "fresh_perspective": 65,
+    "best_option": 63,
+    "originality": 62
+  },
+  "borderline_failures": {
+    "title_thumbnail": 55,
+    "five_second_title": 50
+  },
+  "scorer_recommended_fix_path": {
+    "summary": "If all 3 fixes applied → GO territory 85+",
+    "fix_1_title_reframe": {
+      "problem": "'Price of Breaking the Law' is jargon + describes a premise audience already accepts",
+      "solution": "Reframe around counterintuitive hook: 'Why Getting Caught Helps the Stock Price'",
+      "why_it_works": "Viewer reads and says 'wait, WHAT?' — inverts familiar expectation, demands explanation"
+    },
+    "fix_2_thesis_reframe": {
+      "from": "Fines are cheaper than profits (KNOWN, meme-level)",
+      "to": "The enforcement system is mathematically calibrated to NOT deter crime (NOVEL — same data, different conclusion)",
+      "why_it_works": "Same evidence, reframed from descriptive to mechanism-explanation. Blind spot score jumps from 48 to 75+."
+    },
+    "fix_3_split_or_narrow": {
+      "option_a": "Split: '$0 Fine' (RealPage standalone, publish NOW) + omnibus (publish 3-4 weeks later)",
+      "option_b": "Narrow to ONE shocking case. The $0 RealPage fine = 70+ blind spot as a standalone."
+    }
+  },
+  "scorer_title_suggestions": [
+    "Why Getting Caught Helps the Stock Price",
+    "The Company That Paid $0 for 10 Million Rent Hikes",
+    "Why Companies Break the Law on Purpose",
+    "The Fine Is Cheaper Than the Crime",
+    "Why Corporate Fines Make Investors Happy"
+  ],
+  "scorer_thumbnail_concepts": [
+    "A corporate receipt with line items: 'FRAUD — $5B', 'DEATHS — $2.5B', 'FAKE ACCOUNTS — $3B', bottom: 'PROFIT — $47B'. Dark background, red accent on profit.",
+    "Split screen: LEFT guilty verdict '$5B FINE', RIGHT stock chart going UP with green arrows. Text: 'Why?'",
+    "Corporate executive smiling, holding a check made out to 'U.S. GOVERNMENT' for '$0.00'. Text: 'The $0 Fine.'"
+  ],
+  "scorer_killer_stats_ranked": [
+    "$0 — what RealPage paid for coordinating rent across 10 million American apartments. The DOJ settled for nothing.",
+    "Meta's $5B fine was 9% of revenue. The stock went UP the day it was announced.",
+    "Boeing paid less than 16 days of revenue for 346 deaths. No executive went to prison."
+  ],
+  "timestamp": "2026-04-22"
+}

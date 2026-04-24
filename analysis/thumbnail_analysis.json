@@ -1,0 +1,812 @@
+{
+  "per_thumbnail": {
+    "coldfusion": [
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e63946",
+          "#f5f5f5"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "The RAM Crisis Keeps Getting Worse",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "RAM shortage crisis worsening",
+        "style_keywords": [
+          "dark",
+          "bold-text",
+          "tech-crisis"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e63946",
+          "#f5f5f5"
+        ],
+        "has_face": true,
+        "face_expression": "shocked",
+        "text_content": "OpenAI Kills Sora then Descends into Chaos",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "OpenAI Sora chaos collapse",
+        "style_keywords": [
+          "dark",
+          "dramatic",
+          "tech-crisis"
+        ]
+      },
+      {
+        "layout": "centered-subject",
+        "dominant_colors": [
+          "#B8A89A",
+          "#4A8FA8",
+          "#C8C0B8"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "CF",
+        "text_size": "huge",
+        "text_color": "white",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "ColdFusion channel logo diamond",
+        "style_keywords": [
+          "minimalist",
+          "elegant",
+          "branded"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e63946",
+          "#f5a623"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Hey, Whatever Happened to NFTs?",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "curious",
+        "subject": "NFT market collapse aftermath",
+        "style_keywords": [
+          "dark-background",
+          "retro-pixel-art",
+          "question-hook"
+        ]
+      }
+    ],
+    "how_money_works": [
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#f5a623",
+          "#ffffff"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Can We (Finally) Admit That Crypto Was Really... Dumb?",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "cryptocurrency retrospective critical analysis",
+        "style_keywords": [
+          "dark background",
+          "bold typography",
+          "bitcoin symbol",
+          "minimalist",
+          "editorial"
+        ]
+      },
+      {
+        "layout": "text-dominant",
+        "dominant_colors": [
+          "#1a7a2e",
+          "#ffffff",
+          "#166325"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "$?",
+        "text_size": "huge",
+        "text_color": "white",
+        "has_arrow_or_circle": false,
+        "mood": "curious",
+        "subject": "money and financial uncertainty symbols",
+        "style_keywords": [
+          "minimalist",
+          "bold-typography",
+          "icon-based"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a84b",
+          "#ffffff"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Is Private Credit About To Crash The Global Economy?",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "private credit global economy crash",
+        "style_keywords": [
+          "dark-background",
+          "gold-accent",
+          "financial-charts",
+          "bold-question",
+          "minimalist"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8e8e8",
+          "#c0392b"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "The OpenAI Problem Is About To Become OUR Problem",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "OpenAI threat to public",
+        "style_keywords": [
+          "dark",
+          "corporate",
+          "ominous"
+        ]
+      }
+    ],
+    "polymatter": [
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#4a6fa5"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Why China Banned Weird Architecture",
+        "text_size": "large",
+        "text_color": "white",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "unusual Chinese building architecture ban",
+        "style_keywords": [
+          "cinematic",
+          "architectural",
+          "documentary"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#C8102E",
+          "#FFD700",
+          "#1A1A2E"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "China is Not a Socialist Utopia.",
+        "text_size": "large",
+        "text_color": "#FFFFFF",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "China socialist utopia myth",
+        "style_keywords": [
+          "flag",
+          "contrast",
+          "political",
+          "bold-text",
+          "minimalist"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#e8e8e8"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "America's Self-Inflicted Doctor Shortage",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "US medical doctor supply crisis",
+        "style_keywords": [
+          "minimalist",
+          "typographic",
+          "editorial",
+          "dark-background",
+          "infographic"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#C8102E",
+          "#FFD700",
+          "#1A1A2E"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Taiwan is Not Venezuela",
+        "text_size": "large",
+        "text_color": "#FFFFFF",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "Taiwan versus Venezuela comparison",
+        "style_keywords": [
+          "geopolitical",
+          "flag-based",
+          "minimalist",
+          "contrast",
+          "bold-text"
+        ]
+      }
+    ],
+    "wendover": [
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a951",
+          "#3d5a80"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "",
+        "text_size": "none",
+        "text_color": "none",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "grid of YouTube video thumbnails",
+        "style_keywords": [
+          "mosaic",
+          "collage",
+          "documentary"
+        ]
+      },
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#1a3a5c",
+          "#2e6b9e",
+          "#c8a96e"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "The Cruise Industry's Arms Race",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "massive cruise ship aerial view",
+        "style_keywords": [
+          "aerial",
+          "cinematic",
+          "documentary",
+          "minimalist-text",
+          "oceanic"
+        ]
+      },
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#4a4a6a"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "How ICE's Surveillance System Works",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "ICE surveillance network infrastructure",
+        "style_keywords": [
+          "dark",
+          "map-overlay",
+          "investigative"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#4a7c9e"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Okinawa vs the US Military",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "Okinawa conflict with US military",
+        "style_keywords": [
+          "documentary",
+          "geopolitical",
+          "contrast",
+          "minimalist",
+          "flag-imagery"
+        ]
+      }
+    ],
+    "johnny_harris": [
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c84a",
+          "#f5f5f5"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "",
+        "text_size": "none",
+        "text_color": "none",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "YouTube channel video thumbnails grid",
+        "style_keywords": [
+          "grid",
+          "mosaic",
+          "documentary"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8d5a3",
+          "#c4943a"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "The Internet Didn't Fail. It Was Taken.",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "conspiratorial",
+        "subject": "internet corporatization conspiracy theory",
+        "style_keywords": [
+          "dark",
+          "documentary",
+          "investigative"
+        ]
+      },
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#8B6914",
+          "#D4A843",
+          "#2C1810"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "The Modern Middle East, Explained",
+        "text_size": "large",
+        "text_color": "#FFFFFF",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "Middle East map historical overview",
+        "style_keywords": [
+          "cartographic",
+          "historical",
+          "documentary",
+          "warm-tones",
+          "educational"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a84b",
+          "#2d5a27"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "China's Dirty Money Problem, Explained",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "China money laundering investigation",
+        "style_keywords": [
+          "documentary",
+          "investigative",
+          "dark-overlay",
+          "bold-text",
+          "portrait-left"
+        ]
+      }
+    ],
+    "more_perfect_union": [
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a84b",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "We Uncovered A Housing Scam Trapping Millions Of Americans",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "housing scam trapping Americans",
+        "style_keywords": [
+          "investigative",
+          "documentary",
+          "high-contrast",
+          "bold-text",
+          "activist"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a84b",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "Polymarket Asked To Work With Us. We Exposed Their Scam Instead.",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "conspiratorial",
+        "subject": "Polymarket prediction market scam exposure",
+        "style_keywords": [
+          "investigative",
+          "high-contrast",
+          "documentary"
+        ]
+      },
+      {
+        "layout": "full-bleed-image",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#4a3728"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Driverless Cars Are Doing Something Worse Than Crashing",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "autonomous vehicle city street night",
+        "style_keywords": [
+          "dark",
+          "cinematic",
+          "investigative"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c84a",
+          "#c0392b"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "We Investigated How Teams Monetize Your Loyalty: The Results Will Enrage You",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "sports team fan monetization",
+        "style_keywords": [
+          "investigative",
+          "bold-text",
+          "dark-background",
+          "sports-logos",
+          "expos\u00e9"
+        ]
+      }
+    ],
+    "learnbyleo": [
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c84a",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "Every Title & Thumbnail tactic explained (with examples)",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "YouTube title thumbnail tactics explained",
+        "style_keywords": [
+          "dark-background",
+          "gold-accent",
+          "educational"
+        ]
+      },
+      {
+        "layout": "centered-subject",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c547",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "How to edit SO good your viewers get addicted to your videos",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "video editing addiction techniques",
+        "style_keywords": [
+          "dark-background",
+          "bold-text",
+          "creator-facing"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c547",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "How to get the video ideas the algorithm is looking for",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "creator finding algorithm video ideas",
+        "style_keywords": [
+          "dark background",
+          "yellow accent",
+          "educational"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c547",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "Every viral RETENTION TACTIC explained (with examples)",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "viral retention tactics explained",
+        "style_keywords": [
+          "educational",
+          "dark-background",
+          "bold-text",
+          "presenter-overlay",
+          "high-contrast"
+        ]
+      }
+    ],
+    "watop": [
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a951",
+          "#e8e8e8"
+        ],
+        "has_face": false,
+        "face_expression": "none",
+        "text_content": "Why 22 Countries Have Banned American Food",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "alarming",
+        "subject": "banned American food products",
+        "style_keywords": [
+          "dark",
+          "contrast",
+          "bold-text"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#2d4a7a"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "How America Broke Its Military",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "US military decline crisis",
+        "style_keywords": [
+          "documentary",
+          "dark",
+          "political",
+          "high-contrast",
+          "cinematic"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "Why 4 Billion People Live Here",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "curious",
+        "subject": "densely populated regions of Earth",
+        "style_keywords": [
+          "geographic",
+          "documentary",
+          "minimalist"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#e8c84a",
+          "#ffffff"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "How The US Stole The Panama Canal",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "conspiratorial",
+        "subject": "US takeover of Panama Canal",
+        "style_keywords": [
+          "historical",
+          "political",
+          "dark-background",
+          "bold-title",
+          "map-graphic"
+        ]
+      }
+    ],
+    "fern": [
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a96e",
+          "#2d5a3d"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "How America Became a Tax Haven",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "America as offshore tax haven",
+        "style_keywords": [
+          "documentary",
+          "dark",
+          "cinematic",
+          "investigative",
+          "finance"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c41e3a",
+          "#f5f5f5"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "The Man Who Broke Physics",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "conspiratorial",
+        "subject": "mysterious man breaking physics",
+        "style_keywords": [
+          "dark",
+          "dramatic",
+          "investigative"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a84b",
+          "#2d4a7a"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "How America Broke the World",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "analytical",
+        "subject": "America's global economic impact",
+        "style_keywords": [
+          "documentary",
+          "geopolitical",
+          "cinematic",
+          "dark-toned",
+          "authoritative"
+        ]
+      },
+      {
+        "layout": "split-screen",
+        "dominant_colors": [
+          "#1a1a2e",
+          "#c8a951",
+          "#2d4a6e"
+        ],
+        "has_face": true,
+        "face_expression": "serious",
+        "text_content": "The Dark Side of Dubai",
+        "text_size": "large",
+        "text_color": "#ffffff",
+        "has_arrow_or_circle": false,
+        "mood": "conspiratorial",
+        "subject": "Dubai luxury versus hidden reality",
+        "style_keywords": [
+          "dark",
+          "expos\u00e9",
+          "contrast",
+          "luxury",
+          "investigative"
+        ]
+      }
+    ]
+  }
+}

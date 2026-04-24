@@ -1,0 +1,65 @@
+[
+  {
+    "label": "COLD OPEN",
+    "text": "Phoenix / 4 buildings / algorithm / $0",
+    "start": 0.0,
+    "end": 56.82,
+    "duration": 56.82
+  },
+  {
+    "label": "ACT 1 - YieldStar",
+    "text": "How the algorithm worked",
+    "start": 56.82,
+    "end": 143.73,
+    "duration": 86.9
+  },
+  {
+    "label": "SOUNDBITE: price fixing",
+    "text": "\"old-fashioned price fixing using new technology\"",
+    "start": 143.73,
+    "end": 149.24,
+    "duration": 5.52
+  },
+  {
+    "label": "ACT 1 - Cartel",
+    "text": "Sherman Antitrust + the allegation",
+    "start": 149.24,
+    "end": 174.31,
+    "duration": 25.07
+  },
+  {
+    "label": "SOUNDBITE: housing cartel",
+    "text": "\"We allege an effective housing cartel\"",
+    "start": 174.31,
+    "end": 178.32,
+    "duration": 4.01
+  },
+  {
+    "label": "ACT 2 - THE MATH",
+    "text": "10M homes / 5% premium / billions per year",
+    "start": 178.32,
+    "end": 255.2,
+    "duration": 76.88
+  },
+  {
+    "label": "SOUNDBITE: insulting",
+    "text": "\"extravagant profits... it's insulting actually\"",
+    "start": 255.2,
+    "end": 269.74,
+    "duration": 14.54
+  },
+  {
+    "label": "ACT 3 - STILL RUNNING",
+    "text": "DOJ case + algorithm still running + Seattle/SF",
+    "start": 269.74,
+    "end": 356.64,
+    "duration": 86.9
+  },
+  {
+    "label": "CLOSE",
+    "text": "10M homes / rounding error / machine never stopped",
+    "start": 356.64,
+    "end": 375.36,
+    "duration": 18.72
+  }
+]

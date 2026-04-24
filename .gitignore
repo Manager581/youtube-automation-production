@@ -34,6 +34,8 @@ youtube-cookies.txt
 *.flac
 *.aac
 *.ogg
+*.aiff
+*.aif
 
 # ─── Keyframe images — regenerable from videos ────────────────────────────────
 **/hybrid_keyframes/
@@ -81,3 +83,6 @@ Thumbs.db
 qr_codes/
 .animation_cache/
 .claude/worktrees/
+
+# ─── External tools (vendored submodules, not part of project) ───────────────
+tools/ltx-video/

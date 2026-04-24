@@ -1,0 +1,214 @@
+# The $0 Fine — RealPage standalone v2
+# Council revision pass. Cuts Act 2.5 + Act 3 (GDPR was the omnibus ghost).
+# Kills the thesis-announcement paragraph (Outsider: "writer's sentence").
+# Fixes the hostage line.
+# Target: ~8 min. 3 soundbite anchors unchanged.
+# ============================================================================
+
+# ── COLD OPEN (0:00-0:45) ──────────────────────────────────────────────────
+
+[VISUAL: Phoenix skyline, late afternoon. Apartment building. A lease on a kitchen counter.]
+
+In late 2023, investigators in the Phoenix Attorney General's office noticed something.
+
+Rents in the area were up seventy-six percent in seven years.
+
+Four apartment buildings — different owners, different operators — had landed within twelve percent of each other on price. Not close in some categories. Close in all of them.
+
+The buildings were supposed to be competing with each other. They were acting like the same landlord.
+
+Because, in a sense, they were.
+
+[PAUSE]
+
+The investigators eventually traced every one of those prices back to the same source. An algorithm.
+
+[VISUAL: "REALPAGE" logo, then "YieldStar"]
+
+The company is called RealPage. The software is called YieldStar. And by the time anyone at the federal level caught up to it, that algorithm was setting rents on an estimated ten million American apartments.
+
+[VISUAL: full-screen black, white text]
+
+[CARD: 10,000,000 HOMES  /  $0]
+
+[Hold 2 full seconds]
+
+That is what RealPage paid in federal penalties for coordinating rent across ten million American homes.
+
+[VERIFY BEFORE NARRATION: settlement status + exact number. If fine is >$0 but
+ small, swap card to actual ratio — the structure holds either way. If case
+ still pending, reframe to "is on track to pay" or "has been offered to settle
+ for." This is the only load-bearing factual claim in the cold open.]
+
+[BEAT]
+
+# ── ACT 1 — WHAT THE ALGORITHM DID (0:45-3:00) ─────────────────────────────
+# NO thesis paragraph. Viewer figures out what the video is about by watching.
+
+YieldStar is a revenue management platform. Landlords pay a subscription, hand over their rent rolls, their occupancy data, their move-outs, their renewals — everything they know about the units they own. In return, YieldStar tells them what to charge. Unit by unit. Day by day.
+
+On its own, that is nothing new. Hotels have priced rooms this way for thirty years. Airlines do the same thing with seats.
+
+But apartments are not seats. You do not choose to rent an apartment tonight because Wednesdays are off-peak. You rent because your current lease is ending, your job is here, your kid's school is here, and moving costs an average of twelve hundred dollars even if nothing breaks.
+
+A renter isn't a shopper. A renter signs what you put in front of them.
+
+[BEAT]
+
+What RealPage added to the formula was the thing that made it illegal.
+
+The algorithm did not just price one landlord's units. It priced across landlords. To use YieldStar, you had to share your own data with the pool. Your rents, your specials, your vacancies — all of it, fed into a single model that then told you, and your competitors, what everyone should charge.
+
+If you were a single landlord with a YieldStar subscription, you were not making a pricing decision. You were accepting one.
+
+If you were in a market where every major landlord used it — and by 2022, in some cities, that was most of them — the market was no longer a market. It was a shared spreadsheet.
+
+[SOUNDBITE_ANCHOR_1: news anchor, 3.3s]
+[clip: RealPage_rent_price_fixing_algorithm.mp4, 30.8–34.1s]
+# "That's old-fashioned price fixing using new technology."
+
+[BEAT]
+
+Price fixing is not a complicated crime. Two companies that are supposed to compete agree, directly or indirectly, to set prices together. It has been illegal in the United States since the Sherman Antitrust Act of 1890.
+
+The prosecutor investigating RealPage did not have to invent a new category of harm. He had to prove the old one was still happening.
+
+[SOUNDBITE_ANCHOR_2: AG/investigator, 2.4s]
+[clip: RealPage_rent_price_fixing_algorithm.mp4, 34.1–36.5s]
+# "We allege an effective housing cartel."
+
+[BEAT]
+
+# ── ACT 2 — THE MATH (3:00-5:30) ───────────────────────────────────────────
+
+Now the math.
+
+[VERIFY BEFORE NARRATION: ProPublica footprint estimate, rent-premium
+ range studies, metro-area concentrations. Ranges below are well-reported
+ but confirm current numbers.]
+
+RealPage has been in the rental pricing business since the early 2000s. By the early 2020s, independent investigations — most notably by ProPublica — estimated that YieldStar or its sister products priced somewhere between sixteen and twenty percent of all large multi-family apartments in the United States.
+
+In certain metro areas, the concentration was much higher. In Seattle, some neighborhoods pushed past seventy percent. In Denver, similar. In parts of Phoenix — where the attorney general's office first flagged the pattern — the number approached eighty percent.
+
+Translate that into rent.
+
+Economists looking at YieldStar-saturated markets have consistently found a rent premium between three and nine percent, relative to comparable non-algorithmic markets.
+
+Take the midpoint. Five percent.
+
+On ten million apartments — the most widely cited figure for YieldStar's footprint at peak — a five percent rent premium is, conservatively, billions of dollars a year.
+
+Not across a decade. Every year.
+
+[VISUAL: simple chart. The rent-premium bar, set against the fine bar.]
+
+[BEAT]
+
+This is the number that matters.
+
+Because on one side of this chart is what the algorithm extracted from renters — measured in billions per year, year after year. On the other side is what the company behind the algorithm paid for the privilege.
+
+Whatever that second number is, it is not a deterrent. It is a receipt.
+
+[SOUNDBITE_ANCHOR_3: housing expert, 8.7s]
+[clip: apartment_housing_crisis_rent.mp4, 39.0–47.7s]
+# "These firms are making such extravagant profits. The idea that they need to raise rents, it's kind of insulting actually."
+
+[BEAT]
+
+# ── ACT 3 — WHAT HAPPENS NEXT (5:30-7:30) ──────────────────────────────────
+# Stays on RealPage. Kills the GDPR/Meta pivot. Housing-native closer.
+
+Here is the part most of the coverage hasn't caught up to.
+
+[VERIFY BEFORE NARRATION: current DOJ case status, number of state AGs
+ joined, current count of private lawsuits. If any of these shifted in
+ the last week, update accordingly.]
+
+The Department of Justice filed its antitrust case against RealPage in August 2024. Multiple state attorneys general joined it. Private renters added more than thirty separate lawsuits on top. And yet, as of today —
+
+[VISUAL: a server rack, humming. A product page. A login screen.]
+
+The algorithm is still running.
+
+Landlords are still subscribing. Prices are still being set. RealPage has renamed the product, adjusted some of its disclosures, and denied the central allegation. The case grinds on. And somewhere, in four buildings in Phoenix with different owners and identical rents, another rental cycle starts next month.
+
+[BEAT]
+
+A handful of jurisdictions have tried something real.
+
+[VERIFY BEFORE NARRATION: Seattle algorithmic rent-setting ban was proposed
+ in 2024; confirm whether it passed or remains pending. If it passed, cite.
+ If still pending, use softer language ("has considered"). San Francisco
+ passed a similar measure; verify. Also: Minneapolis, Philadelphia — check.]
+
+Seattle considered banning the use of algorithmic pricing tools on residential rentals. San Francisco moved in the same direction. The proposals targeted the specific mechanism — data-pooling across landlords — rather than the broader antitrust question. They would not undo the harm. But they would, at least, stop the machine.
+
+Whether any of those measures survives, whether the federal case ends in a settlement worth anything close to what the algorithm extracted, whether the company pays a number large enough to change the next quarterly meeting about the next algorithm — none of that is decided yet.
+
+[BEAT]
+
+What is decided is this.
+
+[VISUAL: return to Phoenix. The renter from the cold open. Same apartment. Same block.]
+
+She signed a lease last month. Her rent went up again. Not by much. A nudge.
+
+The algorithm — or its successor, under a new name, owned by the same company, trained on the same data pool — made that nudge.
+
+And as of today, nobody has paid a number large enough to stop it.
+
+[BEAT]
+
+# ── CLOSE (7:30-8:00) ──────────────────────────────────────────────────────
+
+[VISUAL: a wide shot of the apartment block. Windows glowing. Night.]
+
+Ten million homes.
+
+[PAUSE]
+
+A rounding error in fines.
+
+[PAUSE]
+
+And a machine that never stopped running.
+
+[END CARD]
+
+# ── END OF SCRIPT ──────────────────────────────────────────────────────────
+
+# WORDCOUNT (narration only): ~1100 words @ 175 WPM = 6:18
+# Plus 3 soundbites = ~14.4s
+# Plus visual beats / pauses = ~45s
+# Total runtime: ~7:20 – 7:45
+
+# WHAT CHANGED FROM v1:
+# - KILLED thesis paragraph at 0:45 (Outsider's catch)
+# - KILLED "hostage with 90 days notice" → "signs what you put in front of them"
+# - KILLED entire Act 2.5 (criminal antitrust decline, civil damages ceiling)
+# - KILLED entire Act 3 GDPR/Meta pivot (First Principles: "omnibus ghost")
+# - REPLACED with housing-native Act 3: DOJ case ongoing, algorithm still running, Seattle/SF local measures
+# - CHANGED cold open ending card from "$0" alone to "10,000,000 HOMES / $0" ratio (Expansionist)
+# - REWROTE close around Phoenix renter image, not around thesis restatement
+# - SHORTER overall: 1100 words vs 1589 (31% leaner)
+
+# UNCHANGED FROM v1:
+# - All 3 soundbite anchors
+# - Phoenix cold-open factual setup
+# - YieldStar mechanism explanation
+# - The math section (ProPublica footprint, rent premium ranges)
+# - No omnibus files touched
+
+# FACT-CHECK PRIORITY (Executor's order):
+# LOAD-BEARING (kill the cold open if wrong):
+#   [1] RealPage settlement status / fine amount
+#   [2] DOJ joined August 2024
+#   [3] ProPublica investigation dates
+# NICE-TO-HAVE (soften language if uncertain):
+#   [4] Seattle / SF algorithmic rent ban status
+#   [5] Metro-area concentration numbers (Seattle 70%, Phoenix 80%)
+#   [6] Specific rent-premium range (3-9%)
+
+# GDPR/META is NOT in this script. That is the beginning of episode 2.
