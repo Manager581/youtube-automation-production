@@ -43,7 +43,11 @@ from pipeline_v2.chapter_assembler import (
 
 # ─── Constants ─────────────────────────────────────────────────────────────
 
-PAPER_EDIT = PROJECT_ROOT / "storyboards" / "breaking_law_paper_edit_v2.json"
+# Defaults track the latest verified paper-edit and the working narration WAV.
+# Override with --paper-edit / --narration. NEVER point NARRATION at
+# narration_smoothed.wav until the voice-smoother bug is fixed
+# (it's currently 87.9% silent — measured 2026-04-24).
+PAPER_EDIT = PROJECT_ROOT / "storyboards" / "breaking_law_paper_edit_v11.json"
 NARRATION = PROJECT_ROOT / "audio" / "breaking_law" / "narration.wav"
 INTRO_SPEC = PROJECT_ROOT / "storyboards" / "intro_spec_locked.json"
 MUSIC_DIR = PROJECT_ROOT / "audio" / "breaking_law" / "music_tracks"

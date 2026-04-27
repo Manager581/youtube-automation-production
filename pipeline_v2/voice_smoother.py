@@ -151,6 +151,38 @@ def smooth_boundaries(narration_path, boundaries, fade_duration, output_path):
     print(f"  Original: {info['duration']:.1f}s")
     print(f"  Smoothed: {smoothed_info['duration']:.1f}s (diff: {dur_diff:.2f}s)")
 
+    # ── Silence-ratio safety check ────────────────────────────────────────
+    # The Apr 9 bug produced output that was 87.9% silent vs 31% for the
+    # input — silently shipping a broken WAV. Refuse to keep an output that
+    # is wildly more silent than the input.
+    try:
+        import wave as _wave
+        import numpy as _np
+
+        def _silence_pct(path):
+            with _wave.open(str(path), 'r') as w:
+                n = w.getnframes()
+                data = _np.frombuffer(w.readframes(n), dtype=_np.int16)
+            if len(data) == 0:
+                return 100.0
+            return 100.0 * (_np.abs(data) < 100).sum() / len(data)
+
+        in_silence = _silence_pct(narration_path)
+        out_silence = _silence_pct(output_path)
+        print(f"  Silence: input={in_silence:.1f}% → output={out_silence:.1f}%")
+        if out_silence > in_silence + 15.0:
+            broken = output_path.with_suffix(output_path.suffix + ".broken")
+            output_path.rename(broken)
+            raise RuntimeError(
+                f"voice_smoother produced suspect output "
+                f"({out_silence:.1f}% silent vs input {in_silence:.1f}%). "
+                f"Moved to {broken.name}. Use the original narration.wav instead."
+            )
+    except RuntimeError:
+        raise
+    except Exception as e:
+        print(f"  [warn] silence safety check skipped: {e}")
+
 
 def main():
     parser = argparse.ArgumentParser(description="Post-process narration WAV to smooth robotic splits")

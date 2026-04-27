@@ -30,6 +30,55 @@ PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from pipeline_v2.llm import query_claude
+from playbook.loader import Playbook
+
+# Cached playbook content for the director prompt — built once per process.
+_PLAYBOOK = None
+_PLAYBOOK_DIRECTOR_TEXT = None
+
+
+def _get_playbook_director_text() -> str:
+    """Format the LearnByLeo playbook director-stage content for prompt injection.
+
+    Pulls principles, anti-patterns, and tactic IDs from playbook/editing.json
+    via for_stage('director'). Returns a compact bullet list ready to drop into
+    the director's system prompt. Empty string if the playbook fails to load —
+    the prompt still works, just without the playbook bias.
+    """
+    global _PLAYBOOK, _PLAYBOOK_DIRECTOR_TEXT
+    if _PLAYBOOK_DIRECTOR_TEXT is not None:
+        return _PLAYBOOK_DIRECTOR_TEXT
+    try:
+        if _PLAYBOOK is None:
+            _PLAYBOOK = Playbook()
+        d = _PLAYBOOK.for_stage("director")
+        if "error" in d:
+            _PLAYBOOK_DIRECTOR_TEXT = ""
+            return ""
+        lines = ["LEARNBYLEO PLAYBOOK — DIRECTOR PRINCIPLES (follow these):"]
+        for p in d.get("principles", [])[:12]:
+            rule = p.get("rule", "").strip()
+            impl = p.get("implication", "").strip()
+            if rule:
+                lines.append(f"  • {rule}")
+                if impl:
+                    lines.append(f"      → {impl[:200]}")
+        ap = d.get("anti_patterns", [])
+        if ap:
+            lines.append("\nLEARNBYLEO ANTI-PATTERNS (avoid these):")
+            for a in ap[:8]:
+                m = a.get("mistake", "").strip()
+                f = a.get("fix", "").strip()
+                if m:
+                    lines.append(f"  ✗ {m}")
+                    if f:
+                        lines.append(f"      → fix: {f[:160]}")
+        _PLAYBOOK_DIRECTOR_TEXT = "\n".join(lines)
+    except Exception as e:
+        print(f"  [warn] playbook load failed, prompt will run without it: {e}")
+        _PLAYBOOK_DIRECTOR_TEXT = ""
+    return _PLAYBOOK_DIRECTOR_TEXT
+
 
 DEFAULT_SCRIPT = PROJECT_ROOT / "scripts" / "enhanced_breaking_law_v45.txt"
 DEFAULT_ALIGNMENT = PROJECT_ROOT / "audio" / "breaking_law" / "narration_alignment.json"
@@ -286,8 +335,11 @@ def build_batch_prompt(beats, selects, batch_idx, total_batches, used_visuals):
     overused = [f for f, count in used_visuals.items() if count >= 2]
     overused_str = f"\nALREADY USED 2+ TIMES (avoid): {', '.join(overused)}" if overused else ""
 
-    prompt = f"""You are an editorial director for a ColdFusion/How Money Works style documentary.
+    playbook_text = _get_playbook_director_text()
+    playbook_block = f"\n{playbook_text}\n" if playbook_text else ""
 
+    prompt = f"""You are an editorial director for a documentary in the style of LearnByLeo (primary), with sensibility from ColdFusion and How Money Works.
+{playbook_block}
 BATCH {batch_idx + 1}/{total_batches}
 
 ENTITY INDEX (match visuals by CONTENT, not filename):
