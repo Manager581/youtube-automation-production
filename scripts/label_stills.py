@@ -27,9 +27,9 @@ Fields:
 - is_reaction_shot: true if it shows podcast hosts at mics, YouTube reactors, or any "creator talking to camera" framing that is NOT the documentary subject itself.
 - is_title_card: true if the frame is mostly black/solid background with overlaid text as the primary content.
 - is_comment_screenshot: true if a YouTube, Reddit, or other social-media comment UI is visible.
-- has_watermark: true if a software watermark is visible (KINEMASTER, CapCut, Canva, iStock, Shutterstock, Getty, Adobe Stock, etc.).
+- has_watermark: true if ANY watermark, news-network bug, or third-party logo is visible (KINEMASTER, CapCut, Canva, iStock, Shutterstock, Getty, Adobe Stock, AP, AFP, Reuters, CNN, NBC, FOX, ABC, BBC, etc.). Lower-third name graphics from a different network are watermarks too.
 - is_ai_generated: true if the image is obviously AI-generated stock (telltale rendering artifacts, uncanny textures, non-photographic lighting).
-- usable_for_documentary: true only if this frame could genuinely support documentary narration about its ostensible subject. False if it is an ad, reaction shot, watermarked AI slop, comment screenshot, irrelevant filler, or badly degraded.
+- usable_for_documentary: MUST BE FALSE if has_watermark, is_ad, is_reaction_shot, is_comment_screenshot, or is_ai_generated is true — there are no exceptions. Documentary footage cannot ship with someone else's brand on it. True only if the image is clean (no overlays/watermarks) AND directly relevant to its ostensible subject.
 - notes: one short sentence explaining the usability judgment.
 
 Return the JSON object only."""
@@ -61,16 +61,39 @@ def extract_json(raw: str) -> dict:
         return {"_error": "bad_json", "_raw": raw[:500]}
 
 
+def _enforce_disqualifiers(data: dict) -> dict:
+    """Defensive: force usable_for_documentary=false if any disqualifying flag
+    is true, regardless of what the LLM wrote. Documentary can't ship with
+    third-party watermarks, ads, reaction shots, AI slop, or comment UI.
+    """
+    if "_error" in data:
+        return data
+    disq_flags = ("has_watermark", "is_ad", "is_reaction_shot",
+                  "is_comment_screenshot", "is_ai_generated")
+    if any(data.get(f) for f in disq_flags):
+        triggered = [f for f in disq_flags if data.get(f)]
+        if data.get("usable_for_documentary"):
+            data["usable_for_documentary"] = False
+            existing_notes = data.get("notes", "")
+            data["notes"] = f"AUTO-REJECTED ({', '.join(triggered)}): {existing_notes}".strip(": ")
+    return data
+
+
 def label_still(image_path: Path, force: bool = False) -> dict:
     sidecar = image_path.with_suffix(image_path.suffix + ".content.json")
     if sidecar.exists() and not force:
-        return json.loads(sidecar.read_text())
+        # Apply enforcement to existing sidecars too — old sidecars predate the rule
+        existing = json.loads(sidecar.read_text())
+        enforced = _enforce_disqualifiers(existing)
+        if enforced != existing:
+            sidecar.write_text(json.dumps(enforced, indent=2))
+        return enforced
 
     raw = query_claude_vision(PROMPT, str(image_path), timeout=90)
     if not raw:
         return {"_error": "empty_response"}
 
-    data = extract_json(raw)
+    data = _enforce_disqualifiers(extract_json(raw))
     sidecar.write_text(json.dumps(data, indent=2))
     return data
 

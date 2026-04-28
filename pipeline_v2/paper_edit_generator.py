@@ -164,18 +164,34 @@ def parse_script_into_segments(script_path):
 
 
 def align_segments_to_timestamps(segments, alignment):
-    """Match script segments to Whisper alignment timestamps."""
+    """Match script segments to Whisper alignment timestamps.
+
+    Walks `sent_idx` forward through alignment sentences in script order. If a
+    segment exhausts the alignment (sent_idx past the end) we used to default
+    start_sec=0 — that caused 9 RECKONING beats to stack at the opening of v12.
+    Now we interpolate from the previous segment's end at narration WPM.
+    """
     sentences = alignment.get("sentences", [])
     if not sentences:
         return segments
 
+    duration = float(alignment.get("duration_sec") or 0)
+    avg_wpm = float(alignment.get("avg_wpm") or 175)
+    words_per_sec = max(1.0, avg_wpm / 60.0)
+
     sent_idx = 0
+    last_end = 0.0
+    fallback_count = 0
+
     for seg in segments:
         if seg.get("is_chapter_marker"):
             # Chapter markers don't have narration
             if sent_idx > 0:
                 seg["start_sec"] = sentences[min(sent_idx, len(sentences) - 1)]["start"]
-                seg["end_sec"] = seg["start_sec"] + 3.0  # chapter card duration
+            else:
+                seg["start_sec"] = last_end
+            seg["end_sec"] = seg["start_sec"] + 3.0  # chapter card duration
+            last_end = seg["end_sec"]
             continue
 
         seg_words = seg["text"].split()
@@ -194,8 +210,20 @@ def align_segments_to_timestamps(segments, alignment):
             words_matched += len(sent["text"].split())
             sent_idx += 1
 
-        seg["start_sec"] = start or 0
-        seg["end_sec"] = end or (start or 0) + 5.0
+        if start is None:
+            # Alignment exhausted before this segment matched. Interpolate from
+            # the previous beat at narration WPM. Clamp to narration duration.
+            est_dur = max(2.0, seg_word_count / words_per_sec)
+            start = last_end
+            end = min(last_end + est_dur, duration) if duration > 0 else last_end + est_dur
+            fallback_count += 1
+
+        seg["start_sec"] = start
+        seg["end_sec"] = end if end is not None else start + 5.0
+        last_end = seg["end_sec"]
+
+    if fallback_count:
+        print(f"  [align] {fallback_count} segments interpolated (alignment exhausted)")
 
     return segments
 
@@ -390,7 +418,9 @@ RULES:
 5. NEVER use the same visual file more than 2 times across the entire video.
 6. Text overlays for key stats and names only, not every beat.
 7. SFX only at genuine dramatic moments (max 2 per chapter).
-8. USE IMAGES HEAVILY — stills and web images should be ~60% of visual picks. Clips for key moments only.
+8. CHAPTER-AWARE VISUAL MIX:
+   • If chapter == "COLD OPEN": pick a VIDEO CLIP (.mp4/.mov) for AT LEAST 60% of beats — momentum and motion are critical at the open. Stills/charts only when no clip exists for that subject.
+   • Other chapters: stills/web ~60%, clips for key moments only.
 9. Prefer specific images (named entities, buildings, documents) over generic ones.
 10. Video stills (filename ending _still_Ns.jpg) show specific frames from source clips — use them when you want a freeze-frame or the clip's visual without its audio.
 

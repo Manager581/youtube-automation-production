@@ -1,0 +1,3248 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 2.688,
+      "end_sec": 2.688,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "In 2019, Facebook was fined five billion dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 2.688,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 2.988,
+      "duration_sec": 2.038,
+      "end_sec": 5.027,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The largest penalty in FTC history."
+    },
+    {
+      "type": "pause",
+      "start_sec": 5.027,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 5.327,
+      "duration_sec": 5.024,
+      "end_sec": 10.351,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Eighty-seven million people's data \u2014 harvested, profiled, and sold to a political targeting firm without their knowledge."
+    },
+    {
+      "type": "pause",
+      "start_sec": 10.351,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 10.651,
+      "duration_sec": 2.714,
+      "end_sec": 13.365,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And on the day the fine was announced,"
+    },
+    {
+      "type": "pause",
+      "start_sec": 13.365,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 14.365,
+      "duration_sec": 8.557,
+      "end_sec": 22.922,
+      "word_count": 25,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "Facebook's stock went up. The market added six billion dollars in value. Mark Zuckerberg personally gained one point one billion dollars in a single day."
+    },
+    {
+      "type": "pause",
+      "start_sec": 22.922,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 23.222,
+      "duration_sec": 4.449,
+      "end_sec": 27.671,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The punishment made the company richer than if the government had done nothing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 27.671,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 29.171,
+      "duration_sec": 1.356,
+      "end_sec": 30.528,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "How is that possible?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 30.528,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 32.028,
+      "duration_sec": 5.475,
+      "end_sec": 37.503,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "To understand, you need to go back to 1977. Because someone had to discover this trick."
+    },
+    {
+      "type": "pause",
+      "start_sec": 37.503,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 37.803,
+      "duration_sec": 3.065,
+      "end_sec": 40.867,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And the discovery started with a car on fire."
+    },
+    {
+      "type": "pause",
+      "start_sec": 40.867,
+      "duration_sec": 3.3
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 44.167,
+      "duration_sec": 10.627,
+      "end_sec": 54.794,
+      "word_count": 31,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.3,
+      "text": "In 1977, Ford knew the Pinto's fuel tank ruptured in rear-end collisions. They had the crash test data. Two engineers wrote a cost-benefit analysis \u2014 an actual document, with actual numbers."
+    },
+    {
+      "type": "pause",
+      "start_sec": 54.794,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 55.094,
+      "duration_sec": 5.84,
+      "end_sec": 60.934,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Fix every Pinto: one hundred and thirty-seven million dollars. Expected wrongful death payouts: forty-nine point five million."
+    },
+    {
+      "type": "pause",
+      "start_sec": 60.934,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 62.434,
+      "duration_sec": 8.908,
+      "end_sec": 71.342,
+      "word_count": 26,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "They shipped the car. A thirteen-year-old boy named Richard Grimshaw was a passenger in a Pinto that was rear-ended in San Bernardino. The fuel tank ruptured."
+    },
+    {
+      "type": "pause",
+      "start_sec": 71.342,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 71.642,
+      "duration_sec": 3.076,
+      "end_sec": 74.718,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The driver burned to death. Richard survived \u2014 barely."
+    },
+    {
+      "type": "pause",
+      "start_sec": 74.718,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 75.018,
+      "duration_sec": 6.173,
+      "end_sec": 81.192,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Burned over his entire body. Lost parts of his fingers. Lost his left ear. Years of skin grafts."
+    },
+    {
+      "type": "pause",
+      "start_sec": 81.192,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 81.492,
+      "duration_sec": 13.377,
+      "end_sec": 94.869,
+      "word_count": 39,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A childhood replaced by hospital rooms. The jury awarded one hundred and twenty-five million dollars in punitive damages \u2014 the largest in American history. The judge reduced it to three point five million. Ford was acquitted of criminal homicide."
+    },
+    {
+      "type": "pause",
+      "start_sec": 94.869,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 95.169,
+      "duration_sec": 7.546,
+      "end_sec": 102.714,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "No executive went to prison. The fine was three point five million dollars. Ford kept selling cars. No one went to prison."
+    },
+    {
+      "type": "pause",
+      "start_sec": 102.714,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 103.014,
+      "duration_sec": 2.733,
+      "end_sec": 105.747,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And somewhere in a boardroom, someone noticed something."
+    },
+    {
+      "type": "pause",
+      "start_sec": 105.747,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 107.247,
+      "duration_sec": 5.14,
+      "end_sec": 112.387,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "The cost of getting caught was less than the cost of doing the right thing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 112.387,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 112.687,
+      "duration_sec": 5.494,
+      "end_sec": 118.182,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "That might have been an isolated scandal. A single bad company making a single bad calculation."
+    },
+    {
+      "type": "pause",
+      "start_sec": 118.182,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 119.182,
+      "duration_sec": 1.029,
+      "end_sec": 120.21,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "Except it wasn't."
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 120.21,
+      "duration_sec": 4.16,
+      "end_sec": 124.37,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "In 2010, a twenty-four-year-old bank teller named Yesenia Guitron did something dangerous."
+    },
+    {
+      "type": "pause",
+      "start_sec": 124.37,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 124.67,
+      "duration_sec": 13.018,
+      "end_sec": 137.689,
+      "word_count": 38,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "She told the truth. She'd watched her colleagues at Wells Fargo open accounts that customers never asked for \u2014 credit cards ordered to addresses that didn't exist, savings accounts funded by moving money between other accounts without permission."
+    },
+    {
+      "type": "pause",
+      "start_sec": 137.689,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 137.689,
+      "duration_sec": 6.502,
+      "end_sec": 144.191,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "She knew why they did it. There was a quota: every customer should have eight products. \"Eight is Great.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 144.191,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 144.491,
+      "duration_sec": 11.635,
+      "end_sec": 156.126,
+      "word_count": 34,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Miss the number and you get a warning. Miss it again and you get fired. So the tellers cheated. Because the alternative was unemployment. Yesenia called the company's ethics hotline and reported the fraud."
+    },
+    {
+      "type": "pause",
+      "start_sec": 156.126,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 156.426,
+      "duration_sec": 10.606,
+      "end_sec": 167.032,
+      "word_count": 31,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Wells Fargo terminated her the same week. She never found steady work in banking again. Her name went on an industry blacklist \u2014 a record that follows you like a scar."
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 167.032,
+      "duration_sec": 15.435,
+      "end_sec": 182.468,
+      "word_count": 45,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Three point five million fake accounts. Five thousand three hundred tellers fired for opening them. And the woman who designed the quota \u2014 Carrie Tolstedt, head of Community Banking \u2014 kept fifty-seven million dollars and got zero prison time. She served her sentence at home."
+    },
+    {
+      "type": "pause",
+      "start_sec": 182.468,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 182.768,
+      "duration_sec": 10.969,
+      "end_sec": 193.737,
+      "word_count": 32,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Ford's formula required a memo. Wells Fargo's didn't even require a decision \u2014 just a number and a threat. Ford needed a document to do this. Wells Fargo only needed a quota."
+    },
+    {
+      "type": "pause",
+      "start_sec": 193.737,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 195.237,
+      "duration_sec": 12.68,
+      "end_sec": 207.916,
+      "word_count": 37,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "The next company didn't need either. It just needed a head start. Purdue Pharma saw the lawsuits coming a decade early and withdrew ten point seven billion dollars from the company before anyone could calculate the fine."
+    },
+    {
+      "type": "pause",
+      "start_sec": 207.916,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 208.216,
+      "duration_sec": 10.631,
+      "end_sec": 218.848,
+      "word_count": 31,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Richard Sackler promised a, quote, blizzard of prescriptions at OxyContin's launch. In Kermit, West Virginia \u2014 population four hundred \u2014 a single pharmacy received nine million opioid pills in two years."
+    },
+    {
+      "type": "pause",
+      "start_sec": 218.848,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 219.148,
+      "duration_sec": 3.434,
+      "end_sec": 222.582,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The pharmacist went to prison. The Sacklers moved their money."
+    },
+    {
+      "type": "pause",
+      "start_sec": 222.582,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 222.882,
+      "duration_sec": 6.527,
+      "end_sec": 229.409,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "More than eight hundred thousand Americans died. The settlement: seven point four billion. The family's remaining fortune: thirteen billion."
+    },
+    {
+      "type": "pause",
+      "start_sec": 229.409,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 230.909,
+      "duration_sec": 7.876,
+      "end_sec": 238.786,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "Nine thousand dollars per death. Ford valued a life at two hundred thousand in 1977. The Sacklers got it down to nine thousand."
+    },
+    {
+      "type": "pause",
+      "start_sec": 238.786,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 240.786,
+      "duration_sec": 3.068,
+      "end_sec": 243.854,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 2.0,
+      "text": "The fine is cheaper than the profit. Every time."
+    },
+    {
+      "type": "pause",
+      "start_sec": 243.854,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 244.154,
+      "duration_sec": 0.725,
+      "end_sec": 244.879,
+      "word_count": 2,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Without exception."
+    },
+    {
+      "type": "pause",
+      "start_sec": 244.879,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 245.179,
+      "duration_sec": 2.045,
+      "end_sec": 247.224,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The law doesn't prevent corporate crime."
+    },
+    {
+      "type": "pause",
+      "start_sec": 247.224,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 247.524,
+      "duration_sec": 0.994,
+      "end_sec": 248.518,
+      "word_count": 3,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "It prices it."
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 248.518,
+      "duration_sec": 11.999,
+      "end_sec": 260.517,
+      "word_count": 35,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "And the price keeps dropping. Since 2000, corporations have paid over one trillion dollars in fines and settlements in the United States alone. One hundred and twenty-seven companies have each paid more than a billion."
+    },
+    {
+      "type": "pause",
+      "start_sec": 260.517,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 38,
+      "start_sec": 262.017,
+      "duration_sec": 4.801,
+      "end_sec": 266.818,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "And here's the number that should end every argument about whether the system works:"
+    },
+    {
+      "type": "pause",
+      "start_sec": 266.818,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 39,
+      "start_sec": 267.118,
+      "duration_sec": 5.832,
+      "end_sec": 272.95,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "companies caught repeatedly pay smaller fines as a percentage of their revenue over time. Not larger. Smaller."
+    },
+    {
+      "type": "pause",
+      "start_sec": 272.95,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 40,
+      "start_sec": 273.25,
+      "duration_sec": 11.315,
+      "end_sec": 284.565,
+      "word_count": 33,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The more you violate, the better the deal gets. Each company added one feature to the original calculation. Ford added a memo. Wells Fargo added plausible deniability. Purdue added preemption. Facebook added scale."
+    },
+    {
+      "type": "pause",
+      "start_sec": 284.565,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 41,
+      "start_sec": 284.865,
+      "duration_sec": 12.351,
+      "end_sec": 297.216,
+      "word_count": 36,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But every one of them had something in common \u2014 the damage, at least in theory, could be reversed. Ford could recall the car. Wells Fargo could close the accounts. Purdue could stop making the pills."
+    },
+    {
+      "type": "pause",
+      "start_sec": 297.216,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 42,
+      "start_sec": 299.216,
+      "duration_sec": 3.77,
+      "end_sec": 302.986,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "Then the formula met the internet. And the damage became permanent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 302.986,
+      "duration_sec": 5.0
+    },
+    {
+      "type": "speech",
+      "index": 43,
+      "start_sec": 307.986,
+      "duration_sec": 11.663,
+      "end_sec": 319.648,
+      "word_count": 34,
+      "voice_register": "neutral",
+      "pause_before_sec": 5.0,
+      "text": "Facebook was the bridge between the old formula and the new one. In 2013, a Cambridge University researcher named Aleksandr Kogan built a personality quiz app. Two hundred and seventy thousand people downloaded it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 319.648,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 44,
+      "start_sec": 319.948,
+      "duration_sec": 13.031,
+      "end_sec": 332.979,
+      "word_count": 38,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But Facebook's API \u2014 the system that connects apps to the platform \u2014 gave the quiz access to not just those users' data, but all of their friends' data too. Every like, every post, every photo, every connection."
+    },
+    {
+      "type": "pause",
+      "start_sec": 332.979,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 45,
+      "start_sec": 333.279,
+      "duration_sec": 4.809,
+      "end_sec": 338.088,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Two hundred and seventy thousand downloads became eighty-seven million people's data harvested in weeks."
+    },
+    {
+      "type": "speech",
+      "index": 46,
+      "start_sec": 338.088,
+      "duration_sec": 1.721,
+      "end_sec": 339.809,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Facebook knew this was possible."
+    },
+    {
+      "type": "pause",
+      "start_sec": 339.809,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 47,
+      "start_sec": 340.109,
+      "duration_sec": 10.977,
+      "end_sec": 351.085,
+      "word_count": 32,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "It was a feature, not a bug \u2014 they'd designed the API to be open because open APIs drive engagement, and engagement drives advertising revenue. In 2014, they quietly changed the rules."
+    },
+    {
+      "type": "pause",
+      "start_sec": 351.085,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 48,
+      "start_sec": 351.085,
+      "duration_sec": 11.31,
+      "end_sec": 362.395,
+      "word_count": 33,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "But they never enforced deletion of the data already taken. Cambridge Analytica used that data to build voter profiles so precise they could predict what would make you angry before you felt it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 362.395,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 49,
+      "start_sec": 362.695,
+      "duration_sec": 4.798,
+      "end_sec": 367.493,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "They were hired by the Trump campaign. They were hired by groups supporting Brexit."
+    },
+    {
+      "type": "speech",
+      "index": 50,
+      "start_sec": 367.493,
+      "duration_sec": 6.842,
+      "end_sec": 374.335,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Eighty-seven million people's personalities \u2014 measured, modeled, and weaponized \u2014 for the price of a free quiz they never took."
+    },
+    {
+      "type": "pause",
+      "start_sec": 374.335,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 51,
+      "start_sec": 374.635,
+      "duration_sec": 13.356,
+      "end_sec": 387.991,
+      "word_count": 39,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And most of them still don't know. A 2019 Pew survey found that seventy-four percent of Facebook users didn't know the platform maintained a list of their interests and traits for ad targeting. They didn't know they'd been profiled."
+    },
+    {
+      "type": "pause",
+      "start_sec": 387.991,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 52,
+      "start_sec": 387.991,
+      "duration_sec": 2.733,
+      "end_sec": 390.724,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "They didn't know their data had been sold."
+    },
+    {
+      "type": "pause",
+      "start_sec": 390.724,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 53,
+      "start_sec": 391.024,
+      "duration_sec": 8.553,
+      "end_sec": 399.577,
+      "word_count": 25,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "They just knew that their feed felt different in 2016 \u2014 angrier, more anxious, more polarized \u2014 and they assumed that was the world changing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 399.577,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 54,
+      "start_sec": 400.577,
+      "duration_sec": 7.518,
+      "end_sec": 408.095,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "It wasn't the world. It was the algorithm. Tuned by their own data, sold without their consent, deployed to shape an election."
+    },
+    {
+      "type": "pause",
+      "start_sec": 408.095,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 55,
+      "start_sec": 408.395,
+      "duration_sec": 10.969,
+      "end_sec": 419.364,
+      "word_count": 32,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "When the story broke in March 2018, Zuckerberg was summoned before Congress. He wore a suit. He said sorry. And then something happened that tells you everything about why the formula survives."
+    },
+    {
+      "type": "pause",
+      "start_sec": 419.364,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 56,
+      "start_sec": 419.364,
+      "duration_sec": 12.002,
+      "end_sec": 431.365,
+      "word_count": 35,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "A United States senator \u2014 a person with the power to regulate the most valuable company on Earth \u2014 looked at Mark Zuckerberg and asked: \"How does Facebook make money if the product is free?\""
+    },
+    {
+      "type": "speech",
+      "index": 57,
+      "start_sec": 431.365,
+      "duration_sec": 1.643,
+      "end_sec": 433.008,
+      "word_count": 2,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Zuckerberg paused."
+    },
+    {
+      "type": "pause",
+      "start_sec": 433.008,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 58,
+      "start_sec": 433.308,
+      "duration_sec": 2.061,
+      "end_sec": 435.369,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And said: \"Senator, we run ads.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 435.369,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 59,
+      "start_sec": 435.669,
+      "duration_sec": 10.639,
+      "end_sec": 446.308,
+      "word_count": 31,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The room laughed. The internet turned it into a meme. For weeks, the clip circulated as comedy \u2014 an old senator, a young CEO, a punchline about boomers not understanding technology."
+    },
+    {
+      "type": "speech",
+      "index": 60,
+      "start_sec": 446.308,
+      "duration_sec": 9.602,
+      "end_sec": 455.91,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "And it was funny. It genuinely was. The man in charge of regulating the most valuable company on Earth didn't know how it made money. That's objectively absurd."
+    },
+    {
+      "type": "pause",
+      "start_sec": 455.91,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 61,
+      "start_sec": 455.91,
+      "duration_sec": 6.175,
+      "end_sec": 462.085,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "It's the kind of thing you'd write into a satire and worry it was too on the nose."
+    },
+    {
+      "type": "pause",
+      "start_sec": 462.085,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 62,
+      "start_sec": 464.085,
+      "duration_sec": 2.733,
+      "end_sec": 466.818,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 2.0,
+      "text": "But here's what nobody said at the time."
+    },
+    {
+      "type": "pause",
+      "start_sec": 466.818,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 63,
+      "start_sec": 467.118,
+      "duration_sec": 13.708,
+      "end_sec": 480.826,
+      "word_count": 40,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That hearing was the formula protecting itself. The people who set the fines \u2014 who write the regulations, who are supposed to be the ceiling on corporate behavior \u2014 didn't understand the business model of the company they were interrogating."
+    },
+    {
+      "type": "pause",
+      "start_sec": 480.826,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 64,
+      "start_sec": 481.126,
+      "duration_sec": 11.639,
+      "end_sec": 492.765,
+      "word_count": 34,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And Zuckerberg knew it. He sat there, patient and composed, and explained his own business to the people who were supposed to be punishing him. He wasn't being grilled. He was giving a tutorial."
+    },
+    {
+      "type": "pause",
+      "start_sec": 492.765,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 65,
+      "start_sec": 493.065,
+      "duration_sec": 6.847,
+      "end_sec": 499.912,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And everyone watched it happen and laughed \u2014 because it was easier to laugh than to realize what it meant."
+    },
+    {
+      "type": "pause",
+      "start_sec": 499.912,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 66,
+      "start_sec": 501.412,
+      "duration_sec": 3.768,
+      "end_sec": 505.179,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "The people who set the fines don't understand what they're fining."
+    },
+    {
+      "type": "pause",
+      "start_sec": 505.179,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 67,
+      "start_sec": 505.479,
+      "duration_sec": 2.734,
+      "end_sec": 508.213,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The companies being fined have always known that."
+    },
+    {
+      "type": "speech",
+      "index": 68,
+      "start_sec": 508.213,
+      "duration_sec": 7.209,
+      "end_sec": 515.422,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "The FTC investigated for over a year. In July 2019, they announced the largest fine in their history: five billion dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 515.422,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 69,
+      "start_sec": 516.422,
+      "duration_sec": 5.488,
+      "end_sec": 521.91,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "Here is what five billion dollars means to Facebook. Revenue that year: seventy point seven billion."
+    },
+    {
+      "type": "pause",
+      "start_sec": 521.91,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 70,
+      "start_sec": 522.21,
+      "duration_sec": 12.352,
+      "end_sec": 534.561,
+      "word_count": 36,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The fine was seven percent. Net profit: eighteen point five billion. The fine was about twenty-seven percent of one year's profit \u2014 paid once, for a violation that ran for years and compromised eighty-seven million people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 534.561,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 71,
+      "start_sec": 534.561,
+      "duration_sec": 6.856,
+      "end_sec": 541.418,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "The FTC vote was three to two. Party line. The two dissenting commissioners didn't think the fine was too harsh."
+    },
+    {
+      "type": "pause",
+      "start_sec": 541.418,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 72,
+      "start_sec": 542.418,
+      "duration_sec": 6.517,
+      "end_sec": 548.934,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "They thought it was too lenient. They wanted to sue, not settle. They wanted to hold Zuckerberg personally liable."
+    },
+    {
+      "type": "pause",
+      "start_sec": 548.934,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 73,
+      "start_sec": 549.234,
+      "duration_sec": 0.907,
+      "end_sec": 550.141,
+      "word_count": 2,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "They lost."
+    },
+    {
+      "type": "speech",
+      "index": 74,
+      "start_sec": 550.141,
+      "duration_sec": 6.154,
+      "end_sec": 556.295,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "On July twelfth, when the fine amount leaked, Facebook's stock rose one percent. The market had expected worse."
+    },
+    {
+      "type": "pause",
+      "start_sec": 556.295,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 75,
+      "start_sec": 556.595,
+      "duration_sec": 5.475,
+      "end_sec": 562.07,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Investors were relieved. Mark Zuckerberg's net worth increased by one point one billion dollars that day."
+    },
+    {
+      "type": "pause",
+      "start_sec": 562.07,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 76,
+      "start_sec": 563.57,
+      "duration_sec": 5.133,
+      "end_sec": 568.703,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "He made more from the announcement of the fine than the fine cost the company."
+    },
+    {
+      "type": "pause",
+      "start_sec": 568.703,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 77,
+      "start_sec": 569.003,
+      "duration_sec": 5.119,
+      "end_sec": 574.122,
+      "word_count": 15,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The market's verdict was clear: this is the ceiling. This is the worst it gets."
+    },
+    {
+      "type": "pause",
+      "start_sec": 574.122,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 78,
+      "start_sec": 575.122,
+      "duration_sec": 3.031,
+      "end_sec": 578.153,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "And the worst it gets is a good day."
+    },
+    {
+      "type": "pause",
+      "start_sec": 578.153,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 79,
+      "start_sec": 578.453,
+      "duration_sec": 13.031,
+      "end_sec": 591.485,
+      "word_count": 38,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Now. After everything I've just shown you \u2014 Ford, Wells Fargo, Purdue, Facebook \u2014 you'd be forgiven for thinking the formula is unbeatable. That this is just how it works. Fine, settle, move on. Nobody learns. Nothing changes."
+    },
+    {
+      "type": "pause",
+      "start_sec": 591.485,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 80,
+      "start_sec": 593.485,
+      "duration_sec": 3.782,
+      "end_sec": 597.267,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "But something happened in 2023 that proves the formula can break."
+    },
+    {
+      "type": "speech",
+      "index": 81,
+      "start_sec": 597.267,
+      "duration_sec": 10.984,
+      "end_sec": 608.25,
+      "word_count": 32,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Ireland fined Meta one point two billion euros under Europe's GDPR \u2014 a law that scales fines to four percent of global annual revenue. Not a negotiated number. Not a fixed ceiling."
+    },
+    {
+      "type": "pause",
+      "start_sec": 608.25,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 82,
+      "start_sec": 608.55,
+      "duration_sec": 6.515,
+      "end_sec": 615.065,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "A percentage. And Facebook \u2014 the same Facebook that turned a five-billion-dollar American fine into a stock rally \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 615.065,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 83,
+      "start_sec": 615.365,
+      "duration_sec": 9.267,
+      "end_sec": 624.632,
+      "word_count": 27,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "panicked. Within weeks, they rewrote their entire data transfer infrastructure. They shut down a pipeline they'd run for a decade. They rebuilt their European architecture from scratch."
+    },
+    {
+      "type": "pause",
+      "start_sec": 624.632,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 84,
+      "start_sec": 624.932,
+      "duration_sec": 8.574,
+      "end_sec": 633.506,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "They didn't fight it in court for years. They didn't issue a press release and wait for it to blow over. They fixed it. Immediately."
+    },
+    {
+      "type": "pause",
+      "start_sec": 633.506,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 85,
+      "start_sec": 635.006,
+      "duration_sec": 4.456,
+      "end_sec": 639.462,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "Because for the first time, the violation was more expensive than the profit."
+    },
+    {
+      "type": "pause",
+      "start_sec": 639.462,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 86,
+      "start_sec": 639.762,
+      "duration_sec": 7.879,
+      "end_sec": 647.641,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Sit with that for a second. The formula \u2014 the one that has survived five decades, across every industry, through every administration \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 647.641,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 87,
+      "start_sec": 649.141,
+      "duration_sec": 4.455,
+      "end_sec": 653.596,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "broke. In Europe. Because someone changed one variable: they made the fine proportional."
+    },
+    {
+      "type": "pause",
+      "start_sec": 653.596,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 88,
+      "start_sec": 653.896,
+      "duration_sec": 2.062,
+      "end_sec": 655.958,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Same company. Same executives. Same data."
+    },
+    {
+      "type": "pause",
+      "start_sec": 655.958,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 89,
+      "start_sec": 656.258,
+      "duration_sec": 5.147,
+      "end_sec": 661.405,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The only difference was the math. And when the math changed, the behavior changed overnight."
+    },
+    {
+      "type": "pause",
+      "start_sec": 661.405,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 90,
+      "start_sec": 663.405,
+      "duration_sec": 13.025,
+      "end_sec": 676.431,
+      "word_count": 38,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "So at this point in the story, you might be thinking: okay, the formula exists, but there are limits. Europe found the off switch. Proportional fines work. The system can be fixed. Companies can be forced to change."
+    },
+    {
+      "type": "pause",
+      "start_sec": 676.431,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 91,
+      "start_sec": 677.431,
+      "duration_sec": 3.087,
+      "end_sec": 680.518,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "Maybe \u2014 just maybe \u2014 we're figuring it out."
+    },
+    {
+      "type": "pause",
+      "start_sec": 680.518,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 92,
+      "start_sec": 682.018,
+      "duration_sec": 3.477,
+      "end_sec": 685.495,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "I wish that were the end of the video."
+    },
+    {
+      "type": "pause",
+      "start_sec": 685.495,
+      "duration_sec": 3.0
+    },
+    {
+      "type": "speech",
+      "index": 93,
+      "start_sec": 688.495,
+      "duration_sec": 13.727,
+      "end_sec": 702.222,
+      "word_count": 40,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.0,
+      "text": "Here's a thought experiment. What if you could take anything you wanted from anyone \u2014 their writing their art their music their photographs their private conversations \u2014 and the only consequence was paying a fraction of what it was worth"
+    },
+    {
+      "type": "pause",
+      "start_sec": 702.222,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 94,
+      "start_sec": 702.222,
+      "duration_sec": 4.108,
+      "end_sec": 706.33,
+      "word_count": 12,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "years after you'd already used it to build a product worth billions?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 706.33,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 95,
+      "start_sec": 707.83,
+      "duration_sec": 2.064,
+      "end_sec": 709.895,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "You'd take everything. Obviously. Everyone would."
+    },
+    {
+      "type": "pause",
+      "start_sec": 709.895,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 96,
+      "start_sec": 710.195,
+      "duration_sec": 1.718,
+      "end_sec": 711.912,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "That's not a thought experiment."
+    },
+    {
+      "type": "pause",
+      "start_sec": 711.912,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 97,
+      "start_sec": 712.212,
+      "duration_sec": 2.065,
+      "end_sec": 714.277,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "That's the AI industry's business model."
+    },
+    {
+      "type": "pause",
+      "start_sec": 714.277,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 98,
+      "start_sec": 714.577,
+      "duration_sec": 14.059,
+      "end_sec": 728.636,
+      "word_count": 41,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "In October 2025, a Reddit engineer did something clever. They created a post \u2014 ordinary-looking, about a fictional company \u2014 and made it visible only through Google's search index. You couldn't find it by browsing Reddit. You couldn't stumble on it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 728.636,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 99,
+      "start_sec": 728.936,
+      "duration_sec": 9.601,
+      "end_sec": 738.537,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The only way to reach it was through a crawler. It was bait. A tripwire designed to catch one thing: an AI company scraping Reddit's content without permission."
+    },
+    {
+      "type": "pause",
+      "start_sec": 738.537,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 100,
+      "start_sec": 740.037,
+      "duration_sec": 3.432,
+      "end_sec": 743.469,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "Within hours, Perplexity AI cited the post. Word for word."
+    },
+    {
+      "type": "pause",
+      "start_sec": 743.469,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 101,
+      "start_sec": 743.769,
+      "duration_sec": 7.552,
+      "end_sec": 751.321,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The trap worked. Reddit sent a cease-and-desist letter. Standard procedure \u2014 stop scraping, or we sue. And here is what happened next."
+    },
+    {
+      "type": "speech",
+      "index": 102,
+      "start_sec": 751.321,
+      "duration_sec": 2.272,
+      "end_sec": 753.593,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Perplexity's scraping of Reddit content didn't decrease."
+    },
+    {
+      "type": "pause",
+      "start_sec": 753.593,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 103,
+      "start_sec": 754.593,
+      "duration_sec": 2.379,
+      "end_sec": 756.972,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "It increased. By a factor of forty."
+    },
+    {
+      "type": "pause",
+      "start_sec": 756.972,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 104,
+      "start_sec": 757.272,
+      "duration_sec": 6.144,
+      "end_sec": 763.416,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Not a little more. Forty times more. After being caught. After receiving a formal legal demand to stop."
+    },
+    {
+      "type": "speech",
+      "index": 105,
+      "start_sec": 763.416,
+      "duration_sec": 4.46,
+      "end_sec": 767.876,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Most companies, when caught, slow down. Issue a statement. Hire a compliance officer."
+    },
+    {
+      "type": "pause",
+      "start_sec": 767.876,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 106,
+      "start_sec": 768.176,
+      "duration_sec": 7.881,
+      "end_sec": 776.058,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Perplexity sped up. Forty times. It's like getting a speeding ticket and immediately doing donuts in the parking lot of the police station."
+    },
+    {
+      "type": "speech",
+      "index": 107,
+      "start_sec": 776.058,
+      "duration_sec": 1.349,
+      "end_sec": 777.407,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "But it's not arrogance."
+    },
+    {
+      "type": "pause",
+      "start_sec": 777.407,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 108,
+      "start_sec": 777.707,
+      "duration_sec": 12.334,
+      "end_sec": 790.041,
+      "word_count": 36,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "It's arithmetic. They did the math. The data was worth more than any fine. The model being trained on that data was worth more than any lawsuit. And once the data is inside the model \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 790.041,
+      "duration_sec": 2.3
+    },
+    {
+      "type": "speech",
+      "index": 109,
+      "start_sec": 792.341,
+      "duration_sec": 2.041,
+      "end_sec": 794.382,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 2.3,
+      "text": "There is no getting it out."
+    },
+    {
+      "type": "pause",
+      "start_sec": 794.382,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 110,
+      "start_sec": 795.882,
+      "duration_sec": 2.726,
+      "end_sec": 798.608,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "Sugar dissolved in water. You cannot separate them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 798.608,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 111,
+      "start_sec": 798.908,
+      "duration_sec": 12.345,
+      "end_sec": 811.254,
+      "word_count": 36,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "When Ford got caught, they could recall the car. When Facebook got caught, they could \u2014 in theory \u2014 delete the data. When Purdue got caught, they could stop manufacturing the pills. The damage was reversible."
+    },
+    {
+      "type": "pause",
+      "start_sec": 811.254,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 112,
+      "start_sec": 811.554,
+      "duration_sec": 4.469,
+      "end_sec": 816.022,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Expensive, slow, and nobody ever did it voluntarily. But the off switch existed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 816.022,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 113,
+      "start_sec": 818.022,
+      "duration_sec": 13.369,
+      "end_sec": 831.392,
+      "word_count": 39,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "With AI, there is no off switch. When a model trains on scraped data, that data dissolves into the model's parameters like sugar dissolved in water. You cannot un-dissolve it. You cannot identify which outputs came from which inputs."
+    },
+    {
+      "type": "pause",
+      "start_sec": 831.392,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 114,
+      "start_sec": 831.392,
+      "duration_sec": 7.541,
+      "end_sec": 838.933,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "You cannot point to a sentence and say \"that came from Reddit\" or \"that came from a children's book published in 2019.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 838.933,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 115,
+      "start_sec": 839.233,
+      "duration_sec": 11.662,
+      "end_sec": 850.895,
+      "word_count": 34,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The data becomes the model. The violation becomes the product. Every response the AI generates, every image it creates, every answer it provides \u2014 built on content taken without permission and impossible to return."
+    },
+    {
+      "type": "pause",
+      "start_sec": 850.895,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 116,
+      "start_sec": 850.895,
+      "duration_sec": 7.209,
+      "end_sec": 858.104,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Even if every AI company loses every lawsuit, they keep the models. The models keep running. The products keep generating revenue."
+    },
+    {
+      "type": "pause",
+      "start_sec": 858.104,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 117,
+      "start_sec": 858.404,
+      "duration_sec": 7.888,
+      "end_sec": 866.292,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The fine doesn't undo the training. It just pays for the data after the fact \u2014 like shoplifting and mailing a check later."
+    },
+    {
+      "type": "pause",
+      "start_sec": 866.292,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 118,
+      "start_sec": 866.592,
+      "duration_sec": 6.176,
+      "end_sec": 872.768,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Except the check is always less than the retail price. And the people who try to stop it?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 872.768,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 119,
+      "start_sec": 873.068,
+      "duration_sec": 11.323,
+      "end_sec": 884.391,
+      "word_count": 33,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Remember Yesenia Guitron \u2014 the Wells Fargo teller who called the ethics hotline and was fired for it? The formula punishes the people who resist it. It rewards the people who run it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 884.391,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 120,
+      "start_sec": 884.391,
+      "duration_sec": 3.09,
+      "end_sec": 887.482,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "That pattern repeats in every industry, in every decade."
+    },
+    {
+      "type": "pause",
+      "start_sec": 887.482,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 121,
+      "start_sec": 889.482,
+      "duration_sec": 4.461,
+      "end_sec": 893.942,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "Reddit filed a federal lawsuit in October 2025. But Perplexity is one company."
+    },
+    {
+      "type": "pause",
+      "start_sec": 893.942,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 122,
+      "start_sec": 894.942,
+      "duration_sec": 2.401,
+      "end_sec": 897.343,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "What about the rest of the industry?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 897.343,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 123,
+      "start_sec": 897.643,
+      "duration_sec": 13.033,
+      "end_sec": 910.676,
+      "word_count": 38,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "I want to tell you about Elliana Esquivel. Because her story is the one that makes this real \u2014 and the one that shows you how the formula works when it's happening to a person, not a company."
+    },
+    {
+      "type": "speech",
+      "index": 124,
+      "start_sec": 910.676,
+      "duration_sec": 7.892,
+      "end_sec": 918.568,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Elliana is an illustrator in Charlotte, North Carolina. Self-taught. She spent years building a career in minimalistic line work \u2014 psychological, introspective, distinctive."
+    },
+    {
+      "type": "pause",
+      "start_sec": 918.568,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 125,
+      "start_sec": 918.868,
+      "duration_sec": 11.669,
+      "end_sec": 930.536,
+      "word_count": 34,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The kind of art you'd recognize on a bookshelf. She illustrated covers for HarperCollins, Little Brown, and Faber and Faber. She designed album art for Universal Music Group. She created promotional work for Hulu."
+    },
+    {
+      "type": "pause",
+      "start_sec": 930.536,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 126,
+      "start_sec": 930.536,
+      "duration_sec": 3.771,
+      "end_sec": 934.307,
+      "word_count": 11,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Art was her full-time job for four years. She'd built something."
+    },
+    {
+      "type": "pause",
+      "start_sec": 934.307,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 127,
+      "start_sec": 935.807,
+      "duration_sec": 3.427,
+      "end_sec": 939.234,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "Then she visited a website called Have I Been Trained."
+    },
+    {
+      "type": "pause",
+      "start_sec": 939.234,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 128,
+      "start_sec": 939.234,
+      "duration_sec": 10.639,
+      "end_sec": 949.873,
+      "word_count": 31,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "It's a tool that lets creators check whether their work was scraped into the LAION-5B dataset \u2014 the five-billion-image training set used by Stability AI's Stable Diffusion and other image generators."
+    },
+    {
+      "type": "pause",
+      "start_sec": 949.873,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 129,
+      "start_sec": 951.373,
+      "duration_sec": 2.394,
+      "end_sec": 953.767,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "Almost her entire portfolio was in there."
+    },
+    {
+      "type": "speech",
+      "index": 130,
+      "start_sec": 953.767,
+      "duration_sec": 11.978,
+      "end_sec": 965.745,
+      "word_count": 35,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Every illustration she'd spent months creating. Every piece that defined her style. Scraped, indexed, and fed into a model that anyone could now use to generate images that look like her work \u2014 for free."
+    },
+    {
+      "type": "pause",
+      "start_sec": 965.745,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 131,
+      "start_sec": 966.045,
+      "duration_sec": 9.242,
+      "end_sec": 975.288,
+      "word_count": 27,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "A publisher she'd worked with for two years emailed to say they were \"exploring AI-generated options\" for their next cover. Her commissions dropped. Her online sales fell."
+    },
+    {
+      "type": "pause",
+      "start_sec": 975.288,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 132,
+      "start_sec": 975.288,
+      "duration_sec": 6.835,
+      "end_sec": 982.123,
+      "word_count": 20,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "The style she'd spent a decade developing could now be approximated in seconds by typing a sentence into a box."
+    },
+    {
+      "type": "pause",
+      "start_sec": 982.123,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 133,
+      "start_sec": 982.423,
+      "duration_sec": 13.694,
+      "end_sec": 996.116,
+      "word_count": 40,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "She started pivoting to 3D art \u2014 not because she wanted to, but because she hoped three-dimensional work would be harder to scrape. When someone asked her about getting her work removed from the dataset, she said it was pointless."
+    },
+    {
+      "type": "pause",
+      "start_sec": 996.116,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 134,
+      "start_sec": 996.116,
+      "duration_sec": 4.794,
+      "end_sec": 1000.911,
+      "word_count": 14,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Quote: \"It'll just get scraped again, and it'll end up back on the website.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 1000.911,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 135,
+      "start_sec": 1001.211,
+      "duration_sec": 3.75,
+      "end_sec": 1004.96,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "She called it, quote, a dystopian thing to be dealing with."
+    },
+    {
+      "type": "speech",
+      "index": 136,
+      "start_sec": 1004.96,
+      "duration_sec": 2.752,
+      "end_sec": 1007.712,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Elliana isn't suing anyone. She can't afford to."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1007.712,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 137,
+      "start_sec": 1007.712,
+      "duration_sec": 12.004,
+      "end_sec": 1019.716,
+      "word_count": 35,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Over seventy copyright lawsuits are active against AI companies as of March 2026 \u2014 Anthropic settled for one point five billion, OpenAI is fighting the New York Times, and not one company has slowed down."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1019.716,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 138,
+      "start_sec": 1020.016,
+      "duration_sec": 4.804,
+      "end_sec": 1024.82,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The largest settlement in history paid out roughly three thousand dollars per stolen work."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1024.82,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 139,
+      "start_sec": 1025.82,
+      "duration_sec": 1.031,
+      "end_sec": 1026.852,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "Three thousand dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1026.852,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 140,
+      "start_sec": 1027.152,
+      "duration_sec": 10.286,
+      "end_sec": 1037.438,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "That's what Elliana's illustrations are worth in this market \u2014 years of work, commissions for HarperCollins, Universal Music, Hulu \u2014 priced at the same rate as a single scraped novel."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1037.438,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 141,
+      "start_sec": 1037.438,
+      "duration_sec": 4.474,
+      "end_sec": 1041.912,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "If the class-action settlement arrives, her share might cover a month of rent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1041.912,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 142,
+      "start_sec": 1042.212,
+      "duration_sec": 10.301,
+      "end_sec": 1052.513,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The model keeps generating images in her style. The violation is the product. The fine \u2014 if it ever arrives \u2014 is a fraction of what her career was worth."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1052.513,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 143,
+      "start_sec": 1054.513,
+      "duration_sec": 11.661,
+      "end_sec": 1066.174,
+      "word_count": 34,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "And this brings us to you. Because if you've ever posted on Reddit, commented on YouTube, written a blog, tweeted, left a review, uploaded a photo, published anything anywhere on the open internet \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1066.174,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 144,
+      "start_sec": 1067.174,
+      "duration_sec": 3.42,
+      "end_sec": 1070.594,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "your content is in training datasets right now. Not hypothetically."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1070.594,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 145,
+      "start_sec": 1070.894,
+      "duration_sec": 6.863,
+      "end_sec": 1077.757,
+      "word_count": 20,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Provably. Common Crawl, the dataset most large language models train on, contains over two hundred and fifty billion web pages."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1077.757,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 146,
+      "start_sec": 1078.057,
+      "duration_sec": 6.177,
+      "end_sec": 1084.234,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Your words are in there. The companies building hundred-billion-dollar products on your words did not ask your permission."
+    },
+    {
+      "type": "speech",
+      "index": 147,
+      "start_sec": 1084.234,
+      "duration_sec": 13.694,
+      "end_sec": 1097.928,
+      "word_count": 40,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Ford's formula was clumsy \u2014 a memo with signatures. Wells Fargo's was structural \u2014 a quota with plausible deniability. Purdue's was preemptive \u2014 move the money before the fine. Facebook's was mathematical \u2014 the fine is smaller than the profit."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1097.928,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 148,
+      "start_sec": 1099.428,
+      "duration_sec": 3.407,
+      "end_sec": 1102.834,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "AI's formula is all of those things. Plus one more:"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1102.834,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 149,
+      "start_sec": 1103.134,
+      "duration_sec": 5.475,
+      "end_sec": 1108.61,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "irreversible. Scrape now. Train the model. Make it indispensable. Settle later. The model can't be untrained."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1108.61,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 150,
+      "start_sec": 1108.91,
+      "duration_sec": 7.179,
+      "end_sec": 1116.089,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The fine is just the cost of raw materials, paid after the factory is already built and too valuable to demolish."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1116.089,
+      "duration_sec": 3.3
+    },
+    {
+      "type": "speech",
+      "index": 151,
+      "start_sec": 1119.389,
+      "duration_sec": 7.209,
+      "end_sec": 1126.598,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 3.3,
+      "text": "Ford paid three point five million. Wells Fargo paid three billion. Purdue paid seven point four billion. Facebook paid five billion."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1126.598,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 152,
+      "start_sec": 1126.898,
+      "duration_sec": 4.81,
+      "end_sec": 1131.707,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Those numbers got bigger \u2014 but so did the profits. The ratio never changed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1131.707,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 153,
+      "start_sec": 1132.007,
+      "duration_sec": 2.749,
+      "end_sec": 1134.757,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The fine was always less than the take."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1134.757,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 154,
+      "start_sec": 1136.757,
+      "duration_sec": 3.434,
+      "end_sec": 1140.19,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "So what happens when the formula reaches its logical conclusion?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1140.19,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 155,
+      "start_sec": 1141.69,
+      "duration_sec": 12.688,
+      "end_sec": 1154.378,
+      "word_count": 37,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "What happens when the fine is zero? Chris Vialpondo is a renter in Seattle's Lower Queen Anne neighborhood. In 2022, he opened a notice from his property manager and learned his rent had increased by fifty percent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1154.378,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 156,
+      "start_sec": 1154.678,
+      "duration_sec": 5.143,
+      "end_sec": 1159.821,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Same apartment. Same neighborhood. Same job. He was already working two jobs to make rent."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1159.821,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 157,
+      "start_sec": 1160.121,
+      "duration_sec": 11.324,
+      "end_sec": 1171.445,
+      "word_count": 33,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Fifty percent meant the difference between getting by and going under. It meant counting every grocery trip. It meant the constant math of which bill gets paid this week and which one waits."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1171.445,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 158,
+      "start_sec": 1171.445,
+      "duration_sec": 8.575,
+      "end_sec": 1180.02,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "He reached out to his property manager \u2014 the human being he thought had set the price \u2014 and was told nothing could be done."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1180.02,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 159,
+      "start_sec": 1181.52,
+      "duration_sec": 5.151,
+      "end_sec": 1186.671,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "Because his property manager hadn't set the price. A company he'd never heard of had."
+    },
+    {
+      "type": "speech",
+      "index": 160,
+      "start_sec": 1186.671,
+      "duration_sec": 0.939,
+      "end_sec": 1187.61,
+      "word_count": 1,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "RealPage."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1187.61,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 161,
+      "start_sec": 1187.91,
+      "duration_sec": 15.067,
+      "end_sec": 1202.977,
+      "word_count": 44,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "A company that takes confidential pricing data from competing landlords \u2014 data that competitors are not legally supposed to share \u2014 and feeds it into an algorithm that recommends rent prices across more than thirteen million apartments. Ninety percent of landlords follow the recommendation."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1202.977,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 162,
+      "start_sec": 1203.277,
+      "duration_sec": 5.481,
+      "end_sec": 1208.758,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The result: coordinated rent increases across buildings that are supposed to be competing with each other."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1208.758,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 163,
+      "start_sec": 1208.758,
+      "duration_sec": 10.603,
+      "end_sec": 1219.361,
+      "word_count": 31,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "The Department of Justice found that the algorithm costs renters an average of seventy dollars a month more \u2014 and over a hundred dollars a month in six major metro areas."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1219.361,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 164,
+      "start_sec": 1219.361,
+      "duration_sec": 3.296,
+      "end_sec": 1222.657,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Chris spoke publicly at the Washington state attorney general's press conference."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1222.657,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 165,
+      "start_sec": 1222.657,
+      "duration_sec": 11.277,
+      "end_sec": 1233.934,
+      "word_count": 33,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "He said: \"The most painful and revolting part about all of it is that all of the money I spent unnecessarily is now in the pockets of those who need it the least.\""
+    },
+    {
+      "type": "speech",
+      "index": 166,
+      "start_sec": 1233.934,
+      "duration_sec": 9.602,
+      "end_sec": 1243.536,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "The DOJ sued and announced a settlement in November 2025. RealPage has to modify its software. Landlords have to be allowed to set prices below the algorithm's floor."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1243.536,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 167,
+      "start_sec": 1243.836,
+      "duration_sec": 3.437,
+      "end_sec": 1247.273,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "No fine. No compensation to renters. No admission of guilt."
+    },
+    {
+      "type": "speech",
+      "index": 168,
+      "start_sec": 1247.273,
+      "duration_sec": 8.573,
+      "end_sec": 1255.846,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "To be clear: a company was found to have coordinated rent prices for millions of apartments, and the settlement was essentially \"please update your software.\""
+    },
+    {
+      "type": "pause",
+      "start_sec": 1255.846,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 169,
+      "start_sec": 1256.146,
+      "duration_sec": 8.91,
+      "end_sec": 1265.056,
+      "word_count": 26,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "If you got caught fixing prices at a farmers' market, you'd face harsher consequences. Eight hundred thousand leases in Washington alone were priced by the algorithm."
+    },
+    {
+      "type": "speech",
+      "index": 170,
+      "start_sec": 1265.056,
+      "duration_sec": 9.92,
+      "end_sec": 1274.975,
+      "word_count": 29,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "And after getting caught fixing rent for millions of people, RealPage's first move was to sue the state of New York for passing a law that banned algorithmic rent-setting."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1274.975,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 171,
+      "start_sec": 1275.275,
+      "duration_sec": 13.363,
+      "end_sec": 1288.638,
+      "word_count": 39,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "And then RealPage did something that tells you everything about how the formula works when it's fully internalized. New York State passed a law banning algorithmic rent-setting \u2014 the first state to say, explicitly, that this practice is illegal."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1288.638,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 172,
+      "start_sec": 1288.638,
+      "duration_sec": 3.755,
+      "end_sec": 1292.393,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "RealPage's response was not to comply. Not to modify their business."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1292.393,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 173,
+      "start_sec": 1293.393,
+      "duration_sec": 10.948,
+      "end_sec": 1304.341,
+      "word_count": 32,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "They sued New York. The company that was just caught coordinating rent prices for millions of people went to court to argue that the state didn't have the right to stop them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1304.341,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 174,
+      "start_sec": 1305.841,
+      "duration_sec": 3.408,
+      "end_sec": 1309.249,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "That's not a company that got caught and feels chastened."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1309.249,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 175,
+      "start_sec": 1309.549,
+      "duration_sec": 7.167,
+      "end_sec": 1316.717,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That's a company that did the math and concluded \u2014 correctly, so far \u2014 that the system will let them continue."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1316.717,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 176,
+      "start_sec": 1316.717,
+      "duration_sec": 7.183,
+      "end_sec": 1323.9,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "Richard Grimshaw lost his fingers, his ear, and his childhood because Ford decided a hundred and thirty-seven million was too expensive."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1323.9,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 177,
+      "start_sec": 1324.2,
+      "duration_sec": 5.473,
+      "end_sec": 1329.672,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Chris Vialpondo works two jobs because an algorithm decided fifty percent more was the right number."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1329.672,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 178,
+      "start_sec": 1329.972,
+      "duration_sec": 5.465,
+      "end_sec": 1335.437,
+      "word_count": 16,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The formula doesn't care whether it's a car or an apartment. It just runs the math."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1335.437,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 179,
+      "start_sec": 1337.437,
+      "duration_sec": 2.045,
+      "end_sec": 1339.482,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 2.0,
+      "text": "And sometimes, the price is zero."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1339.482,
+      "duration_sec": 5.5
+    },
+    {
+      "type": "speech",
+      "index": 180,
+      "start_sec": 1344.982,
+      "duration_sec": 1.357,
+      "end_sec": 1346.339,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 5.5,
+      "text": "Europe figured this out."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1346.339,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 181,
+      "start_sec": 1346.639,
+      "duration_sec": 2.773,
+      "end_sec": 1349.413,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Four percent of global revenue. Proportional. Automatic. No ceiling."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1349.413,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 182,
+      "start_sec": 1350.413,
+      "duration_sec": 7.879,
+      "end_sec": 1358.292,
+      "word_count": 23,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "When the fine scales with the company, the formula breaks. Facebook shrugged off a five-billion-dollar American fine and panicked over a European one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1358.292,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 183,
+      "start_sec": 1358.592,
+      "duration_sec": 9.239,
+      "end_sec": 1367.831,
+      "word_count": 27,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The tools exist. Criminal liability for executives \u2014 not the tellers, the architects. Disgorgement \u2014 hand back every dollar earned from the violation, not a negotiated fraction."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1367.831,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 184,
+      "start_sec": 1368.131,
+      "duration_sec": 3.755,
+      "end_sec": 1371.886,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The legal frameworks are built. The question has never been how."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1371.886,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 185,
+      "start_sec": 1373.386,
+      "duration_sec": 6.16,
+      "end_sec": 1379.546,
+      "word_count": 18,
+      "voice_register": "tense",
+      "pause_before_sec": 1.5,
+      "text": "The question is why. And the answer is the same math that runs everything else in this video."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1379.546,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 186,
+      "start_sec": 1379.846,
+      "duration_sec": 10.272,
+      "end_sec": 1390.118,
+      "word_count": 30,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The companies that benefit from the formula fund the campaigns, staff the advisory boards, draft the legislation. The fine stays small because the people who pay it set the ceiling."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1390.118,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 187,
+      "start_sec": 1392.118,
+      "duration_sec": 7.524,
+      "end_sec": 1399.642,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 2.0,
+      "text": "Let me show you what the math looks like when you put a face on it. Richard Grimshaw survived the Pinto fire."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1399.642,
+      "duration_sec": 0.0
+    },
+    {
+      "type": "speech",
+      "index": 188,
+      "start_sec": 1399.642,
+      "duration_sec": 10.626,
+      "end_sec": 1410.268,
+      "word_count": 31,
+      "voice_register": "tense",
+      "pause_before_sec": 0.0,
+      "text": "He grew up carrying scars that covered his body and a verdict that was supposed to change things \u2014 one hundred and twenty-five million dollars, reduced to three point five million."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1410.268,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 189,
+      "start_sec": 1411.268,
+      "duration_sec": 4.435,
+      "end_sec": 1415.703,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "The message was: we've done the math, and your pain has a price."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1415.703,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 190,
+      "start_sec": 1416.003,
+      "duration_sec": 7.867,
+      "end_sec": 1423.87,
+      "word_count": 23,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Ford paid it and moved on. Yesenia Guitron called the ethics hotline and was fired for it. She never worked in banking again."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1423.87,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 191,
+      "start_sec": 1424.17,
+      "duration_sec": 3.756,
+      "end_sec": 1427.926,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Carrie Tolstedt, who built the quota system, kept fifty-seven million dollars."
+    },
+    {
+      "type": "speech",
+      "index": 192,
+      "start_sec": 1427.926,
+      "duration_sec": 8.576,
+      "end_sec": 1436.502,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "The Sackler name is still on a wing of the Guggenheim Museum in New York City. The Metropolitan Museum took theirs down after public outcry."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1436.502,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 193,
+      "start_sec": 1436.802,
+      "duration_sec": 14.407,
+      "end_sec": 1451.208,
+      "word_count": 42,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The Guggenheim hasn't. You can walk into one of the most prestigious cultural institutions in the world, look up at the wall, and read the name of a family that earned their fortune from a drug that killed eight hundred thousand people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1451.208,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 194,
+      "start_sec": 1451.508,
+      "duration_sec": 3.085,
+      "end_sec": 1454.593,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "They kept thirteen billion. And they kept the wall."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1454.593,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 195,
+      "start_sec": 1456.093,
+      "duration_sec": 1.03,
+      "end_sec": 1457.123,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "That's the formula."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1457.123,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 196,
+      "start_sec": 1457.423,
+      "duration_sec": 2.06,
+      "end_sec": 1459.483,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "It even gets you a plaque."
+    },
+    {
+      "type": "speech",
+      "index": 197,
+      "start_sec": 1459.483,
+      "duration_sec": 10.293,
+      "end_sec": 1469.775,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.0,
+      "text": "Elliana Esquivel is still making art in Charlotte. She pivoted to 3D \u2014 not because she chose to, but because the alternative was watching her style get reproduced for free."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1469.775,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 198,
+      "start_sec": 1470.075,
+      "duration_sec": 12.337,
+      "end_sec": 1482.412,
+      "word_count": 36,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "If the settlement arrives, her share might cover a month of rent. The model keeps running. Seventy-four percent of Facebook users still don't know the platform profiles them. The data harvested in 2014 was never deleted."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1482.412,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 199,
+      "start_sec": 1482.712,
+      "duration_sec": 5.84,
+      "end_sec": 1488.552,
+      "word_count": 17,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The models built on it were refined. Chris Vialpondo is still in Seattle. Still working two jobs."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1488.552,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 200,
+      "start_sec": 1488.852,
+      "duration_sec": 7.546,
+      "end_sec": 1496.398,
+      "word_count": 22,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The algorithm that raised his rent is still running. His fifty percent increase was not a market decision. It was a formula."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1496.398,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 201,
+      "start_sec": 1496.698,
+      "duration_sec": 4.456,
+      "end_sec": 1501.154,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The Grush-Saunby memo put a dollar value on a human life in 1977."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1501.154,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 202,
+      "start_sec": 1501.454,
+      "duration_sec": 11.325,
+      "end_sec": 1512.779,
+      "word_count": 33,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Two hundred thousand dollars. Purdue's settlement valued each opioid death at nine thousand. Facebook's fine valued each compromised user at fifty-seven dollars. The AI settlements value each stolen book at three thousand dollars."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1512.779,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 203,
+      "start_sec": 1513.079,
+      "duration_sec": 5.154,
+      "end_sec": 1518.233,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Elliana's illustrations? Not priced yet. Your Reddit posts? Your YouTube comments? Your blog from 2016?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1518.233,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 204,
+      "start_sec": 1520.233,
+      "duration_sec": 1.037,
+      "end_sec": 1521.27,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 2.0,
+      "text": "They'll get priced."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1521.27,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 205,
+      "start_sec": 1521.57,
+      "duration_sec": 3.429,
+      "end_sec": 1524.999,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And if fifty years of history tells you anything \u2014"
+    },
+    {
+      "type": "pause",
+      "start_sec": 1524.999,
+      "duration_sec": 1.5
+    },
+    {
+      "type": "speech",
+      "index": 206,
+      "start_sec": 1526.499,
+      "duration_sec": 1.716,
+      "end_sec": 1528.216,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.5,
+      "text": "you won't like the number."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1528.216,
+      "duration_sec": 2.0
+    },
+    {
+      "type": "speech",
+      "index": 207,
+      "start_sec": 1530.216,
+      "duration_sec": 2.043,
+      "end_sec": 1532.258,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 2.0,
+      "text": "The law doesn't prevent corporate crime."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1532.258,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 208,
+      "start_sec": 1532.558,
+      "duration_sec": 0.975,
+      "end_sec": 1533.533,
+      "word_count": 3,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "It prices it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1533.533,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 209,
+      "start_sec": 1533.833,
+      "duration_sec": 3.072,
+      "end_sec": 1536.905,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The question was never whether they'd break the law."
+    },
+    {
+      "type": "pause",
+      "start_sec": 1536.905,
+      "duration_sec": 2.5
+    },
+    {
+      "type": "speech",
+      "index": 210,
+      "start_sec": 1539.405,
+      "duration_sec": 11.818,
+      "end_sec": 1551.223,
+      "word_count": 37,
+      "voice_register": "tense",
+      "pause_before_sec": 2.5,
+      "text": "The question is what you're worth. Sources: NHTSA, Grimshaw v. Ford Motor Co. (1981), FTC, SEC, DOJ, ProPublica, Copyright Alliance, CDC, European Data Protection Board, Washington State AG, WCNC Charlotte, Good Jobs First Violation Tracker, AlixPartners (2019)."
+    }
+  ],
+  "total_duration_sec": 1551.223,
+  "out": "audio/breaking_law/narration_v2.wav",
+  "word_count_total": 4142,
+  "avg_wpm": 160.2
+}
