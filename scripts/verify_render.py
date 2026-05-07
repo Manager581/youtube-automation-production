@@ -38,6 +38,7 @@ from pipeline_v2.chapter_assembler import find_media_file
 
 DEFAULT_RENDER = PROJECT_ROOT / "output" / "breaking_law_production_preview_v3.mp4"
 PAPER_EDIT = PROJECT_ROOT / "storyboards" / "breaking_law_paper_edit_v2.json"
+DEFAULT_ALIGNMENT = PROJECT_ROOT / "audio" / "breaking_law" / "narration_alignment.json"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
 REPORT_OUT = PROJECT_ROOT / "output" / "verify_report.json"
 
@@ -177,6 +178,62 @@ def check_narration(beat, alignment):
     }
 
 
+def check_narration_silenced_during_clip_audio(beat, original_alignment):
+    """For play/play_then_mute beats, the original narration must have NO words
+    in the clip-audio window. The renderer hard-mutes narration during this window,
+    so any word that "should" be playing there gets cut mid-utterance.
+
+    Reads original narration_alignment.json (NOT the rendered transcription) for
+    word-level timings of what the narration actually contains. Returns critical
+    failure with the list of cut words.
+    """
+    clip_mode = beat.get("clip_audio", "mute")
+    if clip_mode not in ("play", "play_then_mute"):
+        return {"check": "narration_silenced", "pass": True, "severity": "info",
+                "note": "not a clip-audio beat"}
+
+    clip_dur = beat.get("clip_audio_duration") or 5.0
+    if isinstance(clip_dur, str):
+        try: clip_dur = float(clip_dur)
+        except: clip_dur = 5.0
+
+    start = beat["start_sec"]
+    end = start + float(clip_dur)
+
+    # Support both formats: legacy {sentences:[{words:[...]}]} and WhisperX {words:[...]}
+    if "words" in original_alignment and original_alignment["words"]:
+        flat_words = original_alignment["words"]
+    else:
+        flat_words = [w for s in original_alignment.get("sentences", []) for w in s.get("words", [])]
+
+    cut_words = []
+    for w in flat_words:
+        ws, we = w.get("start"), w.get("end")
+        if ws is None or we is None:
+            continue
+        if ws < end and we > start + 0.05:
+            cut_words.append(w["word"])
+
+    if not cut_words:
+        return {
+            "check": "narration_silenced",
+            "pass": True,
+            "severity": "info",
+            "window": f"{start:.2f}-{end:.2f}s",
+            "note": "clean — no narration in clip-audio window",
+        }
+
+    return {
+        "check": "narration_silenced",
+        "pass": False,
+        "severity": "critical",
+        "window": f"{start:.2f}-{end:.2f}s",
+        "cut_count": len(cut_words),
+        "cut_words": " ".join(cut_words[:12]),
+        "note": f"play_then_mute would silence {len(cut_words)} narration word(s) mid-utterance",
+    }
+
+
 def check_clip_audio_ducking(beat, audio_mono, sr=48000):
     """For play/play_then_mute beats, check if narration is silent during clip audio.
 
@@ -299,6 +356,8 @@ def main():
     parser = argparse.ArgumentParser(description="Verify rendered MP4 against paper edit")
     parser.add_argument("--render", default=str(DEFAULT_RENDER))
     parser.add_argument("--paper-edit", default=str(PAPER_EDIT))
+    parser.add_argument("--alignment", default=str(DEFAULT_ALIGNMENT),
+                        help="Original narration alignment JSON (for clip-audio coverage check)")
     parser.add_argument("--report", default=str(REPORT_OUT))
     parser.add_argument("--skip-vision", action="store_true",
                         help="Skip Claude vision checks (faster)")
@@ -306,6 +365,8 @@ def main():
                         help="Whisper model size (tiny/base/small/medium)")
     parser.add_argument("--max-beats", type=int, default=None,
                         help="Only check first N beats (for testing)")
+    parser.add_argument("--fail-on-critical", action="store_true",
+                        help="Exit with non-zero status if any critical failures (for pipeline gating)")
     args = parser.parse_args()
 
     render_path = Path(args.render)
@@ -327,6 +388,18 @@ def main():
     if args.max_beats:
         beats = beats[:args.max_beats]
     print(f"  Beats to check: {len(beats)}")
+
+    # ── Load original narration alignment (for clip-audio coverage check) ──
+    original_alignment = {"sentences": []}
+    align_path = Path(args.alignment)
+    if align_path.exists():
+        with open(align_path) as f:
+            original_alignment = json.load(f)
+        n_sents = len(original_alignment.get("sentences", []))
+        print(f"  Original alignment: {align_path.name} ({n_sents} sentences)")
+    else:
+        print(f"  WARNING: original alignment not found: {align_path}")
+        print(f"           clip-audio coverage check will be skipped")
 
     # ── Setup temp dir ─────────────────────────────────────────────────────
     tmp_dir = tempfile.mkdtemp(prefix="verify_")
@@ -376,6 +449,11 @@ def main():
 
         # Narration text
         beat_result["checks"].append(check_narration(beat, alignment))
+
+        # Clip-audio coverage: original narration must be silent in the play_then_mute window
+        beat_result["checks"].append(
+            check_narration_silenced_during_clip_audio(beat, original_alignment)
+        )
 
         # Clip audio ducking
         beat_result["checks"].append(check_clip_audio_ducking(beat, audio_mono))
@@ -547,6 +625,11 @@ def main():
         shutil.rmtree(tmp_dir, ignore_errors=True)
     else:
         print(f"\n  Frames kept for inspection in: {tmp_dir}")
+
+    # Gate exit code if requested by pipeline
+    if args.fail_on_critical and summary["critical_failures"] > 0:
+        print(f"\n  ❌ FAIL: {summary['critical_failures']} critical failure(s). Pipeline halted.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

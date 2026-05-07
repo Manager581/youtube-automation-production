@@ -675,28 +675,14 @@ def main():
     for b in beats:
         b["end_sec"] = min(b["end_sec"], narr_dur)
 
-    # ── Auto intro montage: upgrade first 2-3 video clips to play_then_mute ─
-    # Playbook rule P-IN-05: "5-10s RAISE STAKES — Visual variety (2+ cuts)"
-    # Force first 3 video-clip beats in cold open to play their source audio
-    # briefly (2.5s each). Creates a news-montage intro that establishes the
-    # pattern before narration takes over.
-    intro_clips_upgraded = 0
-    for beat in beats[:15]:  # scan first 15 beats max
-        if intro_clips_upgraded >= 3:
-            break
-        if beat.get("start_sec", 0) >= 20.0:
-            break  # past intro window
-        visual = beat.get("visual_file", "")
-        if is_image(visual):
-            continue  # skip images — they have no audio track
-        # This is a video clip in the intro — upgrade it
-        if beat.get("clip_audio", "mute") != "play_then_mute":
-            beat["clip_audio"] = "play_then_mute"
-            beat["clip_audio_duration"] = 2.5
-        intro_clips_upgraded += 1
-
-    if intro_clips_upgraded:
-        print(f"Intro montage: {intro_clips_upgraded} clips upgraded to play_then_mute")
+    # ── Auto intro montage: DISABLED ──────────────────────────────────────
+    # Previously this auto-upgraded the first 3 cold-open video clips to
+    # clip_audio="play_then_mute" with clip_audio_duration=2.5s, regardless
+    # of what the director set. Result: narration was muted three times in
+    # the first 15 seconds, cutting "In 2019, Facebook was fined $5 billion..."
+    # mid-sentence with random source-clip audio. The director's per-beat
+    # clip_audio decision is the source of truth — don't override it.
+    print("Intro montage: auto-upgrade disabled (director's clip_audio honored)")
 
     # ── Resolve visuals + overlays ─────────────────────────────────────────
     print("\nResolving assets...")
