@@ -356,8 +356,11 @@ def main():
     parser = argparse.ArgumentParser(description="Verify rendered MP4 against paper edit")
     parser.add_argument("--render", default=str(DEFAULT_RENDER))
     parser.add_argument("--paper-edit", default=str(PAPER_EDIT))
-    parser.add_argument("--alignment", default=str(DEFAULT_ALIGNMENT),
-                        help="Original narration alignment JSON (for clip-audio coverage check)")
+    parser.add_argument("--alignment", default=None,
+                        help="Narration alignment JSON for clip-audio coverage check. "
+                             "If omitted, auto-detects best available: padded > whisperx > legacy. "
+                             "CRITICAL: a padded render (silence-inserted) MUST be checked against "
+                             "the padded alignment or narration_silenced will false-fail.")
     parser.add_argument("--report", default=str(REPORT_OUT))
     parser.add_argument("--skip-vision", action="store_true",
                         help="Skip Claude vision checks (faster)")
@@ -390,13 +393,27 @@ def main():
     print(f"  Beats to check: {len(beats)}")
 
     # ── Load original narration alignment (for clip-audio coverage check) ──
-    original_alignment = {"sentences": []}
-    align_path = Path(args.alignment)
+    # Auto-detect best alignment if not explicitly given: padded > whisperx > legacy.
+    # A silence-inserted (padded) render MUST be checked against padded timing, or
+    # the narration_silenced check false-fails on every clip-audio beat.
+    original_alignment = {"sentences": [], "words": []}
+    if args.alignment:
+        align_path = Path(args.alignment)
+    else:
+        audio_dir = PROJECT_ROOT / "audio" / "breaking_law"
+        candidates = [
+            audio_dir / "narration_alignment_padded.json",
+            audio_dir / "narration_alignment_whisperx.json",
+            audio_dir / "narration_alignment.json",
+        ]
+        align_path = next((c for c in candidates if c.exists()), candidates[-1])
+        print(f"  Alignment auto-detected: {align_path.name}")
     if align_path.exists():
         with open(align_path) as f:
             original_alignment = json.load(f)
-        n_sents = len(original_alignment.get("sentences", []))
-        print(f"  Original alignment: {align_path.name} ({n_sents} sentences)")
+        n_units = len(original_alignment.get("words") or original_alignment.get("sentences") or [])
+        unit = "words" if original_alignment.get("words") else "sentences"
+        print(f"  Original alignment: {align_path.name} ({n_units} {unit})")
     else:
         print(f"  WARNING: original alignment not found: {align_path}")
         print(f"           clip-audio coverage check will be skipped")
