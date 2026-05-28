@@ -18,6 +18,7 @@ Usage:
 
 import argparse
 import json
+import math
 import os
 import re
 import subprocess
@@ -40,12 +41,17 @@ DEFAULT_RENDER = PROJECT_ROOT / "output" / "breaking_law_production_preview_v3.m
 PAPER_EDIT = PROJECT_ROOT / "storyboards" / "breaking_law_paper_edit_v2.json"
 DEFAULT_ALIGNMENT = PROJECT_ROOT / "audio" / "breaking_law" / "narration_alignment.json"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
+INTRO_SPEC = PROJECT_ROOT / "storyboards" / "intro_spec_locked.json"
 REPORT_OUT = PROJECT_ROOT / "output" / "verify_report.json"
 
 # Thresholds
 NARRATION_MATCH_MIN = 0.6       # Fraction of expected words in transcribed segment
 DUCKING_RMS_MAX = 0.01           # RMS threshold — above this = narration not ducked
 VISION_MATCH_MIN = 0.5           # Relevance score threshold
+BLACK_MIN_DUR = 0.5              # blackdetect: min seconds of continuous black to report
+BLACK_PIC_TH = 0.98              # blackdetect: luma threshold (fraction of black pixels)
+BLACK_BEAT_FRAC = 0.4            # Beat fails if >this fraction of its duration is black
+BLACK_BEAT_ABS = 1.5             # ...or if >this many absolute seconds are black
 
 # ─── Helpers ───────────────────────────────────────────────────────────────
 
@@ -93,6 +99,64 @@ def extract_frame(render_path, time_sec, out_path):
         str(out_path)
     ], capture_output=True, timeout=30)
     return r.returncode == 0 and os.path.exists(out_path)
+
+
+def extract_frame_accurate(render_path, time_sec, out_path):
+    """Frame-accurate extract that stays fast at any position via two-stage seek:
+    a coarse keyframe seek (-ss before -i) to ~2s before the target, then a fine
+    seek (-ss after -i) for the remainder. Decodes only ~2s regardless of how far
+    into the file the target is — needed so a late black-gap thumbnail actually
+    shows black without re-decoding the whole video (which timed out)."""
+    coarse = max(0.0, float(time_sec) - 2.0)
+    fine = float(time_sec) - coarse
+    r = subprocess.run([
+        "ffmpeg", "-y", "-v", "quiet",
+        "-ss", f"{coarse:.3f}",
+        "-i", str(render_path),
+        "-ss", f"{fine:.3f}",
+        "-frames:v", "1", "-q:v", "3",
+        str(out_path)
+    ], capture_output=True, timeout=60)
+    return r.returncode == 0 and os.path.exists(out_path)
+
+
+def scan_black_segments(render_path, min_dur=BLACK_MIN_DUR, pic_th=BLACK_PIC_TH):
+    """Whole-render black-frame scan via ffmpeg blackdetect.
+
+    Returns a list of (start_sec, end_sec, duration) for every stretch the
+    renderer left black. This is what the structural visual check is blind to:
+    a beat can have a valid visual_file on disk yet render as pure black when
+    its per-segment encode failed and the renderer substituted a black frame.
+    """
+    r = subprocess.run([
+        "ffmpeg", "-nostats", "-hide_banner",
+        "-i", str(render_path),
+        "-vf", f"blackdetect=d={min_dur}:pic_th={pic_th}",
+        "-an", "-f", "null", "-",
+    ], capture_output=True, text=True, timeout=600)
+    segs = []
+    for line in (r.stderr or "").splitlines():
+        if "black_start" not in line:
+            continue
+        try:
+            parts = dict(p.split(":") for p in line.split("] ", 1)[1].strip().split(" "))
+            segs.append((float(parts["black_start"]),
+                         float(parts["black_end"]),
+                         float(parts["black_duration"])))
+        except (ValueError, KeyError, IndexError):
+            continue
+    return segs
+
+
+def black_overlap(beat, black_segments):
+    """Seconds of this beat that fall inside any black segment."""
+    s, e = beat.get("start_sec", 0.0), beat.get("end_sec", 0.0)
+    total = 0.0
+    for bs, be, _ in black_segments:
+        lo, hi = max(s, bs), min(e, be)
+        if hi > lo:
+            total += hi - lo
+    return total
 
 
 def normalize_text(text):
@@ -331,6 +395,32 @@ def check_visual(beat, render_path, tmp_dir, use_vision=True):
     return result
 
 
+def check_not_black(beat, black_segments):
+    """Check: is this beat actually showing its visual, or did the renderer
+    drop it to a pure-black frame?
+
+    The structural visual check (check_visual) confirms only that the
+    expected_file exists on disk — it is BLIND to the renderer substituting a
+    black segment when a per-segment encode fails under parallel load. This
+    check compares the beat's time window against the whole-render blackdetect
+    scan and fails when too much of the beat is black.
+    """
+    dur = max(beat.get("end_sec", 0.0) - beat.get("start_sec", 0.0), 0.001)
+    black = black_overlap(beat, black_segments)
+    frac = black / dur
+    is_black = black >= BLACK_BEAT_ABS or frac >= BLACK_BEAT_FRAC
+    return {
+        "check": "not_black",
+        "pass": not is_black,
+        "severity": "critical" if is_black else "info",
+        "black_sec": round(black, 2),
+        "beat_dur": round(dur, 2),
+        "black_frac": round(frac, 2),
+        "note": (f"{black:.1f}s of {dur:.1f}s black ({frac*100:.0f}%)"
+                 if is_black else "visual present"),
+    }
+
+
 def check_overlay(beat, render_path, tmp_dir):
     """Check: is there a text overlay when beat.text_overlay is set?
 
@@ -348,6 +438,345 @@ def check_overlay(beat, render_path, tmp_dir):
         "overlay_text": overlay_text,
         "note": "structural only (no OCR)",
     }
+
+
+def check_intro_protocol(beats, spec_path=INTRO_SPEC):
+    """Compare the render's intro beats against the locked, user-approved intro spec.
+
+    The intro is a fixed creative decision (intro_spec_locked.json, approved
+    2026-04-04). Every regenerated paper edit drifts from it — wrong clips, the
+    rejected "$5B card" overlay creeping back, the Facebook clip's 3s of its own
+    audio dropped. This check flags each divergence so the locked intro can be
+    re-injected before render. Returns one list of check dicts (not per-beat).
+    """
+    if not Path(spec_path).exists():
+        return [{"check": "intro_protocol", "pass": True, "severity": "info",
+                 "note": f"no locked intro spec at {spec_path}"}]
+    with open(spec_path) as f:
+        spec = json.load(f)
+    segments = spec.get("segments", [])
+
+    def parse_range(t):
+        t = str(t).replace("s", "").strip()
+        a, b = t.split("-")
+        return float(a), float(b)
+
+    def base_noext(p):
+        return os.path.splitext(os.path.basename(str(p or "")))[0].lower()
+
+    def find_beat(lo, hi):
+        best, best_ov = None, 0.0
+        for b in beats:
+            s, e = b.get("start_sec", 0.0), b.get("end_sec", 0.0)
+            ov = max(0.0, min(e, hi) - max(s, lo))
+            if ov > best_ov:
+                best_ov, best = ov, b
+        return best
+
+    out = []
+    for seg in segments:
+        idx = seg.get("index")
+        try:
+            lo, hi = parse_range(seg.get("time", "0-0s"))
+        except (ValueError, AttributeError):
+            lo, hi = 0.0, 0.0
+        beat = find_beat(lo, hi)
+        svf = seg.get("visual_file", "")
+        prefix = f"intro_seg{idx}"
+
+        if beat is None:
+            out.append({"check": f"{prefix}_visual", "pass": False, "severity": "critical",
+                        "expected": svf, "actual": None,
+                        "note": f"no beat covers {seg.get('time')} (expected {svf})"})
+            continue
+
+        # 1. Visual file match (exact basename, case-insensitive)
+        vis_ok = base_noext(svf) == base_noext(beat.get("visual_file"))
+        out.append({
+            "check": f"{prefix}_visual", "pass": vis_ok,
+            "severity": "info" if vis_ok else "critical",
+            "expected_file": svf, "actual": beat.get("visual_file"),
+            "note": "matches spec" if vis_ok
+                    else f"expected {svf}, got {beat.get('visual_file')}",
+        })
+
+        # 2. Clip-audio mode match (e.g. Facebook clip must play_then_mute for 3s)
+        exp_audio, act_audio = seg.get("clip_audio", "mute"), beat.get("clip_audio", "mute")
+        audio_ok = exp_audio == act_audio
+        out.append({
+            "check": f"{prefix}_clip_audio", "pass": audio_ok,
+            "severity": "info" if audio_ok else "critical",
+            "expected": exp_audio, "actual": act_audio,
+            "note": "matches spec" if audio_ok
+                    else f"expected {exp_audio}, got {act_audio}",
+        })
+
+        # 3. Overlay match. Spec overlay starting with "NONE" means NO overlay allowed
+        #    (e.g. the user-rejected "$5B card" must stay removed → critical if present).
+        exp_overlay = (seg.get("overlay") or "").strip()
+        act_overlay = (beat.get("text_overlay") or "").strip()
+        expects_none = exp_overlay.upper().startswith("NONE") or exp_overlay == ""
+        if expects_none:
+            ov_ok = act_overlay == ""
+            out.append({
+                "check": f"{prefix}_overlay", "pass": ov_ok,
+                "severity": "info" if ov_ok else "critical",
+                "expected": "(no overlay)", "actual": act_overlay,
+                "note": "correctly absent" if ov_ok
+                        else f"rejected overlay is back: '{act_overlay}' (spec: {exp_overlay})",
+            })
+        else:
+            ov_ok = act_overlay != "" and normalize_text(exp_overlay).issubset(normalize_text(act_overlay))
+            out.append({
+                "check": f"{prefix}_overlay", "pass": ov_ok,
+                "severity": "info" if ov_ok else "warning",
+                "expected": exp_overlay, "actual": act_overlay,
+                "note": "matches spec" if ov_ok
+                        else f"expected '{exp_overlay}', got '{act_overlay or 'NONE'}'",
+            })
+
+    return out
+
+
+def _flat_words(alignment):
+    """Flatten an alignment dict to a list of (clean_token, raw_word)."""
+    out = []
+    for sent in alignment.get("sentences", []):
+        for w in sent.get("words", []):
+            raw = w.get("word", "")
+            tok = re.sub(r'[^a-z0-9]', '', raw.lower())
+            if tok:
+                out.append((tok, raw.strip()))
+    return out
+
+
+def check_vo_quality(alignment, audio_mono, sr=48000):
+    """Check the voice-over for the defects that make a render "sound awful":
+    F5-TTS stutter/hallucination (repeated words), digital clipping, and dead air.
+
+    Runs once per render. Returns a list of check dicts.
+      • vo_repetition — TTS stutter: a word repeated 3+ times in a row, or a
+        2-word phrase repeated back-to-back. These are the audible "the the the"
+        / "we run ads we run ads" artifacts F5-TTS produces.
+      • vo_clipping  — fraction of samples over 0.99 (distortion) + peak dBFS.
+      • vo_silence   — fraction of the mix that is near-silent (catches a silent
+        / mostly-empty narration stem, e.g. the voice-smoother 79%-silent bug).
+    """
+    out = []
+
+    # ── Repetition / hallucination ─────────────────────────────────────────
+    words = _flat_words(alignment)
+    toks = [t for t, _ in words]
+    stutters = []
+    i = 0
+    while i < len(toks):
+        j = i
+        while j < len(toks) and toks[j] == toks[i]:
+            j += 1
+        if (j - i) >= 3 and len(toks[i]) > 1:
+            stutters.append(f"{toks[i]}x{j-i}")
+        i = j
+    bigram_rep = []
+    for k in range(len(toks) - 3):
+        if (toks[k] == toks[k+2] and toks[k+1] == toks[k+3]
+                and len(toks[k]) + len(toks[k+1]) > 3):
+            bigram_rep.append(f"{toks[k]} {toks[k+1]}")
+    n_rep = len(stutters) + len(bigram_rep)
+    rep_examples = (stutters + bigram_rep)[:8]
+    out.append({
+        "check": "vo_repetition",
+        "pass": n_rep < 1,
+        "severity": "critical" if n_rep >= 5 else ("warning" if n_rep >= 1 else "info"),
+        "count": n_rep,
+        "examples": rep_examples,
+        "note": "no TTS stutter detected" if n_rep == 0
+                else f"{n_rep} repeated-word artifact(s): {', '.join(rep_examples)}",
+    })
+
+    # ── Clipping / peak ────────────────────────────────────────────────────
+    if audio_mono is not None and len(audio_mono) > 1:
+        peak = float(np.max(np.abs(audio_mono)))
+        clip_frac = float(np.mean(np.abs(audio_mono) > 0.99))
+        peak_db = 20 * math.log10(peak) if peak > 1e-9 else -120.0
+        out.append({
+            "check": "vo_clipping",
+            "pass": clip_frac <= 0.001,
+            "severity": "critical" if clip_frac > 0.01 else ("warning" if clip_frac > 0.001 else "info"),
+            "clip_frac": round(clip_frac, 5),
+            "peak_dbfs": round(peak_db, 2),
+            "note": (f"{clip_frac*100:.2f}% of samples clipped (peak {peak_db:+.1f} dBFS)"
+                     if clip_frac > 0.001 else f"no sustained clipping (peak {peak_db:+.1f} dBFS)"),
+        })
+
+        # ── Silence / dead air ─────────────────────────────────────────────
+        fr = int(0.05 * sr)
+        n = len(audio_mono) // fr
+        if n > 0:
+            frames = audio_mono[:n*fr].reshape(n, fr)
+            fr_rms = np.sqrt(np.mean(frames.astype(np.float64)**2, axis=1))
+            sil_frac = float(np.mean(fr_rms < 0.01))
+            out.append({
+                "check": "vo_silence",
+                "pass": sil_frac <= 0.25,
+                "severity": "critical" if sil_frac > 0.5 else ("warning" if sil_frac > 0.25 else "info"),
+                "silence_frac": round(sil_frac, 3),
+                "note": (f"{sil_frac*100:.0f}% of mix near-silent — VO likely missing/buried"
+                         if sil_frac > 0.25 else f"{sil_frac*100:.0f}% near-silent (normal)"),
+            })
+
+    return out
+
+
+# ─── HTML report ─────────────────────────────────────────────────────────────
+
+def _fmt_ts(sec):
+    if sec is None:
+        return "—"
+    sec = float(sec)
+    return f"{int(sec//60):d}:{int(sec%60):02d}"
+
+
+def _esc(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def generate_html_report(report, render_path, html_path):
+    """Write a self-contained, screenshot-rich HTML report next to the JSON.
+
+    The point: the user should see WHAT needs to be redone and WHERE (timecode +
+    thumbnail) without scrubbing a 24-minute video. Frames are extracted for every
+    failing beat into <stem>_frames/ and referenced relatively.
+    """
+    html_path = Path(html_path)
+    frames_dir = html_path.with_suffix("")
+    frames_dir = Path(str(frames_dir) + "_frames")
+    frames_dir.mkdir(parents=True, exist_ok=True)
+
+    summary = report["summary"]
+    n_crit = summary.get("critical_failures", 0)
+    n_warn = summary.get("warnings", 0)
+    n_pass = summary.get("passes", 0)
+    n_beats = summary.get("total_beats", 0)
+    verdict = "FAIL — needs work" if n_crit else ("WARN — review" if n_warn else "PASS")
+    banner = "#b00020" if n_crit else ("#b06b00" if n_warn else "#0a7d2c")
+
+    black_segs = [(b["start"], b["end"]) for b in report.get("black_segments", [])]
+
+    def black_window_center(start, end):
+        """Midpoint of the black stretch that overlaps [start,end], else beat mid."""
+        best, best_ov = None, 0.0
+        for bs, be in black_segs:
+            lo, hi = max(start, bs), min(end, be)
+            if hi - lo > best_ov:
+                best_ov, best = hi - lo, (lo + hi) / 2
+        return best if best is not None else (start + end) / 2
+
+    def thumb(beat_id, t, accurate=False):
+        """Extract a frame at t and return a relative <img> path, or '' on failure."""
+        if t is None:
+            return ""
+        fp = frames_dir / f"{beat_id}.jpg"
+        fn = extract_frame_accurate if accurate else extract_frame
+        if fn(render_path, float(t), str(fp)):
+            return f"{frames_dir.name}/{fp.name}"
+        return ""
+
+    # Group per-beat failures by check type, preserving timecode + visual
+    black_beats, narr_beats, other_beats = [], [], []
+    for br in report.get("results", []):
+        if br["beat_id"] in ("intro_protocol", "vo_quality"):
+            continue
+        for c in br.get("checks", []):
+            if c.get("pass", True):
+                continue
+            row = {
+                "beat_id": br["beat_id"], "start": br.get("start_sec"),
+                "end": br.get("end_sec"), "visual": br.get("visual_file"),
+                "text": br.get("text", ""), "check": c.get("check"),
+                "severity": c.get("severity", "warning"), "note": c.get("note", ""),
+            }
+            if c.get("check") == "not_black":
+                black_beats.append(row)
+            elif c.get("check") == "narration":
+                narr_beats.append(row)
+            else:
+                other_beats.append(row)
+
+    parts = []
+    parts.append(f"""<!doctype html><html><head><meta charset="utf-8">
+<title>Render QA — {_esc(Path(report.get('render','')).name)}</title>
+<style>
+ body{{font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#111;color:#eee}}
+ .wrap{{max-width:1100px;margin:0 auto;padding:24px}}
+ .banner{{background:{banner};color:#fff;padding:18px 24px;border-radius:10px;font-size:22px;font-weight:700}}
+ .sub{{font-size:14px;font-weight:400;opacity:.92;margin-top:4px}}
+ h2{{margin-top:34px;border-bottom:1px solid #333;padding-bottom:6px}}
+ .pill{{display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:700;margin-right:6px}}
+ .crit{{background:#3a0d14;color:#ff8095}} .warn{{background:#3a2a0d;color:#ffd080}} .ok{{background:#0d3a1a;color:#7dffaa}}
+ .card{{display:flex;gap:14px;background:#1b1b1b;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin:10px 0}}
+ .card img{{width:240px;height:135px;object-fit:cover;background:#000;border-radius:4px;flex:none}}
+ .card .meta{{flex:1}} .tc{{font-family:ui-monospace,monospace;color:#9cf;font-weight:700}}
+ .fname{{color:#bbb;font-size:12px;word-break:break-all}}
+ table{{border-collapse:collapse;width:100%;margin-top:8px}}
+ td,th{{border:1px solid #2a2a2a;padding:6px 8px;text-align:left;font-size:13px}}
+ th{{background:#1b1b1b}}
+</style></head><body><div class="wrap">""")
+
+    parts.append(f"""<div class="banner">{verdict}
+<div class="sub">{_esc(Path(report.get('render','')).name)} ·
+ {n_crit} critical · {n_warn} warnings · {n_pass}/{n_beats} beats clean ·
+ {len(report.get('black_segments',[]))} black gaps ·
+ generated {report.get('timestamp','')}</div></div>""")
+
+    # ── Black frames ──
+    parts.append(f'<h2>Black frames <span class="pill crit">{len(black_beats)}</span></h2>')
+    if not black_beats:
+        parts.append("<p>None — every beat renders a visual.</p>")
+    for r in sorted(black_beats, key=lambda x: x["start"] or 0):
+        ctr = black_window_center(r["start"] or 0, r["end"] or (r["start"] or 0))
+        img = thumb(r["beat_id"], ctr, accurate=True)
+        imgtag = f'<img src="{img}">' if img else '<div style="width:240px;height:135px;background:#000;border-radius:4px;flex:none"></div>'
+        parts.append(f"""<div class="card">{imgtag}<div class="meta">
+         <span class="tc">{_fmt_ts(r['start'])}</span> <span class="pill crit">BLACK</span>
+         <span class="fname">{_esc(r['beat_id'])}</span>
+         <div>{_esc(r['note'])}</div>
+         <div class="fname">expected visual: {_esc(r['visual'])}</div>
+         <div style="color:#999">{_esc(r['text'])}</div></div></div>""")
+
+    # ── Intro protocol ──
+    intro = report.get("intro_protocol", [])
+    ifail = [c for c in intro if not c.get("pass", True)]
+    parts.append(f'<h2>Intro protocol <span class="pill {"crit" if any(c["severity"]=="critical" for c in ifail) else "ok"}">{len(ifail)} issue(s)</span></h2>')
+    parts.append("<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>")
+    for c in intro:
+        sev = "ok" if c.get("pass") else ("crit" if c["severity"] == "critical" else "warn")
+        label = "PASS" if c.get("pass") else c["severity"].upper()
+        parts.append(f'<tr><td>{_esc(c["check"])}</td><td><span class="pill {sev}">{label}</span></td><td>{_esc(c.get("note",""))}</td></tr>')
+    parts.append("</table>")
+
+    # ── VO quality ──
+    vo = report.get("vo_quality", [])
+    parts.append('<h2>Voice-over quality</h2>')
+    parts.append("<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>")
+    for c in vo:
+        sev = "ok" if c.get("pass") else ("crit" if c["severity"] == "critical" else "warn")
+        label = "PASS" if c.get("pass") else c["severity"].upper()
+        parts.append(f'<tr><td>{_esc(c["check"])}</td><td><span class="pill {sev}">{label}</span></td><td>{_esc(c.get("note",""))}</td></tr>')
+    parts.append("</table>")
+
+    # ── Other failures ──
+    parts.append(f'<h2>Other issues <span class="pill warn">{len(narr_beats)+len(other_beats)}</span></h2>')
+    parts.append("<table><tr><th>Time</th><th>Beat</th><th>Check</th><th>Severity</th><th>Detail</th></tr>")
+    for r in sorted(narr_beats + other_beats, key=lambda x: x["start"] or 0):
+        sev = "crit" if r["severity"] == "critical" else "warn"
+        parts.append(f'<tr><td class="tc">{_fmt_ts(r["start"])}</td><td>{_esc(r["beat_id"])}</td>'
+                     f'<td>{_esc(r["check"])}</td><td><span class="pill {sev}">{r["severity"].upper()}</span></td>'
+                     f'<td>{_esc(r["note"])}</td></tr>')
+    parts.append("</table>")
+
+    parts.append("</div></body></html>")
+    html_path.write_text("\n".join(parts))
+    return str(html_path)
 
 
 # ─── Main ──────────────────────────────────────────────────────────────────
@@ -442,14 +871,24 @@ def main():
           f"{alignment.get('duration_sec', 0):.1f}s")
 
     # ── Decode audio for ducking check ────────────────────────────────────
-    print("\n[3/4] Decoding audio for clip audio checks...")
+    print("\n[3/5] Decoding audio for clip audio checks...")
     audio_mono = decode_mono(audio_wav)
     if audio_mono is None:
         print("  WARNING: could not decode audio")
         audio_mono = np.zeros(1, dtype=np.float32)
 
+    # ── Whole-render black-frame scan ──────────────────────────────────────
+    # The renderer substitutes pure-black segments when a per-segment encode
+    # fails under parallel load. The structural visual check can't see this, so
+    # scan the whole render once and flag any beat sitting inside a black gap.
+    print("\n[4/5] Scanning for black frames (blackdetect)...")
+    black_segments = scan_black_segments(render_path)
+    black_total = sum(d for _, _, d in black_segments)
+    print(f"  Black segments: {len(black_segments)} "
+          f"({black_total:.1f}s total)")
+
     # ── Run checks per beat ────────────────────────────────────────────────
-    print(f"\n[4/4] Running checks on {len(beats)} beats...")
+    print(f"\n[5/5] Running checks on {len(beats)} beats...")
     results = []
 
     for i, beat in enumerate(beats):
@@ -480,6 +919,9 @@ def main():
             check_visual(beat, render_path, tmp_dir, use_vision=not args.skip_vision)
         )
 
+        # Black-frame: did the renderer drop this beat to pure black?
+        beat_result["checks"].append(check_not_black(beat, black_segments))
+
         # Overlay
         beat_result["checks"].append(check_overlay(beat, render_path, tmp_dir))
 
@@ -487,6 +929,36 @@ def main():
 
         if (i + 1) % 25 == 0 or i == len(beats) - 1:
             print(f"  {i+1}/{len(beats)} beats checked")
+
+    # ── Intro protocol: does the intro follow the locked, approved spec? ───
+    intro_checks = check_intro_protocol(beats)
+    intro_fail = sum(1 for c in intro_checks if not c.get("pass", True))
+    print(f"  Intro protocol: {len(intro_checks)} checks, {intro_fail} divergence(s) from locked spec")
+    results.append({
+        "beat_id": "intro_protocol",
+        "start_sec": 0.0,
+        "end_sec": None,
+        "chapter": "INTRO",
+        "text": "intro vs intro_spec_locked.json",
+        "visual_file": None,
+        "checks": intro_checks,
+    })
+
+    # ── VO quality: stutter / clipping / dead air across the whole render ──
+    vo_checks = check_vo_quality(alignment, audio_mono)
+    vo_fail = sum(1 for c in vo_checks if not c.get("pass", True))
+    print(f"  VO quality: {len(vo_checks)} checks, {vo_fail} issue(s)")
+    for c in vo_checks:
+        print(f"    - {c['check']}: {c['note']}")
+    results.append({
+        "beat_id": "vo_quality",
+        "start_sec": 0.0,
+        "end_sec": None,
+        "chapter": "AUDIO",
+        "text": "voice-over quality (whole render)",
+        "visual_file": None,
+        "checks": vo_checks,
+    })
 
     # ── Vision analysis (batched for frames that were extracted) ──────────
     if not args.skip_vision:
@@ -592,6 +1064,12 @@ def main():
         "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
         "elapsed_sec": round(time.time() - t0, 1),
         "summary": summary,
+        "black_segments": [
+            {"start": round(s, 2), "end": round(e, 2), "duration": round(d, 2)}
+            for s, e, d in black_segments
+        ],
+        "intro_protocol": intro_checks,
+        "vo_quality": vo_checks,
         "critical": critical_list,
         "warnings": warning_list,
         "results": results,
@@ -600,6 +1078,14 @@ def main():
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)
     with open(args.report, "w") as f:
         json.dump(report, f, indent=2)
+
+    # ── Human-readable HTML report (screenshots + timecodes) ───────────────
+    html_path = Path(args.report).with_suffix(".html")
+    try:
+        generate_html_report(report, render_path, html_path)
+    except Exception as e:
+        print(f"  WARNING: could not write HTML report: {e}")
+        html_path = None
 
     # ── Print summary ──────────────────────────────────────────────────────
     print(f"\n{'='*60}")
@@ -633,6 +1119,8 @@ def main():
             print(f"    {w['beat_id']} @ {t:6.1f}s  [{w['check']}]  {w.get('note','')[:70]}")
 
     print(f"\n  Full report: {args.report}")
+    if html_path:
+        print(f"  HTML report: {html_path}")
     print(f"  Render time: {report['elapsed_sec']:.0f}s")
     print(f"{'='*60}")
 
