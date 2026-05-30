@@ -212,7 +212,10 @@ def apply_fade(audio, fade_in=0, fade_out=0, sr=AUDIO_SR):
 def build_zoompan_filter(beat, w, h, fps):
     """Build zoompan filter string for a still image beat."""
     duration = beat["end_sec"] - beat["start_sec"]
-    total_frames = max(int(duration * fps), 1)
+    # Frame count from rounded cumulative positions (matches render_production_segment's
+    # out_frames) so the zoom spans exactly the segment and contiguous beats telescope
+    # to the narration length — int() truncation here would reintroduce per-segment drift.
+    total_frames = max(round(beat["end_sec"] * fps) - round(beat["start_sec"] * fps), 1)
 
     zoom_speed = beat.get("zoom_speed_pct_per_sec", 3.0)
     end_scale = 1.0 + (zoom_speed / 100.0) * duration
@@ -242,6 +245,65 @@ def build_zoompan_filter(beat, w, h, fps):
 
 # ─── Video segment renderer ───────────────────────────────────────────────
 
+# Black detection is tuned to MATCH the watcher's ffmpeg blackdetect
+# (d=0.5:pic_th=0.98 with ffmpeg's default pix_th=0.10 → a pixel is "dark"
+# below luma ~25, a frame is "black" when ≥98% of its pixels are dark). The
+# h264_videotoolbox silent-black failure under sustained parallel load emits a
+# UNIFORM DIM frame at luma ~14 — above a naive mean<6 cutoff yet 100% dark by
+# blackdetect's pixel test. Mirroring blackdetect makes the libx264 retry fire
+# on exactly what the watcher will later flag, no more and no less.
+_DARK_PIX_MAX = 25       # luma at/below this counts as a "dark" pixel
+_BLACK_FRAC = 0.98       # frame is black when this fraction of pixels are dark
+
+
+def _segment_is_black(ts_path, duration):
+    """Return True if a rendered segment measures (near-)black.
+
+    Catches the h264_videotoolbox silent-black failure: under sustained
+    parallel load the encoder can return success (returncode 0) yet emit a dim
+    all-black segment, so returncode checks miss it. Samples a few frames across
+    the segment (not just the midpoint) so partial-black beats — e.g. a dim
+    still that is only bright where a centered text overlay covers it — are
+    still caught. Returns False on any measurement error so it never blocks a
+    good render.
+    """
+    try:
+        from PIL import Image
+    except Exception:
+        return False
+    if duration <= 0:
+        return False
+    # Sample interior points, skipping any 0.5s fade-in and the final frame.
+    lo = min(0.55, max(duration - 0.05, 0.0))
+    hi = max(duration - 0.05, lo)
+    times = [lo] if hi <= lo else [lo + (hi - lo) * f for f in (0.0, 0.4, 0.8)]
+    png = ts_path + ".chk.png"
+    for t in times:
+        try:
+            # Output-seek (-ss AFTER -i): input-seek silently fails to extract a
+            # frame from short MPEG-TS segments (no nearby keyframe).
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error",
+                 "-i", ts_path, "-ss", f"{t:.3f}", "-frames:v", "1", png],
+                capture_output=True, timeout=30,
+            )
+            if not os.path.exists(png):
+                continue
+            hist = Image.open(png).convert("L").histogram()
+            total = sum(hist) or 1
+            if sum(hist[:_DARK_PIX_MAX + 1]) / total >= _BLACK_FRAC:
+                return True
+        except Exception:
+            continue
+        finally:
+            try:
+                if os.path.exists(png):
+                    os.remove(png)
+            except OSError:
+                pass
+    return False
+
+
 def render_production_segment(args):
     """Render one beat to a 1080p MPEG-TS segment.
 
@@ -259,18 +321,28 @@ def render_production_segment(args):
     if duration <= 0:
         return (i, False, beat_id, "zero duration")
 
+    # Exact frame count from ROUNDED cumulative positions. The timeline is
+    # contiguous (each beat's end == the next beat's start), so computing
+    # round(end*fps) - round(start*fps) per segment makes the segments telescope
+    # to round(narration*fps) total. The old int(duration*fps) floored every
+    # segment, dropping ~one fractional frame each of ~250 times → the video ran
+    # ~6s short and the visuals drifted ahead of the audio. out_frames is the
+    # single source of truth for every encode path below.
+    out_frames = max(round(end * fps) - round(start * fps), 1)
+
     encoder = "h264_videotoolbox" if use_hw else "libx264"
     enc_args = ["-b:v", "8M"] if use_hw else ["-preset", "ultrafast"]
 
     try:
         if path is None:
-            # Black frame
+            # Black frame — pin to out_frames so gaps/tail telescope too
             cmd = [
                 "ffmpeg", "-y", "-loglevel", "error",
                 "-f", "lavfi",
-                "-i", f"color=c=black:s={w}x{h}:d={duration:.4f}:r={fps}",
+                "-i", f"color=c=black:s={w}x{h}:d={(out_frames + 1) / fps:.4f}:r={fps}",
                 "-c:v", encoder, *enc_args,
                 "-pix_fmt", "yuv420p", "-an",
+                "-frames:v", str(out_frames),
                 "-f", "mpegts", out_file
             ]
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
@@ -309,91 +381,111 @@ def render_production_segment(args):
                 capped_beat["zoom_target"] = "wide"
                 vf = build_zoompan_filter(capped_beat, w, h, fps)
         else:
-            # Video clip or chapter card → scale + pad
+            # Video clip or chapter card → scale + pad, then freeze-extend the
+            # last frame (tpad) so a source SHORTER than its allotted beat still
+            # fills out_frames instead of coming up short and reintroducing
+            # timeline drift. No-op for clips longer than the beat — -frames:v
+            # clips the output before the cloned padding is ever reached.
             vf = (
                 f"scale={w}:{h}:force_original_aspect_ratio=decrease,"
-                f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:black,setsar=1"
+                f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:black,setsar=1,"
+                f"tpad=stop_mode=clone:stop_duration=10"
             )
 
         # Fade from black on first beat
         if beat.get("transition_in") == "fade_from_black" or i == 0:
             vf += ",fade=in:st=0:d=0.5"
 
-        # Target output frame count (used to clip zoompan output)
-        out_frames = max(int(duration * fps), 1)
-
-        # Build ffmpeg command
-        if overlay_path and os.path.exists(overlay_path):
-            # With text overlay compositing
-            overlay_dur = get_duration(overlay_path) or 3.0
-            overlay_dur = min(overlay_dur, duration)
-
-            if is_img and not is_chapter_card:
-                # Image + overlay: single input frame, zoompan outputs d frames
-                cmd = [
-                    "ffmpeg", "-y", "-loglevel", "error",
-                    "-loop", "1", "-framerate", str(fps), "-i", path,
-                    "-t", f"{overlay_dur:.4f}", "-i", overlay_path,
-                    "-filter_complex",
-                    f"[0:v]{vf}[bg];"
-                    f"[1:v]format=yuva420p,scale={w}:{h}:force_original_aspect_ratio=decrease[ovr];"
-                    f"[bg][ovr]overlay=(W-w)/2:(H-h)/2:shortest=0:enable='between(t,0,{overlay_dur:.2f})'[out]",
-                    "-map", "[out]",
-                    "-c:v", encoder, *enc_args,
-                    "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
-                    "-frames:v", str(out_frames),
-                    "-f", "mpegts", out_file
-                ]
-            else:
+        # Build ffmpeg command (encoder is a parameter so we can retry the
+        # exact same render with libx264 if the hardware encoder misbehaves)
+        def _build(enc, enc_a):
+            if overlay_path and os.path.exists(overlay_path):
+                overlay_dur = get_duration(overlay_path) or 3.0
+                overlay_dur = min(overlay_dur, duration)
+                if is_img and not is_chapter_card:
+                    # Image + overlay: single input frame, zoompan outputs d frames
+                    return [
+                        "ffmpeg", "-y", "-loglevel", "error",
+                        "-loop", "1", "-framerate", str(fps), "-i", path,
+                        "-t", f"{overlay_dur:.4f}", "-i", overlay_path,
+                        "-filter_complex",
+                        f"[0:v]{vf}[bg];"
+                        f"[1:v]format=yuva420p,scale={w}:{h}:force_original_aspect_ratio=decrease[ovr];"
+                        f"[bg][ovr]overlay=(W-w)/2:(H-h)/2:shortest=0:enable='between(t,0,{overlay_dur:.2f})'[out]",
+                        "-map", "[out]",
+                        "-c:v", enc, *enc_a,
+                        "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
+                        "-frames:v", str(out_frames),
+                        "-f", "mpegts", out_file
+                    ]
                 # Video + overlay
-                cmd = [
+                return [
                     "ffmpeg", "-y", "-loglevel", "error",
-                    "-t", f"{duration:.4f}", "-i", path,
+                    "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path,
                     "-t", f"{overlay_dur:.4f}", "-i", overlay_path,
                     "-filter_complex",
                     f"[0:v]{vf}[bg];"
                     f"[1:v]format=yuva420p,scale={w}:{h}:force_original_aspect_ratio=decrease[ovr];"
                     f"[bg][ovr]overlay=(W-w)/2:(H-h)/2:shortest=0:enable='between(t,0,{overlay_dur:.2f})'[out]",
                     "-map", "[out]",
-                    "-c:v", encoder, *enc_args,
+                    "-c:v", enc, *enc_a,
                     "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
                     "-frames:v", str(out_frames),
                     "-f", "mpegts", out_file
                 ]
-        else:
             # No overlay
             if is_img and not is_chapter_card:
-                # Single input frame for zoompan — clip output with -frames:v
-                cmd = [
+                return [
                     "ffmpeg", "-y", "-loglevel", "error",
                     "-loop", "1", "-framerate", str(fps), "-i", path,
                     "-vf", vf,
-                    "-c:v", encoder, *enc_args,
+                    "-c:v", enc, *enc_a,
                     "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
                     "-frames:v", str(out_frames),
                     "-f", "mpegts", out_file
                 ]
-            else:
-                cmd = [
-                    "ffmpeg", "-y", "-loglevel", "error",
-                    "-t", f"{duration:.4f}", "-i", path,
-                    "-vf", vf,
-                    "-c:v", encoder, *enc_args,
-                    "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
-                    "-frames:v", str(out_frames),
-                    "-f", "mpegts", out_file
-                ]
+            return [
+                "ffmpeg", "-y", "-loglevel", "error",
+                "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path,
+                "-vf", vf,
+                "-c:v", enc, *enc_a,
+                "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
+                "-frames:v", str(out_frames),
+                "-f", "mpegts", out_file
+            ]
 
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        result = subprocess.run(_build(encoder, enc_args),
+                                capture_output=True, text=True, timeout=600)
+
+        hw_failed = result.returncode != 0
+        # h264_videotoolbox can return success but emit an all-black segment
+        # under sustained parallel load — measure the output to catch it.
+        hw_black = (use_hw and not hw_failed and not is_chapter_card
+                    and duration >= 1.0 and _segment_is_black(out_file, duration))
+
+        if use_hw and (hw_failed or hw_black):
+            # Retry this one segment with libx264 BEFORE falling back to black.
+            # Software encoding is deterministic and never silent-blacks.
+            retry = subprocess.run(_build("libx264", ["-preset", "medium", "-crf", "18"]),
+                                   capture_output=True, text=True, timeout=600)
+            if retry.returncode == 0:
+                still_black = (not is_chapter_card and duration >= 1.0
+                               and _segment_is_black(out_file, duration))
+                if not still_black:
+                    return (i, True, beat_id,
+                            "recovered-hw-black" if hw_black else "recovered-hw-fail")
+                return (i, False, beat_id, "black-after-libx264-retry")
+            result = retry  # libx264 hard-failed too → black fallback below
 
         if result.returncode != 0:
-            # Fallback: black frame
+            # Last resort: intentional black frame so the timeline stays aligned
             cmd_black = [
                 "ffmpeg", "-y", "-loglevel", "error",
                 "-f", "lavfi",
-                "-i", f"color=c=black:s={w}x{h}:d={duration:.4f}:r={fps}",
+                "-i", f"color=c=black:s={w}x{h}:d={(out_frames + 1) / fps:.4f}:r={fps}",
                 "-c:v", "libx264", "-preset", "ultrafast",
                 "-pix_fmt", "yuv420p", "-an",
+                "-frames:v", str(out_frames),
                 "-f", "mpegts", out_file
             ]
             subprocess.run(cmd_black, capture_output=True, timeout=30)
@@ -405,9 +497,10 @@ def render_production_segment(args):
         cmd_black = [
             "ffmpeg", "-y", "-loglevel", "error",
             "-f", "lavfi",
-            "-i", f"color=c=black:s={w}x{h}:d={duration:.4f}:r={fps}",
+            "-i", f"color=c=black:s={w}x{h}:d={(out_frames + 1) / fps:.4f}:r={fps}",
             "-c:v", "libx264", "-preset", "ultrafast",
             "-pix_fmt", "yuv420p", "-an",
+            "-frames:v", str(out_frames),
             "-f", "mpegts", out_file
         ]
         subprocess.run(cmd_black, capture_output=True, timeout=30)
