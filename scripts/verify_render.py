@@ -405,6 +405,16 @@ def check_not_black(beat, black_segments):
     check compares the beat's time window against the whole-render blackdetect
     scan and fails when too much of the beat is black.
     """
+    # Chapter cards are intentional title cards — several are white serif on a
+    # solid black background, so blackdetect correctly measures them as ~black.
+    # That is by design, not a dropped render, so exempt them from not_black.
+    if beat.get("visual_type") == "chapter_card":
+        return {
+            "check": "not_black",
+            "pass": True,
+            "severity": "info",
+            "note": "chapter card (intentional title card) — exempt",
+        }
     dur = max(beat.get("end_sec", 0.0) - beat.get("start_sec", 0.0), 0.001)
     black = black_overlap(beat, black_segments)
     frac = black / dur
