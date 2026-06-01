@@ -37,8 +37,8 @@ from pipeline_v2.chapter_assembler import find_media_file
 
 # ─── Defaults ──────────────────────────────────────────────────────────────
 
-DEFAULT_RENDER = PROJECT_ROOT / "output" / "breaking_law_production_preview_v3.mp4"
-PAPER_EDIT = PROJECT_ROOT / "storyboards" / "breaking_law_paper_edit_v2.json"
+DEFAULT_RENDER = PROJECT_ROOT / "output" / "breaking_law_v14_preview.mp4"
+PAPER_EDIT = PROJECT_ROOT / "storyboards" / "breaking_law_paper_edit_v14.json"
 DEFAULT_ALIGNMENT = PROJECT_ROOT / "audio" / "breaking_law" / "narration_alignment.json"
 CHAPTER_CARD_DIR = PROJECT_ROOT / "assets" / "breaking_law" / "chapters"
 INTRO_SPEC = PROJECT_ROOT / "storyboards" / "intro_spec_locked.json"
@@ -159,12 +159,56 @@ def black_overlap(beat, black_segments):
     return total
 
 
+# ── Number canonicalization (so finance figures don't false-mismatch) ────────
+_NUM_UNITS = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17,
+    "eighteen": 18, "nineteen": 19,
+}
+_NUM_TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+             "seventy": 70, "eighty": 80, "ninety": 90}
+_NUM_SCALES = {"hundred": 100, "thousand": 1000, "million": 1000000,
+               "billion": 1000000000, "trillion": 1000000000000}
+
+
+def _canonicalize_numbers(tokens):
+    """Collapse number expressions (spelled-out OR digit) to canonical integer
+    tokens, e.g. 'five billion' -> '5000000000', 'fifty seven' -> '57'. Applied
+    identically to expected & actual, so it can only improve matching, never
+    break a previously-matching pair."""
+    out, i, n = [], 0, len(tokens)
+    while i < n:
+        t = tokens[i]
+        if t.isdigit():
+            val, j = int(t), i + 1
+            while j < n and tokens[j] in _NUM_SCALES:
+                val *= _NUM_SCALES[tokens[j]]; j += 1
+            out.append(str(val)); i = j; continue
+        if t in _NUM_UNITS or t in _NUM_TENS or t == "hundred":
+            val = cur = 0; j = i; matched = False
+            while j < n:
+                w = tokens[j]
+                if w in _NUM_UNITS: cur += _NUM_UNITS[w]
+                elif w in _NUM_TENS: cur += _NUM_TENS[w]
+                elif w == "hundred": cur = (cur or 1) * 100
+                elif w in _NUM_SCALES: val += (cur or 1) * _NUM_SCALES[w]; cur = 0
+                else: break
+                matched = True; j += 1
+            if matched:
+                out.append(str(val + cur)); i = j; continue
+        out.append(t); i += 1
+    return out
+
+
 def normalize_text(text):
-    """Lowercase, strip markup, strip punctuation for comparison."""
-    # Remove [BEAT], [PAUSE:1.0], [VOICE:...] markers
-    text = re.sub(r'\[.*?\]', '', text)
-    # Lowercase, keep only words and numbers
-    return set(re.findall(r'\w+', text.lower()))
+    """Lowercase, strip markers/punctuation, canonicalize numbers; return a token
+    set. Numbers are canonicalized (spelled-out <-> digits) so finance figures
+    don't false-mismatch (e.g. 'five billion' == '5 billion')."""
+    text = re.sub(r'\[.*?\]', '', text)   # [BEAT], [PAUSE:1.0], [VOICE:...]
+    text = text.replace(',', '')          # 270,000 -> 270000 so \w+ keeps it whole
+    tokens = re.findall(r'\w+', text.lower())
+    return set(_canonicalize_numbers(tokens))
 
 
 def words_in_range(alignment, start_sec, end_sec):
@@ -217,7 +261,7 @@ def check_narration(beat, alignment):
                 "note": "beat fully within clip audio window"}
 
     actual_words = words_in_range(alignment, check_start, check_end)
-    actual = set(re.findall(r'\w+', " ".join(actual_words).lower()))
+    actual = normalize_text(" ".join(actual_words))
 
     # Ignore common filler words that add noise
     filler = {"a", "an", "the", "and", "or", "of", "in", "to", "on", "at", "is",
@@ -789,6 +833,35 @@ def generate_html_report(report, render_path, html_path):
     return str(html_path)
 
 
+def check_render_coverage(beats, render_dur):
+    """Whole-render coverage: catch beats the renderer silently DROPS because they
+    start at/after the render's end (the symptom that hid the dropped finale), and a
+    paper-edit timeline materially longer than the render (the padded-vs-unpadded
+    narration mismatch). Pure timeline arithmetic — alignment-independent."""
+    content = [b for b in beats if b.get("start_sec") is not None]
+    pe_end = max((b.get("end_sec") or 0.0) for b in content) if content else 0.0
+    dropped = [b for b in content if (b.get("start_sec") or 0.0) >= render_dur - 0.05]
+    over = pe_end - render_dur
+    return [
+        {
+            "check": "coverage_dropped_beats",
+            "pass": not dropped,
+            "severity": "critical" if dropped else "info",
+            "note": (f"{len(dropped)} beat(s) start at/after render end {render_dur:.1f}s "
+                     f"and were DROPPED: " + ", ".join(b.get("beat_id", "?") for b in dropped[:10]))
+                    if dropped else
+                    f"all {len(content)} beats start before render end ({render_dur:.1f}s)",
+        },
+        {
+            "check": "coverage_timeline_span",
+            "pass": over <= 2.0,
+            "severity": "critical" if over > 5.0 else ("warning" if over > 2.0 else "info"),
+            "note": (f"paper-edit ends {pe_end:.1f}s vs render {render_dur:.1f}s (over by {over:.1f}s)"
+                     + ("  — likely padded-vs-unpadded narration mismatch" if over > 5.0 else "")),
+        },
+    ]
+
+
 # ─── Main ──────────────────────────────────────────────────────────────────
 
 def main():
@@ -832,18 +905,19 @@ def main():
     print(f"  Beats to check: {len(beats)}")
 
     # ── Load original narration alignment (for clip-audio coverage check) ──
-    # Auto-detect best alignment if not explicitly given: padded > whisperx > legacy.
-    # A silence-inserted (padded) render MUST be checked against padded timing, or
-    # the narration_silenced check false-fails on every clip-audio beat.
+    # Auto-detect if not given: prefer UNPADDED (whisperx > legacy sentences) — the
+    # project renders the unpadded narration.wav (paper_edit_v14+). For a padded /
+    # silence-inserted render, pass --alignment narration_alignment_padded.json
+    # explicitly, or narration_silenced will false-fail on every clip-audio beat.
     original_alignment = {"sentences": [], "words": []}
     if args.alignment:
         align_path = Path(args.alignment)
     else:
         audio_dir = PROJECT_ROOT / "audio" / "breaking_law"
         candidates = [
-            audio_dir / "narration_alignment_padded.json",
             audio_dir / "narration_alignment_whisperx.json",
             audio_dir / "narration_alignment.json",
+            audio_dir / "narration_alignment_padded.json",
         ]
         align_path = next((c for c in candidates if c.exists()), candidates[-1])
         print(f"  Alignment auto-detected: {align_path.name}")
@@ -968,6 +1042,23 @@ def main():
         "text": "voice-over quality (whole render)",
         "visual_file": None,
         "checks": vo_checks,
+    })
+
+    # ── Render coverage: did the renderer drop beats off the end? ──────────
+    render_dur = get_duration(render_path) or alignment.get("duration_sec") or 0.0
+    coverage_checks = check_render_coverage(beats, render_dur)
+    cov_fail = sum(1 for c in coverage_checks if not c.get("pass", True))
+    print(f"  Render coverage: {len(coverage_checks)} checks, {cov_fail} issue(s)")
+    for c in coverage_checks:
+        print(f"    - {c['check']}: {c['note']}")
+    results.append({
+        "beat_id": "render_coverage",
+        "start_sec": 0.0,
+        "end_sec": None,
+        "chapter": "RENDER",
+        "text": "render coverage vs paper-edit timeline",
+        "visual_file": None,
+        "checks": coverage_checks,
     })
 
     # ── Vision analysis (batched for frames that were extracted) ──────────
