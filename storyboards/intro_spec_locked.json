@@ -5,7 +5,7 @@
   "segments": [
     {
       "index": 0,
-      "time": "1.22-10.9s",
+      "time": "1.22-7.94s",
       "visual_file": "Facebook_FTC_5_billion_dollar_fine.mp4",
       "visual_type": "video_clip",
       "clip_audio": "play_then_mute",
@@ -18,7 +18,7 @@
     },
     {
       "index": 1,
-      "time": "11.24-19.02s",
+      "time": "7.94-16.22s",
       "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
       "visual_type": "video_clip",
       "clip_audio": "mute",
@@ -30,7 +30,7 @@
     },
     {
       "index": 2,
-      "time": "19.52-22.78s",
+      "time": "16.22-19.78s",
       "visual_file": "Wall_Street_trading_floor.mp4",
       "visual_type": "video_clip",
       "clip_audio": "mute",
@@ -42,7 +42,7 @@
     },
     {
       "index": 3,
-      "time": "23.08-26.26s",
+      "time": "19.78-22.98s",
       "visual_file": "data_zuckerberg_gain.jpg",
       "visual_type": "still_image",
       "clip_audio": "mute",
@@ -54,7 +54,7 @@
     },
     {
       "index": 4,
-      "time": "26.28-32.2s",
+      "time": "22.98-29.18s",
       "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
       "visual_type": "video_clip",
       "clip_audio": "mute",
@@ -66,7 +66,7 @@
     },
     {
       "index": 5,
-      "time": "32.48-36.18s",
+      "time": "29.18-33.08s",
       "visual_file": "data_facebook_fine_vs_profit.jpg",
       "visual_type": "still_image",
       "clip_audio": "mute",
@@ -78,7 +78,7 @@
     },
     {
       "index": 6,
-      "time": "36.38-37.4s",
+      "time": "33.08-34.48s",
       "visual_file": "corporate_fines_cost_of_doing_business.mp4",
       "visual_type": "video_clip",
       "clip_audio": "mute",
@@ -90,7 +90,7 @@
     },
     {
       "index": 7,
-      "time": "37.78-43.88s",
+      "time": "34.48-40.94s",
       "visual_file": "ford_pinto_wiki.jpg",
       "visual_type": "still_image",
       "clip_audio": "mute",
@@ -101,5 +101,6 @@
       "text": "To understand, you need to go back to 1977. The discovery started with a car on fire."
     }
   ],
-  "user_feedback": "Approved 8-beat cold open. No black $5B card (segment 0 plays the Facebook clip with its own audio for 3s, then VO takes over, no overlay). Stock-chart visual on 'stock went up' and Zuckerberg-wealth visual on the $1.1B gain are now present (segments 2-4), satisfying the original spec's requests. Ford Pinto kept as the higher-resolution wiki still rather than the 160x128 explosion clip — accepts dropping the explosion audio in exchange for not pixelating the 1080p frame."
+  "user_feedback": "Approved 8-beat cold open. No black $5B card (segment 0 plays the Facebook clip with its own audio for 3s, then VO takes over, no overlay). Stock-chart visual on 'stock went up' and Zuckerberg-wealth visual on the $1.1B gain are now present (segments 2-4), satisfying the original spec's requests. Ford Pinto kept as the higher-resolution wiki still rather than the 160x128 explosion clip — accepts dropping the explosion audio in exchange for not pixelating the 1080p frame.",
+  "_timecode_note": "Segment 'time' fields synced to paper_edit_v14 (unpadded) on 2026-06-01; editorial decisions unchanged."
 }
