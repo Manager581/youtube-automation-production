@@ -32,7 +32,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from pipeline_v2.llm import query_claude, query_claude_vision
 from pipeline_v2.vision_analyzer import analyze_image
-from pipeline_v2.web_image_sourcer import search_google_images
+from pipeline_v2.web_image_sourcer import source_candidates
 
 # ── ANSI colors ──
 GREEN = "\033[92m"; YELLOW = "\033[93m"; RED = "\033[91m"
@@ -230,10 +230,17 @@ def resolve_gaps(gaps, footage_dir, image_dir, max_attempts=2):
 
 
 def _download_candidates(query, output_dir, max_results=5):
-    """Download image candidates using web_image_sourcer."""
+    """Download image candidates using web_image_sourcer.
+
+    source_candidates returns [{path, source, title}]; this stage's consumer
+    expects each candidate under a "file" key, so adapt the shape here.
+    """
     try:
-        results = search_google_images(query, output_dir, max_results=max_results)
-        return results
+        results = source_candidates(query, output_dir, max_candidates=max_results)
+        return [
+            {"file": str(r["path"]), "source": r.get("source"), "title": r.get("title")}
+            for r in results if r.get("path")
+        ]
     except Exception as e:
         print(f"    Download error: {e}")
         return []
