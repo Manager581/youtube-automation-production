@@ -85,7 +85,7 @@ def render_overlay_with_fade(png_path: str, output_dir: str,
     cmd = [
         'ffmpeg', '-y', '-loop', '1', '-i', png_path,
         '-t', str(duration_sec),
-        '-vf', f'fade=in:0:{fade_in_frames},fade=out:{fade_out_start}:{fade_out_frames}',
+        '-vf', f'fade=t=in:s=0:n={fade_in_frames}:alpha=1,fade=t=out:s={fade_out_start}:n={fade_out_frames}:alpha=1',
         *PRORES_4444_ARGS,
         output,
     ]

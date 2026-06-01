@@ -1,0 +1,45 @@
+{
+  "_note": "LOCKED intro spec — preserve these exact decisions when re-running director",
+  "_version": "2026-04-04 — user approved this intro",
+  "segments": [
+    {
+      "index": 0,
+      "time": "0.0-32.8s",
+      "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+      "visual_type": "video_clip",
+      "clip_audio": "play_then_mute",
+      "clip_audio_duration": 3,
+      "transition_in": "cut",
+      "overlay": "NONE (removed — $5B black card covers news clip)",
+      "sfx": null,
+      "music_state": "playing",
+      "text": "In 2019, Facebook was fined five billion dollars..."
+    },
+    {
+      "index": 1,
+      "time": "33.1-34.0s",
+      "visual_file": "pexels_5668858_Mark_Zuckerberg_congressional_.jpg",
+      "visual_type": "still_image",
+      "clip_audio": "mute",
+      "transition_in": "cut",
+      "overlay": "HOW?",
+      "sfx": "shimmer_01_loud.wav",
+      "music_state": "ducking",
+      "text": "How is that possible?"
+    },
+    {
+      "index": 2,
+      "time": "34.5-43.2s",
+      "visual_file": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
+      "visual_type": "video_clip",
+      "clip_audio": "play_then_mute",
+      "clip_audio_duration": 3,
+      "transition_in": "dissolve",
+      "overlay": "1977",
+      "sfx": "whoosh_02_loud.wav",
+      "music_state": "ducking",
+      "text": "To understand, you need to go back to 1977..."
+    }
+  ],
+  "user_feedback": "Intro is good. No black $5B card. Facebook clip plays immediately with its own audio for 3s then VO takes over. Zuckerberg photo on 'How is that possible?' works. Needs: stock chart visual when VO says stock went up, Zuckerberg wealth visual when VO says he gained $1.1B."
+}

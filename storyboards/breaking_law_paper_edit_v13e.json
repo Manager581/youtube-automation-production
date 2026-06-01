@@ -14,7 +14,7 @@
       "clip_audio": "play_then_mute",
       "clip_audio_quote": "(FTC press conference natural sound, 3s)",
       "clip_audio_duration": 3,
-      "text_overlay": "$5 BILLION FINE",
+      "text_overlay": null,
       "sfx": null,
       "sfx_motivation": null,
       "transition_in": "fade_from_black",

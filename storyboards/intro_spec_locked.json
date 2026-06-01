@@ -1,45 +1,105 @@
 {
   "_note": "LOCKED intro spec — preserve these exact decisions when re-running director",
-  "_version": "2026-04-04 — user approved this intro",
+  "_version": "2026-05-29 — approved 8-beat cold open (supersedes the 3-segment 2026-04-04 spec)",
+  "_supersedes": "intro_spec_locked_v1_3seg_2026-04-04.json — the original 3-segment intro. User-approved upgrade: the cold open now adds the stock-chart and Zuckerberg-wealth visuals the original spec's user_feedback explicitly requested, and maps to the narration beat-for-beat. The rejected '$5B card' overlay is removed from segment 0.",
   "segments": [
     {
       "index": 0,
-      "time": "0.0-32.8s",
-      "visual_file": "Facebook_to_pay_5_billion_fine.mp4",
+      "time": "1.22-10.9s",
+      "visual_file": "Facebook_FTC_5_billion_dollar_fine.mp4",
       "visual_type": "video_clip",
       "clip_audio": "play_then_mute",
       "clip_audio_duration": 3,
-      "transition_in": "cut",
-      "overlay": "NONE (removed — $5B black card covers news clip)",
+      "transition_in": "fade_from_black",
+      "overlay": "NONE (removed — rejected $5B card stays out; the clip plays on its own for 3s then VO takes over)",
       "sfx": null,
       "music_state": "playing",
-      "text": "In 2019, Facebook was fined five billion dollars..."
+      "text": "In 2019, Facebook was fined five billion dollars. The largest penalty in FTC history."
     },
     {
       "index": 1,
-      "time": "33.1-34.0s",
-      "visual_file": "pexels_5668858_Mark_Zuckerberg_congressional_.jpg",
+      "time": "11.24-19.02s",
+      "visual_file": "Cambridge_Analytica_scandal_explained.mp4",
+      "visual_type": "video_clip",
+      "clip_audio": "mute",
+      "transition_in": "cut",
+      "overlay": "87 MILLION PEOPLE",
+      "sfx": null,
+      "music_state": "playing",
+      "text": "Eighty-seven million people's data — harvested, profiled, and sold."
+    },
+    {
+      "index": 2,
+      "time": "19.52-22.78s",
+      "visual_file": "Wall_Street_trading_floor.mp4",
+      "visual_type": "video_clip",
+      "clip_audio": "mute",
+      "transition_in": "cut",
+      "overlay": "NONE",
+      "sfx": "impact",
+      "music_state": "playing",
+      "text": "And on the day the fine was announced, Facebook's stock went up."
+    },
+    {
+      "index": 3,
+      "time": "23.08-26.26s",
+      "visual_file": "data_zuckerberg_gain.jpg",
       "visual_type": "still_image",
       "clip_audio": "mute",
       "transition_in": "cut",
-      "overlay": "HOW?",
-      "sfx": "shimmer_01_loud.wav",
+      "overlay": "+$6 BILLION",
+      "sfx": null,
+      "music_state": "playing",
+      "text": "The market added six billion dollars in value."
+    },
+    {
+      "index": 4,
+      "time": "26.28-32.2s",
+      "visual_file": "Mark_Zuckerberg_Senate_hearing_2018.mp4",
+      "visual_type": "video_clip",
+      "clip_audio": "mute",
+      "transition_in": "cut",
+      "overlay": "MARK ZUCKERBERG",
+      "sfx": null,
+      "music_state": "playing",
+      "text": "Mark Zuckerberg personally gained one point one billion dollars in a single day."
+    },
+    {
+      "index": 5,
+      "time": "32.48-36.18s",
+      "visual_file": "data_facebook_fine_vs_profit.jpg",
+      "visual_type": "still_image",
+      "clip_audio": "mute",
+      "transition_in": "cut",
+      "overlay": "NONE",
+      "sfx": "tension",
+      "music_state": "ducking",
+      "text": "The punishment made the company richer than if the government had done nothing."
+    },
+    {
+      "index": 6,
+      "time": "36.38-37.4s",
+      "visual_file": "corporate_fines_cost_of_doing_business.mp4",
+      "visual_type": "video_clip",
+      "clip_audio": "mute",
+      "transition_in": "cut",
+      "overlay": "NONE",
+      "sfx": null,
       "music_state": "ducking",
       "text": "How is that possible?"
     },
     {
-      "index": 2,
-      "time": "34.5-43.2s",
-      "visual_file": "Ford_Pinto_fuel_tank_explosion_1977.mp4",
-      "visual_type": "video_clip",
-      "clip_audio": "play_then_mute",
-      "clip_audio_duration": 3,
-      "transition_in": "dissolve",
+      "index": 7,
+      "time": "37.78-43.88s",
+      "visual_file": "ford_pinto_wiki.jpg",
+      "visual_type": "still_image",
+      "clip_audio": "mute",
+      "transition_in": "cut",
       "overlay": "1977",
-      "sfx": "whoosh_02_loud.wav",
+      "sfx": null,
       "music_state": "ducking",
-      "text": "To understand, you need to go back to 1977..."
+      "text": "To understand, you need to go back to 1977. The discovery started with a car on fire."
     }
   ],
-  "user_feedback": "Intro is good. No black $5B card. Facebook clip plays immediately with its own audio for 3s then VO takes over. Zuckerberg photo on 'How is that possible?' works. Needs: stock chart visual when VO says stock went up, Zuckerberg wealth visual when VO says he gained $1.1B."
+  "user_feedback": "Approved 8-beat cold open. No black $5B card (segment 0 plays the Facebook clip with its own audio for 3s, then VO takes over, no overlay). Stock-chart visual on 'stock went up' and Zuckerberg-wealth visual on the $1.1B gain are now present (segments 2-4), satisfying the original spec's requests. Ford Pinto kept as the higher-resolution wiki still rather than the 160x128 explosion clip — accepts dropping the explosion audio in exchange for not pixelating the 1080p frame."
 }
