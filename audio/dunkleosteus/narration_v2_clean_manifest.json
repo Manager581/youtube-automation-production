@@ -1,0 +1,467 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 6.52,
+      "end_sec": 6.52,
+      "word_count": 19,
+      "voice_register": "energized",
+      "pause_before_sec": 0.0,
+      "text": "Three hundred fifty eight million years ago, the ocean built the closest thing it ever made to a guillotine."
+    },
+    {
+      "type": "pause",
+      "start_sec": 6.52,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 6.82,
+      "duration_sec": 11.318,
+      "end_sec": 18.138,
+      "word_count": 33,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "No teeth. Just two blades of bone that re-sharpened themselves every time the jaws closed, snapping shut in one fiftieth of a second with enough force to shear another armored fish in half."
+    },
+    {
+      "type": "pause",
+      "start_sec": 18.138,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 18.738,
+      "duration_sec": 5.155,
+      "end_sec": 23.893,
+      "word_count": 15,
+      "voice_register": "energized",
+      "pause_before_sec": 0.6,
+      "text": "It was the first creature on Earth big enough to be called an apex predator."
+    },
+    {
+      "type": "pause",
+      "start_sec": 23.893,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 24.193,
+      "duration_sec": 6.519,
+      "end_sec": 30.712,
+      "word_count": 19,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "It ruled for fifty million years. And then it vanished so completely that we almost never knew it existed."
+    },
+    {
+      "type": "pause",
+      "start_sec": 30.712,
+      "duration_sec": 0.9
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 31.612,
+      "duration_sec": 2.745,
+      "end_sec": 34.358,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.9,
+      "text": "Today, you're going to be born as one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 34.358,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 34.658,
+      "duration_sec": 11.321,
+      "end_sec": 45.979,
+      "word_count": 33,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Not in the warm Devonian sea your body was designed for, but here. Now. In a modern ocean that spent the last three hundred million years building things specifically engineered to kill you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 45.979,
+      "duration_sec": 0.7
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 46.679,
+      "duration_sec": 2.398,
+      "end_sec": 49.078,
+      "word_count": 7,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.7,
+      "text": "You won't know any of that yet."
+    },
+    {
+      "type": "pause",
+      "start_sec": 49.078,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 49.378,
+      "duration_sec": 2.065,
+      "end_sec": 51.442,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "All you'll know is the cold."
+    },
+    {
+      "type": "pause",
+      "start_sec": 51.442,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 51.942,
+      "duration_sec": 4.803,
+      "end_sec": 56.745,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.5,
+      "text": "Remember the cold. It's going to be the thing that decides whether you live."
+    },
+    {
+      "type": "pause",
+      "start_sec": 56.745,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 57.745,
+      "duration_sec": 1.952,
+      "end_sec": 59.697,
+      "word_count": 2,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "Day one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 59.697,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 59.997,
+      "duration_sec": 12.01,
+      "end_sec": 72.007,
+      "word_count": 35,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "You are forty centimeters of armor and instinct, and the water around you is four degrees colder than anything your species ever survived. Your body runs on heat you don't have. Every movement costs you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 72.007,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 72.307,
+      "duration_sec": 2.065,
+      "end_sec": 74.372,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "And something has already noticed you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 74.372,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 75.172,
+      "duration_sec": 10.29,
+      "end_sec": 85.462,
+      "word_count": 30,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "It comes out of the dark fast \u2014 a modern fish, sleek, built by sixty million years of evolution you never lived through. It's faster than you. Smarter than you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 85.462,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 85.762,
+      "duration_sec": 1.021,
+      "end_sec": 86.783,
+      "word_count": 3,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "It should win."
+    },
+    {
+      "type": "pause",
+      "start_sec": 86.783,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 87.383,
+      "duration_sec": 2.063,
+      "end_sec": 89.446,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.6,
+      "text": "But here's what it doesn't understand."
+    },
+    {
+      "type": "pause",
+      "start_sec": 89.446,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 89.746,
+      "duration_sec": 5.835,
+      "end_sec": 95.581,
+      "word_count": 17,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Your jaws were built before the word \"escape\" had any meaning. You don't chase. You don't bite."
+    },
+    {
+      "type": "pause",
+      "start_sec": 95.581,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 95.881,
+      "duration_sec": 2.197,
+      "end_sec": 98.078,
+      "word_count": 2,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "You open."
+    },
+    {
+      "type": "pause",
+      "start_sec": 98.078,
+      "duration_sec": 0.4
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 98.478,
+      "duration_sec": 4.471,
+      "end_sec": 102.949,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.4,
+      "text": "And the ocean \u2014 and everything in it \u2014 falls into your mouth."
+    },
+    {
+      "type": "pause",
+      "start_sec": 102.949,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 103.749,
+      "duration_sec": 1.378,
+      "end_sec": 105.127,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.8,
+      "text": "The blades meet once."
+    },
+    {
+      "type": "pause",
+      "start_sec": 105.127,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 105.427,
+      "duration_sec": 1.383,
+      "end_sec": 106.81,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "That's the entire fight."
+    },
+    {
+      "type": "pause",
+      "start_sec": 106.81,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 107.81,
+      "duration_sec": 5.488,
+      "end_sec": 113.298,
+      "word_count": 16,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "For three seconds, the cold doesn't matter. For three seconds, you understand exactly what you are."
+    },
+    {
+      "type": "pause",
+      "start_sec": 113.298,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 113.598,
+      "duration_sec": 1.711,
+      "end_sec": 115.309,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Hold on to that feeling."
+    },
+    {
+      "type": "pause",
+      "start_sec": 115.309,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 115.809,
+      "duration_sec": 12.351,
+      "end_sec": 128.16,
+      "word_count": 36,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.5,
+      "text": "Because the thing that's about to find you doesn't care what you used to be. And your armor \u2014 the armor that made you a god in the Devonian \u2014 was never designed to stop it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 128.16,
+      "duration_sec": 1.2
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 129.36,
+      "duration_sec": 3.434,
+      "end_sec": 132.794,
+      "word_count": 10,
+      "voice_register": "energized",
+      "pause_before_sec": 1.2,
+      "text": "So can a Dunkleosteus actually survive in the modern ocean?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 132.794,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 133.094,
+      "duration_sec": 1.381,
+      "end_sec": 134.475,
+      "word_count": 4,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "The answer is yes."
+    },
+    {
+      "type": "pause",
+      "start_sec": 134.475,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 134.975,
+      "duration_sec": 3.427,
+      "end_sec": 138.402,
+      "word_count": 10,
+      "voice_register": "energized",
+      "pause_before_sec": 0.5,
+      "text": "But there's a catch \u2014 and it's a brutal one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 138.402,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 138.702,
+      "duration_sec": 4.11,
+      "end_sec": 142.812,
+      "word_count": 12,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "We'll get there. First, you have to make it to week two."
+    },
+    {
+      "type": "pause",
+      "start_sec": 142.812,
+      "duration_sec": 1.3
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 144.112,
+      "duration_sec": 12.69,
+      "end_sec": 156.802,
+      "word_count": 37,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.3,
+      "text": "And when this is over \u2014 you tell me which prehistoric predator I drop into the modern world next. Top comment wins. Last time you picked the Megalodon, and that one did not end well for Miami."
+    },
+    {
+      "type": "pause",
+      "start_sec": 156.802,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 157.102,
+      "duration_sec": 4.803,
+      "end_sec": 161.905,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Like this, subscribe, and let's find out how long the ocean's first monster lasts."
+    }
+  ],
+  "total_duration_sec": 161.905,
+  "out": "audio/dunkleosteus/narration_v2_clean.wav",
+  "word_count_total": 420,
+  "avg_wpm": 155.6
+}

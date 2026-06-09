@@ -86,3 +86,11 @@ qr_codes/
 
 # ─── External tools (vendored submodules, not part of project) ───────────────
 tools/ltx-video/
+
+# ── venvs rebuilt locally + iCloud-excluded (reproduce from requirements*.txt) ──
+*.nosync
+/venv
+*.icloud_old
+requirements.txt.bak
+# vendored LTX-Video clone (regenerate: git clone Lightricks/LTX-Video + pip install -e; weights via HF)
+/tools/ltx-video/

@@ -494,7 +494,11 @@ def auto_transcribe(audio_path: Path) -> str:
 
 def _load_tts():
     from f5_tts.api import F5TTS  # type: ignore
-    return F5TTS()
+    import os
+    # F5_DEVICE env override: MPS model-load can hang on some torch builds;
+    # "cpu" is slower but reliable (and frees MPS for a concurrent LTX job).
+    dev = os.environ.get("F5_DEVICE")
+    return F5TTS(device=dev) if dev else F5TTS()
 
 
 def _generate_chunk(tts, ref_audio: Path, ref_text: str,

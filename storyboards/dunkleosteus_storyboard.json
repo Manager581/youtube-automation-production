@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "title": "I Simulated a Dunkleosteus In the Modern Ocean, It Was Brutal",
+    "style": "Spinosnack — prehistoric-creature AI simulation, 2nd-person POV survival arc",
+    "creature": "Dunkleosteus terrelli (Devonian armored placoderm)",
+    "aspect": "16:9",
+    "render_res": "1920x1080",
+    "gen_res": "512x288 (proto) -> upscale/i2v at 768x432 for final",
+    "fps": 24,
+    "clip_seconds": 5,
+    "engine": "LTX-Video i2v preferred (still -> motion); t2v fallback",
+    "negative_prompt": "blurry, low quality, distorted anatomy, extra fins, six eyes, cartoon, illustration, text, watermark, logo, human, scuba diver, jpeg artifacts, warping, melting"
+  },
+  "shots": [
+    {"id": "sh01_hook_jaw", "beat": "cold_open_killerstat", "dur": 6,
+     "prompt": "Extreme close-up of the bladed bony jaws of Dunkleosteus snapping shut in dark water, self-sharpening bone plates, menacing, cinematic underwater nature documentary, volumetric light, photorealistic, shallow depth of field"},
+    {"id": "sh02_armor_reveal", "beat": "not_a_shark_armor", "dur": 6,
+     "prompt": "Slow reveal of a giant armored prehistoric Dunkleosteus emerging from gloom, heavily plated bony head, no teeth, ancient apex predator, cold deep ocean, god rays, drifting particles, photorealistic documentary"},
+    {"id": "sh03_strike_suction", "beat": "open_mouth_vacuum", "dur": 5,
+     "prompt": "Dunkleosteus opening its mouth explosively to create suction, water and a small fish rushing into its bony jaws, motion blur of the strike, underwater high-speed nature footage, photorealistic"},
+    {"id": "sh04_reign_fade", "beat": "ruled_then_vanished", "dur": 6,
+     "prompt": "Lone Dunkleosteus swimming slowly away into deep blue darkness until it fades, melancholic, vast empty prehistoric ocean, dust motes, cinematic, photorealistic"},
+    {"id": "sh05_modern_ocean", "beat": "hatch_modern_ocean", "dur": 6,
+     "prompt": "Wide establishing shot of a modern coral reef and open blue ocean, sun rays, schools of modern fish, pristine, IMAX nature documentary, photorealistic"},
+    {"id": "sh06_hatchling_cold", "beat": "first_feel_cold", "dur": 6,
+     "prompt": "A tiny juvenile armored placoderm fish, a few centimeters long, drifting alone in cold dark water, vulnerable, faint bioluminescent specks, eerie, macro underwater footage, photorealistic"},
+    {"id": "sh07_sense_pulse", "beat": "dark_pressure_pulses", "dur": 5,
+     "prompt": "Point-of-view through dark murky water toward faint electric shimmer of a nearby fish, sensory, blue-green darkness, particles, cinematic underwater, photorealistic"},
+    {"id": "sh08_approach_prey", "beat": "drift_toward_modern_fish", "dur": 6,
+     "prompt": "Small young Dunkleosteus slowly approaching a sleek modern silver fish from below in open water, tension, predator stalking, underwater nature documentary, photorealistic"},
+    {"id": "sh09_open_strike", "beat": "you_open_fish_goes", "dur": 5,
+     "prompt": "Young Dunkleosteus snapping its bony jaws and inhaling a fish in a burst of suction, bubbles and scales scattering, dramatic predator strike, high-speed underwater footage, photorealistic"},
+    {"id": "sh10_three_seconds", "beat": "blades_meet_built_for", "dur": 6,
+     "prompt": "Close-up of a satisfied young armored Dunkleosteus suspended in a shaft of light, calm after the kill, particles drifting, serene yet powerful, cinematic underwater, photorealistic"},
+    {"id": "sh11_shadow_cliffhang", "beat": "something_armor_cant_stop", "dur": 7,
+     "prompt": "An enormous dark shadow looming behind the small Dunkleosteus, a far larger unseen predator approaching from the deep, ominous, dread, dim cold water, cinematic wide shot, photorealistic"}
+  ]
+}
