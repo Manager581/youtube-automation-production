@@ -37,20 +37,62 @@ A prior session's analysis (13 videos) had real errors we verified by re-watchin
   `output/dunk_rexcaped_tempo_demo_540p.mp4` (Dunk footage auto-cut at Rexcaped tempo, 41 cuts incl.
   0.3s bursts). Creature-only (no stock/memes yet) — it proves the RHYTHM, not the full look.
 
-## What's LEFT to a finished video
-1. **Tune asset ratios** in `rexcaped_edit_engine.py` (assign_assets) to hit ~20/40/25/10. (no-decision, quick)
-2. **Build a stat-card generator** — orange/black branded cards w/ the spoken number. (no-decision, buildable now)
-3. **Asset library** — creature (our i2v pipeline, proven), **stock footage** (needs a sourcing decision),
-   **memes** (needs the COPYRIGHT decision — the ref channel uses copyrighted clips; risky monetized).
-4. **The pilot** — T-Rex script (no-evolution) → F5 voice → engine → assets → render → ink thumbnail.
+## ✅ Session 2026-06-10b — the pilot PIPELINE is now end-to-end (script → 540p video)
+Everything in "what's left" items 1, 2, and most of 4 is DONE and committed. The whole
+chain runs from the script with no manual assembly:
 
-## 🔑 Two decisions only the owner can make
-- **Meme strategy**: copyrighted clips like the ref channel (fair-use risk) vs. freely-usable/original cutaways.
-- **Stock sourcing**: which library/approach (project rule historically = no Pexels/Pixabay images; real stock video TBD).
+```
+scripts/trex_pilot.txt                              # the script (906w, no-evolution)
+  → pipeline/voice_generator.py (F5_DEVICE=cpu, --auto-transcribe)  → narration.wav + manifest
+  → scripts/correct_manifest_crossfade.py           # ⚠ REQUIRED drift fix (see below) → *_aligned.json
+  → scripts/rexcaped_edit_engine.py --vtt <aligned> → trex_pilot_plan.json (mix 41/27/21/11 ✓)
+  → scripts/rexcaped_stat_cards.py --plan <plan>    → assets/trex_pilot/cards/ (cards + slates)
+  → scripts/rexcaped_plan_to_paper_edit.py          → storyboards/trex_pilot_paper_edit.json
+  → scripts/ffmpeg_production_render.py --preview    → output/trex_pilot_540p.mp4
+```
+**Proof:** `output/trex_pilot_540p.mp4` (5.7 min, 540p). QA: 0 black frames, audio OK,
+duration 340.65s = the wav EXACTLY (zero drift), stat cards + placeholder slates +
+creature clips all composite correctly. Asset mix lands on the measured target.
+
+⚠️ **The crossfade drift bug (don't skip the corrector).** `voice_generator.py` timestamps
+segments on a no-crossfade cursor, then concatenates with an 80ms acrossfade at every
+boundary → the wav ends ~0.08s × (n_segments−1) EARLIER than the manifest (here 10.08s on
+350.7s). Align the engine/paper-edit to the raw manifest and the finale lands past the wav
+end and gets dropped — the exact v13e bug. `correct_manifest_crossfade.py` rebuilds the true
+timeline (residual 0.000s here). **Always run it between voice gen and the engine.**
+
+## What's LEFT to a finished, uploadable video (the remaining work is ART + 2 decisions)
+1. **Creature quality** — this session's 8 hero clips (`footage/trex_pilot/`, gitignored) were
+   LTX **t2v** (no still) as a fast proof. Quality is mixed: the jaws/teeth + taxi-hunt shots
+   read as a real T-Rex; the full-body shot skewed long-necked. **The quality path is i2v from a
+   curated still** (storyboard `storyboards/trex_pilot_storyboard.json` has `still_prompt` per
+   shot): make ChatGPT photoreal stills → `gen_dunk_clips.py --i2v --stills-dir <dir>`. ~20–25%
+   of shots, so 8–12 good hero clips is plenty.
+2. **Fill the placeholder slots** — the render currently shows branded SLATES for every stock
+   and meme beat; each slate prints the spoken line + timecode, so it IS the sourcing shot-list.
+   Drop real clips in and re-run the converter. Blocked on the 2 decisions below.
+3. **Thumbnail** — ink/emblem base in `assets/brand/`; `playbook/titles_thumbnails.json` + the
+   existing scorers (`pipeline_v2/title_thumbnail_evaluator.py`). Title is locked.
+4. **Then** full 1080p render (drop `--preview`) + upload.
+
+## 🔑 Two decisions only the owner can make (unchanged — now the ONLY blockers to assets)
+- **Meme strategy**: copyrighted clips like the ref channel (fair-use risk on a monetized
+  channel) vs. freely-usable / original comedic cutaways. ~26% of the cut rides on this.
+- **Stock sourcing**: which library/approach for ~42% of shots (NYC: city/people/traffic
+  stock). Project rule historically = NO Pexels/Pixabay *images*; real stock VIDEO source TBD.
 
 ## Gotchas / conventions (still true)
 - Direct venv paths (iCloud renames symlinks): `venv.nosync/bin/python`, LTX `tools/ltx-video/ltx_env.nosync/bin/python`.
 - Renderer: `scripts/ffmpeg_production_render.py --paper-edit X --narration Y --output Z [--preview]`.
 - Reference videos were downloaded to `/tmp/edit_deep/` (EPHEMERAL — re-download via the IDs in `scripts/extract_edit_grammar`/the engine if needed; the *measured* data is preserved in `research/edit_analysis/`).
-- F5-TTS on CPU + short single-register voice ref; one MPS torch job at a time.
+- F5-TTS on CPU + short single-register voice ref; one MPS torch job at a time. **Confirmed
+  this session: F5 (CPU) and LTX (MPS) run concurrently fine** — voice gen + 8 clips generated
+  in parallel, no deadlock. Voice gen on CPU ≈ real-time-ish (350s audio in a few min); LTX
+  t2v ≈ 350s wall per 4s clip at 512×288.
+- Pilot voice command:
+  `F5_DEVICE=cpu venv.nosync/bin/python pipeline/voice_generator.py --ref-neutral assets/voice/voice_neutral_ref_short.wav --ref-tense assets/voice/voice_tense_ref_short.wav --ref-energized assets/voice/voice_energized_ref_short.wav --auto-transcribe --script scripts/trex_pilot.txt --out audio/trex_pilot/narration.wav`
+  (WPM-normalize is ON by default — do NOT pass --no-wpm-normalize; refs have no saved text → use --auto-transcribe.)
+- `verify_render.py` is breaking_law-tuned (checks intro_spec/chapters/overlays it won't find on
+  a pilot). For creature pilots, QA manually: `blackdetect`, ffprobe audio + duration==wav,
+  and eyeball a few extracted frames (what this session did).
 - The 18 Dunkleosteus creature clips (`footage/dunkleosteus/`) + stills (`assets/dunkleosteus/`) remain — the Dunk is a ready **video #2**, just strip its evolution lines.
