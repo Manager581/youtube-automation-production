@@ -1,0 +1,5951 @@
+{
+ "summary": {
+  "name": "trex",
+  "duration_sec": 1725.7,
+  "n_cuts": 532,
+  "cuts_per_min": 18.5,
+  "shot_dur_median": 2.85,
+  "shot_dur_mean": 3.18,
+  "pct_shots_under_2s": 32.9,
+  "pct_shots_under_1s": 15.4,
+  "pct_shots_over_5s": 17.5,
+  "n_sfx_onsets": 8138,
+  "sfx_per_min": 282.9,
+  "sfx_on_cut_rate": 0.947,
+  "music_active_frac": 0.909,
+  "moment_at_cut_pct": {
+   "pause_boundary": 46.6,
+   "mid_phrase": 38.3,
+   "turn": 14.5,
+   "stat": 12.8,
+   "question": 1.3
+  },
+  "n_words": 4774
+ },
+ "cuts": [
+  {
+   "t": 10.0,
+   "shot_dur": 10.0,
+   "word_at": "There's",
+   "spoken": "There's no low rumbles",
+   "spoken_wide": "and the sounds are all There's no low rumbles of no",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 13.53,
+   "shot_dur": 3.53,
+   "word_at": "ferns,",
+   "spoken": "ferns, just through",
+   "spoken_wide": "no crashing of ferns, just through grass that shouldn't exist",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 13.57,
+   "shot_dur": 0.03,
+   "word_at": "ferns,",
+   "spoken": "ferns, just through",
+   "spoken_wide": "no crashing of ferns, just through grass that shouldn't exist",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 15.87,
+   "shot_dur": 2.3,
+   "word_at": "exist",
+   "spoken": "exist Distant sound",
+   "spoken_wide": "through grass that shouldn't exist Distant sound of something that like",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 25.87,
+   "shot_dur": 10.0,
+   "word_at": "problem.",
+   "spoken": "a problem. Why? You're",
+   "spoken_wide": "And this is going to a problem. Why? You're about the size a turkey,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 26.63,
+   "shot_dur": 0.77,
+   "word_at": "You're",
+   "spoken": "Why? You're about the size",
+   "spoken_wide": "is going to a problem. Why? You're about the size a turkey, maybe 40",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 30.5,
+   "shot_dur": 3.87,
+   "word_at": "your",
+   "spoken": "and your brain is screaming",
+   "spoken_wide": "40 lbs if we're being and your brain is screaming at to find cover",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 32.6,
+   "shot_dur": 2.1,
+   "word_at": "cover",
+   "spoken": "find cover because hatchling",
+   "spoken_wide": "brain is screaming at to find cover because hatchling did not survive",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 37.73,
+   "shot_dur": 5.13,
+   "word_at": "noticed.",
+   "spoken": "be noticed. here's",
+   "spoken_wide": "open spaces waiting to be noticed. here's the thing, there is no",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 47.6,
+   "shot_dur": 9.87,
+   "word_at": "maybe",
+   "spoken": "is maybe 400 m",
+   "spoken_wide": "exist. And the tree is maybe 400 m away across",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 51.1,
+   "shot_dur": 3.5,
+   "word_at": "terrain.",
+   "spoken": "terrain. No ferns,",
+   "spoken_wide": "across flat terrain. No ferns, no no dense conifer",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 54.43,
+   "shot_dur": 3.33,
+   "word_at": "just",
+   "spoken": "forests, just grass",
+   "spoken_wide": "no dense conifer forests, just grass swaying in the wind that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 57.67,
+   "shot_dur": 3.23,
+   "word_at": "absolutely",
+   "spoken": "absolutely nothing",
+   "spoken_wide": "in the wind that like absolutely nothing that your recognizes.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 64.23,
+   "shot_dur": 6.57,
+   "word_at": "lived.",
+   "spoken": "ever lived. And what telling",
+   "spoken_wide": "best eyes of any that ever lived. And what telling you right now is that are",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 71.13,
+   "shot_dur": 6.9,
+   "word_at": "you,",
+   "spoken": "you, and something",
+   "spoken_wide": "Anything within a kilometer can you, and something does. You hear",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 72.5,
+   "shot_dur": 1.37,
+   "word_at": "does.",
+   "spoken": "does. You hear",
+   "spoken_wide": "can you, and something does. You hear before you see them. It's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 74.6,
+   "shot_dur": 2.1,
+   "word_at": "them.",
+   "spoken": "see them. It's a weird",
+   "spoken_wide": "You hear before you see them. It's a weird sound that's high-pitched",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 77.43,
+   "shot_dur": 2.83,
+   "word_at": "and",
+   "spoken": "and And when you turn,",
+   "spoken_wide": "sound that's high-pitched and And when you turn, there are five hyenas",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 81.4,
+   "shot_dur": 3.97,
+   "word_at": "out",
+   "spoken": "m out moving",
+   "spoken_wide": "hyenas about 200 m out moving you in that trotting way that",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 82.33,
+   "shot_dur": 0.93,
+   "word_at": "you",
+   "spoken": "you in that trotting",
+   "spoken_wide": "about 200 m out moving you in that trotting way that casual",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 84.73,
+   "shot_dur": 2.4,
+   "word_at": "but",
+   "spoken": "casual but covers ground",
+   "spoken_wide": "that trotting way that casual but covers ground fast. one weighs",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 86.17,
+   "shot_dur": 1.43,
+   "word_at": "fast.",
+   "spoken": "fast. one weighs",
+   "spoken_wide": "casual but covers ground fast. one weighs around 150 lb,",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 90.6,
+   "shot_dur": 4.43,
+   "word_at": "triple,",
+   "spoken": "by triple, and communicating",
+   "spoken_wide": "which they outweigh you by triple, and communicating with each other vocalizations",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 94.6,
+   "shot_dur": 4.0,
+   "word_at": "excited.",
+   "spoken": "excited. are meat.",
+   "spoken_wide": "vocalizations that sound excited. are meat. This is them assessing",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 98.7,
+   "shot_dur": 4.1,
+   "word_at": "do.",
+   "spoken": "about to do. Your instinct",
+   "spoken_wide": "assessing they're about to do. Your instinct to climb a tree.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 102.47,
+   "shot_dur": 3.77,
+   "word_at": "This",
+   "spoken": "This is what works.",
+   "spoken_wide": "tree. This is a good This is what works. except the trees",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 105.77,
+   "shot_dur": 3.3,
+   "word_at": "And",
+   "spoken": "m away. And these",
+   "spoken_wide": "the trees 400 m away. And these are closing at maybe 50",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 109.0,
+   "shot_dur": 3.23,
+   "word_at": "per",
+   "spoken": "per So the math",
+   "spoken_wide": "closing at maybe 50 m per So the math says you don't make So",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 110.2,
+   "shot_dur": 1.2,
+   "word_at": "you",
+   "spoken": "says you don't make",
+   "spoken_wide": "m per So the math says you don't make So you run. You hit maybe",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 111.73,
+   "shot_dur": 1.53,
+   "word_at": "run.",
+   "spoken": "So you run. You hit maybe",
+   "spoken_wide": "says you don't make So you run. You hit maybe 25 km/h, is",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 115.57,
+   "shot_dur": 3.83,
+   "word_at": "dinosaur,",
+   "spoken": "dinosaur, but hyenas",
+   "spoken_wide": "is fast for a baby dinosaur, but hyenas can do 60. And",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 117.73,
+   "shot_dur": 2.17,
+   "word_at": "60.",
+   "spoken": "60. And you're in",
+   "spoken_wide": "but hyenas can do 60. And you're in real time that the Serengeti",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 119.43,
+   "shot_dur": 1.7,
+   "word_at": "Serengeti",
+   "spoken": "time that the Serengeti",
+   "spoken_wide": "60. And you're in real time that the Serengeti not designed for ambushed predators",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 127.87,
+   "shot_dur": 8.43,
+   "word_at": "five",
+   "spoken": "while five hunters",
+   "spoken_wide": "across a flat plane while five hunters close the distance. The",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 129.9,
+   "shot_dur": 2.03,
+   "word_at": "distance.",
+   "spoken": "distance. The gets",
+   "spoken_wide": "five hunters close the distance. The gets louder. One of them is",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 133.67,
+   "shot_dur": 3.77,
+   "word_at": "now.",
+   "spoken": "you now. And then",
+   "spoken_wide": "them is 30 meters behind you now. And then see the hole. It's a warthog",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 135.23,
+   "shot_dur": 1.57,
+   "word_at": "hole.",
+   "spoken": "the hole. It's a warthog",
+   "spoken_wide": "you now. And then see the hole. It's a warthog burrow. a dark opening",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 136.47,
+   "shot_dur": 1.23,
+   "word_at": "burrow.",
+   "spoken": "burrow. a dark",
+   "spoken_wide": "see the hole. It's a warthog burrow. a dark opening in the soil near a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 142.83,
+   "shot_dur": 6.37,
+   "word_at": "first,",
+   "spoken": "in head first, scraping",
+   "spoken_wide": "you dive. You scramble in head first, scraping dirt, and you wedge",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 148.1,
+   "shot_dur": 5.27,
+   "word_at": "hyenas",
+   "spoken": "The hyenas arrive",
+   "spoken_wide": "back as the tunnel The hyenas arrive within pacing",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 151.23,
+   "shot_dur": 3.13,
+   "word_at": "outside,",
+   "spoken": "and one of them",
+   "spoken_wide": "pacing outside, and one of them its head into the entrance,",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 154.5,
+   "shot_dur": 3.27,
+   "word_at": "entrance,",
+   "spoken": "You can see its",
+   "spoken_wide": "head into the entrance, You can see its teeth. It can see",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 157.37,
+   "shot_dur": 2.87,
+   "word_at": "but",
+   "spoken": "you, but the tunnel is",
+   "spoken_wide": "teeth. It can see you, but the tunnel is and you're jammed in deep.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 157.7,
+   "shot_dur": 0.33,
+   "word_at": "tunnel",
+   "spoken": "but the tunnel is",
+   "spoken_wide": "It can see you, but the tunnel is and you're jammed in deep. And",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 157.73,
+   "shot_dur": 0.03,
+   "word_at": "tunnel",
+   "spoken": "but the tunnel is",
+   "spoken_wide": "It can see you, but the tunnel is and you're jammed in deep. And",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 157.8,
+   "shot_dur": 0.07,
+   "word_at": "tunnel",
+   "spoken": "but the tunnel is and",
+   "spoken_wide": "It can see you, but the tunnel is and you're jammed in deep. And",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 157.87,
+   "shot_dur": 0.07,
+   "word_at": "tunnel",
+   "spoken": "but the tunnel is and",
+   "spoken_wide": "It can see you, but the tunnel is and you're jammed in deep. And",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 159.43,
+   "shot_dur": 1.57,
+   "word_at": "in",
+   "spoken": "jammed in deep. And",
+   "spoken_wide": "but the tunnel is and you're jammed in deep. And maybe 5 minutes of digging at the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 159.63,
+   "shot_dur": 0.2,
+   "word_at": "deep.",
+   "spoken": "in deep. And maybe",
+   "spoken_wide": "the tunnel is and you're jammed in deep. And maybe 5 minutes of digging at the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 162.37,
+   "shot_dur": 2.73,
+   "word_at": "they",
+   "spoken": "they give up.",
+   "spoken_wide": "5 minutes of digging at the they give up. You are not the effort. You are",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 163.07,
+   "shot_dur": 0.7,
+   "word_at": "up.",
+   "spoken": "give up. You are not",
+   "spoken_wide": "of digging at the they give up. You are not the effort. You are not dead.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 165.17,
+   "shot_dur": 2.1,
+   "word_at": "dead.",
+   "spoken": "are not dead. That for",
+   "spoken_wide": "You are not the effort. You are not dead. That for something. You spend your night",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 168.1,
+   "shot_dur": 2.93,
+   "word_at": "hole",
+   "spoken": "alive in a hole that smells",
+   "spoken_wide": "something. You spend your night alive in a hole that smells like",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 169.77,
+   "shot_dur": 1.67,
+   "word_at": "smells",
+   "spoken": "like pig.",
+   "spoken_wide": "in a hole that smells like pig. Listening to things",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 171.0,
+   "shot_dur": 1.23,
+   "word_at": "Listening",
+   "spoken": "pig. Listening to things",
+   "spoken_wide": "like pig. Listening to things around outside.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 172.93,
+   "shot_dur": 1.93,
+   "word_at": "outside.",
+   "spoken": "outside. And it's",
+   "spoken_wide": "Listening to things around outside. And it's here in dark that you figure out",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 177.33,
+   "shot_dur": 4.4,
+   "word_at": "Africa.",
+   "spoken": "Africa. Nothing here",
+   "spoken_wide": "the first of modern Africa. Nothing here is to help you. The",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 179.0,
+   "shot_dur": 1.67,
+   "word_at": "help",
+   "spoken": "to help you. The ecosystem",
+   "spoken_wide": "Nothing here is to help you. The ecosystem does have a niche",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 179.37,
+   "shot_dur": 0.37,
+   "word_at": "you.",
+   "spoken": "to help you. The ecosystem",
+   "spoken_wide": "Nothing here is to help you. The ecosystem does have a niche for you.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 181.93,
+   "shot_dur": 2.57,
+   "word_at": "is",
+   "spoken": "for you. There is no",
+   "spoken_wide": "does have a niche for you. There is no role you fit into.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 184.2,
+   "shot_dur": 2.27,
+   "word_at": "into.",
+   "spoken": "fit into. You are 66",
+   "spoken_wide": "no role you fit into. You are 66 years out of date",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 187.8,
+   "shot_dur": 3.6,
+   "word_at": "on.",
+   "spoken": "moved on. Morning comes",
+   "spoken_wide": "out of date and the world moved on. Morning comes and you're which makes",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 189.4,
+   "shot_dur": 1.6,
+   "word_at": "you're",
+   "spoken": "you're which makes",
+   "spoken_wide": "on. Morning comes and you're which makes sense because you eaten since you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 195.0,
+   "shot_dur": 5.6,
+   "word_at": "ago",
+   "spoken": "ago you need to figure",
+   "spoken_wide": "egg yolk maybe 18 hours ago you need to figure out food",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 197.2,
+   "shot_dur": 2.2,
+   "word_at": "food",
+   "spoken": "You emerge from",
+   "spoken_wide": "you need to figure out food You emerge from the burrow checking",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 202.87,
+   "shot_dur": 5.67,
+   "word_at": "moving.",
+   "spoken": "moving. brain says",
+   "spoken_wide": "coast looks clear, you start moving. brain says to hunt small dinosaurs,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 205.4,
+   "shot_dur": 2.53,
+   "word_at": "dinosaurs,",
+   "spoken": "a juvenile",
+   "spoken_wide": "says to hunt small dinosaurs, a juvenile hydrosaur, something in",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 209.2,
+   "shot_dur": 3.8,
+   "word_at": "range.",
+   "spoken": "range. But there",
+   "spoken_wide": "something in 20 to 30 kg range. But there are no There",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 211.2,
+   "shot_dur": 2.0,
+   "word_at": "no",
+   "spoken": "There are no",
+   "spoken_wide": "But there are no There are no dinosaurs at",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 214.27,
+   "shot_dur": 3.07,
+   "word_at": "you.",
+   "spoken": "you. What there is,",
+   "spoken_wide": "dinosaurs at except you. What there is, and you it near some",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 220.8,
+   "shot_dur": 6.53,
+   "word_at": "shaped.",
+   "spoken": "shaped. It's a ground squirrel,",
+   "spoken_wide": "something that looks vaguely shaped. It's a ground squirrel, 2 kg,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 225.7,
+   "shot_dur": 4.9,
+   "word_at": "seeds.",
+   "spoken": "seeds. Perfect. You",
+   "spoken_wide": "up on its eating seeds. Perfect. You low in the grass,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 226.3,
+   "shot_dur": 0.6,
+   "word_at": "You",
+   "spoken": "Perfect. You low in",
+   "spoken_wide": "eating seeds. Perfect. You low in the grass, move slowly,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 231.63,
+   "shot_dur": 5.33,
+   "word_at": "gauge",
+   "spoken": "You get within",
+   "spoken_wide": "forward- facing eyes to gauge You get within 15 m, 10 m.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 234.8,
+   "shot_dur": 3.17,
+   "word_at": "great.",
+   "spoken": "doing great. Then you charge",
+   "spoken_wide": "m, 10 m. doing great. Then you charge and miss completely.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 242.17,
+   "shot_dur": 7.37,
+   "word_at": "past.",
+   "spoken": "past. And it back",
+   "spoken_wide": "hops to left while you sail past. And it back to eating seeds while you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 245.37,
+   "shot_dur": 3.2,
+   "word_at": "hard",
+   "spoken": "breathing hard and",
+   "spoken_wide": "eating seeds while you there breathing hard and realize have no idea how",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 248.97,
+   "shot_dur": 3.6,
+   "word_at": "In",
+   "spoken": "In Hell Creek,",
+   "spoken_wide": "no idea how to hunt in open In Hell Creek, you would have behind a tree trunk",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 255.23,
+   "shot_dur": 6.27,
+   "word_at": "it.",
+   "spoken": "and grab it. But that strategy",
+   "spoken_wide": "m and then explode and grab it. But that strategy does translate to",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 261.67,
+   "shot_dur": 6.43,
+   "word_at": "again.",
+   "spoken": "miss again. This is humbling.",
+   "spoken_wide": "different squirrel 2 hours You miss again. This is humbling. a Tyrannosaurus Rex.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 262.77,
+   "shot_dur": 1.1,
+   "word_at": "humbling.",
+   "spoken": "humbling. a Tyrannosaurus",
+   "spoken_wide": "You miss again. This is humbling. a Tyrannosaurus Rex. You're to be the most fearsome",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 266.57,
+   "shot_dur": 3.8,
+   "word_at": "time,",
+   "spoken": "all time, and two squirrels",
+   "spoken_wide": "be the most fearsome of all time, and two squirrels just beaten you.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 268.67,
+   "shot_dur": 2.1,
+   "word_at": "you.",
+   "spoken": "beaten you. It takes you until",
+   "spoken_wide": "and two squirrels just beaten you. It takes you until afternoon to figure it",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 271.47,
+   "shot_dur": 2.8,
+   "word_at": "And",
+   "spoken": "it out. And becomes clear",
+   "spoken_wide": "until afternoon to figure it out. And becomes clear is that the only prey",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 277.6,
+   "shot_dur": 6.13,
+   "word_at": "too",
+   "spoken": "too You find a water",
+   "spoken_wide": "don't see you coming until it's too You find a water hole, a small depression,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 281.93,
+   "shot_dur": 4.33,
+   "word_at": "and",
+   "spoken": "and you watch from",
+   "spoken_wide": "depression, maybe 30 meters and you watch from 100 m out. come to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 284.13,
+   "shot_dur": 2.2,
+   "word_at": "to",
+   "spoken": "come to drink. Zebras,",
+   "spoken_wide": "you watch from 100 m out. come to drink. Zebras, will the something that looks",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 285.27,
+   "shot_dur": 1.13,
+   "word_at": "will",
+   "spoken": "will the something",
+   "spoken_wide": "out. come to drink. Zebras, will the something that looks like a deer, definitely",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 288.5,
+   "shot_dur": 3.23,
+   "word_at": "deer.",
+   "spoken": "a deer. And then",
+   "spoken_wide": "looks like a deer, definitely isn't a deer. And then see it, a Thompson's",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 289.17,
+   "shot_dur": 0.67,
+   "word_at": "then",
+   "spoken": "And then see it,",
+   "spoken_wide": "definitely isn't a deer. And then see it, a Thompson's gazelle",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 289.77,
+   "shot_dur": 0.6,
+   "word_at": "see",
+   "spoken": "see it, a Thompson's",
+   "spoken_wide": "isn't a deer. And then see it, a Thompson's gazelle fawn",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 290.13,
+   "shot_dur": 0.37,
+   "word_at": "it,",
+   "spoken": "see it, a Thompson's",
+   "spoken_wide": "a deer. And then see it, a Thompson's gazelle fawn maybe",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 293.6,
+   "shot_dur": 3.47,
+   "word_at": "kg,",
+   "spoken": "kg, separated from",
+   "spoken_wide": "fawn maybe 12 kg, separated from its by about 20 m",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 297.13,
+   "shot_dur": 3.53,
+   "word_at": "drinks.",
+   "spoken": "drinks. you circle",
+   "spoken_wide": "about 20 m while she drinks. you circle wide, staying low, getting",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 300.27,
+   "shot_dur": 3.13,
+   "word_at": "You're",
+   "spoken": "You're 30 m",
+   "spoken_wide": "staying low, getting You're 30 m away, then 20. The",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 305.37,
+   "shot_dur": 5.1,
+   "word_at": "water.",
+   "spoken": "the water. You close to",
+   "spoken_wide": "noticed you because it's at the water. You close to 10 m. then you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 308.3,
+   "shot_dur": 2.93,
+   "word_at": "charge,",
+   "spoken": "charge, and this time",
+   "spoken_wide": "m. then you charge, and this time no miss. You hit it at",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 310.17,
+   "shot_dur": 1.87,
+   "word_at": "hit",
+   "spoken": "miss. You hit it at full",
+   "spoken_wide": "and this time no miss. You hit it at full jaws closing on",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 311.8,
+   "shot_dur": 1.63,
+   "word_at": "jaws",
+   "spoken": "jaws closing on its",
+   "spoken_wide": "You hit it at full jaws closing on its neck, and you your bite",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 313.03,
+   "shot_dur": 1.23,
+   "word_at": "neck,",
+   "spoken": "its neck, and you",
+   "spoken_wide": "jaws closing on its neck, and you your bite force crush",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 316.1,
+   "shot_dur": 3.07,
+   "word_at": "spine.",
+   "spoken": "spine. fawn",
+   "spoken_wide": "bite force crush its spine. fawn drops instantly. You've",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 317.97,
+   "shot_dur": 1.87,
+   "word_at": "instantly.",
+   "spoken": "instantly. You've just",
+   "spoken_wide": "fawn drops instantly. You've just something and your brain",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 319.43,
+   "shot_dur": 1.47,
+   "word_at": "something",
+   "spoken": "something and your brain",
+   "spoken_wide": "instantly. You've just something and your brain floods signals that say, \"Eat.\"",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 323.17,
+   "shot_dur": 3.73,
+   "word_at": "do.",
+   "spoken": "So you do. meat tastes",
+   "spoken_wide": "that say, \"Eat.\" So you do. meat tastes wrong. Not bad,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 324.67,
+   "shot_dur": 1.5,
+   "word_at": "wrong.",
+   "spoken": "wrong. Not bad,",
+   "spoken_wide": "So you do. meat tastes wrong. Not bad, but just than what you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 327.63,
+   "shot_dur": 2.97,
+   "word_at": "expecting.",
+   "spoken": "expecting. fat",
+   "spoken_wide": "but just than what you were expecting. fat coats your tongue in a way",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 337.13,
+   "shot_dur": 9.5,
+   "word_at": "eater.",
+   "spoken": "eater. You eat maybe",
+   "spoken_wide": "for getting being a picky eater. You eat maybe kg which is",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 337.23,
+   "shot_dur": 0.1,
+   "word_at": "You",
+   "spoken": "eater. You eat maybe",
+   "spoken_wide": "for getting being a picky eater. You eat maybe kg which is",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 339.03,
+   "shot_dur": 1.8,
+   "word_at": "kg",
+   "spoken": "kg which is about 12%",
+   "spoken_wide": "You eat maybe kg which is about 12% of your body",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 341.3,
+   "shot_dur": 2.27,
+   "word_at": "body",
+   "spoken": "body and then you",
+   "spoken_wide": "which is about 12% of your body and then you hear the vultures",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 343.73,
+   "shot_dur": 2.43,
+   "word_at": "vultures",
+   "spoken": "There are three of",
+   "spoken_wide": "and then you hear the vultures There are three of them. these massive birds",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 348.3,
+   "shot_dur": 4.57,
+   "word_at": "seconds.",
+   "spoken": "seconds. You've been",
+   "spoken_wide": "and they within 30 seconds. You've been not 18 hours and",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 354.27,
+   "shot_dur": 5.97,
+   "word_at": "stays",
+   "spoken": "Every kill",
+   "spoken_wide": "nothing stays Every kill gets an audience.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 356.07,
+   "shot_dur": 1.8,
+   "word_at": "audience.",
+   "spoken": "audience. sun",
+   "spoken_wide": "Every kill gets an audience. sun is directly overhead now and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 361.27,
+   "shot_dur": 5.2,
+   "word_at": "You",
+   "spoken": "You realize",
+   "spoken_wide": "maybe 38\u00b0 C. You realize quickly that you do not have",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 361.8,
+   "shot_dur": 0.53,
+   "word_at": "realize",
+   "spoken": "You realize quickly",
+   "spoken_wide": "C. You realize quickly that you do not have sweat",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 363.3,
+   "shot_dur": 1.5,
+   "word_at": "not",
+   "spoken": "you do not have sweat",
+   "spoken_wide": "You realize quickly that you do not have sweat which feels like it",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 363.43,
+   "shot_dur": 0.13,
+   "word_at": "not",
+   "spoken": "you do not have sweat",
+   "spoken_wide": "realize quickly that you do not have sweat which feels like it should",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 363.5,
+   "shot_dur": 0.07,
+   "word_at": "have",
+   "spoken": "you do not have sweat",
+   "spoken_wide": "realize quickly that you do not have sweat which feels like it should be",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 363.73,
+   "shot_dur": 0.23,
+   "word_at": "sweat",
+   "spoken": "do not have sweat",
+   "spoken_wide": "quickly that you do not have sweat which feels like it should be a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 364.27,
+   "shot_dur": 0.53,
+   "word_at": "sweat",
+   "spoken": "sweat which feels",
+   "spoken_wide": "quickly that you do not have sweat which feels like it should be a flaw,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 364.7,
+   "shot_dur": 0.43,
+   "word_at": "which",
+   "spoken": "which feels like it",
+   "spoken_wide": "that you do not have sweat which feels like it should be a flaw, but",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 364.77,
+   "shot_dur": 0.07,
+   "word_at": "which",
+   "spoken": "which feels like it",
+   "spoken_wide": "you do not have sweat which feels like it should be a flaw, but you've",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 368.33,
+   "shot_dur": 3.57,
+   "word_at": "So,",
+   "spoken": "with So, you start panting",
+   "spoken_wide": "flaw, but you've got to deal with So, you start panting with your open. It's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 368.43,
+   "shot_dur": 0.1,
+   "word_at": "you",
+   "spoken": "So, you start panting",
+   "spoken_wide": "flaw, but you've got to deal with So, you start panting with your open. It's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 368.73,
+   "shot_dur": 0.3,
+   "word_at": "start",
+   "spoken": "So, you start panting with",
+   "spoken_wide": "but you've got to deal with So, you start panting with your open. It's undignified,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 368.93,
+   "shot_dur": 0.2,
+   "word_at": "panting",
+   "spoken": "So, you start panting with your",
+   "spoken_wide": "you've got to deal with So, you start panting with your open. It's undignified,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 369.23,
+   "shot_dur": 0.3,
+   "word_at": "panting",
+   "spoken": "start panting with your",
+   "spoken_wide": "got to deal with So, you start panting with your open. It's undignified,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 369.43,
+   "shot_dur": 0.2,
+   "word_at": "with",
+   "spoken": "panting with your open.",
+   "spoken_wide": "to deal with So, you start panting with your open. It's undignified, but",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 369.63,
+   "shot_dur": 0.2,
+   "word_at": "your",
+   "spoken": "with your open.",
+   "spoken_wide": "deal with So, you start panting with your open. It's undignified, but",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 369.73,
+   "shot_dur": 0.1,
+   "word_at": "your",
+   "spoken": "with your open.",
+   "spoken_wide": "with So, you start panting with your open. It's undignified, but it's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 370.03,
+   "shot_dur": 0.3,
+   "word_at": "open.",
+   "spoken": "your open. It's undignified,",
+   "spoken_wide": "So, you start panting with your open. It's undignified, but it's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 370.23,
+   "shot_dur": 0.2,
+   "word_at": "open.",
+   "spoken": "open. It's undignified,",
+   "spoken_wide": "So, you start panting with your open. It's undignified, but it's than",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 370.33,
+   "shot_dur": 0.1,
+   "word_at": "open.",
+   "spoken": "open. It's undignified,",
+   "spoken_wide": "So, you start panting with your open. It's undignified, but it's than overheating.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 373.23,
+   "shot_dur": 2.9,
+   "word_at": "overheating.",
+   "spoken": "You drag what's",
+   "spoken_wide": "but it's than overheating. You drag what's of the fawn towards a lone",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 377.6,
+   "shot_dur": 4.37,
+   "word_at": "away,",
+   "spoken": "away, settling in the",
+   "spoken_wide": "acacia maybe 50 m away, settling in the underneath it. There's a bird",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 379.27,
+   "shot_dur": 1.67,
+   "word_at": "it.",
+   "spoken": "underneath it. There's a bird",
+   "spoken_wide": "away, settling in the underneath it. There's a bird already, some kind of large",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 382.63,
+   "shot_dur": 3.37,
+   "word_at": "bill,",
+   "spoken": "bill, and it just stares",
+   "spoken_wide": "some kind of large ground bill, and it just stares at you. stare back.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 383.9,
+   "shot_dur": 1.27,
+   "word_at": "you.",
+   "spoken": "at you. stare",
+   "spoken_wide": "bill, and it just stares at you. stare back. Apparently, you're not scary",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 385.07,
+   "shot_dur": 1.17,
+   "word_at": "Apparently,",
+   "spoken": "back. Apparently, you're not",
+   "spoken_wide": "just stares at you. stare back. Apparently, you're not scary yet, cuz this bird",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 389.27,
+   "shot_dur": 4.2,
+   "word_at": "you.",
+   "spoken": "about you. It just stares",
+   "spoken_wide": "bird doesn't a about you. It just stares right in the eyes. The",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 391.37,
+   "shot_dur": 2.1,
+   "word_at": "eyes.",
+   "spoken": "the eyes. The afternoon",
+   "spoken_wide": "It just stares right in the eyes. The afternoon on and the pattern emerges",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 395.3,
+   "shot_dur": 3.93,
+   "word_at": "you",
+   "spoken": "pins you down. You can't",
+   "spoken_wide": "emerges about heat. It pins you down. You can't You can't hunt. You",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 400.1,
+   "shot_dur": 4.8,
+   "word_at": "and",
+   "spoken": "and This is new.",
+   "spoken_wide": "except lie in shade and This is new. In Hell Creek, it humid,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 405.37,
+   "shot_dur": 5.27,
+   "word_at": "Cover.",
+   "spoken": "Cover. Here, the sun",
+   "spoken_wide": "was water in Shri Cover. Here, the sun literally a weapon.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 407.53,
+   "shot_dur": 2.17,
+   "word_at": "weapon.",
+   "spoken": "a weapon. You're going to",
+   "spoken_wide": "Here, the sun literally a weapon. You're going to to hunt at dawn and dusk",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 411.4,
+   "shot_dur": 3.87,
+   "word_at": "cook.",
+   "spoken": "cook. Around 400",
+   "spoken_wide": "and dusk or you're to cook. Around 400 p.m. you hear that makes",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 414.57,
+   "shot_dur": 3.17,
+   "word_at": "head.",
+   "spoken": "your head. are these low",
+   "spoken_wide": "you hear that makes you lift your head. are these low sounds. They're subsonic.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 419.47,
+   "shot_dur": 4.9,
+   "word_at": "away.",
+   "spoken": "away. Six",
+   "spoken_wide": "And then you see them 100 m away. Six lions, four",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 421.57,
+   "shot_dur": 2.1,
+   "word_at": "lions,",
+   "spoken": "four",
+   "spoken_wide": "Six lions, four two males.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 422.83,
+   "shot_dur": 1.27,
+   "word_at": "four",
+   "spoken": "two males.",
+   "spoken_wide": "lions, four two males. They're staring at",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 423.9,
+   "shot_dur": 1.07,
+   "word_at": "males.",
+   "spoken": "males. They're staring",
+   "spoken_wide": "two males. They're staring at You stand up",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 426.3,
+   "shot_dur": 2.4,
+   "word_at": "up",
+   "spoken": "up and at 40",
+   "spoken_wide": "staring at You stand up and at 40 lb, you were aware",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 431.1,
+   "shot_dur": 4.8,
+   "word_at": "not",
+   "spoken": "The lions",
+   "spoken_wide": "that you are not The lions seem confused. of them",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 435.8,
+   "shot_dur": 4.7,
+   "word_at": "testing.",
+   "spoken": "testing. You hiss,",
+   "spoken_wide": "a few steps forward. testing. You hiss, which is all got. The",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 437.8,
+   "shot_dur": 2.0,
+   "word_at": "got.",
+   "spoken": "all got. The lions stop.",
+   "spoken_wide": "You hiss, which is all got. The lions stop. They look at other.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 440.73,
+   "shot_dur": 2.93,
+   "word_at": "big",
+   "spoken": "And then the big male makes",
+   "spoken_wide": "They look at other. And then the big male makes decision and they all turn",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 444.17,
+   "shot_dur": 3.43,
+   "word_at": "walk",
+   "spoken": "You have been assessed",
+   "spoken_wide": "and they all turn and walk You have been assessed and found be too",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 449.4,
+   "shot_dur": 5.23,
+   "word_at": "scary.",
+   "spoken": "scary. You're not prey.",
+   "spoken_wide": "worth the trouble. not scary. You're not prey. just confusing. They've never",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 450.37,
+   "shot_dur": 0.97,
+   "word_at": "prey.",
+   "spoken": "not prey. just confusing.",
+   "spoken_wide": "not scary. You're not prey. just confusing. They've never you before.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 456.3,
+   "shot_dur": 5.93,
+   "word_at": "size.",
+   "spoken": "size. Over the next",
+   "spoken_wide": "with until you reach your size. Over the next 3 months, you at a rate that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 460.93,
+   "shot_dur": 4.63,
+   "word_at": "mammal.",
+   "spoken": "were a mammal. But",
+   "spoken_wide": "be medically if you were a mammal. But mature fast because they to",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 470.6,
+   "shot_dur": 9.67,
+   "word_at": "human,",
+   "spoken": "adult human, and your",
+   "spoken_wide": "roughly the size of a adult human, and your appetite is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 472.9,
+   "shot_dur": 2.3,
+   "word_at": "is",
+   "spoken": "You need 15",
+   "spoken_wide": "and your appetite is You need 15 to 20 pounds of",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 475.9,
+   "shot_dur": 3.0,
+   "word_at": "week.",
+   "spoken": "week. And the math",
+   "spoken_wide": "to 20 pounds of per week. And the math is simple. are always",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.27,
+   "shot_dur": 1.37,
+   "word_at": "simple.",
+   "spoken": "is simple. are always",
+   "spoken_wide": "per week. And the math is simple. are always hunting or",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.4,
+   "shot_dur": 0.13,
+   "word_at": "simple.",
+   "spoken": "simple. are always",
+   "spoken_wide": "week. And the math is simple. are always hunting or you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.47,
+   "shot_dur": 0.07,
+   "word_at": "simple.",
+   "spoken": "simple. are always",
+   "spoken_wide": "week. And the math is simple. are always hunting or you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.53,
+   "shot_dur": 0.07,
+   "word_at": "simple.",
+   "spoken": "simple. are always",
+   "spoken_wide": "week. And the math is simple. are always hunting or you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.63,
+   "shot_dur": 0.1,
+   "word_at": "simple.",
+   "spoken": "are always hunting",
+   "spoken_wide": "week. And the math is simple. are always hunting or you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.7,
+   "shot_dur": 0.07,
+   "word_at": "are",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.83,
+   "shot_dur": 0.13,
+   "word_at": "are",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.93,
+   "shot_dur": 0.1,
+   "word_at": "always",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.0,
+   "shot_dur": 0.07,
+   "word_at": "always",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.07,
+   "shot_dur": 0.07,
+   "word_at": "always",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.13,
+   "shot_dur": 0.07,
+   "word_at": "always",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.23,
+   "shot_dur": 0.1,
+   "word_at": "always",
+   "spoken": "are always hunting",
+   "spoken_wide": "And the math is simple. are always hunting or you're always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.3,
+   "shot_dur": 0.07,
+   "word_at": "hunting",
+   "spoken": "are always hunting",
+   "spoken_wide": "the math is simple. are always hunting or you're always",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.37,
+   "shot_dur": 0.07,
+   "word_at": "hunting",
+   "spoken": "are always hunting or",
+   "spoken_wide": "the math is simple. are always hunting or you're always",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.43,
+   "shot_dur": 0.07,
+   "word_at": "hunting",
+   "spoken": "always hunting or",
+   "spoken_wide": "the math is simple. are always hunting or you're always",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.53,
+   "shot_dur": 0.1,
+   "word_at": "hunting",
+   "spoken": "always hunting or",
+   "spoken_wide": "math is simple. are always hunting or you're always You",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.6,
+   "shot_dur": 0.07,
+   "word_at": "hunting",
+   "spoken": "hunting or",
+   "spoken_wide": "is simple. are always hunting or you're always You",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.67,
+   "shot_dur": 0.07,
+   "word_at": "hunting",
+   "spoken": "hunting or",
+   "spoken_wide": "is simple. are always hunting or you're always You",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 478.77,
+   "shot_dur": 0.1,
+   "word_at": "hunting",
+   "spoken": "hunting or",
+   "spoken_wide": "is simple. are always hunting or you're always You get",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 480.63,
+   "shot_dur": 1.87,
+   "word_at": "always",
+   "spoken": "You get better at",
+   "spoken_wide": "or you're always You get better at the water hole strategy.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 486.5,
+   "shot_dur": 5.87,
+   "word_at": "it's",
+   "spoken": "it's And something clicks",
+   "spoken_wide": "which is ugly, but it's And something clicks to you which animals run",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 491.93,
+   "shot_dur": 5.43,
+   "word_at": "run",
+   "spoken": "Zebra run",
+   "spoken_wide": "just think that they could run Zebra run fast. Warthog do",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 493.2,
+   "shot_dur": 1.27,
+   "word_at": "Warthog",
+   "spoken": "fast. Warthog",
+   "spoken_wide": "could run Zebra run fast. Warthog do not run Warthog",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 494.97,
+   "shot_dur": 1.77,
+   "word_at": "Warthog",
+   "spoken": "run Warthog kind of",
+   "spoken_wide": "Warthog do not run Warthog kind of fat. Warthog easy",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 496.03,
+   "shot_dur": 1.07,
+   "word_at": "fat.",
+   "spoken": "kind of fat. Warthog",
+   "spoken_wide": "do not run Warthog kind of fat. Warthog easy Yum yum",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 497.67,
+   "shot_dur": 1.63,
+   "word_at": "easy",
+   "spoken": "easy Yum yum",
+   "spoken_wide": "of fat. Warthog easy Yum yum bacon. And you recognize vulture",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 498.77,
+   "shot_dur": 1.1,
+   "word_at": "bacon.",
+   "spoken": "yum bacon. And you recognize",
+   "spoken_wide": "easy Yum yum bacon. And you recognize vulture flight patterns because",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 503.87,
+   "shot_dur": 5.1,
+   "word_at": "kill",
+   "spoken": "kill or something dying.",
+   "spoken_wide": "vultures, there is a fresh kill or something dying. both are useful",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 504.9,
+   "shot_dur": 1.03,
+   "word_at": "dying.",
+   "spoken": "dying. both are",
+   "spoken_wide": "a fresh kill or something dying. both are useful to you. And then",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 510.97,
+   "shot_dur": 6.07,
+   "word_at": "leopards.",
+   "spoken": "It's",
+   "spoken_wide": "you learn about leopards. It's You're sleeping in the tall grass",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 515.9,
+   "shot_dur": 4.93,
+   "word_at": "impala",
+   "spoken": "when something lands",
+   "spoken_wide": "hole full from an impala when something lands on your back its claws",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 521.67,
+   "shot_dur": 5.77,
+   "word_at": "you",
+   "spoken": "and you a glimpse",
+   "spoken_wide": "you buck hard spinning. and you a glimpse of spotted fur and green",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 525.7,
+   "shot_dur": 4.03,
+   "word_at": "It's",
+   "spoken": "off. It's a leopard",
+   "spoken_wide": "and green before it jumps off. It's a leopard maybe 80 kg nearly",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 530.27,
+   "shot_dur": 4.57,
+   "word_at": "tree.",
+   "spoken": "tree. You didn't even know",
+   "spoken_wide": "your size. It came of a tree. You didn't even know it there. So, you spin",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 531.8,
+   "shot_dur": 1.53,
+   "word_at": "there.",
+   "spoken": "there. So, you spin and",
+   "spoken_wide": "tree. You didn't even know it there. So, you spin and lunge with jaws snapping,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 534.13,
+   "shot_dur": 2.33,
+   "word_at": "snapping,",
+   "spoken": "snapping, but you miss.",
+   "spoken_wide": "you spin and lunge with jaws snapping, but you miss. It ras left flank",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 540.63,
+   "shot_dur": 6.5,
+   "word_at": "the",
+   "spoken": "The whole thing",
+   "spoken_wide": "and then it's gone into the The whole thing took maybe 5",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 543.03,
+   "shot_dur": 2.4,
+   "word_at": "5",
+   "spoken": "You're bleeding.",
+   "spoken_wide": "whole thing took maybe 5 You're bleeding. Three deep are across",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 544.17,
+   "shot_dur": 1.13,
+   "word_at": "Three",
+   "spoken": "Three deep",
+   "spoken_wide": "5 You're bleeding. Three deep are across your left flank.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 544.2,
+   "shot_dur": 0.03,
+   "word_at": "Three",
+   "spoken": "Three deep",
+   "spoken_wide": "5 You're bleeding. Three deep are across your left flank.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 546.4,
+   "shot_dur": 2.2,
+   "word_at": "flank.",
+   "spoken": "flank. There be four",
+   "spoken_wide": "deep are across your left flank. There be four itches each and they burn",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 549.33,
+   "shot_dur": 2.93,
+   "word_at": "that",
+   "spoken": "in way that tells you the",
+   "spoken_wide": "itches each and they burn in way that tells you the claws were not Over",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 551.47,
+   "shot_dur": 2.13,
+   "word_at": "not",
+   "spoken": "not Over the next few",
+   "spoken_wide": "that tells you the claws were not Over the next few days, the crust over",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 554.97,
+   "shot_dur": 3.5,
+   "word_at": "scar,",
+   "spoken": "scar, tight",
+   "spoken_wide": "crust over and start to scar, tight when you move, and you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 560.2,
+   "shot_dur": 5.23,
+   "word_at": "walk.",
+   "spoken": "you walk. The scars will",
+   "spoken_wide": "favoring your right when you walk. The scars will stay you. They're going to be",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 560.8,
+   "shot_dur": 0.6,
+   "word_at": "scars",
+   "spoken": "The scars will stay",
+   "spoken_wide": "right when you walk. The scars will stay you. They're going to be permanent",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 561.8,
+   "shot_dur": 1.0,
+   "word_at": "you.",
+   "spoken": "stay you. They're going to be permanent",
+   "spoken_wide": "you walk. The scars will stay you. They're going to be permanent about checking",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 565.83,
+   "shot_dur": 4.03,
+   "word_at": "you",
+   "spoken": "But you heal.",
+   "spoken_wide": "checking trees before you But you heal. The pain fades to a",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 566.9,
+   "shot_dur": 1.07,
+   "word_at": "heal.",
+   "spoken": "you heal. The pain fades",
+   "spoken_wide": "before you But you heal. The pain fades to a ache, and by day",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 569.97,
+   "shot_dur": 3.07,
+   "word_at": "resting,",
+   "spoken": "of resting, hunting",
+   "spoken_wide": "a ache, and by day six of resting, hunting again slower and more",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 572.9,
+   "shot_dur": 2.93,
+   "word_at": "more",
+   "spoken": "You've been given a",
+   "spoken_wide": "again slower and more You've been given a warning. here",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 576.5,
+   "shot_dur": 3.6,
+   "word_at": "you",
+   "spoken": "kill you and some of kills",
+   "spoken_wide": "here can kill you and some of kills you from places that you can't",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 579.37,
+   "shot_dur": 2.87,
+   "word_at": "The",
+   "spoken": "coming. The dry season",
+   "spoken_wide": "kills you from places that you can't coming. The dry season arrives in five",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 583.6,
+   "shot_dur": 4.23,
+   "word_at": "start",
+   "spoken": "Herds migrate",
+   "spoken_wide": "and the water holes start Herds migrate west towards water",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 585.93,
+   "shot_dur": 2.33,
+   "word_at": "water",
+   "spoken": "water and you follow",
+   "spoken_wide": "Herds migrate west towards water and you follow because have no choice.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 588.27,
+   "shot_dur": 2.33,
+   "word_at": "choice.",
+   "spoken": "choice. You cover 30",
+   "spoken_wide": "and you follow because have no choice. You cover 30 km in 3",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 594.9,
+   "shot_dur": 6.63,
+   "word_at": "current",
+   "spoken": "You're now roughly",
+   "spoken_wide": "but doable at your current You're now roughly 300 lb, maybe",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 598.07,
+   "shot_dur": 3.17,
+   "word_at": "old,",
+   "spoken": "old, and you're still",
+   "spoken_wide": "lb, maybe 6 old, and you're still growing at rate that seems",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 603.53,
+   "shot_dur": 5.47,
+   "word_at": "but",
+   "spoken": "prey, but not quite",
+   "spoken_wide": "You're no longer prey, but not quite predator yet either.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 605.47,
+   "shot_dur": 1.93,
+   "word_at": "either.",
+   "spoken": "yet either. in between.",
+   "spoken_wide": "but not quite predator yet either. in between. You realize where is,",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 606.43,
+   "shot_dur": 0.97,
+   "word_at": "between.",
+   "spoken": "in between. You realize where",
+   "spoken_wide": "predator yet either. in between. You realize where is, which animals run,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 611.23,
+   "shot_dur": 4.8,
+   "word_at": "heat,",
+   "spoken": "heat, but",
+   "spoken_wide": "ones how to avoid the midday heat, but still feels slightly wrong.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 613.57,
+   "shot_dur": 2.33,
+   "word_at": "wrong.",
+   "spoken": "wrong. air, the",
+   "spoken_wide": "still feels slightly wrong. air, the food, the landscape.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 614.2,
+   "shot_dur": 0.63,
+   "word_at": "air,",
+   "spoken": "air, the food,",
+   "spoken_wide": "still feels slightly wrong. air, the food, the landscape. But is your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 614.27,
+   "shot_dur": 0.07,
+   "word_at": "the",
+   "spoken": "air, the food,",
+   "spoken_wide": "feels slightly wrong. air, the food, the landscape. But is your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 615.13,
+   "shot_dur": 0.87,
+   "word_at": "the",
+   "spoken": "food, the landscape.",
+   "spoken_wide": "wrong. air, the food, the landscape. But is your life now.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 615.9,
+   "shot_dur": 0.77,
+   "word_at": "landscape.",
+   "spoken": "landscape. But is your life",
+   "spoken_wide": "air, the food, the landscape. But is your life now. And what you know",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 622.07,
+   "shot_dur": 6.17,
+   "word_at": "here.",
+   "spoken": "here. You hit",
+   "spoken_wide": "much harder from here. You hit kg at",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 626.17,
+   "shot_dur": 4.1,
+   "word_at": "and",
+   "spoken": "old. and start",
+   "spoken_wide": "at around 2 years old. and start to shift in your favor",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 633.5,
+   "shot_dur": 7.33,
+   "word_at": "exists.",
+   "spoken": "Your bite force",
+   "spoken_wide": "predator currently exists. Your bite force now somewhere around 8,000",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 636.73,
+   "shot_dur": 3.23,
+   "word_at": "lbs.",
+   "spoken": "lbs. Your can",
+   "spoken_wide": "somewhere around 8,000 lbs. Your can crush bone without thinking",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 639.3,
+   "shot_dur": 2.57,
+   "word_at": "it.",
+   "spoken": "it. And when you walk",
+   "spoken_wide": "can crush bone without thinking it. And when you walk past a group lions, they don't",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 645.37,
+   "shot_dur": 6.07,
+   "word_at": "are",
+   "spoken": "The problem is",
+   "spoken_wide": "leave the area. Things are The problem is that your brain thinks in cretaceious",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 648.6,
+   "shot_dur": 3.23,
+   "word_at": "terms.",
+   "spoken": "terms. So you see a",
+   "spoken_wide": "brain thinks in cretaceious terms. So you see a herd of elephants at a",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 654.1,
+   "shot_dur": 5.5,
+   "word_at": "food.",
+   "spoken": "food. you approach them",
+   "spoken_wide": "is large herbivore equals food. you approach them with the of an animal",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 660.2,
+   "shot_dur": 6.1,
+   "word_at": "The",
+   "spoken": "The spots",
+   "spoken_wide": "challenged in six months. The spots you at about 70 meters",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 663.07,
+   "shot_dur": 2.87,
+   "word_at": "meters",
+   "spoken": "She turns to",
+   "spoken_wide": "you at about 70 meters She turns to face you and you keep",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 667.8,
+   "shot_dur": 4.73,
+   "word_at": "spent",
+   "spoken": "and spent the last year",
+   "spoken_wide": "you weigh 1,000 kg and spent the last year learning that runs",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 669.27,
+   "shot_dur": 1.47,
+   "word_at": "that",
+   "spoken": "that",
+   "spoken_wide": "and spent the last year learning that runs from you. But she",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 672.03,
+   "shot_dur": 2.77,
+   "word_at": "run.",
+   "spoken": "run. She mock",
+   "spoken_wide": "runs from you. But she run. She mock charges which is an elephant",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 677.97,
+   "shot_dur": 5.93,
+   "word_at": "threat.",
+   "spoken": "real threat. you hold your",
+   "spoken_wide": "to test if you're a real threat. you hold your ground because you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 682.07,
+   "shot_dur": 4.1,
+   "word_at": "what's",
+   "spoken": "So, she commits",
+   "spoken_wide": "don't understand what's So, she commits into a full",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 684.7,
+   "shot_dur": 2.63,
+   "word_at": "full",
+   "spoken": "There is",
+   "spoken_wide": "commits into a full There is 4,000 kg",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 697.93,
+   "shot_dur": 13.23,
+   "word_at": "They",
+   "spoken": "They scatter",
+   "spoken_wide": "are not hydrasaurs. They scatter when a predator shows up.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 702.17,
+   "shot_dur": 4.23,
+   "word_at": "You",
+   "spoken": "back. You bolt.",
+   "spoken_wide": "coordinate and they fight back. You bolt. Survival instinct overrides",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 705.4,
+   "shot_dur": 3.23,
+   "word_at": "pride.",
+   "spoken": "pride. She stops",
+   "spoken_wide": "Survival instinct overrides pride. She stops after 20 m,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 708.57,
+   "shot_dur": 3.17,
+   "word_at": "once,",
+   "spoken": "once, and walks",
+   "spoken_wide": "20 m, once, and walks back to her Well, that",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 710.3,
+   "shot_dur": 1.73,
+   "word_at": "her",
+   "spoken": "her Well, that was",
+   "spoken_wide": "and walks back to her Well, that was a lesson you had to the hard way.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 710.33,
+   "shot_dur": 0.03,
+   "word_at": "her",
+   "spoken": "Well, that was",
+   "spoken_wide": "and walks back to her Well, that was a lesson you had to the hard way.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 712.57,
+   "shot_dur": 2.23,
+   "word_at": "way.",
+   "spoken": "the hard way. What you take from",
+   "spoken_wide": "Well, that was a lesson you had to the hard way. What you take from is that elephants have tusks",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 717.77,
+   "shot_dur": 5.2,
+   "word_at": "together,",
+   "spoken": "work together, and they will",
+   "spoken_wide": "They're intelligent to work together, and they will call your bluff",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 720.93,
+   "shot_dur": 3.17,
+   "word_at": "wrong.",
+   "spoken": "you come them wrong. You're going",
+   "spoken_wide": "call your bluff if you come them wrong. You're going to need a strategy, and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 722.83,
+   "shot_dur": 1.9,
+   "word_at": "strategy,",
+   "spoken": "strategy, and that",
+   "spoken_wide": "them wrong. You're going to need a strategy, and that strategy is going be target the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 728.9,
+   "shot_dur": 6.07,
+   "word_at": "the",
+   "spoken": "Are you going to",
+   "spoken_wide": "or don't mess with the Are you going to learn? Well, see.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 731.13,
+   "shot_dur": 2.23,
+   "word_at": "see.",
+   "spoken": "see. 2 weeks later,",
+   "spoken_wide": "Are you going to learn? Well, see. 2 weeks later, you're a young cave",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 735.53,
+   "shot_dur": 4.4,
+   "word_at": "that's",
+   "spoken": "kg that's wandered about",
+   "spoken_wide": "buffalo. It's 500 kg that's wandered about 200 m its herd near",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 738.63,
+   "shot_dur": 3.1,
+   "word_at": "riverbank.",
+   "spoken": "riverbank. It's morning.",
+   "spoken_wide": "m its herd near a riverbank. It's morning. The light is still gray",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 743.9,
+   "shot_dur": 5.27,
+   "word_at": "minutes.",
+   "spoken": "minutes. The buffalo",
+   "spoken_wide": "downwind the last 30 minutes. The buffalo to drink. Its heads down",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 746.2,
+   "shot_dur": 2.3,
+   "word_at": "and",
+   "spoken": "heads down and you from",
+   "spoken_wide": "buffalo to drink. Its heads down and you from 40 m out, accelerating",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 751.03,
+   "shot_dur": 4.83,
+   "word_at": "kmh.",
+   "spoken": "You hit it from the",
+   "spoken_wide": "to 30 kmh. You hit it from the side your jaws lock onto",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 755.6,
+   "shot_dur": 4.57,
+   "word_at": "And",
+   "spoken": "And your bite",
+   "spoken_wide": "its spine just the shoulders. And your bite severs the spinal cord",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 759.37,
+   "shot_dur": 3.77,
+   "word_at": "one",
+   "spoken": "The whole thing",
+   "spoken_wide": "spinal cord in one The whole thing takes 10 You've",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 761.33,
+   "shot_dur": 1.97,
+   "word_at": "10",
+   "spoken": "You've just killed",
+   "spoken_wide": "The whole thing takes 10 You've just killed something weighs half of what you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 766.33,
+   "shot_dur": 5.0,
+   "word_at": "for",
+   "spoken": "for Within five",
+   "spoken_wide": "it didn't even have time to call for Within five minutes, there are 15",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 770.47,
+   "shot_dur": 4.13,
+   "word_at": "meters.",
+   "spoken": "Within 10",
+   "spoken_wide": "circling at 50 meters. Within 10 there are 40 vultures overhead.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 773.13,
+   "shot_dur": 2.67,
+   "word_at": "overhead.",
+   "spoken": "overhead. Africa,",
+   "spoken_wide": "there are 40 vultures overhead. Africa, as you know, nothing",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 776.37,
+   "shot_dur": 3.23,
+   "word_at": "stays",
+   "spoken": "so you feed,",
+   "spoken_wide": "you know, nothing stays so you feed, ripping through and muscle",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 789.77,
+   "shot_dur": 13.4,
+   "word_at": "but",
+   "spoken": "don't even bite, but the movement",
+   "spoken_wide": "and you at it. You don't even bite, but the movement is enough. It",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 793.6,
+   "shot_dur": 3.83,
+   "word_at": "When",
+   "spoken": "tries. When you're",
+   "spoken_wide": "Nobody else tries. When you're you move 200 m to a biobab",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 799.7,
+   "shot_dur": 6.1,
+   "word_at": "kg",
+   "spoken": "80 kg of meat",
+   "spoken_wide": "and you collapse because 80 kg of meat takes energy. hyenas",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 801.67,
+   "shot_dur": 1.97,
+   "word_at": "energy.",
+   "spoken": "energy. hyenas",
+   "spoken_wide": "kg of meat takes energy. hyenas immediately swarm the carcass",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 809.47,
+   "shot_dur": 7.8,
+   "word_at": "full.",
+   "spoken": "full. The hierarchy",
+   "spoken_wide": "But you don't care. full. The hierarchy of the is simple",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 812.0,
+   "shot_dur": 2.53,
+   "word_at": "now.",
+   "spoken": "simple now. You eat first.",
+   "spoken_wide": "of the is simple now. You eat first. else waits.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 812.1,
+   "shot_dur": 0.1,
+   "word_at": "now.",
+   "spoken": "now. You eat first.",
+   "spoken_wide": "of the is simple now. You eat first. else waits.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 813.13,
+   "shot_dur": 1.03,
+   "word_at": "first.",
+   "spoken": "first. else",
+   "spoken_wide": "is simple now. You eat first. else waits. But dominance",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 814.57,
+   "shot_dur": 1.43,
+   "word_at": "waits.",
+   "spoken": "waits. But dominance",
+   "spoken_wide": "eat first. else waits. But dominance has a nobody",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 814.6,
+   "shot_dur": 0.03,
+   "word_at": "waits.",
+   "spoken": "waits. But dominance",
+   "spoken_wide": "first. else waits. But dominance has a nobody",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 817.83,
+   "shot_dur": 3.23,
+   "word_at": "mentions,",
+   "spoken": "which is that",
+   "spoken_wide": "a nobody mentions, which is that animal in a 200",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 824.23,
+   "shot_dur": 6.4,
+   "word_at": "you",
+   "spoken": "you Prey species",
+   "spoken_wide": "what you are. and where you Prey species start avoiding water when",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 827.53,
+   "shot_dur": 3.3,
+   "word_at": "scent,",
+   "spoken": "your scent, even you're",
+   "spoken_wide": "water when they smell your scent, even you're not there. They'd rather risk",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 828.8,
+   "shot_dur": 1.27,
+   "word_at": "there.",
+   "spoken": "not there. They'd rather risk",
+   "spoken_wide": "smell your scent, even you're not there. They'd rather risk than risk",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 834.87,
+   "shot_dur": 6.07,
+   "word_at": "horizon.",
+   "spoken": "horizon. Elephants coordinate.",
+   "spoken_wide": "that watch for your shape on horizon. Elephants coordinate. When herd spots",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 836.07,
+   "shot_dur": 1.2,
+   "word_at": "coordinate.",
+   "spoken": "coordinate. When herd",
+   "spoken_wide": "on horizon. Elephants coordinate. When herd spots you, they make low",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 841.67,
+   "shot_dur": 5.6,
+   "word_at": "away.",
+   "spoken": "away. And suddenly,",
+   "spoken_wide": "herds can from kilometers away. And suddenly, elephant within range",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 845.27,
+   "shot_dur": 3.6,
+   "word_at": "are.",
+   "spoken": "are. You're not just",
+   "spoken_wide": "within range knows where are. You're not just the apex",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 847.47,
+   "shot_dur": 2.2,
+   "word_at": "apex",
+   "spoken": "You're the apex",
+   "spoken_wide": "You're not just the apex You're the apex problem. And ecosystem",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 848.8,
+   "shot_dur": 1.33,
+   "word_at": "problem.",
+   "spoken": "problem. And ecosystem",
+   "spoken_wide": "You're the apex problem. And ecosystem is adapting",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 851.9,
+   "shot_dur": 3.1,
+   "word_at": "you.",
+   "spoken": "you. days later,",
+   "spoken_wide": "is adapting around you. days later, you smell blood from kilometers",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 856.7,
+   "shot_dur": 4.8,
+   "word_at": "nose",
+   "spoken": "your nose is genuinely",
+   "spoken_wide": "away, which is normal your nose is genuinely absurd in good",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 859.43,
+   "shot_dur": 2.73,
+   "word_at": "is.",
+   "spoken": "it is. And when you track",
+   "spoken_wide": "absurd in good it is. And when you track it you find a lion pride",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 865.97,
+   "shot_dur": 6.53,
+   "word_at": "meal.",
+   "spoken": "their meal. You walk directly",
+   "spoken_wide": "adult lions just their meal. You walk directly them. They",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 869.27,
+   "shot_dur": 3.3,
+   "word_at": "coming",
+   "spoken": "coming and",
+   "spoken_wide": "them. They see you coming and scatter. There's no hesitation,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 870.6,
+   "shot_dur": 1.33,
+   "word_at": "scatter.",
+   "spoken": "scatter. There's no hesitation,",
+   "spoken_wide": "you coming and scatter. There's no hesitation, no They're just",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 872.2,
+   "shot_dur": 1.6,
+   "word_at": "no",
+   "spoken": "no They're just",
+   "spoken_wide": "scatter. There's no hesitation, no They're just gone. And you the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 873.6,
+   "shot_dur": 1.4,
+   "word_at": "gone.",
+   "spoken": "gone. And you",
+   "spoken_wide": "no They're just gone. And you the zebra. And this is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 880.2,
+   "shot_dur": 6.6,
+   "word_at": "eat,",
+   "spoken": "eat, which is other",
+   "spoken_wide": "possible way to eat, which is other animals do the hunting and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 882.27,
+   "shot_dur": 2.07,
+   "word_at": "and",
+   "spoken": "do the hunting and just walk",
+   "spoken_wide": "which is other animals do the hunting and just walk up and take what they",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 884.83,
+   "shot_dur": 2.57,
+   "word_at": "they",
+   "spoken": "You are one of the",
+   "spoken_wide": "just walk up and take what they You are one of the most things they have",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 891.57,
+   "shot_dur": 6.73,
+   "word_at": "advantage?",
+   "spoken": "advantage? Lions skilled",
+   "spoken_wide": "looks to your advantage? Lions skilled hunters. Hyenas are",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 892.97,
+   "shot_dur": 1.4,
+   "word_at": "hunters.",
+   "spoken": "hunters. Hyenas are",
+   "spoken_wide": "advantage? Lions skilled hunters. Hyenas are killers, and you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 894.87,
+   "shot_dur": 1.9,
+   "word_at": "killers,",
+   "spoken": "killers, and you can just",
+   "spoken_wide": "Hyenas are killers, and you can just walk and claim their work.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 897.43,
+   "shot_dur": 2.57,
+   "word_at": "work.",
+   "spoken": "work. You prefer to",
+   "spoken_wide": "can just walk and claim their work. You prefer to of it as a tax system, but",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 899.47,
+   "shot_dur": 2.03,
+   "word_at": "but",
+   "spoken": "system, but the do",
+   "spoken_wide": "You prefer to of it as a tax system, but the do not appreciate this",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 901.93,
+   "shot_dur": 2.47,
+   "word_at": "this",
+   "spoken": "But the lions",
+   "spoken_wide": "do not appreciate this But the lions also cannot anything",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 904.03,
+   "shot_dur": 2.1,
+   "word_at": "anything",
+   "spoken": "cannot anything about it.",
+   "spoken_wide": "But the lions also cannot anything about it. Just like modern",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 905.0,
+   "shot_dur": 0.97,
+   "word_at": "it.",
+   "spoken": "about it. Just like modern",
+   "spoken_wide": "also cannot anything about it. Just like modern the big",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 906.9,
+   "shot_dur": 1.9,
+   "word_at": "the",
+   "spoken": "the big guy in",
+   "spoken_wide": "it. Just like modern the big guy in power always eats",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 908.53,
+   "shot_dur": 1.63,
+   "word_at": "always",
+   "spoken": "always eats",
+   "spoken_wide": "the big guy in power always eats You try to hunt a",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 913.27,
+   "shot_dur": 4.73,
+   "word_at": "badly.",
+   "spoken": "badly. The setup is",
+   "spoken_wide": "a week and it goes badly. The setup is You're 30 m away in",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 923.2,
+   "shot_dur": 9.93,
+   "word_at": "then",
+   "spoken": "giraffe then 50 kmh.",
+   "spoken_wide": "So, you chase. The giraffe then 50 kmh. You max out",
+   "moment": [
+    "stat",
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 936.4,
+   "shot_dur": 13.2,
+   "word_at": "away.",
+   "spoken": "away. So",
+   "spoken_wide": "giraffe is already 300 m away. So a limit that you didn't know you",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 938.5,
+   "shot_dur": 2.1,
+   "word_at": "you",
+   "spoken": "know you Speed.",
+   "spoken_wide": "So a limit that you didn't know you Speed. In Hell Creek, you ambush",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 939.3,
+   "shot_dur": 0.8,
+   "word_at": "In",
+   "spoken": "Speed. In Hell Creek,",
+   "spoken_wide": "a limit that you didn't know you Speed. In Hell Creek, you ambush 10 m",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 942.53,
+   "shot_dur": 3.23,
+   "word_at": "forest.",
+   "spoken": "forest. Here, prey",
+   "spoken_wide": "10 m in dense forest. Here, prey spot you from 500 m",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 952.53,
+   "shot_dur": 10.0,
+   "word_at": "of",
+   "spoken": "of which is that it weighs",
+   "spoken_wide": "gives you a different kind of which is that it weighs 2500 kg",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 957.23,
+   "shot_dur": 4.7,
+   "word_at": "when",
+   "spoken": "And when it you,",
+   "spoken_wide": "a forward- facing horn. And when it you, it charges reflexively",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 959.7,
+   "shot_dur": 2.47,
+   "word_at": "reflexively",
+   "spoken": "rhinos",
+   "spoken_wide": "you, it charges reflexively rhinos have terrible eyesight",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 960.77,
+   "shot_dur": 1.07,
+   "word_at": "rhinos",
+   "spoken": "rhinos have terrible",
+   "spoken_wide": "reflexively rhinos have terrible eyesight honestly",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 971.0,
+   "shot_dur": 10.23,
+   "word_at": "quarters.",
+   "spoken": "quarters. you bite",
+   "spoken_wide": "down hard on its hind quarters. you bite its butt. The bite crushes",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 971.97,
+   "shot_dur": 0.97,
+   "word_at": "its",
+   "spoken": "you bite its butt. The",
+   "spoken_wide": "its hind quarters. you bite its butt. The bite crushes bone,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 972.5,
+   "shot_dur": 0.53,
+   "word_at": "The",
+   "spoken": "its butt. The bite crushes",
+   "spoken_wide": "quarters. you bite its butt. The bite crushes bone, severs",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 977.3,
+   "shot_dur": 4.8,
+   "word_at": "The",
+   "spoken": "artery. The rhino",
+   "spoken_wide": "and cuts the femoral artery. The rhino down in 30 seconds",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 981.53,
+   "shot_dur": 4.23,
+   "word_at": "shock.",
+   "spoken": "shock. But here's what's",
+   "spoken_wide": "from blood loss shock. But here's what's happened those 30 seconds.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 988.47,
+   "shot_dur": 6.93,
+   "word_at": "left",
+   "spoken": "allow opening",
+   "spoken_wide": "It horn grazed your left allow opening a shallow cut,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 991.93,
+   "shot_dur": 3.47,
+   "word_at": "long.",
+   "spoken": "long. It's not deep.",
+   "spoken_wide": "cut, 6 in long. It's not deep. It's bleeding,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 996.47,
+   "shot_dur": 4.53,
+   "word_at": "first.",
+   "spoken": "first. Then",
+   "spoken_wide": "and you don't even about it at first. Then the flies Within",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 998.57,
+   "shot_dur": 2.1,
+   "word_at": "Within",
+   "spoken": "Within an hour,",
+   "spoken_wide": "Then the flies Within an hour, there are dozens",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1009.23,
+   "shot_dur": 10.67,
+   "word_at": "50",
+   "spoken": "Animals can",
+   "spoken_wide": "before you get within 50 Animals can see the swarm from of",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1012.23,
+   "shot_dur": 3.0,
+   "word_at": "out,",
+   "spoken": "out, and they bolt",
+   "spoken_wide": "the swarm from of meters out, and they bolt you're in range, and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1014.33,
+   "shot_dur": 2.1,
+   "word_at": "and",
+   "spoken": "range, and your success",
+   "spoken_wide": "and they bolt you're in range, and your success drops to almost nothing.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1017.0,
+   "shot_dur": 2.67,
+   "word_at": "You",
+   "spoken": "nothing. You try the",
+   "spoken_wide": "drops to almost nothing. You try the wound with mud, which",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1020.63,
+   "shot_dur": 3.63,
+   "word_at": "before",
+   "spoken": "an hour before the flies",
+   "spoken_wide": "mud, which works maybe an hour before the flies find again. You try hunting",
+   "moment": [
+    "stat",
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1022.27,
+   "shot_dur": 1.63,
+   "word_at": "again.",
+   "spoken": "again. You try hunting at",
+   "spoken_wide": "hour before the flies find again. You try hunting at night when flies are less active,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1028.93,
+   "shot_dur": 6.67,
+   "word_at": "light.",
+   "spoken": "low light. day six,",
+   "spoken_wide": "still how to navigate in low light. day six, you're starving, having",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1030.43,
+   "shot_dur": 1.5,
+   "word_at": "starving,",
+   "spoken": "you're starving, having",
+   "spoken_wide": "low light. day six, you're starving, having through your fat reserves,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1034.4,
+   "shot_dur": 3.97,
+   "word_at": "because",
+   "spoken": "catch because smell",
+   "spoken_wide": "animals you can't catch because smell the wound or see the flies,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1038.83,
+   "shot_dur": 4.43,
+   "word_at": "lucky.",
+   "spoken": "you get lucky. find a water",
+   "spoken_wide": "both. On day seven, you get lucky. find a water buffalo stuck in mud",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1042.43,
+   "shot_dur": 3.6,
+   "word_at": "hole,",
+   "spoken": "water hole, exhausted",
+   "spoken_wide": "stuck in mud a drying water hole, exhausted from to pull itself free.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1044.87,
+   "shot_dur": 2.43,
+   "word_at": "free.",
+   "spoken": "free. It can't",
+   "spoken_wide": "from to pull itself free. It can't You can barely walk, and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1045.83,
+   "shot_dur": 0.97,
+   "word_at": "can't",
+   "spoken": "can't You can barely",
+   "spoken_wide": "pull itself free. It can't You can barely walk, and both of are in bad",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1048.37,
+   "shot_dur": 2.53,
+   "word_at": "shape,",
+   "spoken": "in bad shape, but you're the",
+   "spoken_wide": "barely walk, and both of are in bad shape, but you're the one the teeth, so you win.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1050.0,
+   "shot_dur": 1.63,
+   "word_at": "teeth,",
+   "spoken": "the teeth, so you win.",
+   "spoken_wide": "bad shape, but you're the one the teeth, so you win. The meal you another week,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1050.87,
+   "shot_dur": 0.87,
+   "word_at": "win.",
+   "spoken": "you win. The meal",
+   "spoken_wide": "the one the teeth, so you win. The meal you another week, while the wound",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1052.33,
+   "shot_dur": 1.47,
+   "word_at": "while",
+   "spoken": "another week, while the wound",
+   "spoken_wide": "you win. The meal you another week, while the wound closes, and the flies",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1052.77,
+   "shot_dur": 0.43,
+   "word_at": "wound",
+   "spoken": "week, while the wound",
+   "spoken_wide": "The meal you another week, while the wound closes, and the flies lose",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1053.13,
+   "shot_dur": 0.37,
+   "word_at": "wound",
+   "spoken": "the wound closes,",
+   "spoken_wide": "meal you another week, while the wound closes, and the flies lose",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1053.37,
+   "shot_dur": 0.23,
+   "word_at": "wound",
+   "spoken": "wound closes, and",
+   "spoken_wide": "you another week, while the wound closes, and the flies lose",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1053.5,
+   "shot_dur": 0.13,
+   "word_at": "wound",
+   "spoken": "closes, and the",
+   "spoken_wide": "you another week, while the wound closes, and the flies lose",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1053.8,
+   "shot_dur": 0.3,
+   "word_at": "closes,",
+   "spoken": "closes, and the flies",
+   "spoken_wide": "you another week, while the wound closes, and the flies lose And",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1054.3,
+   "shot_dur": 0.5,
+   "word_at": "the",
+   "spoken": "and the flies lose",
+   "spoken_wide": "while the wound closes, and the flies lose And that's when",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1055.87,
+   "shot_dur": 1.57,
+   "word_at": "lose",
+   "spoken": "And that's when",
+   "spoken_wide": "and the flies lose And that's when something Survival",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1057.7,
+   "shot_dur": 1.83,
+   "word_at": "Survival",
+   "spoken": "Survival here",
+   "spoken_wide": "And that's when something Survival here isn't just about strong.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1060.2,
+   "shot_dur": 2.5,
+   "word_at": "strong.",
+   "spoken": "strong. It's about not",
+   "spoken_wide": "here isn't just about strong. It's about not having that environment",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1063.57,
+   "shot_dur": 3.37,
+   "word_at": "exploit.",
+   "spoken": "exploit. everything",
+   "spoken_wide": "that environment can exploit. everything here is looking for",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1066.53,
+   "shot_dur": 2.97,
+   "word_at": "for",
+   "spoken": "The problem",
+   "spoken_wide": "here is looking for The problem is that you're You're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1071.93,
+   "shot_dur": 5.4,
+   "word_at": "impossible.",
+   "spoken": "But",
+   "spoken_wide": "in this is almost impossible. But is not optional.",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1074.33,
+   "shot_dur": 2.4,
+   "word_at": "optional.",
+   "spoken": "optional. So you",
+   "spoken_wide": "is not optional. So you wait 2 days. You stay",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1079.33,
+   "shot_dur": 5.0,
+   "word_at": "go,",
+   "spoken": "and go, looking",
+   "spoken_wide": "hole animals come and go, looking anything vulnerable. And",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1081.27,
+   "shot_dur": 1.93,
+   "word_at": "vulnerable.",
+   "spoken": "vulnerable. And then you",
+   "spoken_wide": "looking anything vulnerable. And then you it. A giraffe, maybe",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1084.7,
+   "shot_dur": 3.43,
+   "word_at": "kg,",
+   "spoken": "kg, limping",
+   "spoken_wide": "giraffe, maybe 900 kg, limping on its front left leg.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1089.73,
+   "shot_dur": 5.03,
+   "word_at": "stepped",
+   "spoken": "stepped But it's struggling",
+   "spoken_wide": "kicked by another giraffe or stepped But it's struggling and it's And when it",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1091.57,
+   "shot_dur": 1.83,
+   "word_at": "And",
+   "spoken": "it's And when it lowers",
+   "spoken_wide": "But it's struggling and it's And when it lowers its head to spreading its",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1096.53,
+   "shot_dur": 4.97,
+   "word_at": "crouch,",
+   "spoken": "crouch, you move.",
+   "spoken_wide": "wide and awkward giraffe crouch, you move. 40 m away when you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1103.07,
+   "shot_dur": 6.53,
+   "word_at": "right",
+   "spoken": "right But the giraffe",
+   "spoken_wide": "15 km/h at most right But the giraffe is hurt and it accelerate",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1107.57,
+   "shot_dur": 4.5,
+   "word_at": "the",
+   "spoken": "the with your jaws",
+   "spoken_wide": "fast. So you close the with your jaws clamping onto neck from the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1110.6,
+   "shot_dur": 3.03,
+   "word_at": "side",
+   "spoken": "side and your weight",
+   "spoken_wide": "clamping onto neck from the side and your weight the bite force brings it",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1113.4,
+   "shot_dur": 2.8,
+   "word_at": "down.",
+   "spoken": "it down. The tries",
+   "spoken_wide": "the bite force brings it down. The tries to kick, but the angle is",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1118.67,
+   "shot_dur": 5.27,
+   "word_at": "vertebrae.",
+   "spoken": "vertebrae. It's over",
+   "spoken_wide": "jaws are already through vertebrae. It's over in seconds.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1120.77,
+   "shot_dur": 2.1,
+   "word_at": "seconds.",
+   "spoken": "seconds. You've secured",
+   "spoken_wide": "It's over in seconds. You've secured maybe 400 kg",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1123.67,
+   "shot_dur": 2.9,
+   "word_at": "meat",
+   "spoken": "meat from an animal",
+   "spoken_wide": "maybe 400 kg meat from an animal that couldn't It wasn't",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1125.4,
+   "shot_dur": 1.73,
+   "word_at": "couldn't",
+   "spoken": "couldn't It wasn't proud.",
+   "spoken_wide": "meat from an animal that couldn't It wasn't proud. It wasn't",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1126.5,
+   "shot_dur": 1.1,
+   "word_at": "proud.",
+   "spoken": "proud. It wasn't",
+   "spoken_wide": "that couldn't It wasn't proud. It wasn't It was just a desperate",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1127.67,
+   "shot_dur": 1.17,
+   "word_at": "wasn't",
+   "spoken": "It was just a desperate",
+   "spoken_wide": "wasn't proud. It wasn't It was just a desperate move, you got lucky.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1132.17,
+   "shot_dur": 4.5,
+   "word_at": "week.",
+   "spoken": "next week. And then",
+   "spoken_wide": "You feed heavily over next week. And then rest. Within 10",
+   "moment": [
+    "stat",
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1133.4,
+   "shot_dur": 1.23,
+   "word_at": "rest.",
+   "spoken": "rest. Within 10",
+   "spoken_wide": "over next week. And then rest. Within 10 you've regained most of the",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1136.4,
+   "shot_dur": 3.0,
+   "word_at": "lost",
+   "spoken": "You survived",
+   "spoken_wide": "you've regained most of the lost You survived another close call, you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1143.8,
+   "shot_dur": 7.4,
+   "word_at": "back",
+   "spoken": "back They're the ones",
+   "spoken_wide": "the ones that you can bite back They're the ones you can't even see",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1146.0,
+   "shot_dur": 2.2,
+   "word_at": "see",
+   "spoken": "18 months",
+   "spoken_wide": "They're the ones you can't even see 18 months pass. You hunt. You",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1147.7,
+   "shot_dur": 1.7,
+   "word_at": "hunt.",
+   "spoken": "You hunt. You",
+   "spoken_wide": "18 months pass. You hunt. You kills. You figure out",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1149.3,
+   "shot_dur": 1.6,
+   "word_at": "You",
+   "spoken": "You figure out the",
+   "spoken_wide": "You hunt. You kills. You figure out the seasonal of prey",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1152.2,
+   "shot_dur": 2.9,
+   "word_at": "migration.",
+   "spoken": "migration. You survive",
+   "spoken_wide": "seasonal of prey migration. You survive dry season by staying near",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1154.87,
+   "shot_dur": 2.67,
+   "word_at": "permanent",
+   "spoken": "near permanent where",
+   "spoken_wide": "dry season by staying near permanent where buffalo and elephants",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1157.47,
+   "shot_dur": 2.6,
+   "word_at": "elephants",
+   "spoken": "You survive a",
+   "spoken_wide": "where buffalo and elephants You survive a wet season by wilderbeast",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1160.73,
+   "shot_dur": 3.27,
+   "word_at": "north.",
+   "spoken": "north. You",
+   "spoken_wide": "by wilderbeast herds north. You By the time that you're 4 years",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1165.4,
+   "shot_dur": 4.67,
+   "word_at": "kg.",
+   "spoken": "That's roughly",
+   "spoken_wide": "weigh 7,500 kg. That's roughly tons.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1167.63,
+   "shot_dur": 2.23,
+   "word_at": "tons.",
+   "spoken": "tons. You're 12 m",
+   "spoken_wide": "That's roughly tons. You're 12 m long, 4 m",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1174.33,
+   "shot_dur": 6.7,
+   "word_at": "50.",
+   "spoken": "of 50. avoid",
+   "spoken_wide": "in Africa by a factor of 50. avoid you. Hyenas wait for",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1175.53,
+   "shot_dur": 1.2,
+   "word_at": "you.",
+   "spoken": "you. Hyenas",
+   "spoken_wide": "factor of 50. avoid you. Hyenas wait for you. elephants now",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1177.0,
+   "shot_dur": 1.47,
+   "word_at": "you.",
+   "spoken": "for you. elephants now",
+   "spoken_wide": "you. Hyenas wait for you. elephants now alter their roots when know you're",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1180.17,
+   "shot_dur": 3.17,
+   "word_at": "area.",
+   "spoken": "an area. You have",
+   "spoken_wide": "their roots when know you're in an area. You have the behavior of thousands of",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1185.03,
+   "shot_dur": 4.87,
+   "word_at": "existing.",
+   "spoken": "existing. Nothing",
+   "spoken_wide": "simply by just existing. Nothing you. You hunt everything.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1189.33,
+   "shot_dur": 4.3,
+   "word_at": "top,",
+   "spoken": "top, but there are no",
+   "spoken_wide": "You've the top, but there are no There are no other tyrannosaurs,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1190.63,
+   "shot_dur": 1.3,
+   "word_at": "no",
+   "spoken": "There are no",
+   "spoken_wide": "the top, but there are no There are no other tyrannosaurs, pack,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1194.03,
+   "shot_dur": 3.4,
+   "word_at": "You",
+   "spoken": "mate. You are the only",
+   "spoken_wide": "pack, no mate. You are the only one your kind in",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1209.87,
+   "shot_dur": 15.83,
+   "word_at": "it",
+   "spoken": "playing it alone.",
+   "spoken_wide": "now get to just keep playing it alone. what you don't realize",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1210.53,
+   "shot_dur": 0.67,
+   "word_at": "alone.",
+   "spoken": "alone. what you don't",
+   "spoken_wide": "get to just keep playing it alone. what you don't realize is that being",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1212.27,
+   "shot_dur": 1.73,
+   "word_at": "is",
+   "spoken": "is that being",
+   "spoken_wide": "what you don't realize is that being is about to be",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1215.67,
+   "shot_dur": 3.4,
+   "word_at": "downfall.",
+   "spoken": "It's 6",
+   "spoken_wide": "is about to be your downfall. It's 6 months of absolute",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1226.3,
+   "shot_dur": 10.63,
+   "word_at": "side.",
+   "spoken": "your side. herds",
+   "spoken_wide": "and the only one on your side. herds have now started at night",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1229.6,
+   "shot_dur": 3.3,
+   "word_at": "which",
+   "spoken": "which into your",
+   "spoken_wide": "started at night more often, which into your hunting window because with",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1233.83,
+   "shot_dur": 4.23,
+   "word_at": "to",
+   "spoken": "light to hunt effectively.",
+   "spoken_wide": "with good vision, you still need light to hunt effectively. Lines their patterns,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1234.53,
+   "shot_dur": 0.7,
+   "word_at": "effectively.",
+   "spoken": "hunt effectively. Lines",
+   "spoken_wide": "you still need light to hunt effectively. Lines their patterns, too, taking",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1238.73,
+   "shot_dur": 4.2,
+   "word_at": "And",
+   "spoken": "go to. And when do",
+   "spoken_wide": "taking kills areas that you don't go to. And when do show up, they've already eaten of",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1241.93,
+   "shot_dur": 3.2,
+   "word_at": "parts.",
+   "spoken": "parts. Buffalo herds",
+   "spoken_wide": "they've already eaten of the good parts. Buffalo herds their centuries and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1244.23,
+   "shot_dur": 2.3,
+   "word_at": "and",
+   "spoken": "and they rotate",
+   "spoken_wide": "Buffalo herds their centuries and they rotate watches for threats while the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1250.63,
+   "shot_dur": 6.4,
+   "word_at": "pointless.",
+   "spoken": "What",
+   "spoken_wide": "make chasing them pointless. What 6 months ago, the water hole",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1256.47,
+   "shot_dur": 5.83,
+   "word_at": "because",
+   "spoken": "because animals approach",
+   "spoken_wide": "fails 70% of the because animals approach water more",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1263.67,
+   "shot_dur": 7.2,
+   "word_at": "kill,",
+   "spoken": "kill, which burning",
+   "spoken_wide": "to farther for each kill, which burning more energy, which means",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1268.47,
+   "shot_dur": 4.8,
+   "word_at": "tighter.",
+   "spoken": "tighter. Then",
+   "spoken_wide": "food and the math is tighter. Then there's the tick You've",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1270.47,
+   "shot_dur": 2.0,
+   "word_at": "tick",
+   "spoken": "You've accumulated",
+   "spoken_wide": "Then there's the tick You've accumulated maybe 60 on",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1273.27,
+   "shot_dur": 2.8,
+   "word_at": "body,",
+   "spoken": "your body, clustering around",
+   "spoken_wide": "maybe 60 on your body, clustering around ears, in the soft areas",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1280.03,
+   "shot_dur": 6.77,
+   "word_at": "Ticks",
+   "spoken": "Ticks bite reptiles",
+   "spoken_wide": "and they itch Ticks bite reptiles just Turns",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1284.8,
+   "shot_dur": 4.77,
+   "word_at": "scratch.",
+   "spoken": "scratch. But an oxecker",
+   "spoken_wide": "you can't reach most of to scratch. But an oxecker bird on your back one",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1288.33,
+   "shot_dur": 3.53,
+   "word_at": "resting.",
+   "spoken": "resting. It's testing",
+   "spoken_wide": "on your back one morning while resting. It's testing if you're and it",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1290.87,
+   "shot_dur": 2.53,
+   "word_at": "starts",
+   "spoken": "it starts eating the",
+   "spoken_wide": "testing if you're and it starts eating the ticks. You",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1295.97,
+   "shot_dur": 5.1,
+   "word_at": "you.",
+   "spoken": "scared of you. But within a",
+   "spoken_wide": "going on? Everything be scared of you. But within a you have five oxecker",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1301.87,
+   "shot_dur": 5.9,
+   "word_at": "regularly.",
+   "spoken": "regularly. out that",
+   "spoken_wide": "and clean you regularly. out that you've entered a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1308.9,
+   "shot_dur": 7.03,
+   "word_at": "after",
+   "spoken": "after But four male lions",
+   "spoken_wide": "So maybe you're not alone after But four male lions who've been kicked",
+   "moment": [
+    "stat",
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1312.93,
+   "shot_dur": 4.03,
+   "word_at": "are",
+   "spoken": "start trailing",
+   "spoken_wide": "kicked from their pride and are start trailing you in early dry",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1315.33,
+   "shot_dur": 2.4,
+   "word_at": "dry",
+   "spoken": "They're desperate and",
+   "spoken_wide": "trailing you in early dry They're desperate and they something out, which",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1317.37,
+   "shot_dur": 2.03,
+   "word_at": "out,",
+   "spoken": "something out, which is that you",
+   "spoken_wide": "They're desperate and they something out, which is that you kills they can't.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1319.57,
+   "shot_dur": 2.2,
+   "word_at": "can't.",
+   "spoken": "can't. And if they wait",
+   "spoken_wide": "which is that you kills they can't. And if they wait you're done feeding and walk away",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1325.37,
+   "shot_dur": 5.8,
+   "word_at": "Over",
+   "spoken": "notice. Over a",
+   "spoken_wide": "and grab left before you notice. Over a they steal from you three times.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1327.8,
+   "shot_dur": 2.43,
+   "word_at": "times.",
+   "spoken": "times. being robbed",
+   "spoken_wide": "a they steal from you three times. being robbed by animals that 1/50th",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1331.6,
+   "shot_dur": 3.8,
+   "word_at": "do.",
+   "spoken": "you do. It's not a",
+   "spoken_wide": "1/50th of what you do. It's not a but it is annoying.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1332.9,
+   "shot_dur": 1.3,
+   "word_at": "a",
+   "spoken": "a but it is annoying.",
+   "spoken_wide": "of what you do. It's not a but it is annoying. Then the",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1333.9,
+   "shot_dur": 1.0,
+   "word_at": "annoying.",
+   "spoken": "is annoying. Then the",
+   "spoken_wide": "It's not a but it is annoying. Then the migration starts,",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1336.23,
+   "shot_dur": 2.33,
+   "word_at": "starts,",
+   "spoken": "starts, which is",
+   "spoken_wide": "Then the migration starts, which is million animals",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1339.7,
+   "shot_dur": 3.47,
+   "word_at": "And",
+   "spoken": "north. And at this looks",
+   "spoken_wide": "million animals moving north. And at this looks like the best hunting",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1344.33,
+   "shot_dur": 4.63,
+   "word_at": "prey",
+   "spoken": "Stragglers are",
+   "spoken_wide": "seen. It's easy prey Stragglers are falling and juveniles",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1348.07,
+   "shot_dur": 3.73,
+   "word_at": "mothers.",
+   "spoken": "mothers. But there's a",
+   "spoken_wide": "juveniles are wandering from mothers. But there's a problem. not the only",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1349.4,
+   "shot_dur": 1.33,
+   "word_at": "problem.",
+   "spoken": "a problem. not the",
+   "spoken_wide": "mothers. But there's a problem. not the only predator who",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1355.2,
+   "shot_dur": 5.8,
+   "word_at": "migration.",
+   "spoken": "Hyena clans",
+   "spoken_wide": "region on the migration. Hyena clans in size. Cheetahs",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1357.53,
+   "shot_dur": 2.33,
+   "word_at": "Cheetahs",
+   "spoken": "Cheetahs appear from",
+   "spoken_wide": "clans in size. Cheetahs appear from And you're so big",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1358.7,
+   "shot_dur": 1.17,
+   "word_at": "from",
+   "spoken": "from And you're so",
+   "spoken_wide": "size. Cheetahs appear from And you're so big and so that when",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1362.33,
+   "shot_dur": 3.63,
+   "word_at": "kill",
+   "spoken": "kill every",
+   "spoken_wide": "that when you approach a kill every other predator scatters, but",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1364.3,
+   "shot_dur": 1.97,
+   "word_at": "scatters,",
+   "spoken": "scatters, but prey also",
+   "spoken_wide": "every other predator scatters, but prey also sees you coming from a",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1367.1,
+   "shot_dur": 2.8,
+   "word_at": "away.",
+   "spoken": "away. In the chaos",
+   "spoken_wide": "also sees you coming from a away. In the chaos of the you'd",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1370.53,
+   "shot_dur": 3.43,
+   "word_at": "sneak",
+   "spoken": "sneak But there's no cover,",
+   "spoken_wide": "you'd think you could sneak But there's no cover, and your size stealth",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1370.97,
+   "shot_dur": 0.43,
+   "word_at": "there's",
+   "spoken": "But there's no cover, and",
+   "spoken_wide": "you'd think you could sneak But there's no cover, and your size stealth impossible.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1371.7,
+   "shot_dur": 0.73,
+   "word_at": "and",
+   "spoken": "no cover, and your size",
+   "spoken_wide": "you could sneak But there's no cover, and your size stealth impossible. You",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1372.97,
+   "shot_dur": 1.27,
+   "word_at": "stealth",
+   "spoken": "stealth impossible.",
+   "spoken_wide": "there's no cover, and your size stealth impossible. You catch but not",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1373.7,
+   "shot_dur": 0.73,
+   "word_at": "impossible.",
+   "spoken": "impossible. You catch",
+   "spoken_wide": "and your size stealth impossible. You catch but not at the rate that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1376.93,
+   "shot_dur": 3.23,
+   "word_at": "you",
+   "spoken": "It's maybe one",
+   "spoken_wide": "not at the rate that you It's maybe one kill every four instead",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1379.83,
+   "shot_dur": 2.9,
+   "word_at": "two.",
+   "spoken": "of every two. You gain",
+   "spoken_wide": "kill every four instead of every two. You gain some maybe 300",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1381.43,
+   "shot_dur": 1.6,
+   "word_at": "some",
+   "spoken": "maybe 300",
+   "spoken_wide": "of every two. You gain some maybe 300 kg, but it's not the",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1384.7,
+   "shot_dur": 3.27,
+   "word_at": "needed.",
+   "spoken": "you needed. And then",
+   "spoken_wide": "but it's not the that you needed. And then after 6 the herds",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1393.53,
+   "shot_dur": 8.83,
+   "word_at": "coming",
+   "spoken": "coming your size",
+   "spoken_wide": "that you can't see threats coming your size is a liability in tight",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1401.37,
+   "shot_dur": 7.83,
+   "word_at": "resident",
+   "spoken": "and the occasional",
+   "spoken_wide": "you're back to hunting resident and the occasional giraffe, and success rate",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1402.73,
+   "shot_dur": 1.37,
+   "word_at": "and",
+   "spoken": "giraffe, and success",
+   "spoken_wide": "and the occasional giraffe, and success rate falls to 30%.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1405.2,
+   "shot_dur": 2.47,
+   "word_at": "You're",
+   "spoken": "You're more",
+   "spoken_wide": "success rate falls to 30%. You're more calories hunting than you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1407.5,
+   "shot_dur": 2.3,
+   "word_at": "you",
+   "spoken": "than you gaining from kills.",
+   "spoken_wide": "more calories hunting than you gaining from kills. And this is when",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1408.8,
+   "shot_dur": 1.3,
+   "word_at": "kills.",
+   "spoken": "kills. And this is",
+   "spoken_wide": "than you gaining from kills. And this is when make the tactical",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1413.17,
+   "shot_dur": 4.37,
+   "word_at": "starving.",
+   "spoken": "starving. And you try",
+   "spoken_wide": "error. You're You're starving. And you try take a juvenile elephant from",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1417.1,
+   "shot_dur": 3.93,
+   "word_at": "daylight.",
+   "spoken": "daylight. The matriarch",
+   "spoken_wide": "from a herd broad daylight. The matriarch sees coming from 80 m",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1422.6,
+   "shot_dur": 5.5,
+   "word_at": "your",
+   "spoken": "with your hits you at",
+   "spoken_wide": "this time. She's done with your hits you at full speed while focused",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1425.57,
+   "shot_dur": 2.97,
+   "word_at": "calf.",
+   "spoken": "on the calf. That's 5,000",
+   "spoken_wide": "full speed while focused on the calf. That's 5,000 moving at 25",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1426.83,
+   "shot_dur": 1.27,
+   "word_at": "5,000",
+   "spoken": "moving at",
+   "spoken_wide": "on the calf. That's 5,000 moving at 25 kmh.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1429.17,
+   "shot_dur": 2.33,
+   "word_at": "kmh.",
+   "spoken": "And she",
+   "spoken_wide": "moving at 25 kmh. And she catches left leg.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1433.83,
+   "shot_dur": 4.67,
+   "word_at": "crack.",
+   "spoken": "crack. not a full",
+   "spoken_wide": "And you hear the crack. not a full break, but it's a in your",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1434.4,
+   "shot_dur": 0.57,
+   "word_at": "full",
+   "spoken": "not a full break, but it's",
+   "spoken_wide": "hear the crack. not a full break, but it's a in your left femur.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1434.5,
+   "shot_dur": 0.1,
+   "word_at": "full",
+   "spoken": "not a full break, but it's a",
+   "spoken_wide": "hear the crack. not a full break, but it's a in your left femur.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1436.83,
+   "shot_dur": 2.33,
+   "word_at": "femur.",
+   "spoken": "femur. and you",
+   "spoken_wide": "break, but it's a in your left femur. and you out and bite her shoulder, ripping",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1442.57,
+   "shot_dur": 5.73,
+   "word_at": "done.",
+   "spoken": "is done. Your left leg",
+   "spoken_wide": "off trumpeting, but damage is done. Your left leg now 20%",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1447.23,
+   "shot_dur": 4.67,
+   "word_at": "Your",
+   "spoken": "Your top speed",
+   "spoken_wide": "weight and every step Your top speed drops from 35 km/h",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1450.77,
+   "shot_dur": 3.53,
+   "word_at": "20.",
+   "spoken": "maybe 20. You can't chase",
+   "spoken_wide": "km/h maybe 20. You can't chase anymore. can barely ambush.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1453.4,
+   "shot_dur": 2.63,
+   "word_at": "ambush.",
+   "spoken": "ambush. For most",
+   "spoken_wide": "chase anymore. can barely ambush. For most this is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1456.73,
+   "shot_dur": 3.33,
+   "word_at": "sentence,",
+   "spoken": "sentence, and don't",
+   "spoken_wide": "this is a death sentence, and don't know if you're going to pull",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1459.07,
+   "shot_dur": 2.33,
+   "word_at": "pull",
+   "spoken": "to pull You try to adapt.",
+   "spoken_wide": "don't know if you're going to pull You try to adapt. Late one you wait into",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1459.93,
+   "shot_dur": 0.87,
+   "word_at": "adapt.",
+   "spoken": "try to adapt. Late one",
+   "spoken_wide": "if you're going to pull You try to adapt. Late one you wait into river shallows",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1464.2,
+   "shot_dur": 4.27,
+   "word_at": "resting,",
+   "spoken": "maybe you",
+   "spoken_wide": "a pod of hippos is resting, maybe you can grab a calf from edges",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1468.17,
+   "shot_dur": 3.97,
+   "word_at": "adults",
+   "spoken": "But you're wrong.",
+   "spoken_wide": "edges and retreat before the adults But you're wrong. Three adult converge",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1469.03,
+   "shot_dur": 0.87,
+   "word_at": "wrong.",
+   "spoken": "you're wrong. Three adult",
+   "spoken_wide": "before the adults But you're wrong. Three adult converge on you within seconds.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1472.77,
+   "shot_dur": 3.73,
+   "word_at": "and",
+   "spoken": "the front and one from behind.",
+   "spoken_wide": "you within seconds. from the front and one from behind. clamps onto your",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1474.7,
+   "shot_dur": 1.93,
+   "word_at": "clamps",
+   "spoken": "clamps onto your tail.",
+   "spoken_wide": "and one from behind. clamps onto your tail. Another goes your already injured",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1480.47,
+   "shot_dur": 5.77,
+   "word_at": "your",
+   "spoken": "You release whatever",
+   "spoken_wide": "charges directly at your You release whatever you were to grab and thrash",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1485.73,
+   "shot_dur": 5.27,
+   "word_at": "tail.",
+   "spoken": "on your tail. Your",
+   "spoken_wide": "at the hippo on your tail. Your connect and it lets go, but",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1488.03,
+   "shot_dur": 2.3,
+   "word_at": "but",
+   "spoken": "go, but the one your",
+   "spoken_wide": "Your connect and it lets go, but the one your leg has torn muscle and left",
+   "moment": [
+    "stat",
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1492.87,
+   "shot_dur": 4.83,
+   "word_at": "heavily.",
+   "spoken": "heavily. retreat to",
+   "spoken_wide": "puncture wounds that bleed heavily. retreat to shore, stumbling, the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1496.97,
+   "shot_dur": 4.1,
+   "word_at": "waterline.",
+   "spoken": "waterline. made their",
+   "spoken_wide": "the don't pursue past the waterline. made their point. Now you have a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1503.83,
+   "shot_dur": 6.87,
+   "word_at": "bite",
+   "spoken": "Nothing is infected,",
+   "spoken_wide": "leg and multiple bite Nothing is infected, nothing is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1506.73,
+   "shot_dur": 2.9,
+   "word_at": "you",
+   "spoken": "but you are accumulating",
+   "spoken_wide": "nothing is but you are accumulating damage than you can",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1509.57,
+   "shot_dur": 2.83,
+   "word_at": "it.",
+   "spoken": "can heal it. You're apart",
+   "spoken_wide": "damage than you can heal it. You're apart in pieces.",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1511.83,
+   "shot_dur": 2.27,
+   "word_at": "pieces.",
+   "spoken": "pieces. A week later,",
+   "spoken_wide": "apart in pieces. A week later, find a dead zebra. It was",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1513.97,
+   "shot_dur": 2.13,
+   "word_at": "It",
+   "spoken": "zebra. It was probably",
+   "spoken_wide": "A week later, find a dead zebra. It was probably and it's been sitting for 2",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1518.37,
+   "shot_dur": 4.4,
+   "word_at": "turn,",
+   "spoken": "turn, you chase off",
+   "spoken_wide": "So, the meat is starting to turn, you chase off the hyenas and eat that's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1521.4,
+   "shot_dur": 3.03,
+   "word_at": "left.",
+   "spoken": "left. It's maybe 30",
+   "spoken_wide": "hyenas and eat that's left. It's maybe 30 including the maggots.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1525.77,
+   "shot_dur": 4.37,
+   "word_at": "Over",
+   "spoken": "this. Over the next month,",
+   "spoken_wide": "There is no in this. Over the next month, you to stabilize, but",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1529.43,
+   "shot_dur": 3.67,
+   "word_at": "anymore.",
+   "spoken": "anymore. You need maybe",
+   "spoken_wide": "but the math doesn't anymore. You need maybe 100 kg of per",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1533.37,
+   "shot_dur": 3.93,
+   "word_at": "weight,",
+   "spoken": "weight, you're only catching",
+   "spoken_wide": "of per week to maintain your weight, you're only catching prey once every",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1537.6,
+   "shot_dur": 4.23,
+   "word_at": "small.",
+   "spoken": "small. warthogs",
+   "spoken_wide": "weeks. And when you do, it's small. warthogs again from when you were a or",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1539.77,
+   "shot_dur": 2.17,
+   "word_at": "or",
+   "spoken": "were a or juvenile",
+   "spoken_wide": "warthogs again from when you were a or juvenile antelope that give you to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1543.57,
+   "shot_dur": 3.8,
+   "word_at": "most.",
+   "spoken": "at most. You're losing",
+   "spoken_wide": "to 30 kg at most. You're losing at 40 kg per",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1552.23,
+   "shot_dur": 8.67,
+   "word_at": "shutting",
+   "spoken": "So that gives",
+   "spoken_wide": "vital systems start shutting So that gives you 6 months",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1556.37,
+   "shot_dur": 4.13,
+   "word_at": "far.",
+   "spoken": "so far. The",
+   "spoken_wide": "and made it four so far. The migration returns in month",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1558.87,
+   "shot_dur": 2.5,
+   "word_at": "month",
+   "spoken": "month and you follow them",
+   "spoken_wide": "migration returns in month and you follow them north because have to limping",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1561.03,
+   "shot_dur": 2.17,
+   "word_at": "to",
+   "spoken": "have to limping along",
+   "spoken_wide": "and you follow them north because have to limping along behind herds can travel",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1566.87,
+   "shot_dur": 5.83,
+   "word_at": "15.",
+   "spoken": "15. You fall behind.",
+   "spoken_wide": "while you barely manage 15. You fall behind. herds get farther ahead",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1569.2,
+   "shot_dur": 2.33,
+   "word_at": "and",
+   "spoken": "farther ahead and you keep",
+   "spoken_wide": "fall behind. herds get farther ahead and you keep anyway because stopping",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1572.63,
+   "shot_dur": 3.43,
+   "word_at": "faster.",
+   "spoken": "faster. On day",
+   "spoken_wide": "because stopping means faster. On day 112 after the",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1575.93,
+   "shot_dur": 3.3,
+   "word_at": "you're",
+   "spoken": "you're near a river",
+   "spoken_wide": "after the leg you're near a river crossing wilderbeasts are",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1579.63,
+   "shot_dur": 3.7,
+   "word_at": "channel.",
+   "spoken": "channel. There are hundreds",
+   "spoken_wide": "are funneling through narrow channel. There are hundreds of churning up the water",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1583.3,
+   "shot_dur": 3.67,
+   "word_at": "chance.",
+   "spoken": "chance. A juvenile",
+   "spoken_wide": "up the water and you see chance. A juvenile wilderbeast at back of the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1587.8,
+   "shot_dur": 4.5,
+   "word_at": "kg.",
+   "spoken": "struggling in",
+   "spoken_wide": "It's maybe 150 kg. struggling in the current so you in.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1589.17,
+   "shot_dur": 1.37,
+   "word_at": "current",
+   "spoken": "in the current so you in.",
+   "spoken_wide": "kg. struggling in the current so you in. The water is deeper than you",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1594.33,
+   "shot_dur": 5.17,
+   "word_at": "strong.",
+   "spoken": "strong. You lunge for",
+   "spoken_wide": "your chest and the is strong. You lunge for the and your jaws",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1598.07,
+   "shot_dur": 3.73,
+   "word_at": "quarters,",
+   "spoken": "quarters, but your broken",
+   "spoken_wide": "your jaws close on its quarters, but your broken leg can't purchase in",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1601.2,
+   "shot_dur": 3.13,
+   "word_at": "and",
+   "spoken": "below and the",
+   "spoken_wide": "can't purchase in the mud below and the pulls. You try to compensate",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1602.47,
+   "shot_dur": 1.27,
+   "word_at": "pulls.",
+   "spoken": "pulls. You try to compensate",
+   "spoken_wide": "the mud below and the pulls. You try to compensate your right leg, but",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1605.0,
+   "shot_dur": 2.53,
+   "word_at": "it's",
+   "spoken": "but it's not enough",
+   "spoken_wide": "compensate your right leg, but it's not enough the wilderbeast's thrashing",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1606.2,
+   "shot_dur": 1.2,
+   "word_at": "enough",
+   "spoken": "enough the wilderbeast's",
+   "spoken_wide": "leg, but it's not enough the wilderbeast's thrashing pulls off",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1609.3,
+   "shot_dur": 3.1,
+   "word_at": "balance.",
+   "spoken": "balance. You go under.",
+   "spoken_wide": "thrashing pulls off your balance. You go under. crossed rivers before.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1612.83,
+   "shot_dur": 3.53,
+   "word_at": "can",
+   "spoken": "but you're weak",
+   "spoken_wide": "rivers before. You can but you're weak and the leg won't right.",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1618.67,
+   "shot_dur": 5.83,
+   "word_at": "second",
+   "spoken": "a second the current",
+   "spoken_wide": "head breaks water for only a second the current pulls you back down.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1620.67,
+   "shot_dur": 2.0,
+   "word_at": "down.",
+   "spoken": "back down. thrash.",
+   "spoken_wide": "the current pulls you back down. thrash. Your lungs are burning. The",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1625.97,
+   "shot_dur": 5.3,
+   "word_at": "but",
+   "spoken": "air, but the current is",
+   "spoken_wide": "and you're just to reach air, but the current is you downstream and your",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1631.37,
+   "shot_dur": 5.4,
+   "word_at": "solid.",
+   "spoken": "solid. surface once",
+   "spoken_wide": "and water and nothing solid. surface once more, maybe 50 m",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1637.7,
+   "shot_dur": 6.33,
+   "word_at": "away.",
+   "spoken": "away. You try to swim",
+   "spoken_wide": "It's m away. You try to swim towards it, you're so",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1640.63,
+   "shot_dur": 2.93,
+   "word_at": "and",
+   "spoken": "tired and the current is",
+   "spoken_wide": "towards it, you're so tired and the current is here where the river narrows",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1643.27,
+   "shot_dur": 2.63,
+   "word_at": "narrows",
+   "spoken": "narrows and left leg",
+   "spoken_wide": "is here where the river narrows and left leg is useless weight and your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1646.77,
+   "shot_dur": 3.5,
+   "word_at": "enough.",
+   "spoken": "enough. And you go under",
+   "spoken_wide": "weight and your leg isn't enough. And you go under but this time you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1649.9,
+   "shot_dur": 3.13,
+   "word_at": "back",
+   "spoken": "come back The ecosystem",
+   "spoken_wide": "but this time you don't come back The ecosystem was patient with you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1653.0,
+   "shot_dur": 3.1,
+   "word_at": "years.",
+   "spoken": "years. It let you try.",
+   "spoken_wide": "patient with you four years. It let you try. It let hunt and scavenge",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1674.6,
+   "shot_dur": 21.6,
+   "word_at": "heal.",
+   "spoken": "Your body washes",
+   "spoken_wide": "legs that never were able to heal. Your body washes up 3 km",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1678.43,
+   "shot_dur": 3.83,
+   "word_at": "later.",
+   "spoken": "days later. Crocodiles eat",
+   "spoken_wide": "km 2 days later. Crocodiles eat of it within a week. Hyenas",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1680.27,
+   "shot_dur": 1.83,
+   "word_at": "week.",
+   "spoken": "it within a week. Hyenas",
+   "spoken_wide": "Crocodiles eat of it within a week. Hyenas crack bones. Vultures strip",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1690.47,
+   "shot_dur": 10.2,
+   "word_at": "move",
+   "spoken": "move You were 66",
+   "spoken_wide": "as it was always going to move You were 66 million years late. And",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  }
+ ]
+}

@@ -1,0 +1,3151 @@
+{
+ "summary": {
+  "name": "megalodon",
+  "duration_sec": 1120.7,
+  "n_cuts": 281,
+  "cuts_per_min": 15.0,
+  "shot_dur_median": 3.1,
+  "shot_dur_mean": 3.91,
+  "pct_shots_under_2s": 31.0,
+  "pct_shots_under_1s": 14.2,
+  "pct_shots_over_5s": 22.8,
+  "n_sfx_onsets": 5537,
+  "sfx_per_min": 296.4,
+  "sfx_on_cut_rate": 0.979,
+  "music_active_frac": 0.911,
+  "moment_at_cut_pct": {
+   "pause_boundary": 40.9,
+   "mid_phrase": 40.2,
+   "turn": 16.4,
+   "stat": 10.7,
+   "question": 3.6
+  },
+  "n_words": 3207
+ },
+ "cuts": [
+  {
+   "t": 5.57,
+   "shot_dur": 5.57,
+   "word_at": "ocean",
+   "spoken": "an ocean and has not seen",
+   "spoken_wide": "a baby shark is born an ocean and has not seen its kind three and a half",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 8.93,
+   "shot_dur": 3.37,
+   "word_at": "years.",
+   "spoken": "years. This good",
+   "spoken_wide": "three and a half million years. This good news for anyone because this",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 19.53,
+   "shot_dur": 10.6,
+   "word_at": "ever",
+   "spoken": "ever Within 20",
+   "spoken_wide": "predatory shark that has ever Within 20 years, it will need to the",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 20.77,
+   "shot_dur": 1.23,
+   "word_at": "it",
+   "spoken": "years, it will need to",
+   "spoken_wide": "has ever Within 20 years, it will need to the caloric equivalent of",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 23.87,
+   "shot_dur": 3.1,
+   "word_at": "whale",
+   "spoken": "whale just to survive",
+   "spoken_wide": "the caloric equivalent of a whale just to survive 1 month.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 24.13,
+   "shot_dur": 0.27,
+   "word_at": "just",
+   "spoken": "whale just to survive",
+   "spoken_wide": "equivalent of a whale just to survive 1 month. raises",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 25.77,
+   "shot_dur": 1.63,
+   "word_at": "month.",
+   "spoken": "1 month. raises",
+   "spoken_wide": "just to survive 1 month. raises an interesting question the",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 35.73,
+   "shot_dur": 9.97,
+   "word_at": "problems",
+   "spoken": "problems the fact that",
+   "spoken_wide": "you have more immediate problems the fact that you're a baby and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 39.37,
+   "shot_dur": 3.63,
+   "word_at": "eat",
+   "spoken": "to eat You were born",
+   "spoken_wide": "and everything wants to eat You were born on a Tuesday in a",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 46.17,
+   "shot_dur": 6.8,
+   "word_at": "nowhere",
+   "spoken": "mother is nowhere to found.",
+   "spoken_wide": "And the first thing you is that your mother is nowhere to found. She hates you. You're an",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 46.93,
+   "shot_dur": 0.77,
+   "word_at": "found.",
+   "spoken": "to found. She hates you.",
+   "spoken_wide": "is that your mother is nowhere to found. She hates you. You're an now, which is completely",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 48.7,
+   "shot_dur": 1.77,
+   "word_at": "which",
+   "spoken": "now, which is completely",
+   "spoken_wide": "found. She hates you. You're an now, which is completely normal just like my dad, sharks",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 59.7,
+   "shot_dur": 11.0,
+   "word_at": "human,",
+   "spoken": "grown human, and you weigh",
+   "spoken_wide": "roughly the size of a grown human, and you weigh about lb.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 65.4,
+   "shot_dur": 5.7,
+   "word_at": "world.",
+   "spoken": "the world. The water is",
+   "spoken_wide": "have a entry into the world. The water is warm, hovering around 24\u00b0",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 68.93,
+   "shot_dur": 3.53,
+   "word_at": "C.",
+   "spoken": "C. And that might",
+   "spoken_wide": "around 24\u00b0 C. And that might sound impressive, it's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 70.9,
+   "shot_dur": 1.97,
+   "word_at": "it's",
+   "spoken": "it's warmer",
+   "spoken_wide": "And that might sound impressive, it's warmer than it should be for",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 73.77,
+   "shot_dur": 2.87,
+   "word_at": "latitude.",
+   "spoken": "latitude. So, thanks,",
+   "spoken_wide": "than it should be for latitude. So, thanks, climate this is the one",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 75.47,
+   "shot_dur": 1.7,
+   "word_at": "this",
+   "spoken": "this is the one",
+   "spoken_wide": "So, thanks, climate this is the one and only time you're going to",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 79.77,
+   "shot_dur": 4.3,
+   "word_at": "activity.",
+   "spoken": "activity. Back when your",
+   "spoken_wide": "to be benefiting from activity. Back when your species thriving about three",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 83.47,
+   "shot_dur": 3.7,
+   "word_at": "ago,",
+   "spoken": "years ago, nurseries were",
+   "spoken_wide": "about three and a half years ago, nurseries were around places like Panama,",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 87.5,
+   "shot_dur": 4.03,
+   "word_at": "what's",
+   "spoken": "and what's now Maryland.",
+   "spoken_wide": "Panama, Islands, and what's now Maryland. of them shallow bays",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 88.43,
+   "shot_dur": 0.93,
+   "word_at": "Maryland.",
+   "spoken": "Maryland. of them shallow",
+   "spoken_wide": "Islands, and what's now Maryland. of them shallow bays with warm water",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 91.97,
+   "shot_dur": 3.53,
+   "word_at": "food.",
+   "spoken": "of food. And this bay",
+   "spoken_wide": "with warm water tons of food. And this bay off Baja that description",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 95.3,
+   "shot_dur": 3.33,
+   "word_at": "well,",
+   "spoken": "well, for",
+   "spoken_wide": "that description pretty well, for one critical difference, is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 97.13,
+   "shot_dur": 1.83,
+   "word_at": "difference,",
+   "spoken": "difference, is that the",
+   "spoken_wide": "for one critical difference, is that the Mioene Ocean was",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 101.73,
+   "shot_dur": 4.6,
+   "word_at": "areas.",
+   "spoken": "now",
+   "spoken_wide": "warm across huge areas. now you're in a thin strip of",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 109.87,
+   "shot_dur": 8.13,
+   "word_at": "be",
+   "spoken": "But you don't know that",
+   "spoken_wide": "point where you would mostly be But you don't know that yet you're about 6",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 111.47,
+   "shot_dur": 1.6,
+   "word_at": "you're",
+   "spoken": "you're about 6 minutes",
+   "spoken_wide": "But you don't know that yet you're about 6 minutes old and main concern",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 118.67,
+   "shot_dur": 7.2,
+   "word_at": "life.",
+   "spoken": "of your life. So you might as",
+   "spoken_wide": "that you're going to have for rest of your life. So you might as get used to it now. Your",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 123.63,
+   "shot_dur": 4.97,
+   "word_at": "lbs,",
+   "spoken": "lbs, you eat it in",
+   "spoken_wide": "a grouper that weighs about 30 lbs, you eat it in two bites, which feels",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 125.03,
+   "shot_dur": 1.4,
+   "word_at": "which",
+   "spoken": "two bites, which feels",
+   "spoken_wide": "30 lbs, you eat it in two bites, which feels until you realize that you're hungry",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 127.63,
+   "shot_dur": 2.6,
+   "word_at": "hungry",
+   "spoken": "hungry because your metabolism",
+   "spoken_wide": "until you realize that you're hungry because your metabolism is for an ocean",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 136.9,
+   "shot_dur": 9.27,
+   "word_at": "the",
+   "spoken": "the Eventually, you",
+   "spoken_wide": "anything big enough to be worth the Eventually, you find a 4-foot It's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 142.6,
+   "shot_dur": 5.7,
+   "word_at": "up.",
+   "spoken": "you up. And you eat it",
+   "spoken_wide": "minding its own business until you up. And you eat it whole because can. And because",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 149.27,
+   "shot_dur": 6.67,
+   "word_at": "call",
+   "spoken": "call a power",
+   "spoken_wide": "your first day what professionals call a power move. other sharks in the area",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 150.27,
+   "shot_dur": 1.0,
+   "word_at": "move.",
+   "spoken": "power move. other sharks in",
+   "spoken_wide": "what professionals call a power move. other sharks in the area get the pretty",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 152.9,
+   "shot_dur": 2.63,
+   "word_at": "quickly",
+   "spoken": "pretty quickly and start",
+   "spoken_wide": "in the area get the pretty quickly and start you, which is smart",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 156.0,
+   "shot_dur": 3.1,
+   "word_at": "but",
+   "spoken": "their but also means",
+   "spoken_wide": "you, which is smart on their but also means you're running out easy targets",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 159.63,
+   "shot_dur": 3.63,
+   "word_at": "would",
+   "spoken": "you would On day three,",
+   "spoken_wide": "easy targets faster than you would On day three, you spot something There's",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 161.57,
+   "shot_dur": 1.93,
+   "word_at": "something",
+   "spoken": "something There's a pod",
+   "spoken_wide": "On day three, you spot something There's a pod of black and white moving",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 166.7,
+   "shot_dur": 5.13,
+   "word_at": "bay.",
+   "spoken": "the bay. And your genetics",
+   "spoken_wide": "water just the bay. And your genetics tell that these are probably",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 171.33,
+   "shot_dur": 4.63,
+   "word_at": "mammals.",
+   "spoken": "mammals. But genetics",
+   "spoken_wide": "because big and they're mammals. But genetics are about 3 million years",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 174.67,
+   "shot_dur": 3.33,
+   "word_at": "tell",
+   "spoken": "So, they don't tell you these",
+   "spoken_wide": "3 million years of date. So, they don't tell you these particular mammals are orcas",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 181.8,
+   "shot_dur": 7.13,
+   "word_at": "swimming",
+   "spoken": "What your genetics",
+   "spoken_wide": "last time a megalodon was swimming What your genetics also don't is that orcas",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 183.93,
+   "shot_dur": 2.13,
+   "word_at": "that",
+   "spoken": "is that orcas hunt",
+   "spoken_wide": "What your genetics also don't is that orcas hunt young sharks",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 187.37,
+   "shot_dur": 3.43,
+   "word_at": "liver,",
+   "spoken": "the liver, which they",
+   "spoken_wide": "sharks for the liver, which they in their culture a delicacy.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 189.87,
+   "shot_dur": 2.5,
+   "word_at": "delicacy.",
+   "spoken": "delicacy. at your current",
+   "spoken_wide": "they in their culture a delicacy. at your current size, you are not a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 192.63,
+   "shot_dur": 2.77,
+   "word_at": "them.",
+   "spoken": "to them. You're on the",
+   "spoken_wide": "current size, you are not a to them. You're on the menu. of them peels off",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 218.7,
+   "shot_dur": 26.07,
+   "word_at": "comfort",
+   "spoken": "for comfort and the water is",
+   "spoken_wide": "where the bottom is too for comfort and the water is too for them to hunt",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 227.7,
+   "shot_dur": 9.0,
+   "word_at": "leaves.",
+   "spoken": "leaves. the thing",
+   "spoken_wide": "in entire body, and then leaves. the thing about being a juvenile",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 227.73,
+   "shot_dur": 0.03,
+   "word_at": "leaves.",
+   "spoken": "leaves. the thing about",
+   "spoken_wide": "in entire body, and then leaves. the thing about being a juvenile",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 231.2,
+   "shot_dur": 3.47,
+   "word_at": "ocean.",
+   "spoken": "ocean. [music] in the mo",
+   "spoken_wide": "juvenile in the modern ocean. [music] in the mo scene, your biggest was",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 234.8,
+   "shot_dur": 3.6,
+   "word_at": "megalodons,",
+   "spoken": "adults,",
+   "spoken_wide": "biggest was other megalodons, adults, who wouldn't to eat",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 238.63,
+   "shot_dur": 3.83,
+   "word_at": "hungry",
+   "spoken": "which is just",
+   "spoken_wide": "to eat you if they were hungry which is just standard shark",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 240.13,
+   "shot_dur": 1.5,
+   "word_at": "shark",
+   "spoken": "standard shark",
+   "spoken_wide": "which is just standard shark and at least had the decency",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 248.8,
+   "shot_dur": 8.67,
+   "word_at": "packs,",
+   "spoken": "cultural",
+   "spoken_wide": "that hunts in coordinated packs, cultural knowledge passed down generations,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 251.57,
+   "shot_dur": 2.77,
+   "word_at": "generations,",
+   "spoken": "generations, is apparently",
+   "spoken_wide": "knowledge passed down generations, is apparently that shark liver is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 254.77,
+   "shot_dur": 3.2,
+   "word_at": "the",
+   "spoken": "the This is a",
+   "spoken_wide": "that shark liver is worth the This is a new threat. You spend next",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 259.17,
+   "shot_dur": 4.4,
+   "word_at": "bay,",
+   "spoken": "bay, growing about a",
+   "spoken_wide": "5 years [music] in and around bay, growing about a meter per which sounds",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 262.3,
+   "shot_dur": 3.13,
+   "word_at": "you",
+   "spoken": "fast until you you",
+   "spoken_wide": "per which sounds fast until you you need to get to 15 m",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 266.67,
+   "shot_dur": 4.37,
+   "word_at": "anything.",
+   "spoken": "from anything. And 5",
+   "spoken_wide": "before are really safe from anything. And 5 per year means you've got a",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 273.97,
+   "shot_dur": 7.3,
+   "word_at": "you",
+   "spoken": "as you grow. Sea",
+   "spoken_wide": "shallows. And your diet as you grow. Sea lions when you catch them, small",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 274.3,
+   "shot_dur": 0.33,
+   "word_at": "grow.",
+   "spoken": "as you grow. Sea lions when",
+   "spoken_wide": "And your diet as you grow. Sea lions when you catch them, small dolphins",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 276.37,
+   "shot_dur": 2.07,
+   "word_at": "small",
+   "spoken": "them, small dolphins if",
+   "spoken_wide": "Sea lions when you catch them, small dolphins if stupid enough to wander close,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 278.67,
+   "shot_dur": 2.3,
+   "word_at": "close,",
+   "spoken": "wander close, large tuna",
+   "spoken_wide": "dolphins if stupid enough to wander close, large tuna that you actually have to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 281.5,
+   "shot_dur": 2.83,
+   "word_at": "which",
+   "spoken": "which is annoying because",
+   "spoken_wide": "that you actually have to which is annoying because your is designed for",
+   "moment": [
+    "turn",
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 282.53,
+   "shot_dur": 1.03,
+   "word_at": "your",
+   "spoken": "because your is designed",
+   "spoken_wide": "to which is annoying because your is designed for short ambush",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 287.13,
+   "shot_dur": 4.6,
+   "word_at": "pursuits.",
+   "spoken": "pursuits. The you",
+   "spoken_wide": "not extended pursuits. The you keep running into is that modern",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 289.17,
+   "shot_dur": 2.03,
+   "word_at": "that",
+   "spoken": "is that modern ocean",
+   "spoken_wide": "The you keep running into is that modern ocean has about 70%",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 294.47,
+   "shot_dur": 5.3,
+   "word_at": "did,",
+   "spoken": "did, is a nice",
+   "spoken_wide": "prey than the Mioene Ocean did, is a nice way of saying the buffet DNA",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 302.17,
+   "shot_dur": 7.7,
+   "word_at": "time.",
+   "spoken": "time. If you'd been",
+   "spoken_wide": "has been closed for a time. If you'd been born 3 million ago,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 309.5,
+   "shot_dur": 7.33,
+   "word_at": "slow,",
+   "spoken": "were slow,",
+   "spoken_wide": "5 10 m variety that were slow, and full of enough blubber to",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 313.03,
+   "shot_dur": 3.53,
+   "word_at": "weeks.",
+   "spoken": "weeks. Now you've got",
+   "spoken_wide": "enough blubber to you full for weeks. Now you've got lions, which are fine,",
+   "moment": [
+    "stat",
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 315.43,
+   "shot_dur": 2.4,
+   "word_at": "fine,",
+   "spoken": "fine, but they're",
+   "spoken_wide": "you've got lions, which are fine, but they're whales. And the occasional dolphin,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 318.5,
+   "shot_dur": 3.07,
+   "word_at": "again",
+   "spoken": "again is fine,",
+   "spoken_wide": "whales. And the occasional dolphin, again is fine, but not whales. And",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 319.5,
+   "shot_dur": 1.0,
+   "word_at": "but",
+   "spoken": "fine, but not whales.",
+   "spoken_wide": "dolphin, again is fine, but not whales. And lot of fish that you're",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 336.47,
+   "shot_dur": 16.97,
+   "word_at": "went",
+   "spoken": "which is a weird",
+   "spoken_wide": "why your species went which is a weird thing to when you're",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 341.4,
+   "shot_dur": 4.93,
+   "word_at": "are.",
+   "spoken": "here we are. At 5 m",
+   "spoken_wide": "But here we are. At 5 m long, too big for",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 344.2,
+   "shot_dur": 2.8,
+   "word_at": "Now,",
+   "spoken": "the bay. Now, you scraping",
+   "spoken_wide": "long, too big for the bay. Now, you scraping your belly on the sand,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 352.73,
+   "shot_dur": 8.53,
+   "word_at": "week",
+   "spoken": "the past week like they're",
+   "spoken_wide": "been hanging around the for the past week like they're for you to make a mistake.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 356.43,
+   "shot_dur": 3.7,
+   "word_at": "decision,",
+   "spoken": "a decision, which is that",
+   "spoken_wide": "a mistake. So, make a decision, which is that going to leave and head into the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 359.27,
+   "shot_dur": 2.83,
+   "word_at": "ocean",
+   "spoken": "ocean because staying here",
+   "spoken_wide": "going to leave and head into the ocean because staying here means starving,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 359.3,
+   "shot_dur": 0.03,
+   "word_at": "because",
+   "spoken": "ocean because staying here",
+   "spoken_wide": "going to leave and head into the ocean because staying here means starving,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 361.53,
+   "shot_dur": 2.23,
+   "word_at": "starving,",
+   "spoken": "starving, and leaving means",
+   "spoken_wide": "staying here means starving, and leaving means getting killed by orcas.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 363.13,
+   "shot_dur": 1.6,
+   "word_at": "killed",
+   "spoken": "getting killed by orcas.",
+   "spoken_wide": "starving, and leaving means getting killed by orcas. But at the second",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 364.17,
+   "shot_dur": 1.03,
+   "word_at": "orcas.",
+   "spoken": "orcas. But at the",
+   "spoken_wide": "means getting killed by orcas. But at the second option has better",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 367.27,
+   "shot_dur": 3.1,
+   "word_at": "odds.",
+   "spoken": "odds. you wait",
+   "spoken_wide": "option has better odds. you wait until night when the orcas",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 369.0,
+   "shot_dur": 1.73,
+   "word_at": "when",
+   "spoken": "night when the orcas",
+   "spoken_wide": "you wait until night when the orcas less active, and you slip out",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 370.5,
+   "shot_dur": 1.5,
+   "word_at": "and",
+   "spoken": "less active, and you slip out",
+   "spoken_wide": "night when the orcas less active, and you slip out of the into water that's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 373.77,
+   "shot_dur": 3.27,
+   "word_at": "colder",
+   "spoken": "and colder anything you've",
+   "spoken_wide": "into water that's deeper and colder anything you've experienced. First",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 375.47,
+   "shot_dur": 1.7,
+   "word_at": "experienced.",
+   "spoken": "First you notice",
+   "spoken_wide": "colder anything you've experienced. First you notice is that the ocean is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 378.7,
+   "shot_dur": 3.23,
+   "word_at": "be.",
+   "spoken": "it should be. Your genetics",
+   "spoken_wide": "that the ocean is than it should be. Your genetics telling you that there should be",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 383.23,
+   "shot_dur": 4.53,
+   "word_at": "there",
+   "spoken": "there And that is",
+   "spoken_wide": "[music] everywhere, but there And that is going to be quite",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 391.43,
+   "shot_dur": 8.2,
+   "word_at": "for,",
+   "spoken": "you for, which is",
+   "spoken_wide": "things your genetics prepare you for, which is everything because evolution",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 393.03,
+   "shot_dur": 1.6,
+   "word_at": "because",
+   "spoken": "everything because evolution",
+   "spoken_wide": "you for, which is everything because evolution account for the entire planet",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 395.87,
+   "shot_dur": 2.83,
+   "word_at": "planet",
+   "spoken": "down and most",
+   "spoken_wide": "account for the entire planet down and most of your food going",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 398.23,
+   "shot_dur": 2.37,
+   "word_at": "going",
+   "spoken": "You're 10 m",
+   "spoken_wide": "and most of your food going You're 10 m long now, which is enough",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 398.27,
+   "shot_dur": 0.03,
+   "word_at": "going",
+   "spoken": "You're 10 m",
+   "spoken_wide": "and most of your food going You're 10 m long now, which is enough",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 402.13,
+   "shot_dur": 3.87,
+   "word_at": "you",
+   "spoken": "leave you and the ones that",
+   "spoken_wide": "enough that most things leave you and the ones that don't are confused or",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 404.33,
+   "shot_dur": 2.2,
+   "word_at": "or",
+   "spoken": "confused or want to",
+   "spoken_wide": "and the ones that don't are confused or want to end their own But",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 406.33,
+   "shot_dur": 2.0,
+   "word_at": "own",
+   "spoken": "But there's still",
+   "spoken_wide": "or want to end their own But there's still this nagging where",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 408.73,
+   "shot_dur": 2.4,
+   "word_at": "you",
+   "spoken": "where you need to eat roughly",
+   "spoken_wide": "there's still this nagging where you need to eat roughly",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 412.3,
+   "shot_dur": 3.57,
+   "word_at": "day.",
+   "spoken": "a day. and the ocean",
+   "spoken_wide": "calories a day. and the ocean failing to provide them.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 414.53,
+   "shot_dur": 2.23,
+   "word_at": "them.",
+   "spoken": "provide them. So when spot",
+   "spoken_wide": "the ocean failing to provide them. So when spot a grey whale mother and her",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 418.77,
+   "shot_dur": 4.23,
+   "word_at": "coast,",
+   "spoken": "the coast, don't hesitate",
+   "spoken_wide": "migrating north along the coast, don't hesitate because this is what",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 422.33,
+   "shot_dur": 3.57,
+   "word_at": "also",
+   "spoken": "And also because you",
+   "spoken_wide": "because this is what were built for. And also because you eaten anything substantial",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 426.3,
+   "shot_dur": 3.97,
+   "word_at": "3",
+   "spoken": "The calf is",
+   "spoken_wide": "substantial in 3 The calf is 8 m long, which",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 428.03,
+   "shot_dur": 1.73,
+   "word_at": "which",
+   "spoken": "long, which big",
+   "spoken_wide": "The calf is 8 m long, which big until you remember that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 429.93,
+   "shot_dur": 1.9,
+   "word_at": "that",
+   "spoken": "you remember that 10 m",
+   "spoken_wide": "which big until you remember that 10 m and equipped with jaws that",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 433.4,
+   "shot_dur": 3.47,
+   "word_at": "car.",
+   "spoken": "through a car. The mother is",
+   "spoken_wide": "with jaws that bite through a car. The mother is 15 which sounds like",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 436.5,
+   "shot_dur": 3.1,
+   "word_at": "problem.",
+   "spoken": "problem. So you that",
+   "spoken_wide": "15 which sounds like a problem. So you that you're not trying to fight mother.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 438.67,
+   "shot_dur": 2.17,
+   "word_at": "mother.",
+   "spoken": "mother. You're trying to eat",
+   "spoken_wide": "So you that you're not trying to fight mother. You're trying to eat her before she notices.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 442.5,
+   "shot_dur": 3.83,
+   "word_at": "of",
+   "spoken": "sweet of So, you come up from",
+   "spoken_wide": "she notices. How sweet of So, you come up from below, which standard ambush",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 443.63,
+   "shot_dur": 1.13,
+   "word_at": "below,",
+   "spoken": "up from below, which standard",
+   "spoken_wide": "How sweet of So, you come up from below, which standard ambush protocol,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 445.83,
+   "shot_dur": 2.2,
+   "word_at": "protocol,",
+   "spoken": "and you get",
+   "spoken_wide": "which standard ambush protocol, and you get clean bite into the calf's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 448.67,
+   "shot_dur": 2.83,
+   "word_at": "flank,",
+   "spoken": "flank, out",
+   "spoken_wide": "clean bite into the calf's flank, out roughly 200 lb",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 455.77,
+   "shot_dur": 7.1,
+   "word_at": "calf",
+   "spoken": "The calf tries swim,",
+   "spoken_wide": "blood in water is immediate. The calf tries swim, which is pretty optimistic",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 472.87,
+   "shot_dur": 17.1,
+   "word_at": "blood",
+   "spoken": "And during that time,",
+   "spoken_wide": "the calf to die from blood And during that time, the mother with it,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 487.63,
+   "shot_dur": 14.77,
+   "word_at": "hours.",
+   "spoken": "hours. whale",
+   "spoken_wide": "then you feed for the next 6 hours. whale calf [music] equals roughly 60",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 491.5,
+   "shot_dur": 3.87,
+   "word_at": "calories,",
+   "spoken": "calories, which means you",
+   "spoken_wide": "60 of calories, which means you can for 2 months",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 495.27,
+   "shot_dur": 3.77,
+   "word_at": "kill.",
+   "spoken": "kill. that's the",
+   "spoken_wide": "2 months on this single kill. that's the most efficient math encountered",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 498.9,
+   "shot_dur": 3.63,
+   "word_at": "the",
+   "spoken": "the It is a strong",
+   "spoken_wide": "encountered since leaving the It is a strong strategy. Three later,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 509.0,
+   "shot_dur": 10.1,
+   "word_at": "you,",
+   "spoken": "see you, process that",
+   "spoken_wide": "how long it takes for the great white see you, process that you're twice length, and then leave",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 510.93,
+   "shot_dur": 1.93,
+   "word_at": "and",
+   "spoken": "length, and then leave the",
+   "spoken_wide": "you, process that you're twice length, and then leave the area This is",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 530.33,
+   "shot_dur": 19.4,
+   "word_at": "and",
+   "spoken": "out and now you're back.",
+   "spoken_wide": "because your species out and now you're back. So, that's of awkward.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 532.77,
+   "shot_dur": 2.43,
+   "word_at": "awkward.",
+   "spoken": "of awkward. The great white was",
+   "spoken_wide": "you're back. So, that's of awkward. The great white was seals near an island",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 535.3,
+   "shot_dur": 2.53,
+   "word_at": "and",
+   "spoken": "an island and now hunting",
+   "spoken_wide": "white was seals near an island and now hunting seals near an island and",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 537.2,
+   "shot_dur": 1.9,
+   "word_at": "and",
+   "spoken": "near an island and great white",
+   "spoken_wide": "and now hunting seals near an island and great white is somewhere else [music]",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 539.53,
+   "shot_dur": 2.33,
+   "word_at": "[music]",
+   "spoken": "[music] having",
+   "spoken_wide": "great white is somewhere else [music] having an identity crisis. You",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 547.7,
+   "shot_dur": 8.17,
+   "word_at": "it's",
+   "spoken": "And you start to",
+   "spoken_wide": "but at least it's And you start to notice a which is that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 549.43,
+   "shot_dur": 1.73,
+   "word_at": "a",
+   "spoken": "a which is that wherever",
+   "spoken_wide": "And you start to notice a which is that wherever you go, predators",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 550.0,
+   "shot_dur": 0.57,
+   "word_at": "wherever",
+   "spoken": "which is that wherever you",
+   "spoken_wide": "And you start to notice a which is that wherever you go, predators",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 550.6,
+   "shot_dur": 0.6,
+   "word_at": "you",
+   "spoken": "wherever you go,",
+   "spoken_wide": "notice a which is that wherever you go, predators leave. Orcas",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 551.0,
+   "shot_dur": 0.4,
+   "word_at": "go,",
+   "spoken": "you go, predators",
+   "spoken_wide": "a which is that wherever you go, predators leave. Orcas change",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 551.6,
+   "shot_dur": 0.6,
+   "word_at": "predators",
+   "spoken": "predators leave.",
+   "spoken_wide": "which is that wherever you go, predators leave. Orcas change routes.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 551.9,
+   "shot_dur": 0.3,
+   "word_at": "predators",
+   "spoken": "predators leave.",
+   "spoken_wide": "that wherever you go, predators leave. Orcas change routes.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 552.2,
+   "shot_dur": 0.3,
+   "word_at": "predators",
+   "spoken": "predators leave. Orcas",
+   "spoken_wide": "wherever you go, predators leave. Orcas change routes. Sharks",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 554.17,
+   "shot_dur": 1.97,
+   "word_at": "routes.",
+   "spoken": "routes. Sharks abandoned",
+   "spoken_wide": "leave. Orcas change routes. Sharks abandoned hunting You're",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 556.27,
+   "shot_dur": 2.1,
+   "word_at": "hunting",
+   "spoken": "You're reshaping",
+   "spoken_wide": "Sharks abandoned hunting You're reshaping the behavior of",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 560.17,
+   "shot_dur": 3.9,
+   "word_at": "range",
+   "spoken": "your range just by",
+   "spoken_wide": "large animal in your range just by which would",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 564.5,
+   "shot_dur": 4.33,
+   "word_at": "evidence",
+   "spoken": "wasn't evidence that the",
+   "spoken_wide": "be impressive if also wasn't evidence that the has no idea",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 567.8,
+   "shot_dur": 3.3,
+   "word_at": "with",
+   "spoken": "do with You do not",
+   "spoken_wide": "has no idea what to do with You do not belong in this lost",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 570.83,
+   "shot_dur": 3.03,
+   "word_at": "lost",
+   "spoken": "So, you start",
+   "spoken_wide": "belong in this lost So, you start moving north the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 582.07,
+   "shot_dur": 11.23,
+   "word_at": "cold,",
+   "spoken": "cold, too cold,",
+   "spoken_wide": "Bearing Sea, is cold, too cold, and your body slowing",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 584.43,
+   "shot_dur": 2.37,
+   "word_at": "down",
+   "spoken": "slowing down around",
+   "spoken_wide": "cold, and your body slowing down around 12\u00b0 C.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 598.27,
+   "shot_dur": 13.83,
+   "word_at": "and",
+   "spoken": "and didn't",
+   "spoken_wide": "ocean was warm everywhere, and didn't have polar refugees",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 603.3,
+   "shot_dur": 5.03,
+   "word_at": "do.",
+   "spoken": "they do. feed all",
+   "spoken_wide": "hide from you. Now, they do. feed all summer in water that you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 617.4,
+   "shot_dur": 14.1,
+   "word_at": "whales.",
+   "spoken": "whales. And goes",
+   "spoken_wide": "to be a pod of sperm whales. And goes badly for everyone",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 627.17,
+   "shot_dur": 9.77,
+   "word_at": "out,",
+   "spoken": "out, which is a",
+   "spoken_wide": "around it with tails facing out, which is a formation that apparently",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 632.17,
+   "shot_dur": 5.0,
+   "word_at": "You",
+   "spoken": "years. You try to get through",
+   "spoken_wide": "sometime in the last 3 years. You try to get through you're hungry and",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 638.23,
+   "shot_dur": 6.07,
+   "word_at": "tail.",
+   "spoken": "her tail. It's not enough",
+   "spoken_wide": "And one of the females hits with her tail. It's not enough to hurt you, but it's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 640.1,
+   "shot_dur": 1.87,
+   "word_at": "you,",
+   "spoken": "hurt you, but it's enough to",
+   "spoken_wide": "It's not enough to hurt you, but it's enough to you reconsider whether this",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 642.2,
+   "shot_dur": 2.1,
+   "word_at": "this",
+   "spoken": "whether this meal is",
+   "spoken_wide": "but it's enough to you reconsider whether this meal is getting hit by multiple whales",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 646.7,
+   "shot_dur": 4.5,
+   "word_at": "doing.",
+   "spoken": "they're doing. So, you",
+   "spoken_wide": "who know what they're doing. So, you This will be an",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 649.97,
+   "shot_dur": 3.27,
+   "word_at": "important",
+   "spoken": "Here's what's becoming",
+   "spoken_wide": "This will be an important Here's what's becoming clear. hunting",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 658.3,
+   "shot_dur": 8.33,
+   "word_at": "prey.",
+   "spoken": "find prey. and burning",
+   "spoken_wide": "twice as far to find prey. and burning through energy like trying to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 667.77,
+   "shot_dur": 9.47,
+   "word_at": "fine.",
+   "spoken": "be fine. the ocean",
+   "spoken_wide": "every 2 months and be fine. the ocean was warm and whales everywhere",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 670.53,
+   "shot_dur": 2.77,
+   "word_at": "and",
+   "spoken": "everywhere and you didn't have to",
+   "spoken_wide": "was warm and whales everywhere and you didn't have to them into polar water to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 676.0,
+   "shot_dur": 5.47,
+   "word_at": "months",
+   "spoken": "months plus seals",
+   "spoken_wide": "eating one whale every months plus seals plus large fish plus",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.13,
+   "shot_dur": 2.13,
+   "word_at": "plus",
+   "spoken": "fish plus else",
+   "spoken_wide": "plus seals plus large fish plus else you can catch. And you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.23,
+   "shot_dur": 0.1,
+   "word_at": "plus",
+   "spoken": "plus else you",
+   "spoken_wide": "plus seals plus large fish plus else you can catch. And you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.33,
+   "shot_dur": 0.1,
+   "word_at": "plus",
+   "spoken": "plus else you",
+   "spoken_wide": "seals plus large fish plus else you can catch. And you're",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.43,
+   "shot_dur": 0.1,
+   "word_at": "plus",
+   "spoken": "plus else you can",
+   "spoken_wide": "seals plus large fish plus else you can catch. And you're operating",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.53,
+   "shot_dur": 0.1,
+   "word_at": "plus",
+   "spoken": "plus else you can",
+   "spoken_wide": "seals plus large fish plus else you can catch. And you're operating",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.63,
+   "shot_dur": 0.1,
+   "word_at": "plus",
+   "spoken": "else you can catch.",
+   "spoken_wide": "plus large fish plus else you can catch. And you're operating",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.73,
+   "shot_dur": 0.1,
+   "word_at": "else",
+   "spoken": "else you can catch.",
+   "spoken_wide": "plus large fish plus else you can catch. And you're operating",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.83,
+   "shot_dur": 0.1,
+   "word_at": "else",
+   "spoken": "else you can catch.",
+   "spoken_wide": "plus large fish plus else you can catch. And you're operating",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 678.93,
+   "shot_dur": 0.1,
+   "word_at": "you",
+   "spoken": "else you can catch.",
+   "spoken_wide": "plus large fish plus else you can catch. And you're operating at",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 679.03,
+   "shot_dur": 0.1,
+   "word_at": "you",
+   "spoken": "else you can catch.",
+   "spoken_wide": "plus large fish plus else you can catch. And you're operating at an",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 679.13,
+   "shot_dur": 0.1,
+   "word_at": "can",
+   "spoken": "else you can catch.",
+   "spoken_wide": "plus large fish plus else you can catch. And you're operating at an",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 679.23,
+   "shot_dur": 0.1,
+   "word_at": "can",
+   "spoken": "else you can catch. And",
+   "spoken_wide": "large fish plus else you can catch. And you're operating at an",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 679.43,
+   "shot_dur": 0.2,
+   "word_at": "catch.",
+   "spoken": "you can catch. And you're",
+   "spoken_wide": "fish plus else you can catch. And you're operating at an energy",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 679.7,
+   "shot_dur": 0.27,
+   "word_at": "catch.",
+   "spoken": "can catch. And you're",
+   "spoken_wide": "fish plus else you can catch. And you're operating at an energy deficit",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 685.67,
+   "shot_dur": 5.97,
+   "word_at": "gone.",
+   "spoken": "gone. What's here instead",
+   "spoken_wide": "ocean your DNA expects gone. What's here instead is colder,",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 687.5,
+   "shot_dur": 1.83,
+   "word_at": "colder,",
+   "spoken": "colder,",
+   "spoken_wide": "What's here instead is colder, and has whales that are either",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 688.33,
+   "shot_dur": 0.83,
+   "word_at": "and",
+   "spoken": "and has whales",
+   "spoken_wide": "instead is colder, and has whales that are either big to kill",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 691.03,
+   "shot_dur": 2.7,
+   "word_at": "safely",
+   "spoken": "safely or smart enough",
+   "spoken_wide": "that are either big to kill safely or smart enough defend themselves in ways that",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 693.2,
+   "shot_dur": 2.17,
+   "word_at": "that",
+   "spoken": "in ways that make rethink",
+   "spoken_wide": "or smart enough defend themselves in ways that make rethink your life choices. You're",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 694.83,
+   "shot_dur": 1.63,
+   "word_at": "choices.",
+   "spoken": "life choices. You're",
+   "spoken_wide": "ways that make rethink your life choices. You're barely in",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 694.9,
+   "shot_dur": 0.07,
+   "word_at": "choices.",
+   "spoken": "life choices. You're",
+   "spoken_wide": "ways that make rethink your life choices. You're barely in",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 699.4,
+   "shot_dur": 4.5,
+   "word_at": "you.",
+   "spoken": "without you. Your species",
+   "spoken_wide": "an environment that moved on without you. Your species extinct because of this exact",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 702.33,
+   "shot_dur": 2.93,
+   "word_at": "exact",
+   "spoken": "and you [music] are",
+   "spoken_wide": "extinct because of this exact and you [music] are starting to why. But you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 704.0,
+   "shot_dur": 1.67,
+   "word_at": "why.",
+   "spoken": "why. But you don't",
+   "spoken_wide": "and you [music] are starting to why. But you don't go extinct, at not",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 719.0,
+   "shot_dur": 15.0,
+   "word_at": "sharks.",
+   "spoken": "sharks. Except fairness",
+   "spoken_wide": "almost to other sharks. Except fairness really part of the way",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 722.93,
+   "shot_dur": 3.93,
+   "word_at": "business.",
+   "spoken": "business. At",
+   "spoken_wide": "of the way ocean does business. At this size, nothing can",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 729.33,
+   "shot_dur": 6.4,
+   "word_at": "orcas.",
+   "spoken": "orcas. And even they",
+   "spoken_wide": "extremely motivated orcas. And even they would have to catch you in right",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 731.93,
+   "shot_dur": 2.6,
+   "word_at": "mood,",
+   "spoken": "right mood, which is to",
+   "spoken_wide": "they would have to catch you in right mood, which is to say or injured.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 734.33,
+   "shot_dur": 2.4,
+   "word_at": "injured.",
+   "spoken": "injured. Because on a good",
+   "spoken_wide": "is to say or injured. Because on a good you could bite one of them in",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 742.27,
+   "shot_dur": 7.93,
+   "word_at": "which",
+   "spoken": "which runs from Baja",
+   "spoken_wide": "the same route for the past which runs from Baja up to California",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 745.87,
+   "shot_dur": 3.6,
+   "word_at": "down,",
+   "spoken": "back down, and sometimes",
+   "spoken_wide": "California and back down, and sometimes across to Hawaii,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 750.2,
+   "shot_dur": 4.33,
+   "word_at": "breeding.",
+   "spoken": "breeding. And this route is",
+   "spoken_wide": "on when the humpback whales breeding. And this route is now yours because",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 752.17,
+   "shot_dur": 1.97,
+   "word_at": "yours",
+   "spoken": "yours because every",
+   "spoken_wide": "And this route is now yours because every other predator has",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 756.57,
+   "shot_dur": 4.4,
+   "word_at": "up.",
+   "spoken": "show up. The white",
+   "spoken_wide": "learned to be else when you show up. The white sharks that used to hunt off",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 759.43,
+   "shot_dur": 2.87,
+   "word_at": "coast",
+   "spoken": "the coast have moved their",
+   "spoken_wide": "sharks that used to hunt off the coast have moved their further north",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 764.13,
+   "shot_dur": 4.7,
+   "word_at": "them.",
+   "spoken": "follow them. And orcas",
+   "spoken_wide": "colder where you won't follow them. And orcas that used to own these hunting",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 771.27,
+   "shot_dur": 7.13,
+   "word_at": "years.",
+   "spoken": "years. They learned.",
+   "spoken_wide": "in separate incidents the years. They learned. That's the about intelligent",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 772.07,
+   "shot_dur": 0.8,
+   "word_at": "learned.",
+   "spoken": "They learned. That's the",
+   "spoken_wide": "the years. They learned. That's the about intelligent prey.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 774.17,
+   "shot_dur": 2.1,
+   "word_at": "prey.",
+   "spoken": "prey. They",
+   "spoken_wide": "That's the about intelligent prey. They the whale populations",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 783.1,
+   "shot_dur": 8.93,
+   "word_at": "been",
+   "spoken": "been which is a",
+   "spoken_wide": "avoid areas where you've been which is a reasonable response a 50-tonon",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 793.0,
+   "shot_dur": 9.9,
+   "word_at": "them.",
+   "spoken": "to them. You've now eaten",
+   "spoken_wide": "an even wider area to them. You've now eaten 47 grey",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 797.2,
+   "shot_dur": 4.2,
+   "word_at": "which",
+   "spoken": "which sounds",
+   "spoken_wide": "calves since you reached which sounds excessive until remember that",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 799.17,
+   "shot_dur": 1.97,
+   "word_at": "remember",
+   "spoken": "remember that you need to",
+   "spoken_wide": "which sounds excessive until remember that you need to eat one large animal",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 810.97,
+   "shot_dur": 11.8,
+   "word_at": "prey",
+   "spoken": "prey that barely",
+   "spoken_wide": "supplementing a lot of smaller prey that barely on your calorie needs.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 812.33,
+   "shot_dur": 1.37,
+   "word_at": "on",
+   "spoken": "on your calorie",
+   "spoken_wide": "smaller prey that barely on your calorie needs. Here is it gets",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 813.6,
+   "shot_dur": 1.27,
+   "word_at": "needs.",
+   "spoken": "needs. Here is it",
+   "spoken_wide": "on your calorie needs. Here is it gets interesting from an",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 816.93,
+   "shot_dur": 3.33,
+   "word_at": "though.",
+   "spoken": "though. The Pacific",
+   "spoken_wide": "from an perspective, though. The Pacific grey whale population",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 824.37,
+   "shot_dur": 7.43,
+   "word_at": "calves,",
+   "spoken": "their calves, is",
+   "spoken_wide": "killed 47 of their calves, is 23% of the population.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 827.17,
+   "shot_dur": 2.8,
+   "word_at": "population.",
+   "spoken": "population. And that",
+   "spoken_wide": "23% of the population. And that doesn't sound like much, that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 828.9,
+   "shot_dur": 1.73,
+   "word_at": "much,",
+   "spoken": "like much, that you're",
+   "spoken_wide": "And that doesn't sound like much, that you're one shark and measurably",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 830.47,
+   "shot_dur": 1.57,
+   "word_at": "shark",
+   "spoken": "one shark and measurably",
+   "spoken_wide": "like much, that you're one shark and measurably impacting a species",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 838.93,
+   "shot_dur": 8.47,
+   "word_at": "alone,",
+   "spoken": "alone, and were",
+   "spoken_wide": "megalodons in the Pacific alone, and were way more whales to",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 841.57,
+   "shot_dur": 2.63,
+   "word_at": "to",
+   "spoken": "So, the system",
+   "spoken_wide": "were way more whales to So, the system balanced out.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 846.03,
+   "shot_dur": 4.47,
+   "word_at": "fewer",
+   "spoken": "and you're taking a",
+   "spoken_wide": "there's one of you and fewer and you're taking a slice the can",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 852.7,
+   "shot_dur": 6.67,
+   "word_at": "have",
+   "spoken": "which was inevitable",
+   "spoken_wide": "barely. and humans have which was inevitable because notice",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 856.23,
+   "shot_dur": 3.53,
+   "word_at": "then",
+   "spoken": "and then make everyone",
+   "spoken_wide": "notice everything and then make everyone else's problem. Satellite",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 857.9,
+   "shot_dur": 1.67,
+   "word_at": "problem.",
+   "spoken": "problem. Satellite",
+   "spoken_wide": "and then make everyone else's problem. Satellite on whales keep disappearing.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 860.27,
+   "shot_dur": 2.37,
+   "word_at": "disappearing.",
+   "spoken": "disappearing. And whale",
+   "spoken_wide": "Satellite on whales keep disappearing. And whale carcasses wash up on beaches,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 867.43,
+   "shot_dur": 7.17,
+   "word_at": "known",
+   "spoken": "And shipping vessels",
+   "spoken_wide": "that don't match any known And shipping vessels have seeing something",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 873.4,
+   "shot_dur": 5.97,
+   "word_at": "whale",
+   "spoken": "a whale because it's got a",
+   "spoken_wide": "that's definitely a whale because it's got a dorsal and it's moving",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 879.87,
+   "shot_dur": 6.47,
+   "word_at": "concerned,",
+   "spoken": "are concerned, which is less",
+   "spoken_wide": "is understandable. are concerned, which is less because governments are",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 881.4,
+   "shot_dur": 1.53,
+   "word_at": "because",
+   "spoken": "because governments are",
+   "spoken_wide": "concerned, which is less because governments are concerned about the wrong",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 884.03,
+   "shot_dur": 2.63,
+   "word_at": "wrong",
+   "spoken": "wrong And someone somewhere",
+   "spoken_wide": "are concerned about the wrong And someone somewhere is already",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 889.93,
+   "shot_dur": 5.9,
+   "word_at": "humans",
+   "spoken": "humans spent the",
+   "spoken_wide": "safety, which is rich humans spent the last hunting whales down",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 893.93,
+   "shot_dur": 4.0,
+   "word_at": "numbers,",
+   "spoken": "numbers, and now they're",
+   "spoken_wide": "down to 10% of original numbers, and now they're about one big shark.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 894.63,
+   "shot_dur": 0.7,
+   "word_at": "they're",
+   "spoken": "and now they're about one",
+   "spoken_wide": "of original numbers, and now they're about one big shark. The",
+   "moment": [
+    "stat",
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 894.7,
+   "shot_dur": 0.07,
+   "word_at": "they're",
+   "spoken": "and now they're about one",
+   "spoken_wide": "of original numbers, and now they're about one big shark. The",
+   "moment": [
+    "stat",
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 896.23,
+   "shot_dur": 1.53,
+   "word_at": "shark.",
+   "spoken": "big shark. The",
+   "spoken_wide": "now they're about one big shark. The everyone's asking is, what",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 902.23,
+   "shot_dur": 6.0,
+   "word_at": "species?",
+   "spoken": "species? Do you protect it",
+   "spoken_wide": "shark that eats species? Do you protect it it's the last of its kind?",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 904.23,
+   "shot_dur": 2.0,
+   "word_at": "kind?",
+   "spoken": "last of its kind? Do kill it",
+   "spoken_wide": "Do you protect it it's the last of its kind? Do kill it because it's eating things decided",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 907.47,
+   "shot_dur": 3.23,
+   "word_at": "important?",
+   "spoken": "important? or do you to",
+   "spoken_wide": "eating things decided are important? or do you to track it and study it and hope it",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 911.13,
+   "shot_dur": 3.67,
+   "word_at": "boat?",
+   "spoken": "boat? Well, you",
+   "spoken_wide": "it and hope it eat anyone's boat? Well, you care about any of this because",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 917.67,
+   "shot_dur": 6.53,
+   "word_at": "ethics.",
+   "spoken": "ethics. just know that",
+   "spoken_wide": "human laws or conservation ethics. just know that you're hungry and food in",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 919.17,
+   "shot_dur": 1.5,
+   "word_at": "and",
+   "spoken": "you're hungry and food in",
+   "spoken_wide": "ethics. just know that you're hungry and food in the ocean and sometimes",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 929.77,
+   "shot_dur": 10.6,
+   "word_at": "You",
+   "spoken": "You scavenge",
+   "spoken_wide": "opportunistic as aged. You scavenge now, which you do much as",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 930.7,
+   "shot_dur": 0.93,
+   "word_at": "now,",
+   "spoken": "scavenge now, which you",
+   "spoken_wide": "as aged. You scavenge now, which you do much as a younger shark, and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 932.5,
+   "shot_dur": 1.8,
+   "word_at": "shark,",
+   "spoken": "a younger shark, and",
+   "spoken_wide": "now, which you do much as a younger shark, and learned that fishing vessels dump",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 936.7,
+   "shot_dur": 4.2,
+   "word_at": "overboard.",
+   "spoken": "overboard. So, you",
+   "spoken_wide": "dump lot of dead fish overboard. So, you them sometimes and eat the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 939.8,
+   "shot_dur": 3.1,
+   "word_at": "by",
+   "spoken": "which is not",
+   "spoken_wide": "sometimes and eat the by which is not dignified, but hey,",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 947.07,
+   "shot_dur": 7.27,
+   "word_at": "populations",
+   "spoken": "populations that congregate",
+   "spoken_wide": "islands have populations that congregate nearby specific",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 947.47,
+   "shot_dur": 0.4,
+   "word_at": "that",
+   "spoken": "that congregate",
+   "spoken_wide": "islands have populations that congregate nearby specific times",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 956.93,
+   "shot_dur": 9.47,
+   "word_at": "breathing",
+   "spoken": "they're breathing that's when",
+   "spoken_wide": "the surface where they're breathing that's when they're the most Last",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 964.9,
+   "shot_dur": 7.97,
+   "word_at": "successfully",
+   "spoken": "And blue whale",
+   "spoken_wide": "item you've ever successfully And blue whale calves are born at meters",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 969.33,
+   "shot_dur": 4.43,
+   "word_at": "tons.",
+   "spoken": "to tons. So",
+   "spoken_wide": "long and weigh about two to tons. So this is significant. The",
+   "moment": [
+    "stat",
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 971.07,
+   "shot_dur": 1.73,
+   "word_at": "significant.",
+   "spoken": "significant. The was",
+   "spoken_wide": "tons. So this is significant. The was 25 meters and there",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 987.67,
+   "shot_dur": 16.6,
+   "word_at": "megalodon",
+   "spoken": "megalodon because can't",
+   "spoken_wide": "injured is a dead megalodon because can't hunt effectively with broken",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 988.9,
+   "shot_dur": 1.23,
+   "word_at": "effectively",
+   "spoken": "can't hunt effectively with",
+   "spoken_wide": "dead megalodon because can't hunt effectively with broken So you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 990.63,
+   "shot_dur": 1.73,
+   "word_at": "broken",
+   "spoken": "So you waited",
+   "spoken_wide": "hunt effectively with broken So you waited until the calf was",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 993.97,
+   "shot_dur": 3.33,
+   "word_at": "dive.",
+   "spoken": "deep dive. You came from",
+   "spoken_wide": "calf was during a deep dive. You came from below and you got one bite",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1005.53,
+   "shot_dur": 11.57,
+   "word_at": "straight.",
+   "spoken": "straight. Here the",
+   "spoken_wide": "you fed for 8 hours straight. Here the thing about blue whales,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1011.5,
+   "shot_dur": 5.97,
+   "word_at": "extinct.",
+   "spoken": "extinct. Probably",
+   "spoken_wide": "after species went extinct. Probably you weren't around to eat them",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1014.17,
+   "shot_dur": 2.67,
+   "word_at": "them",
+   "spoken": "them which means the",
+   "spoken_wide": "you weren't around to eat them which means the whales got specifically",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1017.9,
+   "shot_dur": 3.73,
+   "word_at": "were",
+   "spoken": "were And now you're",
+   "spoken_wide": "specifically because you were And now you're back and the whales too big",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1022.9,
+   "shot_dur": 5.0,
+   "word_at": "calves.",
+   "spoken": "calves. There's almost",
+   "spoken_wide": "hunt safely, for the calves. There's almost funny about that if",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1025.8,
+   "shot_dur": 2.9,
+   "word_at": "ignore",
+   "spoken": "you ignore depressing it",
+   "spoken_wide": "funny about that if you ignore depressing it is. You are now 25",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1026.0,
+   "shot_dur": 0.2,
+   "word_at": "depressing",
+   "spoken": "ignore depressing it is.",
+   "spoken_wide": "funny about that if you ignore depressing it is. You are now 25",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1026.2,
+   "shot_dur": 0.2,
+   "word_at": "depressing",
+   "spoken": "ignore depressing it is.",
+   "spoken_wide": "funny about that if you ignore depressing it is. You are now 25 old",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1026.4,
+   "shot_dur": 0.2,
+   "word_at": "it",
+   "spoken": "depressing it is. You",
+   "spoken_wide": "funny about that if you ignore depressing it is. You are now 25 old",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1026.6,
+   "shot_dur": 0.2,
+   "word_at": "it",
+   "spoken": "depressing it is. You are now",
+   "spoken_wide": "about that if you ignore depressing it is. You are now 25 old and",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1026.8,
+   "shot_dur": 0.2,
+   "word_at": "is.",
+   "spoken": "it is. You are now",
+   "spoken_wide": "that if you ignore depressing it is. You are now 25 old and you've",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1031.3,
+   "shot_dur": 4.5,
+   "word_at": "left.",
+   "spoken": "years left. And you've",
+   "spoken_wide": "probably got 20 or 30 years left. And you've hundreds of large animals in",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1037.23,
+   "shot_dur": 5.93,
+   "word_at": "and",
+   "spoken": "for you and has no",
+   "spoken_wide": "an ocean wasn't designed for you and has no way to support you long",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1040.3,
+   "shot_dur": 3.07,
+   "word_at": "except",
+   "spoken": "except sheer",
+   "spoken_wide": "way to support you long term except sheer stubbornness on your part.",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1042.83,
+   "shot_dur": 2.53,
+   "word_at": "part.",
+   "spoken": "part. one megalodon",
+   "spoken_wide": "sheer stubbornness on your part. one megalodon actually survive in",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1046.77,
+   "shot_dur": 3.93,
+   "word_at": "apparently.",
+   "spoken": "apparently. Can thrive?",
+   "spoken_wide": "in modern ocean? Yes, apparently. Can thrive? Not really. The ocean's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1047.7,
+   "shot_dur": 0.93,
+   "word_at": "thrive?",
+   "spoken": "thrive? Not really.",
+   "spoken_wide": "Yes, apparently. Can thrive? Not really. The ocean's too The",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1048.63,
+   "shot_dur": 0.93,
+   "word_at": "The",
+   "spoken": "really. The ocean's too",
+   "spoken_wide": "Can thrive? Not really. The ocean's too The prey is too scarce.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1051.3,
+   "shot_dur": 2.67,
+   "word_at": "you",
+   "spoken": "scarce. And you more energy",
+   "spoken_wide": "too The prey is too scarce. And you more energy finding food than your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1054.97,
+   "shot_dur": 3.67,
+   "word_at": "to.",
+   "spoken": "had to. And you can't",
+   "spoken_wide": "food than your ever had to. And you can't because you're alone.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1058.43,
+   "shot_dur": 3.47,
+   "word_at": "could,",
+   "spoken": "you could, there's not enough",
+   "spoken_wide": "you're alone. And even you could, there's not enough food to a population of",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1060.4,
+   "shot_dur": 1.97,
+   "word_at": "population",
+   "spoken": "a population of sharks",
+   "spoken_wide": "there's not enough food to a population of sharks your So, you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1062.0,
+   "shot_dur": 1.6,
+   "word_at": "your",
+   "spoken": "So, you keep",
+   "spoken_wide": "a population of sharks your So, you keep swimming. You keep",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1064.47,
+   "shot_dur": 2.47,
+   "word_at": "and",
+   "spoken": "and keep existing",
+   "spoken_wide": "you keep swimming. You keep and keep existing in a lost that",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1069.2,
+   "shot_dur": 4.73,
+   "word_at": "ago.",
+   "spoken": "years ago. You're the last",
+   "spoken_wide": "without you 3 years ago. You're the last again,",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1073.33,
+   "shot_dur": 4.13,
+   "word_at": "end.",
+   "spoken": "at the end. Except this",
+   "spoken_wide": "just like your species at the end. Except this time there no population",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1077.63,
+   "shot_dur": 4.3,
+   "word_at": "shark",
+   "spoken": "one shark doing laps",
+   "spoken_wide": "to sustain you. You're one shark doing laps between whale routes",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1082.27,
+   "shot_dur": 4.63,
+   "word_at": "options.",
+   "spoken": "options. The modern ocean",
+   "spoken_wide": "slowly running of options. The modern ocean can one megalodon",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1085.47,
+   "shot_dur": 3.2,
+   "word_at": "barely.",
+   "spoken": "barely. But only that",
+   "spoken_wide": "can one megalodon barely. But only that megalodon is willing to work",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1090.47,
+   "shot_dur": 5.0,
+   "word_at": "did",
+   "spoken": "did accept that it's",
+   "spoken_wide": "as hard as its ancestors did accept that it's never going to be more",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1096.17,
+   "shot_dur": 5.7,
+   "word_at": "it.",
+   "spoken": "forgotten it. it. That's",
+   "spoken_wide": "that has already forgotten it. it. That's the answer. Can a",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1097.63,
+   "shot_dur": 1.47,
+   "word_at": "answer.",
+   "spoken": "the answer. Can a",
+   "spoken_wide": "forgotten it. it. That's the answer. Can a survive in our current ocean?",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1100.17,
+   "shot_dur": 2.53,
+   "word_at": "ocean?",
+   "spoken": "current ocean?",
+   "spoken_wide": "survive in our current ocean? But there is a huge",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  }
+ ]
+}

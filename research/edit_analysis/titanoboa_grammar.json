@@ -1,0 +1,1174 @@
+{
+ "summary": {
+  "name": "titanoboa",
+  "duration_sec": 1595.1,
+  "n_cuts": 103,
+  "cuts_per_min": 3.9,
+  "shot_dur_median": 9.6,
+  "shot_dur_mean": 15.07,
+  "pct_shots_under_2s": 10.7,
+  "pct_shots_under_1s": 3.9,
+  "pct_shots_over_5s": 72.8,
+  "n_sfx_onsets": 7960,
+  "sfx_per_min": 299.4,
+  "sfx_on_cut_rate": 0.942,
+  "music_active_frac": 0.992,
+  "moment_at_cut_pct": {
+   "pause_boundary": 56.3,
+   "mid_phrase": 23.3,
+   "stat": 18.4,
+   "turn": 12.6,
+   "question": 2.9
+  },
+  "n_words": 4482
+ },
+ "cuts": [
+  {
+   "t": 6.63,
+   "shot_dur": 6.63,
+   "word_at": "speaking",
+   "spoken": "speaking",
+   "spoken_wide": "This is scientifically speaking because you are a titanoboa",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 12.97,
+   "shot_dur": 6.33,
+   "word_at": "years",
+   "spoken": "years and",
+   "spoken_wide": "for roughly 60 million years and animals are not supposed to give",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 15.23,
+   "shot_dur": 2.27,
+   "word_at": "give",
+   "spoken": "to give But here you",
+   "spoken_wide": "and animals are not supposed to give But here you are sliding out of mother in",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 33.37,
+   "shot_dur": 18.13,
+   "word_at": "10",
+   "spoken": "Your mother leaves.",
+   "spoken_wide": "swamp to die in the next 10 Your mother leaves. She does immediately",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 41.2,
+   "shot_dur": 7.83,
+   "word_at": "million",
+   "spoken": "and will not be",
+   "spoken_wide": "that has worked for 100 million and will not be changing today. are 2",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 42.8,
+   "shot_dur": 1.6,
+   "word_at": "today.",
+   "spoken": "today. are 2 m",
+   "spoken_wide": "and will not be changing today. are 2 m long. You are alone and",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 50.4,
+   "shot_dur": 7.6,
+   "word_at": "nature,",
+   "spoken": "in nature, confusion",
+   "spoken_wide": "no idea what you And in nature, confusion usually to violence.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 52.57,
+   "shot_dur": 2.17,
+   "word_at": "violence.",
+   "spoken": "violence. Honestly, in",
+   "spoken_wide": "confusion usually to violence. Honestly, in too. Something",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 66.23,
+   "shot_dur": 13.67,
+   "word_at": "you",
+   "spoken": "If you survive the next",
+   "spoken_wide": "or whether you are the If you survive the next 5 minutes, might live long",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 75.83,
+   "shot_dur": 9.6,
+   "word_at": "extinct.",
+   "spoken": "extinct. The is",
+   "spoken_wide": "animals should stay extinct. The is running, so you make the right",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 82.73,
+   "shot_dur": 6.9,
+   "word_at": "cayman.",
+   "spoken": "cayman. About m",
+   "spoken_wide": "The thing in reads is a spectacled cayman. About m long, which makes it exactly",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 190.47,
+   "shot_dur": 107.73,
+   "word_at": "means.",
+   "spoken": "means. reach the",
+   "spoken_wide": "which is what instinct means. reach the log and try to pull",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 211.0,
+   "shot_dur": 20.53,
+   "word_at": "correctly",
+   "spoken": "and you realize",
+   "spoken_wide": "your body starts working correctly and you realize you've been brain",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 216.93,
+   "shot_dur": 5.93,
+   "word_at": "you",
+   "spoken": "you You stay on",
+   "spoken_wide": "because being cold makes you You stay on that log for three",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 233.97,
+   "shot_dur": 17.03,
+   "word_at": "A",
+   "spoken": "forest. A stabs",
+   "spoken_wide": "sees coming and bolts into the forest. A stabs a fish. An anaconda,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 235.5,
+   "shot_dur": 1.53,
+   "word_at": "fish.",
+   "spoken": "a fish. An anaconda,",
+   "spoken_wide": "forest. A stabs a fish. An anaconda, bigger you, way",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 250.47,
+   "shot_dur": 14.97,
+   "word_at": "negotiate.",
+   "spoken": "negotiate. You're hungry",
+   "spoken_wide": "ecosystem does negotiate. You're hungry now, which a new feeling. And",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 267.0,
+   "shot_dur": 16.53,
+   "word_at": "before",
+   "spoken": "mother before birth, which",
+   "spoken_wide": "nutrients you absorbed from mother before birth, which is out. You need food",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 268.6,
+   "shot_dur": 1.6,
+   "word_at": "out.",
+   "spoken": "out. You need food in",
+   "spoken_wide": "before birth, which is out. You need food in the next hours or",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 301.5,
+   "shot_dur": 32.9,
+   "word_at": "time.",
+   "spoken": "of the time. and you",
+   "spoken_wide": "paying most of the time. and you Your head shoots forward and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 310.33,
+   "shot_dur": 8.83,
+   "word_at": "and",
+   "spoken": "and the catfish",
+   "spoken_wide": "practice and you have no and the catfish vanishes into water",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 342.47,
+   "shot_dur": 32.13,
+   "word_at": "deeper.",
+   "spoken": "deeper. Then, something",
+   "spoken_wide": "it pulls, it drives them deeper. Then, something in your body that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 376.37,
+   "shot_dur": 33.9,
+   "word_at": "stomach,",
+   "spoken": "your stomach, and your",
+   "spoken_wide": "you can feel sitting in your stomach, and your immediately starts digesting it.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 381.87,
+   "shot_dur": 5.5,
+   "word_at": "3",
+   "spoken": "The sun is",
+   "spoken_wide": "to eat again for 3 The sun is now setting and you to",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 385.7,
+   "shot_dur": 3.83,
+   "word_at": "sleep.",
+   "spoken": "and sleep. 3 pass",
+   "spoken_wide": "you to the root system and sleep. 3 pass and you grow constantly,",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 385.83,
+   "shot_dur": 0.13,
+   "word_at": "sleep.",
+   "spoken": "sleep. 3 pass",
+   "spoken_wide": "to the root system and sleep. 3 pass and you grow constantly,",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 398.17,
+   "shot_dur": 12.33,
+   "word_at": "chances.",
+   "spoken": "chances. And you've",
+   "spoken_wide": "does not give chances. And you've already had of close",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 422.67,
+   "shot_dur": 24.5,
+   "word_at": "progress.",
+   "spoken": "You started hunting",
+   "spoken_wide": "which is progress. You started hunting capibaras,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 478.37,
+   "shot_dur": 55.7,
+   "word_at": "new,",
+   "spoken": "new, capiara,",
+   "spoken_wide": "one night, you spot something new, capiara, but not a young one,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 491.13,
+   "shot_dur": 12.77,
+   "word_at": "mistake.",
+   "spoken": "mistake. You wait until it's",
+   "spoken_wide": "nature is a mistake. You wait until it's with its head down, distracted,",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 515.8,
+   "shot_dur": 24.67,
+   "word_at": "stops.",
+   "spoken": "You killed",
+   "spoken_wide": "minutes, its heart stops. You killed Then you smell something else in",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 516.5,
+   "shot_dur": 0.7,
+   "word_at": "killed",
+   "spoken": "You killed Then you smell",
+   "spoken_wide": "heart stops. You killed Then you smell something else in the",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 527.07,
+   "shot_dur": 10.57,
+   "word_at": "blood",
+   "spoken": "the blood and it's coming",
+   "spoken_wide": "shallows it smelled the blood and it's coming investigate. This",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 539.57,
+   "shot_dur": 12.5,
+   "word_at": "away.",
+   "spoken": "seconds away. sees you.",
+   "spoken_wide": "is less than 30 seconds away. sees you. You see it. Neither of",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 549.23,
+   "shot_dur": 9.67,
+   "word_at": "tiny",
+   "spoken": "running the numbers",
+   "spoken_wide": "calculations in your tiny running the numbers on whether can win this fight",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 568.9,
+   "shot_dur": 19.67,
+   "word_at": "Over",
+   "spoken": "Over next two",
+   "spoken_wide": "leaves. You exhale. Over next two months, you grow to four",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 593.8,
+   "shot_dur": 24.9,
+   "word_at": "strategy.",
+   "spoken": "strategy. You're 6 months",
+   "spoken_wide": "that avoiding it is correct strategy. You're 6 months now. You weigh maybe",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 634.8,
+   "shot_dur": 41.0,
+   "word_at": "from",
+   "spoken": "from now avoid",
+   "spoken_wide": "most of the you used to hide from now avoid The cappu bars",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 636.13,
+   "shot_dur": 1.33,
+   "word_at": "avoid",
+   "spoken": "The cappu",
+   "spoken_wide": "hide from now avoid The cappu bars that come to drink have",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 639.87,
+   "shot_dur": 3.73,
+   "word_at": "water",
+   "spoken": "water looking for",
+   "spoken_wide": "drink have learned to check the water looking for your outline in the shallows.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 644.17,
+   "shot_dur": 4.3,
+   "word_at": "and",
+   "spoken": "they you and leave without",
+   "spoken_wide": "shallows. And half the time they you and leave without drinking, means that they",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 647.27,
+   "shot_dur": 3.1,
+   "word_at": "risk",
+   "spoken": "rather risk",
+   "spoken_wide": "means that they would rather risk than risk you.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 648.8,
+   "shot_dur": 1.53,
+   "word_at": "risk",
+   "spoken": "than risk you.",
+   "spoken_wide": "rather risk than risk you. And honestly, a reasonable",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 652.0,
+   "shot_dur": 3.2,
+   "word_at": "them.",
+   "spoken": "for them. But picary",
+   "spoken_wide": "honestly, a reasonable call for them. But picary doesn't check. It walks",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 672.27,
+   "shot_dur": 20.27,
+   "word_at": "one.",
+   "spoken": "this one. You weigh",
+   "spoken_wide": "next meal while you're this one. You weigh about 200",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 708.37,
+   "shot_dur": 36.1,
+   "word_at": "again.",
+   "spoken": "again. You hear something",
+   "spoken_wide": "and trying to get your working again. You hear something through the brush on",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 736.77,
+   "shot_dur": 28.4,
+   "word_at": "walking",
+   "spoken": "Jaguars",
+   "spoken_wide": "fighting or walking Jaguars kill caymans by biting their",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 752.13,
+   "shot_dur": 15.37,
+   "word_at": "cage.",
+   "spoken": "cage. The",
+   "spoken_wide": "would crush its rib cage. The decides water isn't that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 758.93,
+   "shot_dur": 6.8,
+   "word_at": "choice,",
+   "spoken": "choice, but still",
+   "spoken_wide": "That was a smart choice, but still competition in the water.",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 777.8,
+   "shot_dur": 18.87,
+   "word_at": "The",
+   "spoken": "The dry is",
+   "spoken_wide": "up until food gets scarce. The dry is starting, which means the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 782.4,
+   "shot_dur": 4.6,
+   "word_at": "and",
+   "spoken": "and prey is getting",
+   "spoken_wide": "is dropping and the lake is and prey is getting into a smaller",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 785.53,
+   "shot_dur": 3.13,
+   "word_at": "area.",
+   "spoken": "area. And",
+   "spoken_wide": "into a smaller area. And prey means you and the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 803.47,
+   "shot_dur": 17.93,
+   "word_at": "The",
+   "spoken": "each other. The Anaconda",
+   "spoken_wide": "while being 10 m from each other. The Anaconda first because it grabbed",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 810.23,
+   "shot_dur": 6.77,
+   "word_at": "you.",
+   "spoken": "And this is a",
+   "spoken_wide": "swims towards you. And this is a challenge, which",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 829.83,
+   "shot_dur": 19.6,
+   "word_at": "win.",
+   "spoken": "would win. But you leave.",
+   "spoken_wide": "is no that you would win. But you leave. The anaconda moves closer",
+   "moment": [
+    "turn",
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 861.87,
+   "shot_dur": 32.03,
+   "word_at": "suffocating.",
+   "spoken": "suffocating. So you don't get",
+   "spoken_wide": "and losing suffocating. So you don't get You keep constricting",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 889.73,
+   "shot_dur": 27.87,
+   "word_at": "competition,",
+   "spoken": "competition, for the next 3",
+   "spoken_wide": "fully yours, no competition, for the next 3 weeks, you don't see",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 892.47,
+   "shot_dur": 2.73,
+   "word_at": "large",
+   "spoken": "large predator",
+   "spoken_wide": "next 3 weeks, you don't see large predator in your But",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 896.9,
+   "shot_dur": 4.43,
+   "word_at": "starts",
+   "spoken": "Dry season",
+   "spoken_wide": "then the water starts Dry season in the Amazon",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 909.17,
+   "shot_dur": 12.27,
+   "word_at": "pit.",
+   "spoken": "pit. You it shrink",
+   "spoken_wide": "turning into a big mud pit. You it shrink day by day. And this",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 922.87,
+   "shot_dur": 13.7,
+   "word_at": "moving.",
+   "spoken": "moving. The rule in",
+   "spoken_wide": "vultures for you to stop moving. The rule in is simple. Migrate",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 928.3,
+   "shot_dur": 5.43,
+   "word_at": "it.",
+   "spoken": "with it. You the lake",
+   "spoken_wide": "collapse or die with it. You the lake and start moving overland",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 942.07,
+   "shot_dur": 13.77,
+   "word_at": "in.",
+   "spoken": "in. Your dark scales",
+   "spoken_wide": "And there's water to hide in. Your dark scales absorbing direct sunlight,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 947.87,
+   "shot_dur": 5.8,
+   "word_at": "past",
+   "spoken": "which is too",
+   "spoken_wide": "temperature up past which is too hot, which means that",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 957.13,
+   "shot_dur": 9.27,
+   "word_at": "in",
+   "spoken": "moving in short bursts",
+   "spoken_wide": "to the in 4 hours, moving in short bursts resting in shade.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 957.23,
+   "shot_dur": 0.1,
+   "word_at": "in",
+   "spoken": "moving in short bursts",
+   "spoken_wide": "to the in 4 hours, moving in short bursts resting in shade.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 962.7,
+   "shot_dur": 5.47,
+   "word_at": "cooler",
+   "spoken": "cooler full of fish.",
+   "spoken_wide": "the water, it's deeper and cooler full of fish. You sink to the bottom",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 966.57,
+   "shot_dur": 3.87,
+   "word_at": "hour",
+   "spoken": "an hour while your",
+   "spoken_wide": "to the bottom don't move for an hour while your temperature stabilizes.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 969.2,
+   "shot_dur": 2.63,
+   "word_at": "stabilizes.",
+   "spoken": "This is",
+   "spoken_wide": "temperature stabilizes. This is new territory. Bigger",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 975.43,
+   "shot_dur": 6.23,
+   "word_at": "more",
+   "spoken": "more",
+   "spoken_wide": "but also more There's a black cayman in that",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 976.13,
+   "shot_dur": 0.7,
+   "word_at": "more",
+   "spoken": "There's a black",
+   "spoken_wide": "but also more There's a black cayman in that you've seen from a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 995.0,
+   "shot_dur": 18.87,
+   "word_at": "in.",
+   "spoken": "moved in. You it for",
+   "spoken_wide": "no that you've just moved in. You it for 3 days, learning when",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 996.7,
+   "shot_dur": 1.7,
+   "word_at": "days,",
+   "spoken": "days, learning when it",
+   "spoken_wide": "in. You it for 3 days, learning when it and where it rests and",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1011.5,
+   "shot_dur": 14.8,
+   "word_at": "you're",
+   "spoken": "and you're 10 m",
+   "spoken_wide": "down, distracted, and you're 10 m it, submerged in deep",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1020.93,
+   "shot_dur": 9.43,
+   "word_at": "its",
+   "spoken": "around its and it starts",
+   "spoken_wide": "and your coils wrap around its and it starts thrashing",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1027.53,
+   "shot_dur": 6.6,
+   "word_at": "shut",
+   "spoken": "shut 15",
+   "spoken_wide": "you. Its jaws snap shut 15 cmters from your head with",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1063.03,
+   "shot_dur": 35.5,
+   "word_at": "body.",
+   "spoken": "body. And the time",
+   "spoken_wide": "around its armored body. And the time that you're done, you're so",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1066.03,
+   "shot_dur": 3.0,
+   "word_at": "just",
+   "spoken": "you look like you just a canoe.",
+   "spoken_wide": "you're done, you're so you look like you just a canoe. You won't need to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1069.0,
+   "shot_dur": 2.97,
+   "word_at": "eat",
+   "spoken": "for 2",
+   "spoken_wide": "You won't need to eat for 2 months. You sink",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1081.7,
+   "shot_dur": 12.7,
+   "word_at": "phase.",
+   "spoken": "phase. You're 11 m",
+   "spoken_wide": "It fuels your next phase. You're 11 m long now. You close",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1103.87,
+   "shot_dur": 22.17,
+   "word_at": "interferes.",
+   "spoken": "The river",
+   "spoken_wide": "When hunt, nothing interferes. The river been recalibrated around",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1113.77,
+   "shot_dur": 9.9,
+   "word_at": "threat.",
+   "spoken": "threat. You've become",
+   "spoken_wide": "as the main threat. You've become 60 million years",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1139.47,
+   "shot_dur": 25.7,
+   "word_at": "problem.",
+   "spoken": "You're 12.5",
+   "spoken_wide": "becoming a problem. You're 12.5 m long now.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1181.4,
+   "shot_dur": 41.93,
+   "word_at": "bad",
+   "spoken": "There's a lowland",
+   "spoken_wide": "you is a bad There's a lowland appear drinks at your",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1205.53,
+   "shot_dur": 24.13,
+   "word_at": "But",
+   "spoken": "worth it. But you're bigger now,",
+   "spoken_wide": "ratio worth it. But you're bigger now, risk-to-reward ratios",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1225.53,
+   "shot_dur": 20.0,
+   "word_at": "The",
+   "spoken": "The superior drinks",
+   "spoken_wide": "than your target knows itself. The superior drinks for 4 minutes",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1248.37,
+   "shot_dur": 22.83,
+   "word_at": "up.",
+   "spoken": "show up. you wait",
+   "spoken_wide": "when the tapier doesn't show up. you wait another 3 hours and it",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1257.2,
+   "shot_dur": 8.83,
+   "word_at": "capara,",
+   "spoken": "which at",
+   "spoken_wide": "eat a 40 kg capara, which at point feels like eating a snack",
+   "moment": [
+    "question",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1262.5,
+   "shot_dur": 5.3,
+   "word_at": "On",
+   "spoken": "it. On day 17",
+   "spoken_wide": "the effort of it. On day 17 of waiting, you again.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1315.83,
+   "shot_dur": 53.33,
+   "word_at": "crack.",
+   "spoken": "crack. But that's fine.",
+   "spoken_wide": "in the side and you a rib crack. But that's fine. Ribs heal. Beer tries",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1317.43,
+   "shot_dur": 1.6,
+   "word_at": "heal.",
+   "spoken": "heal. Beer tries to",
+   "spoken_wide": "crack. But that's fine. Ribs heal. Beer tries to inhale and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1325.57,
+   "shot_dur": 8.13,
+   "word_at": "tighter.",
+   "spoken": "tighter. And",
+   "spoken_wide": "take the slack and compress tighter. And not trying to suffocate it.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1377.1,
+   "shot_dur": 51.53,
+   "word_at": "slow",
+   "spoken": "contractions",
+   "spoken_wide": "1 hour of slow contractions pulling the tip of head deeper",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1381.5,
+   "shot_dur": 4.4,
+   "word_at": "chewing",
+   "spoken": "not chewing because you're a",
+   "spoken_wide": "into your throat. not chewing because you're a You don't have teeth for chewing.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1437.53,
+   "shot_dur": 56.03,
+   "word_at": "try.",
+   "spoken": "to try. And after",
+   "spoken_wide": "this is stupid enough to try. And after weeks, the tapir is fully",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1442.87,
+   "shot_dur": 5.33,
+   "word_at": "in",
+   "spoken": "in You're 13",
+   "spoken_wide": "grown another half meter in You're 13 m now. You weigh 1150",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1454.27,
+   "shot_dur": 11.4,
+   "word_at": "system.",
+   "spoken": "system. water",
+   "spoken_wide": "predator in this river system. water is too cold for you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1469.3,
+   "shot_dur": 15.03,
+   "word_at": "adapted.",
+   "spoken": "adapted. You bask",
+   "spoken_wide": "thinking clearly. But adapted. You bask longer during day, and you hunt",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1505.27,
+   "shot_dur": 35.97,
+   "word_at": "surface",
+   "spoken": "When you surface to breathe,",
+   "spoken_wide": "around avoiding When you surface to breathe, fish When",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1508.63,
+   "shot_dur": 3.37,
+   "word_at": "the",
+   "spoken": "the caymans leave.",
+   "spoken_wide": "When you move through the caymans leave. When you hunt,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1517.67,
+   "shot_dur": 9.03,
+   "word_at": "downstream,",
+   "spoken": "a group of cappy",
+   "spoken_wide": "and warm. And somewhere downstream, a group of cappy bars drinking the bank.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1524.1,
+   "shot_dur": 6.43,
+   "word_at": "day.",
+   "spoken": "day. You've been extinct",
+   "spoken_wide": "minutes, you're going to ruin day. You've been extinct for 60 years.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1552.63,
+   "shot_dur": 28.53,
+   "word_at": "Nature",
+   "spoken": "you couldn't exist",
+   "spoken_wide": "the cappy bars. Nature you couldn't exist here, but you're to",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  }
+ ]
+}

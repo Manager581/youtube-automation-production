@@ -1,52 +1,56 @@
-# NEXT SESSION — Dunkleosteus build (Spinosnack-style)
+# NEXT SESSION — Rexcaped (the channel formerly known as the Dunkleosteus build)
 
-**Status: research + pipeline DONE and validated. Next job = assemble the full video to spec.**
+**This session pivoted hard.** It started as "build the Dunkleosteus video" and became:
+fact-check the old "winning formula" → find it was wrong → measure the *real* edit grammar
+→ rebrand to **Rexcaped** → build a working **edit-engine**. Read this before touching anything.
 
-## Paste this to start the new session
-> Read `research/NEXT_SESSION.md` and `research/spinosnack_winning_formula.md`. We've validated the Spinosnack formula and proven every pipeline piece. Now build the full "I Simulated A Dunkleosteus In The Modern Ocean, It Was Brutal" video to the validated spec: generate ~15–20 ChatGPT photoreal creature stills → LTX image-to-video each → assemble to `scripts/dunkleosteus_v2.txt` (voice = `audio/dunkleosteus/narration_v2_clean.wav`) with ~5s cuts, unified teal grade, the ink thumbnail, and the next-creature CTA. Use the direct `.nosync` venv paths.
+## ▶ PASTE THIS TO START
+> Read `research/NEXT_SESSION.md`, `research/edit_grammar_ruleset.md`, and `scripts/rexcaped_edit_engine.py`.
+> We've measured the real edit grammar of the top creature-sim videos and built the Rexcaped edit-engine (script → cut plan). Next: **tune the asset ratios, build the stat-card generator, then run the T-Rex pilot** — script (no-evolution rule) → cloned voice → engine → assets → render. Don't re-derive; build.
 
-## What's already done (don't redo)
-- **Data analysis** → `research/spinosnack_winning_formula.md` (+ raw `spinosnack_analysis_report.json`). 13 videos, top vs bottom. **Packaging beats execution ~376×.**
-- **Validated formula:** original creature (not movie IP) · 2nd-person POV survival-sim · **ink-horror thumbnail + ONE red doom-word** (13/13 predictor — NOT glossy/versus) · brandless stat-stack cold open + POV flip <15s + ≥2 open loops + title-answer withheld · ~195 WPM, 18–26 min · wall-to-wall music · **CTA teases next creature** (series flywheel) · high motion/fast cuts are table stakes, NOT the edge.
-- **Photoreal visual pipeline PROVEN:** ChatGPT still → LTX i2v → photoreal motion. Example asset: `footage/dunkleosteus/dunk_i2v_hero.mp4` from `assets/dunkleosteus/chatgpt_dunk_hero_01.png`.
-- **Script v2 (on-spec):** `scripts/dunkleosteus_v2.txt`
-- **Cloned narration v2 (clean, 157s):** `audio/dunkleosteus/narration_v2_clean.wav` (+ `_manifest.json`)
-- **Ink-horror thumbnail v1:** `footage/dunkleosteus/thumbnail_inkhorror_v2.jpg`
-- **Environment fixed:** venvs rebuilt + iCloud-excluded. Reliable now.
+## ⚠️ The old "formula" was wrong — do NOT trust `spinosnack_winning_formula.md`
+A prior session's analysis (13 videos) had real errors we verified by re-watching:
+- It called **video-game footage (Maneater) and borrowed clips "3D CGI."** They don't make original creature visuals — they assemble **game footage + real stock + memes + cards**.
+- The "13 analyzed videos" are **≥2 different channels** mashed together (a faceless collage channel + a face-cam reaction creator) → its top-vs-bottom and "face-cam = loser" claims are confounded.
+- Its "cut every 5s / 18–26 min" numbers were **averages hiding the truth**.
+**The trustworthy artifact is now `research/edit_grammar_ruleset.md`** (measured, with the honest limits).
 
-## The build plan (the actual next work)
-1. **Shot list:** ~15–20 hero scenes from the v2 script beats (hatch / cold / first strike / the looming threat / etc.) + the existing storyboard `storyboards/dunkleosteus_storyboard.json`.
-2. **Stills:** generate each in **ChatGPT** (photoreal, cinematic, teal deep-ocean, 16:9) via Claude-in-Chrome on chatgpt.com → download → `assets/dunkleosteus/`.
-3. **Motion:** LTX i2v each still → `footage/dunkleosteus/` (see command below). Serialize on MPS.
-4. **Paper edit:** `scripts/build_dunk_paper_edit.py` (clip mode) against `narration_v2_clean_manifest.json`. Aim ~5s beats (don't over-cut). Boomerang-loop short clips to cover beats (`scripts/exclude...` no — see transcript for the loop step) OR generate ~5s clips.
-5. **Render:** `scripts/ffmpeg_production_render.py --paper-edit ... --narration audio/dunkleosteus/narration_v2_clean.wav` → then teal-grade post-pass (params below).
-6. **QA:** `scripts/verify_render.py`.
-7. **Thumbnail:** refine `thumbnail_inkhorror_v2.jpg` in Photoshop (sharper crosshatch, red eye-glow) — or regenerate over a better ChatGPT head.
-8. **CTA:** already in v2 script (tease next creature + community vote).
+## What we MEASURED (the real model — `research/edit_grammar_ruleset.md`)
+- **Cut rhythm is multi-modal**, not an average: 0.07s machine-gun bursts (lists/"simple math" beats) → ~3s body collage → 9s+ held cards. ~95% of cuts have a sound hit; wall-to-wall music.
+- **Cuts are ~80% on a script feature** (stat/turn/pause) BUT — honest caveat — that's only **~7 points above random** once density is matched. **Exact cut placement is NOT script-reproducible** (it's visual/editorial judgment). So the goal is **STYLE-FIT, not cut-cloning.**
+- **The creature is only ~20–25% of shots.** Mix ≈ **stock B-roll 40% / memes 25% / creature 20% / cards 10%.** We do NOT need a creature per beat — a few hero creature shots + a stock/meme/card library carries it.
 
-## CRITICAL conventions / gotchas (or it breaks)
-- **Use direct `.nosync` venv paths** (iCloud renames the convenience symlinks):
-  - main: `venv.nosync/bin/python`  ·  LTX: `tools/ltx-video/ltx_env.nosync/bin/python`
-- **MPS = one torch job at a time.** Run F5-TTS on CPU (`F5_DEVICE=cpu`) so LTX gets MPS. Two MPS jobs deadlock.
-- **F5-TTS voice:** short ref `assets/voice/voice_neutral_ref_short.wav`, **single register** (NOT the long story refs `voice_neutral.wav` etc. — they bleed old scripts into the output).
-- **LTX i2v command** (from `tools/ltx-video`):
-  ```bash
-  cd tools/ltx-video && PYTORCH_ENABLE_MPS_FALLBACK=1 ltx_env.nosync/bin/python -u inference.py \
-    --prompt "<motion desc>" --conditioning_media_paths <abs/path/still.png> --conditioning_start_frames 0 \
-    --height 448 --width 768 --num_frames 97 --frame_rate 24 --seed N \
-    --pipeline_config configs/ltxv-2b-minimal.yaml --output_path <abs/out_dir>
-  # NOTE: --output_path is a DIRECTORY; the mp4 lands inside as video_output_*.mp4
-  ```
-- **ChatGPT:** desktop app won't launch; use **chatgpt.com via the Chrome extension** (Claude-in-Chrome). Logged-in Plus account. Download via the share dialog's Download button → lands in ~/Downloads.
-- **Teal grade post-pass:**
-  ```
-  -vf "colorbalance=rs=-0.06:gs=0.04:bs=0.12:rm=-0.04:gm=0.02:bm=0.06:rh=-0.05:bh=0.08,eq=contrast=1.12:saturation=1.08:gamma=0.96,vignette=PI/4.5"
-  ```
-- Old `output/dunkleosteus_*.mp4` are EARLIER proofs (placeholder/stills/abstract-2B). The new build supersedes them.
+## The brand — Rexcaped ✅
+- Name: **Rexcaped** (a T-Rex that *escaped* into the modern world — premise baked into the name).
+- Mark: **orange T-Rex emblem** → `assets/brand/emblem_trex_orange.png` (also `emblem_trex.png` teal, `emblem_A_creature.png`, `emblem_B_containment.png`). The hand-drawn ink style doubles as the thumbnail base.
+- Worldview rule (owner is a young-earth Christian): **no dates, no "evolution," no geologic-epoch dating.** Use "ancient / a world that's gone." Keep physical stats (bite force, size). A rewritten no-evolution Dunk cold open is in this session's transcript.
+- Pilot title (proven template): **"I Simulated A T-Rex In Modern New York, It Was Brutal."**
 
-## Key files
-- Formula: `research/spinosnack_winning_formula.md` · Script: `scripts/dunkleosteus_v2.txt` · Voice: `audio/dunkleosteus/narration_v2_clean.wav`
-- Hero still: `assets/dunkleosteus/chatgpt_dunk_hero_01.png` · i2v example: `footage/dunkleosteus/dunk_i2v_hero.mp4` · Thumb: `footage/dunkleosteus/thumbnail_inkhorror_v2.jpg`
-- Tools: `scripts/gen_dunk_clips.py` (LTX batch, now uses ltx_env.nosync) · `scripts/build_dunk_paper_edit.py` · `scripts/ffmpeg_production_render.py` · `scripts/verify_render.py`
-- Repro: `requirements.txt` + `requirements_ltx_env.txt` (install with `--no-deps`; ltx torch pinned to stable 2.8.0)
-- Memory: `memory/project_spinosnack_creature_channel.md`, `project_icloud_venv_eviction.md`, `project_mps_serialize_torch_jobs.md`
+## What's BUILT and committed (branch `spinosnack-dunkleosteus`)
+- `scripts/extract_edit_grammar.py` — cuts (ffmpeg scene-detect) ↔ word-timed transcript ↔ moment-type.
+- `scripts/analyze_shot_assets.py` — samples shot frames + OCR + contact sheets for asset-typing.
+- `scripts/validate_edit_engine.py` — predictability test vs real cuts (+ null model).
+- `scripts/rexcaped_edit_engine.py` — **the engine**: script → candidate cuts (stat/turn/pause) → tempo selection (slow-hook/fast-body, rapid-fire bursts) → asset assignment. Self-validates.
+- `research/edit_grammar_ruleset.md` — the measured ruleset (THE reference).
+- `research/edit_analysis/*_grammar.json` — preserved measured cut data (megalodon/titanoboa/trex).
+- **Proof it works end-to-end:** `storyboards/dunk_rexcaped_demo_paper_edit.json` → rendered
+  `output/dunk_rexcaped_tempo_demo_540p.mp4` (Dunk footage auto-cut at Rexcaped tempo, 41 cuts incl.
+  0.3s bursts). Creature-only (no stock/memes yet) — it proves the RHYTHM, not the full look.
+
+## What's LEFT to a finished video
+1. **Tune asset ratios** in `rexcaped_edit_engine.py` (assign_assets) to hit ~20/40/25/10. (no-decision, quick)
+2. **Build a stat-card generator** — orange/black branded cards w/ the spoken number. (no-decision, buildable now)
+3. **Asset library** — creature (our i2v pipeline, proven), **stock footage** (needs a sourcing decision),
+   **memes** (needs the COPYRIGHT decision — the ref channel uses copyrighted clips; risky monetized).
+4. **The pilot** — T-Rex script (no-evolution) → F5 voice → engine → assets → render → ink thumbnail.
+
+## 🔑 Two decisions only the owner can make
+- **Meme strategy**: copyrighted clips like the ref channel (fair-use risk) vs. freely-usable/original cutaways.
+- **Stock sourcing**: which library/approach (project rule historically = no Pexels/Pixabay images; real stock video TBD).
+
+## Gotchas / conventions (still true)
+- Direct venv paths (iCloud renames symlinks): `venv.nosync/bin/python`, LTX `tools/ltx-video/ltx_env.nosync/bin/python`.
+- Renderer: `scripts/ffmpeg_production_render.py --paper-edit X --narration Y --output Z [--preview]`.
+- Reference videos were downloaded to `/tmp/edit_deep/` (EPHEMERAL — re-download via the IDs in `scripts/extract_edit_grammar`/the engine if needed; the *measured* data is preserved in `research/edit_analysis/`).
+- F5-TTS on CPU + short single-register voice ref; one MPS torch job at a time.
+- The 18 Dunkleosteus creature clips (`footage/dunkleosteus/`) + stills (`assets/dunkleosteus/`) remain — the Dunk is a ready **video #2**, just strip its evolution lines.
