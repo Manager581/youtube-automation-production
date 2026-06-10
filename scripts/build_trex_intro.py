@@ -96,19 +96,52 @@ SHEET = [
 ]
 
 
+def build_remap(old_manifest, new_manifest):
+    """Piecewise-linear old-time -> new-time map from the segment boundaries shared
+    by both takes (same script -> same segment order). Used to slide the hand-authored
+    cut times onto a re-generated (differently-paced) narration without losing sync."""
+    o = json.load(open(old_manifest))['segments']
+    n = json.load(open(new_manifest))['segments']
+    if len(o) != len(n):
+        print(f"  ⚠ segment counts differ (old {len(o)} vs new {len(n)}) — "
+              f"falling back to uniform scale")
+        os_, ns_ = json.load(open(old_manifest)), json.load(open(new_manifest))
+        scale = ns_['total_duration_sec'] / os_['total_duration_sec']
+        return lambda t: round(t * scale, 3)
+    anchors = sorted({(float(o[i]['start_sec']), float(n[i]['start_sec']))
+                      for i in range(len(o))} |
+                     {(float(o[-1].get('end_sec', o[-1]['start_sec'])),
+                       float(n[-1].get('end_sec', n[-1]['start_sec'])))})
+
+    def remap(t):
+        for k in range(len(anchors) - 1):
+            (ox, nx), (oy, ny) = anchors[k], anchors[k + 1]
+            if ox <= t <= oy:
+                f = 0 if oy == ox else (t - ox) / (oy - ox)
+                return round(nx + f * (ny - nx), 3)
+        return round(t * anchors[-1][1] / anchors[-1][0], 3) if anchors[-1][0] else t
+    return remap
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--out', required=True)
     ap.add_argument('--chapter', default='REXCAPED')
     ap.add_argument('--render-cards', action='store_true',
                     help='render the 6 intro stat cards before building')
+    ap.add_argument('--old-manifest', help='aligned manifest the SHEET times were authored against')
+    ap.add_argument('--new-manifest', help='aligned manifest of the re-generated narration to retime onto')
     a = ap.parse_args()
 
     if a.render_cards:
         render_cards()
 
+    remap = (build_remap(a.old_manifest, a.new_manifest)
+             if a.old_manifest and a.new_manifest else (lambda t: t))
+
     beats, missing, start = [], [], 0.0
-    for i, (end, key, sfx, note) in enumerate(SHEET):
+    for i, (end_raw, key, sfx, note) in enumerate(SHEET):
+        end = remap(end_raw)
         path = CLIP[key]
         is_card = key.startswith('c_')
         if not path.exists():
@@ -122,7 +155,8 @@ def main():
             'visual_type': 'still' if is_card else 'video',
             'clip_audio': 'mute',
             'tension_level': 0.7,
-            'zoom_speed_pct_per_sec': 0.0,           # cards static (crisp text); clips already move
+            # subtle push on cards (1.2%/s — proven crisp in the full render); clips ignore it
+            'zoom_speed_pct_per_sec': 1.2 if is_card else 0.0,
             'chapter': a.chapter,
             'sfx': sfx,
             'text': note,
