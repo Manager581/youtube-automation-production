@@ -20,26 +20,53 @@ wired on 123/129 beats but onsets don't register — likely soft whoosh attacks 
 offset; investigate in renderer) · **within-shot events 2 vs winner 274; 76% shots static**
 (expected — the EVENT LAYER doesn't exist yet; that's the build).
 
-**▶ PASTE THIS INSTEAD:**
+**▶ PASTE THIS INSTEAD (2026-06-10e — owner rejected the animatic open TWICE; mock-first now):**
 > Read `research/viral_recreation_spec.md`, `research/trex_pilot_shot_sheet_hook.md`, and
-> `research/NEXT_SESSION.md`. The HOOK ANIMATIC exists (`output/trex_hook_animatic_540p.mp4`,
-> 64s, 30 beats, built from the sheet; PE = `storyboards/trex_hook_animatic.json`; 6 ChatGPT
-> stills in `assets/trex_pilot/hook_stills/169/`). EVENT LAYER v1 IS IN (e1a5cf0): slam enters
-> (`enter:"slam"`), per-event SFX (`events`), typewriter + boil MOVs (`rexcaped_stat_cards.py
-> --typewriter-mov/--boil-mov` → `assets/trex_pilot/anim/`, regenerable), whoosh-hit SFX grammar
-> (whoosh-only cuts read SILENT → swell INTO cut at 0.5 + impact ON cut at 0.4). Animatic v2.3:
-> sound-on-cut 97% ✓ (gate 90), music 0.867 (real fix = trex bed ducked against OUR VO — owner
-> music decision; breaking_law ducked tracks have foreign duck-holes). STILL TO BUILD: overlay
-> pop-ins WITHIN a beat (card-over-clip composite), odometer as one MOV, map/clock/calendar
-> cards, sway on long stills. Then re-measure — remaining gates: events ≥25/min, static <40%.
-> Then extend the sheet past 1:04 (body sections) + manufacture per section, animatic-first.
-> Owner decisions pending: ink-gag comedy lane (prototyped in the animatic — beats 19/27),
-> stock lane, i2v spend (Kling/Veo/Hailuo).
-> ChatGPT-stills workflow gotchas: open the image VIEWER (click the painted image; verify the
-> Select/Aspect-ratio/Share toolbar) BEFORE clicking the download icon at top-right — the chat
-> layout's Share button in that corner creates a PUBLIC link (one was created+deleted this
-> session via Settings→Data controls→Shared links). Downloads land in ~/Downloads as
-> "ChatGPT Image <date>.png", 1536×1024 → center-crop to 16:9.
+> `research/NEXT_SESSION.md` (esp. "HOW ON-SCREEN CHOICES GET MADE"). Owner watched
+> `output/trex_hook_animatic_540p.mp4` and rejected the first 10s twice: (1) black text cards
+> — "ZERO black text in the viral video" → ALL cards re-skin to ORANGE canvas
+> (`rexcaped_stat_cards.py render_card_orange()` is built; sample blessed-pending at
+> `/tmp/card_orange_sample.png`); (2) "odd shots of New York City … looks NOTHING like the
+> viral video" → diagnosis: the winner's open is a SCENE (premise on screen while VO talks,
+> stats ride as small overlays); ours was a mood board (stats-first full-frame cards + dark
+> creature-less b-roll). Fix structure: frame 1 = creature-in-bright-NYC wide, stats become
+> orange OVERLAY chips on world shots (overlay-within-a-beat compositing NOT yet in renderer).
+> DONE: still A `assets/trex_pilot/hook_stills/169/ch_trex_avenue_wide.png` (trex mid-avenue,
+> bright winter daylight, taxis, fleeing crowd — the money establishing shot). TO GENERATE
+> (same ChatGPT convo "T-Rex Skull Landscape Image"; typing into the open image VIEWER's
+> "Describe edits" box generates a new chat image USING the open one as style/character ref —
+> that's how A stayed consistent): B = "same trex/street/light, LOW-ANGLE from street level
+> between two yellow taxis, torso+head looming, breath fog, 16:9"; C = "same trex walking away
+> down the avenue toward distant skyscrapers, crowd scattering, 16:9".
+> **THE GATE (promised to owner): build ONE mock strip image of the restructured 0–15s
+> (new stills + orange overlay chips, timestamps + VO lines under each tile, ≤2000px wide)
+> and get veto/bless BEFORE re-rendering anything.**
+> Event layer v1 is IN (e1a5cf0): slam enters, per-event SFX, typewriter+boil MOVs, whoosh-hit
+> grammar (swell INTO cut 0.5 + impact ON cut 0.4 — whoosh-only reads silent). Animatic v2.3
+> measured sound-on-cut 97% ✓, music 0.867 (real fix = trex bed, owner music decision). Still
+> to build: overlay pop-ins WITHIN a beat (now required by the restructure), odometer MOV,
+> map/clock cards, sway on long stills. Gates after mock-bless: events ≥25/min, static <40%.
+> Owner decisions pending: ink-gag comedy lane, stock lane, i2v spend (Kling/Veo/Hailuo).
+> ChatGPT gotchas: download ONLY from the image VIEWER (verify Select/Aspect-ratio toolbar)
+> — the chat layout's corner button is Share and once created a PUBLIC link (deleted via
+> Settings→Data controls→Shared links). Downloads → ~/Downloads "ChatGPT Image <date>.png",
+> 1536×1024 → center-crop 1536×864 into `hook_stills/169/`.
+
+## HOW ON-SCREEN CHOICES GET MADE (the decision chain — owner asked 2026-06-10)
+Three layers, in order of trustworthiness:
+1. **Measured laws (machine-checked):** tempo, event rate, sound-on-cut %, music coverage,
+   card flash length, asset-mix ratios — frame-measured from the winner into
+   `viral_recreation_spec.md`; our renders are measured against the same bands with
+   `extract_motion_events.py`. Never overridden by taste.
+2. **Mapping rules (from the winner's grammar):** script noun → literal visual ("bathtub" →
+   skull-vs-bathtub), stats → cards (flash 1–2s, overlay-on-world preferred), failure beats →
+   comedy, premise plays ON SCREEN while the VO talks. Authored row-by-row in the shot sheet
+   (`trex_pilot_shot_sheet_hook.md`: ON SCREEN / MOTION / SOUND per beat).
+3. **Taste calls (the weak link):** which exact image fills a slot, palette, composition,
+   structure of the open. BOTH owner rejections came from this layer being machine-filled.
+   **Rule now: layer-3 choices get a human gate — sheet + ONE cheap mock strip → owner
+   veto/bless → only then manufacture/render.** (The professional analog: nobody renders
+   finals before the animatic is approved.)
 
 Cull check while testing: `footage/trex_pilot/dunk_trex_stride_avenue.mp4` may read long-necked
 on the street shots (eyeballed in the v2 sanity sheet) — review against the jaws/eye/taxi clips;

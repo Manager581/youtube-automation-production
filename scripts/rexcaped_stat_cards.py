@@ -80,21 +80,50 @@ def wrap(draw, text, f, max_w, max_lines=4):
     return lines
 
 
-def base_canvas(bg):
+def base_canvas(bg, dots=None, dot_alpha=26):
     im = Image.new('RGB', (W, H), bg)
     d = ImageDraw.Draw(im, 'RGBA')
     # halftone dot field, fading from the bottom-left corner
+    dots = dots or ORANGE
     for gy in range(0, H, 26):
         for gx in range(0, W, 26):
             dist = ((gx / W) ** 2 + ((H - gy) / H) ** 2) ** 0.5
-            a = max(0, int(26 - 34 * dist))
+            a = max(0, int(dot_alpha - 34 * dist))
             if a:
-                d.ellipse((gx, gy, gx + 5, gy + 5), fill=ORANGE + (a,))
+                d.ellipse((gx, gy, gx + 5, gy + 5), fill=dots + (a,))
     # film grain
     noise = Image.effect_noise((W, H), 22).convert('L')
     im = Image.composite(im, Image.new('RGB', (W, H), (0, 0, 0)),
                          noise.point(lambda v: 255 - max(0, (v - 128) // 6)))
     return im
+
+
+# The viewer-rejected look was "black cards with text" — the reference's cards
+# live on a BRIGHT brand canvas (their green halftone), never black. Ours is
+# the orange field: ink-dark text, white context, darker-orange halftone.
+ORANGE_BG = (235, 92, 4)
+INK = (16, 13, 10)
+
+
+def render_card_orange(value, context, out_path):
+    im = base_canvas(ORANGE_BG, dots=(120, 40, 0), dot_alpha=46)
+    d = ImageDraw.Draw(im, 'RGBA')
+    d.rectangle((36, 36, W - 36, H - 36), outline=INK, width=4)
+    d.rectangle((50, 50, W - 50, H - 50), outline=INK + (90,), width=1)
+    tracked(d, (0, 76), 'REXCAPED', font(F_BLACK, 34), INK + (210,),
+            tracking=16, anchor_mid_w=W / 2)
+    fv = fit_font(d, value, F_BLACK, 1640, 430, start=330)
+    x0, y0, x1, y1 = d.textbbox((0, 0), value, font=fv)
+    vx, vy = (W - (x1 - x0)) / 2 - x0, (H - (y1 - y0)) * 0.40 - y0
+    d.text((vx + 9, vy + 11), value, font=fv, fill=(255, 200, 150))   # warm under-shadow
+    d.text((vx, vy), value, font=fv, fill=INK)
+    cy = vy + y1 + 46
+    if context:
+        d.line((W / 2 - 130, cy, W / 2 + 130, cy), fill=INK + (170,), width=3)
+        fc = fit_font(d, context, F_BLACK, 1500, 120, start=84, floor=40)
+        tracked(d, (0, cy + 28), context, fc, WHITE, tracking=6, anchor_mid_w=W / 2)
+    stamp_emblem(im)
+    im.save(out_path)
 
 
 def stamp_emblem(im, size=170, alpha=235):
