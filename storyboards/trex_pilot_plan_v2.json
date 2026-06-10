@@ -69,12 +69,8 @@
    "dur": 5.25,
    "why": "stat",
    "text": "twelve inches long and serrated like steak knives. You can bite down with",
-   "asset": "stat_card",
-   "sfx_on_cut": true,
-   "card": {
-    "value": "TWELVE",
-    "context": "INCHES LONG AND SERRATED"
-   }
+   "asset": "creature",
+   "sfx_on_cut": true
   },
   {
    "t": 18.54,
@@ -82,7 +78,7 @@
    "dur": 0.37,
    "why": "burst",
    "text": "twelve",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -100,7 +96,7 @@
    "dur": 0.37,
    "why": "burst",
    "text": "eight",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -109,7 +105,7 @@
    "dur": 0.38,
    "why": "burst",
    "text": "hundred",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -118,7 +114,7 @@
    "dur": 4.08,
    "why": "burst",
    "text": "pounds of force \u2014 enough to crush a car door, splinter",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -136,12 +132,8 @@
    "dur": 4.17,
    "why": "stat",
    "text": "five hundred pounds of meat in a single pull. And when",
-   "asset": "stat_card",
-   "sfx_on_cut": true,
-   "card": {
-    "value": "FIVE HUNDRED POUNDS",
-    "context": "TEAR OFF"
-   }
+   "asset": "creature",
+   "sfx_on_cut": true
   },
   {
    "t": 30.14,
@@ -149,7 +141,7 @@
    "dur": 4.13,
    "why": "timer",
    "text": "a tooth snaps off in the kill, you simply grow another.",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -158,7 +150,7 @@
    "dur": 4.22,
    "why": "pause",
    "text": "Nothing in your world ever walked away from you. But",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -185,7 +177,7 @@
    "dur": 4.9,
    "why": "turn",
    "text": "but in the middle of Manhattan, in February, at four degrees above freezing.",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -216,7 +208,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "flat, gray, and harder than any stone you",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -234,7 +226,7 @@
    "dur": 2.75,
    "why": "pause",
    "text": "Remember that ground. It is going to matter",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -243,7 +235,7 @@
    "dur": 2.55,
    "why": "timer",
    "text": "more than anything with teeth.",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -252,7 +244,7 @@
    "dur": 2.74,
    "why": "pause",
    "text": "Let's talk about the body you just woke",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -261,7 +253,7 @@
    "dur": 1.51,
    "why": "timer",
    "text": "up in. You are",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -283,7 +275,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "feet from nose to tail, and you weigh",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -302,7 +294,7 @@
    "dur": 2.74,
    "why": "pause",
    "text": "A single stride carries you fifteen feet. Your",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -311,7 +303,7 @@
    "dur": 3.09,
    "why": "timer",
    "text": "legs are the most powerful ever grown on a",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -320,7 +312,7 @@
    "dur": 2.74,
    "why": "stat",
    "text": "two-legged animal \u2014 but here is the catch",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -329,7 +321,7 @@
    "dur": 2.65,
    "why": "timer",
    "text": "nobody tells you. You cannot fall.",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -338,7 +330,7 @@
    "dur": 2.75,
    "why": "pause",
    "text": "At your size, a trip at speed slams",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -347,7 +339,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "the ground with enough force to shatter your",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -374,7 +366,7 @@
    "dur": 3.72,
    "why": "timer",
    "text": "For you, falling down is the same as dying.",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -392,7 +384,7 @@
    "dur": 2.89,
    "why": "timer",
    "text": "is paved in wet, flat concrete.",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -423,7 +415,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "it never stops burning. To stay alive, you",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -454,7 +446,7 @@
    "dur": 2.75,
    "why": "timer",
    "text": "food than this entire street will offer up",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -472,7 +464,7 @@
    "dur": 2.89,
    "why": "turn+pause",
    "text": "So you cannot just survive here. You have",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -481,7 +473,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "to hunt here. Constantly. In a place built",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -490,7 +482,7 @@
    "dur": 1.72,
    "why": "timer",
    "text": "out of glass, steel, and",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -499,8 +491,12 @@
    "dur": 2.89,
    "why": "stat",
    "text": "four million strangers. But you did",
-   "asset": "meme",
-   "sfx_on_cut": true
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "FOUR MILLION",
+    "context": "STRANGERS."
+   }
   },
   {
    "t": 138.25,
@@ -517,7 +513,7 @@
    "dur": 2.3,
    "why": "timer",
    "text": "rule by sense. Your nose is",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -526,7 +522,7 @@
    "dur": 2.75,
    "why": "stat",
    "text": "one of the best that ever existed \u2014",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -535,7 +531,7 @@
    "dur": 2.4,
    "why": "timer",
    "text": "you can smell blood from over a",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -567,7 +563,7 @@
    "dur": 1.72,
    "why": "timer",
    "text": "hawk's, and they resolve detail",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -589,12 +585,8 @@
    "dur": 3.87,
    "why": "stat",
    "text": "one running figure out of a crowd six blocks away.",
-   "asset": "stat_card",
-   "sfx_on_cut": true,
-   "card": {
-    "value": "ONE",
-    "context": "RUNNING FIGURE OUT"
-   }
+   "asset": "stock",
+   "sfx_on_cut": true
   },
   {
    "t": 162.9,
@@ -602,7 +594,7 @@
    "dur": 3.08,
    "why": "pause",
    "text": "You are not fast \u2014 you top out around",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -633,7 +625,7 @@
    "dur": 3.28,
    "why": "turn",
    "text": "But you do not need to be fast.",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -651,8 +643,12 @@
    "dur": 2.84,
    "why": "stat+pause",
    "text": "one. The street finds you before",
-   "asset": "meme",
-   "sfx_on_cut": true
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "DAY ONE.",
+    "context": "STREET FINDS"
+   }
   },
   {
    "t": 180.97,
@@ -660,7 +656,7 @@
    "dur": 1.39,
    "why": "timer",
    "text": "you find it.",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -669,7 +665,7 @@
    "dur": 2.74,
    "why": "pause",
    "text": "Horns. Sirens. A wall of yellow taxis, and",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -678,7 +674,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "behind the glass, faces \u2014 hundreds of them",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -687,7 +683,7 @@
    "dur": 3.05,
    "why": "timer",
    "text": "\u2014 looking up. To you, they read as",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -709,7 +705,7 @@
    "dur": 2.76,
    "why": "timer",
    "text": "you do what you were built to do.",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -718,7 +714,7 @@
    "dur": 2.08,
    "why": "timer",
    "text": "You lower your head, you pick",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -740,7 +736,7 @@
    "dur": 1.53,
    "why": "timer",
    "text": "whole block moves at",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -758,7 +754,7 @@
    "dur": 2.8,
    "why": "turn",
    "text": "before it clears the curb. One bite.",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -767,7 +763,7 @@
    "dur": 2.7,
    "why": "timer",
    "text": "That is the entire hunt.",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -776,7 +772,7 @@
    "dur": 2.89,
    "why": "pause",
    "text": "For about ten seconds, the old rules hold.",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -785,7 +781,7 @@
    "dur": 2.75,
    "why": "timer",
    "text": "You are the biggest thing on the street,",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -794,7 +790,7 @@
    "dur": 2.05,
    "why": "timer",
    "text": "and everything runs from you.",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -803,7 +799,7 @@
    "dur": 2.93,
    "why": "turn+pause",
    "text": "But these are not prey. Prey scatters and",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -812,7 +808,7 @@
    "dur": 2.64,
    "why": "timer",
    "text": "forgets. These things point small black rectangles",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -821,7 +817,7 @@
    "dur": 1.37,
    "why": "timer",
    "text": "at you, and within",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -843,7 +839,7 @@
    "dur": 3.97,
    "why": "timer",
    "text": "are, what you are, and which way you are walking.",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -852,7 +848,7 @@
    "dur": 2.63,
    "why": "pause",
    "text": "You killed one of them. Then a",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -861,7 +857,7 @@
    "dur": 2.95,
    "why": "timer",
    "text": "thousand more arrived just to watch you do",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -870,7 +866,7 @@
    "dur": 1.21,
    "why": "timer",
    "text": "it.",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -879,7 +875,7 @@
    "dur": 3.77,
    "why": "pause",
    "text": "By hour two, the hunt has flipped. First the police,",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -898,7 +894,7 @@
    "dur": 3.77,
    "why": "timer",
    "text": "trucks, rifles, and men who do this for a living.",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -907,7 +903,7 @@
    "dur": 3.09,
    "why": "pause",
    "text": "Your nose, the finest in the ancient world, is",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -916,7 +912,7 @@
    "dur": 2.74,
    "why": "turn",
    "text": "now drowning in diesel and gun smoke. Your",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -934,7 +930,7 @@
    "dur": 3.21,
    "why": "timer",
    "text": "that made you a god is being jammed at",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -943,7 +939,7 @@
    "dur": 2.66,
    "why": "turn",
    "text": "once. They cannot outfight you. So",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -952,7 +948,7 @@
    "dur": 2.75,
    "why": "timer",
    "text": "they do something smarter \u2014 they herd you.",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -983,7 +979,7 @@
    "dur": 1.22,
    "why": "timer",
    "text": "river.",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -992,7 +988,7 @@
    "dur": 2.78,
    "why": "pause",
    "text": "The Hudson is half a mile of black",
-   "asset": "meme",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -1001,7 +997,7 @@
    "dur": 3.79,
    "why": "timer",
    "text": "water. You can swim \u2014 your kind always could.",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -1010,7 +1006,7 @@
    "dur": 2.75,
    "why": "turn+pause",
    "text": "But not in four degrees. Not with the",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -1019,7 +1015,7 @@
    "dur": 2.74,
    "why": "timer",
    "text": "cold already deep in your blood, and the",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -1028,7 +1024,7 @@
    "dur": 2.75,
    "why": "stat",
    "text": "one rule of your body still hanging over",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -1037,7 +1033,7 @@
    "dur": 2.2,
    "why": "timer",
    "text": "everything. You still cannot fall.",
-   "asset": "creature",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -1046,7 +1042,7 @@
    "dur": 2.65,
    "why": "pause",
    "text": "On a wet pier, with the whole",
-   "asset": "stock",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -1055,7 +1051,7 @@
    "dur": 2.66,
    "why": "timer",
    "text": "city pushing at your back, that is",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -1064,7 +1060,7 @@
    "dur": 2.84,
    "why": "timer",
    "text": "the only number that matters.",
-   "asset": "stock",
+   "asset": "creature",
    "sfx_on_cut": true
   },
   {
@@ -1073,7 +1069,7 @@
    "dur": 2.74,
    "why": "turn+pause",
    "text": "So can a Tyrannosaurus actually survive in modern",
-   "asset": "creature",
+   "asset": "meme",
    "sfx_on_cut": true
   },
   {
@@ -1082,7 +1078,7 @@
    "dur": 2.41,
    "why": "timer",
    "text": "New York? The answer is yes.",
-   "asset": "meme",
+   "asset": "stock",
    "sfx_on_cut": true
   },
   {
@@ -1101,8 +1097,12 @@
    "dur": 2.88,
    "why": "stat",
    "text": "one. It has nothing to do with the",
-   "asset": "stock",
-   "sfx_on_cut": true
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "ONE.",
+    "context": "HAS NOTHING"
+   }
   },
   {
    "t": 311.15,

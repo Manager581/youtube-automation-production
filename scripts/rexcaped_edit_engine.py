@@ -44,6 +44,8 @@ TURN = {'but', 'until', 'then', 'however', 'suddenly', 'because', 'except', 'ins
 # stock B-roll 40 / memes 25 / creature 20 / stat-cards 10  (of 95) -> shares below.
 RATIOS = {'stock': 0.42, 'meme': 0.26, 'creature': 0.21, 'stat_card': 0.105}
 MIN_CARD_SHOT = 1.2      # a stat card needs hold time; never on a sub-1.2s flash
+MAX_CARD_SHOT = 3.2      # ...and it must FLASH (winner cards ~2s typewriter+hold);
+                         # a static card parked on a 5s shot reads dead
 MEME_RESET = 75.0        # comedic-reset cadence (measured: every 60-90s)
 
 
@@ -203,7 +205,8 @@ def assign_assets(cuts, words, dur, meme_cadence=MEME_RESET):
 
     # stat cards: qualifying stat shots, best-first (a unit beats a bare number)
     stat_idx = [i for i, s in enumerate(shots)
-                if s['asset'] is None and 'stat' in s['why'] and s['dur'] >= MIN_CARD_SHOT]
+                if s['asset'] is None and 'stat' in s['why']
+                and MIN_CARD_SHOT <= s['dur'] <= MAX_CARD_SHOT]
 
     def card_score(i):
         s = shots[i]
