@@ -4,19 +4,36 @@
 fact-check the old "winning formula" → find it was wrong → measure the *real* edit grammar
 → rebrand to **Rexcaped** → build a working **edit-engine**. Read this before touching anything.
 
-## ⚡ SESSION 2026-06-10c SUPERSEDES THE PASTE-BLOCK BELOW — frame-event study in flight
-The pilot pipeline runs end-to-end (section below still true), but a deep-watch session found
-the cut-level grammar is HALF the picture. Start here:
+## ⚡ SESSION 2026-06-10c/d — Tier-2 DONE, spec written, build-order step 1 DONE
+**`research/viral_recreation_spec.md` is the canonical style target** (10 measured laws +
+receipts + gap table + build order). Tier-2 frame anatomy is finished (card typewriter ~27
+chars/s on brand canvas, boiling 2-3-frame logo loop, bursts = frenetic INSERTS not splices,
+puppet-fight composites, noun-rhyme comedy chains, 1.77s median event gap / 91% of runtime
+within 4s of an event). Loser control (Chaos Theory, 556 views) confirmed which layers are
+load-bearing. **Step 1 shipped (cf9efca)**: `fill_timer_cuts()` in the engine (word-aligned
+timer cuts + 6s cap) → `trex_pilot_paper_edit_v2.json` → `output/trex_pilot_v2_540p.mp4`.
+
+**Measured v2 render vs winner band** (tools: extract_motion_events.py + detect_onsets):
+cuts 22.5/min ✓ (was 11.1; winner 18.5) · median 2.75s ✓ (winner 2.85) · >5s 2% ✓ ·
+music 0.85 (winner 0.91 — nudge bed level/genre) · **sound-on-cut 69% vs 95% target** (SFX
+wired on 123/129 beats but onsets don't register — likely soft whoosh attacks / placement
+offset; investigate in renderer) · **within-shot events 2 vs winner 274; 76% shots static**
+(expected — the EVENT LAYER doesn't exist yet; that's the build).
 
 **▶ PASTE THIS INSTEAD:**
-> Read `research/NEXT_SESSION.md` (2026-06-10c section), memory `project_trex_reference_deepwatch.md`,
-> and `research/edit_analysis/trex_motion_events.json` (summary block). Do the Tier-2 eyes-on pass:
-> dense frame grids around the event clusters in trex_motion_events.json (regen video via yt-dlp
-> DzUKhb2ZSko to /tmp/edit_deep/trex.webm if evicted; grids via the egg-prototype pattern in this
-> session's transcript / `scripts/extract_motion_events.py` docstring), write the per-second
-> RECREATION SPEC for the hook + 4 segments (a burst, a card run, a meme cluster, a kill), distill
-> the EVENT VOCABULARY (sway/crack-pop/pop-up/slam-in/wipe/overlay-in/exit/bob), THEN answer the
-> owner's pending question: "what would need to be true to recreate the viral style end-to-end."
+> Read `research/viral_recreation_spec.md` and `research/NEXT_SESSION.md`. Build-order steps
+> 2-3: (a) extend `scripts/rexcaped_stat_cards.py` to emit ANIMATED cards — typewriter reveal
+> ~27 chars/s + boiling Rexcaped-emblem stamp loop + NYC map / survival-clock / calendar cards
+> (PNG sequences or short MOVs the renderer can overlay); (b) add the renderer EVENT layer in
+> `scripts/ffmpeg_production_render.py` — animated overlay pop-in/slam/slide via overlay x/y/
+> scale expressions, sway/bob on stills, per-event SFX with PUNCHY transients (fix the 69%
+> sound-on-cut while in there); (c) re-render v2 and re-measure — gate: events ≥25/min, static
+> shots <40%, sound-on-cut ≥90%, music ≥0.90. Prototype each on ONE beat before wiring (rule 3).
+> Owner decisions still pending: comedy lane, stock lane, i2v spend (Kling/Veo/Hailuo).
+
+Cull check while testing: `footage/trex_pilot/dunk_trex_stride_avenue.mp4` may read long-necked
+on the street shots (eyeballed in the v2 sanity sheet) — review against the jaws/eye/taxi clips;
+`_dunk_trex_full_body_street.mp4` is already excluded (underscore prefix).
 
 What today established (details in memory + `research/edit_analysis/`):
 - **Deep-watch, winner (DzUKhb2ZSko, all 532 shots)**: 5 pilot gaps — tempo (pilot 11.1 cuts/min

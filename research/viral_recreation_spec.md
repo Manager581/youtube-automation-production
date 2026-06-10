@@ -86,7 +86,7 @@ logo 1s → SpongeBob fancy-legs gag 2.4s → DeVito deadpan 1.2s.
 |---|---|---|
 | Script | trex_pilot.txt already noun-dense, you-POV, modern collisions ✓ | add an explicit visual-noun pass: every sentence names a filmable noun |
 | VO | F5-TTS clone ✓ (crossfade corrector required) | unchanged |
-| Music | **none wired** in pilot PE | per-chapter bed via existing renderer support; ~91% coverage target |
+| Music | CORRECTED 2026-06-10: bed IS wired (chapter-field fallback loops `track_01_tense_ducked.wav`; measured 0.82 coverage on the pilot render vs ref 0.91) | creature-genre track(s) + slightly hotter bed → ≥0.90 coverage; per-act tracks later |
 | Cut engine | fires only on stat/turn/pause → 11.1 cuts/min, 60% shots >5s (loser quadrant) | timer-fallback cut at body target on nearest word + ~6s hard cap; bursts as frenetic-insert beats, not 18 splices |
 | Event layer | doesn't exist (static slates + 1.2%/s Ken Burns) | renderer EVENT layer: animated overlay pop-in/slam/slide (ffmpeg overlay x/y/scale expressions or pre-rendered PNG-sequence MOVs), per-event SFX from the event plan, sway/bob on composited stills |
 | Graphics | static orange cards (good brand, wrong behavior) | extend `rexcaped_stat_cards.py` to emit ANIMATED cards: typewriter reveal (~27 chars/s, PNG sequence), boiling emblem stamp loop, NYC map card, survival-clock, calendar flip; cards flash ~2s |
@@ -98,7 +98,7 @@ logo 1s → SpongeBob fancy-legs gag 2.4s → DeVito deadpan 1.2s.
 | Packaging | ink thumbnail ✓ title ✓ | add next-creature vote/tease end card (flywheel) |
 
 ## 4. Build order
-1. Engine tempo fix (timer-fallback + cap) + music wiring → re-render pilot →
+1. Engine tempo fix (timer-fallback + cap); music genre/level nudge → re-render pilot →
    **measure ourselves with `extract_motion_events.py`** (targets: cuts ≥15/min,
    events ≥25/min after event layer, music ≥90%, max quiet gap ≤6s).
 2. Animated graphics pack (typewriter cards, boiling stamp, clock/map/calendar).
