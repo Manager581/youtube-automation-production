@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "title": "Rexcaped NYC b-roll (clean city plates, no creature)",
+    "note": "Pure modern-Manhattan atmosphere to intercut with the T-Rex hero clips. No creature = no anatomy risk; the hardcoded 'human' negative keeps them clean/empty, which fits the cold empty-dawn mood of the intro.",
+    "fps": 24
+  },
+  "shots": [
+    {"id": "nyc_snow_street",
+     "i2v_prompt": "empty snow-covered Manhattan street at cold grey winter dawn, falling snow, rows of skyscrapers receding, parked cars dusted with snow, no people, desolate and silent, slow forward dolly down the street, photorealistic cinematic nature documentary, film grain, IMAX, 16:9"},
+    {"id": "nyc_skyline_dawn",
+     "i2v_prompt": "Manhattan skyline at cold grey winter dawn, low pale sun behind the skyscrapers, freezing haze over the city, slow aerial drift toward the towers, photorealistic cinematic, film grain, IMAX, 16:9"},
+    {"id": "nyc_avenue_taxis",
+     "i2v_prompt": "long Manhattan avenue at cold dawn seen from street level, rows of empty yellow taxis and parked cars, traffic lights, steam rising from a manhole, overcast winter light between skyscrapers, slow push-in, photorealistic cinematic, film grain, IMAX, 16:9"},
+    {"id": "nyc_snow_macro",
+     "i2v_prompt": "extreme slow-motion close-up of snow falling through freezing city air, soft out-of-focus city lights and skyscraper bokeh behind, cold blue-grey tone, drifting flakes, photorealistic cinematic macro, film grain, shallow depth of field"},
+    {"id": "nyc_wet_asphalt",
+     "i2v_prompt": "low close-up of wet dark grey asphalt and concrete city street, melting snow and shallow puddles reflecting cold skyscraper light, flat hard frozen ground, slow drift across the surface, photorealistic cinematic, film grain, shallow depth of field"}
+  ]
+}

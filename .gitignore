@@ -97,3 +97,4 @@ tools/ltx-video/
 requirements.txt.bak
 # vendored LTX-Video clone (regenerate: git clone Lightricks/LTX-Video + pip install -e; weights via HF)
 /tools/ltx-video/
+assets/*/intro_cards/
