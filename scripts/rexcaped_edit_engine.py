@@ -107,6 +107,36 @@ def select_cuts(cands, hook_end, hook_dur, body_dur, burst_win, burst_min):
     return cuts
 
 
+def fill_timer_cuts(cuts, words, hook_end, hook_dur, body_dur, grace, max_shot):
+    """Tempo enforcement (viral_recreation_spec.md law 1-2): the feature lattice
+    alone lets shots run 8-15s on feature-sparse passages (measured: pilot median
+    5.4s vs reference 2.85s). Walk the timeline; whenever the next feature cut
+    would land past target+grace, insert a word-aligned 'timer' cut near the
+    target instead (word-aligned = R5 mid-phrase cuts, which the reference makes
+    23-40% of the time and the lattice alone never produces). max_shot is the
+    hard cap; shots may exceed it only across word-free spans (VO pauses)."""
+    wt = [t for t, _ in words]
+    seq = sorted(cuts, key=lambda c: c['t'])
+    out, last, k = [], 0.0, 0
+    while True:
+        nxt = seq[k]['t'] if k < len(seq) else None
+        tgt = hook_dur if last < hook_end else body_dur
+        limit = min(last + tgt + grace, last + max_shot)
+        if nxt is not None and nxt <= limit:
+            if nxt - last < 0.35 and seq[k]['why'] != 'burst' and out:
+                k += 1; continue                    # collapse near-duplicate
+            out.append(seq[k]); last = nxt; k += 1; continue
+        win = [t for t in wt if last + 0.6 < t <= limit]
+        if not win:
+            if nxt is None:
+                break
+            out.append(seq[k]); last = nxt; k += 1; continue
+        tcut = min(win, key=lambda t: abs(t - (last + tgt)))
+        out.append({'t': round(tcut, 2), 'why': 'timer'})
+        last = tcut
+    return out
+
+
 def _words_in(words, t0, t1):
     return [w for (t, w) in words if t0 <= t < t1]
 
@@ -238,12 +268,18 @@ def main():
     ap.add_argument('--burst-win', type=float, default=2.2)
     ap.add_argument('--burst-min', type=int, default=4)
     ap.add_argument('--meme-cadence', type=float, default=MEME_RESET)
+    ap.add_argument('--grace', type=float, default=1.2,
+                    help='seconds past target before a timer cut fires')
+    ap.add_argument('--max-shot', type=float, default=6.0,
+                    help='hard shot cap (spec law 1: nothing >6s without an event)')
     a = ap.parse_args()
 
     words = parse_words(a.vtt)
     dur = words[-1][0] if words else 0
     cands = tag_candidates(words)
     cuts = select_cuts(cands, a.hook_end, a.hook_dur, a.body_dur, a.burst_win, a.burst_min)
+    cuts = fill_timer_cuts(cuts, words, a.hook_end, a.hook_dur, a.body_dur,
+                           a.grace, a.max_shot)
     shots, mix = assign_assets(cuts, words, dur, a.meme_cadence)
 
     print(f"words={len(words)}  candidates={len(cands)}  -> cuts={len(cuts)}  shots={len(shots)}")

@@ -1,0 +1,1758 @@
+{
+ "shots": [
+  {
+   "t": 0.0,
+   "end": 4.32,
+   "dur": 4.32,
+   "why": "open",
+   "text": "You are the closest thing the ancient world ever built to",
+   "asset": "creature",
+   "sfx_on_cut": false
+  },
+  {
+   "t": 4.32,
+   "end": 6.03,
+   "dur": 1.71,
+   "why": "timer",
+   "text": "a perfect killing machine.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 6.03,
+   "end": 6.41,
+   "dur": 0.38,
+   "why": "burst",
+   "text": "Forty",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 6.41,
+   "end": 7.17,
+   "dur": 0.76,
+   "why": "burst",
+   "text": "feet long.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 7.17,
+   "end": 7.56,
+   "dur": 0.39,
+   "why": "burst",
+   "text": "Nine",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 7.56,
+   "end": 11.76,
+   "dur": 4.2,
+   "why": "burst",
+   "text": "tons. A skull the size of a bathtub, packed with sixty",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 11.76,
+   "end": 13.29,
+   "dur": 1.53,
+   "why": "timer",
+   "text": "teeth, some of them",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 13.29,
+   "end": 18.54,
+   "dur": 5.25,
+   "why": "stat",
+   "text": "twelve inches long and serrated like steak knives. You can bite down with",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "TWELVE",
+    "context": "INCHES LONG AND SERRATED"
+   }
+  },
+  {
+   "t": 18.54,
+   "end": 18.91,
+   "dur": 0.37,
+   "why": "burst",
+   "text": "twelve",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 18.91,
+   "end": 19.28,
+   "dur": 0.37,
+   "why": "burst",
+   "text": "thousand",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 19.28,
+   "end": 19.65,
+   "dur": 0.37,
+   "why": "burst",
+   "text": "eight",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 19.65,
+   "end": 20.03,
+   "dur": 0.38,
+   "why": "burst",
+   "text": "hundred",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 20.03,
+   "end": 24.11,
+   "dur": 4.08,
+   "why": "burst",
+   "text": "pounds of force \u2014 enough to crush a car door, splinter",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 24.11,
+   "end": 25.97,
+   "dur": 1.86,
+   "why": "timer",
+   "text": "solid bone, and tear off",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 25.97,
+   "end": 30.14,
+   "dur": 4.17,
+   "why": "stat",
+   "text": "five hundred pounds of meat in a single pull. And when",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "FIVE HUNDRED POUNDS",
+    "context": "TEAR OFF"
+   }
+  },
+  {
+   "t": 30.14,
+   "end": 34.27,
+   "dur": 4.13,
+   "why": "timer",
+   "text": "a tooth snaps off in the kill, you simply grow another.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 34.27,
+   "end": 38.49,
+   "dur": 4.22,
+   "why": "pause",
+   "text": "Nothing in your world ever walked away from you. But",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 38.49,
+   "end": 40.51,
+   "dur": 2.02,
+   "why": "timer",
+   "text": "your world is gone.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 40.51,
+   "end": 45.8,
+   "dur": 5.29,
+   "why": "pause",
+   "text": "Today, you wake up here. Not on the warm floodplain your body was designed for,",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 45.8,
+   "end": 50.7,
+   "dur": 4.9,
+   "why": "turn",
+   "text": "but in the middle of Manhattan, in February, at four degrees above freezing.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 50.7,
+   "end": 53.92,
+   "dur": 3.22,
+   "why": "pause",
+   "text": "The first thing you feel is the cold. The",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 53.92,
+   "end": 56.67,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "second thing you feel is the ground \u2014",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "SECOND",
+    "context": "THING YOU FEEL"
+   }
+  },
+  {
+   "t": 56.67,
+   "end": 59.41,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "flat, gray, and harder than any stone you",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 59.41,
+   "end": 61.12,
+   "dur": 1.71,
+   "why": "timer",
+   "text": "have ever stood on.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 61.12,
+   "end": 63.87,
+   "dur": 2.75,
+   "why": "pause",
+   "text": "Remember that ground. It is going to matter",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 63.87,
+   "end": 66.42,
+   "dur": 2.55,
+   "why": "timer",
+   "text": "more than anything with teeth.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 66.42,
+   "end": 69.16,
+   "dur": 2.74,
+   "why": "pause",
+   "text": "Let's talk about the body you just woke",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 69.16,
+   "end": 70.67,
+   "dur": 1.51,
+   "why": "timer",
+   "text": "up in. You are",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 70.67,
+   "end": 73.42,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "thirteen feet tall at the hip and forty",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "THIRTEEN FEET",
+    "context": "TALL AT THE HIP"
+   }
+  },
+  {
+   "t": 73.42,
+   "end": 76.16,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "feet from nose to tail, and you weigh",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 76.16,
+   "end": 78.91,
+   "dur": 2.75,
+   "why": "timer",
+   "text": "as much as a full city bus.",
+   "asset": "meme",
+   "sfx_on_cut": true,
+   "meme_reset": true
+  },
+  {
+   "t": 78.91,
+   "end": 81.65,
+   "dur": 2.74,
+   "why": "pause",
+   "text": "A single stride carries you fifteen feet. Your",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 81.65,
+   "end": 84.74,
+   "dur": 3.09,
+   "why": "timer",
+   "text": "legs are the most powerful ever grown on a",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 84.74,
+   "end": 87.48,
+   "dur": 2.74,
+   "why": "stat",
+   "text": "two-legged animal \u2014 but here is the catch",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 87.48,
+   "end": 90.13,
+   "dur": 2.65,
+   "why": "timer",
+   "text": "nobody tells you. You cannot fall.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 90.13,
+   "end": 92.88,
+   "dur": 2.75,
+   "why": "pause",
+   "text": "At your size, a trip at speed slams",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 92.88,
+   "end": 95.62,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "the ground with enough force to shatter your",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 95.62,
+   "end": 98.37,
+   "dur": 2.75,
+   "why": "timer",
+   "text": "own skull, and your arms \u2014 those famously",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 98.37,
+   "end": 101.26,
+   "dur": 2.89,
+   "why": "timer",
+   "text": "tiny arms \u2014 cannot push you back up.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 101.26,
+   "end": 104.98,
+   "dur": 3.72,
+   "why": "timer",
+   "text": "For you, falling down is the same as dying.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 104.98,
+   "end": 107.73,
+   "dur": 2.75,
+   "why": "pause",
+   "text": "And the entire city you just landed in",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 107.73,
+   "end": 110.62,
+   "dur": 2.89,
+   "why": "timer",
+   "text": "is paved in wet, flat concrete.",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 110.62,
+   "end": 113.85,
+   "dur": 3.23,
+   "why": "pause",
+   "text": "There is a second problem, and it is hungrier.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 113.85,
+   "end": 116.6,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "Nine tons of muscle is a furnace, and",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "NINE TONS",
+    "context": "MUSCLE"
+   }
+  },
+  {
+   "t": 116.6,
+   "end": 119.34,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "it never stops burning. To stay alive, you",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 119.34,
+   "end": 121.06,
+   "dur": 1.72,
+   "why": "timer",
+   "text": "need to eat hundreds of",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 121.06,
+   "end": 123.8,
+   "dur": 2.74,
+   "why": "stat",
+   "text": "pounds of meat every few days \u2014 more",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "POUNDS OF MEAT EVERY FEW DAYS",
+    "context": "HUNDREDS"
+   }
+  },
+  {
+   "t": 123.8,
+   "end": 126.55,
+   "dur": 2.75,
+   "why": "timer",
+   "text": "food than this entire street will offer up",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 126.55,
+   "end": 128.01,
+   "dur": 1.46,
+   "why": "timer",
+   "text": "without a fight.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 128.01,
+   "end": 130.9,
+   "dur": 2.89,
+   "why": "turn+pause",
+   "text": "So you cannot just survive here. You have",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 130.9,
+   "end": 133.64,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "to hunt here. Constantly. In a place built",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 133.64,
+   "end": 135.36,
+   "dur": 1.72,
+   "why": "timer",
+   "text": "out of glass, steel, and",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 135.36,
+   "end": 138.25,
+   "dur": 2.89,
+   "why": "stat",
+   "text": "four million strangers. But you did",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 138.25,
+   "end": 141.14,
+   "dur": 2.89,
+   "why": "timer",
+   "text": "not rule a world by being fragile. You",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 141.14,
+   "end": 143.44,
+   "dur": 2.3,
+   "why": "timer",
+   "text": "rule by sense. Your nose is",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 143.44,
+   "end": 146.19,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "one of the best that ever existed \u2014",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 146.19,
+   "end": 148.59,
+   "dur": 2.4,
+   "why": "timer",
+   "text": "you can smell blood from over a",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 148.59,
+   "end": 151.34,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "mile away, through traffic, through smoke, through ten",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "MILE",
+    "context": "AWAY THROUGH TRAFFIC THROUGH SMOKE"
+   }
+  },
+  {
+   "t": 151.34,
+   "end": 154.22,
+   "dur": 2.88,
+   "why": "timer",
+   "text": "thousand people. Your eyes face forward like a",
+   "asset": "meme",
+   "sfx_on_cut": true,
+   "meme_reset": true
+  },
+  {
+   "t": 154.22,
+   "end": 155.94,
+   "dur": 1.72,
+   "why": "timer",
+   "text": "hawk's, and they resolve detail",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 155.94,
+   "end": 159.03,
+   "dur": 3.09,
+   "why": "stat",
+   "text": "thirteen times sharper than a human's. You can pick",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "THIRTEEN",
+    "context": "TIMES SHARPER THAN A HUMAN'S."
+   }
+  },
+  {
+   "t": 159.03,
+   "end": 162.9,
+   "dur": 3.87,
+   "why": "stat",
+   "text": "one running figure out of a crowd six blocks away.",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "ONE",
+    "context": "RUNNING FIGURE OUT"
+   }
+  },
+  {
+   "t": 162.9,
+   "end": 165.98,
+   "dur": 3.08,
+   "why": "pause",
+   "text": "You are not fast \u2014 you top out around",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 165.98,
+   "end": 168.73,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "twelve miles an hour, a quick human jog,",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "TWELVE MILES AN HOUR",
+    "context": "OUT AROUND"
+   }
+  },
+  {
+   "t": 168.73,
+   "end": 171.27,
+   "dur": 2.54,
+   "why": "timer",
+   "text": "and a real sprint would break you.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 171.27,
+   "end": 174.55,
+   "dur": 3.28,
+   "why": "turn",
+   "text": "But you do not need to be fast.",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 174.55,
+   "end": 178.13,
+   "dur": 3.58,
+   "why": "pause",
+   "text": "You only need to be patient. Day",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 178.13,
+   "end": 180.97,
+   "dur": 2.84,
+   "why": "stat+pause",
+   "text": "one. The street finds you before",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 180.97,
+   "end": 182.36,
+   "dur": 1.39,
+   "why": "timer",
+   "text": "you find it.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 182.36,
+   "end": 185.1,
+   "dur": 2.74,
+   "why": "pause",
+   "text": "Horns. Sirens. A wall of yellow taxis, and",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 185.1,
+   "end": 187.84,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "behind the glass, faces \u2014 hundreds of them",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 187.84,
+   "end": 190.89,
+   "dur": 3.05,
+   "why": "timer",
+   "text": "\u2014 looking up. To you, they read as",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 190.89,
+   "end": 193.83,
+   "dur": 2.94,
+   "why": "stat",
+   "text": "one thing: small, soft, and slow. So",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "ONE",
+    "context": "THING SMALL SOFT"
+   }
+  },
+  {
+   "t": 193.83,
+   "end": 196.59,
+   "dur": 2.76,
+   "why": "timer",
+   "text": "you do what you were built to do.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 196.59,
+   "end": 198.67,
+   "dur": 2.08,
+   "why": "timer",
+   "text": "You lower your head, you pick",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 198.67,
+   "end": 201.6,
+   "dur": 2.93,
+   "why": "stat",
+   "text": "one, and you take a single step. The",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "ONE",
+    "context": "TAKE A SINGLE"
+   }
+  },
+  {
+   "t": 201.6,
+   "end": 203.13,
+   "dur": 1.53,
+   "why": "timer",
+   "text": "whole block moves at",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 203.13,
+   "end": 205.97,
+   "dur": 2.84,
+   "why": "turn",
+   "text": "once. You catch the first one",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 205.97,
+   "end": 208.77,
+   "dur": 2.8,
+   "why": "turn",
+   "text": "before it clears the curb. One bite.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 208.77,
+   "end": 211.47,
+   "dur": 2.7,
+   "why": "timer",
+   "text": "That is the entire hunt.",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 211.47,
+   "end": 214.36,
+   "dur": 2.89,
+   "why": "pause",
+   "text": "For about ten seconds, the old rules hold.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 214.36,
+   "end": 217.11,
+   "dur": 2.75,
+   "why": "timer",
+   "text": "You are the biggest thing on the street,",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 217.11,
+   "end": 219.16,
+   "dur": 2.05,
+   "why": "timer",
+   "text": "and everything runs from you.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 219.16,
+   "end": 222.09,
+   "dur": 2.93,
+   "why": "turn+pause",
+   "text": "But these are not prey. Prey scatters and",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 222.09,
+   "end": 224.73,
+   "dur": 2.64,
+   "why": "timer",
+   "text": "forgets. These things point small black rectangles",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 224.73,
+   "end": 226.1,
+   "dur": 1.37,
+   "why": "timer",
+   "text": "at you, and within",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 226.1,
+   "end": 228.84,
+   "dur": 2.74,
+   "why": "stat",
+   "text": "minutes the whole island knows exactly where you",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "MINUTES",
+    "context": "WHOLE ISLAND KNOWS EXACTLY"
+   }
+  },
+  {
+   "t": 228.84,
+   "end": 232.81,
+   "dur": 3.97,
+   "why": "timer",
+   "text": "are, what you are, and which way you are walking.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 232.81,
+   "end": 235.44,
+   "dur": 2.63,
+   "why": "pause",
+   "text": "You killed one of them. Then a",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 235.44,
+   "end": 238.39,
+   "dur": 2.95,
+   "why": "timer",
+   "text": "thousand more arrived just to watch you do",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 238.39,
+   "end": 239.6,
+   "dur": 1.21,
+   "why": "timer",
+   "text": "it.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 239.6,
+   "end": 243.37,
+   "dur": 3.77,
+   "why": "pause",
+   "text": "By hour two, the hunt has flipped. First the police,",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 243.37,
+   "end": 246.12,
+   "dur": 2.75,
+   "why": "turn",
+   "text": "then the helicopters, then something heavier \u2014 armored",
+   "asset": "meme",
+   "sfx_on_cut": true,
+   "meme_reset": true
+  },
+  {
+   "t": 246.12,
+   "end": 249.89,
+   "dur": 3.77,
+   "why": "timer",
+   "text": "trucks, rifles, and men who do this for a living.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 249.89,
+   "end": 252.98,
+   "dur": 3.09,
+   "why": "pause",
+   "text": "Your nose, the finest in the ancient world, is",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 252.98,
+   "end": 255.72,
+   "dur": 2.74,
+   "why": "turn",
+   "text": "now drowning in diesel and gun smoke. Your",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 255.72,
+   "end": 258.64,
+   "dur": 2.92,
+   "why": "timer",
+   "text": "ears are full of rotor blades. Every sense",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 258.64,
+   "end": 261.85,
+   "dur": 3.21,
+   "why": "timer",
+   "text": "that made you a god is being jammed at",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 261.85,
+   "end": 264.51,
+   "dur": 2.66,
+   "why": "turn",
+   "text": "once. They cannot outfight you. So",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 264.51,
+   "end": 267.26,
+   "dur": 2.75,
+   "why": "timer",
+   "text": "they do something smarter \u2014 they herd you.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 267.26,
+   "end": 270.0,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "Block by block, siren by siren, toward the",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 270.0,
+   "end": 272.98,
+   "dur": 2.98,
+   "why": "stat",
+   "text": "one place your body cannot follow. The",
+   "asset": "stat_card",
+   "sfx_on_cut": true,
+   "card": {
+    "value": "ONE",
+    "context": "PLACE YOUR BODY CANNOT FOLLOW."
+   }
+  },
+  {
+   "t": 272.98,
+   "end": 274.2,
+   "dur": 1.22,
+   "why": "timer",
+   "text": "river.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 274.2,
+   "end": 276.98,
+   "dur": 2.78,
+   "why": "pause",
+   "text": "The Hudson is half a mile of black",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 276.98,
+   "end": 280.77,
+   "dur": 3.79,
+   "why": "timer",
+   "text": "water. You can swim \u2014 your kind always could.",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 280.77,
+   "end": 283.52,
+   "dur": 2.75,
+   "why": "turn+pause",
+   "text": "But not in four degrees. Not with the",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 283.52,
+   "end": 286.26,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "cold already deep in your blood, and the",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 286.26,
+   "end": 289.01,
+   "dur": 2.75,
+   "why": "stat",
+   "text": "one rule of your body still hanging over",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 289.01,
+   "end": 291.21,
+   "dur": 2.2,
+   "why": "timer",
+   "text": "everything. You still cannot fall.",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 291.21,
+   "end": 293.86,
+   "dur": 2.65,
+   "why": "pause",
+   "text": "On a wet pier, with the whole",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 293.86,
+   "end": 296.52,
+   "dur": 2.66,
+   "why": "timer",
+   "text": "city pushing at your back, that is",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 296.52,
+   "end": 299.36,
+   "dur": 2.84,
+   "why": "timer",
+   "text": "the only number that matters.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 299.36,
+   "end": 302.1,
+   "dur": 2.74,
+   "why": "turn+pause",
+   "text": "So can a Tyrannosaurus actually survive in modern",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 302.1,
+   "end": 304.51,
+   "dur": 2.41,
+   "why": "timer",
+   "text": "New York? The answer is yes.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 304.51,
+   "end": 308.27,
+   "dur": 3.76,
+   "why": "turn+pause",
+   "text": "But there is a catch \u2014 and it is a brutal",
+   "asset": "meme",
+   "sfx_on_cut": true,
+   "meme_reset": true
+  },
+  {
+   "t": 308.27,
+   "end": 311.15,
+   "dur": 2.88,
+   "why": "stat",
+   "text": "one. It has nothing to do with the",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 311.15,
+   "end": 313.89,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "guns, and everything to do with the cold",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 313.89,
+   "end": 315.26,
+   "dur": 1.37,
+   "why": "timer",
+   "text": "and the concrete.",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 315.26,
+   "end": 318.07,
+   "dur": 2.81,
+   "why": "pause",
+   "text": "We will get there. First, you have to",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 318.07,
+   "end": 321.31,
+   "dur": 3.24,
+   "why": "timer",
+   "text": "make it through the first night.",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 321.31,
+   "end": 324.05,
+   "dur": 2.74,
+   "why": "pause",
+   "text": "And when this is over \u2014 you tell",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 324.05,
+   "end": 326.79,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "me which predator I drop into the modern",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 326.79,
+   "end": 329.68,
+   "dur": 2.89,
+   "why": "timer",
+   "text": "world next. Top comment wins. Last time you",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 329.68,
+   "end": 331.39,
+   "dur": 1.71,
+   "why": "timer",
+   "text": "picked the Megalodon, and that",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 331.39,
+   "end": 334.13,
+   "dur": 2.74,
+   "why": "stat",
+   "text": "one did not end well for Miami.",
+   "asset": "meme",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 334.13,
+   "end": 336.88,
+   "dur": 2.75,
+   "why": "timer",
+   "text": "Like this, subscribe, and let's find out how",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 336.88,
+   "end": 339.62,
+   "dur": 2.74,
+   "why": "timer",
+   "text": "long the king lasts when the whole world",
+   "asset": "creature",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 339.62,
+   "end": 340.31,
+   "dur": 0.69,
+   "why": "timer",
+   "text": "is hunting",
+   "asset": "stock",
+   "sfx_on_cut": true
+  },
+  {
+   "t": 340.31,
+   "end": 340.31,
+   "dur": 0.0,
+   "why": "timer",
+   "text": "",
+   "asset": "meme",
+   "sfx_on_cut": true
+  }
+ ],
+ "cuts": [
+  {
+   "t": 4.32,
+   "why": "timer"
+  },
+  {
+   "t": 6.03,
+   "why": "burst"
+  },
+  {
+   "t": 6.41,
+   "why": "burst"
+  },
+  {
+   "t": 7.17,
+   "why": "burst"
+  },
+  {
+   "t": 7.56,
+   "why": "burst"
+  },
+  {
+   "t": 11.76,
+   "why": "timer"
+  },
+  {
+   "t": 13.29,
+   "why": "stat"
+  },
+  {
+   "t": 18.54,
+   "why": "burst"
+  },
+  {
+   "t": 18.91,
+   "why": "burst"
+  },
+  {
+   "t": 19.28,
+   "why": "burst"
+  },
+  {
+   "t": 19.65,
+   "why": "burst"
+  },
+  {
+   "t": 20.03,
+   "why": "burst"
+  },
+  {
+   "t": 24.11,
+   "why": "timer"
+  },
+  {
+   "t": 25.97,
+   "why": "stat"
+  },
+  {
+   "t": 30.14,
+   "why": "timer"
+  },
+  {
+   "t": 34.27,
+   "why": "pause"
+  },
+  {
+   "t": 38.49,
+   "why": "timer"
+  },
+  {
+   "t": 40.51,
+   "why": "pause"
+  },
+  {
+   "t": 45.8,
+   "why": "turn"
+  },
+  {
+   "t": 50.7,
+   "why": "pause"
+  },
+  {
+   "t": 53.92,
+   "why": "stat"
+  },
+  {
+   "t": 56.67,
+   "why": "timer"
+  },
+  {
+   "t": 59.41,
+   "why": "timer"
+  },
+  {
+   "t": 61.12,
+   "why": "pause"
+  },
+  {
+   "t": 63.87,
+   "why": "timer"
+  },
+  {
+   "t": 66.42,
+   "why": "pause"
+  },
+  {
+   "t": 69.16,
+   "why": "timer"
+  },
+  {
+   "t": 70.67,
+   "why": "stat"
+  },
+  {
+   "t": 73.42,
+   "why": "timer"
+  },
+  {
+   "t": 76.16,
+   "why": "timer"
+  },
+  {
+   "t": 78.91,
+   "why": "pause"
+  },
+  {
+   "t": 81.65,
+   "why": "timer"
+  },
+  {
+   "t": 84.74,
+   "why": "stat"
+  },
+  {
+   "t": 87.48,
+   "why": "timer"
+  },
+  {
+   "t": 90.13,
+   "why": "pause"
+  },
+  {
+   "t": 92.88,
+   "why": "timer"
+  },
+  {
+   "t": 95.62,
+   "why": "timer"
+  },
+  {
+   "t": 98.37,
+   "why": "timer"
+  },
+  {
+   "t": 101.26,
+   "why": "timer"
+  },
+  {
+   "t": 104.98,
+   "why": "pause"
+  },
+  {
+   "t": 107.73,
+   "why": "timer"
+  },
+  {
+   "t": 110.62,
+   "why": "pause"
+  },
+  {
+   "t": 113.85,
+   "why": "stat"
+  },
+  {
+   "t": 116.6,
+   "why": "timer"
+  },
+  {
+   "t": 119.34,
+   "why": "timer"
+  },
+  {
+   "t": 121.06,
+   "why": "stat"
+  },
+  {
+   "t": 123.8,
+   "why": "timer"
+  },
+  {
+   "t": 126.55,
+   "why": "timer"
+  },
+  {
+   "t": 128.01,
+   "why": "turn+pause"
+  },
+  {
+   "t": 130.9,
+   "why": "timer"
+  },
+  {
+   "t": 133.64,
+   "why": "timer"
+  },
+  {
+   "t": 135.36,
+   "why": "stat"
+  },
+  {
+   "t": 138.25,
+   "why": "timer"
+  },
+  {
+   "t": 141.14,
+   "why": "timer"
+  },
+  {
+   "t": 143.44,
+   "why": "stat"
+  },
+  {
+   "t": 146.19,
+   "why": "timer"
+  },
+  {
+   "t": 148.59,
+   "why": "stat"
+  },
+  {
+   "t": 151.34,
+   "why": "timer"
+  },
+  {
+   "t": 154.22,
+   "why": "timer"
+  },
+  {
+   "t": 155.94,
+   "why": "stat"
+  },
+  {
+   "t": 159.03,
+   "why": "stat"
+  },
+  {
+   "t": 162.9,
+   "why": "pause"
+  },
+  {
+   "t": 165.98,
+   "why": "stat"
+  },
+  {
+   "t": 168.73,
+   "why": "timer"
+  },
+  {
+   "t": 171.27,
+   "why": "turn"
+  },
+  {
+   "t": 174.55,
+   "why": "pause"
+  },
+  {
+   "t": 178.13,
+   "why": "stat+pause"
+  },
+  {
+   "t": 180.97,
+   "why": "timer"
+  },
+  {
+   "t": 182.36,
+   "why": "pause"
+  },
+  {
+   "t": 185.1,
+   "why": "timer"
+  },
+  {
+   "t": 187.84,
+   "why": "timer"
+  },
+  {
+   "t": 190.89,
+   "why": "stat"
+  },
+  {
+   "t": 193.83,
+   "why": "timer"
+  },
+  {
+   "t": 196.59,
+   "why": "timer"
+  },
+  {
+   "t": 198.67,
+   "why": "stat"
+  },
+  {
+   "t": 201.6,
+   "why": "timer"
+  },
+  {
+   "t": 203.13,
+   "why": "turn"
+  },
+  {
+   "t": 205.97,
+   "why": "turn"
+  },
+  {
+   "t": 208.77,
+   "why": "timer"
+  },
+  {
+   "t": 211.47,
+   "why": "pause"
+  },
+  {
+   "t": 214.36,
+   "why": "timer"
+  },
+  {
+   "t": 217.11,
+   "why": "timer"
+  },
+  {
+   "t": 219.16,
+   "why": "turn+pause"
+  },
+  {
+   "t": 222.09,
+   "why": "timer"
+  },
+  {
+   "t": 224.73,
+   "why": "timer"
+  },
+  {
+   "t": 226.1,
+   "why": "stat"
+  },
+  {
+   "t": 228.84,
+   "why": "timer"
+  },
+  {
+   "t": 232.81,
+   "why": "pause"
+  },
+  {
+   "t": 235.44,
+   "why": "timer"
+  },
+  {
+   "t": 238.39,
+   "why": "timer"
+  },
+  {
+   "t": 239.6,
+   "why": "pause"
+  },
+  {
+   "t": 243.37,
+   "why": "turn"
+  },
+  {
+   "t": 246.12,
+   "why": "timer"
+  },
+  {
+   "t": 249.89,
+   "why": "pause"
+  },
+  {
+   "t": 252.98,
+   "why": "turn"
+  },
+  {
+   "t": 255.72,
+   "why": "timer"
+  },
+  {
+   "t": 258.64,
+   "why": "timer"
+  },
+  {
+   "t": 261.85,
+   "why": "turn"
+  },
+  {
+   "t": 264.51,
+   "why": "timer"
+  },
+  {
+   "t": 267.26,
+   "why": "timer"
+  },
+  {
+   "t": 270.0,
+   "why": "stat"
+  },
+  {
+   "t": 272.98,
+   "why": "timer"
+  },
+  {
+   "t": 274.2,
+   "why": "pause"
+  },
+  {
+   "t": 276.98,
+   "why": "timer"
+  },
+  {
+   "t": 280.77,
+   "why": "turn+pause"
+  },
+  {
+   "t": 283.52,
+   "why": "timer"
+  },
+  {
+   "t": 286.26,
+   "why": "stat"
+  },
+  {
+   "t": 289.01,
+   "why": "timer"
+  },
+  {
+   "t": 291.21,
+   "why": "pause"
+  },
+  {
+   "t": 293.86,
+   "why": "timer"
+  },
+  {
+   "t": 296.52,
+   "why": "timer"
+  },
+  {
+   "t": 299.36,
+   "why": "turn+pause"
+  },
+  {
+   "t": 302.1,
+   "why": "timer"
+  },
+  {
+   "t": 304.51,
+   "why": "turn+pause"
+  },
+  {
+   "t": 308.27,
+   "why": "stat"
+  },
+  {
+   "t": 311.15,
+   "why": "timer"
+  },
+  {
+   "t": 313.89,
+   "why": "timer"
+  },
+  {
+   "t": 315.26,
+   "why": "pause"
+  },
+  {
+   "t": 318.07,
+   "why": "timer"
+  },
+  {
+   "t": 321.31,
+   "why": "pause"
+  },
+  {
+   "t": 324.05,
+   "why": "timer"
+  },
+  {
+   "t": 326.79,
+   "why": "timer"
+  },
+  {
+   "t": 329.68,
+   "why": "timer"
+  },
+  {
+   "t": 331.39,
+   "why": "stat"
+  },
+  {
+   "t": 334.13,
+   "why": "timer"
+  },
+  {
+   "t": 336.88,
+   "why": "timer"
+  },
+  {
+   "t": 339.62,
+   "why": "timer"
+  },
+  {
+   "t": 340.31,
+   "why": "timer"
+  }
+ ],
+ "mix": {
+  "stock": 41.9,
+  "meme": 26.4,
+  "creature": 20.9,
+  "stat_card": 10.9
+ },
+ "params": {
+  "vtt": "audio/trex_pilot/narration_manifest_aligned.json",
+  "grammar": null,
+  "out": "storyboards/trex_pilot_plan_v2.json",
+  "hook_end": 50,
+  "hook_dur": 4.2,
+  "body_dur": 2.8,
+  "burst_win": 2.2,
+  "burst_min": 4,
+  "meme_cadence": 75.0,
+  "grace": 1.2,
+  "max_shot": 6.0
+ }
+}
