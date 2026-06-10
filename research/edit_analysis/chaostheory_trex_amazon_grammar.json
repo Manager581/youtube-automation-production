@@ -1,0 +1,2589 @@
+{
+ "summary": {
+  "name": "amazon",
+  "duration_sec": 1190.9,
+  "n_cuts": 232,
+  "cuts_per_min": 11.7,
+  "shot_dur_median": 4.15,
+  "shot_dur_mean": 5.05,
+  "pct_shots_under_2s": 15.1,
+  "pct_shots_under_1s": 5.6,
+  "pct_shots_over_5s": 32.3,
+  "n_sfx_onsets": 5748,
+  "sfx_per_min": 289.6,
+  "sfx_on_cut_rate": 0.897,
+  "music_active_frac": 0.976,
+  "moment_at_cut_pct": {
+   "mid_phrase": 56.5,
+   "pause_boundary": 30.2,
+   "turn": 8.2,
+   "stat": 8.2,
+   "question": 1.3
+  },
+  "n_words": 3618
+ },
+ "cuts": [
+  {
+   "t": 7.88,
+   "shot_dur": 7.88,
+   "word_at": "but",
+   "spoken": "were written for, but a of",
+   "spoken_wide": "wide flood plane genetics were written for, but a of green so thick the light",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 25.19,
+   "shot_dur": 17.32,
+   "word_at": "unknown,",
+   "spoken": "unknown, is not a category",
+   "spoken_wide": "it in and logs it under unknown, is not a category your species has",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 27.83,
+   "shot_dur": 2.64,
+   "word_at": "before.",
+   "spoken": "before. Your forward- facing",
+   "spoken_wide": "a category your species has before. Your forward- facing eyes scanning for movement",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 37.8,
+   "shot_dur": 9.98,
+   "word_at": "canopy.",
+   "spoken": "in the canopy. else",
+   "spoken_wide": "40 feet up in the canopy. else answers it. Back in the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 39.11,
+   "shot_dur": 1.3,
+   "word_at": "it.",
+   "spoken": "answers it. Back in the",
+   "spoken_wide": "up in the canopy. else answers it. Back in the sound traveled",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 42.21,
+   "shot_dur": 3.1,
+   "word_at": "open",
+   "spoken": "across open in",
+   "spoken_wide": "sound traveled across open in straight lines and told you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 45.11,
+   "shot_dur": 2.9,
+   "word_at": "things.",
+   "spoken": "things. Here, it just tells",
+   "spoken_wide": "straight lines and told you things. Here, it just tells you this place is extremely loud",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 59.73,
+   "shot_dur": 14.61,
+   "word_at": "planet.",
+   "spoken": "on this planet. And the first the",
+   "spoken_wide": "that has ever on this planet. And the first the Amazon does when you arrive is",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 65.33,
+   "shot_dur": 5.61,
+   "word_at": "you",
+   "spoken": "noticed you The canopy above",
+   "spoken_wide": "something that hasn't noticed you The canopy above you is roughly 30 up",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 71.07,
+   "shot_dur": 5.74,
+   "word_at": "underneath.",
+   "spoken": "underneath. The is",
+   "spoken_wide": "running own weather system underneath. The is around 90%",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 75.38,
+   "shot_dur": 4.3,
+   "word_at": "because",
+   "spoken": "for because the Lake",
+   "spoken_wide": "which your body no framework for because the Lake was warm",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 79.81,
+   "shot_dur": 4.44,
+   "word_at": "this.",
+   "spoken": "this. The heat here doesn't",
+   "spoken_wide": "and wet, but not this. The heat here doesn't move. just sits on",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 98.0,
+   "shot_dur": 18.19,
+   "word_at": "open",
+   "spoken": "built around open straight",
+   "spoken_wide": "your whole hunting is built around open straight and open ground and the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 105.11,
+   "shot_dur": 7.11,
+   "word_at": "you.",
+   "spoken": "to trip you. Your",
+   "spoken_wide": "that actively trying to trip you. Your are telling you a lot of things now.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 110.24,
+   "shot_dur": 5.14,
+   "word_at": "that",
+   "spoken": "They're you that forward- facing",
+   "spoken_wide": "that the apex predator. They're you that forward- facing vision plus 60 teeth",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 115.61,
+   "shot_dur": 5.37,
+   "word_at": "food.",
+   "spoken": "food. They're not telling you",
+   "spoken_wide": "means that whatever moves near you food. They're not telling you useful about where you are",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 122.06,
+   "shot_dur": 6.44,
+   "word_at": "context.",
+   "spoken": "context. ecosystem",
+   "spoken_wide": "outside your operating context. ecosystem has been here for roughly",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 127.39,
+   "shot_dur": 5.34,
+   "word_at": "predator,",
+   "spoken": "every predator,",
+   "spoken_wide": "It has refined itself every predator, every disease,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 131.56,
+   "shot_dur": 4.17,
+   "word_at": "into",
+   "spoken": "into The things living",
+   "spoken_wide": "invasion that has ever walked into The things living in this forest now are",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 134.8,
+   "shot_dur": 3.24,
+   "word_at": "accident.",
+   "spoken": "here by accident. They",
+   "spoken_wide": "forest now are not here by accident. They Every",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 138.37,
+   "shot_dur": 3.57,
+   "word_at": "them.",
+   "spoken": "them. small drops",
+   "spoken_wide": "Every single one of them. small drops from a branch you and lands",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 140.37,
+   "shot_dur": 2.0,
+   "word_at": "and",
+   "spoken": "you and lands somewhere",
+   "spoken_wide": "small drops from a branch you and lands somewhere in the undergrowth and you track",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 143.08,
+   "shot_dur": 2.7,
+   "word_at": "and",
+   "spoken": "you track it and it's gone,",
+   "spoken_wide": "in the undergrowth and you track it and it's gone, already absorbed back the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 145.68,
+   "shot_dur": 2.6,
+   "word_at": "green.",
+   "spoken": "the green. Your first step",
+   "spoken_wide": "gone, already absorbed back the green. Your first step lands in that's",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 149.98,
+   "shot_dur": 4.3,
+   "word_at": "expected.",
+   "spoken": "expected. Your genetics",
+   "spoken_wide": "soft and deep and not what expected. Your genetics say you're apex of everything",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 155.79,
+   "shot_dur": 5.81,
+   "word_at": "to",
+   "spoken": "been to the Amazon.",
+   "spoken_wide": "land. And your genetics has been to the Amazon. The hunger",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 156.76,
+   "shot_dur": 0.97,
+   "word_at": "Amazon.",
+   "spoken": "Amazon. The hunger",
+   "spoken_wide": "has been to the Amazon. The hunger fast,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 181.25,
+   "shot_dur": 24.49,
+   "word_at": "control.",
+   "spoken": "control. Back in Cretaceous,",
+   "spoken_wide": "get memo about portion control. Back in Cretaceous, this wasn't a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 184.12,
+   "shot_dur": 2.87,
+   "word_at": "problem.",
+   "spoken": "problem. You had soropods,",
+   "spoken_wide": "this wasn't a problem. You had soropods, had",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 193.39,
+   "shot_dur": 9.28,
+   "word_at": "not",
+   "spoken": "The math was",
+   "spoken_wide": "that were charitably not The math was simple here. math",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 205.71,
+   "shot_dur": 12.31,
+   "word_at": "thing.",
+   "spoken": "same thing. A large tier",
+   "spoken_wide": "are, to be direct about it, not same thing. A large tier weighs 600 lb on",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 213.38,
+   "shot_dur": 7.67,
+   "word_at": "calories.",
+   "spoken": "calories. And before",
+   "spoken_wide": "every single week to break even on calories. And before accounting for the fact everything in",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 215.88,
+   "shot_dur": 2.5,
+   "word_at": "forest",
+   "spoken": "in this forest has spent",
+   "spoken_wide": "before accounting for the fact everything in this forest has spent of years getting very good at",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 220.69,
+   "shot_dur": 4.81,
+   "word_at": "never",
+   "spoken": "previous prey never really needed",
+   "spoken_wide": "eaten, which is a skill set previous prey never really needed develop because nothing in the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 246.71,
+   "shot_dur": 26.03,
+   "word_at": "yet.",
+   "spoken": "names yet. Your is",
+   "spoken_wide": "plants in the way don't even have names yet. Your is built for open ground pursuit",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 253.49,
+   "shot_dur": 6.77,
+   "word_at": "react.",
+   "spoken": "can react. Here, that's a",
+   "spoken_wide": "closing the distance it can react. Here, that's a pier already gone by the time your",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 254.25,
+   "shot_dur": 0.77,
+   "word_at": "pier",
+   "spoken": "Here, that's a pier already",
+   "spoken_wide": "distance it can react. Here, that's a pier already gone by the time your brain",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 256.36,
+   "shot_dur": 2.1,
+   "word_at": "brain",
+   "spoken": "your brain calculating the",
+   "spoken_wide": "pier already gone by the time your brain calculating the angle. It just into",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 257.56,
+   "shot_dur": 1.2,
+   "word_at": "angle.",
+   "spoken": "the angle. It just",
+   "spoken_wide": "the time your brain calculating the angle. It just into the undergrowth and the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 271.84,
+   "shot_dur": 14.28,
+   "word_at": "theoretically",
+   "spoken": "should theoretically be",
+   "spoken_wide": "with the bar, which should theoretically be and that also doesn't",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 275.54,
+   "shot_dur": 3.7,
+   "word_at": "runs",
+   "spoken": "runs directly into",
+   "spoken_wide": "that also doesn't work the capiara runs directly into and you have other priorities",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 280.75,
+   "shot_dur": 5.21,
+   "word_at": "here.",
+   "spoken": "problem here. Forward- facing",
+   "spoken_wide": "binocular vision is a problem here. Forward- facing eyes excellent for depth",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 283.68,
+   "shot_dur": 2.94,
+   "word_at": "perception,",
+   "spoken": "perception, for judging",
+   "spoken_wide": "eyes excellent for depth perception, for judging the exact distance",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 286.79,
+   "shot_dur": 3.1,
+   "word_at": "target.",
+   "spoken": "moving target. Excellent for",
+   "spoken_wide": "the exact distance a moving target. Excellent for you need when you can",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 291.16,
+   "shot_dur": 4.37,
+   "word_at": "ground.",
+   "spoken": "open ground. In dense canopy,",
+   "spoken_wide": "see the thing you're hunting open ground. In dense canopy, your field of view",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 297.5,
+   "shot_dur": 6.34,
+   "word_at": "face.",
+   "spoken": "of your face. The saw",
+   "spoken_wide": "forest is in front of your face. The saw you first. The tapier always",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 301.57,
+   "shot_dur": 4.07,
+   "word_at": "is",
+   "spoken": "is and",
+   "spoken_wide": "always you first because the tapier is and low and completely familiar",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 305.4,
+   "shot_dur": 3.84,
+   "word_at": "13",
+   "spoken": "you are 13 feet",
+   "spoken_wide": "familiar this terrain and you are 13 feet and sound like a building falling",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 310.91,
+   "shot_dur": 5.51,
+   "word_at": "strategy.",
+   "spoken": "a strategy. You around a",
+   "spoken_wide": "kill that happens is not a strategy. You around a bend in a riverbank where tree cover",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 318.79,
+   "shot_dur": 7.87,
+   "word_at": "tapier",
+   "spoken": "The tapier maybe half",
+   "spoken_wide": "you are both surprised. The tapier maybe half a second to process the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 320.29,
+   "shot_dur": 1.5,
+   "word_at": "process",
+   "spoken": "second to process the",
+   "spoken_wide": "The tapier maybe half a second to process the 4 seconds start",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 321.42,
+   "shot_dur": 1.13,
+   "word_at": "the",
+   "spoken": "4 seconds",
+   "spoken_wide": "half a second to process the 4 seconds start to finish.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 323.76,
+   "shot_dur": 2.34,
+   "word_at": "eat",
+   "spoken": "eat the entire animal",
+   "spoken_wide": "4 seconds start to finish. eat the entire animal because of you do. And",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 331.13,
+   "shot_dur": 7.37,
+   "word_at": "reduced.",
+   "spoken": "reduced. you've taken",
+   "spoken_wide": "still there, only slightly reduced. you've taken the edge off a problem has not",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 334.33,
+   "shot_dur": 3.2,
+   "word_at": "solved.",
+   "spoken": "solved. You a",
+   "spoken_wide": "off a problem has not actually been solved. You a 600-lb animal in roughly the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 338.67,
+   "shot_dur": 4.34,
+   "word_at": "shoes,",
+   "spoken": "their shoes, and still",
+   "spoken_wide": "the time takes a human to tie their shoes, and still hungry, which is going to",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 342.07,
+   "shot_dur": 3.4,
+   "word_at": "theme.",
+   "spoken": "theme. By day three,",
+   "spoken_wide": "which is going to a recurring theme. By day three, the has already introduced itself",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 346.61,
+   "shot_dur": 4.54,
+   "word_at": "did.",
+   "spoken": "never did. It with the",
+   "spoken_wide": "in way the Cretaceous never did. It with the ants. You're moving a stretch",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 350.92,
+   "shot_dur": 4.3,
+   "word_at": "foot",
+   "spoken": "you put your foot down on mound",
+   "spoken_wide": "of ground cover near river and you put your foot down on mound that is roughly the size of a",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 356.69,
+   "shot_dur": 5.77,
+   "word_at": "that.",
+   "spoken": "about that. venom from a",
+   "spoken_wide": "ants have opinions about that. venom from a single one of these produces pain",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 360.43,
+   "shot_dur": 3.74,
+   "word_at": "as",
+   "spoken": "have as walking over",
+   "spoken_wide": "produces pain that researchers have as walking over burning with a nail",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 368.3,
+   "shot_dur": 7.87,
+   "word_at": "tons.",
+   "spoken": "tons. in terms of",
+   "spoken_wide": "lb and not 9 tons. in terms of actual danger to you, is",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 383.65,
+   "shot_dur": 15.35,
+   "word_at": "new.",
+   "spoken": "and new. You've never felt",
+   "spoken_wide": "loud confusing and new. You've never felt like this in your life. The",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 388.29,
+   "shot_dur": 4.64,
+   "word_at": "ants.",
+   "spoken": "ants. You your foot,",
+   "spoken_wide": "did not have bullet ants. You your foot, which scatters 200,000",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 403.74,
+   "shot_dur": 15.45,
+   "word_at": "any",
+   "spoken": "any The spider",
+   "spoken_wide": "problem in any The spider situation is worse, or",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 407.31,
+   "shot_dur": 3.57,
+   "word_at": "stranger.",
+   "spoken": "stranger. You're drinking from",
+   "spoken_wide": "worse, or least stranger. You're drinking from river on day four when",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 414.08,
+   "shot_dur": 6.77,
+   "word_at": "edge",
+   "spoken": "the edge and ends",
+   "spoken_wide": "comes off a root system at the edge and ends up approximately 2 from",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 422.59,
+   "shot_dur": 8.51,
+   "word_at": "sense,",
+   "spoken": "sense, but your",
+   "spoken_wide": "threat you in any biological sense, but your is not a threat assessment",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 425.82,
+   "shot_dur": 3.24,
+   "word_at": "face",
+   "spoken": "Your face just sees something",
+   "spoken_wide": "a threat assessment Your face just sees something and fast and moving directly",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 428.83,
+   "shot_dur": 3.0,
+   "word_at": "nose",
+   "spoken": "your nose and you lurch",
+   "spoken_wide": "and fast and moving directly your nose and you lurch sideways enough that your shoulder",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 439.51,
+   "shot_dur": 10.68,
+   "word_at": "best.",
+   "spoken": "best. But the",
+   "spoken_wide": "Your brain is its best. But the thing that's grinding you down",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 444.01,
+   "shot_dur": 4.5,
+   "word_at": "heat.",
+   "spoken": "the heat. Not kind of heat",
+   "spoken_wide": "the or the spider. It's the heat. Not kind of heat your genetics",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 446.28,
+   "shot_dur": 2.27,
+   "word_at": "genetics",
+   "spoken": "The dry",
+   "spoken_wide": "Not kind of heat your genetics The dry open heat of a flood",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 451.82,
+   "shot_dur": 5.54,
+   "word_at": "entirely.",
+   "spoken": "entirely. The canopy",
+   "spoken_wide": "but different kind entirely. The canopy you is trapping everything. It's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 458.79,
+   "shot_dur": 6.97,
+   "word_at": "the",
+   "spoken": "which means the air is",
+   "spoken_wide": "is at 90% which means the air is really air so much as warm",
+   "moment": [
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 462.03,
+   "shot_dur": 3.24,
+   "word_at": "wet",
+   "spoken": "Every surface",
+   "spoken_wide": "air so much as warm wet Every surface is wet. The is wet.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 463.36,
+   "shot_dur": 1.33,
+   "word_at": "wet.",
+   "spoken": "is wet. The is",
+   "spoken_wide": "wet Every surface is wet. The is wet. You are wet. Your body",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 465.26,
+   "shot_dur": 1.9,
+   "word_at": "wet.",
+   "spoken": "are wet. Your body is",
+   "spoken_wide": "wet. The is wet. You are wet. Your body is to regulate temperature across",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 469.47,
+   "shot_dur": 4.2,
+   "word_at": "closed",
+   "spoken": "a closed jungle",
+   "spoken_wide": "range that did not include a closed jungle acting as a greenhouse at",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 472.77,
+   "shot_dur": 3.3,
+   "word_at": "capacity.",
+   "spoken": "capacity. You're burning",
+   "spoken_wide": "as a greenhouse at capacity. You're burning energy staying at operating",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 476.24,
+   "shot_dur": 3.47,
+   "word_at": "temperature,",
+   "spoken": "is bad",
+   "spoken_wide": "staying at operating temperature, is bad news when you're already",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 480.58,
+   "shot_dur": 4.34,
+   "word_at": "is",
+   "spoken": "You start moving toward",
+   "spoken_wide": "that the food supply here is You start moving toward instinctively and spending",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 484.02,
+   "shot_dur": 3.44,
+   "word_at": "the",
+   "spoken": "near the river banks",
+   "spoken_wide": "instinctively and spending longer near the river banks where the moves slightly and the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 490.09,
+   "shot_dur": 6.07,
+   "word_at": "something.",
+   "spoken": "it's something. The river",
+   "spoken_wide": "which is not but it's something. The river The river is cooler",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 495.3,
+   "shot_dur": 5.21,
+   "word_at": "that.",
+   "spoken": "to do that. You've found the",
+   "spoken_wide": "and your body knows what to do that. You've found the rivers which the heat",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 499.53,
+   "shot_dur": 4.24,
+   "word_at": "one.",
+   "spoken": "different one. The black kimman",
+   "spoken_wide": "heat problem and creates an different one. The black kimman 14 ft long",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 505.04,
+   "shot_dur": 5.51,
+   "word_at": "you",
+   "spoken": "you and it does not",
+   "spoken_wide": "bend in the river since before you and it does not care at all your size.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 506.51,
+   "shot_dur": 1.47,
+   "word_at": "all",
+   "spoken": "care at all your size.",
+   "spoken_wide": "you and it does not care at all your size. It has been sitting in murky",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 507.17,
+   "shot_dur": 0.67,
+   "word_at": "size.",
+   "spoken": "your size. It has been sitting",
+   "spoken_wide": "and it does not care at all your size. It has been sitting in murky water for",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 510.34,
+   "shot_dur": 3.17,
+   "word_at": "hours",
+   "spoken": "3 hours which not unusual",
+   "spoken_wide": "murky water for about 3 hours which not unusual because patience is",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 511.01,
+   "shot_dur": 0.67,
+   "word_at": "unusual",
+   "spoken": "which not unusual because",
+   "spoken_wide": "water for about 3 hours which not unusual because patience is its entire",
+   "moment": [
+    "turn",
+    "question"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 514.41,
+   "shot_dur": 3.4,
+   "word_at": "It",
+   "spoken": "It 400 kg",
+   "spoken_wide": "its entire personality. It 400 kg and its eyes are flush",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 515.91,
+   "shot_dur": 1.5,
+   "word_at": "its",
+   "spoken": "and its eyes are flush",
+   "spoken_wide": "It 400 kg and its eyes are flush the water line and from",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 519.18,
+   "shot_dur": 3.27,
+   "word_at": "looks",
+   "spoken": "standing it looks exactly like",
+   "spoken_wide": "water line and from where standing it looks exactly like a log. And the Amazon",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 520.72,
+   "shot_dur": 1.54,
+   "word_at": "log.",
+   "spoken": "log. And the Amazon",
+   "spoken_wide": "standing it looks exactly like a log. And the Amazon has a lot floating logs.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 522.82,
+   "shot_dur": 2.1,
+   "word_at": "logs.",
+   "spoken": "logs. So you lower your",
+   "spoken_wide": "And the Amazon has a lot floating logs. So you lower your head drink and the Kimman",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 524.56,
+   "shot_dur": 1.74,
+   "word_at": "the",
+   "spoken": "drink and the Kimman launches.",
+   "spoken_wide": "logs. So you lower your head drink and the Kimman launches. What next takes",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 528.73,
+   "shot_dur": 4.17,
+   "word_at": "off",
+   "spoken": "comes off the bottom at",
+   "spoken_wide": "takes about half a second. Kimman comes off the bottom at a that nothing its size",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 533.87,
+   "shot_dur": 5.14,
+   "word_at": "face,",
+   "spoken": "face, which is the correct",
+   "spoken_wide": "moving at, and it's targeting face, which is the correct tactical because",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 538.57,
+   "shot_dur": 4.7,
+   "word_at": "Kimman,",
+   "spoken": "the Kimman, having",
+   "spoken_wide": "is where vulnerable. And the Kimman, having a brain the size of a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 542.04,
+   "shot_dur": 3.47,
+   "word_at": "out.",
+   "spoken": "worked this out. the Kimman",
+   "spoken_wide": "size of a has apparently worked this out. the Kimman has not worked out is your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 546.71,
+   "shot_dur": 4.67,
+   "word_at": "expecting.",
+   "spoken": "was expecting. You pull back and",
+   "spoken_wide": "speed is also not it was expecting. You pull back and head drops and you catch it",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 550.92,
+   "shot_dur": 4.2,
+   "word_at": "Kimman,",
+   "spoken": "and the Kimman, has been the",
+   "spoken_wide": "it just that. One bite and the Kimman, has been the unchallenged ambush",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 555.65,
+   "shot_dur": 4.74,
+   "word_at": "gone.",
+   "spoken": "gone. That is the whole",
+   "spoken_wide": "for years, is gone. That is the whole fight. It less than the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 560.26,
+   "shot_dur": 4.61,
+   "word_at": "and",
+   "spoken": "first place, and Kimman had",
+   "spoken_wide": "it took you to this spot in the first place, and Kimman had no contingency plan for",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 563.26,
+   "shot_dur": 3.0,
+   "word_at": "nothing",
+   "spoken": "because nothing in its",
+   "spoken_wide": "contingency plan for outcome because nothing in its history suggested it",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 566.0,
+   "shot_dur": 2.74,
+   "word_at": "needed",
+   "spoken": "needed Here's the part that",
+   "spoken_wide": "history suggested it needed Here's the part that matters, In the scramble",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 570.44,
+   "shot_dur": 4.44,
+   "word_at": "wrong,",
+   "spoken": "the bank wrong, and a",
+   "spoken_wide": "backwards, your leg catches the bank wrong, and a edge of something, root",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 574.61,
+   "shot_dur": 4.17,
+   "word_at": "clay,",
+   "spoken": "clay, opens a cut",
+   "spoken_wide": "or rock, exposed clay, opens a cut along the leg about 4",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 577.54,
+   "shot_dur": 2.94,
+   "word_at": "long.",
+   "spoken": "in long. It's not",
+   "spoken_wide": "along the leg about 4 in long. It's not It's not serious by any",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 580.71,
+   "shot_dur": 3.17,
+   "word_at": "reasonable",
+   "spoken": "You've survived",
+   "spoken_wide": "It's not serious by any reasonable You've survived worse in the week just",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 585.55,
+   "shot_dur": 4.84,
+   "word_at": "the",
+   "spoken": "there on the bank bleeding",
+   "spoken_wide": "the forest. you stand there on the bank bleeding and eating the rest of",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 591.36,
+   "shot_dur": 5.8,
+   "word_at": "win,",
+   "spoken": "win, which it is",
+   "spoken_wide": "whole situation feels a straightforward win, which it is except for",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 593.13,
+   "shot_dur": 1.77,
+   "word_at": "is",
+   "spoken": "except for the",
+   "spoken_wide": "win, which it is except for the water that got that cut and",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 595.6,
+   "shot_dur": 2.47,
+   "word_at": "bacteria",
+   "spoken": "and the bacteria that",
+   "spoken_wide": "for the water that got that cut and the bacteria that in that water and the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 597.4,
+   "shot_dur": 1.8,
+   "word_at": "water",
+   "spoken": "that water and the parasites",
+   "spoken_wide": "and the bacteria that in that water and the parasites the kimon was carrying",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 599.8,
+   "shot_dur": 2.4,
+   "word_at": "and",
+   "spoken": "was carrying and the things",
+   "spoken_wide": "the parasites the kimon was carrying and the things that just exist in the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 604.77,
+   "shot_dur": 4.97,
+   "word_at": "here,",
+   "spoken": "exists here, which is",
+   "spoken_wide": "systems. The way exists here, which is and everywhere and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 610.18,
+   "shot_dur": 5.41,
+   "word_at": "explain.",
+   "spoken": "explain. Your immune system",
+   "spoken_wide": "that are genuinely difficult explain. Your immune system is It",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 612.75,
+   "shot_dur": 2.57,
+   "word_at": "alive",
+   "spoken": "It kept you alive through",
+   "spoken_wide": "system is It kept you alive through million years of pathogens and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 618.49,
+   "shot_dur": 5.74,
+   "word_at": "things.",
+   "spoken": "kill things. But pathogens",
+   "spoken_wide": "that was also trying to kill things. But pathogens went extinct with your",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 621.09,
+   "shot_dur": 2.6,
+   "word_at": "your",
+   "spoken": "your The organisms",
+   "spoken_wide": "pathogens went extinct with your The organisms in this river after",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 623.86,
+   "shot_dur": 2.77,
+   "word_at": "did.",
+   "spoken": "you did. Your immune",
+   "spoken_wide": "in this river after you did. Your immune has no record of them.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 625.96,
+   "shot_dur": 2.1,
+   "word_at": "them.",
+   "spoken": "record of them. No memory,",
+   "spoken_wide": "Your immune has no record of them. No memory, response queued up. Nothing",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 629.23,
+   "shot_dur": 3.27,
+   "word_at": "the",
+   "spoken": "the You are the",
+   "spoken_wide": "response queued up. Nothing in the You are the most dangerous that has walked",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 633.97,
+   "shot_dur": 4.74,
+   "word_at": "just",
+   "spoken": "And the river just something into",
+   "spoken_wide": "river in history. And the river just something into your bloodstream you have never",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 639.17,
+   "shot_dur": 5.21,
+   "word_at": "species.",
+   "spoken": "a species. The wound",
+   "spoken_wide": "your existence as a species. The wound over the next 2 days",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 646.75,
+   "shot_dur": 7.57,
+   "word_at": "sense.",
+   "spoken": "of sense. Not because",
+   "spoken_wide": "jungle starts making a kind of sense. Not because gotten smarter. You haven't.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 651.35,
+   "shot_dur": 4.61,
+   "word_at": "it's",
+   "spoken": "it's not running a strategic",
+   "spoken_wide": "is roughly the size of a banana it's not running a strategic of the Amazon",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 654.39,
+   "shot_dur": 3.04,
+   "word_at": "basin.",
+   "spoken": "basin. What it's is",
+   "spoken_wide": "of the Amazon basin. What it's is something simpler and more",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 668.0,
+   "shot_dur": 13.61,
+   "word_at": "hooves.",
+   "spoken": "hooves. Your forward",
+   "spoken_wide": "the ground is by things with hooves. Your forward eyes, which were built to lock",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 670.64,
+   "shot_dur": 2.64,
+   "word_at": "lock",
+   "spoken": "hard resurre",
+   "spoken_wide": "eyes, which were built to lock hard resurre across an open flood",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 675.11,
+   "shot_dur": 4.47,
+   "word_at": "of",
+   "spoken": "of work dramatically",
+   "spoken_wide": "and calculate the exact angle of work dramatically better here the forest edge,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 680.75,
+   "shot_dur": 5.64,
+   "word_at": "you.",
+   "spoken": "in front of you. The closed canopy",
+   "spoken_wide": "you can actually see more than ft in front of you. The closed canopy the problem. The river",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 685.28,
+   "shot_dur": 4.54,
+   "word_at": "entirely.",
+   "spoken": "So, you start",
+   "spoken_wide": "corridors are else entirely. So, you start them. Not deliberately,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 703.8,
+   "shot_dur": 18.52,
+   "word_at": "slow",
+   "spoken": "is slow which is a for",
+   "spoken_wide": "something with no predator is slow which is a for them because you are not",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 709.61,
+   "shot_dur": 5.81,
+   "word_at": "in",
+   "spoken": "arrived in their",
+   "spoken_wide": "evolutionary and you've arrived in their source and the math on that goes",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 712.71,
+   "shot_dur": 3.1,
+   "word_at": "way.",
+   "spoken": "way. A capy bar",
+   "spoken_wide": "and the math on that goes way. A capy bar weighs about 150",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 723.72,
+   "shot_dur": 11.01,
+   "word_at": "isn't.",
+   "spoken": "isn't. And you find",
+   "spoken_wide": "stocked the way the rest this jungle isn't. And you find this when you push through a stand",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 728.13,
+   "shot_dur": 4.4,
+   "word_at": "lake",
+   "spoken": "flooded lake there are capiara",
+   "spoken_wide": "of at the edge of a flooded lake there are capiara and giant river",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 736.37,
+   "shot_dur": 8.24,
+   "word_at": "the",
+   "spoken": "You eat six",
+   "spoken_wide": "too small to be worth the You eat six capibara in one and it",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 748.31,
+   "shot_dur": 11.94,
+   "word_at": "flaw.",
+   "spoken": "flaw. You it in",
+   "spoken_wide": "fast. This is its main flaw. You it in a clearing near a termite",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 759.93,
+   "shot_dur": 11.61,
+   "word_at": "meal.",
+   "spoken": "than a meal. You eat it anyway.",
+   "spoken_wide": "at your scale is closer to a than a meal. You eat it anyway. more peers go down",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 771.37,
+   "shot_dur": 11.44,
+   "word_at": "anaconda.",
+   "spoken": "23 feet",
+   "spoken_wide": "things. And then the anaconda. 23 feet long and around 400",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 776.41,
+   "shot_dur": 5.04,
+   "word_at": "do,",
+   "spoken": "do, which is lying",
+   "spoken_wide": "it's been what anacondas do, which is lying still and waiting for",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 781.38,
+   "shot_dur": 4.97,
+   "word_at": "model",
+   "spoken": "it did not model into that strategy",
+   "spoken_wide": "a mistake near it. it did not model into that strategy a 9-tonon theropod",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 793.99,
+   "shot_dur": 12.61,
+   "word_at": "you.",
+   "spoken": "touching you. Then you look down,",
+   "spoken_wide": "brain finishes processing touching you. Then you look down, you bite.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 795.06,
+   "shot_dur": 1.07,
+   "word_at": "down,",
+   "spoken": "look down, you bite.",
+   "spoken_wide": "touching you. Then you look down, you bite. The whole thing takes",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 805.17,
+   "shot_dur": 10.11,
+   "word_at": "size.",
+   "spoken": "your size. And there's a",
+   "spoken_wide": "real mechanical problem even your size. And there's a moment in middle where the squeeze",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 809.01,
+   "shot_dur": 3.84,
+   "word_at": "unpleasant.",
+   "spoken": "unpleasant. You eat the",
+   "spoken_wide": "the squeeze is unpleasant. You eat the in four bites and you do",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 813.78,
+   "shot_dur": 4.77,
+   "word_at": "tall",
+   "spoken": "step into tall grass the",
+   "spoken_wide": "about it again. But you also do step into tall grass the same way used to. Something",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 815.72,
+   "shot_dur": 1.94,
+   "word_at": "to.",
+   "spoken": "used to. Something has",
+   "spoken_wide": "into tall grass the same way used to. Something has changed in forest and it",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 821.25,
+   "shot_dur": 5.54,
+   "word_at": "do.",
+   "spoken": "always do. You noticed",
+   "spoken_wide": "the things in the Amazon always do. You noticed it, which is fine you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 826.93,
+   "shot_dur": 5.67,
+   "word_at": "patterns.",
+   "spoken": "patterns. But the tapiers",
+   "spoken_wide": "something with a bigger brain would patterns. But the tapiers have. tapers near the central",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 829.36,
+   "shot_dur": 2.44,
+   "word_at": "stretch",
+   "spoken": "the central stretch of hunting",
+   "spoken_wide": "the tapiers have. tapers near the central stretch of hunting corridor have been for about",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 834.93,
+   "shot_dur": 5.57,
+   "word_at": "tapers",
+   "spoken": "that tapers have been using",
+   "spoken_wide": "like a small adjustment until you that tapers have been using same game trails for",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 838.1,
+   "shot_dur": 3.17,
+   "word_at": "generations.",
+   "spoken": "didn't move because",
+   "spoken_wide": "same game trails for generations. didn't move because something them once. They",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 841.74,
+   "shot_dur": 3.64,
+   "word_at": "them",
+   "spoken": "scared them consistently",
+   "spoken_wide": "them once. They moved because scared them consistently that the old route stopped",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 844.94,
+   "shot_dur": 3.2,
+   "word_at": "it.",
+   "spoken": "worth it. The Picari",
+   "spoken_wide": "that the old route stopped worth it. The Picari herds did same thing with",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 847.35,
+   "shot_dur": 2.4,
+   "word_at": "with",
+   "spoken": "thing with three separate",
+   "spoken_wide": "herds did same thing with three separate water along the riverbend,",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 847.88,
+   "shot_dur": 0.53,
+   "word_at": "separate",
+   "spoken": "three separate water",
+   "spoken_wide": "herds did same thing with three separate water along the riverbend, which means",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 848.35,
+   "shot_dur": 0.47,
+   "word_at": "water",
+   "spoken": "separate water along the",
+   "spoken_wide": "did same thing with three separate water along the riverbend, which means",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 849.72,
+   "shot_dur": 1.37,
+   "word_at": "riverbend,",
+   "spoken": "the riverbend, which means",
+   "spoken_wide": "separate water along the riverbend, which means are now large sections of",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 855.05,
+   "shot_dur": 5.34,
+   "word_at": "to.",
+   "spoken": "way it used to. The",
+   "spoken_wide": "prey just isn't up the way it used to. The is a system, and systems",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 855.72,
+   "shot_dur": 0.67,
+   "word_at": "The",
+   "spoken": "The is a system,",
+   "spoken_wide": "up the way it used to. The is a system, and systems respond",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 856.39,
+   "shot_dur": 0.67,
+   "word_at": "system,",
+   "spoken": "is a system, and systems",
+   "spoken_wide": "way it used to. The is a system, and systems respond pressure,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 857.16,
+   "shot_dur": 0.77,
+   "word_at": "systems",
+   "spoken": "and systems respond",
+   "spoken_wide": "The is a system, and systems respond pressure, and you",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 857.99,
+   "shot_dur": 0.83,
+   "word_at": "respond",
+   "spoken": "respond pressure,",
+   "spoken_wide": "is a system, and systems respond pressure, and you are a tremendous",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 858.76,
+   "shot_dur": 0.77,
+   "word_at": "pressure,",
+   "spoken": "pressure, and you are",
+   "spoken_wide": "and systems respond pressure, and you are a tremendous of pressure",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 862.6,
+   "shot_dur": 3.84,
+   "word_at": "one",
+   "spoken": "one The jaguars",
+   "spoken_wide": "of pressure concentrated in one The jaguars are the more part of this.",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 864.86,
+   "shot_dur": 2.27,
+   "word_at": "this.",
+   "spoken": "part of this. Before you",
+   "spoken_wide": "jaguars are the more part of this. Before you the jaguar was the top land",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 868.8,
+   "shot_dur": 3.94,
+   "word_at": "a",
+   "spoken": "a position had held",
+   "spoken_wide": "the top land in this ecosystem, a position had held for somewhere around 3",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 871.6,
+   "shot_dur": 2.8,
+   "word_at": "years,",
+   "spoken": "years, which is a",
+   "spoken_wide": "held for somewhere around 3 years, which is a long tenure by reasonable",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 875.64,
+   "shot_dur": 4.04,
+   "word_at": "job.",
+   "spoken": "good at job. It had the territory",
+   "spoken_wide": "reasonable standard. It was good at job. It had the territory mapped, prey patterned,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 878.91,
+   "shot_dur": 3.27,
+   "word_at": "whole",
+   "spoken": "whole running efficiently.",
+   "spoken_wide": "mapped, prey patterned, and the whole running efficiently. And then showed up and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 879.78,
+   "shot_dur": 0.87,
+   "word_at": "efficiently.",
+   "spoken": "efficiently. And then",
+   "spoken_wide": "patterned, and the whole running efficiently. And then showed up and covered 40 square",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 884.85,
+   "shot_dur": 5.07,
+   "word_at": "the",
+   "spoken": "it. And the jaguar did what",
+   "spoken_wide": "hunting ground just by existing it. And the jaguar did what animals do when",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 889.42,
+   "shot_dur": 4.57,
+   "word_at": "It",
+   "spoken": "It not panicking,",
+   "spoken_wide": "something they can't fight. It not panicking, just quietly,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 895.93,
+   "shot_dur": 6.51,
+   "word_at": "fight.",
+   "spoken": "was a fight. Here's the thing",
+   "spoken_wide": "didn't win a fight. You didn't even there was a fight. Here's the thing jaguars, though. They're not gone",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 899.33,
+   "shot_dur": 3.4,
+   "word_at": "Amazon.",
+   "spoken": "Amazon. They've just gone",
+   "spoken_wide": "though. They're not gone the Amazon. They've just gone you can't reach them, which is",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 902.57,
+   "shot_dur": 3.24,
+   "word_at": "canopy.",
+   "spoken": "canopy. That tight interior",
+   "spoken_wide": "you can't reach them, which is deep canopy. That tight interior where the understory",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 905.87,
+   "shot_dur": 3.3,
+   "word_at": "the",
+   "spoken": "layered the root systems",
+   "spoken_wide": "where the understory is layered the root systems are dense and and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 908.61,
+   "shot_dur": 2.74,
+   "word_at": "light",
+   "spoken": "and the light barely makes it",
+   "spoken_wide": "are dense and and the light barely makes it to ground. Your feet are built",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 911.14,
+   "shot_dur": 2.54,
+   "word_at": "for",
+   "spoken": "are built for open plane,",
+   "spoken_wide": "makes it to ground. Your feet are built for open plane, flat, hardpacked",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 915.48,
+   "shot_dur": 4.34,
+   "word_at": "solid.",
+   "spoken": "solid. Deep Canopy,",
+   "spoken_wide": "brown, you can push off something solid. Deep Canopy, every step is a",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 917.92,
+   "shot_dur": 2.44,
+   "word_at": "a",
+   "spoken": "The footing is",
+   "spoken_wide": "Deep Canopy, every step is a The footing is wrong, the is zero, and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 924.99,
+   "shot_dur": 7.07,
+   "word_at": "size.",
+   "spoken": "your size. The Jaguar fits",
+   "spoken_wide": "space. that was never built for your size. The Jaguar fits in perfectly. You don't",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 930.5,
+   "shot_dur": 5.5,
+   "word_at": "hunting",
+   "spoken": "still hunting carries,",
+   "spoken_wide": "the Jaguar is still hunting still hunting carries, still doing it",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 931.86,
+   "shot_dur": 1.37,
+   "word_at": "doing",
+   "spoken": "still doing it",
+   "spoken_wide": "still hunting carries, still doing it was doing before you",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 934.27,
+   "shot_dur": 2.4,
+   "word_at": "you",
+   "spoken": "Just in the",
+   "spoken_wide": "it was doing before you Just in the 30 square km of",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 938.87,
+   "shot_dur": 4.6,
+   "word_at": "zone.",
+   "spoken": "buffer zone. The",
+   "spoken_wide": "that surrounds your like a buffer zone. The didn't collapse when you up.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 948.18,
+   "shot_dur": 9.31,
+   "word_at": "competitors",
+   "spoken": "The competitors found your",
+   "spoken_wide": "The prey learns your The competitors found your spots. The whole system is routing",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 951.42,
+   "shot_dur": 3.24,
+   "word_at": "water",
+   "spoken": "you the way water routes around",
+   "spoken_wide": "The whole system is routing you the way water routes around a in a river. Not fighting",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 955.89,
+   "shot_dur": 4.47,
+   "word_at": "efficiently,",
+   "spoken": "efficiently, which something the",
+   "spoken_wide": "the rock, moving past it efficiently, which something the Amazon has been doing a very",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 960.59,
+   "shot_dur": 4.7,
+   "word_at": "jaguars",
+   "spoken": "The jaguars have not gone",
+   "spoken_wide": "time and is quite good by now. The jaguars have not gone They've just gone",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 963.16,
+   "shot_dur": 2.57,
+   "word_at": "somewhere",
+   "spoken": "just gone somewhere can't follow them.",
+   "spoken_wide": "not gone They've just gone somewhere can't follow them. And the Amazon been making that",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 966.16,
+   "shot_dur": 3.0,
+   "word_at": "since",
+   "spoken": "since your",
+   "spoken_wide": "And the Amazon been making that calculation since your species existed. The leg",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 967.93,
+   "shot_dur": 1.77,
+   "word_at": "existed.",
+   "spoken": "existed. The leg has",
+   "spoken_wide": "since your species existed. The leg has healed the way it should have.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 985.15,
+   "shot_dur": 17.22,
+   "word_at": "before.",
+   "spoken": "before. And the Amazon",
+   "spoken_wide": "leg is there in a way it wasn't before. And the Amazon things your immune system",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 989.32,
+   "shot_dur": 4.17,
+   "word_at": "riverbend",
+   "spoken": "living in that riverbend",
+   "spoken_wide": "doesn't. bacteria living in that riverbend roughly 65 million years",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1002.03,
+   "shot_dur": 12.71,
+   "word_at": "time.",
+   "spoken": "great time. The parasites",
+   "spoken_wide": "are having a great time. The parasites are There are organisms",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1006.24,
+   "shot_dur": 4.21,
+   "word_at": "spent",
+   "spoken": "that have spent millions years",
+   "spoken_wide": "in Amazonian systems that have spent millions years learning exactly how to get",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1010.41,
+   "shot_dur": 4.17,
+   "word_at": "here.",
+   "spoken": "here. Your defenses",
+   "spoken_wide": "the defenses of the things that here. Your defenses are The",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1012.38,
+   "shot_dur": 1.97,
+   "word_at": "are",
+   "spoken": "The pathogens",
+   "spoken_wide": "Your defenses are The pathogens are not. This a mismatch",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1015.88,
+   "shot_dur": 3.5,
+   "word_at": "as",
+   "spoken": "category as genetics telling",
+   "spoken_wide": "This a mismatch in the same category as genetics telling you there should soropods",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1030.06,
+   "shot_dur": 14.18,
+   "word_at": "river",
+   "spoken": "same. The river corridors are the",
+   "spoken_wide": "has changed. The forest looks same. The river corridors are the The prey is doing what the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1031.13,
+   "shot_dur": 1.07,
+   "word_at": "the",
+   "spoken": "are the The prey is doing",
+   "spoken_wide": "looks same. The river corridors are the The prey is doing what the prey but your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1032.9,
+   "shot_dur": 1.77,
+   "word_at": "prey",
+   "spoken": "prey but your energy",
+   "spoken_wide": "the The prey is doing what the prey but your energy output is going up",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1038.54,
+   "shot_dur": 5.64,
+   "word_at": "directions",
+   "spoken": "opposite directions not",
+   "spoken_wide": "And those things moving in opposite directions not a good sign for any 9-tonon",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1043.38,
+   "shot_dur": 4.84,
+   "word_at": "of",
+   "spoken": "just to maintain",
+   "spoken_wide": "that needs a specific number of just to maintain its own body",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1045.41,
+   "shot_dur": 2.04,
+   "word_at": "body",
+   "spoken": "body You burned",
+   "spoken_wide": "just to maintain its own body You burned more on your last hunts",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1049.75,
+   "shot_dur": 4.34,
+   "word_at": "combined.",
+   "spoken": "combined. You're covering maybe",
+   "spoken_wide": "than the two weeks before combined. You're covering maybe 60% the ground you were",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1063.53,
+   "shot_dur": 13.78,
+   "word_at": "off.",
+   "spoken": "was off. dramatically,",
+   "spoken_wide": "the end, like in the calculation was off. dramatically, not enough that the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1067.57,
+   "shot_dur": 4.04,
+   "word_at": "you",
+   "spoken": "you in whatever way you're",
+   "spoken_wide": "got away, but enough that you in whatever way you're capable noticing things.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1069.8,
+   "shot_dur": 2.24,
+   "word_at": "things.",
+   "spoken": "things. The taper",
+   "spoken_wide": "whatever way you're capable noticing things. The taper is dead. ate it. But",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1089.32,
+   "shot_dur": 19.52,
+   "word_at": "since.",
+   "spoken": "ever since. quietly and",
+   "spoken_wide": "has been doing what does ever since. quietly and without interest in your",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1092.79,
+   "shot_dur": 3.47,
+   "word_at": "jaws",
+   "spoken": "your jaws the fact that",
+   "spoken_wide": "interest in your size or your jaws the fact that you're technically the dangerous land",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1096.93,
+   "shot_dur": 4.14,
+   "word_at": "existed.",
+   "spoken": "existed. The Amazon",
+   "spoken_wide": "land predator that has existed. The Amazon never had to you in a straight",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1099.66,
+   "shot_dur": 2.74,
+   "word_at": "fight.",
+   "spoken": "fight. And it trying",
+   "spoken_wide": "never had to you in a straight fight. And it trying to. It was just being the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1100.83,
+   "shot_dur": 1.17,
+   "word_at": "to.",
+   "spoken": "trying to. It was just being the",
+   "spoken_wide": "a straight fight. And it trying to. It was just being the which has",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1121.35,
+   "shot_dur": 20.52,
+   "word_at": "for",
+   "spoken": "for nine tons",
+   "spoken_wide": "Nothing has a response for nine tons of vision predator",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1127.26,
+   "shot_dur": 5.9,
+   "word_at": "line.",
+   "spoken": "a straight line. The prey hasn't",
+   "spoken_wide": "and move at highway speeds a straight line. The prey hasn't you yet, and the ecosystem",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 1129.83,
+   "shot_dur": 2.57,
+   "word_at": "ecosystem",
+   "spoken": "the ecosystem figured",
+   "spoken_wide": "hasn't you yet, and the ecosystem figured out what you are. You're by",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1133.2,
+   "shot_dur": 3.37,
+   "word_at": "margin,",
+   "spoken": "margin, and it",
+   "spoken_wide": "are. You're by a significant margin, and it correct because your genetics say",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1134.43,
+   "shot_dur": 1.23,
+   "word_at": "because",
+   "spoken": "correct because your genetics",
+   "spoken_wide": "a significant margin, and it correct because your genetics say should feel correct.",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1137.34,
+   "shot_dur": 2.9,
+   "word_at": "But",
+   "spoken": "But the Amazon",
+   "spoken_wide": "say should feel correct. But the Amazon not a fair fight, and it",
+   "moment": [
+    "turn"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1140.64,
+   "shot_dur": 3.3,
+   "word_at": "be.",
+   "spoken": "to be. The large mammal",
+   "spoken_wide": "a fair fight, and it was never to be. The large mammal biomass is spread across",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1146.18,
+   "shot_dur": 5.54,
+   "word_at": "you.",
+   "spoken": "works against you. Your",
+   "spoken_wide": "of terrain that works against you. Your prey fast, routes",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1146.41,
+   "shot_dur": 0.23,
+   "word_at": "you.",
+   "spoken": "against you. Your prey",
+   "spoken_wide": "of terrain that works against you. Your prey fast, routes around",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1148.65,
+   "shot_dur": 2.24,
+   "word_at": "around",
+   "spoken": "routes around you,",
+   "spoken_wide": "Your prey fast, routes around you, into canopy where your vision",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1163.5,
+   "shot_dur": 14.85,
+   "word_at": "problem,",
+   "spoken": "problem, the one have",
+   "spoken_wide": "And then the invisible problem, the one have no answer for, which is that",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 1172.37,
+   "shot_dur": 8.88,
+   "word_at": "system",
+   "spoken": "your immune system has",
+   "spoken_wide": "and that your immune system has once encountered and has no",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  }
+ ]
+}
