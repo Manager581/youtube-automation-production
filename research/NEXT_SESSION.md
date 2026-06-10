@@ -79,7 +79,10 @@ timeline (residual 0.000s here). **Always run it between voice gen and the engin
 - **Meme strategy**: copyrighted clips like the ref channel (fair-use risk on a monetized
   channel) vs. freely-usable / original comedic cutaways. ~26% of the cut rides on this.
 - **Stock sourcing**: which library/approach for ~42% of shots (NYC: city/people/traffic
-  stock). Project rule historically = NO Pexels/Pixabay *images*; real stock VIDEO source TBD.
+  stock). 🚫 **HARD RULE — NO Pexels content EVER (video AND images), and no Pixabay images
+  (Pixabay = music only).** So the open decision is *which non-Pexels* source: e.g.
+  archive.org / public-domain footage, Wikimedia video, YouTube Creative-Commons clips, or
+  original capture. Pexels is off the table regardless of how the decision lands.
 
 ## Gotchas / conventions (still true)
 - Direct venv paths (iCloud renames symlinks): `venv.nosync/bin/python`, LTX `tools/ltx-video/ltx_env.nosync/bin/python`.
