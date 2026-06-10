@@ -1,0 +1,382 @@
+{
+ "25": {
+  "lane": "graphic",
+  "desc": "warn-sign card: THE GROUND (remember-the-ground payoff)",
+  "slug": "g_ground_warn"
+ },
+ "29": {
+  "lane": "graphic",
+  "desc": "scale chart: trex vs city-bus silhouettes, 40 FT / 9 TONS",
+  "slug": "g_scale_bus"
+ },
+ "30": {
+  "lane": "stock",
+  "desc": "real NYC MTA bus pulling into stop, low angle",
+  "slug": "s_city_bus"
+ },
+ "31": {
+  "lane": "graphic",
+  "desc": "stride diagram: 15 FT arc over street grid",
+  "slug": "g_stride_arc"
+ },
+ "35": {
+  "lane": "chatgpt",
+  "desc": "trex stumbling mid-stride on wet avenue, motion blur, sparks of slush",
+  "slug": "c_trip_stumble"
+ },
+ "37": {
+  "lane": "ink_gag",
+  "desc": "tiny-arms gag: ink trex on its back, little arms waving, stamp UH OH.",
+  "slug": "i_arms"
+ },
+ "41": {
+  "lane": "stock",
+  "desc": "wet concrete sidewalk macro, reflections",
+  "slug": "s_wet_concrete"
+ },
+ "45": {
+  "lane": "graphic",
+  "desc": "meat odometer card: 500 LBS / EVERY FEW DAYS ratchet",
+  "slug": "g_meat_meter"
+ },
+ "47": {
+  "lane": "chatgpt",
+  "desc": "hot-dog cart + food stalls dwarfed under trex shadow",
+  "slug": "c_food_cart"
+ },
+ "48": {
+  "lane": "stock",
+  "desc": "NYPD barricade + crowd holding line",
+  "slug": "s_barricade"
+ },
+ "50": {
+  "lane": "chatgpt",
+  "desc": "trex reflection sliding across glass tower facade",
+  "slug": "c_glass_reflection"
+ },
+ "51": {
+  "lane": "stock",
+  "desc": "glass-steel skyscraper facade tilt-up",
+  "slug": "s_glass_tower"
+ },
+ "53": {
+  "lane": "chatgpt",
+  "desc": "trex hide/scale armor macro, scarred",
+  "slug": "c_hide_macro"
+ },
+ "55": {
+  "lane": "chatgpt",
+  "desc": "trex nostril macro, breath steam curling",
+  "slug": "c_nostril"
+ },
+ "56": {
+  "lane": "graphic",
+  "desc": "smell-radius map: 1-MILE ring over Manhattan grid",
+  "slug": "g_smell_map"
+ },
+ "58": {
+  "lane": "stock",
+  "desc": "dense crosswalk crowd, timelapse feel",
+  "slug": "s_crowd_cross"
+ },
+ "59": {
+  "lane": "stock",
+  "desc": "hawk eye extreme close-up (wildlife)",
+  "slug": "s_hawk_eye"
+ },
+ "61": {
+  "lane": "chatgpt",
+  "desc": "trex POV down avenue, one running figure spot-lit, predator HUD vibe",
+  "slug": "c_pov_pick"
+ },
+ "62": {
+  "lane": "graphic",
+  "desc": "speedometer gauge: tops out 12 MPH",
+  "slug": "g_speedo"
+ },
+ "64": {
+  "lane": "ink_gag",
+  "desc": "x-ray gag: ink leg bone snapping, stamp WARRANTY VOID",
+  "slug": "i_leg_xray"
+ },
+ "65": {
+  "lane": "chatgpt",
+  "desc": "trex statue-still between parked cars, snow settling on snout",
+  "slug": "c_statue_still"
+ },
+ "66": {
+  "lane": "graphic",
+  "desc": "calendar flip card: DAY ONE.",
+  "slug": "g_day_one"
+ },
+ "68": {
+  "lane": "stock",
+  "desc": "street canyon at dawn, real footage (NOT dunk clip)",
+  "slug": "s_dawn_canyon"
+ },
+ "69": {
+  "lane": "stock",
+  "desc": "yellow-taxi gridlock wall, horns",
+  "slug": "s_taxi_wall"
+ },
+ "70": {
+  "lane": "stock",
+  "desc": "faces at glass \u2014 crowd at storefront window looking up",
+  "slug": "s_faces_glass"
+ },
+ "71": {
+  "lane": "chatgpt",
+  "desc": "predator-vision: crowd with tags SMALL / SOFT / SLOW",
+  "slug": "c_predator_tags"
+ },
+ "74": {
+  "lane": "existing",
+  "desc": "dunk_trex_jaws_teeth 2nd use, late in-point",
+  "slug": "dunk_trex_jaws_teeth.mp4"
+ },
+ "76": {
+  "lane": "stock",
+  "desc": "crowd sprinting away, street level",
+  "slug": "s_crowd_run"
+ },
+ "77": {
+  "lane": "chatgpt",
+  "desc": "strike blur: jaws closing toward camera, snow burst",
+  "slug": "c_strike_blur"
+ },
+ "78": {
+  "lane": "ink_gag",
+  "desc": "receipt gag: ORDER #001 \u2014 1x PEDESTRIAN. TOTAL: ONE BITE.",
+  "slug": "i_receipt"
+ },
+ "79": {
+  "lane": "graphic",
+  "desc": "card: THE ENTIRE HUNT: 4 SECONDS",
+  "slug": "g_hunt_4s"
+ },
+ "80": {
+  "lane": "graphic",
+  "desc": "countdown clock card ticking 00:10",
+  "slug": "g_clock_10s"
+ },
+ "81": {
+  "lane": "existing",
+  "desc": "ch_trex_walkaway_crowd still 2nd use (slow push)",
+  "slug": "ch_trex_walkaway_crowd.png"
+ },
+ "82": {
+  "lane": "stock",
+  "desc": "crowd scattering aerial/drone",
+  "slug": "s_crowd_scatter"
+ },
+ "83": {
+  "lane": "stock",
+  "desc": "wildebeest/gazelle herd scattering on savanna (old-world callback)",
+  "slug": "s_herd_scatter"
+ },
+ "84": {
+  "lane": "stock",
+  "desc": "concert-style crowd, phones up, filming",
+  "slug": "s_phones_up"
+ },
+ "85": {
+  "lane": "chatgpt",
+  "desc": "trex on a wall of livestream phone screens, 12 angles",
+  "slug": "c_phone_wall"
+ },
+ "87": {
+  "lane": "graphic",
+  "desc": "tracking map: Manhattan grid, red dot moving, LIVE badge",
+  "slug": "g_track_map"
+ },
+ "89": {
+  "lane": "stock",
+  "desc": "massive crowd behind police barriers",
+  "slug": "s_crowd_mass"
+ },
+ "90": {
+  "lane": "ink_gag",
+  "desc": "trending gag: ink trex in a TRENDING #1 frame, eyes annoyed",
+  "slug": "i_trending"
+ },
+ "91": {
+  "lane": "stock",
+  "desc": "NYPD cruisers, lights, converging",
+  "slug": "s_nypd_lights"
+ },
+ "92": {
+  "lane": "stock",
+  "desc": "police helicopter close pass + armored truck arriving",
+  "slug": "s_heli_armor"
+ },
+ "93": {
+  "lane": "stock",
+  "desc": "SWAT line advancing, rifles low",
+  "slug": "s_swat_line"
+ },
+ "94": {
+  "lane": "chatgpt",
+  "desc": "nostril macro v2, smoke wisps invading",
+  "slug": "c_nostril_smoke"
+ },
+ "95": {
+  "lane": "stock",
+  "desc": "diesel exhaust / smoke stack macro",
+  "slug": "s_diesel_smoke"
+ },
+ "96": {
+  "lane": "stock",
+  "desc": "helicopter rotor blur macro",
+  "slug": "s_rotor_macro"
+ },
+ "97": {
+  "lane": "graphic",
+  "desc": "senses-jammed diagram: nose/eye/ear icons crossed out one by one",
+  "slug": "g_senses_x"
+ },
+ "98": {
+  "lane": "existing",
+  "desc": "dunk_trex_jaws_teeth 3rd->swap to eye_detail 2nd use",
+  "slug": "dunk_trex_eye_detail.mp4"
+ },
+ "99": {
+  "lane": "graphic",
+  "desc": "herd-route map: arrows squeezing dot block by block toward river",
+  "slug": "g_herd_map"
+ },
+ "100": {
+  "lane": "stock",
+  "desc": "police barricade line advancing night",
+  "slug": "s_barricade_night"
+ },
+ "102": {
+  "lane": "stock",
+  "desc": "Hudson river, cold gray wide, real",
+  "slug": "s_hudson_wide"
+ },
+ "103": {
+  "lane": "graphic",
+  "desc": "Hudson width map: HALF A MILE span marker",
+  "slug": "g_hudson_map"
+ },
+ "104": {
+  "lane": "chatgpt",
+  "desc": "trex swimming, head above black water, breath fog",
+  "slug": "c_swim"
+ },
+ "105": {
+  "lane": "graphic",
+  "desc": "water-temp gauge: 4\u00b0C and falling",
+  "slug": "g_temp_gauge"
+ },
+ "106": {
+  "lane": "chatgpt",
+  "desc": "thermal-cam trex: blue creeping into extremities",
+  "slug": "c_thermal"
+ },
+ "107": {
+  "lane": "graphic",
+  "desc": "rule card callback: YOU CANNOT FALL.",
+  "slug": "g_rule_fall"
+ },
+ "108": {
+  "lane": "existing",
+  "desc": "ink_gag_ground 2nd use (the ground stares back)",
+  "slug": "ink_gag_ground.png"
+ },
+ "109": {
+  "lane": "chatgpt",
+  "desc": "trex feet on wet pier planks, claws gripping, macro",
+  "slug": "c_pier_feet"
+ },
+ "110": {
+  "lane": "stock",
+  "desc": "night skyline from river POV, city pressing",
+  "slug": "s_skyline_river"
+ },
+ "111": {
+  "lane": "graphic",
+  "desc": "counter card: FALLS ALLOWED: 0",
+  "slug": "g_zero_falls"
+ },
+ "112": {
+  "lane": "existing",
+  "desc": "ch_trex_avenue_wide still 2nd use (hero return)",
+  "slug": "ch_trex_avenue_wide.png"
+ },
+ "113": {
+  "lane": "graphic",
+  "desc": "answer card slam: YES.",
+  "slug": "g_yes"
+ },
+ "114": {
+  "lane": "graphic",
+  "desc": "typewriter card: THE CATCH \u2014",
+  "slug": "g_catch"
+ },
+ "116": {
+  "lane": "stock",
+  "desc": "snow flurry macro, streetlight",
+  "slug": "s_snow_flurry"
+ },
+ "117": {
+  "lane": "stock",
+  "desc": "frozen concrete/ice texture macro",
+  "slug": "s_ice_concrete"
+ },
+ "118": {
+  "lane": "existing",
+  "desc": "ch_trex_lowangle_taxis still 2nd use",
+  "slug": "ch_trex_lowangle_taxis.png"
+ },
+ "119": {
+  "lane": "chatgpt",
+  "desc": "trex silhouette deep in dark snowy street, distant police lights \u2014 NIGHT ONE",
+  "slug": "c_night_one"
+ },
+ "120": {
+  "lane": "graphic",
+  "desc": "vote card: NEXT PREDATOR? drop it in the comments",
+  "slug": "g_vote"
+ },
+ "121": {
+  "lane": "ink_gag",
+  "desc": "lineup gag: ink mugshots \u2014 megalodon / raptor / mammoth, numbers held",
+  "slug": "i_lineup"
+ },
+ "122": {
+  "lane": "graphic",
+  "desc": "card: TOP COMMENT WINS.",
+  "slug": "g_top_comment"
+ },
+ "123": {
+  "lane": "stock",
+  "desc": "Miami skyline from water",
+  "slug": "s_miami"
+ },
+ "124": {
+  "lane": "ink_gag",
+  "desc": "megalodon gag: ink shark over flooded skyline, stamp MY BAD.",
+  "slug": "i_megalodon"
+ },
+ "125": {
+  "lane": "graphic",
+  "desc": "subscribe end-card: emblem + LIKE/SUB, orange",
+  "slug": "g_subscribe"
+ },
+ "126": {
+  "lane": "existing",
+  "desc": "ch_trex_walkaway_crowd (exit shot, final use)",
+  "slug": "ch_trex_walkaway_crowd.png"
+ },
+ "127": {
+  "lane": "stock",
+  "desc": "searchlight sweeping night sky",
+  "slug": "s_searchlight"
+ },
+ "128": {
+  "lane": "existing",
+  "desc": "emblem_boil.mp4 close",
+  "slug": "emblem_boil.mp4"
+ }
+}

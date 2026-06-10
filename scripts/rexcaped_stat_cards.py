@@ -293,6 +293,195 @@ def render_boil_mov(out_path, dur=1.0, fps=30, size=560, canvas='orange'):
     print(f'boil mov {out_path} ({dur}s, {n}f)')
 
 
+# ── winner graphics system: MAP / GAUGE / CLOCK / DIAGRAM cards ───────────
+# (reference uses these as ~10% of shots: park maps, clock faces, charts)
+
+def _orange_base():
+    im = base_canvas(ORANGE_BG, dots=(120, 40, 0), dot_alpha=46)
+    d = ImageDraw.Draw(im, 'RGBA')
+    d.rectangle((36, 36, W - 36, H - 36), outline=INK, width=4)
+    tracked(d, (0, 64), 'REXCAPED', font(F_BLACK, 30), INK + (200,),
+            tracking=14, anchor_mid_w=W / 2)
+    return im, d
+
+
+def _manhattan_grid(d, x0=360, y0=200, x1=1560, y1=900):
+    """ink street grid, manhattan-ish: dense cross streets + avenues + a river
+    band on the left edge. Returns the grid box."""
+    d.rectangle((x0, y0, x1, y1), outline=INK, width=5)
+    d.rectangle((x0, y0, x0 + 90, y1), fill=INK + (50,))          # the Hudson
+    for i in range(1, 9):                                          # avenues
+        x = x0 + 90 + i * (x1 - x0 - 90) / 9
+        d.line((x, y0, x, y1), fill=INK + (150,), width=3)
+    for j in range(1, 14):                                         # streets
+        y = y0 + j * (y1 - y0) / 14
+        d.line((x0 + 90, y, x1, y), fill=INK + (110,), width=2)
+    return x0, y0, x1, y1
+
+
+def render_map_card(kind, title, out_path):
+    im, d = _orange_base()
+    x0, y0, x1, y1 = _manhattan_grid(d)
+    cx, cy = (x0 + 90 + x1) / 2, (y0 + y1) / 2
+    if kind == 'ring':            # smell radius
+        for rr, a in ((420, 255), (300, 170), (180, 110)):
+            d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), outline=INK + (a,), width=6)
+        d.ellipse((cx - 16, cy - 16, cx + 16, cy + 16), fill=(208, 58, 36))
+        d.line((cx, cy, cx + 420, cy), fill=(208, 58, 36), width=5)
+    elif kind == 'track':         # live tracking dot + trail
+        pts = [(x1 - 160, y0 + 120), (x1 - 320, y0 + 260), (x1 - 280, y0 + 420),
+               (cx + 60, cy + 90), (cx - 80, cy + 200)]
+        for a, b in zip(pts, pts[1:]):
+            d.line((*a, *b), fill=(208, 58, 36), width=6)
+        d.ellipse((pts[-1][0] - 20, pts[-1][1] - 20, pts[-1][0] + 20, pts[-1][1] + 20),
+                  fill=(208, 58, 36))
+        d.rectangle((x1 - 210, y0 + 24, x1 - 60, y0 + 78), fill=(208, 58, 36))
+        d.text((x1 - 195, y0 + 32), '● LIVE', font=font(F_BLACK, 34), fill=WHITE)
+    elif kind == 'herd':          # arrows squeezing the dot toward the river
+        d.ellipse((x0 + 220 - 20, cy - 20, x0 + 220 + 20, cy + 20), fill=(208, 58, 36))
+        for sx, sy in ((x1 - 140, y0 + 160), (x1 - 120, cy), (x1 - 140, y1 - 160),
+                       (cx + 140, y0 + 110), (cx + 140, y1 - 110)):
+            dx, dy = (x0 + 240) - sx, cy - sy
+            n = (dx * dx + dy * dy) ** 0.5
+            ex, ey = sx + dx / n * 150, sy + dy / n * 150
+            d.line((sx, sy, ex, ey), fill=INK, width=8)
+            d.polygon([(ex, ey), (ex - dy / n * 16 + dx / n * 8, ey + dx / n * 16 + dy / n * 8),
+                       (ex + dy / n * 16 + dx / n * 8, ey - dx / n * 16 + dy / n * 8)], fill=INK)
+    elif kind == 'span':          # hudson width marker
+        d.line((x0 + 12, cy, x0 + 78, cy), fill=(208, 58, 36), width=8)
+        d.line((x0 + 12, cy - 22, x0 + 12, cy + 22), fill=(208, 58, 36), width=8)
+        d.line((x0 + 78, cy - 22, x0 + 78, cy + 22), fill=(208, 58, 36), width=8)
+        fv = font(F_BLACK, 96)
+        d.text((x0 + 130, cy - 120), 'HALF A MILE', font=fv, fill=INK)
+        d.text((x0 + 130, cy + 10), 'OF BLACK WATER', font=font(F_BLACK, 52), fill=WHITE)
+    fT = font(F_BLACK, 64)
+    tx0, _, tx1, _ = d.textbbox((0, 0), title, font=fT)
+    d.rectangle((80, 110, 96 + (tx1 - tx0) + 32, 196), fill=INK)
+    d.text((96, 122), title, font=fT, fill=(245, 130, 32))
+    im.save(out_path)
+    print('map', out_path)
+
+
+def render_gauge_card(value, unit, label, frac, out_path, falling=False):
+    """speedo / temp gauge: arc + needle at frac (0..1)"""
+    import math
+    im, d = _orange_base()
+    cx, cy, r = W / 2, 660, 360
+    d.arc((cx - r, cy - r, cx + r, cy + r), 180, 360, fill=INK, width=18)
+    for i in range(9):
+        a = math.radians(180 + i * 22.5)
+        x_in, y_in = cx + (r - 40) * math.cos(a), cy + (r - 40) * math.sin(a)
+        x_out, y_out = cx + (r - 6) * math.cos(a), cy + (r - 6) * math.sin(a)
+        d.line((x_in, y_in, x_out, y_out), fill=INK, width=7)
+    a = math.radians(180 + 180 * max(0.02, min(frac, 0.98)))
+    d.line((cx, cy, cx + (r - 70) * math.cos(a), cy + (r - 70) * math.sin(a)),
+           fill=(208, 58, 36), width=14)
+    d.ellipse((cx - 24, cy - 24, cx + 24, cy + 24), fill=INK)
+    fv = fit_font(d, value, F_BLACK, 700, 210, start=200)
+    vx0, _, vx1, _ = d.textbbox((0, 0), value, font=fv)
+    d.text(((W - (vx1 - vx0)) / 2 + 4, 705), value, font=fv, fill=WARM_SHADOW if False else (255, 200, 150))
+    d.text(((W - (vx1 - vx0)) / 2, 700), value, font=fv, fill=INK)
+    d.text((cx + (vx1 - vx0) / 2 + 28, 740), unit, font=font(F_BLACK, 60), fill=WHITE)
+    d.text((96, 122), label, font=font(F_BLACK, 64), fill=INK)
+    if falling:
+        d.polygon([(W - 170, 180), (W - 110, 180), (W - 140, 240)], fill=(208, 58, 36))
+        d.text((W - 320, 120), 'FALLING', font=font(F_BLACK, 44), fill=(208, 58, 36))
+    im.save(out_path)
+    print('gauge', out_path)
+
+
+def render_clock_card(text_time, label, out_path, kind='countdown'):
+    import math
+    im, d = _orange_base()
+    if kind == 'countdown':
+        cx, cy, r = W / 2, 560, 330
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=INK, width=16)
+        for i in range(12):
+            a = math.radians(i * 30 - 90)
+            d.line((cx + (r - 44) * math.cos(a), cy + (r - 44) * math.sin(a),
+                    cx + (r - 12) * math.cos(a), cy + (r - 12) * math.sin(a)),
+                   fill=INK, width=8)
+        d.pieslice((cx - r + 60, cy - r + 60, cx + r - 60, cy + r - 60),
+                   -90, -90 + 60, fill=(208, 58, 36, 130))
+        d.line((cx, cy, cx, cy - r + 70), fill=(208, 58, 36), width=14)
+        fv = font(F_BLACK, 150)
+        tb = d.textbbox((0, 0), text_time, font=fv)
+        d.text(((W - (tb[2] - tb[0])) / 2, 760), text_time, font=fv, fill=INK)
+    else:                          # calendar page
+        d.rectangle((560, 230, 1360, 880), fill=WHITE)
+        d.rectangle((560, 230, 1360, 360), fill=(208, 58, 36))
+        d.text((660, 250), 'FEBRUARY', font=font(F_BLACK, 80), fill=WHITE)
+        fv = fit_font(d, text_time, F_BLACK, 700, 420, start=330)
+        tb = d.textbbox((0, 0), text_time, font=fv)
+        d.text((560 + (800 - (tb[2] - tb[0])) / 2, 420), text_time, font=fv, fill=INK)
+    d.text((96, 122), label, font=font(F_BLACK, 64), fill=INK)
+    stamp_emblem(im)
+    im.save(out_path)
+    print('clock', out_path)
+
+
+def render_senses_x_card(out_path):
+    """nose / eye / ear glyphs crossed out one by one (senses jammed)"""
+    im, d = _orange_base()
+    d.text((96, 122), 'EVERY SENSE — JAMMED', font=font(F_BLACK, 64), fill=INK)
+    cxs = (480, 960, 1440)
+    labels = ('SMELL', 'SIGHT', 'HEARING')
+    for cx, lab in zip(cxs, labels):
+        cy = 520
+        d.ellipse((cx - 170, cy - 170, cx + 170, cy + 170), outline=INK, width=10)
+        d.text((cx - d.textlength(lab, font=font(F_BLACK, 52)) / 2, cy + 210),
+               lab, font=font(F_BLACK, 52), fill=WHITE)
+        d.line((cx - 150, cy - 150, cx + 150, cy + 150), fill=(208, 58, 36), width=22)
+        d.line((cx + 150, cy - 150, cx - 150, cy + 150), fill=(208, 58, 36), width=22)
+    stamp_emblem(im)
+    im.save(out_path)
+    print('senses', out_path)
+
+
+def render_stride_card(out_path):
+    im, d = _orange_base()
+    d.text((96, 122), 'ONE STRIDE', font=font(F_BLACK, 64), fill=INK)
+    y = 760
+    d.line((200, y, 1720, y), fill=INK, width=10)                  # street
+    for x in (260, 1660):
+        d.ellipse((x - 26, y - 26, x + 26, y + 26), fill=INK)      # footfalls
+    import math
+    pts = [(260 + t * 1400 / 40, y - math.sin(t / 40 * math.pi) * 420) for t in range(41)]
+    for a, b in zip(pts, pts[1:]):
+        d.line((*a, *b), fill=(208, 58, 36), width=12)
+    fv = font(F_BLACK, 170)
+    tb = d.textbbox((0, 0), '15 FT', font=fv)
+    d.text(((W - (tb[2] - tb[0])) / 2, 300), '15 FT', font=fv, fill=INK)
+    stamp_emblem(im)
+    im.save(out_path)
+    print('stride', out_path)
+
+
+def render_scale_chart_card(out_path):
+    """trex vs city bus silhouette bar-scale"""
+    im, d = _orange_base()
+    d.text((96, 122), 'YOU, IN BUS UNITS', font=font(F_BLACK, 64), fill=INK)
+    base = 840
+    d.line((140, base, 1780, base), fill=INK, width=8)
+    d.rectangle((220, base - 220, 820, base - 20), fill=INK)        # the bus
+    for wx in range(280, 800, 110):
+        d.rectangle((wx, base - 190, wx + 70, base - 110), fill=(245, 130, 32))
+    d.ellipse((280, base - 44, 350, base + 26), fill=INK)
+    d.ellipse((690, base - 44, 760, base + 26), fill=INK)
+    d.text((400, base + 26), 'CITY BUS · 9 TONS', font=font(F_BLACK, 44), fill=WHITE)
+    if EMBLEM.exists():                                             # the ink trex
+        em = Image.open(EMBLEM).convert('RGBA').resize((520, 520))
+        mask = Image.new('L', (520, 520), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0, 520, 520), fill=255)
+        em.putalpha(mask)
+        im.paste(em, (1140, base - 560), em)
+    d.text((W / 2 - 60, base - 350), '=', font=font(F_BLACK, 170), fill=(208, 58, 36))
+    d.text((1180, base + 26), 'YOU · ALSO 9 TONS', font=font(F_BLACK, 44), fill=WHITE)
+    stamp_emblem(im)
+    im.save(out_path)
+    print('scale', out_path)
+
+
 PH_STYLE = {
     'stock': ('STOCK B-ROLL', ORANGE),
     'meme': ('MEME CUTAWAY', WHITE),
