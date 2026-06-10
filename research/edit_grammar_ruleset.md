@@ -111,3 +111,24 @@ We do **NOT** need a generated creature for every beat. The build model:
 This is the HYBRID model, now data-backed: a few great creature hero shots carry the brand;
 stock + memes + cards carry the runtime and the retention rhythm.
 
+## 6. Validation finding — what is and isn't reproducible (honest)
+
+`scripts/rexcaped_edit_engine.py` generates an edit from the script (cut-lattice +
+tempo) and was tested against the real T.Rex cuts:
+
+- Engine recall vs real cuts: **53.9%** | random-at-same-density: **46.6%**.
+- So the script-feature lattice beats chance by only **~7 points**.
+
+**Conclusion: exact cut *placement* is NOT script-reproducible.** Once you match the cut
+*density*, the precise moments are ~at the random ceiling — they're visual/editorial
+judgment (best frame, emphasis) plus genuine editor-to-editor variation. No script-driven
+engine recovers them, and cloning them isn't the goal anyway.
+
+**What IS reproducible (and what the engine targets):** cut density/tempo per section,
+a modest bias toward meaningful moments (stats/turns), the asset mix, rapid-fire bursts on
+lists, sound-on-cut, stat-cards on numbers, the meme cadence, the macro structure. Success
+metric = **style-fit** (does it feel like the channel), NOT cut-for-cut match.
+
+Future refinement to push past the ~7pt: visual/emphasis-aware cut SELECTION (cut on the
+best frame + audio-stress), not more script rules.
+
