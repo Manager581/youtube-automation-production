@@ -24,14 +24,14 @@ offset; investigate in renderer) · **within-shot events 2 vs winner 274; 76% sh
 > Read `research/viral_recreation_spec.md`, `research/trex_pilot_shot_sheet_hook.md`, and
 > `research/NEXT_SESSION.md`. The HOOK ANIMATIC exists (`output/trex_hook_animatic_540p.mp4`,
 > 64s, 30 beats, built from the sheet; PE = `storyboards/trex_hook_animatic.json`; 6 ChatGPT
-> stills in `assets/trex_pilot/hook_stills/169/`). After owner verdict on it: build-order steps
-> 2-3: (a) extend `scripts/rexcaped_stat_cards.py` to emit ANIMATED cards — typewriter reveal
-> ~27 chars/s + boiling Rexcaped-emblem stamp loop + NYC map / survival-clock / calendar cards
-> (PNG sequences or short MOVs the renderer can overlay); (b) add the renderer EVENT layer in
-> `scripts/ffmpeg_production_render.py` — animated overlay pop-in/slam/slide via overlay x/y/
-> scale expressions, sway/bob on stills, per-event SFX with PUNCHY transients (fix the 69%
-> sound-on-cut while in there); (c) re-render and re-measure — gate: events ≥25/min, static
-> shots <40%, sound-on-cut ≥90%, music ≥0.90. Prototype each on ONE beat before wiring (rule 3).
+> stills in `assets/trex_pilot/hook_stills/169/`). EVENT LAYER v1 IS IN (e1a5cf0): slam enters
+> (`enter:"slam"`), per-event SFX (`events`), typewriter + boil MOVs (`rexcaped_stat_cards.py
+> --typewriter-mov/--boil-mov` → `assets/trex_pilot/anim/`, regenerable), whoosh-hit SFX grammar
+> (whoosh-only cuts read SILENT → swell INTO cut at 0.5 + impact ON cut at 0.4). Animatic v2.3:
+> sound-on-cut 97% ✓ (gate 90), music 0.867 (real fix = trex bed ducked against OUR VO — owner
+> music decision; breaking_law ducked tracks have foreign duck-holes). STILL TO BUILD: overlay
+> pop-ins WITHIN a beat (card-over-clip composite), odometer as one MOV, map/clock/calendar
+> cards, sway on long stills. Then re-measure — remaining gates: events ≥25/min, static <40%.
 > Then extend the sheet past 1:04 (body sections) + manufacture per section, animatic-first.
 > Owner decisions pending: ink-gag comedy lane (prototyped in the animatic — beats 19/27),
 > stock lane, i2v spend (Kling/Veo/Hailuo).
