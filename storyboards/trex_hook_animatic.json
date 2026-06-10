@@ -40,7 +40,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0003",
@@ -53,7 +54,9 @@
    "tension_level": 0.7,
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
-   "asset": "animatic"
+   "asset": "animatic",
+   "enter": "slam",
+   "sfx": "whoosh"
   },
   {
    "beat_id": "beat_0004",
@@ -67,7 +70,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0005",
@@ -81,7 +85,8 @@
    "zoom_speed_pct_per_sec": 1.2,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0006",
@@ -95,7 +100,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0007",
@@ -137,7 +143,8 @@
    "zoom_speed_pct_per_sec": 1.2,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0010",
@@ -151,7 +158,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0011",
@@ -164,7 +172,9 @@
    "tension_level": 0.7,
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
-   "asset": "animatic"
+   "asset": "animatic",
+   "enter": "slam",
+   "sfx": "whoosh"
   },
   {
    "beat_id": "beat_0012",
@@ -178,7 +188,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0013",
@@ -191,7 +202,9 @@
    "tension_level": 0.7,
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
-   "asset": "animatic"
+   "asset": "animatic",
+   "enter": "slam",
+   "sfx": "whoosh"
   },
   {
    "beat_id": "beat_0014",
@@ -205,7 +218,8 @@
    "zoom_speed_pct_per_sec": 1.2,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0015",
@@ -233,7 +247,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0017",
@@ -261,7 +276,8 @@
    "zoom_speed_pct_per_sec": 1.2,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0019",
@@ -289,7 +305,8 @@
    "zoom_speed_pct_per_sec": 1.2,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0021",
@@ -331,7 +348,8 @@
    "zoom_speed_pct_per_sec": 1.5,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "impact"
+   "sfx": "impact",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0024",
@@ -352,8 +370,8 @@
    "start_sec": 53.92,
    "end_sec": 56.67,
    "duration": 2.75,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/intro_cards/card_second_fix.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/anim/card_second_type.mp4",
+   "visual_type": "video",
    "clip_audio": "mute",
    "tension_level": 0.7,
    "zoom_speed_pct_per_sec": 1.5,
@@ -373,7 +391,8 @@
    "zoom_speed_pct_per_sec": 1.2,
    "chapter": "REXCAPED PILOT",
    "asset": "animatic",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0027",
@@ -408,8 +427,8 @@
    "start_sec": 63.0,
    "end_sec": 63.87,
    "duration": 0.87,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/brand/emblem_trex_orange.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/anim/emblem_boil.mp4",
+   "visual_type": "video",
    "clip_audio": "mute",
    "tension_level": 0.7,
    "zoom_speed_pct_per_sec": 1.5,
@@ -422,5 +441,5 @@
   "beat_count": 30,
   "total_duration_sec": 63.87
  },
- "_version": "hook_animatic_v1"
+ "_version": "hook_animatic_v2_eventlayer"
 }

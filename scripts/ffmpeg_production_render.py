@@ -226,17 +226,30 @@ def build_zoompan_filter(beat, w, h, fps):
 
     zoom_target = beat.get("zoom_target", "wide")
     if zoom_target == "face":
-        x_expr = "'iw/2-(iw/zoom/2)'"
-        y_expr = "'ih/3-(ih/zoom/2)'"
+        x_base, y_base = "iw/2-(iw/zoom/2)", "ih/3-(ih/zoom/2)"
     elif zoom_target == "document":
-        x_expr = "'iw/3-(iw/zoom/2)'"
-        y_expr = "'ih/2-(ih/zoom/2)'"
+        x_base, y_base = "iw/3-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
     else:  # wide / center
-        x_expr = "'iw/2-(iw/zoom/2)'"
-        y_expr = "'ih/2-(ih/zoom/2)'"
+        x_base, y_base = "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+
+    # Event-layer enter effect (viral_recreation_spec law 4: cuts are FELT).
+    # 'slam': ~0.13s scale punch (z descends 1.3x -> base) + 1-frame x jitter,
+    # then the normal Ken Burns ramp continues from the landing frame.
+    if beat.get("enter") == "slam" and total_frames > 4:
+        n_slam = max(2, int(round(fps * 0.13)))
+        z0 = min(3.0, max(end_scale, 1.0) + 0.28)
+        dz = (z0 - 1.0) / n_slam
+        z_expr = (f"if(lt(on,{n_slam}),{z0:.4f}-{dz:.6f}*on,"
+                  f"min(1.0+{zoom_rate:.8f}*(on-{n_slam}),{end_scale:.4f}))")
+        x_expr = f"'{x_base}+if(lt(on,{n_slam}),(mod(on,2)*2-1)*14,0)'"
+        y_expr = f"'{y_base}'"
+    else:
+        z_expr = f"min(1.0+{zoom_rate:.8f}*on,{end_scale:.4f})"
+        x_expr = f"'{x_base}'"
+        y_expr = f"'{y_base}'"
 
     return (
-        f"zoompan=z='min(1.0+{zoom_rate:.8f}*on,{end_scale:.4f})':"
+        f"zoompan=z='{z_expr}':"
         f"x={x_expr}:y={y_expr}:"
         f"d={total_frames}:s={w}x{h}:fps={fps},"
         f"format=yuv420p"
@@ -639,13 +652,50 @@ def build_audio_mix(beats, narration_path, narr_dur, chapter_map, music_by_chapt
         # Trim SFX to beat duration
         beat_dur = beat["end_sec"] - beat["start_sec"]
         max_samples = int(beat_dur * AUDIO_SR)
-        sfx_audio_clip = sfx_audio[:max_samples]
 
-        place_audio(mix, sfx_audio_clip, beat["start_sec"], volume=0.5)
+        # Whoosh-hit grammar (measured iteratively: whoosh-only cuts read as
+        # SILENT — onset detectors and ears both want a transient ON the cut;
+        # peak-aligning the swell just lands it early). So: the swell rides
+        # INTO the cut, and a quiet sharp impact lands exactly ON it.
+        if sfx_type == "whoosh":
+            place_audio(mix, sfx_audio[:int(1.2 * AUDIO_SR)],
+                        max(0.0, beat["start_sec"] - 0.45), volume=0.5)
+            hit_path = resolve_sfx("impact")
+            hit = sfx_cache.get(hit_path)
+            if hit is None and hit_path:
+                hit = decode_audio(hit_path)
+                sfx_cache[hit_path] = hit
+            if hit is not None:
+                place_audio(mix, hit[:max_samples + AUDIO_SR],
+                            beat["start_sec"], volume=0.4)
+        else:
+            place_audio(mix, sfx_audio[:max_samples + AUDIO_SR],
+                        beat["start_sec"], volume=0.65)
         sfx_count += 1
         sfx_by_chapter[beat.get("chapter", "?")] += 1
 
     print(f"    {sfx_count} SFX placed: {dict(sfx_by_chapter)}")
+
+    # ── Layer 3b: per-EVENT SFX (event layer: a sound on every within-shot
+    # event — pop-ins, overlay entries — not just on cuts; spec law 4) ──────
+    ev_count = 0
+    for beat in beats:
+        for ev in beat.get("events", []):
+            sfx_path = resolve_sfx(ev.get("sfx"))
+            if not sfx_path:
+                continue
+            if sfx_path in sfx_cache:
+                sfx_audio = sfx_cache[sfx_path]
+            else:
+                sfx_audio = decode_audio(sfx_path)
+                sfx_cache[sfx_path] = sfx_audio
+            if sfx_audio is None:
+                continue
+            t_abs = beat["start_sec"] + float(ev.get("t", 0.0))
+            place_audio(mix, sfx_audio[:int(2.5 * AUDIO_SR)], t_abs, volume=0.65)
+            ev_count += 1
+    if ev_count:
+        print(f"    {ev_count} per-event SFX placed")
 
     # ── Layer 4: Clip audio (play / play_then_mute) ────────────────────────
     print("  Audio: mixing clip audio moments...")

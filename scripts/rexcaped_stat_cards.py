@@ -132,6 +132,87 @@ def render_card(value, context, out_path):
     im.save(out_path)
 
 
+def _frames_to_mp4(frames, out_path, fps=30):
+    """Pipe PIL frames to ffmpeg -> H.264 mp4 (the renderer treats animated
+    cards as ordinary video beats — zero renderer changes needed)."""
+    import subprocess
+    p = subprocess.Popen(
+        ['ffmpeg', '-y', '-hide_banner', '-loglevel', 'error',
+         '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(fps),
+         '-i', '-', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', str(out_path)],
+        stdin=subprocess.PIPE)
+    for fr in frames:
+        p.stdin.write(fr.tobytes())
+    p.stdin.close()
+    p.wait()
+
+
+def render_typewriter_mov(value, context, out_path, dur, fps=30, cps=27):
+    """Animated stat card (measured grammar: value slams in ~3 frames, context
+    TYPEWRITES at ~27 chars/s — the reference card anatomy at 7:53)."""
+    bg = base_canvas(BLACK)
+    d0 = ImageDraw.Draw(bg, 'RGBA')
+    d0.rectangle((36, 36, W - 36, H - 36), outline=ORANGE, width=4)
+    d0.rectangle((50, 50, W - 50, H - 50), outline=ORANGE + (90,), width=1)
+    tracked(d0, (0, 76), 'REXCAPED', font(F_BLACK, 34), ORANGE + (200,),
+            tracking=16, anchor_mid_w=W / 2)
+    stamp_emblem(bg)
+    fv = fit_font(d0, value, F_BLACK, 1640, 430, start=330)
+    x0, y0, x1, y1 = d0.textbbox((0, 0), value, font=fv)
+    vx, vy = (W - (x1 - x0)) / 2 - x0, (H - (y1 - y0)) * 0.40 - y0
+    cy = vy + y1 + 46
+    fc = fit_font(d0, context or ' ', F_BLACK, 1500, 120, start=84, floor=40)
+
+    n = max(int(dur * fps), 6)
+    frames = []
+    for i in range(n):
+        im = bg.copy()
+        d = ImageDraw.Draw(im, 'RGBA')
+        punch = {0: 1.16, 1: 1.08}.get(i, 1.0)          # 3-frame value slam
+        if punch > 1.0:
+            fv_p = font(F_BLACK, int(fv.size * punch))
+            px0, py0, px1, py1 = d.textbbox((0, 0), value, font=fv_p)
+            pvx, pvy = (W - (px1 - px0)) / 2 - px0, (H - (py1 - py0)) * 0.40 - py0
+            d.text((pvx + 9, pvy + 11), value, font=fv_p, fill=(0, 0, 0))
+            d.text((pvx, pvy), value, font=fv_p, fill=ORANGE)
+        else:
+            d.text((vx + 9, vy + 11), value, font=fv, fill=(0, 0, 0))
+            d.text((vx, vy), value, font=fv, fill=ORANGE)
+        if context:
+            shown = context[:max(0, int((i / fps) * cps))]
+            if shown:
+                d.line((W / 2 - 130, cy, W / 2 + 130, cy), fill=ORANGE + (160,), width=3)
+                tracked(d, (0, cy + 28), shown + ('▌' if len(shown) < len(context) and i % 8 < 4 else ''),
+                        fc, WHITE, tracking=6, anchor_mid_w=W / 2)
+        frames.append(im)
+    _frames_to_mp4(frames, out_path, fps)
+    print(f'typewriter mov {out_path} ({dur}s, {n}f)')
+
+
+def render_boil_mov(out_path, dur=1.0, fps=30, size=560):
+    """Boiling Rexcaped emblem stamp (reference logo anatomy: 2-3 alternating
+    drawings, sketchbook 'boil', used as scene-transition punctuation)."""
+    if not EMBLEM.exists():
+        raise SystemExit(f'missing {EMBLEM}')
+    em = Image.open(EMBLEM).convert('RGBA').resize((size, size))
+    mask = Image.new('L', (size, size), 0)
+    ImageDraw.Draw(mask).ellipse((0, 0, size, size), fill=255)
+    em.putalpha(mask)
+    bg = base_canvas(BLACK)
+    states = []
+    for rot, sc, dx, dy in ((-1.6, 0.985, -5, 3), (0.0, 1.0, 0, -4), (1.7, 1.02, 5, 2)):
+        e = em.rotate(rot, resample=Image.BICUBIC, expand=False)
+        s = int(size * sc)
+        e = e.resize((s, s))
+        f = bg.copy()
+        f.paste(e, ((W - s) // 2 + dx, (H - s) // 2 + dy), e)
+        states.append(f)
+    n = max(int(dur * fps), 6)
+    frames = [states[(i // 3) % 3] for i in range(n)]    # ~10fps boil at 30fps out
+    _frames_to_mp4(frames, out_path, fps)
+    print(f'boil mov {out_path} ({dur}s, {n}f)')
+
+
 PH_STYLE = {
     'stock': ('STOCK B-ROLL', ORANGE),
     'meme': ('MEME CUTAWAY', WHITE),
@@ -172,9 +253,22 @@ def main():
     ap.add_argument('--creature-placeholders', action='store_true',
                     help='also render slates for creature shots (no clip pool yet)')
     ap.add_argument('--demo', action='store_true')
+    ap.add_argument('--typewriter-mov', nargs=4, metavar=('VALUE', 'CONTEXT', 'DUR', 'OUT'),
+                    help='render an animated typewriter card mp4')
+    ap.add_argument('--boil-mov', nargs=2, metavar=('DUR', 'OUT'),
+                    help='render the boiling emblem stamp mp4')
     a = ap.parse_args()
 
     out = Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
+
+    if a.typewriter_mov:
+        v, c, dur, dest = a.typewriter_mov
+        render_typewriter_mov(v, c, out / dest, float(dur))
+        return
+    if a.boil_mov:
+        dur, dest = a.boil_mov
+        render_boil_mov(out / dest, float(dur))
+        return
 
     if a.demo:
         render_card('12,800 PSI', 'BITE FORCE', out / 'demo_card_psi.png')
