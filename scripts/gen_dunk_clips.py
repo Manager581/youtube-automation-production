@@ -37,6 +37,10 @@ def main():
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--python", default=str(PY))
     ap.add_argument("--only", default=None, help="generate only this shot id")
+    ap.add_argument("--i2v", action="store_true",
+                    help="image-to-video: condition each shot on its <id>.png still in --stills-dir")
+    ap.add_argument("--stills-dir", default="assets/dunkleosteus",
+                    help="dir of <shot_id>.{png,jpg} stills for --i2v")
     args = ap.parse_args()
 
     shots = json.load(open(args.storyboard))["shots"]
@@ -55,12 +59,14 @@ def main():
             print(f"[{i}/{len(shots)}] SKIP {out.name} (exists)")
             done += 1
             continue
+        # i2v_prompt (motion description) preferred for i2v; fall back to t2v prompt.
+        prompt = shot.get("i2v_prompt") or shot.get("prompt") or ""
         # LTX treats --output_path as a DIRECTORY and writes video_output_*.mp4
         # inside it. Generate into a per-shot temp dir, then move to the final name.
         tmp_out = out_dir / f"_tmp_{shot['id']}"
         cmd = [
             args.python, "inference.py",
-            "--prompt", shot["prompt"],
+            "--prompt", prompt,
             "--negative_prompt", NEG,
             "--height", str(args.height), "--width", str(args.width),
             "--num_frames", str(args.frames), "--frame_rate", str(args.fps),
@@ -68,7 +74,18 @@ def main():
             "--pipeline_config", str(CONFIG),
             "--output_path", str(tmp_out),
         ]
-        print(f"[{i}/{len(shots)}] GEN {out.name} :: {shot['prompt'][:60]}…", flush=True)
+        if args.i2v:
+            stills_dir = (ROOT / args.stills_dir).resolve()
+            still = next((stills_dir / f"{shot['id']}{e}"
+                          for e in (".png", ".jpg", ".jpeg")
+                          if (stills_dir / f"{shot['id']}{e}").exists()), None)
+            if still is None:
+                print(f"[{i}/{len(shots)}] SKIP {out.name} (no still {shot['id']}.* in {stills_dir})",
+                      flush=True)
+                continue
+            cmd += ["--conditioning_media_paths", str(still),
+                    "--conditioning_start_frames", "0"]
+        print(f"[{i}/{len(shots)}] GEN {out.name} :: {prompt[:60]}…", flush=True)
         t0 = time.time()
         r = subprocess.run(cmd, cwd=str(LTX), env=env)
         dt = time.time() - t0

@@ -1,0 +1,86 @@
+{
+  "beats": [
+    {
+      "beat_id": "beat_0000",
+      "shot_id": "sh01_guillotine_jaws",
+      "text": "Three hundred fifty eight million years ago, the ocean built the closest thing it ever made to a guillotine.",
+      "start_sec": 0.0,
+      "end_sec": 6.5,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/dunkleosteus/loops_v2/dunk_sh01_guillotine_jaws.mp4",
+      "visual_type": "video",
+      "clip_audio": "mute",
+      "tension_level": 0.6,
+      "zoom_speed_pct_per_sec": 0.0,
+      "prompt": "the bony blades snap shut once, hard and fast, a glint races along the cutting edge, particles jolt outward",
+      "duration": 6.5
+    },
+    {
+      "beat_id": "beat_0001",
+      "shot_id": "sh02_blades_of_bone",
+      "text": "Three hundred fifty eight million years ago, the ocean built the closest thing it ever made to a guillotine. No teeth. Just two blades of bone that re-sharpened themselves every time the jaws closed, snapping shut in one fiftieth of a second with enough force to shear another armored fish in half.",
+      "start_sec": 6.5,
+      "end_sec": 13.5,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/dunkleosteus/loops_v2/dunk_sh02_blades_of_bone.mp4",
+      "visual_type": "video",
+      "clip_audio": "mute",
+      "tension_level": 0.6,
+      "zoom_speed_pct_per_sec": 0.0,
+      "prompt": "slow push-in along the bone blades, faint shimmer of light, drifting particles",
+      "duration": 7.0
+    },
+    {
+      "beat_id": "beat_0002",
+      "shot_id": "sh03_shear_fish",
+      "text": "No teeth. Just two blades of bone that re-sharpened themselves every time the jaws closed, snapping shut in one fiftieth of a second with enough force to shear another armored fish in half.",
+      "start_sec": 13.5,
+      "end_sec": 18.1,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/dunkleosteus/loops_v2/dunk_sh03_shear_fish.mp4",
+      "visual_type": "video",
+      "clip_audio": "mute",
+      "tension_level": 0.6,
+      "zoom_speed_pct_per_sec": 0.0,
+      "prompt": "the jaw closes through the fish, debris and scales burst outward, motion blur",
+      "duration": 4.6
+    },
+    {
+      "beat_id": "beat_0003",
+      "shot_id": "sh04_apex_reveal",
+      "text": "No teeth. Just two blades of bone that re-sharpened themselves every time the jaws closed, snapping shut in one fiftieth of a second with enough force to shear another armored fish in half. It was the first creature on Earth big enough to be called an apex predator. It ruled for fifty million years. And then it vanished so completely that we almost never knew it existed.",
+      "start_sec": 18.1,
+      "end_sec": 24.2,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/dunkleosteus/loops_v2/dunk_sh04_apex_reveal.mp4",
+      "visual_type": "video",
+      "clip_audio": "mute",
+      "tension_level": 0.6,
+      "zoom_speed_pct_per_sec": 0.0,
+      "prompt": "the giant glides slowly forward to fill the frame, subtle camera push-in",
+      "duration": 6.1
+    },
+    {
+      "beat_id": "beat_0004",
+      "shot_id": "sh05_reign_vanish",
+      "text": "It ruled for fifty million years. And then it vanished so completely that we almost never knew it existed.",
+      "start_sec": 24.2,
+      "end_sec": 31.6,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/dunkleosteus/loops_v2/dunk_sh05_reign_vanish.mp4",
+      "visual_type": "video",
+      "clip_audio": "mute",
+      "tension_level": 0.6,
+      "zoom_speed_pct_per_sec": 0.0,
+      "prompt": "the silhouette recedes and dims into the dark, slow melancholic drift",
+      "duration": 7.4
+    }
+  ],
+  "stats": {
+    "beat_count": 5,
+    "total_duration_sec": 31.6,
+    "unique_clips": [
+      "sh01_guillotine_jaws",
+      "sh02_blades_of_bone",
+      "sh03_shear_fish",
+      "sh04_apex_reveal",
+      "sh05_reign_vanish"
+    ]
+  },
+  "_version": "dunkleosteus_proof_v1"
+}

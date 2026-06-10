@@ -35,6 +35,9 @@ def main():
     ap.add_argument("--stills-dir", default=None,
                     help="proof mode: assign image files from this dir (Ken Burns) "
                          "to beats round-robin instead of LTX clips")
+    ap.add_argument("--use-shot-windows", action="store_true",
+                    help="one beat per shot using the storyboard's start/end windows "
+                         "(exact VO-aligned cuts) instead of proportional segment mapping")
     args = ap.parse_args()
 
     stills = []
@@ -56,39 +59,62 @@ def main():
 
     n_seg, n_shot = len(speech), len(shots)
 
-    # Assign each speech segment a shot index, preserving order (proportional).
-    for i, seg in enumerate(speech):
-        seg["_shot"] = min(n_shot - 1, int(i * n_shot / n_seg))
+    def shot_prompt(s):                          # v2 shots use i2v_prompt/still_prompt
+        return s.get("i2v_prompt") or s.get("prompt") or s.get("still_prompt") or ""
 
-    # Group consecutive segments sharing a shot into one beat.
     beats = []
-    i = 0
-    while i < n_seg:
-        j = i
-        while j + 1 < n_seg and speech[j + 1]["_shot"] == speech[i]["_shot"]:
-            j += 1
-        shot = shots[speech[i]["_shot"]]
-        text = " ".join(s["text"] for s in speech[i:j + 1])
-        if stills:                               # PROOF mode: real stills + Ken Burns
-            visual_file = stills[len(beats) % len(stills)]
-            visual_type, zoom = "still", 2.0
-        else:                                    # LTX clip mode
-            visual_file = str(clips_dir / f"dunk_{shot['id']}.{args.ext}")
-            visual_type, zoom = "video", 0.0
-        beats.append({
-            "beat_id": f"beat_{len(beats):04d}",
-            "shot_id": shot["id"],
-            "text": text,
-            "start_sec": float(speech[i]["start_sec"]),
-            "end_sec": float(speech[j]["end_sec"]),
-            "visual_file": visual_file,          # absolute -> resolve_visual finds it
-            "visual_type": visual_type,
-            "clip_audio": "mute",
-            "tension_level": 0.6,
-            "zoom_speed_pct_per_sec": zoom,
-            "prompt": shot["prompt"],            # the AI-clip prompt for the LTX upgrade
-        })
-        i = j + 1
+    if args.use_shot_windows and all("start" in s and "end" in s for s in shots):
+        # One beat per shot, using the storyboard's designed start/end windows.
+        # Beat text = the VO sentences overlapping that window (for QA alignment).
+        for k, shot in enumerate(shots):
+            s0, s1 = float(shot["start"]), float(shot["end"])
+            text = " ".join(sg["text"] for sg in speech
+                            if sg["end_sec"] > s0 and sg["start_sec"] < s1)
+            beats.append({
+                "beat_id": f"beat_{k:04d}",
+                "shot_id": shot["id"],
+                "text": text,
+                "start_sec": s0,
+                "end_sec": s1,
+                "visual_file": str(clips_dir / f"dunk_{shot['id']}.{args.ext}"),
+                "visual_type": "video",
+                "clip_audio": "mute",
+                "tension_level": 0.6,
+                "zoom_speed_pct_per_sec": 0.0,
+                "prompt": shot_prompt(shot),
+            })
+    else:
+        # Proportional: assign each speech segment a shot index, preserving order.
+        for i, seg in enumerate(speech):
+            seg["_shot"] = min(n_shot - 1, int(i * n_shot / n_seg))
+        # Group consecutive segments sharing a shot into one beat.
+        i = 0
+        while i < n_seg:
+            j = i
+            while j + 1 < n_seg and speech[j + 1]["_shot"] == speech[i]["_shot"]:
+                j += 1
+            shot = shots[speech[i]["_shot"]]
+            text = " ".join(s["text"] for s in speech[i:j + 1])
+            if stills:                           # PROOF mode: real stills + Ken Burns
+                visual_file = stills[len(beats) % len(stills)]
+                visual_type, zoom = "still", 2.0
+            else:                                # LTX clip mode
+                visual_file = str(clips_dir / f"dunk_{shot['id']}.{args.ext}")
+                visual_type, zoom = "video", 0.0
+            beats.append({
+                "beat_id": f"beat_{len(beats):04d}",
+                "shot_id": shot["id"],
+                "text": text,
+                "start_sec": float(speech[i]["start_sec"]),
+                "end_sec": float(speech[j]["end_sec"]),
+                "visual_file": visual_file,      # absolute -> resolve_visual finds it
+                "visual_type": visual_type,
+                "clip_audio": "mute",
+                "tension_level": 0.6,
+                "zoom_speed_pct_per_sec": zoom,
+                "prompt": shot_prompt(shot),
+            })
+            i = j + 1
 
     # Make beats contiguous + cover [0, total]: each beat ends where the next begins.
     beats[0]["start_sec"] = 0.0
