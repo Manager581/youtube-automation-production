@@ -21,15 +21,25 @@ offset; investigate in renderer) · **within-shot events 2 vs winner 274; 76% sh
 (expected — the EVENT LAYER doesn't exist yet; that's the build).
 
 **▶ PASTE THIS INSTEAD:**
-> Read `research/viral_recreation_spec.md` and `research/NEXT_SESSION.md`. Build-order steps
+> Read `research/viral_recreation_spec.md`, `research/trex_pilot_shot_sheet_hook.md`, and
+> `research/NEXT_SESSION.md`. The HOOK ANIMATIC exists (`output/trex_hook_animatic_540p.mp4`,
+> 64s, 30 beats, built from the sheet; PE = `storyboards/trex_hook_animatic.json`; 6 ChatGPT
+> stills in `assets/trex_pilot/hook_stills/169/`). After owner verdict on it: build-order steps
 > 2-3: (a) extend `scripts/rexcaped_stat_cards.py` to emit ANIMATED cards — typewriter reveal
 > ~27 chars/s + boiling Rexcaped-emblem stamp loop + NYC map / survival-clock / calendar cards
 > (PNG sequences or short MOVs the renderer can overlay); (b) add the renderer EVENT layer in
 > `scripts/ffmpeg_production_render.py` — animated overlay pop-in/slam/slide via overlay x/y/
 > scale expressions, sway/bob on stills, per-event SFX with PUNCHY transients (fix the 69%
-> sound-on-cut while in there); (c) re-render v2 and re-measure — gate: events ≥25/min, static
+> sound-on-cut while in there); (c) re-render and re-measure — gate: events ≥25/min, static
 > shots <40%, sound-on-cut ≥90%, music ≥0.90. Prototype each on ONE beat before wiring (rule 3).
-> Owner decisions still pending: comedy lane, stock lane, i2v spend (Kling/Veo/Hailuo).
+> Then extend the sheet past 1:04 (body sections) + manufacture per section, animatic-first.
+> Owner decisions pending: ink-gag comedy lane (prototyped in the animatic — beats 19/27),
+> stock lane, i2v spend (Kling/Veo/Hailuo).
+> ChatGPT-stills workflow gotchas: open the image VIEWER (click the painted image; verify the
+> Select/Aspect-ratio/Share toolbar) BEFORE clicking the download icon at top-right — the chat
+> layout's Share button in that corner creates a PUBLIC link (one was created+deleted this
+> session via Settings→Data controls→Shared links). Downloads land in ~/Downloads as
+> "ChatGPT Image <date>.png", 1536×1024 → center-crop to 16:9.
 
 Cull check while testing: `footage/trex_pilot/dunk_trex_stride_avenue.mp4` may read long-necked
 on the street shots (eyeballed in the v2 sanity sheet) — review against the jaws/eye/taxi clips;
