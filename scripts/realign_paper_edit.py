@@ -157,6 +157,32 @@ def realign_beats(beats, alignment, default_marker_dur=3.0):
         nb["start_sec"] = round(flat[first_idx][1], 3)
         nb["end_sec"] = round(flat[last_idx][2], 3)
         nb["duration"] = round(nb["end_sec"] - nb["start_sec"], 3)
+
+        # Word-anchored within-beat offsets (animatic chip overlays / event
+        # SFX): when an entry carries "word", re-time its at/t from that
+        # word's aligned start so pops stay on their words as the beat moves.
+        span = flat[first_idx:last_idx + 1]
+
+        def _word_start(anchor):
+            tgt = normalize_word(anchor)
+            for wd, ws, _ in span:
+                if wd == tgt:
+                    return ws
+            return None
+
+        for ov in nb.get("overlays") or []:
+            wt = _word_start(ov["word"]) if ov.get("word") else None
+            if wt is not None:
+                win = (float(ov["until"]) - float(ov["at"])
+                       if ov.get("until") is not None else None)
+                ov["at"] = round(max(0.0, wt - nb["start_sec"]), 3)
+                if win is not None:
+                    ov["until"] = round(ov["at"] + win, 3)
+        for ev in nb.get("events") or []:
+            wt = _word_start(ev["word"]) if ev.get("word") else None
+            if wt is not None:
+                ev["t"] = round(max(0.0, wt - nb["start_sec"]), 3)
+
         last_end = nb["end_sec"]
         cursor = last_idx + 1
         stats["realigned"] += 1
@@ -184,6 +210,10 @@ def main():
     g.add_argument("--narration", help="Path to narration WAV (will run alignment)")
     ap.add_argument("--script", help="Path to script text (required with --narration)")
     ap.add_argument("--device", default="cpu", choices=["cpu", "cuda", "mps"])
+    ap.add_argument("--stitch", action="store_true",
+                    help="extend each beat through pauses to the next beat's "
+                         "start (contiguous timeline, renderer assumption); "
+                         "last beat extends to narration end")
     args = ap.parse_args()
 
     # Load or compute alignment
@@ -207,6 +237,20 @@ def main():
 
     # Realign
     new_beats, stats = realign_beats(beats, alignment)
+
+    if args.stitch:
+        if new_beats and new_beats[0]["start_sec"] > 0:
+            new_beats[0]["start_sec"] = 0.0     # hold visual over lead-in silence
+        for i in range(len(new_beats) - 1):
+            new_beats[i]["end_sec"] = new_beats[i + 1]["start_sec"]
+            new_beats[i]["duration"] = round(
+                new_beats[i]["end_sec"] - new_beats[i]["start_sec"], 3)
+        if new_beats:
+            dur = float(alignment.get("duration_sec")
+                        or new_beats[-1]["end_sec"])
+            new_beats[-1]["end_sec"] = round(dur, 3)
+            new_beats[-1]["duration"] = round(
+                new_beats[-1]["end_sec"] - new_beats[-1]["start_sec"], 3)
 
     # Drift report
     drifts = []

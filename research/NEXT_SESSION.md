@@ -53,9 +53,18 @@ offset; investigate in renderer) · **within-shot events 2 vs winner 274; 76% sh
 > composable with zoompan/slam/centered-MOV; (2) `render_chip_orange()` in rexcaped_stat_cards
 > (`--chip` flag; chips in `assets/trex_pilot/cards/chip_*.png`); (3) animatic restructured 30→26 beats
 > (scene-first A/B/C open, chips ride world shots, knife = PiP pop on heli per sheet beat 07) →
-> `output/trex_hook_animatic_v3_540p.mp4`. GATES: event rate 26.1/min ✓ (≥25), truly-static 27.3% ✓ (<40%);
-> cuts 20.7/min (flash-beats became overlays — felt events are the law). Onset-sync 66.7% vs winner 90 —
-> chips fire on WORD times not music onsets; next event-layer pass should quantize event `at`s to the bed.
+> `output/trex_hook_animatic_v3_540p.mp4`. **2026-06-10g — OWNER CAUGHT TIMING DRIFT in v3 ("way off,
+> multiple beats"): the animatic JSON was compiled from the engine plan's ESTIMATED times — actual TTS runs
+> 66.6s vs the JSON's 63.87 → tail beats fired 3–5s early (4°C card ~4s before "four degrees"; SECOND card
+> during "the FIRST thing"). FIX: per-beat `text` written into the animatic + WhisperX forced alignment via
+> `realign_paper_edit.py` (extended: word-anchored `overlays`/`events` re-timing via `"word"` field +
+> `--stitch` for contiguous timelines incl. 0-start). 15/26 beats had drifted >1s (max 6.0s). ALSO finished
+> the orange mandate: card_bite/card_500/card_cold re-skinned via render_card_orange; typewriter + boil MOVs
+> now take `canvas='orange'` (default) — zero black canvases remain. → `output/trex_hook_animatic_v4_540p.mp4`
+> (24 beats). GATES v4: cuts 18.9/min (winner 18.5 ✓), truly-static 28.6% ✓ (<40%), BUT event rate 22.5/min —
+> BELOW the ≥25 gate (true 66.6s timeline + 2 filler flashes dropped). Recovery = the queued event-layer
+> items: sway on long stills, odometer ratchet on the burst, more word-anchored pop-ins, onset-quantized
+> `at`s (onset-sync 50% vs winner 90).**
 > Card receipts from the winner: `research/edit_analysis/ref_card_753_green_typewriter.jpg` (green brand
 > canvas, zero black) + `ref_logo_stamp_0377.jpg`.**
 > ChatGPT gotchas: download ONLY from the image VIEWER (verify Select/Aspect-ratio toolbar)

@@ -211,14 +211,29 @@ def _frames_to_mp4(frames, out_path, fps=30):
     p.wait()
 
 
-def render_typewriter_mov(value, context, out_path, dur, fps=30, cps=27):
+def _card_style(canvas):
+    """shared card palette: 'orange' = the owner-mandated bright brand canvas
+    (zero black text cards in the reference); 'black' = legacy slate look."""
+    if canvas == 'orange':
+        return dict(bg=lambda: base_canvas(ORANGE_BG, dots=(120, 40, 0),
+                                           dot_alpha=46),
+                    frame=INK, header=INK + (210,), value=INK,
+                    vshadow=(255, 200, 150), divider=INK + (170,))
+    return dict(bg=lambda: base_canvas(BLACK), frame=ORANGE,
+                header=ORANGE + (200,), value=ORANGE, vshadow=(0, 0, 0),
+                divider=ORANGE + (160,))
+
+
+def render_typewriter_mov(value, context, out_path, dur, fps=30, cps=27,
+                          canvas='orange'):
     """Animated stat card (measured grammar: value slams in ~3 frames, context
     TYPEWRITES at ~27 chars/s — the reference card anatomy at 7:53)."""
-    bg = base_canvas(BLACK)
+    st = _card_style(canvas)
+    bg = st['bg']()
     d0 = ImageDraw.Draw(bg, 'RGBA')
-    d0.rectangle((36, 36, W - 36, H - 36), outline=ORANGE, width=4)
-    d0.rectangle((50, 50, W - 50, H - 50), outline=ORANGE + (90,), width=1)
-    tracked(d0, (0, 76), 'REXCAPED', font(F_BLACK, 34), ORANGE + (200,),
+    d0.rectangle((36, 36, W - 36, H - 36), outline=st['frame'], width=4)
+    d0.rectangle((50, 50, W - 50, H - 50), outline=st['frame'][:3] + (90,), width=1)
+    tracked(d0, (0, 76), 'REXCAPED', font(F_BLACK, 34), st['header'],
             tracking=16, anchor_mid_w=W / 2)
     stamp_emblem(bg)
     fv = fit_font(d0, value, F_BLACK, 1640, 430, start=330)
@@ -237,15 +252,15 @@ def render_typewriter_mov(value, context, out_path, dur, fps=30, cps=27):
             fv_p = font(F_BLACK, int(fv.size * punch))
             px0, py0, px1, py1 = d.textbbox((0, 0), value, font=fv_p)
             pvx, pvy = (W - (px1 - px0)) / 2 - px0, (H - (py1 - py0)) * 0.40 - py0
-            d.text((pvx + 9, pvy + 11), value, font=fv_p, fill=(0, 0, 0))
-            d.text((pvx, pvy), value, font=fv_p, fill=ORANGE)
+            d.text((pvx + 9, pvy + 11), value, font=fv_p, fill=st['vshadow'])
+            d.text((pvx, pvy), value, font=fv_p, fill=st['value'])
         else:
-            d.text((vx + 9, vy + 11), value, font=fv, fill=(0, 0, 0))
-            d.text((vx, vy), value, font=fv, fill=ORANGE)
+            d.text((vx + 9, vy + 11), value, font=fv, fill=st['vshadow'])
+            d.text((vx, vy), value, font=fv, fill=st['value'])
         if context:
             shown = context[:max(0, int((i / fps) * cps))]
             if shown:
-                d.line((W / 2 - 130, cy, W / 2 + 130, cy), fill=ORANGE + (160,), width=3)
+                d.line((W / 2 - 130, cy, W / 2 + 130, cy), fill=st['divider'], width=3)
                 tracked(d, (0, cy + 28), shown + ('▌' if len(shown) < len(context) and i % 8 < 4 else ''),
                         fc, WHITE, tracking=6, anchor_mid_w=W / 2)
         frames.append(im)
@@ -253,16 +268,17 @@ def render_typewriter_mov(value, context, out_path, dur, fps=30, cps=27):
     print(f'typewriter mov {out_path} ({dur}s, {n}f)')
 
 
-def render_boil_mov(out_path, dur=1.0, fps=30, size=560):
+def render_boil_mov(out_path, dur=1.0, fps=30, size=560, canvas='orange'):
     """Boiling Rexcaped emblem stamp (reference logo anatomy: 2-3 alternating
-    drawings, sketchbook 'boil', used as scene-transition punctuation)."""
+    drawings, sketchbook 'boil', used as scene-transition punctuation; the
+    reference stamps theirs on the GREEN brand halftone, never black)."""
     if not EMBLEM.exists():
         raise SystemExit(f'missing {EMBLEM}')
     em = Image.open(EMBLEM).convert('RGBA').resize((size, size))
     mask = Image.new('L', (size, size), 0)
     ImageDraw.Draw(mask).ellipse((0, 0, size, size), fill=255)
     em.putalpha(mask)
-    bg = base_canvas(BLACK)
+    bg = _card_style(canvas)['bg']()
     states = []
     for rot, sc, dx, dy in ((-1.6, 0.985, -5, 3), (0.0, 1.0, 0, -4), (1.7, 1.02, 5, 2)):
         e = em.rotate(rot, resample=Image.BICUBIC, expand=False)
