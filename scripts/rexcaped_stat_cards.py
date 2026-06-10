@@ -374,8 +374,8 @@ def main():
         if s['asset'] == 'stat_card' and not a.placeholders_only:
             card = s.get('card') or {}
             if card.get('value'):
-                render_card(card['value'], card.get('context', ''),
-                            out / f'card_s{i:04d}.png')
+                render_card_orange(card['value'], card.get('context', ''),
+                                   out / f'card_s{i:04d}.png')
                 n_card += 1
         elif s['asset'] in ('stock', 'meme') and not a.cards_only:
             render_placeholder(s['asset'], s, i, out / f"ph_{s['asset']}_s{i:04d}.png")
