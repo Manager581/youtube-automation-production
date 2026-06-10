@@ -4,7 +4,48 @@
 fact-check the old "winning formula" → find it was wrong → measure the *real* edit grammar
 → rebrand to **Rexcaped** → build a working **edit-engine**. Read this before touching anything.
 
-## ▶ PASTE THIS TO START
+## ⚡ SESSION 2026-06-10c SUPERSEDES THE PASTE-BLOCK BELOW — frame-event study in flight
+The pilot pipeline runs end-to-end (section below still true), but a deep-watch session found
+the cut-level grammar is HALF the picture. Start here:
+
+**▶ PASTE THIS INSTEAD:**
+> Read `research/NEXT_SESSION.md` (2026-06-10c section), memory `project_trex_reference_deepwatch.md`,
+> and `research/edit_analysis/trex_motion_events.json` (summary block). Do the Tier-2 eyes-on pass:
+> dense frame grids around the event clusters in trex_motion_events.json (regen video via yt-dlp
+> DzUKhb2ZSko to /tmp/edit_deep/trex.webm if evicted; grids via the egg-prototype pattern in this
+> session's transcript / `scripts/extract_motion_events.py` docstring), write the per-second
+> RECREATION SPEC for the hook + 4 segments (a burst, a card run, a meme cluster, a kill), distill
+> the EVENT VOCABULARY (sway/crack-pop/pop-up/slam-in/wipe/overlay-in/exit/bob), THEN answer the
+> owner's pending question: "what would need to be true to recreate the viral style end-to-end."
+
+What today established (details in memory + `research/edit_analysis/`):
+- **Deep-watch, winner (DzUKhb2ZSko, all 532 shots)**: 5 pilot gaps — tempo (pilot 11.1 cuts/min
+  vs 18.5, median 5.4s vs 2.85s, 60% shots >5s), NO music wired, cards held 5–15s vs 1–2s flashes,
+  missing graphics system (logo stamp ~2min cadence / maps / clocks / calendar / charts), dark vs
+  golden palette. Comedy = 3 length classes incl. FULL copyrighted scenes, clustering on failure
+  beats. Their creature footage is weak — ours wins that layer.
+- **Loser triangulation (Chaos Theory "T-Rex in Amazon", 556 views, grammar committed b1f8843)**:
+  cloned title/ink-thumbnail/logo/music/2nd-person VO and still died → the viral ingredients are
+  the things it skipped: variety engine, burst texture, modern-world collisions (its "modern
+  Amazon" shows zero modernity — broken title promise), story dramaturgy, CTA flywheel.
+  ⚠ Our engine-cut pilot paces in the loser's quadrant (11.1 vs their 11.7 cuts/min).
+- **Frame-event prototype (the egg open, 0–14s)**: the "10s hold" is ~10 visual states (egg sways →
+  crack-pop → hatchling jitter → cartoon pop-up → sun SLAM → wipe → O₂-molecule overlay bobs →
+  exit → canopy cut → head-bob). Visuals illustrate the script NOUN-BY-NOUN; motion floor never 0;
+  87% of within-shot events land ≤0.15s from a percussive onset (motion is sound-designed);
+  first-minute visual event rate = 36/min vs 13 hard cuts. Tool: `scripts/extract_motion_events.py`
+  (Tier-1 mechanical, validated vs prototype); full-video output → `trex_motion_events.json`.
+- **Tool audit (June 2026, memory `reference_tool_landscape_2026-06.md`)**: FFmpeg stays the engine;
+  Resolve Studio = scriptable Super-Scale + finishing; Sora is dead → stills stay ChatGPT (GPT Image 2),
+  i2v = Kling 3.0 / Veo 3.1 / Hailuo (~$3–25/pilot, owner spend-OK pending); skip Premiere/AE.
+- **Renderer/engine implications queued** (after Tier-2): engine timer-fallback cuts + ~6s cap +
+  burst preservation; music wiring; card flash timing + logo-stamp + map/clock/chart cards; an
+  EVENT layer in the renderer (animated card pop-ins, overlay slide-ins, composited creature-in-
+  stock shots); daylight asset pass. Intro (66s hand-cut, 1080p rendered 09:47) already hits body
+  tempo (median 2.52s, cards flash, 0 shots >5s) but recycles 5 clips ~12× and is a stats-barrage
+  where the winner hooks story-first — owner judgment call.
+
+## ▶ ORIGINAL PASTE BLOCK (pilot pipeline — still valid, now second priority)
 > Read `research/NEXT_SESSION.md`, `research/edit_grammar_ruleset.md`, and `scripts/rexcaped_edit_engine.py`.
 > We've measured the real edit grammar of the top creature-sim videos and built the Rexcaped edit-engine (script → cut plan). Next: **tune the asset ratios, build the stat-card generator, then run the T-Rex pilot** — script (no-evolution rule) → cloned voice → engine → assets → render. Don't re-derive; build.
 
