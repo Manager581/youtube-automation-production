@@ -52,7 +52,9 @@ from typing import Optional
 # ---------------------------------------------------------------------------
 # Constants — Fern production spec
 # ---------------------------------------------------------------------------
-TARGET_WPM       = 175.0   # ColdFusion/HMW pace (was 138.7 Fern — too slow for business documentary)
+TARGET_WPM       = 150.0   # ColdFusion/HMW pace. 175 forced a ~1.5x atempo stretch on the
+                           # slow F5 output -> robotic. 150 is what F5 hits near-natively at
+                           # REGISTER_SPEED~1.0, so the WPM normalizer rarely stretches now.
 CHUNK_WORD_LIMIT = 40      # paragraph-level chunks (was 22 — caused robotic splits at every sentence)
 CHUNK_WORD_MIN   = 8       # don't make a chunk this tiny
 
@@ -69,13 +71,15 @@ WPM_TOLERANCE = 0.15
 WPM_STRETCH_MIN = 0.5   # ffmpeg atempo min
 WPM_STRETCH_MAX = 2.0   # ffmpeg atempo max
 
-# Per-register F5-TTS speed calibration (measured with _ref.wav clips)
-# Each register's reference clip has a different natural speaking rate.
-# These multipliers normalize all registers to ~139 WPM.
+# Per-register F5-TTS speed calibration (measured with _ref.wav clips).
+# Raised from ~0.78 to ~1.0 so F5 GENERATES near the 150-WPM target natively
+# instead of generating slow (~114 WPM) and being atempo-stretched ×1.5 up to it
+# (that stretch was the source of the robotic/phasey voice). Keep these so the
+# residual WPM-normalize ratio stays inside WPM_TOLERANCE (no stretch applied).
 REGISTER_SPEED = {
-    "neutral":   0.75,
-    "tense":     0.78,
-    "energized": 0.80,
+    "neutral":   1.00,
+    "tense":     1.00,
+    "energized": 1.03,
 }
 
 
