@@ -301,25 +301,27 @@ PH_STYLE = {
 
 
 def render_placeholder(asset, shot, idx, out_path):
+    """sourcing slate on the ORANGE brand canvas (owner: zero black-with-text
+    frames anywhere, placeholders included)"""
     label, bar = PH_STYLE[asset]
-    im = base_canvas(SLATE_BG)
+    im = base_canvas(ORANGE_BG, dots=(120, 40, 0), dot_alpha=46)
     d = ImageDraw.Draw(im, 'RGBA')
-    d.rectangle((0, 0, 26, H), fill=bar)
-    d.rectangle((36, 36, W - 36, H - 36), outline=(90, 86, 80), width=2)
-    d.text((110, 96), label, font=font(F_BLACK, 112), fill=WHITE)
+    d.rectangle((0, 0, 26, H), fill=INK)
+    d.rectangle((36, 36, W - 36, H - 36), outline=INK + (140,), width=2)
+    d.text((110, 96), label, font=font(F_BLACK, 112), fill=INK)
     if shot.get('meme_reset'):
         bx = 110 + d.textlength(label, font=font(F_BLACK, 112)) + 46
-        d.rectangle((bx, 130, bx + 360, 206), outline=ORANGE, width=4)
-        d.text((bx + 28, 144), 'TONAL RESET', font=font(F_BLACK, 38), fill=ORANGE)
+        d.rectangle((bx, 130, bx + 360, 206), outline=INK, width=4)
+        d.text((bx + 28, 144), 'TONAL RESET', font=font(F_BLACK, 38), fill=INK)
     tc = f"shot {idx:04d}   {shot['t']:8.2f} → {shot['end']:8.2f}   {shot['dur']:5.2f}s   [{shot['why']}]"
-    d.text((114, 252), tc, font=font(F_MONO, 40), fill=(150, 145, 138))
+    d.text((114, 252), tc, font=font(F_MONO, 40), fill=INK + (200,))
     fq = font(F_BLACK, 56)
     qy = 400
     for line in wrap(d, f'“{shot.get("text", "").strip()}”', fq, 1620):
-        d.text((114, qy), line, font=fq, fill=ORANGE)
+        d.text((114, qy), line, font=fq, fill=WHITE)
         qy += 78
     d.text((114, H - 120), 'PLACEHOLDER — source this slot against the line above',
-           font=font(F_BOLD, 34), fill=(150, 145, 138))
+           font=font(F_BOLD, 34), fill=INK + (200,))
     stamp_emblem(im, size=130, alpha=110)
     im.save(out_path)
 

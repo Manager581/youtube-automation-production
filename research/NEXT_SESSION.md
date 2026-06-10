@@ -1,5 +1,18 @@
 # NEXT SESSION — Rexcaped (the channel formerly known as the Dunkleosteus build)
 
+## ⚡ 2026-06-10h — FULL PILOT ASSEMBLED ON MARK VO; owner caught body QA failures
+**State:** `output/trex_pilot_v3_mark_540p.mp4` (6.1 min, ElevenLabs "Mark - Natural Conversations",
+~5.7k free credits left) = blessed open + body realigned word-level. Mix law in renderer
+(`--duck-db`, VO rider). **Owner stopped at 1:30: 5 NYC clips cycling 8-9×, black MEME slates.**
+Fixed mechanically: ALL plan cards+slates orange (regen MUST use `storyboards/trex_pilot_plan_v2.json`
+— /tmp engine plan = wrong indices, silent miss), clip reuse gets varied in-points (`src_offset`),
+contact-sheet QA now mandatory before any owner watch (`output/trex_pilot_v3_contact.jpg`, memory
+`feedback_frame_level_qa.md`). **Repetition root cause = 5-clip body pool — ONLY the asset sprint fixes it:**
+fill 34 slates (each names its line+timecode). Owner decisions still open: comedy lane (recommend house
+ink-gags), stock sourcing, i2v top-up, music bed. Watcher TODO: add `visual_repetition` +
+`dark_text_frame` checks to verify_render.py. ⚠ ElevenLabs free tier = NON-COMMERCIAL license —
+needs $5 Starter before monetized upload.
+
 **This session pivoted hard.** It started as "build the Dunkleosteus video" and became:
 fact-check the old "winning formula" → find it was wrong → measure the *real* edit grammar
 → rebrand to **Rexcaped** → build a working **edit-engine**. Read this before touching anything.

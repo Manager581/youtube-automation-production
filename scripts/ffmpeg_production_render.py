@@ -409,6 +409,12 @@ def render_production_segment(args):
         if beat.get("transition_in") == "fade_from_black" or i == 0:
             vf += ",fade=in:st=0:d=0.5"
 
+        # Reused clips start at a varied in-point (beat['src_offset'], set by
+        # the dispatcher per reuse) — replaying the same opening frames is what
+        # makes reuse read as "the same shot over and over".
+        src_off = float(beat.get("src_offset") or 0.0)
+        src_seek = ["-ss", f"{src_off:.3f}"] if src_off > 0 else []
+
         # Build ffmpeg command (encoder is a parameter so we can retry the
         # exact same render with libx264 if the hardware encoder misbehaves)
         def _build(enc, enc_a):
@@ -421,7 +427,7 @@ def render_production_segment(args):
                 if is_img and not is_chapter_card:
                     inputs = ["-loop", "1", "-framerate", str(fps), "-i", path]
                 else:
-                    inputs = ["-t", f"{(out_frames + 1) / fps:.4f}", "-i", path]
+                    inputs = [*src_seek, "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path]
                 fc = [f"[0:v]{vf}[bg]"]
                 prev = "bg"
                 for k, ov in enumerate(chip_specs):
@@ -478,7 +484,7 @@ def render_production_segment(args):
                 # Video + overlay
                 return [
                     "ffmpeg", "-y", "-loglevel", "error",
-                    "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path,
+                    *src_seek, "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path,
                     "-t", f"{overlay_dur:.4f}", "-i", overlay_path,
                     "-filter_complex",
                     f"[0:v]{vf}[bg];"
@@ -503,7 +509,7 @@ def render_production_segment(args):
                 ]
             return [
                 "ffmpeg", "-y", "-loglevel", "error",
-                "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path,
+                *src_seek, "-t", f"{(out_frames + 1) / fps:.4f}", "-i", path,
                 "-vf", vf,
                 "-c:v", enc, *enc_a,
                 "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
@@ -1042,7 +1048,18 @@ def main():
     print(f"{'='*40}")
 
     render_args = []
+    seen_uses = defaultdict(int)        # reused clips get a varied in-point —
+    dur_cache = {}                      # same opening frames read as repeats
     for i, (s, e, path, img, bid, beat) in enumerate(timeline):
+        if path and not img:
+            n_prev = seen_uses[path]
+            seen_uses[path] += 1
+            if n_prev:
+                if path not in dur_cache:
+                    dur_cache[path] = get_duration(path) or 0.0
+                head = max(dur_cache[path] - (e - s) - 0.25, 0.0)
+                if head > 0.5:
+                    beat["src_offset"] = round((n_prev * 1.9) % head, 3)
         overlay_path = resolved_overlays.get(bid)
         render_args.append((
             i, beat, path, img, overlay_path,
