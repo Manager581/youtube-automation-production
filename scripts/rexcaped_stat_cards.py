@@ -126,6 +126,41 @@ def render_card_orange(value, context, out_path):
     im.save(out_path)
 
 
+def render_chip_orange(value, context, out_path=None):
+    """small overlay CHIP (restructure law: stats ride as overlays on world
+    shots, never full-frame) — render_card_orange anatomy at chip scale.
+    Sized for a 1920x1080 frame; the renderer scales by frame fraction.
+    Returns the PIL image; saves only when out_path is given."""
+    w, h = 560, 250 if context else 200
+    im = Image.new('RGB', (w, h), ORANGE_BG)
+    d = ImageDraw.Draw(im, 'RGBA')
+    for gy in range(0, h, 18):
+        for gx in range(0, w, 18):
+            dist = ((gx / w) ** 2 + ((h - gy) / h) ** 2) ** 0.5
+            a = max(0, int(46 - 34 * dist))
+            if a:
+                d.ellipse((gx, gy, gx + 4, gy + 4), fill=(120, 40, 0) + (a,))
+    d.rectangle((6, 6, w - 6, h - 6), outline=INK, width=5)
+    d.rectangle((15, 15, w - 15, h - 15), outline=INK + (90,), width=1)
+    size = 132 if context else 124
+    while size > 40 and d.textlength(value, font=font(F_BLACK, size)) > w - 70:
+        size -= 4
+    fv = font(F_BLACK, size)
+    x0, y0, x1, y1 = d.textbbox((0, 0), value, font=fv)
+    vx = (w - (x1 - x0)) / 2 - x0
+    vy = (h * (0.36 if context else 0.5)) - (y1 - y0) / 2 - y0
+    d.text((vx + 5, vy + 6), value, font=fv, fill=(255, 200, 150))
+    d.text((vx, vy), value, font=fv, fill=INK)
+    if context:
+        fc = font(F_BLACK, 38)
+        cx0, _, cx1, _ = d.textbbox((0, 0), context, font=fc)
+        d.text(((w - (cx1 - cx0)) / 2, h - 62), context, font=fc, fill=WHITE)
+    if out_path:
+        im.save(out_path)
+        print(f'chip {out_path} ({w}x{h})')
+    return im
+
+
 def stamp_emblem(im, size=170, alpha=235):
     if not EMBLEM.exists():
         return
@@ -286,10 +321,16 @@ def main():
                     help='render an animated typewriter card mp4')
     ap.add_argument('--boil-mov', nargs=2, metavar=('DUR', 'OUT'),
                     help='render the boiling emblem stamp mp4')
+    ap.add_argument('--chip', nargs=3, metavar=('VALUE', 'CONTEXT', 'OUT'),
+                    help="render an overlay stat chip png (CONTEXT '-' = none)")
     a = ap.parse_args()
 
     out = Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
 
+    if a.chip:
+        v, c, dest = a.chip
+        render_chip_orange(v, None if c == '-' else c, out / dest)
+        return
     if a.typewriter_mov:
         v, c, dur, dest = a.typewriter_mov
         render_typewriter_mov(v, c, out / dest, float(dur))

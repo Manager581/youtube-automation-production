@@ -412,6 +412,50 @@ def render_production_segment(args):
         # Build ffmpeg command (encoder is a parameter so we can retry the
         # exact same render with libx264 if the hardware encoder misbehaves)
         def _build(enc, enc_a):
+            chip_specs = beat.get("overlays") or []
+            if chip_specs:
+                # Within-beat positioned overlays (stat chips — restructure law:
+                # stats ride as small overlays on world shots, never full-frame).
+                # Each appears at its word-timed offset and rides to the cut.
+                # x/y/w are FRACTIONS of the frame so previews scale correctly.
+                if is_img and not is_chapter_card:
+                    inputs = ["-loop", "1", "-framerate", str(fps), "-i", path]
+                else:
+                    inputs = ["-t", f"{(out_frames + 1) / fps:.4f}", "-i", path]
+                fc = [f"[0:v]{vf}[bg]"]
+                prev = "bg"
+                for k, ov in enumerate(chip_specs):
+                    inputs += ["-loop", "1", "-framerate", str(fps),
+                               "-i", ov["file"]]
+                    cw = int(round(w * float(ov.get("w", 0.29))))
+                    px = int(round(w * float(ov.get("x", 0.04))))
+                    py = int(round(h * float(ov.get("y", 0.07))))
+                    at = float(ov.get("at", 0.0))
+                    until = ov.get("until")          # absent = rides to the cut
+                    en = (f"between(t,{at:.3f},{float(until):.3f})" if until
+                          else f"gte(t,{at:.3f})")
+                    fc.append(f"[{k + 1}:v]scale={cw}:-1[c{k}]")
+                    fc.append(f"[{prev}][c{k}]overlay={px}:{py}:shortest=0:"
+                              f"enable='{en}'[b{k}]")
+                    prev = f"b{k}"
+                if overlay_path and os.path.exists(overlay_path):
+                    ov_dur = min(get_duration(overlay_path) or 3.0, duration)
+                    idx = len(chip_specs) + 1
+                    inputs += ["-t", f"{ov_dur:.4f}", "-i", overlay_path]
+                    fc.append(f"[{idx}:v]format=yuva420p,scale={w}:{h}:"
+                              f"force_original_aspect_ratio=decrease[ovr]")
+                    fc.append(f"[{prev}][ovr]overlay=(W-w)/2:(H-h)/2:shortest=0:"
+                              f"enable='between(t,0,{ov_dur:.2f})'[bo]")
+                    prev = "bo"
+                return [
+                    "ffmpeg", "-y", "-loglevel", "error", *inputs,
+                    "-filter_complex", ";".join(fc),
+                    "-map", f"[{prev}]",
+                    "-c:v", enc, *enc_a,
+                    "-pix_fmt", "yuv420p", "-r", str(fps), "-an",
+                    "-frames:v", str(out_frames),
+                    "-f", "mpegts", out_file
+                ]
             if overlay_path and os.path.exists(overlay_path):
                 overlay_dur = get_duration(overlay_path) or 3.0
                 overlay_dur = min(overlay_dur, duration)

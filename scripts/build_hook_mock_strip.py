@@ -14,10 +14,14 @@ SMALL overlays on world shots, never full-frame).
 Usage: venv/bin/python scripts/build_hook_mock_strip.py
 Edit TILES below per mock. Output: output/<OUT_NAME>.png (≤2000px wide).
 """
+import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from rexcaped_stat_cards import render_chip_orange  # canonical chip recipe
+
 STILLS = ROOT / 'assets/trex_pilot/hook_stills/169'
 
 # brand constants — keep identical to rexcaped_stat_cards.py
@@ -73,35 +77,12 @@ def font(path, size):
     return ImageFont.truetype(path, size)
 
 
-def chip_img(value, context, scale=1.0):
-    """one orange overlay chip, render_card_orange() recipe at chip scale"""
-    w = int(470 * scale)
-    h = int((212 if context else 168) * scale)
-    im = Image.new('RGB', (w, h), ORANGE_BG)
-    d = ImageDraw.Draw(im, 'RGBA')
-    for gy in range(0, h, 18):                      # halftone field
-        for gx in range(0, w, 18):
-            dist = ((gx / w) ** 2 + ((h - gy) / h) ** 2) ** 0.5
-            a = max(0, int(46 - 34 * dist))
-            if a:
-                d.ellipse((gx, gy, gx + 4, gy + 4), fill=DOTS + (a,))
-    d.rectangle((6, 6, w - 6, h - 6), outline=INK, width=4)
-    d.rectangle((14, 14, w - 14, h - 14), outline=INK + (90,), width=1)
-    size = int((118 if context else 112) * scale)        # fit value to chip width
-    while size > 40 and d.textlength(value, font=font(F_BLACK, size)) > w - 64:
-        size -= 4
-    fv = font(F_BLACK, size)
-    x0, y0, x1, y1 = d.textbbox((0, 0), value, font=fv)
-    vx = (w - (x1 - x0)) / 2 - x0
-    vy = (h * (0.36 if context else 0.5)) - (y1 - y0) / 2 - y0
-    d.text((vx + 4, vy + 5), value, font=fv, fill=WARM_SHADOW)
-    d.text((vx, vy), value, font=fv, fill=INK)
-    if context:
-        fc = font(F_BLACK, int(34 * scale))
-        cx0, _, cx1, _ = d.textbbox((0, 0), context, font=fc)
-        d.text(((w - (cx1 - cx0)) / 2, h - int(56 * scale)), context,
-               font=fc, fill=WHITE)
-    return im
+def chip_img(value, context):
+    """canonical chip, scaled to the renderer's frame fraction (w=0.29 of
+    1536) so the mock previews exactly what the render composites"""
+    ch = render_chip_orange(value, context)
+    cw = int(1536 * 0.29)
+    return ch.resize((cw, int(ch.height * cw / ch.width)), Image.LANCZOS)
 
 
 def tile_frame(spec):

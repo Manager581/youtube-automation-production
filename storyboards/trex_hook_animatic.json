@@ -1,110 +1,109 @@
 {
  "beats": [
   {
-   "beat_id": "beat_0000",
+   "clip_audio": "mute",
+   "tension_level": 0.7,
+   "chapter": "REXCAPED PILOT",
+   "asset": "animatic",
+   "visual_type": "image",
    "start_sec": 0.0,
    "end_sec": 4.32,
    "duration": 4.32,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_jaws_teeth.mp4",
-   "visual_type": "video",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 0.0,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "impact_hit"
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_avenue_wide.png",
+   "zoom_speed_pct_per_sec": 0.8,
+   "sfx": "impact_hit",
+   "beat_id": "beat_0000"
   },
   {
-   "beat_id": "beat_0001",
+   "clip_audio": "mute",
+   "tension_level": 0.7,
+   "chapter": "REXCAPED PILOT",
+   "asset": "animatic",
+   "visual_type": "image",
    "start_sec": 4.32,
    "end_sec": 6.03,
    "duration": 1.71,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_eye_detail.mp4",
-   "visual_type": "video",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 0.0,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "whoosh"
-  },
-  {
-   "beat_id": "beat_0002",
-   "start_sec": 6.03,
-   "end_sec": 6.41,
-   "duration": 0.38,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/intro_cards/card_40ft.png",
-   "visual_type": "still",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 1.5,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "impact",
-   "enter": "slam"
-  },
-  {
-   "beat_id": "beat_0003",
-   "start_sec": 6.41,
-   "end_sec": 7.17,
-   "duration": 0.76,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/intro_cards/card_40ft.png",
-   "visual_type": "still",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 1.5,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_lowangle_taxis.png",
+   "zoom_speed_pct_per_sec": 1.2,
    "enter": "slam",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "events": [
+    {
+     "t": 1.18,
+     "sfx": "impact"
+    }
+   ],
+   "beat_id": "beat_0001"
+  },
+  {
+   "clip_audio": "mute",
+   "tension_level": 0.7,
+   "chapter": "REXCAPED PILOT",
+   "asset": "animatic",
+   "visual_type": "image",
+   "start_sec": 6.03,
+   "end_sec": 7.56,
+   "duration": 1.53,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_walkaway_crowd.png",
+   "zoom_speed_pct_per_sec": 0.8,
+   "enter": "slam",
+   "sfx": "impact",
+   "overlays": [
+    {
+     "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/chip_40ft.png",
+     "at": 0.0,
+     "x": 0.04,
+     "y": 0.07,
+     "w": 0.29
+    },
+    {
+     "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/chip_9tons.png",
+     "at": 1.14,
+     "x": 0.04,
+     "y": 0.33,
+     "w": 0.29
+    }
+   ],
+   "events": [
+    {
+     "t": 1.14,
+     "sfx": "impact"
+    }
+   ],
+   "beat_id": "beat_0002"
+  },
+  {
+   "clip_audio": "mute",
+   "tension_level": 0.7,
+   "chapter": "REXCAPED PILOT",
+   "asset": "animatic",
+   "visual_type": "image",
+   "start_sec": 7.56,
+   "end_sec": 11.76,
+   "duration": 4.2,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_skull_bathtub.png",
+   "zoom_speed_pct_per_sec": 1.2,
+   "enter": "slam",
+   "sfx": "whoosh",
+   "overlays": [
+    {
+     "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/chip_60teeth.png",
+     "at": 3.64,
+     "x": 0.04,
+     "y": 0.07,
+     "w": 0.29
+    }
+   ],
+   "events": [
+    {
+     "t": 3.64,
+     "sfx": "impact"
+    }
+   ],
+   "beat_id": "beat_0003"
   },
   {
    "beat_id": "beat_0004",
-   "start_sec": 7.17,
-   "end_sec": 7.56,
-   "duration": 0.39,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/intro_cards/card_9tons.png",
-   "visual_type": "still",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 1.5,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "impact",
-   "enter": "slam"
-  },
-  {
-   "beat_id": "beat_0005",
-   "start_sec": 7.56,
-   "end_sec": 11.2,
-   "duration": 3.64,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_skull_bathtub.png",
-   "visual_type": "still",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 1.2,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "whoosh",
-   "enter": "slam"
-  },
-  {
-   "beat_id": "beat_0006",
-   "start_sec": 11.2,
-   "end_sec": 11.76,
-   "duration": 0.56,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/intro_cards/card_60teeth.png",
-   "visual_type": "still",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 1.5,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "impact",
-   "enter": "slam"
-  },
-  {
-   "beat_id": "beat_0007",
    "start_sec": 11.76,
    "end_sec": 13.29,
    "duration": 1.53,
@@ -118,36 +117,37 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0008",
-   "start_sec": 13.29,
-   "end_sec": 15.1,
-   "duration": 1.81,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_helicopters_night.mp4",
+   "clip_audio": "mute",
+   "tension_level": 0.7,
+   "chapter": "REXCAPED PILOT",
+   "asset": "animatic",
    "visual_type": "video",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 0.0,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "whoosh"
-  },
-  {
-   "beat_id": "beat_0009",
-   "start_sec": 15.1,
+   "start_sec": 13.29,
    "end_sec": 18.54,
-   "duration": 3.44,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_knife_macro.png",
-   "visual_type": "still",
-   "clip_audio": "mute",
-   "tension_level": 0.7,
-   "zoom_speed_pct_per_sec": 1.2,
-   "chapter": "REXCAPED PILOT",
-   "asset": "animatic",
-   "sfx": "impact",
-   "enter": "slam"
+   "duration": 5.25,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_helicopters_night.mp4",
+   "zoom_speed_pct_per_sec": 0.0,
+   "sfx": "whoosh",
+   "overlays": [
+    {
+     "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_knife_macro.png",
+     "at": 1.8,
+     "until": 3.2,
+     "x": 0.24,
+     "y": 0.16,
+     "w": 0.52
+    }
+   ],
+   "events": [
+    {
+     "t": 1.8,
+     "sfx": "impact"
+    }
+   ],
+   "beat_id": "beat_0005"
   },
   {
-   "beat_id": "beat_0010",
+   "beat_id": "beat_0006",
    "start_sec": 18.54,
    "end_sec": 18.91,
    "duration": 0.37,
@@ -162,7 +162,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0011",
+   "beat_id": "beat_0007",
    "start_sec": 18.91,
    "end_sec": 19.28,
    "duration": 0.37,
@@ -177,7 +177,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0012",
+   "beat_id": "beat_0008",
    "start_sec": 19.28,
    "end_sec": 19.65,
    "duration": 0.37,
@@ -192,7 +192,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0013",
+   "beat_id": "beat_0009",
    "start_sec": 19.65,
    "end_sec": 20.03,
    "duration": 0.38,
@@ -207,7 +207,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0014",
+   "beat_id": "beat_0010",
    "start_sec": 20.03,
    "end_sec": 24.11,
    "duration": 4.08,
@@ -222,7 +222,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0015",
+   "beat_id": "beat_0011",
    "start_sec": 24.11,
    "end_sec": 25.97,
    "duration": 1.86,
@@ -236,7 +236,7 @@
    "sfx": "impact_hit"
   },
   {
-   "beat_id": "beat_0016",
+   "beat_id": "beat_0012",
    "start_sec": 25.97,
    "end_sec": 28.0,
    "duration": 2.03,
@@ -251,7 +251,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0017",
+   "beat_id": "beat_0013",
    "start_sec": 28.0,
    "end_sec": 30.14,
    "duration": 2.14,
@@ -265,7 +265,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0018",
+   "beat_id": "beat_0014",
    "start_sec": 30.14,
    "end_sec": 34.27,
    "duration": 4.13,
@@ -280,7 +280,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0019",
+   "beat_id": "beat_0015",
    "start_sec": 34.27,
    "end_sec": 38.49,
    "duration": 4.22,
@@ -294,7 +294,7 @@
    "sfx": "impact_hit"
   },
   {
-   "beat_id": "beat_0020",
+   "beat_id": "beat_0016",
    "start_sec": 38.49,
    "end_sec": 40.51,
    "duration": 2.02,
@@ -309,7 +309,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0021",
+   "beat_id": "beat_0017",
    "start_sec": 40.51,
    "end_sec": 45.8,
    "duration": 5.29,
@@ -323,7 +323,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0022",
+   "beat_id": "beat_0018",
    "start_sec": 45.8,
    "end_sec": 48.8,
    "duration": 3.0,
@@ -337,7 +337,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0023",
+   "beat_id": "beat_0019",
    "start_sec": 48.8,
    "end_sec": 50.7,
    "duration": 1.9,
@@ -352,7 +352,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0024",
+   "beat_id": "beat_0020",
    "start_sec": 50.7,
    "end_sec": 53.92,
    "duration": 3.22,
@@ -366,7 +366,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0025",
+   "beat_id": "beat_0021",
    "start_sec": 53.92,
    "end_sec": 56.67,
    "duration": 2.75,
@@ -380,7 +380,7 @@
    "sfx": "impact"
   },
   {
-   "beat_id": "beat_0026",
+   "beat_id": "beat_0022",
    "start_sec": 56.67,
    "end_sec": 59.41,
    "duration": 2.74,
@@ -395,7 +395,7 @@
    "enter": "slam"
   },
   {
-   "beat_id": "beat_0027",
+   "beat_id": "beat_0023",
    "start_sec": 59.41,
    "end_sec": 61.12,
    "duration": 1.71,
@@ -409,7 +409,7 @@
    "sfx": "whoosh"
   },
   {
-   "beat_id": "beat_0028",
+   "beat_id": "beat_0024",
    "start_sec": 61.12,
    "end_sec": 63.0,
    "duration": 1.88,
@@ -423,7 +423,7 @@
    "sfx": "impact_hit"
   },
   {
-   "beat_id": "beat_0029",
+   "beat_id": "beat_0025",
    "start_sec": 63.0,
    "end_sec": 63.87,
    "duration": 0.87,
@@ -439,7 +439,8 @@
  ],
  "stats": {
   "beat_count": 30,
-  "total_duration_sec": 63.87
+  "total_duration_sec": 63.87,
+  "beats": 26
  },
  "_version": "hook_animatic_v2_eventlayer"
 }

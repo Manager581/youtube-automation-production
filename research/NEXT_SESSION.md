@@ -47,10 +47,17 @@ offset; investigate in renderer) · **within-shot events 2 vs winner 274; 76% sh
 > to build: overlay pop-ins WITHIN a beat (now required by the restructure), odometer MOV,
 > map/clock cards, sway on long stills. Gates after mock-bless: events ≥25/min, static <40%.
 > Owner decisions pending: ink-gag comedy lane, stock lane, i2v spend (Kling/Veo/Hailuo).
-> **2026-06-10f STATUS: stills B (`ch_trex_lowangle_taxis`) + C (`ch_trex_walkaway_crowd`) generated/filed;
-> mock strip BUILT → `output/trex_hook_mock_strip_0_15_v1.png` (`scripts/build_hook_mock_strip.py`) — AWAITING
-> OWNER BLESS/VETO. Card receipts from the winner saved: `research/edit_analysis/ref_card_753_green_typewriter.jpg`
-> (green brand canvas, zero black) + `ref_logo_stamp_0377.jpg`.**
+> **2026-06-10f STATUS: mock strip BLESSED (`output/trex_hook_mock_strip_0_15_v1.png`). Stills B+C
+> generated/filed (`ch_trex_lowangle_taxis`, `ch_trex_walkaway_crowd`). BUILT on the bless: (1) renderer
+> `overlays` beats — within-beat positioned chips, `{file, at, until?, x, y, w}` as frame FRACTIONS,
+> composable with zoompan/slam/centered-MOV; (2) `render_chip_orange()` in rexcaped_stat_cards
+> (`--chip` flag; chips in `assets/trex_pilot/cards/chip_*.png`); (3) animatic restructured 30→26 beats
+> (scene-first A/B/C open, chips ride world shots, knife = PiP pop on heli per sheet beat 07) →
+> `output/trex_hook_animatic_v3_540p.mp4`. GATES: event rate 26.1/min ✓ (≥25), truly-static 27.3% ✓ (<40%);
+> cuts 20.7/min (flash-beats became overlays — felt events are the law). Onset-sync 66.7% vs winner 90 —
+> chips fire on WORD times not music onsets; next event-layer pass should quantize event `at`s to the bed.
+> Card receipts from the winner: `research/edit_analysis/ref_card_753_green_typewriter.jpg` (green brand
+> canvas, zero black) + `ref_logo_stamp_0377.jpg`.**
 > ChatGPT gotchas: download ONLY from the image VIEWER (verify Select/Aspect-ratio toolbar)
 > — the chat layout's corner button is Share and once created a PUBLIC link (deleted via
 > Settings→Data controls→Shared links). Downloads → ~/Downloads "ChatGPT Image <date>.png",
