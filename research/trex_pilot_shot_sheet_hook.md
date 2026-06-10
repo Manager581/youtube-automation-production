@@ -15,7 +15,7 @@ MOTION: every beat names ≥1 event; "+shake" = 1-frame 2% scale punch on the hi
 | 00 | 0.0–4.3 | "You are the closest thing the ancient world ever built to" | ✅ jaws_teeth macro | clip motion; slow push; title-safe darkness at edges | sub-boom at 0.0; bed starts immediately |
 | 01 | 4.3–6.0 | "a perfect killing machine." | ✅ eye_detail macro | clip motion; micro-zoom on "machine" | impact on cut; metallic *shink* on "machine" |
 | 02 | 6.0–6.4 | "Forty" | 🃏 card_40ft | SLAM-IN +shake | impact |
-| 03 | 6.4–7.2 | "feet long." | 🃏 card_9tons pre-lap? NO — hold 40ft, context line typewrites "NOSE TO TAIL" | typewriter ~27c/s | tick-tick + whoosh out |
+| 03 | 6.4–7.2 | "feet long." | 🃏 card_40ft holds; context line "NOSE TO TAIL" typewrites under it | typewriter ~27c/s | tick-tick + whoosh out |
 | 04 | 7.2–7.6 | "Nine" | 🃏 card_9tons | SLAM-IN +shake | impact |
 | 05 | 7.6–11.8 | "tons. A skull the size of a bathtub, packed with sixty" | 🎨 ch_skull_bathtub (skull dwarfing a clawfoot tub, side by side) | pop-in ON "bathtub"; sway floor; 🃏 card_60teeth slam-overlay on "sixty" | whoosh in; impact on card |
 | 06 | 11.8–13.3 | "teeth, some of them" | ✅ jaws_teeth (different in-point) | clip motion | whoosh on cut |
@@ -31,8 +31,8 @@ MOTION: every beat names ≥1 event; "+shake" = 1-frame 2% scale punch on the hi
 | 19 | 45.8–50.7 | "but in the middle of Manhattan, in February, at four degrees above freezing." | ✅ taxi_hunt clip; 🃏 card_cold (4°C) slam-overlay on "four degrees" | clip motion; card pop +shake, out 1.5s | impact on card; distant siren begins |
 | 20 | 50.7–53.9 | "The first thing you feel is the cold." | ✅ snow_macro plate | drifting flakes (clip); breath-fog 🎨 overlay optional | airy whoosh; bed minimal |
 | 21 | 53.9–56.7 | "second thing you feel is the ground —" | 🃏 card "SECOND / THING YOU FEEL: THE GROUND" (regen copy — current auto-text is mangled) | typewriter ~27c/s | tick-tick + impact on reveal |
-| 22 | 56.7–59.4 | "flat, gray, and harder than any stone you" | ✅ wet_asphalt macro plate | slow drift; 2-frame punch on "harder" | stone *thud* on "harder" |
-| 23 | 59.4–61.1 | "have ever stood on." | ✅ wet_asphalt continues (no cut feel: same plate, new in-point = subtle jump) | drift continues | whoosh |
+| 22 | 56.7–59.4 | "flat, gray, and harder than any stone you" | 🖋 ink_gag_ground (ink trex taps concrete with one claw; crack-meter reads "0"; orange "NOPE." stamp) — failure-beat gag, rhymes "ground" | pop-in +shake; boil 3-frame; stamp slams on "harder" | record-scratch-lite *thud*; stamp hit |
+| 23 | 59.4–61.1 | "have ever stood on." | ✅ wet_asphalt macro plate (back from the gag) | slow drift | whoosh |
 | 24 | 61.1–63.9 | "Remember that ground. It is going to matter" | ✅ eye_detail macro → REXCAPED logo stamp at 63.0 | eye clip; logo SNAP-IN, boiling 3-frame loop ~1s | impact_hit; logo *stamp* hit |
 
 ## ChatGPT manufacture list (the 🎨/🖋 assets — 5 stills, one consistent session)
@@ -54,6 +54,9 @@ accent color, Rexcaped house style, 16:9" (matches emblem/thumbnail language).
 5. `ink_gag_tooth` — "hand-drawn ink illustration: cartoon conveyor belt of oversized
    teeth rolling toward a grinning T-Rex jaw, rubber-stamp word 'NEXT.', textured paper,
    scratchy linework, single orange accent, 16:9"
+6. `ink_gag_ground` — "hand-drawn ink illustration: cartoon T-Rex gingerly tapping city
+   concrete with one claw, a crack-meter gauge reading zero, rubber-stamp word 'NOPE.',
+   textured paper, scratchy linework, single orange accent, 16:9"
 
 Then: Photoshop Generative Expand any non-16:9 outputs; stills get motion from the
 renderer event layer (pop/slam/sway/typewriter) — no i2v needed for these.
