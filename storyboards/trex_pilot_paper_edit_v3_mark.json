@@ -623,8 +623,8 @@
    "start_sec": 99.642,
    "end_sec": 102.062,
    "duration": 2.42,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0035.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_trip_stumble.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -632,7 +632,8 @@
    "text": "At your size, a trip at speed slams",
    "asset": "meme",
    "why": "pause",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0036",
@@ -655,8 +656,8 @@
    "start_sec": 104.122,
    "end_sec": 107.422,
    "duration": 3.3,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0037.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_arms.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -664,7 +665,8 @@
    "text": "own skull, and your arms \u2014 those famously",
    "asset": "meme",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0038",
@@ -816,8 +818,8 @@
    "start_sec": 134.323,
    "end_sec": 136.463,
    "duration": 2.14,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0047.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_food_cart.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -825,7 +827,8 @@
    "text": "food than this entire street will offer up",
    "asset": "meme",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0048",
@@ -864,8 +867,8 @@
    "start_sec": 140.283,
    "end_sec": 143.863,
    "duration": 3.58,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0050.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_glass_reflection.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -873,7 +876,8 @@
    "text": "to hunt here. Constantly. In a place built",
    "asset": "meme",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0051",
@@ -912,8 +916,8 @@
    "start_sec": 148.943,
    "end_sec": 152.203,
    "duration": 3.26,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_wet_asphalt.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_hide_macro.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -921,7 +925,8 @@
    "text": "not rule a world by being fragile. You",
    "asset": "stock",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0054",
@@ -944,8 +949,8 @@
    "start_sec": 154.663,
    "end_sec": 157.404,
    "duration": 2.741,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0055.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_nostril.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -953,7 +958,8 @@
    "text": "one of the best that ever existed \u2014",
    "asset": "meme",
    "why": "stat",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0056",
@@ -1041,8 +1047,8 @@
    "start_sec": 173.524,
    "end_sec": 177.504,
    "duration": 3.98,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_skyline_dawn.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_pov_pick.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1050,7 +1056,8 @@
    "text": "one running figure out of a crowd six blocks away.",
    "asset": "stock",
    "why": "stat",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0062",
@@ -1090,8 +1097,8 @@
    "start_sec": 184.004,
    "end_sec": 186.704,
    "duration": 2.7,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_snow_macro.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_leg_xray.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1099,15 +1106,16 @@
    "text": "and a real sprint would break you.",
    "asset": "stock",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0065",
    "start_sec": 186.704,
    "end_sec": 189.324,
    "duration": 2.62,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0065.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_statue_still.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1115,7 +1123,8 @@
    "text": "But you do not need to be fast.",
    "asset": "meme",
    "why": "turn",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0066",
@@ -1203,8 +1212,8 @@
    "start_sec": 203.585,
    "end_sec": 206.505,
    "duration": 2.92,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_avenue_taxis.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_predator_tags.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1212,7 +1221,8 @@
    "text": "\u2014 looking up. To you, they read as",
    "asset": "stock",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0072",
@@ -1299,8 +1309,8 @@
    "start_sec": 219.565,
    "end_sec": 221.945,
    "duration": 2.38,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_snow_macro.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_strike_blur.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1308,15 +1318,16 @@
    "text": "once. You catch the first one",
    "asset": "stock",
    "why": "turn",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0078",
    "start_sec": 221.945,
    "end_sec": 225.685,
    "duration": 3.74,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_helicopters_night.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_receipt.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1324,7 +1335,8 @@
    "text": "before it clears the curb. One bite.",
    "asset": "creature",
    "why": "turn",
-   "sfx": "impact_hit"
+   "sfx": "impact_hit",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0079",
@@ -1429,8 +1441,8 @@
    "start_sec": 245.166,
    "end_sec": 246.046,
    "duration": 0.88,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0085.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_phone_wall.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1438,7 +1450,8 @@
    "text": "at you, and within",
    "asset": "meme",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0086",
@@ -1510,8 +1523,8 @@
    "start_sec": 258.806,
    "end_sec": 260.206,
    "duration": 1.4,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0090.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_trending.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1519,7 +1532,8 @@
    "text": "it.",
    "asset": "meme",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0091",
@@ -1574,8 +1588,8 @@
    "start_sec": 273.506,
    "end_sec": 276.506,
    "duration": 3.0,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0094.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_nostril_smoke.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1583,7 +1597,8 @@
    "text": "Your nose, the finest in the ancient world, is",
    "asset": "meme",
    "why": "pause",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0095",
@@ -1737,8 +1752,8 @@
    "start_sec": 301.507,
    "end_sec": 306.127,
    "duration": 4.62,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_snow_street.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_swim.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1746,7 +1761,8 @@
    "text": "water. You can swim \u2014 your kind always could.",
    "asset": "stock",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0105",
@@ -1770,8 +1786,8 @@
    "start_sec": 308.967,
    "end_sec": 311.067,
    "duration": 2.1,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_wet_asphalt.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_thermal.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1779,7 +1795,8 @@
    "text": "cold already deep in your blood, and the",
    "asset": "stock",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0107",
@@ -1819,8 +1836,8 @@
    "start_sec": 317.207,
    "end_sec": 318.947,
    "duration": 1.74,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0109.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_pier_feet.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1828,7 +1845,8 @@
    "text": "On a wet pier, with the whole",
    "asset": "meme",
    "why": "pause",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0110",
@@ -1982,8 +2000,8 @@
    "start_sec": 343.888,
    "end_sec": 346.528,
    "duration": 2.64,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_wet_asphalt.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_night_one.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -1991,7 +2009,8 @@
    "text": "make it through the first night.",
    "asset": "stock",
    "why": "timer",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0120",
@@ -2015,8 +2034,8 @@
    "start_sec": 348.388,
    "end_sec": 350.328,
    "duration": 1.94,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_stride_avenue.mp4",
-   "visual_type": "video",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_lineup.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -2024,7 +2043,8 @@
    "text": "me which predator I drop into the modern",
    "asset": "creature",
    "why": "timer",
-   "sfx": "impact_hit"
+   "sfx": "impact_hit",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0122",
@@ -2064,8 +2084,8 @@
    "start_sec": 356.748,
    "end_sec": 359.448,
    "duration": 2.7,
-   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/ph_meme_s0124.png",
-   "visual_type": "still",
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_megalodon.png",
+   "visual_type": "image",
    "clip_audio": "mute",
    "tension_level": 0.6,
    "zoom_speed_pct_per_sec": 0.0,
@@ -2073,7 +2093,8 @@
    "text": "one did not end well for Miami.",
    "asset": "meme",
    "why": "stat",
-   "sfx": "whoosh"
+   "sfx": "whoosh",
+   "enter": "slam"
   },
   {
    "beat_id": "beat_0125",
