@@ -63,6 +63,9 @@ assets/voice/          # your personal voice recordings — keep private
 output/
 temp/
 footage/
+# Rexcaped stat cards + placeholder slates — regenerable from the engine plan
+# via scripts/rexcaped_stat_cards.py (don't bloat the repo with render PNGs)
+assets/*/cards/
 
 # ─── Checkpoint backups ───────────────────────────────────────────────────────
 analysis/fern/.checkpoint.json.backup*

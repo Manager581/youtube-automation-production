@@ -1,0 +1,1034 @@
+{
+  "segments": [
+    {
+      "type": "speech",
+      "index": 1,
+      "start_sec": 0.0,
+      "duration_sec": 5.888,
+      "end_sec": 5.888,
+      "word_count": 15,
+      "voice_register": "energized",
+      "pause_before_sec": 0.0,
+      "text": "You are the closest thing the ancient world ever built to a perfect killing machine."
+    },
+    {
+      "type": "pause",
+      "start_sec": 5.808,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 2,
+      "start_sec": 6.028,
+      "duration_sec": 10.315,
+      "end_sec": 16.343,
+      "word_count": 27,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "Forty feet long. Nine tons. A skull the size of a bathtub, packed with sixty teeth, some of them twelve inches long and serrated like steak knives."
+    },
+    {
+      "type": "pause",
+      "start_sec": 16.263,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 3,
+      "start_sec": 16.683,
+      "duration_sec": 12.629,
+      "end_sec": 29.312,
+      "word_count": 34,
+      "voice_register": "energized",
+      "pause_before_sec": 0.5,
+      "text": "You can bite down with twelve thousand eight hundred pounds of force \u2014 enough to crush a car door, splinter solid bone, and tear off five hundred pounds of meat in a single pull."
+    },
+    {
+      "type": "pause",
+      "start_sec": 29.232,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 4,
+      "start_sec": 29.452,
+      "duration_sec": 4.48,
+      "end_sec": 33.932,
+      "word_count": 13,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "And when a tooth snaps off in the kill, you simply grow another."
+    },
+    {
+      "type": "pause",
+      "start_sec": 33.852,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 5,
+      "start_sec": 34.272,
+      "duration_sec": 3.36,
+      "end_sec": 37.632,
+      "word_count": 9,
+      "voice_register": "energized",
+      "pause_before_sec": 0.5,
+      "text": "Nothing in your world ever walked away from you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 37.552,
+      "duration_sec": 0.7
+    },
+    {
+      "type": "speech",
+      "index": 6,
+      "start_sec": 38.172,
+      "duration_sec": 1.6,
+      "end_sec": 39.772,
+      "word_count": 5,
+      "voice_register": "energized",
+      "pause_before_sec": 0.7,
+      "text": "But your world is gone."
+    },
+    {
+      "type": "pause",
+      "start_sec": 39.692,
+      "duration_sec": 0.9
+    },
+    {
+      "type": "speech",
+      "index": 7,
+      "start_sec": 40.512,
+      "duration_sec": 1.724,
+      "end_sec": 42.236,
+      "word_count": 5,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.9,
+      "text": "Today, you wake up here."
+    },
+    {
+      "type": "pause",
+      "start_sec": 42.156,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 8,
+      "start_sec": 42.376,
+      "duration_sec": 7.881,
+      "end_sec": 50.257,
+      "word_count": 23,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Not on the warm floodplain your body was designed for, but in the middle of Manhattan, in February, at four degrees above freezing."
+    },
+    {
+      "type": "pause",
+      "start_sec": 50.177,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 9,
+      "start_sec": 50.697,
+      "duration_sec": 2.743,
+      "end_sec": 53.44,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.6,
+      "text": "The first thing you feel is the cold."
+    },
+    {
+      "type": "pause",
+      "start_sec": 53.36,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 10,
+      "start_sec": 53.58,
+      "duration_sec": 7.202,
+      "end_sec": 60.782,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "The second thing you feel is the ground \u2014 flat, gray, and harder than any stone you have ever stood on."
+    },
+    {
+      "type": "pause",
+      "start_sec": 60.702,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 11,
+      "start_sec": 61.122,
+      "duration_sec": 4.46,
+      "end_sec": 65.582,
+      "word_count": 13,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.5,
+      "text": "Remember that ground. It is going to matter more than anything with teeth."
+    },
+    {
+      "type": "pause",
+      "start_sec": 65.501,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 12,
+      "start_sec": 66.421,
+      "duration_sec": 3.426,
+      "end_sec": 69.847,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "Let's talk about the body you just woke up in."
+    },
+    {
+      "type": "pause",
+      "start_sec": 69.768,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 13,
+      "start_sec": 69.987,
+      "duration_sec": 8.579,
+      "end_sec": 78.566,
+      "word_count": 25,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "You are thirteen feet tall at the hip and forty feet from nose to tail, and you weigh as much as a full city bus."
+    },
+    {
+      "type": "pause",
+      "start_sec": 78.487,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 14,
+      "start_sec": 78.907,
+      "duration_sec": 9.605,
+      "end_sec": 88.512,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.5,
+      "text": "A single stride carries you fifteen feet. Your legs are the most powerful ever grown on a two-legged animal \u2014 but here is the catch nobody tells you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 88.432,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 15,
+      "start_sec": 88.652,
+      "duration_sec": 1.04,
+      "end_sec": 89.692,
+      "word_count": 3,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "You cannot fall."
+    },
+    {
+      "type": "pause",
+      "start_sec": 89.612,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 16,
+      "start_sec": 90.132,
+      "duration_sec": 10.984,
+      "end_sec": 101.116,
+      "word_count": 32,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.6,
+      "text": "At your size, a trip at speed slams the ground with enough force to shatter your own skull, and your arms \u2014 those famously tiny arms \u2014 cannot push you back up."
+    },
+    {
+      "type": "pause",
+      "start_sec": 101.036,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 17,
+      "start_sec": 101.256,
+      "duration_sec": 3.087,
+      "end_sec": 104.343,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "For you, falling down is the same as dying."
+    },
+    {
+      "type": "pause",
+      "start_sec": 104.263,
+      "duration_sec": 0.8
+    },
+    {
+      "type": "speech",
+      "index": 18,
+      "start_sec": 104.983,
+      "duration_sec": 4.801,
+      "end_sec": 109.784,
+      "word_count": 14,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.8,
+      "text": "And the entire city you just landed in is paved in wet, flat concrete."
+    },
+    {
+      "type": "pause",
+      "start_sec": 109.704,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 19,
+      "start_sec": 110.624,
+      "duration_sec": 3.087,
+      "end_sec": 113.711,
+      "word_count": 9,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "There is a second problem, and it is hungrier."
+    },
+    {
+      "type": "pause",
+      "start_sec": 113.631,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 20,
+      "start_sec": 113.851,
+      "duration_sec": 13.725,
+      "end_sec": 127.576,
+      "word_count": 40,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Nine tons of muscle is a furnace, and it never stops burning. To stay alive, you need to eat hundreds of pounds of meat every few days \u2014 more food than this entire street will offer up without a fight."
+    },
+    {
+      "type": "pause",
+      "start_sec": 127.495,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 21,
+      "start_sec": 128.015,
+      "duration_sec": 2.06,
+      "end_sec": 130.075,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.6,
+      "text": "So you cannot just survive here."
+    },
+    {
+      "type": "pause",
+      "start_sec": 129.996,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 22,
+      "start_sec": 130.216,
+      "duration_sec": 6.17,
+      "end_sec": 136.386,
+      "word_count": 18,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "You have to hunt here. Constantly. In a place built out of glass, steel, and four million strangers."
+    },
+    {
+      "type": "pause",
+      "start_sec": 136.305,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 23,
+      "start_sec": 137.225,
+      "duration_sec": 3.428,
+      "end_sec": 140.653,
+      "word_count": 10,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.0,
+      "text": "But you did not rule a world by being fragile."
+    },
+    {
+      "type": "pause",
+      "start_sec": 140.573,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 24,
+      "start_sec": 140.793,
+      "duration_sec": 1.381,
+      "end_sec": 142.174,
+      "word_count": 4,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "You rule by sense."
+    },
+    {
+      "type": "pause",
+      "start_sec": 142.095,
+      "duration_sec": 0.4
+    },
+    {
+      "type": "speech",
+      "index": 25,
+      "start_sec": 142.415,
+      "duration_sec": 9.608,
+      "end_sec": 152.023,
+      "word_count": 28,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.4,
+      "text": "Your nose is one of the best that ever existed \u2014 you can smell blood from over a mile away, through traffic, through smoke, through ten thousand people."
+    },
+    {
+      "type": "pause",
+      "start_sec": 151.942,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 26,
+      "start_sec": 152.162,
+      "duration_sec": 10.295,
+      "end_sec": 162.457,
+      "word_count": 30,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Your eyes face forward like a hawk's, and they resolve detail thirteen times sharper than a human's. You can pick one running figure out of a crowd six blocks away."
+    },
+    {
+      "type": "pause",
+      "start_sec": 162.377,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 27,
+      "start_sec": 162.897,
+      "duration_sec": 8.229,
+      "end_sec": 171.126,
+      "word_count": 24,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.6,
+      "text": "You are not fast \u2014 you top out around twelve miles an hour, a quick human jog, and a real sprint would break you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 171.047,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 28,
+      "start_sec": 171.267,
+      "duration_sec": 3.04,
+      "end_sec": 174.307,
+      "word_count": 8,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "But you do not need to be fast."
+    },
+    {
+      "type": "pause",
+      "start_sec": 174.227,
+      "duration_sec": 0.4
+    },
+    {
+      "type": "speech",
+      "index": 29,
+      "start_sec": 174.547,
+      "duration_sec": 2.055,
+      "end_sec": 176.602,
+      "word_count": 6,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.4,
+      "text": "You only need to be patient."
+    },
+    {
+      "type": "pause",
+      "start_sec": 176.521,
+      "duration_sec": 0.9
+    },
+    {
+      "type": "speech",
+      "index": 30,
+      "start_sec": 177.341,
+      "duration_sec": 1.579,
+      "end_sec": 178.92,
+      "word_count": 2,
+      "voice_register": "tense",
+      "pause_before_sec": 0.9,
+      "text": "Day one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 178.84,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 31,
+      "start_sec": 179.06,
+      "duration_sec": 3.061,
+      "end_sec": 182.121,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The street finds you before you find it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 182.041,
+      "duration_sec": 0.4
+    },
+    {
+      "type": "speech",
+      "index": 32,
+      "start_sec": 182.361,
+      "duration_sec": 6.507,
+      "end_sec": 188.868,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.4,
+      "text": "Horns. Sirens. A wall of yellow taxis, and behind the glass, faces \u2014 hundreds of them \u2014 looking up."
+    },
+    {
+      "type": "pause",
+      "start_sec": 188.788,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 33,
+      "start_sec": 189.008,
+      "duration_sec": 4.139,
+      "end_sec": 193.147,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "To you, they read as one thing: small, soft, and slow."
+    },
+    {
+      "type": "pause",
+      "start_sec": 193.067,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 34,
+      "start_sec": 193.487,
+      "duration_sec": 7.595,
+      "end_sec": 201.082,
+      "word_count": 22,
+      "voice_register": "tense",
+      "pause_before_sec": 0.5,
+      "text": "So you do what you were built to do. You lower your head, you pick one, and you take a single step."
+    },
+    {
+      "type": "pause",
+      "start_sec": 201.001,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 35,
+      "start_sec": 201.221,
+      "duration_sec": 2.293,
+      "end_sec": 203.514,
+      "word_count": 6,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "The whole block moves at once."
+    },
+    {
+      "type": "pause",
+      "start_sec": 203.435,
+      "duration_sec": 0.7
+    },
+    {
+      "type": "speech",
+      "index": 36,
+      "start_sec": 204.055,
+      "duration_sec": 3.829,
+      "end_sec": 207.884,
+      "word_count": 10,
+      "voice_register": "tense",
+      "pause_before_sec": 0.7,
+      "text": "You catch the first one before it clears the curb."
+    },
+    {
+      "type": "pause",
+      "start_sec": 207.804,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 37,
+      "start_sec": 208.024,
+      "duration_sec": 2.603,
+      "end_sec": 210.627,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "One bite. That is the entire hunt."
+    },
+    {
+      "type": "pause",
+      "start_sec": 210.547,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 38,
+      "start_sec": 211.467,
+      "duration_sec": 2.751,
+      "end_sec": 214.218,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "For about ten seconds, the old rules hold."
+    },
+    {
+      "type": "pause",
+      "start_sec": 214.138,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 39,
+      "start_sec": 214.358,
+      "duration_sec": 4.467,
+      "end_sec": 218.825,
+      "word_count": 13,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "You are the biggest thing on the street, and everything runs from you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 218.745,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 40,
+      "start_sec": 219.165,
+      "duration_sec": 1.749,
+      "end_sec": 220.914,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.5,
+      "text": "But these are not prey."
+    },
+    {
+      "type": "pause",
+      "start_sec": 220.834,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 41,
+      "start_sec": 221.054,
+      "duration_sec": 1.378,
+      "end_sec": 222.432,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Prey scatters and forgets."
+    },
+    {
+      "type": "pause",
+      "start_sec": 222.353,
+      "duration_sec": 0.4
+    },
+    {
+      "type": "speech",
+      "index": 42,
+      "start_sec": 222.673,
+      "duration_sec": 9.596,
+      "end_sec": 232.269,
+      "word_count": 28,
+      "voice_register": "tense",
+      "pause_before_sec": 0.4,
+      "text": "These things point small black rectangles at you, and within minutes the whole island knows exactly where you are, what you are, and which way you are walking."
+    },
+    {
+      "type": "pause",
+      "start_sec": 232.189,
+      "duration_sec": 0.7
+    },
+    {
+      "type": "speech",
+      "index": 43,
+      "start_sec": 232.809,
+      "duration_sec": 1.749,
+      "end_sec": 234.558,
+      "word_count": 5,
+      "voice_register": "tense",
+      "pause_before_sec": 0.7,
+      "text": "You killed one of them."
+    },
+    {
+      "type": "pause",
+      "start_sec": 234.478,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 44,
+      "start_sec": 234.698,
+      "duration_sec": 4.064,
+      "end_sec": 238.762,
+      "word_count": 11,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Then a thousand more arrived just to watch you do it."
+    },
+    {
+      "type": "pause",
+      "start_sec": 238.682,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 45,
+      "start_sec": 239.602,
+      "duration_sec": 2.603,
+      "end_sec": 242.205,
+      "word_count": 7,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "By hour two, the hunt has flipped."
+    },
+    {
+      "type": "pause",
+      "start_sec": 242.125,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 46,
+      "start_sec": 242.345,
+      "duration_sec": 7.201,
+      "end_sec": 249.546,
+      "word_count": 21,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "First the police, then the helicopters, then something heavier \u2014 armored trucks, rifles, and men who do this for a living."
+    },
+    {
+      "type": "pause",
+      "start_sec": 249.466,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 47,
+      "start_sec": 249.886,
+      "duration_sec": 7.895,
+      "end_sec": 257.781,
+      "word_count": 23,
+      "voice_register": "tense",
+      "pause_before_sec": 0.5,
+      "text": "Your nose, the finest in the ancient world, is now drowning in diesel and gun smoke. Your ears are full of rotor blades."
+    },
+    {
+      "type": "pause",
+      "start_sec": 257.701,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 48,
+      "start_sec": 257.921,
+      "duration_sec": 4.288,
+      "end_sec": 262.209,
+      "word_count": 12,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "Every sense that made you a god is being jammed at once."
+    },
+    {
+      "type": "pause",
+      "start_sec": 262.129,
+      "duration_sec": 0.6
+    },
+    {
+      "type": "speech",
+      "index": 49,
+      "start_sec": 262.649,
+      "duration_sec": 1.379,
+      "end_sec": 264.028,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.6,
+      "text": "They cannot outfight you."
+    },
+    {
+      "type": "pause",
+      "start_sec": 263.948,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 50,
+      "start_sec": 264.168,
+      "duration_sec": 7.891,
+      "end_sec": 272.059,
+      "word_count": 23,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "So they do something smarter \u2014 they herd you. Block by block, siren by siren, toward the one place your body cannot follow."
+    },
+    {
+      "type": "pause",
+      "start_sec": 271.979,
+      "duration_sec": 0.7
+    },
+    {
+      "type": "speech",
+      "index": 51,
+      "start_sec": 272.599,
+      "duration_sec": 0.757,
+      "end_sec": 273.356,
+      "word_count": 2,
+      "voice_register": "tense",
+      "pause_before_sec": 0.7,
+      "text": "The river."
+    },
+    {
+      "type": "pause",
+      "start_sec": 273.276,
+      "duration_sec": 1.0
+    },
+    {
+      "type": "speech",
+      "index": 52,
+      "start_sec": 274.196,
+      "duration_sec": 3.136,
+      "end_sec": 277.332,
+      "word_count": 9,
+      "voice_register": "tense",
+      "pause_before_sec": 1.0,
+      "text": "The Hudson is half a mile of black water."
+    },
+    {
+      "type": "pause",
+      "start_sec": 277.252,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 53,
+      "start_sec": 277.472,
+      "duration_sec": 3.061,
+      "end_sec": 280.533,
+      "word_count": 8,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "You can swim \u2014 your kind always could."
+    },
+    {
+      "type": "pause",
+      "start_sec": 280.453,
+      "duration_sec": 0.4
+    },
+    {
+      "type": "speech",
+      "index": 54,
+      "start_sec": 280.773,
+      "duration_sec": 8.576,
+      "end_sec": 289.349,
+      "word_count": 25,
+      "voice_register": "tense",
+      "pause_before_sec": 0.4,
+      "text": "But not in four degrees. Not with the cold already deep in your blood, and the one rule of your body still hanging over everything."
+    },
+    {
+      "type": "pause",
+      "start_sec": 289.269,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 55,
+      "start_sec": 289.489,
+      "duration_sec": 1.377,
+      "end_sec": 290.866,
+      "word_count": 4,
+      "voice_register": "tense",
+      "pause_before_sec": 0.3,
+      "text": "You still cannot fall."
+    },
+    {
+      "type": "pause",
+      "start_sec": 290.786,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 56,
+      "start_sec": 291.206,
+      "duration_sec": 7.211,
+      "end_sec": 298.417,
+      "word_count": 19,
+      "voice_register": "tense",
+      "pause_before_sec": 0.5,
+      "text": "On a wet pier, with the whole city pushing at your back, that is the only number that matters."
+    },
+    {
+      "type": "pause",
+      "start_sec": 298.337,
+      "duration_sec": 1.1
+    },
+    {
+      "type": "speech",
+      "index": 57,
+      "start_sec": 299.357,
+      "duration_sec": 3.429,
+      "end_sec": 302.786,
+      "word_count": 10,
+      "voice_register": "energized",
+      "pause_before_sec": 1.1,
+      "text": "So can a Tyrannosaurus actually survive in modern New York?"
+    },
+    {
+      "type": "pause",
+      "start_sec": 302.705,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 58,
+      "start_sec": 302.925,
+      "duration_sec": 1.248,
+      "end_sec": 304.173,
+      "word_count": 4,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "The answer is yes."
+    },
+    {
+      "type": "pause",
+      "start_sec": 304.093,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 59,
+      "start_sec": 304.513,
+      "duration_sec": 4.104,
+      "end_sec": 308.617,
+      "word_count": 12,
+      "voice_register": "energized",
+      "pause_before_sec": 0.5,
+      "text": "But there is a catch \u2014 and it is a brutal one."
+    },
+    {
+      "type": "pause",
+      "start_sec": 308.537,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 60,
+      "start_sec": 308.757,
+      "duration_sec": 6.165,
+      "end_sec": 314.922,
+      "word_count": 18,
+      "voice_register": "energized",
+      "pause_before_sec": 0.3,
+      "text": "It has nothing to do with the guns, and everything to do with the cold and the concrete."
+    },
+    {
+      "type": "pause",
+      "start_sec": 314.843,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 61,
+      "start_sec": 315.263,
+      "duration_sec": 4.907,
+      "end_sec": 320.17,
+      "word_count": 14,
+      "voice_register": "energized",
+      "pause_before_sec": 0.5,
+      "text": "We will get there. First, you have to make it through the first night."
+    },
+    {
+      "type": "pause",
+      "start_sec": 320.089,
+      "duration_sec": 1.3
+    },
+    {
+      "type": "speech",
+      "index": 62,
+      "start_sec": 321.309,
+      "duration_sec": 7.197,
+      "end_sec": 328.506,
+      "word_count": 21,
+      "voice_register": "neutral",
+      "pause_before_sec": 1.3,
+      "text": "And when this is over \u2014 you tell me which predator I drop into the modern world next. Top comment wins."
+    },
+    {
+      "type": "pause",
+      "start_sec": 328.426,
+      "duration_sec": 0.3
+    },
+    {
+      "type": "speech",
+      "index": 63,
+      "start_sec": 328.646,
+      "duration_sec": 5.147,
+      "end_sec": 333.793,
+      "word_count": 15,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.3,
+      "text": "Last time you picked the Megalodon, and that one did not end well for Miami."
+    },
+    {
+      "type": "pause",
+      "start_sec": 333.713,
+      "duration_sec": 0.5
+    },
+    {
+      "type": "speech",
+      "index": 64,
+      "start_sec": 334.133,
+      "duration_sec": 6.518,
+      "end_sec": 340.651,
+      "word_count": 19,
+      "voice_register": "neutral",
+      "pause_before_sec": 0.5,
+      "text": "Like this, subscribe, and let's find out how long the king lasts when the whole world is hunting back."
+    }
+  ],
+  "total_duration_sec": 340.65,
+  "out": "audio/trex_pilot/narration.wav",
+  "word_count_total": 906,
+  "avg_wpm": 155.0,
+  "_aligned": {
+    "mode": "crossfade-model",
+    "claimed_total": 350.73,
+    "real_wav_dur": 340.65,
+    "shift_total": 10.08,
+    "model_residual": 0.0
+  }
+}
