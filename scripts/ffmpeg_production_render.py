@@ -569,13 +569,18 @@ def render_production_segment(args):
 
 # ─── Stage 2: Audio Mix ───────────────────────────────────────────────────
 
-def build_audio_mix(beats, narration_path, narr_dur, chapter_map, music_by_chapter, tmp_dir):
+def build_audio_mix(beats, narration_path, narr_dur, chapter_map, music_by_chapter, tmp_dir,
+                    duck_db=10.0):
     """Build complete stereo audio mix as a WAV file.
 
-    Layers: narration + music + SFX + clip audio.
+    Layers: narration + music + SFX + clip audio. The non-VO layers form a
+    bed bus that is sidechain-DUCKED under the narration (measured 2026-06-10:
+    the reference rides its voice ~22dB clearer over the bed — mid/side +26.6
+    vs our +4.2; our median VO SNR was +2.1dB with 60% of windows <6dB).
     """
     total_samples = int(narr_dur * AUDIO_SR)
     mix = np.zeros((total_samples, 2), dtype=np.float32)
+    vo_buf = np.zeros((total_samples, 2), dtype=np.float32)
 
     # ── Layer 1: Narration (with ducking during clip audio) ──────────────
     print("  Audio: decoding narration...")
@@ -614,7 +619,26 @@ def build_audio_mix(beats, narration_path, narr_dur, chapter_map, music_by_chapt
                     ramp = np.linspace(0, 1, fade_end - duck_end, dtype=np.float32).reshape(-1, 1)
                     narr_layer[duck_end:fade_end] *= ramp
 
-        mix[:n] += narr_layer
+        # VO rider: even out the TTS stem's uneven sentence levels (quiet word
+        # tails stayed <6dB vs the bed even at -14dB duck; reference VO is
+        # broadcast-compressed). Gentle AGC toward -20dBFS, ride 0.6-2.2x.
+        hop = int(0.02 * AUDIO_SR)
+        env = narr_layer[:, 0].astype(np.float64)
+        w = int(0.4 * AUDIO_SR)
+        c = np.cumsum(np.concatenate(([0.0], env ** 2)))
+        rms = np.sqrt(np.maximum((c[w:] - c[:-w]) / w, 1e-18))
+        nh = max(len(env) // hop, 1)
+        idx = np.minimum(np.arange(nh) * hop, len(rms) - 1) if len(rms) else None
+        if idx is not None and len(rms):
+            r_h = rms[idx]
+            g_h = np.clip(10 ** (-20 / 20) / np.maximum(r_h, 1e-9), 0.6, 2.2)
+            g_h = np.where(r_h > 10 ** (-45 / 20), g_h, 1.0)
+            for _ in range(2):                       # ~smooth the ride
+                g_h = np.convolve(g_h, np.ones(5) / 5, mode='same')
+            ride = np.interp(np.arange(len(narr_layer), dtype=np.float64),
+                             np.arange(nh) * hop, g_h).astype(np.float32)
+            narr_layer *= ride.reshape(-1, 1)
+        vo_buf[:n] += narr_layer            # VO bus — added after the bed ducks
     else:
         print("  WARNING: could not decode narration!")
 
@@ -778,6 +802,32 @@ def build_audio_mix(beats, narration_path, narr_dur, chapter_map, music_by_chapt
 
     print(f"    {clip_audio_count} clip audio moments placed")
 
+    # ── Sidechain duck: bed bus under the VO ───────────────────────────────
+    if duck_db > 0:
+        hop = int(0.02 * AUDIO_SR)                       # 20ms hops
+        env = vo_buf[:, 0].astype(np.float64)
+        w50 = int(0.05 * AUDIO_SR)                       # 50ms moving RMS
+        c = np.cumsum(np.concatenate(([0.0], env ** 2)))
+        rms = np.sqrt(np.maximum((c[w50:] - c[:-w50]) / w50, 1e-18))
+        active = np.zeros(len(env), bool)
+        active[:len(rms)] = rms > 10 ** (-38 / 20)
+        nh = len(env) // hop + 1
+        act_h = np.array([active[i * hop:(i + 1) * hop].any() for i in range(nh)])
+        g_t = np.where(act_h, 10 ** (-duck_db / 20), 1.0)
+        g = np.empty_like(g_t)
+        cur = 1.0
+        for i, t in enumerate(g_t):                      # ~60ms attack, ~300ms release
+            coef = 0.45 if t < cur else 0.93
+            cur = coef * cur + (1 - coef) * t
+            g[i] = cur
+        gain = np.interp(np.arange(len(mix), dtype=np.float64),
+                         np.arange(nh) * hop, g).astype(np.float32)
+        mix *= gain.reshape(-1, 1)
+        ducked_pct = 100.0 * act_h.mean()
+        print(f"  Audio: bed ducked -{duck_db:.0f}dB under VO "
+              f"({ducked_pct:.0f}% of timeline VO-active)")
+    mix += vo_buf
+
     # ── Normalize ──────────────────────────────────────────────────────────
     peak = np.max(np.abs(mix))
     if peak > 0:
@@ -812,6 +862,9 @@ def main():
                         help="Disable hardware encoding (use libx264)")
     parser.add_argument("--crf", type=int, default=18,
                         help="CRF quality for final encode (default 18)")
+    parser.add_argument("--duck-db", type=float, default=10.0,
+                        help="sidechain-duck the bed (music+SFX+clip) this many "
+                             "dB under active VO (0 = off; default 10)")
     args = parser.parse_args()
 
     if args.preview:
@@ -1022,7 +1075,8 @@ def main():
 
     audio_path = build_audio_mix(
         beats, args.narration, narr_dur,
-        chapter_map, music_by_chapter, tmp_dir
+        chapter_map, music_by_chapter, tmp_dir,
+        duck_db=args.duck_db
     )
     print(f"  Audio mix: {os.path.getsize(audio_path) / (1024*1024):.0f} MB")
 
