@@ -1,6 +1,29 @@
 # NEXT SESSION — Rexcaped (the channel formerly known as the Dunkleosteus build)
 
-## ▶▶ PASTE THIS (2026-06-10i — composite engine proven, build CH1 next)
+## ▶▶▶ PASTE THIS (2026-06-11 — DECISION SYSTEM built; wire director→builder→gate next)
+> Read `research/edit_decision_rulebook.md`, `scripts/beat_director.py`, `scripts/build_body_reveal.py`,
+> and memory `feedback_self_verifying_pipeline.md` + `feedback_frame_level_qa.md`. **The hard problem is
+> solved: the owner's editing decisions are now encoded and runnable.** `beat_director.direct(vo_line)`
+> returns the shot recipe (device/angle/motion/graphic/SFX/text) and — proven by running it on all of CH1 —
+> independently reproduces every call the owner made (13ft→vertical tape+front, 40ft→horizontal tape+side
+> pivot, 9tons→bus-scale cut, eyes→POV reticle, nose→range map, fall→FATAL) AND fills undirected beats
+> (force→gauge+crush, speed→speedometer, teeth→count macro), flagging connective beats LOW-confidence for
+> owner veto. The ILLUSTRATED-scene template is proven: `output/body_reveal_540p.mp4` (stomping creature +
+> '13 FT' vertical tape → side pivot + '40 FT' horizontal tape → hard cut to creature=bus SCALE '9 TONS',
+> all word-anchored over Mark VO). New cutouts: `trex_side_cut` (from pier_river), `city_bus_cut`,
+> `ch_trex_avenue_wide_cut`, `ch_trex_walkaway_crowd_cut`.
+>
+> **DO NEXT (the wiring, then the gate):** (1) wire `beat_director` → a spec-driven builder so each CH1 beat's
+> recipe auto-builds via the `build_body_reveal`/`composite_beat` device library (measuring_tape, scale,
+> gauge, speedometer, range_map, reticle, count_macro, macro, action_composite, consequence, loom). (2) Build
+> the device library functions that don't exist yet (gauge_max+crush, speedometer, count_macro). (3) Assemble
+> CH1, cards cut per `spec_ch1.json` (budget 6). (4) Build + run the CONTENT GATE (sync + subject + motion per
+> beat) and read it YOURSELF — owner sees only green. **Owner's hard rules this session (memory):** never make
+> him QA; never ask him to validate a spec/treatment, only show watchable output he can judge; illustrate
+> every stat as a SCENE (tape/scale/gauge), never a flat card; creature always alive+SFX; brand text
+> orange/yellow ink-outline no banner. **Branch `spinosnack-dunkleosteus`, pushed (HEAD c996a0c).**
+
+## ▶▶ (2026-06-10i — composite engine proven, build CH1 next)
 > Read `research/trex_pilot_chapter_plan.md`, `scripts/composite_beat.py`, and memory
 > `project_layered_composite_engine.md`. **Where we are:** the pilot is fully assembled on
 > ElevenLabs **Mark** VO (`audio/trex_pilot/narration_11l_mark_full.wav`, 365.7s) →
