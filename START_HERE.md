@@ -11,7 +11,9 @@ First, run `venv/bin/python scripts/preflight_ch1.py`. It must print "FOUNDATION
 
 Then read `research/NEXT_SESSION.md` (the top ▶▶▶ block), `research/edit_decision_rulebook.md`, and memory files `feedback_use_existing_asset_library.md` + `feedback_self_verifying_pipeline.md`.
 
-Your job: finish CH1 of the T-Rex pilot so it has ALL THREE at once — (1) VARIETY (use the ~36 existing assets in the library / v3_mark, NOT a 4-cutout pool), (2) MOTION (composite the creature stills so they MOVE — cut them with rembg — never Ken-Burns-on-a-still), (3) DEVICES (beat_director's illustrated stats: measuring-tape, gauge, scale, speedometer, reticle — these graphics are already built in composite_beat). Build by AUGMENTING the existing varied library; never regenerate visuals from a tiny pool (that reverts the variety we fixed — it's the #1 hard rule, NEVER INVENT PARALLEL SOLUTIONS). The decision system and device graphics are DONE and proven — reuse them, don't rebuild them.
+THE WORKING CH1 ALREADY EXISTS: `output/trex_pilot_ch1_body_540p.mp4`, built by `scripts/build_ch1_composites.py` (it splices the moving composites into the VARIED edit — 34 unique assets, ~59% moving, devices on the stats). WATCH IT FIRST and tell me what's wrong with it specifically, then improve THAT. ⛔ Do NOT use or "fix" `scripts/build_ch1_auto.py` — it's a DEPRECATED dead-end router that draws from 4 cutouts and produces the same creature every frame. The fix is `build_ch1_composites`, not the router.
+
+The goal (already mostly met by build_ch1_composites): CH1 must have ALL THREE at once — (1) VARIETY (use the ~36 existing library assets, NOT a tiny cutout pool), (2) MOTION (creature stills composited so they MOVE, never Ken-Burns-on-a-still), (3) DEVICES (the illustrated stats: tape, gauge, scale, speedometer, reticle — already built in composite_beat). AUGMENT the existing varied library; never regenerate visuals from a small pool (NEVER INVENT PARALLEL SOLUTIONS — that's what broke the router).
 
 NON-NEGOTIABLE RULES (the owner was burned repeatedly by these being broken):
 - I am NOT your QA. Never tell me something is "done," "fixed," or "QA-clean."

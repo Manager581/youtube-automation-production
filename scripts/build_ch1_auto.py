@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# ⛔ DEPRECATED / DEAD END — DO NOT USE OR "FIX" THIS.
+# This router draws creature visuals from a 4-cutout POOL and IGNORES the ~21-still
+# asset library, so its output is repetitive (same creature every frame — verified
+# 2026-06-11). The WORKING CH1 is built by scripts/build_ch1_composites.py, which
+# splices the moving composites into the VARIED v3_mark edit (34 unique assets,
+# 59% moving, devices on stats) -> output/trex_pilot_ch1_body_540p.mp4. Use that.
+# beat_director + the composite_beat device graphics are fine; this orchestrator is not.
 """
 build_ch1_auto.py — THE CLOSED LOOP. The owner's creative decisions are no longer
 a manual wiring step: this runs beat_director over CH1, turns each recipe into a
