@@ -19,7 +19,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
 FPS, W, H = 30, 960, 540
-INK, ORANGE, RED = (16, 13, 10), (245, 130, 32), (200, 40, 24)
+INK, ORANGE, YELLOW = (16, 13, 10), (245, 130, 32), (255, 209, 40)
 SFX = ROOT / 'assets/sfx'
 SR = 48000
 font = lambda s: ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial Black.ttf', s)
@@ -104,7 +104,7 @@ def render_beat(cfg, out_mp4):
     N = len(BG)
     cut = load_cut(cfg['cutout']); CW, CH = cut.size
     imp = cfg['impact']
-    accent = RED if cfg.get('accent') == 'red' else ORANGE
+    accent = ORANGE
     OUT = ROOT / 'output/_beatframes'; OUT.mkdir(exist_ok=True)
     for f in OUT.glob('*.png'): f.unlink()
 
@@ -167,17 +167,25 @@ def render_beat(cfg, out_mp4):
             frame = frame.transform((W, H), Image.AFFINE,
                                     (1, 0, int(16 * dec * math.sin(ft * 90)), 0, 1, int(12 * dec * math.cos(ft * 70))))
         d = ImageDraw.Draw(frame, 'RGBA')
+        # kinetic text: BIG branded orange/yellow, NO banner, heavy ink outline
+        # so it reads over busy footage (owner brand call)
         for cap in cfg.get('text', []):
             st = smooth(t, cap['t'], cap['t'] + .18) * (1 - smooth(t, cap['t'] + cap.get('hold', 1.6), cap['t'] + cap.get('hold', 1.6) + .3))
             if st <= .01: continue
-            sz = int(cap.get('size', 120) * (1.5 - .5 * smooth(t, cap['t'], cap['t'] + .18)))
-            msg = cap['msg']; tb = d.textbbox((0, 0), msg, font=font(sz))
-            tx, ty = (W - (tb[2] - tb[0])) / 2, H * cap.get('y', .34)
-            d.rectangle((tx - 22, ty - 10, tx + (tb[2] - tb[0]) + 22, ty + (tb[3] - tb[1]) + 24),
-                        fill=accent + (int(235 * st),))
-            d.text((tx, ty - tb[1]), msg, font=font(sz), fill=INK)
+            sz = int(cap.get('size', 130) * (1.45 - .45 * smooth(t, cap['t'], cap['t'] + .18)))
+            col = YELLOW if cap.get('color') == 'yellow' else ORANGE
+            a = int(255 * st); msg = cap['msg']
+            while sz > 30 and d.textlength(msg, font=font(sz)) > W * .92:   # fit width
+                sz -= 4
+            f1 = font(sz); sw = max(5, sz // 15)
+            tb = d.textbbox((0, 0), msg, font=f1, stroke_width=sw)
+            tx, ty = (W - (tb[2] - tb[0])) / 2 - tb[0], H * cap.get('y', .34) - tb[1]
+            d.text((tx, ty), msg, font=f1, fill=col + (a,), stroke_width=sw, stroke_fill=INK + (a,))
             if cap.get('sub'):
-                d.text((tx, ty + (tb[3] - tb[1]) + 30), cap['sub'], font=font(22), fill=accent + (int(235 * st),))
+                f2 = font(26); sw2 = 4
+                sb = d.textbbox((0, 0), cap['sub'], font=f2, stroke_width=sw2)
+                d.text(((W - (sb[2] - sb[0])) / 2 - sb[0], ty + (tb[3] - tb[1]) + 22),
+                       cap['sub'], font=f2, fill=col + (a,), stroke_width=sw2, stroke_fill=INK + (a,))
         frame.convert('RGB').save(OUT / f'{i:04d}.png')
 
     # audio mix
@@ -212,9 +220,9 @@ CONFIGS = {
              dict(name='impact_new_loud.wav', t=6.0, vol=.7)]),
     'stumble': dict(
         bg_frames='/tmp/bg_stumble', cutout=ROOT / 'assets/trex_pilot/cutouts/c_trip_stumble_cut.png',
-        motion='stumble', camera='handheld', impact=3.3, graphic='none', accent='red',
+        motion='stumble', camera='handheld', impact=3.3, graphic='none',
         vo='/tmp/proto_vo_stumble.wav',
-        text=[dict(t=3.3, msg='A FALL AT SPEED = FATAL', y=.30, size=70, sub='— paleontologists', hold=2.4)],
+        text=[dict(t=3.3, msg='A FALL AT SPEED = FATAL', y=.30, size=70, sub='— paleontologists', hold=2.4, color='yellow')],
         sfx=[dict(name='whoosh_05_loud.wav', t=2.6, vol=.5), dict(name='body_impact_01_loud.wav', t=3.3, vol=.95),
              dict(name='impact_02_loud.wav', t=3.3, vol=.8), dict(name='rumble_03_loud.wav', t=3.3, vol=.5)]),
 }
