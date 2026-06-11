@@ -1,0 +1,101 @@
+{
+  "channel": "Tech Joint (https://www.youtube.com/@TechJoint)",
+  "window": "2025-12-11 to 2026-06-11 (last 6 months, 933 uploads in window)",
+  "method": "Scraped all 1150 newest videos (watch-page viewCount + uploadDate), filtered to window, ranked by views. 64 rate-limited fetches retried via yt-dlp; all fell outside window.",
+  "style_dna": {
+    "thumbnails": [
+      "Photorealistic AI-rendered CONCEPT products (aspirational, not real listings)",
+      "Composition: single hero product (5/10), 2-panel vertical split (4/10), 3-panel (1/10)",
+      "ZERO text on image (one exception: small 'available at amazon' white badge)",
+      "Amazon 'a' app-icon badge watermark in a corner or top-center (8/10)",
+      "Glow accents: LED strips, neon underglow, fire, backlit screens; warm-vs-cool contrast",
+      "One saturated hero color against neutral interior (yellow/green/pink-blue/gold)",
+      "Human presence for scale in ~half (lounging man, sleeping woman, hand, foot)",
+      "Products show working displays with readable times (00:20, 09:58, 12:30)",
+      "Seniors content: gold+black luxury palette, warm lamp-lit living room"
+    ],
+    "titles": "[odd number] + [Amazon/Temu] + [category] + Gadgets/Finds/Upgrades + [benefit or FOMO clause] + [year | emoji | *tag*], CAPS emphasis words (NEW/FAST/SO/GENIUS), trailing '..' for curiosity variants"
+  },
+  "recreations": [
+    {
+      "rank": 1,
+      "original": {"id": "XGEM0wc1CB0", "title": "65 Amazon Finds That Instantly Make Your Home 10x More Comfortable!", "views": 554309, "uploaded": "2025-12-15"},
+      "recreated_title": "67 Amazon Finds That Instantly Make Your Home 10x More Relaxing!",
+      "thumbnail_file": "thumb_01_comfort_pod.png",
+      "composition": "single hero + person + badge bottom-left",
+      "concept": "Oversized deep-teal leather lounge pod: canopy with warm LED strip, built-in lit mini-fridge with drinks, snack shelf, cup-holder armrest with glowing touch panel; relaxed man lying back; dark gray modern room"
+    },
+    {
+      "rank": 2,
+      "original": {"id": "4HF8L_PE4ic", "title": "27 Amazon Smart Home Upgrades Everyone Needs in 2026!", "views": 279092, "uploaded": "2026-03-11"},
+      "recreated_title": "33 Amazon Smart Home Upgrades Everyone Will Want in 2026!",
+      "thumbnail_file": "thumb_02_smart_table.png",
+      "composition": "single hero in bright living room + badge top-left",
+      "concept": "Smart dining table, matte black + walnut: edge-to-edge touchscreen surface showing app tiles, two slide-out refrigerated drawers with bottles and fresh produce, soft white interior glow; airy beige living room, big windows"
+    },
+    {
+      "rank": 3,
+      "original": {"id": "NDzwyY5PNnA", "title": "27 Home Decor and Design Ideas For A More High-End Look!", "views": 258349, "uploaded": "2026-02-10"},
+      "recreated_title": "29 Home Decor & Design Ideas That Make Any Room Look Expensive!",
+      "thumbnail_file": "thumb_03_decor_triptych.png",
+      "composition": "3-panel vertical split, no badge",
+      "concept": "LEFT: sculptural white helix bookshelf tower with trailing plants, dusk living room. CENTER: tall glass panel with glowing aurora/smoke swirls (cool blue), minimal hallway. RIGHT: egg-shaped white ceramic fireplace with real flame inside, warm beige room"
+    },
+    {
+      "rank": 4,
+      "original": {"id": "06xaSgvusI4", "title": "These Luxury Amazon Items Will Instantly Upgrade Your Home’s Vibe..", "views": 241692, "uploaded": "2026-02-10"},
+      "recreated_title": "These Luxury Amazon Finds Will Instantly Transform Your Home's Mood..",
+      "thumbnail_file": "thumb_04_luxury_split.png",
+      "composition": "2-panel split + badge top-center",
+      "concept": "LEFT (warm): levitating flame table lamp — brass base, glass cylinder, floating fire, cozy cream dining room. RIGHT (cool): wrap-around corner aquarium TV mounted on a wall corner, glowing screen showing deep ocean, dark modern hallway"
+    },
+    {
+      "rank": 5,
+      "original": {"id": "Fmozn8Iwf_c", "title": "27 Amazon Kitchen Gadgets That Will Save You 10 Hours a Week!", "views": 186380, "uploaded": "2026-02-20"},
+      "recreated_title": "33 Amazon Kitchen Gadgets That Will Save You Hours Every Single Day!",
+      "thumbnail_file": "thumb_05_kitchen_split.png",
+      "composition": "2-panel split + badge top-center",
+      "concept": "LEFT: stainless 5-tier rotating air-tower oven, glass tiers with rotisserie chicken, fries, vegetables, digital timer 00:15. RIGHT: white countertop pancake-printing machine pouring perfect batter circle onto its hotplate, display 5:30, soft blue LED ring; bright white kitchens"
+    },
+    {
+      "rank": 6,
+      "original": {"id": "xdsSHJwO8no", "title": "33 Insanely Cool Backyard Gadgets Worth Buying This Year! *Amazon 2026*", "views": 182905, "uploaded": "2026-04-09"},
+      "recreated_title": "37 Insanely Cool Backyard Upgrades Worth Every Penny! *Amazon 2026*",
+      "thumbnail_file": "thumb_06_backyard_hero.png",
+      "composition": "single hero on lawn + badge top-right",
+      "concept": "Bright orange circular inflatable lounge couch ring around a central glass fire bowl, built-in LED-ringed speakers and cupholders in the armrests, evening manicured lawn, gray patio sofa set behind"
+    },
+    {
+      "rank": 7,
+      "original": {"id": "OkxYtWMHEWs", "title": "27 NEW Amazon Home Gadgets Selling Out FAST… and They're SO Worth It 🔥", "views": 150114, "uploaded": "2026-04-27"},
+      "recreated_title": "29 NEW Amazon Home Gadgets Flying Off the Shelves… and They're SO Worth It 🔥",
+      "thumbnail_file": "thumb_07_neon_split.png",
+      "composition": "2-panel split + badge top-center",
+      "concept": "LEFT: cloud sofa wrapped in soft cotton-cloud upholstery glowing pink-to-blue LED from underneath, woman curled up reading, neon-lit lounge. RIGHT: bare foot stepping onto a translucent color-shifting gel floor pillow on dark tile, purple-cyan gradient glow"
+    },
+    {
+      "rank": 8,
+      "original": {"id": "EKemnn-pPQQ", "title": "100+ Cool & Popular Amazon Gadgets Everyone Will Want in 2026! *Viral Products*", "views": 125795, "uploaded": "2026-02-06"},
+      "recreated_title": "100+ Viral Amazon Gadgets Everyone Will Be Buying in 2026! *Trending Products*",
+      "thumbnail_file": "thumb_08_sleep_pod.png",
+      "composition": "single hero outdoors + person + badge bottom-left",
+      "concept": "Quilted gray solar camping pod shaped like a giant duffel on cobblestone path: rolled-open side reveals bearded man reading a book under a blanket, warm interior light strip, flexible solar panels on the roof, attached backpack module with charging ports"
+    },
+    {
+      "rank": 9,
+      "original": {"id": "SWBf2wGkI5M", "title": "55 Luxury Amazon Seniors Gadgets That Make Your Life Simpler", "views": 106330, "uploaded": "2026-02-06"},
+      "recreated_title": "65 Luxury Amazon Seniors Gadgets That Make Everyday Life Easier",
+      "thumbnail_file": "thumb_09_seniors_gold.png",
+      "composition": "2-panel split + white 'available at amazon' badge top-right",
+      "concept": "Gold + black luxury palette, warm lamp-lit living room. LEFT: black-and-gold smart walking cane with fold-out tripod seat and small health display. RIGHT: black-gold automatic pill dispenser with 14 clear compartments, screen showing 09:45 Tuesday, elderly hand taking a small gold pill cup, marble counter"
+    },
+    {
+      "rank": 10,
+      "original": {"id": "waypqL7xIaI", "title": "37 HIGHLY Useful Amazon Gadgets You Can Take With You ANYWHERE!", "views": 103170, "uploaded": "2026-04-13"},
+      "recreated_title": "33 GENIUS Amazon Gadgets You Can Take With You EVERYWHERE!",
+      "thumbnail_file": "thumb_10_pocket_macro.png",
+      "composition": "macro hero in fingers + badge top-left",
+      "concept": "Macro shot: fingers holding a tiny matte burgundy-and-white pocket cube projector, small lens, LED battery display reading 12, USB-C and full-size USB ports, tiny antenna, soft blurred warm living room background"
+    }
+  ]
+}
