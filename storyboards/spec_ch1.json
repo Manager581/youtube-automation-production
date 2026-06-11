@@ -1,0 +1,19 @@
+{
+  "_doc": "CH1 THE BODY — declarative source of truth. Each segment: the VO it covers (vo_find = unique substring to locate the beat window in the Mark paper edit), the treatment, the subject the visual MUST show, the asset/config, and optional on-screen card text. RULES ENFORCED BY THE BUILDER: treatment=composite => full proto_strike bar (cut-out creature on its own moving layer over REAL moving footage + camera + blur + graphic); card budget <= 6; every 'subject' must be depicted (gate checks it).",
+  "chapter": "CH1_BODY",
+  "card_budget": 6,
+  "segments": [
+    {"vo_find": "Let's talk about the body", "treatment": "composite", "subject": "full creature body in the avenue", "config": "ch1_body", "card": "40 FT · 9 TONS · 13 FT TALL"},
+    {"vo_find": "A single stride carries", "treatment": "clip", "subject": "creature striding (already moving footage)", "asset": "dunk_trex_stride_avenue.mp4", "card": "ONE STRIDE = 15 FT"},
+    {"vo_find": "legs are the most powerful", "treatment": "composite", "subject": "creature legs / full body striding", "config": "ch1_legs"},
+    {"vo_find": "trip at speed slams", "treatment": "composite", "subject": "creature stumbling + slamming the ground", "config": "ch1_stumble", "card": "A FALL AT SPEED = FATAL"},
+    {"vo_find": "tiny arms", "treatment": "gag", "subject": "tiny-arms joke", "asset": "i_arms.png"},
+    {"vo_find": "paved in wet, flat concrete", "treatment": "clip", "subject": "wet flat concrete", "asset": "s_wet_concrete.mp4"},
+    {"vo_find": "Nine tons of muscle", "treatment": "composite", "subject": "creature body, hungry", "config": "ch1_furnace", "card": "EATS HUNDREDS OF LBS / EVERY FEW DAYS"},
+    {"vo_find": "glass, steel, and", "treatment": "clip", "subject": "city of strangers", "asset": "s_crowd_cross.mp4", "card": "4 MILLION STRANGERS"},
+    {"vo_find": "rule by sense. Your nose", "treatment": "composite", "subject": "the nostril, scenting", "config": "ch1_nostril", "card": "SCENT: >1 MILE"},
+    {"vo_find": "running figure out of a crowd", "treatment": "composite", "subject": "creature POV picking one runner from a moving crowd", "config": "ch1_povpick", "card": "13× HUMAN ACUITY"},
+    {"vo_find": "twelve miles an hour", "treatment": "card", "subject": "top speed stat", "asset": "g_speedo.png"},
+    {"vo_find": "do not need to be fast", "treatment": "composite", "subject": "creature looming, patient", "config": "ch1_loom"}
+  ]
+}

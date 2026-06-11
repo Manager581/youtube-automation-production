@@ -375,6 +375,21 @@ CONFIGS = {
         cutout=ROOT / 'assets/trex_pilot/cutouts/c_statue_still_cut.png',
         motion='loom', camera='push', sway=.5,
         sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.55)]),
+    'ch1_body': dict(                          # beats 26+27 "let's talk about the BODY you just woke up in. you are"
+        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_avenue_taxis.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_avenue_wide_cut.png',
+        motion='loom', camera='push', sway=.6,
+        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.5)]),
+    'ch1_legs': dict(                          # "your LEGS are the most powerful ever grown"
+        bg_video=str(ROOT / 'footage/trex_pilot/stock/s_taxi_wall.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_walkaway_crowd_cut.png',
+        motion='loom', camera='push', sway=.7,
+        sfx=[dict(t=.1, name='rumble_03_loud.wav', vol=.5)]),
+    'ch1_furnace': dict(                       # "nine tons of MUSCLE is a furnace"
+        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_snow_street.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_statue_still_cut.png',
+        motion='loom', camera='push', sway=.55, warm=1.0,
+        sfx=[dict(t=.1, name='rumble_01_loud.wav', vol=.5)]),
 }
 
 if __name__ == '__main__':

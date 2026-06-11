@@ -49,6 +49,8 @@ SPLICES = [
                  dict(word='six', sfx='impact_01_loud.wav')]),
     dict(cfg='ch1_loom', beats=[65],
          events=[dict(t=.1, sfx='rumble_02_loud.wav')]),
+    dict(cfg='ch1_body', beats=[26, 27],          # body reveal: moving full-body composite
+         events=[dict(t=.1, sfx='rumble_02_loud.wav')]),
 ]
 
 
