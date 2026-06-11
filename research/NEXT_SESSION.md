@@ -1,5 +1,40 @@
 # NEXT SESSION — Rexcaped (the channel formerly known as the Dunkleosteus build)
 
+## ▶▶ PASTE THIS (2026-06-10i — composite engine proven, build CH1 next)
+> Read `research/trex_pilot_chapter_plan.md`, `scripts/composite_beat.py`, and memory
+> `project_layered_composite_engine.md`. **Where we are:** the pilot is fully assembled on
+> ElevenLabs **Mark** VO (`audio/trex_pilot/narration_11l_mark_full.wav`, 365.7s) →
+> `storyboards/trex_pilot_paper_edit_v3_mark.json` → `output/trex_pilot_v3_mark_540p.mp4`.
+> Variety hit the winner band (15.7 uniq/min vs 16.7; repeats 22% vs their 8%). **The owner's
+> live problem:** the body still reads "lazy / barely-moving" because ~42 body beats are STILLS
+> with Ken-Burns zoom — NOT the viral video's technique. Confirmed by eye that the reference
+> (`/tmp/edit_deep/layer_check_1479.jpg`, `_1597.jpg`) is **layered puppet composites**: a
+> cut-out creature on its own moving layer over real footage. **SOLVED + proven free:**
+> `scripts/composite_beat.py` `render_beat(cfg)` — rembg cutout (`assets/trex_pilot/cutouts/`) →
+> per-frame PIL composite over real moving bg, motion presets (lunge/stumble/loom), camera
+> (push/slam/handheld), real directional blur, configurable graphic (reticle/none), kinetic
+> text, grade, SFX mix. Generalizes on 2 contrasting beats: `output/beat_strike_540p.mp4`
+> (lunge + "ONE BITE") and `output/beat_stumble_540p.mp4` (fall + yellow "FALL AT SPEED =
+> FATAL — paleontologists"). **Owner reaction: "not bad, right direction."**
+>
+> **DO NEXT — build CH1 · THE BODY (beats 24–66, 66–193s)** per the chapter plan: convert the
+> static creature beats to composite configs (patient-stalk=loom on `c_statue_still_cut`,
+> pick-one-runner=reticle, smell=nostril push), add on-screen ATTRIBUTION cards (teeth=
+> "POLYPHYODONT · REGREW FOR LIFE", vision="13× HUMAN ACUITY", smell="SCENT >1 MILE" — fixes the
+> owner's "script reads fake" w/o re-recording VO; claims ARE real, just unattributed), splice
+> the beat clips into the paper edit, render the 66–193s chapter only, owner bless, then CH2/CH3.
+>
+> **LOCKED owner calls:** (1) kinetic text = BIG orange/yellow + ink outline, **NO banner**,
+> auto-fit width (built). (2) build in CHAPTERS, bless each. (3) creature LOCOMOTION (true walk
+> cycle) is the only i2v-only gap — reference puppet-composites too, so we're NOT behind on
+> technique. (4) $5 ElevenLabs Starter needed before monetized upload (free tier = non-commercial);
+> ~5.7k free credits left if a re-record is wanted. **Gotchas:** regen plan assets from
+> `storyboards/trex_pilot_plan_v2.json` NOT /tmp; contact-sheet QA every render BEFORE owner
+> watches (`feedback_frame_level_qa.md`); stumble beat back-half needs in-frame tuning. **Branch
+> `spinosnack-dunkleosteus`, all pushed (HEAD 67110a6).**
+
+
+
 ## ⚡ 2026-06-10h — FULL PILOT ASSEMBLED ON MARK VO; owner caught body QA failures
 **State:** `output/trex_pilot_v3_mark_540p.mp4` (6.1 min, ElevenLabs "Mark - Natural Conversations",
 ~5.7k free credits left) = blessed open + body realigned word-level. Mix law in renderer
