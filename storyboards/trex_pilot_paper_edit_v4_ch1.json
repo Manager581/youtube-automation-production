@@ -477,8 +477,8 @@
       "start_sec": 73.382,
       "end_sec": 75.222,
       "duration": 1.84,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_snow_street.mp4",
-      "visual_type": "video",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_avenue_wide.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -486,15 +486,16 @@
       "text": "Let's talk about the body you just woke",
       "asset": "stock",
       "why": "pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0027",
       "start_sec": 75.222,
       "end_sec": 76.862,
       "duration": 1.64,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_wet_asphalt.mp4",
-      "visual_type": "video",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_walkaway_crowd.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -502,7 +503,8 @@
       "text": "up in. You are",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0028",
@@ -575,7 +577,7 @@
       "start_sec": 89.382,
       "end_sec": 92.002,
       "duration": 2.62,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_avenue_taxis.mp4",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_stride_avenue.mp4",
       "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
@@ -584,15 +586,16 @@
       "text": "legs are the most powerful ever grown on a",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0033",
       "start_sec": 92.002,
       "end_sec": 95.482,
       "duration": 3.48,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_skyline_dawn.mp4",
-      "visual_type": "video",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_statue_still.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -600,7 +603,8 @@
       "text": "two-legged animal \u2014 but here is the catch",
       "asset": "stock",
       "why": "stat",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0034",
@@ -680,8 +684,8 @@
       "start_sec": 107.422,
       "end_sec": 111.143,
       "duration": 3.721,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_nyc_snow_street.mp4",
-      "visual_type": "video",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_trip_stumble.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -689,15 +693,16 @@
       "text": "tiny arms \u2014 cannot push you back up.",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0039",
       "start_sec": 111.143,
       "end_sec": 114.663,
       "duration": 3.52,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_helicopters_night.mp4",
-      "visual_type": "video",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_trip_stumble.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -705,7 +710,8 @@
       "text": "For you, falling down is the same as dying.",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0040",
@@ -940,8 +946,8 @@
       "start_sec": 152.203,
       "end_sec": 154.663,
       "duration": 2.46,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_taxi_hunt.mp4",
-      "visual_type": "video",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_nostril.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -949,7 +955,8 @@
       "text": "rule by sense. Your nose is",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0055",
@@ -1018,7 +1025,7 @@
       "start_sec": 163.644,
       "end_sec": 166.984,
       "duration": 3.34,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/stock/s_crowd_cross.mp4",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_eye_detail.mp4",
       "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
@@ -1027,7 +1034,8 @@
       "text": "thousand people. Your eyes face forward like a",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0059",
