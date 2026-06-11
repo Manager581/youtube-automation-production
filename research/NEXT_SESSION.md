@@ -20,17 +20,18 @@
 > all word-anchored over Mark VO). New cutouts: `trex_side_cut` (from pier_river), `city_bus_cut`,
 > `ch_trex_avenue_wide_cut`, `ch_trex_walkaway_crowd_cut`.
 >
-> **THE LOOP IS ALREADY CLOSED — wiring is FORCED, not manual.** `scripts/build_ch1_auto.py` runs
-> `beat_director` over CH1, `recipe_to_config()` turns each recipe into a renderable config, and it builds +
-> assembles the whole chapter automatically (12/12 beats, 0 manual choices, renders 0 errors → 
-> `output/trex_pilot_ch1_auto_540p.mp4`). Device graphics (gauge/speedometer/count/measuring_tape) are in
-> `composite_beat` render_beat; scale+tapes also in `build_body_reveal`. **DO NEXT = TUNE, not build:**
-> (1) `recipe_to_config` asset variety — the auto-output reads REPETITIVE (picks too-similar cutouts/bgs);
-> rotate cutouts+backgrounds properly + cut more creature-angle cutouts so consecutive beats differ (this is
-> THE open issue — the loop is fine, the asset mapping is bland). (2) device polish: scale device should route
-> to the `build_body_reveal` bus-scale scene (currently falls to loom); tune gauge/tape placement to the
-> creature. (3) cards cut per `spec_ch1.json` (budget 6). (4) build + run the CONTENT GATE (sync + subject +
-> motion per beat), read it YOURSELF — owner sees only green. **Owner's hard rules this session (memory):** never make
+> **⚠ CORRECTED ARCHITECTURE (owner caught a NEVER-INVENT-PARALLEL violation 2026-06-11).** `build_ch1_auto.py`
+> WAS WRONG: it rebuilds CH1 from a 4-cutout × 4-bg pool and IGNORES the 64-asset library we sourced over the
+> variety sprints (21 body_stills + 22 stock + 21 graphics). CH1 in `v3_mark` already uses 36 UNIQUE
+> noun-matched assets — the auto-builder threw all that away → repetitive output that REVERTED the variety fix.
+> Do NOT "tune the 4-cutout rotation" (that was my wrong call). **RIGHT approach: the director AUGMENTS the
+> already-varied `v3_mark` edit — it does NOT regenerate visuals.** Keep v3_mark's 36 assets as the base
+> (variety + noun-mapping already correct); have `beat_director` add the illustrated DEVICE (gauge/tape/scale/
+> speedometer/reticle — these graphics ARE built in `composite_beat.render_beat`) ONLY onto the stat beats
+> that warrant one, and use `build_body_reveal` for the size section. That yields BOTH the variety we fixed
+> AND the illustrated stats. The closed-loop proof (`build_ch1_auto`) shows the director drives device choice;
+> reuse its `beat_director`+device graphics, but route visuals to the EXISTING library, not new composites.
+> Then: cards cut per `spec_ch1.json` (budget 6) + run the CONTENT GATE (sync+subject+motion), owner sees only green. **Owner's hard rules this session (memory):** never make
 > him QA; never ask him to validate a spec/treatment, only show watchable output he can judge; illustrate
 > every stat as a SCENE (tape/scale/gauge), never a flat card; creature always alive+SFX; brand text
 > orange/yellow ink-outline no banner. **Branch `spinosnack-dunkleosteus`, pushed (HEAD c996a0c).**
