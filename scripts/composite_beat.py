@@ -375,11 +375,17 @@ CONFIGS = {
         cutout=ROOT / 'assets/trex_pilot/cutouts/c_statue_still_cut.png',
         motion='loom', camera='push', sway=.5,
         sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.55)]),
-    'ch1_body': dict(                          # beats 26+27 "let's talk about the BODY you just woke up in. you are"
+    'ch1_body': dict(                          # beats 26-30 body reveal: creature looms while size stats POP on the words
         bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_avenue_taxis.mp4'),
         cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_avenue_wide_cut.png',
-        motion='loom', camera='push', sway=.6,
-        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.5)]),
+        motion='loom', camera='push', sway=.6, align=ALIGN, impact='bus',
+        text=[dict(word='thirteen', msg='13 FT TALL', y=.16, size=74, hold=2.2),
+              dict(word='forty', msg='40 FT LONG', y=.16, size=74, hold=2.0),
+              dict(word='bus', msg='9 TONS', y=.16, size=92, hold=2.0)],
+        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.5),
+             dict(word='thirteen', name='impact_01_loud.wav', vol=.6),
+             dict(word='forty', name='impact_02_loud.wav', vol=.6),
+             dict(word='bus', name='body_impact_01_loud.wav', vol=.75)]),
     'ch1_legs': dict(                          # "your LEGS are the most powerful ever grown"
         bg_video=str(ROOT / 'footage/trex_pilot/stock/s_taxi_wall.mp4'),
         cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_walkaway_crowd_cut.png',
