@@ -1,0 +1,141 @@
+{
+ "beats": [
+  {
+   "start_sec": 0.0,
+   "end_sec": 6.16,
+   "duration": 6.16,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0067.22_loom.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "Remember that ground. It is going to matter more than anything with teeth.",
+   "asset": "auto",
+   "device": "loom"
+  },
+  {
+   "start_sec": 6.16,
+   "end_sec": 18.06,
+   "duration": 11.9,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0073.38_measuring_tape.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "Let's talk about the body you just woke up in. You are thirteen feet tall at the hip and forty feet from nose to tail, and you weigh as much as a full city bus.",
+   "asset": "auto",
+   "device": "measuring_tape"
+  },
+  {
+   "start_sec": 18.06,
+   "end_sec": 32.42,
+   "duration": 14.36,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0085.28_macro.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "A single stride carries you fifteen feet. Your legs are the most powerful ever grown on a two-legged animal \u2014 but here is the catch nobody tells you. You cannot fall.",
+   "asset": "auto",
+   "device": "macro"
+  },
+  {
+   "start_sec": 32.42,
+   "end_sec": 43.921,
+   "duration": 11.501,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0099.64_gauge_max.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "At your size, a trip at speed slams the ground with enough force to shatter your own skull, and your arms \u2014 those famously tiny arms \u2014 cannot push you back up.",
+   "asset": "auto",
+   "device": "gauge_max"
+  },
+  {
+   "start_sec": 43.921,
+   "end_sec": 47.441,
+   "duration": 3.52,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0111.14_consequence.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "For you, falling down is the same as dying.",
+   "asset": "auto",
+   "device": "consequence"
+  },
+  {
+   "start_sec": 47.441,
+   "end_sec": 53.221,
+   "duration": 5.78,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0114.66_loom.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "And the entire city you just landed in is paved in wet, flat concrete.",
+   "asset": "auto",
+   "device": "loom"
+  },
+  {
+   "start_sec": 53.221,
+   "end_sec": 56.761,
+   "duration": 3.54,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0120.44_clock.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "There is a second problem, and it is hungrier.",
+   "asset": "auto",
+   "device": "clock"
+  },
+  {
+   "start_sec": 56.761,
+   "end_sec": 70.921,
+   "duration": 14.16,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0123.98_scale.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "Nine tons of muscle is a furnace, and it never stops burning. To stay alive, you need to eat hundreds of pounds of meat every few days \u2014 more food than this entire street will offer up without a fight.",
+   "asset": "auto",
+   "device": "scale"
+  },
+  {
+   "start_sec": 70.921,
+   "end_sec": 110.282,
+   "duration": 39.361,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0138.14_range_map.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "So you cannot just survive here. You have to hunt here. Constantly. In a place built out of glass, steel, and four million strangers. But you did not rule a world by being fragile. You rule by sense. Your nose is one of the best that ever existed \u2014 you can smell blood from over a mile away, through traffic, through smoke, through ten thousand people. Your eyes face forward like a hawk's, and they resolve detail thirteen times sharper than a human's. You can pick one running figure out of a crowd six blocks away.",
+   "asset": "auto",
+   "device": "range_map"
+  },
+  {
+   "start_sec": 110.282,
+   "end_sec": 119.482,
+   "duration": 9.2,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0177.50_speedometer.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "You are not fast \u2014 you top out around twelve miles an hour, a quick human jog, and a real sprint would break you.",
+   "asset": "auto",
+   "device": "speedometer"
+  },
+  {
+   "start_sec": 119.482,
+   "end_sec": 122.102,
+   "duration": 2.62,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0186.70_loom.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "But you do not need to be fast.",
+   "asset": "auto",
+   "device": "loom"
+  },
+  {
+   "start_sec": 122.102,
+   "end_sec": 125.822,
+   "duration": 3.72,
+   "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/auto_beats/0189.32_loom.mp4",
+   "visual_type": "video",
+   "clip_audio": "mute",
+   "text": "You only need to be patient. Day",
+   "asset": "auto",
+   "device": "loom"
+  }
+ ],
+ "stats": {
+  "director_driven": true,
+  "built": 12,
+  "failed": 0
+ }
+}

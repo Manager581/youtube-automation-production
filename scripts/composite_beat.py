@@ -35,6 +35,13 @@ INK, ORANGE, YELLOW = (16, 13, 10), (245, 130, 32), (255, 209, 40)
 SFX = ROOT / 'assets/sfx'
 SR = 48000
 font = lambda s: ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial Black.ttf', s)
+
+
+def big_text_cb(d, msg, cx, cy, size, col=ORANGE):     # branded text, ink outline, no banner
+    f = font(size); sw = max(5, size // 15)
+    b = d.textbbox((0, 0), msg, font=f, stroke_width=sw)
+    d.text((cx - (b[2]-b[0])/2 - b[0], cy - (b[3]-b[1])/2 - b[1]), msg, font=f,
+           fill=col, stroke_width=sw, stroke_fill=INK)
 GOLD = np.array([1.06, 1.00, 0.90])
 
 _vig = Image.new('L', (W, H), 0)
@@ -251,6 +258,46 @@ def render_beat(cfg, out_mp4):
                     d.line((X, Y, X, Y - ky * 22), fill=col, width=3)
                 if smooth(t, rin + .3, rin + .6) > .5:
                     d.text((gx - sz, gy - sz - 24), 'TARGET', font=font(20), fill=col)
+
+        # ── DEVICE graphics (director-driven): the renderer knows each device,
+        # so beat_director's recipe deterministically becomes a rendered beat ──
+        gtype = cfg.get('graphic')
+        if gtype in ('gauge', 'speedometer', 'count', 'measuring_tape'):
+            dp = smooth(t, imp, imp + .45)                 # device draws in on the impact word
+            lbl = cfg.get('device_label', '')
+            if gtype in ('gauge', 'speedometer') and dp > 0:
+                import math as _m
+                cx_, cy_, r_ = W * .5, H * .42, 150
+                d.arc((cx_-r_, cy_-r_, cx_+r_, cy_+r_), 150, 390, fill=ORANGE, width=14)
+                for k in range(9):
+                    a = _m.radians(150 + k*30)
+                    d.line((cx_+(r_-30)*_m.cos(a), cy_+(r_-30)*_m.sin(a),
+                            cx_+(r_-6)*_m.cos(a), cy_+(r_-6)*_m.sin(a)), fill=ORANGE, width=5)
+                a = _m.radians(150 + 240*min(dp, .96))     # needle sweeps to max
+                d.line((cx_, cy_, cx_+(r_-44)*_m.cos(a), cy_+(r_-44)*_m.sin(a)),
+                       fill=(255, 80, 40), width=10)
+                d.ellipse((cx_-16, cy_-16, cx_+16, cy_+16), fill=INK)
+                if lbl: big_text_cb(d, lbl, cx_, cy_+r_+54, 78)
+            elif gtype == 'count' and dp > 0:               # ratcheting number
+                shown = lbl
+                m = re.match(r'(\d[\d,]*)', lbl or '')
+                if m:
+                    shown = f"{int(int(m.group(1).replace(',',''))*min(dp,1)):,}" + lbl[m.end():]
+                big_text_cb(d, shown, W*.5, H*.30, 150)
+            elif gtype == 'measuring_tape' and dp > 0:      # vertical/horizontal ruler
+                vert = cfg.get('tape_axis', 'vertical') == 'vertical'
+                if vert:
+                    x0, y0, y1 = int(W*.62), int(H*.18), int(H*.82)
+                    yy = y0+(y1-y0)*(1-dp)
+                    d.line((x0, yy, x0, y1), fill=ORANGE, width=6)
+                    for ty in range(int(yy), y1, 26): d.line((x0-10, ty, x0+10, ty), fill=ORANGE+(180,), width=3)
+                    if dp > .5: big_text_cb(d, lbl, x0+96, (y0+y1)//2, 74)
+                else:
+                    x0, x1, yy = int(W*.18), int(W*.82), int(H*.74)
+                    xx = x0+(x1-x0)*dp
+                    d.line((x0, yy, xx, yy), fill=ORANGE, width=6)
+                    for tx in range(x0, int(xx), 30): d.line((tx, yy-10, tx, yy+10), fill=ORANGE+(180,), width=3)
+                    if dp > .5: big_text_cb(d, lbl, (x0+x1)//2, yy-58, 74)
 
         # grade + grain + chromatic split on impact
         arr = np.clip(np.asarray(frame.convert('RGB'), np.float32) * GOLD * VIG, 0, 255)

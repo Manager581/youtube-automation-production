@@ -85,6 +85,12 @@ for dev in ['gauge_max', 'speedometer', 'count_macro']:
     built = dev in brv or dev in (ROOT / 'scripts/composite_beat.py').read_text()
     print(f"  {'✅ built' if built else '🔨 TO BUILD'} device: {dev}")
 
+print("── 6b. CLOSED LOOP: director drives the build (build_ch1_auto --plan) ──")
+r = subprocess.run(['venv/bin/python', 'scripts/build_ch1_auto.py', '--plan'],
+                   cwd=str(ROOT), capture_output=True, text=True, timeout=120)
+chk('build_ch1_auto.py --plan runs (director->config)', r.returncode == 0 and 'measuring_tape' in r.stdout,
+    (r.stderr.strip().splitlines() or [''])[-1][:80])
+
 print("── 7. BUILD SCRIPTS ACTUALLY RUN (not just stale outputs) ──")
 import py_compile
 for s in ['scripts/build_body_reveal.py', 'scripts/build_ch1_composites.py',
