@@ -24,14 +24,17 @@
 > WAS WRONG: it rebuilds CH1 from a 4-cutout × 4-bg pool and IGNORES the 64-asset library we sourced over the
 > variety sprints (21 body_stills + 22 stock + 21 graphics). CH1 in `v3_mark` already uses 36 UNIQUE
 > noun-matched assets — the auto-builder threw all that away → repetitive output that REVERTED the variety fix.
-> Do NOT "tune the 4-cutout rotation" (that was my wrong call). **RIGHT approach: the director AUGMENTS the
-> already-varied `v3_mark` edit — it does NOT regenerate visuals.** Keep v3_mark's 36 assets as the base
-> (variety + noun-mapping already correct); have `beat_director` add the illustrated DEVICE (gauge/tape/scale/
-> speedometer/reticle — these graphics ARE built in `composite_beat.render_beat`) ONLY onto the stat beats
-> that warrant one, and use `build_body_reveal` for the size section. That yields BOTH the variety we fixed
-> AND the illustrated stats. The closed-loop proof (`build_ch1_auto`) shows the director drives device choice;
-> reuse its `beat_director`+device graphics, but route visuals to the EXISTING library, not new composites.
-> Then: cards cut per `spec_ch1.json` (budget 6) + run the CONTENT GATE (sync+subject+motion), owner sees only green. **Owner's hard rules this session (memory):** never make
+> Do NOT "tune the 4-cutout rotation" AND do NOT "keep v3_mark as the base" — BOTH were wrong calls (the 2nd
+> reverts to static: v3_mark CH1 is 67% Ken-Burns stills = the cut the owner rejected as lazy). **THE FIX
+> RECONCILES THREE THINGS that every prior version failed on one of:** (1) VARIETY — v3_mark has 36 assets,
+> build_ch1_auto had 4; (2) MOTION — composite engine has it, v3_mark doesn't; (3) DEVICES — beat_director +
+> the new graphics. **Correct synthesis:** the composite cutout POOL must be the ~21 creature stills CUT OUT
+> (rembg) so variety+motion combine (different creature, moving) — NOT 4 cutouts and NOT static stills; the
+> 22 stock clips used as-is (already move); the director adds the illustrated DEVICE only on stat beats; cards
+> cut to `spec_ch1.json` budget 6. Reuse `beat_director` + the `composite_beat` device graphics (gauge/tape/
+> scale/speedometer/reticle) + `build_body_reveal` (size section). **DO NOT trust reasoning that "this is the
+> fix" — BUILD it, run the CONTENT GATE + a contact sheet, and judge the OUTPUT. Every "obvious fix" reasoned
+> on paper this session was wrong; only the render is truth.** Owner sees only a gate-passed, eyes-checked cut. **Owner's hard rules this session (memory):** never make
 > him QA; never ask him to validate a spec/treatment, only show watchable output he can judge; illustrate
 > every stat as a SCENE (tape/scale/gauge), never a flat card; creature always alive+SFX; brand text
 > orange/yellow ink-outline no banner. **Branch `spinosnack-dunkleosteus`, pushed (HEAD c996a0c).**
