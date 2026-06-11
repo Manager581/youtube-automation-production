@@ -37,93 +37,75 @@
     {
       "beat_id": "beat_0026",
       "start_sec": 6.16,
-      "end_sec": 8.0,
-      "duration": 1.84,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_avenue_wide.png",
-      "visual_type": "image",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
-      "chapter": "REXCAPED PILOT",
-      "text": "Let's talk about the body you just woke",
-      "asset": "stock",
-      "why": "pause",
-      "sfx": "whoosh",
-      "src_offset": 0
-    },
-    {
-      "beat_id": "beat_0027",
-      "start_sec": 8.0,
-      "end_sec": 9.64,
-      "duration": 1.64,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_walkaway_crowd.png",
-      "visual_type": "image",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
-      "chapter": "REXCAPED PILOT",
-      "text": "up in. You are",
-      "asset": "stock",
-      "why": "timer",
-      "sfx": "whoosh",
-      "src_offset": 0
-    },
-    {
-      "beat_id": "beat_0028",
-      "start_sec": 9.64,
-      "end_sec": 12.66,
-      "duration": 3.02,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/card_s0028.png",
-      "visual_type": "still",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 1.5,
-      "chapter": "REXCAPED PILOT",
-      "text": "thirteen feet tall at the hip and forty",
-      "asset": "stat_card",
-      "why": "stat",
-      "sfx": "impact"
-    },
-    {
-      "beat_id": "beat_0029",
-      "start_sec": 12.66,
-      "end_sec": 15.24,
-      "duration": 2.58,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/graphics/g_scale_bus.png",
-      "visual_type": "image",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
-      "chapter": "REXCAPED PILOT",
-      "text": "feet from nose to tail, and you weigh",
-      "asset": "creature",
-      "why": "timer",
-      "sfx": "impact_hit",
-      "enter": "slam"
-    },
-    {
-      "beat_id": "beat_0030",
-      "start_sec": 15.24,
       "end_sec": 18.06,
-      "duration": 2.82,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/stock/s_city_bus.mp4",
+      "duration": 11.9,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/body_reveal_540p.mp4",
       "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
-      "text": "as much as a full city bus.",
-      "asset": "meme",
-      "why": "timer",
-      "sfx": "whoosh"
+      "text": "Let's talk about the body you just woke up in. You are thirteen feet tall at the hip and forty feet from nose to tail, and you weigh as much as a full city bus.",
+      "asset": "creature",
+      "why": "pause",
+      "sfx": "whoosh",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.75,
+          "sfx": "impact_01_loud.wav"
+        },
+        {
+          "t": 2.24,
+          "sfx": "impact_01_loud.wav"
+        },
+        {
+          "t": 3.74,
+          "sfx": "impact_01_loud.wav"
+        },
+        {
+          "t": 5.24,
+          "sfx": "impact_01_loud.wav"
+        },
+        {
+          "word": "thirteen",
+          "t": 3.28,
+          "sfx": "whoosh_03_loud.wav"
+        },
+        {
+          "word": "thirteen",
+          "t": 3.48,
+          "sfx": "impact_02_loud.wav"
+        },
+        {
+          "word": "forty",
+          "t": 5.6,
+          "sfx": "whoosh_05_loud.wav"
+        },
+        {
+          "word": "forty",
+          "t": 6.1,
+          "sfx": "impact_02_loud.wav"
+        },
+        {
+          "word": "bus",
+          "t": 10.26,
+          "sfx": "body_impact_01_loud.wav"
+        },
+        {
+          "word": "bus",
+          "t": 10.66,
+          "sfx": "impact_new_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0031",
       "start_sec": 18.06,
       "end_sec": 22.16,
       "duration": 4.1,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/graphics/g_stride_arc.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_stride_avenue.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
@@ -132,24 +114,31 @@
       "asset": "meme",
       "why": "pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0032",
       "start_sec": 22.16,
       "end_sec": 24.78,
       "duration": 2.62,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_stride_avenue.mp4",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_legs.mp4",
       "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "legs are the most powerful ever grown on a",
-      "asset": "stock",
+      "asset": "creature",
       "why": "timer",
       "sfx": "whoosh",
-      "src_offset": 0
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_03_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0033",
@@ -160,7 +149,7 @@
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "two-legged animal \u2014 but here is the catch",
       "asset": "stock",
@@ -229,11 +218,11 @@
       "start_sec": 36.9,
       "end_sec": 40.2,
       "duration": 3.3,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_arms.png",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_tiny_arms_macro.png",
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "own skull, and your arms \u2014 those famously",
       "asset": "meme",
@@ -250,7 +239,7 @@
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "tiny arms \u2014 cannot push you back up.",
       "asset": "stock",
@@ -263,7 +252,7 @@
       "start_sec": 43.921,
       "end_sec": 47.441,
       "duration": 3.52,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_trip_stumble.png",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/i_uhoh.png",
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
@@ -328,16 +317,23 @@
       "start_sec": 56.761,
       "end_sec": 58.961,
       "duration": 2.2,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/card_s0043.png",
-      "visual_type": "still",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_furnace.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 1.5,
       "chapter": "REXCAPED PILOT",
       "text": "Nine tons of muscle is a furnace, and",
-      "asset": "stat_card",
+      "asset": "creature",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0044",
@@ -397,7 +393,7 @@
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "food than this entire street will offer up",
       "asset": "meme",
@@ -426,7 +422,7 @@
       "start_sec": 70.921,
       "end_sec": 73.061,
       "duration": 2.14,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_stride_avenue.mp4",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_taxi_hunt.mp4",
       "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
@@ -435,7 +431,8 @@
       "text": "So you cannot just survive here. You have",
       "asset": "creature",
       "why": "turn+pause",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0050",
@@ -446,7 +443,7 @@
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "to hunt here. Constantly. In a place built",
       "asset": "meme",
@@ -475,11 +472,11 @@
       "start_sec": 78.441,
       "end_sec": 81.721,
       "duration": 3.28,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/card_s0052.png",
-      "visual_type": "still",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_pov_crowd_up.png",
+      "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 1.5,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "four million strangers. But you did",
       "asset": "stat_card",
@@ -495,7 +492,7 @@
       "visual_type": "image",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
+      "zoom_speed_pct_per_sec": 3.0,
       "chapter": "REXCAPED PILOT",
       "text": "not rule a world by being fragile. You",
       "asset": "stock",
@@ -506,36 +503,18 @@
     {
       "beat_id": "beat_0054",
       "start_sec": 84.981,
-      "end_sec": 87.441,
-      "duration": 2.46,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_nostril.png",
-      "visual_type": "image",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
-      "chapter": "REXCAPED PILOT",
-      "text": "rule by sense. Your nose is",
-      "asset": "creature",
-      "why": "timer",
-      "sfx": "impact_hit",
-      "src_offset": 0
-    },
-    {
-      "beat_id": "beat_0055",
-      "start_sec": 87.441,
       "end_sec": 90.182,
-      "duration": 2.741,
+      "duration": 5.201,
       "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_nostril.mp4",
       "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
-      "text": "one of the best that ever existed \u2014",
+      "text": "rule by sense. Your nose is one of the best that ever existed \u2014",
       "asset": "creature",
-      "why": "stat",
-      "sfx": "whoosh",
-      "enter": "slam",
+      "why": "timer",
+      "sfx": "impact_hit",
       "src_offset": 0,
       "events": [
         {
@@ -544,7 +523,7 @@
         },
         {
           "word": "existed",
-          "t": 1.261,
+          "t": 3.721,
           "sfx": "impact_01_loud.wav"
         }
       ]
@@ -620,8 +599,8 @@
       "start_sec": 102.342,
       "end_sec": 106.302,
       "duration": 3.96,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/card_s0060.png",
-      "visual_type": "still",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/stock/s_phones_up.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 1.5,
@@ -629,7 +608,8 @@
       "text": "thirteen times sharper than a human's. You can pick",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0061",
@@ -663,35 +643,31 @@
     {
       "beat_id": "beat_0062",
       "start_sec": 110.282,
-      "end_sec": 113.382,
-      "duration": 3.1,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/graphics/g_speedo.png",
-      "visual_type": "image",
+      "end_sec": 116.782,
+      "duration": 6.5,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_speed.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
-      "text": "You are not fast \u2014 you top out around",
+      "text": "You are not fast \u2014 you top out around twelve miles an hour, a quick human jog,",
       "asset": "creature",
       "why": "pause",
       "sfx": "impact_hit",
-      "enter": "slam"
-    },
-    {
-      "beat_id": "beat_0063",
-      "start_sec": 113.382,
-      "end_sec": 116.782,
-      "duration": 3.4,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/cards/card_s0063.png",
-      "visual_type": "still",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 1.5,
-      "chapter": "REXCAPED PILOT",
-      "text": "twelve miles an hour, a quick human jog,",
-      "asset": "stat_card",
-      "why": "stat",
-      "sfx": "impact"
+      "enter": "slam",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_02_loud.wav"
+        },
+        {
+          "word": "twelve",
+          "t": 3.1,
+          "sfx": "impact_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0064",

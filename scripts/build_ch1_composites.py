@@ -36,25 +36,55 @@ CH1_FIRST, CH1_LAST = 24, 66          # chapter plan: CH1 · THE BODY
 # production renderer lays (word-anchored offsets resolved below; events
 # survive future realigns because the word rides along).
 SPLICES = [
+    # the owner-directed ILLUSTRATED body scene (tapes + side pivot + bus scale),
+    # built once by scripts/build_body_reveal.py — spliced as-is, never re-rendered.
+    # stomp SFX at the preset's falling zero-crossings (sin(t*4.2)); stats word-anchored.
+    dict(clip='output/body_reveal_540p.mp4', beats=[26, 27, 28, 29, 30],
+         events=[dict(t=.75, sfx='impact_01_loud.wav'), dict(t=2.24, sfx='impact_01_loud.wav'),
+                 dict(t=3.74, sfx='impact_01_loud.wav'), dict(t=5.24, sfx='impact_01_loud.wav'),
+                 dict(word='thirteen', dt=-.2, sfx='whoosh_03_loud.wav'),
+                 dict(word='thirteen', sfx='impact_02_loud.wav'),
+                 dict(word='forty', dt=-.5, sfx='whoosh_05_loud.wav'),
+                 dict(word='forty', sfx='impact_02_loud.wav'),
+                 dict(word='bus', dt=-.4, sfx='body_impact_01_loud.wav'),
+                 dict(word='bus', sfx='impact_new_loud.wav')]),
+    dict(cfg='ch1_legs', beats=[32],
+         events=[dict(t=.1, sfx='rumble_03_loud.wav')]),
     dict(cfg='ch1_stumble', beats=[35, 36],
          events=[dict(word='slams', dt=-.7, sfx='whoosh_05_loud.wav'),
                  dict(word='slams', sfx='body_impact_01_loud.wav'),
                  dict(word='slams', sfx='impact_02_loud.wav'),
                  dict(word='slams', sfx='rumble_03_loud.wav')]),
-    dict(cfg='ch1_nostril', beats=[55],
+    dict(cfg='ch1_furnace', beats=[43],
+         events=[dict(t=.1, sfx='rumble_01_loud.wav')]),
+    dict(cfg='ch1_nostril', beats=[54, 55],
          events=[dict(t=.15, sfx='rumble_02_loud.wav'),
                  dict(word='existed', sfx='impact_01_loud.wav')]),
     dict(cfg='ch1_povpick', beats=[61],
          events=[dict(t=.5, sfx='shimmer_01_loud.wav'),
                  dict(word='six', sfx='impact_01_loud.wav')]),
+    dict(cfg='ch1_speed', beats=[62, 63],
+         events=[dict(t=.1, sfx='rumble_02_loud.wav'),
+                 dict(word='twelve', sfx='impact_01_loud.wav')]),
     dict(cfg='ch1_loom', beats=[65],
          events=[dict(t=.1, sfx='rumble_02_loud.wav')]),
-    # NOTE: the body section (beats 26-30, "13ft/40ft/9tons") is the ILLUSTRATED
-    # scene built by scripts/build_body_reveal.py -> output/body_reveal_540p.mp4
-    # (owner-directed: tapes + side pivot + bus scale). The next session wires
-    # that clip into beats 26-30. The composite_beat 'ch1_body' config is a
-    # simple fallback valid only for the full 73.38-85.28 window, NOT this splice.
 ]
+
+# noun-fix retargets within the existing library (no renders): visual_file swaps
+# that put the spoken noun on screen and cut the card count to the spec budget.
+RETARGETS = [
+    (31, 'footage/trex_pilot/dunk_trex_stride_avenue.mp4', 'video'),  # "a single stride" (was arc graphic)
+    (37, 'assets/trex_pilot/body_stills/c_tiny_arms_macro.png', 'image'),  # "famously tiny arms" macro (i_arms art = duplicate of i_uhoh)
+    (39, 'assets/trex_pilot/body_stills/i_uhoh.png', 'image'),        # "falling = dying" -> UH OH ink gag
+    (49, 'footage/trex_pilot/dunk_trex_taxi_hunt.mp4', 'video'),      # "you have to hunt here"
+    (52, 'assets/trex_pilot/body_stills/c_pov_crowd_up.png', 'image'),  # "four million strangers" staring up (world-consistent)
+    (60, 'footage/trex_pilot/stock/s_phones_up.mp4', 'video'),        # "ten thousand people" sea of lights (crowd_mass = CNBC interview, unusable)
+]
+
+# creature PHOTO stills must never sit frozen (zoom 0 = the static-lazy read the
+# owner rejected). Cards / ink gags (g_*, i_*, card_*) stay zoom-0 flash-holds by
+# design — that's the winner's card grammar.
+ZOOM_FIXES = [33, 37, 38, 47, 50, 52, 53]  # statue, arms-macro, trip_stumble, food_cart, glass_refl, crowd_up, hide
 
 
 def main():
@@ -75,12 +105,17 @@ def main():
     for sp in SPLICES:
         bs = [beats[i] for i in sp['beats']]
         w0, w1 = bs[0]['start_sec'], bs[-1]['end_sec']
-        cfg = dict(CONFIGS[sp['cfg']])
-        cfg.update(window=(w0, w1), vo_span=(VO_MARK, w0, w1))
-        clip = CLIPS / f"{sp['cfg']}.mp4"
-        print(f"\n── {sp['cfg']}  beats {sp['beats']}  {w0:.2f}-{w1:.2f} ({w1 - w0:.2f}s)")
-        if not only or sp['cfg'] in only or not clip.exists():
-            render_beat(cfg, clip)
+        name = sp.get('cfg') or Path(sp['clip']).stem
+        if sp.get('clip'):                    # pre-built scene (body reveal): splice as-is
+            clip = ROOT / sp['clip']
+            print(f"\n── {name} (pre-built)  beats {sp['beats']}  {w0:.2f}-{w1:.2f} ({w1 - w0:.2f}s)")
+        else:
+            cfg = dict(CONFIGS[sp['cfg']])
+            cfg.update(window=(w0, w1), vo_span=(VO_MARK, w0, w1))
+            clip = CLIPS / f"{sp['cfg']}.mp4"
+            print(f"\n── {sp['cfg']}  beats {sp['beats']}  {w0:.2f}-{w1:.2f} ({w1 - w0:.2f}s)")
+            if not only or sp['cfg'] in only or not clip.exists():
+                render_beat(cfg, clip)
 
         b = bs[0]
         b['end_sec'] = w1
@@ -99,8 +134,19 @@ def main():
             for ev in sp['events']]
         dropped.update(sp['beats'][1:])
 
+    for i, path, vt in RETARGETS:
+        b = beats[i]
+        b['visual_file'] = str((ROOT / path).resolve())
+        b['visual_type'] = vt
+        if vt == 'video':
+            b['clip_audio'] = 'mute'
+            b['src_offset'] = 0
+        print(f"retarget beat {i:3d} -> {Path(path).name}")
+    for i in ZOOM_FIXES:
+        beats[i]['zoom_speed_pct_per_sec'] = 3.0
+
     pe['beats'] = [b for i, b in enumerate(beats) if i not in dropped]
-    pe.setdefault('stats', {})['ch1_composites'] = [sp['cfg'] for sp in SPLICES]
+    pe.setdefault('stats', {})['ch1_composites'] = [sp.get('cfg') or Path(sp['clip']).stem for sp in SPLICES]
     json.dump(pe, open(PE_V4, 'w'), indent=2)
     print(f"\nwrote {PE_V4} ({len(pe['beats'])} beats, {len(dropped)} merged away)")
 

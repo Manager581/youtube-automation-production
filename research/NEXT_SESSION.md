@@ -1,5 +1,23 @@
 # NEXT SESSION — Rexcaped (the channel formerly known as the Dunkleosteus build)
 
+## ▶▶▶▶ 2026-06-11b — CH1 BUILT + GATED (36/36 green); owner watch = the only open gate
+> **CH1 render: `output/trex_pilot_ch1_body_540p.mp4`** (2.1 min, 540p preview, 0 black) built the
+> corrected way: `spec_ch1.json` → `build_ch1_composites.py` (SPLICES + RETARGETS + ZOOM_FIXES) →
+> production renderer → **`scripts/gate_ch1.py` (NEW — per-beat SYNC/MOTION/SUBJECT on the RENDER,
+> 36/36 green)** → contact sheet `output/ch1_contact_sheet.jpg`. Composites at the strike bar:
+> body_reveal spliced as-is (beats 26-30) + legs (pier-claws macro over snow bokeh) + stumble +
+> furnace (lowangle cutout, grows on 'furnace') + nostril (soft-mask cutout breathing over diesel
+> smoke — rembg FAILS on macros, use the ellipse-mask trick) + povpick (SELF-LAYERED: pov still as
+> plate + own head cutout drifting + tracking reticle) + speed (speedometer device, '12 MPH') + loom.
+> New presets in composite_beat: `macro_drift`, `pov_edge`. **Asset truths learned by LOOKING:**
+> s_dawn_canyon = TORONTO (CN Tower + Canadian flags), s_crowd_run = EarthCam watermark summer,
+> s_crowd_mass = CNBC party-hat interview, s_crowd_scatter = WSJ night — all unusable for world
+> shots; `i_arms.png` is byte-same art as `i_uhoh.png` (never show both); fixes used instead:
+> c_tiny_arms_macro (crop from patient still), c_pov_crowd_up (4M strangers), s_phones_up
+> (10k people). The 21 body_stills == the ChatGPT convo gens (already filed; +2 new: i_uhoh,
+> c_pov_crowd_up). **Open after owner bless: music bed (owner decision), 1080p final, ONE-STRIDE
+> chip polish, hook event-rate top-up, then CH2/CH3 through the same builder+gate.**
+
 ## ▶▶▶ PASTE THIS (2026-06-11 — DECISION SYSTEM built; wire director→builder→gate next)
 > **STEP 0 — RUN `venv/bin/python scripts/preflight_ch1.py` FIRST.** It must print "27 green, 0 red ·
 > FOUNDATION INTACT". It verifies (and proves by EXECUTION) that everything below is real: files, cutouts,

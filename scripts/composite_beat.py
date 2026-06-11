@@ -22,6 +22,7 @@ render_beat(cfg, out_mp4). Configs at the bottom; run:
 """
 import json
 import math
+import re
 import subprocess
 import sys
 import wave
@@ -164,6 +165,13 @@ def motion(preset, t, imp, tune=None):
         s = .55 + .55 * ap ** 1.4
         bob = math.sin(t * 2.6) * 5
         return s, W / 2 + int(30 * math.sin(t * .6)), H * .60 + bob, 0, 0, 0
+    if preset == 'macro_drift':                            # frame-filling macro that BREATHES
+        s = 1.10 + .05 * math.sin(t * 1.5) + .06 * smooth(t, 0, imp)
+        return (s, W * .56 + 10 * math.sin(t * .5), H * .52 + 6 * math.sin(t * .9), 0, 0, 0)
+    if preset == 'pov_edge':                               # foreground head pinned frame-left (POV)
+        s = 1.00 + .05 * smooth(t, 0, imp)
+        bob = math.sin(t * 2.2) * 6
+        return (s, W * .14 + 8 * math.sin(t * .7), H * .55 + bob, 0, 0, 0)
     raise ValueError(preset)
 
 
@@ -401,22 +409,33 @@ CONFIGS = {
              dict(word='slams', name='body_impact_01_loud.wav', vol=.95),
              dict(word='slams', name='impact_02_loud.wav', vol=.8),
              dict(word='slams', name='rumble_03_loud.wav', vol=.5)]),
-    'ch1_nostril': dict(                       # beat 55 "one of the best that ever existed"
-        bg_still=str(ROOT / 'assets/trex_pilot/body_stills/c_nostril_smoke.png'),
-        camera='push', sway=1.0, impact='existed', align=ALIGN,
+    'ch1_nostril': dict(                       # beats 54+55 "your nose is one of the best that ever existed"
+        bg_video=str(ROOT / 'footage/trex_pilot/stock/s_diesel_smoke.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_nostril_smoke_cut.png',
+        motion='macro_drift', camera='push', sway=.4, impact='existed', align=ALIGN,
         text=[dict(word='existed', msg='SCENT: >1 MILE', y=.30, size=96,
                    sub='— paleontologists', hold=9)],
         sfx=[dict(t=.15, name='rumble_02_loud.wav', vol=.45),
              dict(word='existed', name='impact_01_loud.wav', vol=.6)]),
     'ch1_povpick': dict(                       # beat 61 "one running figure ... six blocks away"
+        # self-layered: the world-consistent POV still as plate + its own head
+        # cutout drifting on an independent layer + tracking reticle + push
         bg_still=str(ROOT / 'assets/trex_pilot/body_stills/c_pov_pick.png'),
-        camera='push', sway=.7, impact='six', align=ALIGN,
-        graphic='reticle', reticle_xy=(.565, .50), reticle_track=True,
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_pov_pick_head_cut.png',
+        motion='pov_edge', camera='push', sway=.6, impact='six', align=ALIGN, fog=False,
+        graphic='reticle', reticle_xy=(.60, .52), reticle_track=True,
         reticle_hold=True, reticle_in=.5,
         text=[dict(word='six', msg='13× HUMAN ACUITY', y=.28, size=96,
                    sub='— paleontologists', hold=9)],
         sfx=[dict(t=.5, name='shimmer_01_loud.wav', vol=.5),
              dict(word='six', name='impact_01_loud.wav', vol=.65)]),
+    'ch1_speed': dict(                         # beats 62+63 "top out around twelve miles an hour"
+        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_snow_street.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_avenue_wide_cut.png',
+        motion='loom', camera='push', sway=.5, impact='twelve', align=ALIGN,
+        graphic='speedometer', device_label='12 MPH',
+        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.45),
+             dict(word='twelve', name='impact_01_loud.wav', vol=.6)]),
     'ch1_loom': dict(                          # beat 65 "you do not need to be fast"
         bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_avenue_taxis.mp4'),
         cutout=ROOT / 'assets/trex_pilot/cutouts/c_statue_still_cut.png',
@@ -434,14 +453,16 @@ CONFIGS = {
              dict(word='forty', name='impact_02_loud.wav', vol=.6),
              dict(word='bus', name='body_impact_01_loud.wav', vol=.75)]),
     'ch1_legs': dict(                          # "your LEGS are the most powerful ever grown"
-        bg_video=str(ROOT / 'footage/trex_pilot/stock/s_taxi_wall.mp4'),
-        cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_walkaway_crowd_cut.png',
-        motion='loom', camera='push', sway=.7,
-        sfx=[dict(t=.1, name='rumble_03_loud.wav', vol=.5)]),
+        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_snow_macro.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_pier_feet_cut.png',
+        motion='macro_drift', camera='push', sway=.4, impact='powerful',
+        align=ALIGN, fog=False,
+        sfx=[dict(t=.1, name='rumble_03_loud.wav', vol=.5),
+             dict(word='powerful', name='impact_01_loud.wav', vol=.55)]),
     'ch1_furnace': dict(                       # "nine tons of MUSCLE is a furnace"
-        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_snow_street.mp4'),
-        cutout=ROOT / 'assets/trex_pilot/cutouts/c_statue_still_cut.png',
-        motion='loom', camera='push', sway=.55, warm=1.0,
+        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_avenue_taxis.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_lowangle_taxis_cut.png',
+        motion='loom', camera='push', sway=.55, impact='furnace', align=ALIGN,
         sfx=[dict(t=.1, name='rumble_01_loud.wav', vol=.5)]),
 }
 
