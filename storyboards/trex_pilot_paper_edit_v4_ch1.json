@@ -475,36 +475,25 @@
     {
       "beat_id": "beat_0026",
       "start_sec": 73.382,
-      "end_sec": 75.222,
-      "duration": 1.84,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_avenue_wide.png",
-      "visual_type": "image",
+      "end_sec": 76.862,
+      "duration": 3.48,
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_body.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
       "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
-      "text": "Let's talk about the body you just woke",
-      "asset": "stock",
+      "text": "Let's talk about the body you just woke up in. You are",
+      "asset": "creature",
       "why": "pause",
       "sfx": "whoosh",
-      "src_offset": 0
-    },
-    {
-      "beat_id": "beat_0027",
-      "start_sec": 75.222,
-      "end_sec": 76.862,
-      "duration": 1.64,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/hook_stills/169/ch_trex_walkaway_crowd.png",
-      "visual_type": "image",
-      "clip_audio": "mute",
-      "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 0.0,
-      "chapter": "REXCAPED PILOT",
-      "text": "up in. You are",
-      "asset": "stock",
-      "why": "timer",
-      "sfx": "whoosh",
-      "src_offset": 0
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_02_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0028",
@@ -2221,7 +2210,8 @@
       "ch1_stumble",
       "ch1_nostril",
       "ch1_povpick",
-      "ch1_loom"
+      "ch1_loom",
+      "ch1_body"
     ]
   },
   "_version": "v3_mark"
