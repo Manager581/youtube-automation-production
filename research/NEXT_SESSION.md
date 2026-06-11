@@ -1,6 +1,13 @@
 # NEXT SESSION — Rexcaped (the channel formerly known as the Dunkleosteus build)
 
 ## ▶▶▶ PASTE THIS (2026-06-11 — DECISION SYSTEM built; wire director→builder→gate next)
+> **STEP 0 — RUN `venv/bin/python scripts/preflight_ch1.py` FIRST.** It must print "27 green, 0 red ·
+> FOUNDATION INTACT". It verifies (and proves by EXECUTION) that everything below is real: files, cutouts,
+> audio, the proven renders, that `beat_director.direct()` actually reproduces the owner's calls, that
+> `composite_beat` has the CH1 configs, and which device functions still need building. If any line is red,
+> fix THAT before building — do not rebuild from scratch, the foundation exists. Do NOT re-derive or re-invent
+> what's already here.
+>
 > Read `research/edit_decision_rulebook.md`, `scripts/beat_director.py`, `scripts/build_body_reveal.py`,
 > and memory `feedback_self_verifying_pipeline.md` + `feedback_frame_level_qa.md`. **The hard problem is
 > solved: the owner's editing decisions are now encoded and runnable.** `beat_director.direct(vo_line)`

@@ -49,8 +49,11 @@ SPLICES = [
                  dict(word='six', sfx='impact_01_loud.wav')]),
     dict(cfg='ch1_loom', beats=[65],
          events=[dict(t=.1, sfx='rumble_02_loud.wav')]),
-    dict(cfg='ch1_body', beats=[26, 27],          # body reveal: moving full-body composite
-         events=[dict(t=.1, sfx='rumble_02_loud.wav')]),
+    # NOTE: the body section (beats 26-30, "13ft/40ft/9tons") is the ILLUSTRATED
+    # scene built by scripts/build_body_reveal.py -> output/body_reveal_540p.mp4
+    # (owner-directed: tapes + side pivot + bus scale). The next session wires
+    # that clip into beats 26-30. The composite_beat 'ch1_body' config is a
+    # simple fallback valid only for the full 73.38-85.28 window, NOT this splice.
 ]
 
 

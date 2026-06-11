@@ -85,7 +85,22 @@ for dev in ['gauge_max', 'speedometer', 'count_macro']:
     built = dev in brv or dev in (ROOT / 'scripts/composite_beat.py').read_text()
     print(f"  {'✅ built' if built else '🔨 TO BUILD'} device: {dev}")
 
-print("── 7. git pushed / clean ──")
+print("── 7. BUILD SCRIPTS ACTUALLY RUN (not just stale outputs) ──")
+import py_compile
+for s in ['scripts/build_body_reveal.py', 'scripts/build_ch1_composites.py',
+          'scripts/composite_beat.py', 'scripts/beat_director.py']:
+    try:
+        py_compile.compile(str(ROOT / s), doraise=True); chk(f"{s} compiles", True)
+    except Exception as e:
+        chk(f"{s} compiles", False, repr(e)[:70])
+# build_ch1_composites assembles the paper edit (skips render if clips exist) —
+# this is what caught the ch1_body window/anchor crash; run it for real.
+r = subprocess.run(['venv/bin/python', 'scripts/build_ch1_composites.py'],
+                   cwd=str(ROOT), capture_output=True, text=True, timeout=600)
+chk('build_ch1_composites.py runs clean', r.returncode == 0,
+    (r.stderr.strip().splitlines() or [''])[-1][:80])
+
+print("── 8. git pushed / clean ──")
 st = subprocess.run(['git', '-C', str(ROOT), 'status', '--porcelain'], capture_output=True, text=True).stdout
 unpushed = subprocess.run(['git', '-C', str(ROOT), 'log', '@{u}..', '--oneline'], capture_output=True, text=True).stdout
 IGNORE = ('tools/ltx-video',)   # pre-existing dirty submodule, unrelated to the pipeline
