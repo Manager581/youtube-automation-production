@@ -1,5 +1,9 @@
 # START HERE — paste the block below into a new session
 
+**Making the NEXT video (video #2)? Use `NEXT_VIDEO.md` instead** — the complete verified
+end-to-end pipeline handoff (2026-06-12) with its own paste block. This file's block below
+is for finishing video #1's chapters (CH2/CH3 conversion).
+
 **Confused about the big picture? Open `DESIGN.html` in a browser** — the whole project on one
 visual page: the approved look (with images), the style bands, the pipeline, current status,
 and the road left. Sessions: update DESIGN.html's status board + date whenever status changes.
