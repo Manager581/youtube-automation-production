@@ -73,6 +73,7 @@
   <tr><td>Static share of runtime</td><td>≤ 40%</td><td class="ok">19% ✓</td><td class="ok">23% ✓</td></tr>
   <tr><td>Music bed</td><td>≥ 90% coverage, <b>creature-genre</b></td><td class="bad">✗ wrong bed — Breaking-Law fallback <code>track_01_tense_ducked.wav</code></td><td class="warn">present (level/genre review)</td></tr>
   <tr><td>Cards</td><td>≤ 6 per chapter · ≤ 2.2s hold · ANIMATED</td><td class="bad">✗ 6 cards but 4 are static holds 3.1–4.6s</td><td class="ok">flash chips ✓</td></tr>
+  <tr><td>Creature beats</td><td>composited cutout or real footage — <b>never a flat still</b> (your locked rule: "zero Ken-Burns-on-a-still")</td><td class="bad">✗ 7 beats are drifting stills (5 inherited from the old v3 edit, 2 new)</td><td>n/a — hook is the animated hero-still open</td></tr>
 </table>
 
 <h2>4 · The machine that builds it</h2>
@@ -97,8 +98,9 @@
 <table>
   <tr><th>Piece</th><th>State</th><th>What it means</th></tr>
   <tr><td><b>Hook</b> (0–15s)</td><td><span class="chip o">NEEDS TOP-UP</span></td><td>Blessed look; 21.6 ev/min vs ≥25 — event-layer top-up queued.</td></tr>
-  <tr><td><b>CH1 · THE BODY</b> (2:06)</td><td><span class="chip o">BUILT — AWAITING YOUR VERDICT</span></td><td><code>output/trex_pilot_ch1_body_540p.mp4</code> — variety ✓ motion ✓ devices ✓ SFX ✓. Out of band: static card holds + wrong music bed (fix next).</td></tr>
+  <tr><td><b>CH1 · THE BODY</b> (2:06)</td><td><span class="chip o">BUILT — 13 BEATS TO CONVERT</span></td><td><code>output/trex_pilot_ch1_body_540p.mp4</code> — the 8 approved-recipe composites + devices + SFX are in ✓. Out of band (gate names them): 4 over-held static cards · 7 creature beats still on drifting stills (the rejected pattern, inherited from the old v3 edit) · wrong music bed.</td></tr>
   <tr><td><b>Cards animation</b></td><td><span class="chip x">TO BUILD</span></td><td>Typewriter/chip behavior exists in <code>rexcaped_stat_cards.py</code>; wire into the renderer so cards flash ~2s animated.</td></tr>
+  <tr><td><b>7 still beats → composites</b></td><td><span class="chip x">TO BUILD</span></td><td>Run beats 5·8·9·18·21·23·24 through the approved composite recipe (cutouts mostly exist) — same engine that built the 8 you like.</td></tr>
   <tr><td><b>Music bed</b></td><td><span class="chip x">YOUR DECISION</span></td><td>Pick creature-genre track(s); replaces the Breaking-Law fallback.</td></tr>
   <tr><td><b>CH2 · CH3</b></td><td><span class="chip n">NOT BUILT</span></td><td>Same builder + gates, run on those chapters' lines after CH1 bless.</td></tr>
   <tr><td><b>Full assembly + ship gate</b></td><td><span class="chip n">NOT STARTED</span></td><td>Hook + chapters + CTA, music wall-to-wall, final bands check, 1080p.</td></tr>
@@ -110,7 +112,7 @@
 <ol class="road">
   <li><span class="you">YOU</span> Watch <code>output/trex_pilot_ch1_body_540p.mp4</code> — bless it or give timestamp + which axis fails (variety / motion / device).</li>
   <li><span class="you">YOU</span> Pick the music bed (creature-genre). <span class="cl">CLAUDE</span> wires it + re-renders.</li>
-  <li><span class="cl">CLAUDE</span> Animate the 6 CH1 cards (typewriter flash ≤2.2s) → re-render → both gates green.</li>
+  <li><span class="cl">CLAUDE</span> Convert the 7 flat-still creature beats to composites + animate the 6 cards (typewriter flash ≤2.2s) → re-render → both gates green.</li>
   <li><span class="cl">CLAUDE</span> Hook event top-up → gate green.</li>
   <li><span class="cl">CLAUDE</span> Build CH2 through the same machine → gates → <span class="you">YOU</span> bless. Then CH3.</li>
   <li><span class="cl">CLAUDE</span> Assemble full pilot + CTA cards → final ship gate → 1080p master.</li>

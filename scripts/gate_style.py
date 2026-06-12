@@ -112,8 +112,12 @@ def main():
     db = 20 * np.log10(np.maximum(rms, 1e-6))
     coverage = float(np.mean(db > B['music_floor_dbfs']))
 
-    # cards (paper edit optional)
-    card_rows, worst_hold = [], 0.0
+    # cards + creature-on-still (paper edit optional)
+    # Creature rule (owner, locked 2026-06-11): every creature beat MOVES as a
+    # layered composite or real footage — "zero Ken-Burns-on-a-still passing as
+    # a shot". A c_*/ch_* still rendered as a flat image beat is the REJECTED
+    # pattern even with drift. Ink gags (i_*) are deliberate comedy stills.
+    card_rows, worst_hold, still_rows = [], 0.0, []
     if a.paper_edit:
         pe = json.load(open(a.paper_edit))
         for i, b in enumerate(pe['beats']):
@@ -122,6 +126,8 @@ def main():
                 hold = b['end_sec'] - b['start_sec']
                 worst_hold = max(worst_hold, hold)
                 card_rows.append((i, vis, hold))
+            elif vis.startswith(('c_', 'ch_')) and b.get('visual_type') == 'image':
+                still_rows.append((i, vis, b['end_sec'] - b['start_sec']))
 
     print('[3/3] verdict\n')
     checks = [
@@ -141,14 +147,19 @@ def main():
         checks.append(('CARDS', f"{len(card_rows)} cards, worst hold {worst_hold:.2f}s",
                        worst_hold <= B['card_hold_sec_max'] and len(card_rows) <= B['card_count_max'],
                        f"<={B['card_hold_sec_max']}s hold, <={B['card_count_max']} cards"))
+        checks.append(('CREATURE', f"{len(still_rows)} creature beats on flat stills",
+                       len(still_rows) == 0, 'must be composite/footage, never a still'))
     n_fail = 0
     for name, val, ok, band in checks:
         n_fail += (not ok)
-        print(f"  {'✅' if ok else '❌'} {name:7s} {val:28s} band {band}")
+        print(f"  {'✅' if ok else '❌'} {name:8s} {val:34s} band {band}")
     if card_rows:
         for i, vis, hold in card_rows:
             flag = '  ⚠ OVER' if hold > B['card_hold_sec_max'] else ''
             print(f"     beat {i:3d} {vis:26s} {hold:.2f}s{flag}")
+    if still_rows:
+        for i, vis, hold in still_rows:
+            print(f"     beat {i:3d} {vis:26s} {hold:.2f}s  ⚠ STILL → composite it")
     print(f"\nSTYLE GATE: {'ALL IN BAND ✅' if n_fail == 0 else f'{n_fail} AXES OUT OF BAND ❌'}"
           f"  ({a.render})")
     if a.report:
@@ -156,6 +167,7 @@ def main():
                        max_gap=max_gap, median_shot=med_shot,
                        static_share=static_share, music_coverage=coverage,
                        cards=[dict(beat=i, visual=v, hold=h) for i, v, h in card_rows],
+                       creature_stills=[dict(beat=i, visual=v, hold=h) for i, v, h in still_rows],
                        fails=n_fail), open(a.report, 'w'), indent=1)
         print('wrote', a.report)
     raise SystemExit(1 if n_fail else 0)
