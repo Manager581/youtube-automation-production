@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>REXCAPED · T-Rex Pilot — Design on One Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --orange:#E8631C; --ink:#1A1612; --cream:#F5F3EF; --green:#1E7A3C; --red:#B3261E; --grey:#8A8378; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.55 -apple-system, "Helvetica Neue", Arial, sans-serif; color:var(--ink); background:var(--cream); }
+  .wrap { max-width:980px; margin:0 auto; padding:28px 22px 80px; }
+  header { background:var(--orange); color:var(--cream); margin:-28px -22px 26px; padding:30px 22px 22px; }
+  header h1 { margin:0 0 4px; font-size:30px; letter-spacing:.5px; text-transform:uppercase; }
+  header p { margin:0; opacity:.92; }
+  h2 { font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:6px; margin:42px 0 14px; }
+  img.full { width:100%; border-radius:6px; display:block; }
+  .cap { font-size:13px; color:var(--grey); margin:6px 0 0; }
+  table { border-collapse:collapse; width:100%; font-size:14.5px; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid #DDD6CC; vertical-align:top; }
+  th { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey); }
+  .ok { color:var(--green); font-weight:700; }
+  .bad { color:var(--red); font-weight:700; }
+  .warn { color:#B26A00; font-weight:700; }
+  .chip { display:inline-block; padding:2px 9px; border-radius:99px; font-size:12.5px; font-weight:700; letter-spacing:.5px; }
+  .chip.g { background:#DDEEDF; color:var(--green); } .chip.o { background:#FBE3CF; color:#A14708; }
+  .chip.x { background:#F4D9D7; color:var(--red); } .chip.n { background:#E7E2D9; color:var(--grey); }
+  code { background:#EDE7DC; padding:1px 6px; border-radius:4px; font-size:13px; }
+  .flow { display:flex; flex-wrap:wrap; gap:8px; align-items:stretch; margin:14px 0 4px; }
+  .node { background:#fff; border:2px solid var(--ink); border-radius:8px; padding:9px 12px; font-size:13.5px; flex:1 1 150px; min-width:150px; }
+  .node b { display:block; font-size:13px; }
+  .node small { color:var(--grey); }
+  .node.gate { border-color:var(--orange); background:#FFF3EA; }
+  .node.owner { background:var(--ink); color:var(--cream); border-color:var(--ink); }
+  .arrow { align-self:center; font-size:18px; color:var(--orange); font-weight:900; }
+  .dead { border:2px dashed var(--red); border-radius:8px; padding:8px 12px; color:var(--red); font-size:13.5px; margin-top:10px; background:#FBF1F0; }
+  .threeq { background:var(--ink); color:var(--cream); border-radius:8px; padding:14px 18px; margin:16px 0; }
+  .threeq b { color:#F7A871; }
+  ol.road li { margin:7px 0; }
+  .you { background:var(--orange); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:1px 7px; border-radius:4px; vertical-align:1px; }
+  .cl { background:#5B5448; color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:1px 7px; border-radius:4px; vertical-align:1px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Rexcaped · T-Rex Pilot — the design on one page</h1>
+  <p>What we're making, what "approved" means in numbers, the machine that builds it, and where every piece stands. Updated <b>2026-06-12</b>. Sessions: keep this page current when status changes.</p>
+</header>
+
+<h2>1 · What we're making</h2>
+<p>A ~6-minute creature documentary: <b>"You wake up as a T-Rex in modern New York."</b> Mark's VO narrates survival in second person. The video is built chapter by chapter — you bless each chapter before the next is built:</p>
+<p><b>HOOK</b> (0–15s, hero stills + orange cards) → <b>CH1 · THE BODY</b> (size, falling, hunger, senses, speed) → <b>CH2</b> → <b>CH3</b> → <b>CTA / flywheel cards</b> (TRENDING #1 · WHO'S NEXT? · Megalodon tease). Style target = the measured grammar of the viral reference (<code>research/viral_recreation_spec.md</code>), not taste.</p>
+
+<h2>2 · The approved look (these are the blessed pixels)</h2>
+<img class="full" src="research/design_assets/hook_v4_strip.jpg" alt="hook strip">
+<p class="cap"><b>The hook you blessed:</b> photoreal hero stills, world-consistent creature, stat chips riding ON the shot (40 FT / 9 TONS), ink-gag punchlines, warm cinematic light.</p>
+<img class="full" style="margin-top:14px" src="research/design_assets/body_reveal_devices.jpg" alt="body reveal devices">
+<p class="cap"><b>The illustrated stats you directed:</b> every number plays as a scene ON the word — 13 FT vertical tape beside the stomping creature, pivot to side profile for 40 FT, hard cut to the bus-on-a-scale for 9 TONS. Tape / gauge / scale / speedometer / reticle — never a flat fact.</p>
+<img class="full" style="margin-top:14px" src="research/design_assets/orange_cards.jpg" alt="orange card system">
+<p class="cap"><b>The orange card system:</b> bright orange canvas, ink type, REXCAPED header, boiling emblem — zero black cards. Behavior rule: cards are <b>animated typewriter flashes (~2s)</b> or chips on the shot — never a full-frame static hold.</p>
+<div class="threeq">
+  <b>YOUR 3-QUESTION TEST</b> (how you judge any render): &nbsp;1️⃣ Is the creature <b>different</b> in each shot? &nbsp;2️⃣ Does it <b>move</b> (not Ken-Burns-on-a-still)? &nbsp;3️⃣ When a stat is spoken, is its <b>device on screen</b> at that word?
+</div>
+
+<h2>3 · "Done" is a number, not a vibe — the style bands</h2>
+<p>Source: <code>research/style_bands.json</code> · enforced by <code>scripts/gate_style.py</code>. A render is DONE only when <code>gate_ch1.py</code> (sync · motion · subject) <b>and</b> <code>gate_style.py</code> are both green — no session may invent a new gate or redefine done in prose.</p>
+<table>
+  <tr><th>Axis</th><th>Band (approved)</th><th>CH1 today</th><th>Hook today</th></tr>
+  <tr><td>Visual events / min</td><td>≥ 25 (winner ≈ 28)</td><td class="ok">26.2 ✓</td><td class="bad">21.6 ✗ (top-up queued)</td></tr>
+  <tr><td>Longest gap w/o an event</td><td>≤ 6s</td><td class="ok">6.0 ✓</td><td class="ok">5.7 ✓</td></tr>
+  <tr><td>Median shot length</td><td>1.5 – 4.0s (winner 2.85)</td><td class="ok">3.17 ✓</td><td class="ok">3.00 ✓</td></tr>
+  <tr><td>Static share of runtime</td><td>≤ 40%</td><td class="ok">19% ✓</td><td class="ok">23% ✓</td></tr>
+  <tr><td>Music bed</td><td>≥ 90% coverage, <b>creature-genre</b></td><td class="bad">✗ wrong bed — Breaking-Law fallback <code>track_01_tense_ducked.wav</code></td><td class="warn">present (level/genre review)</td></tr>
+  <tr><td>Cards</td><td>≤ 6 per chapter · ≤ 2.2s hold · ANIMATED</td><td class="bad">✗ 6 cards but 4 are static holds 3.1–4.6s</td><td class="ok">flash chips ✓</td></tr>
+</table>
+
+<h2>4 · The machine that builds it</h2>
+<div class="flow">
+  <div class="node"><b>VO line</b><small>Mark narration + word timings</small></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>beat_director.py</b><small>your decision rules → shot recipe (tape / scale / gauge / POV…)</small></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>build_ch1_composites.py</b><small>moving cutout composites + devices (composite_beat.py); your body-reveal spliced as-is</small></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>ffmpeg_production_render.py</b><small>assembles VO + SFX + music + cards → MP4</small></div>
+  <div class="arrow">→</div>
+  <div class="node gate"><b>GATE 1 · gate_ch1.py</b><small>sync · motion · subject, per beat</small></div>
+  <div class="arrow">→</div>
+  <div class="node gate"><b>GATE 2 · gate_style.py</b><small>the approved-style bands above</small></div>
+  <div class="arrow">→</div>
+  <div class="node owner"><b>YOU watch the render</b><small>3-question test → bless, or name timestamp + axis</small></div>
+</div>
+<div class="dead">⛔ DEAD END — <code>scripts/build_ch1_auto.py</code> (the "recipe router"): drew from 4 cutouts, same creature every frame. Deprecated; no session may use or "fix" it.</div>
+
+<h2>5 · Status board — 2026-06-12</h2>
+<table>
+  <tr><th>Piece</th><th>State</th><th>What it means</th></tr>
+  <tr><td><b>Hook</b> (0–15s)</td><td><span class="chip o">NEEDS TOP-UP</span></td><td>Blessed look; 21.6 ev/min vs ≥25 — event-layer top-up queued.</td></tr>
+  <tr><td><b>CH1 · THE BODY</b> (2:06)</td><td><span class="chip o">BUILT — AWAITING YOUR VERDICT</span></td><td><code>output/trex_pilot_ch1_body_540p.mp4</code> — variety ✓ motion ✓ devices ✓ SFX ✓. Out of band: static card holds + wrong music bed (fix next).</td></tr>
+  <tr><td><b>Cards animation</b></td><td><span class="chip x">TO BUILD</span></td><td>Typewriter/chip behavior exists in <code>rexcaped_stat_cards.py</code>; wire into the renderer so cards flash ~2s animated.</td></tr>
+  <tr><td><b>Music bed</b></td><td><span class="chip x">YOUR DECISION</span></td><td>Pick creature-genre track(s); replaces the Breaking-Law fallback.</td></tr>
+  <tr><td><b>CH2 · CH3</b></td><td><span class="chip n">NOT BUILT</span></td><td>Same builder + gates, run on those chapters' lines after CH1 bless.</td></tr>
+  <tr><td><b>Full assembly + ship gate</b></td><td><span class="chip n">NOT STARTED</span></td><td>Hook + chapters + CTA, music wall-to-wall, final bands check, 1080p.</td></tr>
+</table>
+<img class="full" style="margin-top:14px" src="research/design_assets/ch1_contact_sheet.jpg" alt="CH1 contact sheet">
+<p class="cap"><b>CH1 as it stands today</b> (1 frame / ~3.5s of <code>trex_pilot_ch1_body_540p.mp4</code>): your body-reveal devices, moving composites, ink gags and orange cards are all in. The two visible debts: those orange cards sit static too long, and the bed under it is the wrong genre.</p>
+
+<h2>6 · The road from here</h2>
+<ol class="road">
+  <li><span class="you">YOU</span> Watch <code>output/trex_pilot_ch1_body_540p.mp4</code> — bless it or give timestamp + which axis fails (variety / motion / device).</li>
+  <li><span class="you">YOU</span> Pick the music bed (creature-genre). <span class="cl">CLAUDE</span> wires it + re-renders.</li>
+  <li><span class="cl">CLAUDE</span> Animate the 6 CH1 cards (typewriter flash ≤2.2s) → re-render → both gates green.</li>
+  <li><span class="cl">CLAUDE</span> Hook event top-up → gate green.</li>
+  <li><span class="cl">CLAUDE</span> Build CH2 through the same machine → gates → <span class="you">YOU</span> bless. Then CH3.</li>
+  <li><span class="cl">CLAUDE</span> Assemble full pilot + CTA cards → final ship gate → 1080p master.</li>
+</ol>
+
+<h2>7 · Where everything lives</h2>
+<table>
+  <tr><td>This page</td><td><code>DESIGN.html</code> (open in any browser)</td></tr>
+  <tr><td>Session starter</td><td><code>START_HERE.md</code> — paste block for any new session</td></tr>
+  <tr><td>Approved bands</td><td><code>research/style_bands.json</code> → <code>scripts/gate_style.py</code></td></tr>
+  <tr><td>Style laws (source)</td><td><code>research/viral_recreation_spec.md</code></td></tr>
+  <tr><td>Your decision rules</td><td><code>research/edit_decision_rulebook.md</code> → <code>scripts/beat_director.py</code></td></tr>
+  <tr><td>Current renders</td><td><code>output/trex_pilot_ch1_body_540p.mp4</code> · <code>output/ch1_contact_sheet.jpg</code> · <code>output/body_reveal_540p.mp4</code></td></tr>
+</table>
+
+</div>
+</body>
+</html>

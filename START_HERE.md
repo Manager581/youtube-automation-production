@@ -1,5 +1,9 @@
 # START HERE — paste the block below into a new session
 
+**Confused about the big picture? Open `DESIGN.html` in a browser** — the whole project on one
+visual page: the approved look (with images), the style bands, the pipeline, current status,
+and the road left. Sessions: update DESIGN.html's status board + date whenever status changes.
+
 You (the owner) do exactly two things:
 1. Open a new Claude Code session in this folder.
 2. Paste everything between the lines below as your first message.
