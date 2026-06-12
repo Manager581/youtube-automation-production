@@ -1,0 +1,14 @@
+{
+  "_source": "research/viral_recreation_spec.md (10 measured laws, DzUKhb2ZSko deep-watch) + owner-blessed artifacts (hook animatic v4 orange-card system, proto_strike, body_reveal). These numbers ARE the approved style. Every render ships only inside these bands. Gate: scripts/gate_style.py",
+  "event_rate_per_min_min": 25.0,
+  "max_event_gap_sec": 6.0,
+  "median_shot_sec_min": 1.5,
+  "median_shot_sec_max": 4.0,
+  "static_share_max": 0.40,
+  "music_coverage_min": 0.90,
+  "music_floor_dbfs": -50.0,
+  "card_hold_sec_max": 2.2,
+  "card_count_max": 6,
+  "card_style": "render_card_orange / render_chip_orange ANIMATED (typewriter ~27 chars/s + boiling emblem) or chip riding the shot — never a full-frame static PNG hold",
+  "_winner_reference": {"event_rate": 28, "hook_event_rate": 36, "median_shot": 2.85, "music_coverage": 0.91, "median_event_gap": 1.77}
+}

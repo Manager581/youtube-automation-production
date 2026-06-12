@@ -15,9 +15,22 @@ THE WORKING CH1 ALREADY EXISTS: `output/trex_pilot_ch1_body_540p.mp4`, built by 
 
 The goal (already mostly met by build_ch1_composites): CH1 must have ALL THREE at once — (1) VARIETY (use the ~36 existing library assets, NOT a tiny cutout pool), (2) MOTION (creature stills composited so they MOVE, never Ken-Burns-on-a-still), (3) DEVICES (the illustrated stats: tape, gauge, scale, speedometer, reticle — already built in composite_beat). AUGMENT the existing varied library; never regenerate visuals from a small pool (NEVER INVENT PARALLEL SOLUTIONS — that's what broke the router).
 
+THE APPROVED STYLE IS A NUMBER, NOT A VIBE. `research/style_bands.json` (sourced from
+`research/viral_recreation_spec.md`) is the owner-approved style as machine-checkable bands.
+`scripts/gate_style.py --render <mp4> --paper-edit <json>` measures any render against it
+(events/min, max event gap, shot length, static share, music coverage, card holds). A render
+is NOT done until BOTH gates are green: `gate_ch1.py` (sync/motion/subject) AND `gate_style.py`
+(the approved style). Do NOT write a new gate; do NOT redefine "done" in prose — that drift is
+exactly what made every handoff produce something the owner never approved. Known current
+fails (measured 2026-06-12): CH1 cards held 3.1–4.6s (band ≤2.2s — cards must become ANIMATED
+typewriter flashes or chips riding the shot, never full-frame static PNG holds); the music bed
+is the Breaking-Law fallback `track_01_tense_ducked.wav` via ffmpeg_production_render.py's
+chapter-map default (owner must pick a creature bed); the blessed hook itself measures
+21.6 events/min vs the ≥25 band (its event-layer top-up is still queued).
+
 NON-NEGOTIABLE RULES (the owner was burned repeatedly by these being broken):
 - I am NOT your QA. Never tell me something is "done," "fixed," or "QA-clean."
-- After you build, run the content gate AND make a contact sheet (1 frame / ~5s) and LOOK at it yourself. Only show me a render you have ALREADY watched and confirmed is varied + moving + the visual matches the spoken words.
+- After you build, run BOTH gates AND make a contact sheet (1 frame / ~5s) and LOOK at it yourself. Only show me a render you have ALREADY watched and confirmed is varied + moving + the visual matches the spoken words.
 - Do NOT ask me to validate a spec, config, or plan — I can only judge watchable output.
 - Every fix reasoned on paper last session was wrong; the render is the only source of truth. Verify by looking, not by claiming.
 
