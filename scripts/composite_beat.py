@@ -166,8 +166,12 @@ def motion(preset, t, imp, tune=None):
         bob = math.sin(t * 2.6) * 5
         return s, W / 2 + int(30 * math.sin(t * .6)), H * .60 + bob, 0, 0, 0
     if preset == 'macro_drift':                            # frame-filling macro that BREATHES
-        s = 1.10 + .05 * math.sin(t * 1.5) + .06 * smooth(t, 0, imp)
-        return (s, W * .56 + 10 * math.sin(t * .5), H * .52 + 6 * math.sin(t * .9), 0, 0, 0)
+        # tune cx/cy/s (frame fractions) place a self-layered cutout 1:1 over
+        # its own plate so the layer swims against the bg push (glass, cart)
+        tn = tune or {}
+        s = tn.get('s', 1.10) * (1 + .045 * math.sin(t * 1.5) + .055 * smooth(t, 0, imp))
+        return (s, W * tn.get('cx', .56) + 10 * math.sin(t * .5),
+                H * tn.get('cy', .52) + 6 * math.sin(t * .9), 0, 0, 0)
     if preset == 'pov_edge':                               # foreground head pinned frame-left (POV)
         s = 1.00 + .05 * smooth(t, 0, imp)
         bob = math.sin(t * 2.2) * 6
@@ -464,6 +468,56 @@ CONFIGS = {
         cutout=ROOT / 'assets/trex_pilot/cutouts/ch_trex_lowangle_taxis_cut.png',
         motion='loom', camera='push', sway=.55, impact='furnace', align=ALIGN,
         sfx=[dict(t=.1, name='rumble_01_loud.wav', vol=.5)]),
+
+    # ── still→composite conversions (owner rule: zero Ken-Burns creature stills;
+    # every creature beat is a layered composite or footage) ──
+    'ch1_statue': dict(                        # "two-legged animal — but here is the catch"
+        # self-layered on its own winter plate (s_taxi_wall bg = autumn, world break)
+        bg_still=str(ROOT / 'assets/trex_pilot/body_stills/c_statue_still.png'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_statue_still_cut.png',
+        motion='macro_drift', camera='push', sway=.5, impact='catch', align=ALIGN,
+        tune=dict(cx=.490, cy=.484, s=.862),
+        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.5),
+             dict(word='catch', name='impact_01_loud.wav', vol=.55)]),
+    'ch1_arms': dict(                          # "your arms — those famously (tiny)"
+        bg_video=str(ROOT / 'footage/trex_pilot/stock/s_snow_flurry.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_tiny_arms_cut.png',
+        motion='macro_drift', camera='push', sway=.4, impact='arms', align=ALIGN,
+        fog=False,
+        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.45),
+             dict(word='arms', name='impact_01_loud.wav', vol=.5)]),
+    'ch1_down': dict(                          # "cannot push you back up" — downed struggle
+        bg_video=str(ROOT / 'footage/trex_pilot/dunk_nyc_wet_asphalt.mp4'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_trip_stumble_cut.png',
+        motion='stumble', camera='handheld', impact=.45,
+        tune=dict(down_s=.78, down_y=.66, down_rot=-36),
+        sfx=[dict(t=.45, name='body_impact_01_loud.wav', vol=.6),
+             dict(t=.45, name='rumble_03_loud.wav', vol=.5),
+             dict(t=1.7, name='impact_02_loud.wav', vol=.35)]),
+    'ch1_cart': dict(                          # "food than this entire street will offer up"
+        bg_still=str(ROOT / 'assets/trex_pilot/body_stills/c_food_cart.png'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_food_cart_trex_cut.png',
+        motion='macro_drift', camera='push', sway=.45, impact='street', align=ALIGN,
+        tune=dict(cx=.727, cy=.346, s=.468),
+        graphic='reticle', reticle_xy=(.40, .62), reticle_track=True,
+        reticle_hold=True, reticle_in=.25,
+        sfx=[dict(t=.1, name='rumble_02_loud.wav', vol=.45),
+             dict(word='street', name='impact_01_loud.wav', vol=.55)]),
+    'ch1_glass': dict(                         # "to hunt here. Constantly." — reflection swims
+        bg_still=str(ROOT / 'assets/trex_pilot/body_stills/c_glass_reflection.png'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_glass_refl_cut.png',
+        motion='macro_drift', camera='push', sway=.5, impact='constantly', align=ALIGN,
+        fog=False, tune=dict(cx=.455, cy=.348, s=.695),
+        sfx=[dict(t=.2, name='shimmer_01_loud.wav', vol=.45),
+             dict(word='constantly', name='impact_01_loud.wav', vol=.5)]),
+    'ch1_crowdup': dict(                       # "four million strangers" — POV down at crowd
+        bg_still=str(ROOT / 'assets/trex_pilot/body_stills/c_pov_crowd_up.png'),
+        cutout=ROOT / 'assets/trex_pilot/cutouts/c_pov_pick_head_cut.png',
+        motion='pov_edge', camera='push', sway=.6, impact='million', align=ALIGN,
+        fog=False,
+        text=[dict(word='million', msg='4,000,000 STRANGERS', y=.26, size=92, hold=9)],
+        sfx=[dict(t=.3, name='shimmer_01_loud.wav', vol=.4),
+             dict(word='million', name='impact_01_loud.wav', vol=.6)]),
 }
 
 if __name__ == '__main__':

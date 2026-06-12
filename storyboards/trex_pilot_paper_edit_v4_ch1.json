@@ -583,17 +583,28 @@
       "start_sec": 92.002,
       "end_sec": 95.482,
       "duration": 3.48,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_statue_still.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_statue.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "two-legged animal \u2014 but here is the catch",
-      "asset": "stock",
+      "asset": "creature",
       "why": "stat",
       "sfx": "whoosh",
-      "src_offset": 0
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_02_loud.wav"
+        },
+        {
+          "word": "catch",
+          "t": 2.94,
+          "sfx": "impact_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0034",
@@ -656,34 +667,60 @@
       "start_sec": 104.122,
       "end_sec": 107.422,
       "duration": 3.3,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_tiny_arms_macro.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_arms.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "own skull, and your arms \u2014 those famously",
-      "asset": "meme",
+      "asset": "creature",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_02_loud.wav"
+        },
+        {
+          "word": "arms",
+          "t": 1.66,
+          "sfx": "impact_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0038",
       "start_sec": 107.422,
       "end_sec": 111.143,
       "duration": 3.721,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_trip_stumble.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_down.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "tiny arms \u2014 cannot push you back up.",
-      "asset": "stock",
+      "asset": "creature",
       "why": "timer",
       "sfx": "whoosh",
-      "src_offset": 0
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.45,
+          "sfx": "body_impact_01_loud.wav"
+        },
+        {
+          "t": 0.45,
+          "sfx": "rumble_03_loud.wav"
+        },
+        {
+          "t": 1.7,
+          "sfx": "impact_02_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0039",
@@ -827,17 +864,29 @@
       "start_sec": 134.323,
       "end_sec": 136.463,
       "duration": 2.14,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_food_cart.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_cart.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "food than this entire street will offer up",
-      "asset": "meme",
+      "asset": "creature",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.1,
+          "sfx": "rumble_02_loud.wav"
+        },
+        {
+          "word": "street",
+          "t": 1.14,
+          "sfx": "impact_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0048",
@@ -877,17 +926,29 @@
       "start_sec": 140.283,
       "end_sec": 143.863,
       "duration": 3.58,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_glass_reflection.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_glass.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "to hunt here. Constantly. In a place built",
-      "asset": "meme",
+      "asset": "creature",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.2,
+          "sfx": "shimmer_01_loud.wav"
+        },
+        {
+          "word": "constantly",
+          "t": 1.18,
+          "sfx": "impact_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0051",
@@ -910,33 +971,46 @@
       "start_sec": 145.663,
       "end_sec": 148.943,
       "duration": 3.28,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_pov_crowd_up.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/output/composite_beats/ch1_crowdup.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 1.5,
       "chapter": "REXCAPED PILOT",
       "text": "four million strangers. But you did",
-      "asset": "stat_card",
+      "asset": "creature",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "src_offset": 0,
+      "events": [
+        {
+          "t": 0.3,
+          "sfx": "shimmer_01_loud.wav"
+        },
+        {
+          "word": "million",
+          "t": 0.32,
+          "sfx": "impact_01_loud.wav"
+        }
+      ]
     },
     {
       "beat_id": "beat_0053",
       "start_sec": 148.943,
       "end_sec": 152.203,
       "duration": 3.26,
-      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/trex_pilot/body_stills/c_hide_macro.png",
-      "visual_type": "image",
+      "visual_file": "/Users/jefflawrence/Documents/youtube-automation-production/footage/trex_pilot/dunk_trex_jaws_teeth.mp4",
+      "visual_type": "video",
       "clip_audio": "mute",
       "tension_level": 0.6,
-      "zoom_speed_pct_per_sec": 3.0,
+      "zoom_speed_pct_per_sec": 0.0,
       "chapter": "REXCAPED PILOT",
       "text": "not rule a world by being fragile. You",
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "src_offset": 0
     },
     {
       "beat_id": "beat_0054",
@@ -2201,7 +2275,13 @@
       "ch1_nostril",
       "ch1_povpick",
       "ch1_speed",
-      "ch1_loom"
+      "ch1_loom",
+      "ch1_statue",
+      "ch1_arms",
+      "ch1_down",
+      "ch1_cart",
+      "ch1_glass",
+      "ch1_crowdup"
     ]
   },
   "_version": "v3_mark"

@@ -68,23 +68,42 @@ SPLICES = [
                  dict(word='twelve', sfx='impact_01_loud.wav')]),
     dict(cfg='ch1_loom', beats=[65],
          events=[dict(t=.1, sfx='rumble_02_loud.wav')]),
+    # ── still→composite conversions (owner rule: zero Ken-Burns creature stills) ──
+    dict(cfg='ch1_statue', beats=[33],
+         events=[dict(t=.1, sfx='rumble_02_loud.wav'),
+                 dict(word='catch', sfx='impact_01_loud.wav')]),
+    dict(cfg='ch1_arms', beats=[37],
+         events=[dict(t=.1, sfx='rumble_02_loud.wav'),
+                 dict(word='arms', sfx='impact_01_loud.wav')]),
+    dict(cfg='ch1_down', beats=[38],
+         events=[dict(t=.45, sfx='body_impact_01_loud.wav'),
+                 dict(t=.45, sfx='rumble_03_loud.wav'),
+                 dict(t=1.7, sfx='impact_02_loud.wav')]),
+    dict(cfg='ch1_cart', beats=[47],
+         events=[dict(t=.1, sfx='rumble_02_loud.wav'),
+                 dict(word='street', sfx='impact_01_loud.wav')]),
+    dict(cfg='ch1_glass', beats=[50],
+         events=[dict(t=.2, sfx='shimmer_01_loud.wav'),
+                 dict(word='constantly', sfx='impact_01_loud.wav')]),
+    dict(cfg='ch1_crowdup', beats=[52],
+         events=[dict(t=.3, sfx='shimmer_01_loud.wav'),
+                 dict(word='million', sfx='impact_01_loud.wav')]),
 ]
 
 # noun-fix retargets within the existing library (no renders): visual_file swaps
 # that put the spoken noun on screen and cut the card count to the spec budget.
 RETARGETS = [
     (31, 'footage/trex_pilot/dunk_trex_stride_avenue.mp4', 'video'),  # "a single stride" (was arc graphic)
-    (37, 'assets/trex_pilot/body_stills/c_tiny_arms_macro.png', 'image'),  # "famously tiny arms" macro (i_arms art = duplicate of i_uhoh)
     (39, 'assets/trex_pilot/body_stills/i_uhoh.png', 'image'),        # "falling = dying" -> UH OH ink gag
     (49, 'footage/trex_pilot/dunk_trex_taxi_hunt.mp4', 'video'),      # "you have to hunt here"
-    (52, 'assets/trex_pilot/body_stills/c_pov_crowd_up.png', 'image'),  # "four million strangers" staring up (world-consistent)
+    (53, 'footage/trex_pilot/dunk_trex_jaws_teeth.mp4', 'video'),     # "not... fragile" -> jaws/teeth (hide macro had no cuttable subject)
     (60, 'footage/trex_pilot/stock/s_phones_up.mp4', 'video'),        # "ten thousand people" sea of lights (crowd_mass = CNBC interview, unusable)
 ]
 
-# creature PHOTO stills must never sit frozen (zoom 0 = the static-lazy read the
-# owner rejected). Cards / ink gags (g_*, i_*, card_*) stay zoom-0 flash-holds by
-# design — that's the winner's card grammar.
-ZOOM_FIXES = [33, 37, 38, 47, 50, 52, 53]  # statue, arms-macro, trip_stumble, food_cart, glass_refl, crowd_up, hide
+# All creature stills are now SPLICED as composites (owner rule: zero
+# Ken-Burns-on-a-still). Cards / ink gags (g_*, i_*, card_*) stay zoom-0
+# flash-holds by design — that's the winner's card grammar.
+ZOOM_FIXES = []
 
 
 def main():
