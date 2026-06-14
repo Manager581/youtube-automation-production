@@ -1,0 +1,21 @@
+{
+  "_note": "Spinosaurus/Lagos HOOK creature shots for local LTX i2v (free). Each shot id must match a still <id>.png in assets/spino_lagos/hook_stills/. Generated via scripts/gen_dunk_clips.py --i2v. Output footage/spino_lagos/dunk_<id>.mp4.",
+  "shots": [
+    {
+      "id": "c_spino_hero",
+      "i2v_prompt": "the massive Spinosaurus surges up and forward through the brown lagoon water, jaws parting, water pouring off its tall sail and body, slow powerful cinematic motion, camera steady"
+    },
+    {
+      "id": "c_spino_jaws_macro",
+      "i2v_prompt": "extreme close-up, the long crocodile jaws of the Spinosaurus open and the head turns slightly, water dripping from the conical teeth, breathing motion, cinematic, camera steady"
+    },
+    {
+      "id": "c_spino_side",
+      "i2v_prompt": "the Spinosaurus strides forward through the shallow brown lagoon in side profile, legs stepping, body and tail swaying, sail rocking slightly, slow powerful wading walk, water rippling, cinematic, camera steady"
+    },
+    {
+      "id": "c_spino_lunge",
+      "i2v_prompt": "the Spinosaurus lunges explosively forward and up out of the water toward the camera, jaws snapping, water bursting and spraying outward, fast aggressive strike, cinematic"
+    }
+  ]
+}
