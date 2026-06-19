@@ -31,6 +31,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from provenance import cfg_signature
 FPS, W, H = 30, 960, 540
 INK, ORANGE, YELLOW = (16, 13, 10), (245, 130, 32), (255, 209, 40)
 SFX = ROOT / 'assets/sfx'
@@ -199,6 +201,7 @@ def load_audio(p):
 
 
 def render_beat(cfg, out_mp4):
+    _orig = dict(cfg)                                      # recipe identity, pre-resolve
     cfg = resolve_cues(dict(cfg))
     dur = cfg.get('duration') or (cfg['window'][1] - cfg['window'][0])
     N = max(int(round(dur * FPS)), 2)
@@ -376,6 +379,9 @@ def render_beat(cfg, out_mp4):
                     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18',
                     '-c:a', 'aac', '-shortest', str(out_mp4)], check=True)
     print('wrote', out_mp4)
+    prov = cfg_signature(_orig, recipe=_orig.get('_recipe'))   # stamp at the choke point
+    Path(str(out_mp4) + '.prov.json').write_text(json.dumps(prov, indent=2))
+    return prov
 
 
 ALIGN = str(ROOT / 'audio/trex_pilot/narration_11l_mark_whisperx.json')

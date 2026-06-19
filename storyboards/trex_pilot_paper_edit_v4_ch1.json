@@ -13,7 +13,18 @@
       "zoom_speed_pct_per_sec": 0.8,
       "sfx": "impact_hit",
       "beat_id": "beat_0000",
-      "text": "You are the closest thing the ancient world ever built to"
+      "text": "You are the closest thing the ancient world ever built to",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ch_trex_avenue_wide.png",
+        "approved": false
+      }
     },
     {
       "clip_audio": "mute",
@@ -36,7 +47,18 @@
         }
       ],
       "beat_id": "beat_0001",
-      "text": "a perfect killing machine."
+      "text": "a perfect killing machine.",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ch_trex_lowangle_taxis.png",
+        "approved": false
+      }
     },
     {
       "clip_audio": "mute",
@@ -76,7 +98,18 @@
         }
       ],
       "beat_id": "beat_0002",
-      "text": "Forty feet long. Nine"
+      "text": "Forty feet long. Nine",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ch_trex_walkaway_crowd.png",
+        "approved": false
+      }
     },
     {
       "clip_audio": "mute",
@@ -109,7 +142,18 @@
         }
       ],
       "beat_id": "beat_0003",
-      "text": "tons. A skull the size of a bathtub, packed with sixty"
+      "text": "tons. A skull the size of a bathtub, packed with sixty",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ch_skull_bathtub.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0004",
@@ -124,7 +168,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "whoosh",
-      "text": "teeth, some of them"
+      "text": "teeth, some of them",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_jaws_teeth.mp4"
+        ],
+        "rendered_file": "dunk_trex_jaws_teeth.mp4",
+        "approved": false
+      }
     },
     {
       "clip_audio": "mute",
@@ -157,7 +214,20 @@
         }
       ],
       "beat_id": "beat_0005",
-      "text": "twelve inches long and serrated like steak knives. You can bite down with"
+      "text": "twelve inches long and serrated like steak knives. You can bite down with",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_helicopters_night.mp4"
+        ],
+        "rendered_file": "dunk_trex_helicopters_night.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0006",
@@ -173,7 +243,20 @@
       "asset": "animatic",
       "sfx": "impact",
       "enter": "slam",
-      "text": "twelve"
+      "text": "twelve",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/intro_cards/card_bite.png"
+        ],
+        "rendered_file": "card_bite.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0007",
@@ -189,7 +272,20 @@
       "asset": "animatic",
       "enter": "slam",
       "sfx": "whoosh",
-      "text": "thousand"
+      "text": "thousand",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/intro_cards/card_bite.png"
+        ],
+        "rendered_file": "card_bite.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0008",
@@ -205,7 +301,20 @@
       "asset": "animatic",
       "sfx": "whoosh",
       "enter": "slam",
-      "text": "eight"
+      "text": "eight",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/intro_cards/card_bite.png"
+        ],
+        "rendered_file": "card_bite.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0009",
@@ -221,7 +330,20 @@
       "asset": "animatic",
       "enter": "slam",
       "sfx": "whoosh",
-      "text": "hundred"
+      "text": "hundred",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/intro_cards/card_bite.png"
+        ],
+        "rendered_file": "card_bite.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0010",
@@ -237,7 +359,18 @@
       "asset": "animatic",
       "sfx": "impact",
       "enter": "slam",
-      "text": "pounds of force \u2014 enough to crush a car door, splinter"
+      "text": "pounds of force \u2014 enough to crush a car door, splinter",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ch_door_crush.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0011",
@@ -252,7 +385,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "impact_hit",
-      "text": "solid bone, and tear off"
+      "text": "solid bone, and tear off",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_jaws_teeth.mp4"
+        ],
+        "rendered_file": "dunk_trex_jaws_teeth.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0012",
@@ -268,7 +414,20 @@
       "asset": "animatic",
       "sfx": "impact",
       "enter": "slam",
-      "text": "five hundred pounds of meat"
+      "text": "five hundred pounds of meat",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/intro_cards/card_500.png"
+        ],
+        "rendered_file": "card_500.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0013",
@@ -283,7 +442,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "whoosh",
-      "text": "in a single pull."
+      "text": "in a single pull.",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_pier_river.mp4"
+        ],
+        "rendered_file": "dunk_trex_pier_river.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0014",
@@ -299,7 +471,18 @@
       "asset": "animatic",
       "sfx": "whoosh",
       "enter": "slam",
-      "text": "And when a tooth snaps off in the kill, you simply grow another."
+      "text": "And when a tooth snaps off in the kill, you simply grow another.",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ink_gag_tooth.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0015",
@@ -314,7 +497,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "impact_hit",
-      "text": "Nothing in your world ever walked away from you."
+      "text": "Nothing in your world ever walked away from you.",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_wake_cold.mp4"
+        ],
+        "rendered_file": "dunk_trex_wake_cold.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0016",
@@ -330,7 +526,18 @@
       "asset": "animatic",
       "sfx": "whoosh",
       "enter": "slam",
-      "text": "But your world is gone."
+      "text": "But your world is gone.",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ch_floodplain_warm.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0017",
@@ -345,7 +552,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "whoosh",
-      "text": "Today, you wake up here. Not on the warm floodplain your body was designed for,"
+      "text": "Today, you wake up here. Not on the warm floodplain your body was designed for,",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_nyc_skyline_dawn.mp4"
+        ],
+        "rendered_file": "dunk_nyc_skyline_dawn.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0018",
@@ -360,7 +580,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "whoosh",
-      "text": "but in the middle of Manhattan, in February, at"
+      "text": "but in the middle of Manhattan, in February, at",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_taxi_hunt.mp4"
+        ],
+        "rendered_file": "dunk_trex_taxi_hunt.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0019",
@@ -376,7 +609,20 @@
       "asset": "animatic",
       "sfx": "impact",
       "enter": "slam",
-      "text": "four degrees above freezing."
+      "text": "four degrees above freezing.",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/intro_cards/card_cold.png"
+        ],
+        "rendered_file": "card_cold.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0020",
@@ -391,7 +637,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "whoosh",
-      "text": "The first thing you feel is the cold."
+      "text": "The first thing you feel is the cold.",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_nyc_snow_macro.mp4"
+        ],
+        "rendered_file": "dunk_nyc_snow_macro.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0021",
@@ -406,7 +665,20 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "impact",
-      "text": "The second thing you feel is the ground \u2014"
+      "text": "The second thing you feel is the ground \u2014",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/anim/card_second_type.mp4"
+        ],
+        "rendered_file": "card_second_type.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0022",
@@ -422,7 +694,18 @@
       "asset": "animatic",
       "sfx": "whoosh",
       "enter": "slam",
-      "text": "flat, gray, and harder than any stone you have ever stood on."
+      "text": "flat, gray, and harder than any stone you have ever stood on.",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "ink_gag_ground.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0023",
@@ -437,7 +720,18 @@
       "chapter": "REXCAPED PILOT",
       "asset": "animatic",
       "sfx": "impact",
-      "text": ""
+      "text": "",
+      "provenance": {
+        "traced": false,
+        "class": "inherited",
+        "recipe": "inherited_v3_mark",
+        "engine": null,
+        "builder": null,
+        "params_hash": null,
+        "inputs": [],
+        "rendered_file": "emblem_boil.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0024",
@@ -453,7 +747,20 @@
       "text": "Remember that ground. It is going to matter",
       "asset": "creature",
       "why": "pause",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_wake_cold.mp4"
+        ],
+        "rendered_file": "dunk_trex_wake_cold.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0025",
@@ -470,7 +777,20 @@
       "asset": "meme",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_ground_warn.png"
+        ],
+        "rendered_file": "g_ground_warn.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0026",
@@ -535,7 +855,20 @@
           "t": 10.66,
           "sfx": "impact_new_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "prebuilt_composite",
+        "recipe": "body_reveal",
+        "engine": "composite_beat (prebuilt clip)",
+        "builder": "build_body_reveal.py",
+        "params_hash": null,
+        "inputs": [
+          "output/body_reveal_540p.mp4"
+        ],
+        "rendered_file": "body_reveal_540p.mp4",
+        "approved": true
+      }
     },
     {
       "beat_id": "beat_0031",
@@ -553,7 +886,20 @@
       "why": "pause",
       "sfx": "whoosh",
       "enter": "slam",
-      "src_offset": 0
+      "src_offset": 0,
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_stride_avenue.mp4"
+        ],
+        "rendered_file": "dunk_trex_stride_avenue.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0032",
@@ -576,7 +922,21 @@
           "t": 0.1,
           "sfx": "rumble_03_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_legs",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "3a68982442f8",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_pier_feet_cut.png",
+          "footage/trex_pilot/dunk_nyc_snow_macro.mp4"
+        ],
+        "rendered_file": "ch1_legs.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0033",
@@ -604,7 +964,21 @@
           "t": 2.94,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_statue",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "60863eeaed24",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_statue_still_cut.png",
+          "assets/trex_pilot/body_stills/c_statue_still.png"
+        ],
+        "rendered_file": "ch1_statue.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0034",
@@ -620,7 +994,20 @@
       "text": "nobody tells you. You cannot fall.",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_eye_detail.mp4"
+        ],
+        "rendered_file": "dunk_trex_eye_detail.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0035",
@@ -660,7 +1047,21 @@
           "t": 1.84,
           "sfx": "rumble_03_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_stumble",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "007ec3195ee1",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_trip_stumble_cut.png",
+          "footage/trex_pilot/dunk_nyc_wet_asphalt.mp4"
+        ],
+        "rendered_file": "ch1_stumble.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0037",
@@ -689,7 +1090,21 @@
           "t": 1.66,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_arms",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "144d3e329294",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_tiny_arms_cut.png",
+          "footage/trex_pilot/stock/s_snow_flurry.mp4"
+        ],
+        "rendered_file": "ch1_arms.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0038",
@@ -720,7 +1135,21 @@
           "t": 1.7,
           "sfx": "impact_02_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_down",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "f275764a7de5",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_trip_stumble_cut.png",
+          "footage/trex_pilot/dunk_nyc_wet_asphalt.mp4"
+        ],
+        "rendered_file": "ch1_down.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0039",
@@ -737,7 +1166,20 @@
       "asset": "creature",
       "why": "timer",
       "sfx": "impact_hit",
-      "src_offset": 0
+      "src_offset": 0,
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/i_uhoh.png"
+        ],
+        "rendered_file": "i_uhoh.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0040",
@@ -753,7 +1195,20 @@
       "text": "And the entire city you just landed in",
       "asset": "stock",
       "why": "pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_nyc_wet_asphalt.mp4"
+        ],
+        "rendered_file": "dunk_nyc_wet_asphalt.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0041",
@@ -769,7 +1224,20 @@
       "text": "is paved in wet, flat concrete.",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_nyc_wet_asphalt.mp4"
+        ],
+        "rendered_file": "dunk_nyc_wet_asphalt.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0042",
@@ -785,7 +1253,20 @@
       "text": "There is a second problem, and it is hungrier.",
       "asset": "stock",
       "why": "pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_nyc_avenue_taxis.mp4"
+        ],
+        "rendered_file": "dunk_nyc_avenue_taxis.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0043",
@@ -808,7 +1289,21 @@
           "t": 0.1,
           "sfx": "rumble_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_furnace",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "592a16b9105f",
+        "inputs": [
+          "assets/trex_pilot/cutouts/ch_trex_lowangle_taxis_cut.png",
+          "footage/trex_pilot/dunk_nyc_avenue_taxis.mp4"
+        ],
+        "rendered_file": "ch1_furnace.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0044",
@@ -824,7 +1319,20 @@
       "text": "it never stops burning. To stay alive, you",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_pier_river.mp4"
+        ],
+        "rendered_file": "dunk_trex_pier_river.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0045",
@@ -841,7 +1349,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_meat_meter.png"
+        ],
+        "rendered_file": "g_meat_meter.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0046",
@@ -857,7 +1378,20 @@
       "text": "pounds of meat every few days \u2014 more",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0046.png"
+        ],
+        "rendered_file": "card_s0046.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0047",
@@ -886,7 +1420,21 @@
           "t": 1.14,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_cart",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "e1b69f26f494",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_food_cart_trex_cut.png",
+          "assets/trex_pilot/body_stills/c_food_cart.png"
+        ],
+        "rendered_file": "ch1_cart.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0048",
@@ -902,7 +1450,20 @@
       "text": "without a fight.",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_barricade.mp4"
+        ],
+        "rendered_file": "s_barricade.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0049",
@@ -919,7 +1480,20 @@
       "asset": "creature",
       "why": "turn+pause",
       "sfx": "impact_hit",
-      "src_offset": 0
+      "src_offset": 0,
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_taxi_hunt.mp4"
+        ],
+        "rendered_file": "dunk_trex_taxi_hunt.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0050",
@@ -948,7 +1522,21 @@
           "t": 1.18,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_glass",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "27325ff889c2",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_glass_refl_cut.png",
+          "assets/trex_pilot/body_stills/c_glass_reflection.png"
+        ],
+        "rendered_file": "ch1_glass.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0051",
@@ -964,7 +1552,20 @@
       "text": "out of glass, steel, and",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_glass_tower.mp4"
+        ],
+        "rendered_file": "s_glass_tower.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0052",
@@ -992,7 +1593,21 @@
           "t": 0.32,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_crowdup",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "5b9b996df620",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_pov_pick_head_cut.png",
+          "assets/trex_pilot/body_stills/c_pov_crowd_up.png"
+        ],
+        "rendered_file": "ch1_crowdup.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0053",
@@ -1010,7 +1625,20 @@
       "why": "timer",
       "sfx": "whoosh",
       "enter": "slam",
-      "src_offset": 0
+      "src_offset": 0,
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_jaws_teeth.mp4"
+        ],
+        "rendered_file": "dunk_trex_jaws_teeth.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0054",
@@ -1038,7 +1666,21 @@
           "t": 3.721,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_nostril",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "f4590e4eacce",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_nostril_smoke_cut.png",
+          "footage/trex_pilot/stock/s_diesel_smoke.mp4"
+        ],
+        "rendered_file": "ch1_nostril.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0056",
@@ -1055,7 +1697,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_smell_map.png"
+        ],
+        "rendered_file": "g_smell_map.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0057",
@@ -1071,7 +1726,20 @@
       "text": "mile away, through traffic, through smoke, through ten",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0057.png"
+        ],
+        "rendered_file": "card_s0057.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0058",
@@ -1088,7 +1756,20 @@
       "asset": "meme",
       "why": "timer",
       "sfx": "whoosh",
-      "src_offset": 0
+      "src_offset": 0,
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_eye_detail.mp4"
+        ],
+        "rendered_file": "dunk_trex_eye_detail.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0059",
@@ -1104,7 +1785,20 @@
       "text": "hawk's, and they resolve detail",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_hawk_eye.mp4"
+        ],
+        "rendered_file": "s_hawk_eye.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0060",
@@ -1121,7 +1815,20 @@
       "asset": "stat_card",
       "why": "stat",
       "sfx": "impact",
-      "src_offset": 0
+      "src_offset": 0,
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_phones_up.mp4"
+        ],
+        "rendered_file": "s_phones_up.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0061",
@@ -1150,7 +1857,21 @@
           "t": 1.82,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_povpick",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "dc1c2e120379",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_pov_pick_head_cut.png",
+          "assets/trex_pilot/body_stills/c_pov_pick.png"
+        ],
+        "rendered_file": "ch1_povpick.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0062",
@@ -1179,7 +1900,21 @@
           "t": 3.1,
           "sfx": "impact_01_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_speed",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "3aba26e8a89a",
+        "inputs": [
+          "assets/trex_pilot/cutouts/ch_trex_avenue_wide_cut.png",
+          "footage/trex_pilot/dunk_nyc_snow_street.mp4"
+        ],
+        "rendered_file": "ch1_speed.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0064",
@@ -1196,7 +1931,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/i_leg_xray.png"
+        ],
+        "rendered_file": "i_leg_xray.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0065",
@@ -1220,7 +1968,21 @@
           "t": 0.1,
           "sfx": "rumble_02_loud.wav"
         }
-      ]
+      ],
+      "provenance": {
+        "traced": true,
+        "class": "composite",
+        "recipe": "ch1_loom",
+        "engine": "composite_beat.render_beat",
+        "builder": "build_ch1_composites.py",
+        "params_hash": "9307b7c21c50",
+        "inputs": [
+          "assets/trex_pilot/cutouts/c_statue_still_cut.png",
+          "footage/trex_pilot/dunk_nyc_avenue_taxis.mp4"
+        ],
+        "rendered_file": "ch1_loom.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0066",
@@ -1237,7 +1999,20 @@
       "asset": "stock",
       "why": "pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_day_one.png"
+        ],
+        "rendered_file": "g_day_one.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0067",
@@ -1253,7 +2028,20 @@
       "text": "one. The street finds you before",
       "asset": "stat_card",
       "why": "stat+pause",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0067.png"
+        ],
+        "rendered_file": "card_s0067.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0068",
@@ -1269,7 +2057,20 @@
       "text": "you find it.",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_dawn_canyon.mp4"
+        ],
+        "rendered_file": "s_dawn_canyon.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0069",
@@ -1285,7 +2086,20 @@
       "text": "Horns. Sirens. A wall of yellow taxis, and",
       "asset": "stock",
       "why": "pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_taxi_wall.mp4"
+        ],
+        "rendered_file": "s_taxi_wall.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0070",
@@ -1301,7 +2115,20 @@
       "text": "behind the glass, faces \u2014 hundreds of them",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_crowd_cross.mp4"
+        ],
+        "rendered_file": "s_crowd_cross.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0071",
@@ -1318,7 +2145,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_predator_tags.png"
+        ],
+        "rendered_file": "c_predator_tags.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0072",
@@ -1334,7 +2174,20 @@
       "text": "one thing: small, soft, and slow. So",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0072.png"
+        ],
+        "rendered_file": "card_s0072.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0073",
@@ -1350,7 +2203,20 @@
       "text": "you do what you were built to do.",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_eye_detail.mp4"
+        ],
+        "rendered_file": "dunk_trex_eye_detail.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0074",
@@ -1366,7 +2232,20 @@
       "text": "You lower your head, you pick",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_jaws_teeth.mp4"
+        ],
+        "rendered_file": "dunk_trex_jaws_teeth.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0075",
@@ -1382,7 +2261,20 @@
       "text": "one, and you take a single step. The",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0075.png"
+        ],
+        "rendered_file": "card_s0075.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0076",
@@ -1398,7 +2290,20 @@
       "text": "whole block moves at",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_crowd_run.mp4"
+        ],
+        "rendered_file": "s_crowd_run.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0077",
@@ -1415,7 +2320,20 @@
       "asset": "stock",
       "why": "turn",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_strike_blur.png"
+        ],
+        "rendered_file": "c_strike_blur.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0078",
@@ -1432,7 +2350,20 @@
       "asset": "creature",
       "why": "turn",
       "sfx": "impact_hit",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/i_receipt.png"
+        ],
+        "rendered_file": "i_receipt.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0079",
@@ -1449,7 +2380,20 @@
       "asset": "meme",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_hunt_4s.png"
+        ],
+        "rendered_file": "g_hunt_4s.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0080",
@@ -1466,7 +2410,20 @@
       "asset": "stock",
       "why": "pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_clock_10s.png"
+        ],
+        "rendered_file": "g_clock_10s.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0081",
@@ -1482,7 +2439,20 @@
       "text": "You are the biggest thing on the street,",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/hook_stills/169/ch_trex_walkaway_crowd.png"
+        ],
+        "rendered_file": "ch_trex_walkaway_crowd.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0082",
@@ -1498,7 +2468,20 @@
       "text": "and everything runs from you.",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_crowd_scatter.mp4"
+        ],
+        "rendered_file": "s_crowd_scatter.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0083",
@@ -1514,7 +2497,20 @@
       "text": "But these are not prey. Prey scatters and",
       "asset": "creature",
       "why": "turn+pause",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_herd_scatter.mp4"
+        ],
+        "rendered_file": "s_herd_scatter.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0084",
@@ -1530,7 +2526,20 @@
       "text": "forgets. These things point small black rectangles",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_phones_up.mp4"
+        ],
+        "rendered_file": "s_phones_up.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0085",
@@ -1547,7 +2556,20 @@
       "asset": "meme",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_phone_wall.png"
+        ],
+        "rendered_file": "c_phone_wall.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0086",
@@ -1563,7 +2585,20 @@
       "text": "minutes the whole island knows exactly where you",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0086.png"
+        ],
+        "rendered_file": "card_s0086.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0087",
@@ -1580,7 +2615,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_track_map.png"
+        ],
+        "rendered_file": "g_track_map.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0088",
@@ -1596,7 +2644,20 @@
       "text": "You killed one of them. Then a",
       "asset": "creature",
       "why": "pause",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_stride_avenue.mp4"
+        ],
+        "rendered_file": "dunk_trex_stride_avenue.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0089",
@@ -1612,7 +2673,20 @@
       "text": "thousand more arrived just to watch you do",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_crowd_mass.mp4"
+        ],
+        "rendered_file": "s_crowd_mass.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0090",
@@ -1629,7 +2703,20 @@
       "asset": "meme",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/i_trending.png"
+        ],
+        "rendered_file": "i_trending.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0091",
@@ -1645,7 +2732,20 @@
       "text": "By hour two, the hunt has flipped. First the police,",
       "asset": "stock",
       "why": "pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_nypd_lights.mp4"
+        ],
+        "rendered_file": "s_nypd_lights.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0092",
@@ -1661,7 +2761,20 @@
       "text": "then the helicopters, then something heavier \u2014 armored",
       "asset": "meme",
       "why": "turn",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_heli_armor.mp4"
+        ],
+        "rendered_file": "s_heli_armor.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0093",
@@ -1677,7 +2790,20 @@
       "text": "trucks, rifles, and men who do this for a living.",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_swat_line.mp4"
+        ],
+        "rendered_file": "s_swat_line.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0094",
@@ -1694,7 +2820,20 @@
       "asset": "meme",
       "why": "pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_nostril_smoke.png"
+        ],
+        "rendered_file": "c_nostril_smoke.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0095",
@@ -1710,7 +2849,20 @@
       "text": "now drowning in diesel and gun smoke. Your",
       "asset": "stock",
       "why": "turn",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_diesel_smoke.mp4"
+        ],
+        "rendered_file": "s_diesel_smoke.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0096",
@@ -1726,7 +2878,20 @@
       "text": "ears are full of rotor blades. Every sense",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_rotor_macro.mp4"
+        ],
+        "rendered_file": "s_rotor_macro.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0097",
@@ -1743,7 +2908,20 @@
       "asset": "creature",
       "why": "timer",
       "sfx": "impact_hit",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_senses_x.png"
+        ],
+        "rendered_file": "g_senses_x.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0098",
@@ -1759,7 +2937,20 @@
       "text": "once. They cannot outfight you. So",
       "asset": "meme",
       "why": "turn",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_trex_eye_detail.mp4"
+        ],
+        "rendered_file": "dunk_trex_eye_detail.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0099",
@@ -1776,7 +2967,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_herd_map.png"
+        ],
+        "rendered_file": "g_herd_map.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0100",
@@ -1792,7 +2996,20 @@
       "text": "Block by block, siren by siren, toward the",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_nypd_lights.mp4"
+        ],
+        "rendered_file": "s_nypd_lights.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0101",
@@ -1808,7 +3025,20 @@
       "text": "one place your body cannot follow. The",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0101.png"
+        ],
+        "rendered_file": "card_s0101.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0102",
@@ -1824,7 +3054,20 @@
       "text": "river.",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_hudson_wide.mp4"
+        ],
+        "rendered_file": "s_hudson_wide.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0103",
@@ -1841,7 +3084,20 @@
       "asset": "creature",
       "why": "pause",
       "sfx": "impact_hit",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_hudson_map.png"
+        ],
+        "rendered_file": "g_hudson_map.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0104",
@@ -1858,7 +3114,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_swim.png"
+        ],
+        "rendered_file": "c_swim.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0105",
@@ -1875,7 +3144,20 @@
       "asset": "meme",
       "why": "turn+pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_temp_gauge.png"
+        ],
+        "rendered_file": "g_temp_gauge.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0106",
@@ -1892,7 +3174,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_thermal.png"
+        ],
+        "rendered_file": "c_thermal.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0107",
@@ -1909,7 +3204,20 @@
       "asset": "creature",
       "why": "stat",
       "sfx": "impact_hit",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_rule_fall.png"
+        ],
+        "rendered_file": "g_rule_fall.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0108",
@@ -1925,7 +3233,20 @@
       "text": "everything. You still cannot fall.",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/hook_stills/169/ink_gag_ground.png"
+        ],
+        "rendered_file": "ink_gag_ground.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0109",
@@ -1942,7 +3263,20 @@
       "asset": "meme",
       "why": "pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_pier_feet.png"
+        ],
+        "rendered_file": "c_pier_feet.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0110",
@@ -1958,7 +3292,20 @@
       "text": "city pushing at your back, that is",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_skyline_river.mp4"
+        ],
+        "rendered_file": "s_skyline_river.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0111",
@@ -1975,7 +3322,20 @@
       "asset": "creature",
       "why": "timer",
       "sfx": "impact_hit",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_zero_falls.png"
+        ],
+        "rendered_file": "g_zero_falls.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0112",
@@ -1991,7 +3351,20 @@
       "text": "So can a Tyrannosaurus actually survive in modern",
       "asset": "meme",
       "why": "turn+pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/hook_stills/169/ch_trex_avenue_wide.png"
+        ],
+        "rendered_file": "ch_trex_avenue_wide.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0113",
@@ -2008,7 +3381,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_yes.png"
+        ],
+        "rendered_file": "g_yes.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0114",
@@ -2025,7 +3411,20 @@
       "asset": "meme",
       "why": "turn+pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_catch.png"
+        ],
+        "rendered_file": "g_catch.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0115",
@@ -2041,7 +3440,20 @@
       "text": "one. It has nothing to do with the",
       "asset": "stat_card",
       "why": "stat",
-      "sfx": "impact"
+      "sfx": "impact",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/cards/card_s0115.png"
+        ],
+        "rendered_file": "card_s0115.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0116",
@@ -2057,7 +3469,20 @@
       "text": "guns, and everything to do with the cold",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_snow_flurry.mp4"
+        ],
+        "rendered_file": "s_snow_flurry.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0117",
@@ -2073,7 +3498,20 @@
       "text": "and the concrete.",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/dunk_nyc_snow_macro.mp4"
+        ],
+        "rendered_file": "dunk_nyc_snow_macro.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0118",
@@ -2089,7 +3527,20 @@
       "text": "We will get there. First, you have to",
       "asset": "meme",
       "why": "pause",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/hook_stills/169/ch_trex_lowangle_taxis.png"
+        ],
+        "rendered_file": "ch_trex_lowangle_taxis.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0119",
@@ -2106,7 +3557,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/c_night_one.png"
+        ],
+        "rendered_file": "c_night_one.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0120",
@@ -2123,7 +3587,20 @@
       "asset": "stock",
       "why": "pause",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_vote.png"
+        ],
+        "rendered_file": "g_vote.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0121",
@@ -2140,7 +3617,20 @@
       "asset": "creature",
       "why": "timer",
       "sfx": "impact_hit",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/i_lineup.png"
+        ],
+        "rendered_file": "i_lineup.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0122",
@@ -2157,7 +3647,20 @@
       "asset": "meme",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_top_comment.png"
+        ],
+        "rendered_file": "g_top_comment.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0123",
@@ -2173,7 +3676,20 @@
       "text": "picked the Megalodon, and that",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_miami.mp4"
+        ],
+        "rendered_file": "s_miami.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0124",
@@ -2190,7 +3706,20 @@
       "asset": "meme",
       "why": "stat",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/body_stills/i_megalodon.png"
+        ],
+        "rendered_file": "i_megalodon.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0125",
@@ -2207,7 +3736,20 @@
       "asset": "stock",
       "why": "timer",
       "sfx": "whoosh",
-      "enter": "slam"
+      "enter": "slam",
+      "provenance": {
+        "traced": false,
+        "class": "card",
+        "recipe": "stat_card",
+        "engine": null,
+        "builder": "rexcaped_stat_cards.py",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/graphics/g_subscribe.png"
+        ],
+        "rendered_file": "g_subscribe.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0126",
@@ -2223,7 +3765,20 @@
       "text": "long the king lasts when the whole world",
       "asset": "creature",
       "why": "timer",
-      "sfx": "impact_hit"
+      "sfx": "impact_hit",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/hook_stills/169/ch_trex_walkaway_crowd.png"
+        ],
+        "rendered_file": "ch_trex_walkaway_crowd.png",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0127",
@@ -2239,7 +3794,20 @@
       "text": "is hunting",
       "asset": "stock",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced/retarget",
+        "params_hash": null,
+        "inputs": [
+          "footage/trex_pilot/stock/s_searchlight.mp4"
+        ],
+        "rendered_file": "s_searchlight.mp4",
+        "approved": false
+      }
     },
     {
       "beat_id": "beat_0128",
@@ -2255,7 +3823,20 @@
       "text": "",
       "asset": "meme",
       "why": "timer",
-      "sfx": "whoosh"
+      "sfx": "whoosh",
+      "provenance": {
+        "traced": false,
+        "class": "library_asset",
+        "recipe": "library_asset",
+        "engine": null,
+        "builder": "sourced",
+        "params_hash": null,
+        "inputs": [
+          "assets/trex_pilot/anim/emblem_boil.mp4"
+        ],
+        "rendered_file": "emblem_boil.mp4",
+        "approved": false
+      }
     }
   ],
   "stats": {

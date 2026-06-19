@@ -1,0 +1,15 @@
+{
+  "_note": "Recipes the owner has approved ON RECORD. The assembler (guarantee step 3) will refuse to ship a beat whose provenance.recipe is not in this set. Add a recipe ONLY when the owner blesses it, and cite the evidence below. Do not pre-approve untested recipes.",
+  "approved": [
+    "body_reveal"
+  ],
+  "candidates_pending_owner_signoff": [
+    "ch1_stumble", "ch1_nostril", "ch1_povpick", "ch1_speed", "ch1_loom",
+    "ch1_body", "ch1_legs", "ch1_furnace", "ch1_statue", "ch1_arms",
+    "ch1_down", "ch1_cart", "ch1_glass", "ch1_crowdup"
+  ],
+  "_evidence": {
+    "body_reveal": "build_ch1_composites.py: the owner-directed illustrated body scene, 'built once ... spliced as-is, never re-rendered'.",
+    "candidates": "Owner approved the layered-composite APPROACH ('the cool animations we just fixed with the movement, layers etc' — session 9b2e18db) but has not blessed each CH1 recipe individually. Promote from candidates to approved per-recipe as the owner signs off."
+  }
+}
