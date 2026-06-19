@@ -94,7 +94,10 @@ def classify_beat(beat, configs, approved=frozenset()):
             'engine': None, 'builder': None, 'params_hash': None,
             'inputs': [], 'rendered_file': bn or None, 'approved': False}
 
-    if parent == 'composite_beats' and stem in configs:
+    if beat.get('asset') == 'auto' or parent == 'auto_beats':
+        prov.update(traced=True, **{'class': 'unsanctioned'}, recipe='build_ch1_auto',
+                    builder='build_ch1_auto.py (QUARANTINED)', inputs=[_rel(vf)] if vf else [])
+    elif parent == 'composite_beats' and stem in configs:
         sig = cfg_signature(configs[stem], recipe=stem)
         prov.update(traced=True, **{'class': 'composite'}, builder='build_ch1_composites.py',
                     engine=sig['engine'], recipe=sig['recipe'],

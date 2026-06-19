@@ -862,6 +862,10 @@ def main():
     parser.add_argument("--narration", default=str(NARRATION))
     parser.add_argument("--output", "-o", default=str(OUTPUT))
     parser.add_argument("--workers", type=int, default=MAX_WORKERS)
+    parser.add_argument("--enforce-provenance", action="store_true",
+                        help="refuse to assemble any beat not from a sanctioned recipe (consistency guarantee)")
+    parser.add_argument("--strict-provenance", action="store_true",
+                        help="with --enforce-provenance: also require every beat to be an APPROVED recipe")
     parser.add_argument("--preview", action="store_true",
                         help="540p fast render (for checking)")
     parser.add_argument("--no-hw", action="store_true",
@@ -888,6 +892,15 @@ def main():
     with open(args.paper_edit) as f:
         data = json.load(f)
     beats = data["beats"]
+
+    if args.enforce_provenance:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from gate_provenance import enforce
+        ok, gate_summary = enforce(beats, strict=args.strict_provenance)
+        print(gate_summary)
+        if not ok:
+            print("ABORT: provenance gate failed — not assembling.")
+            sys.exit(2)
 
     narr_dur = get_duration(args.narration)
     if narr_dur is None:

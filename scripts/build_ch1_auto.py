@@ -127,6 +127,11 @@ def segments():
 
 
 def main():
+    if '--force-unsanctioned' not in sys.argv:
+        sys.exit("⛔ build_ch1_auto.py is QUARANTINED — it draws creature visuals from a "
+                 "4-cutout pool and IGNORES the asset library (repetitive output, owner-rejected "
+                 "2026-06-11). Use scripts/build_ch1_composites.py. Re-run with "
+                 "--force-unsanctioned only if you deliberately mean to.")
     plan_only = '--plan' in sys.argv
     print(f"{'VO':46s} {'DEVICE':15s} ANGLE  TEXT")
     print('-' * 92)
