@@ -1,7 +1,14 @@
 # PRODUCTION HANDOFF — Dinoverse "Omega Rex" episode (resume here)
 
-Last session got us from "study the creator" to a production-ready storyboard. **Next job: generate the ~70 stills.**
-Read this + `VERIFIED_PROMPTS.md` + `EDITING.md`, then start generating scene-by-scene.
+**ALL 70 STILLS ARE DONE.** In-world park brand = **DINO ZOO** (owner renamed from "Dinoverse Zoo";
+applied in `build_storyboard.py` + regenerated `STORYBOARD.tsv` + `style.txt`/`characters.txt`).
+Every GEN shot S00–S68 lives at `stills/Sxx.png`, all unique, all Status=still. Generated in ONE
+ChatGPT image thread (consistency-chained, programmatic-download via `work/save.py`). Review sheet:
+`work/ALL_stills_contact_sheet.png`. **Next job: Grok i2v per shot** (upload still → grok.com/imagine,
+Video 720p 6s, 16:9, paste the row's Grok video prompt → `approved/Sxx.mp4`, Status→clip).
+Peril beats softened to pass ChatGPT guardrails — may want stronger source for: S07, S19, S31, S43,
+S49, S60–S65. **S65** (his child "MOMMY!" gut-punch) was rendered as an IMPLIED shot (empty plaza +
+looming dino shadow + dropped teddy bear) because ChatGPT refuses a child in peril.
 
 ## STATUS — what's done
 - ✅ Full chat archive (WhatsApp "Sik" + Messenger "Dinoverse") → Google Doc + `~/Desktop/dinoverse_archive/`.
@@ -40,4 +47,4 @@ For each still: upload to grok.com/imagine (Video, 720p, 6s, **set 16:9**), past
 - Hard rules: `../../CLAUDE.md`. Tools: FFmpeg renderer `scripts/ffmpeg_production_render.py`.
 
 ## HOW TO RESUME (paste into a fresh session)
-"Read dinoverse_clone/episode_01_omega_rex/PRODUCTION_HANDOFF.md and VERIFIED_PROMPTS.md. Decisions are locked. Generate the Spinosaurus scene stills (S10-S15) from the Sheet1 image-prompt column using Gemini in Chrome, one thread, establishing shot first then reference the rest; save to stills/ and mark Status=still."
+"Read dinoverse_clone/episode_01_omega_rex/dino_production.md and VERIFIED_PROMPTS.md. Decisions are locked. Generate the Spinosaurus scene stills (S10-S15) from the Sheet1 image-prompt column using Gemini in Chrome, one thread, establishing shot first then reference the rest; save to stills/ and mark Status=still."
