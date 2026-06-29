@@ -1,50 +1,76 @@
 # PRODUCTION HANDOFF — Dinoverse "Omega Rex" episode (resume here)
 
-**ALL 70 STILLS ARE DONE.** In-world park brand = **DINO ZOO** (owner renamed from "Dinoverse Zoo";
-applied in `build_storyboard.py` + regenerated `STORYBOARD.tsv` + `style.txt`/`characters.txt`).
-Every GEN shot S00–S68 lives at `stills/Sxx.png`, all unique, all Status=still. Generated in ONE
-ChatGPT image thread (consistency-chained, programmatic-download via `work/save.py`). Review sheet:
-`work/ALL_stills_contact_sheet.png`. **Next job: Grok i2v per shot** (upload still → grok.com/imagine,
-Video 720p 6s, 16:9, paste the row's Grok video prompt → `approved/Sxx.mp4`, Status→clip).
-Peril beats softened to pass ChatGPT guardrails — may want stronger source for: S07, S19, S31, S43,
-S49, S60–S65. **S65** (his child "MOMMY!" gut-punch) was rendered as an IMPLIED shot (empty plaza +
-looming dino shadow + dropped teddy bear) because ChatGPT refuses a child in peril.
+Cloning @Dinoverse-U: a faithful zoo-POV dinosaur-park video that turns to disaster.
+Branch: `spinosnack-dunkleosteus`. Everything below is committed + pushed. Owner = Jeff.
 
-## STATUS — what's done
-- ✅ Full chat archive (WhatsApp "Sik" + Messenger "Dinoverse") → Google Doc + `~/Desktop/dinoverse_archive/`.
-- ✅ His **verified prompts** captured (`VERIFIED_PROMPTS.md`): the Image-Prompt-Generator + the Video-Prompt-Generator (his exact reusable system prompts).
-- ✅ His **editing** decoded (`EDITING.md`): CapCut, 1080p export, opens with 2 DISCLAIMER cards, freesound.org ambience layers + a music bed, hard cuts, ~8:20 timeline.
-- ✅ His **real published video** transcribed + speaker-attributed (`reference/dinoverse_TRANSCRIPT_attributed.md`). Video = "I Found a Dinosaur Zoo | D-Rex Vibes", 8:20, 764K views.
-- ✅ **Storyboard built** = Google Sheet "Dinoverse - Omega Rex - Storyboard" (Sheet1), 88 timeline clips, scene-by-scene, columns: Scene/Shot/Time/Dur/Beat/Speaker/On-screen/Camera/**Image prompt**/**Grok video prompt**/Dialogue/SFX/Music/Clip type/Edit/Status. Local copy: `STORYBOARD.tsv` (regenerate via `build_storyboard.py`).
-  - Sheet URL: https://docs.google.com/spreadsheets/d/1Jjh54dzgGtjjMuM5jGSn5eVAtPE6Kry48mTnPZ_ADoQ/edit
-- ✅ **A/B prompt test** done → tab "A-B Prompt Test" (has the Spino A-vs-B image + both prompt versions).
+## WHERE WE ARE (2026-06-29)
+- ✅ **Storyboard locked** — `STORYBOARD.tsv` (source of truth = `build_storyboard.py`; regenerate via
+  `../../venv/bin/python build_storyboard.py`). Cols incl. **Image prompt (still)** + **Grok video prompt (i2v)** + **Status**.
+- ✅ **In-world park brand = "DINO ZOO"** (owner renamed from "Dinoverse Zoo" — applied everywhere).
+- ✅ **ALL 76 GEN stills DONE** (`stills/Sxx.png`). Generated in ChatGPT, one thread, consistency-chained.
+- ✅ **Reworked back third** (owner-directed): early **"HYBRID – STAFF ONLY" door plant** (teens slip in, Maya
+  "that's weird") → tour → hybrid **breaks its gate → trips the power → all dinos loose** (raptor head-tilt
+  cascade, slow→fast chaos, **crowd panic** shots) → couple **hides** → **Blackhawks** inbound → "FOLLOW FOR PART 2".
+  We don't explain HOW it got out — the door plant lets the audience assume.
+- ✅ **i2v STARTED: Spinosaurus scene DONE** — 6 Grok clips `approved/S10–S15.mp4` (1264×720, 6.04s each, status=`clip`).
 
-## DECISIONS LOCKED
-1. **Format:** faithful Dinoverse zoo-POV that turns to disaster (Omega/D-Rex hybrid). ~90 clips, ~8 min.
-2. **Image prompts = HIS verbose "Version B" style** (chosen via the A/B test). Already applied to all 70 GEN rows in the sheet/`build_storyboard.py` (the `IMG`+`SUF` wrapper).
-3. **i2v = Grok Imagine** (6s/720p, native audio).
-4. **Dialogue = Grok-native** for the WHOLE body. VERIFIED: his real 6.04s Grok clip's audio = "I don't know why I'm here, whether to enjoy this or suffer through it" — verbatim in his published video. So **only the ~20s intro hook is a separate recorded VO**; everything else (facts, banter, staff, PA) is generated inside each Grok clip from the dialogue line in the Grok-prompt column. Caveat: long fact lines may need re-rolls.
-5. **Assembly:** Grok clips (keep native audio) → layer freesound ambience + music bed → 2 disclaimer cards at front → logo bug → 1080p. FFmpeg concat per `ORCHESTRATION.md`, or CapCut.
+## NEXT JOB: Grok i2v for the remaining **70 stills**
+Still `status=still` (need clips), by scene:
+- 0 Intro: M01, S00 · 1 Entry: S01, S02, S03, S03b, S03c · 2 Carnotaurus: S04–S09
+- 4 Therizinosaurus: S16–S21 · 5 Quetzalcoatlus: S22–S27 · 6 Velociraptor: S28–S33
+- 7 Sauropods: S34–S39 · 8 Mosasaurus: S40–S45 · 9 T-Rex: S46–S51 · 10 Hybrid: S52–S57
+- 11 Breakout: S60–S67, S66b, S67b, S66d · 12 Outro: S68–S71
 
-## NEXT STEP — generate the stills (the actual job)
-Counts: **70 unique GEN stills** to make. The 16 intro "flashes" are TRIMS of body clips (no generation). 2 cards are text.
+## THE i2v PIPELINE (PROVEN THIS SESSION — use exactly this)
+Engine = **Grok Imagine** (grok.com/imagine), owner has Grok Pro. Settings: **Video · 720p · 16:9 · 6s**.
+Output spec = **1264×720, 6.04s mp4**.
 
-### Batching plan (consistency-first, browser-driven, no paid API)
-Work **one scene per image-gen thread** (Gemini recommended — cleaner browser flow than ChatGPT; ChatGPT also fine):
-1. From Sheet1, copy the scene's **Image prompt** cells (column I) for its GEN rows.
-2. In a fresh Gemini/ChatGPT thread: generate the scene's **establishing shot first**.
-3. Curate it (realism is won here), then **feed it back as the reference** ("same Dinoverse Zoo location, same Dee/Maya, keep it consistent") and generate the scene's remaining shots in that same thread.
-4. Download each (lightbox → download button), save to `stills/Sxx.png` (per shot id).
-5. Mark that row's **Status** column → "still" in the sheet.
-- ~12 scenes → ~12 threads. Do 2-3 scenes per session to stay within context.
-- **Start with the Spinosaurus scene (S10-S15)** — it's the validated one (A_S10/B_S10 already exist in `ab_test/`).
+**Uploading the still is the only hard part — solved via CLIPBOARD PASTE.** (Why: Grok's "Upload" button opens a
+native macOS file picker invisible to automation; the `file_upload` MCP tool sandboxes out project files; a
+localhost image server is CSP-blocked by grok.com. Clipboard paste sidesteps all three.)
 
-### Then (separate phase, later): Grok i2v
-For each still: upload to grok.com/imagine (Video, 720p, 6s, **set 16:9**), paste the row's **Grok video prompt**, generate, download → `approved/Sxx.mp4`, Status → "clip".
+Per-shot loop (Chrome MCP drives the Grok tab; Bash runs osascript + saves):
+1. **Put still on clipboard (Bash):**
+   `osascript -e 'set the clipboard to (read (POSIX file "<ABS path>/stills/Sxx.png") as «class PNGf»)'`
+2. **Grok (Chrome MCP):** click sidebar **"New Generation"** → click the **"Type to imagine"** composer input → **Cmd+V**
+   (the still attaches as a thumbnail) → type the **animate prompt** (see below) → click the **submit ↑ arrow**
+   (bottom-right of composer; it moves down as the prompt grows — screenshot to confirm before clicking).
+3. **Wait ~60–90s.** Poll with a screenshot; done = the still-frame video + right-panel Share/Download/Regenerate/Extend.
+4. **Download:** click **Download** in the right panel → then Bash:
+   `f=$(ls -t ~/Downloads/grok-video*.mp4 | head -1) && cp "$f" approved/Sxx.mp4`
+5. **Mark `status=clip`** for Sxx in STORYBOARD.tsv.
+
+**Animate prompt format** (don't paste the raw sheet column — rewrite it as natural language):
+> "Animate this exact image as a real zoo documentary clip, 16:9. Camera: <cam>. Motion: <move>. Audio: <sound>.
+> Dialogue (<speaker>): \"<line>\". Style: non-cinematic, grounded, flat natural daylight, no fog, no color grading,
+> exact environment match."
+Pull cam/move/sound/dialogue from the **"Grok video prompt (i2v)"** column for each shot.
+
+**Gotchas:**
+- Grok shows a **one-time age-confirmation gate** before the first video — owner must clear it (done this session).
+  It's a personal attestation; do NOT submit it for them.
+- Grok keeps **native audio + dialogue** in the clip. Owner should **spot-check the audio** actually speaks the lines —
+  long narrator/fact lines (e.g. S11, S14) were flagged in the original handoff as sometimes needing a re-roll.
+- `cmd+v` in browser_batch works; the Grok window may resize (coords shift) — screenshot to re-anchor.
+
+## ASSEMBLY (after all clips, separate phase)
+Keep Grok native audio → layer freesound ambience + music bed → 2 disclaimer cards front → 1080p.
+FFmpeg concat per `ORCHESTRATION.md`, or CapCut. Renderer ref: `scripts/ffmpeg_production_render.py`.
+
+## STILL-REGEN GUARDRAILS (only if you must re-make a still in ChatGPT)
+ChatGPT hard-refuses: visible panic/screaming crowds, predation, gunfire-at-people, kids-in-peril. Frame peril as
+**"emergency evacuation"** (running, looking back, dust — NOT panic/screaming), predator action as **empty jaws /
+implied / silhouette**, and never a child in danger. These dodges are already baked into the breakout/outro stills.
 
 ## KEY FILES (all in `dinoverse_clone/episode_01_omega_rex/`)
-- `VERIFIED_PROMPTS.md` · `EDITING.md` · `STORYBOARD.tsv` + `build_storyboard.py` · `reference/dinoverse_TRANSCRIPT_attributed.md` · `ab_test/` (A/B images) · `proto_spino/` (early proto) · folders `stills/ gen/ approved/ work/ audio/`
-- Hard rules: `../../CLAUDE.md`. Tools: FFmpeg renderer `scripts/ffmpeg_production_render.py`.
+- `build_storyboard.py` (source) → `STORYBOARD.tsv` · `stills/Sxx.png` (76 done) · `approved/Sxx.mp4` (6 done)
+- `VERIFIED_PROMPTS.md` · `EDITING.md` · `characters.txt` · `style.txt`
+- `work/` helpers: `save.py` (move ChatGPT dl → stills + mark status) · `_extract.py` (dump remaining prompts to
+  `remaining_prompts.json`) · contact sheets (`ALL_stills_contact_sheet.png`, `reworked_ending_contact_sheet.png`)
+- Hard rules: `../../CLAUDE.md`. Memory index: `memory/MEMORY.md`.
 
 ## HOW TO RESUME (paste into a fresh session)
-"Read dinoverse_clone/episode_01_omega_rex/dino_production.md and VERIFIED_PROMPTS.md. Decisions are locked. Generate the Spinosaurus scene stills (S10-S15) from the Sheet1 image-prompt column using Gemini in Chrome, one thread, establishing shot first then reference the rest; save to stills/ and mark Status=still."
+"Read dinoverse_clone/episode_01_omega_rex/dino_production.md. Continue the Grok i2v pass for the 70 stills still at
+status=still, scene by scene, using the clipboard-paste pipeline (osascript PNG → Cmd+V into Grok, Video/720p/16:9/6s).
+Pull each shot's motion/dialogue from the 'Grok video prompt (i2v)' column, save to approved/Sxx.mp4, mark status=clip,
+commit per scene. Start with Scene 1 Entry. Grok is in Chrome; settings persist; if an age gate appears, ask me to clear it."
