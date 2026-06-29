@@ -1,386 +1,86 @@
 [
  {
-  "scene": "0 Intro",
-  "shot": "M01",
-  "beat": "Montage open: gate flash",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): 'DINO ZOO' wooden gate, green logo, families streaming in; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "0 Intro",
-  "shot": "S00",
-  "beat": "Smash to title",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): near-black w/ ember particles, faint red glow (title in edit); natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "scene": "1 Entry",
+  "shot": "S03b",
+  "beat": "The plant: teens slip into the hybrid door",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): two teenagers glancing around and slipping through a heavy service door stenciled 'HYBRID - STAFF ONLY' with yellow-black hazard stripes, tucked in a quiet corner of the park; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "1 Entry",
-  "shot": "S01",
-  "beat": "Re-intro selfie at gate",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): large wooden 'DINO ZOO' gate, round green logo, families entering, Dee (30s grey tee) selfie-POV; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "1 Entry",
-  "shot": "S02",
-  "beat": "Ticket discount gag (verbatim)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Lena (early 20s, light-brown hair in a ponytail, khaki DINOVERSE polo)Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) wooden DINO ZOO ticket booth, Lena leans out smiling, POV hand slides a ticket; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "1 Entry",
-  "shot": "S03",
-  "beat": "Crowd + mystery plant",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV through plaza past a large painted 'PARK MAP' board, big crowd flowing toward enclosures; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "2 Carnotaurus",
-  "shot": "S04",
-  "beat": "Establish + 'DANGER: CARNOTAURUS' sign",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): tall glass predator enclosure, yellow-black 'DANGER: CARNOTAURUS' sign, horned Carnotaurus paces behind thick glass, crowd; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "2 Carnotaurus",
-  "shot": "S05",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): close on Carnotaurus horned head & very small arms behind glass, scales in sun; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "2 Carnotaurus",
-  "shot": "S06",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Maya at the glass grinning, gesturing at the carno's arms; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "2 Carnotaurus",
-  "shot": "S07",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Carnotaurus charges & slams thick glass, crowd jerks back, Maya flinches; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "2 Carnotaurus",
-  "shot": "S08",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Wide of carno snorting in dusty enclosure; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "2 Carnotaurus",
-  "shot": "S09",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'WETLANDS ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "4 Therizinosaurus",
-  "shot": "S16",
-  "beat": "Establish + Forest paddock",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): sunny forest paddock, tall feathered Therizinosaurus with enormous curved claws browsing leaves, crowd at rail; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "4 Therizinosaurus",
-  "shot": "S17",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): close on Therizinosaurus claws raking bark, feathers catching sun; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "4 Therizinosaurus",
-  "shot": "S18",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Maya staring up at the huge claws, nervous; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "4 Therizinosaurus",
-  "shot": "S19",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Therizinosaurus swings its claws and shreds a hanging melon feeder, pulp flying, crowd gasps; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "4 Therizinosaurus",
-  "shot": "S20",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Wide, Therizino calm among the trees; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "4 Therizinosaurus",
-  "shot": "S21",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'AVIARY ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "5 Quetzalcoatlus",
-  "shot": "S22",
-  "beat": "Establish + Netted aviary dome",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): interior vast netted aviary dome, tall cliffs, giant Quetzalcoatlus perched & gliding, sun through net, tourists below; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "5 Quetzalcoatlus",
-  "shot": "S23",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Quetzalcoatlus on a cliff ledge spreads enormous wings, backlit through the net; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "5 Quetzalcoatlus",
-  "shot": "S24",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Maya tilting her head all the way back, stunned; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "5 Quetzalcoatlus",
-  "shot": "S25",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): giant Quetzalcoatlus swoops low over the crowd, tourists duck, wind rush; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "5 Quetzalcoatlus",
-  "shot": "S26",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Wide, two pterosaurs circling the dome; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "5 Quetzalcoatlus",
-  "shot": "S27",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'RAPTORS ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "6 Velociraptor",
-  "shot": "S28",
-  "beat": "Establish + Rocky raptor paddock",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): sunny rocky paddock, several feathered Velociraptors moving alert behind a tall fence, crowd; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "6 Velociraptor",
-  "shot": "S29",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): close on a Velociraptor feathered head tilting, intelligent eye, behind fence; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "6 Velociraptor",
-  "shot": "S30",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Maya pretending to offer a snack, raptors tracking her hand; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "6 Velociraptor",
-  "shot": "S31",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) two Velociraptors suddenly bolt along the fence line in eerie sync, crowd jumps; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "6 Velociraptor",
-  "shot": "S32",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Two raptors square up near a Protoceratops display; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "6 Velociraptor",
-  "shot": "S33",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'PEACEFUL VALLEY ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "7 Sauropods",
-  "shot": "S34",
-  "beat": "Establish + Grassland 'peaceful' enclosure",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): wide sunny grassland enclosure, a Brachiosaurus, Diplodocus, Stegosaurus and Ankylosaurus grazing peacefully together, families watching; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "7 Sauropods",
-  "shot": "S35",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): tilt up the leg & neck of a towering Brachiosaurus, tiny tourists below for scale; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "7 Sauropods",
-  "shot": "S36",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Maya eyeing the smallest sauropod, grinning; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "7 Sauropods",
-  "shot": "S37",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Stegosaurus swings its spiked thagomizer tail lazily, knocking over a wooden feeder, crowd laughs; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "7 Sauropods",
-  "shot": "S38",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Close on a sauropod's throat swallowing; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "7 Sauropods",
-  "shot": "S39",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'MOSA LAGOON ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "8 Mosasaurus",
-  "shot": "S40",
-  "beat": "Establish + Show stadium tank",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): large aquatic show stadium, tiered seating around an enormous water tank, hanging bait rig, crowd filling, ranger ushering; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "8 Mosasaurus",
-  "shot": "S41",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): huge dark shape circles beneath the show-tank surface, ripples, anticipation in the stands; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "8 Mosasaurus",
-  "shot": "S42",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV settling into a front-row seat beside Maya, big tank ahead; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "8 Mosasaurus",
-  "shot": "S43",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Mosasaurus erupts from the tank to snatch the hanging bait, enormous jaws, water cascading over the screaming front rows; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "8 Mosasaurus",
-  "shot": "S44",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): The Mosa slides under; a Plesiosaur glides in a side tank; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "8 Mosasaurus",
-  "shot": "S45",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'RESTRICTED - APEX ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "9 T-Rex",
-  "shot": "S46",
-  "beat": "Establish + Reinforced apex arena",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): huge reinforced enclosure, thick walls, a massive T-Rex stalks; a Triceratops visible in the adjacent paddock, tense crowd; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "9 T-Rex",
-  "shot": "S47",
-  "beat": "Narrator fact 1",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): close on a T-Rex head, lips & huge teeth, eye catching light, behind heavy fencing; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "9 T-Rex",
-  "shot": "S48",
-  "beat": "Companion beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Maya stepping back from the fence, nervous; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "9 T-Rex",
-  "shot": "S49",
-  "beat": "Action beat",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) T-Rex rams the heavy fence, a Triceratops in the next paddock lowers its horns, dust, crowd jumps; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "9 T-Rex",
-  "shot": "S50",
-  "beat": "Narrator fact 2",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Wide, T-Rex and Triceratops eyeing across the divide; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "9 T-Rex",
-  "shot": "S51",
-  "beat": "Rival CTA (flywheel)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) POV past a wooden 'STAFF ONLY ->' sign, Maya beside, greenery; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "10 Hybrid (D-Rex)",
-  "shot": "S52",
-  "beat": "Sneak into the classified wing",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): dim concrete corridor, flickering fluorescents, signs 'RESTRICTED' 'GENETICS', cold blue light, POV creeping; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "10 Hybrid (D-Rex)",
-  "shot": "S53",
-  "beat": "The hybrid reveal",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) vast dark containment cell behind thick scratched glass, a massive hybrid theropod - charcoal hide, glowing orange seams, oversized jaws - moves into cold light, watching the camera; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "10 Hybrid (D-Rex)",
-  "shot": "S54",
-  "beat": "Fact: smart + camouflage",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) the hybrid's hide subtly shifts tone against the cell wall as if camouflaging, glowing seams dimming; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "10 Hybrid (D-Rex)",
-  "shot": "S55",
-  "beat": "D-Rex trivia (his real line)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): close on a stenciled lab plaque 'PROJECT D-REX // CLASSIFIED', biohazard symbol, cold light; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "10 Hybrid (D-Rex)",
-  "shot": "S56",
-  "beat": "Companion fear",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag)Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) Maya in cold blue light at the scratched glass, wide-eyed, a huge dark shape looming behind; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "10 Hybrid (D-Rex)",
-  "shot": "S57",
-  "beat": "It notices them",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) the hybrid's glowing eye snaps to the camera and it presses its scarred snout against the cracking glass; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "shot": "S03c",
+  "beat": "The plant: 'that's weird'",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) first-person POV catching a heavy 'HYBRID - STAFF ONLY' service door easing shut, Maya beside glancing back over her shoulder, curious; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
   "shot": "S60",
-  "beat": "Alarm",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) lab lights flick red, the hybrid slams the cracking glass; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "The break: hybrid into the open",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) a massive hybrid theropod rams through its heavy enclosure gate out into the sunny open park, debris flying, hazard signs, no people in danger; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
   "shot": "S61",
-  "beat": "Glass bursts",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) thick glass spiderwebs then explodes as the hybrid smashes through, shards in cold light; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "The trip: power goes down",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) the hybrid crashes into a power pylon and transformer, a shower of sparks, the park floodlights dropping dark; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
   "shot": "S62",
-  "beat": "Evacuate",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): strobing corridor + cut to the daytime plaza where the crowd floods the exits in panic; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "The tell + patient zero",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a now-dead electric perimeter fence with its warning light off, and a small harmless dinosaur calmly hopping over the unpowered fence; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
   "shot": "S63",
-  "beat": "Hybrid loose in the park",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) the hybrid smashes through a steel park gate into the sunny plaza, towering over fleeing tourists, debris flying; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S63b",
-  "beat": "Chaos montage",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag)Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) fast chaotic shots of overturning food carts and a surging crowd as the hybrid pursues through the sunny park; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S63c",
-  "beat": "Near-miss",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag)Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) the hybrid's jaws snap shut just behind the running POV, Maya yanked sideways out of frame; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "Raptor notices",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a Velociraptor at its paddock fence tilts its head, intelligent eye fixed on the now-unpowered fence; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
   "shot": "S64",
-  "beat": "The chase",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag)Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) POV sprinting down a wooden boardwalk beside Maya, the hybrid crashing through foliage close behind; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "Raptor realizes + over",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a Velociraptor with a sly, knowing look springs up and over the unpowered fence, the first one out; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
   "shot": "S65",
-  "beat": "The gut-punch (his ending)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a small child alone in the emptying sunlit plaza, looking back terrified, a huge shadow falling over them; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "The flood",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): several Velociraptors pour over the dead fence together into the park; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
-  "scene": "12 Outro",
+  "scene": "11 Breakout",
   "shot": "S66",
-  "beat": "Aftermath",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): eerily empty sunlit plaza, a dropped park map, one red alarm light slowly spinning, abandoned strollers; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "Everything loose",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a wide of the park in chaos - a Quetzalcoatlus swooping low over the plaza, a Spinosaurus and an Ankylosaurus loose among emptied paths, the hybrid theropod amid the worst of it; people implied fleeing, no gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
-  "scene": "12 Outro",
+  "scene": "11 Breakout",
   "shot": "S67",
-  "beat": "Subscribe + comment CTA",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): first-person POV, a hand on a chained sunset 'DINO ZOO - CLOSED' gate, then turning away down an empty path; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "Chaos peak",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): fast chaotic montage of the park overrun - dust, strobing sirens, silhouetted figures running, overturned carts, dinosaurs charging through; dread not gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "12 Outro",
   "shot": "S68",
-  "beat": "Sequel hook (final silhouette)",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) final static wide at dusk of the closed park; far behind a distant fence a huge dark silhouette shifts in the gloom, easy to miss; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "beat": "The held breath",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Dee and Maya crammed into a hiding spot peering out through a narrow gap, lit by strobing red light, tight and tense, time slowed; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+ },
+ {
+  "scene": "12 Outro",
+  "shot": "S69",
+  "beat": "Their POV of the chaos",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): first-person POV through a narrow gap, slightly blurred, of dinosaurs and chaos moving across the smoking park beyond; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+ },
+ {
+  "scene": "12 Outro",
+  "shot": "S70",
+  "beat": "Rescue: one chopper",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a dusk sky over the smoking park, a single distant Blackhawk military helicopter silhouette inbound with a searchlight; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+ },
+ {
+  "scene": "12 Outro",
+  "shot": "S71",
+  "beat": "Several Blackhawks inbound",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): several Blackhawk military helicopters inbound over the park at dusk, rotor-wash kicking up dust and debris, searchlights crossing; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  }
 ]
