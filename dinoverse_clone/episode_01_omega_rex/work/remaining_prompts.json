@@ -1,86 +1,26 @@
 [
  {
-  "scene": "1 Entry",
-  "shot": "S03b",
-  "beat": "The plant: teens slip into the hybrid door",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): two teenagers glancing around and slipping through a heavy service door stenciled 'HYBRID - STAFF ONLY' with yellow-black hazard stripes, tucked in a quiet corner of the park; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "1 Entry",
-  "shot": "S03c",
-  "beat": "The plant: 'that's weird'",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) first-person POV catching a heavy 'HYBRID - STAFF ONLY' service door easing shut, Maya beside glancing back over her shoulder, curious; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "scene": "11 Breakout",
+  "shot": "S66b",
+  "beat": "Crowd stampede (people fleeing)",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a large crowd of panicked tourists running and screaming away from the camera through the sunny theme-park plaza, fleeing, dropped bags and an abandoned stroller, dust kicked up; no blood, no gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
-  "shot": "S60",
-  "beat": "The break: hybrid into the open",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) a massive hybrid theropod rams through its heavy enclosure gate out into the sunny open park, debris flying, hazard signs, no people in danger; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "shot": "S66c",
+  "beat": "POV in the stampede",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): first-person POV swept along in a stampede of terrified people running down the park boardwalk, glancing back over shoulders, screaming; no gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
-  "shot": "S61",
-  "beat": "The trip: power goes down",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Omega Rex (massive unnatural hybrid theropod, charcoal-grey hide with faint glowing orange seams, oversized jaws, six-clawed hands, asymmetric armored back, menacing and wrong-proportioned) the hybrid crashes into a power pylon and transformer, a shower of sparks, the park floodlights dropping dark; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "shot": "S67b",
+  "beat": "Terror reaction (faces)",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): tight on a knot of terrified tourists scrambling and shielding each other, faces in panic, lit by strobing red emergency light; no gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  },
  {
   "scene": "11 Breakout",
-  "shot": "S62",
-  "beat": "The tell + patient zero",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a now-dead electric perimeter fence with its warning light off, and a small harmless dinosaur calmly hopping over the unpowered fence; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S63",
-  "beat": "Raptor notices",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a Velociraptor at its paddock fence tilts its head, intelligent eye fixed on the now-unpowered fence; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S64",
-  "beat": "Raptor realizes + over",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a Velociraptor with a sly, knowing look springs up and over the unpowered fence, the first one out; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S65",
-  "beat": "The flood",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): several Velociraptors pour over the dead fence together into the park; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S66",
-  "beat": "Everything loose",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a wide of the park in chaos - a Quetzalcoatlus swooping low over the plaza, a Spinosaurus and an Ankylosaurus loose among emptied paths, the hybrid theropod amid the worst of it; people implied fleeing, no gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "11 Breakout",
-  "shot": "S67",
-  "beat": "Chaos peak",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): fast chaotic montage of the park overrun - dust, strobing sirens, silhouetted figures running, overturned carts, dinosaurs charging through; dread not gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "12 Outro",
-  "shot": "S68",
-  "beat": "The held breath",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): Maya (28, warm brown skin, curly dark shoulder-length hair, white tee, denim shorts, green crossbody bag) Dee and Maya crammed into a hiding spot peering out through a narrow gap, lit by strobing red light, tight and tense, time slowed; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "12 Outro",
-  "shot": "S69",
-  "beat": "Their POV of the chaos",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): first-person POV through a narrow gap, slightly blurred, of dinosaurs and chaos moving across the smoking park beyond; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "12 Outro",
-  "shot": "S70",
-  "beat": "Rescue: one chopper",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a dusk sky over the smoking park, a single distant Blackhawk military helicopter silhouette inbound with a searchlight; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
- },
- {
-  "scene": "12 Outro",
-  "shot": "S71",
-  "beat": "Several Blackhawks inbound",
-  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): several Blackhawk military helicopters inbound over the park at dusk, rotor-wash kicking up dust and debris, searchlights crossing; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
+  "shot": "S66d",
+  "beat": "Crowd fleeing, dino behind",
+  "prompt": "16:9, photorealistic documentary photography, zoo photography, wildlife photography style, DINO ZOO (modern open-air dinosaur theme park, round green logo, yellow-black hazard signs, khaki rangers): a crowd of tourists running and screaming toward the camera in panic across the plaza, and far behind them a huge dinosaur silhouette looming in the dust and haze; no contact, no gore; natural realistic daylight, natural colors, balanced shadows, realistic skin textures and accurate anatomy and proportions, grounded and believable, real-world scale and perspective, clear focus on the main subject, non-cinematic, Discovery Channel realism; no text or captions, no fog, no movie-style color grading."
  }
 ]
