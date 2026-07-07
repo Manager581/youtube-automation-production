@@ -1,0 +1,1161 @@
+{
+ "summary": {
+  "name": "dinoverse_sik",
+  "duration_sec": 499.6,
+  "n_cuts": 103,
+  "cuts_per_min": 12.4,
+  "shot_dur_median": 6.03,
+  "shot_dur_mean": 4.83,
+  "pct_shots_under_2s": 21.4,
+  "pct_shots_under_1s": 10.7,
+  "pct_shots_over_5s": 64.1,
+  "n_sfx_onsets": 1627,
+  "sfx_per_min": 195.4,
+  "sfx_on_cut_rate": 0.874,
+  "music_active_frac": 0.995,
+  "moment_at_cut_pct": {
+   "pause_boundary": 86.4,
+   "mid_phrase": 11.7,
+   "stat": 2.9,
+   "turn": 1.0
+  },
+  "n_words": 622
+ },
+ "cuts": [
+  {
+   "t": 2.03,
+   "shot_dur": 2.03,
+   "word_at": "",
+   "spoken": "guys,",
+   "spoken_wide": "guys, it's D again. Last",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 4.2,
+   "shot_dur": 2.17,
+   "word_at": "Last",
+   "spoken": "Last time I",
+   "spoken_wide": "guys, it's D again. Last time I survived the Jurassic",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 5.27,
+   "shot_dur": 1.07,
+   "word_at": "I",
+   "spoken": "I survived the Jurassic",
+   "spoken_wide": "again. Last time I survived the Jurassic Zoo. This",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 6.17,
+   "shot_dur": 0.9,
+   "word_at": "Jurassic",
+   "spoken": "the Jurassic Zoo.",
+   "spoken_wide": "time I survived the Jurassic Zoo. This I snuck back",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 6.8,
+   "shot_dur": 0.63,
+   "word_at": "Zoo.",
+   "spoken": "Zoo. This",
+   "spoken_wide": "I survived the Jurassic Zoo. This I snuck back in and",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 7.5,
+   "shot_dur": 0.7,
+   "word_at": "This",
+   "spoken": "This I snuck",
+   "spoken_wide": "survived the Jurassic Zoo. This I snuck back in and saw [music]",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 8.43,
+   "shot_dur": 0.93,
+   "word_at": "back",
+   "spoken": "snuck back in and saw",
+   "spoken_wide": "Zoo. This I snuck back in and saw [music] dinosaurs",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 9.7,
+   "shot_dur": 1.27,
+   "word_at": "[music]",
+   "spoken": "saw [music]",
+   "spoken_wide": "I snuck back in and saw [music] dinosaurs no one has",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 10.73,
+   "shot_dur": 1.03,
+   "word_at": "dinosaurs",
+   "spoken": "dinosaurs no",
+   "spoken_wide": "in and saw [music] dinosaurs no one has ever before,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 11.93,
+   "shot_dur": 1.2,
+   "word_at": "has",
+   "spoken": "one has ever before,",
+   "spoken_wide": "dinosaurs no one has ever before, but one incident",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 12.67,
+   "shot_dur": 0.73,
+   "word_at": "before,",
+   "spoken": "before, but",
+   "spoken_wide": "no one has ever before, but one incident happened shut",
+   "moment": [
+    "turn",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 14.07,
+   "shot_dur": 1.4,
+   "word_at": "incident",
+   "spoken": "one incident happened shut",
+   "spoken_wide": "ever before, but one incident happened shut the whole park [music] down",
+   "moment": [
+    "stat"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 14.73,
+   "shot_dur": 0.67,
+   "word_at": "happened",
+   "spoken": "happened shut the whole",
+   "spoken_wide": "but one incident happened shut the whole park [music] down",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 15.53,
+   "shot_dur": 0.8,
+   "word_at": "whole",
+   "spoken": "the whole park [music] down",
+   "spoken_wide": "one incident happened shut the whole park [music] down Stick till the",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 16.57,
+   "shot_dur": 1.03,
+   "word_at": "down",
+   "spoken": "down Stick",
+   "spoken_wide": "shut the whole park [music] down Stick till the end, you won't",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 17.3,
+   "shot_dur": 0.73,
+   "word_at": "Stick",
+   "spoken": "Stick till the end,",
+   "spoken_wide": "the whole park [music] down Stick till the end, you won't it.",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 18.3,
+   "shot_dur": 1.0,
+   "word_at": "you",
+   "spoken": "the end, you won't",
+   "spoken_wide": "Stick till the end, you won't it. guys, it's D",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 19.33,
+   "shot_dur": 1.03,
+   "word_at": "it.",
+   "spoken": "it. guys,",
+   "spoken_wide": "Stick till the end, you won't it. guys, it's D again.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 19.7,
+   "shot_dur": 0.37,
+   "word_at": "it.",
+   "spoken": "it. guys, it's",
+   "spoken_wide": "till the end, you won't it. guys, it's D again. Last",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 25.73,
+   "shot_dur": 6.03,
+   "word_at": "Zoo.",
+   "spoken": "I get discount?",
+   "spoken_wide": "Zoo. I get discount?",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 31.73,
+   "shot_dur": 6.0,
+   "word_at": "okay.",
+   "spoken": "okay.",
+   "spoken_wide": "but okay. quite a crowd today.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 37.8,
+   "shot_dur": 6.07,
+   "word_at": "something",
+   "spoken": "",
+   "spoken_wide": "see something they mad? They put all the dangerous",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 42.77,
+   "shot_dur": 4.97,
+   "word_at": "that?",
+   "spoken": "",
+   "spoken_wide": "What's in that? used its horns to fight Carnotaurus",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 48.83,
+   "shot_dur": 6.07,
+   "word_at": "and",
+   "spoken": "",
+   "spoken_wide": "large carnivores",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 54.63,
+   "shot_dur": 5.8,
+   "word_at": "Carnotaurus.",
+   "spoken": "",
+   "spoken_wide": "to baby Carnotaurus. was the actual rival",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 55.67,
+   "shot_dur": 1.03,
+   "word_at": "Carnotaurus.",
+   "spoken": "was the actual",
+   "spoken_wide": "was the actual rival of Carnotaurus?",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 61.7,
+   "shot_dur": 6.03,
+   "word_at": "one.",
+   "spoken": "fact,",
+   "spoken_wide": "answer that one. fact, had",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 67.73,
+   "shot_dur": 6.03,
+   "word_at": "dinosaur.",
+   "spoken": "dinosaur. that?",
+   "spoken_wide": "size of any theropod dinosaur. that? She's probably a better mother",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 73.77,
+   "shot_dur": 6.03,
+   "word_at": "yours.",
+   "spoken": "usually",
+   "spoken_wide": "usually lived alone",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 79.83,
+   "shot_dur": 6.07,
+   "word_at": "age.",
+   "spoken": "",
+   "spoken_wide": "an interesting question. Audience",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 84.33,
+   "shot_dur": 4.5,
+   "word_at": "this.",
+   "spoken": "",
+   "spoken_wide": "answer this.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 90.33,
+   "shot_dur": 6.0,
+   "word_at": "this.",
+   "spoken": "keep safe",
+   "spoken_wide": "keep safe distance. Spinosaurus",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 96.37,
+   "shot_dur": 6.03,
+   "word_at": "the",
+   "spoken": "scientists",
+   "spoken_wide": "near the scientists think young Spinosaurus have spent",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 102.4,
+   "shot_dur": 6.03,
+   "word_at": "debated.",
+   "spoken": "possible",
+   "spoken_wide": "but this is still debated. possible rival was",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 108.47,
+   "shot_dur": 6.07,
+   "word_at": "you",
+   "spoken": "mainly ate",
+   "spoken_wide": "mainly ate fish, crocodiles and",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 114.5,
+   "shot_dur": 6.03,
+   "word_at": "day.",
+   "spoken": "of food per day.",
+   "spoken_wide": "70 150 kg of food per day.",
+   "moment": [
+    "stat",
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 119.27,
+   "shot_dur": 4.77,
+   "word_at": "day.",
+   "spoken": "spinosaurus",
+   "spoken_wide": "spinosaurus likely stayed under mother's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 125.3,
+   "shot_dur": 6.03,
+   "word_at": "several",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 131.37,
+   "shot_dur": 6.07,
+   "word_at": "there.",
+   "spoken": "",
+   "spoken_wide": "there. made Therizinosaurus",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 137.4,
+   "shot_dur": 6.03,
+   "word_at": "herbivorous.",
+   "spoken": "",
+   "spoken_wide": "but it was probably herbivorous. scientists think",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 143.43,
+   "shot_dur": 6.03,
+   "word_at": "the",
+   "spoken": "",
+   "spoken_wide": "than the claws look",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 155.1,
+   "shot_dur": 11.67,
+   "word_at": "rivals.",
+   "spoken": "",
+   "spoken_wide": "huge.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 156.9,
+   "shot_dur": 1.8,
+   "word_at": "rivals.",
+   "spoken": "huge.",
+   "spoken_wide": "huge. said huge.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 164.9,
+   "shot_dur": 8.0,
+   "word_at": "waistband.",
+   "spoken": "you know baby",
+   "spoken_wide": "you know baby Quetzalcoatlus can flying",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 170.97,
+   "shot_dur": 6.07,
+   "word_at": "way.",
+   "spoken": "",
+   "spoken_wide": "way.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 177.0,
+   "shot_dur": 6.03,
+   "word_at": "of",
+   "spoken": "of Quetzalcoatlus'",
+   "spoken_wide": "of Quetzalcoatlus' biggest rivals Hatzegopteryx,",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 183.03,
+   "shot_dur": 6.03,
+   "word_at": "period.",
+   "spoken": "period. estimate",
+   "spoken_wide": "that lived during the late period. estimate Quetzalcoatlus may",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 189.07,
+   "shot_dur": 6.03,
+   "word_at": "on",
+   "spoken": "",
+   "spoken_wide": "years on",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 195.1,
+   "shot_dur": 6.03,
+   "word_at": "on",
+   "spoken": "",
+   "spoken_wide": "likely hatched covered in",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 201.17,
+   "shot_dur": 6.07,
+   "word_at": "dinosaurs.",
+   "spoken": "likely rival",
+   "spoken_wide": "birds than the scaly dinosaurs. likely rival of Velociraptor was",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 211.17,
+   "shot_dur": 10.0,
+   "word_at": "fight.",
+   "spoken": "a fight. I give them",
+   "spoken_wide": "together during a fight. I give them some chicken nuggets?",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 221.2,
+   "shot_dur": 10.03,
+   "word_at": "bucket.",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 227.23,
+   "shot_dur": 6.03,
+   "word_at": "bucket.",
+   "spoken": "",
+   "spoken_wide": "an enclosure of",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 233.27,
+   "shot_dur": 6.03,
+   "word_at": "dinos.",
+   "spoken": "fact,",
+   "spoken_wide": "fact, an Argentinosaurus may needed roughly",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 239.33,
+   "shot_dur": 6.07,
+   "word_at": "size.",
+   "spoken": "size.",
+   "spoken_wide": "every day to support its size.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 245.37,
+   "shot_dur": 6.03,
+   "word_at": "only.",
+   "spoken": "only. afraid?",
+   "spoken_wide": "Mating was brief and only. afraid?",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 248.6,
+   "shot_dur": 3.23,
+   "word_at": "afraid?",
+   "spoken": "",
+   "spoken_wide": "probably spent a lot",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 254.63,
+   "shot_dur": 6.03,
+   "word_at": "resting.",
+   "spoken": "was",
+   "spoken_wide": "was the friend of",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 260.7,
+   "shot_dur": 6.07,
+   "word_at": "side.",
+   "spoken": "",
+   "spoken_wide": "plants side by side. I ride this",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 266.73,
+   "shot_dur": 6.03,
+   "word_at": "one?",
+   "spoken": "people don't know sauropods",
+   "spoken_wide": "people don't know sauropods swallowed rocks",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 272.77,
+   "shot_dur": 6.03,
+   "word_at": "stomachs.",
+   "spoken": "",
+   "spoken_wide": "help grind food inside stomachs.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 278.8,
+   "shot_dur": 6.03,
+   "word_at": "stomachs.",
+   "spoken": "",
+   "spoken_wide": "there's",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 284.87,
+   "shot_dur": 6.07,
+   "word_at": "time.",
+   "spoken": "",
+   "spoken_wide": "way, ma'am.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 290.9,
+   "shot_dur": 6.03,
+   "word_at": "ma'am.",
+   "spoken": "",
+   "spoken_wide": "likely spent much of its",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 296.93,
+   "shot_dur": 6.03,
+   "word_at": "oceans.",
+   "spoken": "",
+   "spoken_wide": "through ancient oceans.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 301.5,
+   "shot_dur": 4.57,
+   "word_at": "oceans.",
+   "spoken": "",
+   "spoken_wide": "wonder what killed the Mosasaurus",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 307.53,
+   "shot_dur": 6.03,
+   "word_at": "else.",
+   "spoken": "",
+   "spoken_wide": "used all four flippers to",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 312.33,
+   "shot_dur": 4.8,
+   "word_at": "flying.",
+   "spoken": "",
+   "spoken_wide": "almost like underwater flying.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 318.37,
+   "shot_dur": 6.03,
+   "word_at": "flying.",
+   "spoken": "",
+   "spoken_wide": "had a second set of teeth on",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 324.4,
+   "shot_dur": 6.03,
+   "word_at": "throat.",
+   "spoken": "you think these",
+   "spoken_wide": "deeper into its throat. you think these two could actually",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 330.43,
+   "shot_dur": 6.03,
+   "word_at": "together?",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 336.5,
+   "shot_dur": 6.07,
+   "word_at": "I",
+   "spoken": "",
+   "spoken_wide": "than I",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 342.53,
+   "shot_dur": 6.03,
+   "word_at": "I",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 348.57,
+   "shot_dur": 6.03,
+   "word_at": "packaging.",
+   "spoken": "",
+   "spoken_wide": "we pet any dinosaurs?",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 354.6,
+   "shot_dur": 6.03,
+   "word_at": "dinosaurs?",
+   "spoken": "",
+   "spoken_wide": "T-Rex really",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 357.87,
+   "shot_dur": 3.27,
+   "word_at": "of",
+   "spoken": "the king of dinosaurs?",
+   "spoken_wide": "T-Rex really the king of dinosaurs?",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 359.87,
+   "shot_dur": 2.0,
+   "word_at": "dinosaurs?",
+   "spoken": "",
+   "spoken_wide": "of dinosaurs? scientists think Triceratops",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 360.03,
+   "shot_dur": 0.17,
+   "word_at": "dinosaurs?",
+   "spoken": "",
+   "spoken_wide": "dinosaurs? scientists think Triceratops",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 360.67,
+   "shot_dur": 0.63,
+   "word_at": "dinosaurs?",
+   "spoken": "scientists",
+   "spoken_wide": "scientists think Triceratops may",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 365.5,
+   "shot_dur": 4.83,
+   "word_at": "T-Rex",
+   "spoken": "A T-Rex tooth",
+   "spoken_wide": "one of T-Rex's toughest A T-Rex tooth could reach over cm",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 371.53,
+   "shot_dur": 6.03,
+   "word_at": "root.",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 377.57,
+   "shot_dur": 6.03,
+   "word_at": "root.",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 383.6,
+   "shot_dur": 6.03,
+   "word_at": "root.",
+   "spoken": "",
+   "spoken_wide": "Rex had one of the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 393.67,
+   "shot_dur": 10.07,
+   "word_at": "land",
+   "spoken": "",
+   "spoken_wide": "afraid",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 399.7,
+   "shot_dur": 6.03,
+   "word_at": "there.",
+   "spoken": "Rex",
+   "spoken_wide": "Rex are more intelligent",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 405.73,
+   "shot_dur": 6.03,
+   "word_at": "humans.",
+   "spoken": "",
+   "spoken_wide": "Indominus Rex had camouflage",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 411.77,
+   "shot_dur": 6.03,
+   "word_at": "Here's",
+   "spoken": "long distance. Here's a theory.",
+   "spoken_wide": "would be effective than chasing over long distance. Here's a theory. Camouflage may have been of the most powerful",
+   "moment": [
+    "mid_phrase"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 417.8,
+   "shot_dur": 6.03,
+   "word_at": "size.",
+   "spoken": "than its size.",
+   "spoken_wide": "possibly more important than its size.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 423.87,
+   "shot_dur": 6.07,
+   "word_at": "size.",
+   "spoken": "you know,",
+   "spoken_wide": "you know, before Indominus Rex, the",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 433.9,
+   "shot_dur": 10.03,
+   "word_at": "Rex.",
+   "spoken": "",
+   "spoken_wide": "it Indominus Rex. don't know why I'm here,",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 439.93,
+   "shot_dur": 6.03,
+   "word_at": "it.",
+   "spoken": "",
+   "spoken_wide": "through it. think he's a monster, but",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 445.97,
+   "shot_dur": 6.03,
+   "word_at": "he?",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 446.97,
+   "shot_dur": 1.0,
+   "word_at": "he?",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 453.0,
+   "shot_dur": 6.03,
+   "word_at": "he?",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 459.03,
+   "shot_dur": 6.03,
+   "word_at": "he?",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 465.07,
+   "shot_dur": 6.03,
+   "word_at": "alert.",
+   "spoken": "",
+   "spoken_wide": "alert. EVACUATE",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 471.13,
+   "shot_dur": 6.07,
+   "word_at": "immediately.",
+   "spoken": "",
+   "spoken_wide": "immediately.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 477.17,
+   "shot_dur": 6.03,
+   "word_at": "immediately.",
+   "spoken": "",
+   "spoken_wide": "evacuate immediately.",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 483.2,
+   "shot_dur": 6.03,
+   "word_at": "immediately.",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  },
+  {
+   "t": 486.07,
+   "shot_dur": 2.87,
+   "word_at": "immediately.",
+   "spoken": "go, go!",
+   "spoken_wide": "go, go! coming. GET OUT!",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 491.0,
+   "shot_dur": 4.93,
+   "word_at": "OUT!",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 494.3,
+   "shot_dur": 3.3,
+   "word_at": "OUT!",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": true
+  },
+  {
+   "t": 498.0,
+   "shot_dur": 3.7,
+   "word_at": "OUT!",
+   "spoken": "",
+   "spoken_wide": "",
+   "moment": [
+    "pause_boundary"
+   ],
+   "sfx_on_cut": false
+  }
+ ]
+}

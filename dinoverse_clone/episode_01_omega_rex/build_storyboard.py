@@ -28,28 +28,28 @@ R.append(["0 Intro","D1","0:02-0:03","1.0s","Disclaimer card 2","(card)","'Dinos
 
 # ===== TRAILER MONTAGE: rapid 0.5-1.5s flashes under the VO hook (TRIMS of payoff shots) =====
 gen("0 Intro","M01","0:03-0:04","1.0s","Montage open: gate flash","HOST-VO (Dee)","Quick flash of the 'DINO ZOO' gate, crowd pouring in","quick flash","'DINO ZOO' wooden gate, green logo, families streaming in","fast flash","crowd pours through gate","gate crowd, sting","HOST-VO: \"Hey guys, it's D again. Last time I barely survived the Jurassic Zoo.\"","crowd","upbeat→tense","0.8-1.0s flash, hard cut")
-trim("0 Intro","M02","0:04-0:05","0.6s","Flash: carno slams glass","HOST-VO (Dee)","0.6s: Carnotaurus slams the glass","S16 (Carno charge)","(VO continues)","glass BANG","tense montage","0.6s flash")
-trim("0 Intro","M03","0:05-0:06","0.7s","Flash: Spino splash","HOST-VO (Dee)","0.7s: Spinosaurus splash hits lens","S21 (Spino lunge)","(VO continues)","splash","tense montage","0.7s flash")
-trim("0 Intro","M04","0:06-0:07","0.6s","Flash: Quetz swoop","HOST-VO (Dee)","0.6s: pterosaur swoops the crowd","S31 (Quetz swoop)","HOST-VO: \"This time I snuck back in...\"","wing whoosh","tense montage","0.6s flash")
-trim("0 Intro","M05","0:07-0:08","0.7s","Flash: Mosa breach","HOST-VO (Dee)","0.7s: Mosasaurus breaches the tank","S45 (Mosa breach)","(VO continues)","breach","tense montage","0.7s flash")
-trim("0 Intro","M06","0:08-0:09","0.6s","Flash: T-Rex roar","HOST-VO (Dee)","0.6s: T-Rex head roars at fence","S50 (T-Rex head)","HOST-VO: \"...and saw unrealistic dinosaurs no one has ever seen before.\"","roar","tense montage","0.6s flash")
-trim("0 Intro","M07","0:09-0:10","0.5s","Flash: hybrid eye","HOST-VO (Dee)","0.5s: the hybrid's glowing orange eye in the dark","S56 (Hybrid reveal)","(VO continues)","low growl","tense montage","0.5s flash")
-trim("0 Intro","M08","0:10-0:11","0.6s","Flash: red alarm","HOST-VO (Dee)","0.6s: red containment alarm floods the lab","S60 (Alarm)","HOST-VO: \"But one incident...\"","alarm","tense montage","0.6s flash")
-trim("0 Intro","M09","0:11-0:12","0.5s","Flash: glass bursts","HOST-VO (Dee)","0.5s: the cell glass explodes","S61 (Glass bursts)","(VO continues)","shatter","tense montage","0.5s flash")
-trim("0 Intro","M10","0:12-0:13","0.7s","Flash: crowd panic","HOST-VO (Dee)","0.7s: crowd flooding the exits in panic","S62 (Evacuate)","HOST-VO: \"...shut the whole park down forever.\"","screams, alarm","tense montage","0.7s flash")
-trim("0 Intro","M11","0:13-0:14","0.8s","Flash: hybrid smashes gate","HOST-VO (Dee)","0.8s: hybrid bursts the park gate","S63 (Hybrid loose)","(VO continues)","gate crash, roar","tense montage","0.8s flash")
-trim("0 Intro","M12","0:14-0:15","0.7s","Flash: the chase","HOST-VO (Dee)","0.7s: POV sprinting, hybrid behind","S64 (Chase)","(VO continues)","pounding, roar","tense montage","0.7s flash")
-trim("0 Intro","M13","0:14-0:15","0.6s","Flash: Therizino claws","HOST-VO (Dee)","0.6s: huge claws shred a feeder","Therizinosaurus action","(VO continues)","shred","tense montage","0.6s flash")
-trim("0 Intro","M14","0:15-0:16","0.6s","Flash: raptor pack bolt","HOST-VO (Dee)","0.6s: raptors bolt the fence in sync","Velociraptor action","(VO continues)","chitter","tense montage","0.6s flash")
-trim("0 Intro","M15","0:16-0:17","0.7s","Flash: sauropod scale","HOST-VO (Dee)","0.7s: tilt up a towering Brachiosaurus","Sauropod scale","(VO continues)","low rumble","tense montage","0.7s flash")
-trim("0 Intro","M16","0:17-0:18","0.6s","Flash: hybrid lunges glass","HOST-VO (Dee)","0.6s: the hybrid lunges at the cracking glass","Hybrid lunge","HOST-VO: \"...you won't believe it.\"","glass creak","tense montage","0.6s flash")
+trim("0 Intro","M02","0:04-0:05","0.6s","Flash: carno slams glass","HOST-VO (Dee)","0.6s: Carnotaurus slams the glass","S07 (Carno slams glass)","(VO continues)","glass BANG","tense montage","0.6s flash")
+trim("0 Intro","M03","0:05-0:06","0.7s","Flash: Spino at the glass","HOST-VO (Dee)","0.7s: the Spinosaurus head glides past the glass","S12 (Spino caged glass)","(VO continues)","muffled rumble","tense montage","0.7s flash")
+trim("0 Intro","M04","0:06-0:07","0.6s","Flash: Quetz swoop","HOST-VO (Dee)","0.6s: pterosaur swoops the crowd","S25 (Quetz swoop)","HOST-VO: \"This time I snuck back in...\"","wing whoosh","tense montage","0.6s flash")
+trim("0 Intro","M05","0:07-0:08","0.7s","Flash: Mosa breach","HOST-VO (Dee)","0.7s: Mosasaurus breaches the tank","S43 (Mosa breach)","(VO continues)","breach","tense montage","0.7s flash")
+trim("0 Intro","M06","0:08-0:09","0.6s","Flash: T-Rex roar","HOST-VO (Dee)","0.6s: T-Rex head roars at fence","S47 (T-Rex head)","HOST-VO: \"...and saw unrealistic dinosaurs no one has ever seen before.\"","roar","tense montage","0.6s flash")
+trim("0 Intro","M07","0:09-0:10","0.5s","Flash: hybrid eye","HOST-VO (Dee)","0.5s: the hybrid's glowing orange eye in the dark","S53 (Hybrid reveal)","(VO continues)","low growl","tense montage","0.5s flash")
+trim("0 Intro","M08","0:10-0:11","0.6s","Flash: sirens/blackout","HOST-VO (Dee)","0.6s: strobing sirens, park going dark","S67 (strobing sirens)","HOST-VO: \"But one incident...\"","alarm","tense montage","0.6s flash")
+trim("0 Intro","M09","0:11-0:12","0.5s","Flash: raptor springs the fence","HOST-VO (Dee)","0.5s: a raptor springs over the dead fence","S64 (raptor over the fence)","(VO continues)","chitter, leap","tense montage","0.5s flash")
+trim("0 Intro","M10","0:12-0:13","0.7s","Flash: crowd panic","HOST-VO (Dee)","0.7s: crowd stampede through the plaza","S66b (crowd stampede)","HOST-VO: \"...shut the whole park down forever.\"","screams, alarm","tense montage","0.7s flash")
+trim("0 Intro","M11","0:13-0:14","0.8s","Flash: hybrid smashes gate","HOST-VO (Dee)","0.8s: hybrid bursts its enclosure gate","S60 (hybrid bursts the gate)","(VO continues)","gate crash, roar","tense montage","0.8s flash")
+trim("0 Intro","M12","0:14-0:15","0.7s","Flash: the chase","HOST-VO (Dee)","0.7s: crowd flees toward camera, dino looming behind","S66d (crowd flees, dino behind)","(VO continues)","pounding, roar","tense montage","0.7s flash")
+trim("0 Intro","M13","0:14-0:15","0.6s","Flash: Therizino claws","HOST-VO (Dee)","0.6s: huge claws shred a feeder","S19 (Theri shreds feeder)","(VO continues)","shred","tense montage","0.6s flash")
+trim("0 Intro","M14","0:15-0:16","0.6s","Flash: raptor pack bolt","HOST-VO (Dee)","0.6s: raptors bolt the fence in sync","S31 (raptors bolt)","(VO continues)","chitter","tense montage","0.6s flash")
+trim("0 Intro","M15","0:16-0:17","0.7s","Flash: sauropod scale","HOST-VO (Dee)","0.7s: tilt up a towering Brachiosaurus","S35 (Brachiosaurus tilt-up)","(VO continues)","low rumble","tense montage","0.7s flash")
+trim("0 Intro","M16","0:17-0:18","0.6s","Flash: hybrid lunges glass","HOST-VO (Dee)","0.6s: the hybrid presses the cracking glass","S57 (hybrid presses the glass)","HOST-VO: \"...you won't believe it.\"","glass creak","tense montage","0.6s flash")
 trim("0 Intro","M17","0:18-0:19","1.0s","Flash: rescue tease","HOST-VO (Dee)","1.0s: distant Blackhawk helicopters inbound over the burning park at dusk","S71 (choppers inbound)","HOST-VO: \"Stick till the end.\"","distant rotors (faint)","sting","1.0s flash, slowest of montage")
 gen("0 Intro","S00","0:16-0:18","2.0s","Smash to title","HOST-VO (Dee)","Near-black, ember particles, 'DINO ZOO' title bug","static","near-black w/ ember particles, faint red glow (title in edit)","static","embers drift","low boom","-","low sub boom","silence bed","Title overlay, hard cut to entry")
 
 # ===== ENTRY (ticket gag) =====
 gen("1 Entry","S01","0:18-0:24","6s","Re-intro selfie at gate","HOST-VO (Dee)","'DINO ZOO' gate, Dee selfie-POV, crowds entering","slow push-in","large wooden 'DINO ZOO' gate, round green logo, families entering, Dee (30s grey tee) selfie-POV","slow push-in, sway","Dee walks to gate; crowd enters","cheerful crowd, birds","HOST-VO: \"Last time I barely survived the Jurassic Zoo... this time I'm going deeper.\"","-","upbeat doc bed IN","Hard cut from title")
 gen("1 Entry","S02","0:24-0:30","6s","Ticket discount gag (verbatim)","DEE / STAFF / MAYA","Ticket booth, Lena inside, POV hand slides ticket, Maya beside","locked, sway","[LENA][MAYA] wooden DINO ZOO ticket booth, Lena leans out smiling, POV hand slides a ticket","locked sway","Lena gestures; Maya beside","booth, crowd","Dee: \"Can I get a discount?\"  Staff: \"No, it's the same for everyone.\"  Maya: \"Sad, but okay.\"","-","upbeat doc bed","Hard cut")
-gen("1 Entry","S03","0:30-0:36","6s","Crowd + mystery plant","DEE / MAYA","Busy plaza + painted park map, crowd flowing one way","walk-through","[MAYA] POV through plaza past a large painted 'PARK MAP' board, big crowd flowing toward enclosures","walk-through","walk forward; crowd flows","crowd, birds","Dee: \"There's quite a crowd today. Looks like they're here to see something special.\"","-","upbeat doc bed","Hard cut")
+gen("1 Entry","S03","0:30-0:36","6s","Crowd + mystery plant","DEE / MAYA","Busy plaza + painted park map, crowd flowing one way","walk-through","[MAYA] POV through plaza past a large painted 'PARK MAP' board, big crowd flowing toward enclosures","walk-through","walk forward; crowd flows","crowd, birds","Maya: \"Quite a crowd today.\"  Dee: \"They're all here for the same thing we are.\"","-","upbeat doc bed","Hard cut")
 gen("1 Entry","S03b","0:36-0:39","3s","The plant: teens slip into the hybrid door","DEE / MAYA","Two teenagers slipping through a 'HYBRID - STAFF ONLY' service door","locked, candid","two teenagers glancing around and slipping through a heavy service door stenciled 'HYBRID - STAFF ONLY' with yellow-black hazard stripes, tucked in a quiet corner of the park","locked candid","teens glance around; push through the door","quiet crowd, a latch click","-","-","unsettling doc bed","Hard cut")
 gen("1 Entry","S03c","0:39-0:42","3s","The plant: 'that's weird'","DEE / MAYA","POV: the staff door easing shut; Maya glancing back","handheld","[MAYA] first-person POV catching a heavy 'HYBRID - STAFF ONLY' service door easing shut, Maya beside glancing back over her shoulder, curious","handheld","door eases shut; Maya glances back","quiet crowd","Maya: \"...that's weird.\"  Dee: \"Eh. Come on.\"","-","unsettling doc bed","Hard cut")
 
@@ -72,71 +72,233 @@ def C(scene, base_n, t0, sign, est_on, est_cam, est_img, est_move, est_sound, es
     return n
 
 n=4
-n=C("2 Carnotaurus",n,"0:36-0:43","'DANGER: CARNOTAURUS' sign",
+# --- 2 Carnotaurus: SIK RESTYLE (his signature here = 1.0s PUNCH CUT on the rival question + mother banter) ---
+gen("2 Carnotaurus","S04","0:36-0:43","6s","Establish + 'DANGER: CARNOTAURUS' sign","MAYA",
     "Tall glass enclosure, yellow DANGER sign, carno paces, crowd","slow tilt up",
     "tall glass predator enclosure, yellow-black 'DANGER: CARNOTAURUS' sign, horned Carnotaurus paces behind thick glass, crowd",
-    "carno paces; crowd watches","crowd murmur, hiss","Maya: \"Are they mad? They put all the dangerous ones together.\"","MAYA",
-    "\"Carnotaurus used its horns to fight other Carnotaurus for territory and mating - and had some of the smallest arms of any large theropod.\"",
-    "Close on horned head + tiny arms","close on Carnotaurus horned head & very small arms behind glass, scales in sun",
-    "Dee: \"Even smaller than the T-Rex's. Don't tell him.\"  Maya: \"Cool.\"","DEE / MAYA","Maya at the glass grinning, gesturing at the carno's arms",
-    "Carno charges & slams the glass; crowd recoils","[MAYA] Carnotaurus charges & slams thick glass, crowd jerks back, Maya flinches","carno slams glass; crowd recoils","heavy glass BANG, screams","Maya: \"NOPE.\"","MAYA","glass BANG SFX",
-    "\"It usually lived alone and could reach about 25 years of age.\"","Wide of carno snorting in dusty enclosure",
-    "\"It usually lived alone and could reach about 25 years.||Who was the actual rival of Carnotaurus? I'll let YOU answer.\"","","WETLANDS ->")
+    "slow tilt up","carno paces; crowd watches","crowd murmur, hiss",
+    "Maya: \"Are they mad? They put all the dangerous ones together.\"","-","light doc bed","Hard cut")
+gen("2 Carnotaurus","S05","+","6s","Narrator fact 1","NARRATOR",
+    "Close on horned head + tiny arms","slow push-in",
+    "close on Carnotaurus horned head & very small arms behind glass, scales in sun","slow push-in",
+    "subject slow move, blink","low call, crowd",
+    "NARRATOR: \"Carnotaurus used its horns to fight other Carnotaurus for territory and mating - and had some of the smallest arms of any large theropod.\"",
+    "-","light doc bed","Hard cut")
+gen("2 Carnotaurus","S06","+","6s","Companion banter","DEE / MAYA",
+    "Maya at the glass grinning, gesturing at the carno's arms","handheld",
+    "[MAYA] Maya at the glass grinning, gesturing at the carno's arms","handheld",
+    "Maya reacts; Dee beside","crowd, light laugh",
+    "Dee: \"Even smaller than the T-Rex's. Don't tell him.\"  Maya: \"Cool.\"","-","light doc bed","Hard cut")
+gen("2 Carnotaurus","S07","+","6s","Action beat","MAYA",
+    "Carno charges & slams the glass; crowd recoils","dynamic",
+    "[MAYA] Carnotaurus charges & slams thick glass, crowd jerks back, Maya flinches","dynamic",
+    "carno slams glass; crowd recoils","heavy glass BANG, screams",
+    "Maya: \"NOPE.\"","glass BANG SFX","light doc bed","Hard cut, SFX")
+gen("2 Carnotaurus","S08","+","6s","Babies beat (mother banter)","NARRATOR / MAYA",
+    "Wide of carno snorting in dusty enclosure","slow pan",
+    "Wide of carno snorting in dusty enclosure","slow pan",
+    "subject behaviour","low call, crowd",
+    "NARRATOR: \"Carnotaurus mothers likely left their young to fend for themselves almost from day one.\"  Maya: \"So... mom of the year.\"",
+    "-","light doc bed","Hard cut")
+trim("2 Carnotaurus","S08b","+","1.0s","Punch cut: the rival question","NARRATOR",
+    "1.0s: whip back to the carno pacing","S04 (Carno establish)",
+    "NARRATOR: \"So who was the ACTUAL rival of Carnotaurus?\"","riser tick","light doc bed","1.0s PUNCH CUT on the question")
+gen("2 Carnotaurus","S09","+","5s","Rival CTA (flywheel)","NARRATOR / DEE",
+    "POV toward WETLANDS ->","walking POV",
+    "[MAYA] POV past a wooden 'WETLANDS ->' sign, Maya beside, greenery","walking POV",
+    "walk past sign","footsteps, crowd, birds",
+    "NARRATOR: \"I'll let YOU answer.\"  Dee: \"Comments.\"","-","light doc bed","Hard cut (CTA), trim to 5s")
 
-n=C("3 Spinosaurus",n,"0:43-0:50","Boardwalk over lagoon",
-    "Boardwalk over green lagoon, huge sail-backed Spinosaurus wading, tourists","slow reveal pan",
-    "wooden boardwalk over wide green lagoon, massive sail-backed Spinosaurus wading, tourists at rail",
-    "Spino slow heavy wade, water displaces","water, deep rumble, crowd, birds","Staff: \"Please keep a safe distance - Spinosaurus reacts quickly to movement.\"","STAFF (Ranger)",
-    "\"Spinosaurus mainly ate fish - occasionally crocodiles and small dinosaurs - and likely ate 70 to 150 kg of food a day.\"",
-    "Close on the crocodile jaws + sail","close on Spinosaurus long narrow crocodile jaws & tall sail, water dripping, sun",
-    "Maya: \"Bigger than a T-Rex? In a swimming pool?\"  Dee: \"Basically.\"","DEE / MAYA","Maya at the rail eyeing the Spinosaurus, impressed",
-    "Spino lunges, snaps a fish, splash hits lens","[MAYA] Spinosaurus lunges & snaps a fish, big splash hits camera, Maya soaked & laughing","one heavy lunge+snap, big splash","huge splash, crowd cheer","Maya (soaked): \"I'm soaked. Worth it.\"","MAYA","big splash SFX",
-    "\"Some scientists think young Spinosaurus spent more time on land than adults - still debated.\"","Wide, only the sail cutting the water",
-    "\"Some think young Spinosaurus spent more time on land - still debated.||Its possible rival was Carcharodontosaurus - what do you think?\"","","FOREST ->")
+# --- 3 Spinosaurus: v5 REMAKE (Sik-approved grammar: staff on camera x2, baby-feed beat, distinct vantages).
+# Stills live in work/spino_remake/stills_v5/ -> copied to stills/S10-S14,S15b. S15 (underwater) NEEDS REGEN
+# (the v4/v5 '6_underwater.png' file is a botched save - it's the Prehistoric POV logo, md5-identical in both). ---
+gen("3 Spinosaurus","S10","0:43-0:50","6s","Arrive: lagoon archway + guide greeting","STAFF / MAYA",
+    "'SPINOSAURUS LAGOON' carved archway, ranger greeting the group","walking POV",
+    "wooden 'SPINOSAURUS LAGOON' carved archway entrance, a khaki ranger greeting a small tour group walking in, green lagoon and dome beyond",
+    "walking POV","group walks under the archway; ranger waves them in","crowd, birds, water",
+    "Staff: \"Welcome to Spinosaurus Lagoon, folks - eyes on the water.\"  Maya: \"Love that for us.\"",
+    "-","light doc bed","Hard cut")
+gen("3 Spinosaurus","S11","+","6s","Guide talk (staff on camera)","STAFF / DEE",
+    "Guide talking to the group at the rail, Spino wading behind","locked, sway",
+    "khaki park guide talking to the small tour group at the boardwalk rail, gesturing, the massive sail-backed Spinosaurus wading in the lagoon behind him",
+    "locked sway","guide gestures; Spino wades slowly behind","water, low rumble, crowd",
+    "Staff: \"Big guy eats 70 to 150 kilos of fish a day - so please don't lean over the rail.\"  Dee: \"Noted.\"",
+    "-","light doc bed","Hard cut")
+gen("3 Spinosaurus","S12","+","6s","Caged glass close (whisper)","DEE / MAYA",
+    "Extreme close: Spino head gliding past steel-meshed glass","locked close",
+    "extreme close-up of the Spinosaurus head gliding past behind thick steel-meshed viewing glass, water droplets on the pane",
+    "locked close","the huge head glides past, one eye tracking","muffled water, breathing",
+    "Maya (whisper): \"It's the size of a bus.\"  Dee: \"Bigger.\"","-","light doc bed","Hard cut")
+gen("3 Spinosaurus","S13","+","6s","Keeper feeds young Spino (babies beat)","STAFF / MAYA",
+    "Keeper kneels, feeding a fish to a juvenile Spino at the water's edge","handheld",
+    "a keeper kneeling on a low feeding platform holding out a fish to a juvenile Spinosaurus at the water's edge, metal bucket beside, lagoon behind",
+    "handheld","juvenile takes the fish; keeper steadies","splash, bucket clank, crowd aww",
+    "Maya: \"BABY Spino!\"  Keeper: \"Careful - mom's watching everything from the water.\"",
+    "-","light doc bed","Hard cut")
+gen("3 Spinosaurus","S14","+","6s","Catwalk high angle","NARRATOR",
+    "High angle from the catwalk: full Spino under the surface","high locked, slight sway",
+    "high angle from an elevated catwalk looking down at the green lagoon, the full Spinosaurus body visible just under the surface, guests on the walkway below",
+    "high locked, slight sway","the Spinosaurus glides, sail cutting the surface","wind, distant crowd, water",
+    "NARRATOR: \"Some scientists think young Spinosaurus spent more time on land than adults - still debated.\"",
+    "-","light doc bed","Hard cut")
+gen("3 Spinosaurus","S15","+","6s","Underwater gallery (STILL NEEDS REGEN)","NARRATOR",
+    "Underwater gallery: Spino swims past the glass","locked",
+    "underwater viewing gallery, tourists silhouetted against the huge glass as the Spinosaurus swims past, shafts of sunlight through green water",
+    "locked","the Spinosaurus swims past the glass, tail sweeping","muffled water hum, awed crowd",
+    "NARRATOR: \"Those cone-shaped teeth are built to grip slippery fish - nothing like a T-Rex's.\"",
+    "-","light doc bed","Hard cut")
+gen("3 Spinosaurus","S15b","+","5s","Exit + rival CTA (flywheel)","DEE",
+    "POV walking out, 'FOREST ->' sign, Maya glancing back","walking POV",
+    "first-person POV walking out along a wooden boardwalk into forest, blonde woman ahead glancing back over her shoulder, wooden 'FOREST ->' directional sign, glass lagoon wall receding",
+    "walking POV","walk forward; Maya glances back","footsteps on wood, crowd, birds",
+    "Dee: \"So - Spinosaurus or T-Rex, who actually wins? Comments.\"","-","light doc bed","Hard cut (CTA), trim to 5s")
+n=16
 
-n=C("4 Therizinosaurus",n,"0:50-0:57","Forest paddock",
+# --- 4 Therizinosaurus: SIK RESTYLE (his signature here = 11.7s dead-air hold on 'huge.' + 1.8s gag echo) ---
+gen("4 Therizinosaurus","S16","0:50-0:57","6s","Establish + Forest paddock","MAYA",
     "Forest paddock, Therizinosaurus with huge claws among trees, crowd","slow pan",
     "sunny forest paddock, tall feathered Therizinosaurus with enormous curved claws browsing leaves, crowd at rail",
-    "Therizino reaches for leaves; claws sway","crowd, leaves, low call","Maya: \"Those claws look terrifying.\"","MAYA",
-    "\"Movies made Therizinosaurus look like a pure predator - but it was probably mostly herbivorous.\"",
-    "Close on the claws raking bark","close on Therizinosaurus claws raking bark, feathers catching sun",
-    "Dee: \"And it still mostly ate plants.\"  Maya: \"Respect.\"","DEE / MAYA","Maya staring up at the huge claws, nervous",
-    "It swings its claws, shredding a hanging melon feeder","[MAYA] Therizinosaurus swings its claws and shreds a hanging melon feeder, pulp flying, crowd gasps","claws swing; feeder shreds","shred, crowd gasp","Crowd: \"Whoa!\"","CROWD","shred SFX",
-    "\"Some scientists think baby Therizinosaurus were meaner than the adults.\"","Wide, Therizino calm among the trees",
-    "\"Some think baby Therizinosaurus were meaner than adults.||A likely rival? Tarbosaurus - agree?\"","","AVIARY ->")
+    "slow pan","Therizino reaches for leaves; claws sway","crowd, leaves, low call",
+    "Maya: \"Those claws look terrifying.\"","-","light doc bed","Hard cut")
+gen("4 Therizinosaurus","S17","+","6s","Narrator fact 1","NARRATOR",
+    "Close on the claws raking bark","slow push-in",
+    "close on Therizinosaurus claws raking bark, feathers catching sun","slow push-in",
+    "subject slow move, blink","low call, crowd",
+    "NARRATOR: \"Movies made Therizinosaurus look like a pure predator - but it was probably mostly herbivorous.\"",
+    "-","light doc bed","Hard cut")
+gen("4 Therizinosaurus","S18","+","6s","Companion banter","DEE / MAYA",
+    "Maya staring up at the huge claws, nervous","handheld",
+    "[MAYA] Maya staring up at the huge claws, nervous","handheld",
+    "Maya reacts; Dee beside","crowd, light laugh",
+    "Dee: \"And it still mostly ate plants.\"  Maya: \"Respect.\"","-","light doc bed","Hard cut")
+gen("4 Therizinosaurus","S19","+","6s","Action beat","CROWD",
+    "It swings its claws, shredding a hanging melon feeder","dynamic",
+    "[MAYA] Therizinosaurus swings its claws and shreds a hanging melon feeder, pulp flying, crowd gasps","dynamic",
+    "claws swing; feeder shreds","shred, crowd gasp",
+    "Crowd: \"Whoa!\"","shred SFX","light doc bed","Hard cut, SFX")
+gen("4 Therizinosaurus","S20","+","12s","The hold: '...huge.'","MAYA",
+    "Wide, Therizino calm among the trees - and the shot just sits there","slow pan",
+    "Wide, Therizino calm among the trees","slow pan",
+    "Therizino browses calmly; nothing else happens","leaves, distant crowd",
+    "(long dead-air silence)  Maya: \"...huge.\"","-","KILL music bed","12s DEAD-AIR HOLD - gen 6s, Grok Extend; no music")
+trim("4 Therizinosaurus","S20b","+","1.8s","Gag echo cut","DEE",
+    "1.8s: snap back to Maya at the claws","S18 (Maya at the claws)",
+    "Dee: \"She said huge.\"","-","light doc bed","1.8s ECHO CUT (the joke is the edit)")
+gen("4 Therizinosaurus","S21","+","5s","Babies beat + rival CTA","NARRATOR / DEE",
+    "POV toward AVIARY ->","walking POV",
+    "[MAYA] POV past a wooden 'AVIARY ->' sign, Maya beside, greenery","walking POV",
+    "walk past sign","footsteps, crowd, birds",
+    "NARRATOR: \"Some think baby Therizinosaurus were meaner than the adults. A likely rival? Tarbosaurus.\"  Dee: \"Comments.\"",
+    "-","light doc bed","Hard cut (CTA), trim to 5s")
 
-n=C("5 Quetzalcoatlus",n,"0:57-1:04","Netted aviary dome",
+# --- 5 Quetzalcoatlus: SIK RESTYLE (his signature here = 8s baby-Quetz banter OPENER) ---
+gen("5 Quetzalcoatlus","S22","0:57-1:04","8s","8s baby-Quetz opener (babies beat)","MAYA / DEE",
     "Vast netted aviary dome, giant Quetzalcoatlus perched & gliding","awe tilt-up",
     "interior vast netted aviary dome, tall cliffs, giant Quetzalcoatlus perched & gliding, sun through net, tourists below",
-    "pterosaurs perch & glide","echoing screeches, wind, crowd","Crowd: \"WHOA!\"","CROWD",
-    "\"Did you know baby Quetzalcoatlus could start flying just minutes after hatching?\"",
-    "One spreads enormous wings on a cliff","Quetzalcoatlus on a cliff ledge spreads enormous wings, backlit through the net",
-    "Maya: \"That's a dragon. That's just a dragon.\"  Dee: \"No way.\"","DEE / MAYA","Maya tilting her head all the way back, stunned",
-    "A pterosaur swoops low; people duck","giant Quetzalcoatlus swoops low over the crowd, tourists duck, wind rush","pterosaur swoops; crowd ducks","loud wing-whoosh, shouts","Crowd: \"DUCK!\"","CROWD","whoosh SFX",
-    "\"They lived around 20 to 30 years.\"","Wide, two pterosaurs circling the dome",
-    "\"They lived around 20 to 30 years.||One big rival was Hatzegopteryx, another giant pterosaur - agree?\"","","RAPTORS ->")
+    "awe tilt-up","pterosaurs perch & glide","echoing screeches, wind, crowd",
+    "Maya: \"You know baby Quetzalcoatlus could fly just minutes after hatching?\"  Dee: \"No way.\"",
+    "-","light doc bed","8s - gen 6s, Grok Extend")
+gen("5 Quetzalcoatlus","S23","+","6s","Narrator fact 1","NARRATOR",
+    "One spreads enormous wings on a cliff","slow push-in",
+    "Quetzalcoatlus on a cliff ledge spreads enormous wings, backlit through the net","slow push-in",
+    "subject slow move, blink","low call, crowd",
+    "NARRATOR: \"Quetzalcoatlus stood as tall as a giraffe, with a wingspan over 10 meters.\"",
+    "-","light doc bed","Hard cut")
+gen("5 Quetzalcoatlus","S24","+","6s","Companion banter","DEE / MAYA",
+    "Maya tilting her head all the way back, stunned","handheld",
+    "[MAYA] Maya tilting her head all the way back, stunned","handheld",
+    "Maya reacts; Dee beside","crowd, light laugh",
+    "Maya: \"That's a dragon. That's just a dragon.\"  Dee: \"No way.\"","-","light doc bed","Hard cut")
+gen("5 Quetzalcoatlus","S25","+","6s","Action beat","CROWD",
+    "A pterosaur swoops low; people duck","dynamic",
+    "giant Quetzalcoatlus swoops low over the crowd, tourists duck, wind rush","dynamic",
+    "pterosaur swoops; crowd ducks","loud wing-whoosh, shouts",
+    "Crowd: \"DUCK!\"","whoosh SFX","light doc bed","Hard cut, SFX")
+gen("5 Quetzalcoatlus","S26","+","6s","Narrator fact 2","NARRATOR",
+    "Wide, two pterosaurs circling the dome","slow pan",
+    "Wide, two pterosaurs circling the dome","slow pan",
+    "subject behaviour","low call, crowd",
+    "NARRATOR: \"They lived around 20 to 30 years.\"","-","light doc bed","Hard cut")
+gen("5 Quetzalcoatlus","S27","+","5s","Rival CTA (flywheel)","NARRATOR / DEE",
+    "POV toward RAPTORS ->","walking POV",
+    "[MAYA] POV past a wooden 'RAPTORS ->' sign, Maya beside, greenery","walking POV",
+    "walk past sign","footsteps, crowd, birds",
+    "NARRATOR: \"One big rival was Hatzegopteryx, another giant pterosaur - agree?\"  Dee: \"Comments.\"",
+    "-","light doc bed","Hard cut (CTA), trim to 5s")
+n=28
 
-n=C("6 Velociraptor",n,"1:04-1:11","Rocky raptor paddock",
+# --- 6 Velociraptor: SIK RESTYLE (his signature here = SLOW cutting: two 10s holds) ---
+gen("6 Velociraptor","S28","1:04-1:11","10s","Establish + 10s nuggets hold","MAYA",
     "Rocky paddock, several feathered Velociraptors alert behind a fence","slow pan",
     "sunny rocky paddock, several feathered Velociraptors moving alert behind a tall fence, crowd",
-    "raptors move alert, heads flick","crowd, chittering","Maya: \"Can I give them some chicken nuggets?\"","MAYA",
-    "\"Velociraptors likely hatched covered in feathers - looking more like young birds than scaly dinosaurs.\"",
-    "Close on a raptor's feathered head tilting","close on a Velociraptor feathered head tilting, intelligent eye, behind fence",
-    "Dee: \"I don't think the zoo allows that.\"  Maya: \"They'd want the whole bucket.\"","DEE / MAYA","Maya pretending to offer a snack, raptors tracking her hand",
-    "Two raptors suddenly bolt along the fence in sync","[MAYA] two Velociraptors suddenly bolt along the fence line in eerie sync, crowd jumps","raptors bolt in sync; crowd jumps","chitter burst, gasps","Maya: \"They planned that.\"","MAYA","scurry SFX",
-    "\"Fossils were found with a Velociraptor and Protoceratops locked together mid-fight.\"","Two raptors square up near a Protoceratops display",
-    "\"Fossils show a Velociraptor and Protoceratops locked together mid-fight.||A likely rival? Protoceratops - who wins?\"","","PEACEFUL VALLEY ->")
+    "slow pan","raptors move alert, heads flick","crowd, chittering",
+    "Maya: \"Can I give them some chicken nuggets?\"  (then HOLD the silence - nobody answers)",
+    "-","light doc bed","10s HOLD - gen 6s, Grok Extend; no music swell")
+gen("6 Velociraptor","S29","+","10s","Silent watch (10s, no dialogue)","-",
+    "Close on a raptor's feathered head tilting","slow push-in",
+    "close on a Velociraptor feathered head tilting, intelligent eye, behind fence",
+    "slow push-in","head tilts slowly; intelligent eye stays locked on camera","low chitter, wind",
+    "-","-","light doc bed","10s SILENT hold - Extend; let it stare")
+gen("6 Velociraptor","S30","+","6s","Companion banter","DEE / MAYA",
+    "Maya pretending to offer a snack, raptors tracking her hand","handheld",
+    "[MAYA] Maya pretending to offer a snack, raptors tracking her hand","handheld",
+    "Maya reacts; Dee beside","crowd, light laugh",
+    "Dee: \"I don't think the zoo allows that.\"  Maya: \"They'd want the whole bucket.\"",
+    "-","light doc bed","Hard cut")
+gen("6 Velociraptor","S31","+","6s","Action beat","MAYA",
+    "Two raptors suddenly bolt along the fence in sync","dynamic",
+    "[MAYA] two Velociraptors suddenly bolt along the fence line in eerie sync, crowd jumps","dynamic",
+    "raptors bolt in sync; crowd jumps","chitter burst, gasps",
+    "Maya: \"They planned that.\"","scurry SFX","light doc bed","Hard cut, SFX")
+gen("6 Velociraptor","S32","+","6s","Babies beat (feathered hatchlings)","NARRATOR",
+    "Two raptors square up near a Protoceratops display","slow pan",
+    "Two raptors square up near a Protoceratops display","slow pan",
+    "subject behaviour","low call, crowd",
+    "NARRATOR: \"Velociraptors likely hatched covered in feathers - looking more like young birds than scaly dinosaurs.\"",
+    "-","light doc bed","Hard cut")
+gen("6 Velociraptor","S33","+","5s","Rival CTA (flywheel)","NARRATOR / DEE",
+    "POV toward PEACEFUL VALLEY ->","walking POV",
+    "[MAYA] POV past a wooden 'PEACEFUL VALLEY ->' sign, Maya beside, greenery","walking POV",
+    "walk past sign","footsteps, crowd, birds",
+    "NARRATOR: \"Fossils show a Velociraptor and Protoceratops locked together mid-fight. A likely rival? Protoceratops - who wins?\"  Dee: \"Comments.\"",
+    "-","light doc bed","Hard cut (CTA), trim to 5s")
+n=34
 
-n=C("7 Sauropods",n,"1:11-1:18","Grassland 'peaceful' enclosure",
+# --- 7 Sauropods: SIK RESTYLE (banter-led warm stop; babies beat folded into the CTA walk-out) ---
+gen("7 Sauropods","S34","1:11-1:18","6s","Establish + Grassland 'peaceful' enclosure","DEE",
     "Wide grassland: Brachiosaurus, Diplodocus, Stegosaurus, Ankylosaurus grazing together","slow rising reveal",
     "wide sunny grassland enclosure, a Brachiosaurus, Diplodocus, Stegosaurus and Ankylosaurus grazing peacefully together, families watching",
-    "sauropods graze; necks sway","gentle crowd, birds, chewing","Dee: \"Finally, an enclosure of peaceful dinos.\"","DEE",
-    "\"An Argentinosaurus may have needed 100 to 150 kg of vegetation every single day.\"",
-    "Tilt up a towering Brachiosaurus, tiny tourists below","tilt up the leg & neck of a towering Brachiosaurus, tiny tourists below for scale",
-    "Maya: \"Can I ride this one?\"  Dee: \"Absolutely not.\"","DEE / MAYA","Maya eyeing the smallest sauropod, grinning",
-    "Stegosaurus swings its spiked tail lazily, clearing a feeder","Stegosaurus swings its spiked thagomizer tail lazily, knocking over a wooden feeder, crowd laughs","tail swings; feeder topples","WHUMP, laughter","Maya: \"He did that on purpose.\"","MAYA","WHUMP SFX",
-    "\"Sauropods swallowed rocks - gastroliths - to grind food inside their stomachs.\"","Close on a sauropod's throat swallowing",
-    "\"Sauropods swallowed gastroliths to grind food in their stomachs.||Diplodocus and Stegosaurus were neighbours - who'd you keep?\"","","MOSA LAGOON ->","calm warm bed")
+    "slow rising reveal","sauropods graze; necks sway","gentle crowd, birds, chewing",
+    "Dee: \"Finally, an enclosure of peaceful dinos.\"","-","calm warm bed","Hard cut")
+gen("7 Sauropods","S35","+","6s","Narrator fact 1","NARRATOR",
+    "Tilt up a towering Brachiosaurus, tiny tourists below","slow push-in",
+    "tilt up the leg & neck of a towering Brachiosaurus, tiny tourists below for scale","slow push-in",
+    "subject slow move, blink","low call, crowd",
+    "NARRATOR: \"An Argentinosaurus may have needed 100 to 150 kg of vegetation every single day.\"",
+    "-","calm warm bed","Hard cut")
+gen("7 Sauropods","S36","+","6s","Companion banter","DEE / MAYA",
+    "Maya eyeing the smallest sauropod, grinning","handheld",
+    "[MAYA] Maya eyeing the smallest sauropod, grinning","handheld",
+    "Maya reacts; Dee beside","crowd, light laugh",
+    "Maya: \"Can I ride this one?\"  Dee: \"Absolutely not.\"","-","calm warm bed","Hard cut")
+gen("7 Sauropods","S37","+","6s","Action beat","MAYA",
+    "Stegosaurus swings its spiked tail lazily, clearing a feeder","dynamic",
+    "Stegosaurus swings its spiked thagomizer tail lazily, knocking over a wooden feeder, crowd laughs","dynamic",
+    "tail swings; feeder topples","WHUMP, laughter",
+    "Maya: \"He did that on purpose.\"","WHUMP SFX","calm warm bed","Hard cut, SFX")
+gen("7 Sauropods","S38","+","6s","Narrator fact 2","NARRATOR",
+    "Close on a sauropod's throat swallowing","slow pan",
+    "Close on a sauropod's throat swallowing","slow pan",
+    "subject behaviour","low call, crowd",
+    "NARRATOR: \"Sauropods swallowed rocks - gastroliths - to grind food inside their stomachs.\"",
+    "-","calm warm bed","Hard cut")
+gen("7 Sauropods","S39","+","5s","Babies beat + rival CTA","NARRATOR / MAYA / DEE",
+    "POV toward MOSA LAGOON ->","walking POV",
+    "[MAYA] POV past a wooden 'MOSA LAGOON ->' sign, Maya beside, greenery","walking POV",
+    "walk past sign","footsteps, crowd, birds",
+    "NARRATOR: \"Sauropod mothers laid dozens of eggs and simply walked away.\"  Maya: \"Brutal.\"  Dee: \"Diplodocus or Stegosaurus - who'd you keep? Comments.\"",
+    "-","calm warm bed","Hard cut (CTA), trim to 5s")
+n=40
 
 n=C("8 Mosasaurus",n,"1:18-1:25","Show stadium tank",
     "Show stadium around a huge tank, crowd filling, staff ushering","slow reveal",
@@ -149,16 +311,45 @@ n=C("8 Mosasaurus",n,"1:18-1:25","Show stadium tank",
     "\"Mosasaurus likely spent much of its time cruising slowly through ancient oceans.\"","The Mosa slides under; a Plesiosaur glides in a side tank",
     "\"Plesiosaurs used all four flippers to swim - almost like underwater flying.||Mosa vs Megalodon - who wins?\"","","RESTRICTED - APEX ->")
 
-n=C("9 T-Rex",n,"1:25-1:32","Reinforced apex arena",
+# --- 9 T-Rex: SIK RESTYLE (his signature here = 0.2-0.6s FLASH BURST inside the facts + 10s 'afraid' hold) ---
+gen("9 T-Rex","S46","1:25-1:32","6s","Establish + Reinforced apex arena","MAYA",
     "Huge reinforced arena, a T-Rex stalks; a Triceratops in the next paddock","slow tilt up",
     "huge reinforced enclosure, thick walls, a massive T-Rex stalks; a Triceratops visible in the adjacent paddock, tense crowd",
-    "T-Rex stalks; head tracks crowd","deep roar, low crowd","Maya: \"That thing is even bigger than I expected.\"","MAYA",
-    "\"A T-Rex tooth could reach over 30 cm long including the root - with one of the strongest bite forces of any land animal.\"",
-    "Close on the T-Rex head + teeth","close on a T-Rex head, lips & huge teeth, eye catching light, behind heavy fencing",
-    "Maya: \"I'm afraid to go in there.\"  Dee: \"Good instinct.\"","DEE / MAYA","Maya stepping back from the fence, nervous",
-    "The T-Rex slams the fence; Triceratops lowers its horns","[MAYA] T-Rex rams the heavy fence, a Triceratops in the next paddock lowers its horns, dust, crowd jumps","T-Rex rams fence; trike lowers horns; dust","metal clang, snort, gasps","Crowd: \"AAH!\"","CROWD","clang SFX",
-    "\"Some scientists think Triceratops was one of T-Rex's toughest rivals.\"","Wide, T-Rex and Triceratops eyeing across the divide",
-    "\"Some think Triceratops was one of T-Rex's toughest rivals.||T-Rex or Triceratops - who really wins?\"","","STAFF ONLY ->")
+    "slow tilt up","T-Rex stalks; head tracks crowd","deep roar, low crowd",
+    "Maya: \"That thing is even bigger than I expected.\"","-","light doc bed","Hard cut")
+gen("9 T-Rex","S47","+","6s","Narrator fact 1","NARRATOR",
+    "Close on the T-Rex head + teeth","slow push-in",
+    "close on a T-Rex head, lips & huge teeth, eye catching light, behind heavy fencing","slow push-in",
+    "subject slow move, blink","low call, crowd",
+    "NARRATOR: \"A T-Rex tooth could reach over 30 cm long including the root - with one of the strongest bite forces of any land animal.\"",
+    "-","light doc bed","Hard cut")
+gen("9 T-Rex","S48","+","10s","The 'afraid' hold (10s)","DEE / MAYA",
+    "Maya stepping back from the fence, nervous - then the shot just holds","handheld",
+    "[MAYA] Maya stepping back from the fence, nervous","handheld",
+    "Maya steps back; the T-Rex keeps staring; hold","low growl, crowd hush",
+    "Maya: \"I'm afraid to go in there.\"  Dee: \"Good instinct.\"  (then HOLD the silence)",
+    "-","light doc bed","10s HOLD - gen 6s, Grok Extend; no music swell")
+gen("9 T-Rex","S49","+","6s","Action beat","CROWD",
+    "The T-Rex slams the fence; Triceratops lowers its horns","dynamic",
+    "[MAYA] T-Rex rams the heavy fence, a Triceratops in the next paddock lowers its horns, dust, crowd jumps","dynamic",
+    "T-Rex rams fence; trike lowers horns; dust","metal clang, snort, gasps",
+    "Crowd: \"AAH!\"","clang SFX","light doc bed","Hard cut, SFX")
+trim("9 T-Rex","S49b","+","0.3s","Flash burst 1","NARRATOR",
+    "0.3s: re-hit of the fence slam","S49 (fence slam)","-","impact tick","light doc bed","0.3s FLASH")
+trim("9 T-Rex","S49c","+","0.6s","Flash burst 2","NARRATOR",
+    "0.6s: whip to the stalking T-Rex","S46 (T-Rex stalk)",
+    "NARRATOR: \"Some scientists think Triceratops...\"","riser tick","light doc bed","0.6s FLASH - narrator starts OVER the burst")
+gen("9 T-Rex","S50","+","5s","Narrator fact 2 (lands the burst)","NARRATOR",
+    "Wide, T-Rex and Triceratops eyeing across the divide","slow pan",
+    "Wide, T-Rex and Triceratops eyeing across the divide","slow pan",
+    "subject behaviour","low call, crowd",
+    "NARRATOR: \"...was one of T-Rex's toughest rivals.\"","-","light doc bed","Hard cut, trim to 5s")
+gen("9 T-Rex","S51","+","5s","Rival CTA (flywheel)","NARRATOR / DEE",
+    "POV toward STAFF ONLY ->","walking POV",
+    "[MAYA] POV past a wooden 'STAFF ONLY ->' sign, Maya beside, greenery","walking POV",
+    "walk past sign","footsteps, crowd, birds",
+    "NARRATOR: \"T-Rex or Triceratops - who really wins?\"  Dee: \"Comments.\"","-","light doc bed","Hard cut (CTA), trim to 5s")
+n=52
 
 # ===== HYBRID FINALE (D-Rex) =====
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","1:32-1:41","6s","Into the apex hall (the main attraction)","DEE","Dim corridor, 'RESTRICTED // GENETICS', flicker","slow forward dolly","dim concrete corridor, flickering fluorescents, signs 'RESTRICTED' 'GENETICS', cold blue light, POV creeping","slow forward dolly","POV creeps; lights flicker","hum, flicker, distant thud","Dee: \"Okay - THIS is the one everyone lines up for.\"","-","dread drone","Hard cut; cold-blue grade"); n+=1
@@ -167,7 +358,7 @@ gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","Fact: smart + camouflage","NARRATO
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","D-Rex trivia (his real line)","NARRATOR / DEE","Close on a lab plaque 'PROJECT D-REX'","push to sign","close on a stenciled lab plaque 'PROJECT D-REX // CLASSIFIED', biohazard symbol, cold light","slow push-in","push to plaque; breathing beyond","hum, deep breathing","NARRATOR: \"Fun fact - the Jurassic World team first planned their hybrid as 'Diabolus Rex', or D-Rex, before renaming it.\"  Dee: \"Ooh.\"","-","dread drone","Hard cut"); n+=1
 
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","Companion fear","COMPANION","Maya at the glass, whispering, terrified","handheld close","[MAYA][OMEGA REX] Maya in cold blue light at the scratched glass, wide-eyed, a huge dark shape looming behind","handheld close","Maya whispers; shape looms","whisper, low growl, hum","Maya (whisper): \"Dee... what IS that?\"","-","dread drone","Hard cut"); n+=1
-gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","It notices them","NARRATOR / DEE","The hybrid's eye snaps to the camera; it presses the glass","slow push then jolt","[OMEGA REX] the hybrid's glowing eye snaps to the camera and it presses its scarred snout against the cracking glass","slow push then jolt","eye snaps to lens; snout presses glass","low rumble, glass groan","Dee (whisper): \"...it's watching us back.\"","glass groan SFX","dread drone","Hard cut into breakout"); n+=1
+gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","8s","It notices them (8s dread hold)","NARRATOR / DEE","The hybrid's eye snaps to the camera; it presses the glass - hold the stare","slow push then jolt","[OMEGA REX] the hybrid's glowing eye snaps to the camera and it presses its scarred snout against the cracking glass","slow push then jolt","eye snaps to lens; snout presses glass; HOLD","low rumble, glass groan","Dee (whisper): \"...it's watching us back.\"  (then HOLD the silence)","glass groan SFX","dread drone","8s HOLD - gen 6s, Grok Extend; hard cut into breakout"); n+=1
 # ===== BREAKOUT (hybrid out -> power trip -> everything loose) =====
 gen("11 Breakout","S60","1:41-1:45","4s","The break: hybrid into the open","NARRATOR","Hybrid rams through its enclosure gate into the open park","tilt up + shake","[OMEGA REX] a massive hybrid theropod rams through its heavy enclosure gate out into the sunny open park, debris flying, hazard signs, no people in danger","tilt up + shake","hybrid bursts the gate; debris flies","gate crash, roar, alarm","NARRATOR: \"It only took one to get out.\"","CRASH SFX","alarm/action","Hard cut")
 gen("11 Breakout","S61","+","3s","The trip: power goes down","PA","Hybrid topples a power pylon; sparks; lights drop","whip + shake","[OMEGA REX] the hybrid crashes into a power pylon and transformer, a shower of sparks, the park floodlights dropping dark","whip + shake","pylon topples; sparks burst; lights die","electrical bang, alarm","PA: \"Containment failure. Containment failure.\"","SPARK SFX","action","Hard cut")
@@ -187,6 +378,22 @@ gen("12 Outro","S69","+","4s","Their POV of the chaos","KID/PANIC","Blurry POV t
 gen("12 Outro","S70","+","4s","Rescue: one chopper","HOST-VO (Dee)","Dusk sky, a single distant Blackhawk silhouette, searchlight","slow tilt up","a dusk sky over the smoking park, a single distant Blackhawk military helicopter silhouette inbound with a searchlight","slow tilt up","one chopper appears; searchlight sweeps","distant rotors rising","HOST-VO: \"...and then we heard them.\"","ROTOR SFX","build → swell","Build")
 gen("12 Outro","S71","+","4s","Several Blackhawks inbound","HOST-VO (Dee)","Several Blackhawks inbound, rotor-wash kicking debris","low wide, shake","several Blackhawk military helicopters inbound over the park at dusk, rotor-wash kicking up dust and debris, searchlights crossing","low wide, rotor shake","several choppers sweep in; downwash","loud rotors, wind","-","-","swell → cut","Hard cut to black on the swell")
 R.append(["12 Outro","D2","...","2.0s","End card","(card)","'FOLLOW FOR PART 2'","static","n/a text card","n/a","-","-","sting → silence","CARD","Cut to black, end card","todo"])
+
+# ---- STATUS PRESERVATION: carry still/clip statuses from the existing TSV (hand-updated
+# during production) so regenerating the board never wipes progress. FORCE overrides win
+# (e.g. Spino v3 clips scrapped -> back to v5 stills).
+import os
+# Spino v3 clips scrapped (scene remade as v5): S10-S14+S15b have v5 stills; S15 (underwater) needs a regen.
+STATUS_FORCE={"S10":"still","S11":"still","S12":"still","S13":"still","S14":"still","S15":"todo","S15b":"still"}
+old_status={}
+if os.path.exists("STORYBOARD.tsv"):
+    with open("STORYBOARD.tsv") as f:
+        rd=csv.reader(f,delimiter="\t"); hdr=next(rd)
+        si,sti=hdr.index("Shot"),hdr.index("Status")
+        for row in rd:
+            if len(row)>sti: old_status[row[si]]=row[sti]
+for r in R:
+    r[15]=STATUS_FORCE.get(r[1], old_status.get(r[1], r[15]))
 
 with open("STORYBOARD.tsv","w",newline="") as f:
     w=csv.writer(f,delimiter="\t"); w.writerow(COLS); w.writerows(R)

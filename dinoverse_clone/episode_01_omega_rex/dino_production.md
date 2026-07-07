@@ -3,23 +3,31 @@
 Cloning @Dinoverse-U: a faithful zoo-POV dinosaur-park video that turns to disaster.
 Branch: `spinosnack-dunkleosteus`. Everything below is committed + pushed. Owner = Jeff.
 
-## WHERE WE ARE (2026-06-29)
-- ✅ **Storyboard locked** — `STORYBOARD.tsv` (source of truth = `build_storyboard.py`; regenerate via
-  `../../venv/bin/python build_storyboard.py`). Cols incl. **Image prompt (still)** + **Grok video prompt (i2v)** + **Status**.
-- ✅ **In-world park brand = "DINO ZOO"** (owner renamed from "Dinoverse Zoo" — applied everywhere).
-- ✅ **ALL 76 GEN stills DONE** (`stills/Sxx.png`). Generated in ChatGPT, one thread, consistency-chained.
-- ✅ **Reworked back third** (owner-directed): early **"HYBRID – STAFF ONLY" door plant** (teens slip in, Maya
-  "that's weird") → tour → hybrid **breaks its gate → trips the power → all dinos loose** (raptor head-tilt
-  cascade, slow→fast chaos, **crowd panic** shots) → couple **hides** → **Blackhawks** inbound → "FOLLOW FOR PART 2".
-  We don't explain HOW it got out — the door plant lets the audience assume.
-- ✅ **i2v STARTED: Spinosaurus scene DONE** — 6 Grok clips `approved/S10–S15.mp4` (1264×720, 6.04s each, status=`clip`).
+## WHERE WE ARE (2026-07-07)
+- ✅ **Storyboard SIK-RESTYLED + locked** — `STORYBOARD.tsv`, 100 rows, ~7:20 (source of truth =
+  `build_storyboard.py`; regenerating **preserves statuses** now — it reads the old TSV first).
+- ✅ **Sik grammar applied** (from `work/sik_analysis/` measured cut data): scenes are **banter-led**
+  (narrator ≤2 lines/scene), and each scene has a **signature pace move**:
+  Carno = 1.0s punch-cut on the rival question (S08b trim) · Theri = **12s dead-air "…huge." hold** (S20)
+  + 1.8s echo cut (S20b) · Quetz = 8s baby-Quetz opener (S22) · Raptor = two **10s holds** (S28 nuggets,
+  S29 silent stare) · T-Rex = 0.3/0.6s **flash burst** (S49b/c trims) + 10s "afraid" hold (S48) ·
+  Hybrid = 8s watching-us hold (S57). Plus a **babies/mother beat in almost every scene** (his recurring
+  motif): S08, S13 (keeper feeds baby Spino), S21, S22, S32, S39.
+- ✅ **Spinosaurus scene = v5 remake** (7 shots S10–S15b): guide + keeper ON CAMERA, baby-feed beat,
+  distinct vantages. v5 stills copied to `stills/`. Old v3 clips `approved/S10–S15.mp4` = **SCRAPPED**.
+  ⚠️ **S15 (underwater gallery) still MISSING** — the v4/v5 `6_underwater.png` was a botched save
+  (it's the Prehistoric POV logo, same md5 in both). Regen in ChatGPT before its i2v.
+- ✅ Intro montage TRIM refs re-pointed to real payoff shots (M02→S07, M03→S12, … M16→S57).
+- ✅ **ALL other GEN stills DONE** (76 at status=still). DINO ZOO brand everywhere.
+- ✅ Back third (door plant → breakout → hide → Blackhawks → "PART 2") unchanged.
 
-## NEXT JOB: Grok i2v for the remaining **70 stills**
-Still `status=still` (need clips), by scene:
-- 0 Intro: M01, S00 · 1 Entry: S01, S02, S03, S03b, S03c · 2 Carnotaurus: S04–S09
-- 4 Therizinosaurus: S16–S21 · 5 Quetzalcoatlus: S22–S27 · 6 Velociraptor: S28–S33
-- 7 Sauropods: S34–S39 · 8 Mosasaurus: S40–S45 · 9 T-Rex: S46–S51 · 10 Hybrid: S52–S57
-- 11 Breakout: S60–S67, S66b, S67b, S66d · 12 Outro: S68–S71
+## NEXT JOB: Grok i2v for the **76 stills** at status=still
+Same clipboard-paste pipeline as before. **Dialogue changed in the restyle — always pull the CURRENT
+"Grok video prompt (i2v)" + "Dialogue / VO" columns, not old notes.**
+- ⚠️ **6 shots need Grok EXTEND after generating** (gen 6s, then Extend to target):
+  S20 (12s), S22 (8s), S28 (10s), S29 (10s), S48 (10s), S57 (8s). The "Edit / transition" column flags them.
+- S29 is SILENT (no dialogue) — don't let Grok invent speech.
+- Regen S15 underwater still first (or last), then i2v it.
 
 ## THE i2v PIPELINE (PROVEN THIS SESSION — use exactly this)
 Engine = **Grok Imagine** (grok.com/imagine), owner has Grok Pro. Settings: **Video · 720p · 16:9 · 6s**.
