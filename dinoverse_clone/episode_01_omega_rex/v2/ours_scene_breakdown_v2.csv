@@ -1,0 +1,90 @@
+scene,start,length_s,zone,creature,viewing_mode,baby,tag
+1,0:00,2,Cold open,—,title card,N,
+2,0:02,3,Cold open,host Luke+gf,selfie POV,N,
+3,0:05,1.5,Cold open,Carnotaurus,open-air (chaos),N,
+4,0:06,1.5,Cold open,Utahraptor pack,open-air (chaos),N,
+5,0:08,1.5,Cold open,Mosasaurus,glass tunnel,N,
+6,0:09,1.5,Cold open,Dunkleosteus,behind glass,N,NEW
+7,0:11,1.5,Cold open,T-Rex,behind glass,N,
+8,0:12,1.5,Cold open,Quetzalcoatlus (picnic raid),open-air (chaos),N,NEW
+9,0:14,1.5,Cold open,Indominus (wall breach),open-air (chaos),N,NEW
+10,0:15,1.5,Cold open,D-Rex hybrid,open-air (chaos),N,
+11,0:17,1.5,Cold open,teens at hybrid door,walking,N,NEW
+12,0:18,2,Cold open,T-Rex vs hybrids,open-air (chaos),N,
+13,0:20,6.5,Entry,host Luke+gf,selfie POV,N,
+14,0:27,6,Entry,—,POV ticket booth,N,
+15,0:33,6,Entry,—,walking,N,
+16,0:39,5,Entry,— park map,POV park map,N,
+17,0:44,6,Carnotaurus,— gate sign,walking / gate,N,
+18,0:50,6,Carnotaurus,Carnotaurus (baby),keeper + baby,Y,
+19,0:56,6,Carnotaurus,Carnotaurus,behind glass,N,
+20,1:02,5,Carnotaurus,Carnotaurus (close at glass),behind glass,N,NEW angle
+21,1:07,6,Carnotaurus,Carnotaurus (adult+juv),behind glass,Y,
+22,1:13,6,Carnotaurus,Carnotaurus x2 rival display,behind glass,N,
+23,1:19,4.5,Carnotaurus,— '?' curiosity sign,walking,N,NEW transition
+24,1:23,7,Quetzalcoatlus,— giant statue landmark,landmark,N,NEW landmark
+25,1:30,6,Quetzalcoatlus,Quetzalcoatlus (baby),keeper + baby,Y,
+26,1:36,5,Quetzalcoatlus,Quetzal chick (flight test),behind glass,Y,NEW baby
+27,1:41,6,Quetzalcoatlus,Quetzalcoatlus,glass dome,N,
+28,1:47,6,Quetzalcoatlus,Quetzalcoatlus (flight),glass dome,N,
+29,1:53,6,Quetzalcoatlus,Quetzalcoatlus (looming at tunnel),glass tunnel,N,
+30,1:59,5,Quetzalcoatlus,Quetzalcoatlus,glass (exterior),N,
+31,2:04,6,Aquatic,— swamp boardwalk dining,food court,N,NEW transition
+32,2:10,5,Aquatic,— gate,walking / gate,N,
+33,2:15,5,Aquatic,— facade,walking,N,
+34,2:20,5,Aquatic,Dunkleosteus (juveniles nursery tank),behind glass,Y,NEW baby
+35,2:25,6,Aquatic,Dunkleosteus,behind glass,N,
+36,2:31,6,Aquatic,Dunkleosteus (bite feeding),behind glass,N,
+37,2:37,5,Aquatic,— arena approach,walking,N,NEW transition
+38,2:42,12,Aquatic,Mosasaurus (feeding show),open tank show,N,
+39,2:54,6,Aquatic,Mosasaurus + prey,behind glass,N,
+40,3:00,12,Aquatic,Dunkleosteus + Mosasaurus,glass tunnel,N,
+41,3:12,5,Aquatic,— dome exterior,walking,N,NEW transition
+42,3:17,6,Aquatic,teens at Staff Only door,walking,N,
+43,3:23,5,Utahraptor,— gate sign,walking / gate,N,
+44,3:28,6,Utahraptor,Utahraptor (baby),keeper + baby,Y,
+45,3:34,6,Utahraptor,Utahraptor (juveniles nursery),behind glass,Y,NEW baby
+46,3:40,13,Utahraptor,ranger myth-bust,open-air,N,
+47,3:53,6,Utahraptor,Utahraptor pack,behind glass,N,
+48,3:59,6,Utahraptor,Utahraptor pack (running),open-air fence,N,
+49,4:05,5,Utahraptor,Utahraptor (stare-down at glass),behind glass,N,NEW angle
+50,4:10,5,Utahraptor,banter,walking,N,
+51,4:15,5,Herbivores,— gate sign,walking / gate,N,
+52,4:20,6,Herbivores,Styracosaurus,open-air rail,N,
+53,4:26,6,Herbivores,Styracosaurus (calf + mother),open-air rail,Y,NEW baby
+54,4:32,6,Herbivores,Brachiosaurus,open-air rail,N,
+55,4:38,10,Herbivores,Argentinosaurus (adult+juv),open-air rail,Y,
+56,4:48,6,Herbivores,herbivores + young crossing,open-air,Y,
+57,4:54,6,Herbivores,fact / banter,open-air rail,N,
+58,5:00,5,Herbivores,teens glimpse,walking,N,
+59,5:05,5,Lunch,—,walking,N,
+60,5:10,8,Lunch,host BBQ + teen callback,food court,N,MIDROLL SLOT
+61,5:18,5,T-Rex,— gate sign,walking / gate,N,
+62,5:23,6,T-Rex,T-Rex (baby),host + baby,Y,
+63,5:29,5,T-Rex,fossil jaw,museum,N,
+64,5:34,5,T-Rex,— dome walkway,walking,N,
+65,5:39,6,T-Rex,T-Rex,behind glass,N,
+66,5:45,5,T-Rex,T-Rex (head at glass kids),behind glass,N,NEW angle
+67,5:50,10,T-Rex,T-Rex (roar),behind glass,N,
+68,6:00,5,T-Rex,banter,walking,N,
+69,6:05,6,Hybrid,Staff Only door - teens sneak in,walking / gate,N,
+70,6:11,6,Hybrid,Indominus (juveniles),behind glass,Y,
+71,6:17,6,Hybrid,Indominus (feeding),glass moat feeding,N,
+72,6:23,5,Hybrid,Indominus (claw-scarred wall),behind glass,N,NEW angle
+73,6:28,6,Hybrid,Indominus (camouflage reveal),behind glass,N,NEW angle
+74,6:34,8,Hybrid,— overlook,walking,N,
+75,6:42,9,Hybrid,D-Rex reveal,open-air,N,
+76,6:51,7,Hybrid,teens in danger,open-air,N,
+77,6:58,5,Hybrid,D-Rex (at glass breathing),behind glass,N,NEW angle
+78,7:03,10,Hybrid,breakout - cables snap,open-air,N,
+79,7:13,7,Climax,control room breach,control room,N,
+80,7:20,5,Climax,Carnotaurus under red alarm,behind glass,N,NEW
+81,7:25,5,Climax,evac,food court,N,
+82,7:30,6,Climax,Indominus breach,open-air (chaos),N,
+83,7:36,4,Climax,hybrid in plaza,open-air (chaos),N,
+84,7:40,5,Climax,Quetzal picnic raid payoff,open-air (chaos),N,NEW payoff
+85,7:45,5,Climax,T-Rex loose,open-air (chaos),N,
+86,7:50,4,Climax,T-Rex (city),open-air (chaos),N,
+87,7:54,4,Climax,teens rescued / regret beat,open-air (chaos),N,NEW payoff
+88,7:58,10,Climax,T-Rex vs Indominus vs D-Rex,open-air (chaos),N,
+89,8:08,2,Climax,end card,title card,N,

@@ -3,7 +3,14 @@
 Cloning @Dinoverse-U: a faithful zoo-POV dinosaur-park video that turns to disaster.
 Branch: `spinosnack-dunkleosteus`. Everything below is committed + pushed. Owner = Jeff.
 
-## WHERE WE ARE (2026-07-07)
+## ⚠️ PIVOT (2026-07-07): the episode now follows the **v2 script** — see `v2/PIVOT_PLAN.md`
+Owner switched to the July v2 design ("We Snuck Into a Dinosaur Zoo", Luke+GF, 89 scenes,
+Utahraptor/Dunkleosteus, lunch midroll) because the v1 stills had quality misses (missing glass,
+wrong logos). **All images will be redone.** Everything below this line describes the SUPERSEDED
+Dee/Maya board — kept because its measured Sik-grammar work (pacing, silent budget, babies motif,
+prompt templates, Grok pipeline) carries directly into the v2 build. Resume prompt: `v2/PIVOT_PLAN.md`.
+
+## WHERE WE WERE — v1 board, superseded (2026-07-07)
 - ✅ **Storyboard SIK-RESTYLED + locked** — `STORYBOARD.tsv`, 108 rows, **8:07** (source of truth =
   `build_storyboard.py`; regenerating **preserves statuses** now — it reads the old TSV first).
   Runtime crossed the **8:00 mid-roll threshold** by copying his verified **silent-shot budget**
