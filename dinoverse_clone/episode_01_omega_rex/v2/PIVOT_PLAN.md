@@ -63,7 +63,14 @@ Climax 19s vs his 24/19/19.5). All 36 enclosure shots carry viewing-mode infrast
 `../characters_v2.txt` = Luke/GF/staff/teens + per-creature sheets (Utahraptor FEATHERED).
 Status preservation is v2-guarded (only inherits from a TSV whose first row is "0 Cold Open").
 Google Sheet export: https://docs.google.com/spreadsheets/d/1h5cR59OM-hV7DIlWgO0O6lperWEDiSYHExyNbpV1Tt4
-NEXT = per-zone stills sessions (production loop above). Still generation NOT started.
+NEXT = per-zone stills sessions (production loop above).
+
+## STILLS PROGRESS (update per zone)
+- ✅ Zone 1 Entry S13–S16 (2026-07-07, owner approved) — `v2/stills/`, thread: chatgpt.com/c/6a4d6961-e710-83ea-8168-e2e7b79ff170
+- ✅ Zone 2 Carnotaurus S17–S23 (2026-07-07, owner approved) — thread: chatgpt.com/c/6a4d762a-1aa0-83ea-8032-33a74a9499a1
+- ⬜ NEXT = Zone 3 Quetzalcoatlus S24–S30 (7 shots), then Aquatic S31–S42, etc.
+- Method per zone: fresh ChatGPT thread → paste characters_v2 block (humans + THIS zone's creature sheet + brand kit) → each shot's "Image prompt (still)" verbatim, "Same park… keep consistent" prefix from IMAGE 2 on → download (see faster trick in memory `reference_chatgpt_pov_still_series_method`: stash src URLs + blob sizes in localStorage from the gen tab, then ONE fetch+a.download per FRESH tab, no re-scrolling) → mv to `v2/stills/Sxx.png` → 2-col contact sheet → owner approves → status=still in `../STORYBOARD.tsv` → commit.
+- v2 stills live in `v2/stills/` — do NOT overwrite the 76 v1 reference stills in `../stills/`.
 
 ## HOW TO RESUME (paste into a fresh session)
 "Read dinoverse_clone/episode_01_omega_rex/v2/PIVOT_PLAN.md and SHOOTING_SCRIPT_v2.md. Rebuild
