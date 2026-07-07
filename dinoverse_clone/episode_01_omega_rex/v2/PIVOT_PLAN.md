@@ -55,6 +55,16 @@ Per zone (12 zones ≈ 12 sessions for stills, then ~12 for i2v):
 Assembly after all zones: trims for cold-open flashes, music bed + Pixabay SFX, disclaimer cards,
 midroll marker at S60, 1080p.
 
+## ✅ BOARD REBUILT (2026-07-07, same day as the pivot)
+`../build_storyboard.py` + `../STORYBOARD.tsv` are now the v2 board: 97 rows (77 GEN / 18 TRIM /
+2 CARD), runtime 8:53.5, silent layer 62s matching Sik zone-for-zone (T-Rex 24s / Hybrid 19s /
+Climax 19s vs his 24/19/19.5). All 36 enclosure shots carry viewing-mode infrastructure language;
+14 shots flagged Grok EXTEND; cold-open S03–S12 are TRIMs of Act-3 payoffs; S13 says "Dino Zoo".
+`../characters_v2.txt` = Luke/GF/staff/teens + per-creature sheets (Utahraptor FEATHERED).
+Status preservation is v2-guarded (only inherits from a TSV whose first row is "0 Cold Open").
+Google Sheet export: https://docs.google.com/spreadsheets/d/1h5cR59OM-hV7DIlWgO0O6lperWEDiSYHExyNbpV1Tt4
+NEXT = per-zone stills sessions (production loop above). Still generation NOT started.
+
 ## HOW TO RESUME (paste into a fresh session)
 "Read dinoverse_clone/episode_01_omega_rex/v2/PIVOT_PLAN.md and SHOOTING_SCRIPT_v2.md. Rebuild
 build_storyboard.py around the v2 script (89 scenes, Luke+GF, DINO ZOO brand): per-shot image prompts
