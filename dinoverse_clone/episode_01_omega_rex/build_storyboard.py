@@ -317,12 +317,18 @@ gen("9 T-Rex","S46","1:25-1:32","6s","Establish + Reinforced apex arena","MAYA",
     "huge reinforced enclosure, thick walls, a massive T-Rex stalks; a Triceratops visible in the adjacent paddock, tense crowd",
     "slow tilt up","T-Rex stalks; head tracks crowd","deep roar, low crowd",
     "Maya: \"That thing is even bigger than I expected.\"","-","light doc bed","Hard cut")
+trim("9 T-Rex","S46b","+","6s","Silent walk-up 1 (his pattern: silent/banter alternating at scene open)","-",
+    "6s: the T-Rex stalking, nobody talks","S46 (T-Rex stalk, different segment of the clip)",
+    "-","deep footfalls, low crowd (MUTE trim audio, ambience only)","light doc bed","6s SILENT")
 gen("9 T-Rex","S47","+","6s","Narrator fact 1","NARRATOR",
     "Close on the T-Rex head + teeth","slow push-in",
     "close on a T-Rex head, lips & huge teeth, eye catching light, behind heavy fencing","slow push-in",
     "subject slow move, blink","low call, crowd",
     "NARRATOR: \"A T-Rex tooth could reach over 30 cm long including the root - with one of the strongest bite forces of any land animal.\"",
     "-","light doc bed","Hard cut")
+trim("9 T-Rex","S47b","+","6s","Silent walk-up 2 (the stare)","-",
+    "6s: the head close-up, just staring","S47 (T-Rex head close, different segment)",
+    "-","low growl (MUTE trim audio, ambience only)","light doc bed","6s SILENT")
 gen("9 T-Rex","S48","+","10s","The 'afraid' hold (10s)","DEE / MAYA",
     "Maya stepping back from the fence, nervous - then the shot just holds","handheld",
     "[MAYA] Maya stepping back from the fence, nervous","handheld",
@@ -344,6 +350,12 @@ gen("9 T-Rex","S50","+","5s","Narrator fact 2 (lands the burst)","NARRATOR",
     "Wide, T-Rex and Triceratops eyeing across the divide","slow pan",
     "subject behaviour","low call, crowd",
     "NARRATOR: \"...was one of T-Rex's toughest rivals.\"","-","light doc bed","Hard cut, trim to 5s")
+trim("9 T-Rex","S50b","+","6s","Silent aftermath 1 (his pattern: 2 silents back-to-back after the fact burst)","-",
+    "6s: T-Rex and Triceratops eyeing each other, no words","S50 (eyeing across the divide, different segment)",
+    "-","wind, snort (MUTE trim audio, ambience only)","light doc bed","6s SILENT")
+trim("9 T-Rex","S50c","+","6s","Silent aftermath 2","-",
+    "6s: hold the standoff a beat longer","S46 (T-Rex stalk, tail end of the clip)",
+    "-","distant crowd hush (MUTE trim audio, ambience only)","light doc bed","6s SILENT")
 gen("9 T-Rex","S51","+","5s","Rival CTA (flywheel)","NARRATOR / DEE",
     "POV toward STAFF ONLY ->","walking POV",
     "[MAYA] POV past a wooden 'STAFF ONLY ->' sign, Maya beside, greenery","walking POV",
@@ -353,11 +365,23 @@ n=52
 
 # ===== HYBRID FINALE (D-Rex) =====
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","1:32-1:41","6s","Into the apex hall (the main attraction)","DEE","Dim corridor, 'RESTRICTED // GENETICS', flicker","slow forward dolly","dim concrete corridor, flickering fluorescents, signs 'RESTRICTED' 'GENETICS', cold blue light, POV creeping","slow forward dolly","POV creeps; lights flicker","hum, flicker, distant thud","Dee: \"Okay - THIS is the one everyone lines up for.\"","-","dread drone","Hard cut; cold-blue grade"); n+=1
+trim("10 Hybrid (D-Rex)","S52b","+","6s","Silent corridor creep","-",
+    "6s: the corridor, just the hum and the flicker","S52 (corridor, different segment)",
+    "-","hum, flicker, distant thud (MUTE trim audio, ambience only)","dread drone","6s SILENT")
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","The hybrid reveal","NARRATOR","Vast dark cell, the hybrid's scarred face + glowing seams enters the light","slow reveal","[OMEGA REX] vast dark containment cell behind thick scratched glass, a massive hybrid theropod - charcoal hide, glowing orange seams, oversized jaws - moves into cold light, watching the camera","slow reveal","hybrid face enters light; eye fixes camera; claws scrape","deep breathing, claw scrape","NARRATOR: \"They built a hybrid. People think he's a monster - but is he?\"","claw scrape SFX","dread drone","Hard cut"); n+=1
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","Fact: smart + camouflage","NARRATOR","The hybrid's hide shimmers/blends against the wall","slow push","[OMEGA REX] the hybrid's hide subtly shifts tone against the cell wall as if camouflaging, glowing seams dimming","slow push-in","hide shifts tone; seams dim; slow blink","low rumble, hum","NARRATOR: \"This hybrid is smarter than people realize - and camouflage may be its most dangerous advantage, even more than its size.\"","-","dread drone","Hard cut"); n+=1
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","D-Rex trivia (his real line)","NARRATOR / DEE","Close on a lab plaque 'PROJECT D-REX'","push to sign","close on a stenciled lab plaque 'PROJECT D-REX // CLASSIFIED', biohazard symbol, cold light","slow push-in","push to plaque; breathing beyond","hum, deep breathing","NARRATOR: \"Fun fact - the Jurassic World team first planned their hybrid as 'Diabolus Rex', or D-Rex, before renaming it.\"  Dee: \"Ooh.\"","-","dread drone","Hard cut"); n+=1
 
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","6s","Companion fear","COMPANION","Maya at the glass, whispering, terrified","handheld close","[MAYA][OMEGA REX] Maya in cold blue light at the scratched glass, wide-eyed, a huge dark shape looming behind","handheld close","Maya whispers; shape looms","whisper, low growl, hum","Maya (whisper): \"Dee... what IS that?\"","-","dread drone","Hard cut"); n+=1
+trim("10 Hybrid (D-Rex)","S56b","+","6s","Silent dread 1 (his pattern: 6s + 1s flash + 6s stacked before the incident)","-",
+    "6s: the shape moving in the dark, nobody speaks","S53 (hybrid in the cell, different segment)",
+    "-","deep breathing, hum (MUTE trim audio, ambience only)","dread drone","6s SILENT")
+trim("10 Hybrid (D-Rex)","S56c","+","1.0s","Silent dread 2 (1s flash)","-",
+    "1.0s: flash of the hide camouflage-shifting","S54 (camouflage shift, best 1s)",
+    "-","single sub hit","dread drone","1.0s FLASH")
+trim("10 Hybrid (D-Rex)","S56d","+","6s","Silent dread 3","-",
+    "6s: Maya frozen at the glass, the shape looming","S56 (Maya at the glass, different segment)",
+    "-","heartbeat, hum (MUTE trim audio, ambience only)","dread drone","6s SILENT")
 gen("10 Hybrid (D-Rex)",f"S{n:02d}","+","8s","It notices them (8s dread hold)","NARRATOR / DEE","The hybrid's eye snaps to the camera; it presses the glass - hold the stare","slow push then jolt","[OMEGA REX] the hybrid's glowing eye snaps to the camera and it presses its scarred snout against the cracking glass","slow push then jolt","eye snaps to lens; snout presses glass; HOLD","low rumble, glass groan","Dee (whisper): \"...it's watching us back.\"  (then HOLD the silence)","glass groan SFX","dread drone","8s HOLD - gen 6s, Grok Extend; hard cut into breakout"); n+=1
 # ===== BREAKOUT (hybrid out -> power trip -> everything loose) =====
 gen("11 Breakout","S60","1:41-1:45","4s","The break: hybrid into the open","NARRATOR","Hybrid rams through its enclosure gate into the open park","tilt up + shake","[OMEGA REX] a massive hybrid theropod rams through its heavy enclosure gate out into the sunny open park, debris flying, hazard signs, no people in danger","tilt up + shake","hybrid bursts the gate; debris flies","gate crash, roar, alarm","NARRATOR: \"It only took one to get out.\"","CRASH SFX","alarm/action","Hard cut")
@@ -374,7 +398,7 @@ gen("11 Breakout","S66d","+","3s","Crowd fleeing, dino behind","KID/PANIC","Crow
 
 # ===== OUTRO (hide -> choppers -> part 2) =====
 gen("12 Outro","S68","1:50-...","6s","The held breath","KID/PANIC","Dee + Maya hiding in a gap, strobing red, slow-mo, breathing","tight, slow","[MAYA] Dee and Maya crammed into a hiding spot peering out through a narrow gap, lit by strobing red light, tight and tense, time slowed","tight slow-mo","the two hide; peer out; held breath","heartbeat, breathing, muffled chaos","Dee (whisper): \"Don't move.\"","heartbeat SFX","slow tense","Slow-mo, hold")
-gen("12 Outro","S69","+","4s","Their POV of the chaos","KID/PANIC","Blurry POV through the gap of dinosaurs and chaos","handheld, rack focus","first-person POV through a narrow gap, slightly blurred, of dinosaurs and chaos moving across the smoking park beyond","handheld, rack focus","blurry chaos beyond the gap","muffled roars, sirens","-","-","slow tense","Hold, then build")
+gen("12 Outro","S69","+","8s","Their POV of the chaos (8s silent hold)","KID/PANIC","Blurry POV through the gap of dinosaurs and chaos","handheld, rack focus","first-person POV through a narrow gap, slightly blurred, of dinosaurs and chaos moving across the smoking park beyond","handheld, rack focus","blurry chaos beyond the gap","muffled roars, sirens","-","-","slow tense","8s HOLD - gen 6s, Grok Extend; hold, then build")
 gen("12 Outro","S70","+","4s","Rescue: one chopper","HOST-VO (Dee)","Dusk sky, a single distant Blackhawk silhouette, searchlight","slow tilt up","a dusk sky over the smoking park, a single distant Blackhawk military helicopter silhouette inbound with a searchlight","slow tilt up","one chopper appears; searchlight sweeps","distant rotors rising","HOST-VO: \"...and then we heard them.\"","ROTOR SFX","build → swell","Build")
 gen("12 Outro","S71","+","4s","Several Blackhawks inbound","HOST-VO (Dee)","Several Blackhawks inbound, rotor-wash kicking debris","low wide, shake","several Blackhawk military helicopters inbound over the park at dusk, rotor-wash kicking up dust and debris, searchlights crossing","low wide, rotor shake","several choppers sweep in; downwash","loud rotors, wind","-","-","swell → cut","Hard cut to black on the swell")
 R.append(["12 Outro","D2","...","2.0s","End card","(card)","'FOLLOW FOR PART 2'","static","n/a text card","n/a","-","-","sting → silence","CARD","Cut to black, end card","todo"])

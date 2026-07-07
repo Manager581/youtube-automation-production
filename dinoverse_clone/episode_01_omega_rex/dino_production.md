@@ -4,8 +4,15 @@ Cloning @Dinoverse-U: a faithful zoo-POV dinosaur-park video that turns to disas
 Branch: `spinosnack-dunkleosteus`. Everything below is committed + pushed. Owner = Jeff.
 
 ## WHERE WE ARE (2026-07-07)
-- ✅ **Storyboard SIK-RESTYLED + locked** — `STORYBOARD.tsv`, 100 rows, ~7:20 (source of truth =
+- ✅ **Storyboard SIK-RESTYLED + locked** — `STORYBOARD.tsv`, 108 rows, **8:07** (source of truth =
   `build_storyboard.py`; regenerating **preserves statuses** now — it reads the old TSV first).
+  Runtime crossed the **8:00 mid-roll threshold** by copying his verified **silent-shot budget**
+  (his: 78.5s/16% silent; ours: 83s/17%): 4 silent trims in T-Rex (S46b/S47b/S50b/S50c — his exact
+  pattern: 2 alternating at scene open, 2 back-to-back after the fact burst), a 6+1+6s dread stack in
+  Hybrid (S52b/S56b/S56c/S56d — his exact pre-incident pattern), S69 extended 4→8s. All are TRIMS of
+  existing clips (mute trim audio, ambience only) — zero new generations. NOTE (measured): his
+  Sauropods scene has ZERO silence — its 64s comes from MORE spoken beats; we deliberately did not
+  pad it with silence.
 - ✅ **Sik grammar applied** (from `work/sik_analysis/` measured cut data): scenes are **banter-led**
   (narrator ≤2 lines/scene), and each scene has a **signature pace move**:
   Carno = 1.0s punch-cut on the rival question (S08b trim) · Theri = **12s dead-air "…huge." hold** (S20)
