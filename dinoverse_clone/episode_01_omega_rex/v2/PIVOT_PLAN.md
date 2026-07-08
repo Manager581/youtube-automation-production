@@ -76,6 +76,16 @@ NEXT = per-zone stills sessions (production loop above).
 - Walkway-safety rule (owner, 2026-07-07): inside any open enclosure/dome the visitor path must be visibly protected — steel-mesh cage tunnel, glass, or acrylic. Already baked into S27/S28/S29 TSV prompts; check other zones' prompts as you go and fix the TSV BEFORE generating.
 - v2 stills live in `v2/stills/` — do NOT overwrite the 76 v1 reference stills in `../stills/`.
 
+## I2V TRACK (runs in PARALLEL with remaining stills zones — separate sessions, never both in one)
+Plan (owner-approved 2026-07-08): animate approved zones while stills continue on zones 6–10.
+- Inputs: `v2/stills/Sxx.png` (approved zones only) + each row's "Grok video prompt (i2v)" verbatim from STORYBOARD.tsv.
+- Engine: Grok Imagine i2v (owner-confirmed, NOT Veo); upload via the osascript PNG→clipboard + Cmd+V trick in memory `reference_grok_i2v_clipboard_upload`.
+- Output: `v2/clips/Sxx.mp4`; per-zone contact-sheet-style review (or clip reel) → owner approves → status=clip in STORYBOARD.tsv → commit per zone.
+- PILOT FIRST: Zone 1 Entry (S13–S16, 4 clips) — owner reviews Grok-native dialogue quality, motion, photoreal hold BEFORE batching zones 2–5.
+- Respect EXTEND flags (14 shots) and the Dur column; dialogue is Grok-native for the body (only the ~20s intro hook is separate VO).
+- Cold open S03–S12 = TRIMs of Act-3 payoffs → LAST, after zones 8–10 clips exist.
+- I2V PROGRESS: ⬜ Z1 pilot S13–S16 → ⬜ Z2 S17–S23 → ⬜ Z3 S24–S30 → ⬜ Z4 S31–S42 → ⬜ Z5 S43–S50 → (zones 6–10 as their stills get approved) → ⬜ cold-open TRIMs + cards.
+
 ## HOW TO RESUME (paste into a fresh session)
 "Read dinoverse_clone/episode_01_omega_rex/v2/PIVOT_PLAN.md and SHOOTING_SCRIPT_v2.md. Rebuild
 build_storyboard.py around the v2 script (89 scenes, Luke+GF, DINO ZOO brand): per-shot image prompts
