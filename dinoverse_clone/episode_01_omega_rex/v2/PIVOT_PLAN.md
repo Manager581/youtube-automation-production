@@ -62,7 +62,8 @@ Climax 19s vs his 24/19/19.5). All 36 enclosure shots carry viewing-mode infrast
 14 shots flagged Grok EXTEND; cold-open S03–S12 are TRIMs of Act-3 payoffs; S13 says "Dino Zoo".
 `../characters_v2.txt` = Luke/GF/staff/teens + per-creature sheets (Utahraptor FEATHERED).
 Status preservation is v2-guarded (only inherits from a TSV whose first row is "0 Cold Open").
-Google Sheet export: https://docs.google.com/spreadsheets/d/1h5cR59OM-hV7DIlWgO0O6lperWEDiSYHExyNbpV1Tt4
+Google Sheet export (original, now STALE — Time column predates the realign): https://docs.google.com/spreadsheets/d/1h5cR59OM-hV7DIlWgO0O6lperWEDiSYHExyNbpV1Tt4
+Google Sheet export (current, post-realign 2026-07-08): https://docs.google.com/spreadsheets/d/1DYZgztqA7fqgg93e_dGSy_OmZW0UeOBN1b6E6aTxd60
 NEXT = per-zone stills sessions (production loop above).
 
 ## STILLS PROGRESS (update per zone)
