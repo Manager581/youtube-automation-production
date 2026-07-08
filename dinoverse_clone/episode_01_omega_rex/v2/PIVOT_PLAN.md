@@ -89,7 +89,8 @@ Plan (owner-approved 2026-07-08): animate approved zones while stills continue o
 - PILOT FIRST: Zone 1 Entry (S13–S16, 4 clips) — owner reviews Grok-native dialogue quality, motion, photoreal hold BEFORE batching zones 2–5.
 - Respect EXTEND flags (14 shots) and the Dur column; dialogue is Grok-native for the body (only the ~20s intro hook is separate VO).
 - Cold open S03–S12 = TRIMs of Act-3 payoffs → LAST, after zones 8–10 clips exist.
-- I2V PROGRESS: ⬜ Z1 pilot S13–S16 → ⬜ Z2 S17–S23 → ⬜ Z3 S24–S30 → ⬜ Z4 S31–S42 → ⬜ Z5 S43–S50 → (zones 6–10 as their stills get approved) → ⬜ cold-open TRIMs + cards.
+- I2V PROGRESS: ✅ Z1 pilot S13–S16 (owner approved 2026-07-08, status=clip) → ✅ Z2 S17–S23 (owner approved 2026-07-08, status=clip; S13b/S14a/S14b stay todo — stills not generated yet) → ⬜ Z3 S24–S30 → ⬜ Z4 S31–S42 → ⬜ Z5 S43–S50 → (zones 6–10 as their stills get approved) → ⬜ cold-open TRIMs + cards.
+- I2V lessons (2026-07-08, in memory `reference_grok_i2v_clipboard_upload`): ≤3 speaker turns per 6s clip (4 turns garbled S13 → dialogue split into new rows S13b/S14a/S14b, stills TODO in a stills session); whisper-verify EVERY downloaded clip vs the row's Dialogue column before accepting; match downloads by timestamp (`find ~/Downloads -newermt`), never glob; composer paste races page load — re-click + re-paste until the thumbnail shows. S13's EXTEND flag dropped (2 lines fit 6s). Ear-check flag: S21 "Carnotaurus" pronunciation.
 
 ## HOW TO RESUME (paste into a fresh session)
 "Read dinoverse_clone/episode_01_omega_rex/v2/PIVOT_PLAN.md and SHOOTING_SCRIPT_v2.md. Rebuild
