@@ -6,19 +6,21 @@ actual frame. We detect the motion peak inside the creature mask and anchor the
 SFX stack there — sync is computed, not guessed. Runs in main venv. No GPU.
 """
 import json
+import os
 import subprocess
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 
-WORK = Path(__file__).resolve().parent / "work" / "beat01_strike"
+WORK = Path(__file__).resolve().parent / "work" / os.environ.get("AMBER_BEAT", "beat01_strike")
 REPO = Path(__file__).resolve().parents[2]
 SR = 44100
 
 meta = json.loads((WORK / "meta.json").read_text())
 sheet = json.loads((WORK / "event_sheet.json").read_text())
 fps = meta["fps"]
+RETIME = float(os.environ.get("AMBER_RETIME", "1"))  # 2 = half-speed presentation
 
 frames = sorted((WORK / "gen").glob("*.png"))
 mask = np.array(Image.open(WORK / "mask.png").convert("L")) > 127
@@ -28,7 +30,7 @@ motion = np.array([np.abs(imgs[i + 1] - imgs[i])[mask].mean() for i in range(len
 k = np.ones(3) / 3
 motion_s = np.convolve(motion, k, mode="same")
 peak_idx = int(np.argmax(motion_s))
-t_peak = (peak_idx + 1) / fps
+t_peak = (peak_idx + 1) / fps * RETIME
 print(f"motion peak at frame {peak_idx + 1} -> t={t_peak:.2f}s "
       f"(curve max {motion_s[peak_idx]:.2f}, mean {motion_s.mean():.2f})")
 
@@ -39,10 +41,11 @@ sheet["detected_events"] = [
 (WORK / "event_sheet.json").write_text(json.dumps(sheet, indent=2))
 
 # Mix the SFX stack anchored on the detected event
-dur = meta["num_frames"] / fps
+dur = meta["num_frames"] / fps * RETIME
 mix = np.zeros(int(dur * SR) + SR, np.float32)  # +1s tail room
 for sfx in sheet["sfx_map"]:
-    t0 = t_peak + sfx["offset_s"]
+    anchor = 0.0 if sfx.get("event") == "clip_start" else t_peak
+    t0 = anchor + sfx["offset_s"]
     if t0 < 0:
         continue
     raw = subprocess.run(

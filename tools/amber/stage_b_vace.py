@@ -23,7 +23,7 @@ os.environ.setdefault("PYTORCH_MPS_LOW_WATERMARK_RATIO", "0.7")
 import psutil
 import torch
 
-WORK = Path(__file__).resolve().parent / "work" / "beat01_strike"
+WORK = Path(__file__).resolve().parent / "work" / os.environ.get("AMBER_BEAT", "beat01_strike")
 MODEL = "Wan-AI/Wan2.1-VACE-1.3B-diffusers"
 NUM_STEPS = 20
 GUIDANCE = 5.0
@@ -31,7 +31,9 @@ SEED = 42
 
 meta = json.loads((WORK / "meta.json").read_text())
 sheet = json.loads((WORK / "event_sheet.json").read_text())
-SIZE, NUM_FRAMES = meta["model_size"], meta["num_frames"]
+MW = meta.get("model_w", meta.get("model_size"))
+MH = meta.get("model_h", meta.get("model_size"))
+NUM_FRAMES = meta["num_frames"]
 NEG = "static, frozen, motionless, blurry, deformed, extra limbs, cartoon, low quality, watermark, text"
 
 
@@ -119,6 +121,9 @@ def phase_generate():
     mask = Image.open(WORK / "mask.png").convert("L")
     video = [crop] * NUM_FRAMES
     masks = [mask] * NUM_FRAMES
+    ref_path = WORK / "ref.png"
+    refs = [Image.open(ref_path).convert("RGB")] if ref_path.exists() else None
+    print(f"[ref] reference_images={'yes' if refs else 'no'}", flush=True)
 
     t0 = time.time()
 
@@ -132,9 +137,10 @@ def phase_generate():
     out = pipe(
         video=video,
         mask=masks,
+        reference_images=refs,
         prompt_embeds=pos,
         negative_prompt_embeds=neg,
-        height=SIZE, width=SIZE, num_frames=NUM_FRAMES,
+        height=MH, width=MW, num_frames=NUM_FRAMES,
         num_inference_steps=NUM_STEPS, guidance_scale=GUIDANCE,
         generator=torch.Generator("cpu").manual_seed(SEED),
         callback_on_step_end=on_step,
