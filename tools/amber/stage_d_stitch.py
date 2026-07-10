@@ -25,6 +25,7 @@ x0, y0, x1, y1 = meta["crop_box"]
 cw, ch = x1 - x0, y1 - y0
 fps = meta["fps"]
 RETIME = float(os.environ.get("AMBER_RETIME", "1"))
+PUSHIN = float(os.environ.get("AMBER_PUSHIN", "1"))  # e.g. 1.06 = 6% slow push-in
 
 full = np.asarray(Image.open(WORK / "frame.png").convert("RGB"), np.float32)
 orig_crop = full[y0:y1, x0:x1]
@@ -52,7 +53,14 @@ for i, fp in enumerate(frames):
     g = np.clip(g * gain + offset, 0, 255)
     stitched = full.copy()
     stitched[y0:y1, x0:x1] = blend * g + (1 - blend) * orig_crop
-    Image.fromarray(stitched.astype(np.uint8)).save(out_dir / f"{i:04d}.png")
+    img = Image.fromarray(stitched.astype(np.uint8))
+    if PUSHIN > 1:
+        u = i / max(len(frames) - 1, 1)
+        z = 1 + (PUSHIN - 1) * u
+        zw, zh = int(W / z), int(H / z)
+        zx, zy = (W - zw) // 2, (H - zh) // 2
+        img = img.crop((zx, zy, zx + zw, zy + zh)).resize((W, H), Image.LANCZOS)
+    img.save(out_dir / f"{i:04d}.png")
 
 out_name = f"{meta.get('beat', WORK.name)}_AMBER.mp4" if meta.get('beat') else f"{WORK.name}_AMBER.mp4"
 in_rate = fps / RETIME

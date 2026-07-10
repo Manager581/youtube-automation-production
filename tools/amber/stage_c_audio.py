@@ -34,16 +34,25 @@ t_peak = (peak_idx + 1) / fps * RETIME
 print(f"motion peak at frame {peak_idx + 1} -> t={t_peak:.2f}s "
       f"(curve max {motion_s[peak_idx]:.2f}, mean {motion_s.mean():.2f})")
 
+# SFX gate: only a REAL event gets the impact stack (strong, not at clip start)
+# Real event = sharp relative spike (quiet clips) OR strong absolute peak (high-energy clips)
+event_real = (motion_s[peak_idx] >= 1.8 * motion_s.mean() or motion_s[peak_idx] >= 5.0) \
+    and t_peak > 0.5 * RETIME
 sheet["detected_events"] = [
     {"name": "jaws_snap", "t": round(t_peak, 3), "method": "frame-diff-in-mask",
-     "motion_curve_max": round(float(motion_s[peak_idx]), 2)}
+     "motion_curve_max": round(float(motion_s[peak_idx]), 2), "real": bool(event_real)}
 ]
+active_sfx = sheet["sfx_map"]
+if not event_real:
+    print(f"NO REAL EVENT (peak {motion_s[peak_idx]:.2f} vs mean {motion_s.mean():.2f}, "
+          f"t={t_peak:.2f}s) -> ambience only, impact stack skipped")
+    active_sfx = [x for x in sheet["sfx_map"] if x.get("event") == "clip_start"]
 (WORK / "event_sheet.json").write_text(json.dumps(sheet, indent=2))
 
 # Mix the SFX stack anchored on the detected event
 dur = meta["num_frames"] / fps * RETIME
 mix = np.zeros(int(dur * SR) + SR, np.float32)  # +1s tail room
-for sfx in sheet["sfx_map"]:
+for sfx in active_sfx:
     anchor = 0.0 if sfx.get("event") == "clip_start" else t_peak
     t0 = anchor + sfx["offset_s"]
     if t0 < 0:
