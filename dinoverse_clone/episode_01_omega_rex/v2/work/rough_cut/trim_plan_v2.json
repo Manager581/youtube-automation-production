@@ -1,0 +1,230 @@
+{
+ "S13b": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S14a": {
+  "clip": 6.04,
+  "board": 4.0,
+  "sound_end": 0.0,
+  "trim": true
+ },
+ "S14b": {
+  "clip": 6.04,
+  "board": 4.0,
+  "sound_end": 5.54,
+  "trim": false
+ },
+ "S16": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S20": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 5.68,
+  "trim": false
+ },
+ "S23": {
+  "clip": 6.04,
+  "board": 4.5,
+  "sound_end": 4.71,
+  "trim": false
+ },
+ "S26": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S30": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 5.05,
+  "trim": false
+ },
+ "S32": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.42,
+  "trim": true
+ },
+ "S33": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 2.61,
+  "trim": true
+ },
+ "S34": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 3.93,
+  "trim": true
+ },
+ "S37": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 5.66,
+  "trim": false
+ },
+ "S41": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 3.55,
+  "trim": true
+ },
+ "S43": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 3.76,
+  "trim": true
+ },
+ "S49": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.63,
+  "trim": true
+ },
+ "S50": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S51": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.68,
+  "trim": true
+ },
+ "S58": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.7,
+  "trim": true
+ },
+ "S59": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 5.03,
+  "trim": false
+ },
+ "S59b": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.36,
+  "trim": true
+ },
+ "S59c": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.09,
+  "trim": true
+ },
+ "S60": {
+  "clip": 10.04,
+  "board": 8.0,
+  "sound_end": 8.14,
+  "trim": false
+ },
+ "S61": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.21,
+  "trim": true
+ },
+ "S63": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 3.64,
+  "trim": true
+ },
+ "S64": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 5.64,
+  "trim": false
+ },
+ "S66": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S68": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 3.91,
+  "trim": true
+ },
+ "S72": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 5.01,
+  "trim": false
+ },
+ "S74": {
+  "clip": 10.04,
+  "board": 8.0,
+  "sound_end": 4.03,
+  "trim": true
+ },
+ "S75": {
+  "clip": 10.04,
+  "board": 9.0,
+  "sound_end": 9.11,
+  "trim": false
+ },
+ "S77": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 4.03,
+  "trim": true
+ },
+ "S80": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S81": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S83": {
+  "clip": 6.04,
+  "board": 4.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S84": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S85": {
+  "clip": 6.04,
+  "board": 5.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S86": {
+  "clip": 6.04,
+  "board": 4.0,
+  "sound_end": 6.04,
+  "trim": false
+ },
+ "S87": {
+  "clip": 6.04,
+  "board": 4.0,
+  "sound_end": 5.37,
+  "trim": false
+ }
+}

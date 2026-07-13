@@ -45,7 +45,15 @@ TRIM_SRC = {
 # Hand-picked flash offsets (S67 roar peaks ~t6.0 per Z8 QA notes).
 FLASH_OFFSET = {"S07": 5.2}
 # Shots whose clip exists but is NOT approved (owner rejected roll 1).
-REJECTED_CLIPS = {"S73"}
+REJECTED_CLIPS = set()  # S73 roll 2 approved 2026-07-13
+
+# v2 policy: GEN clips trim to board duration IFF the clip's audio (speech/SFX)
+# ends before the cut point — measured via silencedetect and frozen in
+# trim_plan_v2.json (see PIVOT_PLAN §I2V TRACK 2026-07-13). Everything else
+# still plays full length; those trims stay deferred to the final edit.
+import json as _json
+_plan_path = Path(__file__).resolve().parent / "rough_cut" / "trim_plan_v2.json"
+TRIM_PLAN = _json.loads(_plan_path.read_text()) if _plan_path.exists() else {}
 
 CARDS = {
     "S01": [
@@ -122,6 +130,13 @@ def seg_clip_full(clip, out):
          "-map", "0:v:0", "-map", "0:a:0", *enc_args(), str(out)])
 
 
+def seg_clip_boardtrim(clip, dur, out):
+    # head-anchored trim, native audio kept (audio verified to end before dur)
+    run(["ffmpeg", "-y", "-v", "error", "-t", str(dur), "-i", str(clip),
+         "-t", str(dur), "-map", "0:v:0", "-map", "0:a:0",
+         *enc_args(), str(out)])
+
+
 def seg_clip_muted(clip, offset, dur, out):
     run(["ffmpeg", "-y", "-v", "error", "-ss", str(offset), "-t", str(dur),
          "-i", str(clip),
@@ -170,9 +185,13 @@ def main():
                 kind = "SLATE"
         else:  # GEN
             if clip.exists() and shot not in REJECTED_CLIPS:
-                seg_clip_full(clip, out)
-                dur_s = clip_dur(out)
-                kind = "CLIP(full)"
+                if TRIM_PLAN.get(shot, {}).get("trim"):
+                    seg_clip_boardtrim(clip, dur_s, out)
+                    kind = f"CLIP(trim {TRIM_PLAN[shot]['clip']}->{dur_s}s)"
+                else:
+                    seg_clip_full(clip, out)
+                    dur_s = clip_dur(out)
+                    kind = "CLIP(full)"
             elif still.exists():
                 seg_still(shot, still, dur_s, out, f"{shot} PLACEHOLDER (i2v pending)")
                 kind = "STILL-PLACEHOLDER"
@@ -185,7 +204,7 @@ def main():
 
     listfile = OUT / "concat_list.txt"
     listfile.write_text("".join(f"file '{f}'\n" for f in files))
-    final = OUT / "rough_cut_v1.mp4"
+    final = OUT / "rough_cut_v2.mp4"
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0",
          "-i", str(listfile), "-c", "copy", str(final)])
 
