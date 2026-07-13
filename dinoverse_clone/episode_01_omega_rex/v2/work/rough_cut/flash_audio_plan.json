@@ -1,0 +1,64 @@
+{
+ "S03": {
+  "src": "S80",
+  "offset": 4.0,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S04": {
+  "src": "S48",
+  "offset": 3.4,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S05": {
+  "src": "S38",
+  "offset": 5.4,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S06": {
+  "src": "S36",
+  "offset": 2.8,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S07": {
+  "src": "S67",
+  "offset": 6.7,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S08": {
+  "src": "S84",
+  "offset": 1.6,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S09": {
+  "src": "S82",
+  "offset": 3.1,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S10": {
+  "src": "S83",
+  "offset": 4.5,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S11": {
+  "src": "S69",
+  "offset": 0.7,
+  "dur": 1.5,
+  "audio": true
+ },
+ "S12": {
+  "src": "S88",
+  "offset": 2.0,
+  "dur": 2.0,
+  "audio": true,
+  "audio_src": "S85",
+  "audio_offset": 2.0
+ }
+}

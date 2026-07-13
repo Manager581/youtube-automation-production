@@ -55,6 +55,13 @@ import json as _json
 _plan_path = Path(__file__).resolve().parent / "rough_cut" / "trim_plan_v2.json"
 TRIM_PLAN = _json.loads(_plan_path.read_text()) if _plan_path.exists() else {}
 
+# v3: cold-open flashes carry NATIVE source audio from a speech-free window
+# (whisper word-timestamps + RMS pick, frozen in flash_audio_plan.json).
+# S12 has no speech-free window in S88 (VO spans 0-4.96s) -> borrows S85's
+# roar audio under the S88 visual (temp SFX; final mix replaces).
+_fa_path = Path(__file__).resolve().parent / "rough_cut" / "flash_audio_plan.json"
+FLASH_PLAN = _json.loads(_fa_path.read_text()) if _fa_path.exists() else {}
+
 CARDS = {
     "S01": [
         ("DINO ZOO", GREEN, 110, -60),
@@ -145,6 +152,19 @@ def seg_clip_muted(clip, offset, dur, out):
          *enc_args(), "-shortest", str(out)])
 
 
+def seg_flash_audio(vclip, voff, dur, out, aclip=None, aoff=None):
+    # video from vclip@voff; audio from the same window (or aclip@aoff),
+    # with short fades so hard flash cuts don't click.
+    aclip = aclip or vclip
+    aoff = voff if aoff is None else aoff
+    fade = f"afade=t=in:d=0.06,afade=t=out:st={dur - 0.08:.2f}:d=0.08"
+    run(["ffmpeg", "-y", "-v", "error",
+         "-ss", str(voff), "-t", str(dur), "-i", str(vclip),
+         "-ss", str(aoff), "-t", str(dur), "-i", str(aclip),
+         "-map", "0:v:0", "-map", "1:a:0", "-af", fade,
+         *enc_args(), "-shortest", str(out)])
+
+
 def parse_dur(s):
     m = re.match(r"([\d.]+)s", s.strip())
     return float(m.group(1)) if m else 6.0
@@ -168,7 +188,13 @@ def main():
             src_clip = CLIPS / f"{TRIM_SRC[shot]}.mp4"
             src_still = STILLS / f"{TRIM_SRC[shot]}.png"
             src_ok = src_clip.exists() and TRIM_SRC[shot] not in REJECTED_CLIPS
-            if src_ok:
+            if src_ok and shot in FLASH_PLAN:
+                fp = FLASH_PLAN[shot]
+                aclip = CLIPS / f"{fp['audio_src']}.mp4" if "audio_src" in fp else None
+                seg_flash_audio(src_clip, fp["offset"], dur_s, out,
+                                aclip=aclip, aoff=fp.get("audio_offset"))
+                kind = f"FLASH<-{TRIM_SRC[shot]}@{fp['offset']:.1f}s+audio"
+            elif src_ok:
                 total = clip_dur(src_clip)
                 off = FLASH_OFFSET.get(shot)
                 if off is None:
@@ -204,7 +230,7 @@ def main():
 
     listfile = OUT / "concat_list.txt"
     listfile.write_text("".join(f"file '{f}'\n" for f in files))
-    final = OUT / "rough_cut_v2.mp4"
+    final = OUT / "rough_cut_v3.mp4"
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0",
          "-i", str(listfile), "-c", "copy", str(final)])
 
