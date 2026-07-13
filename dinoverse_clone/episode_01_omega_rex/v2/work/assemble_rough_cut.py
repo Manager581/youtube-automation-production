@@ -62,6 +62,13 @@ TRIM_PLAN = _json.loads(_plan_path.read_text()) if _plan_path.exists() else {}
 _fa_path = Path(__file__).resolve().parent / "rough_cut" / "flash_audio_plan.json"
 FLASH_PLAN = _json.loads(_fa_path.read_text()) if _fa_path.exists() else {}
 
+# v4: the 8 silent "dread-stack" TRIMs literally replay already-seen clips
+# MUTED (only one 6s take exists per source), which reads as broken repeats —
+# owner flagged "endless repeats just with and without sound." Dropped from the
+# rough cut; a real dread beat needs distinct alt-angle gens (later decision).
+# Also kills the doubled empty-pit before the D-Rex reveal (S74 + S74b).
+DROP_SHOTS = {"S65b", "S66b", "S67b", "S67c", "S74b", "S77b", "S77c", "S77d"}
+
 CARDS = {
     "S01": [
         ("DINO ZOO", GREEN, 110, -60),
@@ -177,6 +184,8 @@ def main():
 
     for r in rows:
         shot, dur_s, ctype = r[1], parse_dur(r[3]), r[13]
+        if shot in DROP_SHOTS:
+            continue
         out = SEGS / f"{shot}.mp4"
         clip = CLIPS / f"{shot}.mp4"
         still = STILLS / f"{shot}.png"
@@ -230,7 +239,7 @@ def main():
 
     listfile = OUT / "concat_list.txt"
     listfile.write_text("".join(f"file '{f}'\n" for f in files))
-    final = OUT / "rough_cut_v3.mp4"
+    final = OUT / "rough_cut_v4.mp4"
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0",
          "-i", str(listfile), "-c", "copy", str(final)])
 
