@@ -1,0 +1,60 @@
+{
+  "LUKE": {
+    "per_shot": [
+      {
+        "shot": "S40",
+        "words": 18,
+        "span_s": 5.74,
+        "wps": 3.14,
+        "wpm": 188.2
+      },
+      {
+        "shot": "S67",
+        "words": 17,
+        "span_s": 4.66,
+        "wps": 3.65,
+        "wpm": 218.9
+      },
+      {
+        "shot": "S21",
+        "words": 16,
+        "span_s": 5.1,
+        "wps": 3.14,
+        "wpm": 188.2
+      }
+    ],
+    "overall_wps": 3.29,
+    "overall_wpm": 197.4,
+    "energy_gate_wps": 2.43,
+    "energy_gate_wpm": 145.8
+  },
+  "GF": {
+    "per_shot": [
+      {
+        "shot": "S23",
+        "words": 12,
+        "span_s": 4.66,
+        "wps": 2.58,
+        "wpm": 154.5
+      },
+      {
+        "shot": "S34",
+        "words": 8,
+        "span_s": 3.08,
+        "wps": 2.6,
+        "wpm": 155.8
+      },
+      {
+        "shot": "S66",
+        "words": 8,
+        "span_s": 2.84,
+        "wps": 2.82,
+        "wpm": 169.0
+      }
+    ],
+    "overall_wps": 2.65,
+    "overall_wpm": 158.8,
+    "energy_gate_wps": 2.85,
+    "energy_gate_wpm": 170.8
+  }
+}

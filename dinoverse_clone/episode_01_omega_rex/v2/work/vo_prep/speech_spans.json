@@ -1,0 +1,434 @@
+{
+  "S17": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 8,
+    "transcript": "First up, Carnotaurus, the one with the horns.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.56,
+    "existing_speech_duration_s": 3.56
+  },
+  "S19": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 8,
+    "transcript": "There's the grown -up. Look at those horns.",
+    "speech_start_s": 0.54,
+    "speech_end_s": 2.84,
+    "existing_speech_duration_s": 2.3
+  },
+  "S21": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 16,
+    "transcript": "Mom and baby together. Fun fact, Carnotaurus used those horns to fight each other for territory.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 5.14,
+    "existing_speech_duration_s": 5.14
+  },
+  "S22": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 17,
+    "transcript": "So who do you think it's real rival was? Drop it in the comments. We'll settle it.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 5.18,
+    "existing_speech_duration_s": 5.18
+  },
+  "S26": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 9,
+    "transcript": "He just, yep, he's flying. That's terrifying and cute.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.88,
+    "existing_speech_duration_s": 3.88
+  },
+  "S28": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 9,
+    "transcript": "Imagine looking up and seeing that. They're so close.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 4.1,
+    "existing_speech_duration_s": 4.1
+  },
+  "S29": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 15,
+    "transcript": "One of its rivals was another giant flyer, Hatsagopterix. You'll want to Google that spelling.",
+    "speech_start_s": 0.44,
+    "speech_end_s": 4.68,
+    "existing_speech_duration_s": 4.24
+  },
+  "S32": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 3,
+    "transcript": "Aquatic life enclosure.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 2.28,
+    "existing_speech_duration_s": 2.28
+  },
+  "S33": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 6,
+    "transcript": "This is the one I wanted.",
+    "speech_start_s": 1.02,
+    "speech_end_s": 2.5,
+    "existing_speech_duration_s": 1.48
+  },
+  "S35": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 9,
+    "transcript": "Meet Dunkleosteus, no teeth, just self -sharpening bone blades.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.98,
+    "existing_speech_duration_s": 3.98
+  },
+  "S40": {
+    "group": "luke_body",
+    "clip_duration_s": 10.04,
+    "n_words": 18,
+    "transcript": "Do you think these two could actually live in the same water? I genuinely don't know. Tell me.",
+    "speech_start_s": 0.7,
+    "speech_end_s": 6.34,
+    "existing_speech_duration_s": 5.64
+  },
+  "S43": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 10,
+    "transcript": "Next, and this is the one people always get wrong.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.62,
+    "existing_speech_duration_s": 3.62
+  },
+  "S48": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 8,
+    "transcript": "They hunt in coordination. That's the scary part.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.42,
+    "existing_speech_duration_s": 3.42
+  },
+  "S50": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 18,
+    "transcript": "Comment you to Raptor if you learned something. Let's give the internet a quiz. What do you think?",
+    "speech_start_s": 0.0,
+    "speech_end_s": 5.58,
+    "existing_speech_duration_s": 5.58
+  },
+  "S52": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 13,
+    "transcript": "Starchosaurus, all those spikes are just for show, mostly. Yeah, looks like it.",
+    "speech_start_s": 0.62,
+    "speech_end_s": 4.62,
+    "existing_speech_duration_s": 4.0
+  },
+  "S54": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 6,
+    "transcript": "Brachiosaurus, that necks basically a crane.",
+    "speech_start_s": 0.98,
+    "speech_end_s": 3.04,
+    "existing_speech_duration_s": 2.06
+  },
+  "S56": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 4,
+    "transcript": "Whole family crossing together.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 2.68,
+    "existing_speech_duration_s": 2.68
+  },
+  "S59": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 5,
+    "transcript": "Okay, now food. Come on!",
+    "speech_start_s": 0.94,
+    "speech_end_s": 4.04,
+    "existing_speech_duration_s": 3.1
+  },
+  "S61": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 7,
+    "transcript": "the one everyone's waiting for, T -Rex.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.06,
+    "existing_speech_duration_s": 3.06
+  },
+  "S63": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 7,
+    "transcript": "A single tooth, 30 centimeters, root included.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 3.48,
+    "existing_speech_duration_s": 3.48
+  },
+  "S67": {
+    "group": "luke_body",
+    "clip_duration_s": 10.04,
+    "n_words": 17,
+    "transcript": "Strongest bite of any land animal that ever lived. And that's not even the scary one here.",
+    "speech_start_s": 1.4,
+    "speech_end_s": 6.02,
+    "existing_speech_duration_s": 4.62
+  },
+  "S71": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 11,
+    "transcript": "That's the endominus. Part T -Rex, part a lot of things.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 2.96,
+    "existing_speech_duration_s": 2.96
+  },
+  "S74": {
+    "group": "luke_body",
+    "clip_duration_s": 10.04,
+    "n_words": 9,
+    "transcript": "And this, the deepest one, is the D -Rex.",
+    "speech_start_s": 0.6,
+    "speech_end_s": 3.76,
+    "existing_speech_duration_s": 3.16
+  },
+  "S76": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 6,
+    "transcript": "Hey, get away from the o",
+    "speech_start_s": 1.0,
+    "speech_end_s": 2.52,
+    "existing_speech_duration_s": 1.52
+  },
+  "S78": {
+    "group": "luke_body",
+    "clip_duration_s": 10.04,
+    "n_words": 3,
+    "transcript": "Run! Run out!",
+    "speech_start_s": 0.96,
+    "speech_end_s": 2.62,
+    "existing_speech_duration_s": 1.66
+  },
+  "S81": {
+    "group": "luke_body",
+    "clip_duration_s": 6.04,
+    "n_words": 4,
+    "transcript": "This way! Go! Go!",
+    "speech_start_s": 0.0,
+    "speech_end_s": 1.78,
+    "existing_speech_duration_s": 1.78
+  },
+  "S88": {
+    "group": "flagged",
+    "clip_duration_s": 6.04,
+    "n_words": 12,
+    "transcript": "Three Apex Predators, one park, and it started with one unlocked door.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 4.96,
+    "existing_speech_duration_s": 4.96
+  },
+  "S46": {
+    "group": "two_speaker",
+    "clip_duration_s": 6.04,
+    "n_words": 32,
+    "transcript": "Here's what the movies got wrong. The famous velociraptors, real as raptors the size of a turkey will how actually drew was ever feared. That's easy like this guy with a rebrand.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 5.92,
+    "existing_speech_duration_s": 5.92,
+    "words": [
+      {
+        "w": "Here's",
+        "s": 0.0,
+        "e": 0.18
+      },
+      {
+        "w": "what",
+        "s": 0.18,
+        "e": 0.26
+      },
+      {
+        "w": "the",
+        "s": 0.26,
+        "e": 0.32
+      },
+      {
+        "w": "movies",
+        "s": 0.32,
+        "e": 0.44
+      },
+      {
+        "w": "got",
+        "s": 0.44,
+        "e": 0.64
+      },
+      {
+        "w": "wrong.",
+        "s": 0.64,
+        "e": 0.84
+      },
+      {
+        "w": "The",
+        "s": 1.02,
+        "e": 1.04
+      },
+      {
+        "w": "famous",
+        "s": 1.04,
+        "e": 1.22
+      },
+      {
+        "w": "velociraptors,",
+        "s": 1.22,
+        "e": 1.88
+      },
+      {
+        "w": "real",
+        "s": 1.94,
+        "e": 2.06
+      },
+      {
+        "w": "as",
+        "s": 2.06,
+        "e": 2.16
+      },
+      {
+        "w": "raptors",
+        "s": 2.16,
+        "e": 2.42
+      },
+      {
+        "w": "the",
+        "s": 2.42,
+        "e": 2.56
+      },
+      {
+        "w": "size",
+        "s": 2.56,
+        "e": 2.66
+      },
+      {
+        "w": "of",
+        "s": 2.66,
+        "e": 2.8
+      },
+      {
+        "w": "a",
+        "s": 2.8,
+        "e": 2.82
+      },
+      {
+        "w": "turkey",
+        "s": 2.82,
+        "e": 2.96
+      },
+      {
+        "w": "will",
+        "s": 2.96,
+        "e": 3.06
+      },
+      {
+        "w": "how",
+        "s": 3.06,
+        "e": 3.2
+      },
+      {
+        "w": "actually",
+        "s": 3.2,
+        "e": 3.42
+      },
+      {
+        "w": "drew",
+        "s": 3.42,
+        "e": 3.62
+      },
+      {
+        "w": "was",
+        "s": 3.62,
+        "e": 3.76
+      },
+      {
+        "w": "ever",
+        "s": 3.76,
+        "e": 3.9
+      },
+      {
+        "w": "feared.",
+        "s": 3.9,
+        "e": 4.18
+      },
+      {
+        "w": "That's",
+        "s": 4.32,
+        "e": 4.48
+      },
+      {
+        "w": "easy",
+        "s": 4.48,
+        "e": 4.56
+      },
+      {
+        "w": "like",
+        "s": 4.56,
+        "e": 4.74
+      },
+      {
+        "w": "this",
+        "s": 4.74,
+        "e": 4.88
+      },
+      {
+        "w": "guy",
+        "s": 4.88,
+        "e": 5.06
+      },
+      {
+        "w": "with",
+        "s": 5.06,
+        "e": 5.5
+      },
+      {
+        "w": "a",
+        "s": 5.5,
+        "e": 5.6
+      },
+      {
+        "w": "rebrand.",
+        "s": 5.6,
+        "e": 5.92
+      }
+    ]
+  },
+  "S13": {
+    "group": "blocked_on_camera",
+    "clip_duration_s": 6.04,
+    "n_words": 14,
+    "transcript": "Okay, we're back at dino zoo. You said that like it's a good thing",
+    "speech_start_s": 0.0,
+    "speech_end_s": 4.54,
+    "existing_speech_duration_s": 4.54
+  },
+  "S37": {
+    "group": "blocked_on_camera",
+    "clip_duration_s": 6.04,
+    "n_words": 9,
+    "transcript": "And through here, feeding time for the big one.",
+    "speech_start_s": 0.0,
+    "speech_end_s": 2.8,
+    "existing_speech_duration_s": 2.8
+  }
+}

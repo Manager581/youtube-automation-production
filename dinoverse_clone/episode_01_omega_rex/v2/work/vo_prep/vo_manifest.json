@@ -1,0 +1,233 @@
+{
+  "project": "dinoverse_clone/episode_01_omega_rex",
+  "episode": "Omega Rex (episode_01)",
+  "status": "LOCKED_FINAL",
+  "rule": "ONE generation per pass, no re-rolls (memory: elevenlabs-one-pass-rule)",
+  "source_of_truth": "/Users/jefflawrence/Documents/youtube-automation-production/dinoverse_clone/episode_01_omega_rex/STORYBOARD.tsv",
+  "source_column": "Dialogue / VO",
+  "wav_output_dir": "audio/dinoverse_omega/",
+  "words_per_second_estimate": 2.6,
+  "recommended_split": "2 generations (one per voice), lines separated by 3.0s break tags, then split the WAV at the silences",
+  "break_tag": "<break time=\"3.0s\" />",
+  "split_recipe": "ffmpeg -i <pass>.mp3 -af silencedetect=noise=-40dB:d=1.2 -f null -  ->  expect N-1 silences; cut at silence midpoints, keep 0.3s handles",
+  "model_requirement": "Eleven Multilingual v2 or Turbo v2.5 (both honour <break time=\"x\" />). If the owner picks Eleven v3, use generation_passes_fallback_per_line instead - v3 does not honour break tags.",
+  "lines": [
+    {
+      "shot": "S01",
+      "slot": "S01",
+      "speaker": "LUKE",
+      "role": "card VO",
+      "tsv_verbatim": "So last time, we barely made it out of the dinosaur zoo alive.",
+      "exact_text": "So last time, we barely made it out of the dinosaur zoo alive.",
+      "wav": "luke_s01.wav",
+      "boarded_shots": [
+        "S01"
+      ],
+      "word_count": 13,
+      "estimated_speech_seconds": 5.0,
+      "boarded_dur_seconds": 2.0,
+      "sha256_exact_text": "5f7e93345215b9fa47a9a4db604e27db1d4d891b130aaa0e0773ada0dafcd78a",
+      "target_wav": "audio/dinoverse_omega/luke_s01.wav"
+    },
+    {
+      "shot": "S03",
+      "slot": "S03-S10",
+      "speaker": "LUKE",
+      "role": "cold-open montage (one continuous line over 8 flashes)",
+      "tsv_verbatim": "A T-Rex. A raptor pack. Two hybrids that should not exist... and three kids who thought a locked door was a dare.",
+      "exact_text": "A T-Rex. A raptor pack. Two hybrids that should not exist… and three kids who thought a locked door was a dare.",
+      "wav": "luke_s03_montage.wav",
+      "boarded_shots": [
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10"
+      ],
+      "word_count": 22,
+      "estimated_speech_seconds": 8.46,
+      "boarded_dur_seconds": 12.0,
+      "sha256_exact_text": "b2db1b14d9166364592ebaa2560cd4fe87a84b996d232d6d4b13fa25f16d1b71",
+      "target_wav": "audio/dinoverse_omega/luke_s03_montage.wav"
+    },
+    {
+      "shot": "S12",
+      "slot": "S12",
+      "speaker": "LUKE",
+      "role": "hook / showdown tease",
+      "tsv_verbatim": "Stay till the end. You will not believe how this one ended.",
+      "exact_text": "Stay till the end. You will not believe how this one ended.",
+      "wav": "luke_s12.wav",
+      "boarded_shots": [
+        "S12"
+      ],
+      "word_count": 12,
+      "estimated_speech_seconds": 4.62,
+      "boarded_dur_seconds": 2.0,
+      "sha256_exact_text": "69a75a51463e11194a5ad3663897fad9d833d3ac04d3662e0068f24fe04c01b1",
+      "target_wav": "audio/dinoverse_omega/luke_s12.wav"
+    },
+    {
+      "shot": "S89",
+      "slot": "S89 (2nd)",
+      "speaker": "LUKE",
+      "role": "end-card CTA",
+      "tsv_verbatim": "Comment which dino you'd survive. Subscribe - part two if this hits.",
+      "exact_text": "Comment which dino you'd survive. Subscribe — part two if this hits.",
+      "wav": "luke_s89_cta.wav",
+      "boarded_shots": [
+        "S89"
+      ],
+      "word_count": 11,
+      "estimated_speech_seconds": 4.23,
+      "boarded_dur_seconds": 2.0,
+      "sha256_exact_text": "41857aad9ff625afab736e6ee1dd3a18ff98dc7a356e904b2b802753f1f9d8e1",
+      "target_wav": "audio/dinoverse_omega/luke_s89_cta.wav"
+    },
+    {
+      "shot": "S02",
+      "slot": "S02",
+      "speaker": "GF",
+      "role": "host selfie at the gate",
+      "tsv_verbatim": "This time we found the part they really didn't want us to see.",
+      "exact_text": "This time we found the part they really didn't want us to see.",
+      "wav": "gf_s02.wav",
+      "boarded_shots": [
+        "S02"
+      ],
+      "word_count": 13,
+      "estimated_speech_seconds": 5.0,
+      "boarded_dur_seconds": 3.0,
+      "sha256_exact_text": "8fdf1d7869b3bd019fee21bd3c9f9efc9d4fc987feb21869faa5a5f649dbafb2",
+      "target_wav": "audio/dinoverse_omega/gf_s02.wav"
+    },
+    {
+      "shot": "S11",
+      "slot": "S11",
+      "speaker": "GF",
+      "role": "flash: teens at the door",
+      "tsv_verbatim": "Remember them.",
+      "exact_text": "Remember them.",
+      "wav": "gf_s11.wav",
+      "boarded_shots": [
+        "S11"
+      ],
+      "word_count": 2,
+      "estimated_speech_seconds": 0.77,
+      "boarded_dur_seconds": 1.5,
+      "sha256_exact_text": "a008130f9508c85818768f31a2a6be390bbf7c5522f5d8184b7adc6a63142fb7",
+      "target_wav": "audio/dinoverse_omega/gf_s11.wav"
+    },
+    {
+      "shot": "S89",
+      "slot": "S89 (1st)",
+      "speaker": "GF",
+      "role": "end-card closer (lands BEFORE Luke's CTA)",
+      "tsv_verbatim": "...we are never coming back.",
+      "exact_text": "…we are never coming back.",
+      "wav": "gf_s89_closer.wav",
+      "boarded_shots": [
+        "S89"
+      ],
+      "word_count": 5,
+      "estimated_speech_seconds": 1.92,
+      "boarded_dur_seconds": 2.0,
+      "sha256_exact_text": "54fb7f31ef3ee880e845ad55feb7ea13c9d7dc50375ed048468493947ed57d4c",
+      "target_wav": "audio/dinoverse_omega/gf_s89_closer.wav"
+    }
+  ],
+  "generation_passes": [
+    {
+      "pass_id": "PASS_1_LUKE",
+      "speaker": "LUKE",
+      "n_lines": 4,
+      "segment_order": [
+        "luke_s01.wav",
+        "luke_s03_montage.wav",
+        "luke_s12.wav",
+        "luke_s89_cta.wav"
+      ],
+      "paste_text": "So last time, we barely made it out of the dinosaur zoo alive.\n\n<break time=\"3.0s\" />\n\nA T-Rex. A raptor pack. Two hybrids that should not exist… and three kids who thought a locked door was a dare.\n\n<break time=\"3.0s\" />\n\nStay till the end. You will not believe how this one ended.\n\n<break time=\"3.0s\" />\n\nComment which dino you'd survive. Subscribe — part two if this hits.",
+      "sha256_paste_text": "276cc9ae441aef8efc109cd4f34d40bf33daff6a21c879cb827704a0468e48ff",
+      "char_count": 375,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/luke_pass.mp3",
+      "expected_segments_after_silence_split": 4
+    },
+    {
+      "pass_id": "PASS_2_GF",
+      "speaker": "GF",
+      "n_lines": 3,
+      "segment_order": [
+        "gf_s02.wav",
+        "gf_s11.wav",
+        "gf_s89_closer.wav"
+      ],
+      "paste_text": "This time we found the part they really didn't want us to see.\n\n<break time=\"3.0s\" />\n\nRemember them.\n\n<break time=\"3.0s\" />\n\n…we are never coming back.",
+      "sha256_paste_text": "52fe5a136a1f3621e405a0b70a1faefa582ff032b629aa6c8ac85d8b52657b7b",
+      "char_count": 152,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/gf_pass.mp3",
+      "expected_segments_after_silence_split": 3
+    }
+  ],
+  "generation_passes_fallback_per_line": [
+    {
+      "pass_id": "FB_LUKE_luke_s01",
+      "speaker": "LUKE",
+      "paste_text": "So last time, we barely made it out of the dinosaur zoo alive.",
+      "sha256_paste_text": "5f7e93345215b9fa47a9a4db604e27db1d4d891b130aaa0e0773ada0dafcd78a",
+      "char_count": 62,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/luke_s01.mp3"
+    },
+    {
+      "pass_id": "FB_LUKE_luke_s03_montage",
+      "speaker": "LUKE",
+      "paste_text": "A T-Rex. A raptor pack. Two hybrids that should not exist… and three kids who thought a locked door was a dare.",
+      "sha256_paste_text": "b2db1b14d9166364592ebaa2560cd4fe87a84b996d232d6d4b13fa25f16d1b71",
+      "char_count": 111,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/luke_s03_montage.mp3"
+    },
+    {
+      "pass_id": "FB_LUKE_luke_s12",
+      "speaker": "LUKE",
+      "paste_text": "Stay till the end. You will not believe how this one ended.",
+      "sha256_paste_text": "69a75a51463e11194a5ad3663897fad9d833d3ac04d3662e0068f24fe04c01b1",
+      "char_count": 59,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/luke_s12.mp3"
+    },
+    {
+      "pass_id": "FB_LUKE_luke_s89_cta",
+      "speaker": "LUKE",
+      "paste_text": "Comment which dino you'd survive. Subscribe — part two if this hits.",
+      "sha256_paste_text": "41857aad9ff625afab736e6ee1dd3a18ff98dc7a356e904b2b802753f1f9d8e1",
+      "char_count": 68,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/luke_s89_cta.mp3"
+    },
+    {
+      "pass_id": "FB_GF_gf_s02",
+      "speaker": "GF",
+      "paste_text": "This time we found the part they really didn't want us to see.",
+      "sha256_paste_text": "8fdf1d7869b3bd019fee21bd3c9f9efc9d4fc987feb21869faa5a5f649dbafb2",
+      "char_count": 62,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/gf_s02.mp3"
+    },
+    {
+      "pass_id": "FB_GF_gf_s11",
+      "speaker": "GF",
+      "paste_text": "Remember them.",
+      "sha256_paste_text": "a008130f9508c85818768f31a2a6be390bbf7c5522f5d8184b7adc6a63142fb7",
+      "char_count": 14,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/gf_s11.mp3"
+    },
+    {
+      "pass_id": "FB_GF_gf_s89_closer",
+      "speaker": "GF",
+      "paste_text": "…we are never coming back.",
+      "sha256_paste_text": "54fb7f31ef3ee880e845ad55feb7ea13c9d7dc50375ed048468493947ed57d4c",
+      "char_count": 26,
+      "source_mp3": "audio/dinoverse_omega/source_chunks/gf_s89_closer.mp3"
+    }
+  ]
+}

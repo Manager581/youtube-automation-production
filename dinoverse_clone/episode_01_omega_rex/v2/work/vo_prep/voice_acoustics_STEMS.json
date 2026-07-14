@@ -1,0 +1,132 @@
+{
+  "LUKE": {
+    "shots": [
+      {
+        "shot": "S40",
+        "n_words": 18,
+        "vocals_f0_median": 145.2,
+        "vocals_f0_p25": 127.9,
+        "vocals_f0_p75": 162.0,
+        "vocals_centroid": 1362,
+        "bg_f0_median": 60.0,
+        "bg_to_vocal_rms": 0.03
+      },
+      {
+        "shot": "S67",
+        "n_words": 17,
+        "vocals_f0_median": 190.5,
+        "vocals_f0_p25": 164.9,
+        "vocals_f0_p75": 248.5,
+        "vocals_centroid": 1553,
+        "bg_f0_median": 60.0,
+        "bg_to_vocal_rms": 0.02
+      },
+      {
+        "shot": "S21",
+        "n_words": 16,
+        "vocals_f0_median": 241.4,
+        "vocals_f0_p25": 211.4,
+        "vocals_f0_p75": 278.9,
+        "vocals_centroid": 1942,
+        "bg_f0_median": null,
+        "bg_to_vocal_rms": 0.0
+      }
+    ],
+    "vocals_overall": {
+      "median": 189.4,
+      "p10": 127.9,
+      "p90": 280.7,
+      "p25": 149.5,
+      "p75": 241.4,
+      "centroid": 1610.0,
+      "voiced_pct": 81.1,
+      "rms": 0.1,
+      "n_voiced": 1840
+    },
+    "per_shot_spread_hz": 96.2,
+    "n_words": 51,
+    "speech_only_s": 13.88,
+    "words_per_sec": 3.67,
+    "words_per_min": 220.5
+  },
+  "GF": {
+    "shots": [
+      {
+        "shot": "S23",
+        "n_words": 12,
+        "vocals_f0_median": 239.6,
+        "vocals_f0_p25": 217.2,
+        "vocals_f0_p75": 278.4,
+        "vocals_centroid": 1831,
+        "bg_f0_median": null,
+        "bg_to_vocal_rms": 0.0
+      },
+      {
+        "shot": "S34",
+        "n_words": 8,
+        "vocals_f0_median": 149.2,
+        "vocals_f0_p25": 132.9,
+        "vocals_f0_p75": 208.6,
+        "vocals_centroid": 1302,
+        "bg_f0_median": 137.8,
+        "bg_to_vocal_rms": 0.03
+      },
+      {
+        "shot": "S66",
+        "n_words": 8,
+        "vocals_f0_median": 191.2,
+        "vocals_f0_p25": 180.5,
+        "vocals_f0_p75": 205.0,
+        "vocals_centroid": 1620,
+        "bg_f0_median": null,
+        "bg_to_vocal_rms": 0.0
+      }
+    ],
+    "vocals_overall": {
+      "median": 211.0,
+      "p10": 143.3,
+      "p90": 284.9,
+      "p25": 180.5,
+      "p75": 239.6,
+      "centroid": 1614.4,
+      "voiced_pct": 66.2,
+      "rms": 0.1,
+      "n_voiced": 945
+    },
+    "per_shot_spread_hz": 90.4,
+    "n_words": 28,
+    "speech_only_s": 8.28,
+    "words_per_sec": 3.38,
+    "words_per_min": 202.9
+  },
+  "RANGER_ref": {
+    "shots": [
+      {
+        "shot": "S46",
+        "n_words": 32,
+        "vocals_f0_median": 137.8,
+        "vocals_f0_p25": 124.2,
+        "vocals_f0_p75": 167.8,
+        "vocals_centroid": 1468,
+        "bg_f0_median": 580.8,
+        "bg_to_vocal_rms": 0.01
+      }
+    ],
+    "vocals_overall": {
+      "median": 137.8,
+      "p10": 115.9,
+      "p90": 193.8,
+      "p25": 124.2,
+      "p75": 167.8,
+      "centroid": 1467.6,
+      "voiced_pct": 71.6,
+      "rms": 0.0,
+      "n_voiced": 681
+    },
+    "per_shot_spread_hz": 0.0,
+    "n_words": 32,
+    "speech_only_s": 5.92,
+    "words_per_sec": 5.41,
+    "words_per_min": 324.3
+  }
+}
