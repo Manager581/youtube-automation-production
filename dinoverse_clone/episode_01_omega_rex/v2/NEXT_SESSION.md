@@ -1,15 +1,33 @@
 # NEXT SESSION — Dinoverse "Omega Rex" (episode_01) — resume here
 
 **Paste-to-resume prompt** (put this in a fresh session):
-> Read `dinoverse_clone/episode_01_omega_rex/v2/NEXT_SESSION.md` and continue. All 81 GEN
-> shots are done and in `rough_cut_v6.mp4` (8:45). Task A (Dunkleosteus S35/S36 regen) is
-> ✅ DONE (2026-07-13). One content task remains before the final master: (B) the ElevenLabs
-> one-pass VO for the cold-open montage + ending card — ask me for the Luke/GF voice choice
-> first. Then the final assembly pass (music/SFX/ambience, logo card, midroll, 1080p).
+> Read `dinoverse_clone/episode_01_omega_rex/v2/NEXT_SESSION.md` and continue the Dinoverse
+> "Omega Rex" episode. All 81 GEN shots are locked and in `rough_cut_v6.mp4` (8:45.2, only
+> placeholder = S02). Task A (Dunkleosteus S35/S36 no-teeth regen) is ✅ DONE (commit
+> `aefa531`). Now do **Task B — the ElevenLabs one-pass VO** for the cold-open montage +
+> the S89 ending card (this is what makes the cold open land and gives the video an ending).
+> Rule: ONE generation, no re-rolls — lock the script FINAL, split at paragraph boundaries,
+> SHA-verify the textarea before each Generate.
+>
+> Before generating, ask me three things and wait for my answers:
+> 1. **Which ElevenLabs voice for LUKE and which for GF?** (the episode body uses Grok-native
+>    voices — do NOT assume the Spino video's "Mark – Natural Conversations", that's a
+>    different channel). Offer to cut me short audio samples of Luke + GF from the existing
+>    Grok clips so I can compare before I choose.
+> 2. **S46 ranger line** — overlay a clean ElevenLabs ranger VO, or leave the Grok audio?
+>    (its dense 4-turn take may have slurred "that's a Utahraptor").
+> 3. **S02 cold-open selfie still** — green-light me to generate it in ChatGPT with the S13
+>    Luke+GF face-lock? (it's the last real still missing; currently a grey slate).
+>
+> Pull the exact VO lines from `STORYBOARD.tsv` (verify before generating), save the WAVs
+> under `audio/dinoverse_omega/`, then have the assembler lay the VO under the cold-open
+> flashes + the S01/S89 cards + S02 and TIME the cold open to the narration. Then the final
+> assembly pass: music beds + SFX + ambience, real DINO ZOO logo card, midroll marker at
+> S60, 1080p master. Use `venv/bin/python`; commit + push when work lands.
 
 ---
 
-## STATE (verified 2026-07-13, branch `spinosnack-dunkleosteus`, all pushed → HEAD `0f08aca`)
+## STATE (verified 2026-07-13, branch `spinosnack-dunkleosteus`, all pushed → HEAD `aefa531`)
 - **Board `STORYBOARD.tsv`: 81 clip / 0 still / 21 todo.** Every GEN (generated) shot is a
   finished clip in `v2/clips/Sxx.mp4`. The 21 "todo" are NOT missing footage — they are:
   cards (S01, S89), the S02 cold-open selfie (only real still still missing), the 10
