@@ -239,7 +239,7 @@ def main():
 
     listfile = OUT / "concat_list.txt"
     listfile.write_text("".join(f"file '{f}'\n" for f in files))
-    final = OUT / "rough_cut_v4.mp4"
+    final = OUT / "rough_cut_v6.mp4"
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0",
          "-i", str(listfile), "-c", "copy", str(final)])
 

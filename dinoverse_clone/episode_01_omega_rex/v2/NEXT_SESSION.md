@@ -2,11 +2,10 @@
 
 **Paste-to-resume prompt** (put this in a fresh session):
 > Read `dinoverse_clone/episode_01_omega_rex/v2/NEXT_SESSION.md` and continue. All 81 GEN
-> shots are done and in `rough_cut_v5.mp4` (8:45). Two content tasks remain before the
-> final master: (A) regen the Dunkleosteus stills S35/S36 with a bony beak (no teeth) then
-> re-i2v, and (B) the ElevenLabs one-pass VO for the cold-open montage + ending card. Then
-> the final assembly pass (music/SFX/ambience, logo card, midroll, 1080p). Start with
-> whichever I say; if I say nothing, do (A) first.
+> shots are done and in `rough_cut_v6.mp4` (8:45). Task A (Dunkleosteus S35/S36 regen) is
+> ✅ DONE (2026-07-13). One content task remains before the final master: (B) the ElevenLabs
+> one-pass VO for the cold-open montage + ending card — ask me for the Luke/GF voice choice
+> first. Then the final assembly pass (music/SFX/ambience, logo card, midroll, 1080p).
 
 ---
 
@@ -16,7 +15,8 @@
   cards (S01, S89), the S02 cold-open selfie (only real still still missing), the 10
   cold-open flashes (S03–S12, cut from real clips), and the 8 silent dread-stack trims
   (S65b/S66b/S67b/S67c/S74b/S77b/S77c/S77d) that were **deliberately dropped** from the cut.
-- **Current cut: `v2/work/rough_cut/rough_cut_v5.mp4` (8:45.2, 94 shots, 1 placeholder=S02).**
+- **Current cut: `v2/work/rough_cut/rough_cut_v6.mp4` (8:45.2, 94 shots, 1 placeholder=S02;
+  v6 = v5 + the no-teeth Dunkleosteus S35/S36 takes).**
   Built by `v2/work/assemble_rough_cut.py`. mp4 is gitignored (694 MB); rebuild from the .py.
 - **What v5 already has:** real cold-open flashes with native audio; audio-safe board-duration
   trims; S88 finale re-rolled (no clip-through); all 6 lip-sync clips re-rolled
@@ -27,7 +27,17 @@
 
 ---
 
-## TASK A — Dunkleosteus stills S35/S36 (remove teeth) + re-i2v
+## TASK A — Dunkleosteus stills S35/S36 (remove teeth) + re-i2v — ✅ DONE 2026-07-13
+Stills regenerated in ChatGPT (no-teeth beak anatomy; S35 mouth closed), re-i2v'd in Grok,
+whisper + frame-strip QA'd, installed, `rough_cut_v6.mp4` rebuilt (8:45.2). S36 took 4 rolls —
+rolls 1–3 drew teeth whenever the jaws opened; fix = jaws-CLAMPED Move + remove the
+'Sound: muffled CLACK' cue (S47 root-cause class). Winning prompt baked into the TSV.
+Old takes archived: `stills/S3x_teeth.png`, `clips/S3x_roll_teeth.mp4`,
+`clips/S36_regen_roll1-3_teeth.mp4`. OWNER EYEBALL: the new S35/S36 in the v6 cut (2:46–2:58).
+Full detail: PIVOT_PLAN.md §I2V TRACK tail entry.
+
+<details><summary>original task text</summary>
+
 **Problem:** S35/S36 render the Dunkleosteus with a mouthful of pointed teeth, but Luke's line
 is *"Meet Dunkleosteus. No teeth — just self-sharpening bone blades."* The teeth are baked
 into the **source stills** `v2/stills/S35.png` and `v2/stills/S36.png`, so a Grok re-roll alone
@@ -50,6 +60,8 @@ won't fix it — the stills must be regenerated first.
 4. QA each: whisper vs the Dialogue column + a 12-frame strip to confirm no teeth. Save to
    `v2/clips/S35.mp4` / `S36.mp4` (archive the old teeth takes as `*_roll_teeth.mp4`).
 5. Rebuild the cut, commit.
+
+</details>
 
 ---
 
