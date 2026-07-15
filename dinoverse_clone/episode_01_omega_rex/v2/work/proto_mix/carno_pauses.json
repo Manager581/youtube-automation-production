@@ -1,0 +1,75 @@
+{
+ "S17": {
+  "speech_end": 3.56,
+  "pauses": [
+   {
+    "at": 1.62,
+    "gap": 0.48
+   },
+   {
+    "at": 2.64,
+    "gap": 0.36
+   }
+  ],
+  "text": "First up, Carnotaurus, the one with the horns."
+ },
+ "S18": {
+  "speech_end": 5.82,
+  "pauses": [
+   {
+    "at": 3.49,
+    "gap": 0.5
+   }
+  ],
+  "text": "This little guy is only three weeks old. He's adorable! And he'll be two tons of adorable in a year."
+ },
+ "S19": {
+  "speech_end": 2.84,
+  "pauses": [
+   {
+    "at": 1.81,
+    "gap": 0.34
+   }
+  ],
+  "text": "There's the grown -up. Look at those horns."
+ },
+ "S20": {
+  "speech_end": 2.8,
+  "pauses": [],
+  "text": "He is right there!"
+ },
+ "S21": {
+  "speech_end": 5.14,
+  "pauses": [
+   {
+    "at": 1.53,
+    "gap": 0.46
+   },
+   {
+    "at": 2.41,
+    "gap": 0.38
+   }
+  ],
+  "text": "Mom and baby together. Fun fact, Carnotaurus used those horns to fight each other for territory."
+ },
+ "S22": {
+  "speech_end": 5.18,
+  "pauses": [
+   {
+    "at": 3.05,
+    "gap": 0.5
+   }
+  ],
+  "text": "So who do you think it's real rival was? Drop it in the comments. We'll settle it."
+ },
+ "S23": {
+  "speech_end": 4.6,
+  "pauses": [
+   {
+    "at": 2.98,
+    "gap": 1.0
+   }
+  ],
+  "text": "Do you think dinosaurs were ever actually real? Asking for the internet."
+ }
+}
