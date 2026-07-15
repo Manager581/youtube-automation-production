@@ -54,7 +54,7 @@ segfiles=[]
 for i,(z,a,b) in enumerate(spans):
     trk = MUS/"dark_tension.mp3" if z in DARKZONES else MUS/"light_cinematic.mp3"   # crimson-lies: cinematic, not upbeat
     seg=TM/f"z{i}.wav"; d=b-a+(1.2 if i<len(spans)-1 else 0)
-    run(["ffmpeg","-y","-v","error","-stream_loop","-1","-i",str(trk),"-t",f"{d}","-af","loudnorm=I=-32:TP=-3:LRA=11",str(seg)])  # -29 -> -32, music too loud
+    run(["ffmpeg","-y","-v","error","-stream_loop","-1","-i",str(trk),"-t",f"{d}","-af","loudnorm=I=-37:TP=-6:LRA=11",str(seg)])  # -32 -> -37, DECISIVE cut (owner: still too loud)
     segfiles.append(seg)
 acc=segfiles[0]
 for i in range(1,len(segfiles)):
@@ -103,7 +103,7 @@ baud=TM/"body_audio.wav"
 run(["ffmpeg","-y","-v","error","-i",str(T/"body_native.m4a"),"-i",str(amb),"-i",str(music),"-i",str(sfx),
      "-filter_complex",
      "[0:a]asplit=2[nmix][nkey];"
-     "[2:a][nkey]sidechaincompress=threshold=0.05:ratio=4:attack=25:release=400[musd];"
+     "[2:a][nkey]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=450[musd];"
      "[nmix][1:a][musd][3:a]amix=inputs=4:normalize=0:dropout_transition=0[pre];[pre]alimiter=limit=0.95[out]",
      "-map","[out]",str(baud)])
 bstyled=TM/"body_styled.mp4"; run(["ffmpeg","-y","-v","error","-i",str(T/"body_v.mp4"),"-i",str(baud),"-map","0:v","-map","1:a","-c:v","copy","-c:a","aac","-b:a","192k","-shortest",str(bstyled)])
@@ -115,8 +115,8 @@ eN=T/"ec_n.mp4"
 flist=TM/"flist.txt"; flist.write_text("".join(f"file '{p}'\n" for p in (iN,bN,eN)))
 fv=TM/"final_v.mp4"; run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(flist),"-map","0:v","-c:v","copy","-an",str(fv)])
 fa=TM/"final_a.m4a"; run(["ffmpeg","-y","-v","error","-i",str(iN),"-i",str(bN),"-i",str(eN),"-filter_complex","[0:a][1:a][2:a]concat=n=3:v=0:a=1[a]","-map","[a]","-c:a","aac","-b:a","192k",str(fa)])
-MASTER=PM/"EPISODE_MASTER_v5.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
-print(f"EPISODE_MASTER_v5: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
+MASTER=PM/"EPISODE_MASTER_v6.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
+print(f"EPISODE_MASTER_v6: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
 def _l(f):
     r=subprocess.run(["ffmpeg","-i",str(f),"-af","ebur128","-f","null","-"],capture_output=True,text=True).stderr
     m=[x for x in r.splitlines() if "I:" in x and "LUFS" in x]; return float(m[-1].split("I:")[1].split("LUFS")[0]) if m else 0

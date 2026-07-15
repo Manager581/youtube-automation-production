@@ -76,7 +76,7 @@ fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # music
 ins+=["-i",str(MUS)]; mi=idx; idx+=1
 fc.append(f"[{mi}:a]atrim=0:{TOTAL:.2f},afade=t=in:d=1.0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,"
-          f"loudnorm=I=-27:TP=-2:LRA=11[mus]")   # was -23; lower per owner (intro music too loud)
+          f"loudnorm=I=-33:TP=-6:LRA=11[mus]")   # -27 -> -33, DECISIVE cut (owner: still too loud)
 # SFX on cuts: whoosh rotating; impacts on the big beats; rumble bed under montage
 WHOOSH=[f"whoosh_0{n}_loud.wav" for n in (1,2,3,4,5)]
 IMPACT_AT={1:"impact_new_loud.wav",8:"impact_01_loud.wav",21:"body_impact_01_loud.wav",26:"impact_new_loud.wav"}
