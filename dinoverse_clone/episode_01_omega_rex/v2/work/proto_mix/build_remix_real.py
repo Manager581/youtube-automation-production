@@ -61,9 +61,19 @@ for i in range(1,len(segfiles)):
     nxt=TM/f"acc{i}.wav"; run(["ffmpeg","-y","-v","error","-i",str(acc),"-i",str(segfiles[i]),"-filter_complex","[0][1]acrossfade=d=1.2:c1=tri:c2=tri[a]","-map","[a]",str(nxt)]); acc=nxt
 music=TM/"music.wav"; run(["ffmpeg","-y","-v","error","-i",str(acc),"-af",f"atrim=0:{BLEN}","-ar",str(SR),str(music)])
 
-# --- AMBIENCE: zoo crowd, continuous, ~-27 LUFS (park sounds, above music/under dialogue) ---
+# --- AMBIENCE: clean crowd murmur (NO birds), 2 beds rotated so nothing repeats, SUBTLE (-33) ---
+BEDS=["crowd_a.mp3","crowd_b.mp3"]   # 264s + 151s, pure adult walla
+abits=[]; tacc=0.0; k=0
+while tacc < BLEN+2:
+    src=AMB/BEDS[k%2]; d=dur(src)
+    seg=TM/f"amb{k}.wav"
+    run(["ffmpeg","-y","-v","error","-i",str(src),"-af","loudnorm=I=-33:TP=-6:LRA=11",str(seg)])
+    abits.append(seg); tacc+=d-1.2; k+=1
+accA=abits[0]
+for i in range(1,len(abits)):
+    nx=TM/f"ambacc{i}.wav"; run(["ffmpeg","-y","-v","error","-i",str(accA),"-i",str(abits[i]),"-filter_complex","[0][1]acrossfade=d=1.2:c1=tri:c2=tri[a]","-map","[a]",str(nx)]); accA=nx
 amb=TM/"amb.wav"
-run(["ffmpeg","-y","-v","error","-stream_loop","-1","-i",str(AMB/"zoo_crowd_atmo.mp3"),"-t",f"{BLEN}","-af","loudnorm=I=-27:TP=-3:LRA=11,afade=t=in:d=1.5",str(amb)])
+run(["ffmpeg","-y","-v","error","-i",str(accA),"-af",f"atrim=0:{BLEN},afade=t=in:d=1.5","-ar",str(SR),str(amb)])
 
 # --- SFX bed: real hero SFX at mapped beats + subtle whoosh on cuts ---
 buf=np.zeros((int((BLEN+3)*SR),2),dtype=np.float32)
@@ -105,5 +115,9 @@ eN=T/"ec_n.mp4"
 flist=TM/"flist.txt"; flist.write_text("".join(f"file '{p}'\n" for p in (iN,bN,eN)))
 fv=TM/"final_v.mp4"; run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(flist),"-map","0:v","-c:v","copy","-an",str(fv)])
 fa=TM/"final_a.m4a"; run(["ffmpeg","-y","-v","error","-i",str(iN),"-i",str(bN),"-i",str(eN),"-filter_complex","[0:a][1:a][2:a]concat=n=3:v=0:a=1[a]","-map","[a]","-c:a","aac","-b:a","192k",str(fa)])
-MASTER=PM/"EPISODE_MASTER_v4.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
-print(f"EPISODE_MASTER_v4: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
+MASTER=PM/"EPISODE_MASTER_v5.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
+print(f"EPISODE_MASTER_v5: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
+def _l(f):
+    r=subprocess.run(["ffmpeg","-i",str(f),"-af","ebur128","-f","null","-"],capture_output=True,text=True).stderr
+    m=[x for x in r.splitlines() if "I:" in x and "LUFS" in x]; return float(m[-1].split("I:")[1].split("LUFS")[0]) if m else 0
+print(f"ambience now: {_l(amb):.1f} LUFS (was -26.8; no birds, 2 beds rotated)")
