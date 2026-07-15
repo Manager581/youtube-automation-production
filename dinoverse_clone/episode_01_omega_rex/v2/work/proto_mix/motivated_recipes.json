@@ -1,0 +1,812 @@
+{
+"S13": {
+"technique": "punch",
+"trim_end": 4.84,
+"cut_at": 2.25,
+"zoom": 1.3,
+"xp": 0.68,
+"yp": 0.44,
+"aim_ok": true,
+"rationale": "LUKE's chipper \"we're back at dino zoo\" hands off at the 2.25 pause to GF's deadpan \"you said that like it's a good thing\" \u2014 punch tightens onto her skeptical side-eye (right, xp0.68) which IS the joke."
+},
+"S13b": {
+"technique": "hold",
+"trim_end": 5.06,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Establisher \u2014 DINO ZOO gate sign + families + mascot; the wholesome wide IS the ironic setup for \"worst safety record,\" and the handheld slow push already supplies motion, so hold and trim the ~1.3s dead tail."
+},
+"S14a": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Silent walking-POV establisher approaching the DINO ZOO ticket kiosk \u2014 no speech, the composition is the establishing beat, so hold the full clip for rhythm contrast."
+},
+"S14": {
+"technique": "punch",
+"trim_end": 6.04,
+"cut_at": 4.06,
+"zoom": 1.25,
+"xp": 0.5,
+"yp": 0.33,
+"aim_ok": true,
+"rationale": "Punch in on the clerk at the 4.06 pause to punctuate his deadpan payoff \"Same price for everyone, sir\"; TICKET PRICES sign stays in frame reinforcing the line. Speech fills clip so trim stays full."
+},
+"S14b": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Silent POV action beat (empty line, speech_end 0) \u2014 locked first-person ticket scan through the turnstile; the scan-to-green-to-entry motion IS the shot, no dialogue and no static push target, so hold full for entry rhythm."
+},
+"S15": {
+"technique": "hold",
+"trim_end": 5.48,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Line \"it's packed today, everyone's here for the new exhibit\" is about the crowd \u2014 hold the wide walking-POV establisher so the packed park + exhibit signage read; subject moves too much for a motivated push. Trim 0.86s dead tail after speech_end."
+},
+"S16": {
+"technique": "punch",
+"trim_end": 6.04,
+"cut_at": 3.93,
+"zoom": 1.3,
+"xp": 0.58,
+"yp": 0.4,
+"aim_ok": true,
+"rationale": "POV map close; the line reads \"Hybrid enclosure staff only\" so punch into the red HYBRID ENCLOSURE-STAFF ONLY label at the 3.93 pause to sell the tease."
+},
+"S17": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "LUKE VO names \"Carnotaurus\" as the giant CARNOTAURUS gate sign fills frame and GF walks under it into the zone \u2014 establisher/entrance reveal; hold full so the sign lands and the walk-in completes (punch would crop the sign)."
+},
+"S18": {
+"technique": "punch",
+"trim_end": 6.04,
+"cut_at": 3.49,
+"zoom": 1.25,
+"xp": 0.62,
+"yp": 0.45,
+"aim_ok": true,
+"rationale": "Punch onto the cradled hatchling at the 3.49 pause, landing on \"He's adorable!\" \u2014 the line (\"this little guy\") points right at the baby dino the keeper is holding."
+},
+"S19": {
+"technique": "punch",
+"trim_end": 3.3,
+"cut_at": 1.81,
+"zoom": 1.3,
+"xp": 0.51,
+"yp": 0.36,
+"aim_ok": true,
+"rationale": "Attention cue \"Look at those horns\" \u2014 punch at the 1.81 pause pushes onto the Carnotaurus's horned head as it turns to the glass; trims dead pacing tail after speech."
+},
+"S20": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"He is right there!\" lands on a locked close-up of the Carnotaurus at the glass with kids' shocked faces peaking after speech; two-element composition is the payoff and there is no pause to cut on, so hold full."
+},
+"S21": {
+"technique": "punch",
+"trim_end": 5.44,
+"cut_at": 2.41,
+"zoom": 1.25,
+"xp": 0.48,
+"yp": 0.4,
+"aim_ok": true,
+"rationale": "Line names a feature (\"used those horns\") + \"mom and baby together\"; punch at the 2.41 pause pushes into the adult+baby Carnotaurus pair as the horn fact lands, dropping the foreground kid silhouettes."
+},
+"S22": {
+"technique": "hold",
+"trim_end": 5.48,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Line \"who was its real rival?\" plays over both dinosaurs squaring off across the enclosure \u2014 hold keeps both rivals in the two-shot (punching either undercuts \"rival\"); slow pan supplies motion; trimmed 0.86s dead tail."
+},
+"S23": {
+"technique": "punch",
+"trim_end": 4.9,
+"cut_at": 2.98,
+"zoom": 1.25,
+"xp": 0.47,
+"yp": 0.34,
+"aim_ok": true,
+"rationale": "Pause at 2.98 splits the question from the punchline; punch tightens on GF's face (keeping the matching \"?\" sign in frame) to pop \"Asking for the internet.\""
+},
+"S24": {
+"technique": "hold",
+"trim_end": 5.4,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "NEW landmark reveal \u2014 the built-in awe tilt-up already climbs the giant Quetzalcoatlus statue and lands on Luke/GF's \"oh no\" awe reaction; the scale gag IS the composition, so hold and let the camera move sell it rather than fighting it with a punch. Trim the dead tail after speech_end 5.1."
+},
+"S25": {
+"technique": "punch",
+"trim_end": 5.08,
+"cut_at": 3.22,
+"zoom": 1.25,
+"xp": 0.48,
+"yp": 0.4,
+"aim_ok": true,
+"rationale": "Line names the baby quetzal then adds the surprised \"Minutes? Oh\" \u2014 punch at the 3.22 pause tightens onto the keeper cradling the hatchling as that reaction lands."
+},
+"S26": {
+"technique": "punch",
+"trim_end": 4.18,
+"cut_at": 1.87,
+"zoom": 1.22,
+"xp": 0.42,
+"yp": 0.47,
+"aim_ok": true,
+"rationale": "LUKE narrates \"he's flying\" \u2014 push into the flapping baby Quetzalcoatlus mid flight-test at the 1.87s pause (peak wing-spread); trim the settled-to-ground dead tail after speech_end."
+},
+"S27": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Slow tilt-up money-shot of the giant Quetzalcoatlus over tiny people; the scale reveal IS the payoff of \"wingspans bigger than a small plane,\" so hold full and keep the tilt."
+},
+"S28": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"Imagine looking up and seeing that. They're so close\" \u2014 POV flight-overhead money-shot with built-in tilt/tracking; the pterosaur grows closest in the final frames, so hold full to let the \"so close\" reveal land rather than punch over the existing camera move."
+},
+"S29": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"Looming\" money-shot revealing the just-named giant flyer over tiny visitors; the creature's head sits too high in frame to punch to, and the wide scale IS the point \u2014 hold full so the loom completes past the \"Google that spelling\" aside."
+},
+"S30": {
+"technique": "hold",
+"trim_end": 5.3,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": true,
+"rationale": "Walking POV establisher of the DINO ZOO dome + creature silhouette; camera already pushes forward and subjects exit frame, and the \"What do you think?\" is audience comment-bait with no on-screen reaction \u2014 HOLD for rhythm contrast, trim 0.7s dead tail."
+},
+"S31": {
+"technique": "hold",
+"trim_end": 3.6,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Walking-POV new-location transition (\"Ooh, food. Later. Water first.\") \u2014 camera movement already reframes GF, food and LUKE, so no stable push target; hold for rhythm contrast and trim the dialogue-free tail after speech_end."
+},
+"S32": {
+"technique": "hold",
+"trim_end": 4,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Gate/sign establisher \u2014 LUKE reads the \"AQUATIC LIFE ENCLOSURE\" sign that dominates the wide POV; the composition IS the point, so hold wide and no punch; trim the stale walk-away tail past the establishing beat."
+},
+"S33": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Establishing facade of the Aquatic Life Enclosure on a slow tilt; Luke's \"This is the one I wanted\" pays off by revealing the destination, so hold the full clip to let the tilt and location land \u2014 no motivated push target."
+},
+"S34": {
+"technique": "punch",
+"trim_end": 3.98,
+"cut_at": 2.19,
+"zoom": 1.25,
+"xp": 0.4,
+"yp": 0.48,
+"aim_ok": true,
+"rationale": "GF names the subject \"Those are babies\" at the 2.19 pause, so I punch into the school of Dunkleosteus fry as \"tiny tanks\" lands; verified crop fills frame with the babies, drops empty glass/sign."
+},
+"S35": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"Meet Dunkleosteus\" is a creature reveal money-shot; the slow tracking pan already reveals the whole armored fish behind glass, so hold full and let the reveal play rather than punching into the jaw."
+},
+"S36": {
+"technique": "hold",
+"trim_end": 3.2,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Dunkleosteus feeding-bite impact shot; GF's \"felt that in my soul\" is off-camera VO reaction with no on-screen person to punch to, so hold the money-shot and trim the dead swim-away tail after speech_end 2.88."
+},
+"S37": {
+"technique": "hold",
+"trim_end": 3.1,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Establishing \"Arena approach\" transition \u2014 the overhead MOSASAURUS FEEDING SHOW sign is the location reveal that \"through here\" names, so hold lets it read and trim the dead walking tail after speech."
+},
+"S38": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Deliberate money-shot: \"the Mosasaurus\" feeding-show breach spans the full wide locked frame (pool, crowd, ranger, splash) \u2014 the spectacle IS the composition, so hold full through the \"Oh! Oh!\" reactions."
+},
+"S39": {
+"technique": "hold",
+"trim_end": 4.5,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"It's the size of a bus\" is a scale line \u2014 hold the wide slow-tracking reveal of the full mosasaur; punching in would crop the creature and kill the sense of scale."
+},
+"S40": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Money-shot reveal: Mosa + Dunkle sharing the tunnel is the literal answer to LUKE's \"could these two live in the same water?\" \u2014 hold the wide slow-tilt full so both creatures stay in frame; no single punch target."
+},
+"S41": {
+"technique": "hold",
+"trim_end": 3.84,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Walking follow-me POV transition; camera already dollies and GF grows in frame, and \"Hey, look\" motivates the cut to the next shot, not a push here \u2014 hold, trim 2.2s dead tail."
+},
+"S42": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Locked candid surveillance wide: the three-teen + forbidden-door framing IS the joke, and the tail (kid grabbing the \"HYBRID DANGER\" handle as hosts say \"not our problem, keep walking\") is the ironic payoff \u2014 hold full, punching would kill the composition."
+},
+"S43": {
+"technique": "hold",
+"trim_end": 3.92,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Walking POV approaching the UTAHRAPTOR zone gate; camera already dollies forward toward the sign, so the \"Next, the one people get wrong\" tease reads on a natural push \u2014 HOLD for rhythm contrast, trim ~2.1s dead walking tail after speech."
+},
+"S44": {
+"technique": "punch",
+"trim_end": 5.7,
+"cut_at": 2.1,
+"zoom": 1.25,
+"xp": 0.3,
+"yp": 0.55,
+"aim_ok": true,
+"rationale": "Push onto the feathered chick on the keeper's glove at the 2.1s pause, landing as she says \"It's covered in feathers\" \u2014 the line's attention cue on the baby's feathers; trims 0.6s dead tail after speech."
+},
+"S45": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "HOLD full: \"I could watch these all day\" is a linger-on-the-babies reveal beat \u2014 the family-watching-nursery wide is the point, babies are small/fast with no clean punch target, and the tail keeps showing baby action, so hold the full clip."
+},
+"S46": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Dry myth-bust centerpiece: the wide frame holding RANGER, the raptor, and the turkey-vs-human comparison sign together IS the \"size of a turkey / this guy with a rebrand\" gag; no pause exists and speech fills to 5.92/6.04, so hold full."
+},
+"S47": {
+"technique": "hold",
+"trim_end": 4.8,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Line \"And there's a whole pack\" pays off on the wide group reveal \u2014 punching would crop out pack members and contradict \"whole\"; hold the slow pan, trim the dead tail."
+},
+"S48": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Line \"they hunt in coordination\" is literally shown by the wide fast tracking pan of the whole raptor pack running the fence together; a punch would isolate one animal and kill the coordination point. Hold full so the action money-shot tail lands."
+},
+"S49": {
+"technique": "hold",
+"trim_end": 4.82,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Two-shot stare-down keeps GF and the raptor eyeing each other through the glass in one frame \u2014 the mutual gaze IS the point of \"It's looking at me / at you,\" so hold and trim 1.5s dead tail."
+},
+"S50": {
+"technique": "punch",
+"trim_end": 5.88,
+"cut_at": 4.47,
+"zoom": 1.28,
+"xp": 0.62,
+"yp": 0.36,
+"aim_ok": true,
+"rationale": "GF turns back to camera for the direct-address quiz CTA; punch onto her face at the 4.47 pause lands the \"What do you think?\" audience engagement."
+},
+"S51": {
+"technique": "hold",
+"trim_end": 3.3,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "GF's \"won't eat us\" joke lands right under the HERBIVORE VALLEY gate sign \u2014 the full composition is the gag, so hold the zone-gate establisher and trim ~3s of dead walking after speech."
+},
+"S52": {
+"technique": "punch",
+"trim_end": 4.92,
+"cut_at": 2.59,
+"zoom": 1.28,
+"xp": 0.66,
+"yp": 0.42,
+"aim_ok": true,
+"rationale": "Line names \"all those spikes\" \u2014 punch at the 2.59 pause into the Styracosaurus frill/spikes on the right, keeping the couple in frame-left for reaction."
+},
+"S53": {
+"technique": "punch",
+"trim_end": 3.54,
+"cut_at": 1.6,
+"zoom": 1.3,
+"xp": 0.58,
+"yp": 0.54,
+"aim_ok": true,
+"rationale": "GF says \"that's the cutest thing here\" \u2014 punch tightens onto the baby calf beside its mother (the named cute thing) while keeping her reacting face in frame."
+},
+"S54": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Wide reveal of the towering Brachiosaurus with crowd looking up; the crane-like neck IS the joke of the line, so hold the full slow-tilt scale reveal rather than punch and crush it."
+},
+"S55": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "10s money-shot reveal: the towering Argentinosaurus dwarfing the tiny crowd IS the \"biggest animal ever\" scale gag; slow-rising wide holds full, a punch would kill the reveal."
+},
+"S56": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"Whole family crossing together\" is paid off by the wide ensemble framing (sauropod + triceratops adult + baby crossing water); punching would break the \"whole family together\" point, and the family keeps crossing after the line, so hold full."
+},
+"S57": {
+"technique": "punch",
+"trim_end": 4.88,
+"cut_at": 3.77,
+"zoom": 1.25,
+"xp": 0.38,
+"yp": 0.38,
+"aim_ok": true,
+"rationale": "Push at pause 3.77 tightens the medium onto GF's wry reaction as she lands the kicker \"no teeth needed,\" keeping the sauropod enclosure she references in frame; trim drops 1.16s dead tail."
+},
+"S58": {
+"technique": "punch",
+"trim_end": 4.94,
+"cut_at": 3.66,
+"zoom": 1.25,
+"xp": 0.45,
+"yp": 0.55,
+"aim_ok": true,
+"rationale": "On the pause before \"toward the door,\" punch tightens on the three teens grouped by the STAFF ONLY / HYBRID DANGER gate \u2014 emphasizing the kids heading the wrong way into danger; dead tail trimmed after speech_end."
+},
+"S59": {
+"technique": "hold",
+"trim_end": 4.34,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Walking \"follow-me\" POV to the Smokehouse on \"now food, come on\" \u2014 camera already advances forward, so the hand-hold composition holds; a digital punch would double the motion. Trim the 2s dead tail."
+},
+"S59b": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"Come on. This way.\" is a follow-me POV: GF leads Luke forward into a NEW market row (DINO DOGS + SMOKEHOUSE); the forward walk is the location reveal, so hold full and let the new area land \u2014 no motivated push target."
+},
+"S59c": {
+"technique": "hold",
+"trim_end": 4.28,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Sign/entrance establisher \u2014 the wide frame (McDonald's arches + families with trays in a dino park) IS the joke behind \"They have a McDonald's? Of course they do\"; hold it wide, trim the 2s dead tail."
+},
+"S60": {
+"technique": "hold",
+"trim_end": 8.34,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Locked first-person BBQ POV \u2014 calm midroll breather where the peaceful static framing (Luke's tea in frame, GF eating ribs across the table) is the point; no off-camera face to cut to, so hold for rhythm contrast and just trim the 2s dead tail."
+},
+"S61": {
+"technique": "hold",
+"trim_end": 3.36,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Walking-POV establisher of the T-REX ZONE gate on \"the one everyone's waiting for, T-Rex\" \u2014 the forward dolly already provides push; a zoom would fight it, so HOLD and trim ~3s dead walking air after speech_end."
+},
+"S62": {
+"technique": "punch",
+"trim_end": 4.74,
+"cut_at": 2.89,
+"zoom": 1.25,
+"xp": 0.43,
+"yp": 0.42,
+"aim_ok": true,
+"rationale": "Line names the baby (\"...or the baby?\"); punch onto the centered hatchling at the 2.89 pause emphasizes the very subject being spoken about."
+},
+"S63": {
+"technique": "punch",
+"trim_end": 3.78,
+"cut_at": 1.69,
+"zoom": 1.3,
+"xp": 0.57,
+"yp": 0.62,
+"aim_ok": true,
+"rationale": "Line names the isolated exhibit tooth (\"A single tooth, 30 centimeters\"); punch at the 1.69s pause pushes onto the spotlit pedestal tooth just as Luke gives its size, kids' awe kept in frame right. Trimmed 2.5s dead tail after speech_end."
+},
+"S64": {
+"technique": "punch",
+"trim_end": 3.7,
+"cut_at": 1.73,
+"zoom": 1.25,
+"xp": 0.38,
+"yp": 0.4,
+"aim_ok": true,
+"rationale": "On the pause, punch into GF's over-the-shoulder anticipating face as she says \"before I can even see it,\" keeping the T-REX walkway destination in frame."
+},
+"S65": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Reveal money-shot: T-Rex slowly steps into view behind the glass and pushes toward the visitors as they gasp \"Whoa\" \u2014 hold full so the in-camera reveal lands; a digital punch would fight the slow push."
+},
+"S66": {
+"technique": "hold",
+"trim_end": 3.18,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Hold the NEW-angle two-shot: giant T-Rex head at glass vs tiny kids is the exact size contrast GF's \"those kids are so brave\" reacts to; punching in would crop the dino head and kill the point. Trim 3.16s of static dead tail."
+},
+"S67": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Deliberate \"THE ROAR (10s)\" money-shot: the roaring T-Rex behind glass and the crowd's escalating ear-covering reaction build across the full clip, selling \"not even the scary one here\" \u2014 hold the wide, no punch."
+},
+"S68": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Walking POV dollies forward and reveals the \"HYBRID ZONE\" sign at the end, paying off the line \"The hybrid zone\"; the organic camera push carries it, so hold full to complete the reveal rather than fight it with a digital punch."
+},
+"S69": {
+"technique": "hold",
+"trim_end": 4.24,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Candid POV of teens slipping through the STAFF ONLY / HYBRID DANGER door \u2014 the wide framing (gate, signage, both teens disappearing) IS what \"they just went in\" refers to; subjects move across frame so no stable punch target. Hold, trim ~1.8s dead tail to speech_end+0.3."
+},
+"S70": {
+"technique": "punch",
+"trim_end": 4.4,
+"cut_at": 2.49,
+"zoom": 1.3,
+"xp": 0.61,
+"yp": 0.52,
+"aim_ok": true,
+"rationale": "Punch at the pause (2.49) onto the two Indominus juveniles as the ranger says \"This section's not open\" \u2014 reveals the caged hybrids that are the reason it's closed; both creatures verified well inside the crop."
+},
+"S71": {
+"technique": "punch",
+"trim_end": 6.04,
+"cut_at": 1.39,
+"zoom": 1.25,
+"xp": 0.6,
+"yp": 0.48,
+"aim_ok": true,
+"rationale": "Luke names the creature (\"That's the endominus\"); punch at the 1.39 pause pushes onto the Indominus feeding on the right, holding full to let the mouth-open feeding money-shot play out."
+},
+"S72": {
+"technique": "hold",
+"trim_end": 3.88,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Detail reveal of claw-scarred wall with its own slow pan; GF's \"that to the wall\" points at scars already centered \u2014 no pause to cut on, so hold and trim the dead tail after speech."
+},
+"S73": {
+"technique": "punch",
+"trim_end": 3.68,
+"cut_at": 1.45,
+"zoom": 1.3,
+"xp": 0.48,
+"yp": 0.37,
+"aim_ok": true,
+"rationale": "Line names the feature (\"It can camouflage\") and beat is a Camouflage reveal \u2014 punch at the 1.45 pause past the two viewers onto the crocodilian dino blended in the greenery so \"one second it's there\" lands on the revealed creature."
+},
+"S74": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "High-locked overlook establisher of the empty HYBRID ZONE paddock; the D-Rex is deliberately unseen, so the post-line silence sells dread \u2014 hold full, no punch target exists."
+},
+"S75": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "D-REX REVEAL money-shot: monster slowly advances through glass toward camera, growing across the clip; the line \"That's a monster... but is he?\" pays off on this reveal, so HOLD full and let the natural push land rather than double the motion with a punch."
+},
+"S76": {
+"technique": "hold",
+"trim_end": 2.94,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Wide overlook shows teens as small figures dangerously near the tunnel opening while the dino emerges at top \u2014 the distance geometry IS the danger; LUKE's warning shout \"get away from the opening\" only reads if we hold the full frame. Trim dead standoff tail after speech."
+},
+"S77": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Menacing close-up of the dino breathing steam at the glass \u2014 \"It sees them\" lands as the looming head sizes up the tiny visitor behind glass; already-tight dread money-shot, so hold full for the breathing beat rather than punch/trim."
+},
+"S78": {
+"technique": "hold",
+"trim_end": 10.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"Run! Run out!\" over the BREAKOUT money shot \u2014 Omega Rex smashing the fence, cables sparking, roaring across frame with handheld shake; a deliberate 10s chaos beat that must hold full, no punch target amid the violent motion."
+},
+"S79": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Locked strobing wide of the whole control room in red-alert chaos (EVACUATE monitors, staff on radios) \u2014 the room-wide breach composition matches the PA evacuation announcement; hold preserves the chaos read and gives rhythm contrast."
+},
+"S80": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"It's the whole park\" is a scale line; the wide reveal of the Carnotaurus pacing under red alarm reinforces total scope, so hold the full menacing-dread beat rather than punch and narrow it."
+},
+"S81": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "\"This way! Go! Go!\" over a fast-handheld evacuation wide \u2014 the crowd fleeing toward camera escalates past speech_end, so hold full; no single reaction target and handheld motion already carries it."
+},
+"S82": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Indominus breach payoff (S09 flash) \u2014 SILENT action money-shot; full-frame wall-burst with debris shake carries the scale, so hold full, no punch."
+},
+"S83": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Silent action money-shot: D-Rex advancing through the plaza with a built-in slow camera push through haze \u2014 hold full so the native loom lands; a digital punch would fight the camera move."
+},
+"S84": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "HOLD full 6.04s: GF's \"From the sky, too?\" ends at 1.68s but the named payoff \u2014 the fast tilt-down landing on the Quetzal looming wings-spread over the picnic \u2014 develops after the line, so trimming to speech would kill the reveal; native tilt already supplies motion, no punch."
+},
+"S85": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Silent \"T-Rex loose\" action money-shot \u2014 Rex bursts through the shattered glass dome roaring toward camera; low wide shake reveal must play full, no punch."
+},
+"S86": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "Silent T-Rex charge money-shot: animal goes from distant roar at the gate to head filling frame \u2014 a built-in in-camera push; hold full so the climactic final frame lands, no digital punch needed."
+},
+"S87": {
+"technique": "punch",
+"trim_end": 5.32,
+"cut_at": 2.86,
+"zoom": 1.25,
+"xp": 0.58,
+"yp": 0.55,
+"aim_ok": true,
+"rationale": "Punch on the pause to the ranger's payoff reply \"nobody ever does,\" tightening the wide plaza two-shot onto his hand-on-head consoling the three regretful huddled teens."
+},
+"S88": {
+"technique": "hold",
+"trim_end": 6.04,
+"cut_at": 0,
+"zoom": 1,
+"xp": 0.5,
+"yp": 0.5,
+"aim_ok": false,
+"rationale": "HOLD the full wide showdown \u2014 the line names \"Three Apex Predators, one park,\" and the tableau of all three creatures IS that reveal; the slow wide push is the closer, so keep clip_dur (deliberate money-shot beat)."
+}
+}
