@@ -14,7 +14,7 @@ ROOT = Path("/Users/jefflawrence/Documents/youtube-automation-production")
 CL   = ROOT/"dinoverse_clone/episode_01_omega_rex/v2/clips"
 VO   = ROOT/"audio/dinoverse_omega"
 SFXD = ROOT/"assets/sfx"
-MUS  = ROOT/"audio/breaking_law/music_tracks/track_04_dark.wav"
+MUS  = ROOT/"assets/dino_music/dark_tension.mp3"   # real dark trailer bed
 RC   = ROOT/"dinoverse_clone/episode_01_omega_rex/v2/work/rough_cut/rough_cut_v6.mp4"
 OUT  = ROOT/"dinoverse_clone/episode_01_omega_rex/v2/work/proto_mix"
 TMP  = OUT/"_intro_tmp"; TMP.mkdir(parents=True, exist_ok=True)
@@ -76,7 +76,7 @@ fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # music
 ins+=["-i",str(MUS)]; mi=idx; idx+=1
 fc.append(f"[{mi}:a]atrim=0:{TOTAL:.2f},afade=t=in:d=1.0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,"
-          f"loudnorm=I=-23:TP=-2:LRA=11[mus]")
+          f"loudnorm=I=-27:TP=-2:LRA=11[mus]")   # was -23; lower per owner (intro music too loud)
 # SFX on cuts: whoosh rotating; impacts on the big beats; rumble bed under montage
 WHOOSH=[f"whoosh_0{n}_loud.wav" for n in (1,2,3,4,5)]
 IMPACT_AT={1:"impact_new_loud.wav",8:"impact_01_loud.wav",21:"body_impact_01_loud.wav",26:"impact_new_loud.wav"}
@@ -93,6 +93,10 @@ for ci,ct in enumerate(cut_times):
 ins+=["-i",str(SFXD/"rumble_03_loud.wav")]
 rd=int(cut_times[8]*1000)
 fc.append(f"[{idx}:a]adelay={rd}|{rd},volume=0.22[rumble]"); sfx_labels.append("[rumble]"); idx+=1
+# HERO: classic-style T-Rex roar right when he hits the screen (cut 1 = the S67 T-Rex flash)
+ins+=["-i",str(ROOT/"assets/dino_sfx/roar_trex_victory.mp3")]
+rr=int(max(0.0,cut_times[1]-0.03)*1000)
+fc.append(f"[{idx}:a]adelay={rr}|{rr},volume=0.9[roar]"); sfx_labels.append("[roar]"); idx+=1
 # duck music under VO, then mix everything
 fc.append("[vodry]asplit=2[vomix][vokey]")
 fc.append("[mus][vokey]sidechaincompress=threshold=0.06:ratio=6:attack=15:release=280[musd]")

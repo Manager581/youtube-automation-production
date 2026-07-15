@@ -52,9 +52,9 @@ print(f"body {BLEN:.1f}s")
 # --- MUSIC: real light/dark per zone, subordinate (-29 LUFS) ---
 segfiles=[]
 for i,(z,a,b) in enumerate(spans):
-    trk = MUS/"dark_tension.mp3" if z in DARKZONES else MUS/"light_playful.mp3"
+    trk = MUS/"dark_tension.mp3" if z in DARKZONES else MUS/"light_cinematic.mp3"   # crimson-lies: cinematic, not upbeat
     seg=TM/f"z{i}.wav"; d=b-a+(1.2 if i<len(spans)-1 else 0)
-    run(["ffmpeg","-y","-v","error","-stream_loop","-1","-i",str(trk),"-t",f"{d}","-af","loudnorm=I=-29:TP=-3:LRA=11",str(seg)])
+    run(["ffmpeg","-y","-v","error","-stream_loop","-1","-i",str(trk),"-t",f"{d}","-af","loudnorm=I=-32:TP=-3:LRA=11",str(seg)])  # -29 -> -32, music too loud
     segfiles.append(seg)
 acc=segfiles[0]
 for i in range(1,len(segfiles)):
@@ -72,7 +72,7 @@ def ov(a,at,g):
     if i>=0 and n>0: buf[i:i+n]+=a[:n]*g
 WH=[dec(SFX.parent/"sfx"/f) if (SFX/f).exists() else None for f in []]  # placeholder
 WHOOSH=[dec(ROOT/"assets/sfx"/f"whoosh_0{n}_loud.wav") for n in (1,2,3,4,5)]
-R_TREX=dec(SFX/"roar_trex.mp3"); R_GEN=dec(SFX/"roar_generic.mp3"); R_MON=dec(SFX/"roar_monster.mp3")
+R_TREX=dec(SFX/"roar_trex_victory.mp3"); R_GEN=dec(SFX/"roar_generic.mp3"); R_MON=dec(SFX/"roar_monster.mp3")  # victory = bigger, iconic
 ALARM=dec(SFX/"alarm_emergency.mp3"); CRASH=dec(SFX/"crash_debris.mp3"); BOOM=dec(SFX/"impact_boom.mp3")
 # subtle whoosh on each cut
 for i,ct in enumerate(cutrel):
@@ -100,9 +100,10 @@ bstyled=TM/"body_styled.mp4"; run(["ffmpeg","-y","-v","error","-i",str(T/"body_v
 
 def norm(src,out): run(["ffmpeg","-y","-v","error","-i",str(src),*ENC,"-vf","scale=1264:720,setsar=1","-c:a","aac","-b:a","192k",str(out)])
 bN=TM/"body_n.mp4"; norm(bstyled,bN)
-iN=T/"intro_n.mp4"; eN=T/"ec_n.mp4"
+iN=TM/"intro_n.mp4"; norm(PM/"intro_RECUT.mp4",iN)   # use the FRESH intro (roar + lower music)
+eN=T/"ec_n.mp4"
 flist=TM/"flist.txt"; flist.write_text("".join(f"file '{p}'\n" for p in (iN,bN,eN)))
 fv=TM/"final_v.mp4"; run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(flist),"-map","0:v","-c:v","copy","-an",str(fv)])
 fa=TM/"final_a.m4a"; run(["ffmpeg","-y","-v","error","-i",str(iN),"-i",str(bN),"-i",str(eN),"-filter_complex","[0:a][1:a][2:a]concat=n=3:v=0:a=1[a]","-map","[a]","-c:a","aac","-b:a","192k",str(fa)])
-MASTER=PM/"EPISODE_MASTER_v3.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
-print(f"EPISODE_MASTER_v3: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
+MASTER=PM/"EPISODE_MASTER_v4.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
+print(f"EPISODE_MASTER_v4: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
