@@ -1,179 +1,105 @@
-# NEXT SESSION — Dinoverse "Omega Rex" (episode_01) — resume here
+# NEXT SESSION — Dinoverse "Omega Rex" — finish to a proper master
 
-**Paste-to-resume prompt** (put this in a fresh session):
-> Read `dinoverse_clone/episode_01_omega_rex/v2/NEXT_SESSION.md` and continue the Dinoverse
-> "Omega Rex" episode. Task B (ElevenLabs VO) is ✅ DONE — 36 lines generated, SHA-verified,
-> in `audio/dinoverse_omega/` (commit `649c392`). The episode had a bigger defect than the
-> thin cold open: **Grok gave both hosts a different voice in nearly every clip**, and the
-> owner approved a surgical fix (re-voice LUKE only — he's off-camera in 25 of 27 clips).
-> The VO is generated and fits. Now do TASK C — the assembly: strip Grok's speech from
-> Luke's clips and mix the new VO under them, re-time the cold open, stretch S46, then the
-> final pass (music/SFX, logo card, midroll, 1080p master). Use `venv/bin/python`; commit
-> + push when work lands.
+## PASTE-TO-RESUME (drop this into a fresh session)
 
----
-
-## ⚠️ THE HEADLINE FINDING (2026-07-14) — read this first
-
-Task B was scoped as "a VO for the cold open + end card." Doing it surfaced something worse.
-
-**A full census of every host-dialogue clip (43 solo + 20 two-speaker, 0 failures) proved
-Grok i2v rendered each host with a DIFFERENT VOICE in nearly every clip.**
-
-| | range | clips | outliers |
-|---|---|---|---|
-| **LUKE** | **128 – 392 Hz** | 27 solo | 17 |
-| **GF** | **160 – 465 Hz** | 16 solo | 8 |
-
-The killer detail is not the spread but the **mid-scene jumps**: Luke's three consecutive
-Aquatic lines run **S32 207 Hz → S33 353 Hz → S35 162 Hz** — three different men in ~20
-seconds of one conversation. 10 of Luke's 18 within-scene consecutive line-pairs jump >50 Hz.
-The registers even cross over (Luke's S21 at 241 Hz is *higher* than GF's S34 at 149 Hz).
-
-**Ruled out as artifact four ways** — demucs vocal isolation (bed is only 1–3% of vocal RMS),
-an independent torchaudio autocorrelation tracker (never lands on 2×/0.5×), a harmonic-comb
-test, and a storyboard Speaker-column cross-check. The *in-band* clips cluster tightly
-(Luke 41 Hz band, GF 39 Hz), so a "real Luke" (~197 Hz) and "real GF" (~235 Hz) do exist —
-the outliers simply aren't them.
-
-Data: `work/vo_prep/voice_drift_census.json`, `voice_acoustics_STEMS.json`, `octave_arbiter.py`.
-Hear it yourself: `work/vo_prep/LUKE_voices_isolated.mp3` (dialogue with ambience stripped).
-
-**This — not the thin cold open — is very likely what made the cut feel wrong.**
-
-### OWNER DECISION (locked): surgical fix
-Re-voice **LUKE only**. He is off-camera in **25 of 27** clips, so dubbing is clean.
-**GF is NOT re-voiced in the body** — she is on camera in ~16 clips and dubbing would break
-lip-sync. She keeps her Grok audio and gets only her 3 cold-open/end-card lines.
-
-⚠️ **The board's camera labels are NOT what Grok shot.** 8 rows labelled "walking POV"
-(S23/S31/S32/S37/S41/S50/S59/S61) shipped as full-face talking heads. Do not trust the
-Camera column — 40 evidence frames are in `work/vo_prep/feas/`.
+> Continue the Dinoverse "Omega Rex" episode. Read
+> `dinoverse_clone/episode_01_omega_rex/v2/NEXT_SESSION.md` fully first — it has the
+> verified state, the build pipeline, and the hard-won gotchas.
+>
+> Current best cut = `dinoverse_clone/episode_01_omega_rex/v2/work/proto_mix/EPISODE_MASTER_v6.mp4`
+> (7:59.6, 720p; branch `spinosnack-dunkleosteus` @ `1f604bf`, all pushed). It already has:
+> recut Sik-style intro (fast cuts + cold-open VO + a CC0 T-Rex roar + dark music), a
+> motivated body recut of all 81 clips (dead-air trims + aimed punch-ins + holds, dialogue
+> 100% preserved), park-crowd ambience, per-zone music, real dino SFX (roars/alarm/crash),
+> and the S89 end-card VO.
+>
+> **Do these, in order (midroll marker = SKIP, owner dropped it):**
+> 1. AUDIO — dialogue-forward master. The real fix for the repeated "music too loud": our
+>    native dialogue is −18.8 LUFS vs Sik's −9.6; raise+compress the dialogue to broadcast
+>    level so the voice dominates and the beds recede. Set this at MIX time in
+>    `build_remix_real.py` (raise the `[nmix]` native path), not just as a post master.
+> 2. AUDIO — apply the S46 ranger VO. `audio/dinoverse_omega/ranger_s46.wav` (Brian) exists
+>    but NO build uses it, so S46 still plays its garbled native line. Lay the ranger VO over
+>    the shipped S46 clip (duck/strip the native under it) so "that's a Utahraptor" lands.
+> 3. Ask the owner the body-voice decision (keep native Grok dialogue w/ its shot-to-shot
+>    drift = format-native, OR drop in the ready Liam dub). Then rebuild → **v7**.
+> 4. Get the owner to LISTEN to v7 and confirm the balance — you CANNOT hear audio, so their
+>    ear is ground truth. Ask for a timestamp if anything's still off.
+> 5. S02 selfie still (only real missing shot) — owner green-light needed; ChatGPT gen w/ the
+>    S13 face-lock, framed POV not selfie, then Grok i2v.
+> 6. Real DINO ZOO logo card (S01 is drawtext; no logo image in repo) — create/source, round
+>    green `#2ecc40`.
+> 7. Loudness master to ~−14 LUFS + fix peak clipping (`scripts/audio_master.py`).
+> 8. 1080p upscale (segments are 1264×720).
+>
+> Use `venv/bin/python`. Commit + push when work lands. DO NOT re-litigate re-voicing the
+> body (the drift is in Sik's own hit video too — see below).
 
 ---
 
-## TASK B — ElevenLabs VO — ✅ DONE 2026-07-14 (commit `649c392`)
+## VERIFIED STATE (2026-07-15, branch `spinosnack-dunkleosteus`, HEAD `1f604bf`, all pushed)
 
-**36 lines generated, one-pass, no re-rolls.** Every pass SHA-256 verified in the browser
-textarea against `vo_manifest_v2.json` before clicking Generate.
+**Current master:** `v2/work/proto_mix/EPISODE_MASTER_v6.mp4` — 7:59.6, 1264×720, ~520 MB
+(gitignored — rebuild from scripts). Tightened from 8:52 by trimming 53s of dead air.
 
-| pass | voice | chars | lines | out |
-|---|---|---|---|---|
-| PASS_LUKE_BODY | **Liam** | 1812 | 23 | 111.2 s |
-| PASS_LUKE_COLDOPEN | Liam | 375 | 4 | 25.6 s |
-| PASS_LUKE_SHOUT | Liam (stab 34% / style 29%) | 101 | 3 | 14.2 s |
-| PASS_LUKE_EXTRA | Liam | 170 | 2 | 12.9 s (S88 + S46 punchline) |
-| PASS_GF | **Jessica** | 152 | 3 | 11.6 s |
-| PASS_RANGER | **Brian** | 224 | 1 | 15.8 s |
+**Three real gaps still in v6 (verified):**
+- **S02** — `clips/S02.mp4` + `stills/S02.png` both MISSING; the intro uses stand-in shots
+  for the selfie beat.
+- **S46 ranger** — `audio/dinoverse_omega/ranger_s46.wav` exists but is referenced by NO
+  build script → S46 still plays garbled native audio (whisper hears "otter-raptor",
+  "Utahraptor" absent). The ranger VO must be laid in.
+- **Body voice** — the master uses `body_native.m4a` (Grok dialogue), which has shot-to-shot
+  voice drift. The **Liam dub** (`audio/dinoverse_omega/luke_s*.wav`) was generated but is
+  NOT in the cut. Open decision.
 
-**Voices** (owner A/B'd Liam vs Chris on real lines): LUKE = **Liam**, GF = **Jessica**,
-RANGER = **Brian**. Liam also reads ~172 wpm vs Chris's ~153 (Grok-Luke was 197 wpm), so he
-minimises dub overrun. Model = **Eleven Multilingual v2** (honours `<break>` tags; v3 does NOT).
+## THE BUILD PIPELINE (all in `v2/work/proto_mix/`)
+Run order to regenerate the master from scratch:
+1. `build_intro_recut.py` → `intro_RECUT.mp4` (cold open: VO + T-Rex roar + dark music).
+2. `build_master.py` → motivated body from `motivated_recipes.json` (+ `body_pauses.json`);
+   writes per-clip segments to `_master/` (video `body_v.mp4`, native `body_native.m4a`,
+   end card `ec_n.mp4`) that the next script REUSES.
+3. `build_remix_real.py` → the full master: body mix (native + ambience + music + SFX) +
+   intro + end card → `EPISODE_MASTER_v6.mp4`. **This is where audio balance lives.**
+   (`build_remix_audio.py` = an earlier placeholder-music variant; `proto_mix_climax.py`,
+   `build_carno_*.py` = the validated prototypes.)
 
-**DUB-FIT: SOLVED.** The conservative 2.6 wps estimate predicted S21/S22 would burst their
-6.04 s clips. Measured actuals: **all 23 body lines FIT, zero overruns**, tightest S21 at
-+0.91 s headroom. No speed nudges, no time-stretch, no held frames needed.
+Key data: `motivated_recipes.json` (81-clip cut recipes: trim/punch/hold + aim), 23 punches
+/ 58 holds. `body_pauses.json` (per-clip speech pauses + dead-tail map).
 
-**Bonus — the dub fixes 4 real Grok script deviations**, two of them genuine content bugs:
-Grok said **"YOU TO RAPTOR"** (S50, = "Utahraptor") and **"STARCHOSAURUS"** (S52, =
-"Styracosaurus") — in the very scenes about those animals. Plus ad-libs in S28 and S59.
+## AUDIO — where it's at + the real fix
+Music level history (owner kept saying too loud): **−23.5 → −30.7 → −35.7 LUFS**, now
+hard-ducked. Ambience −34.6 (subtle). Dialogue −18.8.
+- Sik reference (`v2/work/vo_prep/sik_voice_control.json`, `_sikmusic/`): dialogue **−9.6**,
+  combined bed (music+ambience+crowd, demucs can't split music alone) **−15.8**.
+- **Root cause = the dialogue, not the music.** Ours is ~9 dB quieter than Sik's and it dips,
+  so any bed feels exposed. Fix = dialogue-forward (raise+compress the voice), NOT more music
+  cuts. THIS IS THE NEXT AUDIO STEP.
 
-**Whisper QA** (`qa_vo_transcripts.py`, all 36 lines): both content bugs fixed; the S46
-ranger now clearly says **"that's a Utahraptor."** The 10 lines the matcher flagged are ASR
-artifacts (quote marks, "part 2" vs "part two", dropped articles), not audio defects.
-Only genuine imperfection: **S29's "Hatzegopteryx" is approximated** — and that line's own
-joke is *"you'll want to Google that spelling"*, so it stays (no-re-rolls rule).
+## HARD-WON GOTCHAS — do not repeat these
+- **You cannot hear audio.** Every mix call is blind — that's how a looping bird chirp AND
+  repeatedly-too-loud music slipped through. Owner's ear is truth; ask for timestamps.
+- **Ambience:** use `assets/dino_ambience/crowd_a.mp3` + `crowd_b.mp3` (human murmur, NO
+  zoo/nature = no birds), rotated, subtle. Never loop ONE clip that has a distinctive event.
+- **Voice-drift is format-native.** Sik's own 764K-view video drifts the same way
+  (`sik_voice_control.json`). Do NOT re-derive "the hosts sound inconsistent" as a defect or
+  re-launch a re-voice unless the owner explicitly asks.
+- **NO copyrighted audio.** Owner wanted the "classic Jurassic Park T-Rex roar" — that's
+  Universal's copyrighted sound design; used a CC0 roar that evokes it instead. Keep it CC0.
+- **Audio sourcing:** Pixabay CC0 via claude-in-chrome downloads clean (no login/block).
+  Assets committed (force-added past `assets/*.mp3` ignore) in `assets/dino_{ambience,sfx,
+  music}/`. Shopping list + P2/P3 remainder: `work/proto_mix/SOUND_SHOPPING_LIST.md`.
+- **ffmpeg concat:** copy-concat inflates AAC audio duration by tens of seconds. Concat
+  AUDIO via the concat FILTER, VIDEO via copy-concat, then mux. (Bit us on the first master.)
+- **iCloud:** the repo is in ~/Documents (iCloud) — freshly-written temp files occasionally
+  time out on first open ("Operation timed out"); just retry the build.
+- `sed`/`awk`/`echo` and `Date.now()`/`Math.random()` caveats aside — use `venv/bin/python`.
 
-Files: `audio/dinoverse_omega/*.wav` (36, gitignored, 24 MB) + `source_chunks/*.mp3`.
-Splitter: `work/vo_prep/split_vo_passes.py` — **note `GAP_MIN=2.0` for the shout pass**
-(looser stability made Liam add 1.2–1.5 s dramatic pauses *inside* lines; a 1.2 s threshold
-mistakes those for line boundaries).
+## STILL-OPEN DECISIONS FOR THE OWNER
+- Body voice: native drift (format-native) vs Liam dub.
+- S02: green-light to generate.
+- Optional: cutaway inserts (dropped from the auto pass for reliability); re-roll the 3 worst
+  drift clips S20/S45/S33; S13/S37 POV re-rolls (only if applying the Liam dub).
 
----
-
-## TASK C — ASSEMBLY (next up)
-
-### C1. Mix the VO into the body — the dub
-For each of the 23 Luke body clips + S88: **strip Grok's speech but KEEP the clip's
-ambience/SFX**, then lay the new Liam line under it.
-```bash
-# proven in this dir already (sep/htdemucs/)
-venv/bin/demucs --two-stems=vocals -n htdemucs -d cpu clips/Sxx.mp4   # keep no_vocals.wav
-# then mix: no_vocals + audio/dinoverse_omega/luke_sXX.wav
-```
-Align the new line to the clip's existing speech window (`work/vo_prep/speech_spans.json`
-has ffprobe + word-timestamp measurements per clip). All lines fit — pad with silence.
-
-### C2. Cold open — re-time to the narration
-The boarded durations CANNOT hold the VO. Measured:
-
-| shot | boarded | VO actual | action |
-|---|---|---|---|
-| S01 card | 2.0 s | 2.98 s | hold ≈3.5 s |
-| S02 selfie | 3.0 s | 2.98 s | hold ≈3.5 s |
-| S03–S10 montage | 12.0 s (8×1.5) | **6.89 s** | **fits** — 5 s headroom |
-| S11 | 1.5 s | 1.27 s | fits |
-| S12 hook | 2.0 s | 3.48 s | extend ≈4 s |
-| **S89 end card** | **2.0 s** | **7.02 s** (1.80 GF + 5.22 Luke) | **stretch to ≈7.5 s** |
-
-S89 **plays GF first, then Luke** (closer *before* CTA). This card IS the ending the owner
-said the video lacked — do not squeeze it back to 2 s.
-Also: the S03–S12 flashes currently carry native roar/SFX at full level → **duck them under
-the montage VO**. S12's flash borrows S85's roar as temp audio (`flash_audio_plan.json`) →
-the final mix replaces it.
-
-### C3. S46 — stretch 6.04 s → ~19 s  ⚠️ OWNER DECIDED: keep the script, extend the clip
-The board gives S46 13 s. The shipped clip is **6.04 s** and Grok crushed the exchange into
-word-salad — the "that's a Utahraptor" payoff **is not in the episode at all**.
-Ranger VO = 15.8 s + Luke's punchline 5.38 s ⇒ needs ≈19–21 s.
-**Do NOT swap in `clips/S46_roll_talking.mp4`** — that is the talking-raptor take the owner
-personally rejected on Jul 13 (jaw opens and modulates 6.0–9.0 s across the payoff line;
-see `work/vo_prep/S46_alt_head_grid.png`), and it mumbles the word as "otteraptor" anyway.
-Cover the extra ~13 s with: hold on the raptor / a size-comparison insert / cutaway reactions.
-
-### C4. S13 + S37 — re-roll as POV  ⚠️ OWNER APPROVED
-Luke's only 2 on-camera speaking clips. Re-roll both in Grok so he is NOT on camera
-(S37's board row *already says* "walking POV" — Grok ignored it). Then Luke is 100% one
-consistent voice with zero exceptions. Grok quota ~25% used, resets **Jul 20**.
-S13 is the face-lock reference for S02 — the **still** stays, only the clip changes.
-
-### C5. S02 still  ⚠️ OWNER APPROVED (with a change)
-Generate in ChatGPT with the S13 Luke+GF face-lock, then Grok i2v to a 3 s clip.
-**CHANGE: frame it POV / back-of-head, NOT a gate selfie** — as boarded it becomes an 18th
-lip-sync blocker; framed POV it costs nothing. GF's line plays as VO over it either way.
-
-### C6. Final pass
-- **Music beds** — library is a corporate-crime-doc palette; nothing covers the dominant
-  cues (`light doc bed` ×39, `trailer sting` ×12, upbeat/calm/warm). Needs new Pixabay CC0
-  sourcing (project rule: **Pixabay = music only**).
-- **SFX** — **zero dino/zoo sounds exist** (no roar, alarm, crowd, splash). Whole TSV col-12
-  spotting list is unserviceable with the 38 generic files in `assets/sfx/`.
-- **DINO ZOO logo** — **no logo image exists anywhere** in the repo. Must be created (round
-  green mark, `#2ecc40`) to replace the S01 drawtext card.
-- Midroll marker at S60 · 1080p master (segments are 1264×720 today).
-- **No audio-mix stage exists** — `assemble_rough_cut.py` concats with `-c copy`, so nothing
-  can be layered. **Adapt `scripts/ffmpeg_production_render.py:build_audio_mix()` (L578)** —
-  it already has narration + music + SFX + sidechain-ducked bed. **Do not build a parallel
-  mixer** (hard rule #3). `scripts/audio_master.py` = 2-pass loudnorm for the final master.
-
----
-
-## OPEN / DEFERRED
-- **GF still drifts** (160–465 Hz) and is NOT being fixed — she's on camera. Accepted.
-- **~10 borderline two-speaker rows** (S15/S30/S41/S42/S49/S55/S57/S58/S68/S69/S75) where
-  Luke's turn is last and cleanly separable. Excluded from the dub — mixing TTS-Luke and
-  Grok-Luke *inside one clip* is more jarring than a seam between clips. Revisit only if the
-  clip-to-clip seams turn out to bother the owner.
-- **S79** native audio has an unscripted ad-lib tail beyond the board line.
-- **S65** ("BOTH: Whoa") — the one clip whose dialogue no transcript could confirm.
-- The 8 dropped dread-stack trims (`DROP_SHOTS`) would need distinct alt-angle gens if ever
-  restored — they were literal footage repeats.
-
-## Pipeline cheat-sheet
-- **Assembler:** `work/assemble_rough_cut.py` → `work/rough_cut/rough_cut_vN.mp4` (bump N).
-  Current: **rough_cut_v6.mp4, 8:45.2, 94 shots, 1 placeholder (S02)**. mp4 gitignored.
-- **VO manifest (source of truth):** `work/vo_prep/vo_manifest_v2.json` — per-line SHA,
-  target wav, clip duration, measured speech span. `verify_revoice.py` = 182 self-checks.
-- **Grok i2v loop / QA:** see `PIVOT_PLAN.md` §I2V TRACK. Clipboard collides with the owner's
-  live clipboard — re-set it immediately before every Cmd+V.
-- Use `venv/bin/python`. Commit + push when work lands.
+## Full running log
+`v2/PIVOT_PLAN.md` §I2V TRACK; memory `project_dinoverse_production.md`. Reference deep-dive
++ voice control: `v2/work/vo_prep/`. Sik cut analysis: `work/sik_analysis/`.
