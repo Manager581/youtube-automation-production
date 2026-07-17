@@ -98,9 +98,26 @@ for shot,a,g,off in HERO:
 if "S79" in start: ov(ALARM, start["S79"], 0.28)
 sfx=TM/"sfx.wav"; enc(buf,sfx)
 
-# --- MIX: native(fg) + ambience + music(ducked) + sfx, limited ---
+def _l(f):
+    r=subprocess.run(["ffmpeg","-i",str(f),"-af","ebur128","-f","null","-"],capture_output=True,text=True).stderr
+    m=[x for x in r.splitlines() if "I:" in x and "LUFS" in x]; return float(m[-1].split("I:")[1].split("LUFS")[0]) if m else 0
+
+# --- DIALOGUE-FORWARD: compress + raise the native voice to broadcast level (v7) ---
+# Root cause of "music too loud": our dialogue sat at -18.8 LUFS vs Sik's -9.6 and dips,
+# so every bed felt exposed. Fix the VOICE at mix time; beds keep their absolute levels.
+DLG_I=-12.0
+nat0=TM/"native_comp.wav"
+run(["ffmpeg","-y","-v","error","-i",str(T/"body_native.m4a"),"-af",
+     "highpass=f=70,acompressor=threshold=-26dB:ratio=3:attack=8:release=200:knee=4:makeup=2dB",
+     "-ar",str(SR),str(nat0)])
+gN=DLG_I-_l(nat0)
+natF=TM/"native_fwd.wav"
+run(["ffmpeg","-y","-v","error","-i",str(nat0),"-af",f"volume={gN:.1f}dB,alimiter=limit=0.98:level=disabled","-ar",str(SR),str(natF)])
+print(f"dialogue: {_l(natF):.1f} LUFS (target {DLG_I}, gain {gN:+.1f}dB)")
+
+# --- MIX: dialogue-forward native + ambience + music(ducked) + sfx, limited ---
 baud=TM/"body_audio.wav"
-run(["ffmpeg","-y","-v","error","-i",str(T/"body_native.m4a"),"-i",str(amb),"-i",str(music),"-i",str(sfx),
+run(["ffmpeg","-y","-v","error","-i",str(natF),"-i",str(amb),"-i",str(music),"-i",str(sfx),
      "-filter_complex",
      "[0:a]asplit=2[nmix][nkey];"
      "[2:a][nkey]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=450[musd];"
@@ -111,13 +128,19 @@ bstyled=TM/"body_styled.mp4"; run(["ffmpeg","-y","-v","error","-i",str(T/"body_v
 def norm(src,out): run(["ffmpeg","-y","-v","error","-i",str(src),*ENC,"-vf","scale=1264:720,setsar=1","-c:a","aac","-b:a","192k",str(out)])
 bN=TM/"body_n.mp4"; norm(bstyled,bN)
 iN=TM/"intro_n.mp4"; norm(PM/"intro_RECUT.mp4",iN)   # use the FRESH intro (roar + lower music)
-eN=T/"ec_n.mp4"
+
+# end card: same dialogue-forward treatment (was -24.4 LUFS — far under the body voice)
+eS=TM/"ec_fwd_a.wav"
+run(["ffmpeg","-y","-v","error","-i",str(T/"ec_n.mp4"),"-af",
+     "acompressor=threshold=-26dB:ratio=3:attack=8:release=200:knee=4:makeup=2dB","-ar",str(SR),str(eS)])
+gE=(DLG_I-1.0)-_l(eS)   # a hair under the body voice (it rides over a music tail)
+eS2=TM/"ec_fwd.wav"; run(["ffmpeg","-y","-v","error","-i",str(eS),"-af",f"volume={gE:.1f}dB,alimiter=limit=0.95","-ar",str(SR),str(eS2)])
+eN=TM/"ec_fwd.mp4"; run(["ffmpeg","-y","-v","error","-i",str(T/"ec_n.mp4"),"-i",str(eS2),"-map","0:v","-map","1:a","-c:v","copy","-c:a","aac","-b:a","192k","-shortest",str(eN)])
+print(f"end card: {_l(eS2):.1f} LUFS (gain {gE:+.1f}dB)")
+
 flist=TM/"flist.txt"; flist.write_text("".join(f"file '{p}'\n" for p in (iN,bN,eN)))
 fv=TM/"final_v.mp4"; run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(flist),"-map","0:v","-c:v","copy","-an",str(fv)])
 fa=TM/"final_a.m4a"; run(["ffmpeg","-y","-v","error","-i",str(iN),"-i",str(bN),"-i",str(eN),"-filter_complex","[0:a][1:a][2:a]concat=n=3:v=0:a=1[a]","-map","[a]","-c:a","aac","-b:a","192k",str(fa)])
-MASTER=PM/"EPISODE_MASTER_v6.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
-print(f"EPISODE_MASTER_v6: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
-def _l(f):
-    r=subprocess.run(["ffmpeg","-i",str(f),"-af","ebur128","-f","null","-"],capture_output=True,text=True).stderr
-    m=[x for x in r.splitlines() if "I:" in x and "LUFS" in x]; return float(m[-1].split("I:")[1].split("LUFS")[0]) if m else 0
-print(f"ambience now: {_l(amb):.1f} LUFS (was -26.8; no birds, 2 beds rotated)")
+MASTER=PM/"EPISODE_MASTER_v7.mp4"; run(["ffmpeg","-y","-v","error","-i",str(fv),"-i",str(fa),"-map","0:v","-map","1:a","-c","copy",str(MASTER)])
+print(f"EPISODE_MASTER_v7: {dur(MASTER):.1f}s  {MASTER.stat().st_size//1024//1024}MB")
+print(f"beds: ambience {_l(amb):.1f} LUFS, music {_l(music):.1f} LUFS (absolute levels unchanged from v6)")

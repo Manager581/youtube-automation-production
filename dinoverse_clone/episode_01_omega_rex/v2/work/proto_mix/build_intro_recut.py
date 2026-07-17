@@ -24,11 +24,17 @@ def run(c):
     r=subprocess.run(c,capture_output=True,text=True)
     if r.returncode: print("ERR:\n",r.stderr[-1800:]); raise SystemExit(1)
 
+# real logo card (falls back to drawtext if the PNG isn't there yet)
+LOGO = ROOT/"assets/dinoverse/dino_zoo_logo_card.png"
+# S02 gate shot slots into the gf_s02 VO beat once its clip exists (same 1.10s -> zero ripple)
+HAVE_S02 = (CL/"S02.mp4").exists()
+
 # ---- SHOT LIST: (source|CARD, in_point, dur) — tiles 0..19.0s continuously ----
 SHOTS = [
  ("CARD", 0, 0.90),                                                                # DINO ZOO title
  ("S67", 2.0, 0.70), ("S88", 1.5, 0.68), ("S48", 2.0, 0.50), ("S38", 3.0, 0.50),  # last-time flash (dino)
- ("S75", 2.0, 1.10), ("S71", 1.5, 1.00), ("S77", 2.0, 1.28),                       # "part they hid" (hybrid/D-Rex)
+ (("S02" if HAVE_S02 else "S75"), (0.5 if HAVE_S02 else 2.0), 1.10),               # hosts at the gate on GF's line
+ ("S71", 1.5, 1.00), ("S77", 2.0, 1.28),                                           # "part they hid" (hybrid/D-Rex)
  ("S61", 2.0, 0.60), ("S67", 6.0, 0.55), ("S48", 3.0, 0.55), ("S49", 2.0, 0.55),  # montage: T-Rex / raptors
  ("S46", 2.0, 0.50), ("S71", 2.5, 0.55), ("S72", 2.5, 0.55), ("S74", 4.0, 0.55),  # raptor / hybrids
  ("S77", 2.5, 0.55), ("S69", 2.0, 0.70), ("S68", 2.0, 0.60), ("S22", 2.0, 0.64),  # 1 KID shot + dinos
@@ -47,12 +53,18 @@ for i,(src,inp,dur) in enumerate(SHOTS):
     cut_times.append(t); t+=dur
     out=TMP/f"v{i:02d}.mp4"
     if src=="CARD":
-        vf=(f"drawtext=text='DINO ZOO':fontcolor={GREEN}:fontsize=120:"
-            f"x=(w-text_w)/2:y=(h-text_h)/2:font=Helvetica")
-        run(["ffmpeg","-y","-v","error","-f","lavfi",
-             "-i",f"color=c=black:s=1264x720:r=24:d={dur}","-vf",vf,
-             "-c:v","libx264","-preset","veryfast","-crf","18","-pix_fmt","yuv420p",
-             "-an","-t",f"{dur}",str(out)])
+        if LOGO.exists():
+            run(["ffmpeg","-y","-v","error","-loop","1","-t",f"{dur}","-i",str(LOGO),
+                 "-vf","scale=1264:720,setsar=1","-r","24",
+                 "-c:v","libx264","-preset","veryfast","-crf","18","-pix_fmt","yuv420p",
+                 "-an","-t",f"{dur}",str(out)])
+        else:
+            vf=(f"drawtext=text='DINO ZOO':fontcolor={GREEN}:fontsize=120:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2:font=Helvetica")
+            run(["ffmpeg","-y","-v","error","-f","lavfi",
+                 "-i",f"color=c=black:s=1264x720:r=24:d={dur}","-vf",vf,
+                 "-c:v","libx264","-preset","veryfast","-crf","18","-pix_fmt","yuv420p",
+                 "-an","-t",f"{dur}",str(out)])
     else:
         vf=("scale=1264:720:force_original_aspect_ratio=increase,crop=1264:720,setsar=1")
         run(["ffmpeg","-y","-v","error","-ss",f"{inp}","-t",f"{dur}","-i",str(CL/f'{src}.mp4'),
@@ -97,8 +109,12 @@ fc.append(f"[{idx}:a]adelay={rd}|{rd},volume=0.22[rumble]"); sfx_labels.append("
 ins+=["-i",str(ROOT/"assets/dino_sfx/roar_trex_victory.mp3")]
 rr=int(max(0.0,cut_times[1]-0.03)*1000)
 fc.append(f"[{idx}:a]adelay={rr}|{rr},volume=0.9[roar]"); sfx_labels.append("[roar]"); idx+=1
+# DIALOGUE-FORWARD (v7): stems sit at ~-23.8 LUFS; compress + raise to ~-12 so the
+# cold-open VO matches the body dialogue level (duck keys off the RAISED voice)
+fc.append("[vodry]acompressor=threshold=-26dB:ratio=3:attack=8:release=200:knee=4:makeup=2dB,"
+          "volume=9.8dB,alimiter=limit=0.98:level=disabled[vofwd]")
 # duck music under VO, then mix everything
-fc.append("[vodry]asplit=2[vomix][vokey]")
+fc.append("[vofwd]asplit=2[vomix][vokey]")
 fc.append("[mus][vokey]sidechaincompress=threshold=0.06:ratio=6:attack=15:release=280[musd]")
 allmix="[vomix][musd]"+"".join(sfx_labels)
 fc.append(f"{allmix}amix=inputs={2+len(sfx_labels)}:normalize=0:dropout_transition=0[premix]")

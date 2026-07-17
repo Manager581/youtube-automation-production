@@ -49,10 +49,46 @@ for fn in lines:
     if nm in("S01","S02","S89") or (nm.startswith("S") and num<=12 and 'b' not in nm and 'c' not in nm): continue
     if (CL/f"{nm}.mp4").exists(): body.append(nm)
 
+def lufs(f):
+    r=subprocess.run(["ffmpeg","-i",str(f),"-af","ebur128","-f","null","-"],capture_output=True,text=True).stderr
+    m=[x for x in r.splitlines() if "I:" in x and "LUFS" in x]
+    return float(m[-1].split("I:")[1].split("LUFS")[0]) if m else 0.0
+NATIVE_I=-18.8   # measured integrated LUFS of the concatenated native dialogue
+
+def build_s46_ranger(clip,cd):
+    """S46: replace the garbled 6.04s native line with the clean 15.8s ranger VO
+    (audio/dinoverse_omega/ranger_s46.wav). Screen time extends to fit via motivated
+    punch-ins on the wide (ranger / raptor / turkey-sign), cut to the VO beats."""
+    vo=VO/"ranger_s46.wav"; LEAD=0.25; s46len=LEAD+dur(vo)+0.35
+    plan=[(0.0,3.9,1.0,0.5,0.5),     # wide: "movies got wrong / famous Velociraptors?"
+          (1.0,3.3,1.35,0.79,0.72),  # punch: turkey-vs-human sign — "size of a turkey"
+          (2.0,3.3,1.30,0.70,0.39),  # punch: the raptor — "what Hollywood actually drew"
+          (2.6,2.9,1.42,0.68,0.34)]  # tighter raptor — "that's a Utahraptor"
+    last=s46len-sum(p[1] for p in plan)          # wide button: "kept the cooler name"
+    plan.append((max(0.0,min(3.2,cd-last)),last,1.0,0.5,0.5))
+    segs=[]
+    for i,(ss,t,z,xp,yp) in enumerate(plan):
+        s=T/f"S46_x{i}.mp4"; vseg(clip,ss,min(t,cd-ss),s,zoom=z,xp=xp,yp=yp); segs.append(s)
+    lst=T/"S46_l.txt"; lst.write_text("".join(f"file '{s}'\n" for s in segs))
+    cv=T/"S46_v.mp4"; run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(lst),"-c","copy",str(cv)])
+    g=NATIVE_I-lufs(vo)   # level the VO to sit exactly where the native dialogue sits
+    d=int(LEAD*1000)
+    ca_=T/"S46_a.m4a"; run(["ffmpeg","-y","-v","error","-i",str(vo),"-af",
+         f"adelay={d}|{d},volume={g:.1f}dB,apad","-ar","48000","-ac","2",
+         "-t",f"{dur(cv)}","-c:a","aac","-b:a","192k",str(ca_)])
+    cr=T/"S46_r.mp4"; run(["ffmpeg","-y","-v","error","-i",str(cv),"-i",str(ca_),"-map","0:v","-map","1:a","-c","copy","-shortest",str(cr)])
+    return cr,dur(cr)
+
 # ---- build each motivated body clip; track new timeline ----
 clip_files=[]; cut_rel=[]; zone_start={}; tcur=0.0; log=[]
 for shot in body:
     clip=CL/f"{shot}.mp4"; cd=dur(clip)
+    if shot=="S46":
+        cr,d46=build_s46_ranger(clip,cd)
+        clip_files.append(cr)
+        z=zone(znum(shot)); zone_start.setdefault(z,round(tcur,2))
+        cut_rel.append(round(tcur,2)); log.append((shot,"rangerVO",round(d46,2))); tcur+=d46
+        continue
     info=POJ.get(shot,{}); se=info.get("speech_end",0)
     r=REC.get(shot,{})
     # validate/clamp
