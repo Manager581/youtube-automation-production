@@ -165,7 +165,7 @@ def put(a,at,g=1.0):
 put(gf,1.0); put(lk,1.0+len(gf)/SR+0.6)
 stg=dec(MUSD/"track_04_dark.wav")[:int(ECLEN*SR)]; put(stg*(np.linspace(1,0,len(stg)).reshape(-1,1)**1.5),0,0.18)
 ecw=T/"ec.wav"; enc(ea,ecw)
-vf=(f"drawtext=text='Comment which dino you\\'d survive.':fontcolor=white:fontsize=48:x=(w-text_w)/2:y=(h-text_h)/2-40:font=Helvetica,"
+vf=(f"drawtext=text='Comment which dino you’d survive.':fontcolor=white:fontsize=48:x=(w-text_w)/2:y=(h-text_h)/2-40:font=Helvetica,"
     f"drawtext=text='Subscribe — part two if this hits.':fontcolor={GREEN}:fontsize=40:x=(w-text_w)/2:y=(h-text_h)/2+40:font=Helvetica")
 ec=T/"endcard.mp4"; run(["ffmpeg","-y","-v","error","-f","lavfi","-i",f"color=c=black:s=1264x720:r=24:d={ECLEN}","-i",str(ecw),"-vf",vf,"-map","0:v","-map","1:a",*ENC,"-c:a","aac","-b:a","192k","-shortest",str(ec)])
 
