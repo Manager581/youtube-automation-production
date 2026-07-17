@@ -37,15 +37,16 @@ SHOTS = [
  ("S71", 1.5, 1.00), ("S77", 2.0, 1.28),                                           # "part they hid" (hybrid/D-Rex)
  ("S61", 2.0, 0.60), ("S67", 6.0, 0.55), ("S48", 3.0, 0.55), ("S49", 2.0, 0.55),  # montage: T-Rex / raptors
  ("S46", 2.0, 0.50), ("S71", 2.5, 0.55), ("S72", 2.5, 0.55), ("S74", 4.0, 0.55),  # raptor / hybrids
- ("S77", 2.5, 0.55), ("S69", 2.0, 0.70), ("S68", 2.0, 0.60), ("S22", 2.0, 0.64),  # 1 KID shot + dinos
- ("S69", 1.5, 1.57),                                                               # "Remember them." held (KID 2)
- ("S88", 2.0, 0.90), ("S77", 3.0, 0.55), ("S67", 7.0, 0.50), ("S74", 5.0, 0.50),  # "stay till the end" accel (dino)
- ("S61", 3.0, 0.55), ("CARD", 0, 0.88),                                            # snap -> title button
+ ("S77", 2.5, 0.55), ("S85", 2.0, 0.70), ("S68", 2.0, 0.60), ("S22", 2.0, 0.64),  # dome breach + dinos (kids saved for the hold)
+ ("S69", 1.5, 1.57),                                                               # "Remember them." held — the ONLY kid shot
+ ("S88", 2.0, 0.55), ("S77", 3.0, 0.50), ("S67", 7.0, 0.45),                       # wordless showdown-tease accel (no "stay till the end")
+ ("CARD", 0, 0.88),                                                                # snap -> title button
 ]
 
 # ---- VO placement: (stem, start_sec) ----
+# luke_s12 ("Stay till the end...") CUT — owner: cheesy retention-beg; end on the planted mystery.
 VO_PLAN = [("luke_s01",0.0),("gf_s02",3.28),("luke_s03_montage",6.66),
-           ("gf_s11",13.85),("luke_s12",15.52)]
+           ("gf_s11",13.85)]
 
 # 1) VIDEO segments (video-only, uniform) -> concat
 seg_files=[]; cut_times=[]; t=0.0
@@ -91,7 +92,7 @@ fc.append(f"[{mi}:a]atrim=0:{TOTAL:.2f},afade=t=in:d=1.0,afade=t=out:st={TOTAL-1
           f"loudnorm=I=-33:TP=-6:LRA=11[mus]")   # -27 -> -33, DECISIVE cut (owner: still too loud)
 # SFX on cuts: whoosh rotating; impacts on the big beats; rumble bed under montage
 WHOOSH=[f"whoosh_0{n}_loud.wav" for n in (1,2,3,4,5)]
-IMPACT_AT={1:"impact_new_loud.wav",8:"impact_01_loud.wav",21:"body_impact_01_loud.wav",26:"impact_new_loud.wav"}
+IMPACT_AT={1:"impact_new_loud.wav",8:"impact_01_loud.wav",21:"body_impact_01_loud.wav",24:"impact_new_loud.wav"}
 sfx_labels=[]; wi=0
 for ci,ct in enumerate(cut_times):
     if ci==0: continue
