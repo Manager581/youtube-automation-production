@@ -74,6 +74,9 @@ for fn in lines:
 # ---------- 1) derive the VARIANT recipes (deterministic, no randomness) ----------
 punch_ids=sorted([k for k,v in REC.items() if v.get("technique")=="punch"])
 DEMOTE={punch_ids[i] for i in range(0,len(punch_ids),3)}     # every 3rd -> hold (8 of 23)
+# QA wf_c48f688d: S62's 1.33x reframe at xp .43 bisected the 2nd ranger's face
+# at the right edge — pull the aim left to keep her whole (target still centered)
+OVERRIDE={"S62":{"xp":0.35}}
 VREC={}; changed={}
 for shot,r in REC.items():
     v=dict(r)
@@ -93,6 +96,7 @@ for shot,r in REC.items():
                 v["cut_at"]=min(cands,key=lambda p:abs(p-ca))
             z=r.get("zoom",1.25)
             v["zoom"]=min(max(z+0.08 if z<=1.30 else z-0.08,1.15),1.42)
+            v.update(OVERRIDE.get(shot,{}))
             if v["cut_at"]!=ca or abs(v["zoom"]-z)>0.001:
                 v["rationale"]=f"[REXCAPED] re-timed {ca}->{v['cut_at']} zoom {z}->{v['zoom']:.2f}"
                 changed[shot]="retimed"
