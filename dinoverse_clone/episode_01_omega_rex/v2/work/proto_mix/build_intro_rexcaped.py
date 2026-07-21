@@ -57,44 +57,63 @@ img.save(DISC)
 # ---------- montage word times (whisper, rel to stem start) ----------
 # "A T-Rex" 0.36-0.92 | "a Raptor Pack" 1.26-1.86 | "two hybrids...exist" 2.26-4.02
 # | "and three kids...dare" 4.54-6.50
-M0 = 6.50   # montage VO + first flash start
+M0 = 9.60   # montage VO + first flash start
 
 # ---------- SHOT LIST: (kind, src, in_point, dur) ----------
+# Owner spec 2026-07-21 (rev 2): Sik's host beat is the MAIN CHARACTER TALKING
+# to camera giving the update — so the host shot is S13 with its NATIVE
+# lip-synced audio (Luke: "Okay - we're back at Dino Zoo." GF: "You said that
+# like it's a good thing."), not the silent S02 couple shot. S02 follows as the
+# mission beat under gf_s02 VO. luke_s01 ("So last time...") DROPPED — the
+# on-camera update replaces it.
 SHOTS = [
- ("ZCARD", DISC, 0, 2.00),                 # disclaimer, FAST zoom, VO over it
- ("CLIP",  "S02", 0.4, 4.50),              # HOST at 2.0s — no logo card between
- ("CLIP","S67",5.5,0.70),                  # 6.50  T-REX ("A T-Rex") + HERO roar
- ("CLIP","S61",2.0,0.60),                  # 7.20  T-Rex 2nd angle (bridge)
- ("CLIP","S48",4.0,0.60),                  # 7.80  raptors ("Raptor Pack")
- ("CLIP","S49",2.0,0.45),                  # 8.40  raptor close (bridge)
- ("CLIP","S82",3.5,0.65),                  # 8.85  Indominus wall-burst ("two hybrids")
- ("CLIP","S83",3.0,0.60),                  # 9.50  D-Rex in smoke (hybrid #2)
- ("CLIP","S77",3.5,0.55),                  # 10.10 D-Rex at glass (hybrid tail)
- ("CLIP","S88",3.0,0.60),                  # 10.65 showdown tease (chaos beat)
- ("CLIP","S69",2.0,3.55),                  # 11.25 TEENS ("three kids...dare") HELD
+ ("ZCARD", DISC, 0, 1.50),                 # disclaimer: text, music starts, zoom
+ ("NCLIP", "S13", 0.0, 4.80),              # 1.50 HOST TALKS — native audio kept
+                                           #      (GF's line ends 6.06, +0.25 handle)
+ ("CLIP",  "S02", 0.0, 3.30),              # 6.30 mission beat — gf_s02 VO over
+ ("CLIP","S67",5.5,0.70),                  # 9.60  T-REX ("A T-Rex" 9.96) + HERO roar
+ ("CLIP","S61",2.0,0.60),                  # 10.30 T-Rex 2nd angle (word tail)
+ ("CLIP","S48",4.0,0.60),                  # 10.90 raptors ("Raptor Pack" 10.94-11.46)
+ ("CLIP","S49",2.0,0.45),                  # 11.50 raptor close (bridge)
+ ("CLIP","S82",3.5,0.65),                  # 11.95 Indominus wall-burst ("two hybrids" 11.86)
+ ("CLIP","S83",3.0,0.60),                  # 12.60 D-Rex in smoke (hybrid #2)
+ ("CLIP","S77",3.5,0.55),                  # 13.20 D-Rex at glass ("exist" ends 13.62)
+ ("CLIP","S88",3.0,0.45),                  # 13.75 showdown tease (chaos beat)
+ ("CLIP","S69",2.0,3.65),                  # 14.20 TEENS ("three kids" 14.22) HELD
                                            #       through gf_s11 "Remember them."
- ("CARD", LOGO, 0, 0.90),                  # 14.80 snap -> logo button
+ ("CARD", LOGO, 0, 0.90),                  # 17.85 snap -> logo button
 ]
-HERO_ROAR_CUT = 2    # S67 flash
-WALL_CRASH_CUT = 6   # S82 wall-burst
-TEENS_CUT = 10
+HERO_ROAR_CUT = 3    # S67 flash
+WALL_CRASH_CUT = 7   # S82 wall-burst
+TEENS_CUT = 11
 SNAP_CUT = len(SHOTS)-1
 
 # ---------- VO placement ----------
-VO_PLAN = [("luke_s01",0.15),          # over card, spills onto host (ends 3.13)
-           ("gf_s02",3.40),            # host beat (ends 6.38)
-           ("luke_s03_montage",M0),    # 6.50 -> 13.39, flashes word-aligned
-           ("gf_s11",13.60)]           # over the held S69 (ends 14.87)
+VO_PLAN = [("gf_s02",6.45),            # mission line over S02 (ends 9.43)
+           ("luke_s03_montage",M0),    # 9.60 -> 16.49, flashes word-aligned
+           ("gf_s11",16.35)]           # over the held S69 (ends 17.62)
+# S13 native audio is added separately in the audio graph (NCLIP keeps its own
+# lip-synced dialogue; it gets the same dialogue-forward treatment as the stems)
 
 # ---------- 1) VIDEO segments ----------
+# Quantize every cut to the 24fps frame grid against PLANNED ABSOLUTE times —
+# naive per-segment rounding accumulated +0.22s by S69 and pushed "three kids"
+# onto the S88 flash (measured via scene detection on the v4 render).
+for f in TMP.glob("v*.mp4"): f.unlink()          # stale segments from prior layouts
+_end=0.0; _planned=[]
+for kind,src,inp,dur in SHOTS:
+    _end+=dur; _planned.append(_end)
 seg_files=[]; cut_times=[]; t=0.0
 for i,(kind,src,inp,dur) in enumerate(SHOTS):
-    cut_times.append(t); t+=dur
+    cut_times.append(t)
+    nfr=max(1,round((_planned[i]-t)*24)); dur=nfr/24.0   # snap to frame grid
+    t+=dur
     out=TMP/f"v{i:02d}.mp4"
     if kind=="ZCARD":
-        # FAST push-in like his: 1.00 -> 1.28 over the 2s card
-        n=int(round(dur*24))
-        vf=(f"scale=5056:2880,zoompan=z='1+0.28*on/{n}':"
+        # owner spec: text holds a beat, THEN the zoom kicks in (with the music)
+        # hold ~0.33s (8 frames), then push 1.00 -> 1.28 over the rest — super fast
+        n=int(round(dur*24)); hold=8
+        vf=(f"scale=5056:2880,zoompan=z='1+0.28*max(on-{hold},0)/{n-hold}':"
             f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s=1264x720:fps=24,setsar=1")
         run(["ffmpeg","-y","-v","error","-loop","1","-t",f"{dur}","-i",str(src),
              "-vf",vf,"-r","24","-c:v","libx264","-preset","veryfast","-crf","18",
@@ -122,6 +141,11 @@ for stem,st in VO_PLAN:
     ins+=["-i",str(VO/f"{stem}.wav")]
     fc.append(f"[{idx}:a]adelay={int(st*1000)}|{int(st*1000)},volume=1.0[vo{idx}]")
     vo_labels.append(f"[vo{idx}]"); idx+=1
+# S13 native lip-synced dialogue (the NCLIP) — pre-attenuated 0.55 so the shared
+# dialogue-forward chain (+9.8dB) lands it at stem level (native -18.8 vs -23.8 LUFS)
+ins+=["-i",str(CL/"S13.mp4")]
+fc.append(f"[{idx}:a]atrim=0:4.8,adelay=1500|1500,volume=0.55[vo{idx}]")
+vo_labels.append(f"[vo{idx}]"); idx+=1
 fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # music: fade in over the card, fade out only in the very tail (v1 had a mix
 # hole after the last VO — keep the bed audible until the snap)
@@ -137,7 +161,7 @@ IMPACT_AT={HERO_ROAR_CUT:"impact_new_loud.wav",
            SNAP_CUT:"impact_new_loud.wav"}
 sfx_labels=[]; wi=0
 for ci,ct in enumerate(cut_times):
-    if ci in (0,1): continue
+    if ci in (0,1,2): continue           # card + host + mission stay SFX-clean
     f = IMPACT_AT.get(ci) or WHOOSH[wi % len(WHOOSH)]
     if ci not in IMPACT_AT: wi+=1
     vol = 0.5 if ci in IMPACT_AT else 0.32
