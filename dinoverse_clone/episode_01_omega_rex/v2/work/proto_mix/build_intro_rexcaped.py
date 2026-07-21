@@ -135,16 +135,23 @@ vid=TMP/"video.mp4"
 run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(lst),"-c","copy",str(vid)])
 
 # ---------- 2) AUDIO ----------
+def _stemdur(stem):
+    return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration",
+        "-of","csv=p=0",str(VO/f"{stem}.wav")],capture_output=True,text=True).stdout.strip())
 ins=[]; fc=[]; idx=0
 vo_labels=[]
 for stem,st in VO_PLAN:
     ins+=["-i",str(VO/f"{stem}.wav")]
-    fc.append(f"[{idx}:a]adelay={int(st*1000)}|{int(st*1000)},volume=1.0[vo{idx}]")
+    # 0.12s tail fade kills room-tone bleed into the next line (owner note, v5)
+    fc.append(f"[{idx}:a]afade=t=out:st={max(0.0,_stemdur(stem)-0.12):.2f}:d=0.12,"
+              f"adelay={int(st*1000)}|{int(st*1000)},volume=1.0[vo{idx}]")
     vo_labels.append(f"[vo{idx}]"); idx+=1
 # S13 native lip-synced dialogue (the NCLIP) — pre-attenuated 0.55 so the shared
-# dialogue-forward chain (+9.8dB) lands it at stem level (native -18.8 vs -23.8 LUFS)
+# dialogue-forward chain (+9.8dB) lands it at stem level (native -18.8 vs -23.8 LUFS).
+# Edge fades: its baked park ambience was hard-cutting at 6.3s (the v5 'bleed')
 ins+=["-i",str(CL/"S13.mp4")]
-fc.append(f"[{idx}:a]atrim=0:4.8,adelay=1500|1500,volume=0.55[vo{idx}]")
+fc.append(f"[{idx}:a]atrim=0:4.8,afade=t=in:d=0.05,afade=t=out:st=4.45:d=0.35,"
+          f"adelay=1500|1500,volume=0.55[vo{idx}]")
 vo_labels.append(f"[vo{idx}]"); idx+=1
 fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # music: fade in over the card, fade out only in the very tail (v1 had a mix
