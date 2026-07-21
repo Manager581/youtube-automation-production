@@ -57,7 +57,7 @@ img.save(DISC)
 # ---------- montage word times (whisper, rel to stem start) ----------
 # "A T-Rex" 0.36-0.92 | "a Raptor Pack" 1.26-1.86 | "two hybrids...exist" 2.26-4.02
 # | "and three kids...dare" 4.54-6.50
-M0 = 7.15   # montage VO + first flash start
+M0 = 8.75   # montage VO + first flash start
 
 # ---------- SHOT LIST: (kind, src, in_point, dur) ----------
 # Owner spec 2026-07-21 (rev 2): Sik's host beat is the MAIN CHARACTER TALKING
@@ -71,18 +71,20 @@ SHOTS = [
  ("NCLIP", "S13", 0.0, 2.35),              # 1.50 HOST TALKS — Luke's line ONLY
                                            #      (owner cut GF's "good thing" snark;
                                            #      Luke ends 2.00 in-clip, GF starts 2.56)
- ("CLIP",  "S02", 0.0, 3.30),              # 3.85 mission beat — gf_s02 VO over
- ("CLIP","S67",5.5,0.70),                  # 7.15  T-REX ("A T-Rex" 7.51) + HERO roar
- ("CLIP","S61",2.0,0.60),                  # 7.85  T-Rex 2nd angle (word tail)
- ("CLIP","S48",4.0,0.60),                  # 8.45  raptors ("Raptor Pack" 8.41-9.01)
- ("CLIP","S49",2.0,0.45),                  # 9.05  raptor close (bridge)
- ("CLIP","S82",3.5,0.65),                  # 9.50  Indominus wall-burst ("two hybrids" 9.41)
- ("CLIP","S83",3.0,0.60),                  # 10.15 D-Rex in smoke (hybrid #2)
- ("CLIP","S77",3.5,0.55),                  # 10.75 D-Rex at glass ("exist" ends 11.17)
- ("CLIP","S88",3.0,0.45),                  # 11.30 showdown tease (chaos beat)
- ("CLIP","S69",2.0,3.65),                  # 11.75 TEENS ("three kids" 11.77) HELD
+ ("NCLIP", "S02b", 0.0, 4.90),             # 3.85 GF WALK-AND-TALK (gen 2026-07-21,
+                                           #      native lip-synced mission line,
+                                           #      whisper+jaw QA'd; replaces posed S02)
+ ("CLIP","S67",5.5,0.70),                  # 8.75  T-REX ("A T-Rex" 9.11) + HERO roar
+ ("CLIP","S61",2.0,0.60),                  # 9.45  T-Rex 2nd angle (word tail)
+ ("CLIP","S48",4.0,0.60),                  # 10.05 raptors ("Raptor Pack" 10.01-10.61)
+ ("CLIP","S49",2.0,0.45),                  # 10.65 raptor close (bridge)
+ ("CLIP","S82",3.5,0.65),                  # 11.10 Indominus wall-burst ("two hybrids" 11.01)
+ ("CLIP","S83",3.0,0.60),                  # 11.75 D-Rex in smoke (hybrid #2)
+ ("CLIP","S77",3.5,0.55),                  # 12.35 D-Rex at glass ("exist" ends 12.77)
+ ("CLIP","S88",3.0,0.45),                  # 12.90 showdown tease (chaos beat)
+ ("CLIP","S69",2.0,3.65),                  # 13.35 TEENS ("three kids" 13.37) HELD
                                            #       through gf_s11 "Remember them."
- ("CARD", LOGO, 0, 0.90),                  # 15.40 snap -> logo button
+ ("CARD", LOGO, 0, 0.90),                  # 17.00 snap -> logo button
 ]
 HERO_ROAR_CUT = 3    # S67 flash
 WALL_CRASH_CUT = 7   # S82 wall-burst
@@ -90,11 +92,13 @@ TEENS_CUT = 11
 SNAP_CUT = len(SHOTS)-1
 
 # ---------- VO placement ----------
-VO_PLAN = [("gf_s02",4.00),            # mission line over S02 (ends 6.98)
-           ("luke_s03_montage",M0),    # 7.15 -> 14.04, flashes word-aligned
-           ("gf_s11",13.90)]           # over the held S69 (ends 15.17)
-# S13 native audio is added separately in the audio graph (NCLIP keeps its own
-# lip-synced dialogue; it gets the same dialogue-forward treatment as the stems)
+VO_PLAN = [("luke_s03_montage",M0),    # 8.75 -> 15.64, flashes word-aligned
+           ("gf_s11",15.50)]           # over the held S69 (ends 16.77)
+# gf_s02 stem RETIRED — S02b's native lip-synced line replaces it.
+# NCLIP native audio (clip, delay_s, trim_end_s, fade_start_s): same
+# dialogue-forward treatment as the stems, pre-attenuated to stem level
+NATIVES=[("S13",1.50,2.35,2.05),
+         ("S02b",3.85,4.90,4.55)]
 
 # ---------- 1) VIDEO segments ----------
 # Quantize every cut to the 24fps frame grid against PLANNED ABSOLUTE times —
@@ -147,13 +151,15 @@ for stem,st in VO_PLAN:
     fc.append(f"[{idx}:a]afade=t=out:st={max(0.0,_stemdur(stem)-0.12):.2f}:d=0.12,"
               f"adelay={int(st*1000)}|{int(st*1000)},volume=1.0[vo{idx}]")
     vo_labels.append(f"[vo{idx}]"); idx+=1
-# S13 native lip-synced dialogue (the NCLIP) — pre-attenuated 0.55 so the shared
+# NCLIP native lip-synced dialogue — pre-attenuated 0.55 so the shared
 # dialogue-forward chain (+9.8dB) lands it at stem level (native -18.8 vs -23.8 LUFS).
-# Edge fades: its baked park ambience was hard-cutting at 6.3s (the v5 'bleed')
-ins+=["-i",str(CL/"S13.mp4")]
-fc.append(f"[{idx}:a]atrim=0:2.35,afade=t=in:d=0.05,afade=t=out:st=2.05:d=0.30,"
-          f"adelay=1500|1500,volume=0.55[vo{idx}]")
-vo_labels.append(f"[vo{idx}]"); idx+=1
+# Edge fades kill baked-ambience hard cuts (the v5 'bleed')
+for clipname,delay,trim,fst in NATIVES:
+    ins+=["-i",str(CL/f"{clipname}.mp4")]
+    d=int(delay*1000)
+    fc.append(f"[{idx}:a]atrim=0:{trim},afade=t=in:d=0.05,afade=t=out:st={fst}:d=0.30,"
+              f"adelay={d}|{d},volume=0.55[vo{idx}]")
+    vo_labels.append(f"[vo{idx}]"); idx+=1
 fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # music: fade in over the card, fade out only in the very tail (v1 had a mix
 # hole after the last VO — keep the bed audible until the snap)
