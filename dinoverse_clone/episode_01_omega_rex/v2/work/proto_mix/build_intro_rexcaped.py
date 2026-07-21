@@ -57,7 +57,7 @@ img.save(DISC)
 # ---------- montage word times (whisper, rel to stem start) ----------
 # "A T-Rex" 0.36-0.92 | "a Raptor Pack" 1.26-1.86 | "two hybrids...exist" 2.26-4.02
 # | "and three kids...dare" 4.54-6.50
-M0 = 9.60   # montage VO + first flash start
+M0 = 7.15   # montage VO + first flash start
 
 # ---------- SHOT LIST: (kind, src, in_point, dur) ----------
 # Owner spec 2026-07-21 (rev 2): Sik's host beat is the MAIN CHARACTER TALKING
@@ -68,20 +68,21 @@ M0 = 9.60   # montage VO + first flash start
 # on-camera update replaces it.
 SHOTS = [
  ("ZCARD", DISC, 0, 1.50),                 # disclaimer: text, music starts, zoom
- ("NCLIP", "S13", 0.0, 4.80),              # 1.50 HOST TALKS — native audio kept
-                                           #      (GF's line ends 6.06, +0.25 handle)
- ("CLIP",  "S02", 0.0, 3.30),              # 6.30 mission beat — gf_s02 VO over
- ("CLIP","S67",5.5,0.70),                  # 9.60  T-REX ("A T-Rex" 9.96) + HERO roar
- ("CLIP","S61",2.0,0.60),                  # 10.30 T-Rex 2nd angle (word tail)
- ("CLIP","S48",4.0,0.60),                  # 10.90 raptors ("Raptor Pack" 10.94-11.46)
- ("CLIP","S49",2.0,0.45),                  # 11.50 raptor close (bridge)
- ("CLIP","S82",3.5,0.65),                  # 11.95 Indominus wall-burst ("two hybrids" 11.86)
- ("CLIP","S83",3.0,0.60),                  # 12.60 D-Rex in smoke (hybrid #2)
- ("CLIP","S77",3.5,0.55),                  # 13.20 D-Rex at glass ("exist" ends 13.62)
- ("CLIP","S88",3.0,0.45),                  # 13.75 showdown tease (chaos beat)
- ("CLIP","S69",2.0,3.65),                  # 14.20 TEENS ("three kids" 14.22) HELD
+ ("NCLIP", "S13", 0.0, 2.35),              # 1.50 HOST TALKS — Luke's line ONLY
+                                           #      (owner cut GF's "good thing" snark;
+                                           #      Luke ends 2.00 in-clip, GF starts 2.56)
+ ("CLIP",  "S02", 0.0, 3.30),              # 3.85 mission beat — gf_s02 VO over
+ ("CLIP","S67",5.5,0.70),                  # 7.15  T-REX ("A T-Rex" 7.51) + HERO roar
+ ("CLIP","S61",2.0,0.60),                  # 7.85  T-Rex 2nd angle (word tail)
+ ("CLIP","S48",4.0,0.60),                  # 8.45  raptors ("Raptor Pack" 8.41-9.01)
+ ("CLIP","S49",2.0,0.45),                  # 9.05  raptor close (bridge)
+ ("CLIP","S82",3.5,0.65),                  # 9.50  Indominus wall-burst ("two hybrids" 9.41)
+ ("CLIP","S83",3.0,0.60),                  # 10.15 D-Rex in smoke (hybrid #2)
+ ("CLIP","S77",3.5,0.55),                  # 10.75 D-Rex at glass ("exist" ends 11.17)
+ ("CLIP","S88",3.0,0.45),                  # 11.30 showdown tease (chaos beat)
+ ("CLIP","S69",2.0,3.65),                  # 11.75 TEENS ("three kids" 11.77) HELD
                                            #       through gf_s11 "Remember them."
- ("CARD", LOGO, 0, 0.90),                  # 17.85 snap -> logo button
+ ("CARD", LOGO, 0, 0.90),                  # 15.40 snap -> logo button
 ]
 HERO_ROAR_CUT = 3    # S67 flash
 WALL_CRASH_CUT = 7   # S82 wall-burst
@@ -89,9 +90,9 @@ TEENS_CUT = 11
 SNAP_CUT = len(SHOTS)-1
 
 # ---------- VO placement ----------
-VO_PLAN = [("gf_s02",6.45),            # mission line over S02 (ends 9.43)
-           ("luke_s03_montage",M0),    # 9.60 -> 16.49, flashes word-aligned
-           ("gf_s11",16.35)]           # over the held S69 (ends 17.62)
+VO_PLAN = [("gf_s02",4.00),            # mission line over S02 (ends 6.98)
+           ("luke_s03_montage",M0),    # 7.15 -> 14.04, flashes word-aligned
+           ("gf_s11",13.90)]           # over the held S69 (ends 15.17)
 # S13 native audio is added separately in the audio graph (NCLIP keeps its own
 # lip-synced dialogue; it gets the same dialogue-forward treatment as the stems)
 
@@ -150,7 +151,7 @@ for stem,st in VO_PLAN:
 # dialogue-forward chain (+9.8dB) lands it at stem level (native -18.8 vs -23.8 LUFS).
 # Edge fades: its baked park ambience was hard-cutting at 6.3s (the v5 'bleed')
 ins+=["-i",str(CL/"S13.mp4")]
-fc.append(f"[{idx}:a]atrim=0:4.8,afade=t=in:d=0.05,afade=t=out:st=4.45:d=0.35,"
+fc.append(f"[{idx}:a]atrim=0:2.35,afade=t=in:d=0.05,afade=t=out:st=2.05:d=0.30,"
           f"adelay=1500|1500,volume=0.55[vo{idx}]")
 vo_labels.append(f"[vo{idx}]"); idx+=1
 fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
