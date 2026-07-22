@@ -1,4 +1,4 @@
-# Source videos (32) — creator-advice deep-dive, 2026-07-21
+# Source videos (54) — creator-advice deep-dive, 2026-07-21/22
 
 | id | title | channel | length | views at capture |
 |---|---|---|---|---|
@@ -34,3 +34,25 @@
 | [4xWQ_fHLGAc](https://youtu.be/4xWQ_fHLGAc) | How I Monetize Completely New Channel With Claude Code In 7 Days (Full Course) | E'Calm | 28:46 | 103242 |
 | [Ao_d-uaMJvk](https://youtu.be/Ao_d-uaMJvk) | How to Create VIRAL POV Explainer Videos (Step-by-Step AI Tutorial) | Ademola Joshua  | 9:47 | 2625 |
 | [q0G-FzS6uxk](https://youtu.be/q0G-FzS6uxk) | Every mistake preventing you from getting views on YouTube | MonomoTime | 10:56 | 128183 |
+| [vI4RdXMSq8c](https://youtu.be/vI4RdXMSq8c) | How I Fully Automated Video Editing (Claude Code) | Sandy Lee AI | 21:27 | 18218 |
+| [TvJhpOxFRsE](https://youtu.be/TvJhpOxFRsE) | The New Way to Do YouTube Automation in 2026 | Make Money Matt | 22:19 | 6366 |
+| [1ywvAeaFojo](https://youtu.be/1ywvAeaFojo) | Claude Just Changed Making YouTube Videos Forever | Wes McDowell | 15:12 | 111787 |
+| [ROPkHP8jpW0](https://youtu.be/ROPkHP8jpW0) | I Tested if YouTube is Pay To Win | Fabio Morena | 20:44 | 136739 |
+| [Qsi9MeLh95Q](https://youtu.be/Qsi9MeLh95Q) | RIP Paid Tools: Make LONG AI Videos With Consistency! | Mr Void | 11:52 | 114979 |
+| [Oi3nSYYQ6sM](https://youtu.be/Oi3nSYYQ6sM) | The ONLY 12 Faceless AI Niches You Should Try in 2026 To Make Money | Steffen Miro | 19:12 | 5801 |
+| [ylezKJG7rb8](https://youtu.be/ylezKJG7rb8) | Create Unlimited AI Videos in Bulk (One Click) | Consistent Characters & FREE Automation (2026) | AI4Next | 8:58 | 438334 |
+| [JpvaUUgtTVk](https://youtu.be/JpvaUUgtTVk) | How To Make Relaxing Pigment Mix Videos with AI (Fast Tutorial) | Flow Ai | 2:31 | 33809 |
+| [f-ufEhGtVpw](https://youtu.be/f-ufEhGtVpw) | Claude Fable 5 + Higgsfield AI = $60K/Month Faceless AI Channel (2026) | Sanji Nai-Chien | 7:46 | 16880 |
+| [9iP588aMFBc](https://youtu.be/9iP588aMFBc) | Why Getting Sales & Traffic Is Now On "Easy Mode" | Wholesale Ted | 13:13 | 22171 |
+| [YtpQSmu794k](https://youtu.be/YtpQSmu794k) | $333,080.07 From One YouTube Channel Using Claude AI — Just Copy Me | Shane Hummus | 36:32 | 122118 |
+| [vuo_bPhkD_U](https://youtu.be/vuo_bPhkD_U) | This DaVinci Resolve Plugin Just DESTROYED Every AI Editing Tool | Kevin Vandermarliere | 5:42 | 35167 |
+| [ZKsldrcO_fU](https://youtu.be/ZKsldrcO_fU) | The New Rules of YouTube (2026) | vidIQ | 9:38 | 63766 |
+| [zq_Yi1gK6Fc](https://youtu.be/zq_Yi1gK6Fc) | Cách tự xây dựng nhân vật và làm video dài xây kênh  không giới hạn chủ đề | Mẫu Làm Video | Mẫu Làm Video | 4:26 | 48 |
+| [KLswOquhsM8](https://youtu.be/KLswOquhsM8) | I Made an AI Character Sit With Me and Have a Conversation (Full Tutorial) | Prompt Mastery | 18:14 | 295993 |
+| [Z5Wn63kLhpI](https://youtu.be/Z5Wn63kLhpI) | AI OFM Course 2026 (Post IG Ban Wave Update) | NOCT | 188:09 | 19712 |
+| [PaXuebdY75U](https://youtu.be/PaXuebdY75U) | Claude just Edited an Entire Vox Documentary From Scratch! (Here’s How) | Joseph | Video Editing | 17:15 | 25594 |
+| [BePppCvXC-k](https://youtu.be/BePppCvXC-k) | I Proved $1,000/Day On YouTube Isn't Luck (Secret Channel Exposed) | WOLF Money | 10:26 | 681727 |
+| [Eb8wlFawjTw](https://youtu.be/Eb8wlFawjTw) | I copied Hormozi’s YouTube Strategy and it made me $100K | Mike and Matty | 13:33 | 26925 |
+| [WVT2FCjhDDY](https://youtu.be/WVT2FCjhDDY) | Claude Code (Free Plan) + YouTube = $77,000/Month | zapiwala ai | 12:27 | 673122 |
+| [oWkUwno6b0E](https://youtu.be/oWkUwno6b0E) | Claude + Remotion Just RETIRED video editors... (ULTIMATE REMOTION TUTORIAL) | Chronixel | 27:28 | 176119 |
+| [CxwFu1nEsZQ](https://youtu.be/CxwFu1nEsZQ) | Claude Automation + 20minutes per day = $30,000/month | Money Guy | 13:10 | 73868 |
