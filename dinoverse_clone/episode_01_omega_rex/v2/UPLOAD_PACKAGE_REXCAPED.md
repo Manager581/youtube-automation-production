@@ -13,6 +13,8 @@ THE STAFF-ONLY HYBRID ENCLOSURE WAS OFF-LIMITS. WE WENT IN ANYWAY 🦖🚨
 
 One locked door. Three kids who treated it like a dare. Every alarm in the park at once.
 
+Think of it as a fully immersive dinosaur experience — an interactive dinosaur video filmed like a virtual dinosaur museum tour, with Jurassic Park–style interactive exhibits you walk through in first person.
+
 This is the tour DINO ZOO didn't want filmed: the horned Carnotaurus up close, giant pterosaurs overhead, the Mosasaurus and armored Dunkleosteus deep tanks, a full pack of feathered Utahraptors, the sauropod meadow — then the T-Rex window. And past the last wall, the two animals that should not exist: the pale Indominus Rex and the D-Rex.
 
 Bonus fact inside: the movie "Velociraptors" were actually turkey-sized — the animal Hollywood really drew was a UTAHRAPTOR. They just kept the cooler name.
@@ -38,7 +40,7 @@ If the D-Rex got you, LIKE + SUBSCRIBE — part two if this hits.
 This entire video is 100% fictional and created using advanced AI generation tools. All visuals, dinosaurs, zoo layouts, characters, and storylines are synthetically generated for cinematic entertainment purposes only. It does not depict real locations, animals, or events.
 
 ## TAGS (comma-separated)
-dinosaur zoo, ai dinosaur, dinosaur pov, indominus rex, d-rex, jurassic world rebirth, t-rex, utahraptor, mosasaurus, dunkleosteus, carnotaurus, dinosaur park, hybrid dinosaur, ai pov, dino zoo, dinosaur video, prehistoric, raptor, dinosaur escape, theme park chaos
+dinosaur zoo, ai dinosaur, dinosaur pov, indominus rex, d-rex, jurassic world rebirth, t-rex, utahraptor, mosasaurus, dunkleosteus, carnotaurus, dinosaur park, hybrid dinosaur, ai pov, dino zoo, dinosaur escape, theme park chaos, dinosaur immersive experience, interactive dinosaur video, virtual dinosaur museum tour, jurassic park interactive, immersive dinosaur experience, virtual dinosaur tour
 
 ## SETTINGS
 - Audience: NOT made for kids
