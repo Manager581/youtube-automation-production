@@ -86,10 +86,13 @@ SHOTS = [
                                            #       through gf_s11 "Remember them."
  ("CARD", LOGO, 0, 0.90),                  # 12.10 snap -> logo button
 ]
-HERO_ROAR_CUT = 3    # S67 flash
-WALL_CRASH_CUT = 7   # S82 wall-burst
-TEENS_CUT = 11
-SNAP_CUT = len(SHOTS)-1
+# derive beat indices from CONTENT — hardcoded indices silently pointed the
+# roar at the wrong flash when a row was removed (v9 bug: roar fired on S61)
+def _shot_idx(name): return next(i for i,(k,s,_,_) in enumerate(SHOTS) if s==name)
+HERO_ROAR_CUT = _shot_idx("S67")     # T-Rex flash
+WALL_CRASH_CUT = _shot_idx("S82")    # Indominus wall-burst
+TEENS_CUT = _shot_idx("S69")         # teens land
+SNAP_CUT = len(SHOTS)-1              # logo snap
 
 # ---------- VO placement ----------
 VO_PLAN = [("luke_s03_montage",M0),    # 3.85 -> 10.74, flashes word-aligned
@@ -163,9 +166,12 @@ fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # hole after the last VO — keep the bed audible until the snap)
 ins+=["-i",str(MUS)]; mi=idx; idx+=1
 # loudnorm FIRST, fades after — loudnorm is dynamic, and running it after the
-# fade made the music's perceived entrance drift between builds (owner caught it)
-fc.append(f"[{mi}:a]atrim=0:{TOTAL+PAD:.2f},loudnorm=I=-33:TP=-6:LRA=11,"
-          f"afade=t=in:st=0.15:d=0.8,"
+# fade made the music's perceived entrance drift between builds (owner caught it).
+# I=-25 (was -33): the trailer intro is MUSIC-FORWARD like Sik's — at -33 the bed
+# was inaudible ("there is no music in the intro"); the sidechain duck still
+# protects the voice. Fade from 0 over 0.4s so the black card opens WITH music.
+fc.append(f"[{mi}:a]atrim=0:{TOTAL+PAD:.2f},loudnorm=I=-25:TP=-6:LRA=11,"
+          f"afade=t=in:d=0.4,"
           f"afade=t=out:st={TOTAL-0.2:.2f}:d={PAD+0.2:.2f}[mus]")
 # SFX: whoosh on montage cuts, impacts on the big beats; cards + host stay clean
 WHOOSH=[f"whoosh_0{n}_loud.wav" for n in (1,2,3,4,5)]
@@ -188,11 +194,14 @@ rd=int(cut_times[HERO_ROAR_CUT]*1000)
 fc.append(f"[{idx}:a]adelay={rd}|{rd},atrim=0:{cut_times[SNAP_CUT]+0.3:.2f},"
           f"afade=t=out:st={cut_times[SNAP_CUT]-0.4:.2f}:d=0.7,volume=0.22[rumble]")
 sfx_labels.append("[rumble]"); idx+=1
-# HERO roar exactly on the T-Rex flash — strip the file's lead-in silence first
-# (v1 fired +0.76s late: the mp3 has leading silence)
+# HERO roar ON the T-Rex flash. Measured envelope (post silence-strip): 0.4s
+# attack to peak — start 0.20s BEFORE the cut so the -7dB point lands exactly
+# at flash start and the peak sits mid-flash; trim+fade the tail so the roar
+# doesn't smear across the raptor beats (owner: timing off, v9)
 ins+=["-i",str(ROOT/"assets/dino_sfx/roar_trex_victory.mp3")]
-rr=int(max(0.0,cut_times[HERO_ROAR_CUT]-0.03)*1000)
+rr=int(max(0.0,cut_times[HERO_ROAR_CUT]-0.20)*1000)
 fc.append(f"[{idx}:a]silenceremove=start_periods=1:start_threshold=-45dB,"
+          f"atrim=0:1.7,afade=t=out:st=1.1:d=0.6,"
           f"adelay={rr}|{rr},volume=0.9[roar]")
 sfx_labels.append("[roar]"); idx+=1
 # dialogue-forward (v7 treatment)
