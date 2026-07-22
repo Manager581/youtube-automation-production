@@ -57,7 +57,7 @@ img.save(DISC)
 # ---------- montage word times (whisper, rel to stem start) ----------
 # "A T-Rex" 0.36-0.92 | "a Raptor Pack" 1.26-1.86 | "two hybrids...exist" 2.26-4.02
 # | "and three kids...dare" 4.54-6.50
-M0 = 8.75   # montage VO + first flash start
+M0 = 3.85   # montage VO + first flash start
 
 # ---------- SHOT LIST: (kind, src, in_point, dur) ----------
 # Owner spec 2026-07-21 (rev 2): Sik's host beat is the MAIN CHARACTER TALKING
@@ -71,20 +71,20 @@ SHOTS = [
  ("NCLIP", "S13", 0.0, 2.35),              # 1.50 HOST TALKS — Luke's line ONLY
                                            #      (owner cut GF's "good thing" snark;
                                            #      Luke ends 2.00 in-clip, GF starts 2.56)
- ("NCLIP", "S02b", 0.0, 4.90),             # 3.85 GF WALK-AND-TALK (gen 2026-07-21,
-                                           #      native lip-synced mission line,
-                                           #      whisper+jaw QA'd; replaces posed S02)
- ("CLIP","S67",5.5,0.70),                  # 8.75  T-REX ("A T-Rex" 9.11) + HERO roar
- ("CLIP","S61",2.0,0.60),                  # 9.45  T-Rex 2nd angle (word tail)
- ("CLIP","S48",4.0,0.60),                  # 10.05 raptors ("Raptor Pack" 10.01-10.61)
- ("CLIP","S49",2.0,0.45),                  # 10.65 raptor close (bridge)
- ("CLIP","S82",3.5,0.65),                  # 11.10 Indominus wall-burst ("two hybrids" 11.01)
- ("CLIP","S83",3.0,0.60),                  # 11.75 D-Rex in smoke (hybrid #2)
- ("CLIP","S77",3.5,0.55),                  # 12.35 D-Rex at glass ("exist" ends 12.77)
- ("CLIP","S88",3.0,0.45),                  # 12.90 showdown tease (chaos beat)
- ("CLIP","S69",2.0,3.65),                  # 13.35 TEENS ("three kids" 13.37) HELD
+ # GF walk-and-talk beat REMOVED entirely (owner 2026-07-21: too long) —
+ # card -> Luke -> straight to montage, closest yet to Sik's ~7.5s-to-body pace.
+ # S02b clip/still stay on disk for reuse.
+ ("CLIP","S67",5.5,0.70),                  # 3.85  T-REX ("A T-Rex" 4.21) + HERO roar
+ ("CLIP","S61",2.0,0.60),                  # 4.55  T-Rex 2nd angle (word tail)
+ ("CLIP","S48",4.0,0.60),                  # 5.15  raptors ("Raptor Pack" 5.11-5.71)
+ ("CLIP","S49",2.0,0.45),                  # 5.75  raptor close (bridge)
+ ("CLIP","S82",3.5,0.65),                  # 6.20  Indominus wall-burst ("two hybrids" 6.11)
+ ("CLIP","S83",3.0,0.60),                  # 6.85  D-Rex in smoke (hybrid #2)
+ ("CLIP","S77",3.5,0.55),                  # 7.45  D-Rex at glass ("exist" ends 7.87)
+ ("CLIP","S88",3.0,0.45),                  # 8.00  showdown tease (chaos beat)
+ ("CLIP","S69",2.0,3.65),                  # 8.45  TEENS ("three kids" 8.47) HELD
                                            #       through gf_s11 "Remember them."
- ("CARD", LOGO, 0, 0.90),                  # 17.00 snap -> logo button
+ ("CARD", LOGO, 0, 0.90),                  # 12.10 snap -> logo button
 ]
 HERO_ROAR_CUT = 3    # S67 flash
 WALL_CRASH_CUT = 7   # S82 wall-burst
@@ -92,13 +92,11 @@ TEENS_CUT = 11
 SNAP_CUT = len(SHOTS)-1
 
 # ---------- VO placement ----------
-VO_PLAN = [("luke_s03_montage",M0),    # 8.75 -> 15.64, flashes word-aligned
-           ("gf_s11",15.50)]           # over the held S69 (ends 16.77)
-# gf_s02 stem RETIRED — S02b's native lip-synced line replaces it.
+VO_PLAN = [("luke_s03_montage",M0),    # 3.85 -> 10.74, flashes word-aligned
+           ("gf_s11",10.60)]           # over the held S69 (ends 11.87)
 # NCLIP native audio (clip, delay_s, trim_end_s, fade_start_s): same
 # dialogue-forward treatment as the stems, pre-attenuated to stem level
-NATIVES=[("S13",1.50,2.35,2.05),
-         ("S02b",3.85,4.90,4.55)]
+NATIVES=[("S13",1.50,2.35,2.05)]
 
 # ---------- 1) VIDEO segments ----------
 # Quantize every cut to the 24fps frame grid against PLANNED ABSOLUTE times —
@@ -164,9 +162,11 @@ fc.append("".join(vo_labels)+f"amix=inputs={len(vo_labels)}:normalize=0[vodry]")
 # music: fade in over the card, fade out only in the very tail (v1 had a mix
 # hole after the last VO — keep the bed audible until the snap)
 ins+=["-i",str(MUS)]; mi=idx; idx+=1
-fc.append(f"[{mi}:a]atrim=0:{TOTAL+PAD:.2f},afade=t=in:d=1.0,"
-          f"afade=t=out:st={TOTAL-0.2:.2f}:d={PAD+0.2:.2f},"
-          f"loudnorm=I=-33:TP=-6:LRA=11[mus]")
+# loudnorm FIRST, fades after — loudnorm is dynamic, and running it after the
+# fade made the music's perceived entrance drift between builds (owner caught it)
+fc.append(f"[{mi}:a]atrim=0:{TOTAL+PAD:.2f},loudnorm=I=-33:TP=-6:LRA=11,"
+          f"afade=t=in:st=0.15:d=0.8,"
+          f"afade=t=out:st={TOTAL-0.2:.2f}:d={PAD+0.2:.2f}[mus]")
 # SFX: whoosh on montage cuts, impacts on the big beats; cards + host stay clean
 WHOOSH=[f"whoosh_0{n}_loud.wav" for n in (1,2,3,4,5)]
 IMPACT_AT={HERO_ROAR_CUT:"impact_new_loud.wav",
