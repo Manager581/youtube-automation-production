@@ -100,14 +100,14 @@ without its strip is reported as unfinished on purpose.
 | `S076` | 407.7-409.3s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S077` | 409.3-411.1s | CU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S078` | 411.1-412.9s | CU | `hero_still_B_egg_nest.png` |  |
-| `S079` | 412.9-414.7s | MS | `hero_still_B_egg_nest.png` | yes |
+| `S079` | 412.9-414.7s | MS | `hero_still_B_egg_nest.png` |  |
 | `S080` | 414.7-416.5s | WS | `hero_still_A_booby_finch.png` | yes |
 | `S081` | 416.5-418.5s | CU | `hero_still_A_booby_finch.png` | yes |
-| `S082` | 418.5-430s | MS | `hero_still_A_booby_finch.png` | yes |
-| `S083` | 430.0-440.0s | WS | `SEED_wide_booby_clear.png` |  |
+| `S082` | 418.5-429.5s | MS | `hero_still_A_booby_finch.png` | yes |
+| `S083` | 429.5-440.0s | WS | `SEED_wide_booby_clear.png` |  |
 | `S084` | 440.0-444.0s | CU | `SEED_mutualism_clean_B.png` |  |
-| `S085` | 444.0-454.0s | MS | `hero_still_B_egg_nest.png` |  |
-| `S086` | 454.0-466.0s | XCU | `SEED_flank_stain.png` | yes |
+| `S085` | 444.0-454.5s | MS | `hero_still_B_egg_nest.png` |  |
+| `S086` | 454.5-466.0s | XCU | `SEED_flank_stain.png` | yes |
 | `S087` | 466.0-473.0s | CU | `still_booby_eye.png` |  |
 | `S088` | 473.0-480.0s | WS | `SEED_wide_booby_clear.png` |  |
 
