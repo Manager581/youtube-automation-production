@@ -2,8 +2,9 @@
 _Last updated 2026-07-23 (second session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Packaging is DONE (thumbnail passes the gate 4/4) and every shot is now specified (92 shots with
-per-shot Grok prompts). What remains is pure production: 6 seed stills, ~84 clips, the VO, one music bed.**
+**Packaging is DONE (thumbnail passes the gate 4/4) and every shot is now specified — 88 shots with
+per-shot Grok prompts, passing the pacing gate 14/14. What remains is pure production: 6 seed stills,
+~82 clips, the VO, one music bed.**
 
 ---
 
@@ -57,11 +58,12 @@ Eleven Multilingual v2, account `ElevenCreative`. The filename encodes the setti
 ---
 
 ### The full shot manifest now exists
-**`EP02_SHOT_MANIFEST_FULL.md` — 92 shots, every one with in/out, size, a distinct vantage, action,
+**`EP02_SHOT_MANIFEST_FULL.md` — 88 shots, every one with in/out, size, a distinct vantage, action,
 seed, physics risk and a copy-paste Grok prompt.** Machine-readable twin: **`ep02_shots.json`** (read
-that from any builder script). Built by a 21-agent workflow and then independently re-verified, which
-caught four defects the agents' own audit missed — including **22 duplicate shot IDs** that would have
-made a builder silently overwrite clips.
+that from any builder script); re-check with **`gate_shots.py`**, regenerate the doc with
+**`render_manifest.py`**. Built by a 21-agent workflow and then independently re-verified, which caught
+four defects the agents' own audit missed — including **22 duplicate shot IDs** that would have made a
+builder silently overwrite clips.
 
 **Pacing + prompt-hygiene now pass 14/14** — run `gate_shots.py` to re-check after any edit. I tuned
 the draft to get there: absorbed 4 genuinely weak beats (92→88 shots) to lift the mean to 5.45 s, and
