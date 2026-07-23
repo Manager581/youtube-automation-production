@@ -2,8 +2,8 @@
 _Last updated 2026-07-23 (second session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Packaging is DONE — the thumbnail now passes the ship gate 4/4. What remains is footage:
-~6 seed stills, ~72 of ~80 clips, the VO, and one music bed.**
+**Packaging is DONE (thumbnail passes the gate 4/4) and every shot is now specified (92 shots with
+per-shot Grok prompts). What remains is pure production: 6 seed stills, ~84 clips, the VO, one music bed.**
 
 ---
 
