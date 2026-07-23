@@ -1,6 +1,6 @@
 {
  "runtime_s": 480,
- "total_shots": 92,
+ "total_shots": 88,
  "shots": [
   {
    "id": "S001",
@@ -329,35 +329,21 @@
   {
    "id": "S022",
    "in_s": 153.5,
-   "out_s": 158,
-   "dur_s": 4.5,
+   "out_s": 161.5,
+   "dur_s": 8.0,
    "size": "XCU",
    "vantage": "OVER-THE-SHOULDER from directly behind the booby's neck, looking DOWN into the down",
-   "action": "Extreme macro: the finch's blunt beak tweezers a dark engorged tick out of clean white down. The old mutualism, made literal.",
+   "action": "Extreme macro: the finch's blunt beak tweezers a dark engorged tick out of clean white down. The old mutualism, made literal. (Absorbs the adjacent beat S023 \u2014 hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)",
    "seed": "SEED_mutualism_clean",
    "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro of a vampire ground finch's blunt seed-cracking beak tweezering a dark engorged tick out of the clean white down of a Nazca booby and lifting it clear; the down is unmarked and white with no red anywhere; camera is over the booby's shoulder from directly behind the neck, looking down into the feathers, macro. Keep exact anatomy, no extra limbs, no morphing, count stays the same.",
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S042"
+   "orig_id": "S042",
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
   },
   {
    "id": "S023",
-   "in_s": 158,
-   "out_s": 161.5,
-   "dur_s": 3.5,
-   "size": "MS",
-   "vantage": "high TOP-DOWN angle looking straight down onto the back, booby's head at frame bottom",
-   "action": "Three finches spaced across the white back, each working through clean plumage - the crew at work, seen from above.",
-   "seed": "SEED_mutualism_clean",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Three small black vampire ground finches spaced across the white back of a Nazca booby, each working through clean unmarked plumage, one hopping a short step sideways; the booby's head is at the bottom of frame; no blood anywhere; camera is a high top-down angle looking straight down onto the bird's back, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same.",
-   "physics_risk": "medium",
-   "has_blood": false,
-   "act": "ACT4",
-   "orig_id": "S043"
-  },
-  {
-   "id": "S024",
    "in_s": 161.5,
    "out_s": 166,
    "dur_s": 4.5,
@@ -372,7 +358,7 @@
    "orig_id": "S044"
   },
   {
-   "id": "S025",
+   "id": "S024",
    "in_s": 166,
    "out_s": 170,
    "dur_s": 4,
@@ -387,7 +373,7 @@
    "orig_id": "S045"
   },
   {
-   "id": "S026",
+   "id": "S025",
    "in_s": 170,
    "out_s": 173,
    "dur_s": 3,
@@ -402,7 +388,7 @@
    "orig_id": "S046"
   },
   {
-   "id": "S027",
+   "id": "S026",
    "in_s": 173,
    "out_s": 177.5,
    "dur_s": 4.5,
@@ -417,37 +403,23 @@
    "orig_id": "S047"
   },
   {
-   "id": "S028",
+   "id": "S027",
    "in_s": 177.5,
-   "out_s": 181,
-   "dur_s": 3.5,
-   "size": "XCU",
-   "vantage": "SIDE-ON at the finch's own level, tight on the head in PROFILE, white flank filling the background",
-   "action": "The finch's head lowers into frame from the left and works the stain, its throat pulsing as it swallows. It drank.",
-   "seed": "hero_still_A2_macro_finch_wound.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro side-on profile of a vampire ground finch's head lowering to a dry matted red stain in white booby down, the beak working at the mark and the throat feathers pulsing as it swallows; camera is side-on at the finch's own level, tight on the head in profile, the booby's white flank filling the background out of focus. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.",
-   "physics_risk": "medium",
-   "has_blood": true,
-   "act": "ACT4",
-   "orig_id": "S048"
-  },
-  {
-   "id": "S029",
-   "in_s": 181,
    "out_s": 185,
-   "dur_s": 4,
+   "dur_s": 7.5,
    "size": "CU",
    "vantage": "from directly BEHIND the finch, over its black shoulder, long lens, near-foreground finch back dark and soft",
-   "action": "Past the finch's shoulder to the white flank and the mark; the finch lifts its head and the beak tip is stained red.",
+   "action": "Past the finch's shoulder to the white flank and the mark; the finch lifts its head and the beak tip is stained red. (Absorbs the adjacent beat S028 \u2014 hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)",
    "seed": "hero_still_A2_macro_finch_wound.png",
    "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Looking over the black shoulder of a vampire ground finch, past it to the white flank of a Nazca booby and a dry matted red mark at a feather base; the finch lifts its head and the tip of its beak is stained red; camera is directly behind the finch in an over-the-shoulder position, long lens, the finch's back dark and soft in the near foreground. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.",
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S049"
+   "orig_id": "S049",
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
   },
   {
-   "id": "S030",
+   "id": "S028",
    "in_s": 185,
    "out_s": 189,
    "dur_s": 4,
@@ -462,7 +434,7 @@
    "orig_id": "S050"
   },
   {
-   "id": "S031",
+   "id": "S029",
    "in_s": 189,
    "out_s": 192.5,
    "dur_s": 3.5,
@@ -477,7 +449,7 @@
    "orig_id": "S051"
   },
   {
-   "id": "S032",
+   "id": "S030",
    "in_s": 192.5,
    "out_s": 196.5,
    "dur_s": 4,
@@ -492,7 +464,7 @@
    "orig_id": "S052"
   },
   {
-   "id": "S033",
+   "id": "S031",
    "in_s": 196.5,
    "out_s": 201,
    "dur_s": 4.5,
@@ -507,7 +479,7 @@
    "orig_id": "S053"
   },
   {
-   "id": "S034",
+   "id": "S032",
    "in_s": 201,
    "out_s": 205,
    "dur_s": 4,
@@ -522,7 +494,7 @@
    "orig_id": "S054"
   },
   {
-   "id": "S035",
+   "id": "S033",
    "in_s": 205,
    "out_s": 210,
    "dur_s": 5,
@@ -537,7 +509,7 @@
    "orig_id": "S055"
   },
   {
-   "id": "S036",
+   "id": "S034",
    "in_s": 210,
    "out_s": 214.5,
    "dur_s": 4.5,
@@ -552,7 +524,7 @@
    "orig_id": "S056"
   },
   {
-   "id": "S037",
+   "id": "S035",
    "in_s": 214.5,
    "out_s": 220,
    "dur_s": 5.5,
@@ -567,7 +539,7 @@
    "orig_id": "S057"
   },
   {
-   "id": "S038",
+   "id": "S036",
    "in_s": 220,
    "out_s": 224.5,
    "dur_s": 4.5,
@@ -582,7 +554,7 @@
    "orig_id": "S058"
   },
   {
-   "id": "S039",
+   "id": "S037",
    "in_s": 224.5,
    "out_s": 229.5,
    "dur_s": 5,
@@ -597,7 +569,7 @@
    "orig_id": "S059"
   },
   {
-   "id": "S040",
+   "id": "S038",
    "in_s": 229.5,
    "out_s": 235,
    "dur_s": 5.5,
@@ -612,7 +584,7 @@
    "orig_id": "S060"
   },
   {
-   "id": "S041",
+   "id": "S039",
    "in_s": 235,
    "out_s": 241,
    "dur_s": 6,
@@ -627,7 +599,7 @@
    "orig_id": "S061"
   },
   {
-   "id": "S042",
+   "id": "S040",
    "in_s": 241,
    "out_s": 251.5,
    "dur_s": 10.5,
@@ -643,7 +615,7 @@
    "orig_id": "S062"
   },
   {
-   "id": "S043",
+   "id": "S041",
    "in_s": 251.5,
    "out_s": 256.5,
    "dur_s": 5,
@@ -658,7 +630,7 @@
    "orig_id": "S063"
   },
   {
-   "id": "S044",
+   "id": "S042",
    "in_s": 256.5,
    "out_s": 263,
    "dur_s": 6.5,
@@ -674,7 +646,7 @@
    "orig_id": "S064"
   },
   {
-   "id": "S045",
+   "id": "S043",
    "in_s": 263,
    "out_s": 270,
    "dur_s": 7,
@@ -690,37 +662,23 @@
    "orig_id": "S065"
   },
   {
-   "id": "S046",
+   "id": "S044",
    "in_s": 270,
-   "out_s": 274.2,
-   "dur_s": 4.2,
+   "out_s": 277.4,
+   "dur_s": 7.4,
    "size": "WS",
    "vantage": "down at rock level ON the lava shelf, long lens compressing the shelf away to a high grey sea horizon; booby side-on filling ~1/3 frame height",
-   "action": "BRIEF establishing wide. The lone Nazca booby sits side-on mid-shelf, clearly readable, three finches hopping at its feet; a second island's dark silhouette sits far off on the water (Wolf and Darwin). Dust drags across the foreground rock. VO 4:30 'two of the most remote islands in all the Galapagos. Wolf. And Darwin.'",
+   "action": "BRIEF establishing wide. The lone Nazca booby sits side-on mid-shelf, clearly readable, three finches hopping at its feet; a second island's dark silhouette sits far off on the water (Wolf and Darwin). Dust drags across the foreground rock. VO 4:30 'two of the most remote islands in all the Galapagos. Wolf. And Darwin.'. (Absorbs the adjacent beat S047 \u2014 hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)",
    "seed": "SEED_wide_booby_clear",
    "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera sits down on the black lava shelf at rock level and the long lens compresses the shelf away toward a high grey sea horizon, with the dark silhouette of a second island far off on the water; one large white and black Nazca booby sits side-on in the middle distance filling about a third of the frame height, clearly readable and never a small dot, three small black finches hopping near its feet; wind drags a little dry dust across the foreground rock and lifts the booby's breast feathers, the sea flat and colourless on both sides of the lava strip, the camera holding steady with only a slight handheld drift and no zoom. keep exact anatomy, no extra limbs, no morphing, count stays the same.",
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT5",
-   "orig_id": "S050"
+   "orig_id": "S050",
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
   },
   {
-   "id": "S047",
-   "in_s": 274.2,
-   "out_s": 277.4,
-   "dur_s": 3.2,
-   "size": "MS",
-   "vantage": "locked off DIRECTLY OVERHEAD, top-down onto bare rock \u2014 no booby in frame",
-   "action": "Top-down plate of the island's actual surface: cracked black basalt streaked chalk-white with guano, bone dry, heat shimmer rippling at the frame edges. One finch skitters left to right, stops, hops on. Pure environment insert under the VO tail.",
-   "seed": "SEED_wide_booby_clear",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is locked off directly overhead looking straight down onto cracked black basalt streaked with chalky white seabird guano, bone dry with no water anywhere and heat shimmer rippling along the top and bottom edges of the frame; one small black finch skitters across the rock from left to right, stops, turns its head once and hops on; no other animals in frame, the camera does not move and only the bird and a thin drift of dust move. keep exact anatomy, no extra limbs, no morphing, count stays the same.",
-   "physics_risk": "low",
-   "has_blood": false,
-   "act": "ACT5",
-   "orig_id": "S051"
-  },
-  {
-   "id": "S048",
+   "id": "S045",
    "in_s": 277.4,
    "out_s": 282,
    "dur_s": 4.6,
@@ -735,7 +693,7 @@
    "orig_id": "S052"
   },
   {
-   "id": "S049",
+   "id": "S046",
    "in_s": 282,
    "out_s": 287,
    "dur_s": 5,
@@ -750,7 +708,7 @@
    "orig_id": "S053"
   },
   {
-   "id": "S050",
+   "id": "S047",
    "in_s": 287,
    "out_s": 292,
    "dur_s": 5,
@@ -765,37 +723,23 @@
    "orig_id": "S054"
   },
   {
-   "id": "S051",
+   "id": "S048",
    "in_s": 292,
-   "out_s": 295.2,
-   "dur_s": 3.2,
-   "size": "MS",
-   "vantage": "low THREE-QUARTER from BENEATH the prickly pear pad, spines across the foreground, flat white sky behind",
-   "action": "Foraging triptych, beat 1. The finch flies in from frame left and lands on the rim of the cactus pad beside a yellow flower. VO 4:52 'So the finch drinks whatever it can find. Nectar from a cactus flower.'",
-   "seed": "SEED_pricklypear",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A low three-quarter angle from beneath a prickly pear cactus pad against a flat white overcast sky, the pad's spines sharp across the foreground; a small black finch flies in from frame left and lands cleanly on the rim of the pad beside a yellow cactus flower, folding its wings and steadying itself; the bird must land ON the pad and never pass through the pad, the spines or the flower; handheld camera follows the landing with a small settle. keep exact anatomy, no extra limbs, no morphing, count stays the same.",
-   "physics_risk": "medium",
-   "has_blood": false,
-   "act": "ACT5",
-   "orig_id": "S055"
-  },
-  {
-   "id": "S052",
-   "in_s": 295.2,
    "out_s": 298.4,
-   "dur_s": 3.2,
+   "dur_s": 6.4,
    "size": "XCU",
    "vantage": "STRAIGHT DOWN from directly above the open flower, the cup filling frame; beak enters from the right",
-   "action": "Foraging triptych, beat 2. Extreme macro into the flower cup \u2014 the blunt beak dips for nectar, head tips back to swallow, dips again. Same subject as S055 but opposite axis and two sizes tighter.",
+   "action": "Foraging triptych, beat 2. Extreme macro into the flower cup \u2014 the blunt beak dips for nectar, head tips back to swallow, dips again. Same subject as S055 but opposite axis and two sizes tighter. (Absorbs the adjacent beat S051 \u2014 hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)",
    "seed": "SEED_pricklypear",
    "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera looks straight down from directly above an open yellow prickly pear flower, extreme close, the cup of the flower and its stamens filling the frame; the finch's blunt black seed-cracking beak enters from the right and dips into the flower to take nectar, the head tipping back once to swallow, then dipping again; the beak makes real contact with the petals and stamens and never passes through them, no liquid stretches or threads, only the bird moves. keep exact anatomy, no extra limbs, no morphing, count stays the same.",
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT5",
-   "orig_id": "S056"
+   "orig_id": "S056",
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
   },
   {
-   "id": "S053",
+   "id": "S049",
    "in_s": 298.4,
    "out_s": 301.6,
    "dur_s": 3.2,
@@ -810,7 +754,7 @@
    "orig_id": "S057"
   },
   {
-   "id": "S054",
+   "id": "S050",
    "in_s": 301.6,
    "out_s": 305.4,
    "dur_s": 3.8,
@@ -825,7 +769,7 @@
    "orig_id": "S058"
   },
   {
-   "id": "S055",
+   "id": "S051",
    "in_s": 305.4,
    "out_s": 309,
    "dur_s": 3.6,
@@ -840,7 +784,7 @@
    "orig_id": "S059"
   },
   {
-   "id": "S056",
+   "id": "S052",
    "in_s": 309,
    "out_s": 320,
    "dur_s": 11,
@@ -856,7 +800,7 @@
    "orig_id": "S060"
   },
   {
-   "id": "S057",
+   "id": "S053",
    "in_s": 320,
    "out_s": 324,
    "dur_s": 4,
@@ -871,7 +815,7 @@
    "orig_id": "S061"
   },
   {
-   "id": "S058",
+   "id": "S054",
    "in_s": 324,
    "out_s": 328.5,
    "dur_s": 4.5,
@@ -886,7 +830,7 @@
    "orig_id": "S062"
   },
   {
-   "id": "S059",
+   "id": "S055",
    "in_s": 328.5,
    "out_s": 339.5,
    "dur_s": 11,
@@ -902,7 +846,7 @@
    "orig_id": "S063"
   },
   {
-   "id": "S060",
+   "id": "S056",
    "in_s": 339.5,
    "out_s": 345,
    "dur_s": 5.5,
@@ -917,7 +861,7 @@
    "orig_id": "S064"
   },
   {
-   "id": "S061",
+   "id": "S057",
    "in_s": 345,
    "out_s": 350.5,
    "dur_s": 5.5,
@@ -932,7 +876,7 @@
    "orig_id": "S060"
   },
   {
-   "id": "S062",
+   "id": "S058",
    "in_s": 350.5,
    "out_s": 356,
    "dur_s": 5.5,
@@ -947,7 +891,7 @@
    "orig_id": "S061"
   },
   {
-   "id": "S063",
+   "id": "S059",
    "in_s": 356,
    "out_s": 360.5,
    "dur_s": 4.5,
@@ -962,7 +906,7 @@
    "orig_id": "S062"
   },
   {
-   "id": "S064",
+   "id": "S060",
    "in_s": 360.5,
    "out_s": 365,
    "dur_s": 4.5,
@@ -977,7 +921,7 @@
    "orig_id": "S063"
   },
   {
-   "id": "S065",
+   "id": "S061",
    "in_s": 365,
    "out_s": 368.5,
    "dur_s": 3.5,
@@ -992,7 +936,7 @@
    "orig_id": "S064"
   },
   {
-   "id": "S066",
+   "id": "S062",
    "in_s": 368.5,
    "out_s": 372,
    "dur_s": 3.5,
@@ -1007,7 +951,7 @@
    "orig_id": "S065"
   },
   {
-   "id": "S067",
+   "id": "S063",
    "in_s": 372,
    "out_s": 375,
    "dur_s": 3,
@@ -1022,7 +966,7 @@
    "orig_id": "S066"
   },
   {
-   "id": "S068",
+   "id": "S064",
    "in_s": 375,
    "out_s": 378,
    "dur_s": 3,
@@ -1037,7 +981,7 @@
    "orig_id": "S067"
   },
   {
-   "id": "S069",
+   "id": "S065",
    "in_s": 378,
    "out_s": 380.5,
    "dur_s": 2.5,
@@ -1052,7 +996,7 @@
    "orig_id": "S068"
   },
   {
-   "id": "S070",
+   "id": "S066",
    "in_s": 380.5,
    "out_s": 383,
    "dur_s": 2.5,
@@ -1067,7 +1011,7 @@
    "orig_id": "S069"
   },
   {
-   "id": "S071",
+   "id": "S067",
    "in_s": 383,
    "out_s": 385,
    "dur_s": 2,
@@ -1082,7 +1026,7 @@
    "orig_id": "S070"
   },
   {
-   "id": "S072",
+   "id": "S068",
    "in_s": 385,
    "out_s": 395.5,
    "dur_s": 10.5,
@@ -1098,7 +1042,7 @@
    "orig_id": "S071"
   },
   {
-   "id": "S073",
+   "id": "S069",
    "in_s": 395.5,
    "out_s": 397.5,
    "dur_s": 2,
@@ -1113,7 +1057,7 @@
    "orig_id": "S072"
   },
   {
-   "id": "S074",
+   "id": "S070",
    "in_s": 397.5,
    "out_s": 399.3,
    "dur_s": 1.8,
@@ -1128,7 +1072,7 @@
    "orig_id": "S073"
   },
   {
-   "id": "S075",
+   "id": "S071",
    "in_s": 399.3,
    "out_s": 401.1,
    "dur_s": 1.8,
@@ -1143,7 +1087,7 @@
    "orig_id": "S074"
   },
   {
-   "id": "S076",
+   "id": "S072",
    "in_s": 401.1,
    "out_s": 402.7,
    "dur_s": 1.6,
@@ -1158,7 +1102,7 @@
    "orig_id": "S075"
   },
   {
-   "id": "S077",
+   "id": "S073",
    "in_s": 402.7,
    "out_s": 404.3,
    "dur_s": 1.6,
@@ -1173,7 +1117,7 @@
    "orig_id": "S076"
   },
   {
-   "id": "S078",
+   "id": "S074",
    "in_s": 404.3,
    "out_s": 406.1,
    "dur_s": 1.8,
@@ -1188,7 +1132,7 @@
    "orig_id": "S077"
   },
   {
-   "id": "S079",
+   "id": "S075",
    "in_s": 406.1,
    "out_s": 407.7,
    "dur_s": 1.6,
@@ -1203,7 +1147,7 @@
    "orig_id": "S078"
   },
   {
-   "id": "S080",
+   "id": "S076",
    "in_s": 407.7,
    "out_s": 409.3,
    "dur_s": 1.6,
@@ -1218,7 +1162,7 @@
    "orig_id": "S079"
   },
   {
-   "id": "S081",
+   "id": "S077",
    "in_s": 409.3,
    "out_s": 411.1,
    "dur_s": 1.8,
@@ -1233,7 +1177,7 @@
    "orig_id": "S080"
   },
   {
-   "id": "S082",
+   "id": "S078",
    "in_s": 411.1,
    "out_s": 412.9,
    "dur_s": 1.8,
@@ -1248,7 +1192,7 @@
    "orig_id": "S081"
   },
   {
-   "id": "S083",
+   "id": "S079",
    "in_s": 412.9,
    "out_s": 414.7,
    "dur_s": 1.8,
@@ -1263,7 +1207,7 @@
    "orig_id": "S082"
   },
   {
-   "id": "S084",
+   "id": "S080",
    "in_s": 414.7,
    "out_s": 416.5,
    "dur_s": 1.8,
@@ -1278,7 +1222,7 @@
    "orig_id": "S083"
   },
   {
-   "id": "S085",
+   "id": "S081",
    "in_s": 416.5,
    "out_s": 418.5,
    "dur_s": 2,
@@ -1293,7 +1237,7 @@
    "orig_id": "S084"
   },
   {
-   "id": "S086",
+   "id": "S082",
    "in_s": 418.5,
    "out_s": 430,
    "dur_s": 11.5,
@@ -1309,10 +1253,10 @@
    "orig_id": "S085"
   },
   {
-   "id": "S087",
+   "id": "S083",
    "in_s": 430,
-   "out_s": 438,
-   "dur_s": 8,
+   "out_s": 436.0,
+   "dur_s": 6.0,
    "size": "WS",
    "vantage": "LOW at rock level behind a foreground ridge of guano-streaked lava, telephoto, booby in hard side profile against a high sea horizon",
    "action": "Grey first light on the lava shelf. The booby sits settled in profile, not moving. Over the shot three small black finches fly in one at a time and land unhurried on its back and shoulder; the booby does not react and does not stand. Wind moves through the feathers, faint sea mist drifts behind. This is the act's deceleration cut - it lands straight out of ACT6's sub-2s raid burst.",
@@ -1325,10 +1269,10 @@
    "orig_id": "S070"
   },
   {
-   "id": "S088",
-   "in_s": 438,
-   "out_s": 446,
-   "dur_s": 8,
+   "id": "S084",
+   "in_s": 436.0,
+   "out_s": 446.0,
+   "dur_s": 10.0,
    "size": "CU",
    "vantage": "HIGH and BEHIND the booby's shoulder looking down the length of its white back, shallow DOF, lava thrown out of focus below",
    "action": "A finch walks two unhurried steps across the clean white plumage, lowers its head once to pick between the feathers, straightens and preens; a second finch hops in at the edge of frame and settles. The back is unmarked white - this is the visual of the VO's 'as though nothing had passed between them.'",
@@ -1341,10 +1285,10 @@
    "orig_id": "S071"
   },
   {
-   "id": "S089",
-   "in_s": 446,
-   "out_s": 454,
-   "dur_s": 8,
+   "id": "S085",
+   "in_s": 446.0,
+   "out_s": 452.0,
+   "dur_s": 6.0,
    "size": "MS",
    "vantage": "LOW front-three-quarter at nest level, angled slightly UP past a soft out-of-focus lip of lava in the near foreground",
    "action": "The chalk-white egg lies in the dust between the booby's feet. The booby shuffles its feet once and settles gently down over the egg until the egg disappears under its breast feathers. A finch hops once at the edge of frame and then stays put. The 'keeps its egg' beat, made physical.",
@@ -1357,10 +1301,10 @@
    "orig_id": "S072"
   },
   {
-   "id": "S090",
-   "in_s": 454,
-   "out_s": 462,
-   "dur_s": 8,
+   "id": "S086",
+   "in_s": 452.0,
+   "out_s": 463.0,
+   "dur_s": 11.0,
    "size": "XCU",
    "vantage": "SIDE-ON macro level with the flank, frame completely filled with plumage - no head, no horizon, no context; the most abstract frame in the act",
    "action": "Rust-brown dried streaks matted down into the white flank. The flank rises and falls with slow deep breathing. A single small fly walks across the feathers and lifts away. Nothing else moves. This is the only shot in ACT7 that carries blood, and it carries all of it.",
@@ -1373,10 +1317,10 @@
    "orig_id": "S073"
   },
   {
-   "id": "S091",
-   "in_s": 462,
+   "id": "S087",
+   "in_s": 463.0,
    "out_s": 470,
-   "dur_s": 8,
+   "dur_s": 7.0,
    "size": "CU",
    "vantage": "TIGHT from slightly BELOW and to the SIDE, three-quarter profile - eye and facial mask fill frame-left, bill runs out of frame-right (explicitly never head-on)",
    "action": "The pale yellow eye half-closes, opens slowly, half-closes again; the nictitating membrane sweeps across it once. Far behind and completely out of focus a small black bird crosses. The exhale of the whole film. The cut out of this shot lands on the word 'blood' in the final VO line.",
@@ -1389,7 +1333,7 @@
    "orig_id": "S074"
   },
   {
-   "id": "S092",
+   "id": "S088",
    "in_s": 470,
    "out_s": 480,
    "dur_s": 10,

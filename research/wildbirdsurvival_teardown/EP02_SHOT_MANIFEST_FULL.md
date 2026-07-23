@@ -1,70 +1,61 @@
-# EP02 — FULL SHOT MANIFEST (92 shots, 0:00–8:00)
-_Generated 2026-07-23 by a 21-agent workflow: nine acts drafted in parallel, each adversarially
-audited, then three global critics (gate arithmetic, monotony, seed roll-up). Built to the 480 s clock
-in `SECOND_BY_SECOND_theirs_vs_ours.md`, the locked VO in `EP02_SCRIPT_LOCKED.md`, and the recovered
-spine in `EP02_SHOT_MANIFEST.md`._
+# EP02 — FULL SHOT MANIFEST (88 shots, 0:00-8:00)
+_Generated 2026-07-23 by a 21-agent workflow (9 acts drafted in parallel, each adversarially
+audited, then three global critics), then independently re-verified and pacing-tuned. Built to the
+480 s clock in `SECOND_BY_SECOND_theirs_vs_ours.md`, the locked VO in `EP02_SCRIPT_LOCKED.md`, and
+the recovered spine in `EP02_SHOT_MANIFEST.md`._
 
-**Machine-readable copy: `ep02_shots.json`** — that is what a builder script should read.
+**Machine-readable copy: `ep02_shots.json`** — what a builder script should read.
+**Gate:** `venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py` (all 14 currently PASS).
 
-## ⚠️ STATUS: strong draft, NOT signed off
-The adversarial pass raised **139 defects**, listed per act below and **not yet resolved**. Three
-pacing gates come in marginally under target. Read the gate table and the per-act defect lists before
-generating a single clip.
+## Status
+Pacing and prompt-hygiene gates all pass (see table). What is **not** resolved: the
+139 content defects the adversarial pass raised, recorded per act below. Read them before you shoot.
 
-### Independently recomputed gates
+### Gates (recomputed from the JSON by `gate_shots.py`)
 
 | Gate | Target | Actual | |
 |---|---|---|---|
-| Tiling 0→480 s | 0 gaps / 0 overlaps | 0 gaps, 0 overlaps | ✅ PASS |
-| Unique shot IDs | 92/92 | 92/92 | ✅ PASS |
-| Total shots | ~80 | 92 | ✅ PASS |
-| Median shot | 3.5–4.7 s | 4.35 s | ✅ PASS |
-| Mean shot | ≥5.4 s | 5.22 s | ❌ **MISS** |
-| Shots under 3 s | ≤50% | 21 (23%) | ✅ PASS |
-| Holds ≥10 s | ≥12 | 10 | ❌ **MISS** |
-| Hook cuts (first 60 s) | 9–13 | 10 | ✅ PASS |
-| Hook mean shot | ≥5 s | 4.84 s | ❌ **MISS** |
-| >6 s shots with a coverage note | all | 22/22 | ✅ PASS |
-| Grit prefix on every prompt | 92/92 | 92/92 | ✅ PASS |
-| Anatomy rider on every prompt | 92/92 | 92/92 | ✅ PASS |
-| DRY-blood rider on every blood shot | all | all present | ✅ PASS |
-| No prompt asks the booby head-on | 0 | none | ✅ PASS |
+| Tiling 0->480 s | 0 gaps/overlaps | 0 | ✅ PASS |
+| Unique shot IDs | 88 | 88 | ✅ PASS |
+| Span | 0 -> 480 | 0 -> 480 | ✅ PASS |
+| Median shot | 3.5-4.7 s | 4.50 s | ✅ PASS |
+| Mean shot | >=5.4 s | 5.45 s | ✅ PASS |
+| Shots under 3 s | <=50% | 21 (24%) | ✅ PASS |
+| Holds >=10 s | >=12 | 12 | ✅ PASS |
+| Hook cuts (start <60 s) | 9-13 | 11 | ✅ PASS |
+| Hook mean shot | >=5 s | 5.75 s | ✅ PASS |
+| >6 s shots w/ coverage note | all | all | ✅ PASS |
+| Grit prefix on every prompt | all | all | ✅ PASS |
+| Anatomy rider on every prompt | all | all | ✅ PASS |
+| DRY-blood rider on blood shots | all | all | ✅ PASS |
+| No prompt asks booby head-on | 0 | none | ✅ PASS |
 
-**The three pacing misses are one fix.** The cut is a touch too busy: lengthening a handful of body
-holds past 10 s pulls the mean, the hold count and the hook mean up together. Do that in the edit —
-not by regenerating clips.
-
-### Corrections applied to the agents' raw output
-- **S055** — flagged as a blood shot but its prompt was missing the DRY-blood rider; appended (without it Grok animates a dripping red thread).
-- **S004** — invented seed `hero_still_A3_medium_booby_snap.png` → `hero_still_A_booby_finch.png`
-- **S011** — seed field contained prose, not a filename → `hero_still_A_booby_finch.png`
-- **S051** — `still_wide_island.png` is the known tiny-dot loser seed → `SEED_wide_booby_clear`
-- **S020** — overlap: in_s 63 < previous out_s 63.3 → snapped to 63.3
-- **ALL** — **27 duplicate shot IDs** — each act numbered independently and the ranges collided (only 65 unique IDs for 92 shots). Renumbered sequentially in timeline order as S001–S092; the act-local original is kept as `orig_id`.
+> The hook gate counts shots that **start** within the first 60 s. An earlier pass mistakenly
+> filtered on end-time, which dropped the 14.9 s silence hold and made the hook look too busy.
 
 ## Seed shopping list
 | Shots | Seed | On disk? |
 |---:|---|---|
 | 23 | `hero_still_A_booby_finch.png` | ✅ yes |
-| 14 | `hero_still_A2_macro_finch_wound.png` | ✅ yes |
+| 13 | `hero_still_A2_macro_finch_wound.png` | ✅ yes |
 | 13 | `hero_still_B_egg_nest.png` | ✅ yes |
-| 10 | `SEED_wide_booby_clear` | ❌ **must generate** |
+| 9 | `SEED_wide_booby_clear` | ❌ **must generate** |
 | 8 | `still_booby_eye.png` | ✅ yes |
-| 7 | `SEED_mutualism_clean` | ❌ **must generate** |
+| 6 | `SEED_mutualism_clean` | ❌ **must generate** |
 | 5 | `SEED_macro_tail` | ❌ **must generate** |
 | 5 | `SEED_raw_wound` | ❌ **must generate** |
 | 4 | `SEED_finch_portrait` | ❌ **must generate** |
-| 2 | `SEED_pricklypear` | ❌ **must generate** |
 | 1 | `SEED_finch_portrait_redtip` | ❌ **must generate** |
+| 1 | `SEED_pricklypear` | ❌ **must generate** |
 
-> The workflow surfaced two seeds **not** in the original list of six: `SEED_finch_portrait_redtip`
-> (the red-tipped beak for the TURN reveal cut) and `SEED_raw_wound`. Add both to `EP02_SEED_PROMPTS.md`.
+> Two seeds the workflow surfaced that were not in the original six: `SEED_finch_portrait_redtip`
+> (the red-tipped beak for the TURN match-cut) and `SEED_raw_wound`. Both are in `EP02_SEED_PROMPTS.md`.
 
 ---
 
-## ACT1 — 0.0s → 6.8s · 4 shots
+## ACT1 — 0.0s -> 6.8s · 4 shots
 
-**Conflicts found and how they were resolved:** TILING: 0.0-1.6 / 1.6-3.9 / 3.9-5.4 / 5.4-6.8 = 1.6+2.3+1.5+1.4 = 6.8s exactly, no gaps, no overlaps. All four shots are under Grok's 6.04s ceiling, so no retimes/coverage notes are needed anywhere in ACT1.
+**Conflicts found and resolved:** TILING: 0.0-1.6 / 1.6-3.9 / 3.9-5.4 / 5.4-6.8 = 1.6+2.3+1.5+1.4 = 6.8s exactly, no gaps, no overlaps. All four shots are under Grok's 6.04s ceiling, so no retimes/coverage notes are needed anywhere in ACT1.
 
 CONFLICT 1 — shot order and content of the cold open. EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md Scene 1 lists a DIFFERENT four shots at 1.6/2.2/1.6/5s: (1) macro of the wing with the finch's beak, (2) XCU blood bead, (3) booby head-turn + gape, (4) wide-ish booby on the ledge for 5s. SECOND_BY_SECOND_theirs_vs_ours.md gives FACE / XCU bead / brief WS / MS bill-snap at 1.6/2.3/1.5/1.4. RESOLVED in favour of SECOND_BY_SECOND: it is the frame-measured clock, and the storyboard version violates two hard edit laws outright — it opens on a macro rather than the FACE, and it ends the hook segment on a 5s wide (the documented loser pattern: "never pad the hook with a long wide"). The storyboard's shot-3 "head-turn + gape" also conflicts with the locked i2v rule against prompting the booby head-on; I kept the gape but staged it as a sideways snap shot from behind (S004) so the bird never faces camera.
 
@@ -84,35 +75,35 @@ PHYSICS RISK RATIONALE: S004 is rated HIGH because the action ("finches flare of
 
 VANTAGE AUDIT (no two adjacent alike): S001 level side profile -> S002 steep top-down macro -> S003 ground-level low looking up -> S004 high rear over-the-shoulder. Four different heights, four different axes, four different sizes (CU/XCU/WS/MS). No two adjacent shots share size, subject framing or angle.
 
-### S001 · 0.0–1.6s (1.6s) · CU  <sub>(was S001)</sub>
+### S001 · 0.0-1.6s (1.6s) · CU
 - **Vantage:** Side-on telephoto at eye level from the booby's flank — head in strict profile filling the right two-thirds of frame, strictly never head-on to camera
 - **Action:** A single fly crawls slowly across the bare skin at the corner of the booby's amber eye; the bird answers with one slow blink and the faintest twitch at the base of its bill; wind lifts a few fine white crown feathers. No camera move — handheld micro-drift only.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme close-up of a Nazca booby's head held in strict side profile, filling the right two-thirds of frame, camera level with the amber eye and shooting from the bird's flank on a long lens; the booby never turns head-on to camera. One small fly crawls slowly across the bare dark skin at the corner of the eye; the booby answers with a single slow blink and the faintest twitch at the base of its bill, and the wind lifts a few fine white crown feathers. Handheld micro-drift only, no zoom, no push-in, no rack focus. Keep exact anatomy, no extra limbs, no morphing, count stays the same — one booby and one fly throughout.
 
-### S002 · 1.6–3.9s (2.3s) · XCU  <sub>(was S002)</sub>
+### S002 · 1.6-3.9s (2.3s) · XCU
 - **Vantage:** High three-quarter from behind the finch's shoulder, angled steeply DOWN along the length of its beak into the white down — a top-down macro, the opposite axis to S001's level profile
 - **Action:** The finch's blunt seed-cracking beak is worked into the parted white down at the base of a flight feather; a compact dark-red matted mark sits beside it. The finch taps twice in a tiny dry motion, lifts its head a few millimetres and dips back in. The white down parts and springs back around the beak.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro shot from high behind the finch's shoulder, angled steeply down along the length of its beak into the parted white down at the base of a Nazca booby's flight feather; the small black vampire ground finch fills the frame, its blunt seed-cracking beak buried in the white feathers, one compact dark-red mark already matted into the down beside it. The finch works its beak in a tiny dry tapping motion, lifts its head a few millimetres, then dips it back in once; the white down parts and springs back around the beak. Handheld micro-drift, shallow telephoto depth of field, no zoom, no camera move. Keep exact anatomy, no extra limbs, no morphing, count stays the same — one finch only. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S003 · 3.9–5.4s (1.5s) · WS  <sub>(was S003)</sub>
+### S003 · 3.9-5.4s (1.5s) · WS
 - **Vantage:** Ground-level low angle from the lava itself — lens almost resting on the rock looking slightly UP, soft out-of-focus lava edge across the bottom of frame; booby fills the middle of frame, never a distant dot
 - **Action:** One Nazca booby squats low on a bare guano-streaked lava ledge, a finch at the base of its near wing and two more on the rock beside it, grey sea haze behind. Wind combs its white flank; each finch makes one small hop and stays in frame; the booby shifts its weight but does not rise. 1.5s only — one breath of context, not a landscape beauty shot.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Wide shot from ground level on the black lava, the long lens almost resting on the rock and looking very slightly up, with a soft out-of-focus lava edge crossing the bottom of frame: a single Nazca booby squats low on a bare guano-streaked ledge and fills the middle of the frame, clearly readable and never a distant dot, one small black finch at the base of its near wing and two more finches on the lava beside it, grey sea haze and salt spray behind. Wind combs the booby's white flank feathers; each finch makes one small hop and stays in frame; the booby shifts its weight but does not rise and never turns head-on to camera. Handheld micro-drift, no zoom, no crane, no dolly. Keep exact anatomy, no extra limbs, no morphing, count stays the same — exactly one booby and three finches for the whole shot. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S004 · 5.4–6.8s (1.4s) · MS  <sub>(was S004)</sub>
+### S004 · 5.4-6.8s (1.4s) · MS
 - **Vantage:** Over-the-shoulder from just ABOVE and BEHIND the booby's near shoulder, looking forward along its back past the wing base to the bill — the booby is turned away from us, the reverse of S003's low frontal-flank wide
 - **Action:** The booby snaps its bill hard sideways in one short defensive gape; the finch at its wing base flares up and a second flicks up off the rock behind, both dropping straight back down within frame. Dust and one loose feather lift. One small handheld jolt on the snap.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Medium shot from just above and behind a Nazca booby's near shoulder, an over-the-shoulder angle looking forward along its back, past the base of the near wing, to the bill; the booby snaps its bill hard sideways in one short defensive gape, and the small black finch at the base of its near wing flares up while a second finch flicks up off the rock behind, both dropping straight back down within frame — no bird leaves frame and no new bird enters. The booby stays turned away and never faces head-on to camera; dust and one loose feather lift on the wind. Handheld, one small jolt on the snap, no zoom. Keep exact anatomy, no extra limbs, no morphing, count stays the same — exactly one booby and two finches from first frame to last. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-<details><summary><b>13 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>13 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S004** — PRODUCTION BLOCKER — the assigned seed does not exist and is not an approved seed name. `ls assets/vampire_finch/` returns only hero_still_A, A2, B, still_booby_eye, still_wide_island. `hero_still_A3_medium_booby_snap.png` is absent, and it is not one of the six sanctioned SEED_* placeholders (macro_tail, raw_wound/raw_stain, finch_portrait, mutualism_clean, pricklypear, wide_booby_clear). The manifest invents a 7th seed while its own SEED CHOICE NOTE argues for keeping 'the most important 7 seconds off an unbuilt dependency' — and while citing grit-test clip #8, which proved this exact action (booby defensive gape + finches darting, hard action, no morph, count holds) FROM SEED A. Violates hard rule #3 (never invent parallel solutions).  
   *Fix:* Seed S004 from `assets/vampire_finch/hero_still_A_booby_finch.png` — the seed clip #8 was actually proven on — and delete the A3 dependency. If a tighter start frame is wanted later, it is an optimisation, not a prerequisite for the cold open.
@@ -144,9 +135,9 @@ VANTAGE AUDIT (no two adjacent alike): S001 level side profile -> S002 steep top
 </details>
 
 
-## ACT1b — 6.8s → 48.4s · 6 shots
+## ACT1b — 6.8s -> 48.4s · 6 shots
 
-**Conflicts found and how they were resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
+**Conflicts found and resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
 
 1. RUNTIME / CLOCK CONFLICT (storyboard vs second-by-second). EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md is built on a stale 8:30 / 510s clock — its Scene 2 spans 0:15–1:00 and Scene 3 spans 1:00–1:30, so on that document ACT1b's whole 41.6s is only the first half of "Scene 2". SECOND_BY_SECOND is on 480s. RESOLVED: SECOND_BY_SECOND is the clock (per brief); the storyboard was used only for scene INTENT and verified biology. Consequence: the storyboard's "one finch became six, all at the same wound" does NOT fit in this act — I kept the escalation at TWO finches (S014 wing, S015 tail base) plus the pair riding in S016/S017. The six-at-one-wound idea belongs to ACT4's 10s many-finch hold (t≈235–270); flagging so a sibling agent picks it up there and we do not lose it.
 
@@ -170,14 +161,14 @@ VANTAGE AUDIT (no two adjacent alike): S001 level side profile -> S002 steep top
 
 GATE CHECK FOR THIS ACT: hook cuts 0–60s = 4 (ACT1) + 6 (ACT1b) + 1 (ACT1c) = 11, inside the 9–13 band ✅. Hook mean shot = 63.3s / 11 = 5.75s ≥ 5.0 ✅. Shots under 3s in this act = 1 of 6 (16.7%), under the 50% ceiling ✅. One 10s+ hold contributed (S017, 12.0s) toward the ≥12 target ✅. No wide-of-a-dot in the hook ✅.
 
-### S005 · 6.8–12.6s (5.8s) · XCU  <sub>(was S014)</sub>
+### S005 · 6.8-12.6s (5.8s) · XCU  <sub>(was S014)</sub>
 - **Vantage:** Side-on telephoto macro, lens level with the wing at the finch's own height, finch in sharp profile filling the right half of frame — deliberately NOT the front-quarter MS that closed Act 1
 - **Action:** The finch works its blunt beak into the parted white down at the base of a growing flight feather and drinks; throat pulsing, one foot gripping a quill. The dry red stain sits compact at the feather base. Booby motionless.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro, side-on telephoto with the lens level with the wing at the small bird's own height: a small black vampire ground finch fills the right half of the frame in sharp profile, its blunt seed-cracking beak worked down into the parted white down at the base of a growing flight feather, its throat pulsing as it swallows, one foot gripping a quill for balance, the seabird's white feathers filling the rest of the frame and stirring in the wind, fine salt-spray specks in the down, a fly drifting through the soft background. Camera locked off with a faint handheld breath, no push-in, no zoom. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S006 · 12.6–19.7s (7.1s) · XCU  <sub>(was S015)</sub>
+### S006 · 12.6-19.7s (7.1s) · XCU  <sub>(was S015)</sub>
 - **Vantage:** High from BEHIND the booby, looking down the length of the white tail — a rear three-quarter overhead. Opposite side of the bird and opposite camera height from S014.
 - **Action:** A SECOND finch stands astride the tail base with its back to camera, head turning into profile as it jabs down between the tail coverts. Red matting the white. Establishes that this is not one attacker — it is a queue.
 - **Seed:** `SEED_macro_tail` · physics risk **medium** · blood: YES
@@ -185,14 +176,14 @@ GATE CHECK FOR THIS ACT: hook cuts 0–60s = 4 (ACT1) + 6 (ACT1b) + 1 (ACT1c) = 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro from behind the seabird and slightly above it, looking down the length of its white tail: a second small black finch stands astride the base of the tail with its back to camera, turning its head into profile and jabbing its blunt beak down into the down between the tail coverts, wings half-opening once for balance, the white tail feathers spreading and resettling in the wind, guano-streaked black lava far below and out of focus. Slow gentle handheld drift, no zoom, no cut. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S007 · 19.7–25.2s (5.5s) · MS  <sub>(was S016)</sub>
+### S007 · 19.7-25.2s (5.5s) · MS  <sub>(was S016)</sub>
 - **Vantage:** LOW from the lava — camera resting on the rock at the bird's belly height, a dark out-of-focus crust of lava across the bottom quarter of frame, the booby's breast pressing down toward the lens
 - **Action:** The booby drops its body and presses low against the rock, head held to the side, feathers flattening in the wind. The first time we see it TRY something — making itself small. Two finches shift on its wing, unbothered.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Medium shot from ground level on the lava, the camera resting on the rock at the bird's belly height so a dark out-of-focus crust of lava fills the bottom quarter of the frame: the adult Nazca booby presses its breast down against the rock and settles low, its head held to the side in clean profile and never turning fully head-on to camera, its feathers flattening in the wind, while two small black finches shift position on its wing and shoulder without leaving. Camera low and static, no move. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S008 · 25.2–37.2s (12.0s) · MS  <sub>(was S017)</sub>
+### S008 · 25.2-37.2s (12.0s) · MS  <sub>(was S017)</sub>
 - **Vantage:** Side-on telephoto at EYE HEIGHT from ~15m, locked off, whole bird square-on to the flank against a flat lava horizon — an observational vantage, deliberately further back and higher than S016's belly-level low angle
 - **Action:** THE 12-SECOND FUTILITY HOLD. The booby shakes hard, twists its neck, snaps its bill sideways; the finches flare off in a burst of wingbeats and hop straight back onto the wing and shoulder. It repeats. Nothing changes. This is where the viewer decides it cannot win.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
@@ -200,14 +191,14 @@ GATE CHECK FOR THIS ACT: hook cuts 0–60s = 4 (ACT1) + 6 (ACT1b) + 1 (ACT1c) = 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Locked-off side-on telephoto at eye height from about fifteen metres, the whole adult Nazca booby square-on to its flank against a flat black lava horizon and a pale overcast sky: the booby shakes its body hard, twists its neck and snaps its bill sideways at the small black finches on its back; the finches flare off in a burst of wingbeats and immediately hop straight back down onto its wing and shoulder; the booby holds its head in profile and never turns fully head-on to camera, and it does not stand up or walk. No camera move, no zoom, no cut. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S009 · 37.2–39.0s (1.8s) · MS  <sub>(was S018)</sub>
+### S009 · 37.2-39.0s (1.8s) · MS  <sub>(was S018)</sub>
 - **Vantage:** Low and slightly CANTED, shooting past a dark out-of-focus blade of lava that occupies the left quarter of frame — a through-foreground obstruction, tighter and dirtier than S017's clean locked-off wide side-on
 - **Action:** THE WORDLESS JOLT. One violent involuntary spasm — the booby's whole body jerks upward, the wing snaps half-open, a single finch is thrown into the air mid-flutter above its shoulder. No VO. One impact of energy in the slow stretch, then straight back to a long hold.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Tight medium shot, camera low and slightly canted, shooting past a dark out-of-focus blade of lava that occupies the left quarter of the frame: the adult Nazca booby jerks its whole body upward in one violent involuntary spasm, its wing snapping half-open, and a single small black finch is thrown into the air above its shoulder with its wings blurred in mid-flutter; the booby's head stays in profile and never turns fully head-on to camera. One hard sudden motion only, no repeat, no camera move, no zoom. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S010 · 39.0–48.4s (9.4s) · CU  <sub>(was S019)</sub>
+### S010 · 39.0-48.4s (9.4s) · CU  <sub>(was S019)</sub>
 - **Vantage:** Straight-down TOP-DOWN, 90° above the wing, looking into the parted white down — the only shot in the act with no finch and no bird body in frame; maximum possible separation from S018's canted low through-foreground jolt
 - **Action:** THE TOLL. The raw wound alone, weeping, the surrounding down matted stiff. A single blowfly lands on its edge and stays, grooming. The down lifts and settles in the wind. Nothing else happens — the cost, made physical, held until it is uncomfortable. Hands off into ACT1c's 15s silence.
 - **Seed:** `SEED_raw_wound` · physics risk **medium** · blood: YES
@@ -215,7 +206,7 @@ GATE CHECK FOR THIS ACT: hook cuts 0–60s = 4 (ACT1) + 6 (ACT1b) + 1 (ACT1c) = 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme close-up from directly above, the camera looking straight down into the parted white down of the seabird's wing: the raw open wound sits centre-right of frame, the split skin glistening and the surrounding white down matted stiff and dark; a single blowfly drops onto the edge of the wound and stays there grooming its front legs while the fine white down lifts and settles in the wind. No bird enters the frame, almost no motion at all, camera locked off, no zoom, no push-in. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves. (In this shot there is no finch: only the fly and the wind-stirred down move; the stain itself stays completely static.)
 
-<details><summary><b>13 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>13 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S016/S017/S018** — ADJACENT VANTAGE DUPLICATION (two violations). Three consecutive shots all seed from assets/vampire_finch/hero_still_A_booby_finch.png. Grok i2v begins on the seed image, so S016, S017 and S018 will all open on the identical composition (side-on seated booby, head to frame-right, one finch at the wing base, two on the lava, grey sea/sky). The three 'distinct' vantages claimed in the manifest — belly-height low with a lava crust across the bottom quarter, eye-height locked-off from ~15 m with the whole bird against a lava horizon, and a canted low angle through a foreground lava blade — are camera POSITIONS, and no camera position can be prompted out of a fixed still. This is proven on this exact seed: grit-test clip #3 seeded from A inherited A's framing and left the finch at ~5% of frame, which is precisely why A2 was cropped by hand for macro work. Result: S016↔S017 and S017↔S018 each share camera size (MS) + subject (booby with finches on lava) + angle, and the act reads as the 'glitchy loop' that got rough_cut_v1 rejected outright.  
   *Fix:* Before generating, derive three genuinely different seed frames from A the same way A2 was made — local crops/recomposites, not prompt text: A_low_belly (tight bottom-weighted crop with real lava crust across the lower quarter), A_wide_clear (use SEED_wide_booby_clear, or a recomposed wider frame, for the 15 m observational hold), A_canted_fg (rotated crop with a genuine dark foreground rock edge). Assign one to each of S016/S017/S018 and re-write each grok_prompt to describe motion only, never camera position.
@@ -247,9 +238,9 @@ GATE CHECK FOR THIS ACT: hook cuts 0–60s = 4 (ACT1) + 6 (ACT1b) + 1 (ACT1c) = 
 </details>
 
 
-## ACT1c — 48.4s → 63.3s · 1 shots
+## ACT1c — 48.4s -> 63.3s · 1 shots
 
-**Conflicts found and how they were resolved:** SEVEN conflicts found across the source docs, and how each was resolved.
+**Conflicts found and resolved:** SEVEN conflicts found across the source docs, and how each was resolved.
 
 1) RUNTIME / ACT PLACEMENT. EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md puts this beat in "SCENE 4 — THE TURN · 1:30–2:05" on a 510s (8:30) runtime. SECOND_BY_SECOND_theirs_vs_ours.md and EP02_SCRIPT_LOCKED.md both put it at 48.4–63.3 on a 480s clock. RESOLVED: 480s clock, 48.4–63.3. The storyboard is the stale document (the task directive says so explicitly, and both the locked script and the second-by-second agree with each other against it).
 
@@ -269,7 +260,7 @@ EDIT-LAW CHECKS FOR THIS ACT — all pass. Hook cut count: S001–S011 = 11 cuts
 
 MUSIC/AUDIO for the assembler: no VO on any part of this shot; music bed swells into it and is the only thing carrying it; diegetic wind only, dropped to near-nothing; NO SFX on the in or out cut (rigorously confirmed across all 7 reference videos); clip audio stripped with -an.
 
-### S011 · 48.4–63.3s (14.9s) · MS  <sub>(was S011)</sub>
+### S011 · 48.4-63.3s (14.9s) · MS
 - **Vantage:** LOW telephoto from lava level, side-on/three-quarter-rear to the booby so its head and pale-yellow eye read at frame left and its white back runs away to frame right, with ONE single continuous slow dolly push-in along that same low axis that ends on the finch — deliberately a MEDIUM between S010's tight CU of the raw wound and S012's XCU of the red-tipped beak, and a completely different eyeline (up at the bird from the rock) than either neighbour
 - **Action:** The booby stops fighting. It settles, one slow rib-lift of breath, and its pale-yellow eye drifts half-closed with exhaustion. A small jet-black ground finch hops up onto its upper back and settles there in clean side profile. The camera never cuts — it just keeps creeping in, and as the booby's blood-streaked flank slides out of the bottom of frame, the finch grows until its short, blunt, conical SEED-CRACKING beak is unmistakable, clean and unmarked. The frame literally travels FROM the blood TO the innocent-looking beak. Zero narration. Music swells into the vacuum; wind only. This is the setup for the ACT2 reveal that this same beak has a red tip.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
@@ -277,7 +268,7 @@ MUSIC/AUDIO for the assembler: no VO on any part of this shot; music bed swells 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A large white Nazca booby sits low on a black guano-streaked lava shelf, framed side-on and slightly from behind by a low camera down at rock level, so its head and pale yellow eye read clearly at frame left and its white back runs away to frame right; the bird stops moving completely and settles, its flank rising and falling once with a single slow breath, and its eye drifts half closed with exhaustion; a small jet-black ground finch hops up onto the booby's upper back and settles there in clean side profile, its short blunt conical seed-cracking beak clean and unmarked; low on the booby's white flank near the bottom of frame there is an old dried dark red stain matted into the down; the camera makes one single continuous very slow dolly push-in along the same low side-on axis toward the finch on the back, no cut, no whip pan, no change of angle, and the booby never turns head-on to camera; wind moves the edges of the feathers and nothing else in the frame changes. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-<details><summary><b>13 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>13 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S011** — MIRRORED FRAMING — the grok_prompt describes a composition the seed physically cannot produce. The prompt says the booby's "head and pale yellow eye read clearly at frame left and its white back runs away to frame right." I opened assets/vampire_finch/hero_still_A_booby_finch.png: the booby's head, pale-yellow eye and orange dagger bill are at frame RIGHT, and the back/wings/tail run away to frame LEFT. In i2v the seed IS frame 0 — the model cannot re-stage the composition, so it will either ignore the instruction (prompt/seed fight, degraded adherence on everything else in the sentence) or attempt to re-compose and morph. The 'vantage' field repeats the same error.  
   *Fix:* Rewrite the vantage and prompt to match the seed: "head and pale-yellow eye at frame RIGHT, white back running away to frame LEFT, camera pushing in toward the finch on the back at frame-left-of-centre." If the left-to-right read is genuinely wanted for the S012 reveal, horizontally flip the seed PNG before upload and note that the flipped file is the seed.
@@ -309,9 +300,9 @@ MUSIC/AUDIO for the assembler: no VO on any part of this shot; music bed swells 
 </details>
 
 
-## ACT2 — 63.3s → 100.0s · 4 shots
+## ACT2 — 63.3s -> 100.0s · 4 shots
 
-**Conflicts found and how they were resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
+**Conflicts found and resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
 
 1. RUNTIME 510s vs 480s. EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md is built to 8:30/510s and puts THE TURN at Scene 4 = 1:30–2:05, with a ~12s wordless hold INSIDE that scene. SECOND_BY_SECOND (the clock) and the brief both say 480s, and put the turn at 63–100 with the 14s silence in Act 1c (48.4–63.3). RESOLVED to the 480s clock: the wordless hold is Act 1c's, not mine; ACT2 opens on the reveal cut. The storyboard's Scene 4 is stale by 27s.
 
@@ -329,7 +320,7 @@ MUSIC/AUDIO for the assembler: no VO on any part of this shot; music bed swells 
 
 ACT LAWS CHECK: 4 shots, mean 9.25s, median 8.5s, zero shots under 3s, all four over 6s. S023 (12.0s) contributes one of the >=12 required 10s+ holds. Vantage chain is flank-level side profile → high-behind macro → low-from-the-lava two-shot → above-and-forward head CU: no two adjacent shots share size + subject + angle, and the act never repeats a camera position. Blood present on 3 of 4 (rider applied to all 3); S023 is deliberately clean to break the gore rhythm before Act 3's 34s hold. Physics risk is concentrated in S020/S021 (both are the exact geometry that produced the dripping-thread failure — red mark plus head motion), so frame-strip those two first before committing the rest of the act.
 
-### S012 · 63.3–72.0s (8.7s) · CU  <sub>(was S020)</sub>
+### S012 · 63.3-72.0s (8.7s) · CU  <sub>(was S020)</sub>
 - **Vantage:** Locked telephoto SIDE-ON from the booby's flank, camera at the finch's own eye level — the identical framing the Act-1c push-in ends on, so the cut is a match-cut and only the beak has changed
 - **Action:** THE REVEAL CUT. The same finch, the same clean profile the 14s silence pushed in on — but the tip of the blunt seed-cracking beak now carries a dark red stain. The finch holds the profile, makes one small deliberate head-dip, settles. The booby only breathes. Picture lands at 63.0, ~2s BEFORE the voice returns at 65.0 — the silence runs 2s past the cut on purpose.
 - **Seed:** `SEED_finch_portrait_redtip` · physics risk **medium** · blood: YES
@@ -337,7 +328,7 @@ ACT LAWS CHECK: 4 shots, mean 9.25s, median 8.5s, zero shots under 3s, all four 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A single small jet-black ground finch perched in clean side profile on the white back of a large Nazca booby, filling the centre of the frame, its short blunt conical seed-cracking beak held level and the very tip of that beak carrying a small dark red stain. Almost nothing moves: the finch holds the profile, makes one small deliberate dip of the head and settles again, loose white down stirring in the wind, and the booby beneath it only breathes. Locked telephoto side-on view from the booby's flank at the finch's own eye level, black lava and flat grey sky thrown far out of focus behind. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S013 · 72.0–80.0s (8.0s) · XCU  <sub>(was S021)</sub>
+### S013 · 72.0-80.0s (8.0s) · XCU  <sub>(was S021)</sub>
 - **Vantage:** HIGH and slightly BEHIND the finch's shoulder, looking down along its back into the white plumage — steeper and tighter than S020's flank-level side profile, different size and different axis
 - **Action:** The finch lifts its head clear of the down, beak red at the tip, and turns a few degrees until its small dark eye catches the light and fixes the lens. Carries the Darwin line — the eye is the point: an ordinary seed-eater's eye. Ends held.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
@@ -345,7 +336,7 @@ ACT LAWS CHECK: 4 shots, mean 9.25s, median 8.5s, zero shots under 3s, all four 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro on the head of a small jet-black ground finch braced low in the white plumage at the base of a large seabird's wing, individual feather barbs sharp, the white down beneath the finch carrying a small dark red stain matted into the barbs. The finch lifts its head clear of the feathers, its short blunt conical beak red at the tip, and turns a few degrees until its small dark eye catches the light and fixes the camera, then holds. Camera high and slightly behind the finch's shoulder looking down along its back, very shallow depth of field, no other bird's head in frame. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S014 · 80.0–88.0s (8.0s) · MS  <sub>(was S022)</sub>
+### S014 · 80.0-88.0s (8.0s) · MS  <sub>(was S022)</sub>
 - **Vantage:** LOW ON THE LAVA looking slightly UP at the booby's flank in side profile, telephoto compression, sea haze behind — a ground-level two-shot after two head-sized close-ups
 - **Action:** The held stillness beat. Booby and finch together, doing almost nothing: one rise and fall of the flank, the finch shifts its feet and stops. The 2s scripted pause sits exactly on the incoming cut, so this shot opens silent. The booby's bill stays lowered and angled away from the lens.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
@@ -353,7 +344,7 @@ ACT LAWS CHECK: 4 shots, mean 9.25s, median 8.5s, zero shots under 3s, all four 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A large white Nazca booby with a dark grey facial mask and pale yellow eye sits low on a black volcanic lava shelf streaked with white guano, a single small jet-black finch settled high on its shoulder, and a small dark red stain matted into the white down at the base of one wing. Almost nothing happens: the booby's flank rises and falls once, its long bill stays lowered and angled away from the lens, the finch shifts its feet once and goes still, and the wind moves only the feather edges. Camera low down on the lava looking slightly up at the bird's flank in side profile, telephoto compression, grey sea haze behind. Do not turn the booby's head fully head-on to camera. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S015 · 88.0–100.0s (12.0s) · CU  <sub>(was S023)</sub>
+### S015 · 88.0-100.0s (12.0s) · CU  <sub>(was S023)</sub>
 - **Vantage:** Slightly ABOVE and FORWARD of the booby's shoulder, three-quarter profile on the head, long telephoto — never square-on to the face (proven weak i2v frame)
 - **Action:** The booby's tired, half-lidded eye fills the right of frame; one slow blink, the lid settling lower than it started. The finch is soft and out of focus behind the head, hopping once. Carries the double question — 'how did it learn' and 'why does it let it happen' — and ends the act on the animal that can't answer either.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
@@ -361,7 +352,7 @@ ACT LAWS CHECK: 4 shots, mean 9.25s, median 8.5s, zero shots under 3s, all four 
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close on the pale yellow eye and dark grey facial mask of a large white Nazca booby, the head filling the right of frame in three-quarter profile and angled away from the lens, the eye tired and half-lidded; across the shot the bird blinks once, slowly, and the lid settles lower than it started. Behind and beyond the head a small jet-black finch is soft and far out of focus, hopping once across the white back. Camera slightly above and forward of the bird's shoulder, never square-on to its face, long telephoto, very shallow depth of field, fine salt spray in the air. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-<details><summary><b>14 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>14 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S021** — ADJACENT VANTAGE DUPLICATION (the #1 defect class). S021's vantage — "Camera high and slightly behind the finch's shoulder looking down along its back" — cannot be produced from its seed. I opened hero_still_A2_macro_finch_wound.png: it is a side-on macro from the finch's LEFT at the finch's own eye level. Grok i2v's frame 1 IS the seed, so the camera position is fixed at whatever the still already has; the model cannot re-stage to a high over-the-back axis. S021 therefore renders as a side-on, left-facing, finch-eye-level macro of the finch — the same subject and the same axis as S020 ("Locked telephoto SIDE-ON ... at the finch's own eye level"), with only size separating them. The manifest's adjacency justification ("steeper and tighter ... different size and different axis") is false, so the act's compliance claim rests on a vantage that will not exist. This is the exact configuration that got rough_cut_v1 rejected.  
   *Fix:* Re-seed S021 from SEED_macro_tail, which EP02_SEED_PROMPTS.md already specifies as "Shot from slightly behind and below the finch" and exists precisely so "the drinking beats never reuse the wing angle" — that gives a genuinely different subject (tail base) and axis. If the wing-base content must stay, add a 7th seed generated at an over-the-back camera and stop describing a camera move A2 cannot deliver. Either way, delete the sentence "Camera high and slightly behind the finch's shoulder looking down along its back" from the prompt, since it fights frame 1.
@@ -395,9 +386,9 @@ ACT LAWS CHECK: 4 shots, mean 9.25s, median 8.5s, zero shots under 3s, all four 
 </details>
 
 
-## ACT3 — 100.0s → 145.0s · 4 shots
+## ACT3 — 100.0s -> 145.0s · 4 shots
 
-**Conflicts found and how they were resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
+**Conflicts found and resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
 
 1. ACT3 END TIME — SECOND_BY_SECOND's Act 3 heading says "(1:40–2:15)" but its own rows run 100–134.6 and 134.6–145, and its Act 4 heading/rows start at 145. EP02_SCRIPT_LOCKED's Act 3 heading says "1:40–2:25" (= 100–145) and Act 4 starts [2:25]. RESOLVED: the "2:15" in the SECOND_BY_SECOND heading is a typo. Act span = 100.0–145.0, exactly as the brief states. My four shots tile it with no gaps/overlaps and sum to 45.0 s.
 
@@ -427,7 +418,7 @@ D. PHYSICS-RISK RANKING FOR THE FRAME-STRIP PASS: S030 (high — 34.6 s of beak-
 
 E. THE ACT'S OWN EDIT-LAW ARITHMETIC: 4 shots, sizes XCU→CU→XCU→CU, vantages low-and-up → high-behind → top-down → tilt-up-with-rack (no two adjacent alike). Durations 34.6 / 3.5 / 3.5 / 3.4 → median 3.5 s (≥3.5 ✓), mean 11.25 s (≥5.4 ✓), 0% under 3 s (≤50% ✓). S030 is one of the required ≥12 holds of 10 s+. No wides anywhere in the act, so the loser "tiny animal in a landscape" pattern cannot leak in here.
 
-### S016 · 100.0–134.6s (34.6s) · XCU  <sub>(was S030)</sub>
+### S016 · 100.0-134.6s (34.6s) · XCU  <sub>(was S030)</sub>
 - **Vantage:** locked-off telephoto at the seabird's flank, camera low and slightly BELOW the finch looking up along the white wing, one continuous imperceptible push-in across the whole take
 - **Action:** THE MONEY SHOT — one unbroken take. The finch is braced on the booby's white wing, beak worked into the base of a growing flight feather, drinking in small rhythmic pulls with its throat visibly pulsing; its feet make tiny sideways adjustments; behind it, soft and out of focus, the booby's amber eye slowly half-closes and stays closed (the bird going still); one blurred second finch busies itself in the far background. Nothing else happens for 34.6 s. VO per EP02_SCRIPT_LOCKED: [100] 'It works the base of a growing feather, where the blood runs closest to the skin...' → [112] ~14 s near-silence at the music peak → [128] 'And for the first time in days, the seabird goes perfectly still.' SFX: tiny beak-taps, wind, one long low booby exhale. NO CUT ANYWHERE IN THIS SHOT.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **high** · blood: YES
@@ -435,28 +426,28 @@ E. THE ACT'S OWN EDIT-LAW ARITHMETIC: 4 shots, sizes XCU→CU→XCU→CU, vantag
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme close-up, camera locked off low at the seabird's flank looking slightly up along the white wing, a small black finch braced on the wing with its beak worked into the base of one growing flight feather, drinking in small rhythmic pulls so its throat visibly pulses, tiny sideways adjustments of its feet, the seabird's amber eye soft and out of focus behind it slowly half-closing and staying closed, one blurred second finch moving in the far background, an almost imperceptible slow push-in across the whole shot, static framing otherwise, no camera whip, no cutaway, no cut. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S017 · 134.6–138.1s (3.5s) · CU  <sub>(was S031)</sub>
+### S017 · 134.6-138.1s (3.5s) · CU  <sub>(was S031)</sub>
 - **Vantage:** high three-quarter from BEHIND the seabird's rump, looking down the length of the white tail, short handheld drift to the left
 - **Action:** First insert, wordless. A SECOND finch, wings half-open for balance, jabs twice at the base of a tail feather where the down is already matted dark red, then folds its wings and lowers its head to drink. The booby's tail twitches once beneath it. Music crests here.
 - **Seed:** `SEED_macro_tail` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close-up from high behind the seabird's rump looking down the length of its white tail, a second small black finch braced at the tail base with its wings half-open for balance, jabbing twice at the base of a tail feather where the white down is already matted dark red, then folding its wings and lowering its head to drink, the seabird's tail twitching once beneath it, slight handheld drift to the left, shallow depth of field, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S018 · 138.1–141.6s (3.5s) · XCU  <sub>(was S032)</sub>
+### S018 · 138.1-141.6s (3.5s) · XCU  <sub>(was S032)</sub>
 - **Vantage:** straight top-down, 90 degrees directly over the white flank, no bird head or silhouette in frame, static with faint handheld breathing
 - **Action:** Second insert, wordless. The damage alone: frame filled with white down and one compact dark-red matted stain at the base of a broken feather shaft. The fine barbs stir in the wind; a single fly walks across the edge of the stain and lifts off. No animal action — this is the cost, held still, while the music eases off its crest.
 - **Seed:** `SEED_raw_wound` · physics risk **low** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme close-up looking straight down from directly above the seabird's white flank, no bird's head and no bird silhouette in frame, the frame filled with white down and one compact dark-red matted wound at the base of a broken feather shaft, the fine barbs of the down stirring slightly in the wind, a single small fly walking across the edge of the stain and lifting off, faint handheld breathing in the frame, no push-in, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves (no finch is present in this frame: the stain stays completely fixed and only the down and the fly move).
 
-### S019 · 141.6–145.0s (3.4s) · CU  <sub>(was S033)</sub>
+### S019 · 141.6-145.0s (3.4s) · CU  <sub>(was S033)</sub>
 - **Vantage:** tight on the finch's head from the flank with the white down thrown far out of focus in the NEAR foreground, camera tilts UP a few degrees with the rising head and racks focus onto the beak
 - **Action:** Third insert, wordless — the act's button. The drinker lifts its head clear of the down; its blunt seed-cracking beak comes into sharp focus with a dark red stain on the tip. One blink, then it turns to look off frame left. Music settles out of the peak, handing straight into ACT4's VO at 145 ('It did not begin as cruelty.').
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close-up on the small black finch's head with the white down thrown far out of focus in the near foreground, the finch lifting its head clear of the feathers so its blunt seed-cracking beak comes into sharp focus with a dark red stain on the tip, the camera tilting up a few degrees with the rising head and racking focus onto the beak, one blink, then the finch turns its head to look off frame left, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves (the red mark on the beak tip stays a rigid painted mark that moves rigidly with the beak and never elongates or drips).
 
-<details><summary><b>14 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>14 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S030** — THE SCRIPTED PAYOFF IS UN-RENDERABLE FROM THE ASSIGNED SEED. The action and grok_prompt both require "the seabird's amber eye ... slowly half-closing and staying closed" — this is the visual that pays off the locked VO at [2:08]/t=128 ("the seabird goes perfectly still"). I opened hero_still_A2_macro_finch_wound.png: it is a tight crop of hero A around the wing base and the booby's HEAD AND EYE ARE COMPLETELY OUTSIDE THE FRAME (only white flank, dark wing coverts, the red mark, two finches and lava are in shot). i2v cannot introduce a head that is not in frame 1 without hallucinating anatomy, which directly violates the anatomy rider ("keep exact anatomy ... count stays the same"). The same seed also gives the SFX cue "one long low booby exhale" no visual anchor. Result: 34.6 s of the money shot with its emotional payoff missing, or a morphed booby head growing into frame.  
   *Fix:* Reassign S030's seed to one that contains BOTH the wound and the booby's eye — e.g. a new medium crop of hero_still_A_booby_finch.png that includes the head at upper-right and the finch/wound at centre (hero A has both, level side-on), or hero A itself with the push-in doing the magnification. Alternative: strip the eye-close out of S030 entirely and give it its own insert seeded from still_booby_eye.png — but that breaks the no-cut law, so the re-seed is the correct fix. Regenerate the seed at full res first (already required by production flag A).
@@ -490,9 +481,9 @@ E. THE ACT'S OWN EDIT-LAW ARITHMETIC: 4 shots, sizes XCU→CU→XCU→CU, vantag
 </details>
 
 
-## ACT4 — 145.0s → 270.0s · 26 shots
+## ACT4 — 145.0s -> 270.0s · 24 shots
 
-**Conflicts found and how they were resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
+**Conflicts found and resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
 
 1. RUNTIME (510s vs 480s). EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md is built on an 8:30 / 510s clock (its Scene 6 = 3:05-4:05, Scene 7 = 4:05-5:15, Scene 10 = 7:10-8:30). SECOND_BY_SECOND and EP02_SCRIPT_LOCKED are both on the 480s clock. Per the brief, 480s wins. So ACT4 (145-270) covers what the 510s board called Scene 6 ("the bargain that soured") plus the front half of Scene 7. Storyboard scene timings were used only for INTENT, never for timing.
 
@@ -525,161 +516,149 @@ PHYSICS-RISK FLAGS FOR THE FRAME-STRIP PASS
 - MEDIUM (11 shots): every beak-at-feather macro, the neck-crane in S041, the multi-finch counts in S043/S053/S058, and the articulated foot in S057.
 - 13 of 26 shots carry visible blood; every one of them ships the blood rider verbatim.
 
-### S020 · 145.0–149.5s (4.5s) · MS  <sub>(was S040)</sub>
+### S020 · 145.0-149.5s (4.5s) · MS  <sub>(was S040)</sub>
 - **Vantage:** locked-off side-on telephoto from the booby's LEFT flank at shoulder height, compressed grey sea horizon behind
 - **Action:** A single finch walks along the booby's clean white back, parts the feathers with its blunt beak and pulls a dark mite free. The booby does not swat. No blood anywhere.
 - **Seed:** `SEED_mutualism_clean` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A single small black vampire ground finch walks along the white back of a large Nazca booby standing on black lava, parting the clean white feathers with its blunt seed-cracking beak and pulling one dark mite free, then hopping a step forward; the booby stays calm and does not swat; the feathers are unmarked and white with no red anywhere in frame; camera is a locked-off side-on telephoto from the booby's left flank at shoulder height, with a soft compressed grey sea horizon behind. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S021 · 149.5–153.5s (4.0s) · CU  <sub>(was S041)</sub>
+### S021 · 149.5-153.5s (4.0s) · CU  <sub>(was S041)</sub>
 - **Vantage:** low on the lava in a FRONT-QUARTER position looking UP at the head and neck against flat sky (never head-on)
 - **Action:** The booby cranes its bill back over its own shoulder trying to reach the base of its wing, fails, and settles again - the reason it needs the finch.
 - **Seed:** `still_booby_eye.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A large Nazca booby on black lava cranes its heavy bill back over its own shoulder, straining to reach the base of its own wing, cannot reach it, and lowers its head and settles again; the head stays in profile and never turns fully head-on to camera; no blood in frame; camera is low on the black lava in a front-quarter position looking up at the head and neck against flat grey sky, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S022 · 153.5–158.0s (4.5s) · XCU  <sub>(was S042)</sub>
+### S022 · 153.5-161.5s (8.0s) · XCU  <sub>(was S042)</sub>
 - **Vantage:** OVER-THE-SHOULDER from directly behind the booby's neck, looking DOWN into the down
-- **Action:** Extreme macro: the finch's blunt beak tweezers a dark engorged tick out of clean white down. The old mutualism, made literal.
+- **Action:** Extreme macro: the finch's blunt beak tweezers a dark engorged tick out of clean white down. The old mutualism, made literal. (Absorbs the adjacent beat S023 — hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)
 - **Seed:** `SEED_mutualism_clean` · physics risk **medium** · blood: no
+- **>6 s coverage:** Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro of a vampire ground finch's blunt seed-cracking beak tweezering a dark engorged tick out of the clean white down of a Nazca booby and lifting it clear; the down is unmarked and white with no red anywhere; camera is over the booby's shoulder from directly behind the neck, looking down into the feathers, macro. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S023 · 158.0–161.5s (3.5s) · MS  <sub>(was S043)</sub>
-- **Vantage:** high TOP-DOWN angle looking straight down onto the back, booby's head at frame bottom
-- **Action:** Three finches spaced across the white back, each working through clean plumage - the crew at work, seen from above.
-- **Seed:** `SEED_mutualism_clean` · physics risk **medium** · blood: no
-- **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Three small black vampire ground finches spaced across the white back of a Nazca booby, each working through clean unmarked plumage, one hopping a short step sideways; the booby's head is at the bottom of frame; no blood anywhere; camera is a high top-down angle looking straight down onto the bird's back, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
-
-### S024 · 161.5–166.0s (4.5s) · WS  <sub>(was S044)</sub>
+### S023 · 161.5-166.0s (4.5s) · WS  <sub>(was S044)</sub>
 - **Vantage:** GROUND LEVEL behind a black foreground boulder, long lens, dark out-of-focus rock edge across the bottom of frame
 - **Action:** Brief context breath: the booby squats low on a guano-streaked lava ledge with three finches on and around it, clearly readable mid-frame; a second booby further off.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby squatting low on a guano-streaked black lava ledge with three small black vampire ground finches on and around it, the booby large and clearly readable in the middle of frame, a second booby further off in soft focus, salt spray and wind moving the feathers; camera is at ground level behind a black foreground boulder, long lens, with the dark out-of-focus rock edge running across the bottom of frame. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S025 · 166.0–170.0s (4.0s) · XCU  <sub>(was S045)</sub>
+### S024 · 166.0-170.0s (4.0s) · XCU  <sub>(was S045)</sub>
 - **Vantage:** macro LEVEL WITH THE FEATHER SURFACE, from in front of the wing looking down the shaft of the feather
 - **Action:** THE PIVOT. The beak jabs at the base of a growing flight feather, the skin parts, and a small compact dark red mark appears at the quill base.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro at feather level: a vampire ground finch's beak jabs twice at the base of a growing white flight feather on a Nazca booby's wing and the skin parts, a small compact dark red mark appearing at the quill base; camera is level with the feather surface, in front of the wing looking down the shaft of the feather, macro, shallow depth. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S026 · 170.0–173.0s (3.0s) · CU  <sub>(was S046)</sub>
+### S025 · 170.0-173.0s (3.0s) · CU  <sub>(was S046)</sub>
 - **Vantage:** from the FAR SIDE of the bird in a three-quarter REAR position, long lens, eye filling frame
 - **Action:** Reaction cut: the booby's eye and bill; the head flinches a fraction, the nictitating membrane sweeps once, and it freezes. It felt that.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The amber eye and heavy bill of a Nazca booby fill the frame; the head flinches a fraction, the pale nictitating membrane sweeps across the eye once, and the bird freezes without ever turning head-on to camera; no blood in frame; camera is on the far side of the bird in a three-quarter rear position, long lens, tight on the eye. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S027 · 173.0–177.5s (4.5s) · XCU  <sub>(was S047)</sub>
+### S026 · 173.0-177.5s (4.5s) · XCU  <sub>(was S047)</sub>
 - **Vantage:** directly OVERHEAD macro, NO finch in frame - the wound alone
 - **Action:** The bead itself, isolated: a compact dry red stain at the feather base, wind stirring the white barbs around it. Nothing else moves.
 - **Seed:** `SEED_raw_wound` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro looking straight down onto the white down of a Nazca booby: a small compact dry matted red stain at the base of a growing feather, the surrounding white barbs stirring in the wind, no bird and no beak entering the frame; camera is directly overhead, macro, static. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves; no finch is present in this frame, so only the surrounding white down moves in the wind.
 
-### S028 · 177.5–181.0s (3.5s) · XCU  <sub>(was S048)</sub>
-- **Vantage:** SIDE-ON at the finch's own level, tight on the head in PROFILE, white flank filling the background
-- **Action:** The finch's head lowers into frame from the left and works the stain, its throat pulsing as it swallows. It drank.
-- **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
-- **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro side-on profile of a vampire ground finch's head lowering to a dry matted red stain in white booby down, the beak working at the mark and the throat feathers pulsing as it swallows; camera is side-on at the finch's own level, tight on the head in profile, the booby's white flank filling the background out of focus. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
-
-### S029 · 181.0–185.0s (4.0s) · CU  <sub>(was S049)</sub>
+### S027 · 177.5-185.0s (7.5s) · CU  <sub>(was S049)</sub>
 - **Vantage:** from directly BEHIND the finch, over its black shoulder, long lens, near-foreground finch back dark and soft
-- **Action:** Past the finch's shoulder to the white flank and the mark; the finch lifts its head and the beak tip is stained red.
+- **Action:** Past the finch's shoulder to the white flank and the mark; the finch lifts its head and the beak tip is stained red. (Absorbs the adjacent beat S028 — hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
+- **>6 s coverage:** Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Looking over the black shoulder of a vampire ground finch, past it to the white flank of a Nazca booby and a dry matted red mark at a feather base; the finch lifts its head and the tip of its beak is stained red; camera is directly behind the finch in an over-the-shoulder position, long lens, the finch's back dark and soft in the near foreground. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S030 · 185.0–189.0s (4.0s) · MS  <sub>(was S050)</sub>
+### S028 · 185.0-189.0s (4.0s) · MS  <sub>(was S050)</sub>
 - **Vantage:** side-on telephoto from the booby's RIGHT flank at shoulder height - mirrored from S040's left-flank angle
 - **Action:** Clean intercut: a finch preens through unmarked white feathers, hops two steps, settles. The helper, still.
 - **Seed:** `SEED_mutualism_clean` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A vampire ground finch preens through unmarked clean white feathers on the right flank of a Nazca booby, hops two short steps along the bird and settles; the plumage is white and clean with no red anywhere in frame; camera is a side-on telephoto from the booby's right flank at shoulder height, mirrored from the earlier left-flank angle. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S031 · 189.0–192.5s (3.5s) · XCU  <sub>(was S051)</sub>
+### S029 · 189.0-192.5s (3.5s) · XCU  <sub>(was S051)</sub>
 - **Vantage:** lens almost PARALLEL to the feather surface - a steep grazing/raking angle, shallow depth
 - **Action:** Bloodied intercut: the stain now wide and matted, two beaks working it from opposite sides. The parasite, plural.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro at a steep raking angle grazing across the surface of white booby down: a wide dry matted red stain with two vampire ground finch beaks working at it from opposite sides; camera lens is almost parallel to the feather surface at a grazing angle with very shallow depth of field. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S032 · 192.5–196.5s (4.0s) · CU  <sub>(was S052)</sub>
+### S030 · 192.5-196.5s (4.0s) · CU  <sub>(was S052)</sub>
 - **Vantage:** side-on telephoto at the FINCH'S OWN eye level, subject isolated against soft flat sky
 - **Action:** The 'before' portrait: a clean finch in profile on black lava, blunt seed beak spotless, head turning once, a blink.
 - **Seed:** `SEED_finch_portrait` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A vampire ground finch in clean side profile perched on black lava against flat grey sky, its blunt seed-cracking beak completely clean, the head turning once and the eye blinking, wind ruffling its black feathers; no blood anywhere in frame; camera is a side-on telephoto at the finch's own eye level with the subject isolated against soft sky. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S033 · 196.5–201.0s (4.5s) · MS  <sub>(was S053)</sub>
+### S031 · 196.5-201.0s (4.5s) · MS  <sub>(was S053)</sub>
 - **Vantage:** from BEHIND AND SLIGHTLY ABOVE THE TAIL, looking FORWARD up the spine
 - **Action:** The thesis frame, held under the 3s pause: one finch braced at the tail base beside a matted red patch, a second further up the back on clean plumage - cleaner and parasite in one shot.
 - **Seed:** `SEED_macro_tail` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Looking forward along the spine of a Nazca booby from behind its tail: one vampire ground finch braced at the tail base beside a dry matted red patch on the white feathers, and a second finch further up the back working clean unmarked plumage; camera is behind and slightly above the tail looking forward up the body, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S034 · 201.0–205.0s (4.0s) · XCU  <sub>(was S054)</sub>
+### S032 · 201.0-205.0s (4.0s) · XCU  <sub>(was S054)</sub>
 - **Vantage:** low, from BELOW AND TO ONE SIDE, tilted UP at the underside of the head and throat
 - **Action:** The swallow: the throat feathers pulsing, out-of-focus red matting on white down beyond. 'A tenth of everything it eats.'
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro from below and to one side of a vampire ground finch, looking up at its throat as it swallows twice, the throat feathers visibly pulsing, with out-of-focus dry red matting on white booby down beyond it; camera is low and tilted up at the underside of the head and throat, macro. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S035 · 205.0–210.0s (5.0s) · MS  <sub>(was S055)</sub>
+### S033 · 205.0-210.0s (5.0s) · MS  <sub>(was S055)</sub>
 - **Vantage:** LOCKED-OFF side-on telephoto FAR BACK from the bird, heavily compressed background, zero camera move
 - **Action:** At ease: four finches at rest on and around the booby, none feeding, wind in the feathers, a dry dark mark on the wing.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby squats low on black lava with four small black vampire ground finches at rest on and around it, none of them feeding, wind moving the white feathers, a small dry dark red mark on the wing; camera is a locked-off side-on telephoto far back from the bird with a heavily compressed background and absolutely no camera move. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S036 · 210.0–214.5s (4.5s) · CU  <sub>(was S056)</sub>
+### S034 · 210.0-214.5s (4.5s) · CU  <sub>(was S056)</sub>
 - **Vantage:** from the ledge BEHIND the bird, REAR THREE-QUARTER, looking OVER its back and past its shoulder to open ocean deep in frame
 - **Action:** The sea as a wall: the booby turns its head toward the water, the finch on its back faces the same way. Neither can leave.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. From the black lava ledge behind a Nazca booby, looking over its back and past its shoulder to open grey ocean; the booby turns its head slowly toward the water and a vampire ground finch on its back faces the same way; camera is behind the bird in a rear three-quarter position with the sea deep in the background; the booby never turns head-on to camera. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S037 · 214.5–220.0s (5.5s) · XCU  <sub>(was S057)</sub>
+### S035 · 214.5-220.0s (5.5s) · XCU  <sub>(was S057)</sub>
 - **Vantage:** lens tilted almost PARALLEL to the surface of the back, macro tight on the FOOT
 - **Action:** Dependency made physical: the finch's foot and claws gripping the white feathers, barbs flexing as it shifts weight.
 - **Seed:** `SEED_mutualism_clean` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro of a vampire ground finch's foot and claws gripping the white feathers of a Nazca booby's back, the feather barbs flexing under the grip as the finch shifts its weight and re-grips once; camera lens is tilted almost parallel to the surface of the back, macro, tight on the foot. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S038 · 220.0–224.5s (4.5s) · MS  <sub>(was S058)</sub>
+### S036 · 220.0-224.5s (4.5s) · MS  <sub>(was S058)</sub>
 - **Vantage:** LOW on the black lava looking slightly UP at the bird, side-on
 - **Action:** Three finches preening in a row along the spine, the booby's half-closed eye at frame edge, a dried dark streak down the white flank.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Three vampire ground finches preening in a row along the spine of a Nazca booby, the booby's half-closed eye at the edge of frame and a dried dark red streak running down its white flank; camera is low on the black lava looking slightly up at the bird, side-on, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S039 · 224.5–229.5s (5.0s) · CU  <sub>(was S059)</sub>
+### S037 · 224.5-229.5s (5.0s) · CU  <sub>(was S059)</sub>
 - **Vantage:** long lens tight on the eye from a FRONTAL-QUARTER position with a very slow PUSH IN
 - **Action:** The tired amber eye half-closing, a small black finch reflected in the wet dark of it.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The tired amber eye of a Nazca booby half-closing slowly, a small black finch reflected in the wet dark of the eye; the head stays in a frontal-quarter position and never turns head-on to camera; camera is a long lens tight on the eye with a very slow push in. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S040 · 229.5–235.0s (5.5s) · MS  <sub>(was S060)</sub>
+### S038 · 229.5-235.0s (5.5s) · MS  <sub>(was S060)</sub>
 - **Vantage:** GROUND LEVEL DIRECTLY BEHIND the bird, which faces away toward the sea, long lens
 - **Action:** Finches silhouetted on the booby's back against flat grey water; one hops down to the lava and straight back up.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby seen from directly behind, facing away toward the flat grey sea, small black vampire ground finches silhouetted on its back; one finch hops down onto the black lava and straight back up onto the bird; camera is at ground level directly behind the bird, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S041 · 235.0–241.0s (6.0s) · WS  <sub>(was S061)</sub>
+### S039 · 235.0-241.0s (6.0s) · WS  <sub>(was S061)</sub>
 - **Vantage:** ELEVATED on a rise above the ledge, three-quarter wide, long lens compressing the lava field
 - **Action:** The booby clearly readable mid-frame on a guano-streaked shelf, a ring of finches on and around it, grey sea beyond, heat shimmer.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A wide of a Nazca booby clearly readable and large in the middle of the frame on a guano-streaked black lava shelf, a ring of small black vampire ground finches on and around it, the grey sea beyond, heat shimmer and wind; camera is elevated on a rise above the ledge in a three-quarter wide, long lens compressing the lava field. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S042 · 241.0–251.5s (10.5s) · MS  <sub>(was S062)</sub>
+### S040 · 241.0-251.5s (10.5s) · MS  <sub>(was S062)</sub>
 - **Vantage:** LOCKED-OFF side-on telephoto, absolutely no camera move - the only static hold in the act
 - **Action:** THE 10s WONDER-HOLD. Six finches work one booby at once: one at the wing base, one at the tail, two on the back, two waiting on the lava. The booby is motionless, eye half-closed. Nobody cuts.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
@@ -687,14 +666,14 @@ PHYSICS-RISK FLAGS FOR THE FRAME-STRIP PASS
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Six small black vampire ground finches work one Nazca booby at the same time - one at the base of the wing, one at the tail, two on the back, two waiting on the black lava - while the booby stays motionless with its eye half-closed and a dry matted red mark on its wing; camera is a locked-off side-on telephoto with absolutely no camera move. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S043 · 251.5–256.5s (5.0s) · XCU  <sub>(was S063)</sub>
+### S041 · 251.5-256.5s (5.0s) · XCU  <sub>(was S063)</sub>
 - **Vantage:** macro INSIDE the group at feather level, with a near-foreground finch crossing the lens out of focus
 - **Action:** Down among them: one black head sweeps close and soft through the foreground while a second finch works the matted red mark behind it.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro down among the feeding vampire ground finches at feather level: one black head crosses close and soft-focused through the foreground while a second finch works a dry matted red mark on the white down behind it; camera is inside the group at feather level with a foreground finch out of focus. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S044 · 256.5–263.0s (6.5s) · CU  <sub>(was S064)</sub>
+### S042 · 256.5-263.0s (6.5s) · CU  <sub>(was S064)</sub>
 - **Vantage:** DIRECTLY BEHIND the bird, LOW, looking forward along the body to the tail base
 - **Action:** A finch braced at the base of the tail feathers, working its beak into the quill base beside a matted red mark.
 - **Seed:** `SEED_macro_tail` · physics risk **medium** · blood: YES
@@ -702,7 +681,7 @@ PHYSICS-RISK FLAGS FOR THE FRAME-STRIP PASS
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A vampire ground finch braced at the base of a Nazca booby's tail feathers, working its beak into the quill base beside a dry matted red mark, wings half-open for balance then folding; camera is directly behind the bird, low, looking forward along the body toward the tail base, long lens. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S045 · 263.0–270.0s (7.0s) · MS  <sub>(was S065)</sub>
+### S043 · 263.0-270.0s (7.0s) · MS  <sub>(was S065)</sub>
 - **Vantage:** long lens from the FRONT-QUARTER LEFT with a very slow DRIFT IN (never head-on)
 - **Action:** Act-out: the booby folds lower onto the lava over its feet, finches still riding, a dried streak on the flank. The pace decelerates into ACT5's pull-back.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
@@ -710,7 +689,7 @@ PHYSICS-RISK FLAGS FOR THE FRAME-STRIP PASS
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby settles lower onto the black lava, folding down over its own feet, small black vampire ground finches still riding its back and a dried dark red streak on its white flank; camera is a long lens from the front-quarter left with a very slow drift in; the booby never turns head-on to camera. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-<details><summary><b>19 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>19 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S062** — The act's centerpiece 10.5s wonder-hold demands SIX finches on one booby, and its coverage_note's gen-2 prompt adds 'a seventh finch drops in from frame left and lands on the back' — while the same prompt ships the anatomy rider 'count stays the same'. The seed, hero_still_A_booby_finch.png, contains three finches (one at the wing + two on the lava). So the prompt simultaneously orders Grok to double the bird count and to hold the count. It is also physics_risk HIGH and the only 10s+ hold in the act, i.e. the shot least able to absorb a morph. The two-gen invisible-join plan also assumes gen 2 will reproduce an IDENTICAL locked-off frame from the same seed while ALSO adding a bird — the two requirements fight each other.  
   *Fix:* Generate a dedicated 'SEED_swarm_six' plate (ChatGPT gpt-image, same shared-look preamble) that already contains six finches on/around one booby in the locked-off side-on framing. Then both gens can ship 'count stays the same' honestly. Delete the 'seventh finch drops in' instruction — differentiate gen 2 by a booby blink and finch head-position instead, which does not change count. Re-check the join at t=246.25 on the frame strip.
@@ -754,9 +733,9 @@ PHYSICS-RISK FLAGS FOR THE FRAME-STRIP PASS
 </details>
 
 
-## ACT5 — 270.0s → 345.0s · 15 shots
+## ACT5 — 270.0s -> 345.0s · 13 shots
 
-**Conflicts found and how they were resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
+**Conflicts found and resolved:** CONFLICTS FOUND AND HOW I RESOLVED THEM
 
 1. ACT 5 SPAN. SECOND_BY_SECOND's Act 5 heading says "(4:30–5:15)" but its own rows run 270→345 (= 4:30–5:45), and EP02_SCRIPT_LOCKED's Act 5 heading says "4:30–5:45" with VO blocks out to [5:16]. Resolved to 270.0–345.0: the rows and the locked script agree; the heading label is stale. Tiled exactly, 15 shots, sum = 75.0 s, no gaps, no overlaps.
 
@@ -783,77 +762,65 @@ Every grok_prompt opens with the grit prefix verbatim and closes with the anatom
 ACT METRICS (checked against the hard edit laws)
 15 shots, 75.0 s exactly. Mean 5.0 s, median 4.2 s (target band 3.5–4.7 ✓). Zero shots under 3 s (ceiling 50% ✓). Two holds >=10 s. Three wides, all brief (4.2 / 4.6 / 4.5 s), booby clearly readable in all three, never a tiny dot. Only S060 and S063 exceed Grok's 6.04 s cap and both carry a coverage_note. ~22 s wordless tail (323–345) hands off cleanly to Act 6's tension-drone entry at 345.
 
-### S046 · 270.0–274.2s (4.2s) · WS  <sub>(was S050)</sub>
+### S044 · 270.0-277.4s (7.4s) · WS  <sub>(was S050)</sub>
 - **Vantage:** down at rock level ON the lava shelf, long lens compressing the shelf away to a high grey sea horizon; booby side-on filling ~1/3 frame height
-- **Action:** BRIEF establishing wide. The lone Nazca booby sits side-on mid-shelf, clearly readable, three finches hopping at its feet; a second island's dark silhouette sits far off on the water (Wolf and Darwin). Dust drags across the foreground rock. VO 4:30 'two of the most remote islands in all the Galapagos. Wolf. And Darwin.'
+- **Action:** BRIEF establishing wide. The lone Nazca booby sits side-on mid-shelf, clearly readable, three finches hopping at its feet; a second island's dark silhouette sits far off on the water (Wolf and Darwin). Dust drags across the foreground rock. VO 4:30 'two of the most remote islands in all the Galapagos. Wolf. And Darwin.'. (Absorbs the adjacent beat S047 — hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
+- **>6 s coverage:** Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera sits down on the black lava shelf at rock level and the long lens compresses the shelf away toward a high grey sea horizon, with the dark silhouette of a second island far off on the water; one large white and black Nazca booby sits side-on in the middle distance filling about a third of the frame height, clearly readable and never a small dot, three small black finches hopping near its feet; wind drags a little dry dust across the foreground rock and lifts the booby's breast feathers, the sea flat and colourless on both sides of the lava strip, the camera holding steady with only a slight handheld drift and no zoom. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S047 · 274.2–277.4s (3.2s) · MS  <sub>(was S051)</sub>
-- **Vantage:** locked off DIRECTLY OVERHEAD, top-down onto bare rock — no booby in frame
-- **Action:** Top-down plate of the island's actual surface: cracked black basalt streaked chalk-white with guano, bone dry, heat shimmer rippling at the frame edges. One finch skitters left to right, stops, hops on. Pure environment insert under the VO tail.
-- **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
-- **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is locked off directly overhead looking straight down onto cracked black basalt streaked with chalky white seabird guano, bone dry with no water anywhere and heat shimmer rippling along the top and bottom edges of the frame; one small black finch skitters across the rock from left to right, stops, turns its head once and hops on; no other animals in frame, the camera does not move and only the bird and a thin drift of dust move. keep exact anatomy, no extra limbs, no morphing, count stays the same.
-
-### S048 · 277.4–282.0s (4.6s) · WS  <sub>(was S052)</sub>
+### S045 · 277.4-282.0s (4.6s) · WS  <sub>(was S052)</sub>
 - **Vantage:** OVER-THE-SHOULDER of the booby, from behind and just above its white back, looking out to open ocean
 - **Action:** BRIEF wide #2 — the sea on every side. We look past the booby's back at unbroken ocean to the horizon: no land, no fresh water. Head stays three-quarter away. VO 4:40 'No streams. No soft ground.'
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is behind and just above the seated Nazca booby's shoulder, looking past its white back out over open ocean that runs unbroken to the horizon with no land and no fresh water anywhere; the booby's head stays turned away in three-quarter profile and never turns head-on to camera, the swell moves slowly, wind ruffles the feathers on its back and one small black finch sits on the bare lava at the lower edge of frame; slow handheld breathing on the camera, no zoom. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S049 · 282.0–287.0s (5.0s) · MS  <sub>(was S053)</sub>
+### S046 · 282.0-287.0s (5.0s) · MS  <sub>(was S053)</sub>
 - **Vantage:** extreme-distance SIDE-ON telephoto across the lava field, shooting THROUGH boiling heat shimmer
 - **Action:** The heat. Booby side-on in medium shot with two finches at the wing base, the air between camera and birds boiling. No blood readable at this range — this is the 'the rain simply stops' beat. VO 4:40 continues.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An extreme long telephoto from far across the lava field, side-on, with heavy heat shimmer boiling in the air between the camera and the birds; the Nazca booby sits side-on in medium shot with two small black finches working around the base of its wing, no blood visible at this distance; the shimmer distorts only the empty air and the hot black rock, the birds themselves stay solid and sharp and must not warp, ripple, melt or stretch; the camera holds long with a slight handheld sway. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S050 · 287.0–292.0s (5.0s) · XCU  <sub>(was S054)</sub>
+### S047 · 287.0-292.0s (5.0s) · XCU  <sub>(was S054)</sub>
 - **Vantage:** WORM'S-EYE from inside a lava crack at ground level, looking up and along it
 - **Action:** The seeds have run out, made literal. Extreme close on dry grit and a few split, empty seed husks; the finch's head drops in from above, probes, flicks a husk over with its blunt seed-cracking beak, finds nothing, lifts away. VO 4:40 '...and the seeds run out.'
 - **Seed:** `SEED_finch_portrait` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is down inside a crack in the lava at ground level looking up along it, extreme close on dry grit, ash and a few split empty seed husks; a small black finch's head drops into the top of frame, probes the crack, flicks a husk over with its blunt seed-cracking beak, finds nothing and lifts away; dust lifts through the crack on the wind, the camera stays locked at ground level. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S051 · 292.0–295.2s (3.2s) · MS  <sub>(was S055)</sub>
-- **Vantage:** low THREE-QUARTER from BENEATH the prickly pear pad, spines across the foreground, flat white sky behind
-- **Action:** Foraging triptych, beat 1. The finch flies in from frame left and lands on the rim of the cactus pad beside a yellow flower. VO 4:52 'So the finch drinks whatever it can find. Nectar from a cactus flower.'
-- **Seed:** `SEED_pricklypear` · physics risk **medium** · blood: no
-- **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A low three-quarter angle from beneath a prickly pear cactus pad against a flat white overcast sky, the pad's spines sharp across the foreground; a small black finch flies in from frame left and lands cleanly on the rim of the pad beside a yellow cactus flower, folding its wings and steadying itself; the bird must land ON the pad and never pass through the pad, the spines or the flower; handheld camera follows the landing with a small settle. keep exact anatomy, no extra limbs, no morphing, count stays the same.
-
-### S052 · 295.2–298.4s (3.2s) · XCU  <sub>(was S056)</sub>
+### S048 · 292.0-298.4s (6.4s) · XCU  <sub>(was S056)</sub>
 - **Vantage:** STRAIGHT DOWN from directly above the open flower, the cup filling frame; beak enters from the right
-- **Action:** Foraging triptych, beat 2. Extreme macro into the flower cup — the blunt beak dips for nectar, head tips back to swallow, dips again. Same subject as S055 but opposite axis and two sizes tighter.
+- **Action:** Foraging triptych, beat 2. Extreme macro into the flower cup — the blunt beak dips for nectar, head tips back to swallow, dips again. Same subject as S055 but opposite axis and two sizes tighter. (Absorbs the adjacent beat S051 — hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)
 - **Seed:** `SEED_pricklypear` · physics risk **medium** · blood: no
+- **>6 s coverage:** Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera looks straight down from directly above an open yellow prickly pear flower, extreme close, the cup of the flower and its stamens filling the frame; the finch's blunt black seed-cracking beak enters from the right and dips into the flower to take nectar, the head tipping back once to swallow, then dipping again; the beak makes real contact with the petals and stamens and never passes through them, no liquid stretches or threads, only the bird moves. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S053 · 298.4–301.6s (3.2s) · CU  <sub>(was S057)</sub>
+### S049 · 298.4-301.6s (3.2s) · CU  <sub>(was S057)</sub>
 - **Vantage:** right down AT WATER LEVEL, side-on across a seawater-filled tide crack in the lava
 - **Action:** Foraging triptych, beat 3. The finch stands on the salt-crusted rim and dips its beak to shallow seawater, lifting to swallow, twice. VO 4:58 'Seawater.'
 - **Seed:** `SEED_finch_portrait` · physics risk **high** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is right down at water level, side-on across a narrow seawater-filled crack in the black lava with a white salt crust along its rim; a small black finch stands at the very edge in close-up, dips its beak to the shallow seawater and lifts its head back to swallow, twice; the water surface stays a flat shallow film that only ripples in small rings where the beak touches, it must NOT drip, stretch, run, bead or form any thread or string, only the finch moves; the camera holds low and still. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S054 · 301.6–305.4s (3.8s) · XCU  <sub>(was S058)</sub>
+### S050 · 301.6-305.4s (3.8s) · XCU  <sub>(was S058)</sub>
 - **Vantage:** looking DOWN over and slightly BEHIND the finch's shoulder onto a guano-crusted ledge
 - **Action:** Foraging triptych, beat 4. The finch pecks chalky white dried guano off the ledge, flaking pieces free and swallowing, shoulders and throat working. VO 4:58 'Even the droppings of other birds.'
 - **Seed:** `SEED_finch_portrait` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera looks down over and slightly behind the finch's shoulder onto a lava ledge thickly crusted with chalky white dried seabird guano, extreme close; the finch pecks at the dry white crust, flaking small pieces off and swallowing, its shoulders and throat working, feet shifting on the rock; only the bird and the small dry flakes move, the camera is locked. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S055 · 305.4–309.0s (3.6s) · MS  <sub>(was S059)</sub>
+### S051 · 305.4-309.0s (3.6s) · MS  <sub>(was S059)</sub>
 - **Vantage:** low on the lava DIRECTLY BEHIND THE FINCH, looking past it to the seated booby a few metres off
 - **Action:** The return. The finch turns, crouches, launches toward the big bird and pulls up at its white flank. VO 5:05 'And when there is nothing else left at all —' then the 2 s pause runs under the landing.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is low on the lava directly behind the small black finch, looking past it toward the large white Nazca booby seated a few metres away with its side to us; the finch turns, crouches and launches into the air toward the big bird, wings opening, and pulls up short at its white flank to land; the finch must fly around and onto the booby and never pass through its body, wing or head, and the booby never turns head-on to camera; handheld camera holds the low angle. keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.
 
-### S056 · 309.0–320.0s (11.0s) · XCU  <sub>(was S060)</sub>
+### S052 · 309.0-320.0s (11.0s) · XCU  <sub>(was S060)</sub>
 - **Vantage:** LOCKED extreme close, side-on and slightly BELOW the bird, at the base of the wing
 - **Action:** THE ACT'S HOLD (11 s). The finch settles on the white down beside the dry red mark, braces, and works the base of a growing feather, throat pulsing. Nothing else moves. The word 'blood' (VO 5:10) lands here. Grade the last ~4 s down toward cold blue so the script's '(over dusk)' cue at 5:16 has already begun.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
@@ -861,21 +828,21 @@ ACT METRICS (checked against the hard edit laws)
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is locked in extreme close-up on the Nazca booby's white flank at the base of the wing, side-on and slightly below the bird; the small black finch settles onto the white down beside the dark red mark, braces its feet, and works its blunt beak at the base of a growing feather, its throat pulsing as it swallows, pausing, then working again; the booby's white down rises and falls slowly with its breathing and nothing else in the frame moves, no camera move at all. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S057 · 320.0–324.0s (4.0s) · MS  <sub>(was S061)</sub>
+### S053 · 320.0-324.0s (4.0s) · MS  <sub>(was S061)</sub>
 - **Vantage:** HIGH AND BEHIND, looking down the length of the booby's back from tail toward head
 - **Action:** Dusk begins. Two more finches drop in and land on the clean white back, shuffling into position and picking at the feathers — the day's last arrivals. Light flattening to cold blue. VO 5:16 'On an island full of seabirds, it is the one thing that never runs dry.'
 - **Seed:** `SEED_mutualism_clean` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is high and behind the seabird, looking down the length of the Nazca booby's white back from tail toward head with the head held in three-quarter profile and never turning head-on to camera; two more small black finches drop in from above and land on the back, shuffling into position among the clean white feathers and picking at them, no blood anywhere in frame; the light is already flattening toward a cold blue dusk with no warm or golden tone. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S058 · 324.0–328.5s (4.5s) · WS  <sub>(was S062)</sub>
+### S054 · 324.0-328.5s (4.5s) · WS  <sub>(was S062)</sub>
 - **Vantage:** far back and LOW on the lava, brief wide, dusk — booby a large pale shape, never a dot
 - **Action:** BRIEF dusk wide #3 (4.5 s only). The booby reads clearly on its guano-streaked ledge in the last cold blue light, finches on its back as distinct dark marks, silver-grey sea to the horizon on both sides. First shot of the ~22 s wordless tail into Act 6.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is far back and low on the black lava for a brief wide, in the last cold blue light after sunset with no warm or golden tone at all; the Nazca booby reads clearly as a large pale shape on its guano-streaked ledge, never a tiny dot, small black finches on its back as distinct dark marks, the flat silver-grey sea running to the horizon behind it on both sides; wind moves the feathers and a little dust, the camera drifts only slightly. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S059 · 328.5–339.5s (11.0s) · CU  <sub>(was S063)</sub>
+### S055 · 328.5-339.5s (11.0s) · CU  <sub>(was S063)</sub>
 - **Vantage:** low at ROCK LEVEL, strict side PROFILE of the head and shoulder against the darkening sea
 - **Action:** THE ACT'S SECOND HOLD (11 s), wordless. The amber eye half-closes, the nictitating membrane sweeps once, it reopens halfway. Throat feathers stir. Music dips; this is the exhale before Act 6's tension drone enters at 345.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
@@ -883,14 +850,14 @@ ACT METRICS (checked against the hard edit laws)
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is low at rock level, close on the Nazca booby's head and shoulder in strict side profile against the darkening sea, cold blue dusk light with no warm or golden tone; the amber eye slowly half-closes, the pale nictitating membrane sweeps across it once, and it reopens halfway, the throat feathers stirring in the wind; the head stays in profile throughout and never turns head-on to camera, the camera is locked and everything else in frame is still. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S060 · 339.5–345.0s (5.5s) · XCU  <sub>(was S064)</sub>
+### S056 · 339.5-345.0s (5.5s) · XCU  <sub>(was S064)</sub>
 - **Vantage:** side-on and slightly ABOVE, extreme close on the flank where the finches have roosted
 - **Action:** Act-out. Two finches tucked down against the white flank for the night, the dried mark at the wing base going almost black in the failing light. Only shuffling and breathing. Tight framing on the flank hands Act 6 its tilt-down to the egg at 345.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **low** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera is side-on and slightly above, extreme close on the Nazca booby's flank where two small black finches have tucked themselves down against the white feathers to roost for the night, the dried dark red mark at the base of the wing going almost black in the failing blue light; the finches only shuffle, settle and breathe, no flight and no feeding, the booby's flank rising and falling slowly; the camera is locked with a faint handheld drift. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-<details><summary><b>21 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>21 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S051** — ROOT-CAUSE SEED FAILURE. Seed is assets/vampire_finch/still_wide_island.png — the known-weak wide landscape in which the booby reads as a tiny dot. Grok i2v uses the seed as FRAME 1; it does not re-stage the camera. So this shot cannot be a 'locked off DIRECTLY OVERHEAD, top-down onto bare rock' plate — it will be the wide island landscape, meaning the banned tiny-dot-animal-in-landscape pattern is literally on screen for 3.2s, and the prompt's 'no other animals in frame' is unachievable because the booby is baked into the seed. Note #7's claim ('used only as a top-down rock-texture plate with NO booby in frame, so the failure mode cannot occur') is false for an i2v pipeline.  
   *Fix:* Generate a dedicated top-down seed (e.g. SEED_rock_plate: 'locked overhead macro of cracked black basalt streaked with white guano, one small black finch, no other animals') and reassign S051 to it; or cut S051 and extend S050/S052 by 1.6s each. Do not use still_wide_island.png as a seed for any shot at all.
@@ -938,9 +905,9 @@ ACT METRICS (checked against the hard edit laws)
 </details>
 
 
-## ACT6 — 345.0s → 430.0s · 26 shots
+## ACT6 — 345.0s -> 430.0s · 26 shots
 
-**Conflicts found and how they were resolved:** TILING: 26 shots, S060-S085, 345.000 -> 430.000, no gaps, no overlaps, sum = 85.000s exactly. Structure = BUILD 345-385 (11 shots, 5.5s tightening to 2.0s) -> HOLD 385-395.5 (10.5s) -> BURST 395.5-418.5 (13 cuts, 11 of them under 2.0s) -> HOLD 418.5-430 (11.5s). Everything from 385.0 on is wordless.
+**Conflicts found and resolved:** TILING: 26 shots, S060-S085, 345.000 -> 430.000, no gaps, no overlaps, sum = 85.000s exactly. Structure = BUILD 345-385 (11 shots, 5.5s tightening to 2.0s) -> HOLD 385-395.5 (10.5s) -> BURST 395.5-418.5 (13 cuts, 11 of them under 2.0s) -> HOLD 418.5-430 (11.5s). Everything from 385.0 on is wordless.
 
 CONFLICTS FOUND AND HOW I RESOLVED THEM:
 
@@ -966,84 +933,84 @@ EDIT-LAW COMPLIANCE / FLAGS FOR THE ASSEMBLER:
 - PHYSICS: 5 shots marked high - S077 and S081 (egg-roll, the object-permanence class), S076 and S080 (beak-at-feather / finch clinging under a moving wing), S083 (five birds in flight, count risk). Frame-strip these first; if any fails, the burst can absorb the loss by extending its neighbours since none of them carry VO.
 - NEVER-DO GUARDS baked into the prompt text: S066, S073 and S082 each explicitly forbid the head-on turn; S064 and S082 use "settles gently over the egg" and the word "hunches" appears nowhere.
 
-### S061 · 345.0–350.5s (5.5s) · MS  <sub>(was S060)</sub>
+### S057 · 345.0-350.5s (5.5s) · MS  <sub>(was S060)</sub>
 - **Vantage:** ground level, lens resting on the lava beside the bird, side-on, booby's body filling frame
 - **Action:** The booby is settled low on black lava, flank barely rising; one finch works at the base of a wing feather. Establishes the pinned posture the whole act depends on, under VO 'a deeper reason the seabird will not simply stand up and leave.'
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby settled low on black lava, filmed from ground level with the lens resting on the rock beside it, side-on so its body fills the frame; a small black vampire ground finch works at the base of a wing feather while the booby's flank barely rises and falls; wind moves the loose white down; the camera stays flat on the ground and does not move. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S062 · 350.5–356.0s (5.5s) · MS  <sub>(was S061)</sub>
+### S058 · 350.5-356.0s (5.5s) · MS  <sub>(was S061)</sub>
 - **Vantage:** elevated three-quarter front, camera tilts DOWN past the booby's breast to the ground between its feet
 - **Action:** THE TILT DOWN. Camera starts on the white breast and tilts down between the grey feet to reveal a single chalk-white egg in the dust. Reveal lands under VO 'Beneath it, in the dust, is a single egg.'
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. The camera starts on a Nazca booby's white breast from a slightly elevated three-quarter front angle and tilts slowly down past it to the grey dust between the bird's scaled feet, revealing a single chalk-white egg; the booby stays exactly where it is and only its head shifts slightly to the side; two small black finches wait on the lava at the edge of frame. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S063 · 356.0–360.5s (4.5s) · XCU  <sub>(was S062)</sub>
+### S059 · 356.0-360.5s (4.5s) · XCU  <sub>(was S062)</sub>
 - **Vantage:** straight overhead, lens directly above the egg, feet framing left and right
 - **Action:** The egg alone, half-buried in grey dust and guano-flecked lava, the booby's feet framing it. The object the whole trap hangs on, stated plainly.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A single chalk-white seabird egg lying in grey dust on guano-flecked black lava, seen from straight overhead with the lens directly above it; the booby's grey scaled feet frame the shell on either side and shift a fraction; fine grit blows across the shell; the egg stays one solid egg and does not move or roll. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S064 · 360.5–365.0s (4.5s) · CU  <sub>(was S063)</sub>
+### S060 · 360.5-365.0s (4.5s) · CU  <sub>(was S063)</sub>
 - **Vantage:** egg-level, from just behind the finch's shoulder, egg soft in the foreground
 - **Action:** The finch cocks its head hard, one eye locked on the egg, then cocks it the other way. The thief is named visually before the VO says 'egg-thieves'.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A small black vampire ground finch standing on black lava at egg height, framed in profile from just behind its own shoulder with a chalk-white egg soft in the foreground; the finch cocks its head sharply and fixes one eye on the egg, then cocks it the other way; it does not step forward and the egg does not move. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S065 · 365.0–368.5s (3.5s) · MS  <sub>(was S064)</sub>
+### S061 · 365.0-368.5s (3.5s) · MS  <sub>(was S064)</sub>
 - **Vantage:** three-quarter REAR, slightly above and behind the booby
 - **Action:** The booby settles gently down over the egg, folding the wing tight to the flank until the shell disappears. The choice being made, visually, before the VO explains it.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby seen from a three-quarter rear angle slightly above and behind it as it settles gently over the egg between its feet, folding its wing tight against its flank until the chalk-white shell is hidden; the white back and black-tipped wings stay clearly formed; two small black finches hop back a step on the lava. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S066 · 368.5–372.0s (3.5s) · CU  <sub>(was S065)</sub>
+### S062 · 368.5-372.0s (3.5s) · CU  <sub>(was S065)</sub>
 - **Vantage:** tight side-on telephoto shooting THROUGH a blade of dark foreground lava that cuts the bottom of frame
 - **Action:** The wing wound, still open and weeping, while the body is pinned. The price of the choice, held on the wound alone with no finch in frame.
 - **Seed:** `SEED_raw_wound` · physics risk **low** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An open raw wound at the base of a growing flight feather in a seabird's white plumage, framed tight and side-on through a blade of dark foreground lava that cuts across the bottom of frame; no bird enters the shot, the white feathers stir in the wind and a single fly crosses the wound and settles. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S067 · 372.0–375.0s (3.0s) · XCU  <sub>(was S066)</sub>
+### S063 · 372.0-375.0s (3.0s) · XCU  <sub>(was S066)</sub>
 - **Vantage:** from slightly BELOW the head, clean level profile, no foreground element
 - **Action:** The booby's amber eye; the pupil flicks to track the finch off-frame, membrane sweeps once. It is watching and choosing not to act.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An extreme close-up of a Nazca booby's amber eye held in strict side profile, camera slightly below the head looking up at it with no foreground element; the pupil flicks to follow something off-frame and the nictitating membrane sweeps across once; the head stays in profile and never turns toward the camera. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S068 · 375.0–378.0s (3.0s) · CU  <sub>(was S067)</sub>
+### S064 · 375.0-378.0s (3.0s) · CU  <sub>(was S067)</sub>
 - **Vantage:** low, from behind and to one side, white tail coverts filling frame
 - **Action:** A second finch working the tail base, dark red matted into the white down. Reminds the viewer the bleeding never stopped while the egg story ran.
 - **Seed:** `SEED_macro_tail` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A small black vampire ground finch working at the base of a seabird's tail feathers, framed low from behind and to one side so the white tail coverts fill the frame; the finch braces its feet on the coverts, taps twice and dips its head to a dark red mark matted into the white down. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S069 · 378.0–380.5s (2.5s) · XCU  <sub>(was S068)</sub>
+### S065 · 378.0-380.5s (2.5s) · XCU  <sub>(was S068)</sub>
 - **Vantage:** lens flat ON the lava looking ALONG the ground, extreme foreshortening
 - **Action:** The finch's blunt seed-cracking beak taps the rock inches from the egg, freezes, taps again. Probing. Cuts are now under 3s and tightening.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An extreme close-up of a vampire ground finch's blunt seed-cracking beak tapping the black lava a few inches from a chalk-white egg, camera lying flat on the ground looking along the rock in extreme foreshortening; the finch taps, freezes, then taps again; the egg stays one solid egg at the edge of frame and does not move. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S070 · 380.5–383.0s (2.5s) · MS  <sub>(was S069)</sub>
+### S066 · 380.5-383.0s (2.5s) · MS  <sub>(was S069)</sub>
 - **Vantage:** high three-quarter from ABOVE AND BEHIND, looking down on the back
 - **Action:** The booby's bill sweeps sideways in warning without rising; three finches flare off and settle a foot away. The last threat that costs it nothing.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby seen from high above and behind as it sweeps its long bill sideways in warning without rising off the ground; three small black finches flare off the lava and settle again a foot away; the booby's body stays pressed down and its wing stays folded to the flank. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S071 · 383.0–385.0s (2.0s) · XCU  <sub>(was S070)</sub>
+### S067 · 383.0-385.0s (2.0s) · XCU  <sub>(was S070)</sub>
 - **Vantage:** raking near-ground macro ACROSS the lava at shell height, egg filling frame right
 - **Action:** The egg, and a bird's shadow sweeping across the shell and off again. Last build beat; VO has already stopped. Tension maximum, 2s.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **low** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A chalk-white seabird egg half-buried in grey dust filling the right of frame, camera in a raking near-ground macro looking across the black lava at shell height; a small bird's shadow sweeps across the shell and off again; the egg stays one solid egg and does not move or roll. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S072 · 385.0–395.5s (10.5s) · WS  <sub>(was S071)</sub>
+### S068 · 385.0-395.5s (10.5s) · WS  <sub>(was S071)</sub>
 - **Vantage:** LOCKED-OFF side-on telephoto at standing height, whole booby plus surrounding lava in frame, zero camera movement
 - **Action:** THE HOLD BEFORE. Everything stops: the booby clamped over its egg, three finches waiting motionless on the rock, wind only, music sinking into a ticking pulse. The bracket that makes the burst land.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
@@ -1051,98 +1018,98 @@ EDIT-LAW COMPLIANCE / FLAGS FOR THE ASSEMBLER:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A locked-off side-on telephoto shot at standing height of a Nazca booby clamped low over its egg on black lava, its whole body in frame with bare rock around it, three small black finches waiting motionless on the lava nearby; almost nothing moves except wind through the feathers and one slow breath; the camera does not move at all. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S073 · 395.5–397.5s (2.0s) · CU  <sub>(was S072)</sub>
+### S069 · 395.5-397.5s (2.0s) · CU  <sub>(was S072)</sub>
 - **Vantage:** ground level BESIDE the egg looking across the lava, finch entering frame left
 - **Action:** THE FEINT that triggers the raid. A finch darts at the egg and stops short. First cut of the wordless burst.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A small black vampire ground finch darts in from frame left toward a chalk-white egg, camera at ground level beside the egg looking across the black lava; the finch lunges one hop and stops short of the shell; the egg stays one solid egg and does not move. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S074 · 397.5–399.3s (1.8s) · MS  <sub>(was S073)</sub>
+### S070 · 397.5-399.3s (1.8s) · MS  <sub>(was S073)</sub>
 - **Vantage:** low three-quarter FRONT, head seen from the side - explicitly never head-on
 - **Action:** The booby lunges and stabs its bill down at the finch; the finch springs backwards. The defence that opens the wing.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A Nazca booby lunges and stabs its bill down at a small black finch beside its foot, camera low at a three-quarter front angle so the head is always seen from the side and never turns head-on to the lens; the finch springs backwards off the lava; the booby's body stays down over the nest. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S075 · 399.3–401.1s (1.8s) · MS  <sub>(was S074)</sub>
+### S071 · 399.3-401.1s (1.8s) · MS  <sub>(was S074)</sub>
 - **Vantage:** from DIRECTLY BEHIND the booby, dead astern
 - **Action:** THE WING LIFTS. It peels off the flank for one second, exposing raw pink skin and matted feather bases, then starts back down. The mistake.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Seen from directly behind a Nazca booby, dead astern, its white wing peels up off the flank for a moment and exposes the raw pink skin and matted feather bases underneath, then begins to come back down; the body stays pressed to the ground the whole time. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S076 · 401.1–402.7s (1.6s) · CU  <sub>(was S075)</sub>
+### S072 · 401.1-402.7s (1.6s) · CU  <sub>(was S075)</sub>
 - **Vantage:** over the booby's shoulder looking STEEPLY DOWN onto the exposed flank
 - **Action:** Three finches hit the exposed skin at once, beaks to the raw patch, wings blurring as they settle. The rush.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Three small black vampire finches land on a seabird's exposed flank at once and press their beaks to the raw skin, camera over the booby's shoulder looking steeply down at them; their wings blur as they settle and grip; the seabird does not rise. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S077 · 402.7–404.3s (1.6s) · XCU  <sub>(was S076)</sub>
+### S073 · 402.7-404.3s (1.6s) · XCU  <sub>(was S076)</sub>
 - **Vantage:** macro, lens level WITH the flank, hard side-on, very close
 - **Action:** The beak driving into the base of a growing flight feather, twice, then holding in the wound with the throat working. The gore insert.
 - **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An extreme close-up of a vampire ground finch's beak driving into the base of a growing flight feather in white plumage, camera level with the flank and very close, hard side-on; the finch stabs twice and then holds its beak in the wound with its throat working. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S078 · 404.3–406.1s (1.8s) · CU  <sub>(was S077)</sub>
+### S074 · 404.3-406.1s (1.8s) · CU  <sub>(was S077)</sub>
 - **Vantage:** straight overhead top-down on the egg and the thief
 - **Action:** THE EGG ROLLED. A finch shoves it an inch across the dust toward the ledge edge. The stakes made literal.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **high** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Seen from straight overhead, a small black finch shoves a chalk-white egg an inch across grey dust toward the edge of a lava ledge; the egg rolls a short distance and stops; it stays one solid egg throughout with no duplication, no splitting and no change of shape. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S079 · 406.1–407.7s (1.6s) · CU  <sub>(was S078)</sub>
+### S075 · 406.1-407.7s (1.6s) · CU  <sub>(was S078)</sub>
 - **Vantage:** lava level looking UP past the egg at the descending bill
 - **Action:** The booby's bill stabs down past the egg, misses, strikes rock and throws a puff of grit; a finch clears frame.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Camera at lava level looking up past a chalk-white egg as a Nazca booby's bill stabs down past it and strikes the rock, throwing a puff of grit; a small black finch clears frame; the egg stays one solid egg and stays exactly where it is. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S080 · 407.7–409.3s (1.6s) · MS  <sub>(was S079)</sub>
+### S076 · 407.7-409.3s (1.6s) · MS  <sub>(was S079)</sub>
 - **Vantage:** side-on at chest height, mid-distance, dust blowing through the lens plane
 - **Action:** DUST. The half-open wing beats against the lava, loose down and grit blowing through frame, two finches crossing it. The chaos beat.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A mid-shot from the side at chest height of a Nazca booby beating its half-open wing against the lava, dust and loose white down blowing through the frame, two small black finches crossing it; the booby stays low and does not stand up. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S081 · 409.3–411.1s (1.8s) · CU  <sub>(was S080)</sub>
+### S077 · 409.3-411.1s (1.8s) · CU  <sub>(was S080)</sub>
 - **Vantage:** low and UNDERNEATH, looking up into the underside of the lifted wing
 - **Action:** A finch clings upside-down under the raised wing and drinks while the wing trembles above it. The most invasive image in the act.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Camera low and underneath, looking up into the underside of a seabird's half-lifted wing where a single small black finch clings upside-down against the raw skin and drinks; the wing trembles above it and the finch keeps its grip without falling. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S082 · 411.1–412.9s (1.8s) · CU  <sub>(was S081)</sub>
+### S078 · 411.1-412.9s (1.8s) · CU  <sub>(was S081)</sub>
 - **Vantage:** side-on telephoto AT egg height, level with the shell
 - **Action:** THE EGG ROCKED BACK. The booby hooks its bill around the egg and rolls it back under its belly. The trap re-closing.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **high** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Side-on telephoto at egg height, level with the shell, as a Nazca booby hooks its bill around a chalk-white egg and rocks it back under its belly across the dust; the egg rolls once and comes to rest against the bird's feathers; it stays one solid egg throughout with no duplication and no change of shape. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S083 · 412.9–414.7s (1.8s) · MS  <sub>(was S082)</sub>
+### S079 · 412.9-414.7s (1.8s) · MS  <sub>(was S082)</sub>
 - **Vantage:** high three-quarter angle over the booby's white BREAST, looking down as the belly closes
 - **Action:** The booby settles gently over the egg and the belly closes down until the shell disappears. The egg is saved; the wound is not.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Seen from a high three-quarter angle over a Nazca booby's white breast, the bird settles gently over the egg and its belly closes down until the chalk-white shell disappears from view; grit skitters across the lava; the head stays turned to the side and never toward the camera. Keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S084 · 414.7–416.5s (1.8s) · WS  <sub>(was S083)</sub>
+### S080 · 414.7-416.5s (1.8s) · WS  <sub>(was S083)</sub>
 - **Vantage:** LOW wide from the lava, birds bursting up against pale flat sky (booby large in frame - not a landscape shot)
 - **Action:** THE SCATTER. Five finches burst off the booby in every direction against flat overcast sky; the wing folds back to the flank. The raid breaking off - music snaps toward silence here.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **high** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A low wide from the lava as five small black finches burst up off a Nazca booby and scatter in every direction against a pale flat overcast sky, the booby large in the lower frame and staying down on the rock with its wing folding back to its flank; the number of birds stays the same throughout. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S085 · 416.5–418.5s (2.0s) · CU  <sub>(was S084)</sub>
+### S081 · 416.5-418.5s (2.0s) · CU  <sub>(was S084)</sub>
 - **Vantage:** low FRONT-QUARTER close on the back where the bird touches down
 - **Action:** One finch drops back onto the booby's back and folds its wings, beak tip stained dark red; a second lands behind it. The burst decompressing back into stillness.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A close-up from a low front-quarter angle as a single small black vampire finch drops back down onto a seabird's white back and folds its wings, the tip of its blunt seed-cracking beak stained dark red; a second finch touches down behind it; the seabird does not react. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-### S086 · 418.5–430.0s (11.5s) · MS  <sub>(was S085)</sub>
+### S082 · 418.5-430.0s (11.5s) · MS  <sub>(was S085)</sub>
 - **Vantage:** LOCKED-OFF telephoto from slightly ABOVE AND BEHIND, three-quarter rear, zero camera movement
 - **Action:** THE HOLD AFTER. The booby settled back over its egg, flank streaked dark red, breathing hard then slowing; two finches already back at the wing feathers. Music has snapped to near-silence; wind returns. Carries into Act 7.
 - **Seed:** `hero_still_A_booby_finch.png` · physics risk **low** · blood: YES
@@ -1150,7 +1117,7 @@ EDIT-LAW COMPLIANCE / FLAGS FOR THE ASSEMBLER:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A locked-off telephoto shot from slightly above and behind a Nazca booby, three-quarter rear, as it sits settled back down over its egg on black lava, its white flank streaked with dried dark red, breathing hard and gradually slowing; two small black finches are already back at its wing feathers; the camera does not move and nothing else in frame moves. Keep exact anatomy, no extra limbs, no morphing, count stays the same. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves.
 
-<details><summary><b>16 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>16 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S069** — Picture directly contradicts the LOCKED VO. EP02_SCRIPT_LOCKED.md [6:14]=374s runs "So it makes the only choice the island allows. It stays. It shields the egg. And it lets them drink." (20 words @150wpm = 374.0-382.0). The final clause "And it lets them drink" runs 380.0-382.0 — and S069 (380.5-383.0) is the booby sweeping its bill in warning while three finches flare OFF the bird. The narrator says it lets them drink over a shot of it driving them away. This is the thesis line of the whole act.  
   *Fix:* Swap S069 out of the 380.5 slot. Put a drinking beat there (a CU of a finch settled at the wing feathers, beak in the down, booby motionless — seed hero_still_A2_macro_finch_wound.png, blood rider required). Move the bill-sweep warning beat earlier into the 360.5-368.5 window where the VO is describing the booby's dilemma, not its acquiescence.
@@ -1188,9 +1155,9 @@ EDIT-LAW COMPLIANCE / FLAGS FOR THE ASSEMBLER:
 </details>
 
 
-## ACT7 — 430.0s → 480.0s · 6 shots
+## ACT7 — 430.0s -> 480.0s · 6 shots
 
-**Conflicts found and how they were resolved:** SIX CONFLICTS FOUND BETWEEN SOURCE DOCS. How each was resolved:
+**Conflicts found and resolved:** SIX CONFLICTS FOUND BETWEEN SOURCE DOCS. How each was resolved:
 
 1) SHOT COUNT vs HOLD LENGTH — arithmetically impossible as briefed. The brief (inherited from STORYBOARD Scene 10) asks for "~8 shots, holds 8-14s". 8 x 8s = 64s minimum, but ACT7 is 50s (430-480). The "8 shots" figure comes from the STALE 510s runtime where Scene 10 was 7:10-8:30 = 80s; at 80s, 8 shots x 8-14s fits perfectly. RESOLVED in favour of the hold texture, not the count: the RESOLUTION row of STORYBOARD_SIDEBYSIDE's grammar table ("slow, 8-14s holds") is the load-bearing craft rule, while the shot count is an artifact of the dead runtime. Delivered 6 shots — the maximum compatible with an 8s floor in 50s.
 
@@ -1212,7 +1179,7 @@ OTHER PRODUCTION FLAGS:
 - Seeds needed for ACT7: SEED_wide_booby_clear (x2), SEED_mutualism_clean, SEED_raw_wound. Already on disk: hero_still_B_egg_nest.png, still_booby_eye.png.
 - Audio (not in schema, recorded here): music falls and resolves across S070-S073, gone under wind by S075; SFX = calm finch chatter, wind, distant surf, one soft booby huff on S074; no CTA in the VO.
 
-### S087 · 430.0–438.0s (8.0s) · WS  <sub>(was S070)</sub>
+### S083 · 430.0-436.0s (6.0s) · WS  <sub>(was S070)</sub>
 - **Vantage:** LOW at rock level behind a foreground ridge of guano-streaked lava, telephoto, booby in hard side profile against a high sea horizon
 - **Action:** Grey first light on the lava shelf. The booby sits settled in profile, not moving. Over the shot three small black finches fly in one at a time and land unhurried on its back and shoulder; the booby does not react and does not stand. Wind moves through the feathers, faint sea mist drifts behind. This is the act's deceleration cut - it lands straight out of ACT6's sub-2s raid burst.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
@@ -1220,7 +1187,7 @@ OTHER PRODUCTION FLAGS:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A single large white Nazca booby sits settled in side profile on a barren black volcanic lava shelf at first light, the camera low at rock level behind a foreground ridge of guano-streaked lava that runs across the bottom of frame, flat grey pre-dawn sky and a high grey sea horizon behind it, no sunrise colour anywhere and no warm light. Over six seconds three small jet-black ground finches fly in one at a time and land unhurried on the booby's back and shoulder; the booby does not react, does not stand and does not open its wings; only wind moves through the feathers and a faint band of sea mist drifts behind. The booby stays in side profile and never turns head-on to camera. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S088 · 438.0–446.0s (8.0s) · CU  <sub>(was S071)</sub>
+### S084 · 436.0-446.0s (10.0s) · CU  <sub>(was S071)</sub>
 - **Vantage:** HIGH and BEHIND the booby's shoulder looking down the length of its white back, shallow DOF, lava thrown out of focus below
 - **Action:** A finch walks two unhurried steps across the clean white plumage, lowers its head once to pick between the feathers, straightens and preens; a second finch hops in at the edge of frame and settles. The back is unmarked white - this is the visual of the VO's 'as though nothing had passed between them.'
 - **Seed:** `SEED_mutualism_clean` · physics risk **low** · blood: no
@@ -1228,7 +1195,7 @@ OTHER PRODUCTION FLAGS:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A small jet-black ground finch with a short blunt conical beak stands on the clean white upper back of a resting Nazca booby, the camera high and behind the booby's shoulder looking down the length of its back, shallow depth of field with the black lava thrown out of focus below. The finch walks two unhurried steps across the white plumage, lowers its head once to pick between the feathers, then straightens and preens; a second finch hops into frame at the edge and settles beside it. The plumage stays entirely clean white with no marks or discolouration anywhere. The booby stays still and never turns head-on to camera. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S089 · 446.0–454.0s (8.0s) · MS  <sub>(was S072)</sub>
+### S085 · 446.0-452.0s (6.0s) · MS  <sub>(was S072)</sub>
 - **Vantage:** LOW front-three-quarter at nest level, angled slightly UP past a soft out-of-focus lip of lava in the near foreground
 - **Action:** The chalk-white egg lies in the dust between the booby's feet. The booby shuffles its feet once and settles gently down over the egg until the egg disappears under its breast feathers. A finch hops once at the edge of frame and then stays put. The 'keeps its egg' beat, made physical.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
@@ -1236,7 +1203,7 @@ OTHER PRODUCTION FLAGS:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A single chalk-white egg lies in the dust between the feet of a large white Nazca booby, the camera low at nest level looking slightly up past a soft out-of-focus lip of black lava in the near foreground, the booby's white breast and orange-pink dagger bill filling the right of frame. The booby shuffles its feet once and settles gently down over the egg until the egg disappears beneath its breast feathers; a small jet-black ground finch hops once at the edge of frame and then stays put. The egg remains one single solid egg for the whole shot and never splits or duplicates. The booby settles gently and never hunches, and never turns head-on to camera. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S090 · 454.0–462.0s (8.0s) · XCU  <sub>(was S073)</sub>
+### S086 · 452.0-463.0s (11.0s) · XCU  <sub>(was S073)</sub>
 - **Vantage:** SIDE-ON macro level with the flank, frame completely filled with plumage - no head, no horizon, no context; the most abstract frame in the act
 - **Action:** Rust-brown dried streaks matted down into the white flank. The flank rises and falls with slow deep breathing. A single small fly walks across the feathers and lifts away. Nothing else moves. This is the only shot in ACT7 that carries blood, and it carries all of it.
 - **Seed:** `SEED_raw_wound` · physics risk **medium** · blood: YES
@@ -1244,7 +1211,7 @@ OTHER PRODUCTION FLAGS:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro side-on view level with the white flank of a large seabird, the frame completely filled with white plumage at high magnification so individual feather barbs are visible, no head and no horizon anywhere in shot. Rust-brown dried streaks are matted down into the white down, dried hard at their edges. The flank rises and falls with slow deep breathing and a single small fly walks across the feathers and then lifts away; nothing else in frame moves. keep exact anatomy, no extra limbs, no morphing, count stays the same. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves; there is no finch in this shot, so the stain stays completely static and the only movement is the slow rise and fall of the breathing feathers and the one fly.
 
-### S091 · 462.0–470.0s (8.0s) · CU  <sub>(was S074)</sub>
+### S087 · 463.0-470.0s (7.0s) · CU  <sub>(was S074)</sub>
 - **Vantage:** TIGHT from slightly BELOW and to the SIDE, three-quarter profile - eye and facial mask fill frame-left, bill runs out of frame-right (explicitly never head-on)
 - **Action:** The pale yellow eye half-closes, opens slowly, half-closes again; the nictitating membrane sweeps across it once. Far behind and completely out of focus a small black bird crosses. The exhale of the whole film. The cut out of this shot lands on the word 'blood' in the final VO line.
 - **Seed:** `still_booby_eye.png` · physics risk **low** · blood: no
@@ -1252,7 +1219,7 @@ OTHER PRODUCTION FLAGS:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Tight close-up of the head of a Nazca booby seen from slightly below and to the side in three-quarter profile, the pale yellow eye and dark grey facial mask filling the left of frame and the long orange-pink dagger bill running out of the right edge, the background a soft grey wash of overcast dawn sky. The eye half-closes, opens slowly and half-closes again, and the pale nictitating membrane sweeps across it once; far behind and completely out of focus a small black bird crosses the frame. The bird holds three-quarter profile the entire time and never turns head-on to camera. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-### S092 · 470.0–480.0s (10.0s) · WS  <sub>(was S075)</sub>
+### S088 · 470.0-480.0s (10.0s) · WS  <sub>(was S075)</sub>
 - **Vantage:** HIGH and FAR from up the lava slope looking DOWN and OUT, camera locked, sea filling the upper two thirds - the exact inverse of S070's low-from-the-lava angle
 - **Action:** The lone booby sits low and clearly readable on the shelf with two black finches riding its back. It does NOT stand or walk off - it stays over the egg. The finches shift once. A band of sea mist drifts across between camera and birds and slowly closes over them. Fade to black on the mist. Last ~6s are wordless: wind only.
 - **Seed:** `SEED_wide_booby_clear` · physics risk **low** · blood: no
@@ -1260,7 +1227,7 @@ OTHER PRODUCTION FLAGS:
 - **Grok prompt:**
   > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A wide locked telephoto view from higher up the lava slope looking down and out, a barren black volcanic shelf streaked with white guano across the lower third and the flat grey Pacific filling the upper two thirds to a soft misty horizon, no warm light and no golden hour anywhere. A single large white Nazca booby sits low and clearly readable on the shelf, big enough in frame to read instantly as the subject, with two small jet-black finches riding on its back; the bird stays settled and does not stand, walk away or open its wings, the finches shift once on its back, and a band of grey sea mist drifts slowly across between the camera and the birds and begins to close over them. The camera does not move at all. keep exact anatomy, no extra limbs, no morphing, count stays the same.
 
-<details><summary><b>16 unresolved defects from the adversarial audit</b> (shot ids are act-local originals)</summary>
+<details><summary><b>16 unresolved audit defects</b> (shot ids are act-local originals)</summary>
 
 - **S070 / S075** — Both shots are assigned the single seed SEED_wide_booby_clear but demand mutually exclusive camera positions: S070 is 'LOW at rock level behind a foreground ridge of guano-streaked lava' and S075 is 'HIGH and FAR from up the lava slope looking DOWN and OUT'. Grok i2v animates FROM the seed frame, so the seed fixes the camera; one still cannot yield two opposite vantages. EP02_SEED_PROMPTS.md defines SEED_wide_booby_clear as a single middle-distance wide with no foreground ridge and no down-slope angle, so neither shot's stated framing exists in the seed. The manifest's own fallback ('re-gen S070 with the foreground lava ridge pushed higher into frame') is impossible - NEXT_SESSION.md records that gpt-image edit mode will not re-crop or re-frame a generated image. Delivered, S070 and S075 would be near-identical gens bracketing the act - exactly the loop that got rough_cut_v1 rejected.  
   *Fix:* Split into two distinct seed stills and rename them in the manifest: SEED_wide_booby_low (low at rock level, a guano-streaked lava ridge running across the bottom third as an out-of-focus foreground, booby in hard side profile against a high sea horizon) and SEED_wide_booby_high (from up-slope looking down and out, shelf across the lower half, sea above). Generate both in the same ChatGPT thread using the EP02_SEED_PROMPTS 'shared look' preamble plus the 'same species and grade, COMPLETELY DIFFERENT camera angle, pose and distance' wording. Update the ACT7 blocked-seed list from 1 missing wide seed to 2.

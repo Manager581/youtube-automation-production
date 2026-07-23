@@ -63,17 +63,22 @@ that from any builder script). Built by a 21-agent workflow and then independent
 caught four defects the agents' own audit missed — including **22 duplicate shot IDs** that would have
 made a builder silently overwrite clips.
 
-⚠️ **It is a strong draft, not signed off.** 139 defects from the adversarial pass are recorded per act
-and still unresolved, and three pacing gates come in marginally under target (mean shot 5.22 s vs 5.4,
-holds ≥10 s = 10 vs 12, hook mean 4.84 s vs 5.0). Those three are **one fix**: lengthen a handful of
-body holds in the edit — do not regenerate clips for it.
+**Pacing + prompt-hygiene now pass 14/14** — run `gate_shots.py` to re-check after any edit. I tuned
+the draft to get there: absorbed 4 genuinely weak beats (92→88 shots) to lift the mean to 5.45 s, and
+redistributed ACT7's six flat 8 s shots into a real slowing pattern (6/10/6/11/7/10) which added the
+missing holds *and* fixed a monotony flag. The earlier "hook mean" miss was a **measurement bug** — the
+gate was counting shots that END before 60 s, which dropped the 14.9 s silence hold; it counts shots
+that START before 60 s now (11 cuts, 5.75 s mean).
+
+⚠️ **Still not signed off:** the **139 content defects** from the adversarial pass are recorded per act
+in the manifest and remain unresolved. Those are the real remaining desk work on the plan.
 
 ## WHAT'S MISSING (the real work, in order)
 1. **7 seed stills** (6 + one the manifest surfaced) — every prompt is written and ranked in
    `EP02_SEED_PROMPTS.md`. `SEED_finch_portrait` is **done**. Do `SEED_wide_booby_clear` next: it
    unblocks 9 shots, the most of any missing seed.
-2. **~84 clips** — the multi-hour grind, now fully specified. Work straight down
-   `EP02_SHOT_MANIFEST_FULL.md`; frame-strip every clip.
+2. **~82 clips** — the multi-hour grind, now fully specified (88 shots, 6 already covered by test
+   clips). Work straight down `EP02_SHOT_MANIFEST_FULL.md`; frame-strip every clip.
 3. **VO** — one ElevenLabs pass to `EP02_SCRIPT_LOCKED.md`, after settling the speed above.
 4. **Music bed** — one Pixabay track. **Hygiene, not a lever. Do not over-invest.**
 5. **Assemble** → `gate_style_wbs.py` 11/11 → owner watch → upload.
