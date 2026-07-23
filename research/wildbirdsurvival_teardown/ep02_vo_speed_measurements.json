@@ -21,6 +21,13 @@
       "duration_s": 22.47,
       "wpm": 138.9,
       "file": "vo_probe_sp84_s74_sb75_m2.mp3"
+    },
+    {
+      "speed": 0.95,
+      "duration_s": 20.3,
+      "wpm": 153.7,
+      "file": "vo_probe_sp95_s74_sb75_m2.mp3",
+      "note": "MEASURED 2026-07-23. Whisper-verified clean (the 'Darwin watch' / 'seed bird' diffs are whisper-base homophone artifacts, not VO errors). Lands inside owner band 150-160 and handoff band 149-155."
     }
   ],
   "reference_take": {
@@ -32,11 +39,15 @@
     "note": "DIFFERENT, shorter-word text - not comparable to the probes; this is why cross-text interpolation was wrong."
   },
   "fit_on_script_text": {
-    "slope_wpm_per_speed": 81.6,
-    "intercept": 70.3,
-    "predicted_speed_for_145wpm": 0.915,
-    "predicted_speed_for_149wpm": 0.964,
-    "status": "UNCONFIRMED extrapolation - probe 0.95 stalled at ElevenLabs; confirm next session"
+    "status": "RESOLVED 2026-07-23 by direct measurement at 0.95. Do NOT fit a line to these points.",
+    "response_is_nonlinear": true,
+    "segment_slope_wpm_per_speed": {
+      "0.75_to_0.84": 82.2,
+      "0.84_to_0.95": 134.5
+    },
+    "old_linear_fit_error": "The single-line fit (slope 81.6, intercept 70.3) predicted 147.8 wpm at speed 0.95; the measured value is 153.7 wpm, so it undershot by 5.9 wpm. The wpm/speed curve STEEPENS above ~0.84. Extrapolating it was wrong for the same reason cross-text interpolation was wrong: measure, don't fit.",
+    "chosen_speed": 0.95,
+    "chosen_wpm": 153.7
   },
   "script": {
     "words": 487,
@@ -49,6 +60,11 @@
     "at_0.84": {
       "speech_s": 210,
       "coverage_pct": 43.8
+    },
+    "at_0.95_CHOSEN": {
+      "speech_s": 190.1,
+      "coverage_pct": 39.6,
+      "note": "487 words / 153.7 wpm. Reference winners run 145-163 wpm (biggest hit 1.98M = 157, hornbill 153, warthog 145); the flop races at 190. 153.7 sits on the hornbill's number, just under the biggest hit."
     }
   }
 }

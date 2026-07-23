@@ -1,0 +1,310 @@
+{
+  "source": "EP02_SCRIPT_LOCKED.md",
+  "blocks": 37,
+  "total_words": 517,
+  "total_chars_blocks": 2718,
+  "single_pass_chars": 2790,
+  "speed": 0.95,
+  "measured_wpm": 153.7,
+  "predicted_speech_s": 201.8,
+  "runtime_s": 480,
+  "predicted_coverage_pct": 42.0,
+  "blocks_detail": [
+    {
+      "act": "ACT 1 — THE ASSAULT",
+      "t": 0,
+      "timecode": "0:00",
+      "text": "Right now, on a bare rock in the Pacific, this seabird is being drained — one drop at a time.",
+      "words": 19,
+      "chars": 93
+    },
+    {
+      "act": "ACT 1 — THE ASSAULT",
+      "t": 7,
+      "timecode": "0:07",
+      "text": "Not by a shark. Not by a storm. But by a bird small enough to sit in the palm of your hand.",
+      "words": 22,
+      "chars": 91
+    },
+    {
+      "act": "ACT 1b — THE ATTRITION",
+      "t": 15,
+      "timecode": "0:15",
+      "text": "And out here, there is nowhere left to run.",
+      "words": 9,
+      "chars": 43
+    },
+    {
+      "act": "ACT 1b — THE ATTRITION",
+      "t": 20,
+      "timecode": "0:20",
+      "text": "It has tried everything — shaking them off, snapping, twisting away.",
+      "words": 10,
+      "chars": 68
+    },
+    {
+      "act": "ACT 1b — THE ATTRITION",
+      "t": 27,
+      "timecode": "0:27",
+      "text": "They simply hop back on.",
+      "words": 5,
+      "chars": 24
+    },
+    {
+      "act": "ACT 1b — THE ATTRITION",
+      "t": 31,
+      "timecode": "0:31",
+      "text": "Every hour, a little more of its blood is carried off — and the great bird just... endures it.",
+      "words": 18,
+      "chars": 94
+    },
+    {
+      "act": "ACT 1b — THE ATTRITION",
+      "t": 41,
+      "timecode": "0:41",
+      "text": "As if being slowly emptied were somehow the safer choice.",
+      "words": 10,
+      "chars": 57
+    },
+    {
+      "act": "ACT 2 — THE TURN",
+      "t": 65,
+      "timecode": "1:05",
+      "text": "This is a ground finch. A seed-eater — the same unremarkable little bird Darwin watched cracking seeds on these islands, two centuries ago.",
+      "words": 22,
+      "chars": 139
+    },
+    {
+      "act": "ACT 2 — THE TURN",
+      "t": 76,
+      "timecode": "1:16",
+      "text": "It has no business wanting blood at all.",
+      "words": 8,
+      "chars": 40
+    },
+    {
+      "act": "ACT 2 — THE TURN",
+      "t": 82,
+      "timecode": "1:22",
+      "text": "So how did a seed-eater learn to drink blood — and why does a seabird twenty times its size simply let it happen?",
+      "words": 22,
+      "chars": 113
+    },
+    {
+      "act": "ACT 3 — THE MARVEL / MONEY SHOT",
+      "t": 100,
+      "timecode": "1:40",
+      "text": "It works the base of a growing feather, where the blood runs closest to the skin...",
+      "words": 16,
+      "chars": 83
+    },
+    {
+      "act": "ACT 3 — THE MARVEL / MONEY SHOT",
+      "t": 128,
+      "timecode": "2:08",
+      "text": "And for the first time in days, the seabird goes perfectly still.",
+      "words": 12,
+      "chars": 65
+    },
+    {
+      "act": "ACT 4 — WHY IT HAPPENS",
+      "t": 145,
+      "timecode": "2:25",
+      "text": "It did not begin as cruelty.",
+      "words": 6,
+      "chars": 28
+    },
+    {
+      "act": "ACT 4 — WHY IT HAPPENS",
+      "t": 149,
+      "timecode": "2:29",
+      "text": "Long ago, these finches earned their place on the boobies' backs — picking off the ticks and biting flies the big birds could never reach themselves. A fair trade. The seabird got clean; the finch got fed.",
+      "words": 36,
+      "chars": 205
+    },
+    {
+      "act": "ACT 4 — WHY IT HAPPENS",
+      "t": 165,
+      "timecode": "2:45",
+      "text": "But every so often, a beak broke skin. A bead of blood welled up... and the finch drank.",
+      "words": 18,
+      "chars": 88
+    },
+    {
+      "act": "ACT 4 — WHY IT HAPPENS",
+      "t": 176,
+      "timecode": "2:56",
+      "text": "And a bird starving on a bare rock does not forget a taste like that.",
+      "words": 15,
+      "chars": 69
+    },
+    {
+      "act": "ACT 4 — WHY IT HAPPENS",
+      "t": 185,
+      "timecode": "3:05",
+      "text": "Slowly, over generations, the cleaner became the parasite. Today, close to a tenth of everything this finch eats is blood.",
+      "words": 20,
+      "chars": 122
+    },
+    {
+      "act": "ACT 4 — WHY IT HAPPENS",
+      "t": 205,
+      "timecode": "3:25",
+      "text": "It still cannot make its own water. It still cannot cross the open sea. Everything it needs, it must take — from the only large, warm, living thing for miles.",
+      "words": 29,
+      "chars": 158
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 270,
+      "timecode": "4:30",
+      "text": "Because these are two of the most remote islands in all the Galápagos. Wolf. And Darwin.",
+      "words": 16,
+      "chars": 88
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 280,
+      "timecode": "4:40",
+      "text": "No streams. No soft ground. For half of every year, the rain simply stops — and the seeds run out.",
+      "words": 19,
+      "chars": 98
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 292,
+      "timecode": "4:52",
+      "text": "So the finch drinks whatever it can find. Nectar from a cactus flower.",
+      "words": 13,
+      "chars": 70
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 298,
+      "timecode": "4:58",
+      "text": "Seawater. Even the droppings of other birds.",
+      "words": 7,
+      "chars": 44
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 305,
+      "timecode": "5:05",
+      "text": "And when there is nothing else left at all.",
+      "words": 9,
+      "chars": 43
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 310,
+      "timecode": "5:10",
+      "text": "There is always blood.",
+      "words": 4,
+      "chars": 22
+    },
+    {
+      "act": "ACT 5 — THE PLACE THAT MADE IT",
+      "t": 316,
+      "timecode": "5:16",
+      "text": "On an island full of seabirds, it is the one thing that never runs dry.",
+      "words": 15,
+      "chars": 71
+    },
+    {
+      "act": "ACT 6 — THE EGG TRAP",
+      "t": 345,
+      "timecode": "5:45",
+      "text": "But there is a deeper reason the seabird will not simply stand up and leave.",
+      "words": 15,
+      "chars": 76
+    },
+    {
+      "act": "ACT 6 — THE EGG TRAP",
+      "t": 352,
+      "timecode": "5:52",
+      "text": "Beneath it, in the dust, is a single egg.",
+      "words": 9,
+      "chars": 41
+    },
+    {
+      "act": "ACT 6 — THE EGG TRAP",
+      "t": 358,
+      "timecode": "5:58",
+      "text": "And these same finches are egg-thieves.",
+      "words": 6,
+      "chars": 39
+    },
+    {
+      "act": "ACT 6 — THE EGG TRAP",
+      "t": 363,
+      "timecode": "6:03",
+      "text": "The instant the booby lifts off to escape the bleeding.",
+      "words": 10,
+      "chars": 55
+    },
+    {
+      "act": "ACT 6 — THE EGG TRAP",
+      "t": 367,
+      "timecode": "6:07",
+      "text": "They take the very thing it was trying to protect.",
+      "words": 10,
+      "chars": 50
+    },
+    {
+      "act": "ACT 6 — THE EGG TRAP",
+      "t": 374,
+      "timecode": "6:14",
+      "text": "So it makes the only choice the island allows. It stays. It shields the egg. And it lets them drink.",
+      "words": 20,
+      "chars": 100
+    },
+    {
+      "act": "ACT 7 — RESOLUTION",
+      "t": 432,
+      "timecode": "7:12",
+      "text": "By morning, it is quiet again.",
+      "words": 6,
+      "chars": 30
+    },
+    {
+      "act": "ACT 7 — RESOLUTION",
+      "t": 437,
+      "timecode": "7:17",
+      "text": "The finches settle back onto the bird they feed on, as though nothing had passed between them.",
+      "words": 17,
+      "chars": 94
+    },
+    {
+      "act": "ACT 7 — RESOLUTION",
+      "t": 444,
+      "timecode": "7:24",
+      "text": "The seabird keeps its egg. The finch keeps its life.",
+      "words": 10,
+      "chars": 52
+    },
+    {
+      "act": "ACT 7 — RESOLUTION",
+      "t": 455,
+      "timecode": "7:35",
+      "text": "Out here, at the far edge of the world, survival is not kindness — and it is not cruelty.",
+      "words": 18,
+      "chars": 89
+    },
+    {
+      "act": "ACT 7 — RESOLUTION",
+      "t": 464,
+      "timecode": "7:44",
+      "text": "It is only the bargain the island allows...",
+      "words": 8,
+      "chars": 43
+    },
+    {
+      "act": "ACT 7 — RESOLUTION",
+      "t": 468,
+      "timecode": "7:48",
+      "text": "Paid one drop of blood at a time.",
+      "words": 8,
+      "chars": 33
+    }
+  ]
+}
