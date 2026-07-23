@@ -1,0 +1,324 @@
+{
+ "verdicts": [
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN5",
+    "LOSE2"
+   ],
+   "violating_videos": [
+    "WORST",
+    "WIN4",
+    "WIN2",
+    "WIN5"
+   ],
+   "corrected_claim": "Give the money shot room to breathe, but only two of the three claimed parts hold. (1) COUNT: winners carry roughly 13-19 holds of 10s+ (BEST 13, WIN2/WIN3/WIN5 14, WIN4 19) versus the two flops' 9-12 (WORST 9, LOSE2 12) - directionally real, but do NOT treat 13-19 as a hard band: LOSE2 sat at 12, one hold short, so the boundary is fragile; state it as 'noticeably more 10s+ holds than the flops.' (2) BREATHING ROOM (the robust part): winners run their SINGLE LONGEST hold at very low narration density - often near-wordless - so the image, not the voice, carries it (BEST 34.6s at 1.16 wps = 44% of avg; WIN2 26.1s and WIN3 38.2s essentially silent; WIN5 33.0s at 29% of avg), whereas the WORST flop narrates densely over its longest hold (41.3s, 109 words, 8 sentences, 2.64 wps). (3) DROP two false specifics: it is NOT 'one narration sentence' (BEST's hero hold = 40 words/2-3 sentences; WIN4's 45.6s = 82 words/4+ sentences at 70% of avg density; WIN2/WIN3 are wordless) - the operative variable is words-per-second on the hold, not sentence count; and 'a few stretching 25-45s' is NOT a winner signal - only BEST (3) and WIN4 (4) had a few, WIN2 and WIN5 had just one, and the WORST flop itself carried two 25-45s holds including a 41.3s, more than three of the five winners.",
+   "confidence": "high",
+   "notes": "Raw extraction in the evidence is accurate (I reproduced every count and timestamp: BEST 13/WIN2 14/WIN3 14/WIN4 19/WIN5 14/LOSE2 12/WORST 9; holds at 104.7-139.3, 512.8-558.5, 93.8-135.2 all confirmed). The failure is interpretive. Violating-video rationale: WORST (loser) refutes the '25-45s = winner' clause by holding two such shots incl 41.3s; WIN4 refutes the 'one sentence / image dominates' mechanism (82-word, 4-sentence closing paragraph at 70% of its avg wps on the 45.6s 'hero' hold, which is closing-thesis narration not tick-removal action); WIN2 and WIN5 each violate 'a few stretching 25-45s' with only one. Also note many longest holds sit on the closing/summary or end-of-video music climax rather than the mid-video payoff action, so 'placed on the payoff action' is only loosely true. LOSE2 is a clean negative control (under-holds, zero 25s+ holds, flopped) and supports the count-separation half."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN4",
+    "WIN5",
+    "WORST"
+   ],
+   "violating_videos": [
+    "WIN3",
+    "LOSE2"
+   ],
+   "corrected_claim": "Treat narration coverage as a CEILING, not a 40-55% band. Winners keep narrator speech at or below ~55% of runtime and leave large stretches to music+action; all 5 winners sit at 27-54% (BEST 41, WIN2 42, WIN4 50, WIN5 54, WIN3 ~27). There is NO lower bound and no ~half-silent target: WIN3 (855K) measures only 27% and is truly much lower still (its second half is a phantom-transcribed, essentially wordless music/action climax), so it runs ~70%+ silent and still won. The '40-55% band' and 'silent for roughly half' figures are both wrong on the low side. Wall-to-wall narration is a plausible penalty only above ~60%: the single video over 60% (WORST, 67%, a 'full life cycle' peregrine) is a loser, consistent with the rule but resting on one confounded data point (it also starts VO late and speaks fastest). Critically, low/in-band coverage is NECESSARY, NOT SUFFICIENT: LOSE2 sits dead-center in-band at 44% and still flopped (it failed as a same-day BEST clone, not on narration density). Net rule: cap coverage below ~55-60% and leave at least half the runtime to music/action, but never treat 40% as a floor, 'half-silent' as the target, or in-band coverage as evidence a video will win.",
+   "confidence": "medium",
+   "notes": "Coverage numbers independently confirmed against forensics_*/timelines. Key refutations: (1) WIN3 27% (truly lower due to Whisper 'meerkat leaves the group' loop counted as narration in compare_all.py's coverage union) refutes the 40% floor and the 'half-silent' figure. (2) LOSE2 44% in-band but lost refutes any in-band=win mapping. The ceiling/no-wall-to-wall direction holds (6/7 consistent), but the >60% 'loser signature' is n=1 and confounded, and the specific band is wrong. Small sample (n=7) limits confidence."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN4",
+    "WORST",
+    "LOSE2"
+   ],
+   "violating_videos": [
+    "WIN3",
+    "WIN5"
+   ],
+   "corrected_claim": "Frame it as a one-sided CEILING, not a band. Winners keep speech pace at or below ~2.75 words/sec AND composite word-density (coverage x wps) at or below ~1.5 words per second of total runtime; ~2.1 is the failure zone. All 5 winners sit at density <=1.46, and only the WORST loser breaches at 2.12 -- it is the only video above both the ~2.75 wps and the 1.5 density ceilings, because it over-covers (67% coverage, highest of all 7) at a racing 3.17 wps. Two corrections to the original: (1) the '1.0-1.5 band' is wrong as a floor -- WIN3 is a winner at density 0.46 (a genuine wordless music climax), so low density is fine and this is a ceiling, not a band; (2) the '<=2.7 wps' cut clips winner WIN5 at 2.71, so round the ceiling to ~2.75. Scope caveat: the rule is a single-loser discriminator -- it flags only the over-pacing/over-covering failure mode (present only in WORST) and does NOT explain LOSE2, which is fully in-band on both metrics (2.34 wps, 1.03 density) and fails from cloning/broken VO instead.",
+   "confidence": "medium",
+   "notes": "Recomputed density = (cov/100)*wps for all 7; reproduced offered numbers exactly (BEST 1.07, WIN2 1.01, WIN3 0.46, WIN4 1.27, WIN5 1.46, LOSE2 1.03, WORST 2.12). Verified WIN3 timeline: narration genuinely sparse with long wordless action stretches, so its 0.46 density and 27% coverage are real (not the whisper artifact). Verified WORST timeline: near-continuous narration on nearly every shot, 67% coverage, confirming genuine over-coverage. Verdict PARTIAL because two winners break the literal thresholds (WIN3 below the 1.0-1.5 band, WIN5 above the 2.7 wps cut) and only 1 of 2 losers is actually caught by the rule. Confidence medium: the ceiling cleanly separates all 5 winners from WORST (strong), but the discrimination rests on n=1 violating video."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "LOSE2",
+    "WIN5",
+    "WORST"
+   ],
+   "violating_videos": [
+    "WIN2",
+    "WIN3",
+    "WIN4"
+   ],
+   "corrected_claim": "Scoped, not general. WITHIN a single matched near-clone pair (BEST 1.98M vs LOSE2 3K \u2014 identical buffalo/hippo+parasite template, published a day apart), the winning cut has the tighter, hedge-free, threat-sooner open: BEST puts a word on frame 1 (t1=0.0, declarative 'Across the African savannah', 'ticks' by ~6.8s) while LOSE2 wastes 2.2s of dead air, hedges ('Perhaps, this is one of the most miserable days...'), and delays 'blood-feeding ticks' to ~13s (the gap is ~6s, not ~8s). Treat hedge-removal / earlier-threat-naming as a TIE-BREAKER when re-cutting a near-duplicate of a proven video. It is NOT a channel-wide opening formula: 'word on frame 1' holds for only 2 of 5 winners (BEST t1=0.0, WIN5 t1=0.8), and t1/threat-latency do not separate winners from losers across the set. WIN2 (940K) opens at t1=2.3 (\u2248LOSE2's 2.1) with a pop-culture QUESTION and names the parasite ~90s in; WIN3 (855K) opens with ~16s of silence (t1=18.3, later than the loser) and names the cobra ~20s; WIN4 (674K) opens at t1=18.6 with a soft cozy-family beat and no early threat at all \u2014 yet all three are large winners. Winner t1 range (0.0\u201318.6s) fully overlaps loser range (2.1\u201321.5s). So a tight declarative threat-forward open is one viable strong opener, not a requirement \u2014 do not tighten t1 or force an early threat name as if it drives the win.",
+   "confidence": "high",
+   "notes": "The claim's own scoping language ('within an identical template... cleanest A/B: BEST vs LOSE2') is defensible and I did not refute it. What I refute is the generalized lens=hook rule as written ('Open declaratively with a word on frame 1 and no hedges; tightening the open tracks the win'). Support/violate breakdown against the rule: SUPPORT \u2014 BEST (word on frame 1, declarative, threat ~6.8s, WIN); WIN5 (t1=0.8 word on frame 1, declarative, threat ~11s, WIN); LOSE2 (silent open + literal 'Perhaps' hedge + late threat, LOSE \u2014 correct direction); WORST (loose t1=21.5 + glamour-not-threat open, LOSE \u2014 correct direction, but NOT a hedge and word-on-frame-1 isn't the discriminator; the claim's WORST citation is a glamour mechanism, not the hedge/t1 one). VIOLATE \u2014 WIN2, WIN3, WIN4: all big winners that lack a word on frame 1, open as loose or looser than the losers, and name the threat late or never. The literal 'no hedge' mechanism is essentially N=1 (only LOSE2 hedges). Minor factual nit in the offered evidence: BEST-vs-LOSE2 threat-naming gap is ~6s ('ticks' 6.8s vs 12.9s), not ~8s."
+  },
+  {
+   "verdict": "CONFIRMED",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WIN5",
+    "LOSE2",
+    "WORST"
+   ],
+   "violating_videos": [],
+   "corrected_claim": "In this 7-video set the pattern holds cleanly, with two tightening caveats. Winners held a SLOWER baseline than both losers: winner median shot 3.6-4.7s (all 5) and mean ~5.55-7.11s (all 5; WIN2's 5.56 sits just under a rounded 5.6 floor). Both losers cut faster on BOTH metrics with non-overlapping separation \u2014 loser median 2.8-3.0s < every winner's 3.56+, loser mean 4.5-5.0s < every winner's 5.56+. That median/mean separation is the robust, primary target. (1) Downgrade fast-cut share to a SOFT CEILING, not a band: keep shots <=3s at <=~48% (four winners 43-48%, WIN5 an outlier at 13%; losers 50% and 54%), but WIN4 (47.8%, winner) is only ~2pts from WORST (50%, loser) and winners span 13-48%, so it barely discriminates. (2) The 'losers cut faster' half rests on only 2 losers, both confounded: LOSE2 is a near-clone of BEST published a day apart (its collapse is far more plausibly cannibalization than a 0.8s median gap), and WORST is a structurally different 'full life cycle' video with the densest narration (cov 67, wps 3.17). Treat this as a verified directional guardrail for this channel, not proof that slower cutting causes the views.",
+   "confidence": "medium",
+   "notes": "Recomputed median/mean/fast% directly from raw forensics shots[] for all 7 videos; results match compare_metrics.json within rounding (shot count = cuts+1 in every file). No video violates any clause of the rule: median band 5/5 winners in-band + 2/2 losers below; mean band 5/5 + 2/2 below; fast<=48% 5/5 winners under, 2/2 losers over. Separation is clean and non-overlapping on median (loser max 3.04 < winner min 3.56) and mean (loser max 5.02 < winner min 5.56). Weak points, not violations: fast-share margin WIN4 47.8 vs WORST 50.0 is thin and winners don't cluster (WIN5=12.7%); and n=2 confounded losers (LOSE2 near-clone/cannibalization, WORST full-life-cycle structural outlier) limit the causal reading. Verdict CONFIRMED descriptively; confidence held to medium due to n=2 losers, both confounded, and the soft fast-share boundary."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WIN5",
+    "WORST"
+   ],
+   "violating_videos": [
+    "LOSE2"
+   ],
+   "corrected_claim": "The load-bearing, well-supported half is the PROHIBITION, not the \"two shapes\" typology: no winner ever fragments the pre-first-word silence into many short, oscillating, hold-less shots. But qualify heavily. (1) The prohibition only has BITE for the 3 videos that actually delay the first word past ~15s \u2014 WIN3 and WIN4 (winners) and WORST (loser); the other 4 (BEST t1=0.0, WIN5 0.8, WIN2 2.3, LOSE2 2.1) open on the narration with essentially no dead air, so there is nothing to fragment and the clause is vacuous for them. Among the 3 delayed-word openers the pattern is a clean but tiny 2-win-vs-1-loss split: winners fill the silence with FEW cuts that ESCALATE into a long hero hold (WIN3 1.9->4.9->8.8->14.9; WIN4 1.3->17.7s), whereas the loser oscillates in short shots with no anchoring hold (WORST 1.4/6.1/1.8/3.1/3.3, 4 cuts in the first 15s). So the real discriminator is \"escalate to a long hero hold vs. oscillate with no hold,\" not merely \"few vs. many cuts.\" (2) The negative rests on a SINGLE video (WORST), and a conforming opening does NOT predict success: the other loser, LOSE2, opens exactly like the winners (2.2s silent shot -> 8.5s hold, first word at 2.1s, zero fragmentation) yet drew only 3K views \u2014 it lost as a same-day near-clone of BEST, not because of its opening. (3) The \"two proven shapes\" claim overstates the data: the multi-short-shot \"punchy-then-settle\" pattern is cleanly present in only BEST; WIN2 and WIN4 are \"one short shot then one long hold,\" and BEST/WIN5 simply open on the first word. Supported: \"if you delay the first word, do not chop the silence into many short oscillating shots with no hero hold.\" NOT supported: that there are exactly two proven opening shapes, or that a good opening drives the win/loss gap.",
+   "confidence": "medium",
+   "notes": "5/5 winners are consistent with the rule; 1/2 losers (WORST) exhibits the forbidden fragmentation. LOSE2 is the decisive complication: a loser whose opening conforms perfectly to the \"good\" pattern, showing the opening rule is not sufficient and did not cause its loss. The prohibition's evidence base is effectively a 2-vs-1 comparison among only the 3 delayed-word openers (WIN3/WIN4/WORST), and the negative is a single video, so confidence is medium despite clean per-video data. t1 (secs to first word) from compare_metrics.json was used to bound each dead-air window; shot durations read from timelines/*.txt."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "LOSE2",
+    "WORST"
+   ],
+   "violating_videos": [
+    "WIN4",
+    "WIN5"
+   ],
+   "corrected_claim": "On-word welding alone does NOT separate winners from losers here \u2014 winners span 21% to 65% on-word cuts, so the \">55% = loser\" threshold is not a valid ship-gate. Two solid winners weld HARDER than the failed clone: WIN4 (62% on-word, med_dword 0.28) and WIN5 (65%, 0.24) both exceed LOSE2 (57%, 0.30) and still hit 650-675K views. What actually holds: (1) the channel's very top performers cut decoupled from syllables \u2014 BEST 44%/0.92s, WIN2 47%/0.48s \u2014 and the wordless-climax winner WIN3 is 21%; (2) both losers do weld (>55%); (3) but the only cleanly diagnostic loser signal is the EXTREME COMPOUND pattern in WORST: ~75% word-welded cuts stacked on wall-to-wall dense narration (67% coverage, the fastest talker at 3.17 wps). Moderate density does NOT flag the near-clone loser \u2014 LOSE2's coverage (44%) is identical to the winner range (27-54%). So the defensible rule is: it's fine, even ideal, for your flagship-tier cuts to land on visual beats rather than syllables, and avoid the WORST failure mode of tight karaoke-timed chopping over dense fast wall-to-wall VO \u2014 but on-word percentage by itself is not predictive, and welding above 55% is not disqualifying (two winners prove it).",
+   "confidence": "high",
+   "notes": "Metrics independently recomputed from raw forensics aligns[] for all 7 videos; onword% and med_dword match compare_metrics.json exactly. Count on the rule's core prediction (winners decoupled <=55% on-word / losers welded >55%): winners 3 support (BEST 44, WIN2 47, WIN3 21), 2 VIOLATE (WIN4 62, WIN5 65); losers 2 support (LOSE2 57, WORST 75). Net 5 support / 2 violate. The 2 violating winners are the decisive refutation of the >55% threshold: WIN4/WIN5 weld harder (higher onword, lower med_dword) than the loser LOSE2 yet won 674K/654K. Density-pairing sub-claim only holds for WORST (cov 67, wps 3.17); LOSE2 coverage 44 is indistinguishable from winners. WIN3's onword=21 is not distorted for this test \u2014 its wordless-climax artifact only pushes it further onto the supporting (decoupled) side. Evidence as offered cherry-picked BEST/WIN2/WIN3 and omitted WIN4/WIN5."
+  },
+  {
+   "verdict": "REFUTED",
+   "supporting_videos": [
+    "WIN3",
+    "WORST"
+   ],
+   "violating_videos": [
+    "WIN4"
+   ],
+   "corrected_claim": "A long silent cold open (~18s to first word) is NOT inherently fatal and does NOT require visible predator conflict to work. Of the three videos that actually use this tactic (t1 ~18-22s: WIN3 18.3s, WIN4 18.6s, WORST 21.5s), TWO are winners and only one loses. The claim's own logic breaks on WIN4 (674K): its ~18.6s wordless open is the LONGEST-tied silent open of any winner, yet it is filled with calm, non-predator domestic scenery (mongooses waking in a termite mound; hornbill 'alarm clock' calling them to breakfast) \u2014 no stalk, no threat. It still won. So 'scenery in a silent open is fatal' is false and 'only predator conflict rescues it' is false. WIN3 (predator stalk, win) and WORST (scenery, loss) are consistent with the claim but are a 2-point coincidence, not a mechanism. WORST's failure tracks variables OTHER than its scenic open: it is the extreme outlier on wall-to-wall, fast, tightly word-locked narration (cov 67% vs winners 27-54%, wps 3.17 vs 1.72-2.71, maxpause only 17.3s vs winners' 28-55s, onword 75%/med_dword 0.13s) and a broad 'full life cycle' structure with no single sustained conflict. The honest, qualified rule: a long silent cold open is survivable regardless of predator-vs-scenery content (WIN4 proves scenery is fine); what correlates with the loss is a breathless, high-coverage narration that never pauses plus a diffuse multi-event topic \u2014 not the visual content of the open.",
+   "confidence": "high",
+   "notes": "Applicable set = the 3 videos that use a long silent open (WIN3, WIN4, WORST). The other 4 don't use the tactic (BEST t1=0.0, WIN5 t1=0.8, LOSE2 t1=2.1, WIN2 t1=2.3) so they neither support nor violate the conditional \u2014 but LOSE2 is instructive: it's the 3K near-clone of the 1.98M BEST, opens FAST with predator content (t1=2.1), and still lost, showing the hook-open style is not the success lever. Arithmetic verified from forensics aligns[]: WIN3 first word 'Across'=1.88+16.44=18.3s; WIN4 'Even'=1.28+17.3=18.6s; WORST 'In'=1.418+20.08=21.5s (all match compare_metrics t1). All three opens are genuinely wordless (first audio onset at 64.3s/44.7s/111.3s respectively; nothing in first ~20s). WIN4 is the decisive counterexample the offered evidence omitted."
+  },
+  {
+   "verdict": "REFUTED",
+   "supporting_videos": [
+    "BEST",
+    "WORST"
+   ],
+   "violating_videos": [
+    "LOSE2",
+    "WIN4",
+    "WIN5",
+    "WIN2",
+    "WIN3"
+   ],
+   "corrected_claim": "Winner mutualism-format videos tend to place an EARLY narrative turn/reveal somewhere in the first third of runtime (measured ~10-32% in) \u2014 but this is a shared genre convention, NOT a winner-differentiator, and the specific \"insert a ~2s wordless pause immediately before the turn AND signpost it with 'Finally'/'Then something remarkable'\" recipe is neither necessary nor sufficient. Word-level data: the pre-turn pause holds cleanly for only 1 of 5 winners (BEST, whose real gap is ~15s, not 2s); the other 4 winners have gaps of just 0.5-1.7s (WIN3 0.5s, WIN4 0.8s, WIN2 1.1s, WIN5 1.7s), and 3 of 5 winners (WIN3 fight-not-co-op, WIN4, WIN5) carry no 'Finally/remarkable' signpost at all. Decisively, the recipe is executed MOST faithfully by a LOSER: LOSE2 (3K views) has the only clean \u22652s pre-turn pause (2.50s) plus BOTH 'Finally' and 'something remarkable begins to happen' at 11-14% in, yet failed. Treat an early turn in the first third as a format baseline shared by winners and the near-clone loser alike; do NOT treat the pre-turn pause or the signpost phrase as a win lever.",
+   "confidence": "high",
+   "notes": "Checked all 7 via word-level whisper timestamps (wordts/*.json), not just shot boundaries. Full-claim satisfaction (\u22652s pause + signpost phrase + 10-30% position): winners 1/5 (BEST only); losers \u2014 LOSE2 fully satisfies it (contradicts the rule's win/lose logic), WORST lacks it (consistent). So 5 of 7 videos contradict the rule as a discriminator. Additional cracks: (a) BEST's cited \"2.08s\" pause is actually the pre-reveal gap of ~14.9s \u2014 the metric isn't standardized; (b) the claim's own examples breach its stated 10-30% window (WIN2 30.8%, WIN5 9.6%); (c) WIN4's mutualism reveal lands at 31.9% with a 0.8s gap and no signpost; its only big pause (33s) precedes a danger beat at 60.6%, not the turn. The evidence offered cherry-picked BEST/WIN2/WIN5 and ignored the near-clone loser LOSE2 executing the exact recipe. The music-peakfrac defense doesn't rescue the story-lens rule: on the narrative-turn mechanism itself, the loser out-executes the winners."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WORST"
+   ],
+   "violating_videos": [
+    "LOSE2",
+    "WIN5"
+   ],
+   "corrected_claim": "A breathing music bed \u2014 long wordless runs and ~46-73% wordless runtime \u2014 is the channel's near-universal HOUSE STYLE, not a winner-vs-loser signal. It is present in 4 of 5 winners (BEST 59%/45.5s, WIN2 58%/49.3s, WIN3 73%/54.6s, WIN4 50%/33.2s) AND fully present in the flop LOSE2 (56% wordless, a 53.5s solo gap \u2014 2nd longest of all 7 videos \u2014 and 11 pauses >=5s), which is a near-clone of BEST yet drew only 3K vs 1.98M views. So bed-breathing does NOT discriminate outcomes and is not a viral driver; it is table stakes. The only true audio outlier is WORST, which over-narrates (67% coverage, 17.3s max gap, 4 long pauses) \u2014 extreme wall-to-wall narration is a mild negative marker, but a well-breathing bed is neither sufficient for nor predictive of views. Note also that one winner (WIN5, 654K) succeeds with minimal solo runs (28.4s max gap, only 2 pauses >=5s), so long music-only stretches are not even required to win. Corrected: 'The bed should be able to carry solo stretches (channel baseline), but audio breathing is table-stakes house style, not a winner trait \u2014 its presence does not separate BEST from its 3K-view clone; only extreme over-narration (WORST) reads as a mild negative.'",
+   "confidence": "high",
+   "notes": "Verified all cited numbers: wordless% = 100 - cov, exact match for all 7. DECISIVE REFUTATION of the causal half: the evidence cites only WORST as its loser and omits LOSE2, which behaves like a winner on every audio-breathing metric (56% wordless, 53.5s gap, 11 long pauses) yet flopped at 3K views. BEST vs LOSE2 are near-clones with near-identical audio grammar (LOSE2 actually breathes MORE: 53.5s vs 45.5s max gap) but a 650x view gap, proving the trait is non-discriminative. Confirmed LOSE2's long solo runs directly in timeline (rows 60, 88-95 = ~37s and ~36s dead-air; whisper-artifact 'hippo walk in the river' repeats mirror WIN3's 'The group', consistent with music-only stretches). Descriptive half holds for winners as style. WIN5 is a secondary exception: a winner that wins without long solo runs (28.4s max, 2 pauses). WORST genuinely fits the over-narration profile (67% coverage). Net: the pattern is real house-style but does not predict success."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WORST"
+   ],
+   "violating_videos": [
+    "LOSE2",
+    "WIN5"
+   ],
+   "corrected_claim": "A long wordless, music-only stretch is a weak NECESSARY hygiene floor, NOT a winning lever, and it does not separate winners from losers. True half: all 5 winners contain at least one >=28s wordless span (BEST 45.5s@404-450, WIN2 49.3s@304-354, WIN3 54.6s@68-123, WIN4 33.2s@325-358, WIN5 28.4s), and the one video whose action is never given a break longer than ~17s (WORST, 17.3s, wps 3.17, cov 67%, onword 75% -- narrates over every strike) died at 1,879 views. But the rule cannot be a success driver: LOSE2 -- a LOSER at 3,041 views and a near-clone of BEST -- has the richest wordless-climax profile in the whole set (53.5s@208-261, 44.5s@391-436, 27.7s@261-289, plus 11 pauses >=5s, more than WIN4's 9 and WIN5's 2) and still flopped. So 6 of 7 videos (all winners + LOSE2) have a >=28s wordless span; only WORST lacks one (n=1), so the feature is near-universal and non-discriminating. Two caveats the evidence hides: (1) WIN5's qualifying 28.4s span is trailing OUTRO music between two 'Eugh.' artifacts (531-559s), not an action climax -- in its body WIN5 never stops narrating (largest real gap ~3s), yet it won 654K, so even the 'give the ACTION a climax' necessity is soft; (2) the pause-stacking sub-claim cherry-picks by dropping WIN5 (only 2 long pauses, FEWER than loser WORST's 4) and LOSE2 (11, MORE than two winners). Defensible restatement: 'Don't narrate non-stop over every strike -- let at least one action beat breathe wordless for ~20s+ (only the always-talking WORST failed this) -- but a long wordless climax is table stakes, not what wins; LOSE2 had three and died, so the win/loss difference lives upstream (title/thumbnail/topic/timing), not in silence length.'",
+   "confidence": "high",
+   "notes": "Decisive refutation = LOSE2 (loser) with maxpause 53.5s + 44.5s + 27.7s, all genuine mid-video music-only stretches, at 3K views. WIN5 is a secondary violation: its only >=28s silence is the credits-roll outro, and its action beat has no long wordless climax yet it won 654K. All 7 pause values reconstructed from wordts word timestamps match compare_metrics.json exactly (data trustworthy). WIN3's real 54.6s max gap is at 68-123s, not the 393-609s artifact region the evidence cited (doesn't change its verdict). Necessary-side rests on a single loser (WORST) below threshold."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WORST"
+   ],
+   "violating_videos": [
+    "LOSE2",
+    "WIN4",
+    "WIN5"
+   ],
+   "corrected_claim": "Only a WEAK, NEGATIVE version survives: winners keep a single unifying subject/throughline and none uses a sprawling chronological 'full life cycle,' while the one video that does (WORST) closes on a generic line and loses \u2014 so avoid the non-escalating life-cycle format. But the positive template 'ONE victim + ONE tormentor + ONE rescue -> single payoff -> one-line theme' is NOT a success driver and does not discriminate winners from losers: (a) it cleanly fits only 2 of 5 winners (BEST, WIN2); WIN5 follows one CLEANER across MANY hosts, WIN4 is a multi-beat mutualism ensemble, and WIN3 is a single predator-vs-group fight that ends on a WORDLESS climax with no theme line; and (b) decisively, LOSE2 executes BEST's exact single-arc, fish+oxpecker double-cleaner, 'tomorrow the cycle begins again' template and drew only 3K views vs BEST's 1.98M. Since the near-clone with identical structure flopped, the hit/flop split is driven by factors outside story structure (subject, timing, packaging), not by single-arc vs life-cycle. Structure is neither necessary (WIN4/WIN5 win without one victim) nor sufficient (LOSE2 has it and loses).",
+   "confidence": "medium",
+   "notes": "Key refutation is LOSE2: a structural carbon-copy of the top winner (same victim->double-cleaner->payoff->'cycle begins again' theme) that still lost, so single-arc structure fails as a hit/flop discriminator (the task itself notes LOSE2 is a near-clone of BEST a day apart -> confound is timing/packaging, not story). Positive half also over-generalizes: WIN3 (combat, no theme closer), WIN4 (ensemble), WIN5 (cleaner touring multiple hosts) each break the strict single-victim/single-payoff reading. The only surviving trait -- 'don't do a chronological life-cycle' -- rests on a single loser (WORST, n=1) that also differs in subject and narration density (wps 3.17, highest), so even that is weakly supported. WIN3 counted as a loose supporter of the single-throughline idea but it lacks the one-line thematic closer the claim asserts."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WIN5",
+    "LOSE2"
+   ],
+   "violating_videos": [
+    "WORST"
+   ],
+   "corrected_claim": "A mid-video tonal-energy peak co-occurs with failure, but front-loading the peak is NOT sufficient for success. Confirmed: all 5 winners peak their harmonic (music+VO) RMS before mid-video (BEST 0.29, WIN2 0.10, WIN3 0.20, WIN4 0.03, WIN5 0.39; median 0.20), and the only video with a dead-center peak (LOSE2 at 0.55) is a loser \u2014 the BEST(0.29)-vs-clone-LOSE2(0.55) A/B is clean and real. But the prescriptive 'front-load the peak -> win' fails: WORST (1.9K views, the worst performer) peaks at 0.03 \u2014 the EARLIEST of all 7 videos, tied exactly with winner WIN4 (0.03) \u2014 so an early peak has zero power to separate a top winner from the worst flop. Treat 'peak not in the middle of the video' as a weak, necessary-not-sufficient hygiene marker, not a growth lever. Caveats: peakfrac is a fragile single-argmax statistic (WORST is bimodal, near-equal peaks at 0.03 and 0.57); and even 'winners peak in the first third' is only 4/5 (WIN5's 0.39 sits in the second third).",
+   "confidence": "high",
+   "notes": "peakfrac values independently recomputed from raw env.rms_h curves and match compare_metrics.json exactly (WORST 0.028, LOSE2 0.553, WIN5 0.388, BEST 0.295). Decisive refutation: WORST=WIN4=0.03 peakfrac, opposite outcomes -> metric does not discriminate on the early side. WORST curve bimodal: max 0.535@0.028 vs near-tie 0.507@0.567 (mid-video), so its 'early' classification is unstable. n=7 is tiny. The claim's winner-side pattern and the specific BEST/LOSE2 A/B are genuine, but the two-sided 'early=win / mid=lose' discriminator breaks on the second loser."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN4",
+    "WIN5",
+    "LOSE2"
+   ],
+   "violating_videos": [
+    "WIN3",
+    "WORST"
+   ],
+   "corrected_claim": "The music bed does not dynamically swell to cover ORDINARY mid-narration pauses, and the narrator (not the bed) is what makes the mix loud \u2014 this holds broadly: on a within-body basis, harmonic (music+voice) energy in wordless cells falls below speech-cell level in 6 of 7 videos, and no video shows the bed ducking UP to fill an ordinary VO pause. BUT the claim's absolute wording is wrong on two counts. (1) 'No video shows the bed rising / energy always falls' is REFUTED: aggregated over the whole video, wordless tonal energy EQUALS-OR-EXCEEDS speech energy in 2 of 7 \u2014 WIN3 (~1.10x, from a deliberate ~1-2 min music-only action climax that sustains the bed at 1.05-1.50x of voice level) and WORST (~1.17x, driven by a loud 21.5s music-only INTRO before its first word, the single loudest tonal passage in that video at 2.9x speech; strip that intro and WORST's mid-body gaps fall back to ~0.66x). These are discrete scored/intro segments, not gap-filling swells. (2) The '2-5x below voice' magnitude is overstated: only WIN2 (~4.3x) and WIN5 (~3.0x) sit that far below; the other falling videos are ~1.5-1.9x (BEST 1.6x, WIN4 1.9x, LOSE2 1.5x). Corrected: the bare bed typically sits ~1.5-4x below the voice (usually under 2x), and wordless tonal energy falls in ~5 of 7 videos aggregate (6 of 7 on a body basis) \u2014 but it is NOT universal, and a loud wordless intro (WORST) or a scored music-only climax (WIN3) can push whole-video wordless energy at or above speech level.",
+   "confidence": "high",
+   "notes": "Recomputed rms_h (harmonic HPSS RMS from forensics env grid, 0.5s cells) with speech cells = any word overlap from wordts/*.json. My aggregate wordless/speech ratios: BEST 0.61, WIN2 0.23, WIN3 1.12, WIN4 0.53, WIN5 0.33, LOSE2 0.65, WORST 1.17 \u2014 reproduces the offered BEST/WIN2/WIN4/WIN5 within rounding, validating method. The offered evidence conspicuously OMITS LOSE2 (0.65, falls) and WORST (1.17, RISES), and relabels WIN3's 1.10x rise as 'flat.' Robust across mask-dilation pads 0-1.0s (WORST rises harder to 1.5x as pad grows; WIN3 stays >1.0). WORST rise is fully explained by its 0-21.5s pre-first-word intro (rms_h 0.186 = 2.92x speech) \u2014 WORST t1=21.5s (longest of all 7); body-only ratio 0.66x. WIN3 rise is its documented music-only action climax (68-152s gaps at 1.23x/1.50x). 'bed 2-5x below voice': only WIN2 4.3x & WIN5 3.0x qualify; 5 of 7 are <2x. Internal inconsistency in the claim: it hedges '5 of 7' then asserts the universal 'No video shows the bed rising.' Core editorial insight (flat bed, no duck-up on ordinary pauses) is sound; the universal/magnitude framing is not."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN5",
+    "WORST"
+   ],
+   "violating_videos": [
+    "LOSE2",
+    "WIN4",
+    "WIN2",
+    "WIN3"
+   ],
+   "corrected_claim": "Naming a specific, present-tense threat within ~7-13s is ONE hook style some winners use, not a channel-wide rule and NOT a winner/loser discriminator. Only 2 of 5 winners actually name the concrete parasite that early: BEST ('blood sucking ticks' 6.8s) and WIN5 ('the ticks' ~11s). The other three winners break the rule: WIN3 names a predator ('spitting cobra') but at ~18s, outside the stated window; WIN2 opens on a Lion King pop-culture tease and only vaguely teases 'an enemy it can't fight' at 13.5s, not naming ticks until ~90-111s; and WIN4 (674K) opens on a benign 'cannot enjoy a peaceful morning' companion-bird scene with NO predator until ~232s and no parasite until ~443s. Decisively, the controlled near-clone loser LOSE2 (same hippo/tick topic, same production, published a day apart from BEST) names 'blood-feeding ticks' by ~13-16s exactly like BEST, yet drew 3K vs 1.98M -- so an early named threat is neither sufficient (LOSE2 followed it and flopped) nor necessary (WIN4 ignored it and won). The only defensible fragment is the WORST-specific contrast: a hook that glamorizes the protagonist as an apex hunter with jeopardy that is only seasonal/diffuse and no threat to the hero co-occurs with a flop -- but that is about the ABSENCE of any jeopardy framing, and even that side is undercut because LOSE2 had a strong early named threat and still flopped. Early threat-naming does not explain why these videos win or lose.",
+   "confidence": "high",
+   "notes": "Killer evidence is the near-clone control the claim omits: BEST vs LOSE2 have near-identical early-threat hooks (ticks named by ~7s vs ~13s) but 650x view gap, so the hook cannot be the differentiator. WIN4 is a clean winner counterexample (no early threat). Timings read from timelines/*.txt and cross-checked against compare_metrics.json t1 values (BEST 0.0, WIN5 0.8, WIN2 2.3, LOSE2 2.1, WIN3 18.3, WIN4 18.6, WORST 21.5). The claim's secondary wps/cov point is factually correct (WORST wps 3.17 and cov 67 are both highest) but is about narration density, independent of the threat-hook rule."
+  },
+  {
+   "verdict": "CONFIRMED",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WIN5",
+    "LOSE2",
+    "WORST"
+   ],
+   "violating_videos": [],
+   "corrected_claim": "This channel uses no whoosh/riser/impact-cut audio-hit editing; cuts are silent, driven by clip length + narration phrasing. Hard audio transients are extremely rare (3-12/video, 0.30-1.28/min) \u2014 roughly 6.5-30x rarer than the 78-111 hard cuts/video (WIN5 is the true floor at 6.5x, so 'about 7-30x' should read '~6.5-30x'). Only ~1-3% of cuts have any transient within 0.5s (recomputed: 0.9-2.8% across all 7), which equals each video's own random-chance baseline. Even in the more sensitive onset->cut direction (few onsets, so hidden whoosh-on-key-cuts would surface there), no video shows above-chance alignment: binomial P(>=observed) ranges 0.16-0.83 (best candidate WIN2 = 3/8 onsets near a cut, p=0.16, N=3 = incidental, not a technique). Both losers behave identically to the winners, so the absence of an audio-hit layer is channel-wide and not a win/lose lever.",
+   "confidence": "high",
+   "notes": "Verified by re-deriving coincidence from forensics cuts[]/onsets[], not trusting the offered %s: my cut-within-0.5s figures (1.2/2.8/0.9/1.1/1.3/0.9/2.1%) round exactly to the claim's stated 1/3/1/1/1/1/2%. Ran a binomial test on the onset->cut direction to attack the 'whoosh on a few key cuts' loophole \u2014 nothing significant in any of the 7. Only correction: the '7-30x rarer' lower bound is slightly too high (WIN5 = 6.5x); this does not make WIN5 a violator since its coincidence (1.3%) is below its chance baseline (2.14%). Substance of the rule holds for all 5 winners and both losers."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN2",
+    "WIN3",
+    "WIN4",
+    "WIN5",
+    "LOSE2"
+   ],
+   "violating_videos": [
+    "WORST"
+   ],
+   "corrected_claim": "All 5 winners keep the first 60s to 9-11 cuts (BEST 10, WIN2 10, WIN3 9, WIN4 11, WIN5 9) with hook mean-shot >=5s, so a tight, un-choppy hook is a real necessary-looking trait of winners, and a grossly doubled hook (LOSE2: 22 cuts / 2.65s, 2.2x BEST) co-occurs with failure. BUT hook cut-rate doubling is NOT the single clearest kill signal: (1) it rests on one video (only LOSE2 doubled); (2) the single worst video, WORST (1,879 views), did NOT double its hook -- it ran 13 cuts (1.3x, not 2x) and, by the claim's own hook-mean-shot metric, WORST's hook = 5.58s, essentially identical to BEST's 5.60s, so it PASSES the >=5s hook guard yet still died; and (3) four whole-video pacing metrics (mean_shot: winners >=5.56 vs losers <=5.02; median shot >=3.6 vs <=3.0; %fast shots <=3s <=48 vs >=50; %long-holds >10s >=13 vs <=11) each separate all 5 winners from BOTH losers just as cleanly -- and, unlike the hook rule, correctly flag WORST. Use 'keep the hook at ~9-11 cuts / >=5s mean shot' as a trait winners share and a red flag when grossly violated, not as the sole or clearest predictor of failure; overall pacing metrics generalize better and catch the worst video that the hook rule misses.",
+   "confidence": "high",
+   "notes": "Hook cut counts computed directly from forensics_*.json cuts[] (cuts with t<60): BEST 10, WIN2 10, WIN3 9, WIN4 11, WIN5 9, LOSE2 22, WORST 13 -- these reproduce the claim's stated counts exactly. Doubling ratio vs BEST's 10: only LOSE2 (2.2x) qualifies; WORST is 1.3x. Hook mean-shot via mean of actual durations of shots starting <60s (reproduces claim's BEST=5.60/LOSE2=2.65 exactly): BEST 5.60, WIN2 5.55, WIN3 6.20, WIN4 5.31, WIN5 7.42, LOSE2 2.65, WORST 5.58. So WORST -- the lowest-viewed video -- has a hook essentially identical to BEST's and satisfies the >=5s rule, refuting 'single clearest kill signal.' Whole-video separation (compare_metrics.json): mean_shot, med_shot, fast, longhold each perfectly separate the 5 winners from both losers (verified min/max non-overlap). The doubling evidence is a single clone-pair (BEST vs LOSE2, n=1 for the mechanism); overall n=7 (5 win / 2 lose) is too small to crown any 'single clearest' signal among 4+ correlated pacing metrics that classify equally well."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN5",
+    "WORST"
+   ],
+   "violating_videos": [
+    "WIN4",
+    "WIN2",
+    "WIN3",
+    "LOSE2"
+   ],
+   "corrected_claim": "Winners open in medias res on a SPECIFIC, identifiable subject with an immediate problem or tension, and \u2014 the one hard discriminator \u2014 they never lead with encyclopedic species-card exposition (\"X, famous for its Y...\"). But the strict wording (\"ONE singular animal in immediate jeopardy within the first sentence / first words establish a victim in peril\") is too strong: it cleanly fits only 2 of 5 winners (BEST t1=0.0 buffalo+ticks; WIN5 hippo+ticks). The other three winners break it \u2014 WIN4 (674K) opens on a named GROUP (\"the Morgans family... they\") in a NON-peril, comedic frame (\"still cannot enjoy a peaceful morning\"), with the real predator absent until ~224s; WIN3 opens on ambient dread and the PREDATOR (cobra), the victim meerkat arriving several sentences later; WIN2 opens on a Lion King pop-culture QUESTION (peril only in sentence 2, and it later runs an encyclopedic warthog-facts block at 43-90s). The rule is at best necessary, not sufficient, and does not discriminate: LOSE2 (3K) uses a textbook victim-in-peril open (near-clone of BEST) yet failed. Best-supported restatement: \"Open on a concrete in-scene subject with a hook (peril, lurking threat, intrigue, or even comedic disruption) and AVOID the encyclopedic 'this species is famous for...' open\" \u2014 the encyclopedic open is the only opener trait that reliably marks the worst performer (WORST).",
+   "confidence": "high",
+   "notes": "Classification axis = consistency with the claim's thesis (winner should follow the rule; loser should violate it). CONSISTENT: BEST (win, follows), WIN5 (win, follows), WORST (lose, violates via encyclopedic apex-hunter card). CONTRADICTS: WIN4 (win but group + no peril, breaks both sub-claims \u2014 strongest refutation), WIN2 (win but pop-culture-question open, not victim-in-peril; also uses encyclopedic exposition later, contradicting the absolute \"never encyclopedic\"), WIN3 (win but first sentence = ambient danger and first animal = the cobra/threat, not the victim), LOSE2 (lose yet follows the rule perfectly \u2014 rule fails to discriminate). So the strict rule is supported by 2/5 winners and actively contradicted by 3/5 winners + 1/2 losers. The durable, defensible kernel is the negative rule (no encyclopedic species-card open), which is the only opener feature that isolates WORST; a strong open alone cannot explain LOSE2's failure (analyst attributes it to clone-timing + broken VO, not the open). Verified against full opener transcripts in timelines/*.txt and t1 values in compare_metrics.json."
+  },
+  {
+   "verdict": "PARTIAL",
+   "supporting_videos": [
+    "BEST",
+    "WIN3",
+    "WIN4",
+    "WIN2",
+    "LOSE2"
+   ],
+   "violating_videos": [
+    "WORST",
+    "WIN5"
+   ],
+   "corrected_claim": "A settled hook plus fast cutting placed in a bracketed mid-video action burst (hold -> burst -> hold) is a hallmark of the flagship winner BEST and of WIN3/WIN4, and it is exactly what separates BEST from its failed near-clone LOSE2 (which front-loads choppiness into the hook: first-45s mean 3.0s with three sub-1.2s shots). But it is NOT a reliable winner/loser discriminator. It is not sufficient: WORST (1.9K views) keeps the same settled ~4.8s hook with zero sub-1.2s shots AND concentrates its fast cutting into a single late burst emerging from an 18.4s hold (289-353s) -- the winner rhythm -- yet failed. It is not necessary: WIN5 (654K) wins with almost no fast cutting (6% sub-2s, mean 7.1s, no burst). And the concentration premise is inverted: in the densest 40s window the winners hold only 17-25% of their sub-2s shots (BEST the LEAST concentrated at 17%, spread across opening flicker + oxpecker burst + wordless outro), while the two losers concentrate MORE tightly (LOSE2 32%, WORST 36%). So: reserve choppiness out of the hook and use bracketed bursts as good pacing, but do not treat 'hold->burst->hold' as the lever that predicts views -- WORST followed it and lost, WIN5 ignored it and won.",
+   "confidence": "medium",
+   "notes": "Metrics recomputed from forensics_*.json shots[]. Fast=shot<=2.0s. Densest-window burst location and bracketing holds computed via sliding window; hook = first 45s. Key numbers: hook mean shot (first 45s) BEST 4.8 / WIN2 5.6 / WIN3 7.8 / WIN4 6.4 / WIN5 6.0 / LOSE2 3.0 (choppy) / WORST 4.8 (settled, same as BEST). Sub-1.2s shots in hook: only LOSE2 (3) stands out; WORST has 0. Densest-40s-window share of all sub-2s shots: BEST 17%, WIN2 23%, WIN3 25%, WIN4 23%, WIN5 40%(n=5), LOSE2 32%, WORST 36% -> losers MORE concentrated, contradicting the claim's framing. WORST's fast burst (289-353s) sits after an 18.4s hold = the winner pattern, yet it is the worst performer, so rhythm structure is confounded/not causal here (topic 'peregrine full life cycle' vs the mutualism money-shot, thumbnail, etc. are the likelier drivers). WIN3's mid-third fast shots partly coincide with its wordless music-only cobra-fight climax (whisper 'the group' artifact region), treated as wordless. WIN2's densest fast cluster is late (518-578s) not mid, and it carries notable hook fast-cutting, so its support is weak. Verdict PARTIAL: pattern is real for BEST/LOSE2 and 3 winners but fails as a discriminator (WORST counterexample + WIN5 + reversed concentration)."
+  }
+ ],
+ "recipe": null
+}

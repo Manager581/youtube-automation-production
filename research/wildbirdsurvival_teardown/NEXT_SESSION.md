@@ -1,81 +1,91 @@
-# NEXT SESSION — Wild Bird Survival clone (start here)
-_Last updated 2026-07-22. Read this top-to-bottom, then run the kickoff prompt at the bottom._
+# NEXT SESSION — Wild Bird Survival clone · Episode 02 (vampire finch)
+_Last updated 2026-07-23. This supersedes all earlier handoffs. Read top-to-bottom._
 
-> ## ✅ UPDATE 2026-07-22 — premise decided + episode built + grit test PASSED
-> The decision below is MADE: **premise = vampire finch × Nazca booby.** Episode 02 is cloned from the
-> Ep01 spine with the 2 fixes applied, the hero still is locked, and the 10-clip grit test is done
-> (6 clips, every distinct shot class PASS; the one artifact — blood-as-thread — is fixed).
-> **Current source of truth for Ep02:**
-> - Storyboard: `EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md` (all 11 gates pass by design)
-> - Seed stills + prompts: `EPISODE_02_HERO_STILL_AND_GROK_TEST.md` · Seeds in `assets/vampire_finch/`
-> - Grit-test results + LOCKED RECIPE: `EPISODE_02_GRIT_TEST_RESULTS.md`
-> **NEXT = production pass:** make wide-landscape + resolution seeds → ~75 Grok clips from the 3 locked
-> seeds using the locked recipe → frame-strip each → ElevenLabs VO → FFmpeg render → gate_style_wbs.py
-> 11/11 → owner watch. The material below is the original (pre-decision) handoff, kept for context.
+## Where we are in one line
+**The plan, the script, the packaging and the look are LOCKED and committed. What's missing is the
+footage (~72 of ~80 shots) and one music bed.** Everything below is verified, not assumed.
 
-## ⚠️ Two things before anything else
-1. **Claude monthly spend limit was hit** at end of last session (workflows failed with
-   "hit your monthly spend limit"). Raise/reset at claude.ai/settings/usage before running any
-   large Workflow, or work inline. Small tasks are fine.
-2. **The premise must change before we build.** The buffalo/oxpecker Episode-01 storyboard is
-   production-ready but the PREMISE is a proven underperformer (see below). Pick the new premise
-   FIRST thing next session, then the whole pipeline is ready to execute.
+---
 
-## What is already PROVEN / done (don't redo)
-- **The look:** Grok Imagine i2v with the **grit recipe** (flies, mud, flat/overcast light, telephoto,
-  handheld, "no golden hour") matches their footage. Owner approved it over the clean/Veo look.
-  Prototype: `grok_grit.mp4` + `grok_grit_strip.jpg`. Recipe in `PROMPT_TEMPLATES.md`.
-- **The editing grammar (measured, adversarially verified):** `FORENSICS.md` + `verified_rules_raw.json`.
-  Ship-gate script `gate_style_wbs.py` (11 gates). Key numbers: hook 9–11 cuts/60s; median shot
-  3.6–4.7s; coverage ≤55–60%; ≥1 hero hold 15–35s at low words/sec; ≥1 wordless action span >25s;
-  music peak in first ~30%; NO SFX on cuts; VO ~150 wpm, ≤1.5 words per second of runtime.
-- **Pipeline decided:** ONE locked hero still → ~60 Grok i2v clips → strip all clip audio → FFmpeg
-  renderer (`scripts/ffmpeg_production_render.py`) layers 1 music bed + light diegetic ambience +
-  ElevenLabs VO → `gate_style_wbs.py` → 11/11. QA in `QA_PLAN.md` (frame-strip every clip).
-- **Tools confirmed available:** ChatGPT (stills), Grok Imagine (i2v — clipboard-upload recipe in
-  memory `reference_grok_i2v_clipboard_upload.md`), Claude (this), ElevenLabs (VO). All owned. $0 gen.
-- **Episode-01 storyboard** (full scene-by-scene, spec-checked): `EPISODE_01_STORYBOARD.md`. Reusable
-  as a TEMPLATE — swap the premise/animals, keep the beat structure, timings, and gates.
+## THE DECISION (locked 2026-07-23)
 
-## THE PREMISE DECISION (do this first)
-Their view data proves the winning lever is **violation-of-expectation / gross / combat**, NOT
-"a helpful animal." Evidence from their own catalog:
-| Their result | Premise type |
-|---|---|
-| **1.98M** Fish clean a buffalo | anomaly — "fish where no fish should be" |
-| **940K** Warthog lets mongooses on its face | bizarre intimacy w/ a near-predator |
-| **855K** Mongoose vs spitting cobra, fight to death | combat |
-| **674K** Hornbills wake sleeping mongooses each morning | bizarre ritual |
-| **654K** Giants depend on a tiny bird | scale-gap |
-| **34K** "Can one oxpecker *protect* a buffalo?" | **helpful bird ← our Ep01 premise. BOMBED.** |
-| **13K** "Bird drinks blood from live animals" | gross but generic framing |
-| **1.9K** Peregrine falcon "full life cycle" | life-cycle format, no gap |
+**TITLE:** `Why This Giant Seabird Lets a Tiny Finch Drink Its Blood`
+(56 chars · no suffix · no question mark · no colon)
+Isomorph of their **#2 all-time (939,961)** — *"Why This Warthog Lets Mongooses Crawl All Over Its Face"*
+(55 chars, the only top-8 title with no pipe). Stacks the 654K scale-gap lever ("Giant"/"Tiny").
+"Lets" appears in exactly two of their titles: 939,961 and 130,161.
 
-**Ranked new-premise shortlist** (from the premise-ranker workflow; all real behaviors, all fit a
-bird-centric channel + the grit look):
-1. **★ Vampire finch — "Why Does This Giant Seabird Let a Finch Drink Its Blood?"** — combines their
-   TOP three winning ingredients at once: giant+tiny scale gap (654K) + gross blood (their gross lane)
-   + violation of expectation (a *finch*, a seed-eater, drinks blood). Real (Galápagos ground finch
-   pecks boobies). **Recommended #1.** Alt title: "Everyone Thought This Finch Ate Seeds. It Drinks Blood."
-2. **Fish-anomaly, fresh host** — keep the owner's "fish where they shouldn't be" intuition but don't
-   1:1 clone their #1. e.g. fish swarming a different land giant / an unexpected freshwater cleaner.
-   Safest bet (nearest their proven #1) but most derivative.
-3. **Shrike — "Why This Tiny Songbird Impales Mice on Barbed Wire"** — bizarre, gruesome, true, bird.
-4. **Combat pick** — a fight-to-the-death pairing (their 855K lane).
+**THUMBNAIL:** text = **`BLOOD`** (yellow `#FFD400`) / **`FOR EGGS`** (white), heavy condensed sans,
+8–10px black outline, stacked, **left third over a dark plate** (the finch's black body — yellow on
+white feathers collapses). Wound **≥12% of frame**, most saturated element, tack sharp.
+🚨 **SHIP GATE: downscale to 168×94px. If the red doesn't instantly read as _blood_, recompose.**
 
-Owner's stated instinct (2026-07-22): the bird-helper premise is weak; the *anomaly* (fish in the
-savannah) is what creates intrigue. **This is correct.** Decide between #1 (vampire finch) and #2
-(fish-anomaly) next session, then execute the pipeline.
+**⚠️ The premise-risk correction that matters (verified):** their own *"This Bird Drinks Blood From Live
+Animals"* did 13,095 — but it is **upload #1 of 26**. Uploads #1/#2/#3 are the three worst ever
+(13,095 / 1,879 / 26,720); first-five median **26,720** vs rest-of-channel **117,489** (4.4× cold-start),
+and their first real hit was upload #8. **Blood is not disproven.** What actually kills videos on this
+channel: actor-POV declaratives, benign verbs ("Protect" 34,666 / "Save" 100,703), "Full Life Cycle"
+framing, and self-cannibalization (3,041 = near-clone of their own #1 published one day later).
+**Do not publish within 72h of any other blood/parasite/feeding video.**
 
-## Exact first actions next session
-1. Confirm spend limit is cleared (or plan to work inline).
-2. Owner picks premise (#1 vampire finch vs #2 fish-anomaly).
-3. Clone `EPISODE_01_STORYBOARD.md` → new episode, swap animals into the same beat spine, apply the
-   2 fixes already noted (pre-turn pause →~12s, hero hold →~30s).
-4. Lock hero still in ChatGPT → generate clips in Grok (grit recipe) → VO in ElevenLabs → FFmpeg render
-   → `gate_style_wbs.py` → 11/11 → frame-strip QA → owner review.
+---
 
-## Key files (all in research/wildbirdsurvival_teardown/)
-FORENSICS.md · verified_rules_raw.json · gate_style_wbs.py · PROMPT_TEMPLATES.md · QA_PLAN.md ·
-GAMEPLAN.md · PLAN_v1.md · EPISODE_01_STORYBOARD.md · COMPARISON_theirs_vs_mine.md ·
-grok_grit.mp4 (approved look) · wbs_meta.tsv (all 26 videos + views).
+## WHAT EXISTS (all committed)
+| Layer | State | Where |
+|---|---|---|
+| Second-by-second plan, full 8:00 | ✅ LOCKED | `SECOND_BY_SECOND_theirs_vs_ours.md` (+ published page) |
+| The WHY / causal grammar | ✅ LOCKED | `STORYBOARD_SIDEBYSIDE_reference_vs_ours.md` |
+| Full VO script, 487 words to timecode | ✅ LOCKED | `EP02_SCRIPT_LOCKED.md` |
+| Scene-by-scene storyboard | ✅ | `EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md` |
+| Title + thumbnail | ✅ LOCKED | storyboard Step 0 (above) |
+| Look / grit recipe | ✅ PROVEN on 8 clips | `EPISODE_02_GRIT_TEST_RESULTS.md` |
+| Voice settings | ✅ PROVEN | ElevenLabs **Brian**, speed ~0.85 (=150–155 wpm), stability 74 |
+| Mix spec | ✅ PROVEN | VO loudnorm `I=-16`, bed ~20 dB under, limiter 0.95, no SFX on cuts |
+| SFX (8 diegetic) | ✅ | `assets/vampire_finch/sfx/` (wind + peck are approximate — upgrade if time) |
+| Reference data | ✅ | `wbs_meta.tsv`, `FORENSICS.md`, `compare_metrics.json`, `gate_style_wbs.py` |
+
+## WHAT'S MISSING (the real work)
+1. **~72 of ~80 shots.** We have 8 clips + 5 seed stills. Shot manifest = Part E of the storyboard.
+   Need ~6 more seed stills (macro-tail, raw-wound, finch portrait, mutualism-clean, prickly-pear,
+   a barren wide with the booby CLEAR — not the tiny-dot one).
+2. **The music bed** — one continuous harmonic track, swell ~2:19, fall at the end. Pixabay only
+   (project rule); no API key → browser pull. **Hygiene, not a lever — don't over-invest.**
+3. **The thumbnail image itself.** A ChatGPT gen was in flight at session end (extreme macro, booby head
+   right two-thirds, blood LARGE, dark left third for text). Existing crops in
+   `assets/vampire_finch/thumbs/` FAIL — blood reads too small and the left third is white.
+
+## HOW TO GENERATE (proven recipes — do not reinvent)
+- **Stills:** ChatGPT gpt-image. Grit recipe = *"raw wildlife documentary footage, telephoto, flat
+  overcast light, desaturated, handheld, BBC Planet Earth, NO golden hour, NO cinematic lighting."*
+  **Thumbnails are the exception — they must be punchy/saturated/dramatic, NOT the flat doc grade.**
+- **Clips:** Grok Imagine, **Video · 720p · 6s · 16:9** (New Generation resets to 480p — re-select 720p).
+  Upload via clipboard: `osascript -e 'set the clipboard to (read (POSIX file "<abs>.png") as «class PNGf»)'`
+  → click composer → Cmd+V → **zoom-verify the thumbnail attached before submitting** (a background
+  process clobbered the clipboard mid-run once; re-run the osascript immediately before each paste).
+- **Riders that work:** "keep exact anatomy, no extra limbs, no morphing, count stays the same."
+  **Blood rider (REQUIRED):** *"a DRY matted red bloodstain that does NOT drip, stretch, run, or form any
+  thread/string — only the finch moves."* Plain "blood" → Grok animates a dripping red thread.
+- **Avoid** prompting the booby to turn fully head-on to camera (weak i2v frame).
+- **VO:** ElevenLabs browser (acct `ElevenCreative`), voice Brian, speed slider ~0.85. Whisper-verify
+  every line. Generate the whole script in ONE pass, split at blank lines, drop at the timecodes.
+- **QA:** frame-strip every clip before it's used. Then `gate_style_wbs.py` on the render → 11/11.
+
+## THE CRITICAL PATH
+1. Thumbnail image → run the **168×94 gate** → if it passes, the packaging is done.
+2. ~6 seed stills → ~72 clips (the multi-hour grind) → frame-strip each.
+3. VO in one ElevenLabs pass to the locked script.
+4. Music bed (quick, low stakes).
+5. FFmpeg assemble to the second-by-second → `gate_style_wbs.py` 11/11 → owner watch → upload.
+
+## HARD-WON LESSONS (don't repeat)
+- **Grit-test clips ≠ scene coverage.** A cut built from a few test clips looks like a glitchy loop.
+  Every beat needs a DISTINCT vantage.
+- **Never pad the hook with a long wide of a tiny animal in a landscape** — that's their loser pattern.
+  Their hook opens on the FACE and cuts 1.4–2.2s, then lengthens.
+- **macOS `say` is unusable** (robotic). Local Chatterbox clones the owner's voice with an accent —
+  owner rejected it. **Use ElevenLabs Brian.**
+- **Aggregate stats (median shot length etc.) are outputs, not the plan.** The plan is the WHY at each
+  moment — see `STORYBOARD_SIDEBYSIDE_reference_vs_ours.md`.
+- **Evidence weight matters:** music peak / hook cut-count / cuts-on-word are *weak hygiene markers*.
+  The load-bearing items are the shots and the title/thumbnail.
+</content>
