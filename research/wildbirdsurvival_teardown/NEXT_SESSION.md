@@ -2,9 +2,27 @@
 _Last updated 2026-07-23 (THIRD session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Packaging DONE (thumbnail 4/4), plan COMPLETE (88 shots, gate 15/15), and ALL SEED STILLS ARE NOW
-DONE — 23/23 distinct seeds on disk, every one of the 88 shots has its seed (verified). What remains
+**Packaging DONE (thumbnail decided = ALT), plan COMPLETE (88 shots, gate 15/15), and ALL SEED STILLS ARE
+NOW DONE — 23/23 distinct seeds on disk, every one of the 88 shots has its seed (verified). What remains
 is pure production: ~82 clips via Grok i2v, the VO, one music bed, assemble.**
+
+## ▶️ START HERE (do these in this order)
+```bash
+cd /Users/jefflawrence/Documents/youtube-automation-production
+venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py            # expect ALL 15 PASS
+venv/bin/python research/wildbirdsurvival_teardown/gen_seed_shopping.py     # expect 0 / 0 / 23 on disk
+```
+1. **VO first — it's short and it closes out (~20 min).** ElevenLabs → Brian → Eleven Multilingual v2 →
+   stability **.74**, similarity **.75**, style **0**, speaker boost ON. Paste the 52-word probe from
+   `ep02_vo_speed_measurements.json`, set speed **0.95**, generate, download, and measure:
+   `ffprobe -v error -show_entries format=duration -of csv=p=0 FILE` → `wpm = 52 / (dur/60)`.
+   Aim **149–155 wpm** (owner's band 150–160). Then and only then run the **single full pass** on
+   `EP02_SCRIPT_LOCKED.md`, split at blank lines, drop each block at its timecode.
+   *Slider is a Radix span: focus it and press real Arrow keys (~0.01/step) — synthetic key events do nothing.*
+2. **Then the ~82-clip Grok grind** — straight down `EP02_SHOT_MANIFEST_FULL.md`. Frame-strip every clip.
+3. Music bed → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
+
+**Two decisions are already made — don't re-litigate:** thumbnail = **ALT**; VO target = **150–160 wpm**.
 
 ## ✅ SEEDS COMPLETE (this session)
 Generated 12 new seeds + 1 pricklypear in ONE ChatGPT gpt-image thread ("Nature Documentary Stills"),
@@ -30,11 +48,15 @@ Re-run `gen_seed_shopping.py` → **0 to generate, 0 shortcuts, 23 on disk.** Ev
 
 ## ✅ WHAT LANDED THIS SESSION
 
-### The thumbnail ships
-`assets/vampire_finch/thumbs/FINAL_ep02_thumbnail.png` — **4/4 on the gate.**
-Nazca booby correct (grey mask, pale yellow eye, orange dagger bill), the **Giant/Tiny scale gap
-reads**, blood matted into feathers rather than a splash, left third genuinely black under the type.
-`FINAL_ep02_base_notext.png` is the text-free version for the `BLOOD HOSTAGE` A/B swap.
+### The thumbnail ships — ✅ **DECIDED: ship `ALT_ep02_thumbnail_ungraded.png`**
+Owner had no preference (2026-07-23) and delegated the call. **Ship the ALT (ungraded) cut.**
+Measured reason: at the only size that matters (168×94 browse), ALT lands a **1291 px** red blob /
+12.06 % red vs FINAL's **1378 px** / 12.81 % — a difference no browsing viewer can perceive. ALT fails
+*only* the full-frame ≥12 % rule (11.66 %), by 0.34 pp. So you keep the click and drop the
+"visibly bloodied bird" advertiser risk that the spec's own safety clause warns about.
+Both bird anatomy and the Giant/Tiny scale gap read correctly in either cut; text-free versions are
+`ALT_ep02_base_notext_ungraded.png` / `FINAL_ep02_base_notext.png` for the `BLOOD HOSTAGE` A/B swap.
+*(`FINAL_ep02_thumbnail.png` remains on disk as the 4/4 alternative if you later want max blood salience.)*
 
 ### The gate is now mechanical, not an eyeball check
 `thumb_gate.py` measures the four things the spec actually asserts and prints PASS/FAIL with numbers:
@@ -60,13 +82,14 @@ Flags: `--crop x,y,w,h` · `--grade` (the spec's selective grade) · `--plate` (
 
 ---
 
-## ⚠️ TWO SPEC ERRORS FOUND — both need an owner call
+## ⚠️ TWO SPEC ERRORS FOUND — **both now RESOLVED** (kept for the reasoning)
 
-**1. The thumbnail spec contradicts itself.** It demands **wound ≥12% of frame** *and* **"no gore beyond
-one bead + smear (advertiser safety)."** Both cannot hold. The shipped frame reaches 12.58% only via the
-spec's own selective grade and reads as a visibly bloodied bird.
-`ALT_ep02_thumbnail_ungraded.png` is the tamer cut (11.66%, still reads clearly at browse size) if
-advertiser safety outranks the area rule. **Pick one before upload.**
+**1. The thumbnail spec contradicts itself — RESOLVED → ship ALT.** It demands **wound ≥12% of frame**
+*and* **"no gore beyond one bead + smear (advertiser safety)."** Both cannot hold. FINAL reaches 12.58%
+only via the spec's own selective grade and reads as a visibly bloodied bird; ALT is 11.66%.
+**Resolution: the ≥12% rule is only a proxy for "does blood read at browse size," and ALT passes that
+directly (1291 px blob at 168×94).** Satisfying the proxy at the cost of the thing it proxies for is the
+wrong trade, so **ALT ships.** See the thumbnail section above for the numbers.
 
 **2. VO speed — NOW MEASURED (2026-07-23). Both earlier claims were wrong.**
 Measured on **this script's own text** (52-word probe, Brian, stab .74 / sim .75 / style 0, Multilingual v2):
@@ -141,10 +164,14 @@ has watched a cut** — because the footage doesn't exist yet. The manifest is a
 - **Verify the composer received the text before pressing Return.** Clicking by coordinate silently
   fails often; keystrokes go nowhere. Check `document.querySelector('#prompt-textarea').innerText.length`.
   The composer sits at a **different y on the new-chat landing page** than in an open thread.
-- **The inline image icons are share, not download.** Don't fight them — pull the pixels off a canvas
-  (it is not tainted); recipe in `EP02_SEED_PROMPTS.md`. This also sidesteps stalled downloads.
-- **Requests silently drop.** Twice a message landed in the thread with no response and nothing
-  generating. Reload the thread to confirm, then resend.
+- **The inline image icons are share, not download.** ⚠️ **The canvas recipe in `EP02_SEED_PROMPTS.md` is
+  SUPERSEDED** — canvas→blob worked for exactly one download, then Chrome blocked further automatic
+  downloads, and the extension blocks base64 in JS returns. **Use in-page
+  `fetch(img.src,{credentials:'include'}) → blob → <a download>` instead** (see BROWSER METHOD at top).
+  The owner must click "Always allow downloads from chatgpt.com" once per session.
+- **Requests silently drop / the image CDN lags.** A card can sit blank 15–25 s after streaming stops —
+  that's usually just the CDN, not a drop. Confirm by watching the `main img` count rise by 3.
+  **Do NOT `location.reload()` to fix it** — that resets every image in the thread to blank.
 - **Edit mode will not crop in** — asking a generated image for a tighter macro returns the same
   framing. Crop locally instead.
 
