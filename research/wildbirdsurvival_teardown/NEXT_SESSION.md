@@ -2,9 +2,9 @@
 _Last updated 2026-07-23 (second session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Packaging is DONE (thumbnail passes the gate 4/4) and every shot is now specified — 88 shots with
-per-shot Grok prompts, passing the pacing gate 14/14. What remains is pure production: 6 seed stills,
-~82 clips, the VO, one music bed.**
+**Packaging is DONE (thumbnail 4/4) and the plan is COMPLETE on paper — 88 shots with per-shot Grok
+prompts, all 139 audit defects worked through, gate 15/15. What remains is pure production: ~12 seed
+stills (1 done), ~82 clips, the VO, one music bed.**
 
 ---
 
@@ -65,22 +65,33 @@ that from any builder script); re-check with **`gate_shots.py`**, regenerate the
 four defects the agents' own audit missed — including **22 duplicate shot IDs** that would have made a
 builder silently overwrite clips.
 
-**Pacing + prompt-hygiene now pass 14/14** — run `gate_shots.py` to re-check after any edit. I tuned
-the draft to get there: absorbed 4 genuinely weak beats (92→88 shots) to lift the mean to 5.45 s, and
-redistributed ACT7's six flat 8 s shots into a real slowing pattern (6/10/6/11/7/10) which added the
-missing holds *and* fixed a monotony flag. The earlier "hook mean" miss was a **measurement bug** — the
-gate was counting shots that END before 60 s, which dropped the 14.9 s silence hold; it counts shots
-that START before 60 s now (11 cuts, 5.75 s mean).
+**All 15 gates PASS** — run `gate_shots.py` after any edit. Pacing was tuned (92→88 shots: absorbed 4
+weak beats to lift mean to 5.45 s; ACT7 redistributed 6/10/6/11/7/10 to slow properly and add holds).
 
-⚠️ **Still not signed off:** the **139 content defects** from the adversarial pass are recorded per act
-in the manifest and remain unresolved. Those are the real remaining desk work on the plan.
+**All 139 adversarial defects are now worked through** (was "unresolved"):
+- 62 were in families the gate proves fixed (riders, anatomy, head-on, tiling).
+- 18 act-level ones triaged in `EP02_DEFECT_TRIAGE.md` (tiny-dot seed purged, mean-budget fixed, stale
+  NOTES superseded by the computed manifest; ACT7 cut re-timed to land on the VO line at 444 s; two
+  self-contradictory rider clauses reworded globally).
+- 59 genuinely-open ones (vantage duplication, VO-sync, seed-capability) resolved by 4 agents: **43
+  fixed, 4 already-resolved, 12 wont_fix** (all note/ledger-level or an intentional match-cut — none is
+  live shot content). Applied via `apply_defect_edits.py` (guardrails reject timing edits / dropped
+  riders), gate re-hardened so the rider regression can't recur.
+
+⚠️ **What "signed off" still means:** the plan is now internally consistent and gated, but **no owner
+has watched a cut** — because the footage doesn't exist yet. The manifest is as good as it gets on paper.
 
 ## WHAT'S MISSING (the real work, in order)
-1. **7 seed stills** (6 + one the manifest surfaced) — every prompt is written and ranked in
-   `EP02_SEED_PROMPTS.md`. `SEED_finch_portrait` is **done**. Do `SEED_wide_booby_clear` next: it
-   unblocks 9 shots, the most of any missing seed.
-2. **~82 clips** — the multi-hour grind, now fully specified (88 shots, 6 already covered by test
-   clips). Work straight down `EP02_SHOT_MANIFEST_FULL.md`; frame-strip every clip.
+1. **Seed stills — 1 of ~12 done.** `SEED_finch_portrait.png` is on disk. The defect pass grew the list
+   to **14 seeds** (11 real generations + 3 crop/recolor shortcuts) because several shots' framings were
+   unreachable from their assigned seed — the consolidated shopping list with per-seed make-instructions
+   is at the bottom of `EP02_SEED_PROMPTS.md`. Do **`SEED_wide_booby_clear`** next (6 shots, the most).
+   The `SEED_mutualism_clean` A/B/C are three *deliberately distinct* poses — don't collapse them.
+   ⚠️ Blocked this session: ChatGPT's image CDN + downloads went intermittent. `SEED_mutualism_clean`
+   regenerated correctly but couldn't be pulled — recipe + status in `EP02_SEED_PROMPTS.md`.
+2. **~82 clips** — the multi-hour grind, now fully specified (88 shots, 6 covered by test clips). Work
+   straight down `EP02_SHOT_MANIFEST_FULL.md`; frame-strip every clip. **Same-seed adjacency (S007-9,
+   S058-61, S080-82): derive distinct seed frames by cropping the base still, don't re-prompt one frame.**
 3. **VO** — one ElevenLabs pass to `EP02_SCRIPT_LOCKED.md`, after settling the speed above.
 4. **Music bed** — one Pixabay track. **Hygiene, not a lever. Do not over-invest.**
 5. **Assemble** → `gate_style_wbs.py` 11/11 → owner watch → upload.
