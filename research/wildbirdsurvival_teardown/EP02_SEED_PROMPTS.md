@@ -48,6 +48,15 @@ the cut that follows.
 > A single vampire ground finch perched in clean SIDE PROFILE on the white back of a Nazca booby, filling the centre of the frame. Its short blunt conical beak is clearly visible, completely clean and unmarked. Small dark eye with a bright catchlight. Background of black lava and flat grey overcast sky, thrown out of focus. Telephoto, flat overcast light, desaturated, no golden hour.
 
 ## 2. `SEED_mutualism_clean` — used ×3+ in Act 4
+
+> ⚠️ **This one failed on the first attempt and the reason matters.** After a good seed 1, the
+> follow-up said *"keep them identical for every following image."* gpt-image anchored on that and
+> reproduced **the entire composition** — same upright side-profile perch, same angle — not just the
+> bird's identity. The result was a near-duplicate of seed 1 and was discarded.
+> **Word it as: "same bird species and same grade, but a COMPLETELY DIFFERENT camera angle, pose and
+> distance."** Identity carries; framing must not. Two seeds with the same vantage produce the glitchy
+> looping cut that got `rough_cut_v1` rejected outright.
+
 The "it did not begin as cruelty" montage. **Must contain no red at all** — it is the before to the
 pivot's after.
 > A vampire ground finch standing on the upper back of a resting Nazca booby, head lowered, picking a small parasite from between the seabird's clean white feathers. The plumage is entirely clean and white with no marks or discolouration anywhere. Both birds calm and settled. Side-on telephoto view, shallow depth of field, black lava behind, flat grey overcast light, desaturated.
