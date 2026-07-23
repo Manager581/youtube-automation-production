@@ -12,11 +12,41 @@ gate_style_wbs.py). All clip audio stripped; one music bed + light diegetic ambi
   once: **scale-gap** (654K lane), **gross/blood** (their gross lane), and **violation of expectation**
   (a *finch*, a seed-eater, drinks blood). Two animals, curiosity gap, two jeopardies (the bleeding,
   then the eggs). Not a 1:1 of their #1 fish-cleaning hit.
-- **Title (pick one):** "Why Does This Giant Seabird Let a Finch Drink Its Blood?" · alt: "Everyone
-  Thought This Finch Ate Seeds. It Drinks Blood."
-- **Thumbnail:** extreme close-up — the white Nazca booby's wing with a small black finch's beak at
-  the feather base and a **single bright bead of red blood** in the white down + 2–3 words
-  **"IT DRINKS BLOOD"** or **"IT JUST LETS IT"** (yellow/white, thick black outline).
+- **TITLE — LOCKED:** `Why This Giant Seabird Lets a Tiny Finch Drink Its Blood`
+  (56 chars · no suffix · no question mark · no colon)
+  **Why:** a character-for-character isomorph of their **#2 all-time, 939,961 views** — *"Why This
+  Warthog Lets Mongooses Crawl All Over Its Face"* (55 chars, the only top-8 title with no pipe suffix).
+  It stacks the 654K scale-gap lever ("Giant"/"Tiny") on top, and **"Lets"** — the permission verb —
+  appears in exactly two of their titles: 939,961 and 130,161 (mean 535K). "Drink Its Blood" is in the
+  same invasive register as "Crawl All Over Its Face"; the *benign* verbs are what died ("Protect"
+  34,666 · "Save" 100,703). No species names: every winner used an instantly imageable animal, and
+  "Booby" invites off-intent search + comment noise — recover the search terms in the description/tags.
+  **A/B ladder:** ① *"Why Does a Bird 100 Times Bigger Let This Finch Open a Wound and Drink?"* (the
+  clean no-blood-keyword counterfactual) ② *"…Lets Dozens of Tiny Finches Drink Its Blood"* — **gated:
+  only if the hero image is recomposed to show a swarm**, or it breaks the title–thumb contract.
+- **THUMBNAIL — LOCKED:** text = **`BLOOD FOR EGGS`** — `BLOOD` in **yellow #FFD400**, `FOR EGGS` in
+  **white**, heavy condensed sans, 8–10px black outline, stacked 2 lines, left third.
+  **Why:** their winners either amplify a *visible* gross thing ("1000+ PARASITES GONE!", "TOO MANY
+  TICKS!") or pose a relational puzzle ("WHO NEEDS WHO?"). This does both — `BLOOD` names what the eye
+  already sees, `FOR EGGS` supplies the trade the image can't show. Keyword overlap with the title is
+  deliberate: their 1.98M champion ran "Thousands of Parasites" in the title AND "1000+ PARASITES GONE!"
+  in the thumb.
+  **Image:** extreme macro, frame filled; the wound is the hero — one bright red bead + smear at a
+  feather base, centre-right, tack sharp, **≥12% of frame area**, the most saturated element in frame;
+  the black finch's head/beak enters from the left (this is also the dark plate the text sits on).
+  ⚠️ **Yellow on white feathers = contrast collapse** — the text must sit over the finch's black body or
+  a left-edge dark gradient.
+  🚨 **SHIP GATE:** downscale to **168×94 px** and look. If the red isn't instantly readable as *blood*
+  at that size, recompose. **This is the exact error that sank their blood video** — its thumbnail was
+  "LIVE IN THE EAR!" and contained no blood at all.
+- **⚠️ Premise risk — RE-ASSESSED (verified 2026-07-23):** their own "This Bird Drinks Blood From Live
+  Animals" did 13,095 — but it is **upload #1 on the channel**. Uploads #1/#2/#3 are the three worst
+  ever (13,095 / 1,879 / 26,720); first-five median **26,720** vs rest-of-channel median **117,489**
+  (4.4× cold-start penalty), and their first real hit was upload #8. **The blood premise is not
+  disproven — that video was confounded by cold start**, and it also carried the two loser tells we
+  avoid (actor-POV declarative + "Full Life Cycle" suffix). Do fear: actor-POV, benign verbs,
+  life-cycle framing, and self-cannibalization (their 3,041 was a near-clone of their own #1 published
+  one day later). **Do not publish within 72h of any other blood/parasite/feeding video.**
 
 ## The 6-beat outline
 1. **Cold open (0:00–0:15):** one Nazca booby, right now, a small black finch at its wing, a bead of
