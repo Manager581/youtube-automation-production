@@ -1,7 +1,7 @@
 # EP02 — SEED SHOPPING LIST (generated)
 _Auto-generated from `ep02_shots.json` by `gen_seed_shopping.py`. Do not hand-edit — re-run it._
 
-**0 base generations + 0 crop/recolor shortcuts still needed; 23 seed(s) already on disk.**
+**0 base generations + 0 crop/recolor shortcuts still needed; 24 seed(s) already on disk.**
 
 The defect pass grew the seed list because several shots' framings were unreachable from their
 assigned seed (Grok i2v begins on the seed's frame 1). Each new seed traces to a seed-capability
@@ -21,7 +21,7 @@ defect an agent grounded by opening the actual PNG. Prompts for the original six
 |---|---:|
 | `hero_still_A_booby_finch.png` | 21 |
 | `hero_still_A2_macro_finch_wound.png` | 14 |
-| `hero_still_B_egg_nest.png` | 14 |
+| `hero_still_B_egg_nest.png` | 13 |
 | `still_booby_eye.png` | 8 |
 | `SEED_wide_booby_clear.png` | 5 |
 | `SEED_macro_tail.png` | 4 |
@@ -40,6 +40,7 @@ defect an agent grounded by opening the actual PNG. Prompts for the original six
 | `SEED_wide_ocean_ots.png` | 1 |
 | `SEED_finch_ground.png` | 1 |
 | `SEED_pricklypear_top.png` | 1 |
+| `SEED_egg_xcu_feet.png` | 1 |
 | `SEED_mutualism_clean_B.png` | 1 |
 | `SEED_flank_stain.png` | 1 |
 

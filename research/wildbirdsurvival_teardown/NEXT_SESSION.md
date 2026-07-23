@@ -12,13 +12,17 @@ cd /Users/jefflawrence/Documents/youtube-automation-production
 venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py          # expect ALL 15 PASS
 venv/bin/python research/wildbirdsurvival_teardown/gen_clip_ledger.py --next 3   # status + next shots
 ```
-1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST.** It has the proven browser recipe (including the one
-   incantation that actually attaches a seed), the four dead ends not to retry, and — most importantly —
-   **why you must check each SEED against its prompt before generating.** The first clip generated
-   this session was rejected for reasons that were all in the seed, not the prompt.
-2. **The clip grind — 86 shots left.** Work the ledger, not memory. Frame-strip every clip; a shot is
-   not done until `<ID>_strip.jpg` exists AND you have looked at it.
-3. Music bed (one Pixabay track, hygiene only) → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
+1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST.** It has the proven browser recipe — including the one
+   incantation that actually attaches a seed (`computer{key, text:"cmd+v"}`; the `modifiers` form
+   just types a literal "v") — and the four dead ends not to retry.
+2. **Generate the one missing seed, S035** — `EP02_OPEN_SEEDS.md`, ~10 min. It is the only shot
+   whose seed still cannot deliver its prompt.
+3. **The clip grind — 87 shots left.** Work the ledger, not memory. Frame-strip every clip; a shot
+   is not done until `<ID>_strip.jpg` exists AND you have looked at it. The seed-vs-prompt audit is
+   already done, so a shot that now fails is a *generation* problem (re-roll), not a plan problem.
+   Re-run `assemble_ep02.py` whenever you want to watch progress in context.
+4. Music bed (one Pixabay track, hygiene only — but it must peak **before** the 50 % mark to pass the
+   last style gate) → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
 
 **Decisions already made — don't re-litigate:** thumbnail = **ALT**; VO speed = **0.95** (settled by
 measurement, see below).
@@ -178,6 +182,50 @@ has watched a cut** — because the footage doesn't exist yet. The manifest is a
 3. **VO — ✅ DONE.** See the VO section at the top.
 4. **Music bed** — one Pixabay track. **Hygiene, not a lever. Do not over-invest.**
 5. **Assemble** → `gate_style_wbs.py` 11/11 → owner watch → upload.
+
+## ✅ SEED-REACHABILITY AUDIT — DONE (243 agents, 2026-07-23). The plan is now *makeable*.
+Because i2v begins on the seed's frame 1, a prompt describing framing, a creature count or a
+stain state the still does not have is unmakeable however it is worded — S002 proved it by
+being generated correctly and still failing. So every shot was checked against its actual seed
+**before** spending 85 more generations.
+
+23 agents (one per seed) opened the PNG and judged all 88 shots; every blocker then faced 3
+independent refuters on distinct lenses (framing / creature-count / action-and-blood), each told
+to look at the image and to default to REFUTED when unsure. A blocker survived only on ≥2 of 3.
+
+**64 raised → 28 sustained** (the adversarial pass killed 36, which is why it exists).
+**26 of 28 remedies were prompt respecs, not new stills — all applied**, plus S059's crop.
+Full record: `ep02_seed_reachability_audit.json`.
+
+- Concentrated in the 3 seeds carrying 49 of 88 shots: A2_macro_finch_wound 10, A_booby_finch 7,
+  B_egg_nest 6.
+- **`hero_still_A2_macro_finch_wound.png` has a WET mark** — filaments spanning to the beak and a
+  runnel already running down. That is why S002 failed, and why shots on it that ask for violent
+  motion were respec'd to pin the feeding finch still.
+- **S008's prompt demanded a bill-snap its own `action` field says was deliberately left to S007**
+  so the two would not read as one looped shot — the exact failure that killed `rough_cut_v1`.
+  No keyword scan finds that.
+- **S079 `has_blood` → false**: its seed has zero red pixels, so a blood rider would have ordered
+  the model to invent blood absent from frame 1.
+- **S059** got a real crop, `SEED_egg_xcu_feet.png` (verified by eye: egg as a true XCU, feet
+  framing left and right, booby's head out of frame so head-on is structurally impossible).
+
+**Still open: S035 only** — needs one new seed. Prompt is written, with the gpt-image trip words
+already neutralised, in **`EP02_OPEN_SEEDS.md`**.
+
+## ✅ ASSEMBLY PATH PROVEN — a full-length cut already exists
+`assemble_ep02.py` builds the whole 480 s episode now, rendering a **labelled placeholder** from
+each shot's seed where no clip exists yet (Dinoverse's rough-cut policy). Proven end-to-end in
+54 s at preview res, output exactly 480.00 s, and the VO was spot-checked by transcribing the
+real render at 0 s, 270 s and 468 s — all three land on the right line. So the grind can be
+watched in context at any point, and assembly is no longer an unknown waiting at the end.
+
+## ✅ 9 of the 11 STYLE GATES ARE ALREADY LOCKED IN
+`gate_style_preflight.py` checks the 9 knowable before the render — now **9/9**. Only
+cuts-on-audio-hit (needs the render) and music-peak-before-50% (needs the track) remain.
+It caught a **ship-blocking defect**: `gate_shots.py` counts holds `>= 10` but the real ship gate
+counts `> 10`, and S083/S085 were exactly 10.0 s — the plan would have failed the final gate
+10/11 *after* the whole grind. Fixed by two 0.5 s boundary nudges.
 
 ## ⚠️ THREE MANIFEST DEFECTS FOUND WHILE STARTING THE GRIND
 Found by checking, before generating, whether each prompt is reachable from its seed. The gate's 15

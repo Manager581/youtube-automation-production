@@ -80,7 +80,7 @@ without its strip is reported as unfinished on purpose.
 | `S056` | 339.5-345s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S057` | 345-350.5s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S058` | 350.5-356s | MS | `hero_still_B_egg_nest.png` |  |
-| `S059` | 356-360.5s | XCU | `hero_still_B_egg_nest.png` |  |
+| `S059` | 356-360.5s | XCU | `SEED_egg_xcu_feet.png` |  |
 | `S060` | 360.5-365s | CU | `hero_still_B_egg_nest.png` |  |
 | `S061` | 365-368.5s | MS | `hero_still_B_egg_nest.png` |  |
 | `S062` | 368.5-372s | CU | `hero_still_B_egg_nest.png` |  |

@@ -39,7 +39,7 @@ Pacing and prompt-hygiene gates all pass (see table). What is **not** resolved: 
 |---:|---|---|
 | 21 | `hero_still_A_booby_finch.png` | ✅ yes |
 | 14 | `hero_still_A2_macro_finch_wound.png` | ✅ yes |
-| 14 | `hero_still_B_egg_nest.png` | ✅ yes |
+| 13 | `hero_still_B_egg_nest.png` | ✅ yes |
 | 8 | `still_booby_eye.png` | ✅ yes |
 | 5 | `SEED_wide_booby_clear.png` | ✅ yes |
 | 4 | `SEED_macro_tail.png` | ✅ yes |
@@ -58,6 +58,7 @@ Pacing and prompt-hygiene gates all pass (see table). What is **not** resolved: 
 | 1 | `SEED_wide_ocean_ots.png` | ✅ yes |
 | 1 | `SEED_finch_ground.png` | ✅ yes |
 | 1 | `SEED_pricklypear_top.png` | ✅ yes |
+| 1 | `SEED_egg_xcu_feet.png` | ✅ yes |
 | 1 | `SEED_mutualism_clean_B.png` | ✅ yes |
 | 1 | `SEED_flank_stain.png` | ✅ yes |
 
@@ -963,9 +964,9 @@ EDIT-LAW COMPLIANCE / FLAGS FOR THE ASSEMBLER:
 ### S059 · 356.0-360.5s (4.5s) · XCU  <sub>(was S062)</sub>
 - **Vantage:** straight overhead, lens directly above the egg, feet framing left and right
 - **Action:** The egg alone, half-buried in grey dust and guano-flecked lava, the booby's feet framing it. The object the whole trap hangs on, stated plainly.
-- **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
+- **Seed:** `SEED_egg_xcu_feet.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A single chalk-white seabird egg lying in grey dust on guano-flecked black lava, seen from straight overhead with the lens directly above it; the booby's grey scaled feet frame the shell on either side and shift a fraction; fine grit blows across the shell; the egg stays one solid egg and does not move or roll. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging.
+  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An extreme close-up of a single chalk-white speckled seabird egg resting half-buried in grey dust on guano-flecked black lava, the camera low at egg height looking across the ground in a raking near-ground macro so the shell fills the middle of frame; the booby's two grey scaled feet frame the shell on either side, one splayed foot with long toes at the left and the webbed foot behind the shell at the right, and they shift a fraction; the booby's white belly is a soft band across the top of frame and its head stays completely out of frame; a single small black finch's head and bill hang at the extreme right edge of frame and dip once toward the shell; fine grit blows across the shell; the egg stays one solid egg and does not move or roll. Long lens, handheld micro-drift only, no zoom, no push-in. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging - one booby and one finch throughout.
 
 ### S060 · 360.5-365.0s (4.5s) · CU  <sub>(was S063)</sub>
 - **Vantage:** egg-level, from just behind the finch's shoulder, egg soft in the foreground
