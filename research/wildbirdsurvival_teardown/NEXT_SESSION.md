@@ -3,8 +3,7 @@ _Last updated 2026-07-23 (second session of the day). This supersedes all earlie
 
 ## Where we are in one line
 **Packaging is DONE (thumbnail 4/4) and the plan is COMPLETE on paper — 88 shots with per-shot Grok
-prompts, all 139 audit defects worked through, gate 15/15. What remains is pure production: ~12 seed
-stills (1 done), ~82 clips, the VO, one music bed.**
+prompts, all 139 audit defects worked through, gate 15/15. What remains is pure production: ~18 seeds (1 done; 14 base generations + 4 crop/recolor shortcuts), ~82 clips, the VO, one music bed.**
 
 ---
 
@@ -82,10 +81,8 @@ weak beats to lift mean to 5.45 s; ACT7 redistributed 6/10/6/11/7/10 to slow pro
 has watched a cut** — because the footage doesn't exist yet. The manifest is as good as it gets on paper.
 
 ## WHAT'S MISSING (the real work, in order)
-1. **Seed stills — 1 of ~12 done.** `SEED_finch_portrait.png` is on disk. The defect pass grew the list
-   to **14 seeds** (11 real generations + 3 crop/recolor shortcuts) because several shots' framings were
-   unreachable from their assigned seed — the consolidated shopping list with per-seed make-instructions
-   is at the bottom of `EP02_SEED_PROMPTS.md`. Do **`SEED_wide_booby_clear`** next (6 shots, the most).
+1. **Seed stills — 1 of ~18 done.** `SEED_finch_portrait.png` is on disk. The defect pass grew the list to **~18 seeds** (14 base generations + 4 crop/recolor shortcuts) because several shots' framings were
+   unreachable from their assigned seed — the generated shopping list (`EP02_SEED_SHOPPING.md`, from `gen_seed_shopping.py`) has per-seed specs. Do **`SEED_wide_booby_clear`** next (6 shots, the most).
    The `SEED_mutualism_clean` A/B/C are three *deliberately distinct* poses — don't collapse them.
    ⚠️ Blocked this session: ChatGPT's image CDN + downloads went intermittent. `SEED_mutualism_clean`
    regenerated correctly but couldn't be pulled — recipe + status in `EP02_SEED_PROMPTS.md`.
