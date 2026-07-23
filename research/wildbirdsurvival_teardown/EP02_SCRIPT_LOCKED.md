@@ -1,8 +1,17 @@
 # EP02 — FULL LOCKED SCRIPT (VO to timecode)
 ### "Why Does This Giant Seabird Let a Finch Drink Its Blood?"
-_The complete narration, written to the SECOND_BY_SECOND clock. Deep male (ElevenLabs Brian, speed ~0.85
-≈ 150 wpm, British spelling). Generate in ONE pass, then split at the blank lines and drop each block at
-its timecode. **[SILENCE]** blocks are real — the narrator stops; music + visuals carry them._
+_The complete narration, written to the SECOND_BY_SECOND clock. Deep male (ElevenLabs Brian, British
+spelling). Generate in ONE pass, then split at the blank lines and drop each block at its timecode.
+**[SILENCE]** blocks are real — the narrator stops; music + visuals carry them._
+
+> ⚠️ **SPEED: "~0.85 ≈ 150 wpm" WAS WRONG — measured 2026-07-23.** On this script's own text,
+> speed **0.75 → 131.5 wpm** and **0.84 → 138.9 wpm** (52-word probe, Brian, stab .74 / sim .75 / style 0).
+> That is a slope of only ~82 wpm per 1.00 speed, so **0.85 ≈ 139 wpm**, not 150. The rival claim in an
+> older handoff that 0.85 ≈ 178-185 wpm is ALSO wrong — it interpolated two *different* texts, and wpm is
+> strongly text-dependent (long words + sentence stops cut wpm at identical voice speed).
+> **~149 wpm extrapolates to speed ≈ 0.96 — UNCONFIRMED (the 0.95 probe stalled at ElevenLabs).
+> Run one 0.95 probe and measure before committing the one-pass.** Raw data:
+> `ep02_vo_speed_measurements.json`; probe audio in `audio/vampire_finch/vo_probe_sp*.mp3`.
 
 **Budget check (their measured target):** 480 s runtime · **41 % coverage** ≈ 197 s of speech ·
 **~490 words**. This script = **487 words**, ~195 s of speech at 150 wpm → **~41 % coverage.** ✅

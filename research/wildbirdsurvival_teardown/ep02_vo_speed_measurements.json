@@ -1,0 +1,54 @@
+{
+  "probe_text_words": 52,
+  "probe_text": "This is a ground finch. A seed-eater \u2014 the same unremarkable little bird Darwin watched cracking seeds on these islands, two centuries ago. It has no business wanting blood at all. So how did a seed-eater learn to drink blood \u2014 and why does a seabird twenty times its size simply let it happen?",
+  "settings": {
+    "voice": "Brian",
+    "model": "Eleven Multilingual v2",
+    "stability": 0.74,
+    "similarity": 0.75,
+    "style": 0,
+    "speaker_boost": true
+  },
+  "measurements": [
+    {
+      "speed": 0.75,
+      "duration_s": 23.72,
+      "wpm": 131.5,
+      "file": "vo_probe_sp75_s74_sb75_m2.mp3"
+    },
+    {
+      "speed": 0.84,
+      "duration_s": 22.47,
+      "wpm": 138.9,
+      "file": "vo_probe_sp84_s74_sb75_m2.mp3"
+    }
+  ],
+  "reference_take": {
+    "file": "coldopen_vo_eleven_brian.mp3",
+    "speed": 0.71,
+    "words": 31,
+    "duration_s": 12.98,
+    "wpm": 143.3,
+    "note": "DIFFERENT, shorter-word text - not comparable to the probes; this is why cross-text interpolation was wrong."
+  },
+  "fit_on_script_text": {
+    "slope_wpm_per_speed": 81.6,
+    "intercept": 70.3,
+    "predicted_speed_for_145wpm": 0.915,
+    "predicted_speed_for_149wpm": 0.964,
+    "status": "UNCONFIRMED extrapolation - probe 0.95 stalled at ElevenLabs; confirm next session"
+  },
+  "script": {
+    "words": 487,
+    "design_target_speech_s": 195,
+    "design_coverage_pct": 41,
+    "at_0.75": {
+      "speech_s": 222,
+      "coverage_pct": 46.3
+    },
+    "at_0.84": {
+      "speech_s": 210,
+      "coverage_pct": 43.8
+    }
+  }
+}

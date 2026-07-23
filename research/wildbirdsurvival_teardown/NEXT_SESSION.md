@@ -68,12 +68,30 @@ spec's own selective grade and reads as a visibly bloodied bird.
 `ALT_ep02_thumbnail_ungraded.png` is the tamer cut (11.66%, still reads clearly at browse size) if
 advertiser safety outranks the area rule. **Pick one before upload.**
 
-**2. `ElevenLabs speed ~0.85` was never measured.** It interpolates the only two real data points:
-default = **215 wpm**, slider 0.71 = **143 wpm** (which Jeff called too slow). Linear between them,
-150–157 wpm lands at **~0.74–0.77**; 0.85 would run ≈185 wpm — far too fast.
-**Measure it before committing the VO**, don't trust either number. Stability 74, similarity ~75,
-Eleven Multilingual v2, account `ElevenCreative`. The filename encodes the settings
-(`…_pre_sp71_s74_sb75_m2.mp3`) — use it to confirm which take you actually grabbed.
+**2. VO speed — NOW MEASURED (2026-07-23). Both earlier claims were wrong.**
+Measured on **this script's own text** (52-word probe, Brian, stab .74 / sim .75 / style 0, Multilingual v2):
+
+| speed | duration | **wpm** |
+|---|---|---|
+| 0.75 | 23.72 s | **131.5** |
+| 0.84 | 22.47 s | **138.9** |
+
+Slope ≈ **82 wpm per 1.00 speed** → **0.85 ≈ 139 wpm.** So the script note's "0.85 ≈ 150 wpm" was wrong,
+and this file's own earlier "0.85 ≈ 185 wpm" was *also* wrong — that one interpolated the 0.71 cold-open
+take (143.3 wpm, re-measured and confirmed) against a reported default of 215 wpm, but those are
+**different texts**. ⚠️ **wpm is strongly text-dependent** — long words + sentence stops lower wpm at the
+same voice speed. Never interpolate across texts again; measure on the real script.
+
+**Target:** the script is 487 words written for ~195 s of speech (41 % coverage) ⇒ **~149 wpm**, which
+extrapolates to **speed ≈ 0.96** — *UNCONFIRMED*: the 0.95 probe stalled at ElevenLabs (job never charged).
+**Next session: run ONE 0.95 probe, measure, then commit the single full pass.** For reference, 0.84
+already yields 210 s / 43.8 % coverage — inside the winners' 40–50 % band, so 0.90–0.96 is the safe zone.
+Owner's chosen band is **150–160 wpm**. Raw data: `ep02_vo_speed_measurements.json`; probe audio in
+`audio/vampire_finch/vo_probe_sp75…mp3`, `…sp84…mp3`. Account `ElevenCreative`.
+
+**Reference channel's measured pacing** (from `FORENSICS.md`, why 150ish is right): winners run
+**145–163 wpm** (biggest hit 1.98M = 157; hornbill 153; warthog 145), the **flop races at 190**. Winners
+narrate ~43 % of runtime; the flop talks over 67 %.
 
 ---
 
