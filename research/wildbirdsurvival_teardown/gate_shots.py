@@ -44,6 +44,9 @@ def gates(shots):
     noblood = [x["id"] for x in s if x.get("has_blood") and BLOOD_RIDER not in x["grok_prompt"]]
     nogrit = [x["id"] for x in s if not x["grok_prompt"].startswith(GRIT)]
     noanat = [x["id"] for x in s if ANATOMY not in x["grok_prompt"]]
+    # the two rider closing clauses the audit flagged as self-contradictory — must be gone
+    oldrider = [x["id"] for x in s if "only the finch moves" in x["grok_prompt"].lower()
+                or "count stays the same" in x["grok_prompt"].lower()]
     headon = [x["id"] for x in s if "head-on" in x["grok_prompt"].lower()
               and not any(n in x["grok_prompt"].lower() for n in HEADON_OK)]
     nocov = [x["id"] for x in longs if not x.get("coverage_note")]
@@ -64,6 +67,7 @@ def gates(shots):
         ("Anatomy rider on every prompt", "all", "all" if not noanat else ",".join(noanat), not noanat),
         ("DRY-blood rider on blood shots", "all", "all" if not noblood else ",".join(noblood), not noblood),
         ("No prompt asks booby head-on", "0", "none" if not headon else ",".join(headon), not headon),
+        ("No self-contradictory rider tails", "0", "none" if not oldrider else ",".join(oldrider), not oldrider),
     ]
     return rows
 
