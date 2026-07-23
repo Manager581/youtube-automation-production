@@ -56,6 +56,18 @@ the cut that follows.
 > **Word it as: "same bird species and same grade, but a COMPLETELY DIFFERENT camera angle, pose and
 > distance."** Identity carries; framing must not. Two seeds with the same vantage produce the glitchy
 > looping cut that got `rough_cut_v1` rejected outright.
+>
+> **Regen status (2026-07-23):** re-run with the corrected wording below — a good, genuinely different
+> above-and-behind pose generated (visible in the ChatGPT thread, distinct fingerprint) but could NOT be
+> pulled: mid-session ChatGPT's image CDN started rendering blank and Chrome began blocking the
+> canvas-blob download ([[feedback_chrome_download_block_ask]]). **Next session: regenerate or, if the
+> thread is still open, have the owner allow the download.** The corrected prompt to use:
+> *"Keep the same finch species and the same flat overcast grade, but a COMPLETELY DIFFERENT camera
+> angle, pose and distance — do not repeat the upright side-profile perch. Shot from ABOVE AND BEHIND,
+> looking down over the broad white back of a large resting white seabird that fills the lower frame;
+> the small black ground finch is seen from the rear three-quarter, crouched low, facing away, its head
+> pushed DOWN INTO the white back feathers to pick out a tiny parasite; plumage entirely clean white,
+> no marks anywhere."*
 
 The "it did not begin as cruelty" montage. **Must contain no red at all** — it is the before to the
 pivot's after.
