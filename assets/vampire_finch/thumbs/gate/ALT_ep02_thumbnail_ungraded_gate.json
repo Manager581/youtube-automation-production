@@ -1,0 +1,39 @@
+{
+  "label": "ALT_ep02_thumbnail_ungraded",
+  "size": [
+    1280,
+    720
+  ],
+  "blood_area_pct": 11.66,
+  "blood_sat_mean": 0.643,
+  "rest_sat_mean": 0.178,
+  "blood_is_most_saturated": true,
+  "text_plate_darkness": 0.562,
+  "left_third_darkness": 0.8,
+  "at_168x94_red_px": 1905,
+  "at_168x94_largest_blob_px": 1291,
+  "at_168x94_red_area_pct": 12.06,
+  "verdict": "RECOMPOSE",
+  "checks": [
+    {
+      "check": "BLOOD AREA >= 12% of frame",
+      "pass": false,
+      "value": "11.66%"
+    },
+    {
+      "check": "BLOOD is the most saturated element",
+      "pass": true,
+      "value": "blood sat 0.643 vs rest 0.178"
+    },
+    {
+      "check": "TEXT PLATE dark enough for #FFD400 (>= 0.55)",
+      "pass": true,
+      "value": "0.562 under type (left third 0.800)"
+    },
+    {
+      "check": "168x94: red survives as a mark (>= 12 px blob)",
+      "pass": true,
+      "value": "1291 px blob, 1905 px total"
+    }
+  ]
+}

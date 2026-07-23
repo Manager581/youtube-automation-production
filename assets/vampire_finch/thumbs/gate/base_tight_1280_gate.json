@@ -1,0 +1,38 @@
+{
+  "label": "base_tight_1280",
+  "size": [
+    1280,
+    720
+  ],
+  "blood_area_pct": 0.05,
+  "blood_sat_mean": 0.55,
+  "rest_sat_mean": 0.059,
+  "blood_is_most_saturated": true,
+  "left_third_darkness": 0.498,
+  "at_168x94_red_px": 5,
+  "at_168x94_largest_blob_px": 5,
+  "at_168x94_red_area_pct": 0.03,
+  "verdict": "RECOMPOSE",
+  "checks": [
+    {
+      "check": "BLOOD AREA >= 12% of frame",
+      "pass": false,
+      "value": "0.05%"
+    },
+    {
+      "check": "BLOOD is the most saturated element",
+      "pass": true,
+      "value": "blood sat 0.550 vs rest 0.059"
+    },
+    {
+      "check": "LEFT THIRD dark enough for #FFD400 (>= 0.55)",
+      "pass": false,
+      "value": "0.498"
+    },
+    {
+      "check": "168x94: red survives as a mark (>= 12 px blob)",
+      "pass": false,
+      "value": "5 px blob, 5 px total"
+    }
+  ]
+}

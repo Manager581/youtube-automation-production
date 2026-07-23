@@ -1,0 +1,38 @@
+{
+  "label": "hero_still_A2_macro_finch_wound",
+  "size": [
+    1280,
+    720
+  ],
+  "blood_area_pct": 0.09,
+  "blood_sat_mean": 0.549,
+  "rest_sat_mean": 0.058,
+  "blood_is_most_saturated": true,
+  "left_third_darkness": 0.447,
+  "at_168x94_red_px": 12,
+  "at_168x94_largest_blob_px": 12,
+  "at_168x94_red_area_pct": 0.08,
+  "verdict": "RECOMPOSE",
+  "checks": [
+    {
+      "check": "BLOOD AREA >= 12% of frame",
+      "pass": false,
+      "value": "0.09%"
+    },
+    {
+      "check": "BLOOD is the most saturated element",
+      "pass": true,
+      "value": "blood sat 0.549 vs rest 0.058"
+    },
+    {
+      "check": "LEFT THIRD dark enough for #FFD400 (>= 0.55)",
+      "pass": false,
+      "value": "0.447"
+    },
+    {
+      "check": "168x94: red survives as a mark (>= 12 px blob)",
+      "pass": true,
+      "value": "12 px blob, 12 px total"
+    }
+  ]
+}

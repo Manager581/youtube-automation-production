@@ -1,0 +1,39 @@
+{
+  "label": "cand02_scalegap",
+  "size": [
+    1280,
+    720
+  ],
+  "blood_area_pct": 10.02,
+  "blood_sat_mean": 0.64,
+  "rest_sat_mean": 0.177,
+  "blood_is_most_saturated": true,
+  "text_plate_darkness": 0.575,
+  "left_third_darkness": 0.804,
+  "at_168x94_red_px": 1634,
+  "at_168x94_largest_blob_px": 1054,
+  "at_168x94_red_area_pct": 10.35,
+  "verdict": "RECOMPOSE",
+  "checks": [
+    {
+      "check": "BLOOD AREA >= 12% of frame",
+      "pass": false,
+      "value": "10.02%"
+    },
+    {
+      "check": "BLOOD is the most saturated element",
+      "pass": true,
+      "value": "blood sat 0.640 vs rest 0.177"
+    },
+    {
+      "check": "TEXT PLATE dark enough for #FFD400 (>= 0.55)",
+      "pass": true,
+      "value": "0.575 under type (left third 0.804)"
+    },
+    {
+      "check": "168x94: red survives as a mark (>= 12 px blob)",
+      "pass": true,
+      "value": "1054 px blob, 1634 px total"
+    }
+  ]
+}

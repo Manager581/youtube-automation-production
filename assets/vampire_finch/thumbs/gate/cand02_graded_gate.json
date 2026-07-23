@@ -1,0 +1,39 @@
+{
+  "label": "cand02_graded",
+  "size": [
+    1280,
+    720
+  ],
+  "blood_area_pct": 12.58,
+  "blood_sat_mean": 0.686,
+  "rest_sat_mean": 0.125,
+  "blood_is_most_saturated": true,
+  "text_plate_darkness": 0.562,
+  "left_third_darkness": 0.8,
+  "at_168x94_red_px": 2023,
+  "at_168x94_largest_blob_px": 1378,
+  "at_168x94_red_area_pct": 12.81,
+  "verdict": "SHIP",
+  "checks": [
+    {
+      "check": "BLOOD AREA >= 12% of frame",
+      "pass": true,
+      "value": "12.58%"
+    },
+    {
+      "check": "BLOOD is the most saturated element",
+      "pass": true,
+      "value": "blood sat 0.686 vs rest 0.125"
+    },
+    {
+      "check": "TEXT PLATE dark enough for #FFD400 (>= 0.55)",
+      "pass": true,
+      "value": "0.562 under type (left third 0.800)"
+    },
+    {
+      "check": "168x94: red survives as a mark (>= 12 px blob)",
+      "pass": true,
+      "value": "1378 px blob, 2023 px total"
+    }
+  ]
+}
