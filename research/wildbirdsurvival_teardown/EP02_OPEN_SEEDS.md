@@ -1,6 +1,28 @@
-# EP02 — the one seed still to generate (S035)
+# EP02 — S035's seed ✅ DONE (2026-07-23)
 
-_Everything else from the 243-agent reachability audit is applied. This is the last open item._
+**`SEED_foot_grip_dry.png` is generated, verified and wired to S035. Nothing here is outstanding.**
+The reachability audit is fully closed: every one of the 88 shots now has a seed that can deliver
+its prompt, and `gen_seed_shopping.py` reads **0 to generate / 25 on disk**.
+
+**What was generated** (gpt-image, in the existing "Nature Documentary Stills" thread so the look
+matches): 1672×941, 16:9. Checked against the list at the bottom of this file —
+- claws **clearly hooked over** the white feather barbs ✅ (contact is the whole point of the shot)
+- the stain is **dry, compact, crusted, rust-brown, no wet gloss, no downward trail** ✅ — exactly
+  the property `hero_still_A2_macro_finch_wound.png` lacks, which is why that seed's clips run
+- no booby head, eye, bill, horizon or sky ✅
+- **deviation, accepted:** it shows **two** feet of the one finch, not one. S035 carries no count
+  clause, its vantage says "macro tight on the FOOT" and its action is *"shifts weight and
+  re-grips once"* — which reads better with two feet, since the weight has somewhere to shift to.
+
+**One rider added** rather than the audit's suggested "toes stay clamped… never lift clear", which
+would have contradicted the shot's own "re-grips once": *"The foot stays in contact with the white
+back feathers throughout and never floats clear of the booby's back; the claws stay hooked over the
+feathers as it re-grips."* That blocks the float-off physics failure while preserving the re-grip.
+
+_Everything below is the original reasoning, kept because it explains why a crop and a respec were
+both rejected on evidence._
+
+---
 
 ## Why S035 needs a NEW seed rather than a crop or a respec
 

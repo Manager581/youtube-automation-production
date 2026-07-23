@@ -38,7 +38,7 @@ Pacing and prompt-hygiene gates all pass (see table). What is **not** resolved: 
 | Shots | Seed | On disk? |
 |---:|---|---|
 | 21 | `hero_still_A_booby_finch.png` | ✅ yes |
-| 14 | `hero_still_A2_macro_finch_wound.png` | ✅ yes |
+| 13 | `hero_still_A2_macro_finch_wound.png` | ✅ yes |
 | 13 | `hero_still_B_egg_nest.png` | ✅ yes |
 | 8 | `still_booby_eye.png` | ✅ yes |
 | 5 | `SEED_wide_booby_clear.png` | ✅ yes |
@@ -52,6 +52,7 @@ Pacing and prompt-hygiene gates all pass (see table). What is **not** resolved: 
 | 1 | `SEED_mutualism_clean_C.png` | ✅ yes |
 | 1 | `SEED_spine_two_finch.png` | ✅ yes |
 | 1 | `SEED_booby_rear_sea.png` | ✅ yes |
+| 1 | `SEED_foot_grip_dry.png` | ✅ yes |
 | 1 | `SEED_booby_from_behind.png` | ✅ yes |
 | 1 | `SEED_swarm_six.png` | ✅ yes |
 | 1 | `SEED_wide_two_islands.png` | ✅ yes |
@@ -640,9 +641,9 @@ PHYSICS-RISK FLAGS FOR THE FRAME-STRIP PASS
 ### S035 · 214.5-220.0s (5.5s) · XCU  <sub>(was S057)</sub>
 - **Vantage:** lens tilted almost PARALLEL to the surface of the back, macro tight on the FOOT
 - **Action:** Dependency made physical: the finch's foot and claws gripping the white back feathers beside a small dried dark-red wound, the surrounding down matted with old blood, barbs flexing as it shifts weight and re-grips once.
-- **Seed:** `hero_still_A2_macro_finch_wound.png` · physics risk **medium** · blood: YES
+- **Seed:** `SEED_foot_grip_dry.png` · physics risk **medium** · blood: YES
 - **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro of a vampire ground finch's foot and claws gripping the white back feathers of a Nazca booby beside a small dried dark-red wound, the feather barbs and surrounding down matted with dried blood as the finch shifts its weight and re-grips once; camera lens is tilted almost parallel to the surface of the back, macro, tight on the foot. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — the stain itself stays completely still while the birds move. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging.
+  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme macro of a vampire ground finch's foot and claws gripping the white back feathers of a Nazca booby beside a small dried dark-red wound, the feather barbs and surrounding down matted with dried blood as the finch shifts its weight and re-grips once; camera lens is tilted almost parallel to the surface of the back, macro, tight on the foot. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — the stain itself stays completely still while the birds move. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. The foot stays in contact with the white back feathers throughout and never floats clear of the booby's back; the claws stay hooked over the feathers as it re-grips.
 
 ### S036 · 220.0-224.5s (4.5s) · MS  <sub>(was S058)</sub>
 - **Vantage:** LOW on the black lava looking slightly UP at the bird, side-on
