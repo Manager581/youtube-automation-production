@@ -1,28 +1,50 @@
 # NEXT SESSION — Wild Bird Survival clone · Episode 02 (vampire finch)
-_Last updated 2026-07-23 (THIRD session of the day). This supersedes all earlier handoffs._
+_Last updated 2026-07-23 (FOURTH session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Packaging DONE (thumbnail decided = ALT), plan COMPLETE (88 shots, gate 15/15), and ALL SEED STILLS ARE
-NOW DONE — 23/23 distinct seeds on disk, every one of the 88 shots has its seed (verified). What remains
-is pure production: ~82 clips via Grok i2v, the VO, one music bed, assemble.**
+**Packaging DONE, plan COMPLETE (88 shots, gate 15/15), all 23 seeds on disk, and the **VO IS NOW DONE
+AND VERIFIED** (one pass, 37 blocks, split to timecode). What remains is the clip grind (86 shots), one
+music bed, assemble.**
 
 ## ▶️ START HERE (do these in this order)
 ```bash
 cd /Users/jefflawrence/Documents/youtube-automation-production
-venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py            # expect ALL 15 PASS
-venv/bin/python research/wildbirdsurvival_teardown/gen_seed_shopping.py     # expect 0 / 0 / 23 on disk
+venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py          # expect ALL 15 PASS
+venv/bin/python research/wildbirdsurvival_teardown/gen_clip_ledger.py --next 3   # status + next shots
 ```
-1. **VO first — it's short and it closes out (~20 min).** ElevenLabs → Brian → Eleven Multilingual v2 →
-   stability **.74**, similarity **.75**, style **0**, speaker boost ON. Paste the 52-word probe from
-   `ep02_vo_speed_measurements.json`, set speed **0.95**, generate, download, and measure:
-   `ffprobe -v error -show_entries format=duration -of csv=p=0 FILE` → `wpm = 52 / (dur/60)`.
-   Aim **149–155 wpm** (owner's band 150–160). Then and only then run the **single full pass** on
-   `EP02_SCRIPT_LOCKED.md`, split at blank lines, drop each block at its timecode.
-   *Slider is a Radix span: focus it and press real Arrow keys (~0.01/step) — synthetic key events do nothing.*
-2. **Then the ~82-clip Grok grind** — straight down `EP02_SHOT_MANIFEST_FULL.md`. Frame-strip every clip.
-3. Music bed → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
+1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST.** It has the proven browser recipe (including the one
+   incantation that actually attaches a seed), the four dead ends not to retry, and — most importantly —
+   **why you must check each SEED against its prompt before generating.** The first clip generated
+   this session was rejected for reasons that were all in the seed, not the prompt.
+2. **The clip grind — 86 shots left.** Work the ledger, not memory. Frame-strip every clip; a shot is
+   not done until `<ID>_strip.jpg` exists AND you have looked at it.
+3. Music bed (one Pixabay track, hygiene only) → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
 
-**Two decisions are already made — don't re-litigate:** thumbnail = **ALT**; VO target = **150–160 wpm**.
+**Decisions already made — don't re-litigate:** thumbnail = **ALT**; VO speed = **0.95** (settled by
+measurement, see below).
+
+## ✅ VO — DONE (2026-07-23, owner approved the single pass)
+`audio/vampire_finch/ep02_vo_full_sp95_s74_sb75_m2.mp3` — **199.86 s, 155.2 wpm, 41.6 % coverage**,
+mono 44.1 kHz 128 kbps. Split into **37 blocks** in `audio/vampire_finch/blocks/`, each with its drop
+timecode in **`ep02_vo_block_manifest.json`** — that manifest is what the assembler should read.
+*(Audio is local-only: `*.mp3` is gitignored repo-wide.)*
+
+- **Speed settled at 0.95 by measurement.** 0.75→131.5, 0.84→138.9, **0.95→153.7 wpm** on the real
+  script text. ⚠️ The wpm/speed curve is **NOT linear** — slope ≈82 wpm/speed below 0.84 but ≈135 above
+  it, so the old linear fit predicted 147.8 and was wrong by ~6 wpm. Never fit a line to it again.
+- **Verified clean, no misreads.** 509/520 script tokens aligned against whisper word timestamps; all
+  10 remaining diffs are tokenisation artifacts (whisper splits "seabird"→"sea bird" 7×, joins
+  "ground finch", splits "onto"/"seawater"). Read diffs before failing a take.
+- **The script is 517 words, not the 487 the ledger in `EP02_SCRIPT_LOCKED.md` claims** — that table is a
+  stale hand-estimate (it says ACT 1 = 28; the real text is 41). Verified: `wc -w` 526 − 9 standalone
+  em-dashes = 517. The 41.6 % coverage is computed from the real count.
+- **Splitting is content-aware, not silence-threshold.** Silences form a continuous ramp 1.0 s → 0.30 s,
+  so paragraph breaks and ordinary sentence periods overlap and **no cutoff separates them** — a silence
+  split cuts mid-block. `split_vo_blocks.py` maps script tokens to whisper word times and cuts at the
+  midpoint of each inter-block gap.
+- **All 37 blocks fit their storyboard slots** — 0 overrun the gap to the next timecode, and the last
+  drops at 468 s + 3.48 s = 471.5 s, leaving the 8.5 s wind tail the closing [SILENCE] wants.
+- To regenerate: `transcribe_vo.py` (cached) then `split_vo_blocks.py`.
 
 ## ✅ SEEDS COMPLETE (this session)
 Generated 12 new seeds + 1 pricklypear in ONE ChatGPT gpt-image thread ("Nature Documentary Stills"),
@@ -143,14 +165,40 @@ weak beats to lift mean to 5.45 s; ACT7 redistributed 6/10/6/11/7/10 to slow pro
 has watched a cut** — because the footage doesn't exist yet. The manifest is as good as it gets on paper.
 
 ## WHAT'S MISSING (the real work, in order)
-1. **Seed stills — ✅ DONE (23/23 on disk, all 88 shots covered).** Nothing to generate. See the
-   "SEEDS COMPLETE" section above. `EP02_SEED_SHOPPING.md` now reads 0/0/23.
-2. **~82 clips** — the multi-hour grind, now fully specified (88 shots, 6 covered by test clips). Work
-   straight down `EP02_SHOT_MANIFEST_FULL.md`; frame-strip every clip. **Same-seed adjacency (S007-9,
-   S058-61, S080-82): derive distinct seed frames by cropping the base still, don't re-prompt one frame.**
-3. **VO** — one ElevenLabs pass to `EP02_SCRIPT_LOCKED.md`, after settling the speed above.
+1. **Seed stills — ✅ DONE (23/23 on disk).** But see the seed-capability warnings below: "on disk" is
+   not the same as "reaches the shot its prompt describes."
+2. **86 clips** — the multi-hour grind. **`EP02_GROK_GRIND_RECIPE.md` is the how; `gen_clip_ledger.py`
+   is the tracker.** Frame-strip every clip. **Same-seed adjacency (S007-9, S058-61, S080-82): derive
+   distinct seed frames by cropping the base still, don't re-prompt one frame.**
+   - **S001 is DONE** — the earlier `grok_test/shot_booby_eye.mp4` is a genuine match for S001's vantage
+     (booby left two-thirds, soft finch right third, slow blink) and was adopted as `clips/S001.mp4`.
+   - **`grok_test/shot_wide_island.mp4` is DEAD** — its seed `still_wide_island.png` is used by **0**
+     shots now (replaced by `SEED_wide_booby_clear` under the no-tiny-animal-in-a-landscape hook rule).
+     The other 6 `clip0*` test clips are grit-tests, not scene coverage — don't adopt them.
+3. **VO — ✅ DONE.** See the VO section at the top.
 4. **Music bed** — one Pixabay track. **Hygiene, not a lever. Do not over-invest.**
 5. **Assemble** → `gate_style_wbs.py` 11/11 → owner watch → upload.
+
+## ⚠️ THREE MANIFEST DEFECTS FOUND WHILE STARTING THE GRIND
+Found by checking, before generating, whether each prompt is reachable from its seed. The gate's 15
+checks cover riders/anatomy/head-on/tiling — they do **not** compare a prompt to its seed or vantage.
+
+1. **S062 — FIXED.** Its `grok_prompt` was another shot's prompt entirely: a static wound macro with
+   *"no bird enters the shot"*, on the Act-6 **payoff** shot whose whole job is the booby + egg + finch
+   as the VO word "take" lands at 369.4 s. It also carried the DRY-blood rider despite `has_blood=false`,
+   and self-contradicted ("no bird enters" … "while the birds move"). Rewritten from its own vantage +
+   action via `apply_defect_edits.py`; only S062 changed; gates still 15/15.
+2. **S002 — seed cannot reach the prompt.** Take 1 rejected on its frame strip. Full analysis in
+   `EP02_GROK_GRIND_RECIPE.md`; short version: the seed is a side-on medium containing **two** finches
+   with a stain that **already runs**, while the prompt asks for an extreme macro from high behind the
+   shoulder with **one** finch and a stain that must not run. Needs a fixed seed (a tight crop) or a
+   re-spec of the shot.
+3. **S021 — seed cannot reach the prompt.** `still_booby_eye.png` is an eye close-up with no neck,
+   shoulder or sky; the shot wants a low front-quarter looking up at head and neck against flat sky.
+
+**Not defects (checked and cleared):** S026 and S070 tripped a keyword heuristic but are both fine
+(S026 says "stain" not "wound"; S070's egg is simply under the bird). And there are **zero** left/right
+contradictions across all 88 shots.
 
 ---
 

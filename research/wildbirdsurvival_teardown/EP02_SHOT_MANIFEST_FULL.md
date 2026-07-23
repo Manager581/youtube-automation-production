@@ -41,25 +41,25 @@ Pacing and prompt-hygiene gates all pass (see table). What is **not** resolved: 
 | 14 | `hero_still_A2_macro_finch_wound.png` | ✅ yes |
 | 14 | `hero_still_B_egg_nest.png` | ✅ yes |
 | 8 | `still_booby_eye.png` | ✅ yes |
-| 5 | `SEED_wide_booby_clear.png` | ❌ **must generate** |
-| 4 | `SEED_macro_tail.png` | ❌ **must generate** |
-| 3 | `SEED_mutualism_clean.png` | ❌ **must generate** |
-| 2 | `SEED_raw_wound.png` | ❌ **must generate** |
-| 2 | `SEED_finch_portrait_redtip.png` | ❌ **must generate** |
+| 5 | `SEED_wide_booby_clear.png` | ✅ yes |
+| 4 | `SEED_macro_tail.png` | ✅ yes |
+| 3 | `SEED_mutualism_clean.png` | ✅ yes |
+| 2 | `SEED_raw_wound.png` | ✅ yes |
+| 2 | `SEED_finch_portrait_redtip.png` | ✅ yes |
 | 2 | `SEED_finch_portrait.png` | ✅ yes |
-| 1 | `SEED_macro_tail_high.png` | ❌ **must generate** |
-| 1 | `SEED_flank_stain_top.png` | ❌ **must generate** |
-| 1 | `SEED_mutualism_clean_C.png` | ❌ **must generate** |
-| 1 | `SEED_spine_two_finch.png` | ❌ **must generate** |
-| 1 | `SEED_booby_rear_sea.png` | ❌ **must generate** |
-| 1 | `SEED_booby_from_behind.png` | ❌ **must generate** |
-| 1 | `SEED_swarm_six.png` | ❌ **must generate** |
-| 1 | `SEED_wide_two_islands.png` | ❌ **must generate** |
-| 1 | `SEED_wide_ocean_ots.png` | ❌ **must generate** |
-| 1 | `SEED_finch_ground.png` | ❌ **must generate** |
-| 1 | `SEED_pricklypear_top.png` | ❌ **must generate** |
-| 1 | `SEED_mutualism_clean_B.png` | ❌ **must generate** |
-| 1 | `SEED_flank_stain.png` | ❌ **must generate** |
+| 1 | `SEED_macro_tail_high.png` | ✅ yes |
+| 1 | `SEED_flank_stain_top.png` | ✅ yes |
+| 1 | `SEED_mutualism_clean_C.png` | ✅ yes |
+| 1 | `SEED_spine_two_finch.png` | ✅ yes |
+| 1 | `SEED_booby_rear_sea.png` | ✅ yes |
+| 1 | `SEED_booby_from_behind.png` | ✅ yes |
+| 1 | `SEED_swarm_six.png` | ✅ yes |
+| 1 | `SEED_wide_two_islands.png` | ✅ yes |
+| 1 | `SEED_wide_ocean_ots.png` | ✅ yes |
+| 1 | `SEED_finch_ground.png` | ✅ yes |
+| 1 | `SEED_pricklypear_top.png` | ✅ yes |
+| 1 | `SEED_mutualism_clean_B.png` | ✅ yes |
+| 1 | `SEED_flank_stain.png` | ✅ yes |
 
 > Two seeds the workflow surfaced that were not in the original six: `SEED_finch_portrait_redtip`
 > (the red-tipped beak for the TURN match-cut) and `SEED_raw_wound`. Both are in `EP02_SEED_PROMPTS.md`.
@@ -986,7 +986,7 @@ EDIT-LAW COMPLIANCE / FLAGS FOR THE ASSEMBLER:
 - **Action:** The payoff. As the booby's weight shifts and its breast lifts a fraction clear of the scrape, the nearer finch lunges its head down at the exposed white egg - the thieves taking the very thing it was trying to protect. The egg and a finch are plainly on screen as the word 'take' lands (~369.4s), held through 372s; the booby settles gently back over the egg, never hunching.
 - **Seed:** `hero_still_B_egg_nest.png` · physics risk **medium** · blood: no
 - **Grok prompt:**
-  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. An open raw wound at the base of a growing flight feather in a seabird's white plumage, framed tight and side-on through a blade of dark foreground lava that cuts across the bottom of frame; no bird enters the shot, the white feathers stir in the wind and a single fly crosses the wound and settles. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; the stain itself stays completely still while the birds move.
+  > real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Camera low at nest level and side-on to a standing Nazca booby on black lava; a single white egg sits in the dust between its feet and two small black ground finches stand pressed in close beside the egg. The booby's weight shifts and its breast lifts a fraction clear of the scrape so the white egg is plainly exposed; the nearer finch lunges its head down at the exposed egg, and the booby then settles gently back down over it. The booby's head stays in strict side profile and never turns head-on to camera. Long lens, handheld micro-drift only, no zoom, no push-in. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging - one booby and two finches throughout.
 
 ### S063 · 372.0-375.0s (3.0s) · XCU  <sub>(was S066)</sub>
 - **Vantage:** from slightly BELOW the head, clean level profile, no foreground element
