@@ -115,47 +115,7 @@ Everywhere else, repeating a vantage is the defect described under seed 2.
 
 ---
 
-## Consolidated seed shopping list (after defect resolution, 2026-07-23)
-_The defect pass grew the seed list because several shots' framings were **unreachable from their
-assigned seed** (Grok i2v starts on the seed's frame 1). Each new seed below traces to a seed-capability
-defect an agent grounded by opening the actual PNG. Net: ~9 real generations + 3 crop/recolor shortcuts._
-
-| Seed | Shots | On disk | How to make it |
-|---|---|---|---|
-| `SEED_wide_booby_clear.png` | 6 (S023,S038,S039,S054,S083,S088) | — | GENERATE — GROUND LEVEL behind a black foreground boulder, long lens, dark out-of-focus rock edge acr |
-| `SEED_macro_tail.png` | 5 (S017,S031,S042,S052,S064) | — | GENERATE — Low, behind and slightly below the second finch at the base of the white tail, looking for |
-| `SEED_mutualism_clean.png` | 4 (S020,S022,S035,S053) | — | GENERATE — locked-off side-on telephoto from the booby's LEFT flank at shoulder height, compressed gr |
-| `SEED_raw_wound.png` | 2 (S010,S026) | — | GENERATE — Straight-down TOP-DOWN, 90° above the wing, looking into the parted white down — the only  |
-| `SEED_finch_portrait_redtip.png` | 2 (S012,S030) | — | **RECOLOR the beak tip red on the existing portrait (ChatGPT edit)** (base: `SEED_finch_portrait.png`) |
-| `SEED_macro_tail_high.png` | 1 (S006) | — | **tighter/higher CROP of the tail generation** (base: `SEED_macro_tail.png`) |
-| `SEED_flank_stain_top.png` | 1 (S018) | — | **top-down CROP of the flank-stain generation** (base: `SEED_flank_stain.png`) |
-| `SEED_mutualism_clean_C.png` | 1 (S028) | — | GENERATE — Three-quarter FRONT from just below the booby's shoulder, telephoto, shallow depth of fiel |
-| `SEED_booby_rear_sea.png` | 1 (S034) | — | GENERATE — from the ledge BEHIND the bird, REAR THREE-QUARTER, looking OVER its back and past its sho |
-| `SEED_wide_two_islands.png` | 1 (S044) | — | GENERATE — down at rock level ON the lava shelf, long lens compressing the shelf away to a high grey  |
-| `SEED_wide_ocean_ots.png` | 1 (S045) | — | GENERATE — OVER-THE-SHOULDER of the booby, from behind and just above its white back, looking out to  |
-| `SEED_pricklypear_top.png` | 1 (S048) | — | GENERATE — STRAIGHT DOWN from directly above the open flower, the cup filling frame; beak enters from |
-| `SEED_mutualism_clean_B.png` | 1 (S084) | — | GENERATE — HIGH and BEHIND the booby's shoulder looking down the length of its white back, shallow DO |
-| `SEED_flank_stain.png` | 1 (S086) | — | GENERATE — SIDE-ON macro level with the flank, frame completely filled with plumage - no head, no hor |
-| `hero_still_A_booby_finch.png` | 23 (S003,S004,S007,S008,S009,S011,S014,S033,S036,S040,S043,S046,S051,S057,S066,S068,S071,S072,S076,S077,S080,S081,S082) | ✅ | already on disk |
-| `hero_still_B_egg_nest.png` | 14 (S058,S059,S060,S061,S062,S065,S067,S069,S070,S074,S075,S078,S079,S085) | ✅ | already on disk |
-| `hero_still_A2_macro_finch_wound.png` | 12 (S002,S005,S013,S016,S019,S024,S027,S029,S032,S041,S056,S073) | ✅ | already on disk |
-| `still_booby_eye.png` | 8 (S001,S015,S021,S025,S037,S055,S063,S087) | ✅ | already on disk |
-| `SEED_finch_portrait.png` | 3 (S047,S049,S050) | ✅ | already on disk |
-
-**Real generations still needed** (excluding crops/recolors and on-disk):
-- `SEED_wide_booby_clear.png` (6 shots) — GROUND LEVEL behind a black foreground boulder, long lens, dark out-of-focus rock edge across the bottom of fr
-- `SEED_macro_tail.png` (5 shots) — Low, behind and slightly below the second finch at the base of the white tail, looking forward along the lengt
-- `SEED_mutualism_clean.png` (4 shots) — locked-off side-on telephoto from the booby's LEFT flank at shoulder height, compressed grey sea horizon behin
-- `SEED_raw_wound.png` (2 shots) — Straight-down TOP-DOWN, 90° above the wing, looking into the parted white down — the only shot in the act with
-- `SEED_mutualism_clean_C.png` (1 shot) — Three-quarter FRONT from just below the booby's shoulder, telephoto, shallow depth of field - on the finch wor
-- `SEED_booby_rear_sea.png` (1 shot) — from the ledge BEHIND the bird, REAR THREE-QUARTER, looking OVER its back and past its shoulder to open ocean 
-- `SEED_wide_two_islands.png` (1 shot) — down at rock level ON the lava shelf, long lens compressing the shelf away to a high grey sea horizon; booby s
-- `SEED_wide_ocean_ots.png` (1 shot) — OVER-THE-SHOULDER of the booby, from behind and just above its white back, looking out to open ocean
-- `SEED_pricklypear_top.png` (1 shot) — STRAIGHT DOWN from directly above the open flower, the cup filling frame; beak enters from the right
-- `SEED_mutualism_clean_B.png` (1 shot) — HIGH and BEHIND the booby's shoulder looking down the length of its white back, shallow DOF, lava thrown out o
-- `SEED_flank_stain.png` (1 shot) — SIDE-ON macro level with the flank, frame completely filled with plumage - no head, no horizon, no context; th
-
-⚠️ **Scope note for the owner:** this is more seeds than the original 6. The alternative — forcing each
-shot onto a reachable existing seed — would reintroduce the adjacent-vantage duplication the pass just
-removed. The three `mutualism_clean` variants (A/B/C) are *deliberately* distinct poses so the Act-4
-montage doesn't read as one looping take.
+## Shopping list → see the generated file
+The full, always-current seed shopping list (which seeds to generate, which are cheap crops/recolors,
+which are on disk) is **auto-generated** at `EP02_SEED_SHOPPING.md` by `gen_seed_shopping.py`. Re-run
+that after any manifest edit rather than hand-maintaining a list here.

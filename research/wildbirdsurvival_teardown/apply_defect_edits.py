@@ -21,7 +21,7 @@ SHOTS = os.path.join(HERE, "ep02_shots.json")
 GRIT = "real handheld wildlife documentary footage"
 ANAT = "no extra limbs"
 BLOOD = "does NOT drip"
-EDITABLE = {"vantage", "action", "seed", "grok_prompt", "physics_risk", "has_blood"}
+EDITABLE = {"vantage", "action", "seed", "grok_prompt", "physics_risk", "has_blood", "coverage_note"}
 
 NEW_BLOOD = ("a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; "
              "the stain itself stays completely still while the birds move.")
@@ -70,16 +70,24 @@ def main(dry):
             applied += 1
             log.append(f"APPLY  {sid}: {sorted(edits)}")
 
-    # re-normalize riders so any newly written prompt matches the canonical forms
-    OLD_B = ["a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string — only the finch moves.",
-             "a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - only the finch moves."]
-    OLD_A = "keep exact anatomy, no extra limbs, no morphing, count stays the same."
+    # re-normalize riders robustly (case/punctuation-insensitive) so any newly
+    # written prompt — including agent output carrying the old forms — matches the
+    # canonical clauses. Substring replace, no trailing-punctuation assumption.
+    import re
     for s in j["shots"]:
         p = s["grok_prompt"]
-        for ob in OLD_B:
-            p = p.replace(ob, NEW_BLOOD)
-        p = p.replace(OLD_A, NEW_ANAT)
+        p = re.sub(r"only the finch moves",
+                   "the stain itself stays completely still while the birds move", p, flags=re.I)
+        p = re.sub(r"count stays the same", "no bird splitting or merging", p, flags=re.I)
+        p = re.sub(r";\s*;", ";", p)
         s["grok_prompt"] = p
+        # seed naming: bare filename, .png extension, canonical raw-wound name
+        v = s["seed"].split("/")[-1]
+        if v == "SEED_raw_stain" or v == "SEED_raw_stain.png":
+            v = "SEED_raw_wound.png"
+        if v.startswith("SEED_") and not v.endswith(".png"):
+            v = v + ".png"
+        s["seed"] = v
 
     print("\n".join(log))
     print(f"\napplied {applied}, rejected {rejected}")
