@@ -1,91 +1,116 @@
 # NEXT SESSION — Wild Bird Survival clone · Episode 02 (vampire finch)
-_Last updated 2026-07-23. This supersedes all earlier handoffs. Read top-to-bottom._
+_Last updated 2026-07-23 (second session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**The plan, the script, the packaging and the look are LOCKED and committed. What's missing is the
-footage (~72 of ~80 shots) and one music bed.** Everything below is verified, not assumed.
+**Packaging is DONE — the thumbnail now passes the ship gate 4/4. What remains is footage:
+~6 seed stills, ~72 of ~80 clips, the VO, and one music bed.**
 
 ---
 
-## THE DECISION (locked 2026-07-23)
+## ✅ WHAT LANDED THIS SESSION
 
-**TITLE:** `Why This Giant Seabird Lets a Tiny Finch Drink Its Blood`
-(56 chars · no suffix · no question mark · no colon)
-Isomorph of their **#2 all-time (939,961)** — *"Why This Warthog Lets Mongooses Crawl All Over Its Face"*
-(55 chars, the only top-8 title with no pipe). Stacks the 654K scale-gap lever ("Giant"/"Tiny").
-"Lets" appears in exactly two of their titles: 939,961 and 130,161.
+### The thumbnail ships
+`assets/vampire_finch/thumbs/FINAL_ep02_thumbnail.png` — **4/4 on the gate.**
+Nazca booby correct (grey mask, pale yellow eye, orange dagger bill), the **Giant/Tiny scale gap
+reads**, blood matted into feathers rather than a splash, left third genuinely black under the type.
+`FINAL_ep02_base_notext.png` is the text-free version for the `BLOOD HOSTAGE` A/B swap.
 
-**THUMBNAIL:** text = **`BLOOD`** (yellow `#FFD400`) / **`FOR EGGS`** (white), heavy condensed sans,
-8–10px black outline, stacked, **left third over a dark plate** (the finch's black body — yellow on
-white feathers collapses). Wound **≥12% of frame**, most saturated element, tack sharp.
-🚨 **SHIP GATE: downscale to 168×94px. If the red doesn't instantly read as _blood_, recompose.**
+### The gate is now mechanical, not an eyeball check
+`thumb_gate.py` measures the four things the spec actually asserts and prints PASS/FAIL with numbers:
+blood area %, blood-vs-rest saturation, luminance **under the real type box**, and the largest
+surviving red blob at 168×94. It writes a gate sheet whose lower panel is the true 168×94 image
+nearest-upscaled 4× — that adds no information, so it shows exactly what a browsing viewer sees.
+```bash
+venv/bin/python research/wildbirdsurvival_teardown/thumb_gate.py BASE.png OUTDIR --tag name
+```
+Flags: `--crop x,y,w,h` · `--grade` (the spec's selective grade) · `--plate` (dark gradient fallback).
 
-**⚠️ The premise-risk correction that matters (verified):** their own *"This Bird Drinks Blood From Live
-Animals"* did 13,095 — but it is **upload #1 of 26**. Uploads #1/#2/#3 are the three worst ever
-(13,095 / 1,879 / 26,720); first-five median **26,720** vs rest-of-channel **117,489** (4.4× cold-start),
-and their first real hit was upload #8. **Blood is not disproven.** What actually kills videos on this
-channel: actor-POV declaratives, benign verbs ("Protect" 34,666 / "Save" 100,703), "Full Life Cycle"
-framing, and self-cannibalization (3,041 = near-clone of their own #1 published one day later).
-**Do not publish within 72h of any other blood/parasite/feeding video.**
+**Why the old crops could never work:** measured at **0.05–0.09% blood area against a 12% spec — a
+130–240× shortfall.** No crop of those sources closes that. That is now proven, not asserted.
+
+### Recovered work that had been lost
+- **The shot manifest was never missing — it was destroyed.** `STORYBOARD_SIDEBYSIDE` originally
+  carried Parts D/E/F; the rewrite after Jeff rejected the stats framing took the manifest with it.
+  The rewrite was correct and stands. The manifest is restored on its own at **`EP02_SHOT_MANIFEST.md`**
+  with provenance. *This is why the old handoff pointed at a "Part E" that does not exist.*
+- **`EP02_PACKAGING.md`** — description, 12 tags, 3 hashtags, the A/B title ladder **with the measured
+  reasons each option was rejected**, and the thumbnail hard-nos. All written previously, never saved.
+- **`EP02_SEED_PROMPTS.md`** — the 6 missing seed stills as copy-paste prompts, ranked by shots unblocked.
 
 ---
 
-## WHAT EXISTS (all committed)
-| Layer | State | Where |
-|---|---|---|
-| Second-by-second plan, full 8:00 | ✅ LOCKED | `SECOND_BY_SECOND_theirs_vs_ours.md` (+ published page) |
-| The WHY / causal grammar | ✅ LOCKED | `STORYBOARD_SIDEBYSIDE_reference_vs_ours.md` |
-| Full VO script, 487 words to timecode | ✅ LOCKED | `EP02_SCRIPT_LOCKED.md` |
-| Scene-by-scene storyboard | ✅ | `EPISODE_02_VAMPIRE_FINCH_STORYBOARD.md` |
-| Title + thumbnail | ✅ LOCKED | storyboard Step 0 (above) |
-| Look / grit recipe | ✅ PROVEN on 8 clips | `EPISODE_02_GRIT_TEST_RESULTS.md` |
-| Voice settings | ✅ PROVEN | ElevenLabs **Brian**, speed ~0.85 (=150–155 wpm), stability 74 |
-| Mix spec | ✅ PROVEN | VO loudnorm `I=-16`, bed ~20 dB under, limiter 0.95, no SFX on cuts |
-| SFX (8 diegetic) | ✅ | `assets/vampire_finch/sfx/` (wind + peck are approximate — upgrade if time) |
-| Reference data | ✅ | `wbs_meta.tsv`, `FORENSICS.md`, `compare_metrics.json`, `gate_style_wbs.py` |
+## ⚠️ TWO SPEC ERRORS FOUND — both need an owner call
 
-## WHAT'S MISSING (the real work)
-1. **~72 of ~80 shots.** We have 8 clips + 5 seed stills. Shot manifest = Part E of the storyboard.
-   Need ~6 more seed stills (macro-tail, raw-wound, finch portrait, mutualism-clean, prickly-pear,
-   a barren wide with the booby CLEAR — not the tiny-dot one).
-2. **The music bed** — one continuous harmonic track, swell ~2:19, fall at the end. Pixabay only
-   (project rule); no API key → browser pull. **Hygiene, not a lever — don't over-invest.**
-3. **The thumbnail image itself.** A ChatGPT gen was in flight at session end (extreme macro, booby head
-   right two-thirds, blood LARGE, dark left third for text). Existing crops in
-   `assets/vampire_finch/thumbs/` FAIL — blood reads too small and the left third is white.
+**1. The thumbnail spec contradicts itself.** It demands **wound ≥12% of frame** *and* **"no gore beyond
+one bead + smear (advertiser safety)."** Both cannot hold. The shipped frame reaches 12.58% only via the
+spec's own selective grade and reads as a visibly bloodied bird.
+`ALT_ep02_thumbnail_ungraded.png` is the tamer cut (11.66%, still reads clearly at browse size) if
+advertiser safety outranks the area rule. **Pick one before upload.**
 
-## HOW TO GENERATE (proven recipes — do not reinvent)
-- **Stills:** ChatGPT gpt-image. Grit recipe = *"raw wildlife documentary footage, telephoto, flat
-  overcast light, desaturated, handheld, BBC Planet Earth, NO golden hour, NO cinematic lighting."*
-  **Thumbnails are the exception — they must be punchy/saturated/dramatic, NOT the flat doc grade.**
-- **Clips:** Grok Imagine, **Video · 720p · 6s · 16:9** (New Generation resets to 480p — re-select 720p).
-  Upload via clipboard: `osascript -e 'set the clipboard to (read (POSIX file "<abs>.png") as «class PNGf»)'`
-  → click composer → Cmd+V → **zoom-verify the thumbnail attached before submitting** (a background
-  process clobbered the clipboard mid-run once; re-run the osascript immediately before each paste).
-- **Riders that work:** "keep exact anatomy, no extra limbs, no morphing, count stays the same."
-  **Blood rider (REQUIRED):** *"a DRY matted red bloodstain that does NOT drip, stretch, run, or form any
-  thread/string — only the finch moves."* Plain "blood" → Grok animates a dripping red thread.
-- **Avoid** prompting the booby to turn fully head-on to camera (weak i2v frame).
-- **VO:** ElevenLabs browser (acct `ElevenCreative`), voice Brian, speed slider ~0.85. Whisper-verify
-  every line. Generate the whole script in ONE pass, split at blank lines, drop at the timecodes.
-- **QA:** frame-strip every clip before it's used. Then `gate_style_wbs.py` on the render → 11/11.
+**2. `ElevenLabs speed ~0.85` was never measured.** It interpolates the only two real data points:
+default = **215 wpm**, slider 0.71 = **143 wpm** (which Jeff called too slow). Linear between them,
+150–157 wpm lands at **~0.74–0.77**; 0.85 would run ≈185 wpm — far too fast.
+**Measure it before committing the VO**, don't trust either number. Stability 74, similarity ~75,
+Eleven Multilingual v2, account `ElevenCreative`. The filename encodes the settings
+(`…_pre_sp71_s74_sb75_m2.mp3`) — use it to confirm which take you actually grabbed.
 
-## THE CRITICAL PATH
-1. Thumbnail image → run the **168×94 gate** → if it passes, the packaging is done.
-2. ~6 seed stills → ~72 clips (the multi-hour grind) → frame-strip each.
-3. VO in one ElevenLabs pass to the locked script.
-4. Music bed (quick, low stakes).
-5. FFmpeg assemble to the second-by-second → `gate_style_wbs.py` 11/11 → owner watch → upload.
+---
 
-## HARD-WON LESSONS (don't repeat)
+## WHAT'S MISSING (the real work, in order)
+1. **~6 seed stills** — every prompt is written and ranked in `EP02_SEED_PROMPTS.md`. Start with
+   `SEED_finch_portrait`: it unblocks the TURN, the most important beat in the video.
+2. **~72 of ~80 clips** — the multi-hour grind. Spine = `EP02_SHOT_MANIFEST.md`.
+3. **VO** — one ElevenLabs pass to `EP02_SCRIPT_LOCKED.md`, after settling the speed above.
+4. **Music bed** — one Pixabay track. **Hygiene, not a lever. Do not over-invest.**
+5. **Assemble** → `gate_style_wbs.py` 11/11 → owner watch → upload.
+
+---
+
+## OPERATIONAL GOTCHAS (each of these cost real time — don't rediscover them)
+
+### ChatGPT gpt-image
+- **It refuses gore-forward wording**: *"the image we created may violate our guardrails around
+  violence."* Trip words: wound, bleeding, drink blood, gore, welling, raw, weeping. **The register that
+  works is a "dark red stain" on plumage, with size coming from magnification, not from more blood.**
+- **Never type a multi-line prompt** — the first newline submits, so only paragraph one is sent.
+- **Verify the composer received the text before pressing Return.** Clicking by coordinate silently
+  fails often; keystrokes go nowhere. Check `document.querySelector('#prompt-textarea').innerText.length`.
+  The composer sits at a **different y on the new-chat landing page** than in an open thread.
+- **The inline image icons are share, not download.** Don't fight them — pull the pixels off a canvas
+  (it is not tainted); recipe in `EP02_SEED_PROMPTS.md`. This also sidesteps stalled downloads.
+- **Requests silently drop.** Twice a message landed in the thread with no response and nothing
+  generating. Reload the thread to confirm, then resend.
+- **Edit mode will not crop in** — asking a generated image for a tighter macro returns the same
+  framing. Crop locally instead.
+
+### Grok Imagine (unchanged, still true)
+Video · **720p** · 6s · 16:9 — New Generation resets to 480p, re-select it. Clipboard-paste the seed and
+**zoom-verify the thumbnail attached before submitting** (a background process clobbered the clipboard
+once and it silently did text-to-video). Download icon position moves between generations — locate it
+each time. Output is 1264×720, 6.04s, 145 frames. Strip clip audio (`-an`) at assembly.
+
+### Riders that work
+- Anatomy: *"keep exact anatomy, no extra limbs, no morphing, count stays the same."*
+- **Blood (REQUIRED on every gore shot):** *"a DRY matted red bloodstain that does NOT drip, stretch,
+  run, or form any thread/string — only the finch moves."* Plain "blood" → Grok animates a dripping thread.
+- Never prompt the booby to turn **head-on** to camera. Never prompt it to **"hunch"** over the egg —
+  use "settles gently."
+
+---
+
+## HARD-WON LESSONS (unchanged, still the ones that matter)
 - **Grit-test clips ≠ scene coverage.** A cut built from a few test clips looks like a glitchy loop.
-  Every beat needs a DISTINCT vantage.
-- **Never pad the hook with a long wide of a tiny animal in a landscape** — that's their loser pattern.
-  Their hook opens on the FACE and cuts 1.4–2.2s, then lengthens.
-- **macOS `say` is unusable** (robotic). Local Chatterbox clones the owner's voice with an accent —
-  owner rejected it. **Use ElevenLabs Brian.**
-- **Aggregate stats (median shot length etc.) are outputs, not the plan.** The plan is the WHY at each
-  moment — see `STORYBOARD_SIDEBYSIDE_reference_vs_ours.md`.
-- **Evidence weight matters:** music peak / hook cut-count / cuts-on-word are *weak hygiene markers*.
-  The load-bearing items are the shots and the title/thumbnail.
-</content>
+  Every beat needs a DISTINCT vantage. This is what got `rough_cut_v1` rejected outright.
+- **Never pad the hook with a long wide of a tiny animal in a landscape** — their measured loser
+  pattern. The hook opens on the FACE and cuts 1.4–2.2s, then holds lengthen.
+  *(`still_wide_island.png` fails this — the booby is a dot. `SEED_wide_booby_clear` replaces it.)*
+- **macOS `say` is unusable**; local Chatterbox clones Jeff's own voice with an accent and was rejected
+  outright. **ElevenLabs Brian, via the browser.**
+- **Aggregate stats are outputs, not the plan.** The plan is the WHY at each moment —
+  `STORYBOARD_SIDEBYSIDE_reference_vs_ours.md`.
+- **Evidence weight:** music peak / hook cut-count / cuts-on-word are *weak hygiene markers*. The
+  load-bearing items are the shots and the title/thumbnail.
+- **Whisper `base` mis-hears homophones** ("being blood alive", "Buy a bird"). Read the text before
+  failing a take.
+- **Do not publish within 72h of any other blood/parasite/feeding video** (self-cannibalisation took one
+  of their videos to 3,041).
