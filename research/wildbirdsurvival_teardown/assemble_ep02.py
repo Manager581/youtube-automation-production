@@ -63,8 +63,16 @@ def make_segment(shot, out, crf, scale):
 
     if os.path.exists(clip):
         have = probe_dur(clip)
+        # Grok always returns 6.04 s but most shots ship far less, so WHICH window we
+        # take matters more than the length. S004 is 1.4 s and its whole point -- the
+        # booby's defensive gape -- happens at ~1.0-2.4 s, so a blind trim=0 would ship
+        # the static opening and drop the beat. clip_in names the good window's start.
+        start = float(shot.get("clip_in", 0.0) or 0.0)
+        if start + want > have + 0.02:
+            start = max(0.0, have - want)
         if have >= want - 0.02:
-            vf = f"trim=0:{want:.3f},setpts=PTS-STARTPTS,scale={w}:{h},fps={FPS},format=yuv420p"
+            vf = (f"trim={start:.3f}:{start + want:.3f},setpts=PTS-STARTPTS,"
+                  f"scale={w}:{h},fps={FPS},format=yuv420p")
         else:
             # under-covered: play what exists, then hold the last frame. Labelled so
             # nobody mistakes a padded shot for finished coverage.

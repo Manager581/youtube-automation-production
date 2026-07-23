@@ -56,7 +56,7 @@ without its strip is reported as unfinished on purpose.
 | `S032` | 201-205s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S033` | 205-210s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S034` | 210-214.5s | CU | `SEED_booby_rear_sea.png` |  |
-| `S035` | 214.5-220s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
+| `S035` | 214.5-220s | XCU | `SEED_foot_grip_dry.png` | yes |
 | `S036` | 220-224.5s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S037` | 224.5-229.5s | CU | `still_booby_eye.png` |  |
 | `S038` | 229.5-235s | MS | `SEED_booby_from_behind.png` |  |

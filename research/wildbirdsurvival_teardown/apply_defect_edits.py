@@ -21,7 +21,11 @@ SHOTS = os.path.join(HERE, "ep02_shots.json")
 GRIT = "real handheld wildlife documentary footage"
 ANAT = "no extra limbs"
 BLOOD = "does NOT drip"
-EDITABLE = {"vantage", "action", "seed", "grok_prompt", "physics_risk", "has_blood", "coverage_note"}
+# seed_crop and clip_in are SOURCE-side fields: which region of the still is fed to i2v,
+# and which window of the returned 6.04 s clip ships. Neither touches the timeline, so
+# neither can break tiling -- unlike in_s/out_s/dur_s, which stay immutable.
+EDITABLE = {"vantage", "action", "seed", "grok_prompt", "physics_risk", "has_blood",
+            "coverage_note", "seed_crop", "clip_in"}
 
 NEW_BLOOD = ("a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; "
              "the stain itself stays completely still while the birds move.")

@@ -60,7 +60,9 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT1",
-   "orig_id": "S004"
+   "orig_id": "S004",
+   "seed_crop": "506,75,1058,595",
+   "clip_in": 1.0
   },
   {
    "id": "S005",

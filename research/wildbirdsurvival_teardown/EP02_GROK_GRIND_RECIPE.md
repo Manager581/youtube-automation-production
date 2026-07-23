@@ -2,6 +2,41 @@
 
 _Written 2026-07-23 after proving one clip end-to-end. Every step below was executed, not assumed._
 
+## ⭐ THE FIVE STEPS THAT ACTUALLY PRODUCE AN ACCEPTED CLIP
+
+Proven on S004, which was **rejected on take 1 and accepted on take 2** — the difference was
+step 1 alone.
+
+1. **PRE-CROP THE SEED to the shot's framing, and feed the crop.** i2v begins on frame 1 and
+   *never re-frames*, so a prompt asking for a tighter shot than its still simply returns the
+   still's framing. S004 take 1 came back a full-body wide against a prompt demanding a tight
+   medium. Take 2, from a `506,75,1058,595` crop, delivered exactly the prompt. The box lives in
+   the shot's **`seed_crop`** field; render and LOOK at it first:
+   ```bash
+   venv/bin/python research/wildbirdsurvival_teardown/preview_crop.py SEED.png x,y,w,h /tmp/try.png
+   ```
+   Keep upscale ≤ ~2.5× (the tool prints it) or the source goes soft and reads as fake.
+   **This is also how 73 of the 88 shots get DISTINCT vantages from 25 stills** — without it the
+   21 shots on `hero_still_A_booby_finch.png` all render as the same wide shot, which is the
+   glitchy-loop failure that got `rough_cut_v1` rejected.
+2. **Use the shot's current prompt.** For blood shots it has already been respec'd to pin the
+   feeding bird's bill absolutely still and give the motion to things that cannot touch the
+   stain. **That fix is empirically confirmed:** S004's stain held perfectly stable across all
+   9 strip frames, where S002's ran into a streak by 4.4 s on the same seed family.
+3. **Generate** — 720p, 6 s, seed attached (verify the blob `<img>` reports the crop's exact
+   pixel size), prompt inserted byte-exact.
+4. **Frame-strip and LOOK at it.** Non-negotiable; both rejections this session looked fine in
+   motion and only failed on the strip.
+5. **Pick the shipped window with `clip_in`.** Grok always returns 6.04 s but most shots ship
+   1.5–5 s, so *which* window matters more than the length. S004 ships 1.4 s and its whole beat
+   — the defensive gape — is at ~1.0–2.4 s, so `clip_in: 1.0`. A blind trim from 0 would have
+   shipped the static opening and dropped the beat entirely. The assembler honours `clip_in`.
+
+Both `seed_crop` and `clip_in` go through `apply_defect_edits.py` like any other edit; they are
+source-side fields and cannot break timeline tiling.
+
+---
+
 ## The browser method that works (this replaces guesswork)
 
 **Attaching the seed — `key` with the chord in `text`, NOT the `modifiers` param.**
