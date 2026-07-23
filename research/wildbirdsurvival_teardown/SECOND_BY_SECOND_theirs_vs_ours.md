@@ -88,6 +88,18 @@ Shot sizes: **XCU**=extreme macro · **CU**=close · **MS**=medium · **WS**=wid
 
 ---
 
+### ⚠️ Evidence weight (don't treat every row as equally proven)
+- **Load-bearing (measured, tracks with winning):** the slow cut baseline, no SFX on cuts, the long
+  near-wordless money-shot hold, the long silent pause before the turn, the coverage ceiling.
+- **Weak hygiene markers (measured but they do NOT separate winners from losers):** the music peak
+  position (their worst video peaked earliest of all — 0.03 — and still did 1.9K views), hook cut-count,
+  cuts-on-word %.
+- **Inferred, not measured:** that the bed is *one continuous* track (HPSS shows a harmonic-dominant
+  single-peak curve; it can't distinguish one track from several cues), and the reconstructed body beats.
+- **Not addressed by any of this:** topic, title, thumbnail. Their near-clone A/B settles it — same
+  template, same production, a day apart: **1.98M vs 3K.** The remaining load-bearing work on our side is
+  **the ~72 shots** and **the title/thumbnail**. Music and SFX are hygiene.
+
 ### Reading it
 - **Look up any second.** e.g. *t = 30 s*: theirs = a 12-second hold of the buffalo rubbing itself raw, VO
   "rubbing against tree trunks…"; ours = a 12-second hold of the booby shaking/snapping while the finches

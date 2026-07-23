@@ -109,9 +109,12 @@ new location — the reveal reframes everything you just watched.
 cleaning it — **almost no narration** over it. Then a few inserts. Music **PEAKS here** — the fullest,
 warmest it gets in the whole video. SFX: underwater ambience, bubbles.
 **WHY:** This is the payoff you clicked for. You STOP cutting so the viewer can just *watch the spectacle*
-— words would break the spell, so density drops near zero and the image carries it. The music peaks in
-the **first third** (not the middle/end) so the dopamine hit lands early and holds them for the back half.
-Peaking dead-center is what their FLOP did.
+— words would break the spell, so density drops near zero and the image carries it. The **hold** is the
+load-bearing choice here.
+**⚠️ Don't over-weight the music peak.** It's measured (0.29 of runtime = 2:19) and all 5 winners peak
+before mid-video — but their own adversarial pass demoted it to a **weak hygiene marker**: the
+worst-performing video of the set peaked *earliest of all* (0.03) and still died at 1.9K views. Match it
+so we don't look amateur; do not expect it to earn anything.
 **OURS:** A **~30–40 s held take** of the finch drinking at the wound — throat working, the booby's eye
 softening, the other finches busy around it. **≤1 sentence over it:** *"It drinks. And for the first time
 in days, the seabird goes still."* Music opens up, warm-but-dark. SFX: tiny beak-taps, a long booby exhale.
@@ -178,4 +181,31 @@ Runtime 8:00 · ~80 shots · music peaks ~29% in (first third) · one 30–45s n
 a 14.9s silent pause before the turn · VO ~150–155 wpm (British spelling), deep + steady · music a soft
 harmonic bed 12–20 dB under VO, one swell at the payoff, falls at the end · SFX diegetic only, none on a cut.
 `gate_style_wbs.py` verifies these 11 automatically so a drift can't ship — but they're the *output*, not the plan.
+
+---
+
+## ⚠️ EVIDENCE WEIGHT — what's proven, what's inferred, what's just hygiene
+Not every line above carries the same authority. Sorted honestly, so we don't spend effort in the wrong place.
+
+**MEASURED and load-bearing** (do these — they track with winning)
+- Slow cut baseline: winner median shot ≥3.6s / mean ≥5.6s; **both losers cut faster on both, non-overlapping.**
+- **No SFX-stinger editing** — rigorously confirmed across all 7 videos (0.9–2.8% of cuts near a transient = chance).
+- The **long held money shot at near-zero word density**, and the **long silent pause before the turn**.
+- Narration coverage **ceiling** ~55–60% and pace ≤2.75 wps. (There is **no floor** — one winner ran 27%.)
+
+**MEASURED but only a WEAK marker** (match for polish; expect nothing from it)
+- **Music peak position.** 0.29 for their #1, all winners early — but the worst video peaked earliest (0.03) and flopped.
+- Hook cut-count. A doubled hook co-occurs with one failure, but the other loser had a normal hook and still died.
+- Cuts-on-word %. Winners span 21%→65%; it does not discriminate on its own.
+
+**INFERRED, not measured** (my reading, flag as such)
+- "**One continuous** music bed." The HPSS analysis shows a harmonic-dominant track with a single smooth
+  energy peak — it **cannot** tell one track from several well-sequenced cues. Treat as a working choice.
+- The reconstructed body beats (1:03–8:00) — structure from the contact sheet, not frame-measured.
+
+**NOT SOLVED BY ANY OF THIS — where the win actually lives**
+Topic · title · thumbnail · not cannibalising your own hit. Their near-clone A/B proves it: **LOSE2 conformed
+to 10 of 19 winner edit rules, same template, same production, published a day apart — 1.98M vs 3K.**
+So the two genuinely load-bearing items left on our build list are **the ~72 remaining shots** and **the
+title/thumbnail**. Music and SFX are hygiene. Budget attention accordingly.
 </content>
