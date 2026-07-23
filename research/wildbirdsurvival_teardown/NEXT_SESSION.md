@@ -56,10 +56,24 @@ Eleven Multilingual v2, account `ElevenCreative`. The filename encodes the setti
 
 ---
 
+### The full shot manifest now exists
+**`EP02_SHOT_MANIFEST_FULL.md` — 92 shots, every one with in/out, size, a distinct vantage, action,
+seed, physics risk and a copy-paste Grok prompt.** Machine-readable twin: **`ep02_shots.json`** (read
+that from any builder script). Built by a 21-agent workflow and then independently re-verified, which
+caught four defects the agents' own audit missed — including **22 duplicate shot IDs** that would have
+made a builder silently overwrite clips.
+
+⚠️ **It is a strong draft, not signed off.** 139 defects from the adversarial pass are recorded per act
+and still unresolved, and three pacing gates come in marginally under target (mean shot 5.22 s vs 5.4,
+holds ≥10 s = 10 vs 12, hook mean 4.84 s vs 5.0). Those three are **one fix**: lengthen a handful of
+body holds in the edit — do not regenerate clips for it.
+
 ## WHAT'S MISSING (the real work, in order)
-1. **~6 seed stills** — every prompt is written and ranked in `EP02_SEED_PROMPTS.md`. Start with
-   `SEED_finch_portrait`: it unblocks the TURN, the most important beat in the video.
-2. **~72 of ~80 clips** — the multi-hour grind. Spine = `EP02_SHOT_MANIFEST.md`.
+1. **7 seed stills** (6 + one the manifest surfaced) — every prompt is written and ranked in
+   `EP02_SEED_PROMPTS.md`. `SEED_finch_portrait` is **done**. Do `SEED_wide_booby_clear` next: it
+   unblocks 9 shots, the most of any missing seed.
+2. **~84 clips** — the multi-hour grind, now fully specified. Work straight down
+   `EP02_SHOT_MANIFEST_FULL.md`; frame-strip every clip.
 3. **VO** — one ElevenLabs pass to `EP02_SCRIPT_LOCKED.md`, after settling the speed above.
 4. **Music bed** — one Pixabay track. **Hygiene, not a lever. Do not over-invest.**
 5. **Assemble** → `gate_style_wbs.py` 11/11 → owner watch → upload.
