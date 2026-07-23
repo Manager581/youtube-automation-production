@@ -61,7 +61,8 @@ The "it did not begin as cruelty" montage. **Must contain no red at all** — it
 pivot's after.
 > A vampire ground finch standing on the upper back of a resting Nazca booby, head lowered, picking a small parasite from between the seabird's clean white feathers. The plumage is entirely clean and white with no marks or discolouration anywhere. Both birds calm and settled. Side-on telephoto view, shallow depth of field, black lava behind, flat grey overcast light, desaturated.
 
-## 3. `SEED_raw_stain` — hook shot 10 + Act 3 inserts
+## 3. `SEED_raw_wound` — hook shot 10 + Act 3 inserts
+_(the shot manifest references this exact name — do not rename it)_
 The "stain alone, no finch" insert. Safe-register wording matters most here.
 > Extreme macro of the white wing feathers of a large seabird, filling the whole frame at high magnification so individual feather barbs are visible. At the base of one feather the white down carries a small dark red stain, matted into the barbs, dried at its edges. A single small fly rests on the feathers nearby. No bird's head in frame. Telephoto macro, shallow depth of field, flat overcast light, desaturated, documentary realism.
 
@@ -88,3 +89,14 @@ The "drinks whatever it can find" beat.
 3. Then it is Grok i2v, **Video · 720p · 6s · 16:9** (New Generation resets to 480p — re-select 720p),
    clipboard-paste the seed, **zoom-verify the thumbnail attached before submitting**, and frame-strip
    every clip before it is used.
+
+---
+
+## 7. `SEED_finch_portrait_redtip` — surfaced by the shot manifest, not in the original six
+The **reveal cut** of the TURN: the identical finch and framing as `SEED_finch_portrait`, but the beak
+tip now marked. It only works if it matches seed 1 closely enough that the cut reads as the *same bird*
+a moment later — so generate it in the same thread, immediately after seed 1, and change only the beak.
+> Exactly the same photograph as the previous image - same finch, same perch, same side profile, same angle, distance and light - with one single change: the very tip of its short conical beak now carries a small dark red mark. Everything else in the frame is identical. Flat grey overcast light, telephoto, desaturated.
+
+**This is the one case where repeating the framing is correct** — it is a match cut, not a new vantage.
+Everywhere else, repeating a vantage is the defect described under seed 2.
