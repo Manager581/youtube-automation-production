@@ -39,3 +39,17 @@
 hook v1 (wrong head, replaced), wade, hero, threat, bookend on disk.
 Hook v2 reshoot post ef640c06 NEVER APPEARED — treat as failed; hook v1 stays
 in the cut until a fresh reshoot is approved.
+
+## FINAL (2026-07-24)
+`output/spino_short_FINAL.mp4` — 70.337 s, 720x1280@24, -16.3 LUFS / LRA 11.2 / TP -1.3.
+11 shots + 4.5 s card. Black only on the card (65.77-70.23).
+- Hook = v1 (t2v). v2 reshoot (1c4ae09d) has the correct head but NO reveal — i2v
+  cannot start the animal lying down when the seed shows it standing. The reveal
+  beat wins; v2 kept on disk as an alternate.
+- Sealife (jellyfish/turtle insert) failed twice from the MAIN composer; both
+  submissions vanished without a post. The post-page Make Video path went 10/10.
+  If wanted later: generate a sealife IMAGE first, then Make Video from its post.
+- Wave 3 journey (7dcc0259) + hook v2 (1c4ae09d) landed; journey QA PASS.
+- Known cosmetic: hero + threat carry seed B's darker green river water between
+  two open-sea blue shots; reads as a depth change. Fix would be reshooting both
+  from seed E (2 generations) — optional.
