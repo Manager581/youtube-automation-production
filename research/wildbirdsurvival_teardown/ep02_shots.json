@@ -455,7 +455,9 @@
    "has_blood": true,
    "act": "ACT4",
    "orig_id": "S047",
-   "seed_crop": "760,215,530,298"
+   "seed_crop": "760,215,530,298",
+   "clip_in": 0.25,
+   "coverage_note": " T1 ACCEPTED (first roll): stain structure pixel-stable all 9 frames (canonical DRY rider correct for no-contact shots \u2014 2/2 with S018), down stirs, no bird, no creature-from-debris. Mild creep-in vs 'static' reads as handheld breathing (S020 precedent). clip_in=0.25."
   },
   {
    "id": "S027",
@@ -466,13 +468,14 @@
    "vantage": "from directly BEHIND the finch, over its black shoulder, long lens, near-foreground finch back dark and soft",
    "action": "Past the finch's shoulder to the white flank and the mark; the finch lifts its head and the beak tip is stained red. (Absorbs the adjacent beat S028 \u2014 hold extended in the edit; regenerate as one longer take or two invisible-cut gens.)",
    "seed": "hero_still_A2_macro_finch_wound.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close-up, side-on telephoto with the lens level with the small bird: a black vampire ground finch stands in sharp left-facing profile, feet braced on the pale guano-streaked lava at the base of a Nazca booby's white flank, its blunt seed-cracking beak worked into the parted white down at the base of a growing flight feather where a small dark red mark is matted into the barbs; a second black vampire ground finch sits large, soft and far out of focus at the near right edge of the frame and stays there, never moving toward the drinking bird; the seabird's dark folded wing and white body fill the left of the frame and stir slightly in the wind, the seabird's head stays out of frame. The finch taps twice in a small dry motion, lifts its head clear of the down so the tip of its short blunt beak reads dark red, holds, then dips back in once. Camera locked off at the finch's own height with a faint handheld breath, shallow telephoto depth of field, no push-in, no zoom, no camera move, no whip, no cutaway, no cut. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging \u2014 the two finches never touch or merge. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; the stain itself stays completely still while the birds move \u2014 the mark stays welded to the white down and never spreads, widens or runs further down the plumage, the thin red trickle already on the white feathers is dried and fixed in place and does not lengthen or move, no strand or thread of blood ever connects the beak to the feathers as the head lifts, and the red on the beak tip stays a small rigid mark that moves rigidly with the beak and never elongates, smears or drips.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close-up, side-on telephoto with the lens level with the small bird: a black vampire ground finch stands in sharp left-facing profile, feet braced on the pale guano-streaked lava at the base of a Nazca booby's white flank, its blunt seed-cracking beak worked into the parted white down at the base of a growing flight feather where a small patch of dark rust-brown matting is set into the barbs, old and dry, part of the feathers themselves; a second black vampire ground finch sits large, soft and far out of focus at the near right edge of the frame and stays there, never moving toward the drinking bird; the seabird's dark folded wing and white body fill the left of the frame and stir slightly in the wind, the seabird's head stays out of frame. The finch taps twice in a small dry motion, lifts its head clear of the down so the tip of its short blunt beak reads dark rust-brown against the white, holds, then dips back in once. Camera locked off at the finch's own height with a faint handheld breath, shallow telephoto depth of field, no push-in, no zoom, no camera move, no whip, no cutaway, no cut. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging \u2014 the two finches never touch or merge. The small patch of matting and the fine dry trace already on the white feathers stay rigid, fixed in size, shape, position and colour in every frame, part of the feathers themselves; the dark tip of the beak is a rigid dry mark that moves rigidly with the head and keeps exactly the same size, shape and colour in every frame.",
    "physics_risk": "medium",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT4",
    "orig_id": "S049",
-   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.",
-   "seed_crop": "540,150,620,349"
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.DRY RESPEC PRE-APPLIED (session-8 rule): bill-in-mark + lift-with-tip-payoff on A2 = failure-verb-cueing structure; gore wall replaced with rust-brown matting + S012/S013 rigid-tip-mark pattern (payoff kept as 'reads dark rust-brown'); has_blood->false. T1 ACCEPTED (ONE 10s gen): work-at-mark 0-2.3, lift 2.5, held profile 3-9 (two natural bill-opens), dip-back 9.5. Mark pixel-stable all 10s (dry pattern 6/6). Tip-payoff concession: beak tip reads pale post-lift (Grok declined the rust tip; mark carries the read; re-rolling for tip = re-inviting the mint risk). Second finch held its corner. clip_in=0.25, native 7.5s window, no conform.",
+   "seed_crop": "540,150,620,349",
+   "clip_in": 0.25
   },
   {
    "id": "S028",
