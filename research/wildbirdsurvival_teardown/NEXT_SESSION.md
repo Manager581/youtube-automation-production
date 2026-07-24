@@ -2,11 +2,11 @@
 _Last updated 2026-07-24 (session 6). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**14/88 clips done (S001–S014), 83/88 shootable. The grind loop is proven at scale — 9 clips
+**15/88 clips done (S001–S015), 83/88 shootable. The grind loop is proven at scale — 10 clips
 landed in one session incl. the S008 12s two-gen build and the S011 14.9s 3-gen chain-reseed.
 Read the SESSION-6 ADDENDUM at the top of `EP02_GROK_GRIND_RECIPE.md` before generating
 anything — the 10s pill + head-arc + conform rules there now drive most accept/reject calls.
-Remaining: owner's Chrome click for the last 5 seeds, 74 clips (S016's 34.6s XCU is next and
+Remaining: owner's Chrome click for the last 5 seeds, 73 clips (S016's 34.6s XCU is next and
 needs a fresh session), music bed, assemble, one AMBER pass on S008.**
 
 ## ⚠️ SESSION-6 STATUS (2026-07-24)
@@ -20,8 +20,9 @@ needs a fresh session), music bed, assemble, one AMBER pass on S008.**
 - **Accepted this session**: S006 (t1), S007 (t4 best-of-4), S008 (2-gen build, AMBER PENDING —
   see its coverage_note: masked-crop stabilization of the mark region is a SHIP GATE),
   S009 (t1), S010 (t1), S011 (3-gen chain, all t1), S012 (t2 conformed), S013 (t2 ramped),
-  S014 (t1 conformed). All strips reviewed frame-by-frame; verdicts + windows live in each
-  shot's coverage_note; take history in clips/rejected/.
+  S014 (t1 conformed), S015 (t1 conformed, frame-1 respec killed the invented-finch risk).
+  All strips reviewed frame-by-frame; verdicts + windows live in each shot's coverage_note;
+  take history in clips/rejected/.
 - **NEXT SHOT: S016 — the 34.6s ACT3 XCU hold.** It needs its own chain/loop plan (5-6 gens or
   chain-reseed) — do NOT start it at the end of a long session. S015 (12s eye CU) can be ONE
   10s gen conformed 0.83x (slow blink reads better) — supersedes its two-gen blink-cut note.

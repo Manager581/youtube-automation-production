@@ -1,7 +1,7 @@
 # EP02 — CLIP LEDGER (generated)
 _Auto-generated from `ep02_shots.json` by `gen_clip_ledger.py`. Do not hand-edit — re-run it._
 
-**14 / 88 clips done · 0 awaiting frame-strip · 74 still to generate.**
+**15 / 88 clips done · 0 awaiting frame-strip · 73 still to generate.**
 
 A shot counts as done only when BOTH `<ID>.mp4` and `<ID>_strip.jpg` exist in
 `assets/vampire_finch/clips/` — frame-stripping every clip is mandatory, so a clip
@@ -13,7 +13,7 @@ without its strip is reported as unfinished on purpose.
 | ACT1 | 4 | 4 |
 | ACT1b | 6 | 6 |
 | ACT1c | 1 | 1 |
-| ACT2 | 3 | 4 |
+| ACT2 | 4 | 4 |
 | ACT3 | 0 | 4 |
 | ACT4 | 0 | 24 |
 | ACT5 | 0 | 13 |
@@ -23,7 +23,6 @@ without its strip is reported as unfinished on purpose.
 ## Remaining shots (in timeline order)
 | Shot | In-Out | Size | Seed | Blood |
 |---|---|---|---|---|
-| `S015` | 88-100s | CU | `still_booby_eye.png` |  |
 | `S016` | 100-134.6s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S017` | 134.6-138.1s | CU | `SEED_macro_tail.png` | yes |
 | `S018` | 138.1-141.6s | XCU | `SEED_flank_stain_top.png` | yes |
