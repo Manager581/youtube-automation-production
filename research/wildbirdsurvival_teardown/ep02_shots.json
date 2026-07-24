@@ -383,8 +383,9 @@
    "has_blood": false,
    "act": "ACT4",
    "orig_id": "S042",
-   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.",
-   "seed_crop": "300,165,836,470"
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.T1 ACCEPTED (ONE 10s gen, 2026-07-24): full arc in-gen (lower 0.5-1.7, work 2.8-5.0, tick free 6.1 w/ visible legs, tip-back swallow 8.4 as motivated 3/4 turn, resettle-to-profile 9.5); push-in whole-finch->head per spec; no red, 1 finch. Native 8.0s window clip_in=1.5 (1.5-9.5), no conform needed. 10s-pill recipe (addendum #1) 3rd proof.",
+   "seed_crop": "300,165,836,470",
+   "clip_in": 1.5
   },
   {
    "id": "S023",
@@ -395,12 +396,14 @@
    "vantage": "LOW at ledge height, long lens, wide across the guano-streaked lava shelf; thin grey sea band across the top of frame.",
    "action": "Brief context breath: the booby squats low on a guano-streaked lava ledge, clearly readable mid-frame, three finches spaced on the rock around it; wind and salt spray only.",
    "seed": "SEED_wide_booby_clear.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A wide low telephoto across a guano-streaked black lava ledge: one Nazca booby squats low in the middle of frame, large and clearly readable, with three small black vampire ground finches on the rock around it \u2014 one far left, one low centre, one at frame right; a thin band of flat grey sea runs across the top of frame, salt spray and wind moving the feathers; the birds hold their places, the finches turning their heads and shifting their feet on the rock without flying; camera is low at the ledge's own height on a long lens and does not move. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging \u2014 one booby and three finches throughout.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A wide low telephoto across a guano-streaked black lava ledge: one Nazca booby squats low in the middle of frame, large and clearly readable, with three small black vampire ground finches on the rock around it \u2014 one far left, one low centre, one at frame right; a thin band of flat grey sea runs across the top of frame, salt spray and wind moving the feathers; the birds hold their places, the finches turning their heads and shifting their feet on the rock without flying; camera is low at the ledge's own height on a long lens and does not move. The booby keeps its head in relaxed left profile and never turns its face toward the camera. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging \u2014 one booby and three finches throughout, the number of birds never changes - exactly four birds in every frame, no new bird ever enters or appears.",
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT4",
    "orig_id": "S044",
-   "seed_crop": "180,250,1200,675"
+   "seed_crop": "180,250,1200,675",
+   "coverage_note": "T1 REJECTED (2026-07-24): 4th finch materialized by 1.0s (S003 WS-multiplication mode; species-count clause alone insufficient) + booby turned head-on ~4.4-5.0. Fix: S003's number-of-birds phrasing (exactly four birds in every frame, no new bird) + booby-profile pin. Archived clips/rejected/. T3 ACCEPTED as BEST-OF-3 (2026-07-24): 3 animated finches exactly at the manifest placements, booby profile-locked all 6s (profile pin worked), spray+head-lift 2.4-3.7. The seed's bottom-centre dark blob renders as a STATIC inert lump all 6s (reads as terrain; it was frame-1 truth). t2 rejected: a clearly-alive 4th finch walked in at 3.4s and stayed (archived rejected/). WS count lesson: number-of-birds clause reduced but did not eliminate intrusions on this rock texture; static-lump outcome is acceptable, walking extras are not. clip_in=0.5.",
+   "clip_in": 0.5
   },
   {
    "id": "S024",
