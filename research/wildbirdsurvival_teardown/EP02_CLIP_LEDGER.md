@@ -1,7 +1,7 @@
 # EP02 — CLIP LEDGER (generated)
 _Auto-generated from `ep02_shots.json` by `gen_clip_ledger.py`. Do not hand-edit — re-run it._
 
-**16 / 88 clips done · 0 awaiting frame-strip · 72 still to generate.**
+**18 / 88 clips done · 0 awaiting frame-strip · 70 still to generate.**
 
 A shot counts as done only when BOTH `<ID>.mp4` and `<ID>_strip.jpg` exist in
 `assets/vampire_finch/clips/` — frame-stripping every clip is mandatory, so a clip
@@ -14,7 +14,7 @@ without its strip is reported as unfinished on purpose.
 | ACT1b | 6 | 6 |
 | ACT1c | 1 | 1 |
 | ACT2 | 4 | 4 |
-| ACT3 | 1 | 4 |
+| ACT3 | 3 | 4 |
 | ACT4 | 0 | 24 |
 | ACT5 | 0 | 13 |
 | ACT6 | 0 | 26 |
@@ -23,8 +23,6 @@ without its strip is reported as unfinished on purpose.
 ## Remaining shots (in timeline order)
 | Shot | In-Out | Size | Seed | Blood |
 |---|---|---|---|---|
-| `S017` | 134.6-138.1s | CU | `SEED_macro_tail.png` | yes |
-| `S018` | 138.1-141.6s | XCU | `SEED_flank_stain_top.png` | yes |
 | `S019` | 141.6-145s | CU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S020` | 145-149.5s | MS | `SEED_mutualism_clean.png` |  |
 | `S021` | 149.5-153.5s | CU | `still_booby_eye.png` |  |

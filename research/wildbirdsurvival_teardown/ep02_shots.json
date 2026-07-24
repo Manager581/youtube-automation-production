@@ -289,12 +289,14 @@
    "vantage": "Low, behind and slightly below the second finch at the base of the white tail, looking forward along the length of the tail feathers, short handheld drift to the left - the native angle of SEED_macro_tail (tail region, so it never reuses S016's wing angle).",
    "action": "First insert, wordless. A SECOND finch, wings half-open for balance, jabs twice at the base of a tail feather where the down is already matted dark red, then folds its wings and lowers its head to drink. The booby's tail twitches once beneath it. Music crests here.",
    "seed": "SEED_macro_tail.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close-up from high behind the seabird's rump looking down the length of its white tail, a second small black finch braced at the tail base with its wings half-open for balance, jabbing twice at the base of a tail feather where the white down is already matted dark red, then folding its wings and lowering its head to drink, the seabird's tail twitching once beneath it, slight handheld drift to the left, shallow depth of field, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; the stain itself stays completely still while the birds move.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Close-up from high behind the seabird's rump looking down the length of its white tail, a second small black finch braced at the tail base with its wings half-open for balance, jabbing twice at the base of a tail feather where the white down is already matted into a small patch of dark rust-brown, old and dry, part of the feathers themselves, keeping exactly the same size, shape and colour in every frame, then folding its wings and lowering its head to drink, the seabird's tail twitching once beneath it, slight handheld drift to the left, shallow depth of field, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging.",
    "physics_risk": "medium",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT3",
    "orig_id": "S031",
-   "seed_crop": "270,266,1200,675"
+   "seed_crop": "270,266,1200,675",
+   "coverage_note": "T1 REJECTED (2026-07-24): audit prompt with gore vocab minted fresh red at the bill contact by 1.7s, growing smear through the gen (structure fine: 1 finch, jab-then-drink arc as seated bobs). FAILURE-VERB CUEING fix applied (S016 precedent): mark respec'd to dry rust-brown matting, zero red/blood/failure-verb words, has_blood->false. Take archived clips/rejected/S017_t1_*. T2 ACCEPTED (dry prompt, first roll): matting stable rust-brown all 9 strip frames, zero fresh red, clean bill on the 4.4s lift; 1 finch, no morphing. Beat (jabs + head-down drink) at 0.3-3.8s -> clip_in=0.3 for the 3.5s slot. Failure-verb cueing fix now proven on a 3rd shot.",
+   "clip_in": 0.3
   },
   {
    "id": "S018",
@@ -305,12 +307,14 @@
    "vantage": "straight top-down, 90 degrees directly over the white flank, no bird head or silhouette in frame, static with faint handheld breathing",
    "action": "Second insert, wordless. The damage alone: frame filled with white down and one compact dark-red matted stain at the base of a broken feather shaft. The fine barbs stir in the wind; a single fly walks across the edge of the stain and lifts off. No animal action \u2014 this is the cost, held still, while the music eases off its crest.",
    "seed": "SEED_flank_stain_top.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme close-up looking straight down from directly above the seabird's white flank, no bird's head and no bird silhouette in frame, the frame filled with white down and one compact dark-red matted wound at the base of a broken feather shaft, the fine barbs of the down stirring slightly in the wind, a single small fly walking across the edge of the stain and lifting off, faint handheld breathing in the frame, no push-in, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - the stain itself stays completely still while the birds move (no finch is present in this frame: the stain stays completely fixed and only the down and the fly move).",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme close-up looking straight down from directly above the seabird's white flank, no bird's head and no bird silhouette in frame, the frame filled with white down and one compact dark-red matted wound at the base of a broken feather shaft, the small grey shaft fragment lying inside the stain staying exactly where it is, inanimate, never moving, never becoming an insect, the fine barbs of the down stirring slightly in the wind, a single small fly walking across the edge of the stain and lifting off, faint handheld breathing in the frame, no push-in, no camera whip, no cutaway. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string - the stain itself stays completely still while the birds move (no finch is present in this frame: the stain stays completely fixed and only the down and the fly move).",
    "physics_risk": "low",
    "has_blood": true,
    "act": "ACT3",
    "orig_id": "S032",
-   "seed_crop": "290,55,860,484"
+   "seed_crop": "290,55,860,484",
+   "coverage_note": "T1 (2026-07-24): stain held perfectly (DRY rider fine, no spread), down+wind fine, no bird - but the grey shaft fragment inside the stain ANIMATED INTO A SECOND FLY ~0.8s (prompt wants a single fly). Kept in takes/ as fallback (naturalism acceptable if t2 fails). Pin-repair applied: fragment named and pinned inanimate. T2 ACCEPTED (pin-repair, first roll after pin): fragment held inanimate, exactly 1 fly walks the stain 0.3-3.7 and lifts off ~4.2, stain rock-steady dry, no bird. clip_in=1.2 (liftoff lands ~75% through the 3.5s window).",
+   "clip_in": 1.2
   },
   {
    "id": "S019",
