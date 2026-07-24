@@ -32,21 +32,38 @@ W, H, FPS = 720, 1280, 24
 # act: "bank" (above water, full band) | "under" (lowpass ~800Hz)
 # `hole` = seconds into the TRIMMED segment where a payoff lands; the mix ducks
 # to near-silence for 0.8 s before it and lifts on the hit.
-# gain = per-clip level match (native audio measured -29.3 / -52.2 / -40.1 LUFS)
+# gain = per-clip level match. Missing files are skipped with a warning, so this
+# is the FULL film order; clips drop in as they finish rendering.
+# (The old SP_B08_strike stays banned: its prompt said the water "EXPLODES" and
+# Grok rendered a literal detonation. Never explode/blast/burst; never ask for an
+# off-screen attacker. Violence = the mosasaur's own shot, then the hero dragged
+# down through churning silt with contact off-frame.)
 EDIT = [
-    dict(id="SPINO_S01_reveal", act="bank",  tin=0.3, tout=7.6, gain=1.0,
+    dict(id="SPINO_S01_reveal",  act="bank",  tin=0.3, tout=7.3, gain=1.0,
          hole=5.6, hit="underwater/impact_uw.wav",
-         note="WORLD -> REVEAL. Sandbar lifts and becomes the animal."),
-    dict(id="SP_B02_wade_sail", act="bank",  tin=0.5, tout=8.5, gain=6.0,
-         note="THE LULL. Wades away, shrinking. Stays quiet."),
-    dict(id="SP_B05_hero",      act="under", tin=0.0, tout=9.5, gain=2.5,
+         note="1  HOOK: the 'sandbar' lifts and becomes the animal."),
+    dict(id="SP_B02b_journey",   act="bank",  tin=0.5, tout=7.0, gain=2.0,
+         note="2  JOURNEY: tiny in the vast marsh, walking toward the sea."),
+    dict(id="SP_B02_wade_sail",  act="bank",  tin=0.5, tout=7.0, gain=6.0,
+         note="3  LULL: wades away, only the sail above water. Quiet."),
+    dict(id="SP_B04c_sea_entry", act="bank",  tin=0.5, tout=8.0, gain=2.0,
+         note="4  INTO THE SEA: through the surf until only the sail shows."),
+    dict(id="SP_B05b_living_sea",act="under", tin=0.0, tout=7.5, gain=2.5,
+         note="5  A LIVING SEA: fish school parts around it."),
+    dict(id="SP_B06_sealife",    act="under", tin=0.0, tout=6.0, gain=2.5,
+         note="6  SUPPORTING CAST: jellyfish, squid, turtle. Calm."),
+    dict(id="SP_B05_hero",       act="under", tin=0.0, tout=9.0, gain=2.5,
          hole=6.5, hit="underwater/rumble_bed_uw.wav",
-         note="HERO. Eye level, head-on, fills frame. The attachment shot."),
-    dict(id="SP_B07_threat",    act="under", tin=1.5, tout=9.5, gain=3.0,
-         note="THE THREAT. A far larger shape passes behind it."),
-    dict(id="SP_B08_strike",    act="under", tin=0.0, tout=9.0, gain=2.0,
-         hole=1.8, hit="underwater/impact_uw.wav",
-         note="THE STRIKE. Contact hidden in the silt cloud. Dark."),
+         note="7  HERO: eye level, head-on, fills frame."),
+    dict(id="SP_B07_threat",     act="under", tin=1.5, tout=8.5, gain=3.0,
+         note="8  THREAT: a far larger shape passes in the gloom."),
+    dict(id="SP_B09a_mosasaur",  act="under", tin=0.0, tout=4.5, gain=2.5,
+         hole=3.8, hit="underwater/impact_uw.wav",
+         note="9a MOSASAUR COMMITS: drives down out of frame, jaws opening."),
+    dict(id="SP_B09b_dragged",   act="under", tin=0.0, tout=6.5, gain=2.0,
+         note="9b DRAGGED DOWN: thrashing silhouette inside churning silt."),
+    dict(id="SP_B10_bookend",    act="bank",  tin=0.5, tout=8.5, gain=2.0,
+         note="10 BOOKEND: settles into the mud, reads as a ridge again."),
 ]
 
 
@@ -68,6 +85,7 @@ def main():
     ap.add_argument("-o", "--output",
                     default=os.path.join(REPO, "output", "spino_short_v1.mp4"))
     ap.add_argument("--preview", action="store_true")
+    ap.add_argument("--no-card", action="store_true", help="skip the 4.5 s end card")
     args = ap.parse_args()
     w, h = (540, 960) if args.preview else (W, H)
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
@@ -133,6 +151,21 @@ def main():
 
         if not segs:
             sys.exit("no clips found in " + CLIPS)
+
+        # END CARD: the reference holds 4.716 s of black. It uses TRUE digital
+        # zero; we use -55 dB room tone instead, because multi-second true zero
+        # can interact badly with platform loudness processing.
+        if not args.no_card:
+            card = os.path.join(tmp, "card.mp4")
+            run(["ffmpeg", "-y",
+                 "-f", "lavfi", "-i", f"color=c=black:s={w}x{h}:r={FPS}:d=4.5",
+                 "-f", "lavfi", "-i", "anoisesrc=c=pink:a=0.0018:r=48000:d=4.5",
+                 "-shortest", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+                 "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ac", "2",
+                 card, "-loglevel", "error"])
+            segs.append(card)
+            t += 4.5
+            print(f"  [card] 4.5 s black, -55 dB room tone (not true zero)")
 
         lst = os.path.join(tmp, "l.txt")
         with open(lst, "w") as f:
