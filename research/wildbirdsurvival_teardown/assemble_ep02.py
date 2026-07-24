@@ -34,6 +34,12 @@ MUSIC_DIR = os.path.join(REPO, "audio", "vampire_finch", "music")
 W, H, FPS = 1264, 720, 24
 RUNTIME = 480.0
 
+# Warm-lift grade applied at the final mux (hook-zone delivery rule, 2026-07-24):
+# the per-shot "desaturated" prompt grade measured 21/255 sat vs the reference
+# winner's 55/255, muting the red mark / amber eye the hook depends on. This eq
+# pass restores the pops without touching the clips. Disable with --no-grade.
+GRADE_FILTER = "eq=saturation=1.35:gamma=1.02,colorbalance=rm=0.02:bm=-0.02"
+
 
 def run(cmd, **kw):
     r = subprocess.run(cmd, capture_output=True, text=True, **kw)
@@ -150,6 +156,8 @@ def main():
     ap.add_argument("--preview", action="store_true", help="half-res, faster")
     ap.add_argument("--crf", type=int, default=20)
     ap.add_argument("--music", default=None, help="path to the music bed")
+    ap.add_argument("--grade", action=argparse.BooleanOptionalAction, default=True,
+                    help="apply the warm-lift grade at the final mux (--no-grade for the flat cut)")
     args = ap.parse_args()
 
     scale = (W // 2 * 2, H // 2 * 2) if not args.preview else (632, 360)
@@ -180,8 +188,11 @@ def main():
 
         audio = build_audio(tmp, music)
         os.makedirs(os.path.dirname(args.output), exist_ok=True)
+        vcodec = (["-vf", GRADE_FILTER, "-c:v", "libx264", "-preset", "medium",
+                   "-crf", str(args.crf), "-pix_fmt", "yuv420p"]
+                  if args.grade else ["-c:v", "copy"])
         run(["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", audio,
-             "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac",
+             "-map", "0:v", "-map", "1:a", *vcodec, "-c:a", "aac",
              "-b:a", "192k", "-shortest", args.output])
 
         dur = probe_dur(args.output)
