@@ -15,7 +15,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT1",
-   "orig_id": "S001"
+   "orig_id": "S001",
+   "seed_crop": "0,150,715,402"
   },
   {
    "id": "S002",
@@ -30,7 +31,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT1",
-   "orig_id": "S002"
+   "orig_id": "S002",
+   "seed_crop": "450,110,520,292"
   },
   {
    "id": "S003",
@@ -77,7 +79,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT1b",
-   "orig_id": "S014"
+   "orig_id": "S014",
+   "seed_crop": "410,165,680,383"
   },
   {
    "id": "S006",
@@ -93,7 +96,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT1b",
-   "orig_id": "S015"
+   "orig_id": "S015",
+   "seed_crop": "330,350,900,506"
   },
   {
    "id": "S007",
@@ -108,7 +112,8 @@
    "physics_risk": "low",
    "has_blood": true,
    "act": "ACT1b",
-   "orig_id": "S016"
+   "orig_id": "S016",
+   "seed_crop": "0,80,1400,787"
   },
   {
    "id": "S008",
@@ -139,7 +144,8 @@
    "physics_risk": "high",
    "has_blood": true,
    "act": "ACT1b",
-   "orig_id": "S018"
+   "orig_id": "S018",
+   "seed_crop": "366,366,700,394"
   },
   {
    "id": "S010",
@@ -155,7 +161,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT1b",
-   "orig_id": "S019"
+   "orig_id": "S019",
+   "seed_crop": "600,180,900,506"
   },
   {
    "id": "S011",
@@ -187,7 +194,8 @@
    "has_blood": true,
    "coverage_note": "9.0s vs the 6.04s Grok cap (+2.96s). PRIMARY: one gen conformed 6.04 -> 9.00s at 0.671x (ffmpeg setpts=1.49*PTS, minterpolate to 24fps). The shot is near-static, so the slowdown reads as gravity on the reveal rather than slow-motion. FALLBACK if the head-dip goes rubbery under interpolation: two gens from the same seed cut invisibly on a motionless frame \u2014 gen A 0.00\u20134.80 + gen B 1.84\u20136.04 = 9.00s.",
    "act": "ACT2",
-   "orig_id": "S020"
+   "orig_id": "S020",
+   "seed_crop": "400,150,845,475"
   },
   {
    "id": "S013",
@@ -203,7 +211,8 @@
    "has_blood": true,
    "coverage_note": "8.0s vs the 6.04s cap (+1.96s). SPEED RAMP, not a flat retime \u2014 the head-lift must stay legible. Slow the still opening (source 0.00\u20132.30s) to 0.54x = 4.26s, then play the head-lift and eye-turn (source 2.30\u20136.04s) at 1.0x = 3.74s. Total 8.00s. Frame-strip the ramped section specifically for barb smear; if it smears, re-ramp at 0.7x and hold the final eye frame 1.1s as a freeze.",
    "act": "ACT2",
-   "orig_id": "S021"
+   "orig_id": "S021",
+   "seed_crop": "545,145,506,285"
   },
   {
    "id": "S014",
@@ -219,7 +228,8 @@
    "has_blood": true,
    "coverage_note": "8.0s vs the 6.04s cap (+1.96s). TWO NEAR-IDENTICAL GENS from hero_still_A with the same prompt, cut invisibly at 4.20s. Both gens start from the identical seed frame, so pick an exit frame in gen A and an entry frame in gen B at the same point in the booby's breath cycle. Gen A 0.00\u20134.20 + gen B 1.80\u20135.60 = 8.00s. NO retime here \u2014 this is a stillness beat and interpolation mush would be visible against the static lava.",
    "act": "ACT2",
-   "orig_id": "S022"
+   "orig_id": "S022",
+   "seed_crop": "0,80,1066,600"
   },
   {
    "id": "S015",
@@ -235,7 +245,8 @@
    "has_blood": false,
    "coverage_note": "12.0s vs the 6.04s cap \u2014 needs TWO gens (+5.96s). CUT ON THE BLINK: prompt both gens to blink, take gen A up to and including the frame where the lid is fully closed, and start gen B on its own fully-closed lid, so the join is buried inside a single blink. 6.04 + 6.04 = 12.08s, trim 0.08s off the tail. This is one of the >=12 required 10s+ holds. Do not cover this with a retime \u2014 a 2x-slowed blink reads as a dying bird.",
    "act": "ACT2",
-   "orig_id": "S023"
+   "orig_id": "S023",
+   "seed_crop": "150,0,1000,563"
   },
   {
    "id": "S016",
@@ -266,7 +277,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT3",
-   "orig_id": "S031"
+   "orig_id": "S031",
+   "seed_crop": "270,266,1200,675"
   },
   {
    "id": "S018",
@@ -281,7 +293,8 @@
    "physics_risk": "low",
    "has_blood": true,
    "act": "ACT3",
-   "orig_id": "S032"
+   "orig_id": "S032",
+   "seed_crop": "290,55,860,484"
   },
   {
    "id": "S019",
@@ -296,7 +309,8 @@
    "physics_risk": "high",
    "has_blood": true,
    "act": "ACT3",
-   "orig_id": "S033"
+   "orig_id": "S033",
+   "seed_crop": "430,70,660,371"
   },
   {
    "id": "S020",
@@ -311,7 +325,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S040"
+   "orig_id": "S040",
+   "seed_crop": "200,113,1472,828"
   },
   {
    "id": "S021",
@@ -342,7 +357,8 @@
    "has_blood": false,
    "act": "ACT4",
    "orig_id": "S042",
-   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.",
+   "seed_crop": "300,165,836,470"
   },
   {
    "id": "S023",
@@ -387,7 +403,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S046"
+   "orig_id": "S046",
+   "seed_crop": "225,193,960,540"
   },
   {
    "id": "S026",
@@ -402,7 +419,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S047"
+   "orig_id": "S047",
+   "seed_crop": "760,215,530,298"
   },
   {
    "id": "S027",
@@ -418,7 +436,8 @@
    "has_blood": true,
    "act": "ACT4",
    "orig_id": "S049",
-   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.",
+   "seed_crop": "540,150,620,349"
   },
   {
    "id": "S028",
@@ -433,7 +452,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S050"
+   "orig_id": "S050",
+   "seed_crop": "250,300,1000,563"
   },
   {
    "id": "S029",
@@ -463,7 +483,8 @@
    "physics_risk": "low",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S052"
+   "orig_id": "S052",
+   "seed_crop": "330,125,1040,585"
   },
   {
    "id": "S031",
@@ -478,7 +499,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S053"
+   "orig_id": "S053",
+   "seed_crop": "276,215,1244,700"
   },
   {
    "id": "S032",
@@ -493,7 +515,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S054"
+   "orig_id": "S054",
+   "seed_crop": "470,168,576,324"
   },
   {
    "id": "S033",
@@ -508,7 +531,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S055"
+   "orig_id": "S055",
+   "seed_crop": "0,0,1672,941"
   },
   {
    "id": "S034",
@@ -523,7 +547,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S056"
+   "orig_id": "S056",
+   "seed_crop": "440,80,1000,563"
   },
   {
    "id": "S035",
@@ -538,7 +563,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S057"
+   "orig_id": "S057",
+   "seed_crop": "520,320,740,416"
   },
   {
    "id": "S036",
@@ -553,7 +579,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S058"
+   "orig_id": "S058",
+   "seed_crop": "422,130,1250,703"
   },
   {
    "id": "S037",
@@ -583,7 +610,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S060"
+   "orig_id": "S060",
+   "seed_crop": "390,311,1120,630"
   },
   {
    "id": "S039",
@@ -598,7 +626,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S061"
+   "orig_id": "S061",
+   "seed_crop": "190,142,1420,799"
   },
   {
    "id": "S040",
@@ -614,7 +643,8 @@
    "has_blood": true,
    "coverage_note": "10.5s vs Grok's 6.04s cap. Build from TWO gens off SEED_swarm_six (six finches already in-frame, so 'count stays the same' holds honestly) with an IDENTICAL locked-off frame and identical prompt; differentiate gen 2 ONLY by a slow booby blink and small shifts in the finches' head positions - no bird is added or removed, so the count never changes. Use 5.25s from each and butt-cut at t=246.25 on the booby's slow blink. Because the camera never moves and the frame layout is identical, the join reads as one unbroken hold. 12.08s of source for 10.5s of screen means NO retime is needed. Fallback only if gen 2 fails identity: single gen retimed 0.58x - acceptable for the static booby but the finch hops will read slow-mo, so prefer the two-gen cut. SEED_swarm_six must be generated first (ChatGPT gpt-image, shared-look preamble): six finches on/around one Nazca booby in the locked-off side-on framing; verify the six-finch count on the frame strip before joining.",
    "act": "ACT4",
-   "orig_id": "S062"
+   "orig_id": "S062",
+   "seed_crop": "38,69,1500,844"
   },
   {
    "id": "S041",
@@ -629,7 +659,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT4",
-   "orig_id": "S063"
+   "orig_id": "S063",
+   "seed_crop": "538,190,660,371"
   },
   {
    "id": "S042",
@@ -645,7 +676,8 @@
    "has_blood": true,
    "coverage_note": "6.5s vs 6.04s cap. Use the full 6.04s gen retimed uniformly to 0.93x (= 6.49s). The action is a single brace-and-peck with no fast motion, so uniform slow-down is imperceptible. Do NOT cross-dissolve, freeze-frame, or ping-pong the tail.",
    "act": "ACT4",
-   "orig_id": "S064"
+   "orig_id": "S064",
+   "seed_crop": "520,315,880,495"
   },
   {
    "id": "S043",
@@ -722,7 +754,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT5",
-   "orig_id": "S054"
+   "orig_id": "S054",
+   "seed_crop": "500,260,880,495"
   },
   {
    "id": "S048",
@@ -738,7 +771,8 @@
    "has_blood": false,
    "act": "ACT5",
    "orig_id": "S056",
-   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length."
+   "coverage_note": "Exceeds Grok's 6.04 s cap: generate as 2 near-identical 6 s gens from the same seed and join on an invisible match-cut (no motion change across the seam), or one slow gen retimed to length.",
+   "seed_crop": "300,190,840,473"
   },
   {
    "id": "S049",
@@ -753,7 +787,8 @@
    "physics_risk": "high",
    "has_blood": false,
    "act": "ACT5",
-   "orig_id": "S057"
+   "orig_id": "S057",
+   "seed_crop": "400,145,1020,574"
   },
   {
    "id": "S050",
@@ -783,7 +818,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT5",
-   "orig_id": "S059"
+   "orig_id": "S059",
+   "seed_crop": "140,235,1255,706"
   },
   {
    "id": "S052",
@@ -799,7 +835,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT5",
-   "orig_id": "S060"
+   "orig_id": "S060",
+   "seed_crop": "680,304,520,293"
   },
   {
    "id": "S053",
@@ -814,7 +851,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT5",
-   "orig_id": "S061"
+   "orig_id": "S061",
+   "seed_crop": "0,0,1400,788"
   },
   {
    "id": "S054",
@@ -845,7 +883,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT5",
-   "orig_id": "S063"
+   "orig_id": "S063",
+   "seed_crop": "0,200,1090,613"
   },
   {
    "id": "S056",
@@ -860,7 +899,8 @@
    "physics_risk": "low",
    "has_blood": true,
    "act": "ACT5",
-   "orig_id": "S064"
+   "orig_id": "S064",
+   "seed_crop": "464,180,800,450"
   },
   {
    "id": "S057",
@@ -875,7 +915,8 @@
    "physics_risk": "low",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S060"
+   "orig_id": "S060",
+   "seed_crop": "100,300,966,543"
   },
   {
    "id": "S058",
@@ -890,7 +931,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S061"
+   "orig_id": "S061",
+   "seed_crop": "560,290,940,529"
   },
   {
    "id": "S059",
@@ -905,7 +947,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S062"
+   "orig_id": "S062",
+   "seed_crop": "310,110,954,537"
   },
   {
    "id": "S060",
@@ -920,7 +963,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S063"
+   "orig_id": "S063",
+   "seed_crop": "650,500,506,285"
   },
   {
    "id": "S061",
@@ -950,7 +994,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S065"
+   "orig_id": "S065",
+   "seed_crop": "560,457,860,484"
   },
   {
    "id": "S063",
@@ -965,7 +1010,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S066"
+   "orig_id": "S066",
+   "seed_crop": "204,250,506,285"
   },
   {
    "id": "S064",
@@ -980,7 +1026,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S067"
+   "orig_id": "S067",
+   "seed_crop": "600,338,1072,603"
   },
   {
    "id": "S065",
@@ -995,7 +1042,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S068"
+   "orig_id": "S068",
+   "seed_crop": "690,600,560,315"
   },
   {
    "id": "S066",
@@ -1010,7 +1058,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S069"
+   "orig_id": "S069",
+   "seed_crop": "272,80,1400,787"
   },
   {
    "id": "S067",
@@ -1056,7 +1105,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S072"
+   "orig_id": "S072",
+   "seed_crop": "468,553,690,388"
   },
   {
    "id": "S070",
@@ -1071,7 +1121,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S073"
+   "orig_id": "S073",
+   "seed_crop": "312,20,1360,765"
   },
   {
    "id": "S071",
@@ -1086,7 +1137,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S074"
+   "orig_id": "S074",
+   "seed_crop": "432,240,1240,697"
   },
   {
    "id": "S072",
@@ -1101,7 +1153,8 @@
    "physics_risk": "high",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S075"
+   "orig_id": "S075",
+   "seed_crop": "825,406,847,476"
   },
   {
    "id": "S073",
@@ -1116,7 +1169,8 @@
    "physics_risk": "high",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S076"
+   "orig_id": "S076",
+   "seed_crop": "330,130,506,285"
   },
   {
    "id": "S074",
@@ -1131,7 +1185,8 @@
    "physics_risk": "high",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S077"
+   "orig_id": "S077",
+   "seed_crop": "700,545,650,366"
   },
   {
    "id": "S075",
@@ -1146,7 +1201,8 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S078"
+   "orig_id": "S078",
+   "seed_crop": "560,340,1000,563"
   },
   {
    "id": "S076",
@@ -1161,7 +1217,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S079"
+   "orig_id": "S079",
+   "seed_crop": "300,240,1076,605"
   },
   {
    "id": "S077",
@@ -1176,7 +1233,8 @@
    "physics_risk": "high",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S080"
+   "orig_id": "S080",
+   "seed_crop": "460,90,780,439"
   },
   {
    "id": "S078",
@@ -1191,7 +1249,8 @@
    "physics_risk": "high",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S081"
+   "orig_id": "S081",
+   "seed_crop": "356,530,560,315"
   },
   {
    "id": "S079",
@@ -1206,7 +1265,8 @@
    "physics_risk": "high",
    "has_blood": false,
    "act": "ACT6",
-   "orig_id": "S082"
+   "orig_id": "S082",
+   "seed_crop": "680,392,780,439"
   },
   {
    "id": "S080",
@@ -1236,7 +1296,8 @@
    "physics_risk": "medium",
    "has_blood": true,
    "act": "ACT6",
-   "orig_id": "S084"
+   "orig_id": "S084",
+   "seed_crop": "642,320,1030,579"
   },
   {
    "id": "S082",
@@ -1268,7 +1329,8 @@
    "has_blood": false,
    "coverage_note": "Exceeds Grok's 6.04 s cap. Cover with TWO near-identical gens from the SAME seed and identical prompt (different rolls), each trimmed to 5.25 s and joined on an invisible match-cut at a wind lull with the booby's head static (5.25 + 5.25 = 10.5 s exactly, both inside the 6.04 s cap - no retime needed). Do NOT single-gen retime this one: reaching 10.5 s from one 6.04 s gen needs 0.58x, and the breathing rhythm slows visibly below ~0.9x. Frame-strip both gens before assembly. All motion here is settling/landing/wind, so the match-cut is easy to hide; reject any gen where a finch changes count across the seam.",
    "act": "ACT7",
-   "orig_id": "S070"
+   "orig_id": "S070",
+   "seed_crop": "416,60,1031,580"
   },
   {
    "id": "S084",
@@ -1283,7 +1345,8 @@
    "physics_risk": "low",
    "has_blood": false,
    "act": "ACT7",
-   "orig_id": "S071"
+   "orig_id": "S071",
+   "seed_crop": "400,440,760,428"
   },
   {
    "id": "S085",
@@ -1299,7 +1362,8 @@
    "has_blood": false,
    "coverage_note": "Exceeds Grok's 6.04 s cap. Cover with TWO near-identical gens from the SAME seed and identical prompt (different rolls), each trimmed to 5.25 s and joined on an invisible match-cut at a wind lull with the booby's head static (5.25 + 5.25 = 10.5 s exactly, both inside the 6.04 s cap - no retime needed). Do NOT single-gen retime this one: reaching 10.5 s from one 6.04 s gen needs 0.58x, and the breathing rhythm slows visibly below ~0.9x. Frame-strip both gens before assembly. Trim the last 12 frames of each gen BEFORE joining - grit clip #9 went slightly awkward in the booby's posture in the final ~1 s. Frame-strip mandatory: this is the flagged egg object-permanence class.",
    "act": "ACT7",
-   "orig_id": "S072"
+   "orig_id": "S072",
+   "seed_crop": "260,435,900,506"
   },
   {
    "id": "S086",
@@ -1315,7 +1379,8 @@
    "has_blood": true,
    "coverage_note": "Exceeds Grok's 6.04 s cap. Cover with TWO near-identical gens from the SAME seed and identical prompt (different rolls), each trimmed to 5.75 s and joined on an invisible match-cut at a wind lull with the booby's head static (5.75 + 5.75 = 11.5 s exactly, both inside the 6.04 s cap - no retime needed). Do NOT single-gen retime this one: reaching 11.5 s from one 6.04 s gen needs 0.53x, and the breathing rhythm slows visibly below ~0.9x. Frame-strip both gens before assembly. Frame-strip mandatory - the blood-thread artifact is the one proven failure mode of the whole pipeline, and the fly is a small fast element that can morph.",
    "act": "ACT7",
-   "orig_id": "S073"
+   "orig_id": "S073",
+   "seed_crop": "608,232,736,414"
   },
   {
    "id": "S087",
@@ -1347,7 +1412,8 @@
    "has_blood": false,
    "coverage_note": "10.0s from a 6.04s gen: retime to 0.80x -> 7.55s, then ramp-to-freeze on the final frame across the last 2.45s while the fade-to-black runs - the fade completely masks the freeze, and drifting mist is the ideal element to freeze under because it reads as thickening rather than stopping. Fallback if the freeze shows: two gens (6.04+6.04=12.08s) trimmed to 10.0 with the join buried inside a mist pass. Do NOT retime a single gen to 0.60x - at that ratio the mist drift reads as slow-motion and breaks the documentary register.",
    "act": "ACT7",
-   "orig_id": "S075"
+   "orig_id": "S075",
+   "seed_crop": "170,60,1173,660"
   }
  ]
 }

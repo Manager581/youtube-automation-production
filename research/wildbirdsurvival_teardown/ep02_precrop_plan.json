@@ -1,0 +1,867 @@
+{
+ "seeds": 25,
+ "crops_proposed": 81,
+ "approved": [
+  {
+   "id": "S004",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "330,80,1342,755",
+   "rationale": "The tightest box the seed permits that still holds the crown (y88) AND finch2's feet (y825) AND finch3's tail (x1660) \u2014 1342x755 is the geometric minimum for head + three finches. Looked at it: the tail and outer wing are gone off frame left, head/neck/wing-base now dominate the left two-thirds and both lava finches sit at frame right exactly as the prompt asks. Differs from S003 by losing the whole tail spike and the sky above the head; differs from S036 by keeping the crown; differs from S011 (same 1342 width) by being shifted 254px right \u2014 S004 ends at the frame edge with finch3 and the dark lava mass, S011 ends at 1418 on bare rock with the tail in."
+  },
+  {
+   "id": "S009",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "366,366,700,394",
+   "rationale": "The tightest crop in the whole group at 1.81x and the only one where the wound is a major frame element. Right edge at 1066 sits in the 13px gap between finch1's tail (1060) and finch2's beak (1073), so exactly ONE finch is present as the prompt names \u2014 the two lava finches are gone. Head is well above frame (top edge y366 is 150px below the chin). Looked at it: dark folded wing fills the left, white flank and the red mark centre-right, finch1 feeding at it, lava along the bottom-right, and 137px of headroom above the finch for the spasm that throws it up. Nothing else in the group is this scale."
+  },
+  {
+   "id": "S014",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "0,80,1066,600",
+   "rationale": "Honors the shot's explicit note ('frame tight on the booby-and-finch pair so the two background lava finches are out of shot'): right edge at 1066 is the only way to do that, since finch2 starts at 1073. Result, which I looked at: eye, dark facial mask and the finch at the wound all read; the two lava finches are gone; almost no foreground rock, which suits the low looking-slightly-up vantage. ACCEPTED COST \u2014 the bill runs out of frame at the right (bill spans x1030-1250, right edge is 1066), so only the bill base is in shot. The alternative is keeping the lava finches, which would collapse S014 into the S007/S011/S046 cluster and break its own note. Only crop in the group with the frame edge inside the bird's face."
+  },
+  {
+   "id": "S036",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "422,130,1250,703",
+   "rationale": "The only crop that deliberately cuts the crown: top edge at y130 puts the pale-yellow eye (y135-165) hard against the top edge, which is literally what the shot asks for ('the booby's half-closed eye at the edge of frame'). The spine/back then runs across the left of frame for the three preening finches, and all three finches are in (finch3's tail at 1660 keeps the right edge at the frame edge). Verified by eye: crown gone, eye at the edge, rock across the bottom, low-looking-up feel. This is the one member of the near-full cluster that is genuinely unmistakable from the others."
+  },
+  {
+   "id": "S002",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "450,110,520,292",
+   "rationale": "XCU, ONE FINCH ONLY. Right edge 970 stops 9px short of the second finch (its beak tip is at x=979), so the box holds exactly one bird as the prompt demands. Looked at it: the drinking finch fills the right two-thirds in near-profile, its beak buried in the parted white down, the compact red knot (x551-581, y214-262) sitting at 19-25% from the left with headroom above the crown for the millimetre head-lift the action needs. No lava, no dark wing - a pure white field, which is the tonal signature that separates it from every other box on this seed. Differs from S073 (same 2.5x class) by being anchored 120px right: S073 centres the WOUND in white plumage, S002 lets the BIRD fill the frame. Differs from S013 by 90px left and by excluding the second finch; differs from S024 by scale (2.43 vs 2.07) and by having almost no down field on the left."
+  },
+  {
+   "id": "S005",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "410,165,680,383",
+   "rationale": "XCU, two finches. Drinking finch sits centred (its beak-to-tail span 574-929 centres at ~50% of the box) in sharp left-facing profile with its feet braced on the lava, exactly as the prompt specifies; the second finch reads as a soft dark shape at the LOWER-RIGHT edge (979-1090 x 374-548). Wound whole at upper-left. This is the only mid-scale box that shows the whole standing bird including tail and both feet on the rock. Differs from S019 (nearly the same scale) by a 100px vertical shift: S005 keeps the rock and the legs, S019 drops them and puts the white wing overhead instead. Differs from S032 by 21% scale - S032 is the same camera one notch in."
+  },
+  {
+   "id": "S013",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "545,145,506,285",
+   "rationale": "XCU, the tightest box on this seed (2.50x, at the softness ceiling - acceptable for an 8s hold, and it is the shot whose whole job is the eye). Looked at it: the head reads big at upper-left with the dark eye clearly legible for the 'fixes the lens' beat, and there is real headroom above the crown so the head-lift stays in frame. The wound is at the extreme left edge (its right portion visible where the beak enters) and the second finch is a soft dark corner at bottom-right (979-1051 x 374-430), matching 'sits out of focus at the right edge'. No lava at all. Closest neighbour in the group is S032 (2.26x) - they differ by 10% scale and an 81px centre offset, with S013 holding no ground and no legs while S032 shows feet, rock and the throat line. Differs from S002 by containing the second bird and sitting 90px further right."
+  },
+  {
+   "id": "S019",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "430,70,660,371",
+   "rationale": "CU, two finches. HIGH band (y70-441): the booby's white down sweeps across the top and left as a big soft near-foreground mass and the lava/legs are cropped out entirely, which is what sells the 'white down thrown far out of focus in the NEAR foreground' and the few-degree tilt UP. Head and beak planted in the wound sit centre-left, whole, with the red mark and its dried drip fully inside. Second finch present as a dark crown at the bottom-right corner (979-1090 x 374-441) - the 'lower right edge' the prompt names. Differs from S005 (same scale class) by that 100px vertical shift and by having no ground in frame; differs from S013/S032 by being a half-scale step wider with the finch smaller in a much larger down field."
+  },
+  {
+   "id": "S027",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "540,150,620,349",
+   "rationale": "CU, two finches, RIGHT-biased. Anchored at x540 so the wound sits at the extreme left edge and the frame is given over to the drinking finch in left-facing profile plus the second finch reading large, dark and soft at the NEAR RIGHT edge (979-1160 x 374-499) - the over-the-shoulder feel the vantage asks for, since the seed has no true behind-the-bird axis. Head whole with the beak-tip lift fully in frame. Differs from S041 (the other 'near-foreground finch' box) by 16% scale and a 75px centre offset: S041 gives the foreground bird more of the frame and floods the bottom with lava, S027 keeps the drinking finch dominant with only a lava sliver. Differs from S077 by scale (2.04 vs 1.62) - S077 keeps the white wing looming overhead, S027 crops it away."
+  },
+  {
+   "id": "S073",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "330,130,506,285",
+   "rationale": "XCU gore insert, tightest legal box (2.50x, at the ceiling - defensible for a 1.6s cut). This is the only crop that CENTRES the wound: the red knot and its dried streak sit dead-centre in a field of white plumage with the beak driving in from the right and the dark wing edge just entering at bottom-left. That is 'a beak driving into the base of a growing flight feather in white plumage, camera level with the flank and very close, hard side-on'. Its prompt names no second bird, and the right edge at 836 keeps the second finch well out, so the count is right at one. Differs from S002 (same scale class) by a 127px left anchor - S002 lets the bird fill the frame, S073 lets the wound and the feathers fill it; differs from S024 by 21% scale and by dropping the finch's body entirely."
+  },
+  {
+   "id": "S077",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "460,90,780,439",
+   "rationale": "CU, two finches. HIGH top edge (y90) so the booby's white wing base looms across the top of the frame above both birds while the lava is only a thin strip at the bottom - the closest this seed can come to 'low and underneath, looking up into the base of the wing'. Drinking finch left of centre with its beak buried in the mark; second finch pushing in close and soft from the LOWER RIGHT (979-1240 x 374-529) toward the same mark, which is the shot's action. Differs from S027 by 21% scale and by that overhead wing mass (S027 crops it out); differs from S041 by an 80px vertical offset at similar scale - S077 looks up under the wing, S041 sits down in the lava."
+  },
+  {
+   "id": "S058",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "560,290,940,529",
+   "rationale": "Seed geometry (verified): booby broadside facing frame right, crown top y=40, eye (1185,128), bill tip (1420,255), breast x950-1210, near leg+toes x655-800 y615-790, EGG x761-900 y665-775, finch1 x926-1140 y599-765, finch2 x1164-1405 y588-790. This crop starts on the white breast (fills top-left/centre), runs down the leg to the egg in the dust at bottom-left, both finches complete at right - i.e. the END framing of the tilt-down, which Grok must already have in frame 1 since it cannot re-frame. Head, tail and sky are all cut, so it does not read as the wide. HIGHEST-anchored (y=290) of the three breast-down MS frames: S079 is 17% tighter and 100px lower, S085 is left-shifted and bottom-anchored with only one finch."
+  },
+  {
+   "id": "S060",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "650,500,506,285",
+   "rationale": "ONE finch only: right edge 1156 sits 8px left of finch2's bill tip (measured at x=1164 with a 6.3x probe crop), so the second bird is fully excluded as the prompt's singular finch requires; finch1 (to x1140) is complete. Finch1 fills the right half in profile with its head already cocked down, and the egg sits large and soft in the lower-left foreground = 'from just behind the finch's shoulder, egg soft in the foreground'. Tightest box in the whole group (2.50x, at the softness ceiling). Differs from the other one-finch shot S069 by being 27% tighter, 80px higher, finch-led rather than egg-led."
+  },
+  {
+   "id": "S062",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "560,457,860,484",
+   "rationale": "Low at nest level, side-on: the booby's white belly and the black wing edge fill the top, the egg sits between the grey feet, BOTH finches are pressed in right beside it (near one head-down at the shell), and the bottom edge at y=941 gives the dark blade of foreground lava the vantage asks for. Camera height reads as level with the scrape, not above it. This is the WIDE step of the three nest-level frames on this seed - S074 is 1.94x and S065 is 2.26x on roughly the same centre, so the trio reads as a wide/tight/tightest set of the nest rather than one repeated shot."
+  },
+  {
+   "id": "S065",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "690,600,560,315",
+   "rationale": "Lowest and tightest of the nest-level family: the bottom 45% of frame is near-ground lava, which is what 'lens flat ON the lava, extreme foreshortening' looks like. Egg large at frame left with the booby's white belly directly above it (so there is belly to lower over the shell during the settle), near finch centre with its head already down, second finch's head/shoulder at the extreme right = 'two finches just beyond the egg at frame right'. Differs from S074 (1.94x, 55px higher, finch2 complete) and S062 (1.47x, much more belly) by scale and by how much of the second bird is inside the frame."
+  },
+  {
+   "id": "S069",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "468,553,690,388",
+   "rationale": "Ground level beside the egg looking across the lava: egg centred and large, ONE finch complete at frame right with its head lowered (right edge 1158 excludes finch2's bill at x=1164), leg and toes at left, and a deep near-foreground lava band across the bottom third for the dart-and-stop. Head of the finch has clear headroom (its crown is at y=599, box top 553) - an earlier y=620 box clipped it and was rejected. The other one-finch shot S060 is 27% tighter, 50px higher and finch-led; this one is looser and egg-led."
+  },
+  {
+   "id": "S070",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "312,20,1360,765",
+   "rationale": "The stab needs the whole head (crown y=40, bill tip x=1420) AND the finch beside the foot (y to 765) in frame 1, which forces a box at least ~1310 wide - that is the seed's geometry, not a choice. This is the TIGHTEST such box: the tail is cut at frame left so the booby fills noticeably more of the frame than the uncropped seed, head high-right with ~18px headroom, both finches and the egg at the bottom. Reads as the low three-quarter 'bird dominant' medium against S061 (uncropped, sky + tail + right lava) and S075 (1500 wide, sky trimmed, tail kept)."
+  },
+  {
+   "id": "S074",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "700,545,650,366",
+   "rationale": "Followed the grok_prompt, not the vantage: the vantage says 'straight overhead top-down', which this side-on still can never deliver, while the prompt itself specifies low at nest level, side-on, tight on the egg with the belly and legs filling the top - so that is what I cropped. Tight on the shell between the feet with OPEN DUST to the right of it, which is the room the egg needs to be shoved into and the low lava ridge it comes to rest against; both finches present, the near one head-down against the shell. Middle step of the nest-level ladder: 32% tighter than S062, 15% looser than S065, and 60px higher than S065."
+  },
+  {
+   "id": "S078",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "356,530,560,315",
+   "rationale": "Side-on AT egg height, level with the shell: the egg is large at frame right and the booby's white belly and flank fill the left and top - i.e. the destination the egg gets rocked back into is physically in shot. Right edge 916 sits between the egg's right edge (900) and finch1's bill (926), so this is the ONLY crop in the group with no finch at all, which matches a prompt that never names one and makes it unmistakably a different set-up from every other box here. Note for generation: at egg height the head is above frame, so the bill must descend into shot from the top edge - unavoidable, since including the head would force a ~1310px-wide near-full frame and destroy the CU."
+  },
+  {
+   "id": "S079",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "680,392,780,439",
+   "rationale": "High three-quarter over the white breast: the breast/belly mass fills the upper left and the egg sits directly beneath it at lower left, so the closing belly and the shell it swallows are stacked in one diagonal; both finches complete at right to hop back. Tighter (1.62x) and 100px lower than S058, and right-shifted 420px from S085, so the three breast-family frames read as three different set-ups: S058 starts high on the breast, this one is the belly-over-egg medium, S085 is the low ground-anchored one."
+  },
+  {
+   "id": "S085",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "260,435,900,506",
+   "rationale": "Low front-three-quarter at nest level: bottom edge at y=941 puts the soft out-of-focus lip of lava across the near foreground exactly as the vantage asks, the white breast fills the RIGHT of frame, the egg lies in the dust between the feet, and the right edge at 1160 leaves exactly ONE jet-black finch at the edge of frame (finch2's bill starts at 1164), matching the prompt's single hopping finch. Leftmost and lowest of the breast family - includes the wing and flank that S058/S079 cut, and is the only one of the three with one finch. Caveat: the prompt also asks for the orange-pink bill in frame; the bill is at y=165-255 and cannot be included without going to a ~1310px near-full-frame wide, which would both destroy this low nest-level look and drag finch2 back in. Recommend dropping 'and orange-pink dagger bill' from the prompt for this shot."
+  },
+  {
+   "id": "S025",
+   "seed": "still_booby_eye.png",
+   "crop": "225,193,960,540",
+   "rationale": "Looked at /tmp/try_S025.png. Delivers the prompt line 'the amber eye and heavy bill fill the frame': the eye sits high-left (0.29 across, 0.31 down) with just enough lid headroom for the flinch and the nictitating-membrane sweep, and the massive pink bill fills the whole bottom-right of frame. Excludes the finch entirely (right edge 1185, finch starts at 1190) and contains no blood, as the prompt requires. Bottom-anchored and bill-dominated, versus S087 which is the same side of the head but 17% tighter, pushed right, and top-weighted on the crown and grey sky; versus S037/S063 which are far tighter and eye-only; versus S055 which is anchored at x=0 on the white neck and shoulder."
+  },
+  {
+   "id": "S039",
+   "seed": "SEED_wide_booby_clear.png",
+   "crop": "190,142,1420,799",
+   "rationale": "ELEVATED / LOOKING-DOWN member. Crop top is set at y=142, one pixel-band BELOW the horizon (y~130), so the sky and the horizon line are gone entirely and the frame is pure sea-over-lava \u2014 the classic read for a camera up on a rise looking down and out, and it makes the lava field feel compressed by the long lens. Sea occupies the top 32%, lava the lower 68%, booby readable mid-frame at 31% of frame height with a 'ring' of all three finches around it (left, right and bottom-centre, all well inside the box with 110-325px margins). This is a downscale (0.89x), so it is the sharpest of the five. Differs from S054 by dropping the sky+horizon and tightening the sides; differs from S023 by being 1.35x wider with a much deeper sea band and the booby a third smaller; differs from S088 which keeps sky/horizon and cuts the foreground lava off."
+  },
+  {
+   "id": "S088",
+   "seed": "SEED_wide_booby_clear.png",
+   "crop": "170,60,1173,660",
+   "rationale": "MODEST-ELEVATION / SEA-TOP-HALF member, and the only one built to a hard geometric spec. The lava edge (y=400) is placed almost exactly on the crop's vertical midpoint (crop spans y=60-720, midpoint 390), so the grey Pacific plus its misty horizon fills the upper half and the shelf fills the lower half, precisely as the vantage demands. Bottom is cut at y=720 \u2014 above the third finch at y=730 \u2014 so the frame contains EXACTLY the two finches the prompt names (left at seed x300-410, right at seed x1205-1285, both fully inside with 58-130px margins). Booby occupies 38% of frame height, comfortably over the one-fifth HARD SIZE FLOOR; I ran the required gate by downscaling the rendered crop to 168x94 and it still reads instantly as a bird, so no re-seed is needed. Sitting low in frame against a big sea, it is the compositional inverse of S023 (bird high in frame, no sky, lava filling the bottom, three finches) and reads as a different camera position even though the two are similar in scale; it also differs from S054 by being 1.43x tighter with the foreground lava cut away, from S039 by keeping the sky and horizon, and from S083 by being 1.5x wider with finches present."
+  },
+  {
+   "id": "S017",
+   "seed": "SEED_macro_tail.png",
+   "crop": "270,266,1200,675",
+   "rationale": "WIDEST of the four. Looked at /tmp/try_S017.png: the whole finch sits left-of-centre with clearance from the left edge (its tail tip is fully inside, so Grok has no half-bird to morph), the dry red mark sits high-centre, and the booby's white plumage sweeps unbroken to the right edge -- which is literally the prompt's 'looking down the length of its white tail'. The blurred dark rock in the top-left corner gives the 'high behind the rump' depth cue the other three deliberately drop. Contains exactly one finch (the seed only holds one), wings/feet/beak-at-wound all present for the jab-then-drink action. Differs from S042 (1.37x wider, keeps the finch's tail and the background), from S052 (2.3x wider, whole bird vs head-only), and from S064 (region sits 330px further left, finch is the subject rather than a corner element)."
+  },
+  {
+   "id": "S042",
+   "seed": "SEED_macro_tail.png",
+   "crop": "520,315,880,495",
+   "rationale": "Same subject, clearly closer set-up. Looked at /tmp/try_S042.png: the finch's tail and all background rock are pushed out of frame so the shot starts mid-body and reads forward along the booby toward the tail base, exactly the 'directly behind, low, looking forward along the body' vantage. The dry red mark is fully contained with headroom above it (required -- the beak works the quill base BESIDE the mark), the beak-to-down contact point sits on the centre line, and the braced foot/claw is in frame at the bottom edge (toes clipped by the frame line, which is normal for real long-lens footage and cheaper than losing the top of the wound). Visibly different from S017 by 1.37x scale plus the loss of the tail and the rock corner; wider and lower than S052; the finch fills far more of the frame than in S064."
+  },
+  {
+   "id": "S052",
+   "seed": "SEED_macro_tail.png",
+   "crop": "680,304,520,293",
+   "rationale": "The only true XCU in the group, and the tightest box the 2.5x softness rule allows (2.43x). Looked at /tmp/try_S052.png: the finch's head, eye and blunt beak fill the left half, the matted red wound with its spray of white down fills the centre-right, and nothing else is in frame -- no feet, no body, no background. That is what an 11s locked hold on 'the base of a growing feather with the throat pulsing' needs; at any wider framing the eye and the swallow would be too small to carry 11 seconds. Detail still holds at 2.43x. FLAG for the owner: this shot's grok_prompt text describes the booby's FLANK AT THE BASE OF THE WING (side-on), which contradicts its own vantage field ('base of a growing TAIL feather... a different body region AND axis from S016') and contradicts this seed, which is the tail/rump region. The crop follows the vantage field; the prompt wording looks like leftover S016 text and should be reconciled before generation or S052 will read as a repeat of the Act-3 wing-base shot."
+  },
+  {
+   "id": "S064",
+   "seed": "SEED_macro_tail.png",
+   "crop": "600,338,1072,603",
+   "rationale": "The negative-space framing of the group. Looked at /tmp/try_S064.png: the finch is pinned into the top-left corner with the dry red mark beside it, and roughly 70% of the frame is nothing but white tail coverts running to the right and bottom edges -- the prompt's 'white tail coverts filling the frame, low from behind and to one side' taken literally. The finch's rear is outside the frame, which is what makes it read as a different camera position rather than a zoom of S017. Braced feet and the beak-at-wound contact are both inside the box, so the tap-twice-and-dip action is covered. Differs from S017 (region shifted 330px right, all background rock gone, finch demoted from subject to corner element), from S042 (much more white field, finch smaller and pushed off-centre), and from S052 (1.5x wider and a whole different composition)."
+  },
+  {
+   "id": "S022",
+   "seed": "SEED_mutualism_clean.png",
+   "crop": "300,165,836,470",
+   "rationale": "Tightest of the three: dead side-on left-facing profile, eyeline level with the back, head and blunt beak large in the upper-left, tail tip just running off the right edge, feet planted on a band of clean white down across the bottom ~15% of frame. The booby's head and neck are out of frame as the prompt demands. This is frame 1 for the prompt's very slow push-in, which lands on true XCU (head + working beak) by the end. A genuine one-shot XCU is geometrically impossible here: the crown sits at y169 and the white down starts around y590-635, so any box holding BOTH the head and the down must be ~470px tall, capping upscale at ~1.5x. Going tighter (tested 200,170,764,430 and 380,168,680,383) either loses the white down entirely - leaving the beak nothing to part - or clips the crown/feet. Differs from S020 and S053 by 1.5-1.7x more scale on the bird and by excluding the right-hand cliff and most of the back."
+  },
+  {
+   "id": "S010",
+   "seed": "SEED_raw_wound.png",
+   "crop": "600,180,900,506",
+   "rationale": "CU, top-down on the wound WITH the blowfly. Seed content measured: dry red stain occupies x 830-1150 / y 278-480 (dense core ~x 979-1049, y 306-373); the single blowfly sits at x 1352-1436 / y 485-562 (centroid 1388,525). This box (x 600-1500, y 180-686) contains both and nothing else animate - no bird body, no finch, all white down - which is exactly what the prompt requires (\"a single blowfly drops onto the edge of the wound and stays there\", \"No bird enters the frame\"). Verified in /tmp/try_S010b.png: the stain lands near frame centre with the matted parted down radiating around it, and the fly reads clearly on the big smooth feather at right-of-centre, so Grok has a real fly to hold rather than having to invent one. Differs from S026 on the same seed by SCALE and by CONTENT: it is 900px wide vs S026's 530px (1.70x wider field), keeps the fly, and shows the surrounding wing down as context; S026 excludes the fly entirely and pushes into the stain alone. Also drops the seed's left-third plain feather sweep and bottom quarter, so it does not read as the uncropped still. Soft-ness is a non-issue at 1.40x."
+  },
+  {
+   "id": "S026",
+   "seed": "SEED_raw_wound.png",
+   "crop": "760,215,530,298",
+   "rationale": "XCU macro, the stain isolated and NO fly. Box is x 760-1290, y 215-513. The fly's leftmost pixel is x 1352, so the right edge at 1290 excludes it with 62px of margin - this is the shot's hard requirement (\"generate ... WITHOUT the small resting fly ... so nothing animates against this still tension hold\"). Verified in /tmp/try_S026b.png: the dry matted stain fills the centre of the frame with only wind-stirrable white barbs around it, no beak, no bird, no insect. Differs from S010 by being 1.70x tighter (530 vs 900 px of source width) and by removing the fly - the two read as a wide-ish locked CU and a true macro of the same detail, not the same shot twice. Upscale is 2.38x, just inside the 2.5x ceiling; going tighter to make the stain fill even more of the frame would push past 2.5x and go visibly mushy, so this is the tightest honest framing available from this seed."
+  },
+  {
+   "id": "S030",
+   "seed": "SEED_finch_portrait_redtip.png",
+   "crop": "330,125,1040,585",
+   "rationale": "Wider CU for the ACT4 stat beat: the whole finch in clean side profile, feet and all, standing ON the white booby back, which reads as a clear white curved band across the bottom of the frame - the 'on the white back of a large white seabird' line is literally visible here, and the head-lift-plus-swallow motion needs the neck and body in frame to read. Verified in /tmp/try_S030c.png: complete bird from beak tip to tail, toes not clipped, red beak tip still visible, only 1.22x upscale so it stays crisp. One bird only. Distinct from S012 by scale and content - S012 is a 2.18x head-only punch-in with no white back and no feet, this is a 1.22x full-body set-up with the booby's back and the finch at roughly half the linear size. Caveat on the prompt: the background behind the bird at this framing is defocused lava rock, not open sky, so 'isolated against soft grey sky' is only partly satisfied - getting pure sky behind would need a crop high in the frame that cuts the body, so the soft grey rock defocus is the closest honest match."
+  },
+  {
+   "id": "S049",
+   "seed": "SEED_finch_portrait.png",
+   "crop": "400,145,1020,574",
+   "rationale": "CU, side-on and level. Verified at /tmp/try_S049b.png. The uncropped seed puts the finch at only ~42% of frame width with a lot of dead sky above and empty rock left, which reads as a MS, not the 'close on the finch' this shot asks for. This box (x 400-1420, y 145-719) brings the one finch to ~71% of frame width: whole bird intact from beak tip (x~497) to tail tip (x~1213), crown (y~169) with 24px headroom, feet and toes fully in, the broad white seabird back sweeping across the entire bottom of frame (its top contour runs y~579 at x=400 down to y~727 at x=1400), and the out-of-focus guano-streaked black lava running off the RIGHT frame edge so the scripted 'raises its head and looks off toward the guano-streaked ledge at frame edge' has something real to look at. Exactly one finch and one host bird, no second animal anywhere in the box. Differs from S050 by being the whole-bird contextual close-up at 1.24x \u2014 1.65x wider in linear scale, and it is the only one of the two that contains the white back, the feet, the legs and the tail."
+  },
+  {
+   "id": "S006",
+   "seed": "SEED_macro_tail_high.png",
+   "crop": "330,350,900,506",
+   "rationale": "Sole shot on this seed, so distinctness is only against the uncropped seed. The full frame wastes its right third on flat empty white flank and reads as a loose macro, not the XCU S006 asks for. This box (x330-1230, y350-856, 1.40x) drops that dead white and the empty upper-white shoulder and lands the wound as the frame's subject: the matted red puncture and the pale blood-flecked feather spray sit fully contained at upper-right with headroom (a y=380 variant clipped the spray's top edge), the finch's beak-into-the-down junction and its eye sit dead-centre, and its black back plus the folded wing coverts fill the left half so the prompt's 'wings half-opening once for balance' has somewhere to happen. Exactly one finch in frame, matching the prompt's single animated attacker. The band of white tail feathers kept at right of the wound is the motion space for 'spreading and resettling in the wind'. Bottom edge deliberately cuts the finch's lower body/tail: it is astride the tail base, so the cut reads as the bird continuing toward camera, not as an amputation. Note the crop excludes the out-of-focus black lava in the seed's upper-left corner -- at XCU scale the frame is all bird, so the prompt's 'black lava far below' clause will not be satisfiable from this seed; including it would have forced the wound down to a third of its size and turned an XCU into an MS. Tighter alternatives tested and rejected: 560,400,700,394 (1.81x) put the wound alone in frame but severed the finch head at the left edge so nothing read as a bird, and 230,380,900,506 crowded the wound against the right edge."
+  },
+  {
+   "id": "S018",
+   "seed": "SEED_flank_stain_top.png",
+   "crop": "290,55,860,484",
+   "rationale": "XCU 'the damage alone'. The uncropped seed is a wide-ish macro where the stain reads as only ~30% of the frame width, sitting left of center with a large empty white quadrant at the bottom-right -- that is a detail IN a frame, not a detail FILLING the frame, so it does not meet the XCU bar and needs a crop. This box (aspect 1.777, 1.47x upscale, well under the 2.5x softness limit) trims the dead white bottom-right and the top white band so the matted stain now dominates the lower-left two-thirds and the dark clot at the base of the broken feather shaft lands as the clear focal point, with the fine barb texture still crisp. Contains everything the prompt names and nothing it forbids: the full stain body plus its spatter tail, and exactly one fly (x 895-1088, y 106-248) sitting fully inside the upper-right with ~50px of margin on every side -- deliberate headroom so the fly has room to walk toward the stain edge and lift off without clipping the border (the tighter 330,95,782,440 alternative I rendered pushed the fly into the corner with a wingtip on the frame edge, which is a morph risk for i2v and kills the lift-off move). Zero bird head or silhouette enters the box, so the 'no bird in frame' constraint holds. Only shot on this seed, so no same-group differentiation is required."
+  },
+  {
+   "id": "S028",
+   "seed": "SEED_mutualism_clean_C.png",
+   "crop": "250,300,1000,563",
+   "rationale": "Sole shot on this seed, so distinctness is against the other mutualism shots rather than a sibling on the same still. Verified by rendering /tmp/try_S028.png and looking at it. The box sits below the booby's shoulder line (top edge y=300 cuts the back/neck) and holds the finch at ~55% width working the unmarked white breast, white flank filling the left two-thirds, blurred lava + ocean falling off to the right which reads as the telephoto shallow-DOF the vantage asks for. Exact creature count is right: one booby, one finch, no other bird in the box. Nothing red is in frame -- the crop's right edge at x=1250 and top edge at y=300 both sit clear of the orange beak (beak occupies x 810-1220, y 120-250), which matters because the prompt's whole point is a clean no-blood intercut. The finch's tail runs off the bottom edge exactly as it already does in the uncropped seed, so nothing is newly amputated. TRADE-OFF, stated deliberately: the booby's head is NOT in this box. The crown (y~30) and the finch (past y~941) span the full image height, so any box containing both the head and the finch is >=1450px wide = 0.87x upscale, i.e. no re-frame at all -- I rendered that (180,40,1300,731 at 0.97x and 170,150,1330,748 at 0.95x) and it comes back as the same side-on mutualism composition this shot's vantage explicitly forbids, with the second one slicing the eye. Partial-head boxes (330,210,1150,647 and 300,240,1060,596) put a chopped orange beak across the top edge, which breaks 'no red anywhere in frame'. The grok_prompt's own camera direction is 'side-on telephoto from the booby's right flank at shoulder height' and never requires the head, so the flank framing is the one that can actually be delivered from this seed. If the head in strict side profile is non-negotiable for this beat, it needs a different seed, not a different box on this one."
+  },
+  {
+   "id": "S034",
+   "seed": "SEED_booby_rear_sea.png",
+   "crop": "440,80,1000,563",
+   "rationale": "Only shot on this seed, so no in-group distinctness constraint; the crop is judged purely against the prompt. The uncropped seed is a full-body medium/wide with a wide band of black lava ledge across the entire bottom third -- that is not the CU the shot asks for, and the visible ledge reads as an escape route that contradicts the beat ('the sea as a wall... Neither can leave'). This box pushes in so the booby's head and neck fill the upper-center-left and the vampire ground finch on its back is large and readable at lower left, while cutting away every scrap of rock: the only thing behind and past the shoulder is open grey ocean, with the horizon just below the top edge to give real depth. Rear three-quarter vantage is preserved -- we remain behind the bird looking over its back, and it is never head-on. Contains exactly the two creatures the prompt names (one Nazca booby, one finch); no other birds fall inside the box. Framing also leaves animation headroom: the beak tip sits at ~1030 of 1264 output px, so the slow head-turn toward the water cannot clip out of frame. Tested against two rejected alternates -- 450,70,900,506 was tighter but pinned the beak tip at ~1120/1264 with no room for the turn, and 400,90,1050,591 kept more back mass but read as a medium rather than a CU. Aspect 1.776, upscale 1.26x, comfortably inside the softness limit."
+  },
+  {
+   "id": "S038",
+   "seed": "SEED_booby_from_behind.png",
+   "crop": "390,311,1120,630",
+   "rationale": "MS pushed in on the booby's back so the two finches read at a legible size instead of as specks. Verified by rendering /tmp/try_S038_c.png: both finches are inside the box (left finch head-down on the near shoulder, right finch upright and silhouetted against the grey sea), flat grey water fills the background left and right as the prompt requires, and the bottom third is a full band of black lava \u2014 the landing zone the action ('one finch hops down onto the black lava and straight back up') actually needs. The white neck column rising out of the top edge preserves the 'seen from directly behind, facing away' read; the head and beak are deliberately excluded because any box containing both the head top (y~70) and the near lava (y~900) would have to be >=1490px wide, i.e. a downscale of essentially the uncropped frame, which is the wide the shot is not. Tested and rejected 430,330,1000,562 (1.26x \u2014 tighter on the finches but the lava is crushed against the bottom edge, no room for the hop) and 210,80,1250,703 (1.01x \u2014 keeps the beak but reduces the lava to a sliver, killing the action). Only shot on this seed, so no group-distinctness constraint applies. 1.13x upscale keeps it sharp."
+  },
+  {
+   "id": "S040",
+   "seed": "SEED_swarm_six.png",
+   "crop": "38,69,1500,844",
+   "rationale": "Only shot on this seed, so no distinctness pressure - the job is purely to hit the MS target. I measured the required content: tail finch leftmost at x=93, booby beak tip at x=1484 (verified by an orange-pixel scan), back-finch tops at y=220, booby head crown at y=105, lowest toe claw at y=877 (verified by a zoom on the feet), right lava finch tail at x=1430 (verified by a zoom). All six birds the prompt names are in the box: two on the back, one at the wing base, one on the tail, two waiting on the lava, plus the half-closed eye and the dry matted red mark at the base of the wing. The crop is a modest 1.11x tighten that drops the dead grey band of sea across the top and the empty water on the right, so the booby and the six finches fill the frame as a medium instead of a loose wide - which matters because this is a 10.5s locked-off hold whose whole payload is the viewer counting six birds on one victim. It leaves ~55px horizontal and ~36px vertical margin around the outermost content in seed pixels, enough that small i2v drift will not clip the tail finch or the beak tip. Nothing tighter is possible: the absolute minimum 16:9 box containing all required content is 1391x782 (only a 1.20x tighten) and has literally zero margin on the left and right edges, so it would clip the moment any bird moves. Upscale is 0.84x, i.e. still a downscale to 1264x720 - no softness cost at all."
+  },
+  {
+   "id": "S047",
+   "seed": "SEED_finch_ground.png",
+   "crop": "500,260,880,495",
+   "rationale": "Only shot on this seed. The UNCROPPED seed is a worm's-eye MEDIUM, not the XCU the prompt asks for: the full 1672x941 frame gives the whole finch head plus both towering lava walls plus a large sky gap, and the grit/husk floor is only about the lower third. S047's prompt makes the ground the subject -- 'extreme close on dry grit, ash and a few split empty seed husks; a small black finch's head drops into the top of frame.' The box 500,260,880,495 drops the sky and the outer wall slabs and lands the crack floor across the whole frame: the split, empty husks (the two pale rings mid-frame, the big cracked husk lower-left, the scattered ones bottom-center) now read as the subject rather than as texture. The top edge at y=260 cuts the finch cleanly just BELOW the eye, so what remains is the forehead, cheek whiskers and the full blunt seed-cracking beak entering from the top edge -- literally 'drops into the top of frame' -- with about 200px of headroom above the beak tip so the probe / flick / lift-away all happen inside the frame instead of instantly leaving it. Cutting below the eye rather than through it also avoids handing Grok a half-eye at frame 1, which is a known morph trigger. Exactly one finch is in the box (only one bird exists in the seed). Both lava walls still bracket left and right so the 'camera down inside a crack' vantage survives. Upscale 1.44x, well inside the 2.5x soft limit. Rejected alternatives, all rendered and viewed: 520,180,800,450 (1.58x) kept the eye and full head, but the bird's head then dominates the upper-left and it reads as a CU of the finch, not an XCU of the grit; 560,300,720,405 (1.76x) went too tight -- only the beak tip and a sliver of face survive, so the bird barely reads as a bird and the lift-away exits frame immediately; 470,235,900,506 (1.40x) is the near-miss, near-identical composition but it clips the eye in half at the top edge."
+  },
+  {
+   "id": "S048",
+   "seed": "SEED_pricklypear_top.png",
+   "crop": "300,190,840,473",
+   "rationale": "XCU on the feeding contact point. Verified by rendering /tmp/try_S048_e.png and looking at it. The uncropped seed is a full-body side-on portrait of the whole finch (body runs to x~1570) - that is an MS, not the XCU this shot asks for, so it must be cropped. This box drops the entire body and keeps only what the grok_prompt names: the open yellow bloom filling the left of frame (petals plus the red-tipped tepal bases and a sliver of green spined pad at lower left), the blunt black beak already pushed in among the petals at frame center, the sharp eye, and the head plus the shoulder/upper wing entering at the right edge. Chin and throat sit fully inside the bottom edge, which the action requires - the bird 'tips its head back once to swallow with its throat working', and a tighter bottom would push the throat out of frame. Background elements the prompt says must stay still are all present: green cactus pad lower left, black lava lower center, pale blurred grey sea upper right. Exactly one bird in frame, which matches - the seed contains only one. Aspect 1.776, upscale 1.50x, well inside the 2.5x softness limit. Only shot on this seed, so no intra-group differentiation needed; it differs from the seed's own framing by dropping roughly half the width and the whole lower body. Caveat: the shot's vantage field asks for a STRAIGHT DOWN view into the flower cup, which cannot be produced from this level side-on seed by any crop - the box above serves the grok_prompt's stated 'camera is level with the bloom and side-on' framing instead. If the top-down vantage is the real intent, this shot needs a new overhead seed rather than a crop."
+  },
+  {
+   "id": "S084",
+   "seed": "SEED_mutualism_clean_B.png",
+   "crop": "400,440,760,428",
+   "rationale": "Only shot on this seed, so no in-group differentiation is needed. The uncropped seed is a full-body portrait dominated by the booby's HEAD, yellow eye and orange beak in the upper right, plus a second finch in flight with wings spread at bottom right on the lava - none of which S084 asks for. The shot wants a CU from HIGH and BEHIND the shoulder looking down the length of the white back. This box starts below the neck (y=440, head/eye/beak end near y=390) so no head is in frame at all, which also protects the prompt's 'never turns head-on to camera'. Left edge at x=400 keeps a band of out-of-focus grey/black lava down the left side plus a dark wedge of the booby's flight feathers at bottom left - the 'shallow DOF, lava thrown out of focus below' cue. The black ground finch (seed x600-860, y505-710) sits left of centre at ~34% of frame width, head lowered and picking between the feathers, exactly the opening beat; the right third is unbroken clean white plumage, which is both the 'unmarked white back' the VO needs and open landing space for the second finch to hop in and settle. Right edge at 1160 deliberately excludes the second finch (verified: it starts at seed x~1200) because the prompt has that bird enter DURING the clip - starting with it already perched would contradict the action. Tighter variants were tested: 520,430,610,343 (2.07x) made a stronger CU but lost the length of the back, the lava blur and the landing space, and was already going soft; 430,400,730,411 and 430,410,758,426 both bled the neck base into the top edge, inviting Grok to grow the head back in. 1.66x upscale keeps the plumage texture crisp."
+  },
+  {
+   "id": "S086",
+   "seed": "SEED_flank_stain.png",
+   "crop": "608,232,736,414",
+   "rationale": "Only shot on this seed, so no in-group differentiation needed; the crop exists to fix two failures of the uncropped frame. (1) The seed's bottom-left corner shows the bird's body silhouette falling away against a pale out-of-focus background - a visible contour line - which violates the prompt's 'no horizon anywhere in shot' and 'frame completely filled with white plumage'. This crop starts at x=608, well clear of that contour (which sits near x=100 at the crop's bottom edge y=646), so every pixel is plumage. (2) At full width the stain reads as a small detail in a wide field, i.e. a CU not the required XCU. At 1.72x push-in the stain becomes the dominant mass at ~44% across / 60% down and individual feather barbs are clearly resolved, which is the 'high magnification' the prompt asks for. Both required elements are inside the box with margin: the dried stain (seed x790-1090, y370-620) and the single fly (seed x1090-1215, y285-390), the fly sitting 16% down from the top with open feather field above and to its right so it can walk across and lift away without leaving frame instantly. No head, no second animal, no finch - creature count matches the prompt exactly. Verified by rendering to /tmp/try_S086_a.png and viewing it; the full frame and the corner region were also rendered and viewed to confirm the contour problem."
+  },
+  {
+   "id": "S059",
+   "seed": "SEED_egg_xcu_feet.png",
+   "crop": "310,110,954,537",
+   "rationale": "Only shot on this seed, so the job is purely to make the full frame read as XCU rather than the CU it currently is. Uncropped, the egg spans only ~36% of frame width with dead lava/dust along the bottom and a large empty white belly mass up top -- that is a close-up, not 'a detail fills the frame'. This box (verified in /tmp/try_S059_d.png) takes the egg to ~48% of width and ~75% of height so the shell genuinely dominates, while still containing every element the grok_prompt names: the white belly stays a soft band across the top ~25% with the booby's head fully out of frame; the splayed grey foot with long scaled toes and a visible claw runs across the bottom-left; the webbed foot sits behind and right of the shell; and the single finch's head, eye and bill hang at the extreme right edge angled down toward the shell, with clear air for the one dip the prompt asks for. Creature count is exactly one booby + one finch. Right edge is pinned at x=1264 because the finch must stay at the frame edge. Tested three rejects: 340,60,924,520 (1.37x) cut the left foot out entirely and broke the 'two feet frame the shell' requirement; 250,90,1014,570 (1.25x) kept everything but the egg still read closer to CU than XCU; 180,40,1084,610 (1.17x) was barely distinguishable from the uncropped seed. 1.32x upscale is well inside the 2.5x softness limit."
+  },
+  {
+   "id": "S035",
+   "seed": "SEED_foot_grip_dry.png",
+   "crop": "520,320,740,416",
+   "rationale": "Only shot on this seed, so no sibling-differentiation needed. The uncropped seed is a macro but NOT an extreme close-up: the top ~200px is the finch's black belly/breast mass and the outer thirds are empty white feather field, so the foot occupies only about a third of the frame width and it reads as a CU, not the XCU the shot asks for. This box starts below the belly mass and tightens onto the working part of the frame: the black tarsus enters top-center, the three-toed foot with its hooked claws fills the left two-thirds gripping the white back feathers, and the small dried dark-red wound with its ring of blood-matted down sits right of center, fully inside the box. Tested three boxes: 530,250,800,450 still carried dead feather field and read looser; 560,320,720,405 was the right scale but pushed the lower-left claw tip against the left edge (a clipped claw invites Grok to hallucinate the missing part, and the prompt explicitly requires the claws stay hooked over the feathers), so I shifted the box 40px left and widened 20px, which restores margin around every claw tip while keeping the right edge past the matted-down halo of the wound. Verified by eye on /tmp/try_S035_c.png. Aspect 1.779, upscale 1.71x \u2014 well inside the 2.5x softness limit. Contains exactly the two creature elements the prompt names (one finch foot, one booby back with one wound) and no second finch."
+  }
+ ],
+ "rejected": [
+  {
+   "id": "S007",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "18,80,1400,787",
+   "issues": [
+    "DISTINCTNESS FAIL (planner's own warning confirmed geometrically): S007 requires the full head, the bottom lava, AND both finches. The crown sits at seed y~79, so the top edge is pinned at y=80; keeping the rock at the bottom forces h~787-800, which at 16:9 forces w~1400-1422. Finch2's tail at x1336 sets the right edge, finch3's beak at x1420 caps it. Every shot on this seed needing head+finch1+finch2 lands in the same 1342-1418 width band, so S007/S011/S046 are ~1.05x apart and will read as one set-up. No box inside S007's stated requirements escapes this -- the fix is upstream (drop the lava finch from one prompt, let one lose the head, or use a different seed), not a better crop.",
+    "VANTAGE NOT DELIVERED: spec asks for 'camera resting on the rock at the bird's belly height' with a 'dark out-of-focus crust of lava across the bottom quarter'. The render shows a camera clearly ABOVE belly height -- you look down onto the receding top surface of the lava shelf -- and the bottom band is SHARP guano-streaked ground plane, not a defocused foreground crust. Cropping cannot change perspective; this seed cannot deliver a low-from-the-rock angle (S011's own vantage note already concedes this).",
+    "RATIONALE IS FACTUALLY BACKWARDS: 'pushed to its maximum rock weight (y80)' is inverted. With the crown at y~79 and h fixed at 787, y=80 is the FORCED MINIMUM y, and it discards the bottom 74px of lava. Measured off the renders, the uncropped seed carries ~26-30% bottom rock vs ~21-25% for this crop -- the crop REDUCES the low/belly read rather than maximizing it. To actually maximize rock weight you would have to push y down and decapitate the bird.",
+    "SHOT SIZE READS WIDE FOR AN 'MS': the entire booby including the full tail spans ~84% of frame width, head to tail, which reads as a full shot rather than a medium pressed in on the breast. At 1400 of 1672 it is only 1.19x tighter than the uncropped seed -- barely a crop at all, which is the same failure mode that got S004 rejected.",
+    "RIGHT EDGE IS 2px FROM A COUNT VIOLATION: I measured finch3's beak tip at seed x~1420 (zoom strip /tmp/ver_S007_edge2.png, crop 1300,545,352,198) against a right edge of 1418. The render confirms only 2 finches, so the count passes, but 2px is inside measurement error and Grok can hallucinate at the boundary. suggested_crop 0,80,1400,787 is the identical framing shifted 18px left, giving a 20px buffer from finch3 while keeping the tail (tip at x~66) comfortably in. This ONLY de-risks the edge -- it does not fix the distinctness or vantage failures.",
+    "SECOND FINCH IS MIS-PLACED FOR THE PROMPT: the prompt says two finches shift position 'on its wing and shoulder', but in the seed finch2 stands on the ROCK beside the bird, not on the booby. Count is still exactly 2 so the check passes, but Grok would have to lift it onto the bird over a 5.5s low-physics shot."
+   ],
+   "suggested_crop": "0,80,1400,787",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S008",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "92,20,1580,889",
+   "issues": [
+    "DISTINCTNESS FAIL (the reason to reject): the seed is 1672x941, which is ALREADY 16:9, so S003's full frame and this 1580x889 box are the same region at 1.06x. I rendered both and they are visually indistinguishable - same vantage, same subject scale, same horizon line. For a 12s locked-off hold that is exactly the 'same shot again' failure, and it also collides with the other near-full-frame shots on this seed (S068 and S080 are WS).",
+    "SIZE FAIL: S008 is size=MS ('subject plus immediate context'). The rendered crop reads as a wide - it is S003's establishing WS composition with a 20px haze trim. The medium never happens.",
+    "SPEC CONTRADICTION: the crop clips the tail tip, but S008's vantage says 'whole bird square-on to the flank' and the Grok prompt says 'the whole adult Nazca booby square-on to its near flank'. The full seed contains the entire tail (tip at seed x~69), so this clip violates the spec while buying no distinctness - worst of both.",
+    "PLANNER'S FLOOR NUMBER IS WRONG, though the structural point is right. I verified the true floor by rendering 69,0,1551,872: that is the tightest 16:9 box still containing the whole tail, the whole head, and all three finches with their feet. It is 1551x872, only 1.08x tighter than the full frame - not the claimed 1342x755 (any 1333-1342-wide box necessarily amputates most of the tail). So 'whole booby + three finches' truly cannot be separated from S003 by cropping; the spec has to give somewhere.",
+    "PASSES: creature count is exactly right - one Nazca booby plus exactly three finches (wing-base finch with the red wound, center finch on the lava, far-right finch), no fourth bird, none clipped out. Sharpness is fine at 0.80x (a downscale). The dark out-of-focus lava mass does hold frame right as the prompt requires.",
+    "SUGGESTED BOX 299,80,1333,750 (rendered and inspected, /tmp/ver_S008_cand.png): 0.95x upscale, 1.25x tighter than the full frame, and it does read as a different, closer set-up. All three finches fully inside WITH their feet on the rock (I zoomed to confirm - a tighter 1282x721 version cut the center finch's feet at the bottom edge, which is dangerous for a physics=high shot where finches walk), booby head and beak fully in with headroom, lava mass still on the right edge. ITS COST: it clips roughly half the tail feathers at frame left, so it trades the 'whole bird' wording for a real MS. That is a deliberate call the planner or owner should make, not something I can approve unilaterally.",
+    "IF 'whole bird' is non-negotiable, then cropping cannot fix S008 and the shot needs its own seed (a genuinely further-back or differently-angled still), because at the verified 1.08x floor it will always be S003's frame again."
+   ],
+   "suggested_crop": "299,80,1333,750",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S011",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "76,78,1342,755",
+   "issues": [
+    "CREATURE COUNT FAILS: the rendered crop contains TWO finches. The S011 prompt names exactly one ('a small jet-black ground finch hops up onto the booby's upper back... the finch grows until its beak is unmistakable') -- the second finch standing on the lava at frame right is inside the box and is a full-height, in-focus, unmissable subject, not a background smudge. It will read as a second character in a shot whose whole point is a single push-in onto ONE finch.",
+    "SIZE IS NOT A MEDIUM: 1342x755 out of 1672x941 is 80% of the seed's linear dimensions, upscale 0.94x -- i.e. a DOWNSCALE. Side by side with the uncropped seed the composition is the same full-body two-shot: whole bird tail-tip to bill-tip, plus a wide band of rock and sea haze. spec says size=MS. This is the exact S004 failure pattern -- a shot asking for a tighter framing fed a near-full frame and coming back as the still.",
+    "NOT DISTINCT: 21 shots share this seed, three of them wide (S003, S068, S080) which will legitimately use the full or near-full frame. The only visible difference between this box and a full-frame WS is that finch3 drops off the right edge. No viewer registers that as a new camera set-up. This is the glitchy-loop risk that killed rough_cut_v1.",
+    "DIRECTION IS MIRRORED (planner's point 1 confirmed): spec wants head and pale-yellow eye at frame LEFT with the white back running away to frame RIGHT; the seed and therefore every crop of it puts the head at frame RIGHT. Cropping cannot fix it. FIX UPSTREAM BY REWRITING THE PROMPT, NOT BY FLIPPING THE SEED -- the other 20 shots on this seed explicitly lock 'the right-facing profile the seed actually shows' (S004, S081), so a horizontal flip would break screen direction against the whole act.",
+    "PLANNER'S POINT 2 IS OVERSTATED -- the one-finch crop IS achievable. Excluding finch2 caps the right edge at ~1066, which cuts the BOOBY'S bill, but S011's spec never requires the booby's bill: it requires the booby's EYE ('its pale-yellow eye drifts half-closed with exhaustion') and the FINCH's beak ('its short, blunt, conical SEED-CRACKING beak is unmistakable'). I rendered 12,88,1051,591 and verified both survive: crown intact at y88, yellow eye clear, dry red wound mark present, exactly ONE finch with its conical beak readable, upscale 1.20x. Cost is the booby's pink bill tip clipped at frame right and the finch's tail clipped at frame bottom -- both cheap next to importing an uncalled-for second bird.",
+    "CAVEAT ON MY SUGGESTED BOX: at 12,88,1051,591 the finch sits low in the bottom-right corner, which is awkward for a 14.9s dolly push-in that is supposed to END on the finch (a centre-weighted push will drive it further out of frame). If that matters more than the creature count, the honest answer is that this seed cannot serve S011 -- keeping crown + whole finch + excluding finch2 mathematically forces w>=1030, i.e. a full-body framing, so no true MS exists on this still. Consider reassigning S011 to a seed where the finch is actually on the booby's upper back, which is what the prompt describes and this seed does not show."
+   ],
+   "suggested_crop": "12,88,1051,591",
+   "flags": {
+    "framing": false,
+    "count": false,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S033",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "232,25,1440,810",
+   "issues": [
+    "NOT DISTINCT: 1440 of 1672px wide = 86% of the seed, a 1.16x crop. I rendered the proposed box and the uncropped seed side by side and they are the same picture \u2014 same composition, same bird position, same three finches. The only visible differences are ~100px less rock at the bottom and the booby's tail tip clipped at frame left. This will not read as a different camera set-up from any other near-full-frame box in this 21-shot group (S003 WS, S008, S082 all want essentially the whole bird). This is exactly the glitchy-loop repeat the pre-crop system exists to prevent.",
+    "THE OPTICAL RATIONALE IS WRONG: 'a tighter crop is a longer effective lens, which is what far back, heavily compressed actually means optically' is false. Cropping magnifies subject and background by the SAME factor, so perspective compression is completely unchanged by a crop \u2014 compression is fixed by the camera-to-subject distance already baked into the still. What the crop does change is subject size in frame, and making the bird bigger reads as CLOSER, which is the opposite of S033's defining vantage word, 'FAR BACK'. Clipping the tail out of frame pushes the same wrong direction.",
+    "THE CLAIMED DISTINCTNESS AXIS DOES NOT EXIST: the rationale separates S033 from S066/S043 by 'sitting sky-weighted rather than rock-weighted'. I rendered the rock-weighted end of the legal y range (232,131,1440,810) \u2014 it decapitates the booby, cutting the crown off at the top edge. Any shot on this seed that needs the head is forced to y<=~40. So sky-vs-rock weighting is not an available axis of separation for S033, S043, S066 or S082; the planner is separating these shots on a difference the seed cannot produce.",
+    "MINOR: 'pushed to the top of its legal y range (25)' \u2014 the top of the legal y range for h=810 on a 941px-tall seed is y=0, not y=25. The legal range is 0..131.",
+    "PASSES on count and sharpness: exactly three finches (wing-base finch with the red mark, centre rock finch, right rock finch), all fully inside the box including the centre finch's feet at seed y~811 vs the bottom edge at 835; the dry red wing-base mark the prompt requires is present. Upscale is 0.88x (a downscale) so there is no softness risk.",
+    "SUGGESTED FIX: give S033 the full uncropped frame (0,0,1672,941, 0.76x, sharpest option in the group). It is the one shot in the group whose vantage is explicitly FAR BACK with the whole bird, so it should own the widest box rather than crop in for no optical gain; it also restores the tail. I checked whether any genuinely distinct tighter box exists and it does not: the right-hand finch's right edge sits at seed x~1620, so every three-finch box must run to the right image edge, and the content span from crown (y~99) to finch feet (y~847) is 748px, which forces w>=1330 (a 1.26x crop at most) before the head or the feet start getting cut. The only visibly different box that holds three finches is a head-out flank box (e.g. 408,230,1264,711), which contradicts 'far back' and collides with the tight head-out boxes already assigned to S071/S081.",
+    "ENDORSING THE PLANNER'S HONEST FLAG: their self-report is correct and is the real finding. This seed cannot yield five distinct set-ups for five shots that all demand head + three finches. Fix it upstream in the prompts, not in the crop boxes \u2014 dropping finch3 from two of S033/S043/S066/S082/S004 frees those two to take genuinely tight boxes. S033 is the wrong one to make tight (it is the far-back locked-off shot), so it should keep three finches and take the full frame, and the finch3 drop should land on two of S043/S066/S082."
+   ],
+   "suggested_crop": "0,0,1672,941",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S043",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "312,80,1360,765",
+   "issues": [
+    "DISTINCTNESS FAIL (the only failing check). Rendered /tmp/ver_S043.png next to the full uncropped seed (/tmp/ver_S043_full.png): the proposed box is the full frame minus the tail. 312+1360=1672 = the seed's own right edge, and it trims only 312px of tail at left, 80 top, 96 bottom. It reads as the same camera set-up as the uncropped still, and per the planner's own note it is 1.01x from S082 and 1.03x from S004.",
+    "The box is not just similar to the alternatives, it is FORCED. Measured content positions in seed pixels: booby head top y~86, bill tip x~1250, finch2 (lava, centre) feet y~840, finch3 (far right) right edge x~1627. Containing all three finches plus the head therefore requires h>=759 (so w>=1350 at 16:9) and a right edge >=1630. The entire legal solution space is x in [270,312], y in [80,86] at w=1360 - a ~42x6px window. There is literally no visibly different box on this seed that satisfies the prompt, so no better crop can be suggested.",
+    "CORRECTION to the planner's proposed fix. They said losing finch3 would unlock a 1076-wide head-out box. It would not: finch2's feet sit at seed y~840 while the head top is at y~86, so keeping finch2 still forces h~760 / w~1350. The prompt would have to drop BOTH finch2 and finch3 to get near 1076.",
+    "And even that does not fully work. I test-rendered the tight head-out alternative 250,86,1038,584 (1.22x, /tmp/ver_S043_alt.png). It is genuinely distinct, but finch2's head intrudes into the bottom-right corner as a half-cut dark blob, so it delivers two finches, not one. Excluding finch2 cleanly needs a right edge before x~1078, which would sever the bill (tip at x~1250). A clean 'booby + one finch' crop does not exist on this seed.",
+    "Secondary flag: S043 is size=MS but S003 on this same seed is size=WS with a near-identical vantage ('level telephoto at the bird's own eye height, booby fills the middle of frame, grey sea haze behind'). Since the MS crop cannot get tighter than the WS crop, MS and WS on this seed collapse into the same image regardless of which box is chosen.",
+    "RECOMMENDATION: this is a seed problem, not a crop problem. S043 needs a different seed (a genuinely closer or different-angle booby+finch still), because its 7s ACT4 slow-drift-in beat cannot be differentiated from S003/S004/S082 out of hero_still_A. Passing checks for the record: aspect 1.778 exact; upscale 0.93x (a downscale, so sharpness is a non-issue); creature count is exactly 1 booby + 3 finches as the prompt names; the dry red stain at the near wing base is present and readable; framing is level side-on at the bird's eye height with haze behind, matching the prompt text."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": true,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S046",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "0,40,1418,798",
+   "issues": [
+    "delivers_framing FAIL: S046's defining vantage is 'extreme-distance SIDE-ON telephoto across the lava field, shooting THROUGH boiling heat shimmer'. The rendered crop is an intimate close telephoto portrait -- the booby's head, bill and near wing dominate the frame and there is almost no run of intervening ground or air. Nothing for the shimmer to boil in, so the 'the rain simply stops' distance beat does not read.",
+    "Rationale has the geometry backwards: y40 is justified as maximizing 'empty haze and hot rock between camera and bird', but the haze in this seed is BEHIND the bird, not between. The only between-camera-and-bird ground is the foreground lava strip at the bottom, and y40 crops 103px of it away. The shot wants a downward bias, not a sky bias.",
+    "distinct_enough FAIL: 1418x798 is the widest legal box (finch3 starts at seed x~1429), and the booby's head top sits at seed y~72, so the head-safe y range for a 798-tall box is only ~0-60. The crop is therefore effectively forced -- there is exactly one near-full box on this seed, and S007 (also MS on this seed) lands on it too. Planner's own render comparison confirms a 40px vertical shift is the entire difference.",
+    "Right-edge margin is only ~11px (crop ends 1418, finch3 beak begins ~1429). Correct as measured, but no tolerance for re-measurement error.",
+    "CONCUR WITH RE-SEED. Cropping only ever enlarges the subject, so no box on this close telephoto portrait can produce 'far across the lava field'. A tighter crop moves further from spec; the wide crop is already S007's. S046 needs a genuinely distant/lava-field seed. No better box exists -- suggested_crop intentionally left empty.",
+    "Passing checks for the record: creature_count_ok TRUE (exactly two finches -- wing-base finch with the dry red stain plus the rock finch, both fully inside, finch3 excluded); sharp_enough TRUE (0.89x is a downscale, no softness risk); aspect 1.777 within tolerance; box lies fully inside the 1672x941 seed."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S051",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "140,235,1255,706",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S057",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "100,300,966,543",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S066",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "272,80,1400,787",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S068",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "152,80,1520,855",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S071",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "432,240,1240,697",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S072",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "825,406,847,476",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S076",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "300,240,1076,605",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S080",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "152,0,1520,855",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S081",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "642,320,1030,579",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S082",
+   "seed": "hero_still_A_booby_finch.png",
+   "crop": "292,59,1380,776",
+   "suggested_crop": "",
+   "flags": {}
+  },
+  {
+   "id": "S024",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "330,120,610,343",
+   "issues": [
+    "CROP/PROMPT MISMATCH (blocking, but the box is correct - fix the PROMPT, not the crop): the rendered crop contains exactly ONE finch plus the booby, but the S024 Grok prompt names two finches in two places - 'One blurred second finch at the lower right edge of frame stays completely still and does not move' and the tail clause 'one finch feeding, one finch still'. Verified by measurement: the second finch's beak tip begins at seed x=982, and the box's right edge is x=940, so it is excluded by ~42px (planner said 39px - correct in direction and magnitude). Fed unedited, this prompt tells Grok to animate a bird that is not in frame 1. BOTH clauses must be deleted and the tail changed to 'one finch only' before this seed is generated.",
+    "No better box exists. Reaching right to x~1150 to actually include the second finch would require w~700 (upscale 1.81x), which stops being an XCU and lands on the region S019 already holds - the planner's collision reasoning checks out.",
+    "Minor, non-blocking: the shot's VANTAGE field says 'from in front of the wing looking down the shaft of the feather', but the seed only supplies a hard side-on axis and the Grok prompt correctly says 'hard side-on'. The crop cannot manufacture a new camera axis. The prompt governs, so this is consistent as written - just note the VANTAGE text overpromises an axis A2 does not have.",
+    "Minor, non-blocking: distinctness vs S073 rests on scale alone (both are left-anchored hard side-on macros). The extra content in this box - the dark folded wing mass across the bottom-left and the finch's full body rather than just the beak/wound - is what carries the separation. If S073's final box drifts wider, re-check this pair."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S029",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "200,158,1000,562",
+   "issues": [
+    "delivers_framing FAIL - size=XCU, but 200,158,1000,562 keeps 1000x562 of a 1264x720 seed (79% of the frame area, 1.26x). Rendered, it is not 'a detail fills the frame': the drinking finch occupies roughly a third of the width and the lower ~45% of the frame is bare guano-streaked lava with nothing happening on it. It reads as the same CU/MS two-shot as the raw still, not an extreme close-up.",
+    "distinct_enough FAIL vs the seed itself - side by side with the uncropped hero_still_A2 the crop is the same picture with a corner trimmed (200px off the left, 158px off the top, 64px off the right, bottom untouched). Any shot in this 13-shot group that uses needs_crop=false or another mild box will be visually interchangeable with S029. This is the rough_cut_v1 'glitchy loop' failure mode.",
+    "distinct_enough FAIL vs S056 by the planner's own numbers - 11% scale and a 114px centre offset on a 1000px-wide box is ~11% in both axes. The rule is 'different region, or CLEARLY different scale'; an 11% delta is not visible as a different camera set-up, especially when both boxes are described as 'the wide low box'.",
+    "The bottom-anchor rationale does not do what it claims. Cropping cannot change the camera axis, so anchoring to y=720 buys no 'raking/grazing angle' - it only adds more empty rock. The vantage asks for 'lens almost PARALLEL to the feather surface... shallow depth', which is served by pushing IN on the flank surface, not by handing half the frame to the ground.",
+    "Second finch reads slightly wrong for the prompt. It calls for the second finch 'out of focus on the pale lava at the LOWER right edge'; trimming 158px off the top lifts it to ~41% frame height, so it sits mid-right and fairly legible rather than a soft lower-corner presence.",
+    "Not a blocker: creature count is correct (exactly two finches, booby flank + folded wing, no seabird head in frame) and 1.26x is comfortably sharp."
+   ],
+   "suggested_crop": "500,158,764,430",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S032",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "470,195,560,315",
+   "issues": [
+    "CROWN IS CLIPPED, not 'grazing': the finch's skull top is at seed y=185/186 and the box starts at y=195, cutting ~10 seed px (~22 output px) off the head. Verified numerically - row 0 of the render has 177 dark head pixels spanning x321-497, a flat slice across the crown.",
+    "The clipped crown breaks the shot's action. S032 is 'lifts its head a few millimetres clear of the down and swallows twice' - a head-lift with zero headroom pushes the crown into/through the frame boundary, the classic Grok i2v deformation trigger. This is the reason to reject rather than the aesthetics.",
+    "Second finch is only a fragment: its beak tip is at seed x~977 and its eye at x~1045, but the box's right edge is 1030, so only the beak and forehead are inside. In the render it reads as an ambiguous dark smudge at the lower right, not a recognisable bird. The prompt wants 'a second finch out of focus at the lower right edge' - present, but not legible.",
+    "Size reads CU, not XCU: the whole finch, both legs, feet and the lava strip are in frame, so the throat (the actual subject of 'the swallow') is a small fraction of the frame. A true 'underside of the head and throat' XCU needs ~2.9x on this seed, over the 2.5x mush line, so the compromise is the right call - but it should be stated as a seed limit, not claimed as delivering the vantage.",
+    "The wound is the sharpest, most saturated element in frame at upper-left, not the 'out-of-focus red matting beyond' the action describes. Seed limitation (the stain is in focus in the source), not fixable by cropping - noting it so the parent does not expect soft red.",
+    "Distinctness caveat for the parent to check when it verifies S013: the planner's own numbers put S013 only 10% in scale and 81px away. Content differs (S032 has ground, legs, no headroom; S013 has none of those), so it passes on what I can see, but the pair is the tightest on this 13-shot seed. Note my suggested box raises the top edge, which moves S032 slightly TOWARD S013's headroom - the compensating separation is S032's ground strip and cropped tail, which S013 lacks."
+   ],
+   "suggested_crop": "470,168,576,324",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S041",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "535,175,719,404",
+   "issues": [
+    "SIZE MISMATCH: shot is spec'd XCU / 'extreme macro down among the feeding finches at feather level', but the render is a CU-to-MS. The drinking finch is shown ENTIRE -- head, wing, folded tail, both legs, feet -- plus a wide band of lava across the bottom third and a large slab of the booby's white flank. Nothing in frame reads as a magnified detail; this is a whole-animal-plus-context shot.",
+    "RATIONALE DOES NOT MATCH THE PIXELS: the planner says the drinking finch works the mark 'small and behind it at the far left' while the foreground finch owns the frame. In the actual render the drinking finch is the LARGEST and SHARPEST element, spanning roughly the left 55% of frame; the out-of-focus finch is confined to the right ~30-35% and its head is only slightly bigger than the drinker's. The 'one black head sweeps close and soft through the foreground' read is weak -- it looks like a second bird standing nearby out of focus, not a bird crossing the lens.",
+    "NOT DISTINCT FROM S027: the composition here (sharp left-facing drinker at the wound + large soft finch parked at the near-right edge + lava under the feet + booby flank filling frame-left) is verbatim what S027's own Grok prompt describes, and S027 is spec'd one size WIDER (CU). The planner's own claim is that they differ by only 16% scale. A 16% zoom delta on an identical composition reads as the same camera set-up, which is exactly the repetition failure pre-crops exist to prevent. S005 and S032 on this seed also specify 'second finch out of focus at the lower-right edge' -- four shots converging on one look.",
+    "GEOMETRY CAP (root cause, not the planner's fault): the required wound sits at seed x=551-585 and the foreground finch's head at x~985-1140, ~450px apart centre-to-centre. Any 16:9 box containing both must be >=~640px wide, i.e. >=50% of the seed width, which forecloses a genuine XCU. This seed cannot produce S041's spec'd framing. Real fixes: (a) respec S041 to CU and let a different shot carry the 'down among them' beat, (b) source a new seed that actually has a near-foreground bird crossing the lens, or (c) drop the wound requirement from S041's prompt and crop hard right on the blurred bird alone.",
+    "PASSES: upscale 1.76x, well under the 2.5x softness limit. Creature count correct -- exactly two finches (sharp drinker + soft foreground bird) plus the booby's flank; I zoomed the dark mass at lower-left (seed 500,380-720,520) and confirmed it is the booby's dark folded wing, not a third bird. Wound is fully inside the left edge with ~16px margin and its drip trail (down to y~300) is well inside the bottom.",
+    "suggested_crop 538,190,660,371 (1.92x, aspect 1.779) is the tightest box the geometry allows: it keeps the wound with ~13px margin, makes the foreground head clearly larger and softer than the drinker's, and trims dead lava. I rendered it (/tmp/ver_S041_alt.png) -- it is BETTER but still not a true XCU. Use it only if S041 is being kept on this seed; it does not by itself fix the size or the S027 collision."
+   ],
+   "suggested_crop": "538,190,660,371",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S056",
+   "seed": "hero_still_A2_macro_finch_wound.png",
+   "crop": "364,180,900,506",
+   "issues": [
+    "DISTINCTNESS (the failing check): the planner's own stated separation from S029 is 11% scale + a 114px offset (~9% of frame width). That is below the 'different region OR clearly different scale' bar and will read as the same camera set-up. This seed carries 13 shots, and S005 / S029 / S056 are natively the same picture (side-on level-ish, drinking finch centre, second finch soft at lower right) -- the crop is the only lever separating them, and a 1.40x near-full-frame crop takes the widest slot without doing that work.",
+    "SIZE: shot is size=XCU but at 1.40x this reads as a loose two-shot in the setting -- the drinking finch spans only ~45% of frame width and the lava field takes the bottom ~45%. Partly forced by the prompt (the wound sits at seed x~560 and the second finch runs to x=1264, so any box holding both is >=~720px wide, capping upscale at ~1.75x), but 900 is not the tightest achievable.",
+    "NOT failures, verified in the render: aspect 1.779 and fully inside the 1264x720 seed; upscale 1.40x (well under 2.5); exactly two finches with the booby head out of frame; dried red mark present at upper-left with the beak at it; second finch settled on the black lava at lower right, soft; black lava running along the bottom; slightly-above side-on read confirmed by the receding rock surface.",
+    "Suggested box 464,180,800,450 was RENDERED and checked (/tmp/ver_S056_alt.png, 1.58x, aspect 1.778 exact). Right edge must stay at 1264 (second finch runs to the edge) and top at 180 (drinking finch's head top is at y~194, only 14px headroom), so scale via the left/bottom edges is the only lever. It keeps the wound, both finches, and the lava band, drops most of the dark folded wing (which the planner says S029 keeps), opens the S029 gap to ~25% -- matching the 26% gap already accepted for S041 -- and reads much closer to XCU.",
+    "Tradeoff on the suggested box: at 800 wide the second finch grows from small-and-soft to a larger soft mass at frame right. It remains on the lava, at the right, out of focus, so the prompt is still satisfied -- but if 'soft and out of focus at the lower right' is judged load-bearing, the alternative fix is to widen S029 and leave S056 at 900.",
+    "S029 and S041 crops could not be rendered for direct comparison: ep02_shots.json currently carries a seed_crop on S004 only, so the 11%/114px and 26% deltas are taken from the planner's rationale as stated."
+   ],
+   "suggested_crop": "464,180,800,450",
+   "flags": {
+    "framing": true,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S067",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "254,585,506,285",
+   "issues": [
+    "FRAMING FAILS: size=XCU means a detail fills the frame, but in the render the foot occupies only the right ~20% of the width. Roughly 60% of the frame is empty lava and 25% is white belly. It reads as a mid-ish ground plate, not a foot macro.",
+    "The talons are clipped by the right frame edge. The action IS 'its talons clamp down hard on the black lava' -- the payload of a 2s maximum-tension beat happens half outside the frame. Grok animates forward from frame 1 and cannot re-frame, so the clamp would play offscreen.",
+    "VERIFIED the planner's constraint rather than trusting it: from a 1.98x diagnostic crop, the egg's left edge is seed x~760 (planner said 761, correct) and the near foot's toes span seed x~676-854, y~707-790. Foot and egg overlap horizontally by ~94px, so no eggless crop can contain the whole foot. At the 2.5x ceiling min width is 506px, so with the right edge capped at 760 the left edge is forced to 254 -- the proposed box is the UNIQUE maximal eggless option. There is no better box to suggest.",
+    "Tested one alternative, 254,640,506,285 (same width, shifted down to centre the foot). Rendered and rejected: even more dead lava, foot pushed into the far corner, toes still clipped. The planner's y=585 is the better of the two.",
+    "SPEC CONFLICT IS REAL and must be resolved by a human before generation, exactly as the planner flagged. vantage + action say foot macro with the shell deliberately out of frame; grok_prompt still says 'a chalk-white seabird egg ... filling the right of frame'. Feeding this eggless crop with the current grok_prompt will make Grok hallucinate an egg into a frame that has none.",
+    "Upscale is exactly 2.50x -- at the ceiling with zero headroom, and the crop is dominated by low-contrast lava texture that will be the first thing to go mushy.",
+    "creature_count passes only under the foot reading: the crop holds exactly one animal (the booby, partial -- belly plus one leg/foot), no finches intruding, which matches vantage+action naming only the booby's foot. Under the grok_prompt reading it fails, since the required egg is absent by design.",
+    "distinct_enough passes clearly: of the 13 shots on this seed (S058, S060, S061, S062, S065, S067, S069, S070, S074, S075, S078, S079, S085) every other one shows the egg and/or the whole standing bird. A near-ground foot detail across the lava is unmistakably a different camera set-up. This is the one thing the proposal gets right.",
+    "RECOMMENDATION: this shot cannot be satisfied from this seed at <=2.5x. Either (a) re-seed S067 from a different still that has an unobstructed foot, or (b) accept the planner's egg fallback 300,585,560,315 (2.26x) and accept that the egg repeats within ~5s of S065, or (c) keep this box only if the grok_prompt is rewritten to a foot macro whose action lives inside the frame (a slow toe/tendon flex on the rock) rather than a talon clamp that is cut off."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S075",
+   "seed": "/Users/jefflawrence/Documents/youtube-automation-production/assets/vampire_finch/hero_still_B_egg_nest.png",
+   "crop": "60,25,1500,844",
+   "issues": [
+    "FRAMING FAIL: spec says size=CU but the render is a full-body lateral MS/WS - whole booby head to tail, tail touching frame left, full lava field right. The box keeps 1500/1672 width and 844/941 height, i.e. it discards only ~10% per axis and is functionally the uncropped seed. This is exactly the S004 failure named in the brief: a CU shot generated from a wide seed comes back as the wide.",
+    "RATIONALE FACTUALLY WRONG on sky: it claims the box 'drops the grey sky band off the top' and is '1500 with no sky'. It removes 25px from a sky band that extends to y~155. The grey sky is plainly visible across the top of the rendered crop.",
+    "DISTINCTNESS FAIL: ~11% linear difference from S061's near-full 1672 box (1672/1500=1.115) is imperceptible as a camera move. S061, S070 and this box all read as the same lateral full-body still - the 'glitchy loop' repetition that got rough_cut_v1 rejected.",
+    "LANE COLLISION: this seed carries 5 MS shots (S058, S061, S070, S079, S085). A near-full-frame box for S075 both misses its own CU size and occupies the MS lane those five need.",
+    "The planner's premise that head (y~40) and egg (y~775) are both required is what forces the mush - it yields a ~775px minimum height and a permanently full-body frame. But the shot's own vantage field says 'looking UP past the egg AT THE DESCENDING BILL', i.e. the bill descends INTO frame; the head is not required in frame 1. Cropping to nest level is legal and is what the shot describes.",
+    "SUGGESTED 560,340,1000,563 (1.26x, aspect 1.776) verified by render: holds the egg, both finches, the booby's feet, a tall column of white breast for the bill to travel down past, and open lava frame right for the nearer finch to exit into. Reads as a genuinely different set-up from S061/S070/S079. A tighter 600,419,820,461 (1.54x) also renders clean but leaves less breast above the egg for the stab to register.",
+    "IF the tighter box is adopted, the grok_prompt needs a matching edit: 'Camera side-on to a standing Nazca booby and only slightly above nest height, level with the bird's body' and 'drives its head down in one fast stab past its own white breast' both presume the head is in frame 1. Reword to the bill driving down into frame from above past the white breast, or Grok may not animate the stab at all.",
+    "SHARPNESS OK: 0.84x - the proposed box is a downscale, not an upscale, which is itself evidence it is barely a crop. Both suggested alternatives (1.26x, 1.54x) stay well under the 2.5x ceiling."
+   ],
+   "suggested_crop": "560,340,1000,563",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S001",
+   "seed": "still_booby_eye.png",
+   "crop": "280,0,1360,765",
+   "issues": [
+    "CREATURE COUNT FAILS: the grok prompt's contract is 'one booby and one fly throughout' and never names a finch, but the rendered crop contains one booby, TWO flies (seed ~525,210 on the eye rim and ~733,322 at the mask/bill junction, confirmed by zoom render /tmp/zoom_fly2.png) and one finch. The unnamed finch is a prominent subject with no prompt clause pinning it, which is the setup for morph/duplicate artifacts.",
+    "NOT DISTINCT FROM S021: S021's grok prompt is a literal description of this seed UNCROPPED -- 'head filling the left two-thirds', 'bill run out of the lower-right corner', 'a single small jet-black finch stands soft and far out of focus', 'two small flies, one at the corner of the eye and one at the base of the bill'. The proposed S001 box reproduces that identical composition at only 1.23x tighter (1360 of 1672 px wide). The finch even lands at the same normalized x (0.81 vs 0.83). Opening shot and the 149.5s shot would read as the same camera set-up -- the rough_cut_v1 'same shot' failure.",
+    "The planner's caveat is CORRECT and I verified it geometrically: eye spans seed x 409-592, finch starts at seed x ~1163, so any box holding both must span x 409-1604, and fly #2 at x=733 sits inside that span at the eye's own height. No 16:9 box keeps eye + finch and drops the second fly. But the caveat frames this as 'accept two flies or drop the finch' without noting that keeping the finch is also what makes the shot a near-duplicate of S021.",
+    "The prompt is internally inconsistent and should be fixed regardless of which box is chosen: the VANTAGE says the head fills the LEFT two-thirds with the finch in the right third, while the GROK_PROMPT says the head fills the RIGHT two-thirds and omits the finch entirely. The crop satisfies the vantage and violates the grok prompt.",
+    "COST OF MY SUGGESTED BOX (stated honestly): dropping fly #2 caps the crop width at ~715px (fly #2 sits at x=733), which caps height at ~402px, leaving no room for bill context -- so 0,150,715,402 renders as an eye XCU rather than the spec'd CU, drifting toward S063's territory ('extreme close-up of the amber eye'). S063 is 372s away and specifies a from-below angle with no foreground element, so the collision is survivable, but it is a real trade. Verified at /tmp/alt_S001_b.png: aspect 1.779, upscale 1.77x (sharp), one booby and exactly one fly, the fly on bare skin at the eye's upper rim -- which is precisely this shot's action.",
+    "ALTERNATIVE RESOLUTION if the finch is worth keeping: leave the box at 280,0,1360,765 and amend S001's grok prompt to name 'one booby, one finch and two flies throughout' the way S021's prompt already does. That fixes the creature contract but does NOT fix the S021 duplication -- S001 would still need a clearly different scale or region to earn its own vantage."
+   ],
+   "suggested_crop": "0,150,715,402",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S015",
+   "seed": "still_booby_eye.png",
+   "crop": "0,140,760,428",
+   "issues": [
+    "SIZE IS WRONG: spec says size=CU with 'the head filling the right of frame in three-quarter profile'. The rendered box is an XCU eye detail -- the eyeball alone occupies ~35% of frame width, and there is no bill, no crown silhouette, no background anywhere in the box. Every pixel is feather or facial skin. You cannot read a head, let alone a three-quarter-profile head angled away from the lens.",
+    "CAMERA POSITION IS UNREADABLE: the vantage is the load-bearing part of this shot ('slightly ABOVE and FORWARD of the booby's shoulder... never square-on'). With no head outline, no bill and no horizon/background in frame there is zero geometric cue for above-vs-below or forward-vs-rear. Grok has nothing to hold the vantage to, and the shot cannot be QA'd against it later.",
+    "MISSING NAMED CREATURE: the Grok prompt requires 'a small jet-black finch soft and far out of focus, hopping once across the white back' -- the finch is the beat's only motion event besides the blink. The crop excludes it entirely.",
+    "THE FINCH-INVENTION FALLBACK IS UNSAFE: the planner's plan is for Grok to invent a defocused finch on the 'white field at left'. That white field is not the bird's back or a background -- it is the booby's own cheek and lore, in sharp focus, contiguous with the eye. A finch materialising there would be a bird standing on another bird's face, in focus, i.e. exactly the morph/anatomy failure the prompt's 'no morphing, no bird splitting or merging' rider exists to prevent -- and it has 12 seconds to go wrong.",
+    "EXTRA UNNAMED ANIMALS: two flies are in the box (one on the upper lid, one at the right edge on the mask). S015's prompt names only the booby and the finch. This project tracks flies as explicit entities (S021's prompt locks 'one booby, one finch and two flies throughout'), so an unnamed pair of flies in frame will animate unbidden across a 12s hold.",
+    "COLLIDES WITH THREE OTHER SHOTS ON THIS SEED: five of the eight shots here are eye-tight. This box is the canonical eye-fills-frame framing that S063 (size=XCU, 'extreme close-up of the amber eye... no foreground element') needs, and it also duplicates S025 ('eye and bill fill the frame') and S037 ('long lens tight on the eye'). Spending the group's tightest eye box on a CU-sized shot both mis-sizes S015 and leaves the three shots that actually call for XCU with nowhere distinct to go.",
+    "The trade-off analysis itself is sound and I confirmed it numerically -- the finch's body core starts at x~1200, so any box holding both the eye (x~505) and a legible finch must be >=1620px wide, i.e. effectively the full frame. Dropping the finch is a defensible call. Choosing an XCU eye detail as the replacement is not; the same 'drop the finch' constraint is satisfied by a head-scale box that still delivers the CU and the vantage (see suggested_crop).",
+    "Sharpness is the one clean pass: 1.66x upscale, well under the 2.5x limit."
+   ],
+   "suggested_crop": "150,0,1000,563",
+   "flags": {
+    "framing": false,
+    "count": false,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S037",
+   "seed": "still_booby_eye.png",
+   "crop": "250,200,700,394",
+   "issues": [
+    "CREATURE COUNT: the crop contains two flies that the S037 prompt never names. Seed coords ~(522,215) on the upper lid ridge and ~(732,318) on the white cheek. Verified by zooming the seed at 3x -- both are sharply resolved insects with visible legs, not dust, and at 1.81x upscale they render as unmistakable flies in the 1264x720 output. The S037 prompt's roster is one booby + one reflected finch, and its only anchor is 'keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging' -- nothing pins the flies. Two unanchored live creatures across a 5s push-in is the morph risk the project's own i2v QA already caught.",
+    "DO NOT RE-CROP -- the box is right and no better one exists. Fly 1 sits ON the eyelid ridge (ridge top = seed y=231, fly spans y~203-218), so excluding it forces crop top to y>=220, leaving only 11px above the lid; a 'very slow push in' eats that immediately and the upper lid leaves frame, killing the one thing the shot is built on ('the lid closes from the top'). Fly 2 can only be excluded by shifting hard left (x<=25 at w=700), which puts the eye at 51-92% of frame width with dead white cheek filling the left half -- a weaker 'tight on the eye' that also duplicates the right-weighted composition of S001/S015. The only both-flies-out box at <=2.5x is ~219,220,506,285, which is S063's XCU slot. So this is a seed property, not a crop error.",
+    "FIX BELONGS IN THE PROMPT, and the pattern is already in this seed group. Copy S021's treatment verbatim in spirit: add 'two small flies rest motionless on the bare dark skin of the face, one just above the eye and one on the white cheek feathers; they do not move' and change the tail anchor to '... no bird splitting or merging - one booby and two flies throughout.' With that rider added, this exact box (250,200,700,394) should be approved as-is.",
+    "MINOR, not blocking: headroom above the lid ridge is 56px at 1264x720 (7.8% of frame height). A push-in beyond ~8% will put the ridge top at the frame boundary by the end of the 5s. The lid still sweeps down across the iris so the beat survives, but keep the push genuinely 'very slow' as written.",
+    "NOTE on distinctness: S037 reads as a different set-up from S063 (XCU) and S025 (bill-dominated) by scale and by eye placement left-of-centre, which is enough. But all 8 shots on this seed share one vantage -- no crop can create a real camera-position difference, so the group is differentiated by scale and framing alone. Worth confirming the other 5 boxes in this group (S001, S015, S021, S055, S087) do not also land near 700px wide, or the ladder collapses."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S055",
+   "seed": "still_booby_eye.png",
+   "crop": "0,200,1180,664",
+   "issues": [
+    "CREATURE COUNT FAIL: the crop does NOT exclude the finch. The planner's premise 'finch at 1190' is wrong -- 1190 is where the finch's body starts, but its out-of-focus tail/rump extends left to ~x1110. Pixel scan of near-black (<70 luma) content over y420-720: x1090=0.5%, x1110=14.7%, x1140=25.7%, x1180=32.4%. At the proposed right edge of 1180, 32% of that column is finch. The render confirms a soft black wedge riding the right edge, roughly rendered y354-482.",
+    "This matters more here than on any other shot in the group: S055 is an 11s LOCKED-OFF hold whose prompt says 'the camera is locked and everything else in frame is still' and 'no bird splitting or merging'. An unrecognizable dark blob parked at the frame edge is exactly what i2v grows into a second bird, with 11 seconds to do it.",
+    "FIX = 0,200,1090,613 (rendered to /tmp/alt_c.png and inspected). Trims 90px off the right, keeps the planner's x=0 anchor and framing intent. Full eye with headroom, both flies, white neck/throat mass filling the left third and bottom-left, bill sweeping out the lower-right. Right edge is now entirely bird (white crown into pink bill), so there is no background element left in frame to morph at all. Aspect 1.778, upscale 1.16x.",
+    "Also tested 0,328,1090,613 -- clips the top of the eye. Rejected.",
+    "NOT FIXABLE BY CROP (flag for the seed owner, not against this box): the prompt asks for 'head AND shoulder ... against the darkening sea' and 'low at rock level'. The uncropped seed shows no shoulder and no sea (background is defocused guano-spattered rock) and is shot roughly level, not from below. No crop can add any of these -- cropping only moves further from 'head and shoulder'. The full seed is already the widest framing available, so the shot will not deliver its stated vantage from this seed regardless of crop.",
+    "PASSES: sharp_enough -- 1.07x as proposed, 1.16x as corrected, both far under the 2.5x limit. distinct_enough -- the x=0 anchor with the neck/throat mass reads as a clearly different set-up from S063 (XCU on the eye alone), S087/S037 (tight on eye, x>=215 anchors, no shoulder) and S025 (23% narrower), and dropping the finch entirely changes the composition substantially versus the finch-inclusive S001/S015/S021.",
+    "Minor, non-blocking: two flies sit on the face (corner of the eye and base of the bill) and are inside every viable crop of this seed, but the S055 prompt names only the booby. Unavoidable -- any crop containing the eye contains at least one fly -- and S021's prompt names them explicitly, so they are an accepted seed property. Consider adding 'two small flies rest still on the face' to the S055 prompt so the model holds them static rather than inventing motion during the locked hold."
+   ],
+   "suggested_crop": "0,200,1090,613",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S063",
+   "seed": "still_booby_eye.png",
+   "crop": "215,250,506,285",
+   "issues": [
+    "Right edge does NOT clear the bill-base fly. Planner's rationale claims 'right edge at 721 clears the bill-base fly at ~728'; zooming the seed at the boundary shows the fly's body starts at x~724 but its legs and the dark smudge under it reach back to x~714, inside the box. In the delivered render it appears as a thin dark filament touching the right edge around y=195-210. S063's prompt names one booby only and specifies 'no foreground element', so an edge insect Grok can animate into a crawl is a real violation of the shot.",
+    "The eye-corner fly IS correctly excluded (it sits at seed y~200-225, above the top edge at y=250) - that half of the rationale verifies.",
+    "'Camera slightly below the head looking up' cannot be manufactured by cropping; the seed is shot near level. Eye at 0.39 down is the best available approximation and at XCU on an eyeball the angle is not readable, so this is not a blocker - just do not expect the crop to sell the low angle on its own.",
+    "2.50x is genuinely at the ceiling. It holds on this seed because the source is a high-detail macro (iris striations and skin wrinkles still resolve), but the planner is right that 506px is the floor - do not tighten."
+   ],
+   "suggested_crop": "204,250,506,285",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S087",
+   "seed": "still_booby_eye.png",
+   "crop": "365,150,820,461",
+   "issues": [
+    "CREATURE COUNT (the blocking issue, but fix the PROMPT not the box): the crop contains two flies -- one on the brow directly above the eye at seed ~(505,205), one on the mask/crown edge at seed ~(735,320) -- and the S087 Grok prompt names neither. S021 names its two flies and pins one ('the fly stays exactly where it was'); S087 says nothing, so on a 7s held hero eye shot two unpinned insects sit right beside the animating eyelid. This is NOT croppable away: excluding both flies requires y>340, which puts the eye (centre y=355) on the top edge. Fix = add to the S087 prompt: 'two small flies rest on the bare dark skin, one on the brow above the eye and one on the dark mask below the white crown; both stay exactly where they are.'",
+    "The prompt's 'small black bird crosses' is not in the crop. The planner's call is correct and I tested it: any box containing the finch runs to ~82% of seed width and reproduces the S001/S021 framing ('head filling the left two-thirds, soft out-of-focus black finch in the right third'). Keep the box. But the prompt should state the bird ENTERS from off-frame -- e.g. 'a small jet-black bird crosses into frame from the right edge behind the crown, completely out of focus, and exits' -- so Grok is told to introduce it rather than left to invent it. Verified there is a real grey lane for this: the right edge of the crop is clean defocused background from the top down to ~65% height, and stops ~30px clear of the finch (finch mass begins seed x~1215, crop right edge 1185), so no clipped sliver.",
+    "DISTINCTNESS is thinner than the rationale claims -- flagging for a check against the real S025 box, not rejecting on it. Taking the planner's own description literally (17% tighter, +140 x, -43 y) puts S025 at ~225,193,988,556; S087 then sits ~91% inside S025 at only a 1.20x scale difference, same region, same subject. The rule wants 'different region, or clearly different scale.' It survives because the composition genuinely differs (crown dome + sky lane carry the top-right here vs bill carrying the frame) and the two shots are 296s apart (170s vs 466s). Worth rendering S025 and S087 side by side before committing.",
+    "Seed limitation, not a crop defect: the vantage asks for 'slightly BELOW' but the seed shows the full crown dome from roughly eye level, so the render reads level-to-slightly-above. No crop can manufacture a low camera. S021 ('looking UP') and S063 ('slightly below') on this same seed inherit the identical limit."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S023",
+   "seed": "SEED_wide_booby_clear.png",
+   "crop": "270,285,1050,590",
+   "issues": [
+    "SHOT SIZE WRONG: spec is size=WS and the action calls it a 'brief context breath', but in the render the booby spans ~62% of frame width and ~45% of frame height. That reads as a medium shot of a bird, not a wide of a lava ledge -- there is almost no setting left, just a sliver of sea and a strip of rock. This is the S004 failure inverted (S004 came back too wide for a medium; this is cropped too tight for its wide).",
+    "VANTAGE ELEMENT MISSING: the vantage requires a 'dark out-of-focus rock edge across the bottom of frame'. The box ends at y=875 and cuts off exactly the darker, softer bottom 66px of the seed that would supply it. What actually runs across the bottom of the render is bright, in-focus, high-contrast white guano lava -- the opposite of a dark soft foreground boulder. The planner's rationale claims the bottom 45% delivers this; the render shows it does not.",
+    "SECOND BOOBY DOES NOT EXIST IN THE SEED (not a crop defect, but flag it): the Grok prompt names 'a second booby further off in soft focus'. The full uncropped 1672x941 seed contains exactly ONE booby. No crop of this seed can deliver it. Either drop the second booby from the prompt or accept Grok hallucinating it in, which on a physics=medium shot is a morph risk.",
+    "PASSES: creature count correct -- all three named finches (left seed x300-410, right x1205-1285, bottom-centre x975-1065/y730-800) are fully inside with 30-90px margins, no clipping, no extra animals. Sharpness fine at 1.20x. Distinct from S039/S054/S083/S088.",
+    "CAVEAT ON THE SUGGESTED BOX: 180,200,1317,741 is 1.27x tighter than the full frame vs the proposal's 1.59x, so it sits closer to a full-frame look. It still excludes both sky and horizon (which the full frame contains) so it stays distinct, but confirm S039 and S054 are not landing near full-frame or the separation between the three wides gets thin."
+   ],
+   "suggested_crop": "180,200,1317,741",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S083",
+   "seed": "SEED_wide_booby_clear.png",
+   "crop": "416,247,784,441",
+   "issues": [
+    "SIZE MISMATCH (fatal): shot size field is WS but the rendered crop is a medium/near-close profile portrait -- the booby fills ~57% of frame height and ~75% of frame width, with essentially no setting around it. S088's spec on this same seed sets the project's wide floor at 'at least one fifth of the frame height', so this is roughly 3x tighter than a wide. This is the inverse of the S004 failure (medium asked, wide delivered) that was already rejected once.",
+    "Vantage element missing: 'a high grey sea horizon behind it' and the 'flat grey pre-dawn sky' are both entirely absent -- crop y starts at 247 and the seed's horizon sits at y~124. Grok cannot invent a horizon that is not in frame 1, so a 10.5s hero shot loses two of its four named background elements.",
+    "Vantage element weak: 'a foreground ridge of guano-streaked lava that runs across the bottom of frame' -- in this crop the bottom band is the in-focus shelf the bird is sitting ON, at the same depth as the bird, not a nearer out-of-focus ridge between camera and subject. It reads as ground, not foreground occlusion.",
+    "The finch-free constraint that forced all of the above is stricter than the prompt requires. The prompt needs no finch ON THE BOOBY'S BACK at frame 1; all three finches in this seed stand on the lava, none on the bird, so every possible crop already satisfies the real constraint. The planner traded away the horizon, the sky and the wide scale to buy a property it already had.",
+    "Verified: the planner's geometry is accurate (horizon y~124, left finch ends x~397, right finch starts x~1190, bottom finch above y~726, so finch-free x-window is 416-1200 giving w<=784). I rendered 416,105,784,441 to test the claim and it does confirm the conflict -- the horizon appears but the bird is guillotined at the bottom edge with no ridge. The 'maths does not close' claim is true INSIDE the finch-free rule and false outside it.",
+    "Suggested box 416,60,1031,580 (aspect 1.778, 1.23x upscale, fully inside the 1672x941 seed) closes the maths: high sea horizon, open grey sky, sea filling the upper half, lava across the bottom, whole booby in hard side profile at a genuine wide scale. Cost: it carries one finch standing on the lava at right -- which is arguably an asset, since an in-frame finch that can hop/fly up onto the back is far more achievable for i2v than three finches materializing from off-screen.",
+    "Caveat on the suggested box: at 1031px it spans 62% of the seed width, so it must be checked against the other four WS shots on this seed (S023, S039, S054, S088) for collision. If those already use near-full-frame crops, S083 should be differentiated by vantage/y-offset rather than by dropping to a medium.",
+    "Non-blocking: creature count is correct as proposed -- exactly one booby, zero finches, no second booby in the box -- and zero finches at frame 1 is a defensible reading of 'three fly in one at a time and land on the back'. Sharpness is fine at 1.61x. Distinctness is fine: it is clearly the tightest of the five and the only one with no second creature."
+   ],
+   "suggested_crop": "416,60,1031,580",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S020",
+   "seed": "SEED_mutualism_clean.png",
+   "crop": "430,120,1242,699",
+   "issues": [
+    "SIZE MISMATCH: spec says size=MS but the render is a close-up. In /tmp/ver_S020.png the finch spans roughly 70% of frame height and ~60% of width - head-to-tail it dominates the frame. MS ('subject plus immediate context') should sit nearer 50-55% height, which is what the seed's own native framing already gives.",
+    "RATIONALE CONTRADICTS THE PIXELS #1: planner says the finch 'reads small in frame'. It does not - it is the largest it can be short of S022's macro. This is the opposite of the stated intent.",
+    "RATIONALE CONTRADICTS THE PIXELS #2: planner says the crop keeps 'a broad unbroken sweep of clean white back running away to the right' at '~35% white back'. In the render the back is a tapering wedge along the bottom-left that thins to a narrow strip by the right edge - roughly 20% of frame area - while the right two-thirds of the frame is guano-streaked cliff. The ~35% figure describes the UNCROPPED seed (~38%), not this crop.",
+    "The action of the shot is the finch WALKING ALONG the booby's back. The planner rejected 430,110,1000,563 and 350,140,1150,647 for exactly the reason that they cut the back to a sliver - but the accepted box does a milder version of the same thing. The surface the bird walks on is the one element this crop should protect and it is the element it loses.",
+    "NOT A CROP FAULT, flag for the record: the vantage and GROK_PROMPT both call for 'a soft compressed grey sea horizon behind'. The seed has a black lava cliff streaked with white guano - no sea horizon exists anywhere in it, so no crop can deliver that line. Either accept the cliff (S022's prompt already describes the cliff, so the group is inconsistent with itself) or reword S020's background clause to match the seed.",
+    "SUGGESTED BOX 200,113,1472,828 (verified at /tmp/ver_S020_altB.png): aspect 1.778, upscale 0.86x so it is a downscale - fully sharp, sharper than the proposal. Finch drops to ~55% frame height = a true MS, sits left-of-center, and the white back becomes a broad unbroken sweep filling the bottom ~45% and running off the right edge. Keeps the grey sky band at top-left, keeps the cliff behind, whole finch with feet planted, one bird, no red. It is bottom-and-right weighted relative to the seed, so it still reads as a deliberate set-up rather than the raw still, while staying far wider than S022's XCU and side-on rather than S053's high-and-behind."
+   ],
+   "suggested_crop": "200,113,1472,828",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S053",
+   "seed": "SEED_mutualism_clean.png",
+   "crop": "0,110,1400,788",
+   "issues": [
+    "HEADROOM \u2014 the crop's stated purpose is defeated by its own y-offset. S053's action is 'two more finches DROP IN FROM ABOVE and land on the back.' In the seed the finch's crown top sits at y~163; y=110 leaves only ~53px of seed (~48px of the 720 output, 6.7% of frame height) above the crown. Two birds entering from off-top would be visible for a couple of frames before touching down \u2014 i.e. they pop in already-landed, exactly the failure the planner says they were avoiding when they rejected 0,153. The rationale claims '~60px of sky/blurred rock above the crown' and treats that as sufficient; the render shows it is not. The full 163px of available headroom is free \u2014 y=0 costs nothing in aspect, scale or sharpness.",
+    "VANTAGE NOT DELIVERED (and not deliverable from this seed) \u2014 the spec's vantage is 'HIGH AND BEHIND, looking down the length of the booby's back from tail toward head,' with the booby's head held in three-quarter profile. The render is a dead-level, side-on view at back height: no downward angle, no back receding away from camera, and no booby head anywhere in frame. The white back reads as a rounded hump crossing the bottom of frame, not as a length being looked down. The rationale's claim that it 'reads as looking down the length of the back' is not supported by the rendered image. Because Grok starts on frame 1 and the seed's camera axis is fixed level/side-on, NO crop of SEED_mutualism_clean.png can produce a high-and-behind vantage \u2014 this is a seed-level gap, not a fixable crop parameter. Flag it: either accept a level side-on reading of S053 (and rewrite the vantage/grok_prompt to stop asking for high-and-behind and for a head that isn't in the seed), or shop a new over-the-back seed.",
+    "DISTINCTNESS FROM S020 IS THIN \u2014 S020 is also MS on this same seed and this same side-on axis. The proposed box is 1400x788 out of 1672x941: 84% of the seed's linear size, subject left in the same screen position, same axis, same background. Against a full/near-full-frame S020 that is a ~19% scale step and a trimmed right cliff \u2014 the classic 'same set-up again' read that got rough_cut_v1 rejected. (S022 is XCU and will be a hard tight crop, so no clash there.) Distinctness needs to come from composition, not a 19% zoom.",
+    "SUGGESTED BOX 0,0,1400,788 \u2014 rendered and checked (/tmp/ver_S053_alt2.png). Same 1400x788 / 1.777 aspect, same 0.90x downscale (sharp), same x=1400 right-cliff trim the planner wanted; the ONLY change is y 110 -> 0. It buys ~145px of sky and blurred cliff above the crown \u2014 real runway for the two arrivals to fall through \u2014 while the white back still fills the bottom third and still runs off to the left as an open landing expanse. It also happens to fix the distinctness problem: the finch now sits HIGH in frame against a large sky field rather than low on a back-dominant frame, which is a visibly different composition from a wide S020, not just a smaller one. Also rendered 0,0,1264,711 (1.00x, tighter, finch at 68% across) \u2014 better scale separation from S020 but it squeezes the back to a thin bottom band and shrinks the landing surface, so 0,0,1400,788 is the better trade."
+   ],
+   "suggested_crop": "0,0,1400,788",
+   "flags": {
+    "framing": false,
+    "count": true,
+    "sharp": true,
+    "distinct": false
+   }
+  },
+  {
+   "id": "S012",
+   "seed": "SEED_finch_portrait_redtip.png",
+   "crop": "400,150,580,326",
+   "issues": [
+    "CREATURE COUNT FAIL: the grok_prompt names TWO creatures - 'a single small jet-black ground finch perched in clean side profile on the white back of a large Nazca booby' and 'the booby beneath it only breathes'. The crop contains only the finch. The booby's white back top edge runs y~528 (x=0) to y~610 (x=1100); the box bottoms out at y476, so the perch is fully excluded and the finch reads as floating against grey defocus for the whole 8.7s LOCKED hold.",
+    "GENERATION RISK: feeding Grok a frame with no white back while the prompt demands a large white Nazca booby under the finch invites it to invent/morph a white mass into the lower frame - the exact failure class the shot's own rider ('no morphing, no bird splitting or merging') exists to prevent. Two prompt instructions ('perched on the white back', 'the booby beneath it only breathes') are simply unrenderable from this frame.",
+    "THE BIND IS GEOMETRIC, NOT A PLANNER SLIP - verified by test: crown sits at y164, white back starts ~y558 at that x-range, so any box holding both needs h>=~470, which at 16:9 forces w>=~835. No tight beak-tip CU on this seed can include the booby.",
+    "RECOMMENDED FIX (preferred): amend S012's grok_prompt to drop all booby references (finch perched, perch out of frame) and keep a tight crop. This preserves the ~1.8x scale separation from S030, which is the only distinctness lever this seed offers since S030's vantage line is nearly identical (side-on telephoto, finch eye level, finch in profile on the booby's white back).",
+    "SUGGESTED CROP CAVEAT: 400,150,845,475 (1.50x, rendered /tmp/ver_S012_B.png) is the tightest box that satisfies the prompt as written - whole finch, feet gripping the white back, lava soft behind - but at 845px vs S030's stated 1040px it is only 1.23x apart, so it trades the creature-count fix for distinctness. If this box is used, S030 must be re-cropped to a different region/scale.",
+    "COMPOSITION (secondary): the planner's claim that the red stain is 'the largest readable element in frame' is not what the render shows - the eye and crown dominate and the stain is a small mark ~16% in from the left edge with almost no look room ahead of it, weak for a reveal cut. Crown headroom is also only ~30px of 720 (4%), tighter than 'has headroom' implies. 352,132,580,326 (same 2.18x scale, rendered /tmp/ver_S012_C.png) fixes both: real headroom and air in front of the beak tip.",
+    "SHARPNESS OK: 2.18x is under the ~2.5x ceiling and the render holds - crown feather detail and the eye-ring are crisp, no mush."
+   ],
+   "suggested_crop": "400,150,845,475",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S050",
+   "seed": "SEED_finch_portrait.png",
+   "crop": "400,145,620,349",
+   "issues": [
+    "BLOCKER (fixable by prompt edit, not by a better box): the grok_prompt names TWO animals in frame -- the finch AND 'a large seabird' whose 'smooth white back' the finch stands on with 'its feet gripping the white feathers', and which must 'stay motionless with its head out of frame'. The rendered crop contains ZERO white feathers and no second bird: the box bottom is y=494 and the white contour does not begin until y~529 (far left) / y~591 (under the finch's head) / y~648 (at the feet). Frame 1 therefore shows the finch against out-of-focus grey-white rock only. Feeding Grok a prompt that stages a white perch absent from frame 1 is the classic invention/morph trigger -- it will either hallucinate a white surface in or deform the bird trying to produce one.",
+    "The planner's tradeoff math CHECKS OUT -- I verified it against the full seed, so there is no better box. Crown sits at y~169; any box holding both the crown and a usable amount of white feather (~60px below the contour under the head, i.e. bottom y~650) is h~481, w~855, upscale 1.48x. At that size the head (crown y169 to jaw y~330, 161px) is 161/481 = 33% of frame height versus 28% in the S049 CU -- effectively the same camera set-up as the immediately preceding shot, which cut back-to-back at 301.6s is exactly the near-duplicate 'glitchy loop' pair this pass exists to prevent. The XCU is the right call; the prompt is what has to move.",
+    "REQUIRED FIX before generation: delete from the S050 grok_prompt the clauses 'standing on the smooth white back of a large seabird, its feet gripping the white feathers', 'shifts its feet on the feathers', 'tail flicking once' (tail is out of frame), the whole rider 'The finch never pecks, bites, probes or lowers its beak into the white feathers beneath it', and 'the large white seabird stays motionless with its head out of frame and never turns toward camera'. Replace the staging clause with an XCU framing that matches frame 1, e.g. 'extreme close-up on the head, throat and near shoulder of a small black finch, filling the frame in profile'. Keep the animated events that ARE in frame -- the throat swallowing once and the head turning away from camera -- plus the no-blood rider and the slow handheld push. Alternative if the perch must stay visible: re-seed S050 from a still where the finch's head sits nearer the white surface.",
+    "Separate pre-existing spec drift, not caused by the crop: S050's vantage field asks for 'looking DOWN over and slightly BEHIND the finch's shoulder onto a guano-crusted ledge' and its action field says the finch 'pecks chalky white dried guano off the ledge', but the grok_prompt says the camera is 'level and side-on' and that the finch 'never pecks'. The seed is a level side-on portrait, so no crop can produce a high over-shoulder angle. The prompt (the operative text) is what the crop matches; the vantage/action fields are stale and should be reconciled so the ledge-pecking beat is not silently lost from the foraging triptych."
+   ],
+   "suggested_crop": "",
+   "flags": {
+    "framing": true,
+    "count": false,
+    "sharp": true,
+    "distinct": true
+   }
+  },
+  {
+   "id": "S031",
+   "seed": "SEED_spine_two_finch.png",
+   "crop": "320,198,1156,650",
+   "issues": [
+    "BOTTOM EDGE SEVERS THE LOWER FINCH. The planner's claim of '~35px clearance under the lower finch's tail' is wrong. Measured on the seed with the y=848 line drawn in: the lower finch's tail tip sits at y~843 -- about 5px above the cut, not 35 -- and both of its legs and feet extend well BELOW the line, down to y~893 (visible splayed toes and claws gripping the rock at seed x~950-1080, y~855-893). So the crop chops the finch's legs off at the frame edge and grazes its tail tip. That is exactly the frame-edge severing the brief names as the i2v morphing trigger, and the finch is the shot's whole thesis subject.",
+    "Everything else on this box checks out: aspect 1.778, upscale 1.09x (sharp), head and beak cleanly excluded (booby's chin/gape bottoms out at y~170, crop top at 198), the white neck column does climb out of the top edge so the 'forward up the spine' direction reads, the upper finch is whole with ~54px clearance above it, and exactly two finches are in frame with no third anywhere in the seed. Only shot on this seed, so distinctness is trivially satisfied and it is clearly tighter than the uncropped WS.",
+    "Fix is cheap and costs nothing in sharpness: 276,215,1244,700 (rendered and inspected at /tmp/alt_C.png). Bottom moves to y=915, clearing the finch's feet by ~22px and its tail tip by ~72px; top moves to y=215, still below the booby's chin (y~170) so no head or beak enters, and still ~37px above the upper finch. Aspect 1.777, upscale 1.02x. Still reads MS -- the back fills the frame, rock context only at the sides.",
+    "Do NOT simply slide the existing 650-tall box down. I tested 320,265,1156,650 (/tmp/alt_A.png) and its top edge cuts straight through the UPPER finch's head and back -- the upper finch starts at y~252. The box has to get TALLER (h>=~675), not just lower."
+   ],
+   "suggested_crop": "276,215,1244,700",
+   "flags": {
+    "framing": true,
+    "count": true,
+    "sharp": true,
+    "distinct": true
+   }
+  }
+ ]
+}
