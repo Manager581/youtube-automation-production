@@ -1,7 +1,7 @@
 # EP02 — CLIP LEDGER (generated)
 _Auto-generated from `ep02_shots.json` by `gen_clip_ledger.py`. Do not hand-edit — re-run it._
 
-**15 / 88 clips done · 0 awaiting frame-strip · 73 still to generate.**
+**16 / 88 clips done · 0 awaiting frame-strip · 72 still to generate.**
 
 A shot counts as done only when BOTH `<ID>.mp4` and `<ID>_strip.jpg` exist in
 `assets/vampire_finch/clips/` — frame-stripping every clip is mandatory, so a clip
@@ -14,7 +14,7 @@ without its strip is reported as unfinished on purpose.
 | ACT1b | 6 | 6 |
 | ACT1c | 1 | 1 |
 | ACT2 | 4 | 4 |
-| ACT3 | 0 | 4 |
+| ACT3 | 1 | 4 |
 | ACT4 | 0 | 24 |
 | ACT5 | 0 | 13 |
 | ACT6 | 0 | 26 |
@@ -23,7 +23,6 @@ without its strip is reported as unfinished on purpose.
 ## Remaining shots (in timeline order)
 | Shot | In-Out | Size | Seed | Blood |
 |---|---|---|---|---|
-| `S016` | 100-134.6s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S017` | 134.6-138.1s | CU | `SEED_macro_tail.png` | yes |
 | `S018` | 138.1-141.6s | XCU | `SEED_flank_stain_top.png` | yes |
 | `S019` | 141.6-145s | CU | `hero_still_A2_macro_finch_wound.png` | yes |
@@ -53,11 +52,11 @@ without its strip is reported as unfinished on purpose.
 | `S043` | 263-270s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S044` | 270-277.4s | WS | `SEED_wide_two_islands.png` |  |
 | `S045` | 277.4-282s | WS | `SEED_wide_ocean_ots.png` |  |
-| `S046` | 282-287s | MS | `hero_still_A_booby_finch.png` | yes |
+| `S046` | 282-287s | MS | `SEED_shimmer_distance.png` |  |
 | `S047` | 287-292s | XCU | `SEED_finch_ground.png` |  |
 | `S048` | 292-298.4s | XCU | `SEED_pricklypear_top.png` |  |
 | `S049` | 298.4-301.6s | CU | `SEED_finch_portrait.png` |  |
-| `S050` | 301.6-305.4s | XCU | `SEED_finch_portrait.png` |  |
+| `S050` | 301.6-305.4s | XCU | `SEED_guano_peck.png` |  |
 | `S051` | 305.4-309s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S052` | 309-320s | XCU | `SEED_macro_tail.png` | yes |
 | `S053` | 320-324s | MS | `SEED_mutualism_clean.png` |  |
@@ -74,8 +73,8 @@ without its strip is reported as unfinished on purpose.
 | `S064` | 375-378s | CU | `SEED_macro_tail.png` | yes |
 | `S065` | 378-380.5s | XCU | `hero_still_B_egg_nest.png` |  |
 | `S066` | 380.5-383s | MS | `hero_still_A_booby_finch.png` | yes |
-| `S067` | 383-385s | XCU | `hero_still_B_egg_nest.png` |  |
-| `S068` | 385-395.5s | WS | `hero_still_A_booby_finch.png` | yes |
+| `S067` | 383-385s | XCU | `SEED_foot_clamp.png` |  |
+| `S068` | 385-395.5s | WS | `SEED_hold_wide.png` | yes |
 | `S069` | 395.5-397.5s | CU | `hero_still_B_egg_nest.png` |  |
 | `S070` | 397.5-399.3s | MS | `hero_still_B_egg_nest.png` |  |
 | `S071` | 399.3-401.1s | MS | `hero_still_A_booby_finch.png` | yes |
@@ -89,7 +88,7 @@ without its strip is reported as unfinished on purpose.
 | `S079` | 412.9-414.7s | MS | `hero_still_B_egg_nest.png` |  |
 | `S080` | 414.7-416.5s | WS | `SEED_swarm_six.png` | yes |
 | `S081` | 416.5-418.5s | CU | `hero_still_A_booby_finch.png` | yes |
-| `S082` | 418.5-429.5s | MS | `hero_still_A_booby_finch.png` | yes |
+| `S082` | 418.5-429.5s | MS | `SEED_aftermath_flat.png` | yes |
 | `S083` | 429.5-440.0s | WS | `SEED_wide_booby_clear.png` |  |
 | `S084` | 440.0-444.0s | CU | `SEED_mutualism_clean_B.png` |  |
 | `S085` | 444.0-454.5s | MS | `hero_still_B_egg_nest.png` |  |
