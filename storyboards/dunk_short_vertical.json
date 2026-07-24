@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "title": "The First Apex Predator Had No Teeth",
+    "creature": "Dunkleosteus terrelli (Late Devonian placoderm)",
+    "format": "wordless vertical Short, Primeval Atlas style",
+    "aspect": "9:16",
+    "target_runtime_s": 63,
+    "narration": "NONE - wordless. Grok native clip audio + free music bed only.",
+    "pipeline": "ChatGPT image (9:16 still) -> Grok Imagine i2v (video+audio) -> ffmpeg assemble",
+    "hook": "WORLD -> REVEAL: a dark seafloor ridge that turns out to be an animal",
+    "rule": "what you read as seafloor is alive - taught at 0:07, repeated as the bookend at 0:55",
+    "accuracy_note": "Dunkleosteus had NO true teeth. Its bite came from two self-sharpening bony gnathal plates that honed against each other. This is the title's payoff and it is scientifically correct.",
+    "style_suffix": "photorealistic underwater natural history documentary still, shot on a cinema camera, cold dark teal-green Devonian ocean, single soft light source from directly above, heavy volumetric god-rays, suspended silt and marine snow, shallow depth of field, no text, no watermark, no people, vertical 9:16 composition",
+    "negative": "cartoon, illustration, CGI game render, text, watermark, logo, human, diver, modern coral reef, bright tropical colours, distorted anatomy, extra fins, six eyes",
+    "colour_worlds": {
+      "act1_gloom": "very desaturated, near-monochrome dark teal, low key, 20-30% saturation",
+      "act2_hunt": "saturated blue-cyan, bright god-rays from above, 60-75% saturation",
+      "act3_aftermath": "desaturated again, silt-brown-green haze, 25-35% saturation"
+    }
+  },
+  "shots": [
+    {
+      "id": "S01_seafloor_ridge",
+      "act": "act1_gloom",
+      "dur": 7.0,
+      "beat": "WORLD - the puzzle. Reads as terrain, not an animal.",
+      "still_prompt": "Wide shot of a dark Devonian seafloor, a long low armoured ridge of grey-green bony plates half buried in silt, indistinguishable from rock, a few small primitive fish drifting past it, cold teal gloom, god-rays from far above",
+      "i2v_prompt": "the small fish drift slowly past, silt particles drift, the ridge does not move at all, camera perfectly still"
+    },
+    {
+      "id": "S02_the_reveal",
+      "act": "act1_gloom",
+      "dur": 6.5,
+      "beat": "REVEAL - the terrain opens. This is the hook payoff.",
+      "still_prompt": "The armoured ridge on the seafloor is revealed to be the head of an enormous placoderm fish, bony plates parting to show a dark mouth, silt sliding off the armour, cold teal gloom",
+      "i2v_prompt": "the bony head lifts off the seafloor and the jaws crack open once, silt slides off the armour and clouds outward, the small fish scatter"
+    },
+    {
+      "id": "S03_blades_macro",
+      "act": "act1_gloom",
+      "dur": 6.5,
+      "beat": "THE MACHINE - macro on the bony shears. Pays off the title.",
+      "still_prompt": "Extreme macro of two interlocking blades of bone inside the mouth of an armoured placoderm, no teeth anywhere, self-sharpened bone edges honed like shears, a single hard glint travelling along the cutting edge, cold dark water",
+      "i2v_prompt": "the bony blades slide past each other once and shut hard, a glint races along the cutting edge, particles jolt outward"
+    },
+    {
+      "id": "S04_full_body_rise",
+      "act": "act1_gloom",
+      "dur": 7.0,
+      "beat": "SCALE - the whole animal, low angle, dominant.",
+      "still_prompt": "Low angle looking up at the full body of a giant armoured Dunkleosteus lifting off the seabed, heavy bony head plates, thick muscular body, silhouetted against faint light from the surface far above, cold teal gloom",
+      "i2v_prompt": "the huge fish rises slowly off the bottom and glides forward over the camera, unhurried, powerful tail beat"
+    },
+    {
+      "id": "S05_open_water",
+      "act": "act2_hunt",
+      "dur": 7.0,
+      "beat": "ACT BREAK - colour opens up. The reward act.",
+      "still_prompt": "Open Devonian water column, bright shafts of light from the surface, a dense silver school of small primitive fish above, the dark armoured shape of a large placoderm cruising below them, saturated blue-cyan, marine snow",
+      "i2v_prompt": "the school of fish wheels and turns together, the dark armoured shape cruises slowly beneath them, light shafts sway"
+    },
+    {
+      "id": "S06_rival_crosses",
+      "act": "act2_hunt",
+      "dur": 6.5,
+      "beat": "THE OTHER ANIMAL - a rival enters. Tension.",
+      "still_prompt": "A sleek primitive shark with long pointed fins crossing through bright shafts of light in open blue Devonian water, seen from below, a much larger dark armoured shape barely visible in the blue haze behind it",
+      "i2v_prompt": "the sleek shark glides across frame through the light shafts, and the huge dark shape behind it slowly turns toward it"
+    },
+    {
+      "id": "S07_the_strike",
+      "act": "act2_hunt",
+      "dur": 5.5,
+      "beat": "CONTACT - staged DARK, fast and occluded. i2v cannot do clean contact.",
+      "still_prompt": "A violent underwater strike in low light, an enormous armoured bony head lunging from below into a burst of silt and bubbles, the prey almost completely hidden inside the churning cloud, very dark, heavy motion blur, only a hard edge of bone catching light",
+      "i2v_prompt": "the armoured head lunges up into frame and the water explodes into silt and bubbles, everything churns, very fast, dark"
+    },
+    {
+      "id": "S08_silt_aftermath",
+      "act": "act3_aftermath",
+      "dur": 8.0,
+      "beat": "AFTERMATH - the longest hold, on a shot that renders well (drifting debris).",
+      "still_prompt": "Slowly settling cloud of silt and drifting scales in dim green-brown water after a kill, small fragments turning in the current, the dark bulk of a large armoured fish barely visible inside the murk, desaturated",
+      "i2v_prompt": "the silt cloud slowly billows and settles, scales and fragments drift down through the water, the dark bulk moves once inside the murk"
+    },
+    {
+      "id": "S09_becomes_terrain",
+      "act": "act3_aftermath",
+      "dur": 8.0,
+      "beat": "BOOKEND - it settles back and becomes 'rock' again. Rhymes with S01.",
+      "still_prompt": "A huge armoured placoderm settling back down onto a silty Devonian seabed, silt drifting over its bony plates until it reads as a low ridge of rock again, small fish returning to drift past it, cold teal gloom, wide shot",
+      "i2v_prompt": "the animal settles onto the seabed and goes completely still, silt drifts over and across it, small fish drift back into frame, camera perfectly still"
+    }
+  ]
+}
