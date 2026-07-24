@@ -12,17 +12,42 @@ cd /Users/jefflawrence/Documents/youtube-automation-production
 venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py          # expect ALL 15 PASS
 venv/bin/python research/wildbirdsurvival_teardown/gen_clip_ledger.py --next 3   # status + next shots
 ```
-1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST.** It has the proven browser recipe — including the one
-   incantation that actually attaches a seed (`computer{key, text:"cmd+v"}`; the `modifiers` form
-   just types a literal "v") — and the four dead ends not to retry.
-2. **Generate the one missing seed, S035** — `EP02_OPEN_SEEDS.md`, ~10 min. It is the only shot
-   whose seed still cannot deliver its prompt.
-3. **The clip grind — 87 shots left.** Work the ledger, not memory. Frame-strip every clip; a shot
-   is not done until `<ID>_strip.jpg` exists AND you have looked at it. The seed-vs-prompt audit is
-   already done, so a shot that now fails is a *generation* problem (re-roll), not a plan problem.
-   Re-run `assemble_ep02.py` whenever you want to watch progress in context.
-4. Music bed (one Pixabay track, hygiene only — but it must peak **before** the 50 % mark to pass the
-   last style gate) → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
+> ⛔ **THE ACCOUNT HIT ITS MONTHLY SPEND LIMIT (2026-07-23).** Ten subagents died on it mid-run.
+> **No further multi-agent work is possible until it is raised** (claude.ai → Settings → Usage).
+> Everything below is doable directly; only the 14 remaining crops and the S002-family prompt
+> repairs wanted more agent time.
+
+1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST** — especially the five-step block at the top. Step 1
+   (pre-crop the seed) is the difference between S004 take 1 being rejected and take 2 accepted.
+2. **The clip grind — 86 shots left.** Work the ledger, not memory. For each shot:
+   crop its seed with `preview_crop.py` using its **`seed_crop`** field → paste → prompt →
+   720p/6s → download → **frame-strip and LOOK** → set **`clip_in`** to the window that holds the
+   beat. Re-run `assemble_ep02.py` any time to watch progress in context.
+3. Music bed (one Pixabay track, hygiene only — but it must peak **before** the 50 % mark to pass
+   the last style gate) → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
+
+### Crop coverage: 74 of 88 shots are ready to shoot
+- **67** have a verified-distinct `seed_crop`; **7** correctly use the full seed
+  (S003, S016, S021, S044, S045, S054, S061).
+- **14 still need a crop** — S008, S011, S023, S024, S029, S037, S043, S046, S050, S067, S068,
+  S080, S082, S087. Candidate boxes exist for most in `ep02_precrop_plan.json`, but each was
+  rejected for duplicating another shot on the same seed, so each needs a genuinely different
+  region or scale. Check any new box with:
+  ```bash
+  venv/bin/python research/wildbirdsurvival_teardown/gate_crop_distinct.py   # expect 0 conflicts
+  ```
+- **Do not skip the distinctness gate.** Blanket-applying the unverified crops introduced 14
+  too-alike pairs, 3 of them adjacent in time (S066/S068 are 4 s apart at IoU 0.85) — the exact
+  glitchy-loop failure that got `rough_cut_v1` rejected.
+
+### Still open from the wet-stain re-check
+`ep02_wetstain_recheck.json` holds 18 proposed rewrites for blood shots on the two wet-stain
+seeds. **None are applied** — the verifiers contested all 18 with 13–21 specific issues each, and
+the issues are real (on S002 the rewrite banned all head movement then licensed "one foot re-grips
+the rock" for the feeding bird, which is mechanically a head displacement). They need a repair
+pass, and that pass should run AFTER the crops, because several issues are framing overclaims that
+only exist while prompts are written against uncropped seeds. **S002's `action` field and its SFX
+cue also need a companion edit if its prompt is swapped**, or the manifest and prompt will disagree.
 
 **Decisions already made — don't re-litigate:** thumbnail = **ALT**; VO speed = **0.95** (settled by
 measurement, see below).
