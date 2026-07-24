@@ -16,6 +16,13 @@ DaVinci-as-assembler era) are archived at `archive/CLAUDE_archive_2026-06-01.md`
    `pipeline_v2/` or `scripts/`. If the user says "you're inventing," stop and find it.
 4. **SHORT SESSIONS** — past ~2h or 2 major decisions, recommend a fresh session.
 5. Use `venv/bin/python` (not system python). Always commit + push when work lands.
+6. **SUBJECT LOCK** — the creature/topic the owner names or shows IS the subject. Never
+   substitute it (e.g. because related assets exist in the repo). Before ANY credit
+   spend: state the subject in one line, get a yes, lock ONE approved seed image, and
+   generate every clip as i2v from that seed. (Dunkleosteus-for-Spinosaurus burn, 2026-07-23.)
+7. **LOOK BEFORE YOU REPORT** — judge a render on a dense contact sheet (same creature
+   every shot? title claim un-contradicted? story happens?) before citing any metric.
+   Green gates on a bad video = a failed report.
 
 ## ⚠️ Tool Policy (FFmpeg is the engine — DaVinci is optional)
 1. **FFmpeg = the assembly/render engine.** `scripts/ffmpeg_production_render.py` builds
