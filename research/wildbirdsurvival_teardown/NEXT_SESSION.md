@@ -1,13 +1,48 @@
 # NEXT SESSION — Wild Bird Survival clone · Episode 02 (vampire finch)
-_Last updated 2026-07-24 (session 6). This supersedes all earlier handoffs._
+_Last updated 2026-07-24 (session 8). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**15/88 clips done (S001–S015), 83/88 shootable. The grind loop is proven at scale — 10 clips
-landed in one session incl. the S008 12s two-gen build and the S011 14.9s 3-gen chain-reseed.
-Read the SESSION-6 ADDENDUM at the top of `EP02_GROK_GRIND_RECIPE.md` before generating
-anything — the 10s pill + head-arc + conform rules there now drive most accept/reject calls.
-Remaining: owner's Chrome click for the last 5 seeds, 73 clips (S016's 34.6s XCU is next and
-needs a fresh session), music bed, assemble, one AMBER pass on S008.**
+**23/88 clips done (S001–S023 complete, no gaps). S016's 34.6s XCU is DONE — 8-link chain
+assembled to clips/S016.mp4 (dissolves verified, renderer owns the 100→108% push). Ledger
+resumes at S024. Remaining: 65 clips, music bed, AMBER pass on S008 (ship gate; S016's mark
+held compact — AMBER there optional), assemble, gate_style_wbs 11/11, owner watch.**
+
+## ⚠️ SESSION-8 STATUS (2026-07-24 afternoon) — read before generating
+- **S016 DONE.** Rolled gens 6–16 (7 accepts / 11 rolls = 64%). THE FINDING: trailing
+  micro-phrases that re-pin the SEATED BILL ("The bill stays buried in the parted feathers…")
+  ran 5/7 full-seat; stillness-flavored trailers (light/feathers/air) lifted 2/2 at ~1.7s.
+  Chain = link01 (4.05s legacy) + links02–08 (5.5s harvests of full-seat gens, 0.25–5.75).
+  Assembly used the EVEN-SEGMENT plan (link01 full + links02-08 @4.864s each, 7×0.5s
+  dissolves = exactly 34.60s) to avoid a stub tail segment — NOT the naive trim-the-tail.
+- **Dry-respec (failure-verb cueing) generalized to 3 more shots this session:** S017 (t1
+  gore-vocab minted red at the bill by 1.7s → dry rust-brown respec accepted t2 first roll),
+  S019 (pre-applied before any take on the S016 precedent — same A2 seed + bill-parked
+  structure — accepted t1), and the pattern held. **Rule now: bill-parked-on-mark + gore vocab
+  = pre-apply the dry respec, don't burn the take.** Canonical DRY rider stays for
+  no-contact shots (S018 held perfectly with it).
+- **S018 pin-repair precedent:** the grey shaft fragment inside the stain animated into a 2nd
+  fly on t1 — "never becoming an insect" pin killed it on t2. Name-and-pin ANY creature-like
+  debris in macro frames.
+- **S023 WS lesson (extends S003):** the number-of-birds clause ("exactly four birds in every
+  frame, no new bird ever enters or appears") reduced but did NOT eliminate finch intrusions
+  on busy lava texture — t1 added a walker by 1.0s, t2 by 3.4s; t3's intruder rendered as a
+  STATIC inert lump (= acceptable, reads as terrain). Walking extras = reject; static lump =
+  acceptable-with-note. Booby-profile pin ("keeps its head in relaxed left profile and never
+  turns its face toward the camera") worked 2/2.
+- **S020/S022 accepts:** S020 eased out to its assigned MS (reads as documentary reveal;
+  clip_in=1.5 past the ease). S022 = the 10s-pill recipe's 3rd proof: full tick-pull arc in
+  ONE 10s gen, native 8.0s window clip_in=1.5, no conform.
+- **Browser gotchas added this session:** (1) in-page waits ≥45s hit the CDP timeout — cap
+  polls at ~38s; (2) the Chrome window GEOMETRY can flip between wide (1568×613, composer
+  ~(700,562), pills y≈586, submit (1046,586)) and tall (1132×1086, composer ~(690,997), pills
+  y≈1038) — screenshot after navigation when clicks no-op; (3) a paste no-op with a good
+  clipboard usually means the MCP tab went HIDDEN (check `document.visibilityState` — front by
+  explicit window index: `set active tab index of window N` + `set index of window N to 1`;
+  the loop-variable AppleScript can silently fail); (4) frame0-vs-seed diff >8 on BUSY WS
+  textures can be compression noise — verify visually before calling it unseeded (S023 at
+  9.87 was seeded).
+- Take history: accepted full gens in `clips/S016_work/`; per-shot takes in `clips/takes/`;
+  rejects with strips in `clips/rejected/`.
 
 ## ⚠️ SESSION-6 STATUS (2026-07-24)
 - **S029's seed LANDED**: Chrome's fresh-restart allowance gave ONE free download;
