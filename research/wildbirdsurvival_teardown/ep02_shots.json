@@ -414,12 +414,14 @@
    "vantage": "macro LEVEL WITH THE FEATHER SURFACE, from in front of the wing looking down the shaft of the feather",
    "action": "THE PIVOT. The beak jabs at the base of a growing flight feather, the skin parts, and a small compact dark red mark appears at the quill base.",
    "seed": "hero_still_A2_macro_finch_wound.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Tight telephoto macro, hard side-on with the lens level with the seabird's flank at the leading edge of the folded wing: the frame is filled by the white down of a Nazca booby on the left and the head and shoulder of a single small black vampire ground finch on the right, the finch in near-profile facing left with its blunt seed-cracking beak worked into the parted white down at the base of a growing flight feather where the down meets the dark folded wing, a compact dark red mark already matted into the barbs where the beak enters. The finch drives its beak into the feather base twice in short dry jabs and then holds it there, the white barbs parting and springing back around the beak, its throat working once; the seabird's flank rises and falls slowly and its head stays out of frame. Camera locked off at feather level with a faint handheld breath, shallow telephoto depth of field, no push-in, no zoom, no camera move, no cutaway. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging \u2014 one finch only. A DRY matted red bloodstain that does NOT drip, stretch, run, elongate or form any thread/string; the red mark and the fine red streak already on the down stay rigid, fixed in size and shape, and completely still while the birds move \u2014 no new blood appears, nothing flows, nothing lengthens.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Tight telephoto macro, hard side-on with the lens level with the seabird's flank at the leading edge of the folded wing: the frame is filled by the white down of a Nazca booby on the left and the head and shoulder of a single small black vampire ground finch on the right, the finch in near-profile facing left with its blunt seed-cracking beak worked into the parted white down at the base of a growing flight feather where the down meets the dark folded wing, a small patch of dark rust-brown matting already set into the barbs where the beak enters, old and dry, part of the feathers themselves. The finch drives its beak into the feather base twice in short dry jabs and then holds it there, the white barbs parting and springing back around the beak, its throat working once; the seabird's flank rises and falls slowly and its head stays out of frame. Camera locked off at feather level with a faint handheld breath, shallow telephoto depth of field, no push-in, no zoom, no camera move, no cutaway. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging \u2014 one finch only. The small patch of matting and the fine dry wisp below it stay rigid, fixed in size, shape and colour, part of the feathers themselves, in every frame, and everything at the beak stays dry, matte and unchanged from the first frame to the last.",
    "physics_risk": "high",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT4",
    "orig_id": "S045",
-   "seed_crop": "330,120,610,343"
+   "seed_crop": "330,120,610,343",
+   "coverage_note": "DRY RESPEC PRE-APPLIED (2026-07-24, session-8 rule): bill-worked-into-mark + jabs on the A2 seed = the proven failure-verb-cueing structure (S016 2/2 fail w/ gore vocab, 9/9 hold dry; S017/S019 same-day). Gore vocab + rider wall replaced with rust-brown matting + dry-wisp pin; has_blood->false. T1 ACCEPTED (dry prompt, first roll): mark+wisp pixel-fixed all 9 frames, jab rhythm with re-seat at 4.4, one finch, locked framing. clip_in=0.25. Dry pattern 5/5 on sustained-contact shots.",
+   "clip_in": 0.25
   },
   {
    "id": "S025",
@@ -435,7 +437,9 @@
    "has_blood": false,
    "act": "ACT4",
    "orig_id": "S046",
-   "seed_crop": "225,193,960,540"
+   "seed_crop": "225,193,960,540",
+   "clip_in": 0.25,
+   "coverage_note": "T1 ACCEPTED (first roll): one clean nictitating sweep 1.0-2.4, flinch as small reframe ~3.0, freeze after; never head-on; seed flies persist naturally. clip_in=0.25 (sweep lands mid-window of the 3s slot)."
   },
   {
    "id": "S026",
