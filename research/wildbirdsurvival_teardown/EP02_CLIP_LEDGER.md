@@ -28,10 +28,10 @@ without its strip is reported as unfinished on purpose.
 | `S005` | 6.8-12.6s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S006` | 12.6-19.7s | XCU | `SEED_macro_tail_high.png` | yes |
 | `S007` | 19.7-25.2s | MS | `hero_still_A_booby_finch.png` | yes |
-| `S008` | 25.2-37.2s | MS | `hero_still_A_booby_finch.png` | yes |
+| `S008` | 25.2-37.2s | MS | `SEED_crane_flank.png` | yes |
 | `S009` | 37.2-39s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S010` | 39-48.4s | CU | `SEED_raw_wound.png` | yes |
-| `S011` | 48.4-63.3s | MS | `hero_still_A_booby_finch.png` | yes |
+| `S011` | 48.4-63.3s | MS | `SEED_booby_rear_sea_stain.png` | yes |
 | `S012` | 63.3-72s | CU | `SEED_finch_portrait_redtip.png` | yes |
 | `S013` | 72-80s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S014` | 80-88s | MS | `hero_still_A_booby_finch.png` | yes |
@@ -100,7 +100,7 @@ without its strip is reported as unfinished on purpose.
 | `S077` | 409.3-411.1s | CU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S078` | 411.1-412.9s | CU | `hero_still_B_egg_nest.png` |  |
 | `S079` | 412.9-414.7s | MS | `hero_still_B_egg_nest.png` |  |
-| `S080` | 414.7-416.5s | WS | `hero_still_A_booby_finch.png` | yes |
+| `S080` | 414.7-416.5s | WS | `SEED_swarm_six.png` | yes |
 | `S081` | 416.5-418.5s | CU | `hero_still_A_booby_finch.png` | yes |
 | `S082` | 418.5-429.5s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S083` | 429.5-440.0s | WS | `SEED_wide_booby_clear.png` |  |
