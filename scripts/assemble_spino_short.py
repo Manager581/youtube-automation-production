@@ -30,13 +30,23 @@ SFX = os.path.join(REPO, "assets", "sfx")
 W, H, FPS = 720, 1280, 24
 
 # act: "bank" (above water, full band) | "under" (lowpass ~800Hz)
+# `hole` = seconds into the TRIMMED segment where a payoff lands; the mix ducks
+# to near-silence for 0.8 s before it and lifts on the hit.
+# gain = per-clip level match (native audio measured -29.3 / -52.2 / -40.1 LUFS)
 EDIT = [
-    dict(id="SPINO_S01_reveal", act="bank",  tin=0.3, tout=8.0,
-         note="WORLD -> REVEAL. Sandbar lifts. Locked off, low."),
-    dict(id="SP_B02_wade_sail", act="bank",  tin=0.0, tout=9.0,
-         note="Wades away, gets smaller. Locked off."),
-    dict(id="SP_B05_hero",      act="under", tin=0.0, tout=10.0,
+    dict(id="SPINO_S01_reveal", act="bank",  tin=0.3, tout=7.6, gain=1.0,
+         hole=5.6, hit="underwater/impact_uw.wav",
+         note="WORLD -> REVEAL. Sandbar lifts and becomes the animal."),
+    dict(id="SP_B02_wade_sail", act="bank",  tin=0.5, tout=8.5, gain=6.0,
+         note="THE LULL. Wades away, shrinking. Stays quiet."),
+    dict(id="SP_B05_hero",      act="under", tin=0.0, tout=9.5, gain=2.5,
+         hole=6.5, hit="underwater/rumble_bed_uw.wav",
          note="HERO. Eye level, head-on, fills frame. The attachment shot."),
+    dict(id="SP_B07_threat",    act="under", tin=1.5, tout=9.5, gain=3.0,
+         note="THE THREAT. A far larger shape passes behind it."),
+    dict(id="SP_B08_strike",    act="under", tin=0.0, tout=9.0, gain=2.0,
+         hole=1.8, hit="underwater/impact_uw.wav",
+         note="THE STRIKE. Contact hidden in the silt cloud. Dark."),
 ]
 
 
@@ -79,16 +89,38 @@ def main():
                  "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
                  v, "-loglevel", "error"])
 
-            # audio: keep native, normalise to a common level, apply the act's filter
+            # audio: keep the NATIVE clip sound. Per-clip gain only (measured
+            # levels differ by ~23 dB), the act's filter, and the hole/impact
+            # automation. Deliberately NOT loudnorm-per-segment -- that levels
+            # every shot to the same loudness and is what killed the dynamics.
             a = os.path.join(tmp, f"a{i}.wav")
-            af = "loudnorm=I=-20:TP=-2:LRA=11"
+            af = f"volume={e.get('gain', 1.0)}"
             if e["act"] == "under":
                 af += ",lowpass=f=800,bass=g=4:f=90"      # the underwater filter
             else:
                 af += ",highpass=f=45"
+            # THE HOLE: duck hard for 0.9 s before a payoff so the hit has
+            # something to land against. Reference measures -42.7 dB holes
+            # against -12 dB peaks = a 30 dB swing.
+            hole = e.get("hole")
+            if hole is not None:
+                h0 = max(hole - 0.9, 0.0)
+                af += f",volume=enable='between(t,{h0},{hole})':volume=0.06"
             run(["ffmpeg", "-y", "-ss", str(e["tin"]), "-i", src, "-t", str(dur),
                  "-vn", "-af", af, "-ar", "48000", "-ac", "2",
                  a, "-loglevel", "error"])
+
+            # THE HIT: a real impact on the payoff frame, so the peak is genuine
+            hit = e.get("hit")
+            if hole is not None and hit and os.path.exists(os.path.join(SFX, hit)):
+                a2 = os.path.join(tmp, f"a{i}h.wav")
+                run(["ffmpeg", "-y", "-i", a, "-i", os.path.join(SFX, hit),
+                     "-filter_complex",
+                     (f"[1:a]volume=1.0,adelay={int(hole*1000)}|{int(hole*1000)}[h];"
+                      f"[0:a][h]amix=inputs=2:duration=first:normalize=0[a]"),
+                     "-map", "[a]", "-ar", "48000", "-ac", "2",
+                     a2, "-loglevel", "error"])
+                a = a2
 
             seg = os.path.join(tmp, f"s{i}.mp4")
             run(["ffmpeg", "-y", "-i", v, "-i", a, "-map", "0:v", "-map", "1:a",
