@@ -133,10 +133,25 @@ def build_audio(tmp, music):
     chain = ";".join(filters) + ";" + "".join(mixed) + f"amix=inputs={n}:normalize=0[vo]"
     last = "[vo]"
     if music and os.path.exists(music):
-        inputs += ["-i", music]
+        # Loop the bed for the full runtime (a ~2 min track played once dies a
+        # quarter of the way in), then shape it: near-silent under the cold open
+        # (the reference's pad enters ~7 s), full through the ACT3 reveal, and a
+        # -4 dB step after 240 s so the music peak PROVABLY lands before the 50%
+        # mark (hard style gate), with a fade into the closing wind tail.
+        env = ("if(lt(t,7),0.12,"
+               "if(lt(t,15),0.12+(t-7)*0.11,"
+               "if(lt(t,240),1.0,"
+               "if(lt(t,260),1.0-(t-240)*0.0185,"
+               "if(lt(t,460),0.63,0.63*max(480-t\\,0)/20)))))")
+        # Start the loop 75 s into the track: its quiet tail/head seam otherwise
+        # lands as ~30 s of dead air under the S016 hero hold (100-135 s); offset,
+        # the strong plateau carries the hold and the peak still lands < 50%.
+        off = 75
+        inputs += ["-stream_loop", "-1", "-i", music]
         chain += (f";[{n}:a]aformat=sample_fmts=fltp:sample_rates=48000:"
                   f"channel_layouts=stereo,volume=-19dB,"
-                  f"atrim=0:{RUNTIME},asetpts=PTS-STARTPTS[mus]"
+                  f"atrim={off}:{off + RUNTIME},asetpts=PTS-STARTPTS,"
+                  f"volume=eval=frame:volume='{env}'[mus]"
                   f";[vo][mus]amix=inputs=2:normalize=0:duration=first[mixout]")
         last = "[mixout]"
     # The mix ends at its last sample (the final VO block lands ~471.5 s), and -t
