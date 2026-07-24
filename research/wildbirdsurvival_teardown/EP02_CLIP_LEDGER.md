@@ -1,7 +1,7 @@
 # EP02 — CLIP LEDGER (generated)
 _Auto-generated from `ep02_shots.json` by `gen_clip_ledger.py`. Do not hand-edit — re-run it._
 
-**5 / 88 clips done · 0 awaiting frame-strip · 83 still to generate.**
+**14 / 88 clips done · 0 awaiting frame-strip · 74 still to generate.**
 
 A shot counts as done only when BOTH `<ID>.mp4` and `<ID>_strip.jpg` exist in
 `assets/vampire_finch/clips/` — frame-stripping every clip is mandatory, so a clip
@@ -11,9 +11,9 @@ without its strip is reported as unfinished on purpose.
 | Act | Done | Total |
 |---|---:|---:|
 | ACT1 | 4 | 4 |
-| ACT1b | 1 | 6 |
-| ACT1c | 0 | 1 |
-| ACT2 | 0 | 4 |
+| ACT1b | 6 | 6 |
+| ACT1c | 1 | 1 |
+| ACT2 | 3 | 4 |
 | ACT3 | 0 | 4 |
 | ACT4 | 0 | 24 |
 | ACT5 | 0 | 13 |
@@ -23,15 +23,6 @@ without its strip is reported as unfinished on purpose.
 ## Remaining shots (in timeline order)
 | Shot | In-Out | Size | Seed | Blood |
 |---|---|---|---|---|
-| `S006` | 12.6-19.7s | XCU | `SEED_macro_tail_high.png` | yes |
-| `S007` | 19.7-25.2s | MS | `hero_still_A_booby_finch.png` | yes |
-| `S008` | 25.2-37.2s | MS | `SEED_crane_flank.png` | yes |
-| `S009` | 37.2-39s | MS | `hero_still_A_booby_finch.png` | yes |
-| `S010` | 39-48.4s | CU | `SEED_raw_wound.png` | yes |
-| `S011` | 48.4-63.3s | MS | `SEED_booby_rear_sea_stain.png` | yes |
-| `S012` | 63.3-72s | CU | `SEED_finch_portrait_redtip.png` | yes |
-| `S013` | 72-80s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
-| `S014` | 80-88s | MS | `hero_still_A_booby_finch.png` | yes |
 | `S015` | 88-100s | CU | `still_booby_eye.png` |  |
 | `S016` | 100-134.6s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S017` | 134.6-138.1s | CU | `SEED_macro_tail.png` | yes |
@@ -46,7 +37,7 @@ without its strip is reported as unfinished on purpose.
 | `S026` | 173-177.5s | XCU | `SEED_raw_wound.png` | yes |
 | `S027` | 177.5-185s | CU | `hero_still_A2_macro_finch_wound.png` | yes |
 | `S028` | 185-189s | MS | `SEED_mutualism_clean_C.png` |  |
-| `S029` | 189-192.5s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |
+| `S029` | 189-192.5s | XCU | `SEED_stain_opposed.png` | yes |
 | `S030` | 192.5-196.5s | CU | `SEED_finch_portrait_redtip.png` | yes |
 | `S031` | 196.5-201s | MS | `SEED_spine_two_finch.png` | yes |
 | `S032` | 201-205s | XCU | `hero_still_A2_macro_finch_wound.png` | yes |

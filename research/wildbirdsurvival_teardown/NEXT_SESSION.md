@@ -1,12 +1,30 @@
 # NEXT SESSION — Wild Bird Survival clone · Episode 02 (vampire finch)
-_Last updated 2026-07-23 (FIFTH session of the day). This supersedes all earlier handoffs._
+_Last updated 2026-07-24 (session 6). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Plan COMPLETE and repaired (88 shots, gate 15/15), VO DONE, crops resolved for 82/88 shots,
-all 18 wet-stain prompts repaired, and the grind is MOVING: 5/88 clips done (S001–S005), with
-the browser loop fully debugged (see the SESSION-5 ADDENDUM in `EP02_GROK_GRIND_RECIPE.md` —
-read it first, it supersedes the old browser notes). What remains: ONE owner click to free 6
-seed images stuck in Chrome's download block, 83 clips, one music bed, assemble.**
+**14/88 clips done (S001–S014), 83/88 shootable. The grind loop is proven at scale — 9 clips
+landed in one session incl. the S008 12s two-gen build and the S011 14.9s 3-gen chain-reseed.
+Read the SESSION-6 ADDENDUM at the top of `EP02_GROK_GRIND_RECIPE.md` before generating
+anything — the 10s pill + head-arc + conform rules there now drive most accept/reject calls.
+Remaining: owner's Chrome click for the last 5 seeds, 74 clips (S016's 34.6s XCU is next and
+needs a fresh session), music bed, assemble, one AMBER pass on S008.**
+
+## ⚠️ SESSION-6 STATUS (2026-07-24)
+- **S029's seed LANDED**: Chrome's fresh-restart allowance gave ONE free download;
+  `SEED_stain_opposed.png` was QA'd (2 finches opposed, dry stain, correct grade) and S029 was
+  retargeted via apply_defect_edits (seed + vantage + two-finch-opposed prompt). Gates 15/15.
+- **The other 5 seeds are still blocked** (S046, S050, S067, S068, S082): the owner click
+  "Always allow downloads from chatgpt.com" has NOT happened. The 5 remain the last 6
+  generations in the "Nature Documentary Stills" thread (drain recipe unchanged, alt-text map
+  in the batch2 doc). One free download per Chrome RESTART exists if the click never happens.
+- **Accepted this session**: S006 (t1), S007 (t4 best-of-4), S008 (2-gen build, AMBER PENDING —
+  see its coverage_note: masked-crop stabilization of the mark region is a SHIP GATE),
+  S009 (t1), S010 (t1), S011 (3-gen chain, all t1), S012 (t2 conformed), S013 (t2 ramped),
+  S014 (t1 conformed). All strips reviewed frame-by-frame; verdicts + windows live in each
+  shot's coverage_note; take history in clips/rejected/.
+- **NEXT SHOT: S016 — the 34.6s ACT3 XCU hold.** It needs its own chain/loop plan (5-6 gens or
+  chain-reseed) — do NOT start it at the end of a long session. S015 (12s eye CU) can be ONE
+  10s gen conformed 0.83x (slow blink reads better) — supersedes its two-gen blink-cut note.
 
 ### Grind verdicts so far (all frame-stripped)
 - **S002 ACCEPTED take 1** on the repaired pin-prompt, `clip_in=0.6` (stain stable through the

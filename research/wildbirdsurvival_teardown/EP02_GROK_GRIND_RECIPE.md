@@ -2,6 +2,58 @@
 
 _Written 2026-07-23 after proving one clip end-to-end. Every step below was executed, not assumed._
 
+## ⚡⚡ SESSION-6 ADDENDUM (2026-07-24, 14/88 done — supersedes where it conflicts)
+
+**1. THE 10s PILL EXISTS and is the right call for every slot > 6.04s.** The 6s pill silently
+flipped to 10s once (S012 t1) — check the pill in its OWN batch before the submit click, never
+in the same batch (the zoom screenshot arrives after the click has already fired). A 10s gen is
+1264×720, 10.04s, 241 frames. For 6.04-cap slots: S012 (8.7s) and S014 (8.0s) each shipped from
+ONE 10s gen — native trim or a mild ≤1.43x minterpolate conform of the clean window — replacing
+their planned two-gen joins. S015's blink-cut note is likewise superseded (one 10s gen at
+~0.83x). Conform recipe: `trim=0:T,setpts=F*PTS,minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:
+vsbmc=1` + `tpad=stop_mode=clone` to clear the slot (container rounds to whole frames).
+
+**2. THE HEAD-ARC RULE (cost 3 takes on S007, confirmed on S008×3 and S014).** Any booby head
+arc that passes NEAR the flank mints red — the approach itself, not contact, is the trigger.
+Wordier "never touches" clauses do NOT stop it; S007 takes 1-3 all ran red on approach. What
+works (t4, ACCEPTED): route the motion UP+FORWARD (gape at the air in front/above), have the
+settle END in the exact starting pose ("head never tucks, never turns back over its shoulder,
+never lowers toward wing or flank"), and add a floor clause ("the dark wing and white flank
+below the mark stay clean black and clean white — no red ever appears on bill/wing/below the
+mark"). Corollary: a seed whose FRAME 1 already has the bill at the wing base (SEED_crane_flank)
+cannot be worded out of it — that's S008, which is why it ships pending AMBER.
+**S014 corollary: even 'stays in profile' decays after ~6.5s on 10s gens — the booby drifts
+face-on in the tail. Plan to ship the early window.**
+
+**3. S008 PATTERN for 12s holds when the seed is contact-cursed:** both halves = the STAY-DOWN
+variant prompt (finches keep positions, "every bird ends the shot in the same place it began"),
+join two count-clean takes at 6.0s on stillness, and book an AMBER/VACE masked-crop pass on the
+mark region across the full 12s as a SHIP GATE (it also erases the red-state jump at the seam).
+Gen-A-style escalation actions (climb up, walk up) broke count 2/2 times on the busy 4-bird
+frame — hard count clauses did not save them.
+
+**4. CHAIN-RESEED IS PROVEN (S011, 14.9s, one unbroken push-in).** gen1 from the seed → gen2
+from gen1's LAST FRAME (`ffmpeg -sseof -0.1 … -frames:v 1`) → gen3 from gen2's. Two 0.167s
+xfades at 5.875/11.75, gen3 trimmed to 3.15s. Identity held across all three gens with zero
+drift. Each continuation prompt starts "Continue this same unbroken telephoto shot from this
+exact frame with no cut…". All three takes were first-try accepts.
+
+**5. Beak-tip red on the finch portrait class (S012):** even with the dry rider the tip mark
+beads into a droplet or migrates into an open bill ("chewing blood") in the BACK HALF of gens.
+The S013-style rider ("a rigid painted mark that moves rigidly with the beak, never beads,
+never elongates, keeps the same size shape and colour in every frame") + bill-closed clause +
+shipping the clean EARLY window via conform is the pattern that landed both S012 and S013.
+The finch also over-rotates "a few degrees toward the lens" into a full face-on 2/2 times —
+if subtlety matters, don't prompt a camera-turn at all.
+
+**6. Clipboard gets clobbered between shots** (something rewrites it with text). Re-run the
+osascript PNG copy IMMEDIATELY before every paste, in the same Bash call as the AppleScript
+front when possible. Verify with `osascript -e 'clipboard info'` if a paste no-ops: text in the
+clipboard = re-copy, don't re-click.
+
+**7. apply_defect_edits.py has NO --help** — any invocation applies whatever `/tmp/batch_*`
+files exist. Write the batch file, run it, `rm -f /tmp/batch_*_out.json` in the same command.
+
 ## ⚡ SESSION-5 ADDENDUM (2026-07-23 night, 5/88 done — read this before the old text)
 
 **The paste requirement is TAB VISIBILITY, nothing else.** The claude-in-chrome MCP tab is
