@@ -491,7 +491,9 @@
    "has_blood": false,
    "act": "ACT4",
    "orig_id": "S050",
-   "seed_crop": "250,300,1000,563"
+   "seed_crop": "250,300,1000,563",
+   "clip_in": 1.7,
+   "coverage_note": "T1 ACCEPTED (first roll): preen 0.3-3.0, hop1 3.7 + hop2 4.4 w/ balance-wings, settle 5.0-5.7; camera follows up-flank (motivated), booby head reveals in profile (not head-on); zero red. clip_in=1.7 for the 4s slot."
   },
   {
    "id": "S029",
@@ -502,11 +504,13 @@
    "vantage": "extreme telephoto macro, hard side-on and level with the booby's white flank at the base of the dark folded wing - white plumage and the dark wing edge fill the whole frame, no seabird head, no horizon, no sky",
    "action": "Bloodied intercut: the stain now wide and matted, two beaks working it from opposite sides. The parasite, plural.",
    "seed": "SEED_stain_opposed.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme telephoto macro, hard side-on and level with a Nazca booby's white flank at the base of its dark folded wing, white plumage and the dark wing edge filling the whole frame, no seabird head, no horizon, no sky: two small black vampire ground finches work the one wide matted rust-brown stain in the parted white down from opposite sides - the left finch standing on the pale lava below the flank with its head up and beak tip in the stained down, the right finch braced higher against the flank with its head down into the same patch - each making small slow rhythmic working pulls with its beak tip, throat pulsing once, their heads a few centimetres apart. Both finches keep their feet planted and their bodies still: neither climbs, hops, steps or changes position, and both beak tips stay inside the stained patch from first frame to last, with nothing at either point of contact stretching, lifting or trailing. The booby's flank rises once with a slow breath; the dark wing feathers above stir once in the wind but the stained down itself never moves in the wind. Camera locked off with a faint handheld breath, no push-in, no zoom, no cut. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging - exactly two finches, no third bird appearing, no other bird. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; the stain stays fixed in size and shape, no new red appears, and the stain itself stays completely still while the birds move.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Extreme telephoto macro, hard side-on and level with a Nazca booby's white flank at the base of its dark folded wing, white plumage and the dark wing edge filling the whole frame, no seabird head, no horizon, no sky: two small black vampire ground finches work the one wide patch of matted rust-brown in the parted white down from opposite sides, the patch old and dry and part of the feathers themselves - the left finch standing on the pale lava below the flank with its head up and beak tip in the matted down, the right finch braced higher against the flank with its head down into the same patch - each making small slow rhythmic working pulls with its beak tip, throat pulsing once, their heads a few centimetres apart. Both finches keep their feet planted and their bodies still: neither climbs, hops, steps or changes position, and both beak tips stay inside the matted patch from first frame to last, with everything at both points of contact staying dry, matte and unchanged. The booby's flank rises once with a slow breath; the dark wing feathers above stir once in the wind but the matted down itself never moves in the wind. Camera locked off with a faint handheld breath, no push-in, no zoom, no cut. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging - exactly two finches, no third bird appearing, no other bird. The one patch of matting keeps exactly the same size, shape, position and colour in every frame, part of the feathers themselves, from the first frame to the last.",
    "physics_risk": "medium",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S051"
+   "orig_id": "S051",
+   "coverage_note": " DRY RESPEC PRE-APPLIED (session-8 rule): dual sustained contact = failure-verb-cueing structure; body failure-verbs + red rider wall stripped, stain->matting nouns; has_blood->false. T1 ACCEPTED (dry prompt, first roll): patch rust-brown/matte all 6s, zero mint, both finches opposed working; right head-lift 1.7 re-seats by 2.35 -> window escapes it. clip_in=2.1 (both-in continuous 2.1-5.6). Dry pattern 7/7.",
+   "clip_in": 2.1
   },
   {
    "id": "S030",
