@@ -1,10 +1,40 @@
 # NEXT SESSION — Wild Bird Survival clone · Episode 02 (vampire finch)
-_Last updated 2026-07-23 (FOURTH session of the day). This supersedes all earlier handoffs._
+_Last updated 2026-07-23 (FIFTH session of the day). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**Packaging DONE, plan COMPLETE (88 shots, gate 15/15), all 23 seeds on disk, and the **VO IS NOW DONE
-AND VERIFIED** (one pass, 37 blocks, split to timecode). What remains is the clip grind (86 shots), one
-music bed, assemble.**
+**Plan COMPLETE and repaired (88 shots, gate 15/15), VO DONE, crops resolved for 82/88 shots,
+all 18 wet-stain prompts repaired, and the grind is MOVING: 5/88 clips done (S001–S005), with
+the browser loop fully debugged (see the SESSION-5 ADDENDUM in `EP02_GROK_GRIND_RECIPE.md` —
+read it first, it supersedes the old browser notes). What remains: ONE owner click to free 6
+seed images stuck in Chrome's download block, 83 clips, one music bed, assemble.**
+
+### Grind verdicts so far (all frame-stripped)
+- **S002 ACCEPTED take 1** on the repaired pin-prompt, `clip_in=0.6` (stain stable through the
+  2.9 s mark; run develops only after 3.7 s, outside the shipped window).
+- **S003 ACCEPTED take 2** after take 1 invented a red pool on the rock and multiplied the
+  finches → fixed by `has_blood=false` + zero red mentions + hard count clause (WS rule, now in
+  the recipe). Apply the same treatment to any other true WIDE before generating it.
+- **S005 ships take 2 as BEST-OF-3** (takes 1/3 rejected: strings / monotonic run). Full-window
+  shots on A2's wet mark can't window-escape; policy = best-of-N + AMBER masked-crop
+  stabilization fallback (note in S005's coverage_note).
+
+## ⚠️ OWNER ACTION NEEDED FIRST (one click, then everything is unblocked)
+Six new seed images (S029, S046, S050, S067, S068, S082) are **generated and waiting in the
+ChatGPT "Nature Documentary Stills" thread**, but Chrome's multiple-automatic-downloads
+protection blocked their downloads (only the first per page session lands; reloads do NOT
+reset the per-origin flag; localhost exfil is CSP-blocked on chatgpt.com exactly like grok.com;
+`navigator.clipboard.write` never completes from automation context).
+**Fix: open chatgpt.com in Chrome, and when the "download multiple files" prompt appears (or via
+the blocked-download icon in the address bar), click "Always allow downloads from chatgpt.com."**
+Then any session can drain all 6 via the fetch→blob→`<a download>` flow (map images by their
+`alt` text: "Birds exa…"=stain_opposed, "Seabird on a"=shimmer_distance, "Focused f"=guano_peck,
+"Textured"=foot_clamp, "Seabird o…"=hold_wide, "Seabird r…"=aftermath_flat — they are the last
+6 generations in the thread). Save to `assets/vampire_finch/` under the names in
+**`EP02_SEED_PROMPTS_BATCH2.md`**, QA each against that file's checklist, then retarget the 6
+shots (seed + prompt respec per the notes in the same file) via `apply_defect_edits.py`.
+- Also FYI: during the failed exfil attempts a macOS dialog "Allow Python to find devices on
+  local networks?" may have been auto-confirmed by a stray Return keystroke. The Python process
+  is dead; revoke in System Settings → Privacy & Security → Local Network if unwanted.
 
 ## ▶️ START HERE (do these in this order)
 ```bash
@@ -12,42 +42,38 @@ cd /Users/jefflawrence/Documents/youtube-automation-production
 venv/bin/python research/wildbirdsurvival_teardown/gate_shots.py          # expect ALL 15 PASS
 venv/bin/python research/wildbirdsurvival_teardown/gen_clip_ledger.py --next 3   # status + next shots
 ```
-> ⛔ **THE ACCOUNT HIT ITS MONTHLY SPEND LIMIT (2026-07-23).** Ten subagents died on it mid-run.
-> **No further multi-agent work is possible until it is raised** (claude.ai → Settings → Usage).
-> Everything below is doable directly; only the 14 remaining crops and the S002-family prompt
-> repairs wanted more agent time.
+1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST** — especially the five-step block at the top.
+2. **The clip grind — 86 shots left, 82 shootable right now.** Work the ledger, not memory.
+   For each shot: crop its seed with `preview_crop.py` using its **`seed_crop`** field → paste →
+   prompt → 720p/6s → download → **frame-strip and LOOK** → set **`clip_in`**. Re-run
+   `assemble_ep02.py` any time to watch progress in context.
+   **Browser gotcha solved this session: the claude-in-chrome MCP tab is usually HIDDEN, which
+   silently breaks focus-dependent APIs. Front it first** (set `document.title='MCPTAB'` via JS,
+   then AppleScript: find the tab by title, `set active tab index` + `set index of w to 1`).
+3. Music bed (one Pixabay track, hygiene only — must peak **before** the 50 % mark) → assemble →
+   `gate_style_wbs.py` 11/11 → owner watch → upload.
 
-1. **READ `EP02_GROK_GRIND_RECIPE.md` FIRST** — especially the five-step block at the top. Step 1
-   (pre-crop the seed) is the difference between S004 take 1 being rejected and take 2 accepted.
-2. **The clip grind — 86 shots left.** Work the ledger, not memory. For each shot:
-   crop its seed with `preview_crop.py` using its **`seed_crop`** field → paste → prompt →
-   720p/6s → download → **frame-strip and LOOK** → set **`clip_in`** to the window that holds the
-   beat. Re-run `assemble_ep02.py` any time to watch progress in context.
-3. Music bed (one Pixabay track, hygiene only — but it must peak **before** the 50 % mark to pass
-   the last style gate) → assemble → `gate_style_wbs.py` 11/11 → owner watch → upload.
+### Crop coverage: 82 of 88 shots are ready to shoot (was 74)
+The 14 missing crops were resolved 2026-07-23 (commits 9912a50 + b1d22bf):
+- **S023, S024, S037, S043, S087** got verified-distinct boxes (S023's verifier-suggested box
+  FAILED the numeric gate vs S039 at IoU 0.848 and was re-derived at 180,250,1200,675).
+- **S011 → `SEED_booby_rear_sea_stain.png`** — a local paint of the flank_stain texture onto the
+  rear-sea seed (redtip precedent). Keeps the chain-reseed blood→beak push-in AND the
+  finch-on-back composition hero_still_A could never deliver (best crop hit IoU 0.97 vs S014).
+- **S080 → `SEED_swarm_six.png` full frame** (six finches to scatter; prompt respec'd to six).
+- **S008 → `SEED_crane_flank.png`** (on disk, QA'd) — craning pose IS frame 1.
+- **S029, S046, S050, S067, S068, S082 → the 6 blocked seeds above.** Each was PROVEN
+  un-croppable on its old seed (geometry exhausted or content absent) — see
+  `EP02_SEED_PROMPTS_BATCH2.md` for the per-shot reasoning and the retarget notes.
 
-### Crop coverage: 74 of 88 shots are ready to shoot
-- **67** have a verified-distinct `seed_crop`; **7** correctly use the full seed
-  (S003, S016, S021, S044, S045, S054, S061).
-- **14 still need a crop** — S008, S011, S023, S024, S029, S037, S043, S046, S050, S067, S068,
-  S080, S082, S087. Candidate boxes exist for most in `ep02_precrop_plan.json`, but each was
-  rejected for duplicating another shot on the same seed, so each needs a genuinely different
-  region or scale. Check any new box with:
-  ```bash
-  venv/bin/python research/wildbirdsurvival_teardown/gate_crop_distinct.py   # expect 0 conflicts
-  ```
-- **Do not skip the distinctness gate.** Blanket-applying the unverified crops introduced 14
-  too-alike pairs, 3 of them adjacent in time (S066/S068 are 4 s apart at IoU 0.85) — the exact
-  glitchy-loop failure that got `rough_cut_v1` rejected.
-
-### Still open from the wet-stain re-check
-`ep02_wetstain_recheck.json` holds 18 proposed rewrites for blood shots on the two wet-stain
-seeds. **None are applied** — the verifiers contested all 18 with 13–21 specific issues each, and
-the issues are real (on S002 the rewrite banned all head movement then licensed "one foot re-grips
-the rock" for the feeding bird, which is mechanically a head displacement). They need a repair
-pass, and that pass should run AFTER the crops, because several issues are framing overclaims that
-only exist while prompts are written against uncropped seeds. **S002's `action` field and its SFX
-cue also need a companion edit if its prompt is swapped**, or the manifest and prompt will disagree.
+### Wet-stain re-check: ✅ RESOLVED (2026-07-23, commit b1d22bf)
+All 18 contested rewrites are settled: 4 mooted by seed reassignment (S011/S046/S068/S080),
+14 rewritten fresh against the verifiers' objections and each shot's actual cropped frame 1.
+The repair pattern (use it for any future blood prompt): feeding bird pinned whole-body (S004's
+empirically proven fix), riders name and pin the runnel + filaments already in the seed, wind
+never touches the stain's substrate, frame-1 truth only (no invented props/anatomy/positions),
+no negation lists that re-cue the failure verb, neighbours' beats not stolen (S036's eye stays
+open and static because S037 owns the half-close). S002's action + SFX cue re-pointed to the blink.
 
 **Decisions already made — don't re-litigate:** thumbnail = **ALT**; VO speed = **0.95** (settled by
 measurement, see below).

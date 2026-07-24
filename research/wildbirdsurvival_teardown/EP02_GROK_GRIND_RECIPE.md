@@ -2,6 +2,41 @@
 
 _Written 2026-07-23 after proving one clip end-to-end. Every step below was executed, not assumed._
 
+## ⚡ SESSION-5 ADDENDUM (2026-07-23 night, 5/88 done — read this before the old text)
+
+**The paste requirement is TAB VISIBILITY, nothing else.** The claude-in-chrome MCP tab is
+usually a HIDDEN background tab, and Chrome will not deliver the OS clipboard to a hidden tab —
+that is the entire mystery behind every "first paste no-ops" observation. The reliable loop:
+1. `preview_crop.py` the shot's seed → always feed a **1264×720** PNG; `osascript` it to clipboard.
+2. Navigate the MCP tab to grok.com/imagine, then set `document.title='MCPTAB-GRIND'` via JS.
+3. AppleScript: find the tab by that title → `set active tab index` + `set index of w to 1`
+   (AppleScript tab ids ≠ CDP tabIds — always match by the title marker).
+4. **In ONE `browser_batch` call**: click the composer + `key cmd+v` (no gap for the Claude app
+   to steal focus). Verify the attached blob `<img>` reports exactly 1264×720.
+5. Prompt via execCommand, verify length; check 720p/6s pills (6s can flip to 10s); submit;
+   fetch→blob→`<a download>` (grok.com downloads have not tripped the multi-download flag —
+   keep it that way by staying on fresh /imagine loads between generations).
+- Do NOT use System Events keystrokes or cliclick for this flow: the Claude desktop app
+  re-fronts itself between tool calls, so OS-level input lands in the wrong app.
+
+**WIDE shots: remove ALL blood attention.** S003 take 1 invented a bright red pool ON THE ROCK —
+at WS scale the stain is a sub-visible speck, and the blood rider itself directs the model to
+paint blood it can't see (the S079 mechanism, now proven on a live gen). Fix that shipped:
+`has_blood=false`, zero red mentions, plus a hard count clause ("the number of birds never
+changes — exactly N in every frame"; take 1 also multiplied the finches). Take 2 ACCEPTED.
+
+**A2's wet mark + beak-in-contact + full-window shots = structurally unstable.** S005 needed
+5.8 s of its 6.04 gen; three takes gave pull-back strings / oscillating red / a monotonic run.
+Unlike S002 (ships 2.3 s from the stable early window, clip_in=0.6, ACCEPTED take 1 on the
+repaired pin-prompt), there is no window escape when dur ≈ 6 s. Policy: best-of-N ships with a
+note, and the fallback is an **AMBER/VACE masked-crop stabilization of the mark region**
+(proven pipeline, ~22 min/beat, $0) — not more takes. S005 ships take 2 under this policy.
+
+**The repaired pin-pattern works.** S002 (the shot that killed take 1 last session) was accepted
+on its first take with the new prompt: bill locked all 9 frames, one blink, stain stable through
+the shipped window. When a blood shot fails, fix the PROMPT to pin the feeding bird whole-body
+and name-and-pin the existing streak/filaments — do not re-litigate the seed.
+
 ## ⭐ THE FIVE STEPS THAT ACTUALLY PRODUCE AN ACCEPTED CLIP
 
 Proven on S004, which was **rejected on take 1 and accepted on take 2** — the difference was
