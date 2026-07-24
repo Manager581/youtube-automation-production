@@ -325,12 +325,14 @@
    "vantage": "tight on the finch's head from the flank with the white down thrown far out of focus in the NEAR foreground, camera tilts UP a few degrees with the rising head and racks focus onto the beak",
    "action": "Third insert, wordless \u2014 the act's button. The drinker lifts its head clear of the down; its blunt seed-cracking beak comes into sharp focus with a dark red stain on the tip \u2014 a DRY, matted mark that stays fixed to the beak and does NOT smear, trail, elongate, detach, or change size as the head lifts. One blink, then it turns to look off frame left. Music settles out of the peak, handing straight into ACT4's VO at 145 ('It did not begin as cruelty.').",
    "seed": "hero_still_A2_macro_finch_wound.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Side-on telephoto macro level with the seabird's flank at the base of the wing: one small black vampire ground finch in near-profile facing frame left, its blunt seed-cracking beak already planted in the parted white down at a compact dark red wound, the red already matted into the down and already marking the beak. The finch holds its beak planted in the wound for the entire shot, in unbroken contact, exactly where it starts; it does not lift, pull back, withdraw, or carry its head away from the wound at any point. The only movement is the finch's throat giving one small swallow, one slow blink of its dark eye, and the finch then holding its gaze off frame left; the white down stirs faintly in the wind and the seabird's flank rises once with a slow breath. A second small black finch waits motionless and out of focus at the lower right edge of frame and does not move, feed, or approach. No seabird head in frame. Camera locked off with a faint handheld breath, no push-in, no zoom, no tilt, no rack focus, no camera whip, no cutaway. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging - one drinking finch only. A DRY matted red bloodstain that does NOT drip, stretch, run, spread, lengthen, or detach: the red is painted onto the feathers and onto the beak and stays completely frozen while the birds move, and the fine red strands already present between the wound and the beak tip stay exactly as they are in the first frame, rigid and unchanged, never elongating, swaying, dripping, or growing, because the beak never moves away from the wound.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Side-on telephoto macro level with the seabird's flank at the base of the wing: one small black vampire ground finch in near-profile facing frame left, its blunt seed-cracking beak already planted in the parted white down at a small tuft of dark rust-brown matting, old and dry, part of the feathers themselves, the same dull colour already on the beak tip. The finch holds its beak planted in the parted down for the entire shot, in unbroken contact, exactly where it starts; it does not lift, pull back, withdraw, or carry its head away at any point. The only movement is the finch's throat giving one small swallow, one slow blink of its dark eye, and the finch then holding its gaze off frame left; the white down stirs faintly in the wind and the seabird's flank rises once with a slow breath. A second small black finch waits motionless and out of focus at the lower right edge of frame and does not move, feed, or approach. No seabird head in frame. Camera locked off with a faint handheld breath, no push-in, no zoom, no tilt, no rack focus, no camera whip, no cutaway. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging - one drinking finch only. The small tuft of matting and the fine dry wisps below it are stiff, old, part of the feathers themselves, keeping exactly the same size, shape, position and colour in every frame, and everything at the beak tip stays dry, matte and unchanged from the first frame to the last.",
    "physics_risk": "high",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT3",
    "orig_id": "S033",
-   "seed_crop": "430,70,660,371"
+   "seed_crop": "430,70,660,371",
+   "coverage_note": "DRY RESPEC PRE-APPLIED (2026-07-24, before any take): same A2 seed + bill-parked structure as S016, whose gore-vocab pin prompt minted threads 2/2 while dry language held 9/9; S017 re-proved the mechanism same-day. Old pin-prompt (fine-red-strands wall) replaced with rust-brown matting + 'fine dry wisps' pin, has_blood->false per addendum #8. T1 ACCEPTED (dry prompt, first roll): tuft+wisp pixel-stable all 9 frames, zero new red, beak planted with only natural micro-adjustments, waiter finch + framing held. clip_in=0.25. Dry pattern now 4/4 shots on sustained-contact.",
+   "clip_in": 0.25
   },
   {
    "id": "S020",
@@ -346,7 +348,9 @@
    "has_blood": false,
    "act": "ACT4",
    "orig_id": "S040",
-   "seed_crop": "200,113,1472,828"
+   "seed_crop": "200,113,1472,828",
+   "clip_in": 1.5,
+   "coverage_note": "T1 ACCEPTED (2026-07-24): gen eased out from the tight seed framing to the assigned MS over 0.3-2.4s then held (prompt lacks the no-push-in/no-zoom clauses other shots carry; the ease actually fixes the seed-vs-MS mismatch and reads as a documentary reveal). Beats all present: walk, part, mite speck pulled free ~1.0-3.0, booby calm, zero red. clip_in=1.5 ships the settled window w/ mild residual drift 1.5-2.4."
   },
   {
    "id": "S021",
@@ -361,7 +365,9 @@
    "physics_risk": "medium",
    "has_blood": false,
    "act": "ACT4",
-   "orig_id": "S041"
+   "orig_id": "S041",
+   "clip_in": 0.6,
+   "coverage_note": "T1 ACCEPTED (2026-07-24): aborted-reach beat clean (dip 1.0-2.4 w/ mid-dip half-close, recovery 3.0-3.7, settle), never head-on, finch soft behind, fly specks stable. clip_in=0.6 for the 4.0s slot. The eye-settle-half-closed tail beat rendered as mid-dip half-close instead - story reads identically."
   },
   {
    "id": "S022",
