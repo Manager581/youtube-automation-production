@@ -1,0 +1,152 @@
+[
+ {
+  "n": 1,
+  "start": 0.0,
+  "end": 5.03,
+  "dur": 5.03,
+  "sat_pct": 17.3,
+  "bright_pct": 39.3,
+  "motion": 9.52,
+  "beat": "swamp: camouflaged log reveal"
+ },
+ {
+  "n": 2,
+  "start": 5.03,
+  "end": 8.17,
+  "dur": 3.14,
+  "sat_pct": 16.3,
+  "bright_pct": 41.4,
+  "motion": 7.71,
+  "beat": "swamp: wide low-angle wade"
+ },
+ {
+  "n": 3,
+  "start": 8.17,
+  "end": 12.1,
+  "dur": 3.93,
+  "sat_pct": 19.9,
+  "bright_pct": 44.9,
+  "motion": 6.88,
+  "beat": "swamp: sail-only, moving away"
+ },
+ {
+  "n": 4,
+  "start": 12.1,
+  "end": 14.57,
+  "dur": 2.47,
+  "sat_pct": 19.3,
+  "bright_pct": 45.8,
+  "motion": 34.15,
+  "beat": "FISH CATCH - head thrown vertical"
+ },
+ {
+  "n": 5,
+  "start": 14.57,
+  "end": 17.33,
+  "dur": 2.76,
+  "sat_pct": 12.2,
+  "bright_pct": 54.3,
+  "motion": 14.07,
+  "beat": "sea surface: sail like a shark fin"
+ },
+ {
+  "n": 6,
+  "start": 17.33,
+  "end": 23.8,
+  "dur": 6.47,
+  "sat_pct": 25.2,
+  "bright_pct": 40.1,
+  "motion": 14.35,
+  "beat": "sail close-up, submerging"
+ },
+ {
+  "n": 7,
+  "start": 23.8,
+  "end": 26.87,
+  "dur": 3.07,
+  "sat_pct": 53.4,
+  "bright_pct": 41.9,
+  "motion": 10.64,
+  "beat": "underwater: tail undulation"
+ },
+ {
+  "n": 8,
+  "start": 26.87,
+  "end": 31.77,
+  "dur": 4.9,
+  "sat_pct": 59.3,
+  "bright_pct": 34.0,
+  "motion": 36.05,
+  "beat": "HERO head-on approach + turtle"
+ },
+ {
+  "n": 9,
+  "start": 31.77,
+  "end": 46.87,
+  "dur": 15.1,
+  "sat_pct": 64.7,
+  "bright_pct": 38.3,
+  "motion": 7.66,
+  "beat": "OPEN OCEAN DRIFT (15.1s) -> mosasaur appears 41s, ATTACK 43-46s"
+ },
+ {
+  "n": 10,
+  "start": 46.87,
+  "end": 49.33,
+  "dur": 2.46,
+  "sat_pct": 76.7,
+  "bright_pct": 27.8,
+  "motion": 11.9,
+  "beat": "dragged down, blood cloud"
+ },
+ {
+  "n": 11,
+  "start": 49.33,
+  "end": 52.6,
+  "dur": 3.27,
+  "sat_pct": 30.9,
+  "bright_pct": 35.0,
+  "motion": 29.9,
+  "beat": "surface thrash against rocks"
+ },
+ {
+  "n": 12,
+  "start": 52.6,
+  "end": 56.8,
+  "dur": 4.2,
+  "sat_pct": 38.3,
+  "bright_pct": 21.8,
+  "motion": 12.79,
+  "beat": "surface thrash continues"
+ },
+ {
+  "n": 13,
+  "start": 56.8,
+  "end": 61.53,
+  "dur": 4.73,
+  "sat_pct": 29.6,
+  "bright_pct": 31.0,
+  "motion": 19.85,
+  "beat": "held + shaken at surface"
+ },
+ {
+  "n": 14,
+  "start": 61.53,
+  "end": 65.7,
+  "dur": 4.17,
+  "sat_pct": 26.1,
+  "bright_pct": 38.9,
+  "motion": 10.47,
+  "beat": "final hold, dead"
+ },
+ {
+  "n": 15,
+  "start": 65.7,
+  "end": 70.43,
+  "dur": 4.73,
+  "sat_pct": 31.8,
+  "bright_pct": 7.1,
+  "motion": 0.06,
+  "beat": "BLACK CARD: A FILM BY LYNX (silent)"
+ }
+]
