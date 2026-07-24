@@ -521,12 +521,14 @@
    "vantage": "side-on telephoto at the finch's own eye level, the finch in profile ON the booby's white back, background lava and sky thrown soft",
    "action": "Lands the stat on the word 'blood'. The finch, in profile on the booby's white back, lifts its head once - the very tip of its short blunt beak now carries a dark red mark - and the throat works in a single swallow. A DRY matted dark red stain that does not drip, stretch, run, or thread; the mark stays completely still while the head moves. Blunt seed-beak still reads short and conical.",
    "seed": "SEED_finch_portrait_redtip.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A vampire ground finch in clean side profile on the white back of a large white seabird, the very tip of its short blunt conical beak now marked dark red; it lifts its head once so the red-tipped beak catches the flat light, wind ruffling its black feathers; side-on telephoto at the finch's own eye level, subject isolated against soft grey sky. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. a DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; the stain itself stays completely still while the birds move.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. A vampire ground finch in clean side profile on the white back of a large white seabird, the very tip of its short blunt conical beak carrying a small dark mark; it lifts its head once so the marked beak tip catches the flat light, wind ruffling its black feathers; side-on telephoto at the finch's own eye level, subject isolated against soft grey sky. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. the small dark mark on the beak tip is a rigid painted mark that moves rigidly with the beak, never beads, never elongates, and keeps exactly the same size, shape and colour in every frame; the bill stays closed throughout.",
    "physics_risk": "low",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT4",
    "orig_id": "S052",
-   "seed_crop": "330,125,1040,585"
+   "seed_crop": "330,125,1040,585",
+   "coverage_note": "S012/S013 BEAK-TIP CLASS PATTERN PRE-APPLIED (session-8): rigid-painted-mark rider + bill-closed clause, zero red words (the redtip seed's paint carries the colour as frame-1 truth), has_blood->false; plan = ship the clean EARLY window (tip beads/migrates in BACK half of gens per addendum #5). T1 ACCEPTED: red tip reads STRONG in profile 0.3-1.0 (the match-cut payoff hits at cut-in), then the class's documented over-rotation (now 3/3) holds a natural 3/4 glance with a faint red gape-line to 3.7; mark fades in the back half as documented - outside the window. clip_in=0.25 for the 4s slot.",
+   "clip_in": 0.25
   },
   {
    "id": "S031",

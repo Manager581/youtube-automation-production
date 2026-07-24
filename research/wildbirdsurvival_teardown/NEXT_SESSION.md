@@ -2,10 +2,12 @@
 _Last updated 2026-07-24 (session 8). This supersedes all earlier handoffs._
 
 ## Where we are in one line
-**23/88 clips done (S001–S023 complete, no gaps). S016's 34.6s XCU is DONE — 8-link chain
-assembled to clips/S016.mp4 (dissolves verified, renderer owns the 100→108% push). Ledger
-resumes at S024. Remaining: 65 clips, music bed, AMBER pass on S008 (ship gate; S016's mark
-held compact — AMBER there optional), assemble, gate_style_wbs 11/11, owner watch.**
+**30/88 clips done (S001–S030 complete, no gaps — session 8 landed 15 shots incl. the S016
+34.6s chain). Ledger resumes at S031 (SEED_spine_two_finch, normal single-gen MS). Remaining:
+58 clips, music bed, AMBER pass on S008 (ship gate; S016's mark held — AMBER optional),
+assemble, gate_style_wbs 11/11, owner watch. ACT4 done through S030; pre-apply the dry respec
+on every bill-parked blood shot before rolling (7/7 proof), S013 rigid-tip rider for the
+redtip class (over-rotation now 3/3 — plan the early window).**
 
 ## ⚠️ SESSION-8 STATUS (2026-07-24 afternoon) — read before generating
 - **S016 DONE.** Rolled gens 6–16 (7 accepts / 11 rolls = 64%). THE FINDING: trailing
