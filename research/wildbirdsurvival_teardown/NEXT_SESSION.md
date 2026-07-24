@@ -23,9 +23,21 @@ needs a fresh session), music bed, assemble, one AMBER pass on S008.**
   S014 (t1 conformed), S015 (t1 conformed, frame-1 respec killed the invented-finch risk).
   All strips reviewed frame-by-frame; verdicts + windows live in each shot's coverage_note;
   take history in clips/rejected/.
-- **NEXT SHOT: S016 — the 34.6s ACT3 XCU hold.** It needs its own chain/loop plan (5-6 gens or
-  chain-reseed) — do NOT start it at the end of a long session. S015 (12s eye CU) can be ONE
-  10s gen conformed 0.83x (slow blink reads better) — supersedes its two-gen blink-cut note.
+- **S016 (34.6s ACT3 XCU) — RECIPE PROVEN, 1 of ~9 chain links banked (2026-07-24 session 7).**
+  Five gens burned to crack it: the gore-vocab rider was ITSELF minting the bill-threads
+  (failure-verb cueing — recipe addendum #8); the DRY prompt now in the manifest held a
+  thread-free mark 2/2. Link 1 (gen 5, bill seated 0.25-4.3s) is banked at
+  `clips/S016_chain/S016_link01_seated_0.25-4.3s.mp4`. **START HERE NEXT SESSION: roll the
+  manifest prompt verbatim (6s/720p, vary a trailing micro-phrase), accept bar = bill seated
+  >=4s + count 2 + flank still + mark compact, harvest the seated window, until ~9 links
+  (~38.6s); chain with 0.5s dissolves, trim to 34.60s; renderer applies the 100->108% push.**
+  Expect ~35-50% structural yield per roll. Rejected gens 1-4 in clips/rejected/ with strips.
+- **The 5 blocked seeds are DRAINED (owner clicked allow)** — all QA'd PASS, S046/S050/S067/
+  S068/S082 retargeted (S046 has_blood->false; S050+S067 prompts rewritten from stale
+  placeholders; S068 stain name-and-pinned; S082 vantage fixed). ALL 88 SHOTS SHOOTABLE,
+  33 seeds on disk, 0 to generate.
+- S015 (12s eye CU): DONE — one 10s gen conformed 1.2x after a frame-1 respec (the old prompt's
+  3/4-head + background finch weren't in the crop; the two real mask-flies carry the texture).
 
 ### Grind verdicts so far (all frame-stripped)
 - **S002 ACCEPTED take 1** on the repaired pin-prompt, `clip_in=0.6` (stain stable through the

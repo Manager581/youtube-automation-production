@@ -54,6 +54,25 @@ clipboard = re-copy, don't re-click.
 **7. apply_defect_edits.py has NO --help** — any invocation applies whatever `/tmp/batch_*`
 files exist. Write the batch file, run it, `rm -f /tmp/batch_*_out.json` in the same command.
 
+**8. FAILURE-VERB CUEING (proven on S016, 2026-07-24 — the biggest rider finding so far).**
+On sustained bill-in-contact shots, the DRY-blood rider's forbidden-verb list ("drip, stretch,
+run, thread, string, hang, dangle…") IS what generates the red threads: gens 2-3 with the gore
+rider minted a hanging thread within ~1s (and S005's three takes + S016 gen 1 fit the same
+pattern); gens 4-5 with ALL gore vocabulary removed — the mark described only as "a small patch
+of dark rust-brown matting, old, dry, part of the feathers themselves, keeping exactly the same
+size, shape and colour in every frame" — held a compact thread-free mark BOTH takes. Rule: when
+a blood shot keeps minting motion after one pin-repair take, strip every red/blood/failure-verb
+word and describe the mark as dry matting instead (has_blood->false so the gate doesn't demand
+the rider back). The canonical rider stays correct for shots where the bill is NOT parked on
+the mark. Structure (bill staying seated, count) is an independent per-roll coin flip — judge
+it separately on the strip.
+
+**9. Grok RE-KEYS the post id after submit** — the `/imagine/post/<uuid>` you read right after
+clicking submit can 404 later; the finished video lives under a NEW post id the tab navigates
+to on its own. Always poll `location.pathname` at download time (never the remembered submit
+id), and when a result looks suspicious, verify frame 0 against the fed seed (ImageChops mean
+diff < 8 = same frame; S016 gen 1 verified seeded this way at 7.08).
+
 ## ⚡ SESSION-5 ADDENDUM (2026-07-23 night, 5/88 done — read this before the old text)
 
 **The paste requirement is TAB VISIBILITY, nothing else.** The claude-in-chrome MCP tab is

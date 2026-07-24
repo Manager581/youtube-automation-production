@@ -1,7 +1,7 @@
 # EP02 — SEED SHOPPING LIST (generated)
 _Auto-generated from `ep02_shots.json` by `gen_seed_shopping.py`. Do not hand-edit — re-run it._
 
-**0 base generations + 0 crop/recolor shortcuts still needed; 27 seed(s) already on disk.**
+**0 base generations + 0 crop/recolor shortcuts still needed; 33 seed(s) already on disk.**
 
 The defect pass grew the seed list because several shots' framings were unreachable from their
 assigned seed (Grok i2v begins on the seed's frame 1). Each new seed traces to a seed-capability
@@ -19,9 +19,9 @@ defect an agent grounded by opening the actual PNG. Prompts for the original six
 ## Already on disk
 | Seed | Shots |
 |---|---:|
-| `hero_still_A_booby_finch.png` | 18 |
-| `hero_still_A2_macro_finch_wound.png` | 13 |
-| `hero_still_B_egg_nest.png` | 13 |
+| `hero_still_A_booby_finch.png` | 15 |
+| `hero_still_A2_macro_finch_wound.png` | 12 |
+| `hero_still_B_egg_nest.png` | 12 |
 | `still_booby_eye.png` | 8 |
 | `SEED_wide_booby_clear.png` | 5 |
 | `SEED_macro_tail.png` | 4 |
@@ -29,21 +29,27 @@ defect an agent grounded by opening the actual PNG. Prompts for the original six
 | `SEED_raw_wound.png` | 2 |
 | `SEED_finch_portrait_redtip.png` | 2 |
 | `SEED_swarm_six.png` | 2 |
-| `SEED_finch_portrait.png` | 2 |
 | `SEED_macro_tail_high.png` | 1 |
 | `SEED_crane_flank.png` | 1 |
 | `SEED_booby_rear_sea_stain.png` | 1 |
 | `SEED_flank_stain_top.png` | 1 |
 | `SEED_mutualism_clean_C.png` | 1 |
+| `SEED_stain_opposed.png` | 1 |
 | `SEED_spine_two_finch.png` | 1 |
 | `SEED_booby_rear_sea.png` | 1 |
 | `SEED_foot_grip_dry.png` | 1 |
 | `SEED_booby_from_behind.png` | 1 |
 | `SEED_wide_two_islands.png` | 1 |
 | `SEED_wide_ocean_ots.png` | 1 |
+| `SEED_shimmer_distance.png` | 1 |
 | `SEED_finch_ground.png` | 1 |
 | `SEED_pricklypear_top.png` | 1 |
+| `SEED_finch_portrait.png` | 1 |
+| `SEED_guano_peck.png` | 1 |
 | `SEED_egg_xcu_feet.png` | 1 |
+| `SEED_foot_clamp.png` | 1 |
+| `SEED_hold_wide.png` | 1 |
+| `SEED_aftermath_flat.png` | 1 |
 | `SEED_mutualism_clean_B.png` | 1 |
 | `SEED_flank_stain.png` | 1 |
 
