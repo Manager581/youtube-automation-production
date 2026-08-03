@@ -64,6 +64,11 @@ Next: the six days of creation, one chapter at a time — including the question
 6. Do Genesis 1 and 2 contradict? / light before the sun?
 7. "Where do I start reading the Bible?" (channel-trailer material)
 
+## PILOT BUILD v1 — DONE 2026-08-03
+- VO: `audio/christ_cares/genesis_overview.wav` — Brian/Multilingual v2, ONE pass (3,712 credits; two takes returned for one gen, take2 canonical; takes in `source_takes/`), 274.2s = 146.8 wpm, whisperx 0/671 null-timed.
+- Stills: `assets/christ_cares/genesis_overview/` — 15 files (S01a+S01b are the two IMAGE 1 takes; S01a used). ChatGPT thread "Cinematic Genesis Series" (`chatgpt.com/c/6a70c011-53cc-83ea-b00a-d92f06e50de6`) — REUSE it for future Genesis stills, style is locked in-thread. Faceless gate: 15/15 pass; borderline (dark featureless profiles, owner may veto): S11 Jacob, S13 brothers.
+- Assembly: `scripts/assemble_genesis_pilot.py` → `output/christ_cares_genesis_overview_v1.mp4` (275.2s 1080p30, Ken Burns alternating in/out, paragraph-span timing, no music bed). Contact sheet: `output/genesis_pilot_contact_sheet.png`. Audio mean -25.3 dB / max -3.7 dB.
+
 ## Title/packaging candidates (search-demand-matched)
 - Series: "Genesis Explained — Chapter by Chapter" (deep autocomplete demand, no dominant animated player)
 - This video: "The Book of Genesis: The Complete Account (Animated)" — "full story/full movie" autocomplete family
