@@ -193,8 +193,8 @@ GROK: "The light shafts from the high windows intensify and pour down through dr
 IMAGE: [DOC] + "Inside a dim goat-hair tent at night lit by one oil lamp and one narrow shaft of pale light from the smoke-hole: an aged patriarch lying still under woven blankets, several sons standing as deep-shadow featureless silhouettes, ONE standing son caught in the pale shaft. Real fabric texture, real lamplight falloff. No visible faces anywhere — all figures solid dark shapes."
 GROK: "The shaft of light brightens slowly on the one standing son, lamp flame wavers, dust motes rise; the reclining figure stays completely still; camera locked. All figures remain featureless silhouettes. Sound: lamp flame flutter, night wind on tent cloth, low breathing, no music." [RIDER]
 
-## G046 (~235.5–241.0, XCU) — CROP `doc_tent_blessing` (the lit son's silhouetted hand + staff in the shaft, head excluded, framed below the shoulder; upscale first)
-GROK: "The light on the staff and gripping silhouetted hand pulses slowly brighter, dust orbits in the shaft; the hand stays still; no face or head enters frame. Sound: tent quiet, cloth shifting, no music." [RIDER]
+## G046 (~235.5–241.0, XCU) — CROP `doc_tent_blessing` **respec 2026-08-04: the generated seed has NO staff and the son's hands are folded into the robe — crop = the lit son's torso in the pale shaft, window between his head (ends ~y280) and the patriarch's head (starts ~y652); cut + upscaled in `assets/christ_cares/crops/G046_shaft_torso.png`**
+GROK: "The pale shaft of light pulses slowly brighter on the still dark silhouette, dust orbits in the beam; the figure stays completely still; no face or head enters frame. Sound: tent quiet, cloth shifting, no music." [RIDER]
 
 ## G048 (247.5–253.88, MS) — NEW `doc_scroll_closed`
 IMAGE: [DOC] + "A closed ancient parchment scroll on dark weathered stone in a dim space, one thin line of warm light seeping from its seam catching dust in the air, real parchment fiber texture, deep natural shadow."
