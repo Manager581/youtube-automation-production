@@ -104,9 +104,13 @@ GROK: "The break in the clouds travels, extending the lit path steadily farther 
 IMAGE: [DOC] + "A dark stony field as cold rain begins: one dead bare tree, dark stained earth in the foreground, iron-grey light, rain just starting to speckle the stones. Restrained, sorrowful, real overcast documentary light. No gore, no bodies, no figures."
 GROK: "Rain thickens over the field, water pools slowly in the dark stain, the dead branches sway; camera locked. Sound: rain on stone, wind, distant thunder, no music." [RIDER]
 
-## G022 (110.0–114.5, WS) — NEW `doc_violence_walk` (replaces painterly S06)
+## G022a/G022b (110.0–114.5, WS+MS) — SPLIT per owner 2026-08-04: `doc_violence_walk` + NEW `doc_violence_mob`
+G022a (~110.0–112.2, snap to word onset) — `doc_violence_walk`
 IMAGE: [DOC] + "A lone figure in a dark cloak walking away across a bleak stony plain under an iron sky, rendered as a featureless silhouette, and on the far horizon primitive mudbrick settlements burning with real fire and black smoke columns. War-photography realism, muted, no visible faces."
 GROK: "The figure walks slowly on, the distant fires flicker and the smoke columns lean in the wind; camera locked, long lens. Sound: wind, very distant roar of fire, no music." [RIDER]
+G022b (~112.2–114.5, snap to word onset) — `doc_violence_mob` (owner-locked addition; seed gated 2026-08-04)
+IMAGE: [DOC] + "Night, iron-dark: a mob of men crossing a ridge line as pure solid black featureless silhouettes against a burning orange glow beyond the hill, torches and crude weapons raised, smoke drifting across. War-photography realism, solid black cut-out figures only, zero facial detail, no skin."
+GROK: "The torch-bearing silhouettes stream over the ridge toward the glow, flames gutter in the wind, smoke rolls; camera locked, long lens. All figures stay solid black shapes. Sound: distant shouting, fire crackle, wind, no music." [RIDER]
 
 ## G023 (114.5–118.92, MS) — NEW `doc_burning_horizon` — SURGE
 IMAGE: [DOC] + "Telephoto night-news realism: a distant line of primitive mudbrick settlements burning along a dark horizon, real fire color and drifting ember light, heavy smoke lit from below, heat shimmer. No people at the fires, no figures."
@@ -115,12 +119,16 @@ GROK: "The fires spread visibly wider, smoke thickens and rolls, embers drift up
 ## G024 (118.92–124.0, WS) — DONE: `TEST2_ark_doc.png` — SURGE
 GROK: "The ark rides up a mountainous swell as waves burst against the hull, rain sweeps in sheets, the lamplight in the window holds; camera locked from sea level, spray hits the lens. Sound: roaring sea, rain squall, groaning timber, no music." [RIDER]
 
-## G025 (124.0–~131.3, CU) — CROP `TEST2_ark_doc.png` (lit window + hull; upscale first)
+## G025a/G025b (124.0–~131.3, WS+CU) — SPLIT per owner 2026-08-04: NEW `doc_ark_door_family` + window crop
+G025a (~124.0–127.5, "One family. One door." — snap both cuts to word onsets) — `doc_ark_door_family` (owner-locked addition; seed gated 2026-08-04)
+IMAGE: [DOC] + "Grey pre-storm light: the immense wooden hull of the ark towering at frame right, a single open door high on the hull with a long wooden ramp, a small family of featureless dark silhouetted figures climbing the ramp toward the doorway seen from behind, first heavy raindrops streaking, dark animal shapes already inside the doorway shadow. Documentary realism, muted, no faces."
+GROK: "The small silhouetted family climbs steadily up the ramp toward the open door as rain thickens, cloth whipped by wind; camera locked from below. They stay featureless dark shapes from behind. Sound: rising wind, first rain on timber, distant thunder, no music." [RIDER]
+G025b (~127.5–131.3, "God Himself shuts them in") — CROP `TEST2_ark_doc.png` (lit window + hull; cut+upscaled in `assets/christ_cares/crops/G025_ark_window.png`)
 GROK: "Rain streaks past the small glowing window, water runs down the dark timber, the warm light holds steady; the window stays empty — only warm light inside, no one appears at or behind it. Sound: rain on wood planking, wind gusts, muffled creak, no music." [RIDER]
 
-## G026 (~131.3–~134.1, MS) — NEW `doc_peaks_submerge` — SURGE
-IMAGE: [DOC] + "The last grey mountain summits disappearing beneath a churning storm ocean in heavy rain — real storm-sea footage look, foam surging around drowning rock, no sky visible but low black cloud. No ark, no figures."
-GROK: "The flood surges visibly higher over the summits, foam bursts around the rock, rain drives sideways; camera locked. Sound: ocean roar, driving rain, deep rumble, no music." [RIDER]
+## G026 (~131.3–~134.1, MS) — REPLACED per owner 2026-08-04: `doc_flood_creatures` (dinosaurs in the waves + distant ark; seed gated; `doc_peaks_submerge` stays as fallback) — SURGE
+IMAGE: [DOC] + "A churning storm ocean in heavy rain where the last grey mountain summits are disappearing beneath the swell, and among the waves the huge dark backs and long necks of great sauropod creatures straining above the water, the wooden ark riding the swell small in the far background, low black cloud. Real storm-sea documentary footage look, muted, no human figures."
+GROK: "The great creatures' necks strain above the swell as waves burst over them, the flood rises visibly, rain drives sideways, the distant ark rides on; camera locked. Nothing morphs. Sound: ocean roar, driving rain, deep animal bellows far off, no music." [RIDER]
 
 ## G027 (~134.1–140.36, WS) — NEW `doc_rainbow_calm`
 IMAGE: [DOC] + "A glassy calm sea after a storm under breaking clouds, the wooden ark small on the horizon, a real full rainbow standing in the washed air, soft true post-storm light. No figures."
@@ -158,8 +166,12 @@ GROK: "His robe stirs faintly in the night wind while the stars above shimmer an
 IMAGE: [DOC] + "Pure dense real starfield filling the frame, long-exposure astrophotography, no ground, natural star color variation, fine grain."
 GROK: "Slow parallax drift through the stars, gentle natural twinkle; nothing else moves. Sound: near-silence, faintest deep wind, no music." [RIDER]
 
-## G037 (191.84–196.5, MS) — NEW `doc_ram_thicket`
-IMAGE: [DOC] + "Wildlife-documentary frame at dawn: a ram caught by its horns in a dense thorn thicket on a rocky mountainside, real dawn beams over the ridge, dust in the light, a rough stone altar in shadow behind. No human figures."
+## G037a/G037b (191.84–196.5, WS+MS) — SPLIT per owner 2026-08-04: NEW `doc_knife_raised` + `doc_ram_thicket`
+G037a (~191.84–194.1, "spared on a mountain" — snap to word onset) — `doc_knife_raised` (owner-locked addition; seed gated 2026-08-04)
+IMAGE: [DOC] + "Low against a pale dawn sky on a rocky mountaintop: a robed man in full dark featureless silhouette standing over a rough stone altar, one arm raised high gripping a bronze-age knife in silhouette, a smaller bound figure lying still on the altar as a dark shape only, the first rays breaking over the ridge behind them. No faces, no skin detail, real documentary backlight."
+GROK: "The raised silhouetted arm holds trembling at its peak, robes stir in the wind, the dawn light behind them flares brighter as if interrupting; camera locked. Both figures stay featureless silhouettes; the blade never falls. Sound: wind over rock, a held breath, no music." [RIDER]
+G037b (~194.1–196.5, "when God provides the sacrifice Himself") — `doc_ram_thicket` (RETAKE seed 2026-08-04: ram STANDING, horns caught — the lying-down first take is dead)
+IMAGE: [DOC] + "Wildlife-documentary frame at dawn: a ram STANDING upright on all four legs, caught by its curled horns in a dense thorn thicket on a rocky mountainside, head pulled low by the tangled thorns, legs braced, real dawn beams over the ridge, dust in the light, a rough stone altar in shadow behind. The ram is alive, tense and straining — not lying down. No human figures."
 GROK: "The ram stands caught, its flank heaving with breath, it strains once against the thicket then holds still; the dawn beams intensify; camera locked. Sound: hoof scrape on rock, animal breath, morning wind, no music." [RIDER]
 
 ## G038 (196.5–201.0, WS) — NEW `doc_wrestle_light` (Option A locked)
@@ -207,5 +219,13 @@ GROK G051: "The glow across the pages breathes slowly and settles as sparks thin
 ## G050a–d (260.0–267.0) — word-onset slices of G008/G024/G021/G023 clips. No gens.
 
 ---
-**Gen counts v3:** 24 NEW doc seeds + 3 DONE (TEST1-3) + 4 surviving painterly (S01a, S01b-crop, S05, S14; S10 under review) + crops (G016, G025, G029, G033, G044, G046, G003, G018, G051) → ~50 Grok gens unchanged.
+**Gen counts v4 (owner additions locked 2026-08-04):** 28 doc seeds + 3 TEST + 4 painterly survivors + 9 crops → ~46 remaining Grok gens after the 2026-08-04 session-1 batch.
 **Order:** seeds (fresh doc thread) → faceless gate → crops+upscales → Grok grind (paid tier, ~20/day pacing if standard SuperGrok) → frame-strips → assembler v2 → overlay pass → watch.
+
+**GROK MOTION-PROMPT TRIGGER WORDS (learned 2026-08-04, apply everywhere):** "spiral"/"swirl"
+literalize into glowing rings/vortex VFX inside light beams (G009 take 1 killed for concentric
+halos). Use "drift/rise/stream" for particulates and append "no rings, no halos, no glowing
+shapes form in the light" to any shot with a visible beam. First paste after a grok.com
+navigation silently fails — click composer, paste, VERIFY the chip, paste again if missing,
+THEN type. Downloads: filename = conversation id; Chrome multiple-download block needs the
+owner's one-time Allow.

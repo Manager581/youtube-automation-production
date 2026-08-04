@@ -53,11 +53,11 @@ marked ~ are snap targets, not clock divisions.
 | G019 | 93.0–99.0 | WS | NEW dawn_crack | — |
 | G020 | 99.0–105.16 | MS | NEW light_path | Δ IMAGE += "the path stops partway across the terrain, unlit darkness between its end and the glowing horizon" (gives the motion somewhere to go) |
 | G021 | 105.16–110.0 | CU | NEW dark_rain_field | — |
-| G022 | 110.0–114.5 | WS | S06 | — |
+| G022a/b | 110.0–114.5 | WS+MS | violence_walk + **violence_mob (owner add 2026-08-04)** | split at word onset ~112.2; mob = solid-black torch crowd (people density per owner) |
 | G023 | 114.5–118.92 | MS | **NEW burning_horizon** (replaces crop — v1 crop = 620×60px sliver, unusable) | SURGE shot: fires spread faster, smoke thickens quicker; camera stays restrained |
 | G024 | 118.92–124.0 | WS | S07 | Δ restore FULL rider; SURGE: storm at full violence |
-| G025 | 124.0–~131.3 | CU | CROP S07 window (upscale first) | Δ retimed so "God Himself shuts them in" lands ON the door/window; motion += "the window stays empty — only warm light inside; no one appears at or behind it" |
-| G026 | ~131.3–~134.1 | MS | NEW peaks_submerge | SURGE: real rising-water energy; retimed so "recede... God hangs His bow" plays on G027 |
+| G025a/b | 124.0–~131.3 | WS+CU | **ark_door_family (owner add 2026-08-04)** + CROP window | a: family up the ramp on "One family. One door."; b: window crop on "God Himself shuts them in"; window stays empty |
+| G026 | ~131.3–~134.1 | MS | **flood_creatures (owner replacement 2026-08-04)** — sauropods in the swell + distant ark; peaks_submerge = fallback | SURGE; the channel's dino×flood crossover hook lands here |
 | G027 | ~134.1–140.36 | WS | NEW rainbow_calm | — |
 | G028 | 140.36–146.0 | WS | S08 | — |
 | G029 | 146.0–150.5 | MS | CROP S08 base | SURGE: scattering energy |
@@ -68,7 +68,7 @@ marked ~ are snap targets, not clock divisions.
 | G034 | 173.12–179.0 | WS | S10 | — |
 | G035 | 179.0–185.5 | MS | **NEW he_believed** (closer from-behind robed figure under starfield; v1 crop = 110px figure, unusable) | rim-lit, featureless |
 | G036 | 185.5–191.84 | XCU | NEW starfield_pure | — |
-| G037 | 191.84–196.5 | MS | NEW ram_thicket | Δ motion = static entanglement: "stands caught, flank heaving, strains once then holds still" (no horn/thorn interpenetration) |
+| G037a/b | 191.84–196.5 | WS+MS | **knife_raised (owner add 2026-08-04)** + ram_thicket (STANDING retake) | a: knife over Isaac on "spared on a mountain"; b: ram on "God provides the sacrifice Himself"; both static-strain motion |
 | G038 | 196.5–201.0 | WS | **OWNER GATE #2** (Option A: re-gen seed, opponent = blinding light mass; Option B: S11 + on-screen Gen 32:24 cite) | "inner glow of taller figure" wording DELETED both ways; motion = static strain |
 | G039 | 201.0–205.28 | CU | **NEW clasped_hands** (style block + "two clasped silhouetted hands and forearms locked against a blazing dawn flare — only hands and forearms, no heads, no bodies"; v1 crop cannot exclude the heads) | — |
 | G040 | 205.28–~210.0 | MS | NEW coat_torn | carries "Sold... Enslaved" |
