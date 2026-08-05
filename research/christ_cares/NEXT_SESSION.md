@@ -77,7 +77,19 @@ Owner on standard SuperGrok (720p ONLY — 1080p toast-refuses AND CLEARS the co
 ## RESUME ORDER
 1. ~~Grok grind~~ **DONE 2026-08-05 — all 53 clips banked + frame-strip QA'd, faceless+physics
    gates passed (priority clips G025a/b, G038, G041, G045, G046 got full-res face checks).**
-2. Upscale pass all clips 720p→1080p (test grain survival; Topaz or ffmpeg realesrgan-alt).
+2. ~~Upscale pass~~ **DONE — folded into the assembler: lanczos+unsharp=5:5:0.4 per segment
+   (grain-survival verified on G023; no Topaz/realesrgan needed).**
+2b. **ASSEMBLER v2 + OVERLAY PASS DONE 2026-08-05:** `scripts/assemble_genesis_v2.py`
+   (59 segments, whisperx-snapped cuts, P2+G050 chains as slices, retime-to-fit holds,
+   clip ambience at -12dB under VO) → `output/christ_cares_genesis_v2.mp4` (275.2s 1080p30);
+   `scripts/genesis_overlay_pass.py` (8 verse lower-thirds + NKJV attribution + AI
+   disclosure) → `output/christ_cares_genesis_v2_overlaid.mp4`. Contact sheets + audio
+   spot-checks PASSED (story order, faceless, same-creature, overlays on-shot, VO healthy).
+   **GOTCHAS (cost a 5h hang):** ffmpeg 8.0 DEADLOCKS when a retimed -vf and -af run in one
+   process — split video/audio passes + copy-mux (fixed in the script, with per-call
+   timeouts + a dataless-hydration precheck). ffmpeg 8.0 drawtext: colons break even inside
+   quoted text= — escape as `\:`. Next: owner watches the overlaid cut → music/hymn decision
+   (self-rendered MIDI only) → upload package.
 3. Assembler v2: rewrite `scripts/assemble_genesis_pilot.py` to cut CLIPS with whisperx-snapped
    times (0.3s snap rule + R2 turn-words), P2 + Joseph burst chains, G050a-d word-onset flashes
    (onsets: dinosaurs 261.01, flood 261.89, Cain's wife 263.11, Nephilim 264.43; G050c reuses G021),
