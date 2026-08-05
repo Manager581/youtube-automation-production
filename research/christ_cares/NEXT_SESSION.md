@@ -1,9 +1,12 @@
-# CHRIST CARES — NEXT SESSION HANDOFF (updated 2026-08-04)
+# CHRIST CARES — NEXT SESSION HANDOFF (updated 2026-08-04 ~21:20)
 
-**State:** Style LOCKED = documentary photorealism. Owner on standard SuperGrok (720p ONLY —
-1080p toast-refuses AND CLEARS the composer). 38s direction test delivered
-(`output/christ_cares_direction_test_38s.mp4`). **OWNER VERDICT STILL PENDING — the owner's
-resume message left the verdict placeholder unfilled. The Grok grind is GATED on it.**
+**State:** Style LOCKED = documentary photorealism. **38s direction test APPROVED (owner,
+2026-08-04) — grind UNGATED.** 4 owner additions LOCKED into ledger+book (G022b violence_mob,
+G025a ark_door_family, G026→flood_creatures, G037a knife_raised; burning bush = Exodus ep
+material, parked). **GRIND SESSION 1 COMPLETE: G001–G020 ALL on disk + frame-strip QA'd**
+(20 of ~53 total gens; G009 needed 1 retake — "spiral" wording grew ring-VFX in the beam,
+see trigger-word rule in PROMPT_BOOK_v3). Owner on standard SuperGrok (720p ONLY — 1080p
+toast-refuses AND CLEARS the composer). ~14 sends used evening 2026-08-04.
 
 ## SEED PHASE COMPLETE (2026-08-04)
 - **All 33 doc seeds on disk + faceless-gated:** `assets/christ_cares/doc_seeds/` (30 files)
@@ -61,19 +64,33 @@ resume message left the verdict placeholder unfilled. The Grok grind is GATED on
 - Same-tab multi-downloads work (fetch blob + a.click); one-per-fresh-tab no longer needed.
 
 ## RESUME ORDER
-1. **OWNER GATE: direction-test verdict on `output/christ_cares_direction_test_38s.mp4`** —
-   if changes are ordered, fold into PROMPT_BOOK_v3 before any Grok spend.
-2. Owner eyeballs `genesis_seed_contact_sheet_2026-08-04.png` (incl. the G034/S10 review call).
-3. Grok grind remaining ~43 gens (respect ~20/day cap — 2-3 days; the 7 test clips already
-   exist) → frame-strip EVERY clip (priority: G009, G011, G025, G038, G041, G045, G046) →
-   faceless+physics gate.
-4. Upscale pass all clips 720p→1080p (test grain survival; Topaz or ffmpeg realesrgan-alt).
-5. Assembler v2: rewrite `scripts/assemble_genesis_pilot.py` to cut CLIPS with whisperx-snapped
+1. Grok grind session 2: **START AT G021** (rain_field) and continue in ledger order incl.
+   the owner-addition splits: G021, G022a walk, G022b mob, G023, G024→done, G025a family,
+   G025b window-crop, G026 flood_creatures, G027, G028, G029 crop, G030 … through G051
+   (~33 gens left, ~2 days at cap) → frame-strip EVERY clip (remaining priority: G025a/b,
+   G038, G041, G045, G046) → faceless+physics gate.
+2. Upscale pass all clips 720p→1080p (test grain survival; Topaz or ffmpeg realesrgan-alt).
+3. Assembler v2: rewrite `scripts/assemble_genesis_pilot.py` to cut CLIPS with whisperx-snapped
    times (0.3s snap rule + R2 turn-words), P2 + Joseph burst chains, G050a-d word-onset flashes
-   (onsets: dinosaurs 261.01, flood 261.89, Cain's wife 263.11, Nephilim 264.43; G050c reuses G021).
-6. Overlay pass: verse-reference lower-thirds at the 8 NKJV quotes + attribution card + AI disclosure.
-7. Contact sheet + WATCH before reporting ([[stills-are-seeds-not-film]]; [[watch-output-before-reporting]]).
-8. Music/hymn decision with owner after motion approval (self-rendered MIDI only).
+   (onsets: dinosaurs 261.01, flood 261.89, Cain's wife 263.11, Nephilim 264.43; G050c reuses G021),
+   + the 4 owner-addition splits per ledger v2 rows G022a/b, G025a/b, G026, G037a/b.
+4. Overlay pass: verse-reference lower-thirds at the 8 NKJV quotes + attribution card + AI disclosure.
+5. Contact sheet + WATCH before reporting ([[stills-are-seeds-not-film]]; [[watch-output-before-reporting]]).
+6. Music/hymn decision with owner after motion approval (self-rendered MIDI only).
+
+## GRIND SESSION-1 AUTOMATION LESSONS (2026-08-04 evening — apply in session 2)
+- **Downloads work; no Chrome permission issue** (grok.com + chatgpt.com are in the
+  automatic-downloads allowlist). Morning "block" was stale tab/extension state — a fresh
+  MCP tab fixed it. Download filename = `grok-video-<conversationId>.mp4` → map via
+  `grok_post_registry_2026-08-04.md` (ALWAYS save post URLs WITH ?conversation=; post-only
+  URLs 404 after session end — recover via History sidebar thumbnails).
+- **Narrow window (<~1300px): action panel = top-right toggle → bottom sheet**; download icon
+  bottom-right of the sheet (~1177,873 @1292w). The FIRST toggle/paste after any navigation
+  is often a dud — verify (screenshot/find), retry once, THEN act. NEVER type the motion
+  prompt before the image chip is confirmed (one text-only 9:16 gen fired + was canceled).
+- **Owner-active clipboard etiquette:** pbpaste-backup owner clipboard → load seed PNG →
+  paste → pbcopy-restore owner clipboard. Owner text pasted mid-grind once; cmd+a+Delete
+  cleared it. Two chips can attach on double-paste — hover chip → X removes the dupe.
 
 ## STANDING RULES
 Faceless gate per frame · silhouettes featureless · no golden-hour in doc plates · divine light
