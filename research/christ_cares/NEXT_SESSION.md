@@ -64,7 +64,7 @@ toast-refuses AND CLEARS the composer). ~14 sends used evening 2026-08-04.
 - Same-tab multi-downloads work (fetch blob + a.click); one-per-fresh-tab no longer needed.
 
 ## RESUME ORDER
-1. Grok grind session 2: **START AT G021** (rain_field) and continue in ledger order incl.
+1. Grok grind session 2 CONTINUES: **START AT G023** (burning_horizon; G021+G022a+G022b banked 2026-08-04 late) and continue in ledger order incl.
    the owner-addition splits: G021, G022a walk, G022b mob, G023, G024→done, G025a family,
    G025b window-crop, G026 flood_creatures, G027, G028, G029 crop, G030 … through G051
    (~33 gens left, ~2 days at cap) → frame-strip EVERY clip (remaining priority: G025a/b,
