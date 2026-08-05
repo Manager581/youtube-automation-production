@@ -1,12 +1,23 @@
-# CHRIST CARES — NEXT SESSION HANDOFF (updated 2026-08-04 ~21:20)
+# CHRIST CARES — NEXT SESSION HANDOFF (updated 2026-08-05)
 
-**State:** Style LOCKED = documentary photorealism. **38s direction test APPROVED (owner,
-2026-08-04) — grind UNGATED.** 4 owner additions LOCKED into ledger+book (G022b violence_mob,
-G025a ark_door_family, G026→flood_creatures, G037a knife_raised; burning bush = Exodus ep
-material, parked). **GRIND SESSION 1 COMPLETE: G001–G020 ALL on disk + frame-strip QA'd**
-(20 of ~53 total gens; G009 needed 1 retake — "spiral" wording grew ring-VFX in the beam,
-see trigger-word rule in PROMPT_BOOK_v3). Owner on standard SuperGrok (720p ONLY — 1080p
-toast-refuses AND CLEARS the composer). ~14 sends used evening 2026-08-04.
+**State:** Style LOCKED = documentary photorealism. **GROK GRIND COMPLETE (2026-08-05):
+ALL 53 clips on disk + frame-strip QA'd** (`assets/christ_cares/clips/G001–G051`; G050a-d
+are assembler slices, no gens). Session-2 additions (G023–G051, 32 gens incl. 2 retakes):
+- **G024 + G031 did NOT exist** despite the "G024→done" note in the old resume order — that
+  annotation meant the SEED (TEST2/TEST3) was done, not the clip. Both generated 2026-08-05.
+- **Retakes:** G037a take 1 killed (bound figure arched up/writhed + end-limb deformity;
+  take 2 with "lies completely motionless the entire time / no body moves" rider PASSED).
+  G046 take 1 killed (Grok widened the torso crop and a HEAD with faint facial planes
+  entered frame; take 2 with "static extreme close crop, framing never widens, no head and
+  no face ever enters the frame" PASSED). G041 pit_up passed take 1 (heads solid black at
+  full res).
+- **G051 = 10.04s NATIVE** — the 10s duration button WORKS on standard SuperGrok at 720p
+  (no refusal, composer kept). The 8.2s hold is covered; freeze-tail fallback NOT needed.
+- **Limit model is WEEKLY, not 20/day**: banner mid-session read "25% through your weekly
+  limit — resets August 6". ~32 sends this session drew no throttle.
+- Native ambient audio fired on every take. Post URLs (WITH ?conversation=) all appended to
+  `grok_post_registry_2026-08-04.md`.
+Owner on standard SuperGrok (720p ONLY — 1080p toast-refuses AND CLEARS the composer).
 
 ## SEED PHASE COMPLETE (2026-08-04)
 - **All 33 doc seeds on disk + faceless-gated:** `assets/christ_cares/doc_seeds/` (30 files)
@@ -64,11 +75,8 @@ toast-refuses AND CLEARS the composer). ~14 sends used evening 2026-08-04.
 - Same-tab multi-downloads work (fetch blob + a.click); one-per-fresh-tab no longer needed.
 
 ## RESUME ORDER
-1. Grok grind session 2 CONTINUES: **START AT G023** (burning_horizon; G021+G022a+G022b banked 2026-08-04 late) and continue in ledger order incl.
-   the owner-addition splits: G021, G022a walk, G022b mob, G023, G024→done, G025a family,
-   G025b window-crop, G026 flood_creatures, G027, G028, G029 crop, G030 … through G051
-   (~33 gens left, ~2 days at cap) → frame-strip EVERY clip (remaining priority: G025a/b,
-   G038, G041, G045, G046) → faceless+physics gate.
+1. ~~Grok grind~~ **DONE 2026-08-05 — all 53 clips banked + frame-strip QA'd, faceless+physics
+   gates passed (priority clips G025a/b, G038, G041, G045, G046 got full-res face checks).**
 2. Upscale pass all clips 720p→1080p (test grain survival; Topaz or ffmpeg realesrgan-alt).
 3. Assembler v2: rewrite `scripts/assemble_genesis_pilot.py` to cut CLIPS with whisperx-snapped
    times (0.3s snap rule + R2 turn-words), P2 + Joseph burst chains, G050a-d word-onset flashes
