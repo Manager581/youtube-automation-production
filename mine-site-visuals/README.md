@@ -27,14 +27,24 @@ the 7-ft hallway dimension on Sarah's plan (footprint ≈ 48 × 42 ft).
 
 ## Photoreal renders
 
+**No API key? Use ChatGPT directly** — generate the copy-paste kit:
+
 ```
 cd pipeline
+python3 generate_renders.py --chatgpt-kit   # writes chatgpt-prompts.md
+```
+
+For each shot in `chatgpt-prompts.md`, attach the listed images from
+`pipeline/inputs/` in ChatGPT, paste the prompt, and iterate in the same chat.
+
+With an API key the same prompts run automatically:
+
+```
 python3 generate_renders.py --dry-run     # preview prompts
 GEMINI_API_KEY=... python3 generate_renders.py            # all 5 shots
 GEMINI_API_KEY=... python3 generate_renders.py --shot entrance
 ```
 
-Set `GEMINI_API_KEY` (preferred — multi-image grounding) or `OPENAI_API_KEY`.
 Shots: `overview`, `entrance`, `hallway`, `innovation-hub`, `micro-market`.
 
 ## Scaling to the other 10 sites

@@ -11,6 +11,7 @@ Providers (auto-detected from environment):
 
 Usage:
   python3 generate_renders.py --dry-run          # print shot prompts, no API calls
+  python3 generate_renders.py --chatgpt-kit      # write chatgpt-prompts.md (no API)
   python3 generate_renders.py                    # generate all shots -> ../renders/
   python3 generate_renders.py --shot entrance    # generate one shot
   python3 generate_renders.py --config other_site.json   # another of the 11 sites
@@ -168,10 +169,41 @@ def call_openai(key, prompt, refs):
     return base64.b64decode(resp["data"][0]["b64_json"])
 
 
+def write_chatgpt_kit(cfg, scene, path):
+    """Write the shot prompts as a copy-paste kit for ChatGPT (no API needed)."""
+    lines = [
+        f"# ChatGPT Render Kit — {cfg['site_name']}",
+        "",
+        "How to use: for each shot below, start a fresh ChatGPT message, **attach the",
+        "listed images** (they're in `pipeline/inputs/`), paste the prompt, and send.",
+        "Ask for landscape/wide format if it comes back square. If a detail is off,",
+        "reply with a correction (\"make the coveralls brighter orange\", \"the vending",
+        "machine goes at the hallway entrance\") — iterating in the same chat keeps",
+        "the layout consistent.",
+        "",
+    ]
+    for name, shot in SHOTS.items():
+        prompt = shot["prompt"].format(scene=scene, style=cfg["style"])
+        lines += [
+            f"## {name} — {shot['title']}",
+            "",
+            "**Attach:** " + ", ".join(f"`{r}`" for r in shot["refs"]),
+            "",
+            "```",
+            prompt,
+            "```",
+            "",
+        ]
+    pathlib.Path(path).write_text("\n".join(lines))
+    print(f"wrote {path}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true", help="print prompts, no API calls")
+    ap.add_argument("--chatgpt-kit", action="store_true",
+                    help="write chatgpt-prompts.md for manual use in ChatGPT (no API)")
     ap.add_argument("--shot", choices=sorted(SHOTS), help="generate a single shot")
     ap.add_argument("--config", default=str(HERE / "site_config.json"),
                     help="site config JSON (default: site_config.json)")
@@ -179,6 +211,9 @@ def main():
 
     cfg = json.loads(pathlib.Path(args.config).read_text())
     scene = build_scene(cfg)
+    if args.chatgpt_kit:
+        write_chatgpt_kit(cfg, scene, HERE / "chatgpt-prompts.md")
+        return
     shots = {args.shot: SHOTS[args.shot]} if args.shot else SHOTS
 
     gemini_key = os.environ.get("GEMINI_API_KEY")
