@@ -80,7 +80,32 @@ def alt():
     im.resize((168, 94), Image.LANCZOS).save(os.path.join(OUT, "thumb_genesis_ark_door_168.png"))
 
 
+def speed():
+    """Utility/speed angle for Test & Compare: the whole book, fast."""
+    plate = os.path.join(REPO, "assets", "christ_cares", "genesis_overview", "genesis_S14.png")
+    im = Image.open(plate).convert("RGB").resize((W, H), Image.LANCZOS)
+    im = ImageEnhance.Contrast(im).enhance(1.08)  # flanks are already near-black; no sky band
+    d = ImageDraw.Draw(im, "RGBA")
+    bb = draw_block(d, (44, 40), "ALL 50 CHAPTERS", 108, AMBER, stroke=9)
+    draw_block(d, (44, bb[3] + 6), "IN 5 MINUTES", 86, WHITE, stroke=8)
+    im.save(os.path.join(OUT, "thumb_genesis_50chapters.png"))
+    im.resize((168, 94), Image.LANCZOS).save(os.path.join(OUT, "thumb_genesis_50chapters_168.png"))
+
+
+def results_row():
+    """All three at 168x94 side by side — a mock search-results row for judging."""
+    names = ["thumb_genesis_dino_flood_168.png", "thumb_genesis_ark_door_168.png",
+             "thumb_genesis_50chapters_168.png"]
+    row = Image.new("RGB", (168 * 3 + 40, 94 + 20), (24, 24, 24))
+    for i, n in enumerate(names):
+        row.paste(Image.open(os.path.join(OUT, n)), (10 + i * 178, 10))
+    row.resize((row.width * 2, row.height * 2), Image.NEAREST).save(
+        os.path.join(OUT, "thumb_genesis_test_row.png"))
+
+
 if __name__ == "__main__":
     hero()
     alt()
-    print("wrote hero + alt thumbnails to", OUT)
+    speed()
+    results_row()
+    print("wrote 3 thumbnails + test row to", OUT)
