@@ -1,0 +1,272 @@
+{
+ "title": {
+  "file": "assets/techjoint_cookies/gfx/title.png",
+  "w": 1029,
+  "h": 334,
+  "x": 445,
+  "y": 493,
+  "kind": "title",
+  "text": "CRISPY OUTSIDE · GOOEY INSIDE"
+ },
+ "rule1": {
+  "file": "assets/techjoint_cookies/gfx/rule1.png",
+  "w": 891,
+  "h": 153,
+  "x": 72,
+  "y": 855,
+  "kind": "banner",
+  "text": "RULE #1 · BROWN THE BUTTER"
+ },
+ "rule2": {
+  "file": "assets/techjoint_cookies/gfx/rule2.png",
+  "w": 707,
+  "h": 153,
+  "x": 72,
+  "y": 855,
+  "kind": "banner",
+  "text": "RULE #2 · EXTRA YOLK"
+ },
+ "rule3": {
+  "file": "assets/techjoint_cookies/gfx/rule3.png",
+  "w": 839,
+  "h": 153,
+  "x": 72,
+  "y": 855,
+  "kind": "banner",
+  "text": "RULE #3 · CHILL THE DOUGH"
+ },
+ "ing_butter": {
+  "file": "assets/techjoint_cookies/gfx/ing_butter.png",
+  "w": 267,
+  "h": 148,
+  "x": 72,
+  "y": 110,
+  "kind": "pill",
+  "text": "butter"
+ },
+ "ing_brown": {
+  "file": "assets/techjoint_cookies/gfx/ing_brown.png",
+  "w": 392,
+  "h": 158,
+  "x": 72,
+  "y": 206,
+  "kind": "pill",
+  "text": "brown sugar"
+ },
+ "ing_white": {
+  "file": "assets/techjoint_cookies/gfx/ing_white.png",
+  "w": 375,
+  "h": 158,
+  "x": 72,
+  "y": 302,
+  "kind": "pill",
+  "text": "white sugar"
+ },
+ "ing_egg": {
+  "file": "assets/techjoint_cookies/gfx/ing_egg.png",
+  "w": 537,
+  "h": 158,
+  "x": 72,
+  "y": 398,
+  "kind": "pill",
+  "text": "1 egg + 1 extra yolk"
+ },
+ "ing_vanilla": {
+  "file": "assets/techjoint_cookies/gfx/ing_vanilla.png",
+  "w": 274,
+  "h": 148,
+  "x": 72,
+  "y": 494,
+  "kind": "pill",
+  "text": "vanilla"
+ },
+ "ing_flour": {
+  "file": "assets/techjoint_cookies/gfx/ing_flour.png",
+  "w": 239,
+  "h": 148,
+  "x": 72,
+  "y": 590,
+  "kind": "pill",
+  "text": "flour"
+ },
+ "ing_soda": {
+  "file": "assets/techjoint_cookies/gfx/ing_soda.png",
+  "w": 504,
+  "h": 158,
+  "x": 72,
+  "y": 686,
+  "kind": "pill",
+  "text": "baking soda + salt"
+ },
+ "ing_choc": {
+  "file": "assets/techjoint_cookies/gfx/ing_choc.png",
+  "w": 619,
+  "h": 158,
+  "x": 72,
+  "y": 782,
+  "kind": "pill",
+  "text": "way too much chocolate"
+ },
+ "toffee": {
+  "file": "assets/techjoint_cookies/gfx/toffee.png",
+  "w": 412,
+  "h": 136,
+  "x": 1436,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "smells like toffee"
+ },
+ "cool10": {
+  "file": "assets/techjoint_cookies/gfx/cool10.png",
+  "w": 463,
+  "h": 158,
+  "x": 1385,
+  "y": 112,
+  "kind": "timer",
+  "text": "COOL 10 MIN"
+ },
+ "c_brown": {
+  "file": "assets/techjoint_cookies/gfx/c_brown.png",
+  "w": 444,
+  "h": 144,
+  "x": 1404,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "1 cup brown sugar"
+ },
+ "c_white": {
+  "file": "assets/techjoint_cookies/gfx/c_white.png",
+  "w": 439,
+  "h": 144,
+  "x": 1409,
+  "y": 208,
+  "kind": "pill_s",
+  "text": "½ cup white sugar"
+ },
+ "yolk": {
+  "file": "assets/techjoint_cookies/gfx/yolk.png",
+  "w": 626,
+  "h": 156,
+  "x": 1222,
+  "y": 112,
+  "kind": "pill",
+  "text": "+1 YOLK = gooey centre"
+ },
+ "c_flour": {
+  "file": "assets/techjoint_cookies/gfx/c_flour.png",
+  "w": 361,
+  "h": 145,
+  "x": 1487,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "2¼ cups flour"
+ },
+ "c_soda": {
+  "file": "assets/techjoint_cookies/gfx/c_soda.png",
+  "w": 491,
+  "h": 145,
+  "x": 1357,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "1 tsp soda · ¾ tsp salt"
+ },
+ "stop": {
+  "file": "assets/techjoint_cookies/gfx/stop.png",
+  "w": 603,
+  "h": 158,
+  "x": 1245,
+  "y": 112,
+  "kind": "pill",
+  "text": "stop here — no dry flour"
+ },
+ "c_choc": {
+  "file": "assets/techjoint_cookies/gfx/c_choc.png",
+  "w": 446,
+  "h": 145,
+  "x": 1402,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "1½ cups chocolate"
+ },
+ "scoop": {
+  "file": "assets/techjoint_cookies/gfx/scoop.png",
+  "w": 359,
+  "h": 144,
+  "x": 1489,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "~3 Tbsp each"
+ },
+ "chill30": {
+  "file": "assets/techjoint_cookies/gfx/chill30.png",
+  "w": 457,
+  "h": 158,
+  "x": 1391,
+  "y": 112,
+  "kind": "timer",
+  "text": "CHILL 30 MIN"
+ },
+ "chill_done": {
+  "file": "assets/techjoint_cookies/gfx/chill_done.png",
+  "w": 405,
+  "h": 133,
+  "x": 1443,
+  "y": 112,
+  "kind": "pill_s",
+  "text": "30 MIN — DONE"
+ },
+ "temp": {
+  "file": "assets/techjoint_cookies/gfx/temp.png",
+  "w": 427,
+  "h": 151,
+  "x": 1421,
+  "y": 112,
+  "kind": "pill",
+  "text": "375°F / 190°C"
+ },
+ "bake": {
+  "file": "assets/techjoint_cookies/gfx/bake.png",
+  "w": 403,
+  "h": 158,
+  "x": 1445,
+  "y": 112,
+  "kind": "timer",
+  "text": "10–12 MIN"
+ },
+ "rest": {
+  "file": "assets/techjoint_cookies/gfx/rest.png",
+  "w": 622,
+  "h": 158,
+  "x": 1226,
+  "y": 112,
+  "kind": "pill",
+  "text": "5 MIN — the hardest part"
+ },
+ "crispy": {
+  "file": "assets/techjoint_cookies/gfx/crispy.png",
+  "w": 621,
+  "h": 214,
+  "x": 649,
+  "y": 553,
+  "kind": "word",
+  "text": "CRISPY"
+ },
+ "gooey": {
+  "file": "assets/techjoint_cookies/gfx/gooey.png",
+  "w": 622,
+  "h": 214,
+  "x": 649,
+  "y": 553,
+  "kind": "word",
+  "text": "GOOEY"
+ },
+ "card": {
+  "file": "assets/techjoint_cookies/gfx/card.png",
+  "w": 1080,
+  "h": 1080,
+  "x": 60,
+  "y": 0,
+  "kind": "card",
+  "text": ""
+ }
+}

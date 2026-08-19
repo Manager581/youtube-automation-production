@@ -1,0 +1,176 @@
+{
+ "sizzle": {
+  "file": "assets/techjoint_cookies/sfx/sizzle.mp3",
+  "freesound_id": 811952,
+  "name": "Sizzling in Frying Pan",
+  "duration": 8.36267,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "butter sizzling frying pan"
+ },
+ "pour_liquid": {
+  "file": "assets/techjoint_cookies/sfx/pour_liquid.mp3",
+  "freesound_id": 585516,
+  "name": "Pouring Water Into Metal Pot or Kettle",
+  "duration": 4.51415,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "pouring liquid into glass bowl"
+ },
+ "sugar_pour": {
+  "file": "assets/techjoint_cookies/sfx/sugar_pour.mp3",
+  "freesound_id": 119797,
+  "name": "Sugar Into Sugar Bowl.wav",
+  "duration": 1.1,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "pouring sugar bowl"
+ },
+ "egg_crack": {
+  "file": "assets/techjoint_cookies/sfx/egg_crack.mp3",
+  "freesound_id": 757511,
+  "name": "Egg crack and drop",
+  "duration": 2.09909,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "egg crack bowl"
+ },
+ "chop": {
+  "file": "assets/techjoint_cookies/sfx/chop.mp3",
+  "freesound_id": 760374,
+  "name": "Chopping Lettuce on a Cutting Board",
+  "duration": 11.2089,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "chopping knife cutting board"
+ },
+ "oven_door": {
+  "file": "assets/techjoint_cookies/sfx/oven_door.mp3",
+  "freesound_id": 426389,
+  "name": "Oven Door close 2 incheswav.wav",
+  "duration": 2.33361,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "oven door close"
+ },
+ "bowl_set": {
+  "file": "assets/techjoint_cookies/sfx/bowl_set.mp3",
+  "freesound_id": 528894,
+  "name": "Bowl Put Down On Table.wav",
+  "duration": 8.87982,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "ceramic bowl put down"
+ },
+ "whoosh": {
+  "file": "assets/techjoint_cookies/sfx/whoosh.mp3",
+  "freesound_id": 485277,
+  "name": "Wooden Stick Swing 1_2",
+  "duration": 0.709583,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "soft whoosh"
+ },
+ "pop": {
+  "file": "assets/techjoint_cookies/sfx/pop.mp3",
+  "freesound_id": 220180,
+  "name": "Click Pop",
+  "duration": 0.500068,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "pop ui"
+ },
+ "room_tone": {
+  "file": "assets/techjoint_cookies/sfx/room_tone.mp3",
+  "freesound_id": 761024,
+  "name": "Very Quiet Indoor Roomtone",
+  "duration": 27.4943,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "kitchen room tone"
+ },
+ "whisk": {
+  "file": "assets/techjoint_cookies/sfx/whisk.mp3",
+  "source": "pixabay",
+  "name": "whisking",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "flour_pour": {
+  "file": "assets/techjoint_cookies/sfx/flour_pour.mp3",
+  "freesound_id": 382642,
+  "name": "Bag Of Flour Dropped On Counter Top.wav",
+  "duration": 6.21893,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "flour bag"
+ },
+ "sprinkle": {
+  "file": "assets/techjoint_cookies/sfx/sprinkle.mp3",
+  "freesound_id": 668642,
+  "name": "Salt Dropping on Eggs or Liquid in Bowl",
+  "duration": 3.06237,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "sprinkling salt"
+ },
+ "tray_rack": {
+  "file": "assets/techjoint_cookies/sfx/tray_rack.mp3",
+  "freesound_id": 855679,
+  "name": "360x435 Oven Rack 1",
+  "duration": 10.8639,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "oven rack"
+ },
+ "rice_pour": {
+  "file": "assets/techjoint_cookies/sfx/rice_pour.mp3",
+  "source": "pixabay",
+  "name": "Rice Pour",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "tray_foley": {
+  "file": "assets/techjoint_cookies/sfx/tray_foley.mp3",
+  "source": "pixabay",
+  "name": "Baking Tray Foley",
+  "author": "MatiMassa",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "tray_laydown": {
+  "file": "assets/techjoint_cookies/sfx/tray_laydown.mp3",
+  "source": "pixabay",
+  "name": "baking sheet lay down",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "stir_bowl": {
+  "file": "assets/techjoint_cookies/sfx/stir_bowl.mp3",
+  "source": "pixabay",
+  "name": "stirring bowl",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "cookie_crunch": {
+  "file": "assets/techjoint_cookies/sfx/cookie_crunch.mp3",
+  "source": "pixabay",
+  "name": "Cookie Crunch",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "crisp_crunch": {
+  "file": "assets/techjoint_cookies/sfx/crisp_crunch.mp3",
+  "source": "pixabay",
+  "name": "Crisp Crunch",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "knob_spin": {
+  "file": "assets/techjoint_cookies/sfx/knob_spin.mp3",
+  "source": "pixabay",
+  "name": "spinning knob",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "oven_open": {
+  "file": "assets/techjoint_cookies/sfx/oven_open.mp3",
+  "source": "pixabay",
+  "name": "Oven Opening",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ },
+ "oven_fan": {
+  "file": "assets/techjoint_cookies/sfx/oven_fan.mp3",
+  "source": "pixabay",
+  "name": "Oven fan starting",
+  "author": "freesound_community",
+  "license": "Pixabay Content License (no attribution required)"
+ }
+}
