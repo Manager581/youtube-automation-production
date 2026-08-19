@@ -1,6 +1,6 @@
 # TechJoint · "Crispy Outside, Gooey Inside" Chocolate Chip Cookies — 3:00 PLAN (v1, for approval)
 
-**Status:** PLAN ONLY — no images, clips, VO or credits spent yet. Owner reviews → approves → THEN seeds.
+**Status (2026-08-19):** v1 MASTER BUILT — `output/techjoint_cookies/cookies_v1.mp4` (1080p24, 3:04). Seeds, 36 Grok clips (720p, paid acct ytmanager628), Jessica VO (one pass), SFX/music, graphics, assembler all in repo — see `project_techjoint_cookies` memory. Camera rule added after review: largely close-ups throughout.
 **Channel:** TechJoint. **Length:** 3:00 (180 s). **Format:** hands-only POV cooking, influencer VO, ASMR + on-screen graphics.
 **Persona (VO only, never on camera):** early-20s American woman, blonde (never seen — the audience only ever sees her hands and the food).
 **Angle (locked by owner 2026-08-18):** crispy on the outside, gooey on the inside.
@@ -152,7 +152,7 @@ Cadence is deliberately uneven: hook = 1.5–2 s flashes; process = 3–7 s hold
 |---|---|---|---|---|---|---|---|---|
 | C36 | 2:48 | 12 (10 s gen + hold) | Cookies on a cooling rack, gentle window light, right third of frame | slow drift | N | room tone, music up | **RECIPE CARD** slides in over the left 55%: title, yield, full ingredient list, 8 steps | *"Full recipe's on screen right now — screenshot it, save it, make them tonight. See you in the next one."* |
 
-**Totals:** 36 unique Grok generations (C01–C36; hook = re-used clips), ~17 hands-in-frame, 2 silent ASMR holds, 3 rule banners, ~14 callouts/timers, 1 recipe card.
+**Totals:** 36 unique Grok generations (C01–C36; hook = re-used clips), 29 of 36 shots involve hands (13 full-hand action, 13 hand-at-edge, 3 in an oven mitt), 2 silent ASMR holds, 3 rule banners, ~14 callouts/timers, 1 recipe card.
 
 ---
 
