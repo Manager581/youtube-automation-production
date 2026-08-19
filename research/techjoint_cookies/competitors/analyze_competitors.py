@@ -19,7 +19,8 @@ sys.path.insert(0, os.path.join(ROOT, "research", "wildbirdsurvival_teardown"))
 import extract_forensics as EF  # noqa: E402
 
 VID_DIR = {"long": os.path.join(ROOT, "footage", "techjoint_competitors.nosync", "long"),
-           "short": os.path.join(ROOT, "footage", "techjoint_competitors.nosync", "short")}
+           "short": os.path.join(ROOT, "footage", "techjoint_competitors.nosync", "short"),
+           "ours": os.path.join(ROOT, "footage", "techjoint_competitors.nosync", "ours")}
 WHISPERX = os.path.join(ROOT, "venv", "bin", "whisperx")
 LANG = {"PLIOTjj_gmY": "ar"}
 
@@ -173,7 +174,7 @@ def derive_metrics(fx, words, dur):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--set", required=True, choices=["long", "short"])
+    ap.add_argument("--set", required=True, choices=["long", "short", "ours"])
     ap.add_argument("--ids", help="comma list to restrict")
     ap.add_argument("--skip-whisper", action="store_true")
     a = ap.parse_args()
