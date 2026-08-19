@@ -19,6 +19,7 @@ stretched (up to their native clip length, then a short freeze) so the VO never 
 import argparse, json, os, shutil, subprocess, sys, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 REPO = os.path.normpath(os.path.join(HERE, "..", ".."))
 SHOTS = os.path.join(HERE, "shots.json")
 CLIPS = os.path.join(REPO, "assets", "techjoint_cookies", "clips")
@@ -80,6 +81,8 @@ GFX_SFX = {"title": ("whoosh", 0.8), "crispy": ("pop", 0.5), "gooey": ("pop", 0.
 POP_KEYS = {"ing_butter", "ing_brown", "ing_white", "ing_egg", "ing_vanilla", "ing_flour", "ing_soda", "ing_choc",
             "c_brown", "c_white", "yolk", "c_flour", "c_soda", "stop", "c_choc", "scoop", "temp", "rest", "toffee"}
 ASMR_HOLDS = {"C06", "C16", "C18", "C33"}   # music dips, SFX foreground
+MUSIC_BASE, MUSIC_DIP, MUSIC_CARD = 0.16, 0.10, 0.34
+GFX_SLIDE = 18   # px slide-up on graphic pop-in (0 = fade only)
 
 
 def run(cmd):
@@ -229,11 +232,11 @@ def build_audio(tmp, shots, blocks, runtime, word_time):
                       f"volume={gain:.2f},adelay={int(t*1000)}|{int(t*1000)}[a{n}]"); mixes.append(f"[a{n}]"); n += 1
     # --- music bed with envelope: low under VO, dip in ASMR holds, up on the recipe card
     card = by_id["C36"]; dip = [(by_id[k]["t0"], by_id[k]["t1"]) for k in ASMR_HOLDS if k in by_id]
-    env = "0.16"
+    env = f"{MUSIC_BASE}"
     for a, bb in dip:
-        env = f"if(between(t\\,{a:.2f}\\,{bb:.2f})\\,0.10\\,{env})"
-    env = f"if(gte(t\\,{card['t0']:.2f})\\,0.34\\,{env})"
-    env = f"if(gte(t\\,{runtime-2.0:.2f})\\,0.34*({runtime:.2f}-t)/2.0\\,{env})"
+        env = f"if(between(t\\,{a:.2f}\\,{bb:.2f})\\,{MUSIC_DIP}\\,{env})"
+    env = f"if(gte(t\\,{card['t0']:.2f})\\,{MUSIC_CARD}\\,{env})"
+    env = f"if(gte(t\\,{runtime-2.0:.2f})\\,{MUSIC_CARD}*({runtime:.2f}-t)/2.0\\,{env})"
     inputs += ["-stream_loop", "-1", "-i", MUSIC]
     chains.append(f"[{n}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
                   f"loudnorm=I=-20:TP=-2:LRA=11,atrim=0:{runtime:.3f},asetpts=PTS-STARTPTS,"
@@ -263,7 +266,7 @@ def overlay_pass(video_in, video_out, shots, word_time, crf, scale):
         chain.append(f"[{k}:v]scale={gw}:{gh},format=rgba,fade=t=in:st=0:d={fin}:alpha=1,"
                      f"fade=t=out:st={max(0.0,d-fout):.3f}:d={fout}:alpha=1,setpts=PTS+{t0:.3f}/TB[g{k}]")
         # pop-in: slide up 18px over the fade-in
-        yexpr = f"{gy}+18*(1-min(1\\,(t-{t0:.3f})/{fin}))"
+        yexpr = f"{gy}+{GFX_SLIDE}*(1-min(1\\,(t-{t0:.3f})/{fin}))"
         chain.append(f"{prev}[g{k}]overlay=x={gx}:y='{yexpr}':enable='between(t\\,{t0:.3f}\\,{t0+d:.3f})'[v{k}]")
         prev = f"[v{k}]"; k += 1
     graph = ";".join(chain)
@@ -277,7 +280,13 @@ def main():
     ap.add_argument("--preview", action="store_true")
     ap.add_argument("--crf", type=int, default=18)
     ap.add_argument("--no-gfx", action="store_true")
+    ap.add_argument("--variant", default=None, help="e.g. v2 -> loads cookies_v2_config.OVERRIDES")
     args = ap.parse_args()
+    if args.variant:
+        import importlib
+        cfg = importlib.import_module(f"cookies_{args.variant}_config")
+        globals().update(cfg.OVERRIDES)
+        print(f"variant {args.variant}: {len(cfg.OVERRIDES)} overrides")
     scale = (960, 540) if args.preview else (1920, 1080)
 
     words = load_words()

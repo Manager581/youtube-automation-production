@@ -1,0 +1,164 @@
+{
+ "hook_claim": {
+  "file": "assets/techjoint_cookies/gfx_v2/hook_claim.png",
+  "w": 545,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "crispy outside · gooey inside"
+ },
+ "cap_choc": {
+  "file": "assets/techjoint_cookies/gfx_v2/cap_choc.png",
+  "w": 472,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "way too much chocolate"
+ },
+ "rule1": {
+  "file": "assets/techjoint_cookies/gfx_v2/rule1.png",
+  "w": 548,
+  "h": 82,
+  "x": 80,
+  "y": 928,
+  "kind": "caption",
+  "text": "brown the butter"
+ },
+ "toffee": {
+  "file": "assets/techjoint_cookies/gfx_v2/toffee.png",
+  "w": 339,
+  "h": 77,
+  "x": 80,
+  "y": 933,
+  "kind": "caption",
+  "text": "smells like toffee"
+ },
+ "cool10": {
+  "file": "assets/techjoint_cookies/gfx_v2/cool10.png",
+  "w": 253,
+  "h": 77,
+  "x": 80,
+  "y": 933,
+  "kind": "caption",
+  "text": "cool 10 min"
+ },
+ "sugars": {
+  "file": "assets/techjoint_cookies/gfx_v2/sugars.png",
+  "w": 508,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "1 cup brown · ½ cup white"
+ },
+ "rule2": {
+  "file": "assets/techjoint_cookies/gfx_v2/rule2.png",
+  "w": 494,
+  "h": 93,
+  "x": 80,
+  "y": 917,
+  "kind": "caption",
+  "text": "one extra yolk"
+ },
+ "flour": {
+  "file": "assets/techjoint_cookies/gfx_v2/flour.png",
+  "w": 286,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "2¼ cups flour"
+ },
+ "soda": {
+  "file": "assets/techjoint_cookies/gfx_v2/soda.png",
+  "w": 552,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "1 tsp baking soda · ¾ tsp salt"
+ },
+ "stop": {
+  "file": "assets/techjoint_cookies/gfx_v2/stop.png",
+  "w": 457,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "stop here — no dry flour"
+ },
+ "choc": {
+  "file": "assets/techjoint_cookies/gfx_v2/choc.png",
+  "w": 835,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "1½ cups chocolate — half chopped, half chips"
+ },
+ "scoop": {
+  "file": "assets/techjoint_cookies/gfx_v2/scoop.png",
+  "w": 502,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "big scoops — about 3 tbsp"
+ },
+ "rule3": {
+  "file": "assets/techjoint_cookies/gfx_v2/rule3.png",
+  "w": 509,
+  "h": 93,
+  "x": 80,
+  "y": 917,
+  "kind": "caption",
+  "text": "chill the dough"
+ },
+ "chill30": {
+  "file": "assets/techjoint_cookies/gfx_v2/chill30.png",
+  "w": 343,
+  "h": 75,
+  "x": 80,
+  "y": 935,
+  "kind": "caption",
+  "text": "30 min minimum"
+ },
+ "temp": {
+  "file": "assets/techjoint_cookies/gfx_v2/temp.png",
+  "w": 525,
+  "h": 77,
+  "x": 80,
+  "y": 933,
+  "kind": "caption",
+  "text": "375 °F / 190 °C · 10–12 min"
+ },
+ "bake": {
+  "file": "assets/techjoint_cookies/gfx_v2/bake.png",
+  "w": 1352,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "pull them when the edges are golden and the middle still looks underdone"
+ },
+ "rest": {
+  "file": "assets/techjoint_cookies/gfx_v2/rest.png",
+  "w": 465,
+  "h": 86,
+  "x": 80,
+  "y": 924,
+  "kind": "caption",
+  "text": "5 min — the hardest part"
+ },
+ "card": {
+  "file": "assets/techjoint_cookies/gfx_v2/card.png",
+  "w": 1080,
+  "h": 1080,
+  "x": 60,
+  "y": 0,
+  "kind": "card",
+  "text": ""
+ }
+}

@@ -94,3 +94,20 @@ flash-forward reuse; missing shots (lift/turn, flip/base, cross-section) = 2–3
 - **Molten-centre pull-apart** (thick chocolate pool / soft centre, halves bent not snapped) and **crisp-edge shatter** — the two promise shots.
 - Lift-and-turn to lens; flip to show the browned base; cross-section/stack — the reveal-ladder shots the pool always has.
 - (Optional, owner's call) re-seed the look toward iPhone-real: plain counter, flat light, no flowers/candles/marble.
+
+---
+## v2 closure (2026-08-19 — `output/techjoint_cookies/cookies_v2.mp4`, 3:15, −16.2 LUFS)
+Remade from scratch: 36 new phone-real seeds (ChatGPT thread `6a85fcec`, grit standing rules) → 36 Grok 720p i2v clips
+(11 × 10 s, 25 × 6 s, paid account) + the 2 prototype clips (P2→C09, P3→C23) → `assemble_cookies.py --variant v2`
+(`cookies_v2_config.py`, `render_gfx_v2.py`). Every clip frame-strip QA'd (five fingers, grips, physics; C12 trimmed to
+3.5 s before the yolk lands in the wrong bowl; C16 seed redone without chocolate).
+| gap | v1 | v2 |
+|---|---|---|
+| money shot | thin wire strings over dry crumb | bend-open, molten pools on both faces, one drip that lands and pools, sub-second thread only; 6.5 s hold, VO silent 4.3 s after "look at that" |
+| look | saturated gold, marble/flowers/milk glass | flat indoor light, neutral, bare quartz + tile, crumbs/smears, faint grain — checked against Ashley/Birchberry/Casual frames |
+| graphics + UI sounds | 30 graphics, 22 pops + whoosh | 18 small static captions (one register, bottom-left) + recipe card; **0 pops/whoosh** |
+| baked-cookie reprise | none for 128 s | G1 @0:54 (open halves), G2 @1:54 (stack) |
+| hook | static pose 2 s, 12.7 s + title pop | motion in frame 1 (drip falling), 6 goods flashes, tiny claim caption on the stack only |
+| reveal ladder | tray ×3 → salt → tray → pull → snap → stack | tray out → tap → salt → rest → lift & turn → flip base → bend-open (hold) → snap on "Crispy edge" → stack on "gooey middle" → rack + card |
+| measured | 38 cuts, med 4.0 s, talk 46 % @218 wpm, onsets 10 | 37 cuts, med 4.0 s, talk 43 % @220 wpm, onsets 18, longest hold 23.5 s (money shot + card) |
+Residual tells I know of: C37's edge-on moment reads thin; C24 fridge milk carton has legible label text; C13 vanilla bottle label; oven interior light is warm by nature.
