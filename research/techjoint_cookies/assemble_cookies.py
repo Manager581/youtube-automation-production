@@ -80,6 +80,7 @@ GFX_EVENTS = [
 GFX_SFX = {"title": ("whoosh", 0.8), "crispy": ("pop", 0.5), "gooey": ("pop", 0.5)}
 POP_KEYS = {"ing_butter", "ing_brown", "ing_white", "ing_egg", "ing_vanilla", "ing_flour", "ing_soda", "ing_choc",
             "c_brown", "c_white", "yolk", "c_flour", "c_soda", "stop", "c_choc", "scoop", "temp", "rest", "toffee"}
+CLIP_AUDIO = {}   # shot -> gain or (gain, max_dur): mix the Grok clip's own foley under the library layer
 ASMR_HOLDS = {"C06", "C16", "C18", "C33"}   # music dips, SFX foreground
 MUSIC_BASE, MUSIC_DIP, MUSIC_CARD = 0.16, 0.10, 0.34
 GFX_SLIDE = 18   # px slide-up on graphic pop-in (0 = fade only)
@@ -105,19 +106,64 @@ def load_words():
     return [w for s in d["segments"] for w in s.get("words", []) if "start" in w]
 
 
+def narration_silences(thr_db=-48.0, min_dur=0.15, win=0.02):
+    """Measured silence regions [(start, end), ...] of the narration waveform (RMS windows)."""
+    import struct
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", NARR, "-f", "f32le", "-ac", "1", "-ar", "48000", "-"],
+                       capture_output=True)
+    x = struct.unpack(f"<{len(r.stdout)//4}f", r.stdout)
+    n = int(48000 * win)
+    import math
+    regions, run0 = [], None
+    for i in range(len(x) // n):
+        seg = x[i*n:(i+1)*n]
+        rms = math.sqrt(sum(v*v for v in seg) / n)
+        db = 20 * math.log10(rms + 1e-9)
+        t = i * win
+        if db < thr_db:
+            if run0 is None: run0 = t
+        else:
+            if run0 is not None and t - run0 >= min_dur: regions.append((run0, t))
+            run0 = None
+    if run0 is not None: regions.append((run0, len(x)/48000.0))
+    return regions
+
+
 def vo_blocks(words):
-    """Return list of dicts {anchor_shot, lead, t0, t1, words:[...]} in narration time."""
-    idx, blocks = 0, []
-    starts = []
+    """Cut blocks at MEASURED silence (not whisperx word stamps): find the real speech
+    onset/offset from the waveform, pad head/tail into the surrounding silence, and size
+    fades to sit entirely inside the padding. b['speech0'] is the true speech onset inside
+    the cut — placement uses it so words land exactly where the v2 picture expects them."""
+    sil = narration_silences()
+    idx, starts = 0, []
     for anchor, shot, lead in VO_BLOCKS:
         a = anchor.lower().strip(" ,.")
         j = next(k for k in range(idx, len(words)) if words[k]["word"].lower().strip(" ,.?!…") == a)
         starts.append((j, shot, lead)); idx = j + 1
+    blocks = []
     for n, (j, shot, lead) in enumerate(starts):
         k = starts[n + 1][0] if n + 1 < len(starts) else len(words)
         ws = words[j:k]
-        blocks.append({"shot": shot, "lead": lead, "t0": max(0.0, ws[0]["start"] - 0.12),
-                       "t1": ws[-1]["end"] + 0.25, "words": ws})
+        w0s, wle = ws[0]["start"], ws[-1]["end"]
+        # real onset = end of the silence region just before the first word stamp
+        speech0 = max(0.0, w0s - 0.15)
+        for a, b in sil:
+            if a <= w0s + 0.30 and b <= w0s + 0.30 and b >= w0s - 1.5: speech0 = b
+        # real offset = start of the first silence region after the last word stamp
+        speech1 = wle + 0.30
+        for a, b in reversed(sil):
+            if a >= wle - 0.30 and a <= wle + 1.5: speech1 = a
+        prev_end = blocks[-1]["speech1"] if blocks else 0.0
+        pad_h = min(0.30, max(0.0, (speech0 - prev_end) / 2))
+        nxt = words[k]["start"] if k < len(words) else speech1 + 2.0
+        pad_t = min(0.45, max(0.10, (nxt - speech1) / 2))
+        blocks.append({"shot": shot, "lead": lead, "words": ws,
+                       "t0": max(0.0, speech0 - pad_h), "t1": speech1 + pad_t,
+                       "speech0": speech0, "speech1": speech1,
+                       "fade_in": max(0.03, min(0.12, pad_h)), "fade_out": max(0.08, min(0.35, pad_t))})
+        b = blocks[-1]
+        # keep the v2 picture: speech onset should land where v2 put it (cut+0.12 after shot.t0+lead)
+        b["eff_lead"] = max(0.0, b["lead"] + 0.12 - (b["speech0"] - b["t0"]))
     return blocks
 
 
@@ -143,7 +189,7 @@ def solve_timeline(shots, blocks):
     for n, b in enumerate(blocks):
         i0 = pos[b["shot"]]
         i1 = pos[blocks[n + 1]["shot"]] if n + 1 < len(blocks) else len(shots)
-        need = b["lead"] + (b["t1"] - b["t0"]) + GAP_AFTER_BLOCK
+        need = b.get("eff_lead", b["lead"]) + (b["t1"] - b["t0"]) + GAP_AFTER_BLOCK
         span = shots[i0:i1]
         have = sum(s["dur"] for s in span)
         if need > have + 1e-6:
@@ -201,14 +247,31 @@ def build_audio(tmp, shots, blocks, runtime, word_time):
     inputs, chains, mixes, n = [], [], [], 0
     vo_place = []
     for b in blocks:
-        s = by_id[b["shot"]]; at = s["t0"] + b["lead"]
+        s = by_id[b["shot"]]; at = s["t0"] + b.get("eff_lead", b["lead"])
         b["at"] = at
         seg = os.path.join(tmp, f"vo_{b['shot']}.wav")
+        fi, fo = b.get("fade_in", 0.05), b.get("fade_out", 0.08)
         run(["ffmpeg", "-y", "-loglevel", "error", "-i", vo_norm, "-af",
-             f"atrim={b['t0']:.3f}:{b['t1']:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.05,afade=t=out:st={b['t1']-b['t0']-0.08:.3f}:d=0.08", seg])
+             f"atrim={b['t0']:.3f}:{b['t1']:.3f},asetpts=PTS-STARTPTS,afade=t=in:d={fi:.3f},afade=t=out:st={b['t1']-b['t0']-fo:.3f}:d={fo:.3f}", seg])
         inputs += ["-i", seg]
         chains.append(f"[{n}:a]adelay={int(at*1000)}|{int(at*1000)}[a{n}]"); mixes.append(f"[a{n}]"); n += 1
         vo_place.append((b["shot"], round(at, 2), round(at + b["t1"] - b["t0"], 2)))
+    # --- Grok native clip foley (CLIP_AUDIO: shot -> (gain, max_dur or None)), mixed under the library layer
+    for sid, spec in (CLIP_AUDIO or {}).items():
+        if sid not in by_id: continue
+        gain, max_dur = (spec if isinstance(spec, (tuple, list)) else (spec, None))
+        s = by_id[sid]
+        dur = min(s["dur"], s["native"] - s["in"])
+        if max_dur: dur = min(dur, max_dur)
+        if dur <= 0.3: continue
+        seg = os.path.join(tmp, f"clip_{sid}.wav")
+        run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{s['in']:.3f}", "-t", f"{dur:.3f}",
+             "-i", os.path.join(CLIPS, f"{s['src']}.mp4"), "-vn",
+             "-af", "loudnorm=I=-18:TP=-2:LRA=9,aformat=sample_rates=48000:channel_layouts=stereo,"
+                    f"afade=t=in:d=0.05,afade=t=out:st={max(0.0, dur-0.30):.3f}:d=0.30", seg])
+        inputs += ["-i", seg]
+        chains.append(f"[{n}:a]volume={gain:.2f},adelay={int(s['t0']*1000)}|{int(s['t0']*1000)}[a{n}]")
+        mixes.append(f"[a{n}]"); n += 1
     # --- SFX events
     sfxp = norm_sfx(tmp)
     events = []
@@ -237,7 +300,19 @@ def build_audio(tmp, shots, blocks, runtime, word_time):
         env = f"if(between(t\\,{a:.2f}\\,{bb:.2f})\\,{MUSIC_DIP}\\,{env})"
     env = f"if(gte(t\\,{card['t0']:.2f})\\,{MUSIC_CARD}\\,{env})"
     env = f"if(gte(t\\,{runtime-2.0:.2f})\\,{MUSIC_CARD}*({runtime:.2f}-t)/2.0\\,{env})"
-    inputs += ["-stream_loop", "-1", "-i", MUSIC]
+    # seamless music bed: crossfade the track into itself (raw -stream_loop left a ~1.5s
+    # dead seam every 82.4s — one landed naked at ~164s of the v2 master)
+    mdur = probe_dur(MUSIC)
+    music_loop = os.path.join(tmp, "music_loop.wav")
+    ncopies = max(2, int(runtime / (mdur - 2.5)) + 2)
+    m_in = []; m_ch = []
+    for i in range(ncopies): m_in += ["-i", MUSIC]
+    prev = "[0:a]"
+    for i in range(1, ncopies):
+        m_ch.append(f"{prev}[{i}:a]acrossfade=d=2.0:c1=tri:c2=tri[x{i}]"); prev = f"[x{i}]"
+    run(["ffmpeg", "-y", "-loglevel", "error", *m_in, "-filter_complex", ";".join(m_ch) + f";{prev}atrim=0:{runtime+2.0:.3f}[m]",
+         "-map", "[m]", music_loop])
+    inputs += ["-i", music_loop]
     chains.append(f"[{n}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
                   f"loudnorm=I=-20:TP=-2:LRA=11,atrim=0:{runtime:.3f},asetpts=PTS-STARTPTS,"
                   f"volume=eval=frame:volume='{env}'[a{n}]"); mixes.append(f"[a{n}]"); n += 1
@@ -295,7 +370,7 @@ def main():
     runtime = solve_timeline(shots, blocks)
 
     by_id = {s["id"]: s for s in shots}
-    for b in blocks: b["at"] = by_id[b["shot"]]["t0"] + b["lead"]
+    for b in blocks: b["at"] = by_id[b["shot"]]["t0"] + b.get("eff_lead", b["lead"])
     def word_time(tag):
         """'@word' -> ABSOLUTE timeline seconds of that VO word (first match in block order)."""
         w = tag[1:].lower()

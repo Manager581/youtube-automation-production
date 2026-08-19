@@ -172,5 +172,71 @@
   "name": "Oven fan starting",
   "author": "freesound_community",
   "license": "Pixabay Content License (no attribution required)"
+ },
+ "bread_break": {
+  "file": "assets/techjoint_cookies/sfx/bread_break.mp3",
+  "freesound_id": 540978,
+  "name": "TORDEUX_Emeline_2020_2021_HandBreakBread.wav",
+  "author": "univ_lyon3",
+  "duration": 4.16,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "query": "v3 alignment pass"
+ },
+ "dough_fold": {
+  "file": "assets/techjoint_cookies/sfx/dough_fold.mp3",
+  "freesound_id": 732392,
+  "name": "CookieDough(Scooped)",
+  "author": "Haydonus",
+  "duration": 2.79,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "v3 alignment pass"
+ },
+ "flour_puff": {
+  "file": "assets/techjoint_cookies/sfx/flour_puff.mp3",
+  "freesound_id": 532234,
+  "name": "Dry Puff.wav",
+  "author": "valeofhearts",
+  "duration": 0.83,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "v3 alignment pass"
+ },
+ "dry_crackle": {
+  "file": "assets/techjoint_cookies/sfx/dry_crackle.mp3",
+  "freesound_id": 723851,
+  "name": "dry crackle",
+  "author": "cognito perceptu",
+  "duration": 2.31,
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "query": "v3 alignment pass"
+ },
+ "crisp_snap": {
+  "file": "assets/techjoint_cookies/sfx/crisp_snap.mp3",
+  "derived_from": "crisp_crunch @0.60+2.0s (one-shot snap)",
+  "license": "same as source",
+  "query": "v3 alignment pass"
+ },
+ "tap_down": {
+  "file": "assets/techjoint_cookies/sfx/tap_down.mp3",
+  "derived_from": "tray_laydown @3.85+1.5s (set-down thud)",
+  "license": "same as source",
+  "query": "v3 alignment pass"
+ },
+ "bowl_set_hit": {
+  "file": "assets/techjoint_cookies/sfx/bowl_set_hit.mp3",
+  "derived_from": "bowl_set @1.70+1.0s (single ceramic set)",
+  "license": "same as source",
+  "query": "v3 alignment pass"
+ },
+ "chips_pour": {
+  "file": "assets/techjoint_cookies/sfx/chips_pour.mp3",
+  "derived_from": "rice_pour @0.95+2.4s (steady rattle)",
+  "license": "same as source",
+  "query": "v3 alignment pass"
+ },
+ "butter_pour": {
+  "file": "assets/techjoint_cookies/sfx/butter_pour.mp3",
+  "derived_from": "Grok C07 native audio @0.25+5.1s (browned-butter pour into glass)",
+  "license": "same as source",
+  "query": "v3 alignment pass"
  }
 }
