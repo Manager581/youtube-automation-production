@@ -1,0 +1,403 @@
+<title>Crispy Outside, Gooey Inside</title>
+<style>
+  :root {
+    --bg: #FBF8F3;          /* flour-white with a warm bias */
+    --bg-2: #F3ECE1;        /* parchment panel */
+    --ink: #2A1B12;         /* dark chocolate */
+    --ink-2: #6B5749;       /* cocoa grey */
+    --rule: #E3D7C6;
+    --amber: #B8681A;       /* browned butter */
+    --amber-soft: #F5E3C8;
+    --sage: #5F8266;        /* the spatula */
+    --sage-soft: #E2ECE2;
+    --choc: #4A2C1B;
+    --mono: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+    --sans: "Avenir Next", "Avenir", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    --cond: "Avenir Next Condensed", "Helvetica Neue Condensed", "Arial Narrow", "Avenir Next", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B140F; --bg-2: #261D16; --ink: #F1E7DA; --ink-2: #B7A593; --rule: #3B2E24;
+      --amber: #E0953E; --amber-soft: #3A2A16; --sage: #8DB894; --sage-soft: #24302A; --choc: #E7CFB4;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1B140F; --bg-2: #261D16; --ink: #F1E7DA; --ink-2: #B7A593; --rule: #3B2E24;
+    --amber: #E0953E; --amber-soft: #3A2A16; --sage: #8DB894; --sage-soft: #24302A; --choc: #E7CFB4;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; margin: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 40px 28px 96px; }
+  h1, h2, h3 { font-family: var(--cond); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+  h1 { font-size: 44px; line-height: 1.02; font-weight: 700; }
+  h2 { font-size: 26px; font-weight: 700; margin-top: 56px; padding-top: 18px; border-top: 2px solid var(--ink); }
+  h3 { font-size: 18px; font-weight: 700; margin-top: 28px; }
+  p { margin: 10px 0; max-width: 72ch; }
+  .eyebrow { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+  .lede { font-size: 18px; color: var(--ink-2); max-width: 64ch; }
+  .status { display: inline-block; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; padding: 4px 10px; border: 1px solid var(--amber); color: var(--amber); border-radius: 3px; }
+  .promise { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; margin-top: 28px; }
+  .card { background: var(--bg-2); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; }
+  .card h3 { margin-top: 0; }
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  .rule { border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; background: var(--bg); }
+  .rule .n { font-family: var(--cond); font-size: 30px; font-weight: 700; color: var(--amber); line-height: 1; }
+  .rule .t { font-weight: 600; margin-top: 4px; }
+  .rule .w { color: var(--ink-2); font-size: 13.5px; }
+  .kv { display: grid; grid-template-columns: 150px 1fr; gap: 6px 14px; font-size: 14px; }
+  .kv dt { color: var(--ink-2); font-family: var(--mono); font-size: 12px; letter-spacing: .04em; padding-top: 2px; }
+  .kv dd { margin: 0; }
+  /* timeline */
+  .timeline { margin-top: 26px; }
+  .tl-bar { display: flex; height: 44px; border-radius: 4px; overflow: hidden; border: 1px solid var(--rule); }
+  .tl-seg { position: relative; display: flex; align-items: flex-end; padding: 4px 6px; font-family: var(--mono); font-size: 10.5px; color: var(--ink); border-right: 1px solid var(--bg); background: var(--bg-2); white-space: nowrap; overflow: hidden; }
+  .tl-seg.hook { background: var(--amber); color: #fff; }
+  .tl-seg.asmr { background: var(--sage-soft); }
+  .tl-seg.pay { background: var(--amber-soft); }
+  .tl-scale { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--ink-2); margin-top: 4px; }
+  /* tables */
+  .tbl-wrap { overflow-x: auto; margin-top: 12px; border: 1px solid var(--rule); border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 980px; }
+  th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); font-weight: 600; padding: 10px 10px; background: var(--bg-2); border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  td { padding: 9px 10px; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: 0; }
+  td.id, td.t, td.d { font-family: var(--mono); font-size: 12.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td.id { font-weight: 600; }
+  td.vo { font-style: italic; color: var(--choc); min-width: 220px; }
+  td.gfx { color: var(--ink-2); }
+  .pill { display: inline-block; font-family: var(--mono); font-size: 11px; padding: 1px 7px; border-radius: 10px; border: 1px solid var(--rule); background: var(--bg); white-space: nowrap; }
+  .pill.gfx { background: var(--bg-2); }
+  .pill.hold { border-color: var(--sage); color: var(--sage); }
+  .pill.money { border-color: var(--amber); color: var(--amber); font-weight: 600; }
+  .pill.reuse { color: var(--ink-2); }
+  .hand { font-family: var(--mono); font-size: 12px; }
+  .hand.y { color: var(--amber); }
+  .hand.n { color: var(--ink-2); }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-top: 30px; }
+  .sec-head .rng { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+  .sec-head .banner { font-family: var(--mono); font-size: 11px; padding: 2px 8px; background: var(--amber-soft); color: var(--amber); border-radius: 3px; letter-spacing: .04em; }
+  /* recipe */
+  .recipe { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; margin-top: 14px; }
+  .recipe table { min-width: 0; font-size: 13.5px; }
+  .recipe ol { margin: 8px 0 0 18px; padding: 0; }
+  .recipe li { margin: 6px 0; }
+  .recipe li b { color: var(--amber); }
+  /* VO */
+  .vo { margin-top: 14px; display: grid; gap: 10px; }
+  .vo-block { display: grid; grid-template-columns: 64px 1fr; gap: 14px; padding: 12px 14px; background: var(--bg-2); border: 1px solid var(--rule); border-radius: 6px; }
+  .vo-block .tc { font-family: var(--mono); font-size: 12.5px; color: var(--amber); font-weight: 600; padding-top: 2px; }
+  .vo-block .tx { font-size: 15.5px; line-height: 1.55; max-width: 70ch; }
+  .vo-block .tx em { color: var(--ink-2); font-style: normal; font-family: var(--mono); font-size: 12px; }
+  .note { font-size: 13.5px; color: var(--ink-2); }
+  /* stages */
+  .stages { display: grid; gap: 8px; margin-top: 12px; }
+  .stage { display: grid; grid-template-columns: 34px 180px 1fr 1fr; gap: 12px; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; font-size: 13.5px; background: var(--bg-2); }
+  .stage .n { font-family: var(--cond); font-size: 22px; font-weight: 700; color: var(--amber); line-height: 1; }
+  .stage .g { color: var(--sage); }
+  .stage .g::before { content: "gate · "; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+  .decisions { counter-reset: q; display: grid; gap: 8px; margin-top: 12px; }
+  .q { display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 10px 12px; border: 1px solid var(--amber); border-radius: 6px; }
+  .q::before { counter-increment: q; content: counter(q); font-family: var(--cond); font-size: 22px; font-weight: 700; color: var(--amber); line-height: 1; }
+  .q b { display: block; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  ul.tight { margin: 8px 0 0 18px; padding: 0; }
+  ul.tight li { margin: 4px 0; }
+  code { font-family: var(--mono); font-size: 12.5px; background: var(--bg-2); padding: 1px 5px; border-radius: 3px; }
+  @media (max-width: 820px) {
+    .promise, .recipe, .two { grid-template-columns: 1fr; }
+    .rules { grid-template-columns: 1fr; }
+    .stage { grid-template-columns: 30px 1fr; }
+    .stage .g { grid-column: 2; }
+    h1 { font-size: 34px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">TechJoint · 3:00 cooking video · plan v1 · 2026-08-18</div>
+  <h1 style="margin-top:8px">Crispy Outside, Gooey Inside</h1>
+  <p class="lede">The only chocolate-chip cookie you'll ever need — hands-only POV, an early-20s influencer voice you never see, ultra-real iPhone look, ASMR sound and clean on-screen graphics. Frame 1 is the goods.</p>
+  <span class="status">PLAN ONLY — no images, clips, VO or credits spent</span>
+
+  <div class="promise">
+    <div class="card">
+      <h3>The promise, and how the video proves it</h3>
+      <p><b>0:00–0:02</b> — a warm cookie pulled apart: the crisp edge <em>cracks</em>, the molten centre <em>stretches</em>. Then five 1.5-s flashes of the payoff (tray out of the oven, flaky salt, the snap, the stack) while the VO says the promise out loud. Every step after that ties back to it: <i>this is what crisps the edge / this is what keeps the middle gooey</i>.</p>
+      <div class="rules">
+        <div class="rule"><div class="n">1</div><div class="t">Brown the butter</div><div class="w">crisper edge, toffee flavour — and the best ASMR in the video</div></div>
+        <div class="rule"><div class="n">2</div><div class="t">Add an extra yolk</div><div class="w">fat + richness = the gooey centre</div></div>
+        <div class="rule"><div class="n">3</div><div class="t">Chill, bake hot</div><div class="w">cold dough spreads slower — edges set while the middle stays soft</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Spec</h3>
+      <dl class="kv">
+        <dt>channel</dt><dd>TechJoint (kitchen = top earner-per-view)</dd>
+        <dt>length</dt><dd>3:00 · 180 s · 16:9 · 1080p master</dd>
+        <dt>persona</dt><dd>early-20s American woman, blonde — <b>VO only, never on camera</b>; only her hands + the food are ever seen</dd>
+        <dt>look</dt><dd>candid iPhone realism, bright high-key home kitchen (owner rule for TechJoint: BRIGHT)</dd>
+        <dt>stills</dt><dd>ChatGPT gpt-image, one thread, kitchen-master reference re-attached each prompt</dd>
+        <dt>motion</dt><dd>Grok Imagine i2v · 720p · 6 s (10 s for two shots) → 36 unique clips</dd>
+        <dt>voice</dt><dd>ElevenLabs, ONE pass after the script is blessed</dd>
+        <dt>sound</dt><dd>Pixabay bed ~20 dB under VO · ASMR SFX layer (Grok-native when it fires, else free-licence library)</dd>
+        <dt>graphics</dt><dd>3 rule banners · ~14 callouts/timers · title pop · recipe card</dd>
+        <dt>cost</dt><dd>$0 beyond existing subs · ~2 Grok days (20 clips/24 h cap)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="eyebrow">Structure — 180 s, sections to scale</div>
+    <div class="tl-bar" aria-label="timeline">
+      <div class="tl-seg hook" style="flex:10">HOOK</div>
+      <div class="tl-seg" style="flex:14">INGREDIENTS</div>
+      <div class="tl-seg asmr" style="flex:26">1 · BROWN BUTTER</div>
+      <div class="tl-seg" style="flex:22">2 · SUGARS + EGGS</div>
+      <div class="tl-seg asmr" style="flex:18">3 · DRY</div>
+      <div class="tl-seg" style="flex:18">4 · CHOCOLATE</div>
+      <div class="tl-seg" style="flex:17">5 · SCOOP + CHILL</div>
+      <div class="tl-seg" style="flex:25">6 · BAKE</div>
+      <div class="tl-seg pay" style="flex:18">PAYOFF</div>
+      <div class="tl-seg" style="flex:12">CARD</div>
+    </div>
+    <div class="tl-scale"><span>0:00</span><span>0:30</span><span>1:00</span><span>1:30</span><span>2:00</span><span>2:30</span><span>3:00</span></div>
+    <p class="note">Green = sections holding a silent ASMR beat. Amber = the promise (hook) and its proof (payoff). Cadence is deliberately uneven — 1.5-s flashes in the hook, 3–7-s holds in the process.</p>
+  </div>
+
+  <!-- RECIPE -->
+  <h2>Recipe — the ratios that actually make crispy/gooey happen</h2>
+  <p class="note">Yields ~14 large cookies · bake <b>375°F / 190°C · 10–12 min</b>. Ratios are standard bakery-style; the three rules are what most home recipes skip.</p>
+  <div class="recipe">
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Ingredient</th><th>Amount</th><th>Why (crispy/gooey logic)</th></tr></thead>
+      <tbody>
+        <tr><td>Unsalted butter, <b>browned</b>, cooled 10 min</td><td class="d">1 cup · 226 g</td><td>rule 1 — melted/browned = chewier, crisper edges + toffee</td></tr>
+        <tr><td>Dark brown sugar, packed</td><td class="d">1 cup · 200 g</td><td>moisture → soft chewy centre</td></tr>
+        <tr><td>Granulated sugar</td><td class="d">½ cup · 100 g</td><td>spread + crisp edge</td></tr>
+        <tr><td>Egg</td><td class="d">1 large</td><td>structure</td></tr>
+        <tr><td><b>Extra egg yolk</b></td><td class="d">1</td><td>rule 2 — richness → gooey centre</td></tr>
+        <tr><td>Vanilla extract</td><td class="d">2 tsp</td><td>flavour</td></tr>
+        <tr><td>All-purpose flour</td><td class="d">2¼ cups · 280 g</td><td>body</td></tr>
+        <tr><td>Baking soda</td><td class="d">1 tsp</td><td>spread + browning</td></tr>
+        <tr><td>Fine salt</td><td class="d">¾ tsp</td><td>balance</td></tr>
+        <tr><td>Chocolate — ½ chopped dark bar + ½ semisweet chips</td><td class="d">1½ cups · 255 g</td><td>chunks → puddles, chips hold shape</td></tr>
+        <tr><td>Flaky sea salt</td><td class="d">to finish</td><td>contrast, bakery look</td></tr>
+      </tbody>
+    </table></div>
+    <div class="card">
+      <h3>Method (as spoken)</h3>
+      <ol>
+        <li><b>Brown</b> the butter on medium, swirling: foams → quiets → golden flecks + toffee smell. Into the bowl, cool 10 min.</li>
+        <li>Whisk both sugars into the butter ~1 min — looks like caramel.</li>
+        <li>Whisk in 1 egg + <b>1 extra yolk</b> + vanilla until glossy and thick.</li>
+        <li>Fold in flour, soda, salt — stop the second no dry flour shows.</li>
+        <li>Fold in the chocolate.</li>
+        <li>Scoop big (~3 Tbsp / 80 g). <b>Chill 30 min</b> minimum.</li>
+        <li>375°F, 10–12 min — pull when edges are golden and centres still look underdone.</li>
+        <li>Tap the tray once, flaky salt, rest 5 min on the tray. Then pull apart.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- LOOK -->
+  <h2>Look &amp; consistency kit — "ultra real" is the prompt, not the tool</h2>
+  <div class="two">
+    <div>
+      <h3>Realism prefix (every still)</h3>
+      <p>“Ultra-realistic candid iPhone photo, natural window daylight, real home kitchen, slight handheld imperfection, true-to-life colour, real textures — flour dust on the counter, butter smears, crumbs, fingerprints on glass. NO studio lighting, NO cinematic grade, NO stock-photo gloss, NO text, NO logos, NO faces, NO reflections of a person. 16:9.”</p>
+      <p class="note">Same lesson as the wildlife channel: naive “8K cinematic” reads AI-stock. Grit sold the buffalo; crumbs and smudges sell the cookie.</p>
+    </div>
+    <div>
+      <h3>Locked in every shot</h3>
+      <ul class="tight">
+        <li><b>Kitchen</b> — white quartz with grey veining, light-oak lower cabinets, white subway tile, big window camera-LEFT, morning light. Props: grey linen towel, potted basil, one white mug.</li>
+        <li><b>Vessels</b> — one big clear glass bowl, one medium white ceramic bowl, small stainless saucepan, wooden spoon, balloon whisk, <b>sage-green</b> spatula (colour anchor), light-gold half-sheet + parchment, steel scoop, wooden board.</li>
+        <li><b>Hands</b> — young woman, fair skin, short natural nails in sheer pink, thin gold band right ring finger, <b>cream oversized knit sweater, sleeves pushed up</b>. No face, no hair, no mirror/oven-door reflections.</li>
+        <li><b>Optional affiliate props</b> — digital scale, cookie scoop, silicone mat, oven thermometer (yes/no?).</li>
+      </ul>
+      <p class="note"><b>Hands are the #1 AI risk.</b> ~17 of 36 shots are hands-in-frame; the rest are food-only by design. Every hands clip gets a frame-strip QA (finger count, morphing) before it's accepted.</p>
+    </div>
+  </div>
+
+  <!-- SHOT LIST -->
+  <h2>Shot list — 36 unique clips + hook flash-forwards</h2>
+  <p class="note">Every clip is a distinct vantage (no two adjacent alike). Grok = 720p/16:9/6 s; the editor trims to <b>dur</b>. <span class="hand y">Y</span> = hands in frame (finger QA). SFX = ASMR layer. GFX = on-screen graphic. VO shown where it lands.</p>
+
+  <div class="sec-head"><h3>HOOK</h3><span class="rng">0:00–0:10 · flash-forwards, re-uses payoff clips · 0 extra gens</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>t</th><th>dur</th><th>Shot</th><th>Source</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="t">0:00.0</td><td class="d">2.0</td><td><b>THE GOODS</b> — macro, hands pull a warm cookie apart; crisp edge cracks, molten chocolate stretches</td><td><span class="pill reuse">reuse C33</span></td><td>crack + soft stretch</td><td class="gfx">—</td><td class="vo">“Crispy on the outside…”</td></tr>
+      <tr><td class="t">0:02.0</td><td class="d">1.5</td><td>tray coming out of the oven — golden edges, steam</td><td><span class="pill reuse">reuse C29</span></td><td>rack slide</td><td class="gfx">—</td><td class="vo">“…gooey in the middle.”</td></tr>
+      <tr><td class="t">0:03.5</td><td class="d">1.5</td><td>flaky salt falling onto a cookie, macro</td><td><span class="pill reuse">reuse C31</span></td><td>crystal patter</td><td class="gfx">—</td><td class="vo">“These are the only chocolate chip cookies I make anymore —”</td></tr>
+      <tr><td class="t">0:05.0</td><td class="d">1.5</td><td>crisp edge snapped off — crunch, crumbs</td><td><span class="pill reuse">reuse C34</span></td><td>crisp snap</td><td class="gfx">—</td><td class="vo">“and there are three little things”</td></tr>
+      <tr><td class="t">0:06.5</td><td class="d">2.0</td><td>stack of 5, top one broken open — gooey centre, glass of milk</td><td><span class="pill reuse">reuse C35</span></td><td>—</td><td class="gfx">—</td><td class="vo">“that make them turn out like this every single time.”</td></tr>
+      <tr><td class="t">0:08.5</td><td class="d">1.5</td><td>slow push on the stack (continues)</td><td><span class="pill reuse">C35</span></td><td>soft whoosh</td><td class="gfx"><span class="pill gfx">TITLE · CRISPY OUTSIDE · GOOEY INSIDE</span></td><td class="vo">“Let's go.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>INGREDIENTS</h3><span class="rng">0:10–0:24</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot (seed intent)</th><th>Motion (Grok intent)</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C01</td><td class="t">0:10</td><td class="d">6</td><td>Overhead flat-lay — every ingredient in small bowls, butter, eggs, chocolate bar, chips</td><td>hands enter, set down the last bowl (chocolate)</td><td class="hand y">Y</td><td>bowl set-down</td><td class="gfx">ingredient callouts pop in one-by-one, synced to VO</td><td class="vo">“Here's everything you need: butter, brown sugar, white sugar, one egg plus an extra yolk, vanilla, flour, baking soda, salt —”</td></tr>
+      <tr><td class="id">C02</td><td class="t">0:16</td><td class="d">4</td><td>Low 45° across the counter — chocolate bar + bowl of chips foreground, glass bowl soft behind</td><td>hand nudges the chocolate bowl forward</td><td class="hand y">Y</td><td>—</td><td class="gfx"><span class="pill gfx">way too much chocolate ✔</span></td><td class="vo">“— and way too much chocolate.”</td></tr>
+      <tr><td class="id">C03</td><td class="t">0:20</td><td class="d">4</td><td>Side CU — hand drops butter cubes into the saucepan on the stove</td><td>cubes drop, one slides</td><td class="hand y">Y</td><td>butter thud, stove click</td><td class="gfx">—</td><td class="vo">“Full amounts are on screen at the end, so don't write anything down.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>STEP 1 · BROWN THE BUTTER</h3><span class="rng">0:24–0:50</span><span class="banner">RULE #1 · BROWN THE BUTTER</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C04</td><td class="t">0:24</td><td class="d">5</td><td>Side CU into the pan — cubes half-melted, edges bubbling</td><td>melt + gentle bubble</td><td class="hand n">N</td><td>sizzle (low)</td><td class="gfx">banner in</td><td class="vo">“Rule number one: brown your butter.”</td></tr>
+      <tr><td class="id">C05</td><td class="t">0:29</td><td class="d">5</td><td>Top-down — hand swirls the pan, butter foaming white</td><td>swirl, foam builds</td><td class="hand y">Y</td><td>swirl + sizzle</td><td class="gfx">—</td><td class="vo">“Melt it on medium and just… keep swirling. It'll foam up —”</td></tr>
+      <tr><td class="id">C06</td><td class="t">0:34</td><td class="d">6</td><td><span class="pill hold">ASMR HOLD</span> macro into the pan — foam thinning, golden-brown flecks appearing, wisps of steam</td><td>foam subsides, flecks darken</td><td class="hand n">N</td><td>sizzle crackle, foreground</td><td class="gfx"><span class="pill gfx">smells like toffee</span> at 0:38</td><td class="vo">“— then go quiet, and then… you'll see little golden-brown bits at the bottom.” (2-s pause)</td></tr>
+      <tr><td class="id">C07</td><td class="t">0:40</td><td class="d">5</td><td>45° — amber brown butter poured from pan into the glass bowl, brown bits visible</td><td>pour stream</td><td class="hand y">Y</td><td>pour</td><td class="gfx">—</td><td class="vo">“Pull it right there —”</td></tr>
+      <tr><td class="id">C08</td><td class="t">0:45</td><td class="d">5</td><td>Wide-ish — bowl of brown butter set by the window, light catching the steam</td><td>hand withdraws, steam drifts</td><td class="hand y">Y</td><td>—</td><td class="gfx"><span class="pill gfx">COOL 10 MIN</span> timer spins fast</td><td class="vo">“— and let it cool for ten minutes so it doesn't scramble the eggs.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>STEP 2 · SUGARS + EGGS</h3><span class="rng">0:50–1:12</span><span class="banner">RULE #2 · EXTRA YOLK (at C12)</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C09</td><td class="t">0:50</td><td class="d">4</td><td>Overhead — brown sugar tipped from a measuring cup into the butter, white sugar follows</td><td>pours</td><td class="hand y">Y</td><td>granular pour</td><td class="gfx"><span class="pill gfx">1 cup brown</span> <span class="pill gfx">½ cup white</span></td><td class="vo">“Both sugars into the butter — mostly brown, that's where the chewy comes from.”</td></tr>
+      <tr><td class="id">C10</td><td class="t">0:54</td><td class="d">5</td><td>45° — whisking, mixture turning glossy caramel</td><td>whisk circles</td><td class="hand y">Y</td><td>whisk clinks (ASMR)</td><td class="gfx">—</td><td class="vo">“Whisk it a minute till it looks like caramel.”</td></tr>
+      <tr><td class="id">C11</td><td class="t">0:59</td><td class="d">4</td><td>CU — egg cracked on the rim, drops in</td><td>crack + drop</td><td class="hand y">Y</td><td>crack + plop</td><td class="gfx">—</td><td class="vo">“Then rule number two: one whole egg…”</td></tr>
+      <tr><td class="id">C12</td><td class="t">1:03</td><td class="d">4</td><td>Macro — yolk in a half shell, white slipping away, then yolk tipped in</td><td>separate + tip</td><td class="hand y">Y (risk)</td><td>soft plop</td><td class="gfx">banner in · <span class="pill gfx">+1 YOLK = gooey centre</span></td><td class="vo">“…and one extra yolk. That yolk is the gooey centre.”</td></tr>
+      <tr><td class="id">C13</td><td class="t">1:07</td><td class="d">5</td><td>Side — teaspoon of vanilla in, whisk lifted showing a thick glossy ribbon</td><td>pour, whisk, lift</td><td class="hand y">Y</td><td>whisk</td><td class="gfx">—</td><td class="vo">“Vanilla — and whisk till it's glossy and thick.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>STEP 3 · DRY</h3><span class="rng">1:12–1:30</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C14</td><td class="t">1:12</td><td class="d">4</td><td>Overhead — flour dumped from the white bowl into the wet mix, soft puff of dust</td><td>pour + gentle puff</td><td class="hand y">Y</td><td>soft flour poof</td><td class="gfx"><span class="pill gfx">2¼ cups flour</span></td><td class="vo">“Flour, baking soda, salt.”</td></tr>
+      <tr><td class="id">C15</td><td class="t">1:16</td><td class="d">4</td><td>CU — teaspoon of baking soda + pinch of salt over the flour</td><td>sprinkle</td><td class="hand y">Y</td><td>tiny</td><td class="gfx"><span class="pill gfx">1 tsp soda · ¾ tsp salt</span></td><td class="vo">—</td></tr>
+      <tr><td class="id">C16</td><td class="t">1:20</td><td class="d">6</td><td><span class="pill hold">ASMR HOLD</span> 45° — spatula folding, flour streaks disappearing into dough</td><td>folds</td><td class="hand y">Y</td><td>spatula scrape, foreground</td><td class="gfx">—</td><td class="vo">“Fold — don't beat —” (pause)</td></tr>
+      <tr><td class="id">C17</td><td class="t">1:26</td><td class="d">4</td><td>Macro — last dry streak folded away, matte dough surface</td><td>one fold</td><td class="hand y">Y</td><td>—</td><td class="gfx"><span class="pill gfx">stop here ✋ no dry flour</span></td><td class="vo">“— just until you can't see dry flour. Overmixing is how you get tough cookies.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>STEP 4 · CHOCOLATE</h3><span class="rng">1:30–1:48</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C18</td><td class="t">1:30</td><td class="d">5</td><td>Side CU — chef's knife chopping a dark chocolate bar on the board, shards scattering</td><td>chops</td><td class="hand y">Y</td><td>knife chop (ASMR)</td><td class="gfx">—</td><td class="vo">“Now the chocolate. Half chips…”</td></tr>
+      <tr><td class="id">C19</td><td class="t">1:35</td><td class="d">4</td><td>Overhead — chopped chocolate + bowl of chips tipped onto the dough</td><td>tip in</td><td class="hand y">Y</td><td>patter</td><td class="gfx"><span class="pill gfx">1½ cups total</span></td><td class="vo">“…and half a chopped bar.”</td></tr>
+      <tr><td class="id">C20</td><td class="t">1:39</td><td class="d">5</td><td>45° — folding chocolate through the dough</td><td>folds</td><td class="hand y">Y</td><td>fold</td><td class="gfx">—</td><td class="vo">“The chunks melt into puddles, the chips hold their shape.”</td></tr>
+      <tr><td class="id">C21</td><td class="t">1:44</td><td class="d">4</td><td>Macro — dough studded with chunks + chips, spatula lifts</td><td>lift</td><td class="hand n">N</td><td>—</td><td class="gfx">—</td><td class="vo">“Fold it in.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>STEP 5 · SCOOP + CHILL</h3><span class="rng">1:48–2:05</span><span class="banner">RULE #3 · CHILL</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C22</td><td class="t">1:48</td><td class="d">5</td><td>CU — cookie scoop pulls a big ball from the dough</td><td>scoop + release</td><td class="hand y">Y</td><td>scoop click</td><td class="gfx"><span class="pill gfx">~3 Tbsp each</span></td><td class="vo">“Big scoops — like three-tablespoons big.”</td></tr>
+      <tr><td class="id">C23</td><td class="t">1:53</td><td class="d">5</td><td>Overhead — dough balls placed on the parchment tray, spaced</td><td>placing</td><td class="hand y">Y</td><td>soft placement</td><td class="gfx">—</td><td class="vo">“And rule number three: chill them.”</td></tr>
+      <tr><td class="id">C24</td><td class="t">1:58</td><td class="d">4</td><td>Side — tray slides into the fridge, door closes</td><td>slide + close</td><td class="hand y">Y</td><td>fridge door</td><td class="gfx"><span class="pill gfx">30 MIN</span> timer spins fast</td><td class="vo">“Thirty minutes minimum.”</td></tr>
+      <tr><td class="id">C25</td><td class="t">2:02</td><td class="d">3</td><td>Tray back out — chilled, matte dough balls</td><td>pull out</td><td class="hand y">Y</td><td>—</td><td class="gfx">timer ✓</td><td class="vo">“Cold dough spreads slower — edges crisp, middle stays soft.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>STEP 6 · BAKE</h3><span class="rng">2:05–2:30</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C26</td><td class="t">2:05</td><td class="d">4</td><td>CU — hand turns the oven knob (no digital display: avoids AI text)</td><td>knob turn</td><td class="hand y">Y</td><td>knob click</td><td class="gfx"><span class="pill gfx">375°F / 190°C</span></td><td class="vo">“Three-seventy-five, ten to twelve minutes.”</td></tr>
+      <tr><td class="id">C27</td><td class="t">2:09</td><td class="d">4</td><td>Side — tray goes into the oven, door closes</td><td>slide + close</td><td class="hand y">Y</td><td>oven door</td><td class="gfx">—</td><td class="vo">—</td></tr>
+      <tr><td class="id">C28</td><td class="t">2:13</td><td class="d">7 <span class="note">(10-s gen)</span></td><td>Through the oven window — cookies spreading and puffing, time-lapse feel</td><td>spread + puff</td><td class="hand n">N</td><td>oven hum</td><td class="gfx"><span class="pill gfx">10–12 MIN</span> timer</td><td class="vo">“Watch through the door — golden edges, and a middle that still looks a little underdone.”</td></tr>
+      <tr><td class="id">C29</td><td class="t">2:20</td><td class="d">4</td><td>Tray comes out — golden edges, pale puffy centres, steam <span class="pill reuse">hook source</span></td><td>slide out, steam</td><td class="hand y">Y</td><td>rack slide</td><td class="gfx">—</td><td class="vo">“Out they come —”</td></tr>
+      <tr><td class="id">C30</td><td class="t">2:24</td><td class="d">3</td><td>CU — tray tapped once on the counter, cookies settle and crinkle</td><td>tap + settle</td><td class="hand y">Y</td><td>tray tap</td><td class="gfx">—</td><td class="vo">“tap the tray once…”</td></tr>
+      <tr><td class="id">C31</td><td class="t">2:27</td><td class="d">3</td><td>Macro — flaky salt pinched and falling onto a cookie <span class="pill reuse">hook source</span></td><td>crystals fall</td><td class="hand y">Y</td><td>crystal patter</td><td class="gfx">—</td><td class="vo">“…flaky salt…”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>PAYOFF</h3><span class="rng">2:30–2:48</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C32</td><td class="t">2:30</td><td class="d">4</td><td>Side — cookies resting on the tray by the window, faint steam</td><td>steam drifts</td><td class="hand n">N</td><td>room tone</td><td class="gfx"><span class="pill gfx">5 MIN — the hardest part</span></td><td class="vo">“…and now the hardest part: leave them alone for five minutes.”</td></tr>
+      <tr><td class="id">C33</td><td class="t">2:34</td><td class="d">6</td><td><span class="pill money">MONEY SHOT</span> macro — hands pull one apart, molten stretch, gooey centre <span class="pill reuse">hook source</span></td><td>slow pull, stretch</td><td class="hand y">Y</td><td>crack + soft stretch</td><td class="gfx">—</td><td class="vo">“…okay. Look at that.” (then silence)</td></tr>
+      <tr><td class="id">C34</td><td class="t">2:40</td><td class="d">4</td><td>CU — crisp edge snapped off, crack, crumbs <span class="pill reuse">hook source</span></td><td>snap</td><td class="hand y">Y</td><td>crisp snap</td><td class="gfx"><span class="pill gfx">CRISPY</span> word pop</td><td class="vo">“Crispy edge.”</td></tr>
+      <tr><td class="id">C35</td><td class="t">2:44</td><td class="d">4</td><td>Stack of 5, top one broken open, gooey middle, glass of milk <span class="pill reuse">hook source</span></td><td>slow push</td><td class="hand n">N</td><td>—</td><td class="gfx"><span class="pill gfx">GOOEY</span> word pop</td><td class="vo">“Gooey middle. Every time.”</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-head"><h3>RECIPE CARD + CTA</h3><span class="rng">2:48–3:00</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>t</th><th>dur</th><th>Shot</th><th>Motion</th><th>Hands</th><th>SFX</th><th>GFX</th><th>VO</th></tr></thead>
+    <tbody>
+      <tr><td class="id">C36</td><td class="t">2:48</td><td class="d">12 <span class="note">(10-s gen + hold)</span></td><td>Cookies on a cooling rack, gentle window light, right third of frame</td><td>slow drift</td><td class="hand n">N</td><td>room tone, music up</td><td class="gfx"><span class="pill gfx">RECIPE CARD</span> slides in over the left 55%: title, yield, full ingredient list, 8 steps</td><td class="vo">“Full recipe's on screen right now — screenshot it, save it, make them tonight. See you in the next one.”</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>Totals:</b> 36 unique Grok generations (hook = re-used clips) · ~17 hands-in-frame · 2 silent ASMR holds + 1 money-shot silence · 3 rule banners · ~14 callouts/timers · 1 title pop · 1 recipe card.</p>
+
+  <!-- VO -->
+  <h2>VO script — FINAL-candidate</h2>
+  <p class="note">~300 words · ~155–160 wpm · ~65% coverage (silence is written in for the two ASMR holds and the money shot). Casual, warm, confident, a little playful — talking to a friend, not reading. ElevenLabs is <b>one pass</b>, so this has to be blessed word-for-word. Generated as blocks and placed at these timecodes (same block method as the wildlife episode).</p>
+  <div class="vo">
+    <div class="vo-block"><div class="tc">0:00</div><div class="tx">Crispy on the outside… gooey in the middle. These are the only chocolate chip cookies I make anymore — and there are three little things that make them turn out like this every single time. Let's go.</div></div>
+    <div class="vo-block"><div class="tc">0:10</div><div class="tx">Here's everything you need: butter, brown sugar, white sugar, one egg plus an extra yolk, vanilla, flour, baking soda, salt — and way too much chocolate. Full amounts are on screen at the end, so don't write anything down.</div></div>
+    <div class="vo-block"><div class="tc">0:24</div><div class="tx">Rule number one: brown your butter. Melt it on medium and just… keep swirling. It'll foam up — then go quiet, and then… you'll see little golden-brown bits at the bottom. <em>[pause · ASMR]</em> Pull it right there — and let it cool for ten minutes so it doesn't scramble the eggs.</div></div>
+    <div class="vo-block"><div class="tc">0:50</div><div class="tx">Both sugars into the butter — mostly brown, that's where the chewy comes from. Whisk it a minute till it looks like caramel. Then rule number two: one whole egg… and one extra yolk. That yolk is the gooey centre. Vanilla — and whisk till it's glossy and thick.</div></div>
+    <div class="vo-block"><div class="tc">1:12</div><div class="tx">Flour, baking soda, salt. Fold — don't beat — <em>[pause · ASMR]</em> just until you can't see dry flour. Overmixing is how you get tough cookies.</div></div>
+    <div class="vo-block"><div class="tc">1:30</div><div class="tx">Now the chocolate. Half chips… and half a chopped bar. The chunks melt into puddles, the chips hold their shape. Fold it in.</div></div>
+    <div class="vo-block"><div class="tc">1:48</div><div class="tx">Big scoops — like three-tablespoons big. And rule number three: chill them. Thirty minutes minimum. Cold dough spreads slower — edges crisp, middle stays soft.</div></div>
+    <div class="vo-block"><div class="tc">2:05</div><div class="tx">Three-seventy-five, ten to twelve minutes. Watch through the door — golden edges, and a middle that still looks a little underdone. Out they come — tap the tray once… flaky salt… and now the hardest part: leave them alone for five minutes.</div></div>
+    <div class="vo-block"><div class="tc">2:34</div><div class="tx">…okay. Look at that. <em>[silence · money shot]</em> Crispy edge. Gooey middle. Every time.</div></div>
+    <div class="vo-block"><div class="tc">2:48</div><div class="tx">Full recipe's on screen right now — screenshot it, save it, make them tonight. See you in the next one.</div></div>
+  </div>
+  <p class="note"><b>Voice:</b> ElevenLabs library, young American female, casual social-media register — audition with the free preview button (no credits): <b>Jessica</b> (playful, trendy) · <b>Laura</b> (sunny, social) · <b>Sarah</b> (soft, warm). Eleven Multilingual v2 · speed ~0.95–1.0 · stability ~60% · style ~20%. <i>Speculation until checked in the account: exact voice names available.</i></p>
+
+  <!-- SOUND + GFX -->
+  <h2>Sound design &amp; on-screen graphics</h2>
+  <div class="two">
+    <div>
+      <h3>Sound</h3>
+      <ul class="tight">
+        <li><b>Music bed</b> — Pixabay only: cosy, light, mid-tempo (~95–105 bpm) acoustic/lo-fi, no vocals. Constant, ~20 dB under VO (the proven wildlife level: <code>volume ≈ 0.07</code> under a <code>loudnorm I=-16</code> VO), +6 dB on the recipe card. No auto-duck — the VO gaps are written into the script.</li>
+        <li><b>ASMR / SFX layer</b> — the texture that sells “real”: butter sizzle + crackle · pan swirl · pour · granular sugar · whisk clinks · egg crack + plop · flour poof · spatula scrape · knife on chocolate · scoop click · fridge door · oven knob · oven door · oven hum · rack slide · tray tap · salt-crystal patter · cookie crack · crisp snap · room tone. Source order: (1) audition Grok's native clip audio — picture-synced when it fires; (2) fallback free-licence library via the existing SFX fetcher (<code>pipeline_v2/ambient_bed.py</code>, CC0 filter). SFX ~6–10 dB under VO; foreground during the two ASMR holds and the money shot.</li>
+        <li><b>VO</b> — <code>loudnorm I=-16</code>, dead-centre mono.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Graphics (clean influencer style — white pills, black text, on a bright kitchen)</h3>
+      <ul class="tight">
+        <li><b>Title pop</b> 0:08.5 — <code>CRISPY OUTSIDE · GOOEY INSIDE</code>, two-word stagger, slight overshoot.</li>
+        <li><b>Rule banners</b> ×3 — bottom-left, slide in, hold ~3 s.</li>
+        <li><b>Ingredient callouts</b> — white rounded pill + leader dot, 8-frame overshoot pop, synced to the VO word (C01, C09, C14, C15, C19, C22).</li>
+        <li><b>Timers</b> — <code>COOL 10 MIN</code> · <code>30 MIN</code> · <code>10–12 MIN</code> · <code>5 MIN</code>: pill with a fast-spinning ring → ✓.</li>
+        <li><b>Word pops</b> on the payoff — <code>CRISPY</code> / <code>GOOEY</code>.</li>
+        <li><b>Recipe card</b> 2:48–3:00 — left 55% panel, ingredients + 8 steps, legible on a phone.</li>
+        <li>Rendered as pre-made PNG pills through the existing FFmpeg overlay pass (the Christ Cares assembler-v2 lower-third approach) — no new toolchain.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PIPELINE -->
+  <h2>Production pipeline &amp; budget — the house pipeline, nothing new invented</h2>
+  <div class="stages">
+    <div class="stage"><div class="n">0</div><div><b>Plan</b> (this page)</div><div>—</div><div class="g">owner approves shot list + VO + recipe + kit</div></div>
+    <div class="stage"><div class="n">1</div><div><b>Seeds</b> · 36 stills + 1 kitchen master</div><div>ChatGPT gpt-image, ONE thread, kitchen-master reference re-attached to every prompt (the proven scene-lock trick); download one-per-fresh-tab</div><div class="g">contact sheet → owner approves seeds; per-shot seed-vs-prompt check (framing / count / reachability)</div></div>
+    <div class="stage"><div class="n">2</div><div><b>Clips</b> · 36 gens</div><div>Grok Imagine i2v 720p/16:9/6 s (10 s for C28, C36), clipboard-paste upload; prompt = “Animate this exact image as real handheld iPhone cooking footage…” + hand-anatomy + physics riders</div><div class="g">frame-strip QA per clip: same kitchen/bowls/hands, 5 fingers, no faces/reflections, no morph → retake on fail</div></div>
+    <div class="stage"><div class="n">3</div><div><b>VO</b></div><div>ElevenLabs in the browser, ONE pass after the script is blessed; whisperx word alignment</div><div class="g">whisper-verify vs script</div></div>
+    <div class="stage"><div class="n">4</div><div><b>Assemble</b></div><div>shots-json → FFmpeg assembler (wildlife <code>assemble_ep02.py</code> lineage / Christ Cares overlay pass) + music + SFX + graphics</div><div class="g">dense contact sheet + hook-zone (0–8 s) audit + audio watch BEFORE the owner sees it</div></div>
+    <div class="stage"><div class="n">5</div><div><b>Package</b></div><div>title A/B, thumbnail via the “tj thumbs” recipe + real Amazon badge composite</div><div class="g">168×94 legibility gate</div></div>
+  </div>
+  <p class="note"><b>Grok budget:</b> 36 clips × ~3 min ≈ 2 h of generation, but SuperGrok caps ≈ 20 videos / 24 h → <b>~2 days</b> of clip grind (+~20% retakes ≈ 43 gens). ChatGPT ~37 stills × ~1 min. ElevenLabs ≈ 1.6K characters, one pass. <b>Cost: $0 beyond existing subscriptions.</b></p>
+
+  <!-- DECISIONS -->
+  <h2>Decisions needed before any image is made</h2>
+  <div class="decisions">
+    <div class="q"><div><b>Shot list</b> approve / cut / add — 36 clips ≈ 2 Grok days. OK?</div></div>
+    <div class="q"><div><b>VO script</b> word-for-word blessing (one-pass rule) — any lines to change?</div></div>
+    <div class="q"><div><b>Voice</b> Jessica / Laura / Sarah (I'll play the free previews), or another?</div></div>
+    <div class="q"><div><b>Recipe</b> brown butter + extra yolk + chill: keep, or simplify to plain melted butter?</div></div>
+    <div class="q"><div><b>Kit</b> sage spatula / cream sweater sleeves / gold ring as identity anchors OK? Any affiliate props (scale, scoop, mat, thermometer) to feature?</div></div>
+    <div class="q"><div><b>Graphics</b> white-pill influencer look OK, or TechJoint house colours?</div></div>
+  </div>
+</div>
