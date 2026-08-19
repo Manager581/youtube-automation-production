@@ -86,6 +86,8 @@ def analyze(name, video, wordts_json=None):
             avg=dur/(n+1)
             if best is None or abs(avg-5.0)<abs(best[2]-5.0):
                 best=(thr,cuts,avg,n)
+    if best is None:  # no cut at any threshold (single continuous take) -> treat as one shot
+        best=(0.30,[],dur,0)
     thr,cuts,avg,n = best
     shots=[]
     bounds=[0.0]+cuts+[dur]
