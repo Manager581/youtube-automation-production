@@ -81,6 +81,15 @@ GFX_SFX = {"title": ("whoosh", 0.8), "crispy": ("pop", 0.5), "gooey": ("pop", 0.
 POP_KEYS = {"ing_butter", "ing_brown", "ing_white", "ing_egg", "ing_vanilla", "ing_flour", "ing_soda", "ing_choc",
             "c_brown", "c_white", "yolk", "c_flour", "c_soda", "stop", "c_choc", "scoop", "temp", "rest", "toffee"}
 CLIP_AUDIO = {}   # shot -> gain or (gain, max_dur): mix the Grok clip's own foley under the library layer
+# Generated video-to-foley layer (MMAudio, per exact shot window). FOLEY_DIR holds <SHOT>.flac;
+# the bus is ducked under VO with a frame envelope and lifted in ASMR holds.
+FOLEY_DIR = None
+FOLEY_GAIN = {}          # per-shot trim on top of loudnorm (default 1.0)
+FOLEY_BASE, FOLEY_VO, FOLEY_ASMR = 1.0, 0.5, 1.25
+FOLEY_NORM_I = -16          # competitor-measured: contact foley 5-10dB under VO, not buried
+MUSIC_MUTE_SPANS = []       # [(start_shot, end_shot)] -> music volume 0 from start.t0 to end.t0
+ROOM_TONE = None            # path to a room-tone file looped under everything (never digital dead air)
+ROOM_TONE_VOL = 0.03
 ASMR_HOLDS = {"C06", "C16", "C18", "C33"}   # music dips, SFX foreground
 MUSIC_BASE, MUSIC_DIP, MUSIC_CARD = 0.16, 0.10, 0.34
 GFX_SLIDE = 18   # px slide-up on graphic pop-in (0 = fade only)
@@ -256,6 +265,41 @@ def build_audio(tmp, shots, blocks, runtime, word_time):
         inputs += ["-i", seg]
         chains.append(f"[{n}:a]adelay={int(at*1000)}|{int(at*1000)}[a{n}]"); mixes.append(f"[a{n}]"); n += 1
         vo_place.append((b["shot"], round(at, 2), round(at + b["t1"] - b["t0"], 2)))
+    # --- generated foley bus (MMAudio per-shot windows), ducked under VO via frame envelope
+    if FOLEY_DIR:
+        fseg_labels = []
+        for s in shots:
+            f = os.path.join(FOLEY_DIR, f"{s['id']}.flac")
+            if not os.path.exists(f): continue
+            g = FOLEY_GAIN.get(s["id"], 1.0)
+            fdur = min(s["dur"], probe_dur(f))
+            seg = os.path.join(tmp, f"foley_{s['id']}.wav")
+            # capped-gain leveling: pull loud files toward FOLEY_NORM_I but never boost a quiet
+            # room-tone bed into foreground hiss (blanket loudnorm would add +30dB to a -45I bed)
+            import re as _re
+            pr = subprocess.run(["ffmpeg", "-i", f, "-af", "loudnorm=print_format=json", "-f", "null", "-"],
+                                capture_output=True, text=True)
+            m = _re.search(r'"input_i"\s*:\s*"(-?[\d.]+)"', pr.stderr)
+            meas = float(m.group(1)) if m else -30.0
+            gdb = max(-10.0, min(8.0, (FOLEY_NORM_I - 1) - meas))
+            run(["ffmpeg", "-y", "-loglevel", "error", "-i", f, "-af",
+                 f"volume={gdb:.1f}dB,aformat=sample_rates=48000:channel_layouts=stereo,"
+                 f"atrim=0:{fdur:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.06,afade=t=out:st={max(0.0,fdur-0.25):.3f}:d=0.25,"
+                 f"volume={g:.2f}", seg])
+            inputs += ["-i", seg]
+            chains.append(f"[{n}:a]adelay={int(s['t0']*1000)}|{int(s['t0']*1000)}[f{n}]")
+            fseg_labels.append(f"[f{n}]"); n += 1
+        if fseg_labels:
+            fenv = f"{FOLEY_BASE}"
+            for s in shots:
+                if s["id"] in ASMR_HOLDS:
+                    fenv = f"if(between(t\\,{s['t0']:.2f}\\,{s['t1']:.2f})\\,{FOLEY_ASMR}\\,{fenv})"
+            for b in blocks:
+                v0, v1 = b["at"], b["at"] + (b["t1"] - b["t0"])
+                fenv = f"if(between(t\\,{v0:.2f}\\,{v1:.2f})\\,{FOLEY_VO}\\,{fenv})"
+            chains.append("".join(fseg_labels) + f"amix=inputs={len(fseg_labels)}:normalize=0:duration=longest,"
+                          f"volume=eval=frame:volume='{fenv}'[fbus]")
+            mixes.append("[fbus]")   # counts as one input to the master mix
     # --- Grok native clip foley (CLIP_AUDIO: shot -> (gain, max_dur or None)), mixed under the library layer
     for sid, spec in (CLIP_AUDIO or {}).items():
         if sid not in by_id: continue
@@ -299,6 +343,9 @@ def build_audio(tmp, shots, blocks, runtime, word_time):
     for a, bb in dip:
         env = f"if(between(t\\,{a:.2f}\\,{bb:.2f})\\,{MUSIC_DIP}\\,{env})"
     env = f"if(gte(t\\,{card['t0']:.2f})\\,{MUSIC_CARD}\\,{env})"
+    for a_sh, b_sh in MUSIC_MUTE_SPANS:
+        if a_sh in by_id and b_sh in by_id:
+            env = f"if(between(t\\,{by_id[a_sh]['t0']:.2f}\\,{by_id[b_sh]['t0']:.2f})\\,0\\,{env})"
     env = f"if(gte(t\\,{runtime-2.0:.2f})\\,{MUSIC_CARD}*({runtime:.2f}-t)/2.0\\,{env})"
     # seamless music bed: crossfade the track into itself (raw -stream_loop left a ~1.5s
     # dead seam every 82.4s — one landed naked at ~164s of the v2 master)
@@ -316,8 +363,13 @@ def build_audio(tmp, shots, blocks, runtime, word_time):
     chains.append(f"[{n}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
                   f"loudnorm=I=-20:TP=-2:LRA=11,atrim=0:{runtime:.3f},asetpts=PTS-STARTPTS,"
                   f"volume=eval=frame:volume='{env}'[a{n}]"); mixes.append(f"[a{n}]"); n += 1
-    graph = ";".join(chains) + ";" + "".join(mixes) + f"amix=inputs={n}:normalize=0:duration=longest,apad,atrim=0:{runtime:.3f}," \
+    graph = ";".join(chains) + ";" + "".join(mixes) + f"amix=inputs={len(mixes)}:normalize=0:duration=longest,apad,atrim=0:{runtime:.3f}," \
             f"alimiter=limit=0.95:attack=5:release=80[outa]"
+    if ROOM_TONE and os.path.exists(ROOM_TONE):
+        inputs += ["-stream_loop", "-1", "-i", ROOM_TONE]
+        chains.append(f"[{n}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
+                      f"loudnorm=I=-18:TP=-2:LRA=11,atrim=0:{runtime:.3f},asetpts=PTS-STARTPTS,volume={ROOM_TONE_VOL}[a{n}]")
+        mixes.append(f"[a{n}]"); n += 1
     out = os.path.join(tmp, "mix.wav")
     run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", graph, "-map", "[outa]", out])
     return out, vo_place, events
