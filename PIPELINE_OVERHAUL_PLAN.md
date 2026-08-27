@@ -1,0 +1,85 @@
+# Pipeline Overhaul Plan — v1.1 (revised under adversarial review)
+
+**Date:** 2026-08-27 · **Provenance:** 3 multi-agent investigations (29 agents), every claim artifact-verified against disk/git/memory; plan draft attacked by 2 adversarial reviewers (both NEEDS-REVISION); their landed fixes are folded in below and logged in §5.
+**Companion memory:** `memory/project_pipeline_diagnosis_2026_08.md` (the verified diagnosis this plan answers).
+
+---
+
+## 0. The verdict this plan is built on
+
+1. **Wiring diagnosis (confirmed):** checks exist but aim at the wrong object (plan/reference/single clip, not the assembled render), through the wrong lens (2fps strips, LUFS/whisper proxies), with no teeth (advisory verdicts, waivers, fail-open assemblers), and never persist. The owner is the only blocking perceptual gate.
+2. **Thesis A — project thrash DOMINATES throughput (proven):** ~14 initiatives / 5-6 channels since Dec 2025 → **2 published videos** (both deliberately-imperfect drafts). breaking_law strategy-killed at ~95%. WBS Ep02 stalled 34 days at 31/88. Christ Cares assembled + unpublished 21 days. A perfect pipeline changes nothing if finish-rate stays 2/14 — so this plan **starts by finishing**, not by building.
+3. **Thesis C — zero audience ground truth (proven):** no view count, CTR, or retention number for ANY own published video exists anywhere in the repo; the owner's own playbook's day-14/day-90 reads are 76 and 41 days overdue. Every gate currently optimizes one person's unvalidated taste.
+4. **Thesis B — the owner gate is load-bearing and mostly right, but:** waiver-shipping and taste-spec churn (3 recorded formula reversals; one accepted-v2/rejected-identical-v3 contradiction) are real; the fix is budgeting his bandwidth and making waivers/reversals first-class records — never bypassing him.
+
+**Ruled out (do not revisit):** generator quality as primary cause; missing knowledge; RAG/vector DB (no documented burn was a retrieval failure — a vector DB would have faithfully served the false "53 clips banked" memory); buying Seedance as a fix; DaVinci.
+
+---
+
+## 1. The 12 stages
+
+Single door: **`run_gates.py`** — the ONLY sanctioned entrypoint for teardown/spend/assembly/verification. Per-style behavior = `research/style_profiles/<style>.json` config swap. All gates fail-closed; waivers only via logged entries (lane, date, reason) that resurface at review and post-publish read. **Mechanical enforcement, not norms** (norms are proven to fail here): a pre-commit hook fails any commit adding `assemble_*.py` outside `lib/assembly/`; the S0 state check is embedded inside the assembly/render entrypoints so a bypassing session still hits it; gates refuse to pass on uncommitted artifacts (commit-on-write).
+
+| # | Stage | Core | Gate (falsifiable) | Human |
+|---|-------|------|--------------------|-------|
+| S0 | **Portfolio/WIP** | `pipeline_state.json`: every lane ACTIVE / BLOCKED-ON-OWNER / KILLED(reason) / PUBLISHED. Max **1 ACTIVE** production lane. New lane requires current one PUBLISHED or KILLED-with-record. | `run_gates.py state` exits nonzero on >1 ACTIVE. **Semantics (rev):** packet-not-yet-delivered >7d = FAIL (our fault); packet-delivered-verdict-pending = WARN + blocks NEW lane starts only, never the current lane's machine stages. | Owner: kill/park/activate at triage + each new-lane request. |
+| S1 | **Teardown → style profile** | Persisted teardown recipe emits machine-readable profile: tempo/edit bands, mix spec, CLICK spec, story spine, timeline paradigm, narrative→visual mapping, **content-policy constraints (rev — e.g. Christ Cares faceless-God/quote caps)**, and an **executable causal-grammar layer** (story-state → hold/pause/music-state rules) (rev). | Schema-valid; every band cites its source measurement; separation test: ≥90% bands pass on 3 winners, ≥3 fail on a loser. **Divergent-style mode (rev):** owner-chosen delta bands marked `diverges-by-design`, exempt from separation, logged in header. | None. |
+| S2 | **CLICK layer** (before production) | 3-5 topics scored vs profile levers + novelty vs own publish ledger (LOSE2 self-cannibalization death); 3 titles through `title_gate.py` (measured winner grammar); 2-3 thumbs through `thumb_gate.py` (profile thresholds). **Differentiation gate (rev):** edit-fingerprint diff vs the cloned reference via `extract_motion_events.py` + per-upload AI disclosure — the masterclass-adjudicated YPP sameness defense. | Fail-closed triple + differentiation report. Honest cap in report: own-CTR prediction = CANNOT-CONFIRM until S11 accrues data; title_gate falsification is confounded by the reference channel's 4.4× cold-start (noted, not hidden). | Owner picks ONE title+thumb combo from gated candidates (~2 min); pick recorded for S11 scoring. |
+| S3 | **Story gate** | Script written to profile spine/word budget **with author-tagged inline hook/beat annotations (rev)**; `story_gate.py` checks deterministically: spine beats mapped, re-hook gap ≤ profile max, one named next-video end card, hook-zone 1-3s prove/3-4s deliver; emits the **shot-demand list** (law 6: every sentence's noun gets an image) and **per-video WHY anchors** (hook/reveal/tension-peak timecodes) that S6/S7 MUST consume (rev). Semantic judgments route through the same scripted-LLM caller as gate_vision (same cost/approval story). | story_report.json pass before any VO. Honest cap: checks STRUCTURE, not boredom. | None. |
+| S4 | **Shot plan + SUBJECT LOCK** | beat_director / WBS manifest pattern; every shot-demand covered; SUBJECT LOCK: subject one-liner yes + ONE approved seed per identity, **seed file hash recorded as a spend precondition**; seed-reachability audit zero sustained blockers. | Coverage set-difference empty; spend refuses without recorded lock. | Owner: subject+seed yes; spend sign-off per batch. |
+| S5 | **Generate + bank (QA at bank time)** | Grok grind per banked recipe; clip enters ledger only after: file-hash on disk + gate_shots + **scripted vision verdict** (identity vs seed, motion direction, demanded action, physics). Ledger count must equal disk-verified count (the 53-vs-31 inflation, made a check). | `run_gates.py bank-status` exit-nonzero on mismatch; assembly refuses <100% banked (placeholders only via per-shot waiver — kills the silent-skip that dropped SP_B06). | Spend sign-off only. |
+| S6 | **Assemble — shared lib** | `lib/assembly/`: segment_normalize/concat/audio-bed/mux/probe + fail-closed asset policy; 3 timeline-policy modules (vo_silence_solver, manifest_timecodes, straight_concat) selected by profile; cut-lattice styles via rexcaped_edit_engine. **Consumes S3 WHY anchors + profile causal grammar** for hold lengths/pauses (rev). | Assembly report: every manifest shot placed; span within tolerance; zero unwaivered placeholders. Regression (rev): v3 config → matches cookies_v3_timeline.json AND v4 config → matches v4's own recorded timeline. | None. |
+| S7 | **Sound** | MMAudio foley per shot window; mix to profile spec **with music-state driven by the causal grammar at the S3 anchors** (rev — tension data finally consumed, not stripped); `verify_foley.py` (generalized v4) with hiss/unsync **promoted to hard-fail** (closes the 26+5 hole); `listen_gate.py` v0 = DSP-only: ebur128 curves, per-window VO/music offsets, onset-vs-motion, dead-air, whisper checks. | Regression: must flag archived known-bad mixes (WBS 0.10 bed, rexcaped silent intro) and pass their fixes. Semantic listening = CANNOT-CONFIRM; bounded 1-hr Gemini-audio probe AFTER v0 ships, note-only. | None. |
+| S8 | **Verify assembled render — tiered, every clip seen** | Tier 1: verify_render mechanical suite. Tier 2: `gate_vision.py` — ≥6fps strips for EVERY clip (killer classes had no cheap-metric precursor; metrics only pick zoom windows, never skip clips), scripted verdicts: motion direction, subject identity, demanded action, title-claim not contradicted; contact beats escalate to 0.5s-step. Tier 3: retention-drop pass — **advisory-only until validated against Ep02's real retention (rev; its original validation target was the dropped breaking_law)**. Budget checkpoint/resume (spend-cap precedent). | Live only after regression suite detects archived C33/C29 backwards clips + dinoverse jaw-flap strips. Any FAIL blocks S9. Waivers per-defect, carried forward. | None. |
+| S9 | **Owner review — final gate, budgeted** | ONE packet: watch copy, contact sheet, 1-page gate summary, predicted-drop windows, open waivers. Verdicts recorded per-defect in the lane ledger. Reversal of a recorded verdict → conflict flagged → profile updated + versioned. **Semantic verdicts map to causal-grammar rule edits, not just numeric bands (rev)**; failed rounds re-verify only affected windows, not full S8 (rev). | SHIP requires recorded yes; ship-with-defects requires per-defect waivers. Packets >7d flagged by S0. | THE owner moment: one watch/ear per candidate. |
+| S10 | **Publish — checkable** | Upload by owner (or delegated recipe); `publish_ledger.json` entry: video_id, datetime, title/thumb used vs S2 package, shipped waivers, report hashes. | `run_gates.py publish-check` verifies live via yt-dlp metadata. | Publish click / schedule / kill-with-record. |
+| S11 | **Measure + calibrate** | Scheduled day-2/14/28/90 reads (`own_channel_read.py`, innertube/yt-dlp; Studio CTR/retention via proven TechJoint pattern when owner present). Calibration: retention vs S8 predictions; CTR vs S2 candidates + owner pick; outcomes vs verdicts + waivers. **Minimum-signal floor (rev):** below the floor (0-3-sub channels, small n), reads are collected but calibration is note-only and NEVER fail-closes lanes; public like/comment rates flagged as proven-paradoxical (WBS losers scored higher). Repackage-at-day-14 and never-delete-flops standing. | Overdue DUE reads block new lanes for that channel; **next lane unlocks at PUBLISHED + reads scheduled — not day-14 (rev)**. | Day-14/90 decisions from a 1-page summary. |
+
+---
+
+## 2. Build order (10 steps, each with an on-disk done_when)
+
+1. **Ground truth + triage.** Browser-check publish status of the 3 unconfirmed deliverables (Rexcaped variant, Spino Short, Sam Neill); create `publish_ledger.json` + `pipeline_state.json`; owner triages every lane in one sitting (≤1 ACTIVE). *Done when: both files committed, every lane has a status.*
+2. **Close the oldest loop: cookies v4 ear check.** One packet (watch copy exists + gate summary + 26-hissy/5-unsynced as pre-declared waiver candidates). *Done when: dated per-defect verdict in the lane ledger; ship or v5 list.*
+3. **Own-channel read v0.** Overdue reads on Dmmtwvx7qnE + EUp3PX5mUWQ; scheduled recurrence as a real cron/scheduled-task artifact + dated ledger line (rev). *Done when: read JSONs + 1-page summary committed; schedule artifact on disk.*
+4. **Gate runner skeleton.** `run_gates.py` wrapping EXISTING gates (verify_render, verify_foley_v4→hard-fail hiss, thumb_gate, gate_style, gate_shots) + profiles seeded from cookies mix spec and WBS bands + WAIVERS ledger + S0 checks + pre-commit hook (rev). *Done when: end-to-end run on the cookies master flags the 26 known-hissy tracks; state check fails a synthetic 2-ACTIVE file.*
+5. **Finish WBS Ep02 bank (31→88) through ledger discipline** with bank-time vision verdicts. *Done when: `bank-status` exit 0 at 88/88, disk-verified, committed.* (Longest wall-clock item; multi-session, owner spend sign-off per batch, Grok weekly caps apply. Machine-only steps 3/4/6-prep run in parallel during owner-wait — rev.)
+6. **Shared assembly lib** extracted from cookies+ep02 assemblers; assemble Ep02 through it. *Done when: both timeline regressions pass (v3→v3, v4→v4); Ep02 assembly report 88/88, zero silent skips.*
+7. **Scripted vision gate.** **PRECONDITION (rev): micro-prototype — ONE archived C33 strip → one scripted API verdict with cost+latency logged, then OWNER APPROVAL for standing vision-gate API spend** (scripted Claude-vision has zero prior runs; all past audits were in-session labor; NO-PAID-APIS rule applies). Then full regression + tiered S8 on the Ep02 render with wall-time/call-count logged. *Done when: regression detects C33/C29 + jaw-flap; Ep02 report on disk with cost accounting.*
+8. **Listen gate v0 + Ep02 sound pass**; then the bounded 1-hr Gemini-audio probe (note-only). *Done when: listen_report in-band; regression flags archived bad mixes; probe note exists.*
+9. **CLICK + story gates for Ep02 packaging** (title_gate falsified against the WBS 26-video corpus, cold-start confound noted; story_gate report-only for the locked script, blocking from next lane). *Done when: click_package.json + story_report.json committed; owner pick recorded.*
+10. **Ep02 review → publish → reads.** First full traversal. *Done when: publish-check passes; day-2 read + calibration note on schedule; S0 activates exactly one next lane by recorded owner decision.* **First config-swap repeat: a like-for-like creature/doc lane. Christ Cares runs only after the profile schema's content-policy section exists (rev — its binding gates are policy, not style).*
+
+---
+
+## 3. What stays human (structurally, not temporarily)
+
+Spend sign-off · subject+seed lock · title/thumb pick · the S9 watch/ear · publish click · day-14/90 strategy calls. Everything else is proven-autonomous or gated by machines first.
+
+## 4. CANNOT-CONFIRM register (honest capability boundary, 2026-08-27)
+
+- Music/mix judged without the owner's ears (every stuck level was owner-eared) — v0 DSP gate narrows, does not close.
+- Machine detection of "boring" / story-arc failure on a render (band-conformity proven not to predict engagement — LOSE2).
+- CTR prediction for owned uploads; ANY own-channel performance measurement (never done once).
+- Scripted (non-interactive) vision gating — zero prior runs; micro-prototype required (step 7).
+- Semantic listening on any route (Gemini key present in ~/.zshrc, audio upload untested; no CLAP/audio-LM local).
+- MMAudio foley surviving the owner's ear (v4 verdict pending).
+- Style transfer without a fresh teardown (both attempts rejected).
+- A full video approved first-try: **0 occurrences across 7+ projects** (sub-artifacts pass first-try routinely).
+- Publish status of Rexcaped variant / Spino Short / Sam Neill (step 1 settles).
+- Whether "owner" verdicts on TechJoint lanes are Jeff or Vincent.
+
+## 5. Revision log (what the adversarial reviewers landed → resolution)
+
+1. Vision-gate API spend unproven + unauthorized → micro-prototype + explicit owner approval precondition (step 7).
+2. Christ Cares breaks the S1 separation test (deliberate divergence) + lacks content-policy fields → divergent-style profile mode + content-policy schema section; like-for-like lane is the first swap test.
+3. S0 staleness could freeze everything on owner latency → split semantics (FAIL vs WARN-and-block-new-only).
+4. Day-14 wait between lanes caps output at ~1/2.5wk → unlock at PUBLISHED + reads scheduled.
+5. Impossible v4-vs-v3 timeline regression → two regressions, one per config.
+6. Single-door ban is normative; norms proven to fail here → pre-commit hook + entrypoint-embedded state check + CLAUDE.md routing.
+7. story_gate's LLM judgment unfalsifiable → author-tagged annotations + deterministic position checks.
+8. 9 hand-maintained schemas = drift risk (the 53-vs-31 class) → commit-on-write enforced by gates; ledgers merged per-lane.
+9. WHY layer would die again at render → profile carries executable causal grammar; S3 anchors are a mandatory S6/S7 input; S9 verdicts edit grammar rules, not only bands.
+10. Retention-drop pass's validation target (breaking_law) is unreachable → advisory until validated on Ep02's real retention.
+11. All gates push toward sameness (YPP "mass-produced" trigger) → S2 differentiation gate (edit-fingerprint diff + disclosure).
+12. S11 calibration-on-noise → minimum-signal floor; noise-tier reads never fail-close.
