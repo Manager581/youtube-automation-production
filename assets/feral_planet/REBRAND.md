@@ -1,10 +1,14 @@
 # FERAL PLANET — channel rebrand package
 _2026-08-27. Full rebrand of the dormant "Quantum" channel (@Quantum_Space_Physics, 0 subs)._
 
-## Identity
-- **Channel name:** Feral Planet
-- **Handle:** **@FeralPlanetTV** (verified free 2026-08-27 via 404 check; fallback **@TheFeralPlanet**, also free).
-  Bare @FeralPlanet is held by an empty channel — do not wait on it.
+## Identity — APPLIED LIVE 2026-08-27
+- **Channel name:** Feral Planet TV (owner call: whole branding matches the handle; 2nd name change of the
+  14-day window — name now LOCKED until ~2026-09-10)
+- **Handle:** **@FeralPlanetTV** (green-check accepted in Studio; bare @FeralPlanet held by an empty channel)
+- **Live art:** eye avatar + buffalo banner with "FERAL PLANET TV" wordmark (`banner_buffalo_text_tv.png`)
+- **Channel settings applied:** keywords (19 chips: wildlife…dinosaurs, prehistoric animals), country=Canada
+  (pre-existing), upload defaults = boilerplate description + Private default visibility + 9 default tags +
+  category Pets & Animals + video language English. Old Quantum videos = PRIVATE.
 - **Collision status:** only 2 tiny auto-suffix channels named "Feral Planet" exist (@FeralPlanet-b5i,
   @FeralPlanet-0BB — dead accounts). Every other short wildlife name checked (16 total) is clone-farm
   saturated. Full board in the session log.
