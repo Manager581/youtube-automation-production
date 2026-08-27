@@ -8,7 +8,7 @@
 ## 0. The verdict this plan is built on
 
 1. **Wiring diagnosis (confirmed):** checks exist but aim at the wrong object (plan/reference/single clip, not the assembled render), through the wrong lens (2fps strips, LUFS/whisper proxies), with no teeth (advisory verdicts, waivers, fail-open assemblers), and never persist. The owner is the only blocking perceptual gate.
-2. **Thesis A — project thrash DOMINATES throughput (proven):** ~14 initiatives / 5-6 channels since Dec 2025 → **2 published videos** (both deliberately-imperfect drafts). breaking_law strategy-killed at ~95%. WBS Ep02 stalled 34 days at 31/88. Christ Cares assembled + unpublished 21 days. A perfect pipeline changes nothing if finish-rate stays 2/14 — so this plan **starts by finishing**, not by building.
+2. **Thesis A — the vicious cycle (owner-corrected 2026-08-27):** ~14 initiatives / 5-6 channels since Dec 2025 → **2 published videos**. The owner's correction, accepted: lanes were abandoned BECAUSE each video was garbage — "fix one thing, fuck up another, never progress" — which is the no-persistence failure wearing its cost: every new lane got a fresh bespoke assembler importing zero lessons, so quality reset each time, so lanes died, so new lanes started. The WIP gate (S0) is therefore **credit protection**, not a discipline lecture: an unfinished lane is burned Grok/ElevenLabs credits with zero payoff. Breaking the cycle = making lessons transfer (S1/S6/run_gates), so finishing stops being punishing.
 3. **Thesis C — zero audience ground truth (proven):** no view count, CTR, or retention number for ANY own published video exists anywhere in the repo; the owner's own playbook's day-14/day-90 reads are 76 and 41 days overdue. Every gate currently optimizes one person's unvalidated taste.
 4. **Thesis B — the owner gate is load-bearing and mostly right, but:** waiver-shipping and taste-spec churn (3 recorded formula reversals; one accepted-v2/rejected-identical-v3 contradiction) are real; the fix is budgeting his bandwidth and making waivers/reversals first-class records — never bypassing him.
 
@@ -17,6 +17,8 @@
 ---
 
 ## 1. The 12 stages
+
+**The front door the owner asked for (2026-08-27):** drop a video URL/title → S1 tears it down into a style profile + S2 emits gated title/thumb/topic candidates → owner approves subject/seed and picks packaging (minutes) → S3-S8 build and machine-verify → owner watches once → publish → S11 measures. Teardown-to-spec is the pipeline's PROVEN strongest capability (5 successful teardowns; cookies v4 hit its measured spec) — the only missing piece has always been that teardowns died as prose instead of emitting the config everything downstream is forced to obey. That converter + the single door below IS this plan.
 
 Single door: **`run_gates.py`** — the ONLY sanctioned entrypoint for teardown/spend/assembly/verification. Per-style behavior = `research/style_profiles/<style>.json` config swap. All gates fail-closed; waivers only via logged entries (lane, date, reason) that resurface at review and post-publish read. **Mechanical enforcement, not norms** (norms are proven to fail here): a pre-commit hook fails any commit adding `assemble_*.py` outside `lib/assembly/`; the S0 state check is embedded inside the assembly/render entrypoints so a bypassing session still hits it; gates refuse to pass on uncommitted artifacts (commit-on-write).
 
@@ -45,7 +47,7 @@ Single door: **`run_gates.py`** — the ONLY sanctioned entrypoint for teardown/
 4. **Gate runner skeleton.** `run_gates.py` wrapping EXISTING gates (verify_render, verify_foley_v4→hard-fail hiss, thumb_gate, gate_style, gate_shots) + profiles seeded from cookies mix spec and WBS bands + WAIVERS ledger + S0 checks + pre-commit hook (rev). *Done when: end-to-end run on the cookies master flags the 26 known-hissy tracks; state check fails a synthetic 2-ACTIVE file.*
 5. **Finish WBS Ep02 bank (31→88) through ledger discipline** with bank-time vision verdicts. *Done when: `bank-status` exit 0 at 88/88, disk-verified, committed.* (Longest wall-clock item; multi-session, owner spend sign-off per batch, Grok weekly caps apply. Machine-only steps 3/4/6-prep run in parallel during owner-wait — rev.)
 6. **Shared assembly lib** extracted from cookies+ep02 assemblers; assemble Ep02 through it. *Done when: both timeline regressions pass (v3→v3, v4→v4); Ep02 assembly report 88/88, zero silent skips.*
-7. **Scripted vision gate.** **PRECONDITION (rev): micro-prototype — ONE archived C33 strip → one scripted API verdict with cost+latency logged, then OWNER APPROVAL for standing vision-gate API spend** (scripted Claude-vision has zero prior runs; all past audits were in-session labor; NO-PAID-APIS rule applies). Then full regression + tiered S8 on the Ep02 render with wall-time/call-count logged. *Done when: regression detects C33/C29 + jaw-flap; Ep02 report on disk with cost accounting.*
+7. **Standing vision gate — SUBSCRIPTION-ONLY (owner correction 2026-08-27: NO metered APIs, ever).** gate_vision runs as **in-session agent labor under the Claude subscription** — the exact mechanism every successful past audit used — made repeatable as a standing recipe/skill (strip extraction is scripted + free locally; the vision verdicts are a fixed agent fan-out any session invokes identically per render). No API keys, no per-call dollars; the cost is session time, logged. Then full regression + tiered S8 on the Ep02 render with wall-time logged. *Done when: the recipe run detects archived C33/C29 + jaw-flap from their kept strips; Ep02 report on disk with time accounting.*
 8. **Listen gate v0 + Ep02 sound pass**; then the bounded 1-hr Gemini-audio probe (note-only). *Done when: listen_report in-band; regression flags archived bad mixes; probe note exists.*
 9. **CLICK + story gates for Ep02 packaging** (title_gate falsified against the WBS 26-video corpus, cold-start confound noted; story_gate report-only for the locked script, blocking from next lane). *Done when: click_package.json + story_report.json committed; owner pick recorded.*
 10. **Ep02 review → publish → reads.** First full traversal. *Done when: publish-check passes; day-2 read + calibration note on schedule; S0 activates exactly one next lane by recorded owner decision.* **First config-swap repeat: a like-for-like creature/doc lane. Christ Cares runs only after the profile schema's content-policy section exists (rev — its binding gates are policy, not style).*
@@ -69,9 +71,11 @@ Spend sign-off · subject+seed lock · title/thumb pick · the S9 watch/ear · p
 - Publish status of Rexcaped variant / Spino Short / Sam Neill (step 1 settles).
 - Whether "owner" verdicts on TechJoint lanes are Jeff or Vincent.
 
-## 5. Revision log (what the adversarial reviewers landed → resolution)
+## 5. Revision log (what the adversarial reviewers + owner landed → resolution)
 
-1. Vision-gate API spend unproven + unauthorized → micro-prototype + explicit owner approval precondition (step 7).
+0a. **OWNER (2026-08-27): thrash causality reversed** — lanes died because videos were garbage (fix-one-break-another), not owner flakiness → §0.2 reframed as the vicious cycle; S0 framed as credit protection; breaking the cycle = lesson transfer, which is the plan's core.
+0b. **OWNER (2026-08-27): subscriptions ONLY, no metered APIs ever** → step 7 + S5/S8 vision verdicts run as in-session subscription agent labor via a standing recipe (the proven mechanism), never API scripts; all gates must run on subscriptions/local compute. Memory: `feedback_subscriptions_only_no_api_spend.md`.
+1. Vision-gate scripting unproven → superseded by 0b: standing in-session recipe with the same mandatory regression suite (step 7).
 2. Christ Cares breaks the S1 separation test (deliberate divergence) + lacks content-policy fields → divergent-style profile mode + content-policy schema section; like-for-like lane is the first swap test.
 3. S0 staleness could freeze everything on owner latency → split semantics (FAIL vs WARN-and-block-new-only).
 4. Day-14 wait between lanes caps output at ~1/2.5wk → unlock at PUBLISHED + reads scheduled.
