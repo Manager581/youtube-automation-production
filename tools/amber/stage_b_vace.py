@@ -119,7 +119,13 @@ def phase_generate():
 
     crop = Image.open(WORK / "crop.png").convert("RGB")
     mask = Image.open(WORK / "mask.png").convert("L")
-    video = [crop] * NUM_FRAMES
+    cond_dir = WORK / "cond"
+    if cond_dir.exists():
+        cond_frames = sorted(cond_dir.glob("*.png"))
+        video = [Image.open(f).convert("RGB") for f in cond_frames]
+        print(f"[cond] puppet conditioning video: {len(video)} frames", flush=True)
+    else:
+        video = [crop] * NUM_FRAMES
     masks = [mask] * NUM_FRAMES
     ref_path = WORK / "ref.png"
     refs = [Image.open(ref_path).convert("RGB")] if ref_path.exists() else None

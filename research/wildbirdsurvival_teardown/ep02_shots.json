@@ -539,12 +539,14 @@
    "vantage": "from BEHIND AND SLIGHTLY ABOVE THE TAIL, looking FORWARD up the spine",
    "action": "The thesis frame, held under the 3s pause: one finch braced at the tail base beside a matted red patch, a second further up the back on clean plumage - cleaner and parasite in one shot.",
    "seed": "SEED_spine_two_finch.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Looking forward along the spine of a Nazca booby from behind its tail: one vampire ground finch braced at the tail base beside a dry matted red patch on the white feathers, and a second finch further up the back working clean unmarked plumage; camera is behind and slightly above the tail looking forward up the body, long lens. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. A DRY matted red bloodstain that does NOT drip, stretch, run, or form any thread/string; the stain itself stays completely still while the birds move.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Looking forward along the spine of a Nazca booby from behind its tail: one vampire ground finch braced at the tail base beside a small patch of dry rust-brown matting on the white feathers, old and part of the feathers themselves, and a second finch further up the back working clean unmarked plumage; camera is behind and slightly above the tail looking forward up the body, long lens. Keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. The small patch of matting keeps exactly the same size, shape, position and colour in every frame, and everything at both finches' beaks stays dry, matte and unchanged.",
    "physics_risk": "medium",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT4",
    "orig_id": "S053",
-   "seed_crop": "276,215,1244,700"
+   "seed_crop": "276,215,1244,700",
+   "coverage_note": "DRY RESPEC PRE-APPLIED (session-8 rule): frame-1 shows the foreground finch's bill AT the tail-base patch (near-contact, not beside) -> failure-verb-cueing risk; red vocab + rider wall stripped to rust-brown matting; has_blood->false. T1 ACCEPTED (dry prompt, first roll): patch pixel-stable (dry 8/8), both finches station-hold with real working motion, count 2, no morph. clip_in=0.6.",
+   "clip_in": 0.6
   },
   {
    "id": "S032",
@@ -555,12 +557,13 @@
    "vantage": "low, from BELOW AND TO ONE SIDE, tilted UP at the underside of the head and throat",
    "action": "The swallow: the throat feathers pulsing, out-of-focus red matting on white down beyond. 'A tenth of everything it eats.'",
    "seed": "hero_still_A2_macro_finch_wound.png",
-   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Tight telephoto macro, lens level with the bird and only very slightly above its eye, side-on: a small black vampire ground finch stands in near-profile on the pale lava beside a Nazca booby's flank, its blunt seed-cracking beak worked into the parted white down at the base of a flight feather, a compact dark red mark matted into the down right beside the beak, the seabird's dark folded wing and white body filling the left of the frame. The finch lifts its head a few millimetres clear of the down and swallows twice, its dark throat visibly pulsing against the white feathers behind it, then dips the beak back in; it keeps facing the feather and never turns toward the camera. A second black vampire ground finch waits motionless and out of focus at the lower right edge of the frame and does not move; the seabird's head stays out of frame and the seabird itself is still apart from the wind moving its feathers. Camera locked off with a faint handheld breath, shallow telephoto depth of field, background lava thrown soft, no push-in, no zoom, no camera move. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. a DRY matted red bloodstain: the red mark already on the white down is fixed in place and stays exactly as it is \u2014 it does NOT drip, run, stretch, spread, grow, or form any thread, string or droplet, and no new blood appears; the stain stays completely still while the birds move.",
+   "grok_prompt": "real handheld wildlife documentary footage, 16:9, telephoto, flat overcast light, desaturated, BBC Planet Earth realism, no golden hour, no cinematic lighting, realistic bird anatomy. Tight telephoto macro, lens level with the bird and only very slightly above its eye, side-on: a small black vampire ground finch stands in near-profile on the pale lava beside a Nazca booby's flank, its blunt seed-cracking beak worked into the parted white down at the base of a flight feather, a small patch of dark rust-brown matting set into the down right beside the beak, old and dry, part of the feathers themselves, the seabird's dark folded wing and white body filling the left of the frame. The finch lifts its head a few millimetres clear of the down and swallows twice, its dark throat visibly pulsing against the white feathers behind it, then dips the beak back in; it keeps facing the feather and never turns toward the camera. A second black vampire ground finch waits motionless and out of focus at the lower right edge of the frame and does not move; the seabird's head stays out of frame and the seabird itself is still apart from the wind moving its feathers. Camera locked off with a faint handheld breath, shallow telephoto depth of field, background lava thrown soft, no push-in, no zoom, no camera move. keep exact anatomy, no extra limbs, no morphing, no bird splitting or merging. The small patch of matting stays exactly as it is, keeping the same size, shape, position and colour in every frame, part of the feathers themselves, and everything at the beak stays dry, matte and unchanged from the first frame to the last.",
    "physics_risk": "medium",
-   "has_blood": true,
+   "has_blood": false,
    "act": "ACT4",
    "orig_id": "S054",
-   "seed_crop": "470,168,576,324"
+   "seed_crop": "470,168,576,324",
+   "coverage_note": "DRY RESPEC PRE-APPLIED (session-8 rule): bill-in-mark + swallow arc on A2; gore wall -> rust-brown matting + dry closer; has_blood->false."
   },
   {
    "id": "S033",
