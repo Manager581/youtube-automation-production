@@ -1,0 +1,132 @@
+{
+  "_schema": "publish_ledger v1 (PIPELINE_OVERHAUL_PLAN §S10 / build step 1). One entry per LIVE public upload on an owned channel. Verified via yt-dlp public metadata; views recorded per read date. Private/unlisted uploads do not appear here (yt-dlp sees public only) — absence from this ledger means NOT PUBLISHED publicly.",
+  "recorded": "2026-08-31",
+  "channels": {
+    "rexcaped": { "id": "UCAYP6fzqaCymk_0FFZ9yLJQ", "handle": "@rexcaped" },
+    "prehistoric_pov": { "id": "UCp5i11vHNtFqs2iH77bS8kw", "handle": "@Prehistoric_POV" },
+    "feral_planet": { "id": "UC5H-0aA2jbVMIabsHX7idow", "handle": "@FeralPlanetTV", "note": "0 public uploads as of 2026-08-31 (no videos/shorts tab)" }
+  },
+  "entries": [
+    {
+      "video_id": "Dmmtwvx7qnE",
+      "channel": "rexcaped",
+      "upload_date": "2026-06-12",
+      "duration_s": 366,
+      "title": "I Simulated A T-REX In NYC And It's Terrifying...",
+      "provenance": "repo",
+      "repo_artifact": "trex_pilot v4_ch1 full-timeline draft (540p, deliberate rough publish)",
+      "views": { "2026-08-31": 9 }
+    },
+    {
+      "video_id": "p6g4fwdTwyk",
+      "channel": "rexcaped",
+      "upload_date": "2026-07-22",
+      "duration_s": 485,
+      "title": "I Found A Dino Zoo | Jurassic World Indominus Rex (AI POV)",
+      "provenance": "repo",
+      "repo_artifact": "EPISODE_FINAL_REXCAPED_1080.mp4 (8:04.8 — duration match; the Omega Rex Rexcaped variant, v10 intro)",
+      "views": { "2026-08-31": 11 },
+      "notes": "Was handed off 2026-07-21 for PRIVATE upload; is now PUBLIC. Settles plan §4 CANNOT-CONFIRM item."
+    },
+    {
+      "video_id": "8jug27d-4NI",
+      "channel": "rexcaped",
+      "upload_date": "2026-06-29",
+      "duration_s": 36,
+      "title": "Jurassic Zoo Spinosaurus Scene WalkThrough",
+      "provenance": "owner-direct",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 157 },
+      "notes": "No repo record. Owner uploads outside the pipeline exist — ledger must be reconciled against yt-dlp, never against repo memory alone."
+    },
+    {
+      "video_id": "KeLi8Qxj8Fw",
+      "channel": "rexcaped",
+      "upload_date": "2026-06-29",
+      "duration_s": 36,
+      "title": "Jurassic Zoo Spinosaurus Enclosure WalkThrough",
+      "provenance": "owner-direct",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 3 }
+    },
+    {
+      "video_id": "aH5q0e_l0sQ",
+      "channel": "rexcaped",
+      "upload_date": "2025-10-28",
+      "duration_s": 4,
+      "title": "This Is Why Killer Whales Are Terrified Of Pilot Whales",
+      "provenance": "legacy_watch_this",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 17 }
+    },
+    {
+      "video_id": "1SBkfHQ3oXo",
+      "channel": "rexcaped",
+      "upload_date": "2025-10-28",
+      "duration_s": 4,
+      "title": "The only creature that killer whales are afraid of...",
+      "provenance": "legacy_watch_this",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 2185 }
+    },
+    {
+      "video_id": "JVvFLHvZEFY",
+      "channel": "rexcaped",
+      "upload_date": "2025-10-27",
+      "duration_s": 8,
+      "title": "What If You Met This Monster Shark?",
+      "provenance": "legacy_watch_this",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 1573 }
+    },
+    {
+      "video_id": "EUp3PX5mUWQ",
+      "channel": "prehistoric_pov",
+      "upload_date": "2026-07-17",
+      "duration_s": 488,
+      "title": "I Found a Dinosaur Zoo Hiding A Secret | Jurassic World AI POV",
+      "provenance": "repo",
+      "repo_artifact": "EPISODE_MASTER_v7.mp4 (Dinoverse v7)",
+      "views": { "2026-08-31": 407 }
+    },
+    {
+      "video_id": "UKgH1MhP9ko",
+      "channel": "prehistoric_pov",
+      "upload_date": "2026-07-10",
+      "duration_s": 52,
+      "title": "I Found A Dinosaur Zoo | Jurassic World Walkthrough | Velociraptor | AI POV",
+      "provenance": "owner-direct",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 48 }
+    },
+    {
+      "video_id": "WRG-o9X_0Ho",
+      "channel": "prehistoric_pov",
+      "upload_date": "2026-06-30",
+      "duration_s": 36,
+      "title": "POV Walkthrough Spinosaurus Lagoon",
+      "provenance": "owner-direct",
+      "repo_artifact": null,
+      "views": { "2026-08-31": 26 }
+    },
+    {
+      "video_id": "u_2Wdt4zGa0",
+      "channel": "prehistoric_pov",
+      "upload_date": "2026-07-15",
+      "duration_s": 19,
+      "title": "Tribute To Sam Neil",
+      "provenance": "repo",
+      "repo_artifact": "sam_neill_tribute_JPTHEME_19s.mp4 (duration match)",
+      "views": { "2026-08-31": 1416 },
+      "notes": "PUBLISHED — settles plan §4 CANNOT-CONFIRM item. Best-performing 2026 own upload on any channel."
+    }
+  ],
+  "not_published": [
+    {
+      "artifact": "output/spino_short_FINAL.mp4",
+      "built": "2026-07-24",
+      "duration_s": 70.3,
+      "note": "Finished 720x1280 short (Spinosaurus to the sea). No live upload matches it on any owned channel. Publish-or-kill is an open owner decision."
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "_schema": "pipeline_state v1 (PIPELINE_OVERHAUL_PLAN §S0 / build step 1). Every production lane has exactly one status: ACTIVE | BLOCKED-ON-OWNER | PARKED | KILLED | PUBLISHED | UNTRIAGED. Max 1 ACTIVE production lane. UNTRIAGED is only legal until the owner's triage sitting; run_gates.py state must fail on >1 ACTIVE or any UNTRIAGED after triage.",
+  "updated": "2026-08-31",
+  "triage": { "done": false, "note": "Factual state verified 2026-08-31 (yt-dlp + disk). Statuses below marked UNTRIAGED await the owner's one-sitting triage; 'proposed' is machine advice only." },
+  "lanes": {
+    "breaking_law": {
+      "status": "KILLED",
+      "reason": "Strategy-killed at ~95% complete (owner decision, 2026-06). Never propose resuming. Bizdoc pipeline/tools stay alive.",
+      "channel": null
+    },
+    "dinoverse_v7": {
+      "status": "PUBLISHED",
+      "channel": "prehistoric_pov",
+      "video_id": "EUp3PX5mUWQ"
+    },
+    "rexcaped_pilot_trex_nyc": {
+      "status": "PUBLISHED",
+      "channel": "rexcaped",
+      "video_id": "Dmmtwvx7qnE",
+      "note": "Deliberate rough draft publish."
+    },
+    "rexcaped_variant_dino_zoo": {
+      "status": "PUBLISHED",
+      "channel": "rexcaped",
+      "video_id": "p6g4fwdTwyk",
+      "note": "Confirmed live (public) 2026-08-31; was previously CANNOT-CONFIRM."
+    },
+    "sam_neill_tribute": {
+      "status": "PUBLISHED",
+      "channel": "prehistoric_pov",
+      "video_id": "u_2Wdt4zGa0",
+      "note": "Confirmed live 2026-08-31; 1,416 views — best 2026 own upload."
+    },
+    "wbs_ep02_vampire_finch": {
+      "status": "UNTRIAGED",
+      "proposed": "ACTIVE",
+      "channel": "feral_planet",
+      "state": "31/88 clips banked (ledger disk-verified); VO done + block manifest; 23/23 seeds; assembler proven end-to-end with placeholders; gate_style preflight 9/9.",
+      "next": "Resume clip grind at S032 per research/wildbirdsurvival_teardown/NEXT_SESSION.md; this is plan build step 5.",
+      "why_proposed": "Most-advanced unfinished lane; the plan's build order (steps 5-10) runs through it; first upload slate for the branded-but-empty Feral Planet TV channel."
+    },
+    "spino_short": {
+      "status": "UNTRIAGED",
+      "proposed": "BLOCKED-ON-OWNER",
+      "channel": "rexcaped",
+      "state": "FINAL built 2026-07-24 (output/spino_short_FINAL.mp4, 70.3s, QA'd). NOT live on any owned channel.",
+      "next": "One owner decision: publish as-is / fix water-continuity cosmetic first / kill.",
+      "why_proposed": "Zero build cost remaining; it is a delivered packet awaiting verdict (S0 WARN class)."
+    },
+    "rexcaped_video2_spino_lagos": {
+      "status": "UNTRIAGED",
+      "proposed": "PARKED",
+      "channel": "rexcaped",
+      "state": "Script + single-pass Mark VO (9:48) + whisperx alignment done; 4 hook stills; composite pipeline validated. No work since ~2026-06-13.",
+      "next": "If activated: chapter-by-chapter stills -> cutouts -> composites per NEXT_VIDEO.md.",
+      "why_proposed": "Real sunk value (VO paid for) but behind wbs_ep02 in maturity; parking preserves it without splitting focus."
+    },
+    "spinosnack_dunkleosteus": {
+      "status": "UNTRIAGED",
+      "proposed": "PARKED",
+      "channel": "rexcaped",
+      "state": "June proof renders (540p AISIM cut) + 18 shot stills on disk (assets/dunkleosteus/sh01-18, 2026-06-09, never committed). Branch name is stale legacy.",
+      "next": "If activated: re-plan against current pipeline; stills may be reusable seeds.",
+      "why_proposed": "Superseded in practice by the Rexcaped lane doing the same genre."
+    },
+    "christ_cares": {
+      "status": "UNTRIAGED",
+      "proposed": "PARKED",
+      "channel": "christ_cares",
+      "state": "Format decided (own-words summaries + sparse quotes, faceless-God gate).",
+      "next": "Per plan step 10: runs only after the style-profile schema's content-policy section exists.",
+      "why_proposed": "Plan explicitly sequences it after the first config-swap lane."
+    },
+    "techjoint_cookies_v4": {
+      "status": "BLOCKED-ON-OWNER",
+      "channel": "techjoint",
+      "state": "v4 generated-foley rebuild (commit 224ec8b) delivered; awaiting owner EAR CHECK. Plan build step 2 = close this loop with a dated per-defect verdict.",
+      "next": "Owner listens once; verdict recorded; ship or v5 list.",
+      "note": "Delivered-packet class: blocks NEW lane starts only, per S0 split semantics."
+    },
+    "techjoint_top25_series": {
+      "status": "UNTRIAGED",
+      "proposed": "PARKED",
+      "channel": "techjoint",
+      "state": "Look-alike series through #9; next = #10.",
+      "why_proposed": "Separate channel with its own cadence; owner call whether it counts against the WIP cap."
+    },
+    "prehistoric_pov_walkthroughs": {
+      "status": "UNTRIAGED",
+      "proposed": "PARKED",
+      "channel": "prehistoric_pov",
+      "state": "Owner-direct uploads (velociraptor 52s, spinosaurus lagoon 36s, + 2 Rexcaped walkthroughs) with no repo artifacts — a lane that exists outside the pipeline.",
+      "why_proposed": "Owner's personal upload lane; pipeline should record (publish ledger) but not gate it."
+    },
+    "feral_planet_first_upload": {
+      "status": "UNTRIAGED",
+      "proposed": "BLOCKED-ON-OWNER",
+      "channel": "feral_planet",
+      "state": "Channel branded + settings done 2026-08-27; 0 public uploads. First slate = wbs_ep02 (or a fast tick-formula episode).",
+      "why_proposed": "Not a separate build — it is wbs_ep02's destination; kept as a line so the empty channel is visible in triage."
+    }
+  },
+  "meta": {
+    "pipeline_overhaul": {
+      "state": "Plan v1.5 committed (76eea0c). Build step 1 in progress this session (this file + publish_ledger.json). Steps 2-10 not started: no run_gates.py, no lib/assembly/, no research/style_profiles/.",
+      "note": "Meta-lane; does not count against the 1-ACTIVE production cap."
+    }
+  }
+}
