@@ -1,0 +1,471 @@
+{
+ "source": "research/primeval_atlas_teardown/spino_short.mp4",
+ "window": "0.0-28.0s (hook)",
+ "method": "event-grammar teardown v1: 8fps filmstrips -> vision event ledger -> causal annotation -> adversarial spot-check",
+ "generated": "2026-08-31",
+ "event_count": 51,
+ "spot_check": {
+  "verdict": "RELIABLE",
+  "errors_found": [
+   "Claim 6 audio timing: the listed onset 14.164 (str 4.27) leads the actual energy rise - at 14.16 the RMS is at its local quietest (-52.5 dB); the audible hit rises ~14.21-14.34, which aligns with the visual gape frames (14.25-14.375). Pairing is real but the timestamp is ~60ms early relative to broadband energy.",
+   "Claim 7 omission: the claimed 'tracking begins ~17.5' window actually contains an unclaimed hard cut at ~17.25 from a distant beach wide into the water-level sail shot - the shot begins with a cut ~0.25s before the claimed time. The water-level surface-bob read itself is supported (favoring the claim over the docs' 'locked-off' note).",
+   "Claim 4 wording: 'sail swings broadside' overstates the rotation - the sail reads closer to a 3/4/edge-on angle than fully broadside; the turn and the orange-red backlit membrane payoff are otherwise accurate.",
+   "Claim 3 nuance: the head-dip is subtle and continues slightly past the claimed 5.875 endpoint; the snout lowers toward but never visibly reaches the water within 5.5-5.9."
+  ]
+ },
+ "phase_rates": [
+  {
+   "phase": "P1 Cold-open camouflage shock (Shot 1)",
+   "span": "0.0-5.0s",
+   "events_per_min": 96,
+   "cuts_per_min": 12,
+   "character": "One 5.0s held shot - the longest of the window - but the 96/min average hides the real shape: ZERO events from 0.5 to 2.875 (2.4s of bought stillness), then 6 events in the final 2.1s (~170/min locally). Stillness-then-eruption; all action played quiet, saving the bang for the phase-exit sting at 5.085."
+  },
+  {
+   "phase": "P2 Pull-back lull / journey (Shots 2-3)",
+   "span": "5.0-12.125s",
+   "events_per_min": 101.1,
+   "cuts_per_min": 16.8,
+   "character": "The deliberate audio hole (-38 to -45 LUFS, quietest stretch of the film per both docs). Event rate looks nearly identical to P1/global, but the events are low-amplitude: drifting push-ins, wading strides, a broadside beauty beat - maintenance beats that keep quiet from reading as static. No stung cuts; the 8.125 cut passes at the audio floor."
+  },
+  {
+   "phase": "P3 Catch climax (Shot 4 + beach head-toss)",
+   "span": "12.125-14.625s",
+   "events_per_min": 288,
+   "cuts_per_min": 24,
+   "character": "The densest phase by ~3x global: 12 events in 2.5s, an onset ladder (12.4/12.59/13.4/14.16) climbing to the window's loudest moment (-20.2 LUFS) and biggest transient (6.87 at 13.398, within 23ms of the visual apex). Includes the only camera move (13.25 tilt-up) and the intra-shot spike (13.125) the detector mistakes for a cut - peak energy comes from within-shot action."
+  },
+  {
+   "phase": "P4 Out to sea / submerge (Shots 5-6)",
+   "span": "14.625-21.125s",
+   "events_per_min": 55.4,
+   "cuts_per_min": 18.5,
+   "character": "The SPARSEST phase - half the global event rate, including a 3.1s stretch (17.5-20.6) with zero events AND zero audio onsets (the 14.58-20.39 onset desert). Cuts stay near average but events collapse: this phase proves cut rate and event rate are independent levers. The disappearance IS the content; carried by loudness wash + handheld bob, not beats."
+  },
+  {
+   "phase": "P5 Underwater reveal + hero approach (Shots 7-8)",
+   "span": "21.125-26.875s",
+   "events_per_min": 83.5,
+   "cuts_per_min": 20.9,
+   "character": "Events cluster entirely at the two cuts (3 stacked at 21.125, 4 at 23.75-24.0) with long continuous actions between - the tail stroke and the 2.75s slo-mo approach are each ONE event spanning seconds. Both cuts audio-cold; loudness does the escalation (-25.6 to -20.2 swell). Contains the hardest visual change of the window (23.75 hero cut) and the only eye-level framing of the film."
+  },
+  {
+   "phase": "P6 Stakes reset - the turtle (Shot 9 start)",
+   "span": "26.875-28.0s",
+   "events_per_min": 266.7,
+   "cuts_per_min": 53.3,
+   "character": "Small-window artifact warning: 5 events / 1 cut in 1.125s inflates both rates - the real texture is one stacked cut (cut+subject+color at 26.875) then a footstep metronome (27.45, 27.79 onsets, the latter the strongest hit of the underwater act). Function: transfer the withheld P5 climax onto a new victim and exit the hook mid-threat."
+  }
+ ],
+ "averages_lie": "Global averages for 0-28s: 51 events / 28s = 109.3 events/min, and 9 hard cuts (8 excluding the t=0 start) = 17.1-19.3 cuts/min, mean shot ~3.2s. Those numbers describe NO actual second of this video. Event rate swings 5.2x between adjacent phases: the catch runs 288 ev/min (12 events in 2.5s) while the sea/submerge phase immediately after runs 55 ev/min - and contains a 3.1s stretch (17.5-20.6s) with zero events and zero audio onsets. The cold open averages 96 ev/min but is really 0 ev/min for its first 2.9s and ~170 ev/min for its last 2.1s - the stillness is the purchase that makes 2.875 land. Cut spacing is equally non-uniform: 5.0s hold (opening) down to 2.5s (catch phase), and cut COST varies more than cut rate - two cuts are paid with str 6.5-6.8 stings (5.085, 14.582), two pass silent at the audio floor (8.125, 17.375), and the two most important cuts of the back half (23.75 hero, 26.875 turtle) are deliberately audio-cold with the loudness peak landing just BEFORE the cut. If you built a replica to the averages - a beat every 0.55s, a cut every 3.3s, uniformly - you would destroy both mechanisms the hook actually runs on: the purchased stillness that gives the reveal its snap, and the 288-vs-55 ev/min contrast that makes the catch feel violent and the submerge feel ominous. The averages don't just blur this video; they prescribe its opposite. (Cross-check: the docs' per-second bins agree on all 8 true cut positions within rounding but miss the distributional story entirely - plus the frame pass found the beach head-toss beat at 14.125 they binned away, three camera moves / a speed ramp their 'camera never moves' rule denies, and resolved their s21 'cut' as a blend-frame-softened true cut and their undersold s24 as the hardest visual change in the window at 23.80.)",
+ "ledger": [
+  {
+   "t": 0,
+   "type": "hard_cut",
+   "description": "Video start / Shot 1: static wide of rain-soaked swamp; mud-caked Spinosaurus lying flat, camouflaged as a fallen log; folded sail reads as a dead stump with birds perched on it. Rain is the only motion.",
+   "word_context": "[silence] (film has zero narration/captions - whisper: 0 real segments)",
+   "audio_sync": "0.07 (str 8.09 - ambience fade-in, -120.7 LUFS at 0.1s to -31.9 at 0.6s)",
+   "why": "Opens on a visual lie - the creature staged as terrain, birds as the misdirection prop (perching = 'it's a log'). Soft ambience fade-in with NO bang (spec: 'soft-in, no bang') deliberately withholds any signal that something is alive, so the viewer's first job is parsing the frame. CROSS-CHECK: docs count 6 birds; frame-read sees 3 clearly - minor, but the docs' per-second bins agree this shot's whole function is camouflage."
+  },
+  {
+   "t": 0.5,
+   "type": "zoom_in",
+   "description": "Very slow push-in/drift begins and runs the length of Shot 1 (0-5.0s); framing creeps toward the 'log'; creature and birds dead still through 2.75s.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "The creep is the only promise during total stillness - it says 'look HERE' without revealing why, holding the swipe-away finger for ~3s. DISCREPANCY: CAMERA_AND_SOUND_SPEC rule 1 claims 'not one push-in in the entire film' (logs this shot as a 1.3%/s tilt-down settle); frame-read sees a slow push. Either way it is sub-drift-speed and its function is attention direction, not energy."
+  },
+  {
+   "t": 2.875,
+   "type": "motion_spike",
+   "description": "First sign of life: camouflaged head/neck lifts out of the mud, dorsal spikes rising. Breaks ~2.9s of total stillness.",
+   "word_context": "[silence]",
+   "audio_sync": "2.926 (str 3.02)",
+   "why": "The turn of the cold open: 2.9s of purchased stillness is the setup, this is the 'it's alive' payoff - synced to the strongest onset since t0 and landing exactly at the ~3s mark where a Short must re-earn the hold (hook-zone: prove by 3s). Docs bin this at s2 'first tremor'/s3 'jaws crack open' - consistent."
+  },
+  {
+   "t": 3.25,
+   "type": "motion_spike",
+   "description": "Jaws part showing teeth; mud/water strings drip from the mouth as the head raises; rise accelerating.",
+   "word_context": "[silence]",
+   "audio_sync": "none (2.926 is 0.32s early)",
+   "why": "Escalation beat two: teeth = threat class, dripping mud = physical proof of the camouflage premise. Played with no hit - the rise is kept audibly quiet (loudness still ~-31 LUFS) to preserve headroom for the 5.085 cut sting; spec rule 4: every loud moment is pre-loaded with a hole."
+  },
+  {
+   "t": 3.5,
+   "type": "motion_spike",
+   "description": "Full rear-up: torso surges out of the swamp, jaws wide, mud and water pouring off; largest movement of Shot 1, continues through 4.0s.",
+   "word_context": "[silence]",
+   "audio_sync": "none (nearest onset 4.063 is 0.56s late - rise played quiet)",
+   "why": "The biggest movement of the shot is deliberately spent QUIET (-31.7 to -26.7 LUFS, no synced transient): scale is proven visually while the soundtrack keeps digging the hole that pays off at the 5.085 sting. Loud-on-the-cut, quiet-on-the-action is the opening's whole audio strategy."
+  },
+  {
+   "t": 3.5,
+   "type": "subject_change",
+   "description": "The reveal: 'log + stump' exposed as a living camouflaged Spinosaurus; the stump is its sail.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "The hook's core transaction: the implicit promise of the still frame ('that log is a monster') is cashed at 3.5s - inside the prove-by-3s/deliver-by-4s hook window. Everything before this is setup, everything after is consequence; the whole film's closing image (docs s63-65: dead body 'reads as terrain again') is this beat inverted."
+  },
+  {
+   "t": 4.375,
+   "type": "motion_spike",
+   "description": "Birds flush off the sail-stump - wings open, lifting off, startled by the rising creature (jaws in roar posture).",
+   "word_context": "[silence]",
+   "audio_sync": "4.412 (str 1.98 - wingbeat/flutter)",
+   "why": "Consequence beat: the birds are the scale-and-danger yardstick - their panic tells a narration-less viewer how to feel. The one clean foley-synced micro-event of the shot (wingbeat onset), showing the film syncs sound to reactions, not to the monster."
+  },
+  {
+   "t": 4.5,
+   "type": "subject_change",
+   "description": "Birds fully airborne, scattering above the sail; creature holds open-jawed reared pose through 4.875s.",
+   "word_context": "[silence]",
+   "audio_sync": "4.528 (str 2.03)",
+   "why": "The tableau frame: roar pose + scattering birds held ~0.4s so the eruption fully reads (thumbnail-grade composition) before the cut resets everything. Holding the apex pose instead of cutting on it makes the 5.0 cut feel like escape, not interruption."
+  },
+  {
+   "t": 5,
+   "type": "hard_cut",
+   "description": "Cut to Shot 2: high aerial wide of bright flooded green marsh; Spinosaurus mid-frame in shallows, small in frame.",
+   "word_context": "[silence]",
+   "audio_sync": "5.085 (str 6.54 - hard impact/sting on the cut)",
+   "why": "The reset cut: eruption to distant observation, paid with the window's 2nd-biggest sting - then loudness collapses into the film's quietest stretch (-38 to -45 LUFS, 5.6-9.1s). Classic bang-then-hole: the shock is banked and the deliberate lull begins (spec logs this exact hole as 'THE HOLE: -35 to -38 dB')."
+  },
+  {
+   "t": 5,
+   "type": "color_shift",
+   "description": "Grade jump with the cut: gray rain gloom to bright saturated green overcast daylight.",
+   "word_context": "[silence]",
+   "audio_sync": "5.085",
+   "why": "Location/act stamp and emotional decompress: brightness relief after the scare tells the viewer the danger beat is over and a journey beat is starting. First step of the docs' measured three-act saturation arc (17% swamp to 77% underwater peak)."
+  },
+  {
+   "t": 5,
+   "type": "angle_change",
+   "description": "Ground-level eye-line to high aerial/drone perspective looking down across the marsh.",
+   "word_context": "[silence]",
+   "audio_sync": "5.085",
+   "why": "Spec rule 2 executed: camera HEIGHT does the storytelling and flips at the cut (horizon 91% to 12%). The monster-in-your-face becomes a small observed specimen - power framing inverted to create room to re-escalate. Docs: subject share drops 62% to 39%."
+  },
+  {
+   "t": 5.25,
+   "type": "zoom_in",
+   "description": "Slow aerial push-in begins toward the wading creature; it grows steadily in frame from 5.0s to the 8.125s cut.",
+   "word_context": "[silence]",
+   "audio_sync": "5.201 (str 2.31)",
+   "why": "Keeps a forward vector through the lull so quiet never reads as static - the frame slowly closes back toward the animal while the soundtrack sits in its hole. DISCREPANCY: spec logs Shot 2 as LOCKED OFF; frame-read sees steady scale growth (some may be the animal's approach - spec rule: 'growth in frame is the animal moving')."
+  },
+  {
+   "t": 5.5,
+   "type": "subject_change",
+   "description": "Creature strides right through shallows, legs kicking spray; head dips toward water ~5.5-5.875 then lifts, walking through 8.0s.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "The behavioral beat that carries the lull: purposeful travel = 'he is going somewhere' narrative pull, and the head-dip quietly forecasts fish-hunting ~7s before the catch shot proves it. Foreshadow-by-behavior, invisible on the docs' per-second grid."
+  },
+  {
+   "t": 8.125,
+   "type": "hard_cut",
+   "description": "Cut to Shot 3: low water-level view across golden flooded grassland; Spinosaurus swims away with only curved sail and head-knob above surface, wake rippling.",
+   "word_context": "[silence]",
+   "audio_sync": "8.313 (str 3.11, 0.19s after - water slosh on the new shot)",
+   "why": "A continuation cut spent at the audio floor: 8.1s is the quietest second (-45 LUFS; spec: '-42.7 dB, quietest second in the film'). No sting because this cut advances geography, not story - the film reserves stung cuts for shocks (5.085, 14.582) and lets journey cuts pass silent."
+  },
+  {
+   "t": 8.125,
+   "type": "color_shift",
+   "description": "Overcast green daylight to warm golden-hour backlight; sail edge rim-lit orange.",
+   "word_context": "[silence]",
+   "audio_sync": "8.313",
+   "why": "Passage-of-time grammar (day moving on = journey progressing) and the rim-light introduces the sail at its most graphic - setting up the fin icon the same cut delivers."
+  },
+  {
+   "t": 8.125,
+   "type": "angle_change",
+   "description": "High aerial down-angle to near-surface behind/three-quarter - predator-periscope composition (sail as fin).",
+   "word_context": "[silence]",
+   "audio_sync": "8.313",
+   "why": "The JAWS quote: sail-as-shark-fin attaches apex-predator iconography to the subject - the misdirect the full film inverts when he becomes prey at 43s (docs Act 2). Height alternation per spec rule 2: high to low again at the cut."
+  },
+  {
+   "t": 9.375,
+   "type": "motion_spike",
+   "description": "Sail pitches forward as the creature surges through the water; bow ripples spread from the sail base.",
+   "word_context": "[silence]",
+   "audio_sync": "9.427 (str 3.08)",
+   "why": "First push of a rising motion series (onsets 9.43/9.85/11.45 as loudness climbs -36.9 to -29.7): the lull is being ramped back out through movement, re-accelerating toward the catch without a cut."
+  },
+  {
+   "t": 9.875,
+   "type": "motion_spike",
+   "description": "Second forward push; wake widens, sail leans further, creature advancing left-of-frame.",
+   "word_context": "[silence]",
+   "audio_sync": "9.845 (str 2.64)",
+   "why": "Rhythm beat: paired surges ~0.5s apart establish a swim cadence that keeps this 4s shot from flatlining in the middle of the quietest stretch. Pace maintained by within-shot action, not by cutting - the docs' 'mo ~8' undersells these micro-surges."
+  },
+  {
+   "t": 10.375,
+   "type": "subject_change",
+   "description": "Creature turns; sail swings broadside and its orange-red membrane catches the backlight (10.375-10.875) - most colorful frames of the shot.",
+   "word_context": "[silence]",
+   "audio_sync": "10.356 (str 2.37; cluster 10.15-10.52)",
+   "why": "A beauty beat placed mid-lull: while the story idles, retention is carried by spectacle (the membrane color payoff of the golden-hour grade set up at 8.125). The onset cluster marks the turn audibly without breaking the hole."
+  },
+  {
+   "t": 11.5,
+   "type": "motion_spike",
+   "description": "Creature crouches deeper, sail dipping as it slides left; circular wake/drag ring expands (11.0-11.875).",
+   "word_context": "[silence]",
+   "audio_sync": "11.447 (str 2.63)",
+   "why": "Pre-strike body language: lowering = stalk posture, the last calm before the catch. The visible drag-ring telegraphs 'about to lunge' so the 12.125 cut into mid-strike reads as continuity rather than a jump - the cut is pre-sold by behavior."
+  },
+  {
+   "t": 12.125,
+   "type": "hard_cut",
+   "description": "Cut to Shot 4: ground-level close-up side view - Spinosaurus huge in frame at the water's edge, jaws already wide over a prey hump (large fish), palm trees behind.",
+   "word_context": "[silence]",
+   "audio_sync": "12.028 (str 3.48, 0.10s BEFORE the cut frame)",
+   "why": "The payoff cut: distance to intimacy in one jump, entering MID-action (jaws already open) so zero frames are spent re-establishing. Audio leads the picture by 0.10s (J-cut) - sound announces the strike before the eye arrives. Docs' s12 'catches a fish' (mo 47.1) confirmed at 12.10; triple-frame cluster = Topaz interpolation, matching their upscale claim."
+  },
+  {
+   "t": 12.125,
+   "type": "angle_change",
+   "description": "Distant rear water-level view to intimate low-angle close-up; large scale jump (creature now fills frame).",
+   "word_context": "[silence]",
+   "audio_sync": "12.028",
+   "why": "Spec rule 2 at maximum: horizon jumps to 98% (docs: 'we are UNDER the animal's eyeline'), subject to 84%. The observed speck becomes the monster again exactly when it kills - dominance framing timed to dominance behavior."
+  },
+  {
+   "t": 12.25,
+   "type": "motion_spike",
+   "description": "Open-jawed downward lunge: head and neck drive down toward the prey hump (12.125-12.5).",
+   "word_context": "[silence]",
+   "audio_sync": "12.399 (str 3.54)",
+   "why": "The strike wind-up, onset-synced: the violence promised by the fin icon at 8.125 is now being delivered ~4s later. First beat of a tight onset ladder (12.4 / 12.59 / 13.4) that scores the whole catch."
+  },
+  {
+   "t": 12.625,
+   "type": "motion_spike",
+   "description": "Strike lands - snout plunges onto the prey; splash burst at the waterline.",
+   "word_context": "[silence]",
+   "audio_sync": "12.585 (str 4.61 - strike/splash impact)",
+   "why": "Proof-of-kill frame with the biggest hit since the 5.085 sting; loudness starts its climb to the window's peak. Contact moment is brief and splash-obscured - consistent with docs' finding that violence is deliberately obscured (generator can't render clean contact), disguised as style."
+  },
+  {
+   "t": 12.875,
+   "type": "motion_spike",
+   "description": "Thrashing at the surface - head works the prey, spray continuing; loudness climbing toward the 13.1s peak (-20.2 LUFS, loudest of 0-14s).",
+   "word_context": "[silence]",
+   "audio_sync": "12.887 (str 1.83)",
+   "why": "Sustain beat: continuous struggle keeps kinetic energy up while the loudness curve does the escalating - the messiness sells physical reality (i2v credibility through chaos) between the two clean hits at 12.585 and 13.398."
+  },
+  {
+   "t": 13.125,
+   "type": "motion_spike",
+   "description": "Head snaps skyward with the fish clamped; creature rocks back toward hind legs. The t0.1-only cut candidate at 13.133 - an intra-shot action spike, NOT a cut.",
+   "word_context": "[silence]",
+   "audio_sync": "13.166 (str 1.95; leading into the 13.398 hit)",
+   "why": "Violence delivered by ACTION so hard the cut-detector mistakes it for an edit - the film's peak energy comes from within-shot motion, not cutting. Docs binned it correctly in s13 'head thrown vertical'; the frame-level pass resolves it as the wind-up to the 13.398 apex."
+  },
+  {
+   "t": 13.25,
+   "type": "camera_move",
+   "description": "Quick tilt-up/reframe: horizon drops as the camera widens to hold the rearing full body (head-to-legs by 13.375).",
+   "word_context": "[silence]",
+   "audio_sync": "13.305 (str 2.81)",
+   "why": "DISCREPANCY: docs claim 'no camera movement anywhere' / spec logs Shot 4 as a 1.8%/s pan; frame-read sees a fast tilt-up here. Its function: keep the full silhouette in frame at the apex - and it is invisible precisely because it rides the fastest action in the window. Reframe during peak motion = free camera move."
+  },
+  {
+   "t": 13.375,
+   "type": "motion_spike",
+   "description": "Catch apex: fish tossed/re-gripped at the top of the throw, jaws open around it.",
+   "word_context": "[silence]",
+   "audio_sync": "13.398 (str 6.87 - biggest SFX hit in 0-14s)",
+   "why": "The money frame gets the money sound: the strongest transient of the entire window lands within 23ms of the visual apex, at the loudness peak (-20.2 LUFS at 13.1). This is the only moment in 0-28s where biggest-image and biggest-sound coincide - everything since 5.085 has been saving for it."
+  },
+  {
+   "t": 13.625,
+   "type": "subject_change",
+   "description": "Creature stands fully upright juggling the fish crosswise, water streaming off; small head jerks working the catch.",
+   "word_context": "[silence]",
+   "audio_sync": "13.653 (str 2.09; onset run 13.51-14.16 = wet slaps/drips)",
+   "why": "Settle beat: the wet-slap onset run is tactile aftermath - violence decays through texture instead of cutting away instantly, which lets the catch be believed (and lets the loudness fall from its peak before the next cut needs a fresh hole)."
+  },
+  {
+   "t": 13.875,
+   "type": "subject_change",
+   "description": "Fish repositioned in the jaws (gulp beginning); creature settles its stance, upright at frame top.",
+   "word_context": "[silence]",
+   "audio_sync": "13.886 (str 1.99)",
+   "why": "Closes the mini-story arc (stalk-strike-catch-swallow) inside 1.75s and hands off to the next shot: the swallow starting here is what makes the 14.125 frontal head-toss read as continuation rather than repetition."
+  },
+  {
+   "t": 14.125,
+   "type": "motion_spike",
+   "description": "Head-toss swallow (beach shot, frontal): flips the fish upward, jaws gape skyward 14.25-14.375, gulping it down. Palm treeline, static camera.",
+   "word_context": "[silence]",
+   "audio_sync": "onset 14.164 (str 4.27)",
+   "why": "LEDGER-ONLY beat: docs bin s13-14 as one 'gulped whole' event and miss that the swallow is completed frontally with its own strong hit (4.27). Same action, new angle = the feeding shown twice without feeling repeated - cheap spectacle amplification."
+  },
+  {
+   "t": 14.5,
+   "type": "motion_spike",
+   "description": "Jaws snap shut, head fully vertical - final beat of the catch before the cut; body rears on hind legs.",
+   "word_context": "[silence]",
+   "audio_sync": "onset 14.420 (str 2.26)",
+   "why": "Punctuation mark: the closure snap ends the feeding sentence while loudness has already been dropped to -36/-38 LUFS - a fresh hole dug in under half a second so the 14.582 cut sting can land at full contrast. Rule 4 executed at speed."
+  },
+  {
+   "t": 14.625,
+   "type": "hard_cut",
+   "description": "HARD CUT: beach frontal close shot to wide profile of Spino wading through breaking surf, out to sea, sandy beach foreground. 2-3 interpolated blend frames precede (14.567/14.600).",
+   "word_context": "[silence]",
+   "audio_sync": "onset 14.582 (str 6.77 - strong splash/impact sting on the cut)",
+   "why": "The act-turn cut, paid with the 3rd-biggest sting of the window: land story ends, the title's 'seas' begin. Docs place this at s15; frame-level pass measures 14.57-14.63 with Topaz blend frames (confirming their interpolated-source claim). Stung because it is a commitment, not a continuation."
+  },
+  {
+   "t": 15.75,
+   "type": "motion_spike",
+   "description": "Forward plunge: body pitches into the breakers, head under, orange-red sail underside flashes as the body rolls forward. Biggest within-shot action of the surf shot.",
+   "word_context": "[silence]",
+   "audio_sync": "none (onset gap 14.58-20.39; carried by loudness wash ~-23.5 LUFS at 15.1-15.6)",
+   "why": "Point-of-no-return beat played with NO transient: from here to 20.4s there is not a single onset - the sea act runs on loudness texture, not hits, which is exactly the spec's dive grammar (the lowpass arc replaces percussion). The color flash is the only punctuation."
+  },
+  {
+   "t": 16.25,
+   "type": "motion_spike",
+   "description": "Body roll continues: striped orange flank/sail-base breaches and rolls through surf foam (16.0-16.875), mostly submerged, sail tall.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "Sustain of the plunge: churning foam keeps the eye busy while the film transitions its physics from land-animal to sea-animal. The roll also previews the axis games of the underwater act (bodies seen from unfamiliar orientations)."
+  },
+  {
+   "t": 17.375,
+   "type": "hard_cut",
+   "description": "HARD CUT: wide surf to macro water-level close-up of the sail cutting green lagoon water, treeline on horizon. Blend frame at 17.250; detector cluster 17.300-17.367. Drastic scale change (wide to extreme close).",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "A scale-whiplash cut with ZERO audio support - proof the film trusts visual contrast alone when the composition change is extreme enough. Docs' s17 (mo 60.5) confirmed at 17.33; blend-frame cluster again = interpolated source. Sat jump to 28% (docs) starts warming toward the underwater color reward."
+  },
+  {
+   "t": 17.5,
+   "type": "camera_move",
+   "description": "Handheld water-level tracking begins: camera rides beside the sail at surface height, bobbing with chop, through ~21.0s while the sail sinks frame-by-frame (continuous submerge 18.0-20.5).",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "DISCREPANCY: docs say 'no handheld' and log Shot 6 as locked-off with 3px drift; frame-read sees surface-bob tracking. Function either way: prey's-eye height beside the fin (dread POV) while the ONLY story content for 3+ seconds is disappearance itself - the longest event-free stretch in the window IS the beat."
+  },
+  {
+   "t": 20.625,
+   "type": "motion_spike",
+   "description": "Final slip-under: last sail tip sinks into its own foam wake; by 20.750 the frame is empty water. Subject fully exits frame.",
+   "word_context": "[silence]",
+   "audio_sync": "onset 20.526 (str 2.03; also 20.387 str 1.92 - the two small submerge splashes)",
+   "why": "The submerge's punchline: two tiny splashes are the ONLY transients in a 5.8s onset desert, so near-silence makes the vanishing audible. The empty frame is a posed question ('where did he go?') that the next cut answers from below - an engineered cut motivation."
+  },
+  {
+   "t": 21.125,
+   "type": "hard_cut",
+   "description": "HARD CUT: surface foam wake to fully underwater shot from below/behind (hind legs dangling, bubble trails, body silhouetted at the surface). Detector fires only weakly (21.167 at t0.1) - blend frames soften a true cut.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "CROSS-CHECK RESOLUTION: docs log s21 as the S7 cut (mo 35.2); frame pass shows it is a true environment cut softened by interpolation frames into a near-dissolve - which is WHY it feels seamless: the question posed at 20.625 is answered within 0.5s with motion continuity preserved. The act-2 door opens without announcing itself."
+  },
+  {
+   "t": 21.125,
+   "type": "color_shift",
+   "description": "Palette flips on the cut: silty surf browns/greys to deep teal-blue underwater grade. Sharpest color change in the window.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "The act break carried by color, not sound: docs measure saturation exploding 26% to 73% here - the underwater act is the color REWARD for sitting through the drab surface act. The saturation arc (17-77-19%) is the film's emotional spine and this is its biggest single step."
+  },
+  {
+   "t": 21.125,
+   "type": "angle_change",
+   "description": "Axis flip on the same subject: above-water surface view to below-water looking up, preserving submerge continuity (the 'soft transition' the prior teardown logged at s21).",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "Same subject, flipped world: continuity of the submerge action makes the largest environment change in the film feel like one continuous move. This is the spec's dive - the point where their measured lowpass sweep (roll90 3500-6600 Hz collapsing toward 400-990 Hz) starts doing the work percussion did above water."
+  },
+  {
+   "t": 22,
+   "type": "motion_spike",
+   "description": "Tail power-stroke: tail curls and sweeps through a full S-curve to trailing-right by ~23.0, driving the underwater glide; camera drifts beneath. Loudness swells to -20.5 LUFS at 22.6 (texture wash, no transient).",
+   "word_context": "[silence]",
+   "audio_sync": "onset 21.896 (str 2.26 - swim whoosh, 0.10s before)",
+   "why": "The reward act opens with GRACE, not threat: one beautiful propulsive stroke, whoosh-led (audio 0.10s early again - the film consistently leads picture with sound), loudness swelling to the 2nd-loudest point of the window with zero transients. Establishes that underwater loudness = mass moving water, not impacts."
+  },
+  {
+   "t": 23.75,
+   "type": "hard_cut",
+   "description": "HARD CUT (hero cut): under-rear glide to dead head-on underwater approach, croc-like face frontal with red-orange skull markings, sail rising behind. Strongest visual change in 0-28s (only cut surviving detector threshold 0.3).",
+   "word_context": "[silence]",
+   "audio_sync": "none (audio-cold - nearest onsets 21.896 and 27.446)",
+   "why": "The film's single eye-level shot (spec rule 2: 'used exactly ONCE - that is why it lands') gets the hardest visual cut of the window - and it is spent AUDIO-COLD: the image is trusted to carry it entirely. CROSS-CHECK: docs place it at s24 with mo 51.2, underselling it relative to neighbors; frame pass measures 23.80 and ranks it #1. The audio-cold choice is also the replication opportunity (an SFX hole to exploit or respect)."
+  },
+  {
+   "t": 23.75,
+   "type": "angle_change",
+   "description": "Rear/below three-quarter to perfectly frontal head-on framing of the same subject - maximum-contrast reframe.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "Predator eye-contact = direct address: after 23s of observing the animal, the animal now looks at YOU. In a film with no text and no narration, this is the closest thing to a direct-to-camera moment - the portrait that earns the hero label docs give it."
+  },
+  {
+   "t": 23.75,
+   "type": "speed_ramp",
+   "description": "Apparent slow-motion begins: frame-to-frame deltas collapse to tiny increments for the entire head-on approach (23.75-26.75), consistent with retimed/interpolated slo-mo vs faster prior shots.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "DISCREPANCY: docs claim 'no speed ramps' anywhere; frame deltas say this approach is retimed slow. Function: the single best composition in the film is stretched to ~3s of screen time - the hero moment monetized frame by frame. (Likely a Topaz-retime artifact deliberately kept: the interpolation that is cosmetic elsewhere is expressive here.)"
+  },
+  {
+   "t": 24,
+   "type": "zoom_in",
+   "description": "Slow push: subject swims directly into the lens, steady scale growth 24.0-26.75 (head from ~1/3 frame to filling it). Subject approach, not lens zoom; mouth slightly open showing teeth, slight sway.",
+   "word_context": "[silence]",
+   "audio_sync": "none (loudness swells -25.6 to -20.2 LUFS across 24.6-26.6, smooth wash)",
+   "why": "Consistent with spec rule 1: 'whatever growth you see is the ANIMAL moving, not the lens.' A pure dread crescendo built from subject approach + smooth loudness swell + zero transients - a 2.75s pre-loaded hole (rule 4) whose payoff is then deliberately WITHHELD: the mouth never reaches the lens."
+  },
+  {
+   "t": 26.875,
+   "type": "hard_cut",
+   "description": "HARD CUT: face-filling head-on shot to wide seafloor scene: turtle in a sandy nest depression foreground-center, seagrass near, Spino walking the bottom in the background, looming toward camera.",
+   "word_context": "[silence]",
+   "audio_sync": "none (audio-cold; loudness peak -20.2 LUFS at 26.6 lands just BEFORE the cut)",
+   "why": "The stakes cut: the swell peaks at 26.6 and THEN the film cuts away audio-cold - climax denied, tension transferred wholesale to a new potential victim. Cutting at the loudness apex rather than after it means the dread has nowhere to discharge except onto the turtle. Docs' s27 (mo 65.8, their 2nd-biggest) confirmed at 26.87."
+  },
+  {
+   "t": 26.875,
+   "type": "subject_change",
+   "description": "New secondary subject: the turtle - first non-Spino creature in the window. Spino recast from POV-subject to background threat.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "The film's thesis rehearsed in miniature: 'apex' is relative - our hero is now someone else's looming monster, exactly the role reversal the mosasaur inflicts on HIM at 43s. Docs additionally flag the turtle as 'the only scale cue in the film': one prop doing stakes, scale, and foreshadowing at once."
+  },
+  {
+   "t": 26.875,
+   "type": "color_shift",
+   "description": "Deep open-water blue column to sunlit sandy-bottom tans/greens with caustics on the cut.",
+   "word_context": "[silence]",
+   "audio_sync": "none",
+   "why": "False-calm palette: the sunlit nursery look makes the innocent foreground legible as innocent, so the dark silhouette advancing behind it reads instantly as threat. Contrast between foreground grade and background mass IS the shot's composition."
+  },
+  {
+   "t": 27.5,
+   "type": "motion_spike",
+   "description": "Underwater footstep: near leg swings forward through 27.125-27.375 and plants toward camera ~27.5, body advancing over the turtle.",
+   "word_context": "[silence]",
+   "audio_sync": "onset 27.446 (str 1.69 - muffled step/water push)",
+   "why": "The dread metronome starts: after two audio-cold cuts, transients return as FOOTSTEPS - each muffled plant is a countdown beat toward the turtle. First onset in 5.5s, so even at str 1.69 it registers; the muffle honors the spec's underwater lowpass (roll90 ~926 Hz here per their Shot 9)."
+  },
+  {
+   "t": 27.875,
+   "type": "motion_spike",
+   "description": "Second stride: far leg lifts and swings (27.625-27.875) as the looming body grows in frame, closing on the turtle at the window's end.",
+   "word_context": "[silence]",
+   "audio_sync": "onset 27.794 (str 3.77 - strongest hit of the underwater act)",
+   "why": "Window-ending escalation: the strongest transient of the whole underwater act lands on the closing stride, and the hook exits at 28s MID-approach - the unresolved advance on the turtle is the retention handoff into the body of the film. The 0-28s hook ends on a question, same device as 20.625, at higher stakes."
+  }
+ ]
+}
