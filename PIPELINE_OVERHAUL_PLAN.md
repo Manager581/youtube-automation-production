@@ -62,13 +62,13 @@ Spend sign-off · subject+seed lock · title/thumb pick · the S9 watch/ear · p
 
 - Music/mix judged without the owner's ears (every stuck level was owner-eared) — v0 DSP gate narrows, does not close.
 - Machine detection of "boring" / story-arc failure on a render (band-conformity proven not to predict engagement — LOSE2).
-- CTR prediction for owned uploads; ANY own-channel performance measurement (never done once).
+- CTR prediction for owned uploads. ~~ANY own-channel performance measurement~~ — first read landed 2026-08-31 (`reads/`, views/likes only); CTR/retention still never measured (needs owner in Studio).
 - Scripted (non-interactive) vision gating — zero prior runs; micro-prototype required (step 7).
 - Semantic listening on any route (Gemini key present in ~/.zshrc, audio upload untested; no CLAP/audio-LM local).
 - MMAudio foley surviving the owner's ear (v4 verdict pending).
 - Style transfer without a fresh teardown (both attempts rejected).
 - A full video approved first-try: **0 occurrences across 7+ projects** (sub-artifacts pass first-try routinely).
-- Publish status of Rexcaped variant / Spino Short / Sam Neill (step 1 settles).
+- ~~Publish status of Rexcaped variant / Spino Short / Sam Neill~~ — settled 2026-08-31 (`publish_ledger.json`): variant PUBLIC (p6g4fwdTwyk), Sam Neill PUBLISHED (u_2Wdt4zGa0, 1,416 views), Spino Short NOT published.
 - Whether "owner" verdicts on TechJoint lanes are Jeff or Vincent.
 
 ## 4b. 2026-09 landscape amendments (web-verified 2026-08-31; full sources in session research)

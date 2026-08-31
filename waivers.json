@@ -1,0 +1,4 @@
+{
+  "_schema": "waivers v1 (PIPELINE_OVERHAUL_PLAN). The ONLY way past a failed gate. Each entry: lane, gate, id (shot/track/beat), reason, date, decided_by. Waivers resurface at S9 review and in the post-publish read — they are never silent.",
+  "waivers": []
+}

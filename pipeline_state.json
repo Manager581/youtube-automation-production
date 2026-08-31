@@ -102,7 +102,7 @@
   },
   "meta": {
     "pipeline_overhaul": {
-      "state": "Plan v1.5 committed (76eea0c). Build step 1 in progress this session (this file + publish_ledger.json). Steps 2-10 not started: no run_gates.py, no lib/assembly/, no research/style_profiles/.",
+      "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 skeleton (run_gates.py: state/foley/bank-status wrapped + verified, waivers.json, .githooks/pre-commit; render/thumb/style/shots wraps still TODO). Next machine steps: finish step 4 wraps, step 6 lib/assembly prep. Step 2 (cookies ear check) + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
       "note": "Meta-lane; does not count against the 1-ACTIVE production cap."
     }
   }

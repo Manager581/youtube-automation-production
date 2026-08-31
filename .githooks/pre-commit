@@ -1,0 +1,12 @@
+#!/bin/sh
+# PIPELINE_OVERHAUL_PLAN single-door enforcement: no new bespoke assemblers.
+# Fails any commit ADDING an assemble_*.py outside lib/assembly/.
+# Enable once per clone: git config core.hooksPath .githooks
+bad=$(git diff --cached --name-only --diff-filter=A | grep -E '(^|/)assemble_[^/]*\.py$' | grep -v '^lib/assembly/')
+if [ -n "$bad" ]; then
+  echo "COMMIT BLOCKED (run_gates single-door rule): new assembler(s) outside lib/assembly/:" >&2
+  echo "$bad" >&2
+  echo "Extend lib/assembly/ + a profile config instead. (PIPELINE_OVERHAUL_PLAN §1, revision log #6)" >&2
+  exit 1
+fi
+exit 0
