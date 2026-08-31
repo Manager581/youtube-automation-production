@@ -78,14 +78,24 @@ def analyze(name, video, wordts_json=None):
     # cuts
     scenes=scene_scores(video)
     # adaptive threshold: pick so median shot len is 3-8s if possible
+    # (2026-08-31: code now matches this comment. The old tie-break minimized |avg-5.0| only,
+    #  which sat on a knife edge — a re-encode of BEST flipped it 0.40->0.35 by a 0.03 margin,
+    #  128 cuts vs the recorded 80, silently failing 2 style gates. Median-in-band first,
+    #  then closest avg, reproduces the recorded reference measurements.)
     best=None
     for thr in [0.30,0.35,0.40,0.45,0.50,0.55,0.60]:
         cuts=detect_cuts(scenes,thr=thr,min_gap=0.8)
         n=len(cuts)
         if n>=1:
             avg=dur/(n+1)
-            if best is None or abs(avg-5.0)<abs(best[2]-5.0):
-                best=(thr,cuts,avg,n)
+            durs=[b-a for a,b in zip([0.0]+cuts,cuts+[dur])]
+            durs_s=sorted(durs); med=durs_s[len(durs_s)//2]
+            med_ok=3.0<=med<=8.0
+            key=(not med_ok, abs(avg-5.0))   # in-band medians beat out-of-band; then closest avg
+            if best is None or key<best[4]:
+                best=(thr,cuts,avg,n,key)
+    if best is not None:
+        best=best[:4]
     if best is None:  # no cut at any threshold (single continuous take) -> treat as one shot
         best=(0.30,[],dur,0)
     thr,cuts,avg,n = best

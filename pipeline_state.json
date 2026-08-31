@@ -74,8 +74,8 @@
     "techjoint_cookies_v4": {
       "status": "BLOCKED-ON-OWNER",
       "channel": "techjoint",
-      "state": "v4 generated-foley rebuild (commit 224ec8b) delivered; awaiting owner EAR CHECK. Plan build step 2 = close this loop with a dated per-defect verdict.",
-      "next": "Owner listens once; verdict recorded; ship or v5 list.",
+      "state": "v4 generated-foley rebuild (commit 224ec8b) delivered; awaiting owner EAR CHECK. Review packet DELIVERED 2026-08-31: research/techjoint_cookies/V4_REVIEW_PACKET.md (31 pre-declared waiver candidates, timecoded) + v4_verdict_ledger.json (31 PENDING slots).",
+      "next": "Owner watches ~/Movies/TechJoint_Cookies_v4_preview_watch.mp4 once with the packet; per-defect verdicts (WAIVE/REGEN/MUTE) recorded in the ledger; ship or v5 list.",
       "note": "Delivered-packet class: blocks NEW lane starts only, per S0 split semantics."
     },
     "techjoint_top25_series": {
@@ -102,7 +102,7 @@
   },
   "meta": {
     "pipeline_overhaul": {
-      "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 skeleton (run_gates.py: state/foley/bank-status wrapped + verified, waivers.json, .githooks/pre-commit; render/thumb/style/shots wraps still TODO). Next machine steps: finish step 4 wraps, step 6 lib/assembly prep. Step 2 (cookies ear check) + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
+      "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 COMPLETE (run_gates.py: state/foley/bank-status/render/thumb/style/shots all wrapped fail-closed + verified on real artifacts; waiver mechanics tested; style-gate inputs restored — refs/BEST.mp4 re-downloaded, forensics_BEST.json regenerated, extract_forensics adaptive-threshold knife-edge fixed to match its own comment, BEST grades 10/11 vs recorded 11/11 with only hook-cuts off by re-encode), step 2 machine half (V4_REVIEW_PACKET.md + v4_verdict_ledger.json delivered). Next machine step: step 6 lib/assembly prep. Step 2 verdicts + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
       "note": "Meta-lane; does not count against the 1-ACTIVE production cap."
     }
   }
