@@ -71,6 +71,16 @@ Spend sign-off · subject+seed lock · title/thumb pick · the S9 watch/ear · p
 - Publish status of Rexcaped variant / Spino Short / Sam Neill (step 1 settles).
 - Whether "owner" verdicts on TechJoint lanes are Jeff or Vincent.
 
+## 4b. 2026-09 landscape amendments (web-verified 2026-08-31; full sources in session research)
+
+Owner asked whether our tech/patterns are stale. Verdict after researching the Aug/Sept 2026 landscape: **core architecture validated** — "bin + script → well-edited video, unattended" is not solved anywhere (commercial rough-cutters are speech-driven + human-finished; 2026 academic benchmarks still list it unsolved); the frontier's convergent shape (grammar rules + LLM shot selection + deterministic engine owning timecode + vision QA) IS this plan. The "Claude edits videos" demos do LESS than they appear (Remotion motion graphics, talking-head transcript cuts, or metered Eddie AI). Two stale things found + one missing:
+
+1. **DaVinci ban's factual basis stale** (memory corrected): Resolve 21.0.4 placement works (with silent traps that explain our March findings), mature free MCP exists — but API still can't move/retime/level placed clips → **FFmpeg stays the unattended engine; DaVinci = optional post-S9 manual-polish hand-off, strictly after build step 10.**
+2. **Perception layer deaf/story-blind → 3-layer watcher (amends S7/S8, build step 8):** keep ffmpeg/whisper for numbers; ADD local **Qwen2.5-Omni-7B** (llama.cpp mtmd, ~5GB q4, $0 on M5) as per-shot listen gate (10-min prototype on ONE real Ep02 shot first); ADD **Gemini** (app under Google AI Pro, or non-metered AI Studio free tier) as standing whole-render watcher-LISTENER — the only major model ingesting video WITH audio (1fps + audio, timestamped verdicts on pacing/music-vs-VO/SFX/story) — note-only until calibrated against owner S9 verdicts. Honest limits: 1fps misses frame glitches (strips stay), no LUFS (DSP stays).
+3. **No retrieval over banked clips → build it (amends S5/S6):** PySceneDetect keyframes + local CLIP embeddings at bank time; S6 queries by script line; near-dup distance = variety/self-cannibalization check. Free, local, compounds every lane.
+4. **Adopt video-use mechanics (22K-star MIT project, structurally identical to our pipeline):** cut-boundary filmstrip+waveform PNGs in every assembly report; gate_vision consumes a machine-readable edit-context pack per cut.
+5. **Flagged, NOT bought:** Opus Clip ($15-29/mo, Shorts repurposing) — owner decision, zero value until long-form publishes on cadence; revisit at first day-14 read. **Honest thinness:** Grok "keep" = no grounded reason to move, not proven-best (no i2v benchmark run); Grok 4.6 "video understanding" claims = hype, never use Grok for perception; DaVinci fixes rest on one project's measured ledger.
+
 ## 5. Revision log (what the adversarial reviewers + owner landed → resolution)
 
 0a. **OWNER (2026-08-27): thrash causality reversed** — lanes died because videos were garbage (fix-one-break-another), not owner flakiness → §0.2 reframed as the vicious cycle; S0 framed as credit protection; breaking the cycle = lesson transfer, which is the plan's core.
