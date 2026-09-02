@@ -1,0 +1,382 @@
+<title>Shrinking Planet</title>
+<meta name="description" content="Evidence-backed 20-minute outline for an all-AI MrBeast-format episode, with every decision's reason, visual plan, corrected budget and stage gates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F9; --panel:#FFFFFF; --ink:#171B26; --muted:#5B6376; --line:#D7DCE6;
+  --gold:#B8901F; --gold-soft:#F5EBCD; --pip:#D2368F; --pip-soft:#FBE3F0; --gruff:#1E9DBB; --gruff-soft:#DDF2F7;
+  --red:#C8352F; --red-soft:#FBE4E2; --green:#2E8B57; --green-soft:#E1F3E8; --code:#EEF1F6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1018; --panel:#151A25; --ink:#E9ECF3; --muted:#9AA3B8; --line:#2A3142;
+    --gold:#E2B94A; --gold-soft:#2C2612; --pip:#F06AB8; --pip-soft:#3A1A2C; --gruff:#4CC3E0; --gruff-soft:#12303A;
+    --red:#F06A64; --red-soft:#3A1A1A; --green:#5CC98A; --green-soft:#16301F; --code:#1C2230;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1018; --panel:#151A25; --ink:#E9ECF3; --muted:#9AA3B8; --line:#2A3142;
+  --gold:#E2B94A; --gold-soft:#2C2612; --pip:#F06AB8; --pip-soft:#3A1A2C; --gruff:#4CC3E0; --gruff-soft:#12303A;
+  --red:#F06A64; --red-soft:#3A1A1A; --green:#5CC98A; --green-soft:#16301F; --code:#1C2230;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;font-size:15.5px;line-height:1.55;}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 96px;}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:"Anton",Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(44px,8vw,84px);line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+h2{font-family:"Anton",Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:30px;letter-spacing:.02em;text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px;max-width:72ch}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+section{margin-top:56px}
+.lede{font-size:18px;color:var(--muted);max-width:66ch}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:28px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.stat .n{font-family:"Anton",Impact,sans-serif;font-size:34px;line-height:1;margin-bottom:6px}
+.stat .l{font-size:12.5px;color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px 20px;margin-bottom:12px}
+.verdict{border-left:6px solid var(--red);background:var(--red-soft)}
+.ok{border-left:6px solid var(--green);background:var(--green-soft)}
+.gate{border-left:6px solid var(--gold);background:var(--gold-soft)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid var(--line);color:var(--muted);margin-right:6px}
+.tag.pip{color:var(--pip);border-color:var(--pip);background:var(--pip-soft)}
+.tag.gruff{color:var(--gruff);border-color:var(--gruff);background:var(--gruff-soft)}
+.tag.gold{color:var(--gold);border-color:var(--gold);background:var(--gold-soft)}
+.tag.red{color:var(--red);border-color:var(--red);background:var(--red-soft)}
+.tag.green{color:var(--green);border-color:var(--green);background:var(--green-soft)}
+ul{margin:0 0 12px;padding-left:20px}li{margin-bottom:6px;max-width:80ch}
+.fixlist li{margin-bottom:10px}
+.fixlist b{color:var(--red)}
+.laws{display:grid;gap:10px}
+.law{display:grid;grid-template-columns:110px 1fr;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px}
+.law .count{font-family:"Anton",Impact,sans-serif;font-size:26px;line-height:1.05}
+.law .count small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.08em;margin-top:4px}
+.law .ev{font-size:13.5px;color:var(--muted);margin-top:4px}
+.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cast .card{margin:0}
+.act{margin-top:34px;padding-top:14px;border-top:2px solid var(--ink);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.act .name{font-family:"Anton",Impact,sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.02em}
+.act .span{color:var(--muted)}
+.beat{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line)}
+.beat .tc{font-family:"Anton",Impact,sans-serif;font-size:26px;line-height:1;color:var(--ink)}
+.beat .tc small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.06em;margin-top:6px;font-variant-numeric:tabular-nums}
+.beat .what{font-size:16px;font-weight:500;margin-bottom:10px;max-width:80ch}
+.beat q{font-style:italic;quotes:"“" "”"}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cell{background:var(--code);border-radius:5px;padding:10px 12px;font-size:13.5px}
+.cell .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cell.ev{grid-column:1/-1;background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.budget{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.scroll{overflow-x:auto}
+.gates .card{margin-bottom:10px}
+.gates .n{font-family:"Anton",Impact,sans-serif;font-size:22px;margin-right:10px;color:var(--gold)}
+.foot{margin-top:56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+a{color:inherit}
+@media (max-width:640px){.beat{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.law{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Production bible · v2 · 2026-08-31 · nothing generated, nothing purchased</div>
+  <h1>Shrinking Planet</h1>
+  <p class="lede">A 20-minute, entirely AI-made episode in the survival-challenge format, built from MrBeast's ten most-viewed videos of the last twelve months (real view counts, full transcripts, and a frame-by-frame read of the #1 hook). Every beat carries its reason, its on-screen plan, its sound, and the evidence it rests on. Version 1 failed its own adversarial review; this is the corrected version, with the failures listed first.</p>
+
+  <div class="strip">
+    <div class="stat"><div class="n mono">10</div><div class="l">videos torn down · 251M → 154M views · Sep 2025–Aug 2026</div></div>
+    <div class="stat"><div class="n mono">187</div><div class="l">on-screen events logged in the #1 hook's first 45 s</div></div>
+    <div class="stat"><div class="n mono">15</div><div class="l">problems the adversarial review found in v1 — all addressed below</div></div>
+    <div class="stat"><div class="n mono">$0</div><div class="l">spent so far · first credit spend is Gate 2, capped at ~14 clips</div></div>
+  </div>
+
+  <section>
+    <h2>What the review caught in v1</h2>
+    <div class="card verdict">
+      <p><strong>Verdict on v1: not ready.</strong> The reviewer's exact charge: the outline was "a scene-by-scene transplant of the #1 video, not a synthesis of laws." It was right. Here is what was wrong and what changed — shown so you can see the mistake-catching working, instead of finding these yourself after credits were spent.</p>
+    </div>
+    <ul class="fixlist">
+      <li><b>Budget built on a misread number.</b> v1 used "31 of 88 clips banked" as a 35% yield. That is a progress counter, not a reject rate. Real roll-1 pass rates on record: Dinoverse zone 9 = 9/10, Christ Cares = 7/7, cookies = 36/36 held identity. v2 plans at 80–90% roll-1 with a 3-roll cap.</li>
+      <li><b>Wrong throughput model, real cap ignored.</b> v1 used "20 clips/day." The proven recipe runs ~36 clips/hour; the limit that has actually stopped production here is Grok's <em>weekly</em> cap (~160 clips/week observed). v2 budgets in weekly cycles.</li>
+      <li><b>Clip counts contradicted themselves 2×</b> (beats summed to 88, budget said 156) and the budget only balanced by re-using one drone loop 40 times — which violates the channel's own clip-variety rule. v2 counts unique clips per beat under that rule: <span class="mono">~176</span>.</li>
+      <li><b>Story logic broke twice.</b> The planet ladder hit 0 m on Day 29 instead of 2 m; and "crossing the red line = quit, both lose" collided with "launching the pod = steal everything" on the same object. v2 separates the devices (red line = quit; launch key = steal) and fixes the ladder: 20 → 12 → 7 → 4 → 2 m.</li>
+      <li><b>25+ lines lifted near-verbatim from the #1 video</b> while claiming an original premise. Every line of dialogue below is rewritten. The <em>structure</em> is borrowed on purpose (that is the point of a teardown); the words are not.</li>
+      <li><b>Six of fourteen "laws" were overstated</b> by their own evidence lists. Counts below are the honest ones (e.g. "$ figure in the first 17 s" is 6 of 10, not 8; the "genre flip at 64–85%" window is 3 of 10, though 8 of 10 announce a format change somewhere).</li>
+      <li><b>Hook targets quoted the wrong measurements</b> (60-second and loose-threshold counts presented as 45-second hard cuts). Corrected numbers in the hook-grammar section.</li>
+      <li><b>PIP's line count broke the budget's own cap</b> (~30 mouth-visible lines vs a ≤20 cap set because talking-creature lip-sync is this repo's biggest known failure). v2 keeps PIP's on-camera mouth lines ≤20 and carries the rest as voice-over on reactions and inserts.</li>
+      <li><b>Script length ~30% low.</b> The references run 197–213 words per minute. A 20-minute episode is ~4,000 words ≈ 24k characters (≈30k with retake reserve), delivered in ~6 chunks — not one pass.</li>
+      <li><b>The "AI faces" rule was mischaracterized.</b> That memory is a quality bar about a real person's likeness, not a ban on AI humans. The creature cast is kept — but as a strategic choice (the repo's proven strength + lip-sync tolerance), not rule compliance. ORB also lost its "two tiny arms" (an uncosted consistency risk across 40 gestures); objects now arrive on tray drones.</li>
+      <li><b>The prop-money contradiction.</b> v1 said "don't pretend the money is real" and then put $1,000,000 in 4 of 5 titles. v2's default title sells survival, not cash; the in-world prize is fictional and disclosed. If you'd rather fund a real giveaway, money titles become honest — that is your Gate 0 call.</li>
+      <li><b>"One-off episode" contradicted the series mascots.</b> v2 commits to a series-capable cast; the sameness defense is a different premise every episode, not a single upload.</li>
+      <li><b>Three wrong citations</b> fixed (a running-gag count, a consolation-money citation that paid losers not winners, and a flash-forward that spoiled the finale).</li>
+      <li><b>Two tool leaks struck:</b> Remotion (not in this repo — the engine is the FFmpeg renderer) and an unnamed "upscaler" (720p→1080p is a plain ffmpeg scale pass, stated as such).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The formula · honest counts</h2>
+    <p class="lede">What the ten videos actually do, with how many of the ten do it. Counts marked "measured" come from the frame ledger of one video, not all ten.</p>
+    <div class="laws">
+      <div class="law"><div class="count">10<small>of 10</small></div><div><h3>Stakes are stated by 0:17. A dollar figure by 0:17 in 6 of 10.</h3><div class="ev">"$250,000" at 0:10 · "would literally die" at 0:00 · "quarter of a million" at 0:05 · cash on camera at 0:13. Two videos open on pure curiosity ("Who would win?") with no money at all.</div></div></div>
+      <div class="law"><div class="count">5<small>of 10</small></div><div><h3>Irreversible on-camera commitment inside 40 s — premise → prize → human wound → the click.</h3><div class="ev">Handcuffs click at 0:29 with "the video is over, neither of you wins" by 0:36. In 3 of 10 the challenge is already running before the rules finish.</div></div></div>
+      <div class="law"><div class="count">9<small>of 10</small></div><div><h3>A promise stack (3–5 set pieces, or the worst future moment) lands before 3:20 — 7 of 10 before 1:40.</h3><div class="ev">"Get me out of here! / You make me wanna die" at 2:37 · a three-item trailer at 0:07 · "Little did we know…" at 1:31.</div></div></div>
+      <div class="law"><div class="count">10<small>of 10</small></div><div><h3>A one-directional number ladder is the spine; the number is spoken and shown at every step.</h3><div class="ev">Chain 60 → 30 → 20 → 5 → 1 ft · animals 999 → 74 → 1,000 · pilots 100 → 19 → 7 → 5 · $1 → $1B in 11 rungs.</div></div></div>
+      <div class="law"><div class="count">7<small>of 10</small></div><div><h3>Host check-in every 4–7 min (survival formats); every check-in changes a rule or makes an offer.</h3><div class="ev">Day 5/10/15/20/25 at 3:28, 8:24, 13:02, 17:29, 23:35 (mean gap 5.0 min). Anthology formats re-set every 1.5–2.5 min.</div></div></div>
+      <div class="law"><div class="count">7<small>of 10</small></div><div><h3>Losses are physical and irreversible, performed as a ritual on camera — never a score change.</h3><div class="ev">"Cut the chain in half!" · a quarter of the platform pushed off: "It's now gone" · store windows boarded · "what you're competing for is literally what's eliminating you."</div></div></div>
+      <div class="law"><div class="count">6<small>of 10 measured</small></div><div><h3>The thumbnail state is withheld until 62–99% of runtime; the thumb sells the last state of the video.</h3><div class="ev">1-ft chain at 90% · title fight begins at 82% · $1B rocket at 80% · count hits 1,000 at 99%.</div></div></div>
+      <div class="law"><div class="count">8<small>of 10</small></div><div><h3>A meta-announced format change ("we're about to fundamentally change this video"). Placement varies 4%–95%; only 3 of 10 sit in the 64–85% window.</h3><div class="ev">Prisoner's dilemma at 64% · "no one gets it" negotiation at 74% · "will fundamentally change the video" at 28%.</div></div></div>
+      <div class="law"><div class="count">6<small>of 10</small></div><div><h3>A trust asymmetry (lie detector, steal/no-steal, honor system) is planted, then replayed at the climax.</h3><div class="ev">Her "won't steal" verified TRUE at 25:53; his answer left unverified at 26:19; replayed at 35:31 before the clock runs out.</div></div></div>
+      <div class="law"><div class="count">5<small>of 10</small></div><div><h3>Re-humanize within 3 minutes of the biggest collapse: a secret, a family, a motive.</h3><div class="ev">Motives montage (daughters, IVF) at 17:01 → collapse at 17:25 · the ring secret 24 h before the end · brothers brought out before the beam decision.</div></div></div>
+      <div class="law"><div class="count">8<small>of 10</small></div><div><h3>A literal spoken countdown carries every act climax; the finale is a real clock read aloud at shrinking intervals.</h3><div class="ev">"12h43m" → "Ten minutes" → "1:12" → "16 seconds" → "3, 2, 1, time is up." One video runs eight countdowns.</div></div></div>
+      <div class="law"><div class="count">7<small>of 10</small></div><div><h3>Nobody leaves with nothing: consolation is paid on camera to the losers so the loss reads as fair.</h3><div class="ev">$10,000 to every eliminated pilot · $22,000 each · $10,000 to the 7-year-old · $125,000 each in the split.</div></div></div>
+      <div class="law"><div class="count">10<small>of 10</small></div><div><h3>The climax resolves inside the last 90 s; the tail is ≤30 s; the CTA is one word or a next-video promise.</h3><div class="ev">"Subscribe." as the last word in 4 of 10 · "See ya in a year" · "I'm not failing again." No end-screen pitch anywhere.</div></div></div>
+      <div class="law"><div class="count">1<small>of 10 measured</small></div><div><h3>Silent reaction holds after every money line: dialogue stops 2–4 s, music only, loudness dips ~5 LU, cutaways of each face.</h3><div class="ev">Frame ledger, #1 video: 12.7–16.8 s = 4.1 s no dialogue, 3 cutaways + a 1.6 s pull-back, momentary loudness −12 vs −7.6 LUFS. Caption gaps in the other nine are consistent but were not frame-measured.</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The #1 hook, measured</h2>
+    <p class="lede">"Survive 30 Days Chained To Your Ex" · 251,566,834 views · first 45 seconds, frame-read at 8 fps with audio onsets and loudness. These are the numbers the Gate 2 prototype is scored against.</p>
+    <div class="card">
+      <ul>
+        <li><strong>0–12.7 s (premise → prize):</strong> only <span class="mono">1</span> true hard cut, but <span class="mono">~13</span> visual transitions — a snap punch-out at 1.375 s, whiteout-hidden cuts at 3.4 and 8.0 s, a six-photo archive stack in 2.4 s, a split-fold wipe, a push-in to 1.9× at 8.25 s eased back out over 1 s. Name cards in magenta (her) and cyan (him) held 1.9 s. <strong>"30 DAYS" appears on screen 0.2–0.5 s before the word is spoken.</strong> Two white flashes and a light bloom centered on the physical "$250,000" sign on the money line.</li>
+        <li><strong>12.7–16.8 s (the silent hold):</strong> 3 cutaways (her close-up, his close-up, the chain insert) and a 1.6 s pull-back; no dialogue; loudness dips to −12 from −7.6 LUFS.</li>
+        <li><strong>16.8–33 s (the exchange):</strong> <span class="mono">13</span> hard cuts, mean shot ~1.25 s; 9 of 13 cuts land within ±0.12 s of an audio onset; "HE'S SALTY" is a 0.6 s shot.</li>
+        <li><strong>Whole 0–45 s:</strong> 23 hard cuts (~0.5/s), ~110 logged visual events in the first 33 s (~200/min), 170 audio onsets per minute, integrated −7.6 LUFS with a loudness range of only 2.9 LU — heavily compressed, near-constant, except the deliberate dips.</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13.5px">Global averages would say "a cut every 2 s." No second of this hook is cut every 2 s: it is one take with digital punch-ins for 12 seconds, then a silent hold, then a burst at 1.25 s. The outline's hook is built to that shape, not to the average.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where the all-AI idea collides with reality</h2>
+    <p class="lede">Pushback you asked for. Each problem carries its mitigation; two need your decision at Gate 0.</p>
+    <div class="card"><h3>1 · The authenticity engine is gone.</h3><p>All ten videos run on real strangers with real jobs and 6 of 10 open with a real dollar figure. An AI cast cannot receive money, so "will he steal it?" has no real referent. <strong>Mitigation:</strong> don't pretend. Declare it an animated game show (AI disclosure on every upload), and build stakes fiction can honor: visible, irreversible world-loss (the planet literally shrinks — the one thing only AI can stage at this scale) and a relationship stake that pays off regardless of money. <span class="tag gold">Gate 0 decision</span> keep the prize fictional and sell survival in the title, <em>or</em> fund a real viewer giveaway and earn the right to a money title.</p></div>
+    <div class="card"><h3>2 · Human faces at a 1.25-second cut rhythm.</h3><p>Photoreal AI humans read uncanny at hook density and lip-sync fails frame QA. <strong>Mitigation:</strong> zero photoreal humans. A creature cast with strong silhouettes and mouths that tolerate imperfect sync — a mouthless host, a fur-covered mouth, and one small mouth used sparingly. This plays to what this repo has actually proven it can render consistently (creatures), and it is a choice, not a rule.</p></div>
+    <div class="card"><h3>3 · Sameness is the demonetization trigger, not AI.</h3><p>A beat-for-beat clone with an AI cast is the definition of a template farm. <strong>Mitigation:</strong> copy the laws, not the show — original premise, original characters and names, a locked art style, hand-built graphics through the existing FFmpeg renderer, a different premise every episode, and a per-upload edit-fingerprint check against the reference.</p></div>
+    <div class="card"><h3>4 · Likeness.</h3><p>No name, logo, wordmark, snack brands, no bearded brown-haired human host, no "you're in a [Name] video" phrasing. The genre grammar ("Survive X, Win Y", "Last To Leave") is generic and stays.</p></div>
+    <div class="card"><h3>5 · Credits are the real risk.</h3><p>A 20-minute all-generated video is ~176 unique clips before rejects. <strong>Mitigation:</strong> stage-gated spend — the hook prototype (≈14 clips) is generated first and measured against the hook numbers above before any act is touched; the five hero environment shots are generated next because they are re-used most; then act by act, each reviewed on a contact sheet before the next act's clips exist.</p></div>
+    <div class="card"><h3>6 · Scripted animation cannot surprise the writer.</h3><p>The references are carried by genuinely unscripted outcomes. <strong>Mitigation:</strong> script the expectation violations explicitly — the unchosen platter revealed as the free option, the trust beam that deliberately leaves one answer unverified, a finale whose answer the truth device withholds. Runtime stays at 20:00 (the references' ~4 minutes of sponsor slots are cut; this channel has none).</p></div>
+    <div class="card"><h3>7 · Same creature, every shot, for "30 days."</h3><p>This repo's largest recorded burn was a subject swap. <strong>Mitigation:</strong> SUBJECT LOCK before spend — one approved seed per character, no costume changes across the 30 days (only the planet changes), every clip generated from composites of those masters, frame-strip QA per clip, contact-sheet review per act.</p></div>
+  </section>
+
+  <section>
+    <h2>Cast · four originals</h2>
+    <div class="cast">
+      <div class="card"><span class="tag gold">Host</span><h3>ORB</h3><p>A 60-cm floating chrome sphere with one large glass lens-eye and a gold ring-light halo that pulses when it speaks. No mouth, <strong>no arms</strong>. Always the same starfield reflection. Objects it "hands over" arrive on tray drones. <em>Why:</em> no face and no lip-sync to fail; speech is a halo pulse (a brightness keyframe in FFmpeg); readable silhouette at 1-second shot lengths; a host that can leave the planet — the shot no real camera can buy.</p></div>
+      <div class="card"><span class="tag pip">Contestant · magenta</span><h3>PIP</h3><p>A 1-m axolotl-like creature, matte magenta skin, six frilly gill-fronds that act as hair and emote (droop = sad, flare = angry, curl = flirt), oversized glossy black eyes, one yellow scarf that never changes. Small mouth. <em>Why:</em> emotion carried by fronds and eyes, not lips; mouth-visible lines capped at 20 for the whole episode, the rest voice-over on reactions. She is the singer who went solo — the emotional lead.</p></div>
+      <div class="card"><span class="tag gruff">Contestant · cyan</span><h3>GRUFF</h3><p>A 2.5-m cyan-blue yeti whose long fur completely covers the mouth; speech reads as fur movement and heavy brows. One cracked brass goggle worn on the forehead — the plot object. No clothes. <em>Why:</em> a fur-covered mouth is the cheapest talking creature possible; his size makes the 2-metre-planet finale (the thumbnail) absurd on sight. He is the drummer who got left behind.</p></div>
+      <div class="card"><span class="tag">Scoreboard</span><h3>THE COUNT</h3><p>A matte-black hovering 40-cm cube with red seven-segment displays on every face, one wobbling antenna, four thrusters. No face, no voice — beeps. Numbers are composited over its clean plate. <em>Why:</em> makes the number ladder diegetic and nearly free; a comic foil that malfunctions; used as inserts (never adjacent to itself) to respect the variety rule.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The 20 minutes</h2>
+    <p class="lede">Timecodes are the ordering, because time is the real structure. Every beat: what happens, why it is <em>here</em>, what is on screen (and roughly how many unique generated clips), what it sounds like, and the evidence it rests on. All dialogue is original.</p>
+
+    <div class="act"><span class="name">Hook</span><span class="span mono">0:00–0:45 · ~14 unique clips</span></div>
+
+    <div class="beat"><div class="tc">0:00<small>–0:12</small></div><div>
+      <div class="what">Cold open, no fade. ORB, punched in tight: <q>Helmets off.</q> Snap punch-out to the wide: PIP and GRUFF pull off their helmets on a rock hanging in space. <q>These two used to be a band. Four years, one bus, one stage. She went solo. He's still angry about it.</q> Six archive stills of the band flip past in 2.4 seconds. <q>If they survive 30 days on this planet — together — they go home with the prize.</q></div>
+      <div class="grid4">
+        <div class="cell"><div class="k">Why here</div>Stakes inside 12 s (10 of 10), premise → wound → prize chain (the #1 video's exact opening shape). Color codes and the constraint number land before anyone can leave.</div>
+        <div class="cell"><div class="k">On screen</div>One 6-s wide take used three times via punch-ins (1.6× → 1.0× → 1.9× pull-back). Six archive stills composited as a stack with whiteouts. Name cards: PIP / WENT SOLO (magenta), GRUFF / GOT LEFT (cyan). "30 DAYS" pops 0.3 s before the word. Bloom on the prize crate. ≈3 unique clips.</div>
+        <div class="cell"><div class="k">Sound</div>ORB at announcer energy, −7.6 LUFS target; driving cue; whoosh per photo; riser under "30 DAYS"; cash-register hit on the crate.</div>
+        <div class="cell ev"><div class="k">Evidence</div>Hook ledger 0.0–12.25 s (punch-out 1.375, photo stack 3.5–5.75, text leading VO by 0.2–0.5 s, bloom 11.5); Law 1, Law 2.</div>
+      </div></div></div>
+
+    <div class="beat"><div class="tc">0:12<small>–0:17</small></div><div>
+      <div class="what">Silent hold. PIP's open-mouthed close-up at her camp; GRUFF's close-up in his cave; insert of the coiled gravity tether with ORB hovering above it; a slow 1.6-second pull-back.</div>
+      <div class="grid4">
+        <div class="cell"><div class="k">Why here</div>The money line needs air. The measured dip (−12 LUFS) and three cutaways in 4 s are what make the number feel big.</div>
+        <div class="cell"><div class="k">On screen</div>2 reaction close-ups (the episode's workhorse reactions, re-used non-adjacently later), 1 tether insert; pull-back is an FFmpeg zoom on the wide. ≈3 unique clips.</div>
+        <div class="cell"><div class="k">Sound</div>Music only, ducked 5 LU; one sub hit on the tether insert.</div>
+        <div class="cell ev"><div class="k">Evidence</div>Ledger cuts 12.746 / 13.514 / 14.348, zoom-out 14.5–16.0, loudness −12.1 vs −7.6; Law 14 (measured).</div>
+      </div></div></div>
+
+    <div class="beat"><div class="tc">0:17<small>–0:21</small></div><div>
+      <div class="what">Over-the-shoulder Q&amp;A at 1-second cuts. ORB: <q>When did the band end?</q> PIP: <q>Three years ago.</q> GRUFF, fur bristling: <q>She quit. Mid-tour.</q> ORB, off camera: <q>Still sore.</q> PIP laughs.</div>
+      <div class="grid4">
+        <div class="cell"><div class="k">Why here</div>The human wound inside 20 s — the whole relationship in four lines, and it plants the secret that pays at 17:10.</div>
+        <div class="cell"><div class="k">On screen</div>OTS 2-shot ORB+GRUFF, PIP close-up against the prize crate, punch-in on the 2-shot, PIP laugh (re-use, non-adjacent). ≈2 unique clips; 4 cuts.</div>
+        <div class="cell"><div class="k">Sound</div>Dialogue (PIP bright and quick, GRUFF low and gravelly), every cut on a word onset; comedic sting under "Still sore."</div>
+        <div class="cell ev"><div class="k">Evidence</div>Ledger 17.0–21.4 s (13 cuts in 16 s, cut-on-onset 9/13 within ±0.12 s); Law 2.</div>
+      </div></div></div>
+
+    <div class="beat"><div class="tc">0:21<small>–0:30</small></div><div>
+      <div class="what">ORB's halo flares: <q>Nobody's making you. But the second those anklets lock, the thirty days are running.</q> GRUFF locks his — CLICK — <q>Running.</q> One second of silence. PIP locks hers — CLICK. <q>Both locked,</q> says ORB.</div>
+      <div class="grid4">
+        <div class="cell"><div class="k">Why here</div>Irreversible on-camera commitment (5 of 10 inside 40 s) — the "they can't back out now" moment; the two clicks are the loudest onsets in the hook.</div>
+        <div class="cell"><div class="k">On screen</div>Wide take B (halo flare) → side-angle GRUFF medium with ORB drifting out of foreground → 2-shot anklet click with fast punch-in and motion blur → GRUFF smirk close-up → PIP close-up. ≈3 unique clips.</div>
+        <div class="cell"><div class="k">Sound</div>Two hard metallic clicks (generated foley per shot — never library); dialogue stops 1 s after each click; music holds.</div>
+        <div class="cell ev"><div class="k">Evidence</div>Ledger 21.5–30.6 s (cut on onset 24.1, punch-in 25.75, click onsets 26.0 and 29.1, silent holds 27.1–29.4); Law 2, Law 14.</div>
+      </div></div></div>
+
+    <div class="beat"><div class="tc">0:30<small>–0:45</small></div><div>
+      <div class="what">Whip-tilt from PIP's anklet to her face. ORB at its landing pad, a red ring painted on the rock around it: <q>Cross this line and you quit. If either of you quits, I take you both home tonight — and the prize goes back in the crate.</q> ORB lifts off. The camera goes with it, up and up, until the planet is a marble. <q>Have fun down there.</q></div>
+      <div class="grid4">
+        <div class="cell"><div class="k">Why here</div>The loss rule by 0:36, then the first only-AI shot: the host leaves the planet and reveals the scale — the image the format cannot buy with real cameras. The red line is the QUIT device; the launch key (Day 25) is a separate device — no rule collision.</div>
+        <div class="cell"><div class="k">On screen</div>Anklet-to-face whip tilt; landing-pad wide with the red ring, all three; ORB close-up; ORB launch + pull-out to the full 1,000-m planet (hero environment shot, re-used at the end). ≈3 unique clips.</div>
+        <div class="cell"><div class="k">Sound</div>Rule delivered dry (music out), one low drone; launch whoosh + music slam on the planet reveal; "Have fun" over the slam.</div>
+        <div class="cell ev"><div class="k">Evidence</div>#1 video: whip tilt 32.25, door wide 33.0, rule 0:31–0:36, sign-off 0:39; #3 video 0:26 "if you fall, you lose everything"; Law 2.</div>
+      </div></div></div>
+
+    <div class="act"><span class="name">Act 1 · Far apart</span><span class="span mono">0:45–6:20 · ~40 unique clips</span></div>
+
+    <div class="beat"><div class="tc">0:45<small>–1:30</small></div><div>
+      <div class="what">Planet tour: a 1,000-metre rock with its own thin sky. PIP's camp at the north pole, GRUFF's cave at the south — <q>on a planet this size they can go a week without seeing each other.</q> THE COUNT hovers past showing DAY 1 · 1,000 M. A sealed crate stamped with a question mark sits on the equator. A toilet that is just a hole with a view of the stars.</div>
+      <div class="grid4">
+        <div class="cell"><div class="k">Why here</div>Relief and relatability after the rule dump, plus the mystery-crate open loop that runs to 12:00 (the #1 video plants a "?" door at 0:58 and pays it at 19:18).</div>
+        <div class="cell"><div class="k">On screen</div>Orbital push-in to the camp, the cave, THE COUNT insert, toilet gag, crate hero shot, two-shot walking the equator. On-screen text "DAY 1", "1,000 M" composited. ≈6 unique clips.</div>
+        <div class="cell"><div class="k">Sound</div>Upbeat world-building cue; drone beeps; toilet gag ends on a record scratch; ORB narrates.</div>
+        <div class="cell ev"><div class="k">Evidence</div>#1 video 0:41–1:24 house tour, "?" door 0:58, bathroom gag 1:03–1:08; #3 video 0:32–0:44; Law 5.</div>
+      </div></div></div>
+
+    <div class="beat"><div class="tc">1:30<small>–2:00</small></div><div>
+      <div class="what">Confessional booths, each alone, colour-lit. PIP: <q>Sooner or later one of us has to bring it up.</q> GRUFF: <q>I've been cold to her. I'm allowed. She left.</q> Then ORB: <q>They think this is about surviving. It isn't.</q> — a five-shot flash-forward: a wedge of planet tearing away, GRUFF's hand on a red lever, PIP shouting into a storm of rock dust, the truth beam flashing red, a ticking clock.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The promise stack before 1:40 (7 of 10) — guarantees conflict and spectacle before the slow Day 2 beat. The clips cost nothing extra: they are pulled from later beats. The clock flash-forward no longer spoils the finale (v1 error fixed — it shows a clock, not a result).</div><div class="cell"><div class="k">On screen</div>2 confessional close-ups (magenta-lit / cyan-lit booths; the booth angle varies later so it is never the same clip adjacent). Flash-forward = 5 clips borrowed from later beats, 0.5 s cuts with whiteouts. ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Confessionals dry; "It isn't" → music drop-out then slam; screams; a single clock tick.</div><div class="cell ev"><div class="k">Evidence</div>#1 video confessional 1:56 and flash-forward 2:37; #8 video 1:31 "Little did we know"; Law 3.</div></div></div></div>
+
+    <div class="beat"><div class="tc">2:00<small>–2:45</small></div><div>
+      <div class="what">Day 2. Opposite hemispheres; split-screen sunrises. ORB explains the engine: <q>Every deal I offer shrinks this planet. Right now they can avoid each other. At a hundred metres they'll hear each other breathe. At two, there's nowhere to stand but together.</q> A ladder graphic draws itself: 1,000 → 2 M. <q>So does a smaller world bring them back — or finish them off?</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Names the mechanic as the engine (the #1 video's "this chain will shrink… forced to confront each other" at 2:30) and asks the episode's central question before the first offer (3:23 there).</div><div class="cell"><div class="k">On screen</div>Split-screen of the two camps (re-use camp clips, non-adjacent), orbital planet with an animated diameter ring (overlay on the planet master), ladder graphic, ORB hover. ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Calm ambient; the ladder ticks; the question lands on silence.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 2:19–2:33 and 3:23–3:26; Law 4, Law 5.</div></div></div></div>
+
+    <div class="beat"><div class="tc">2:45<small>–4:10</small></div><div>
+      <div class="what">DAY 5 · OFFER #1. A tray drone lands two covered platters. ORB: <q>Keep your thousand-metre planet. Or halve it — and I add a hundred thousand to the prize.</q> GRUFF: <q>Money's money.</q> PIP: <q>Halve it.</q> A seam of light splits the planet; a whole wedge shears off and drifts away, their old campsite going with it. THE COUNT flips to 500 M.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>First choice = first escalation. The wedge ejection is the ritual, irreversible loss (7 of 10) staged at a scale only AI can render — the set piece the 1:30 trailer promised.</div><div class="cell"><div class="k">On screen</div>ORB arrival from orbit, tray-drone platter reveal close-up, deliberation 2-shot, PIP close-up "Halve it", HERO: wedge shearing away seen from space, ground-level POV of the camp drifting past their feet, THE COUNT insert. ≈7 unique clips.</div><div class="cell"><div class="k">Sound</div>Offer over a ticking cue; "Money's money" dry; deep crack, rumble, then vacuum silence as the wedge leaves; drone beep on 500.</div><div class="cell ev"><div class="k">Evidence</div>#1 video Day-5 offer 3:28–4:37, "cut the chain in half" 4:29; #3 video "destroying a quarter of your entire world" 4:42, tile pushed off 7:14; Laws 4, 5, 6.</div></div></div></div>
+
+    <div class="beat"><div class="tc">4:10<small>–4:50</small></div><div>
+      <div class="what"><q>Less than a day at half size, and it's already going wrong.</q> Gravity now drags both camps toward the same valley. GRUFF's snoring carries across the whole planet. PIP, tiptoeing into his cave at night, trips over the tether. Tally marks scratched into rock: DAY 6.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The audience must see the deal bite within one beat or the offers feel free (the #1 video: "not even 24 hours… already having problems" at 4:58).</div><div class="cell"><div class="k">On screen</div>Night wide, two tents sliding toward each other; snoring close-up; PIP tiptoe POV; tally-mark insert. ≈4 unique clips.</div><div class="cell"><div class="k">Sound</div>Snore as a comedy motif (generated), stumble foley, vacuum ambience; ORB wry.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 4:54–5:47; #3 video 1:47–2:21; Law 6 consequence.</div></div></div></div>
+
+    <div class="beat"><div class="tc">4:50<small>–6:20</small></div><div>
+      <div class="what">THE FIRST FIGHT. PIP: <q>I'd rather be chained to a stranger.</q> GRUFF: <q>You'd rather be anywhere I'm not. That's the whole story.</q> PIP: <q>You wrote one song in four years!</q> Fronds flare; fur bristles; he turns his back; she cries where he can't see. Later, a truce over a ration bar: <q>Clean slate?</q> — <q>…Fine.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The act-one low point pays the trailer's promise, then resets so the rebuild at 7:05 is earned. Without a real fight the reconciliation is unearned.</div><div class="cell"><div class="k">On screen</div>Confessional close-ups (different booth angles), handheld 2-shot argument in the valley (2 clips: fronds flared / fur bristled), GRUFF turning away, PIP crying close-up, the truce insert (two hands on one ration bar). Shots hold 2–4 s here — energy variation. ≈6 unique clips. PIP mouth-visible lines so far: 5.</div><div class="cell"><div class="k">Sound</div>Music out for the argument; breath and a wind-through-vacuum motif; strings enter on the truce.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 5:48–8:15 (fight → apology → "fresh start"); Law 10 (relationship stake).</div></div></div></div>
+
+    <div class="act"><span class="name">Act 2 · Closer</span><span class="span mono">6:20–10:55 · ~32 unique clips</span></div>
+
+    <div class="beat"><div class="tc">6:20<small>–7:05</small></div><div>
+      <div class="what">DAY 10. ORB: <q>Today's shrink is on the house.</q> A smaller wedge ejects — 300 M. Gift: THE COUNT gets thrusters and can fetch things now. ORB: <q>From here on, the money gets serious. So will the planet.</q> A moon-rock heart appears outside GRUFF's cave. He doesn't mention it. She notices he kept it.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Rule change + relief + an explicit promise of bigger offers — the promise carries viewers across the quiet friendship beat (the #1 video 8:24–9:33, 10:47).</div><div class="cell"><div class="k">On screen</div>ORB arrival (new angle), small wedge ejection (re-cropped from the hero), THE COUNT upgrade gag, moon-rock heart insert, 2-shot at the cave mouth. Text "DAY 10", "300 M". ≈4 unique clips.</div><div class="cell"><div class="k">Sound</div>Lighter cue; thruster whine; the heart lands on a pause then a warm chord.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 8:24–9:06 (free shrink + crew help), 8:42 promise, 10:27–10:47 heart on the wall; Law 5.</div></div></div></div>
+
+    <div class="beat"><div class="tc">7:05<small>–8:15</small></div><div>
+      <div class="what">THE TALK, at a plasma vent that passes for a campfire. ORB, voice-over: <q>So what actually broke the band?</q> PIP: <q>I sat in the dressing room every night thinking nobody in that band would notice if I vanished. So I vanished first.</q> GRUFF: <q>I noticed. I just never said it out loud.</q> A long silence. PIP: <q>So what do we do now?</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The B-story becomes the A-story at the one-third mark (the #1 video does this at 29–34%). From here the relationship outranks the prize — the one stake a fictional cast can carry with full authenticity.</div><div class="cell"><div class="k">On screen</div>Two-shot at the vent, PIP close-up firelit, GRUFF close-up firelit, slow push-ins in FFmpeg on both, a starfield time-lapse over the tiny horizon. Shots hold 3–5 s. ≈4 unique clips. PIP lines here are 2 of her 20.</div><div class="cell"><div class="k">Sound</div>Vent crackle (generated), sparse piano; two seconds of silence after the last line.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 10:49–12:15 (the breakup talk, "So what do we do?"); Law 10.</div></div></div></div>
+
+    <div class="beat"><div class="tc">8:15<small>–8:45</small></div><div>
+      <div class="what">GRUFF's crisis. <q>I haven't seen further than thirty metres in two weeks.</q> He walks a full lap of the planet in forty seconds and arrives back where he started. Confessional: <q>I'm not doing great. In the head.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Manufactures the need the next offer exploits; the forty-second lap is a sight gag only possible on a 300-m planet.</div><div class="cell"><div class="k">On screen</div>One continuous tracking shot around the circumference (hero clip, sped 2×), confessional (new angle). ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Looping footsteps (generated), one sad synth; ends on his line, no music.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 12:32–13:01; #3 video 20:42–22:12 solo isolation; Law 5 setup.</div></div></div></div>
+
+    <div class="beat"><div class="tc">8:45<small>–9:45</small></div><div>
+      <div class="what">DAY 15 · the offer they refuse. ORB unveils a hologram: a glass dome with a garden, real air, real trees — <q>yours, if the planet goes to a hundred metres.</q> PIP: <q>…No.</q> ORB: <q>Ten seconds to change your mind.</q> A timer. GRUFF sulks: <q>There were trees.</q> ORB: <q>Regret it yet? Remember — there's still a crate.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>A declined offer creates a regret thread and a mini-countdown; it re-hooks the crate and plants PIP's redemption for 12:00 (the #1 video 13:02–15:03).</div><div class="cell"><div class="k">On screen</div>Sky-dome hologram over the planet (only-AI), platter 2-shot (new angle), 10-s timer graphic over the wide, GRUFF sulking close-up, crate hero (re-use, non-adjacent), PIP confessional. ≈4 unique clips.</div><div class="cell"><div class="k">Sound</div>Dome reveal = choir swell then cut; timer beeps; "Regret it yet?" on silence.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 13:02–15:03 ("Yeah, no", 10-s timer, "regretful", "there's still…"); Law 5, Law 7.</div></div></div></div>
+
+    <div class="beat"><div class="tc">9:45<small>–10:25</small></div><div>
+      <div class="what">PIP makes him breakfast: ration bars arranged as a heart. <q>Bandmates?</q> — <q>Bandmates.</q> Alone, GRUFF reads a battered paperback whose title is composited: HOW TO STOP BEING A DRUMMER ABOUT IT. He takes notes.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>An ambiguous signal plus a comic device that recurs and drives his later behaviour change; pulls him out of the low (the #1 video's self-help book runs 16:00 → 21:51).</div><div class="cell"><div class="k">On screen</div>Breakfast insert, 2-shot over the plate, GRUFF reading close-up (title is composited text, not generated). ≈3 unique clips.</div><div class="cell"><div class="k">Sound</div>A four-note ukulele motif — it becomes the duo's riff at 19:30; page-turn foley.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 15:35–16:51 (heart breakfast, the book); running-gag device (#4 video, sidekick gag at 11:24).</div></div></div></div>
+
+    <div class="beat"><div class="tc">10:25<small>–10:55</small></div><div>
+      <div class="what">THE GOGGLE. PIP: <q>You still wear that thing?</q> GRUFF touches the cracked brass goggle on his forehead. <q>There's something about it I'll tell you. The last night on this rock. Not before.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The midpoint open loop, explicitly tied to staying to the end — for her and for the viewer (the #1 video plants its secret at 46%; this sits at 52%).</div><div class="cell"><div class="k">On screen</div>Goggle macro insert, 2-shot (new angle at the vent), PIP confessional. ≈1 unique clip.</div><div class="cell"><div class="k">Sound</div>Music drops to a single held note under the secret; confessional dry.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 16:56–17:27 (the ring, "the night before we leave"); Law 10 setup, paid at 17:10.</div></div></div></div>
+
+    <div class="act"><span class="name">Act 3 · The crate</span><span class="span mono">10:55–13:30 · ~20 unique clips</span></div>
+
+    <div class="beat"><div class="tc">10:55<small>–12:00</small></div><div>
+      <div class="what">DAY 20 · FIVE PLATTERS to open the crate, revealed right to left. ORB: <q>Careful. The best deal might be the one you skip.</q> #1: pay $200,000 out of the prize — no. #2: $500,000 — no. #3: shrink to 25 metres — GRUFF: <q>Take it.</q> PIP: <q>Take it.</q> ORB lifts #4: <q>Free. It was free.</q> The wedge tears away anyway. 25 M.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Escalation, a gamble, and the sting of the unchosen free option — a scripted expectation violation to replace the unpredictability fiction can't have (the #1 video 17:29–19:05, the unchosen-platter sting at 18:57).</div><div class="cell"><div class="k">On screen</div>Five-platter wide, lid-lift inserts (2 lids, re-lit and re-cropped, never adjacent), debate 2-shot, "Take it" close-ups, the #4 reveal with a slow push, the big wedge ejection to 25 M (new angle on the hero event), THE COUNT insert. ≈6 unique clips.</div><div class="cell"><div class="k">Sound</div>Game-show stings per lid; "It was free" on total silence then low sad brass; wedge rumble.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 17:29–19:05; Laws 5, 6, 7.</div></div></div></div>
+
+    <div class="beat"><div class="tc">12:00<small>–12:25</small></div><div>
+      <div class="what">THE CRATE OPENS: two tickets on a rescue ship — <q>You both go home. Whoever wins, whoever doesn't.</q> PIP sobs. GRUFF: <q>That's the redemption, right there.</q> ORB: <q>The tickets come at a cost. Look down.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Pays the 0:45 crate loop at 60% (the #1 video pays its door at 52%) — an emotional high placed right before the cost and the flip, so the fall is maximal.</div><div class="cell"><div class="k">On screen</div>Crate doors opening with light, ticket macro, PIP crying close-up (new angle), 2-shot hug. ≈3 unique clips.</div><div class="cell"><div class="k">Sound</div>Full swell; silence after "Look down."</div><div class="cell ev"><div class="k">Evidence</div>#1 video 19:14–20:05 (the reveal, "these come at a cost"); Law 7 payoff.</div></div></div></div>
+
+    <div class="beat"><div class="tc">12:25<small>–12:45</small></div><div>
+      <div class="what">The cost, on a house-sized planet: they cannot be out of arm's reach — sleeping, washing, the toilet, everything within three metres. PIP: <q>It can't get smaller than this.</q> ORB: <q>It can.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Cost of the win + tease of the next shrink keeps the ladder moving after a payoff (the #1 video 20:05–20:38: "This chain can't get shorter. / Oh, it can.").</div><div class="cell"><div class="k">On screen</div>House-sized planet from orbit, ground-level two-shot bumping shoulders, toilet callback (re-cropped). Text "25 M". ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Comedy bump foley; "It can" on a stinger.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 20:15–20:36; Laws 4, 5.</div></div></div></div>
+
+    <div class="beat"><div class="tc">12:45<small>–13:30</small></div><div>
+      <div class="what">DAY 25 · THE FLIP, at 64%. ORB: <q>I'm changing the rules of this entire video.</q> A tray drone lifts a platter: the ESCAPE POD LAUNCH KEY. <q>The pod has one seat. Whoever launches it goes home now — with the whole prize. The other one gets nothing.</q> The pod door glows red. <q>And from today the planet loses size every single day: twenty, twelve, seven, four, two.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The meta-announced format change (8 of 10) placed at the #1 video's exact 64% mark; converts shared stakes into zero-sum and re-hooks the last third. The launch key is a separate object from the quit line — no rule collision. The ladder now has five honest numbers.</div><div class="cell"><div class="k">On screen</div>ORB low-angle arrival, key-under-platter macro, the pod door lit red with one seat visible, split-screen reactions (re-use, non-adjacent), the ladder graphic 20 → 2 animating. ≈3 unique clips.</div><div class="cell"><div class="k">Sound</div>Music cut dead on "changing"; a single heartbeat; the key's clink is the loudest onset of the act.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 23:35–24:41 (meta line 23:38, keys 23:49, all-or-nothing 23:57–24:14, per-day shrink 24:22); #7 video 21:17 "no one gets it"; Law 8.</div></div></div></div>
+
+    <div class="act"><span class="name">Act 4 · Trust</span><span class="span mono">13:30–18:35 · ~32 unique clips</span></div>
+
+    <div class="beat"><div class="tc">13:30<small>–15:10</small></div><div>
+      <div class="what">THE TRUTH BEAM. <q>This is the part I like,</q> says ORB. A column of light on the equator: green for truth, red for a lie. GRUFF: <q>Were you better off solo?</q> PIP: <q>No.</q> GREEN. PIP: <q>Would you launch the pod?</q> GRUFF: <q>I'd never leave you on a rock.</q> The beam flickers — and the drone carrying it "malfunctions" before it settles. Unverified. PIP, same question: <q>No.</q> GREEN.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Forced disclosure creates asymmetric doubt (6 of 10): her "won't launch" is verified, his is not. That gap powers the finale. The beam is a colour shift on one clip — nearly free.</div><div class="cell"><div class="k">On screen</div>Truth-beam wide (one clip colour-shifted green/red/flicker for every answer), GRUFF close-up in the beam, PIP close-up in the beam, ORB hover (new angle), THE COUNT "malfunction" insert, reaction split-screens. Text "TRUE" / "—". ≈4 unique clips. PIP lines: 3 of her 20.</div><div class="cell"><div class="k">Sound</div>Beam hum; red = harsh buzzer, green = soft chime; dialogue dry; one second of silence after each verdict.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 24:42–28:29 (lie detector; her answer verified 25:53, his unverified 26:19); Law 9.</div></div></div></div>
+
+    <div class="beat"><div class="tc">15:10<small>–15:40</small></div><div>
+      <div class="what">GRUFF alone at the pod door, key in his fist. <q>She got her happy ending on camera. I could take the whole prize and be gone before she wakes up. Nobody would even blame me.</q> Cut to black for half a second.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Establishes the betrayal motive explicitly so the finale question is live for four minutes (the #1 video 28:31–28:58, "the perfect revenge story").</div><div class="cell"><div class="k">On screen</div>GRUFF at the pod door, red light on fur; key macro (re-use); confessional. ≈1 unique clip.</div><div class="cell"><div class="k">Sound</div>Low pulse; hard cut to black.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 28:41–28:58; Law 9.</div></div></div></div>
+
+    <div class="beat"><div class="tc">15:40<small>–16:25</small></div><div>
+      <div class="what">DAY 26–27. 12 M, then 7 M. Soundproof confessional pods — each can't hear the other. PIP: <q>Maybe he wants it to be even. Maybe that's fair.</q> ORB to GRUFF: <q>You're not planning to launch alone, are you?</q> GRUFF: <q>…Good question.</q> Tethered walking has become a three-legged race.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Suspicion escalation via a non-answer keeps the loop open; irritation rises as the world shrinks daily, so every beat carries a new number.</div><div class="cell"><div class="k">On screen</div>Two soundproof pods wide, pod interiors (new booth angles), 7-m planet from orbit, tethered-walk gag. Text "DAY 26", "DAY 27", "12 M", "7 M". ≈3 unique clips.</div><div class="cell"><div class="k">Sound</div>Muffled-through-glass treatment for the pod lines; comedy drag foley.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 29:00–31:44 (soundproof box, "good question"); Laws 4, 5.</div></div></div></div>
+
+    <div class="beat"><div class="tc">16:25<small>–17:10</small></div><div>
+      <div class="what">DAY 28 · 4 M. GRUFF stands taller than the world; PIP is at his feet; black space all around. <q>Every bump makes me want to hit that lever.</q> His hand rests on it. PIP, in confessional: <q>I think he's getting ready to leave.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The threat made explicit, and the thumbnail image state (a creature bigger than his world) arrives at 82% (6 of 10 withhold the thumb state until 62–99%).</div><div class="cell"><div class="k">On screen</div>The 4-m planet hero: GRUFF taller than the planet, PIP at his feet — THIS IS THE THUMBNAIL SEED; lever-hand macro; confessional. ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Nothing but breathing — and a ticking clock introduced here that runs to the end.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 32:01–32:14; Law 7 (thumb state at 82–90%).</div></div></div></div>
+
+    <div class="beat"><div class="tc">17:10<small>–17:55</small></div><div>
+      <div class="what">24 HOURS LEFT. The secret. GRUFF: <q>I sold the tour van. I was buying you a solo ticket — real one, real label, your name on it. I was going to give it to you on stage. You left the week before.</q> PIP looks at the goggle — the only thing of the band he kept. A clock is installed on the rock: 24:00:00.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Pays the 10:25 loop; reframes GRUFF as sincere and gives PIP hope — the re-humanization within three minutes of the climax (5 of 10) — and the clock makes the countdown literal.</div><div class="cell"><div class="k">On screen</div>Two-shot on a 2-m planet (both bodies fill the frame), goggle macro (re-use), PIP confessional, clock install insert. Text "24 HOURS LEFT". ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Confession over one sustained string; the clock tick becomes the metronome for every cut from here.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 32:17–33:45 (the ring secret, the 1-ft chain, the clock); Laws 10, 11.</div></div></div></div>
+
+    <div class="beat"><div class="tc">17:55<small>–18:35</small></div><div>
+      <div class="what">Night. Two shapes asleep against the prize crate on a rock the size of a car. 12:43:00 on the clock. PIP: <q>I'm scared of the next twenty-four hours.</q> GRUFF, in confessional: <q>The whole prize would change my life more than half of it. And after this we might never talk again anyway.</q></div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Maximal doubt injected right before the climax — the last thing the viewer hears before the countdown is the case for betrayal (the #1 video 33:48–35:03).</div><div class="cell"><div class="k">On screen</div>Night wide (the tiny rock in space with two sleeping shapes), clock insert (graphic), GRUFF confessional. ≈1 unique clip.</div><div class="cell"><div class="k">Sound</div>Tick only; his lines dry; two seconds of silence after "anyway."</div><div class="cell ev"><div class="k">Evidence</div>#1 video 33:52–34:59; Law 9.</div></div></div></div>
+
+    <div class="act"><span class="name">Act 5 · The clock</span><span class="span mono">18:35–20:00 · ~14 unique clips</span></div>
+
+    <div class="beat"><div class="tc">18:35<small>–19:30</small></div><div>
+      <div class="what">THE CLIMAX. Flash-forward: <q>Three seconds on the clock.</q> Back to ten minutes left. The truth beam replays, red flicker. ORB: <q>A minute and twelve seconds. Last chance to launch.</q> GRUFF's hand is on the lever. <q>Sixteen seconds.</q> He lifts his hand off. PIP grabs it. <q>Three. Two. One.</q> Silence. <q>Time's up.</q> A rescue ship rises over the horizon of a planet the size of a car.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>The question resolved on a literal clock read at shrinking intervals (8 of 10): 10:00 → 1:12 → 0:16 → 3-2-1. Friendship and prize stakes pay off together; the rescue ship is the closing only-AI spectacle.</div><div class="cell"><div class="k">On screen</div>Clock inserts (graphics), pod-lever macro (re-use), GRUFF close-up sweating, PIP close-up, 2-shot on the 2-m rock (new angle), truth-beam replay (re-use, red), ORB hover, HERO: rescue ship rising over the tiny planet. ≈5 unique clips.</div><div class="cell"><div class="k">Sound</div>Tick accelerates; music builds from 1:12; every number spoken by ORB; total silence for one second before "Time's up"; ship engines swell.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 35:05–36:34 (flash-forward, replay, "1:12", "16 seconds", "3, 2, 1, time is up"); #7 video 27:52 "You have seconds left"; Laws 11, 13.</div></div></div></div>
+
+    <div class="beat"><div class="tc">19:30<small>–19:55</small></div><div>
+      <div class="what">Anklets unlock. ORB: <q>Half each. And both tickets.</q> <q>So — what's next for the two of you?</q> They look at each other and, without a word, play the four-note ukulele riff from breakfast on a ration tin. ORB spins in place.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>Payoff plus the surprise button after the payoff, and nobody leaves with nothing (7 of 10 — here both win, so the consolation rule is satisfied by construction). The riff is the 9:45 motif paid off.</div><div class="cell"><div class="k">On screen</div>Anklet-release macro, crate reveal 2-shot (new angle), riff on the ration tin, ORB spin. Text "HALF EACH". ≈2 unique clips.</div><div class="cell"><div class="k">Sound</div>Cash chime, the riff played live (four bars, generated), ORB's laugh-pulse.</div><div class="cell ev"><div class="k">Evidence</div>#1 video 36:38–36:56 (the split, the kiss as a button); Laws 12, 13.</div></div></div></div>
+
+    <div class="beat"><div class="tc">19:55<small>–20:00</small></div><div>
+      <div class="what">ORB, rising into orbit as the planet becomes a dot: <q>Band's back. Subscribe.</q> Hard cut to black at 20:00.</div>
+      <div class="grid4"><div class="cell"><div class="k">Why here</div>A ≤5-second tail, one-word CTA, no end-screen pitch (10 of 10); the pull-out mirrors the 0:45 reveal — a bookend.</div><div class="cell"><div class="k">On screen</div>Re-use the 0:45 orbit pull-out with a new grade. 0 unique clips.</div><div class="cell"><div class="k">Sound</div>Anthem tail; hard stop on "Subscribe."</div><div class="cell ev"><div class="k">Evidence</div>#1 video 36:59–37:01 ("Subscribe."); #4 video 27:12; Law 13.</div></div></div></div>
+  </section>
+
+  <section>
+    <h2>Credit budget · before any spend</h2>
+    <p class="lede">All estimates. Nothing has been generated. The numbers that matter are the ones marked as unknown until Gate 2 measures them.</p>
+    <div class="budget">
+      <div class="card"><div class="eyebrow">Grok i2v · unique clips</div><div class="stat"><div class="n mono">~176</div><div class="l">Hook 14 · Act 1 40 · Act 2 32 · Act 3 20 · Act 4 32 · Act 5 14 — counted per beat under the clip-variety rule (no adjacent re-use; inserts re-used ≤3× non-adjacent).</div></div></div>
+      <div class="card"><div class="eyebrow">Generations incl. rejects</div><div class="stat"><div class="n mono">200–230</div><div class="l">At the recorded roll-1 pass rate (80–90%: Dinoverse zone 9 = 9/10, Christ Cares 7/7, cookies 36/36) with a 3-roll cap. <strong>Unknown until Gate 2:</strong> a mouthless/fur-mouthed cast may pass higher; static sets may pass higher.</div></div></div>
+      <div class="card"><div class="eyebrow">Time under the weekly cap</div><div class="stat"><div class="n mono">~2</div><div class="l">weekly cycles. Throughput is ~36 clips/hour (proven recipe); the binding limit is Grok's weekly cap (~160 clips observed). No "Heavy" tier assumed — that would be new spend and is not recommended.</div></div></div>
+      <div class="card"><div class="eyebrow">Seed stills (image gens, subscription)</div><div class="stat"><div class="n mono">23</div><div class="l">approved masters: 4 characters · 7 planet sizes (1000/500/300/100/25/7/2 m) · 6 sets · 6 archive stills. Per-shot composites ≈120 at best-of-4 ≈ 480 image generations of labour.</div></div></div>
+      <div class="card"><div class="eyebrow">ElevenLabs · one pass</div><div class="stat"><div class="n mono">~30k</div><div class="l">characters: ~4,000 words (references run 197–213 wpm) ≈ 24k chars + 25% retake reserve, in ~6 chunks. Three voices: ORB ~55%, PIP ~22%, GRUFF ~23%. Script locked and hash-verified before the pass.</div></div></div>
+      <div class="card"><div class="eyebrow">Local compute · $0</div><div class="stat"><div class="n mono">0</div><div class="l">720p→1080p via plain ffmpeg scale; MMAudio foley per shot window (generated, never library); whisper alignment; FFmpeg renderer for all graphics and punch-ins.</div></div></div>
+    </div>
+    <div class="card" style="margin-top:12px"><strong>Biggest cost drivers, in order:</strong> (1) the seven wedge-ejection / planet-scale hero shots — physics-heavy i2v with the highest reject risk; generate them right after the hook and re-use them across the episode. (2) PIP's mouth-visible dialogue — capped at 20 lines; every extra line is a lip-sync QA risk. (3) Same-character consistency across seven planet sizes — mitigated by SUBJECT LOCK and no costume changes.</div>
+  </section>
+
+  <section class="gates">
+    <h2>Stage gates · where you approve before anything spends</h2>
+    <div class="card gate"><span class="n">0</span><strong>Concept + subject lock · $0.</strong> You approve in one line: the premise (ex-bandmates on a shrinking planet, escape-pod dilemma), the cast of four, 20:00 runtime, one title/thumb candidate — and the stakes stance: fictional prize with a survival title, <em>or</em> a real giveaway you fund. <span class="tag red">decision needed</span></div>
+    <div class="card gate"><span class="n">1</span><strong>Seed lock · image gens only.</strong> Contact sheet of the 4 character masters (front / three-quarter / expression), 7 planet-size masters, 6 set masters, 6 archive stills. You pick ONE seed per character; files are frozen with hashes; every later composite derives from them.</div>
+    <div class="card gate"><span class="n">2</span><strong>Hook prototype · first credit spend, capped at ~14 clips + ~650 VO characters.</strong> 0:00–0:45 fully assembled at 1080p with the measured grammar applied, delivered with its contact sheet and a numbers readout scored against the hook targets above (hard cuts, transitions in the first 12 s, the silent hold's dip, cut-on-onset rate). <strong>The actual yield here re-prices the whole budget before Act 1 exists.</strong></div>
+    <div class="card gate"><span class="n">3</span><strong>Script final lock.</strong> The full ~4,000-word script as a read-through with per-line character and emotion direction. You edit; the final text is hashed; then one ElevenLabs pass. Any later line change is a paid retake and gets flagged as such.</div>
+    <div class="card gate"><span class="n">4</span><strong>Hero environment shots · 5 clips.</strong> Wedge ejection, the 25-m and 4-m planets, the orbit pull-out, the rescue ship — generated first because they are re-used most; contact sheet + frame strips reviewed by you before any dialogue act is generated.</div>
+    <div class="card gate"><span class="n">5</span><strong>Act-by-act bank.</strong> Each act is generated, frame-strip QA'd (same creature every shot? colour codes intact? planet size matches THE COUNT?), foleyed, and cut into a 540p preview of that act. You watch the act on a dense contact sheet before the next act's clips exist.</div>
+    <div class="card gate"><span class="n">6</span><strong>Full assembly + watcher.</strong> 540p full preview, the verify report (black frames, narration alignment, overlays), then your single watch-through. Only after this: the 1080p master.</div>
+    <div class="card gate"><span class="n">7</span><strong>Package.</strong> Final title/thumb pair (two thumbs rendered from the Gate-4 4-m planet seed for A/B), AI disclosure on, an "animated fiction" line in the description, the edit-fingerprint diff logged, uploaded unlisted first. You press publish.</div>
+  </section>
+
+  <section>
+    <h2>Title + thumbnail candidates</h2>
+    <div class="scroll"><table>
+      <tr><th>Title</th><th>Grammar it borrows</th><th>Thumbnail</th></tr>
+      <tr><td><strong>Survive 30 Days On A Shrinking Planet Or Fall Into Space</strong> <span class="tag green">default</span></td><td>Imperative + duration + absurd constraint + a stated loss condition ("if you fall, you lose everything"). No prop money — honest with a disclosed animation.</td><td>GRUFF standing taller than a car-sized planet, PIP at his feet, black space around them. No text; the image is the claim.</td></tr>
+      <tr><td>Survive 30 Days On A Shrinking Planet, Win $1,000,000</td><td>The exact template of the #1 and #3 videos. <em>Only honest if you fund a real giveaway (Gate 0).</em></td><td>Same hero image, "$1,000,000" as a physical sign on the rock.</td></tr>
+      <tr><td>Last To Leave The Shrinking Planet Wins</td><td>The #5 video's "Last To Leave [place]" template; sells the betrayal question.</td><td>GRUFF alone on the planet, hand on the glowing red lever, PIP asleep at his feet.</td></tr>
+      <tr><td>Survive 30 Days In Space With Your Ex-Bandmate</td><td>Imports the #1 video's second-person "Your Ex" lever without the romance.</td><td>Overhead of the two lying head-to-head on the tiny planet, tether coiled between them.</td></tr>
+      <tr><td>I Trapped Two Ex-Bandmates On A Planet The Size Of A Car</td><td>First-person achievement claim (3 of 10 open "I [verb]…").</td><td>ORB's giant lens-eye in the foreground, the two tiny figures reflected in it.</td></tr>
+    </table></div>
+  </section>
+
+  <div class="foot">Sources on disk: <span class="mono">research/mrbeast_teardown/</span> — top10.json (view counts), story_beat_maps.json (ten timestamped maps), hook_event_ledger_v1_0-45s.json (187 events), OUTLINE_v1_all_ai_20min.json, OUTLINE_v1_adversarial_review.json. Method: research/EVENT_GRAMMAR_TEARDOWN_SPEC.md. Nothing in this document has been generated, rendered, or purchased.</div>
+</div>

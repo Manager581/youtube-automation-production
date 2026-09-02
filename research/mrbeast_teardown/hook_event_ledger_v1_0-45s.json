@@ -1,0 +1,1311 @@
+[
+ {
+  "t": 0,
+  "type": "subject_change",
+  "description": "Cold open, no fade-in. Jimmy in a DIGITALLY PUNCHED-IN (~1.6x, visibly soft/upscaled) medium shot of the wide take, holding two open handcuffs on a chain. Physical set signage: 3D '$250,000' top-left, 'SUZIE'/'JOSH' on the money wall. Suzie (pink, blindfolded) at L edge, Josh (cyan, blindfolded) at R edge, both defocused by the upscale.",
+  "words": "Take",
+  "audio_sync": "onset 0.070 (+0.07) strong; 0.139 strong"
+ },
+ {
+  "t": 0.125,
+  "type": "camera_move",
+  "description": "Static handheld micro-drift only 0.0-1.25 \u2014 the $250,000 sign stays at the same frame position, no push.",
+  "words": "Take / off",
+  "audio_sync": "onset 0.139 (+0.01)"
+ },
+ {
+  "t": 0.25,
+  "type": "motion_spike",
+  "description": "Jimmy's hands spread outward (open gesture on 'off').",
+  "words": "off",
+  "audio_sync": "onset 0.325 (+0.08)"
+ },
+ {
+  "t": 0.5,
+  "type": "motion_spike",
+  "description": "Jimmy brings the handcuffs back to chest and looks down at them (0.5-0.875).",
+  "words": "your",
+  "audio_sync": "onset 0.580 (+0.08)"
+ },
+ {
+  "t": 1,
+  "type": "motion_spike",
+  "description": "Suzie's hands rise to her blindfold at the L edge (start of blindfold removal).",
+  "words": "blindfolds!",
+  "audio_sync": "onset 1.022 (+0.02)"
+ },
+ {
+  "t": 1.125,
+  "type": "motion_spike",
+  "description": "Josh's hand rises to his blindfold at the R edge; Jimmy looks down at the chain.",
+  "words": "blindfolds!",
+  "audio_sync": "onset 1.022 (-0.10)"
+ },
+ {
+  "t": 1.375,
+  "type": "zoom_out",
+  "description": "SNAP DIGITAL PUNCH-OUT ~1.6x -> 1.0x in <=2 video frames (scene 1.368/1.401 score 0.1-0.2). SAME TAKE, not a cut: both subjects' hands-at-blindfold pose is continuous from 1.25. Reads as a cut to the wide 3-shot (Jimmy centre, chain pile on pedestal).",
+  "words": "These",
+  "audio_sync": "onset 1.486 (+0.11)"
+ },
+ {
+  "t": 1.375,
+  "type": "graphic_overlay",
+  "description": "Glow-key look ON: background dimmed/desaturated, Suzie's pink and Josh's cyan outfits given a rotoscoped neon halo. Persists to 3.25 (last frame before the flash).",
+  "words": "These",
+  "audio_sync": "onset 1.486 (+0.11)"
+ },
+ {
+  "t": 1.375,
+  "type": "text_on",
+  "description": "Name cards pop: 'SUZIE / EX-GIRLFRIEND' magenta neon card lower-left (soft, mid-scale-in) and 'JOSH / EX-BOYFRIEND' cyan card right (translucent, animating in).",
+  "words": "These",
+  "audio_sync": "onset 1.486 (+0.11)"
+ },
+ {
+  "t": 1.5,
+  "type": "text_animate",
+  "description": "Both name cards reach full opacity/scale; they hold static (do not track the bodies) until 3.25.",
+  "words": "These",
+  "audio_sync": "onset 1.486 (-0.01)"
+ },
+ {
+  "t": 1.5,
+  "type": "camera_move",
+  "description": "Slight scale settle: frame widens a few % 1.375->1.625 ('$250,000' clears the top edge by 1.625), then locked-off static to 3.25.",
+  "words": "These",
+  "audio_sync": "onset 1.486 (-0.01)"
+ },
+ {
+  "t": 2.125,
+  "type": "motion_spike",
+  "description": "Blindfold removal peak: Josh raises both arms over his head (2.0-2.25); Suzie pulls her blindfold up (1.375-2.0).",
+  "words": "people",
+  "audio_sync": "onset 2.206 (+0.08)"
+ },
+ {
+  "t": 2.5,
+  "type": "subject_change",
+  "description": "Josh drops his arms, blindfold off, turns his head to look at Suzie; Suzie covers her mouth with her hand (shock/laugh reaction) \u2014 held through 3.25.",
+  "words": "used",
+  "audio_sync": "onset 2.694 (+0.19)"
+ },
+ {
+  "t": 3.375,
+  "type": "color_shift",
+  "description": "WHITE FLASH (whiteout): full-frame white with faint ghosts of the name cards. Scene 3.303/3.337 (>0.2) = flash on at the first frame of 'They'; 3.37 (0.1) = plateau.",
+  "words": "They",
+  "audio_sync": "onset 3.367 (-0.01)"
+ },
+ {
+  "t": 3.5,
+  "type": "graphic_overlay",
+  "description": "PHOTO 1 revealed under the decaying flash: full-frame archive photo of Suzie & Josh kissing outdoors (blue sky, hills), highlights still blown; slow Ken Burns push-in begins (scene 3.537 = flash decay).",
+  "words": "They / had",
+  "audio_sync": "onset 3.367 (-0.13)"
+ },
+ {
+  "t": 3.625,
+  "type": "graphic_overlay",
+  "description": "Light-leak/lens-flare burst top-centre over photo 1 (scene 3.604 0.1); the edge of photo 2 starts entering at the R edge.",
+  "words": "had",
+  "audio_sync": "onset 3.831 (+0.21)"
+ },
+ {
+  "t": 3.75,
+  "type": "graphic_overlay",
+  "description": "PHOTO 2 slides in from the right, tilted, covering ~55% of frame: festival/concert selfie (Josh white tank, Suzie yellow top, pink stage lights) with sparkle/light-leak overlay (scene 3.737).",
+  "words": "had",
+  "audio_sync": "onset 3.831 (+0.08)"
+ },
+ {
+  "t": 3.875,
+  "type": "graphic_overlay",
+  "description": "Photo 2 settles at right; photo 1 keeps pushing in on the left.",
+  "words": "a / four-year",
+  "audio_sync": "onset 3.831 (-0.04)"
+ },
+ {
+  "t": 4.125,
+  "type": "graphic_overlay",
+  "description": "PHOTO 3 slides in from the left (car selfie: Suzie in patterned jacket + Josh + a friend), covering ~45%; photo 1 reduced to a centre sliver (scene 4.071).",
+  "words": "four-year",
+  "audio_sync": "onset 4.203 (+0.08) strong"
+ },
+ {
+  "t": 4.375,
+  "type": "graphic_overlay",
+  "description": "PHOTO 4 scales in at centre over photo 1: Josh (white shirt) hugging Suzie in front of a garden gate/plants (scene 4.371 0.1). Stack now = car selfie L / gate hug C / festival R.",
+  "words": "four-year",
+  "audio_sync": "onset 4.458 (+0.08)"
+ },
+ {
+  "t": 4.75,
+  "type": "graphic_overlay",
+  "description": "PHOTO 5 pops in small at centre over photo 4: desert red-rock hug (Suzie yellow-striped top + straw bag, Josh white tee + denim jacket) (scene 4.805).",
+  "words": "romantic",
+  "audio_sync": "none within 0.25 (nearest 4.458 -0.29 / 5.108 +0.36)"
+ },
+ {
+  "t": 5,
+  "type": "zoom_in",
+  "description": "Continuous scale-up (Ken Burns push) on photo 5, 4.875->5.625, ~1.0x->1.5x; flanking photos 3/2 pushed toward the frame edges.",
+  "words": "romantic",
+  "audio_sync": "onset 5.108 (+0.11)"
+ },
+ {
+  "t": 5.375,
+  "type": "graphic_overlay",
+  "description": "Light-leak flash on the photo stack \u2014 brightness spike top/top-left (scene 5.339 0.1).",
+  "words": "relationship",
+  "audio_sync": "onset 5.410 (+0.04)"
+ },
+ {
+  "t": 5.75,
+  "type": "hard_cut",
+  "description": "FIRST TRUE HARD CUT of the video: PHOTO 6 full-frame \u2014 CU kiss in the desert (same couple, red rocks), no flanking photos (scene 5.739, th0.3).",
+  "words": "relationship",
+  "audio_sync": "onset 5.828 (+0.08)"
+ },
+ {
+  "t": 5.875,
+  "type": "zoom_in",
+  "description": "Slow push-in on photo 6, 5.75->6.75 (~1.0->1.1x), white vignette glow at top.",
+  "words": "relationship",
+  "audio_sync": "onset 6.037 (+0.16)"
+ },
+ {
+  "t": 6.875,
+  "type": "graphic_overlay",
+  "description": "SPLIT-FOLD WIPE: the kiss photo cracks along a vertical magenta neon seam at centre and the two halves fold/peel inward, revealing the teal/pink split-screen behind (scene 6.907/6.94 0.1-0.2, gradual).",
+  "words": "they're",
+  "audio_sync": "onset 6.850 (-0.03) strong"
+ },
+ {
+  "t": 7,
+  "type": "angle_change",
+  "description": "SPLIT-SCREEN fully in (hidden cut): L = Suzie present-day CU, mouth open, pink top; R = Josh CU, mouth agape, cyan; vertical pink/magenta neon divider (scene 7.007/7.04).",
+  "words": "they're -> exes.",
+  "audio_sync": "onset 6.850 (-0.15)"
+ },
+ {
+  "t": 7,
+  "type": "text_on",
+  "description": "'EXES' 3D block text pops in bottom-centre, steel-blue/cyan, ~80% scale (scaling in).",
+  "words": "exes.",
+  "audio_sync": "onset 6.850 (-0.15)"
+ },
+ {
+  "t": 7.125,
+  "type": "text_animate",
+  "description": "'EXES' ~95% scale, bright blue-white.",
+  "words": "exes.",
+  "audio_sync": "onset 7.338 (+0.21)"
+ },
+ {
+  "t": 7.25,
+  "type": "color_shift",
+  "description": "'EXES' hits 100% scale and flips to hot-pink/magenta gradient.",
+  "words": "exes.",
+  "audio_sync": "onset 7.338 (+0.09)"
+ },
+ {
+  "t": 7.5,
+  "type": "text_animate",
+  "description": "'EXES' hue pulses every frame 7.5-7.875: purple -> pink -> magenta -> pink-purple (continuous colour cycle).",
+  "words": "(gap) -> And",
+  "audio_sync": "onset 7.639 (+0.14)"
+ },
+ {
+  "t": 7.5,
+  "type": "zoom_in",
+  "description": "Slow push on the split-screen 7.0->7.875 (both faces ~5% larger by 7.875).",
+  "words": "And / if",
+  "audio_sync": "onset 7.639 (+0.14)"
+ },
+ {
+  "t": 8,
+  "type": "color_shift",
+  "description": "WHITE FLASH #2: near-full white frame with a ghost of Jimmy arms-raised. Scene 7.908/7.941 (>0.2) = flash on; 8.008/8.075/8.108/8.175 (0.1-0.2) = decay.",
+  "words": "they",
+  "audio_sync": "onset 7.848 (-0.06 from 7.908) strong"
+ },
+ {
+  "t": 8,
+  "type": "hard_cut",
+  "description": "Hidden under the flash: cut from split-screen to WIDE 3-SHOT B \u2014 Jimmy centre with both hands raised holding open handcuffs, Suzie L and Josh R each now holding a handcuff, chain pile on pedestal, $250,000 sign; slightly wider/higher framing than the 1.375-3.25 wide, NO glow-key effect.",
+  "words": "they",
+  "audio_sync": "onset 7.848 (-0.15)"
+ },
+ {
+  "t": 8.125,
+  "type": "color_shift",
+  "description": "Flash decaying \u2014 wide 3-shot readable but overexposed.",
+  "words": "spend",
+  "audio_sync": "none within 0.25 (nearest 7.848 -0.28)"
+ },
+ {
+  "t": 8.25,
+  "type": "zoom_in",
+  "description": "FAST DIGITAL PUNCH-IN on the wide: ~1.4x at 8.25 -> ~1.7x at 8.375 -> ~1.9x at 8.5 ('$250,000' pushed out the top; SUZIE/OSH signs + Jimmy's torso fill frame).",
+  "words": "spend",
+  "audio_sync": "none within 0.25 (nearest 7.848 -0.40 / 8.754 +0.50)"
+ },
+ {
+  "t": 8.25,
+  "type": "text_on",
+  "description": "'30 DAYS' 3D block text pops in bottom-centre, steel-blue with motion blur, ~85% scale. NOTE: graphic LEADS the spoken '30' (interpolated 8.44-8.58; nearest onset 8.754) by 0.2-0.5s.",
+  "words": "spend (spoken '30' follows at ~8.44)",
+  "audio_sync": "none within 0.25 (nearest 8.754 +0.50)"
+ },
+ {
+  "t": 8.375,
+  "type": "text_animate",
+  "description": "'30 DAYS' at 100% scale, gradient pink (L) -> blue (R) with glow; punch-in ~1.7x.",
+  "words": "spend",
+  "audio_sync": "none within 0.25 (8.754 +0.38)"
+ },
+ {
+  "t": 8.5,
+  "type": "color_shift",
+  "description": "'30 DAYS' fully hot-pink with blue outer glow; punch-in reaches max ~1.9x.",
+  "words": "30",
+  "audio_sync": "onset 8.754 (+0.25, marginal)"
+ },
+ {
+  "t": 8.625,
+  "type": "camera_move",
+  "description": "Hold at max punch-in with slow handheld drift 8.625-9.0; Jimmy fiddles with the handcuffs, Suzie hand to face.",
+  "words": "days",
+  "audio_sync": "onset 8.754 (+0.13)"
+ },
+ {
+  "t": 9,
+  "type": "zoom_out",
+  "description": "Slow pull-back begins (top of '$250,000' re-enters 9.125-9.25), easing in.",
+  "words": "chained",
+  "audio_sync": "onset 9.125 (+0.13)"
+ },
+ {
+  "t": 9.5,
+  "type": "zoom_out",
+  "description": "Pull-back accelerates 9.5->10.0 (fastest 9.5-9.875); '$250,000' fully back by 9.625; wide 3-shot re-established at 10.0.",
+  "words": "together\u2026",
+  "audio_sync": "onset 9.543 (+0.04)"
+ },
+ {
+  "t": 9.75,
+  "type": "color_shift",
+  "description": "'30 DAYS' flips pink -> cyan/blue and starts receding/shrinking toward bottom-left (text scales down as the shot scales out \u2014 one combined ease-out).",
+  "words": "together\u2026",
+  "audio_sync": "onset 9.543 (-0.21)"
+ },
+ {
+  "t": 10,
+  "type": "text_animate",
+  "description": "'30 DAYS' blue, ~55% scale, low in frame; wide shot fully restored (framing sits ~25px right of the 8.125 wide \u2014 handheld source).",
+  "words": "together\u2026",
+  "audio_sync": "onset 10.240 (+0.24)"
+ },
+ {
+  "t": 10.125,
+  "type": "text_animate",
+  "description": "'30 DAYS' ~45% scale, semi-transparent (fading).",
+  "words": "I",
+  "audio_sync": "onset 10.240 (+0.12)"
+ },
+ {
+  "t": 10.25,
+  "type": "text_off",
+  "description": "'30 DAYS' ghost only (~10% opacity).",
+  "words": "will",
+  "audio_sync": "onset 10.240 (-0.01)"
+ },
+ {
+  "t": 10.375,
+  "type": "text_off",
+  "description": "'30 DAYS' fully gone. Locked-off wide 3-shot holds 10.375-11.5 (handheld micro-drift only).",
+  "words": "will",
+  "audio_sync": "onset 10.542 (+0.17)"
+ },
+ {
+  "t": 10.5,
+  "type": "motion_spike",
+  "description": "Josh gestures with the open handcuff toward Jimmy (10.5-10.875); Jimmy turns to Josh at 10.75.",
+  "words": "will / give",
+  "audio_sync": "onset 10.542 (+0.04); 10.681 strong"
+ },
+ {
+  "t": 11.25,
+  "type": "motion_spike",
+  "description": "Jimmy turns back to camera and lifts the chain (11.25-11.5).",
+  "words": "them",
+  "audio_sync": "onset 11.401 (+0.15)"
+ },
+ {
+  "t": 11.5,
+  "type": "color_shift",
+  "description": "LIGHT-BURST begins: white bloom centred ON the physical '$250,000' sign (top-centre), not a full whiteout; grows 11.5->11.75. Scene score <0.1/frame (gradual).",
+  "words": "them -> $250,000.",
+  "audio_sync": "onset 11.401 (-0.10); 11.587 (+0.09)"
+ },
+ {
+  "t": 11.75,
+  "type": "color_shift",
+  "description": "Bloom peak: upper two-thirds washed white, sign unreadable. The SAME wide angle continues underneath (Suzie turning toward Jimmy, motion-blurred) \u2014 this is a sign-glow emphasis on the money line, NOT a shot transition.",
+  "words": "$250,000.",
+  "audio_sync": "onset 11.587 (-0.16); 11.912 (+0.16)"
+ },
+ {
+  "t": 11.875,
+  "type": "camera_move",
+  "description": "Under the bloom the framing emerges slightly tighter/shifted (~1.1x; Jimmy & Josh ~25px further right, Suzie's head larger/lower in foreground-left). Speculation: micro punch-in or handheld drift \u2014 subject layout identical, not a new angle.",
+  "words": "$250,000.",
+  "audio_sync": "onset 11.912 (+0.04)"
+ },
+ {
+  "t": 12,
+  "type": "color_shift",
+  "description": "Bloom decaying \u2014 sign readable again as a glowing '$250,000'; fully clean by 12.25.",
+  "words": "$250,000.",
+  "audio_sync": "onset 11.912 (-0.09); 12.25 has none within 0.25"
+ },
+ {
+  "t": 12.5,
+  "type": "motion_spike",
+  "description": "Suzie (foreground L) lifts her hand and turns to Jimmy, mouth open \u2014 live reaction to the number.",
+  "words": "$250,000. (tail)",
+  "audio_sync": "none within 0.25 (nearest 11.912 -0.59)"
+ },
+ {
+  "t": 12.75,
+  "type": "hard_cut",
+  "description": "SUZIE REACTION CU (cutaway) \u2014 different location (kitchen/confessional set: pendant lights, island, 'SUZ' pink sign at R), mouth agape in shock, looking off-right; held 12.75-13.375 (0.75s) (scene 12.746).",
+  "words": "(no dialogue \u2014 caption gap 12.68-16.78; music only, loudness dips to -12 LUFS)",
+  "audio_sync": "none within 0.25 (no detected onset between 11.912 and 16.231)"
+ },
+ {
+  "t": 13,
+  "type": "camera_move",
+  "description": "Static hold on Suzie reaction (handheld micro-drift), no push.",
+  "words": "(none)",
+  "audio_sync": "none"
+ },
+ {
+  "t": 13.5,
+  "type": "hard_cut",
+  "description": "JOSH REACTION CU (cutaway) \u2014 bedroom set (bed, pillows, wall art), mouth open, looking off-left; held 13.5-14.25 (0.875s) (scene 13.514).",
+  "words": "(none)",
+  "audio_sync": "none within 0.25"
+ },
+ {
+  "t": 14.375,
+  "type": "hard_cut",
+  "description": "CHAIN-PILE CU \u2014 tight on the coiled chains on the pedestal with Jimmy's clasped hands above (torso only), 'UZIE'/'JOSH' wall signs, Suzie pink at L edge, Josh cyan at R edge (scene 14.348).",
+  "words": "(none)",
+  "audio_sync": "none within 0.25"
+ },
+ {
+  "t": 14.5,
+  "type": "zoom_out",
+  "description": "Continuous digital pull-back begins from the chain CU (each 0.125s step ~3-5% wider) 14.375->15.5.",
+  "words": "(none)",
+  "audio_sync": "none"
+ },
+ {
+  "t": 15.5,
+  "type": "speed_ramp",
+  "description": "Zoom-velocity spike: the pull-back jumps ~25% in one 0.125s step 15.5->15.625 (Jimmy's chin + full '$250,000' appear). Same angle/composition and no scene-score >0.1 -> fast eased zoom, NOT a cut.",
+  "words": "(none)",
+  "audio_sync": "none within 0.25"
+ },
+ {
+  "t": 15.75,
+  "type": "zoom_out",
+  "description": "Pull-back decelerates 15.625->16.0 (Jimmy's face, yellow '?' board, side furniture enter).",
+  "words": "(none)",
+  "audio_sync": "onset 16.231 (+0.23 from 16.0, marginal)"
+ },
+ {
+  "t": 16,
+  "type": "camera_move",
+  "description": "Zoom-out lands on the locked-off WIDE 3-SHOT: all three standing still, hands clasped \u2014 a 0.9s 'waiting' hold 16.0-16.875 before dialogue resumes.",
+  "words": "(none)",
+  "audio_sync": "onset 16.231 (+0.23)"
+ },
+ {
+  "t": 16.75,
+  "type": "motion_spike",
+  "description": "Jimmy's mouth opens \u2014 dialogue resumes ('How long ago did you two date?').",
+  "words": "How",
+  "audio_sync": "onset 17.020 (+0.27, just outside 0.25)"
+ },
+ {
+  "t": 17,
+  "type": "hard_cut",
+  "description": "OTS 2-SHOT \u2014 Jimmy at L edge in profile (talking, gesturing), Josh CU right; new background (red-rock wall art, plant, yellow wall) (scene 17.017). Speaker-change cut.",
+  "words": "long",
+  "audio_sync": "onset 17.020 (+0.02) strong"
+ },
+ {
+  "t": 17.125,
+  "type": "motion_spike",
+  "description": "Jimmy's open-palm hand gesture enters frame bottom-left (17.125-17.5).",
+  "words": "long ago did",
+  "audio_sync": "onset 17.369 (+0.24); 17.508"
+ },
+ {
+  "t": 17.625,
+  "type": "subject_change",
+  "description": "Josh breaks eye contact, looks down-left and smirks (17.625-17.875) as the question lands.",
+  "words": "two date?",
+  "audio_sync": "onset 17.601 (-0.02); 17.717; 17.763; 17.879"
+ },
+ {
+  "t": 18,
+  "type": "hard_cut",
+  "description": "SUZIE CU (yellow '$' money-wall backdrop, 'SU' of SUZIE sign bottom-right), head turned right, answering (scene 18.018). Speaker-change cut.",
+  "words": "Three",
+  "audio_sync": "onset 17.879 (-0.12); 18.251 (+0.25)"
+ },
+ {
+  "t": 18.125,
+  "type": "camera_move",
+  "description": "Static hold 18.0-19.125 (1.25s), handheld micro-drift; she turns slightly toward camera at 18.5-18.75.",
+  "words": "Three years ago.",
+  "audio_sync": "onset 18.622"
+ },
+ {
+  "t": 19.25,
+  "type": "hard_cut",
+  "description": "2-SHOT Jimmy (L) + Josh (R) in front of '$250,000' ('50,000' visible) and 'JOSH' sign (scene 19.219). Speaker-change cut.",
+  "words": "She / broke",
+  "audio_sync": "onset 19.203 (-0.05)"
+ },
+ {
+  "t": 19.25,
+  "type": "motion_spike",
+  "description": "Josh's right hand thrown out in a 'she did it' gesture (19.25-19.5).",
+  "words": "She broke",
+  "audio_sync": "onset 19.412 (+0.16)"
+ },
+ {
+  "t": 19.5,
+  "type": "subject_change",
+  "description": "Jimmy grins/laughs, hands clasped (19.5-20.375); Josh's hand drops.",
+  "words": "broke up with me.",
+  "audio_sync": "onset 19.946 (+0.45 \u2014 none within 0.25)"
+ },
+ {
+  "t": 20.5,
+  "type": "hard_cut",
+  "description": "SUZIE SMILING CU (kitchen set, '$2' sign top-right, pink 'IZI' sign) \u2014 laughing at Josh while Jimmy (off-camera) says 'He's salty' (scene 20.521).",
+  "words": "He's",
+  "audio_sync": "onset 20.689 (+0.19)"
+ },
+ {
+  "t": 20.75,
+  "type": "text_on",
+  "description": "'HE'S SALTY' white brush-script overlay with soft glow pops in upper-right, mid-scale-in (~60%), letters still resolving.",
+  "words": "He's",
+  "audio_sync": "onset 20.689 (-0.06)"
+ },
+ {
+  "t": 20.875,
+  "type": "text_animate",
+  "description": "'HE'S SALTY' at 100% scale, two lines right of her head.",
+  "words": "salty.",
+  "audio_sync": "onset 20.689 (-0.19)"
+ },
+ {
+  "t": 21,
+  "type": "text_animate",
+  "description": "Text drifts upward ~5px (settle), then holds 21.0-21.375.",
+  "words": "salty.",
+  "audio_sync": "none within 0.25 (nearest 21.316 +0.32)"
+ },
+ {
+  "t": 21,
+  "type": "zoom_in",
+  "description": "Slow push on the Suzie CU 20.5->21.375 (~3-5%, top of head rises toward frame edge).",
+  "words": "salty.",
+  "audio_sync": "none within 0.25"
+ },
+ {
+  "t": 21.375,
+  "type": "text_off",
+  "description": "Last frame of 'HE'S SALTY' \u2014 removed by the cut at 21.5 (0.625s on screen).",
+  "words": "I",
+  "audio_sync": "onset 21.316 (-0.06)"
+ },
+ {
+  "t": 21.5,
+  "type": "hard_cut",
+  "description": "WIDE 3-SHOT \u2014 Jimmy centre with arms spreading, Suzie L, Josh R now holding their handcuff/chain at waist; '$250,000' + 'ZIE'/'OSH' signs (scene 21.555). Speaker-change cut back to host.",
+  "words": "can't",
+  "audio_sync": "onset 21.525 (+0.03)"
+ },
+ {
+  "t": 21.625,
+  "type": "motion_spike",
+  "description": "Jimmy's arms spread wide open (shrug on 'I can't force you') 21.5-21.875.",
+  "words": "can't force",
+  "audio_sync": "onset 21.711 (+0.09)"
+ },
+ {
+  "t": 22,
+  "type": "subject_change",
+  "description": "Window opens mid-shot (shot began 21.555): STATIC wide 3-shot, Suzie (pink) L, Jimmy (black suit) C, Josh (cyan) R, standing in front of the money crates. Jimmy open-palm gesturing; Josh looking at Jimmy; Suzie holding her cuff at her waist. No camera move 22.0-24.125 (door edge and sign position identical across all 17 frames).",
+  "words": "guys [I can't force you guys to do it,]",
+  "audio_sync": "nearest onset 22.361 (+0.36s) -> none within 0.25s"
+ },
+ {
+  "t": 22,
+  "type": "graphic_overlay",
+  "description": "Persistent set graphics in frame: white 3D '$250,000' sign above the crates (Jimmy's head occludes the '5' and '0') and 'SUZIE'/'JOSH' crate labels ('ZIE' + 'JOSH' visible). Stay on screen through 24.125.",
+  "words": "guys",
+  "audio_sync": "n/a (persistent state)"
+ },
+ {
+  "t": 22.625,
+  "type": "subject_change",
+  "description": "Josh drops his gaze to the cuff on his right wrist; Jimmy's open palms close to clasped/interlaced hands at chest (22.625-22.875) and stay clasped to 23.875.",
+  "words": "but [but once you clip on the handcuffs, ...]",
+  "audio_sync": "onset 22.756 STRONG (+0.13s)"
+ },
+ {
+  "t": 23,
+  "type": "subject_change",
+  "description": "Suzie drops her gaze to her cuffed hands and brings them together (23.0-23.25); all three now looking at hands/cuffs.",
+  "words": "once -> you (23.082)",
+  "audio_sync": "onset 23.057 (+0.06s)"
+ },
+ {
+  "t": 23.25,
+  "type": "motion_spike",
+  "description": "Josh raises both hands and grips/works the cuff on his right wrist (23.25-23.875) exactly as Jimmy says 'clip on the handcuffs' - literal word/action match.",
+  "words": "clip [23.278-23.54]",
+  "audio_sync": "onset 23.313 STRONG (+0.06s)"
+ },
+ {
+  "t": 24.25,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 24.191): wide -> medium shot of Josh from a side angle. Josh's hands at waist holding the cuff, 'SH' of the JOSH crate at lower-left, plant + wall TV behind.",
+  "words": "handcuffs, [23.868-24.523]",
+  "audio_sync": "onset 24.102 STRONG (-0.09s from 24.191); next onset 24.311 (+0.12s)"
+ },
+ {
+  "t": 24.25,
+  "type": "angle_change",
+  "description": "Camera axis rotates ~90 deg from the frontal wide to a profile/side angle on Josh (reverse side of the set: plant, framed TV, bed beyond).",
+  "words": "handcuffs,",
+  "audio_sync": "onset 24.102 STRONG (-0.09s)"
+ },
+ {
+  "t": 24.25,
+  "type": "subject_change",
+  "description": "Subject narrows from 3-shot to Josh solo; Jimmy present only as a soft-focus, motion-blurred foreground figure at frame left, smiling and already moving out.",
+  "words": "handcuffs,",
+  "audio_sync": "onset 24.102 STRONG"
+ },
+ {
+  "t": 24.25,
+  "type": "motion_spike",
+  "description": "Jimmy walks out of frame left through the foreground (blurred 24.25, half out 24.375, sliver 24.5, gone 24.625) - foreground wipe.",
+  "words": "handcuffs,",
+  "audio_sync": "onset 24.311 (+0.06s)"
+ },
+ {
+  "t": 24.25,
+  "type": "camera_move",
+  "description": "Slow push-in on Josh begins (24.25 -> 25.375): head grows and rises toward upper-right, TV frame at top-right enlarges.",
+  "words": "handcuffs,",
+  "audio_sync": "onset 24.311 (+0.06s)"
+ },
+ {
+  "t": 24.25,
+  "type": "text_off",
+  "description": "'$250,000' sign and SUZIE label leave frame (only 'SH' of the JOSH crate visible bottom-left).",
+  "words": "handcuffs,",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 24.625,
+  "type": "subject_change",
+  "description": "Jimmy fully out of frame; Josh turns his eyes down to his hands and works the cuff onto his wrist (24.625-25.375), slight smile.",
+  "words": "the [24.523-24.719] -> 30 (24.719)",
+  "audio_sync": "onset 24.567 STRONG (-0.06s)"
+ },
+ {
+  "t": 25.5,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 25.559): -> frontal wide 2-shot, Jimmy (L, hands clasped) + Josh (R) in front of the crates; full '$250,000' sign + 'ZIE'/'JOSH' labels; Josh clipping the cuff onto his right wrist.",
+  "words": "challenge [25.047-25.636] -> has (25.636)",
+  "audio_sync": "onset 25.658 STRONG (+0.10s from 25.559)"
+ },
+ {
+  "t": 25.5,
+  "type": "subject_change",
+  "description": "Back to Jimmy + Josh 2-shot (Suzie cropped out at left edge: pink sliver only).",
+  "words": "challenge",
+  "audio_sync": "onset 25.658 STRONG"
+ },
+ {
+  "t": 25.5,
+  "type": "graphic_overlay",
+  "description": "'$250,000' sign fully readable again at top of frame; 'JOSH' crate label centered between the two men.",
+  "words": "challenge",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 25.75,
+  "type": "zoom_in",
+  "description": "FAST digital punch-in begins (25.75 -> 26.0): sign crops from '$250,000' to '25 000' (25.875) to '00' (26.0); Jimmy pushed to left edge; frame lands on Josh's wrist/cuff.",
+  "words": "begun. [25.833-26.226]",
+  "audio_sync": "onset 25.867 (+0.12s)"
+ },
+ {
+  "t": 25.875,
+  "type": "motion_spike",
+  "description": "Motion-blur frame mid-punch: Jimmy and the sign are smeared (directional blur baked into the zoom).",
+  "words": "begun.",
+  "audio_sync": "onset 25.867 (-0.01s)"
+ },
+ {
+  "t": 26,
+  "type": "zoom_in",
+  "description": "Punch-in lands and holds (26.0-26.5): tight on Jimmy's torso L + Josh R with big 'JOSH' label between; Josh clicks the cuff shut with his left hand (26.0-26.25).",
+  "words": "begun.",
+  "audio_sync": "onset 25.867 (-0.13s) = 'begun'/cuff click"
+ },
+ {
+  "t": 26.5,
+  "type": "subject_change",
+  "description": "Josh releases the locked cuff - hands separate, cuff on, chain hanging.",
+  "words": "I'm (26.293-26.502) -> locked (26.502)",
+  "audio_sync": "nearest onset 26.819 (+0.32s) -> none within 0.25s"
+ },
+ {
+  "t": 26.625,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 26.66): -> CU Josh, bedroom set behind (red wall art L, framed TV R, plant). Josh looks down-left, faint smirk.",
+  "words": "locked [26.502-26.918]",
+  "audio_sync": "onset 26.819 (+0.16s from 26.66)"
+ },
+ {
+  "t": 26.625,
+  "type": "subject_change",
+  "description": "Josh solo CU for his line 'I'm locked in'.",
+  "words": "locked",
+  "audio_sync": "onset 26.819 (+0.16s)"
+ },
+ {
+  "t": 26.625,
+  "type": "camera_move",
+  "description": "Slow push-in / Josh leaning in (26.625 -> 27.875): head grows ~10% and drifts to upper-right.",
+  "words": "locked",
+  "audio_sync": "onset 26.819"
+ },
+ {
+  "t": 26.625,
+  "type": "text_off",
+  "description": "Sign and crate labels out of frame for the CU.",
+  "words": "locked",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 27.125,
+  "type": "subject_change",
+  "description": "Dialogue ends ('in.' 27.127) -> SILENT reaction hold: Josh smirks, glances camera-right toward Suzie (27.375-27.5), grin widens (27.625-28.0). Loudness drops to -13 -> -16.4 LUFS; NO audio onsets 26.819 -> 29.071.",
+  "words": "in. (27.127) then no dialogue until 29.396",
+  "audio_sync": "none within 0.25s (onset gap 26.819 -> 29.071)"
+ },
+ {
+  "t": 27.875,
+  "type": "camera_move",
+  "description": "Push-in reaches its tightest frame (Josh's head upper-right, collar at bottom); 28.0 is the same shot (no cut at 28.0 - scene score < 0.1).",
+  "words": "(silent)",
+  "audio_sync": "none"
+ },
+ {
+  "t": 28.125,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 28.095): -> MCU Suzie in front of the pink 'SUZIE' crate; '$2' of the sign and 'ZIE' visible at right. She looks camera-right toward Josh, smiling.",
+  "words": "(silent - caption gap 27.127-29.396)",
+  "audio_sync": "none within 0.25s (nearest 29.071, +0.98s)"
+ },
+ {
+  "t": 28.125,
+  "type": "subject_change",
+  "description": "Suzie solo reaction CU (silent) - matched pair with Josh's silent CU 27.1-28.1.",
+  "words": "(silent)",
+  "audio_sync": "none"
+ },
+ {
+  "t": 28.125,
+  "type": "camera_move",
+  "description": "Slow push-in on Suzie (28.125 -> 29.0): '$2' sign pushed off frame-right and grows, her face ~10% larger by 29.0.",
+  "words": "(silent)",
+  "audio_sync": "none"
+ },
+ {
+  "t": 28.125,
+  "type": "graphic_overlay",
+  "description": "Partial '$2' of the sign + 'ZIE' crate label in frame (right side).",
+  "words": "(silent)",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 28.5,
+  "type": "subject_change",
+  "description": "Suzie tilts her head up-right and laughs silently (28.5-29.0).",
+  "words": "(silent)",
+  "audio_sync": "none"
+ },
+ {
+  "t": 29.125,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 29.096): -> INSERT CU of Suzie's hands closing the cuff on her wrist, chain hanging; Jimmy's index finger points in from frame-right at the cuff; 'ZIE' at top-right.",
+  "words": "(silent until 'Oh,' 29.431)",
+  "audio_sync": "onset 29.071 STRONG (-0.03s) + 29.164 STRONG (+0.07s) = cuff click(s)"
+ },
+ {
+  "t": 29.125,
+  "type": "subject_change",
+  "description": "Subject = hands + cuff + pointing finger (no faces).",
+  "words": "(silent)",
+  "audio_sync": "onset 29.071 STRONG"
+ },
+ {
+  "t": 29.125,
+  "type": "camera_move",
+  "description": "Slight push-in on the hands insert (29.125 -> 29.625): 'ZIE' slides off right, hands grow.",
+  "words": "(silent)",
+  "audio_sync": "onset 29.071"
+ },
+ {
+  "t": 29.375,
+  "type": "motion_spike",
+  "description": "Jimmy's finger jabs closer to the cuff; Suzie presses the cuff shut (29.375-29.5).",
+  "words": "Oh, (29.431-29.538)",
+  "audio_sync": "onset 29.466 (+0.09s)"
+ },
+ {
+  "t": 29.75,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 29.763): -> frontal 2-shot Suzie (C-L, cuffed hands together at waist, smiling) + Jimmy (R edge, head cropped) in front of pink crate; '$250' of sign at top.",
+  "words": "They're [29.751-29.999] (after 'Oh, gosh.')",
+  "audio_sync": "onset 29.977 (+0.21s from 29.763)"
+ },
+ {
+  "t": 29.75,
+  "type": "subject_change",
+  "description": "Suzie + Jimmy 2-shot; Jimmy gesturing with open hand at right edge.",
+  "words": "They're",
+  "audio_sync": "onset 29.977 (+0.21s)"
+ },
+ {
+  "t": 29.75,
+  "type": "camera_move",
+  "description": "Slow push-in (29.75 -> 30.625): Suzie's body grows ~20% in frame width, '$250' letters enlarge and drift right.",
+  "words": "They're",
+  "audio_sync": "onset 29.977"
+ },
+ {
+  "t": 29.75,
+  "type": "graphic_overlay",
+  "description": "'$250' (partial sign) + pink SUZIE crate frame in shot.",
+  "words": "They're",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 30.25,
+  "type": "subject_change",
+  "description": "Jimmy's open-palm gesture on 'handcuffed'/'From'; Suzie rubs her cuffed wrist (30.375-30.625).",
+  "words": "handcuffed. [30.141-30.531]",
+  "audio_sync": "onset 30.232 (-0.02s)"
+ },
+ {
+  "t": 30.75,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 30.797): -> MCU Josh (bedroom bg), STATIC (no push: wall art, shirt text and head positions identical 30.75-32.0). He looks camera-left at Jimmy, smiling, while Jimmy's line runs off-screen.",
+  "words": "From [30.597-30.826] -> this (30.826)",
+  "audio_sync": "onset 30.79 (-0.01s from 30.797) - cut on the word onset"
+ },
+ {
+  "t": 30.75,
+  "type": "subject_change",
+  "description": "Josh reaction MCU (listening) for 'From this point forward, if either of you...'.",
+  "words": "From",
+  "audio_sync": "onset 30.79"
+ },
+ {
+  "t": 30.75,
+  "type": "text_off",
+  "description": "Sign/labels out of frame.",
+  "words": "From",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 31.25,
+  "type": "subject_change",
+  "description": "Josh turns his head further camera-left, grin widens (31.25-31.625), holds to 32.0.",
+  "words": "point [31.055-31.34] -> forward,",
+  "audio_sync": "onset 31.347 (+0.10s)"
+ },
+ {
+  "t": 32.125,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 32.165): -> INSERT CU of Suzie's cuffed hands/chain against white chairs (dining area).",
+  "words": "either [31.989-32.359]",
+  "audio_sync": "onset 32.136 (-0.03s from 32.165); prior 31.881 STRONG (-0.28s)"
+ },
+ {
+  "t": 32.125,
+  "type": "subject_change",
+  "description": "Subject = Suzie's hands + cuff (second cuff insert of the sequence).",
+  "words": "either",
+  "audio_sync": "onset 32.136"
+ },
+ {
+  "t": 32.25,
+  "type": "camera_move",
+  "description": "WHIP TILT-UP from hands to face begins (32.25 -> 32.625); hands drop out of the bottom of frame.",
+  "words": "either -> of (32.359)",
+  "audio_sync": "onset 32.136 (-0.11s)"
+ },
+ {
+  "t": 32.375,
+  "type": "motion_spike",
+  "description": "Motion-blur frames mid-tilt (32.375-32.5): Suzie's chin/smile enters from top, background streaked.",
+  "words": "of [32.359-32.483]",
+  "audio_sync": "nearest onset 32.136 (-0.24s)"
+ },
+ {
+  "t": 32.625,
+  "type": "camera_move",
+  "description": "Tilt settles on Suzie MCU (smiling, looking camera-right toward Jimmy), holds 32.625-32.875.",
+  "words": "you [32.483-32.668]",
+  "audio_sync": "onset 32.694 (+0.07s)"
+ },
+ {
+  "t": 33,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 33.000): -> wide at the front door: Jimmy stands in the open doorway pointing down at a red threshold mat, Suzie C, Josh R, chain on the floor.",
+  "words": "decide [32.668-33.039] -> to (33.039)",
+  "audio_sync": "onset 33.065 (+0.07s)"
+ },
+ {
+  "t": 33,
+  "type": "angle_change",
+  "description": "New location/axis: entry door seen from inside the house.",
+  "words": "decide",
+  "audio_sync": "onset 33.065"
+ },
+ {
+  "t": 33,
+  "type": "subject_change",
+  "description": "Back to 3-shot; the red line (mat) is the new visual subject Jimmy points at.",
+  "words": "decide",
+  "audio_sync": "onset 33.065"
+ },
+ {
+  "t": 33,
+  "type": "text_off",
+  "description": "Sign/labels not in frame (door location).",
+  "words": "decide",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 33.375,
+  "type": "graphic_overlay",
+  "description": "RED GLOW composited onto the threshold mat starts (ramps 33.375 -> 33.625): bloom spills up Jimmy's trouser legs; the physical mat beneath is plain red/pink at 33.0-33.25.",
+  "words": "quit [33.162-33.409] -> by (33.409)",
+  "audio_sync": "onset 33.483 STRONG (+0.11s)"
+ },
+ {
+  "t": 33.375,
+  "type": "zoom_in",
+  "description": "Accelerating digital push-in toward the threshold begins (33.375 -> 34.0): door enlarges, Josh crops out at right.",
+  "words": "quit -> by",
+  "audio_sync": "onset 33.483 STRONG (+0.11s)"
+ },
+ {
+  "t": 33.625,
+  "type": "zoom_in",
+  "description": "Zoom accelerates: Jimmy's head crops out at top, frame diving to legs + glowing mat (33.625-33.875).",
+  "words": "crossing [33.533-34.027]",
+  "audio_sync": "onset 33.483 STRONG (-0.14s)"
+ },
+ {
+  "t": 34,
+  "type": "zoom_in",
+  "description": "Zoom lands and HOLDS (34.0-34.75): tight on the doorway - Jimmy's feet on the glowing red mat, Suzie's pink legs + chain at right.",
+  "words": "crossing -> this (34.027)",
+  "audio_sync": "onset 34.18 (+0.18s)"
+ },
+ {
+  "t": 34.125,
+  "type": "motion_spike",
+  "description": "Jimmy lifts his right foot and steps across the red line (34.125 -> 34.625) - acting out 'crossing this red line'.",
+  "words": "this [34.027-34.274]",
+  "audio_sync": "onset 34.18 (+0.06s)"
+ },
+ {
+  "t": 34.25,
+  "type": "graphic_overlay",
+  "description": "Red glow begins fading (34.25 -> 34.5); mat returns toward flat red.",
+  "words": "this -> red (34.274)",
+  "audio_sync": "onset 34.18 (-0.07s)"
+ },
+ {
+  "t": 34.5,
+  "type": "text_off",
+  "description": "Glow overlay fully OFF: the physical 'WELCOME HOME' doormat (hidden by the glow plate until now) and the plain red mat are revealed.",
+  "words": "red [34.274-34.459] -> line, (34.459)",
+  "audio_sync": "onset 34.458 (-0.04s) - glow off on 'red'/'line'"
+ },
+ {
+  "t": 34.875,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 34.835): -> wide from further inside: open door L, Suzie C, Josh R, chain across the floor. Handheld hold with only micro-drift for ~3.1s (to 38.0) - longest shot in the window.",
+  "words": "I (34.835-34.888) -> will (34.888-35.1)",
+  "audio_sync": "none within 0.25s (nearest 34.458 -0.38s / 35.225 +0.39s)"
+ },
+ {
+  "t": 34.875,
+  "type": "angle_change",
+  "description": "Wider, more frontal angle on the door than 33.0 shot.",
+  "words": "I -> will",
+  "audio_sync": "none"
+ },
+ {
+  "t": 34.875,
+  "type": "subject_change",
+  "description": "3-shot; Jimmy gesturing toward the door/outside.",
+  "words": "I -> will",
+  "audio_sync": "none"
+ },
+ {
+  "t": 35.5,
+  "type": "subject_change",
+  "description": "Jimmy mimes unlocking with both hands ('unhandcuff'); Josh turns toward Jimmy; Suzie watches Jimmy.",
+  "words": "instantly (ends 35.577) -> unhandcuff [35.577-36.107]",
+  "audio_sync": "onset 35.527 (+0.03s)"
+ },
+ {
+  "t": 36,
+  "type": "subject_change",
+  "description": "Jimmy opens his arms / points at both of them ('both of you').",
+  "words": "unhandcuff -> both (36.107)",
+  "audio_sync": "onset 35.991 (-0.01s)"
+ },
+ {
+  "t": 36.375,
+  "type": "subject_change",
+  "description": "Josh squares his body to face Jimmy (36.375-36.5); no zoom - door size constant, it is Josh moving.",
+  "words": "of (36.319) -> you. [36.425-36.637]",
+  "audio_sync": "onset 36.432 STRONG (+0.06s)"
+ },
+ {
+  "t": 37,
+  "type": "subject_change",
+  "description": "Jimmy's hand-out gesture on 'The video is over'.",
+  "words": "video [36.917-37.274]",
+  "audio_sync": "onset 37.013 STRONG (+0.01s)"
+ },
+ {
+  "t": 37.5,
+  "type": "subject_change",
+  "description": "Jimmy points at the pair; Suzie raises a hand (37.5-37.75); Josh fidgets with the chain and looks down.",
+  "words": "over, [37.417-37.774] -> but",
+  "audio_sync": "onset 37.547 (+0.05s)"
+ },
+ {
+  "t": 38,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 38.038): -> VFX/insert shot: money crates in near-darkness with amber backlight, 'SUZIE'/'JOSH' labels dim, and the sign re-rendered as '-$250,000' (red minus prefix, white glowing digits). No people.",
+  "words": "neither [37.988-38.488]",
+  "audio_sync": "onset 37.802 STRONG (-0.24s from 38.038)"
+ },
+ {
+  "t": 38,
+  "type": "graphic_overlay",
+  "description": "'-$250,000' (red minus) 3D sign ON.",
+  "words": "neither",
+  "audio_sync": "onset 37.802 STRONG"
+ },
+ {
+  "t": 38,
+  "type": "color_shift",
+  "description": "Grade snaps from bright daylight interior to dark red/amber.",
+  "words": "neither",
+  "audio_sync": "onset 37.802 STRONG"
+ },
+ {
+  "t": 38,
+  "type": "subject_change",
+  "description": "Subject = the prize itself (crates + sign), no humans.",
+  "words": "neither",
+  "audio_sync": "onset 37.802"
+ },
+ {
+  "t": 38,
+  "type": "camera_move",
+  "description": "Slow push/drift on the sign (38.0-38.25); sign rises in frame, red glow intensifies.",
+  "words": "neither",
+  "audio_sync": "onset 37.802"
+ },
+ {
+  "t": 38.25,
+  "type": "text_animate",
+  "description": "A translucent duplicate '$250,000' (no minus) appears just below '-$250,000' - start of a dissolve between two passes of the same graphic/camera move.",
+  "words": "neither",
+  "audio_sync": "onset 38.452 (+0.20s)"
+ },
+ {
+  "t": 38.375,
+  "type": "graphic_overlay",
+  "description": "Big red 'X' with white glowing outline POPS onto the SUZIE crate (scene-detect 38.338).",
+  "words": "neither -> of (38.488)",
+  "audio_sync": "onset 38.452 (+0.08s)"
+ },
+ {
+  "t": 38.5,
+  "type": "graphic_overlay",
+  "description": "Second red 'X' POPS onto the JOSH crate (scene-detect 38.438) - staggered pair, 0.125s apart.",
+  "words": "of [38.488-38.631]",
+  "audio_sync": "onset 38.452 (-0.05s)"
+ },
+ {
+  "t": 38.5,
+  "type": "color_shift",
+  "description": "Lighting changes: magenta LED strip appears in the background, blue tint on the crate tops (second pass lighting).",
+  "words": "of",
+  "audio_sync": "onset 38.452 (-0.05s)"
+ },
+ {
+  "t": 38.5,
+  "type": "text_animate",
+  "description": "'-$250,000' begins fading/ghosting out (38.5 -> 38.875) while the lower '$250,000' solidifies (38.5 -> 39.0).",
+  "words": "of",
+  "audio_sync": "onset 38.452"
+ },
+ {
+  "t": 38.875,
+  "type": "text_off",
+  "description": "'-$250,000' gone; solid white '$250,000' (no minus) now the only sign, X's on both crates.",
+  "words": "you [38.631-38.845] -> wins (38.845)",
+  "audio_sync": "onset 38.986 (+0.11s)"
+ },
+ {
+  "t": 38.875,
+  "type": "camera_move",
+  "description": "Pull-back + orbit-right begins (38.875 -> 39.75): floor and room revealed, crates rotate in perspective.",
+  "words": "you -> wins",
+  "audio_sync": "onset 38.986 (+0.11s)"
+ },
+ {
+  "t": 39,
+  "type": "color_shift",
+  "description": "Floor wash: orange (L) / magenta (C) / blue (R) party lighting sweeps in.",
+  "words": "wins [38.845-39.13]",
+  "audio_sync": "onset 38.986 (-0.01s)"
+ },
+ {
+  "t": 39.375,
+  "type": "camera_move",
+  "description": "Orbit continues; chairs and bed revealed at right, lights cycle.",
+  "words": "anything. [39.13-39.773]",
+  "audio_sync": "onset 39.404 STRONG (+0.03s)"
+ },
+ {
+  "t": 39.75,
+  "type": "zoom_out",
+  "description": "Widest point of the pull-back: crates small in center, full multicolor room lighting.",
+  "words": "anything.",
+  "audio_sync": "onset 39.729 (-0.02s)"
+ },
+ {
+  "t": 39.875,
+  "type": "hard_cut",
+  "description": "FLASH-TO-WHITE: full white frame (scene-detect 39.84 / 39.873). Transition out of the VFX shot.",
+  "words": "Have [39.84-40.205]",
+  "audio_sync": "onset 39.729 (-0.11s from 39.84); 39.962 (+0.12s)"
+ },
+ {
+  "t": 40,
+  "type": "color_shift",
+  "description": "White flash decays over the incoming live wide (washed, hazy, Jimmy's outstretched arms motion-blurred) - scene-detect 39.973/40.007/40.073.",
+  "words": "Have",
+  "audio_sync": "onset 39.962 (-0.04s)"
+ },
+ {
+  "t": 40,
+  "type": "zoom_out",
+  "description": "Incoming shot starts punched-in and zooms OUT fast (40.0 -> 40.25: crates shrink ~325 -> 260 px of 720), then continues slowly to 41.125 (~210 px).",
+  "words": "Have",
+  "audio_sync": "onset 39.962 (-0.04s)"
+ },
+ {
+  "t": 40,
+  "type": "subject_change",
+  "description": "Back to live action: Jimmy C arms spread wide ('Have fun'), Suzie L, Josh R holding the chain, black podium in foreground.",
+  "words": "Have",
+  "audio_sync": "onset 39.962"
+ },
+ {
+  "t": 40,
+  "type": "graphic_overlay",
+  "description": "Real-set '$250,000' sign + SUZIE/JOSH crate labels back in frame (pink/blue crate trims).",
+  "words": "Have",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 40.125,
+  "type": "color_shift",
+  "description": "Flash fully cleared, normal exposure (scene-detect 40.107).",
+  "words": "Have",
+  "audio_sync": "onset 39.962 (-0.16s)"
+ },
+ {
+  "t": 40.25,
+  "type": "zoom_out",
+  "description": "Fast phase of the zoom-out ends; slow zoom-out continues through 41.125.",
+  "words": "fun, [40.205-40.57]",
+  "audio_sync": "none within 0.25s (nearest 40.519 +0.27s)"
+ },
+ {
+  "t": 40.75,
+  "type": "subject_change",
+  "description": "Jimmy drops his arms, turns and walks off camera-left behind the podium (40.75 -> 41.125); Josh and Suzie watch him go.",
+  "words": "you [40.57-40.843]",
+  "audio_sync": "onset 40.519 (-0.23s)"
+ },
+ {
+  "t": 41,
+  "type": "motion_spike",
+  "description": "Jimmy mid-stride exiting; Suzie and Josh left alone in frame by 41.125.",
+  "words": "two. [40.843-41.208]",
+  "audio_sync": "onset 41.03 (+0.03s)"
+ },
+ {
+  "t": 41.25,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 41.275): -> CU Suzie in a kitchen (warm bokeh globe lights, lamp), talking camera-right. Static handheld (lamp/face positions drift <3% over the shot).",
+  "words": "My [41.275-41.425]",
+  "audio_sync": "onset 41.169 (-0.11s from 41.275); 41.448 STRONG (+0.17s)"
+ },
+ {
+  "t": 41.25,
+  "type": "angle_change",
+  "description": "New location (kitchen) - time jump implied.",
+  "words": "My",
+  "audio_sync": "onset 41.169"
+ },
+ {
+  "t": 41.25,
+  "type": "subject_change",
+  "description": "Suzie solo CU, speaking ('My ex-boyfriend? Really, Jimmy?'). Loudness dips to -17.6 at 41.11 then recovers.",
+  "words": "My",
+  "audio_sync": "onset 41.169"
+ },
+ {
+  "t": 41.25,
+  "type": "text_off",
+  "description": "No sign/labels in frame.",
+  "words": "My",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 41.625,
+  "type": "subject_change",
+  "description": "Suzie closes into a tight smile and blinks/eye-roll beat (41.625-41.75) on 'ex-boyfriend'.",
+  "words": "ex-boyfriend? [41.425-42.401]",
+  "audio_sync": "onset 41.448 STRONG (-0.18s)"
+ },
+ {
+  "t": 42,
+  "type": "subject_change",
+  "description": "Suzie speaks again, mouth open, head turning camera-right.",
+  "words": "ex-boyfriend? -> Really, (42.401)",
+  "audio_sync": "onset 41.982 (-0.02s)"
+ },
+ {
+  "t": 42.375,
+  "type": "subject_change",
+  "description": "Suzie turns further camera-right ('Jimmy?'), eyes closing into a laugh by 42.625.",
+  "words": "Really, [42.401-42.927]",
+  "audio_sync": "onset 42.284 (-0.09s)"
+ },
+ {
+  "t": 42.75,
+  "type": "hard_cut",
+  "description": "HARD CUT (scene-detect 42.776): -> wide from behind the black podium: Suzie L, crates C with '$250,000' sign + SUZIE/JOSH labels, Josh R with his back to camera. Static for the rest of the window.",
+  "words": "Really, -> Jimmy? (42.927)",
+  "audio_sync": "onset 42.678 STRONG (-0.10s from 42.776)"
+ },
+ {
+  "t": 42.75,
+  "type": "text_on",
+  "description": "'HOUR 0' 3D counter ON, tracked onto the crate faces, with a rendered reflection of the text on the podium top.",
+  "words": "Really, -> Jimmy?",
+  "audio_sync": "onset 42.678 STRONG (-0.10s)"
+ },
+ {
+  "t": 42.75,
+  "type": "graphic_overlay",
+  "description": "'$250,000' sign + SUZIE/JOSH labels in frame above the counter.",
+  "words": "Really,",
+  "audio_sync": "n/a"
+ },
+ {
+  "t": 42.75,
+  "type": "angle_change",
+  "description": "Reverse angle from behind the podium (podium now foreground-center).",
+  "words": "Really,",
+  "audio_sync": "onset 42.678"
+ },
+ {
+  "t": 42.75,
+  "type": "subject_change",
+  "description": "Suzie + Josh 2-shot, Jimmy gone; Josh facing the crates/counter.",
+  "words": "Really,",
+  "audio_sync": "onset 42.678"
+ },
+ {
+  "t": 43.125,
+  "type": "text_animate",
+  "description": "Counter FLIPS 'HOUR 0' -> 'HOUR 1' (digit mid-rotation at 43.125, settled 43.25); podium reflection updates in sync -> confirms tracked 3D element.",
+  "words": "Jimmy? [42.927-43.377]",
+  "audio_sync": "onset 43.212 (+0.09s)"
+ },
+ {
+  "t": 43.5,
+  "type": "subject_change",
+  "description": "Josh turns head then body away from the crates toward Suzie/camera (43.5 -> 44.375).",
+  "words": "Bro, [43.443-43.829]",
+  "audio_sync": "onset 43.514 (+0.01s) - turn starts on 'Bro'"
+ },
+ {
+  "t": 43.75,
+  "type": "motion_spike",
+  "description": "Josh's turn peaks (head toward Suzie).",
+  "words": "Bro, -> what? (43.829)",
+  "audio_sync": "onset 43.654 STRONG (-0.10s)"
+ },
+ {
+  "t": 44.5,
+  "type": "subject_change",
+  "description": "Josh now faces Suzie and raises his right hand in a 'what?' gesture (44.5-44.875); Suzie looks down and laughs. Silent reaction hold begins (caption gap 44.311 -> 46.38, loudness -18.1 at 44.61).",
+  "words": "(silent - 'what?' ended 44.311)",
+  "audio_sync": "onset 44.513 STRONG (+0.01s)"
+ },
+ {
+  "t": 44.75,
+  "type": "motion_spike",
+  "description": "Josh's hand gesture peaks; shot continues past the window (next scene-detect cut 45.445).",
+  "words": "(silent)",
+  "audio_sync": "onset 44.838 (+0.09s) / 44.652 (-0.10s)"
+ }
+]
