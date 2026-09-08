@@ -292,6 +292,17 @@ def cmd_bank(args):
     if args.require_complete: cmd.append("--require-complete")
     r=subprocess.run(cmd); print("bank: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed)")); return r.returncode
 
+def cmd_assembly(args):
+    """S6 gate: judge an assembly report (lib/assembly/assemble_manifest.py) — any MISSING shot or render fail = FAIL; waived placeholders are listed, never silent."""
+    rep=json.load(open(args.report)); fails=list(rep.get("fails",[]))
+    for r in rep.get("shots",[]):
+        if r.get("status")=="MISSING": fails.append(f"{r['shot']}: MISSING")
+        if r.get("status")=="placeholder-waived": print(f"  WAIVED {r['shot']} ({r.get('beat')}) placeholder")
+        if r.get("warn"): print(f"  WARN {r['shot']}: {r['warn']}")
+    print(f"assembly: placed={rep.get('placed')} waived={rep.get('waived')} missing={rep.get('missing')}")
+    for f in fails: print("  FAIL", f)
+    print("assembly: " + ("PASS" if not fails else f"FAIL ({len(fails)})")); return 1 if fails else 0
+
 def cmd_list(_):
     for g, s in GATES.items():
         print(f"  {g:12s} {s}")
@@ -326,6 +337,7 @@ def main():
     p = sub.add_parser("hook"); p.add_argument("--video", required=True); p.add_argument("--targets", required=True); p.add_argument("--t0", type=float, default=0.0); p.add_argument("--t1", type=float, default=45.0); p.set_defaults(fn=cmd_hook)
     p = sub.add_parser("seedlock"); p.add_argument("--lane", required=True); p.add_argument("--manifest"); p.set_defaults(fn=cmd_seedlock)
     p = sub.add_parser("bank"); p.add_argument("--ledger", required=True); p.add_argument("--manifest"); p.add_argument("--require-complete", action="store_true"); p.set_defaults(fn=cmd_bank)
+    p = sub.add_parser("assembly"); p.add_argument("--report", required=True); p.set_defaults(fn=cmd_assembly)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()
     sys.exit(args.fn(args))

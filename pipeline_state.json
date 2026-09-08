@@ -106,9 +106,10 @@
       "status": "ACTIVE",
       "channel": "TBD (owner)",
       "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
-      "next": "Phase A ($0): script v1 w/ loop tags + shot manifest + continuity ledger + story_gate/continuity_check. Phase B (image gens, subscription): 23 seed masters -> contact sheet -> GATE 1 owner seed pick (hashes frozen). No Grok credit spend before Gate 1.",
+      "next": "(1) workflow fixer -> SCRIPT_v2/manifest_v2 -> run story+continuity gates -> targeted fix until PASS; (2) GATE 1 needs the owner's Chrome side panel connected (ChatGPT image thread for the 23 masters) -> contact sheet -> owner picks -> seed_lock; (3) composite seeds -> hook prototype (~14 clips) -> hook_score vs hook_targets_v1.json -> GATE 2.",
       "gate": 0,
-      "activated": "2026-08-31"
+      "activated": "2026-08-31",
+      "built_2026-08-31": "Phase A machinery: story_gate (S3), continuity_check (S4/S6), seed_lock (GATE 1), clip_bank (GATE 5), hook_score (GATE 2, ref-calibrated), lib/assembly/{edit_layer,assemble_manifest,render_edit_spec}, build_composite_seeds, contact_sheet \u2014 all wired in run_gates.py, all self-tested fail-closed. SCRIPT_v1 written (story_gate: 10 FAILs -> fix pass pending after reviewer)."
     }
   },
   "meta": {
