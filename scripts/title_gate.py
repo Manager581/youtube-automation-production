@@ -19,7 +19,7 @@ def check(t):
     if not NUM.search(t): w.append("no number / $ / 'Last To' / 'vs' (9 of 10 winners have one)")
     if BANNED.search(t): f.append("banned brand/likeness token")
     if FILLER.search(t): f.append("clickbait filler")
-    if t.count(",") > 1: f.append("more than one comma")
+    if re.sub(r"(?<=\d),(?=\d)", "", t).count(",") > 1: f.append("more than one clause comma (thousands separators ignored)")
     words = [x for x in re.findall(r"[A-Za-z][A-Za-z']*", t) if len(x) > 3]
     if words and sum(x[0].isupper() for x in words) / len(words) < 0.8: f.append("not Title Case")
     return f, w
