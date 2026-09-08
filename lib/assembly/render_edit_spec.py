@@ -22,11 +22,36 @@ def build_vf(ops, fps, W, H):
         elif k == "text": parts.append(E.text_pop(o["text"], o["t_on"], o["t_off"], o.get("lead", 0.3), o.get("size", 96), o.get("y", "h*0.72"), o.get("color", "white"), o.get("pop", 1.15)))
         else: raise ValueError(f"unknown op {k}")
     return ",".join(parts)
-def main(spec_path, out):
+def resolve_src(src, ledger, fallback=None):
+    if src.startswith("ledger:"):
+        sid = src.split(":",1)[1]
+        row = (ledger or {}).get("clips", {}).get(sid)
+        if row and row.get("verdict") == "PASS" and os.path.exists(row["clip"]): return row["clip"], "ledger"
+        if fallback: return fallback, "FALLBACK"
+        raise FileNotFoundError(f"no PASS-banked clip for {sid} and no --fallback")
+    return src, "path"
+
+def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, report_path=None):
     spec = json.load(open(spec_path)); fps = spec.get("fps", 24); W, H = map(int, spec.get("size", "1920x1080").split("x"))
-    work = os.path.splitext(out)[0] + "_segs"; os.makedirs(work, exist_ok=True); segs = []
+    ledger = json.load(open(ledger_path)) if ledger_path and os.path.exists(ledger_path) else None
+    work = os.path.splitext(out)[0] + "_segs"; os.makedirs(work, exist_ok=True); segs = []; rep = []
     for i, sg in enumerate(spec["segments"]):
-        seg = os.path.join(work, f"seg{i:02d}.mp4"); E.segment_from_take(sg["src"], sg["t0"], sg["t1"], build_vf(sg.get("ops", []), fps, W, H), seg, fps, W, H); segs.append(seg)
+        src, how = resolve_src(sg["src"], ledger, fallback)
+        slot = (sg["t_out"] - sg["t_in"]) if "t_out" in sg else (sg["t1"] - sg["t0"])
+        t0 = sg.get("t0", 0.0); t1 = t0 + slot
+        ops = [o for o in sg.get("ops", []) if o.get("op") != "cards"]; cards = [o for o in sg.get("ops", []) if o.get("op") == "cards"]
+        seg = os.path.join(work, f"seg{i:02d}_{sg.get('shot', i)}.mp4")
+        vf = build_vf(ops, fps, W, H)
+        E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{t0:.3f}", "-t", f"{slot:.3f}", "-i", src, "-vf", (f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,fps={fps}" + ("," + vf if vf else "")), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), seg])
+        for c in cards:
+            stills = []
+            for st in c["stills"]:
+                cand = os.path.join(masters_dir or "", st + ".png") if masters_dir else st
+                stills.append(cand if os.path.exists(cand) else (fallback_still(work, st, W, H)))
+            ins, chain, last = E.photo_cards_overlay(stills, c.get("t_start", 0.0), c.get("each", 0.4), W, H, c.get("card_w", 0.46), c.get("slide", 0.12))
+            nxt = seg.replace(".mp4", "_cards.mp4")
+            E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", seg] + ins + ["-filter_complex", chain, "-map", f"[{last}]", "-t", f"{slot:.3f}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), nxt]); seg = nxt
+        segs.append(seg); rep.append({"shot": sg.get("shot"), "src": src, "how": how, "slot": round(slot, 3), "ops": len(ops), "cards": len(cards)})
     silent = os.path.join(work, "silent.mp4"); E.concat(segs, silent); cur = silent
     for j, c in enumerate(spec.get("cards", [])):
         ins, chain, last = E.photo_cards_overlay(c["stills"], c["t_start"], c["each"], W, H, c.get("card_w", 0.46), c.get("slide", 0.12))
@@ -34,5 +59,15 @@ def main(spec_path, out):
         E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", cur] + ins + ["-filter_complex", chain, "-map", f"[{last}]", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), nxt]); cur = nxt
     if spec.get("audio") and os.path.exists(spec["audio"]): E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", cur, "-i", spec["audio"], "-c:v", "copy", "-c:a", "aac", "-shortest", out])
     else: os.replace(cur, out)
-    print("rendered", out); return out
-if __name__ == "__main__": main(sys.argv[1], sys.argv[2])
+    json.dump({"out": out, "segments": rep, "fallbacks": sum(r["how"] == "FALLBACK" for r in rep)}, open(report_path or out.replace(".mp4", "_report.json"), "w"), indent=1)
+    print(f"rendered {out} ({len(rep)} segments, {sum(r['how']=='FALLBACK' for r in rep)} FALLBACK stand-ins)"); return out
+
+def fallback_still(work, name, W, H):
+    p = os.path.join(work, f"still_{name}.png")
+    if not os.path.exists(p): E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i", f"color=c=0x30343f:size={W//2}x{H//2}", "-vf", f"drawtext=fontfile={E.FONT}:text='{name}':fontsize=48:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2", "-frames:v", "1", p])
+    return p
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("out"); ap.add_argument("--ledger"); ap.add_argument("--masters"); ap.add_argument("--fallback", help="stand-in clip for unbanked ledger refs (prototype/dry runs ONLY; report counts them)"); ap.add_argument("--report")
+    a = ap.parse_args(); main(a.spec, a.out, a.ledger, a.masters, a.fallback, a.report)
