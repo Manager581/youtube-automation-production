@@ -1,0 +1,29 @@
+{
+ "limit": 4800,
+ "chunks": [
+  {
+   "id": "ORB_01",
+   "voice": "ORB",
+   "chars": 3149,
+   "sha": "181eac615fe286b9",
+   "text": "research/mrbeast_teardown/shrinking_planet/vo_chunks_v2_0-3min/ORB_01.txt",
+   "words": 601
+  },
+  {
+   "id": "PIP_01",
+   "voice": "PIP",
+   "chars": 508,
+   "sha": "c50a94d10bf1a025",
+   "text": "research/mrbeast_teardown/shrinking_planet/vo_chunks_v2_0-3min/PIP_01.txt",
+   "words": 100
+  },
+  {
+   "id": "GRUFF_01",
+   "voice": "GRUFF",
+   "chars": 319,
+   "sha": "483d77dc87d2a743",
+   "text": "research/mrbeast_teardown/shrinking_planet/vo_chunks_v2_0-3min/GRUFF_01.txt",
+   "words": 64
+  }
+ ]
+}
