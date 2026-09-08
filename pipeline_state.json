@@ -1,7 +1,10 @@
 {
-  "_schema": "pipeline_state v1 (PIPELINE_OVERHAUL_PLAN §S0 / build step 1). Every production lane has exactly one status: ACTIVE | BLOCKED-ON-OWNER | PARKED | KILLED | PUBLISHED | UNTRIAGED. Max 1 ACTIVE production lane. UNTRIAGED is only legal until the owner's triage sitting; run_gates.py state must fail on >1 ACTIVE or any UNTRIAGED after triage.",
+  "_schema": "pipeline_state v1 (PIPELINE_OVERHAUL_PLAN \u00a7S0 / build step 1). Every production lane has exactly one status: ACTIVE | BLOCKED-ON-OWNER | PARKED | KILLED | PUBLISHED | UNTRIAGED. Max 1 ACTIVE production lane. UNTRIAGED is only legal until the owner's triage sitting; run_gates.py state must fail on >1 ACTIVE or any UNTRIAGED after triage.",
   "updated": "2026-08-31",
-  "triage": { "done": false, "note": "Factual state verified 2026-08-31 (yt-dlp + disk). Statuses below marked UNTRIAGED await the owner's one-sitting triage; 'proposed' is machine advice only." },
+  "triage": {
+    "done": false,
+    "note": "Factual state verified 2026-08-31 (yt-dlp + disk). Statuses below marked UNTRIAGED await the owner's one-sitting triage; 'proposed' is machine advice only."
+  },
   "lanes": {
     "breaking_law": {
       "status": "KILLED",
@@ -29,7 +32,7 @@
       "status": "PUBLISHED",
       "channel": "prehistoric_pov",
       "video_id": "u_2Wdt4zGa0",
-      "note": "Confirmed live 2026-08-31; 1,416 views — best 2026 own upload."
+      "note": "Confirmed live 2026-08-31; 1,416 views \u2014 best 2026 own upload."
     },
     "wbs_ep02_vampire_finch": {
       "status": "UNTRIAGED",
@@ -89,7 +92,7 @@
       "status": "UNTRIAGED",
       "proposed": "PARKED",
       "channel": "prehistoric_pov",
-      "state": "Owner-direct uploads (velociraptor 52s, spinosaurus lagoon 36s, + 2 Rexcaped walkthroughs) with no repo artifacts — a lane that exists outside the pipeline.",
+      "state": "Owner-direct uploads (velociraptor 52s, spinosaurus lagoon 36s, + 2 Rexcaped walkthroughs) with no repo artifacts \u2014 a lane that exists outside the pipeline.",
       "why_proposed": "Owner's personal upload lane; pipeline should record (publish ledger) but not gate it."
     },
     "feral_planet_first_upload": {
@@ -97,12 +100,20 @@
       "proposed": "BLOCKED-ON-OWNER",
       "channel": "feral_planet",
       "state": "Channel branded + settings done 2026-08-27; 0 public uploads. First slate = wbs_ep02 (or a fast tick-formula episode).",
-      "why_proposed": "Not a separate build — it is wbs_ep02's destination; kept as a line so the empty channel is visible in triage."
+      "why_proposed": "Not a separate build \u2014 it is wbs_ep02's destination; kept as a line so the empty channel is visible in triage."
+    },
+    "shrinking_planet": {
+      "status": "ACTIVE",
+      "channel": "TBD (owner)",
+      "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
+      "next": "Phase A ($0): script v1 w/ loop tags + shot manifest + continuity ledger + story_gate/continuity_check. Phase B (image gens, subscription): 23 seed masters -> contact sheet -> GATE 1 owner seed pick (hashes frozen). No Grok credit spend before Gate 1.",
+      "gate": 0,
+      "activated": "2026-08-31"
     }
   },
   "meta": {
     "pipeline_overhaul": {
-      "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 COMPLETE (run_gates.py: state/foley/bank-status/render/thumb/style/shots all wrapped fail-closed + verified on real artifacts; waiver mechanics tested; style-gate inputs restored — refs/BEST.mp4 re-downloaded, forensics_BEST.json regenerated, extract_forensics adaptive-threshold knife-edge fixed to match its own comment, BEST grades 10/11 vs recorded 11/11 with only hook-cuts off by re-encode), step 2 machine half (V4_REVIEW_PACKET.md + v4_verdict_ledger.json delivered). Next machine step: step 6 lib/assembly prep. Step 2 verdicts + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
+      "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 COMPLETE (run_gates.py: state/foley/bank-status/render/thumb/style/shots all wrapped fail-closed + verified on real artifacts; waiver mechanics tested; style-gate inputs restored \u2014 refs/BEST.mp4 re-downloaded, forensics_BEST.json regenerated, extract_forensics adaptive-threshold knife-edge fixed to match its own comment, BEST grades 10/11 vs recorded 11/11 with only hook-cuts off by re-encode), step 2 machine half (V4_REVIEW_PACKET.md + v4_verdict_ledger.json delivered). Next machine step: step 6 lib/assembly prep. Step 2 verdicts + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
       "note": "Meta-lane; does not count against the 1-ACTIVE production cap."
     }
   }

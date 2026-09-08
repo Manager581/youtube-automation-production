@@ -22,6 +22,10 @@ Subcommands (v0 — wrapped gates only; `list` shows what is still TODO):
                   the plan's >=90% separation rule). Whole-name waiver id = NAME.
   shots         S4 shot-manifest craft gate: runs gate_shots.py (ep02 manifest). No waivers —
                   a failing craft law means fix the manifest, not ship around it.
+  story         S3 deterministic story gate on a tagged SCRIPT_v*.md (loops OPEN->PAY, device cadence,
+                  PIP mouth:ON cap, word band, DAY/PLANET/COUNT vs ladder, brand tokens). No waivers.
+  continuity    S4/S6 shot-manifest continuity + coverage gate (count==planet==ladder, adjacent vantage,
+                  seed refs, beat coverage, unique band, 23 masters). No waivers.
   list          registered gates + wrap status
 
 Usage: python3 run_gates.py <subcommand> [options]
@@ -257,6 +261,18 @@ def cmd_shots(args):
     return r.returncode
 
 
+def cmd_story(args):
+    """S3 story gate: deterministic loop/cap/ladder checks on a tagged script (scripts/story_gate.py)."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","story_gate.py"), args.script]
+    if args.ladder: cmd += ["--ladder", args.ladder]
+    r=subprocess.run(cmd); print("story: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed; no waivers on story structure)")); return r.returncode
+
+def cmd_continuity(args):
+    """S4/S6 continuity + coverage gate on a shot manifest (scripts/continuity_check.py)."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","continuity_check.py"), args.manifest, "--beats", str(args.beats)]
+    if args.lines: cmd += ["--lines", args.lines]
+    r=subprocess.run(cmd); print("continuity: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed; fix the manifest)")); return r.returncode
+
 def cmd_list(_):
     for g, s in GATES.items():
         print(f"  {g:12s} {s}")
@@ -286,6 +302,8 @@ def main():
     p.add_argument("--lane", default="wbs_ep02_vampire_finch")
     p.set_defaults(fn=cmd_style)
     p = sub.add_parser("shots"); p.set_defaults(fn=cmd_shots)
+    p = sub.add_parser("story"); p.add_argument("script"); p.add_argument("--ladder"); p.set_defaults(fn=cmd_story)
+    p = sub.add_parser("continuity"); p.add_argument("manifest"); p.add_argument("--beats", type=int, default=30); p.add_argument("--lines"); p.set_defaults(fn=cmd_continuity)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()
     sys.exit(args.fn(args))
