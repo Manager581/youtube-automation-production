@@ -5752,7 +5752,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "foley_prompt": "thin atmospheric rush growing as the camera dives from orbit, settling to a soft wind over rock"
   },
   {
    "id": "S023",
@@ -5788,7 +5789,8 @@
    "props": [
     "ration_bar",
     "keyboard"
-   ]
+   ],
+   "foley_prompt": "a metal ration crate lid creaks open, three foil-wrapped bars set down one by one on metal, a small sigh, thin wind over rock"
   },
   {
    "id": "S024",
@@ -5826,7 +5828,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "foley_prompt": "soft hover whir drifting overhead, a faint halo pulse, thin wind over rock"
   },
   {
    "id": "S025",
