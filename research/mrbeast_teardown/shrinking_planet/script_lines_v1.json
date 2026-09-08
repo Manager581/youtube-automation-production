@@ -1,27 +1,35 @@
 [
  {
   "beat": "B01",
-  "t": "00:02",
+  "t": "00:00",
   "speaker": "ORB",
   "mouth": null,
-  "words": 17,
-  "text": "Helmets off. Breathe. That air is the only thing on this rock I'm handing out for free."
+  "words": 2,
+  "text": "Helmets off."
+ },
+ {
+  "beat": "B01",
+  "t": "00:03",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 13,
+  "text": "These two used to be a band. Four years. One bus. One stage."
  },
  {
   "beat": "B01",
   "t": "00:06",
   "speaker": "ORB",
   "mouth": null,
-  "words": 32,
-  "text": "Meet Pip. Meet Gruff. Four years they were a band — one bus, one stage, one van that smelled like a drum kit. Then she went solo. He found out from a poster."
+  "words": 8,
+  "text": "She went solo. He's still angry about it."
  },
  {
   "beat": "B01",
-  "t": "00:10",
+  "t": "00:09",
   "speaker": "ORB",
   "mouth": null,
-  "words": 27,
-  "text": "Thirty days on a planet one kilometre across. Nobody leaves the rock. Nobody leaves the other one. Survive that, together, and this crate goes home with them."
+  "words": 19,
+  "text": "If they survive thirty days on this planet — together — they go home with what's in that crate."
  },
  {
   "beat": "B03",
@@ -37,43 +45,43 @@
   "speaker": "PIP",
   "mouth": "ON",
   "words": 3,
-  "text": "Three years back."
+  "text": "Three years ago."
  },
  {
   "beat": "B03",
   "t": "00:19",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 7,
-  "text": "She ended it. Halfway through a tour."
+  "words": 3,
+  "text": "She quit. Mid-tour."
  },
  {
   "beat": "B03",
   "t": "00:20",
   "speaker": "ORB",
   "mouth": null,
-  "words": 3,
-  "text": "Still sore, then."
+  "words": 2,
+  "text": "Still sore."
  },
  {
   "beat": "B04",
-  "t": "00:22",
+  "t": "00:21",
   "speaker": "ORB",
   "mouth": null,
-  "words": 24,
-  "text": "Nobody's dragging you into this. But the moment those anklets close, the thirty days are counting — and nothing I say afterwards can un-count them."
+  "words": 14,
+  "text": "Nobody's making you. But the second those anklets lock, the thirty days are running."
  },
  {
   "beat": "B04",
-  "t": "00:25",
+  "t": "00:24",
   "speaker": "GRUFF",
   "mouth": null,
   "words": 1,
-  "text": "Counting."
+  "text": "Running."
  },
  {
   "beat": "B04",
-  "t": "00:28",
+  "t": "00:27",
   "speaker": "ORB",
   "mouth": null,
   "words": 2,
@@ -81,227 +89,163 @@
  },
  {
   "beat": "B05",
-  "t": "00:33",
+  "t": "00:30",
   "speaker": "ORB",
   "mouth": null,
-  "words": 56,
-  "text": "See this ring? Step across it and you've quit. If one of you quits, both of you fly home tonight, and the crate flies home with me. There is no version where one of you crosses and the other one wins. The ring is the only exit on this rock, and it's an exit for two."
+  "words": 25,
+  "text": "Cross this line and you quit. If either of you quits, I take you both home tonight — and the crate goes home with me."
  },
  {
   "beat": "B05",
-  "t": "00:41",
+  "t": "00:37",
   "speaker": "ORB",
   "mouth": null,
-  "words": 18,
-  "text": "Enjoy the view. There's more of it than you'd think. And a little less every time I visit."
+  "words": 4,
+  "text": "Have fun down there."
  },
  {
   "beat": "B06",
-  "t": "00:47",
+  "t": "00:45",
   "speaker": "ORB",
   "mouth": null,
-  "words": 34,
-  "text": "One thousand metres across. Its own thin sky, its own sad little sunrise every six hours. North pole: Pip's camp. A tent, a kettle, and a keyboard she has not touched since she landed."
+  "words": 17,
+  "text": "One thousand metres across. Its own sky, if you squint. Her camp is at the north pole."
  },
  {
   "beat": "B06",
-  "t": "00:52",
+  "t": "00:51",
   "speaker": "ORB",
   "mouth": null,
-  "words": 36,
-  "text": "South pole: Gruff's cave. A mattress, and a wall he has already introduced himself to. On a world this size, they can go a week without crossing paths. In some households, that is the whole arrangement."
+  "words": 25,
+  "text": "His cave is at the south. On a planet this size they can go a week without seeing each other. Which is roughly the plan."
  },
  {
   "beat": "B06",
   "t": "00:57",
   "speaker": "ORB",
   "mouth": null,
-  "words": 31,
-  "text": "That is The Count. It keeps the day and it keeps the diameter. It does not negotiate, it does not blink, and it has never once been right about a landing."
+  "words": 18,
+  "text": "That's THE COUNT. It keeps the number. The number is the only thing on this planet that changes."
  },
  {
   "beat": "B06",
-  "t": "01:02",
+  "t": "01:04",
   "speaker": "ORB",
   "mouth": null,
-  "words": 19,
-  "text": "The tether. Forty metres of braided gravity. It stretches; it does not break. I tested it on a moon."
+  "words": 1,
+  "text": "Facilities."
  },
  {
   "beat": "B06",
-  "t": "01:07",
+  "t": "01:10",
   "speaker": "ORB",
   "mouth": null,
-  "words": 29,
-  "text": "And on the equator — a crate. Not the prize. Something else. It stays shut until I say, and I am not going to say for a long, long while."
- },
- {
-  "beat": "B06",
-  "t": "01:12",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 10,
-  "text": "The bathroom. It's a hole. The hole has a view."
+  "words": 15,
+  "text": "And on the equator: the crate. Nobody opens it before Day 20. Not even me."
  },
  {
   "beat": "B06",
   "t": "01:17",
   "speaker": "PIP",
   "mouth": "OFF",
-  "words": 9,
-  "text": "You are not serious. There isn't even a door."
+  "words": 6,
+  "text": "You don't know what's in it?"
  },
  {
   "beat": "B06",
-  "t": "01:22",
-  "speaker": "GRUFF",
+  "t": "01:23",
+  "speaker": "ORB",
   "mouth": null,
-  "words": 9,
-  "text": "Best seat on the planet. I'm not sharing it."
- },
- {
-  "beat": "B06",
-  "t": "01:27",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 7,
-  "text": "Forty metres of tether says you are."
+  "words": 6,
+  "text": "I know exactly what's in it."
  },
  {
   "beat": "B07",
-  "t": "01:33",
+  "t": "01:30",
   "speaker": "PIP",
   "mouth": "ON",
-  "words": 24,
-  "text": "We're going to have to talk about it. Not today. But it's coming, and I honestly don't know which one of us cracks first."
+  "words": 15,
+  "text": "Sooner or later one of us has to bring it up. I'm hoping it's later."
  },
  {
   "beat": "B07",
-  "t": "01:39",
+  "t": "01:40",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 19,
-  "text": "I've been cold to her. I'm entitled to that. I didn't leave. She did. Everybody keeps forgetting that part."
+  "words": 9,
+  "text": "I've been cold to her. I'm allowed. She left."
  },
  {
   "beat": "B07",
-  "t": "01:45",
+  "t": "01:50",
   "speaker": "ORB",
   "mouth": null,
   "words": 8,
-  "text": "They think this is a show about surviving."
- },
- {
-  "beat": "B07",
-  "t": "01:51",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 2,
-  "text": "It isn't."
- },
- {
-  "beat": "B07",
-  "t": "01:57",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 25,
-  "text": "It's about whether two people who broke each other once can stand on a rock the size of a car and not do it twice."
+  "text": "They think this is about surviving. It isn't."
  },
  {
   "beat": "B08",
-  "t": "02:04",
+  "t": "02:00",
   "speaker": "ORB",
   "mouth": null,
-  "words": 21,
-  "text": "Day two. Two sunrises, two hemispheres, zero conversation. So let me explain the engine, because everything that follows runs on it."
+  "words": 11,
+  "text": "Here's the engine. Every deal I offer them shrinks this planet."
  },
  {
   "beat": "B08",
-  "t": "02:13",
+  "t": "02:15",
   "speaker": "ORB",
   "mouth": null,
-  "words": 77,
-  "text": "Nine numbers on that ladder. They will hear every one of them out loud, and they will see every one of them on The Count, and not one of them goes back up. Every deal I offer them makes this planet smaller. Right now they can avoid each other. At a hundred metres, they'll hear each other breathe. At two metres there is nowhere left to stand except together — and I mean that as geometry, not poetry."
+  "words": 24,
+  "text": "Right now they can avoid each other. At a hundred metres they'll hear each other breathe. At two, there's nowhere to stand but together."
  },
  {
   "beat": "B08",
-  "t": "02:22",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 28,
-  "text": "Quiet. I could get used to quiet. Nobody singing in the next room. Nobody singing at all. Just me, a rock, and a wall that doesn't argue back."
- },
- {
-  "beat": "B08",
-  "t": "02:31",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 45,
-  "text": "He's fine. He's always fine. That was the whole problem — you cannot fight a wall, and you cannot leave one, either. So I did the second thing. Three years later, here I am on a rock with the wall, and the wall got a cave."
- },
- {
-  "beat": "B08",
-  "t": "02:40",
+  "t": "02:30",
   "speaker": "ORB",
   "mouth": null,
-  "words": 26,
-  "text": "So here is what the next twenty-eight days answer. Does a smaller world pull two people back together — or does it finish the job they started?"
+  "words": 13,
+  "text": "So. Does a smaller world bring them back — or finish them off?"
  },
  {
   "beat": "B09",
-  "t": "02:48",
+  "t": "02:45",
   "speaker": "ORB",
   "mouth": null,
-  "words": 47,
-  "text": "Midnight. Which means me. Every five days I visit, and every visit comes with a choice. Two platters. Under the first: you keep your thousand-metre planet exactly as it is. Under the second: you halve it — and I add a hundred thousand to whatever's in that crate."
+  "words": 15,
+  "text": "Day five. First offer. Under the left lid: nothing changes. You keep your thousand-metre planet."
  },
  {
   "beat": "B09",
   "t": "02:55",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 12,
-  "text": "Money is money. I've slept in worse places than half a planet."
- },
- {
-  "beat": "B09",
-  "t": "03:02",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 21,
-  "text": "Of course he'll take it. He'd take anything shiny. That's the drummer in him — hit the thing that makes the noise."
- },
- {
-  "beat": "B09",
-  "t": "03:09",
   "speaker": "ORB",
   "mouth": null,
-  "words": 47,
-  "text": "Two rules on every visit. One: you answer together, or you don't answer. Two: The Count goes once around the pad, and when it gets back I need a word. One word. Silence counts as keeping the planet, which is the only free thing I've ever offered."
+  "words": 22,
+  "text": "Under the right lid: I halve it. Five hundred metres. And I add a hundred thousand to whatever is in the crate."
+ },
+ {
+  "beat": "B09",
+  "t": "03:06",
+  "speaker": "GRUFF",
+  "mouth": null,
+  "words": 2,
+  "text": "Money's money."
  },
  {
   "beat": "B09",
   "t": "03:16",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 10,
-  "text": "You do the honours. You're good at leaving things behind."
- },
- {
-  "beat": "B09",
-  "t": "03:23",
   "speaker": "PIP",
   "mouth": "OFF",
-  "words": 12,
-  "text": "Say that again and I'll keep the planet just to spite you."
+  "words": 14,
+  "text": "We haven't seen each other in four days. We could live at five hundred."
  },
  {
   "beat": "B09",
-  "t": "03:31",
+  "t": "03:27",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 20,
-  "text": "Then keep it. Half a planet's still a planet. I'm not the one who needs the money to prove something."
+  "words": 5,
+  "text": "We could live at fifty."
  },
  {
   "beat": "B09",
@@ -313,591 +257,303 @@
  },
  {
   "beat": "B09",
-  "t": "03:45",
+  "t": "03:48",
   "speaker": "ORB",
   "mouth": null,
-  "words": 3,
-  "text": "Then look up."
- },
- {
-  "beat": "B09",
-  "t": "03:52",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 42,
-  "text": "A wedge, sheared clean. Their first camp is on it. Nobody gets that back — not for a hundred thousand, not for anything. Watch it go. It's the first thing on this rock they lost together, and it will not be the last."
+  "words": 7,
+  "text": "Their first camp was on that piece."
  },
  {
   "beat": "B09",
   "t": "03:59",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 5,
-  "text": "My mattress was on that."
+  "words": 1,
+  "text": "Huh."
  },
  {
-  "beat": "B09",
-  "t": "04:06",
+  "beat": "B10",
+  "t": "04:10",
   "speaker": "ORB",
   "mouth": null,
-  "words": 30,
-  "text": "Day five. Five hundred metres. A hundred thousand richer and one hemisphere poorer. That is what a deal costs here — and it is the cheapest one I will ever offer."
+  "words": 21,
+  "text": "Less than a day at half size, and it's already going wrong. Gravity now drags both camps into the same valley."
  },
  {
   "beat": "B10",
-  "t": "04:12",
+  "t": "04:23",
   "speaker": "ORB",
   "mouth": null,
-  "words": 33,
-  "text": "Less than one day at half size, and the bill has arrived. Gravity rearranged itself while they slept. Both camps are sliding into the same valley, and neither of them packed for company."
+  "words": 7,
+  "text": "His snoring carries. All the way round."
  },
  {
   "beat": "B10",
-  "t": "04:18",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 37,
-  "text": "That is Gruff. Snoring. It now carries across the entire planet, because there is no longer an entire planet. On day one she was five hundred metres from that noise. Tonight, forty. Tomorrow, the maths gets worse."
- },
- {
-  "beat": "B10",
-  "t": "04:24",
+  "t": "04:36",
   "speaker": "PIP",
   "mouth": "OFF",
-  "words": 24,
-  "text": "If I hold his nose for one minute, do I win the crate by myself? I'm asking for a friend. The friend is me."
+  "words": 4,
+  "text": "Nope. Nope nope nope."
  },
  {
-  "beat": "B10",
-  "t": "04:30",
+  "beat": "B11",
+  "t": "04:50",
   "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 10,
-  "text": "Ow. Ow, ow. That is a floor made of planet."
+  "mouth": "ON",
+  "words": 15,
+  "text": "I'd rather be chained to a stranger. A stranger would at least talk to me."
  },
  {
-  "beat": "B10",
-  "t": "04:35",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 10,
-  "text": "…Pip? Is it the money or is it the snoring?"
- },
- {
-  "beat": "B10",
-  "t": "04:41",
+  "beat": "B11",
+  "t": "05:02",
   "speaker": "PIP",
-  "mouth": "OFF",
+  "mouth": "ON",
   "words": 6,
-  "text": "Go back to sleep. It's both."
- },
- {
-  "beat": "B10",
-  "t": "04:47",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 15,
-  "text": "Tally six. Scratched into the rock with a piece of the rock. Twenty-four to go."
+  "text": "Six days. You've said nine words."
  },
  {
   "beat": "B11",
-  "t": "04:53",
+  "t": "05:15",
+  "speaker": "GRUFF",
+  "mouth": null,
+  "words": 16,
+  "text": "You'd rather be anywhere I'm not. That's the whole story. It's always been the whole story."
+ },
+ {
+  "beat": "B11",
+  "t": "05:28",
   "speaker": "PIP",
   "mouth": "ON",
-  "words": 25,
-  "text": "I would rather be roped to somebody I'd never met. Somebody I'd never met would at least pretend to be interested in what I'm saying."
- },
- {
-  "beat": "B11",
-  "t": "04:59",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 22,
-  "text": "You'd rather be anywhere I'm not. You proved it with a tour bus and a head start. Don't act like it's news."
- },
- {
-  "beat": "B11",
-  "t": "05:05",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 25,
-  "text": "One song, Gruff. Four years, and you brought one song to the band. I wrote the other thirty in a van you were asleep in."
- },
- {
-  "beat": "B11",
-  "t": "05:11",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 15,
-  "text": "And you put your name on all thirty-one. Solo. So which of us actually left?"
- },
- {
-  "beat": "B11",
-  "t": "05:17",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 10,
-  "text": "I wrote them! Writing them is the part that counts!"
- },
- {
-  "beat": "B11",
-  "t": "05:23",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 18,
-  "text": "Then you didn't need a band. Good. You've got what you wanted. It's just smaller than you thought."
- },
- {
-  "beat": "B11",
-  "t": "05:29",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 18,
-  "text": "Remember this argument. In twenty-two days they'll be standing on a rock too small to have it on."
- },
- {
-  "beat": "B11",
-  "t": "05:35",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 25,
-  "text": "He's not wrong. That's the part I can't stand. I've had three years of being right about him, and he undid it in one sentence."
+  "words": 14,
+  "text": "You wrote one song in four years! One! And it was about your van!"
  },
  {
   "beat": "B11",
   "t": "05:41",
-  "speaker": "GRUFF",
+  "speaker": "ORB",
   "mouth": null,
-  "words": 21,
-  "text": "I said the thing I promised myself I would never say to her. Took me six days. That's a personal best."
+  "words": 4,
+  "text": "Nobody wins this one."
  },
  {
   "beat": "B11",
-  "t": "05:47",
+  "t": "05:54",
+  "speaker": "PIP",
+  "mouth": "OFF",
+  "words": 2,
+  "text": "Clean slate?"
+ },
+ {
+  "beat": "B11",
+  "t": "06:07",
+  "speaker": "GRUFF",
+  "mouth": null,
+  "words": 1,
+  "text": "…Fine."
+ },
+ {
+  "beat": "B12",
+  "t": "06:20",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 14,
+  "text": "Day ten. Today's shrink is on the house. No deal, no money, no choice."
+ },
+ {
+  "beat": "B12",
+  "t": "06:31",
   "speaker": "ORB",
   "mouth": null,
   "words": 15,
-  "text": "Day seven. The first fight took eleven minutes. The silence after it took four hours."
- },
- {
-  "beat": "B11",
-  "t": "05:53",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 1,
-  "text": "Half?"
- },
- {
-  "beat": "B11",
-  "t": "05:59",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 1,
-  "text": "…Half."
- },
- {
-  "beat": "B11",
-  "t": "06:05",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 17,
-  "text": "Start over. Just for the rock. Nothing from before comes up here unless we both say so."
- },
- {
-  "beat": "B11",
-  "t": "06:11",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 4,
-  "text": "Just for the rock."
- },
- {
-  "beat": "B11",
-  "t": "06:17",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 19,
-  "text": "That's a truce. It will last exactly until I come back — which, for the record, is in three days."
- },
- {
-  "beat": "B12",
-  "t": "06:22",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 16,
-  "text": "Midnight again. No platters tonight. Tonight's shrink is a gift, and gifts don't come with lids."
- },
- {
-  "beat": "B12",
-  "t": "06:27",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 2,
-  "text": "A gift."
- },
- {
-  "beat": "B12",
-  "t": "06:32",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 26,
-  "text": "Since when does a gift take something away from you? Every one of his gifts has a lid, and the lid has a price under it."
- },
- {
-  "beat": "B12",
-  "t": "06:37",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 4,
-  "text": "Since always. Look up."
+  "text": "Gift: THE COUNT gets thrusters. It can fetch things now. Try not to break it."
  },
  {
   "beat": "B12",
   "t": "06:42",
   "speaker": "ORB",
   "mouth": null,
-  "words": 53,
-  "text": "Three hundred metres. Ten days ago they could lose each other for a week. Now the far side of the world is a four-minute walk. And a present for the house: The Count grew thrusters. It can fetch now. Ask it nicely — it will not understand a word, but it appreciates the tone."
+  "words": 12,
+  "text": "And from here on, the money gets serious. So will the planet."
  },
  {
   "beat": "B12",
-  "t": "06:47",
+  "t": "06:53",
   "speaker": "ORB",
   "mouth": null,
-  "words": 29,
-  "text": "One more thing before I go. So far the money has been polite. From tonight, it gets rude. And every time the money gets rude, so does the planet."
- },
- {
-  "beat": "B12",
-  "t": "06:52",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 10,
-  "text": "Looking forward to it. Nothing else to do up here."
- },
- {
-  "beat": "B12",
-  "t": "06:57",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 20,
-  "text": "He says that like it's a joke. It isn't. He'd sell the rock out from under us for a bath."
- },
- {
-  "beat": "B12",
-  "t": "07:02",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 34,
-  "text": "Left on a mattress at dawn: a moon rock, worked into a heart with what I assume was another moon rock. He doesn't mention it. She notices he didn't throw it in the hole."
+  "words": 9,
+  "text": "He didn't mention it. She noticed he kept it."
  },
  {
   "beat": "B13",
-  "t": "07:08",
+  "t": "07:05",
   "speaker": "ORB",
   "mouth": null,
-  "words": 39,
-  "text": "Night ten. Three hundred metres, one fire that isn't a fire. I'm going to ask the thing I've wanted to ask since the helmets came off, and then I'm going to be quiet, which I'm told I'm bad at."
+  "words": 6,
+  "text": "So what actually broke the band?"
  },
  {
   "beat": "B13",
-  "t": "07:16",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 5,
-  "text": "What actually broke the band?"
- },
- {
-  "beat": "B13",
-  "t": "07:24",
+  "t": "07:19",
   "speaker": "PIP",
   "mouth": "ON",
-  "words": 52,
-  "text": "Every night, in every dressing room, I'd sit there thinking: if I stood up and walked out right now, would anyone in this band notice before the encore? And I never got an answer, because I never tested it. So one night I tested it. I walked out before anybody could answer."
+  "words": 22,
+  "text": "I sat in the dressing room every night thinking nobody in that band would notice if I vanished. So I vanished first."
  },
  {
   "beat": "B13",
-  "t": "07:32",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 16,
-  "text": "Hold onto what she just said. In fifteen days a light is going to check it."
- },
- {
-  "beat": "B13",
-  "t": "07:40",
+  "t": "07:33",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 23,
-  "text": "I'd have noticed. I did notice. I noticed for about three years straight. I just never said it anywhere you could hear it."
+  "words": 2,
+  "text": "I noticed."
  },
  {
   "beat": "B13",
   "t": "07:47",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 10,
-  "text": "You could have called. There's a phone in every van."
- },
- {
-  "beat": "B13",
-  "t": "07:55",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 21,
-  "text": "You'd changed the number. I checked. Twice. Second time I got a dentist in another city. Nice man. Didn't know you."
+  "words": 7,
+  "text": "I just never said it out loud."
  },
  {
   "beat": "B13",
-  "t": "08:03",
+  "t": "08:01",
   "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 4,
-  "text": "So what happens now?"
- },
- {
-  "beat": "B13",
-  "t": "08:11",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 16,
-  "text": "Now we survive a rock. The rest of it can wait until the rock is smaller."
+  "mouth": "ON",
+  "words": 6,
+  "text": "So what do we do now?"
  },
  {
   "beat": "B14",
-  "t": "08:20",
+  "t": "08:15",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 19,
-  "text": "Two weeks. The furthest thing I've looked at in two weeks is thirty metres away, and it's her tent."
+  "words": 10,
+  "text": "I haven't seen further than thirty metres in two weeks."
  },
  {
   "beat": "B14",
   "t": "08:30",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 61,
-  "text": "Day fourteen. He decides to walk it off. One lap of the world. He passes the crate. He passes the vent. He passes the crate again — which is the trouble with laps. On a normal planet you can walk until the problem is behind you. On this one the problem is forty seconds ahead of you, and it's the same crate."
- },
- {
-  "beat": "B14",
-  "t": "08:40",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 16,
-  "text": "I'm not doing great. Up here. The rock's holding up fine. I'm the one coming apart."
+  "words": 7,
+  "text": "I'm not doing great. In the head."
  },
  {
   "beat": "B15",
-  "t": "08:48",
+  "t": "08:45",
   "speaker": "ORB",
   "mouth": null,
-  "words": 69,
-  "text": "Day fifteen. Halfway. So I brought the best thing I own. A dome. Glass. A garden in it — real air, real trees, a real bath with real hot water. It's yours tonight. Sleep under glass, wake up to birdsong — I have birdsong. All it costs is the planet: three hundred metres, down to one hundred. At a hundred metres you will hear each other breathe. I did mention that."
+  "words": 20,
+  "text": "Real air. Real trees. Real shade. All of it is yours — if the planet goes to a hundred metres."
  },
  {
   "beat": "B15",
   "t": "08:55",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 16,
-  "text": "There's a tree. There is an actual tree. I forgot what they look like from underneath."
- },
- {
-  "beat": "B15",
-  "t": "09:01",
   "speaker": "PIP",
   "mouth": "ON",
   "words": 1,
-  "text": "No."
+  "text": "…No."
  },
  {
   "beat": "B15",
-  "t": "09:08",
+  "t": "09:05",
   "speaker": "ORB",
   "mouth": null,
-  "words": 8,
-  "text": "She gets ten seconds to change her mind."
+  "words": 6,
+  "text": "Ten seconds to change your mind."
  },
  {
   "beat": "B15",
   "t": "09:15",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 4,
-  "text": "Pip. There's a bath."
+  "words": 3,
+  "text": "There were trees."
  },
  {
   "beat": "B15",
-  "t": "09:21",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 55,
-  "text": "I said no. He keeps calling it the best thing he owns. Not the best thing we can win — the best thing he owns. That's a different sentence, and I don't like where it goes. Besides, a hundred metres is where he starts hearing me breathe. I'm not ready for him to hear me breathe."
- },
- {
-  "beat": "B15",
-  "t": "09:28",
+  "t": "09:25",
   "speaker": "ORB",
   "mouth": null,
-  "words": 5,
-  "text": "Time. Dome's gone. Planet stays."
+  "words": 3,
+  "text": "Regret it yet?"
  },
  {
   "beat": "B15",
   "t": "09:35",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 16,
-  "text": "There were trees. I'd have given a whole planet for one tree. She didn't even look."
- },
- {
-  "beat": "B15",
-  "t": "09:41",
   "speaker": "ORB",
   "mouth": null,
-  "words": 25,
-  "text": "Any second thoughts? Sit with those for a while. And while you're sitting — the crate's still there. Still sealed. Still waiting on the right night."
+  "words": 6,
+  "text": "Remember — there's still a crate."
  },
  {
   "beat": "B16",
-  "t": "09:47",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 17,
-  "text": "Day sixteen. Ration bars, arranged into a heart, by the person who said no to a bath."
- },
- {
-  "beat": "B16",
-  "t": "09:51",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 13,
-  "text": "It's not a heart. It's a triangle that went wrong on the left."
- },
- {
-  "beat": "B16",
-  "t": "09:56",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 17,
-  "text": "It's a heart. I've drawn worse ones on drum cases. Yours has a corner. Mine had wheels."
- },
- {
-  "beat": "B16",
-  "t": "10:00",
+  "t": "09:45",
   "speaker": "PIP",
   "mouth": "ON",
-  "words": 5,
-  "text": "So we're — what, then? Colleagues?"
- },
- {
-  "beat": "B16",
-  "t": "10:05",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 5,
-  "text": "Bandmates. Say the real word."
- },
- {
-  "beat": "B16",
-  "t": "10:09",
-  "speaker": "PIP",
-  "mouth": "OFF",
   "words": 1,
-  "text": "…Bandmates."
+  "text": "Bandmates?"
  },
  {
   "beat": "B16",
-  "t": "10:13",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 11,
-  "text": "Four notes on a ration tin. Keep those. They come back."
- },
- {
-  "beat": "B16",
-  "t": "10:18",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 38,
-  "text": "Alone, he reads. The title, in case you can't see it from there: How To Stop Being A Drummer About It. Chapter one is called \"Listen.\" He takes notes. In pencil. Hard enough to go through the page."
- },
- {
-  "beat": "B16",
-  "t": "10:22",
+  "t": "09:58",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 16,
-  "text": "\"Before you hit something, ask what it did.\" …That's the whole chapter? Fine. Fine. I'll ask."
+  "words": 1,
+  "text": "Bandmates."
  },
  {
-  "beat": "B17",
-  "t": "10:27",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 21,
-  "text": "That thing is still on your head? Every photo we ever took, it was on your head. You slept in it."
- },
- {
-  "beat": "B17",
-  "t": "10:32",
-  "speaker": "GRUFF",
+  "beat": "B16",
+  "t": "10:11",
+  "speaker": "ORB",
   "mouth": null,
-  "words": 20,
-  "text": "There's a story behind it. You'll get it on the last night we're on this rock. Not one night sooner."
+  "words": 4,
+  "text": "He's on chapter three."
  },
  {
   "beat": "B17",
-  "t": "10:37",
+  "t": "10:25",
   "speaker": "PIP",
   "mouth": "OFF",
+  "words": 5,
+  "text": "You still wear that thing?"
+ },
+ {
+  "beat": "B17",
+  "t": "10:35",
+  "speaker": "GRUFF",
+  "mouth": null,
   "words": 7,
-  "text": "The last night. Why the last night?"
+  "text": "There's something about it I'll tell you."
  },
  {
   "beat": "B17",
-  "t": "10:42",
+  "t": "10:45",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 9,
-  "text": "Because on the last night you can't leave early."
- },
- {
-  "beat": "B17",
-  "t": "10:47",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 22,
-  "text": "He said the last night. So now I have to be here for the last night. He knows exactly what he did."
- },
- {
-  "beat": "B17",
-  "t": "10:52",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 14,
-  "text": "And that, for anyone taking notes, is how you keep somebody on a planet."
+  "words": 8,
+  "text": "The last night on this rock. Not before."
  },
  {
   "beat": "B18",
-  "t": "10:57",
+  "t": "10:55",
   "speaker": "ORB",
   "mouth": null,
-  "words": 42,
-  "text": "Day twenty. Tonight the crate can open. Five platters, revealed right to left — each one a price for the lid. And a warning, which I will only give once: the best deal on this tray may be the one you never lift."
+  "words": 21,
+  "text": "Day twenty. Five platters. One of them opens the crate. Careful — the best deal might be the one you skip."
  },
  {
   "beat": "B18",
-  "t": "11:01",
+  "t": "11:02",
   "speaker": "ORB",
   "mouth": null,
-  "words": 13,
-  "text": "Platter one. Open the crate for two hundred thousand out of the prize."
+  "words": 8,
+  "text": "Pay two hundred thousand out of the prize."
  },
  {
   "beat": "B18",
-  "t": "11:06",
+  "t": "11:09",
   "speaker": "GRUFF",
   "mouth": null,
   "words": 1,
@@ -905,255 +561,135 @@
  },
  {
   "beat": "B18",
-  "t": "11:11",
+  "t": "11:16",
   "speaker": "ORB",
   "mouth": null,
-  "words": 9,
-  "text": "Platter two. Half a million out of the prize."
+  "words": 3,
+  "text": "Five hundred thousand."
  },
  {
   "beat": "B18",
-  "t": "11:15",
-  "speaker": "PIP",
-  "mouth": "OFF",
+  "t": "11:23",
+  "speaker": "GRUFF",
+  "mouth": null,
+  "words": 1,
+  "text": "No."
+ },
+ {
+  "beat": "B18",
+  "t": "11:31",
+  "speaker": "ORB",
+  "mouth": null,
   "words": 6,
-  "text": "Absolutely not. That's most of it."
+  "text": "Shrink the planet to twenty-five metres."
  },
  {
   "beat": "B18",
-  "t": "11:20",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 17,
-  "text": "Platter three. Open the crate — and the planet drops to twenty-five metres. The size of a house."
- },
- {
-  "beat": "B18",
-  "t": "11:25",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 8,
-  "text": "Five seconds on this one. Houses go fast."
- },
- {
-  "beat": "B18",
-  "t": "11:29",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 16,
-  "text": "Take it. A house is fine. I've lived in a house. Never lived in a planet."
- },
- {
-  "beat": "B18",
-  "t": "11:34",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 8,
-  "text": "Take it. Now — before I think about it."
- },
- {
-  "beat": "B18",
-  "t": "11:39",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 12,
-  "text": "Settled on three. Then let's see what you left on the tray."
- },
- {
-  "beat": "B18",
-  "t": "11:43",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 5,
-  "text": "Free. Platter four was free."
- },
- {
-  "beat": "B18",
-  "t": "11:48",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 9,
-  "text": "You said the best deal might be the one—"
- },
- {
-  "beat": "B18",
-  "t": "11:53",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 13,
-  "text": "I did. I said it out loud, with my halo on. Look up."
- },
- {
-  "beat": "B18",
-  "t": "11:57",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 34,
-  "text": "Twenty-five metres. A planet the size of a house, bought at a price they didn't have to pay. Every deal costs something here — and the free ones cost the most, because you remember them."
- },
- {
-  "beat": "B19",
-  "t": "12:03",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 31,
-  "text": "Two tickets on the rescue ship. One each. Whoever wins whatever's in the prize, whoever doesn't — you both leave this rock alive, and you both leave it on the same ship."
- },
- {
-  "beat": "B19",
-  "t": "12:09",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 14,
-  "text": "Two names. He put both names on. I didn't think there'd be two names."
- },
- {
-  "beat": "B19",
-  "t": "12:15",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 22,
-  "text": "That's it. That's the thing I came up here for. Not the money — that. Her name on a ticket next to mine."
- },
- {
-  "beat": "B19",
-  "t": "12:21",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 10,
-  "text": "The tickets have a price. It's underneath you. Look down."
- },
- {
-  "beat": "B20",
-  "t": "12:27",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 46,
-  "text": "Twenty-five metres. From orbit it looks like a pebble somebody dropped two people on. Arm's reach is now the entire neighbourhood. Sleeping, washing, the hole with a view — all of it within three metres of the other person, for as long as there is a planet."
- },
- {
-  "beat": "B20",
-  "t": "12:32",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 25,
-  "text": "I can hear you swallow. I can hear you think. I'm going to learn what your thoughts sound like, and neither of us wants that."
- },
- {
-  "beat": "B20",
-  "t": "12:37",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 6,
-  "text": "There is no smaller than this."
- },
- {
-  "beat": "B20",
-  "t": "12:42",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 8,
-  "text": "There are five smaller than this. I've counted."
- },
- {
-  "beat": "B21",
-  "t": "12:47",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 7,
-  "text": "Rules change. Right now. All of them."
- },
- {
-  "beat": "B21",
-  "t": "12:52",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 48,
-  "text": "This is the launch key. It fits that pod. The pod has one seat. Turn the key, and you leave tonight — with everything in the crate, and everything I've added to it. The one still standing on the rock gets nothing. Not a ticket. Not a ride. Nothing."
- },
- {
-  "beat": "B21",
-  "t": "12:57",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 2,
-  "text": "One seat."
- },
- {
-  "beat": "B21",
-  "t": "13:02",
+  "t": "11:38",
   "speaker": "GRUFF",
   "mouth": null,
   "words": 2,
-  "text": "One seat."
+  "text": "Take it."
  },
  {
-  "beat": "B21",
-  "t": "13:07",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 62,
-  "text": "I'll say the rest once, so nobody argues later. The key stays on the platter, on the pad, inside the red ring — where either of you can reach it and neither of you can pretend you couldn't. The red line still means quit: cross it, both of you go home empty. The key means the opposite. One of you goes home full."
- },
- {
-  "beat": "B21",
-  "t": "13:12",
+  "beat": "B18",
+  "t": "11:45",
   "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 20,
-  "text": "He put it inside the ring. Right where we'd have to look at it every time we look at anything."
+  "mouth": "ON",
+  "words": 2,
+  "text": "Take it."
  },
  {
-  "beat": "B21",
-  "t": "13:17",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 34,
-  "text": "And from tonight the planet loses size every single day. Twenty metres. Twelve. Seven. Four. Two. Five days, five numbers, one key. The red line still quits you both. The key only quits one."
- },
- {
-  "beat": "B21",
-  "t": "13:22",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 5,
-  "text": "Two metres. That's a doormat."
- },
- {
-  "beat": "B21",
-  "t": "13:27",
+  "beat": "B18",
+  "t": "11:52",
   "speaker": "ORB",
   "mouth": null,
   "words": 4,
-  "text": "That's the whole idea."
+  "text": "Free. It was free."
  },
  {
-  "beat": "B22",
-  "t": "13:32",
+  "beat": "B19",
+  "t": "12:00",
   "speaker": "ORB",
   "mouth": null,
-  "words": 61,
-  "text": "Here is my favourite hour of the month. That column hears everything — pulse, breath, the little pause before a lie. Stand in it, answer a question. Green means true. Red means you lied to somebody you're tethered to — and the tether will remember. One question each. Choose it like it's the last thing you'll ever find out about the other one."
+  "words": 14,
+  "text": "Two tickets on the rescue ship. You both go home. Whoever wins, whoever doesn't."
  },
  {
-  "beat": "B22",
-  "t": "13:37",
+  "beat": "B19",
+  "t": "12:08",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 22,
-  "text": "I'll go. Before I lose my nerve. I've had a question for three years; might as well ask it under a light."
+  "words": 5,
+  "text": "That's the redemption. Right there."
  },
  {
-  "beat": "B22",
-  "t": "13:43",
+  "beat": "B19",
+  "t": "12:16",
   "speaker": "ORB",
   "mouth": null,
   "words": 8,
-  "text": "Pip. Into the beam. He asks, you answer."
+  "text": "The tickets come at a cost. Look down."
+ },
+ {
+  "beat": "B20",
+  "t": "12:25",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 18,
+  "text": "Twenty-five metres. They cannot be out of arm's reach. Sleeping, washing, the toilet — everything within three metres."
+ },
+ {
+  "beat": "B20",
+  "t": "12:31",
+  "speaker": "PIP",
+  "mouth": "ON",
+  "words": 6,
+  "text": "It can't get smaller than this."
+ },
+ {
+  "beat": "B20",
+  "t": "12:38",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 2,
+  "text": "It can."
+ },
+ {
+  "beat": "B21",
+  "t": "12:45",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 8,
+  "text": "I'm changing the rules of this entire video."
+ },
+ {
+  "beat": "B21",
+  "t": "13:00",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 26,
+  "text": "The escape pod launch key. The pod has one seat. Whoever launches it goes home now — with the whole prize. The other one gets nothing."
+ },
+ {
+  "beat": "B21",
+  "t": "13:15",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 15,
+  "text": "And from today the planet loses size every single day. Twenty. Twelve. Seven. Four. Two."
  },
  {
   "beat": "B22",
-  "t": "13:48",
+  "t": "13:30",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 17,
+  "text": "This is the part I like. Green for truth. Red for a lie. Ask each other anything."
+ },
+ {
+  "beat": "B22",
+  "t": "13:42",
   "speaker": "GRUFF",
   "mouth": null,
   "words": 5,
@@ -1161,7 +697,7 @@
  },
  {
   "beat": "B22",
-  "t": "13:53",
+  "t": "13:55",
   "speaker": "PIP",
   "mouth": "ON",
   "words": 1,
@@ -1169,159 +705,71 @@
  },
  {
   "beat": "B22",
-  "t": "13:58",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 1,
-  "text": "True."
- },
- {
-  "beat": "B22",
-  "t": "14:04",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 6,
-  "text": "…You sold twice what we sold."
- },
- {
-  "beat": "B22",
-  "t": "14:09",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 15,
-  "text": "I said better off. I didn't say richer. Different question. Ask me the other one."
- },
- {
-  "beat": "B22",
-  "t": "14:14",
+  "t": "14:07",
   "speaker": "PIP",
   "mouth": "ON",
   "words": 5,
-  "text": "Would you turn the key?"
+  "text": "Would you launch the pod?"
  },
  {
   "beat": "B22",
   "t": "14:20",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 8,
-  "text": "I would never leave you on a rock."
+  "words": 7,
+  "text": "I'd never leave you on a rock."
  },
  {
   "beat": "B22",
-  "t": "14:25",
+  "t": "14:32",
   "speaker": "ORB",
   "mouth": null,
-  "words": 20,
-  "text": "The Count carries the beam. The Count has chosen this exact moment to fall over. We'll call that answer… unread."
+  "words": 5,
+  "text": "Unverified. Technical fault. Moving on."
  },
  {
   "beat": "B22",
-  "t": "14:30",
+  "t": "14:45",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 5,
-  "text": "Fix it. Ask me again."
+  "words": 2,
+  "text": "Same question."
  },
  {
   "beat": "B22",
-  "t": "14:35",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 7,
-  "text": "One question per person. That was yours."
- },
- {
-  "beat": "B22",
-  "t": "14:41",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 13,
-  "text": "Ask me. Ask me the same thing. I'll stand in it all day."
- },
- {
-  "beat": "B22",
-  "t": "14:46",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 5,
-  "text": "Would you turn the key?"
- },
- {
-  "beat": "B22",
-  "t": "14:51",
+  "t": "14:57",
   "speaker": "PIP",
   "mouth": "ON",
   "words": 1,
   "text": "No."
  },
  {
-  "beat": "B22",
-  "t": "14:56",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 38,
-  "text": "One green. One blank. Hers is verified. His is a machine that fell over. Five days from that blank, we find out what colour it was — and the only instrument left that can tell us is a lever."
- },
- {
-  "beat": "B22",
-  "t": "15:02",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 22,
-  "text": "It was true. I don't need a light to tell me what I meant. …Mostly true. The light would have said mostly."
- },
- {
-  "beat": "B22",
-  "t": "15:07",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 25,
-  "text": "I believe him. I do. But I believed him about a lot of things, and I've got a light that says the machine wasn't sure."
- },
- {
   "beat": "B23",
-  "t": "15:15",
+  "t": "15:10",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 25,
-  "text": "She got her ending. Tickets, tears, the arm round the shoulder, the whole thing, on camera. That's hers now. Nobody can take it off her."
+  "words": 7,
+  "text": "She got her happy ending on camera."
  },
  {
   "beat": "B23",
   "t": "15:25",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 34,
-  "text": "I could turn this and be halfway home before she wakes up. The whole crate. And not one person watching would call it wrong — she did it first. She just didn't have a key."
- },
- {
-  "beat": "B23",
-  "t": "15:35",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 2,
-  "text": "…Not tonight."
+  "words": 18,
+  "text": "I could take the whole prize and be gone before she wakes up. Nobody would even blame me."
  },
  {
   "beat": "B24",
-  "t": "15:42",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 23,
-  "text": "Day twenty-six. Twelve metres. Two soundproof pods, because at this size a closed door is the only privacy left, and I'm feeling generous."
- },
- {
-  "beat": "B24",
-  "t": "15:47",
+  "t": "15:40",
   "speaker": "PIP",
   "mouth": "ON",
-  "words": 55,
-  "text": "Maybe he wants it even. I took the band, he takes the crate — maybe that's fair, and I'm the only one who doesn't see it. He still hasn't told me about the goggle. He said the last night. The last night is three nights away, and I don't know if he'll be here for it."
+  "words": 14,
+  "text": "Maybe he wants it to be even. Maybe after what I did, that's fair."
  },
  {
   "beat": "B24",
-  "t": "15:52",
+  "t": "15:48",
   "speaker": "ORB",
   "mouth": null,
   "words": 8,
@@ -1329,290 +777,186 @@
  },
  {
   "beat": "B24",
-  "t": "15:57",
+  "t": "15:56",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 14,
-  "text": "…Ask me on the last night. Everything's on the last night. It's getting crowded."
+  "words": 2,
+  "text": "…Good question."
  },
  {
-  "beat": "B24",
-  "t": "16:02",
+  "beat": "B25",
+  "t": "16:05",
   "speaker": "PIP",
   "mouth": "OFF",
-  "words": 20,
-  "text": "I can see his mouth move. I can't hear a word. That's the band, actually. That was the whole band."
+  "words": 3,
+  "text": "Put me down."
  },
  {
-  "beat": "B24",
-  "t": "16:07",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 15,
-  "text": "He didn't say no. I've been doing this a long time. They always say no."
- },
- {
-  "beat": "B24",
-  "t": "16:12",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 17,
-  "text": "Day twenty-seven. Seven metres. Walking is now a three-legged race where the third leg is the planet."
- },
- {
-  "beat": "B24",
-  "t": "16:17",
+  "beat": "B25",
+  "t": "16:15",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 6,
-  "text": "Left. Your left. That's my left."
- },
- {
-  "beat": "B24",
-  "t": "16:22",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 15,
-  "text": "There's only one left on a rock this size, Gruff, and you're standing on it."
- },
- {
-  "beat": "B25",
-  "t": "16:30",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 30,
-  "text": "Day twenty-eight. Four metres. He's taller than the world now. She fits inside his shadow. Somewhere under all that fur is a hand, and the hand is on a lever."
- },
- {
-  "beat": "B25",
-  "t": "16:41",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 28,
-  "text": "Every time she bumps me I want to pull this. Every single time. And she bumps me about once a minute now, because there's nowhere else to be."
- },
- {
-  "beat": "B25",
-  "t": "16:53",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 33,
-  "text": "I think he's getting ready to go. Tonight, or tomorrow. I keep waking up and checking his side of the rock — and there isn't a his side any more. There's just the rock."
- },
- {
-  "beat": "B25",
-  "t": "17:04",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 23,
-  "text": "Two days. One key. Four metres of planet, going on two. And a clock you can't see yet — you can only hear it."
+  "words": 1,
+  "text": "Where?"
  },
  {
   "beat": "B26",
-  "t": "17:13",
-  "speaker": "ORB",
+  "t": "16:25",
+  "speaker": "GRUFF",
   "mouth": null,
-  "words": 21,
-  "text": "Day twenty-nine. Two metres. The last night. A clock goes into the rock: twenty-four hours, and it only runs one way."
+  "words": 9,
+  "text": "Every bump makes me want to hit that lever."
  },
  {
   "beat": "B26",
+  "t": "16:47",
+  "speaker": "PIP",
+  "mouth": "ON",
+  "words": 7,
+  "text": "I think he's getting ready to leave."
+ },
+ {
+  "beat": "B27",
+  "t": "17:10",
+  "speaker": "GRUFF",
+  "mouth": null,
+  "words": 5,
+  "text": "I sold the tour van."
+ },
+ {
+  "beat": "B27",
   "t": "17:19",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 58,
-  "text": "I sold the van. The tour van. Three weeks before you left. I was buying you a solo record — a real one, a real label, your name on the sleeve. I was going to hand it to you on stage, last night of the tour, in front of everyone, so you'd know the band wanted it for you."
+  "words": 25,
+  "text": "I was buying you a solo ticket. Real one. Real label. Your name on it. I was going to give it to you on stage."
  },
  {
-  "beat": "B26",
-  "t": "17:26",
+  "beat": "B27",
+  "t": "17:28",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 50,
-  "text": "You left the week before I could. So I had a van's worth of money, a record with your name on it, and no you. This was the only thing from the band I didn't sell. I wear it so I'd remember I was going to do something good, once."
+  "words": 5,
+  "text": "You left the week before."
  },
  {
-  "beat": "B26",
-  "t": "17:32",
+  "beat": "B27",
+  "t": "17:37",
+  "speaker": "PIP",
+  "mouth": "OFF",
+  "words": 5,
+  "text": "That's why you kept it."
+ },
+ {
+  "beat": "B27",
+  "t": "17:46",
+  "speaker": "GRUFF",
+  "mouth": null,
+  "words": 5,
+  "text": "That's why I kept it."
+ },
+ {
+  "beat": "B28",
+  "t": "17:55",
   "speaker": "PIP",
   "mouth": "ON",
-  "words": 6,
-  "text": "You sold the van for me."
+  "words": 7,
+  "text": "I'm scared of the next twenty-four hours."
  },
  {
-  "beat": "B26",
-  "t": "17:38",
+  "beat": "B28",
+  "t": "18:08",
   "speaker": "GRUFF",
-  "mouth": null,
-  "words": 19,
-  "text": "It was a bad van. Smelled like a drum kit. You said so yourself, every morning for four years."
- },
- {
-  "beat": "B26",
-  "t": "17:45",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 34,
-  "text": "Three years I've thought he hated me for leaving. He didn't hate me for leaving. He hated that I left a week early. One week. I've been wrong about the whole shape of it."
- },
- {
-  "beat": "B26",
-  "t": "17:51",
-  "speaker": "ORB",
   "mouth": null,
   "words": 12,
-  "text": "Twenty-three hours, fifty minutes. The clock doesn't care what they just learned."
+  "text": "The whole prize would change my life more than half of it."
  },
  {
-  "beat": "B27",
-  "t": "18:01",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 32,
-  "text": "Eleven hours, seven minutes. Two shapes asleep against a crate, on a rock you could park in a driveway. One of them is not actually asleep. I'll let you work out which."
- },
- {
-  "beat": "B27",
-  "t": "18:15",
-  "speaker": "PIP",
-  "mouth": "OFF",
-  "words": 32,
-  "text": "I'm scared of tomorrow. More scared of the next eleven hours than of the twenty-nine days before them. He's asleep. His hand is closer to the door than it is to me."
- },
- {
-  "beat": "B27",
-  "t": "18:28",
+  "beat": "B28",
+  "t": "18:21",
   "speaker": "GRUFF",
   "mouth": null,
-  "words": 28,
-  "text": "All of it would change my life. Half of it would change it less. And once we're off this rock, there's every chance we never speak again anyway."
- },
- {
-  "beat": "B28",
-  "t": "18:37",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 17,
-  "text": "Three seconds. That is where this ends up. Rewind ten minutes and watch how it gets there."
- },
- {
-  "beat": "B28",
-  "t": "18:42",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 46,
-  "text": "Ten minutes. The key still fits. The seat is still empty. Nobody has crossed the red line, and nobody has turned the key. Both of those are still available, and I am going to stand here and say the numbers out loud, because that's the job."
- },
- {
-  "beat": "B28",
-  "t": "18:47",
-  "speaker": "PIP",
-  "mouth": "OFF",
   "words": 9,
-  "text": "You said you'd never leave me on a rock."
+  "text": "And after this we might never talk again anyway."
  },
  {
-  "beat": "B28",
-  "t": "18:52",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 8,
-  "text": "I know what I said. The machine didn't."
- },
- {
-  "beat": "B28",
-  "t": "18:57",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 16,
-  "text": "One minute, ten seconds. Last call for the pod. After this, the key is a souvenir."
- },
- {
-  "beat": "B28",
-  "t": "19:02",
+  "beat": "B29",
+  "t": "18:35",
   "speaker": "ORB",
   "mouth": null,
   "words": 2,
-  "text": "Fourteen seconds."
+  "text": "Ten minutes."
  },
  {
-  "beat": "B28",
-  "t": "19:07",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 15,
-  "text": "…Not for money. Not for a van. Not for anything with a lid on it."
- },
- {
-  "beat": "B28",
-  "t": "19:12",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 1,
-  "text": "Stay."
- },
- {
-  "beat": "B28",
-  "t": "19:17",
+  "beat": "B29",
+  "t": "18:42",
   "speaker": "ORB",
   "mouth": null,
-  "words": 3,
-  "text": "Three. Two. One."
+  "words": 9,
+  "text": "A minute and twelve seconds. Last chance to launch."
  },
  {
-  "beat": "B28",
+  "beat": "B29",
+  "t": "18:50",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 2,
+  "text": "Sixteen seconds."
+ },
+ {
+  "beat": "B29",
+  "t": "18:58",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 1,
+  "text": "Three."
+ },
+ {
+  "beat": "B29",
+  "t": "19:06",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 1,
+  "text": "Two."
+ },
+ {
+  "beat": "B29",
+  "t": "19:14",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 1,
+  "text": "One."
+ },
+ {
+  "beat": "B29",
   "t": "19:22",
   "speaker": "ORB",
   "mouth": null,
-  "words": 3,
-  "text": "Out of time."
- },
- {
-  "beat": "B28",
-  "t": "19:27",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 33,
-  "text": "And that is the sound of a rescue ship arriving at a world you could fit in a garage. Thirty days. Nine numbers. One key, never turned. Both tickets valid. Both seats taken."
- },
- {
-  "beat": "B29",
-  "t": "19:33",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 18,
-  "text": "Anklets open. Half each — and both tickets. So. Where do a singer and a drummer go from here?"
- },
- {
-  "beat": "B29",
-  "t": "19:39",
-  "speaker": "ORB",
-  "mouth": null,
-  "words": 10,
-  "text": "I did not have that on my list of outcomes."
- },
- {
-  "beat": "B29",
-  "t": "19:45",
-  "speaker": "PIP",
-  "mouth": "ON",
-  "words": 8,
-  "text": "Tour van's sold. We'll need a new van."
- },
- {
-  "beat": "B29",
-  "t": "19:51",
-  "speaker": "GRUFF",
-  "mouth": null,
-  "words": 8,
-  "text": "I'll drum on the tin until we do."
+  "words": 2,
+  "text": "Time's up."
  },
  {
   "beat": "B30",
-  "t": "19:57",
+  "t": "19:30",
   "speaker": "ORB",
   "mouth": null,
   "words": 5,
-  "text": "The band is back. Subscribe."
+  "text": "Half each. And both tickets."
+ },
+ {
+  "beat": "B30",
+  "t": "19:42",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 9,
+  "text": "So — what's next for the two of you?"
+ },
+ {
+  "beat": "B31",
+  "t": "19:55",
+  "speaker": "ORB",
+  "mouth": null,
+  "words": 3,
+  "text": "Band's back. Subscribe."
  }
 ]
