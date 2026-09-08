@@ -318,17 +318,12 @@ Stylized 3D-animated feature look, NOT photoreal: matte materials, soft global i
 
 | master / view | shots referencing |
 |---|---|
+| `M_GRUFF` | 93 |
+| `M_PIP` | 92 |
 | `M_SET_pad` | 55 |
-| `M_GRUFF_3q` | 40 |
-| `M_PIP_front` | 34 |
-| `M_PIP_3q` | 33 |
-| `M_GRUFF_front` | 32 |
+| `M_ORB` | 38 |
 | `M_PLANET_2` | 22 |
-| `M_PIP_expr` | 21 |
-| `M_ORB_3q` | 20 |
 | `M_PLANET_300` | 20 |
-| `M_GRUFF_expr` | 19 |
-| `M_ORB_front` | 18 |
 | `M_PLANET_1000` | 17 |
 | `M_SET_pip_camp` | 16 |
 | `M_SET_gruff_cave` | 16 |
@@ -337,8 +332,6 @@ Stylized 3D-animated feature look, NOT photoreal: matte materials, soft global i
 | `M_SET_pod_door` | 15 |
 | `M_PLANET_500` | 12 |
 | `M_SET_truth_beam` | 12 |
+| `M_COUNT` | 9 |
 | `M_PLANET_12` | 8 |
 | `M_PLANET_4` | 5 |
-| `M_COUNT_3q` | 4 |
-| `M_COUNT_front` | 3 |
-| `M_COUNT_expr` | 2 |

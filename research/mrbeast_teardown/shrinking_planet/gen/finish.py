@@ -33,7 +33,7 @@ prev_day=0
 mshots=collections.defaultdict(list)
 for s in shots: mshots[s["beat"]].append(s)
 man_beats={s["beat"] for s in shots}
-if [b["beat"] for b in beats]!=[f"B{i:02d}" for i in range(1,32)]: errs.append("beat sequence not B01..B31")
+if [b["beat"] for b in beats]!=[f"B{i:02d}" for i in range(1,37)]: errs.append("beat sequence not B01..B31")
 for b in beats:
     d=dict(b["tags"]); tags=collections.defaultdict(list)
     for k,v in b["tags"]: tags[k].append(v)
