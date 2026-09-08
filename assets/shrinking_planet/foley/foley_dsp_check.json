@@ -1,0 +1,186 @@
+{
+ "S001.flac": {
+  "dur": 1.97,
+  "rms": 0.2304,
+  "peak": 0.86,
+  "onsets": 21,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S002.flac": {
+  "dur": 0.98,
+  "rms": 0.0054,
+  "peak": 0.078,
+  "onsets": 5,
+  "flatness": 0.147,
+  "verdict": "OK"
+ },
+ "S004.flac": {
+  "dur": 1.97,
+  "rms": 0.0328,
+  "peak": 0.661,
+  "onsets": 16,
+  "flatness": 0.14,
+  "verdict": "OK"
+ },
+ "S005.flac": {
+  "dur": 3.97,
+  "rms": 0.2594,
+  "peak": 1.0,
+  "onsets": 38,
+  "flatness": 0.001,
+  "verdict": "OK"
+ },
+ "S006.flac": {
+  "dur": 1.97,
+  "rms": 0.0171,
+  "peak": 1.0,
+  "onsets": 4,
+  "flatness": 0.121,
+  "verdict": "OK"
+ },
+ "S007.flac": {
+  "dur": 0.98,
+  "rms": 0.0576,
+  "peak": 0.173,
+  "onsets": 18,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S008.flac": {
+  "dur": 1.97,
+  "rms": 0.0173,
+  "peak": 0.399,
+  "onsets": 25,
+  "flatness": 0.02,
+  "verdict": "OK"
+ },
+ "S009.flac": {
+  "dur": 0.98,
+  "rms": 0.0724,
+  "peak": 0.928,
+  "onsets": 11,
+  "flatness": 0.007,
+  "verdict": "OK"
+ },
+ "S010.flac": {
+  "dur": 0.98,
+  "rms": 0.0261,
+  "peak": 0.516,
+  "onsets": 8,
+  "flatness": 0.026,
+  "verdict": "OK"
+ },
+ "S011.flac": {
+  "dur": 0.98,
+  "rms": 0.0217,
+  "peak": 0.116,
+  "onsets": 9,
+  "flatness": 0.002,
+  "verdict": "OK"
+ },
+ "S012.flac": {
+  "dur": 0.98,
+  "rms": 0.0262,
+  "peak": 0.535,
+  "onsets": 7,
+  "flatness": 0.037,
+  "verdict": "OK"
+ },
+ "S013.flac": {
+  "dur": 2.97,
+  "rms": 0.153,
+  "peak": 1.0,
+  "onsets": 28,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S014.flac": {
+  "dur": 1.97,
+  "rms": 0.1517,
+  "peak": 0.619,
+  "onsets": 32,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S015.flac": {
+  "dur": 1.97,
+  "rms": 0.0127,
+  "peak": 0.346,
+  "onsets": 10,
+  "flatness": 0.041,
+  "verdict": "OK"
+ },
+ "S016.flac": {
+  "dur": 0.98,
+  "rms": 0.0906,
+  "peak": 0.358,
+  "onsets": 13,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S017.flac": {
+  "dur": 0.98,
+  "rms": 0.0531,
+  "peak": 0.232,
+  "onsets": 13,
+  "flatness": 0.001,
+  "verdict": "OK"
+ },
+ "S018.flac": {
+  "dur": 1.97,
+  "rms": 0.0296,
+  "peak": 0.193,
+  "onsets": 15,
+  "flatness": 0.006,
+  "verdict": "OK"
+ },
+ "S019.flac": {
+  "dur": 3.97,
+  "rms": 0.0182,
+  "peak": 0.496,
+  "onsets": 3,
+  "flatness": 0.002,
+  "verdict": "OK"
+ },
+ "S020.flac": {
+  "dur": 2.97,
+  "rms": 0.1396,
+  "peak": 1.0,
+  "onsets": 4,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S021.flac": {
+  "dur": 5.97,
+  "rms": 0.2788,
+  "peak": 1.0,
+  "onsets": 97,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S022.flac": {
+  "dur": 5.97,
+  "rms": 0.1562,
+  "peak": 0.615,
+  "onsets": 94,
+  "flatness": 0.0,
+  "verdict": "OK"
+ },
+ "S023.flac": {
+  "dur": 3.97,
+  "rms": 0.0022,
+  "peak": 0.125,
+  "onsets": 19,
+  "flatness": 0.067,
+  "verdict": "SILENT"
+ },
+ "S024.flac": {
+  "dur": 4.97,
+  "rms": 0.0867,
+  "peak": 0.343,
+  "onsets": 63,
+  "flatness": 0.0,
+  "verdict": "OK"
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "S001": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S001_take1.mp4",
+  "in": 0.0,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "soft electronic halo pulse, two short tones, deep-space silence bed",
+  "flac": "output/shrinking_planet/foley/S001.flac"
+ },
+ "S002": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S002_take1.mp4",
+  "in": 4.5,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot",
+  "flac": "output/shrinking_planet/foley/S002.flac"
+ },
+ "S004": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S002_take1.mp4",
+  "in": 5.5,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot",
+  "flac": "output/shrinking_planet/foley/S004.flac"
+ },
+ "S005": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S005_take1.mp4",
+  "in": 0.0,
+  "slot": 4.0,
+  "gen_dur": 4.0,
+  "prompt": "deep low hum rising as warm light blooms from a metal crate, faint metallic creak",
+  "flac": "output/shrinking_planet/foley/S005.flac"
+ },
+ "S006": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S006_take1.mp4",
+  "in": 0.0,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence",
+  "flac": "output/shrinking_planet/foley/S006.flac"
+ },
+ "S007": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S007_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "low bristling fur rustle, a heavy exhale through fur",
+  "flac": "output/shrinking_planet/foley/S007.flac"
+ },
+ "S008": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S008_take1.mp4",
+  "in": 0.0,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "metal chain links settling on rock, a soft hover whir descending",
+  "flac": "output/shrinking_planet/foley/S008.flac"
+ },
+ "S009": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S009_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "fur bristling, a low rumble in the chest",
+  "flac": "output/shrinking_planet/foley/S009.flac"
+ },
+ "S010": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S010_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "quick bright breath, small mouth click",
+  "flac": "output/shrinking_planet/foley/S010.flac"
+ },
+ "S011": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S009_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "fur bristling, a low rumble in the chest",
+  "flac": "output/shrinking_planet/foley/S011.flac"
+ },
+ "S012": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S010_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "quick bright breath, small mouth click",
+  "flac": "output/shrinking_planet/foley/S012.flac"
+ },
+ "S013": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S013_take1.mp4",
+  "in": 0.0,
+  "slot": 3.0,
+  "gen_dur": 3.0,
+  "prompt": "electric flare of a ring light, faint capacitor whine",
+  "flac": "output/shrinking_planet/foley/S013.flac"
+ },
+ "S014": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S014_take1.mp4",
+  "in": 0.0,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "heavy footfall on basalt, a hover whir receding",
+  "flac": "output/shrinking_planet/foley/S014.flac"
+ },
+ "S015": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S015_take1.mp4",
+  "in": 0.0,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "two hard metallic anklet clicks with a short ring, then silence",
+  "flac": "output/shrinking_planet/foley/S015.flac"
+ },
+ "S016": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S007_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "low bristling fur rustle, a heavy exhale through fur",
+  "flac": "output/shrinking_planet/foley/S016.flac"
+ },
+ "S017": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S006_take1.mp4",
+  "in": 0.0,
+  "slot": 1.0,
+  "gen_dur": 1.0,
+  "prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence",
+  "flac": "output/shrinking_planet/foley/S017.flac"
+ },
+ "S018": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S018_take1.mp4",
+  "in": 0.0,
+  "slot": 2.0,
+  "gen_dur": 2.0,
+  "prompt": "anklet chain jerk, a fast whip of cloth",
+  "flac": "output/shrinking_planet/foley/S018.flac"
+ },
+ "S019": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S019_take1.mp4",
+  "in": 0.0,
+  "slot": 4.0,
+  "gen_dur": 4.0,
+  "prompt": "distant thin wind over rock, three small pad lights ticking",
+  "flac": "output/shrinking_planet/foley/S019.flac"
+ },
+ "S020": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S020_take1.mp4",
+  "in": 0.0,
+  "slot": 3.0,
+  "gen_dur": 3.0,
+  "prompt": "electronic halo pulse in speech rhythm, then a dimming hum",
+  "flac": "output/shrinking_planet/foley/S020.flac"
+ },
+ "S021": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S021_take1.mp4",
+  "in": 0.0,
+  "slot": 6.0,
+  "gen_dur": 6.0,
+  "prompt": "launch whoosh, rising thruster roar that thins to vacuum silence, low sub swell",
+  "flac": "output/shrinking_planet/foley/S021.flac"
+ },
+ "S022": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S022_take1.mp4",
+  "in": 0.0,
+  "slot": 6.0,
+  "gen_dur": 6.0,
+  "prompt": "foley for: Camera dives from orbit toward the planet's north pole, the sky haze thickening as it passes through, settling on a slow glide over the magenta tent. Stars stre",
+  "flac": "output/shrinking_planet/foley/S022.flac"
+ },
+ "S023": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S023_take1.mp4",
+  "in": 0.0,
+  "slot": 4.0,
+  "gen_dur": 4.0,
+  "prompt": "foley for: Camera locked. PIP pulls a ration crate open, lays three bars in a neat row, straightens the scarf, looks up at the curved horizon and sighs; fronds settle.",
+  "flac": "output/shrinking_planet/foley/S023.flac"
+ },
+ "S024": {
+  "src": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S024_take1.mp4",
+  "in": 0.0,
+  "slot": 5.0,
+  "gen_dur": 5.0,
+  "prompt": "foley for: Camera locked wide. ORB hovers high over the tent, halo pulsing as it narrates, drifting a slow arc; PIP below shades her eyes and looks up at it; the horizon c",
+  "flac": "output/shrinking_planet/foley/S024.flac"
+ }
+}
