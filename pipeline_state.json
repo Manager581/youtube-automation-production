@@ -106,7 +106,7 @@
       "status": "ACTIVE",
       "channel": "TBD (owner)",
       "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
-      "next": "(1) owner allows chatgpt.com automatic downloads -> download remaining 23 -> contact sheet (scripts/contact_sheet.py) -> GATE 1 packet -> owner picks (incl. PLANET_500 vs _alt, ARCH_01 v1 vs v2) -> scripts/seed_lock.py lock; (2) composite seeds (build_composite_seeds.py) -> hook prototype (~14 Grok clips, first credit spend) -> hook_score vs hook_targets_v1.json -> GATE 2.",
+      "next": "(1) OWNER SPEND SIGN-OFF for the first-3-min batch: 37 Grok i2v clips (ytmanager628 paid acct, 3-tab recipe) + ~3,976 ElevenLabs chars (vo_chunks_v2_0-3min, SHA-locked). (2) Meanwhile zero-credit: extend hook_edit_spec_v1 (0:00-0:45) to a full 0:00-3:00 edit spec; dry-run render with seeds as stand-ins for timing/coverage only (never shipped).",
       "gate": 1,
       "activated": "2026-08-31",
       "built_2026-08-31": "Phase A machinery: story_gate (S3), continuity_check (S4/S6), seed_lock (GATE 1), clip_bank (GATE 5), hook_score (GATE 2, ref-calibrated), lib/assembly/{edit_layer,assemble_manifest,render_edit_spec}, build_composite_seeds, contact_sheet \u2014 all wired in run_gates.py, all self-tested fail-closed. SCRIPT_v1 written (story_gate: 10 FAILs -> fix pass pending after reviewer).",
@@ -114,14 +114,13 @@
       "blocker": "Chrome blocks automatic multiple downloads from chatgpt.com after the first file (per-site permission). Per memory rule (Chrome download-block -> ask owner, no workarounds): owner must allow 'Automatic downloads' for chatgpt.com (address-bar blocked-downloads icon, or chrome://settings/content/automaticDownloads), then rerun the ordered download loop (23 remaining, order + src map in the tab's localStorage 'sp_final').",
       "hook_prep_2026-08-31": "hook_edit_spec_v1.json (21 segments, 20 edit-layer ops + 6 archive overlay cards, reference-measured timings) renders END-TO-END via lib/assembly/render_edit_spec.py (dry run with a synthetic stand-in clip in every slot: 45.0 s, output/shrinking_planet/hook_dryrun.mp4; stand-ins make cuts between identical clips invisible to the scorer, so the dry-run FAIL on hard_cuts/gap is expected and not a spec defect). Foley prompts on 15 hook shots. VO chunks for script v2 pre-cut (5 chunks / 20.5k chars; re-chunk after owner edit).",
       "owner_gates_pending": [
-        "Chrome automatic-downloads permission for https://chatgpt.com (23 masters waiting in the thread)",
-        "GATE 1 seed pick (incl. PLANET_500 vs _alt, ARCH_01 v1 vs v2) -> seed_lock",
-        "GATE 3 script read/edit -> hash -> ElevenLabs one pass (credits)",
-        "GATE 2 spend sign-off: ~14 Grok clips for the hook prototype (credits)"
+        "SPEND: 37 Grok i2v clips + ~4k ElevenLabs chars for 0:00-3:00 (first credits of this lane)",
+        "GATE 3 script read/edit (SCRIPT_v2_first3min_readthrough.md sent 2026-09-08) -> hash -> ElevenLabs one pass"
       ],
       "gate1_2026-08-31": "OWNER: keep (current look). 23 masters sha-locked (SEED_LOCK.json); ARCH_01 = identity regen v2; PLANET_500_alt + ARCH_01 v1 kept unlocked as alternates. Owner deferred look iteration to a later pass.",
       "first_3min_target": "Owner wants 0:00-3:00 FULLY finished (not a shortened video): beats B01-B09 = 48 shots (37 unique Grok clips + 11 free inserts), 37 composite seeds, VO 41 lines (~769 words / 3,938 chars: ORB 3124, PIP 501, GRUFF 313), foley via MMAudio, music bed, full gates, 1080p.",
-      "course_correction_2026-08-31": "Cutout composites (build_composite_seeds.py) judged UNUSABLE as i2v seeds on the contact sheet (fixed character scale ignores framing; characters pasted over orbital plates). Switched to the PROVEN method: per-shot seed STILLS generated in the identity-locked ChatGPT thread (subscription, no credits). Composites kept only as fallback references."
+      "course_correction_2026-08-31": "Cutout composites (build_composite_seeds.py) judged UNUSABLE as i2v seeds on the contact sheet (fixed character scale ignores framing; characters pasted over orbital plates). Switched to the PROVEN method: per-shot seed STILLS generated in the identity-locked ChatGPT thread (subscription, no credits). Composites kept only as fallback references.",
+      "seeds_0-3min_2026-09-08": "ALL 37 per-shot seed stills for 0:00-3:00 GENERATED in the identity thread and PASSED on contact-sheet inspection (5 regens: GRUFF-grey x2, PIP-eye-drift x2, COUNT-brown x1; anchors hardened mid-run; S030/S047 'tether' wording refused by ChatGPT guardrail -> 'safety cable'). Ledger = assets/shrinking_planet/seeds/SEEDS_0-3min.json; sheets A-G + ALL37 in assets/shrinking_planet/gate1/. ZERO credits spent."
     }
   },
   "meta": {
