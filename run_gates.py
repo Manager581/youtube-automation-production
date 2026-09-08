@@ -27,6 +27,7 @@ Subcommands (v0 — wrapped gates only; `list` shows what is still TODO):
   continuity    S4/S6 shot-manifest continuity + coverage gate (count==planet==ladder, adjacent vantage,
                   seed refs, beat coverage, unique band, 23 masters). No waivers.
   hook          GATE 2: score our hook render vs reference-derived bands (--video --targets [--t0 --t1]).
+  all           run every gate in a lane.json and write ONE report (required-but-missing = FAIL; future-stage = NOT-READY)
   list          registered gates + wrap status
 
 Usage: python3 run_gates.py <subcommand> [options]
@@ -311,6 +312,20 @@ def cmd_title(args):
     """S2 title gate: deterministic winner-grammar checks (scripts/title_gate.py)."""
     r=subprocess.run([sys.executable, os.path.join(REPO,"scripts","title_gate.py")] + args.titles); print("title: " + ("PASS" if r.returncode==0 else "FAIL")); return r.returncode
 
+def cmd_all(args):
+    """Run EVERY gate in a lane config (lane.json) and write ONE report. Fail-closed: a required gate with missing inputs = FAIL;
+    a gate whose stage has not been reached yet = NOT-READY (reported, never silent). Exit 1 if any required gate fails."""
+    cfg=json.load(open(args.lane_config)); stage=cfg.get("stage",0); rep={"lane":cfg.get("lane"),"stage":stage,"gates":{}}; bad=0
+    for name,g in cfg["gates"].items():
+        req = stage >= g.get("from_stage",0); missing=[n for n in g.get("needs",[]) if not os.path.exists(os.path.join(REPO,n))]
+        if missing and not req: rep["gates"][name]={"status":"NOT-READY","missing":missing}; print(f"  NOT-READY {name} (stage {g.get('from_stage',0)} > {stage}); missing {missing}"); continue
+        if missing: rep["gates"][name]={"status":"FAIL","missing":missing}; print(f"  FAIL {name}: required at stage {stage} but inputs missing {missing}"); bad+=1; continue
+        r=subprocess.run([sys.executable, os.path.abspath(__file__)]+g["cmd"], capture_output=True, text=True, cwd=REPO)
+        ok = r.returncode==0; rep["gates"][name]={"status":"PASS" if ok else "FAIL","tail":r.stdout.strip().splitlines()[-3:]}
+        print(f"  {'PASS' if ok else 'FAIL'} {name}" + ("" if ok else " — " + (r.stdout.strip().splitlines() or ['?'])[-1][:120])); bad += (not ok)
+    out=args.report or os.path.join(REPO, "output", f"gates_{cfg.get('lane','lane')}.json"); os.makedirs(os.path.dirname(out), exist_ok=True); json.dump(rep, open(out,"w"), indent=1)
+    print(f"all: stage={stage} {sum(1 for v in rep['gates'].values() if v['status']=='PASS')} PASS / {bad} FAIL / {sum(1 for v in rep['gates'].values() if v['status']=='NOT-READY')} NOT-READY -> {out}"); return 1 if bad else 0
+
 def cmd_list(_):
     for g, s in GATES.items():
         print(f"  {g:12s} {s}")
@@ -348,6 +363,7 @@ def main():
     p = sub.add_parser("assembly"); p.add_argument("--report", required=True); p.set_defaults(fn=cmd_assembly)
     p = sub.add_parser("listen"); p.add_argument("--video", required=True); p.add_argument("--targets", required=True); p.add_argument("--t0", type=float, default=0.0); p.add_argument("--t1", type=float, default=45.0); p.set_defaults(fn=cmd_listen)
     p = sub.add_parser("title"); p.add_argument("titles", nargs="+"); p.set_defaults(fn=cmd_title)
+    p = sub.add_parser("all"); p.add_argument("lane_config"); p.add_argument("--report"); p.set_defaults(fn=cmd_all)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()
     sys.exit(args.fn(args))
