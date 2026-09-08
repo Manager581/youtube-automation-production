@@ -1,0 +1,63 @@
+{
+ "fails": [
+  "loop 'redline': gap 1165s between touches at 30s\u21921195s exceeds 300s",
+  "loop 'crate': gap 330s between touches at 165s\u2192495s exceeds 300s",
+  "loop 'riff': gap 585s between touches at 585s\u21921170s exceeds 300s",
+  "loop 'goggle': gap 315s between touches at 625s\u2192940s exceeds 300s",
+  "no retention device/beat for 85s (165s\u2192250s) > 60s",
+  "no retention device/beat for 90s (290s\u2192380s) > 60s",
+  "no retention device/beat for 70s (425s\u2192495s) > 60s",
+  "no retention device/beat for 65s (655s\u2192720s) > 60s",
+  "no retention device/beat for 100s (810s\u2192910s) > 60s"
+ ],
+ "warns": [],
+ "info": {
+  "beats": 30,
+  "words": 3834,
+  "pip_mouth_on": 19,
+  "loops": {
+   "redline": {
+    "OPEN": 30,
+    "FEED": [],
+    "PAY": 1195
+   },
+   "crate": {
+    "OPEN": 45,
+    "FEED": [
+     165,
+     495,
+     525,
+     655
+    ],
+    "PAY": 720
+   },
+   "riff": {
+    "OPEN": 585,
+    "FEED": [],
+    "PAY": 1170
+   },
+   "goggle": {
+    "OPEN": 625,
+    "FEED": [
+     940
+    ],
+    "PAY": 1030
+   },
+   "launch": {
+    "OPEN": 765,
+    "FEED": [
+     810,
+     910,
+     985,
+     1075
+    ],
+    "PAY": 1115
+   }
+  },
+  "share": {
+   "ORB": 0.56,
+   "PIP": 0.22,
+   "GRUFF": 0.22
+  }
+ }
+}
