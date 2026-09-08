@@ -6,7 +6,15 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "extreme close-up: ORB extreme close-up lens-eye fills frame. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB. Frozen first frame of this moment: The halo brightens in two short pulses as if speaking, the lens iris tightens slightly, a faint drift of the sphere up and down by a few centimetres. Nothing else moves. Planet size context: 1000 m. Day 1."
+  "prompt": "extreme close-up: ORB extreme close-up lens-eye fills frame. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB. Frozen first frame of this moment: The halo brightens in two short pulses as if speaking, the lens iris tightens slightly, a faint drift of the sphere up and down by a few centimetres. Nothing else moves. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S001 (standing rules apply, generate it now, ONE image only): Extreme close-up. ORB extreme close-up lens-eye fills frame. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: The halo brightens in two short pulses as if speaking, the lens iris tightens slightly, a faint drift of the sphere up and down by a few centimetres. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "ECU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S002",
@@ -17,7 +25,18 @@
    "GRUFF",
    "ORB"
   ],
-  "prompt": "wide shot: wide 3-shot low angle on the pad. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF, ORB. Frozen first frame of this moment: Both contestants lift bubble helmets off their heads in one motion and lower them to their sides; PIP's fronds spring up as the helmet clears; GRUFF shakes his fur once. ORB hovers between them, halo pulsing on speech. F Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: wide 3-shot low angle on the pad. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF, ORB. Frozen first frame of this moment: Both contestants lift bubble helmets off their heads in one motion and lower them to their sides; PIP's fronds spring up as the helmet clears; GRUFF shakes his fur once. ORB hovers between them, halo pulsing on speech. F Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S002 (standing rules apply, generate it now, ONE image only): Wide shot. wide 3-shot low angle on the pad. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: Both contestants lift bubble helmets off their heads in one motion and lower them to their sides; PIP's fronds spring up as the helmet clears; GRUFF shakes his fur once. Cast in frame (PIP, GRUFF, ORB): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_ORB",
+   "M_SET_pad",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S005",
@@ -27,7 +46,16 @@
    "PIP",
    "GRUFF"
   ],
-  "prompt": "medium shot: tight 2-shot chest-up on the crate. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF. Frozen first frame of this moment: A slow bloom of warm light rises from the crate's question-mark plate between them; PIP glances down at it, GRUFF looks away over his shoulder. Subtle breathing, fronds settle. Planet size context: 1000 m. Day 1."
+  "prompt": "medium shot: tight 2-shot chest-up on the crate. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF. Frozen first frame of this moment: A slow bloom of warm light rises from the crate's question-mark plate between them; PIP glances down at it, GRUFF looks away over his shoulder. Subtle breathing, fronds settle. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S005 (standing rules apply, generate it now, ONE image only): Medium shot. tight 2-shot chest-up on the crate. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: A slow bloom of warm light rises from the crate's question-mark plate between them; PIP glances down at it, GRUFF looks away over his shoulder. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S006",
@@ -36,7 +64,15 @@
   "characters": [
    "PIP"
   ],
-  "prompt": "close-up: PIP close-up at camp, mouth open in surprise. Location: PIP's magenta dome-tent camp. Characters present: PIP. Frozen first frame of this moment: PIP's eyes widen further, fronds lift slowly outward, the mouth stays open; a tiny blink at the end. Camp lamp flickers once behind her. Planet size context: 1000 m. Day 1."
+  "prompt": "close-up: PIP close-up at camp, mouth open in surprise. Location: PIP's magenta dome-tent camp. Characters present: PIP. Frozen first frame of this moment: PIP's eyes widen further, fronds lift slowly outward, the mouth stays open; a tiny blink at the end. Camp lamp flickers once behind her. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S006 (standing rules apply, generate it now, ONE image only): Close-up. PIP close-up at camp, mouth open in surprise. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP's eyes widen further, fronds lift slowly outward, the mouth stays open; a tiny blink at the end. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "pip_camp",
+  "shot_type": "CU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_SET_pip_camp"
+  ]
  },
  {
   "shot": "S007",
@@ -45,7 +81,15 @@
   "characters": [
    "GRUFF"
   ],
-  "prompt": "close-up: GRUFF close-up in the cave mouth, brows knotted. Location: GRUFF's cyan-lit basalt cave. Characters present: GRUFF. Frozen first frame of this moment: GRUFF's brows lower and knot, fur bristles around the mouth region, one slow exhale moves the fur, the goggle catches a passing highlight. Moss glow breathes behind him. Planet size context: 1000 m. Day 1."
+  "prompt": "close-up: GRUFF close-up in the cave mouth, brows knotted. Location: GRUFF's cyan-lit basalt cave. Characters present: GRUFF. Frozen first frame of this moment: GRUFF's brows lower and knot, fur bristles around the mouth region, one slow exhale moves the fur, the goggle catches a passing highlight. Moss glow breathes behind him. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S007 (standing rules apply, generate it now, ONE image only): Close-up. GRUFF close-up in the cave mouth, brows knotted. Location: GRUFF's cave: a basalt cave lit cyan from within. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF's brows lower and knot, fur bristles around the mouth region, one slow exhale moves the fur, the goggle catches a passing highlight. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "gruff_cave",
+  "shot_type": "CU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_GRUFF",
+   "M_SET_gruff_cave"
+  ]
  },
  {
   "shot": "S008",
@@ -54,7 +98,15 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "INS: insert: coiled tether on rock, ORB hovering above. Location: PIP's magenta dome-tent camp. Characters present: ORB. Frozen first frame of this moment: ORB drifts down into frame from the top, halo dim, and settles in a slow hover; the tether's anklet ring rocks once as if nudged. Dust motes. Planet size context: 1000 m. Day 1."
+  "prompt": "INS: insert: coiled tether on rock, ORB hovering above. Location: PIP's magenta dome-tent camp. Characters present: ORB. Frozen first frame of this moment: ORB drifts down into frame from the top, halo dim, and settles in a slow hover; the tether's anklet ring rocks once as if nudged. Dust motes. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S008 (standing rules apply, generate it now, ONE image only): Insert detail shot. insert: coiled tether on rock, ORB hovering above. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB drifts down into frame from the top, halo dim, and settles in a slow hover; the tether's anklet ring rocks once as if nudged. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "pip_camp",
+  "shot_type": "INS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_SET_pip_camp"
+  ]
  },
  {
   "shot": "S009",
@@ -64,7 +116,16 @@
    "ORB",
    "GRUFF"
   ],
-  "prompt": "over-the-shoulder: over-the-shoulder past ORB to GRUFF. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB, GRUFF. Frozen first frame of this moment: GRUFF's fur bristles outward as he speaks, brows drop, he leans in ten centimetres and back. ORB's halo pulses in reply. Planet size context: 1000 m. Day 1."
+  "prompt": "over-the-shoulder: over-the-shoulder past ORB to GRUFF. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB, GRUFF. Frozen first frame of this moment: GRUFF's fur bristles outward as he speaks, brows drop, he leans in ten centimetres and back. ORB's halo pulses in reply. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S009 (standing rules apply, generate it now, ONE image only): Over-the-shoulder shot. over-the-shoulder past ORB to GRUFF. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF's fur bristles outward as he speaks, brows drop, he leans in ten centimetres and back. Cast in frame (ORB, GRUFF): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "OTS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_GRUFF",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S010",
@@ -73,7 +134,15 @@
   "characters": [
    "PIP"
   ],
-  "prompt": "close-up: PIP close-up against the crate, bright. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP. Frozen first frame of this moment: PIP answers quickly with a small mouth movement, fronds bounce once, then she laughs \u2014 head tips back a few degrees, fronds curl at the tips, eyes squint. Planet size context: 1000 m. Day 1."
+  "prompt": "close-up: PIP close-up against the crate, bright. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP. Frozen first frame of this moment: PIP answers quickly with a small mouth movement, fronds bounce once, then she laughs \u2014 head tips back a few degrees, fronds curl at the tips, eyes squint. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S010 (standing rules apply, generate it now, ONE image only): Close-up. PIP close-up against the crate, bright. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP answers quickly with a small mouth movement, fronds bounce once, then she laughs \u2014 head tips back a few degrees, fronds curl at the tips, eyes squint. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "CU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S013",
@@ -84,7 +153,17 @@
    "GRUFF",
    "ORB"
   ],
-  "prompt": "wide shot: wide 3-shot high angle, halo flare. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF, ORB. Frozen first frame of this moment: ORB's halo flares into a wide starburst and holds, throwing gold light across both contestants; PIP steps back half a pace; GRUFF folds his arms. Pad lights brighten in sync with the flare. Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: wide 3-shot high angle, halo flare. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF, ORB. Frozen first frame of this moment: ORB's halo flares into a wide starburst and holds, throwing gold light across both contestants; PIP steps back half a pace; GRUFF folds his arms. Pad lights brighten in sync with the flare. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S013 (standing rules apply, generate it now, ONE image only): Wide shot. wide 3-shot high angle, halo flare. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: ORB's halo flares into a wide starburst and holds, throwing gold light across both contestants; PIP steps back half a pace; GRUFF folds his arms. Cast in frame (PIP, GRUFF, ORB): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_ORB",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S014",
@@ -94,7 +173,16 @@
    "GRUFF",
    "ORB"
   ],
-  "prompt": "medium shot: side-angle GRUFF medium, ORB drifting out of foreground. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: GRUFF, ORB. Frozen first frame of this moment: ORB drifts out of the foreground to the right, defocusing; GRUFF bends and snaps an anklet shut on his leg with a sharp jerk, then straightens and rolls his shoulders. Planet size context: 1000 m. Day 1."
+  "prompt": "medium shot: side-angle GRUFF medium, ORB drifting out of foreground. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: GRUFF, ORB. Frozen first frame of this moment: ORB drifts out of the foreground to the right, defocusing; GRUFF bends and snaps an anklet shut on his leg with a sharp jerk, then straightens and rolls his shoulders. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S014 (standing rules apply, generate it now, ONE image only): Medium shot. side-angle GRUFF medium, ORB drifting out of foreground. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB drifts out of the foreground to the right, defocusing; GRUFF bends and snaps an anklet shut on his leg with a sharp jerk, then straightens and rolls his shoulders. Cast in frame (GRUFF, ORB): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_GRUFF",
+   "M_ORB",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S015",
@@ -104,7 +192,16 @@
    "PIP",
    "GRUFF"
   ],
-  "prompt": "INS: 2-shot on the anklets, ground level. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF. Frozen first frame of this moment: GRUFF's locked anklet sits still in the foreground; PIP's foot enters, she hesitates, then the anklet snaps closed with a small burst of dust and a brief motion-blur of the clasp. Tether cable tightens once. Planet size context: 1000 m. Day 1."
+  "prompt": "INS: 2-shot on the anklets, ground level. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF. Frozen first frame of this moment: GRUFF's locked anklet sits still in the foreground; PIP's foot enters, she hesitates, then the anklet snaps closed with a small burst of dust and a brief motion-blur of the clasp. Tether cable tightens once. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S015 (standing rules apply, generate it now, ONE image only): Insert detail shot. 2-shot on the anklets, ground level. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: GRUFF's locked anklet sits still in the foreground; PIP's foot enters, she hesitates, then the anklet snaps closed with a small burst of dust and a brief motion-blur of the clasp. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "INS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S018",
@@ -113,7 +210,15 @@
   "characters": [
    "PIP"
   ],
-  "prompt": "close-up: whip-tilt from PIP's anklet up to her face. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP. Frozen first frame of this moment:  Planet size context: 1000 m. Day 1."
+  "prompt": "close-up: whip-tilt from PIP's anklet up to her face. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP. Frozen first frame of this moment:  Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S018 (standing rules apply, generate it now, ONE image only): Close-up. whip-tilt from PIP's anklet up to her face. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment:  Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "CU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S019",
@@ -124,7 +229,18 @@
    "GRUFF",
    "ORB"
   ],
-  "prompt": "wide shot: landing-pad wide, red ring in full, all three. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF, ORB. Frozen first frame of this moment: ORB drifts backward toward the ring's edge while its halo pulses; PIP and GRUFF stand still, GRUFF's fur moving in a faint breeze, PIP's scarf lifting. Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: landing-pad wide, red ring in full, all three. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF, ORB. Frozen first frame of this moment: ORB drifts backward toward the ring's edge while its halo pulses; PIP and GRUFF stand still, GRUFF's fur moving in a faint breeze, PIP's scarf lifting. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S019 (standing rules apply, generate it now, ONE image only): Wide shot. landing-pad wide, red ring in full, all three. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: ORB drifts backward toward the ring's edge while its halo pulses; PIP and GRUFF stand still, GRUFF's fur moving in a faint breeze, PIP's scarf lifting. Cast in frame (PIP, GRUFF, ORB): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_ORB",
+   "M_SET_pad",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S020",
@@ -133,7 +249,15 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "close-up: ORB close-up, halo pulse, rock behind. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB. Frozen first frame of this moment: ORB's halo pulses in speech rhythm then dims; the lens-eye tilts down toward the two off-screen contestants, then straight back at camera; the starfield reflection slides across the chrome as it turns. Planet size context: 1000 m. Day 1."
+  "prompt": "close-up: ORB close-up, halo pulse, rock behind. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB. Frozen first frame of this moment: ORB's halo pulses in speech rhythm then dims; the lens-eye tilts down toward the two off-screen contestants, then straight back at camera; the starfield reflection slides across the chrome as it turns. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S020 (standing rules apply, generate it now, ONE image only): Close-up. ORB close-up, halo pulse, rock behind. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB's halo pulses in speech rhythm then dims; the lens-eye tilts down toward the two off-screen contestants, then straight back at camera; the starfield reflection slides across the chrome as it turns Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "CU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S021",
@@ -142,14 +266,31 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "hero wide: ORB launch + continuous pull-out to full 1000 m planet. Location: orbit. Characters present: ORB. Frozen first frame of this moment: Smooth continuous acceleration, no cuts. Planet size context: 1000 m. Day 1."
+  "prompt": "hero wide: ORB launch + continuous pull-out to full 1000 m planet. Location: orbit. Characters present: ORB. Frozen first frame of this moment: Smooth continuous acceleration, no cuts. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S021 (standing rules apply, generate it now, ONE image only): Hero wide shot. ORB launch + continuous pull-out to full 1000 m planet. Location: deep space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: Smooth continuous acceleration, no cuts. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "orbit",
+  "shot_type": "HERO",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_SET_pad",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S022",
   "beat": "B06",
   "composite_seed_id": "C016",
   "characters": [],
-  "prompt": "hero wide: orbital push-in from space onto the north pole camp. Location: orbit. Characters present: none. Frozen first frame of this moment: Stars streak slightly then stabilise. Planet size context: 1000 m. Day 1."
+  "prompt": "hero wide: orbital push-in from space onto the north pole camp. Location: orbit. Characters present: none. Frozen first frame of this moment: Stars streak slightly then stabilise. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S022 (standing rules apply, generate it now, ONE image only): Hero wide shot. orbital push-in from space onto the north pole camp. Location: deep space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: Stars streak slightly then stabilise. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "orbit",
+  "shot_type": "HERO",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PLANET_1000",
+   "M_SET_pip_camp"
+  ]
  },
  {
   "shot": "S023",
@@ -158,7 +299,15 @@
   "characters": [
    "PIP"
   ],
-  "prompt": "medium shot: PIP camp medium, unpacking. Location: PIP's magenta dome-tent camp. Characters present: PIP. Frozen first frame of this moment: PIP pulls a ration crate open, lays three bars in a neat row, straightens the scarf, looks up at the curved horizon and sighs; fronds settle. Planet size context: 1000 m. Day 1."
+  "prompt": "medium shot: PIP camp medium, unpacking. Location: PIP's magenta dome-tent camp. Characters present: PIP. Frozen first frame of this moment: PIP pulls a ration crate open, lays three bars in a neat row, straightens the scarf, looks up at the curved horizon and sighs; fronds settle. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S023 (standing rules apply, generate it now, ONE image only): Medium shot. PIP camp medium, unpacking. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP pulls a ration crate open, lays three bars in a neat row, straightens the scarf, looks up at the curved horizon and sighs; fronds settle. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "pip_camp",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_SET_pip_camp"
+  ]
  },
  {
   "shot": "S024",
@@ -168,14 +317,31 @@
    "ORB",
    "PIP"
   ],
-  "prompt": "wide shot: ORB hovering high over the camp looking down at PIP, wide. Location: PIP's magenta dome-tent camp. Characters present: ORB, PIP. Frozen first frame of this moment: ORB hovers high over the tent, halo pulsing as it narrates, drifting a slow arc; PIP below shades her eyes and looks up at it; the horizon curves behind. Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: ORB hovering high over the camp looking down at PIP, wide. Location: PIP's magenta dome-tent camp. Characters present: ORB, PIP. Frozen first frame of this moment: ORB hovers high over the tent, halo pulsing as it narrates, drifting a slow arc; PIP below shades her eyes and looks up at it; the horizon curves behind. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S024 (standing rules apply, generate it now, ONE image only): Wide shot. ORB hovering high over the camp looking down at PIP, wide. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB hovers high over the tent, halo pulsing as it narrates, drifting a slow arc; PIP below shades her eyes and looks up at it; the horizon curves behind. Cast in frame (ORB, PIP): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms; PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "pip_camp",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_PIP",
+   "M_SET_pip_camp"
+  ]
  },
  {
   "shot": "S025",
   "beat": "B06",
   "composite_seed_id": "C019",
   "characters": [],
-  "prompt": "wide shot: orbital glide over the south pole cave. Location: orbit. Characters present: none. Frozen first frame of this moment:  Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: orbital glide over the south pole cave. Location: orbit. Characters present: none. Frozen first frame of this moment:  Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S025 (standing rules apply, generate it now, ONE image only): Wide shot. orbital glide over the south pole cave. Location: deep space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment:  No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "orbit",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PLANET_1000",
+   "M_SET_gruff_cave"
+  ]
  },
  {
   "shot": "S026",
@@ -184,7 +350,15 @@
   "characters": [
    "GRUFF"
   ],
-  "prompt": "wide shot: GRUFF cave interior wide, settling in. Location: GRUFF's cyan-lit basalt cave. Characters present: GRUFF. Frozen first frame of this moment: GRUFF ducks under the entrance, thumps down onto the ledge, stacks two moon rocks, then lies back with one arm behind his head. Moss glow breathes. Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: GRUFF cave interior wide, settling in. Location: GRUFF's cyan-lit basalt cave. Characters present: GRUFF. Frozen first frame of this moment: GRUFF ducks under the entrance, thumps down onto the ledge, stacks two moon rocks, then lies back with one arm behind his head. Moss glow breathes. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S026 (standing rules apply, generate it now, ONE image only): Wide shot. GRUFF cave interior wide, settling in. Location: GRUFF's cave: a basalt cave lit cyan from within. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF ducks under the entrance, thumps down onto the ledge, stacks two moon rocks, then lies back with one arm behind his head. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "gruff_cave",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_GRUFF",
+   "M_SET_gruff_cave"
+  ]
  },
  {
   "shot": "S027",
@@ -193,7 +367,15 @@
   "characters": [
    "COUNT"
   ],
-  "prompt": "INS: THE COUNT insert, drifting past camera left to right. Location: equator. Characters present: COUNT. Frozen first frame of this moment: THE COUNT hovers in from frame left, thrusters puffing, antenna wobbling, its display faces blank and steady (digits composited later), and drifts out frame right. Faint horizon behind. Planet size context: 1000 m. Day 1."
+  "prompt": "INS: THE COUNT insert, drifting past camera left to right. Location: equator. Characters present: COUNT. Frozen first frame of this moment: THE COUNT hovers in from frame left, thrusters puffing, antenna wobbling, its display faces blank and steady (digits composited later), and drifts out frame right. Faint horizon behind. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S027 (standing rules apply, generate it now, ONE image only): Insert detail shot. THE COUNT insert, drifting past camera left to right. Location: orbital view of the small round planet against deep-space black. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: THE COUNT hovers in from frame left, thrusters puffing, antenna wobbling, its display faces blank and steady (digits composited later), and drifts out frame right. Cast in frame (COUNT): THE COUNT = 40-cm matte-black hovering cube, red seven-segment display on every face, one wobbling antenna, four small thrusters. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "equator",
+  "shot_type": "INS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_COUNT",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S028",
@@ -202,14 +384,29 @@
   "characters": [
    "GRUFF"
   ],
-  "prompt": "wide shot: toilet gag: low wide, a hole in the rock with the horizon and stars. Location: equator. Characters present: GRUFF. Frozen first frame of this moment: GRUFF walks into frame, looks down at the hole, looks up at the stars, looks at the camera, and slowly sits; fur puffs. The horizon curves sharply behind him. Planet size context: 1000 m. Day 1."
+  "prompt": "wide shot: toilet gag: low wide, a hole in the rock with the horizon and stars. Location: equator. Characters present: GRUFF. Frozen first frame of this moment: GRUFF walks into frame, looks down at the hole, looks up at the stars, looks at the camera, and slowly sits; fur puffs. The horizon curves sharply behind him. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S028 (standing rules apply, generate it now, ONE image only): Wide shot. toilet gag: low wide, a hole in the rock with the horizon and stars. Location: orbital view of the small round planet against deep-space black. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF walks into frame, looks down at the hole, looks up at the stars, looks at the camera, and slowly sits; fur puffs. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "equator",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_GRUFF",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S029",
   "beat": "B06",
   "composite_seed_id": "C023",
   "characters": [],
-  "prompt": "hero wide: crate hero: slow orbit around the sealed crate on the pad. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: none. Frozen first frame of this moment: Full 90-degree arc over the clip. Planet size context: 1000 m. Day 1."
+  "prompt": "hero wide: crate hero: slow orbit around the sealed crate on the pad. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: none. Frozen first frame of this moment: Full 90-degree arc over the clip. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S029 (standing rules apply, generate it now, ONE image only): Hero wide shot. crate hero: slow orbit around the sealed crate on the pad. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: Full 90-degree arc over the clip. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "HERO",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S030",
@@ -219,7 +416,16 @@
    "PIP",
    "GRUFF"
   ],
-  "prompt": "medium shot: 2-shot walking the equator, tracking alongside. Location: equator. Characters present: PIP, GRUFF. Frozen first frame of this moment: PIP walks ahead with quick steps, GRUFF lumbers three metres behind with the tether slack between them; the horizon rolls under their feet; neither looks at the other. Planet size context: 1000 m. Day 1."
+  "prompt": "medium shot: 2-shot walking the equator, tracking alongside. Location: equator. Characters present: PIP, GRUFF. Frozen first frame of this moment: PIP walks ahead with quick steps, GRUFF lumbers three metres behind with the tether slack between them; the horizon rolls under their feet; neither looks at the other. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S030 (standing rules apply, generate it now, ONE image only): Medium shot. 2-shot walking the equator, tracking alongside. Location: orbital view of the small round planet against deep-space black. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: PIP walks ahead with quick steps, GRUFF lumbers three metres behind with the tether slack between them; the horizon rolls under their feet; neither looks at the other. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "equator",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S032",
@@ -228,7 +434,15 @@
   "characters": [
    "PIP"
   ],
-  "prompt": "close-up: PIP confessional close-up, magenta booth, straight on. Location: the glass confessional booth. Characters present: PIP. Frozen first frame of this moment: PIP speaks with small mouth movements, fronds drooping slightly, eyes flick down then back to camera; magenta strip light steady. Planet size context: 1000 m. Day 1."
+  "prompt": "close-up: PIP confessional close-up, magenta booth, straight on. Location: the glass confessional booth. Characters present: PIP. Frozen first frame of this moment: PIP speaks with small mouth movements, fronds drooping slightly, eyes flick down then back to camera; magenta strip light steady. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S032 (standing rules apply, generate it now, ONE image only): Close-up. PIP confessional close-up, magenta booth, straight on. Location: the glass confessional booth. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP speaks with small mouth movements, fronds drooping slightly, eyes flick down then back to camera; magenta strip light steady. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "confessional",
+  "shot_type": "CU",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_SET_confessional"
+  ]
  },
  {
   "shot": "S033",
@@ -237,7 +451,15 @@
   "characters": [
    "GRUFF"
   ],
-  "prompt": "medium shot: GRUFF confessional medium, cyan booth, slightly high angle. Location: the glass confessional booth. Characters present: GRUFF. Frozen first frame of this moment: GRUFF sits hunched, fur over the mouth shifting as he speaks, brows flat and cold, one hand rubs the goggle on his forehead. Planet size context: 1000 m. Day 1."
+  "prompt": "medium shot: GRUFF confessional medium, cyan booth, slightly high angle. Location: the glass confessional booth. Characters present: GRUFF. Frozen first frame of this moment: GRUFF sits hunched, fur over the mouth shifting as he speaks, brows flat and cold, one hand rubs the goggle on his forehead. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S033 (standing rules apply, generate it now, ONE image only): Medium shot. GRUFF confessional medium, cyan booth, slightly high angle. Location: the glass confessional booth. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF sits hunched, fur over the mouth shifting as he speaks, brows flat and cold, one hand rubs the goggle on his forehead. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "confessional",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_GRUFF",
+   "M_SET_confessional"
+  ]
  },
  {
   "shot": "S035",
@@ -246,28 +468,61 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "medium shot: ORB hovering in orbit, planet behind, halo dims on 'It isn't'. Location: orbit. Characters present: ORB. Frozen first frame of this moment: ORB hovers with the planet large behind it; the halo pulses twice then drops to almost nothing; the lens-eye slowly turns to face camera dead-on. Planet size context: 1000 m. Day 1."
+  "prompt": "medium shot: ORB hovering in orbit, planet behind, halo dims on 'It isn't'. Location: orbit. Characters present: ORB. Frozen first frame of this moment: ORB hovers with the planet large behind it; the halo pulses twice then drops to almost nothing; the lens-eye slowly turns to face camera dead-on. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S035 (standing rules apply, generate it now, ONE image only): Medium shot. ORB hovering in orbit, planet behind, halo dims on 'It isn't'. Location: deep space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB hovers with the planet large behind it; the halo pulses twice then drops to almost nothing; the lens-eye slowly turns to face camera dead-on. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "orbit",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S037",
   "beat": "B07",
   "composite_seed_id": "C028",
   "characters": [],
-  "prompt": "INS: flash-forward card plate: rock dust storm, no characters. Location: equator. Characters present: none. Frozen first frame of this moment: A storm of grey rock dust blows left to right across a black void, small pebbles tumbling, a red light pulsing somewhere behind the dust. Planet size context: 1000 m. Day 1."
+  "prompt": "INS: flash-forward card plate: rock dust storm, no characters. Location: equator. Characters present: none. Frozen first frame of this moment: A storm of grey rock dust blows left to right across a black void, small pebbles tumbling, a red light pulsing somewhere behind the dust. Planet size context: 1000 m. Day 1.",
+  "send_text": "IMAGE S037 (standing rules apply, generate it now, ONE image only): Insert detail shot. flash-forward card plate: rock dust storm, no characters. Location: the planet surface at the equator, grey basalt, a rock-dust storm blowing across frame. This is a flash-forward: the planet is now a tiny ~25 m rock, extreme curvature, space visible all around. Freeze-frame of the moment: A storm of grey rock dust blows left to right across a black void, small pebbles tumbling, a red light pulsing somewhere behind the dust. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "equator",
+  "shot_type": "INS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PLANET_25"
+  ]
  },
  {
   "shot": "S038",
   "beat": "B08",
   "composite_seed_id": "C029",
   "characters": [],
-  "prompt": "wide shot: sunrise over PIP's tent, sun cresting the horizon. Location: PIP's magenta dome-tent camp. Characters present: none. Frozen first frame of this moment: A hard white sun rises fast over the curved horizon behind the tent, long shadows sweeping across the rock, haze glowing; the tent flap moves once. Planet size context: 1000 m. Day 2."
+  "prompt": "wide shot: sunrise over PIP's tent, sun cresting the horizon. Location: PIP's magenta dome-tent camp. Characters present: none. Frozen first frame of this moment: A hard white sun rises fast over the curved horizon behind the tent, long shadows sweeping across the rock, haze glowing; the tent flap moves once. Planet size context: 1000 m. Day 2.",
+  "send_text": "IMAGE S038 (standing rules apply, generate it now, ONE image only): Wide shot. sunrise over PIP's tent, sun cresting the horizon. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: A hard white sun rises fast over the curved horizon behind the tent, long shadows sweeping across the rock, haze glowing; the tent flap moves once. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "pip_camp",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_SET_pip_camp",
+   "M_PLANET_1000",
+   "M_PIP"
+  ]
  },
  {
   "shot": "S039",
   "beat": "B08",
   "composite_seed_id": "C030",
   "characters": [],
-  "prompt": "wide shot: sunrise on the cave mouth, opposite hemisphere. Location: GRUFF's cyan-lit basalt cave. Characters present: none. Frozen first frame of this moment: Sunlight crawls down the cave mouth from top to bottom, moss glow fading as it brightens; GRUFF's silhouette stirs on the ledge inside. Planet size context: 1000 m. Day 2."
+  "prompt": "wide shot: sunrise on the cave mouth, opposite hemisphere. Location: GRUFF's cyan-lit basalt cave. Characters present: none. Frozen first frame of this moment: Sunlight crawls down the cave mouth from top to bottom, moss glow fading as it brightens; GRUFF's silhouette stirs on the ledge inside. Planet size context: 1000 m. Day 2.",
+  "send_text": "IMAGE S039 (standing rules apply, generate it now, ONE image only): Wide shot. sunrise on the cave mouth, opposite hemisphere. Location: GRUFF's cave: a basalt cave lit cyan from within. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: Sunlight crawls down the cave mouth from top to bottom, moss glow fading as it brightens; GRUFF's silhouette stirs on the ledge inside. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "gruff_cave",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_SET_gruff_cave",
+   "M_PLANET_1000",
+   "M_GRUFF"
+  ]
  },
  {
   "shot": "S041",
@@ -276,14 +531,29 @@
   "characters": [
    "PIP"
   ],
-  "prompt": "medium shot: PIP stretching outside the tent at dawn, medium. Location: PIP's magenta dome-tent camp. Characters present: PIP. Frozen first frame of this moment: PIP steps out of the tent into hard low sunlight, stretches both arms, fronds fanning out, scarf lifting in a breeze, then squints toward the far horizon. Planet size context: 1000 m. Day 2."
+  "prompt": "medium shot: PIP stretching outside the tent at dawn, medium. Location: PIP's magenta dome-tent camp. Characters present: PIP. Frozen first frame of this moment: PIP steps out of the tent into hard low sunlight, stretches both arms, fronds fanning out, scarf lifting in a breeze, then squints toward the far horizon. Planet size context: 1000 m. Day 2.",
+  "send_text": "IMAGE S041 (standing rules apply, generate it now, ONE image only): Medium shot. PIP stretching outside the tent at dawn, medium. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP steps out of the tent into hard low sunlight, stretches both arms, fronds fanning out, scarf lifting in a breeze, then squints toward the far horizon. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "pip_camp",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_SET_pip_camp"
+  ]
  },
  {
   "shot": "S042",
   "beat": "B08",
   "composite_seed_id": "C032",
   "characters": [],
-  "prompt": "hero wide: orbital planet plate with slow rotation (diameter ring overlay in post). Location: orbit. Characters present: none. Frozen first frame of this moment: The full planet rotates slowly, a quarter turn over the clip, haze rim glinting, stars fixed. Planet size context: 1000 m. Day 2."
+  "prompt": "hero wide: orbital planet plate with slow rotation (diameter ring overlay in post). Location: orbit. Characters present: none. Frozen first frame of this moment: The full planet rotates slowly, a quarter turn over the clip, haze rim glinting, stars fixed. Planet size context: 1000 m. Day 2.",
+  "send_text": "IMAGE S042 (standing rules apply, generate it now, ONE image only): Hero wide shot. orbital planet plate with slow rotation (diameter ring overlay in post). Location: deep space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: The full planet rotates slowly, a quarter turn over the clip, haze rim glinting, stars fixed. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "orbit",
+  "shot_type": "HERO",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S043",
@@ -292,7 +562,15 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "medium shot: ORB three-quarter hover, drifting closer to lens. Location: orbit. Characters present: ORB. Frozen first frame of this moment: ORB drifts toward the lens over the clip, halo pulsing steadily as it narrates, the starfield reflection sliding; it stops just short of filling the frame. Planet size context: 1000 m. Day 2."
+  "prompt": "medium shot: ORB three-quarter hover, drifting closer to lens. Location: orbit. Characters present: ORB. Frozen first frame of this moment: ORB drifts toward the lens over the clip, halo pulsing steadily as it narrates, the starfield reflection sliding; it stops just short of filling the frame. Planet size context: 1000 m. Day 2.",
+  "send_text": "IMAGE S043 (standing rules apply, generate it now, ONE image only): Medium shot. ORB three-quarter hover, drifting closer to lens. Location: deep space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB drifts toward the lens over the clip, halo pulsing steadily as it narrates, the starfield reflection sliding; it stops just short of filling the frame. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "orbit",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S045",
@@ -302,7 +580,16 @@
    "PIP",
    "GRUFF"
   ],
-  "prompt": "EWS: extreme wide: two tiny figures on opposite sides of a ridge. Location: equator. Characters present: PIP, GRUFF. Frozen first frame of this moment: Two tiny figures stand on opposite sides of a ridge, each facing away; PIP kicks a pebble; GRUFF sits down. The horizon curves away; haze drifts. Planet size context: 1000 m. Day 2."
+  "prompt": "EWS: extreme wide: two tiny figures on opposite sides of a ridge. Location: equator. Characters present: PIP, GRUFF. Frozen first frame of this moment: Two tiny figures stand on opposite sides of a ridge, each facing away; PIP kicks a pebble; GRUFF sits down. The horizon curves away; haze drifts. Planet size context: 1000 m. Day 2.",
+  "send_text": "IMAGE S045 (standing rules apply, generate it now, ONE image only): Extreme wide shot. extreme wide: two tiny figures on opposite sides of a ridge. Location: orbital view of the small round planet against deep-space black. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: Two tiny figures stand on opposite sides of a ridge, each facing away; PIP kicks a pebble; GRUFF sits down. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "equator",
+  "shot_type": "EWS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S046",
@@ -311,7 +598,16 @@
   "characters": [
    "ORB"
   ],
-  "prompt": "wide shot: ORB descending from orbit onto the pad, seen from ground. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB. Frozen first frame of this moment: ORB drops from the black sky into frame, decelerates, and settles into a hover a metre above the red ring; halo brightens as it arrives; pad lights wake. Planet size context: 1000 m. Day 4."
+  "prompt": "wide shot: ORB descending from orbit onto the pad, seen from ground. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: ORB. Frozen first frame of this moment: ORB drops from the black sky into frame, decelerates, and settles into a hover a metre above the red ring; halo brightens as it arrives; pad lights wake. Planet size context: 1000 m. Day 4.",
+  "send_text": "IMAGE S046 (standing rules apply, generate it now, ONE image only): Wide shot. ORB descending from orbit onto the pad, seen from ground. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB drops from the black sky into frame, decelerates, and settles into a hover a metre above the red ring; halo brightens as it arrives; pad lights wake. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "WS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_ORB",
+   "M_SET_pad",
+   "M_PLANET_1000"
+  ]
  },
  {
   "shot": "S047",
@@ -321,13 +617,29 @@
    "PIP",
    "GRUFF"
   ],
-  "prompt": "medium shot: 2-shot: PIP and GRUFF trudging onto the pad at dusk, tether dragging between them, low tracking. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF. Frozen first frame of this moment: PIP and GRUFF walk onto the pad three metres apart, the tether dragging and catching on the rock between them; GRUFF tugs it free without looking at her; pad lights glow in the dusk. Planet size context: 1000 m. Day 4."
+  "prompt": "medium shot: 2-shot: PIP and GRUFF trudging onto the pad at dusk, tether dragging between them, low tracking. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: PIP, GRUFF. Frozen first frame of this moment: PIP and GRUFF walk onto the pad three metres apart, the tether dragging and catching on the rock between them; GRUFF tugs it free without looking at her; pad lights glow in the dusk. Planet size context: 1000 m. Day 4.",
+  "send_text": "IMAGE S047 (standing rules apply, generate it now, ONE image only): Medium shot. 2-shot: PIP and GRUFF trudging onto the pad at dusk, tether dragging between them, low tracking. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: PIP and GRUFF walk onto the pad three metres apart, the tether dragging and catching on the rock between them; GRUFF tugs it free without looking at her; pad lights glow in the dusk. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "MS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_PIP",
+   "M_GRUFF",
+   "M_SET_pad"
+  ]
  },
  {
   "shot": "S048",
   "beat": "B09",
   "composite_seed_id": "C036",
   "characters": [],
-  "prompt": "INS: tray drone landing with two covered platters, close. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: none. Frozen first frame of this moment: A small tray drone lowers two silver cloches into frame and retreats; the cloches rock and settle; a highlight slides over the domes. Planet size context: 1000 m. Day 4."
+  "prompt": "INS: tray drone landing with two covered platters, close. Location: the landing pad with its red painted ring and the question-mark crate. Characters present: none. Frozen first frame of this moment: A small tray drone lowers two silver cloches into frame and retreats; the cloches rock and settle; a highlight slides over the domes. Planet size context: 1000 m. Day 4.",
+  "send_text": "IMAGE S048 (standing rules apply, generate it now, ONE image only): Insert detail shot. tray drone landing with two covered platters, close. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: A small tray drone lowers two silver cloches into frame and retreats; the cloches rock and settle; a highlight slides over the domes. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+  "set": "landing_pad",
+  "shot_type": "INS",
+  "planet_m": 1000,
+  "seed_masters": [
+   "M_SET_pad"
+  ]
  }
 ]

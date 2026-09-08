@@ -1,0 +1,15 @@
+{
+ "_schema": "per-shot seed stills for 0:00-3:00; generated in the identity-locked ChatGPT thread (6aa03fb8); sha256 = provenance; status: GEN|PASS|REJECT",
+ "seeds": {
+  "S001": {
+   "file": "assets/shrinking_planet/seeds/S001.png",
+   "sha256": "6e98596082f2b8345c3796f47e78548acb28f5ff73733cd1879027650246a5cb",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S001 (standing rules apply, generate it now, ONE image only): Extreme close-up. ORB extreme close-up lens-eye fills frame. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: The halo brightens in two short pulses as if speaking, the lens iris tightens slightly, a faint drift of the sphere up and down by a few centimetres. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "GEN"
+  }
+ }
+}
