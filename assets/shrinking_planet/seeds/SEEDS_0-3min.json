@@ -9,6 +9,313 @@
     941
    ],
    "prompt": "IMAGE S001 (standing rules apply, generate it now, ONE image only): Extreme close-up. ORB extreme close-up lens-eye fills frame. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: The halo brightens in two short pulses as if speaking, the lens iris tightens slightly, a faint drift of the sphere up and down by a few centimetres. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "ORB on-anchor; pad, ring, crate, curved horizon"
+  },
+  "S002": {
+   "file": "assets/shrinking_planet/seeds/S002.png",
+   "sha256": "8a77bfb20bb223180996271691529427d8920a4dbfb91e3bfe792f0f9874bf33",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S002 (standing rules apply, generate it now, ONE image only): Wide shot. wide 3-shot low angle on the pad. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: Both contestants lift bubble helmets off their heads in one motion and lower them to their sides; PIP's fronds spring up as the helmet clears; GRUFF shakes his fur once. Cast in frame (PIP, GRUFF, ORB): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "all three on-anchor; helmets in hand"
+  },
+  "S005": {
+   "file": "assets/shrinking_planet/seeds/S005.png",
+   "sha256": "09a6b9b2d182e857acb8434d92dd1469c6c768ec0a90004674ff389936053d3b",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S005 (standing rules apply, generate it now, ONE image only): Medium shot. tight 2-shot chest-up on the crate. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: A slow bloom of warm light rises from the crate's question-mark plate between them; PIP glances down at it, GRUFF looks away over his shoulder. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "2-shot on glowing crate; on-anchor"
+  },
+  "S006": {
+   "file": "assets/shrinking_planet/seeds/S006.png",
+   "sha256": "6a9f10970c57dcfd751c1e5504b1cd9cea4c93571ca98bd159a68f114235bb87",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S006 (standing rules apply, generate it now, ONE image only): Close-up. PIP close-up at camp, mouth open in surprise. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP's eyes widen further, fronds lift slowly outward, the mouth stays open; a tiny blink at the end. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "REJECT",
+   "verdict": "PIP eye drift: brown iris + white sclera vs glossy black; regen with eye anchor"
+  },
+  "S007": {
+   "file": "assets/shrinking_planet/seeds/S007.png",
+   "sha256": "026da82249c4a1315d7d17a7071e8f59aa656bcd8a105bf12730e5bac9d3f5e2",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S007 (standing rules apply, generate it now, ONE image only): Close-up. GRUFF close-up in the cave mouth, brows knotted. Location: GRUFF's cave: a basalt cave lit cyan from within. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF's brows lower and knot, fur bristles around the mouth region, one slow exhale moves the fur, the goggle catches a passing highlight. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "GRUFF CU in cyan cave; on-anchor"
+  },
+  "S008": {
+   "file": "assets/shrinking_planet/seeds/S008.png",
+   "sha256": "4e6b116a5496d4acd386c209596873df02b1fbe74fab2ff317ab0ee6ff1e1f65",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S008 (standing rules apply, generate it now, ONE image only): Insert detail shot. insert: coiled tether on rock, ORB hovering above. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB drifts down into frame from the top, halo dim, and settles in a slow hover; the tether's anklet ring rocks once as if nudged. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "tether insert + ORB; on-anchor"
+  },
+  "S009": {
+   "file": "assets/shrinking_planet/seeds/S009.png",
+   "sha256": "95eee9bcc5573ab0d7936dcdef4e713f8b61cebd5d80465971d35b1b0f67bb3e",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S009 (standing rules apply, generate it now, ONE image only): Over-the-shoulder shot. over-the-shoulder past ORB to GRUFF. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF's fur bristles outward as he speaks, brows drop, he leans in ten centimetres and back. Cast in frame (ORB, GRUFF): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "REJECT",
+   "verdict": "GRUFF fur GREY not cyan-blue; regen with colour anchor"
+  },
+  "S010": {
+   "file": "assets/shrinking_planet/seeds/S010.png",
+   "sha256": "a2337f385e191c644d09b6fce02759c7ab3ea3f6410f5d6fa3670607bedca90d",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S010 (standing rules apply, generate it now, ONE image only): Close-up. PIP close-up against the crate, bright. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP answers quickly with a small mouth movement, fronds bounce once, then she laughs \u2014 head tips back a few degrees, fronds curl at the tips, eyes squint. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "PIP laugh CU; on-anchor"
+  },
+  "S013": {
+   "file": "assets/shrinking_planet/seeds/S013.png",
+   "sha256": "a9d710b0452d0a12c51849a9568303980b56cafc349122c7030b0776c3d454d9",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S013 (standing rules apply, generate it now, ONE image only): Wide shot. wide 3-shot high angle, halo flare. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: ORB's halo flares into a wide starburst and holds, throwing gold light across both contestants; PIP steps back half a pace; GRUFF folds his arms. Cast in frame (PIP, GRUFF, ORB): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "REJECT",
+   "verdict": "GRUFF desaturated grey under gold flare; regen with colour anchor"
+  },
+  "S014": {
+   "file": "assets/shrinking_planet/seeds/S014.png",
+   "sha256": "492fc238cc6f7be2942c36107c96424232f052da81dad4444b741a55057b862c",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S014 (standing rules apply, generate it now, ONE image only): Medium shot. side-angle GRUFF medium, ORB drifting out of foreground. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB drifts out of the foreground to the right, defocusing; GRUFF bends and snaps an anklet shut on his leg with a sharp jerk, then straightens and rolls his shoulders. Cast in frame (GRUFF, ORB): GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "GRUFF cyan, anklet snap, ORB defocused; on-anchor"
+  },
+  "S015": {
+   "file": "assets/shrinking_planet/seeds/S015.png",
+   "sha256": "28f2fb38175b8a710acd505362851d6a9159707e85ce0b71fcc7a8cc0f45c6e0",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S015 (standing rules apply, generate it now, ONE image only): Insert detail shot. 2-shot on the anklets, ground level. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: GRUFF's locked anklet sits still in the foreground; PIP's foot enters, she hesitates, then the anklet snaps closed with a small burst of dust and a brief motion-blur of the clasp. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long cyan-blue fur covering the mouth, heavy brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "anklet insert, dust burst; both on-anchor"
+  },
+  "S018": {
+   "file": "assets/shrinking_planet/seeds/S018.png",
+   "sha256": "c85281a440b7620c3dc8190c17bf299018eb58d2d82ac9b2ce7f4741b8503a38",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S018 (standing rules apply, generate it now, ONE image only): Close-up. whip-tilt from PIP's anklet up to her face. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP looks up from her freshly locked anklet straight into camera, eyes huge, fronds half-raised, a flicker of fear. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized glossy black eyes, small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "REJECT",
+   "verdict": "PIP eye drift (brown iris + whites) + fuzzier skin; sent pre-hardening; regen"
+  },
+  "S020": {
+   "file": "assets/shrinking_planet/seeds/S020.png",
+   "sha256": "aa9064f96f830196f55a48d0609bd05fc62d4848c405283bce592ee02029839f",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S020 (standing rules apply, generate it now, ONE image only): Close-up. ORB close-up, halo pulse, rock behind. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB's halo pulses in speech rhythm then dims; the lens-eye tilts down toward the two off-screen contestants, then straight back at camera; the starfield reflection slides across the chrome as it turns Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "ORB CU; on-anchor"
+  },
+  "S019": {
+   "file": "assets/shrinking_planet/seeds/S019.png",
+   "sha256": "465cf1e0e149bdb532eb4da6840c0726e325607992f9fb09bcff42188cb8f4a7",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S019 (standing rules apply, generate it now, ONE image only): Wide shot. landing-pad wide, red ring in full, all three. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: ORB drifts backward toward the ring's edge while its halo pulses; PIP and GRUFF stand still, GRUFF's fur moving in a faint breeze, PIP's scarf lifting. Cast in frame (PIP, GRUFF, ORB): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized SOLID glossy BLACK eyes (no whites, no iris), small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long SATURATED CYAN-BLUE fur (never grey, never desaturated) completely covering the mouth, heavy dark-blue brows, one cracked brass goggle on the forehead; ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "sheet C: on-anchor"
+  },
+  "S021": {
+   "file": "assets/shrinking_planet/seeds/S021.png",
+   "sha256": "9c69c61d716506c912076053ec27c642a7b629039591dcaf972cb9834fa3affc",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S021 (standing rules apply, generate it now, ONE image only): Hero wide shot. ORB launch + continuous pull-out to full 1000 m planet. Location: high above the landing pad, looking down past ORB at the whole ~1 km planet: the red ring, the crate and two tiny figures far below, the curved edge of the planet against black space. Freeze-frame of the moment: ORB has just launched upward, halo blazing, a faint dust ring blown off the pad below. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "sheet C: on-anchor"
+  },
+  "S022": {
+   "file": "assets/shrinking_planet/seeds/S022.png",
+   "sha256": "31f6a868756b5383a2170e283506a1bec3e86e605011264601e4fec7cb3dd810",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S022 (standing rules apply, generate it now, ONE image only): Hero wide shot. orbital push-in from space onto the north pole camp. Location: seen from space: the whole ~1 km planet fills the lower frame, its north pole toward camera, the magenta dome tent a tiny bright dot on the grey basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: a still, clean orbital view, stars sharp. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "sheet C: on-anchor"
+  },
+  "S023": {
+   "file": "assets/shrinking_planet/seeds/S023.png",
+   "sha256": "033aff9babda97513641fdc017eeea7fe3b5d1b1d0d5e310ca8a041e1e677bf2",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S023 (standing rules apply, generate it now, ONE image only): Medium shot. PIP camp medium, unpacking. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP pulls a ration crate open, lays three bars in a neat row, straightens the scarf, looks up at the curved horizon and sighs; fronds settle. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized SOLID glossy BLACK eyes (no whites, no iris), small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "sheet C: on-anchor"
+  },
+  "S024": {
+   "file": "assets/shrinking_planet/seeds/S024.png",
+   "sha256": "e59e8525981e66d3746bf9cf968f09f424b6aa9e9ca931e91ba00dbb26c7db62",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S024 (standing rules apply, generate it now, ONE image only): Wide shot. ORB hovering high over the camp looking down at PIP, wide. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB hovers high over the tent, halo pulsing as it narrates, drifting a slow arc; PIP below shades her eyes and looks up at it; the horizon curves behind. Cast in frame (ORB, PIP): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms; PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized SOLID glossy BLACK eyes (no whites, no iris), small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "sheet C: on-anchor"
+  },
+  "S025": {
+   "file": "assets/shrinking_planet/seeds/S025.png",
+   "sha256": "6014cb5827c90d95e7727fa1eb00acc26e4fb272a703f29bfdccbc213633b88e",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S025 (standing rules apply, generate it now, ONE image only): Wide shot. orbital glide over the south pole cave. Location: from low orbit looking down at the south pole, the cyan-lit cave mouth a small glowing notch in the basalt, the planet edge curving against black. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: a still, clean orbital view. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "sheet C: on-anchor"
+  },
+  "S026": {
+   "file": "assets/shrinking_planet/seeds/S026.png",
+   "sha256": "7b82f9e0d06348bfd3698c59152f6159a10ab2642ac388a828b5f44205173f02",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S026 (standing rules apply, generate it now, ONE image only): Wide shot. GRUFF cave interior wide, settling in. Location: GRUFF's cave: a basalt cave lit cyan from within. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF ducks under the entrance, thumps down onto the ledge, stacks two moon rocks, then lies back with one arm behind his head. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long SATURATED CYAN-BLUE fur (never grey, never desaturated) completely covering the mouth, heavy dark-blue brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "GRUFF cave interior; cyan fur under cyan light"
+  },
+  "S027": {
+   "file": "assets/shrinking_planet/seeds/S027.png",
+   "sha256": "278b0f8b272339f08905b1a79a69cd1318157ff2dece47924d45c3fb5797302a",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S027 (standing rules apply, generate it now, ONE image only): Insert detail shot. THE COUNT insert, drifting past camera left to right. Location: just above the basalt surface near the pad, the curved horizon and stars behind. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: THE COUNT hovers in from frame left, thrusters puffing, antenna wobbling, its display faces blank and steady (digits composited later), and drifts out frame right. Cast in frame (COUNT): THE COUNT = 40-cm matte-black hovering cube, red seven-segment display on every face, one wobbling antenna, four small thrusters. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "THE COUNT insert; NOTE: rusty-brown body + \"0\" digits vs matte-black/blank anchor \u2014 compare to M_COUNT master before assembly"
+  },
+  "S028": {
+   "file": "assets/shrinking_planet/seeds/S028.png",
+   "sha256": "d5f6d6b9cb49131ab684dc6810795cd12d0b9721cd6a2c5ba079734e50bbf78a",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S028 (standing rules apply, generate it now, ONE image only): Wide shot. toilet gag: low wide, a hole in the rock with the horizon and stars. Location: a round hole in the basalt near the equator, low wide angle, the close curved horizon and stars behind. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF walks into frame, looks down at the hole, looks up at the stars, looks at the camera, and slowly sits; fur puffs. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long SATURATED CYAN-BLUE fur (never grey, never desaturated) completely covering the mouth, heavy dark-blue brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "toilet gag wide; GRUFF cyan"
+  },
+  "S029": {
+   "file": "assets/shrinking_planet/seeds/S029.png",
+   "sha256": "9261139206392710c4ea6b9ee3c08f430e3a3fdb66deefa9431deb8d6c94c880",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S029 (standing rules apply, generate it now, ONE image only): Hero wide shot. crate hero: slow orbit around the sealed crate on the pad. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: the sealed crate alone in the centre of the red ring, its question-mark plate glowing softly, dust settled. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "crate hero on pad"
+  },
+  "S030": {
+   "file": "assets/shrinking_planet/seeds/S030.png",
+   "sha256": "c1a8a3cc67228e942cbfd267ae78a8e4a08d3ddcf6659bdafae2aaa42bad730b",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S030 (standing rules apply, generate it now, ONE image only; this is an original character design from our own series): Medium shot. Two contestants walking single file along the equator ridge, camera tracking alongside. Location: the equator: a bare basalt ridge path, the horizon rolling close on both sides. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. GRUFF towers over PIP (2.5 m vs 1 m). Freeze-frame of the moment: PIP walks ahead with quick steps, GRUFF lumbers three metres behind, a slack safety cable between their anklets; neither looks at the other. Cast in frame (PIP, GRUFF): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized SOLID glossy BLACK eyes (no whites, no iris), small mouth, one yellow scarf; GRUFF = 2.5-metre yeti, long SATURATED CYAN-BLUE fur (never grey, never desaturated) completely covering the mouth, heavy dark-blue brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "reworded retry; tethered walk on ridge; both on-anchor"
+  },
+  "S032": {
+   "file": "assets/shrinking_planet/seeds/S032.png",
+   "sha256": "d3ad40a7ab766d0c5bba223c26b15faf337fcd1d6bd620e7a834ce34cf36c9ad",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S032 (standing rules apply, generate it now, ONE image only): Close-up. PIP confessional close-up, magenta booth, straight on. Location: the glass confessional booth. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: PIP speaks with small mouth movements, fronds drooping slightly, eyes flick down then back to camera; magenta strip light steady. Cast in frame (PIP): PIP = 1-metre axolotl-like creature, matte magenta skin, six frilly gill-fronds as hair, oversized SOLID glossy BLACK eyes (no whites, no iris), small mouth, one yellow scarf. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "PIP confessional, magenta booth, black eyes"
+  },
+  "S033": {
+   "file": "assets/shrinking_planet/seeds/S033.png",
+   "sha256": "083ce757ceb547d59a019109e86cdbd76a4ef36c5e319cecc913ddcb862afadc",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S033 (standing rules apply, generate it now, ONE image only): Medium shot. GRUFF confessional medium, cyan booth, slightly high angle. Location: the glass confessional booth. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: GRUFF sits hunched, fur over the mouth shifting as he speaks, brows flat and cold, one hand rubs the goggle on his forehead. Cast in frame (GRUFF): GRUFF = 2.5-metre yeti, long SATURATED CYAN-BLUE fur (never grey, never desaturated) completely covering the mouth, heavy dark-blue brows, one cracked brass goggle on the forehead. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "GRUFF confessional, cyan booth"
+  },
+  "S035": {
+   "file": "assets/shrinking_planet/seeds/S035.png",
+   "sha256": "3e4ff3fc37fb28b0fad1a3b83258eeb22d62dd3f5fbafa38760b6f2acb461cc5",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S035 (standing rules apply, generate it now, ONE image only): Medium shot. ORB hovering in orbit, planet behind, halo dims on 'It isn't'. Location: low orbit: ORB in the foreground with the whole ~1 km planet behind it against black space. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: ORB hovers with the planet large behind it; the halo pulses twice then drops to almost nothing; the lens-eye slowly turns to face camera dead-on. Cast in frame (ORB): ORB = 60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo, starfield reflected in the chrome, no mouth, no arms. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "PASS",
+   "verdict": "ORB in low orbit, halo dimmed as scripted"
+  },
+  "S037": {
+   "file": "assets/shrinking_planet/seeds/S037.png",
+   "sha256": "1b4a568c3be2683f848ade92c9333fa84e4f4095326b3ecd9f947d54c10b290f",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S037 (standing rules apply, generate it now, ONE image only): Insert detail shot. flash-forward card plate: rock dust storm, no characters. Location: the planet surface at the equator, grey basalt, a rock-dust storm blowing across frame. This is a flash-forward: the planet is now a tiny ~25 m rock, extreme curvature, space visible all around. Freeze-frame of the moment: A storm of grey rock dust blows left to right across a black void, small pebbles tumbling, a red light pulsing somewhere behind the dust. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
+   "status": "GEN"
+  },
+  "S038": {
+   "file": "assets/shrinking_planet/seeds/S038.png",
+   "sha256": "0e1642ffef022bee07f06ee068773f915cd615f07d767b81aa10766651f4bc06",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "IMAGE S038 (standing rules apply, generate it now, ONE image only): Wide shot. sunrise over PIP's tent, sun cresting the horizon. Location: PIP's camp: a magenta dome tent on basalt. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: A hard white sun rises fast over the curved horizon behind the tent, long shadows sweeping across the rock, haze glowing; the tent flap moves once. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
    "status": "GEN"
   }
  }
