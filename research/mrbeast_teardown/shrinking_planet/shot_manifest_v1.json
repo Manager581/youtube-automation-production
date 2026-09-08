@@ -1,0 +1,6338 @@
+{
+ "title": "Shrinking Planet",
+ "version": "v1",
+ "runtime": "20:00",
+ "art_style": "Stylized 3D-animated creature feature, one locked look for every shot: painterly-realistic CG with soft subsurface skin and groomed fur, cinematic 35mm lens with shallow depth of field, matte-grey basalt planet surface with fine dust, deep black space with a dense cool starfield and one warm orange key light (the planet's own small sun) plus a cold blue fill from space; colour codes locked — PIP magenta #E0479E, GRUFF cyan #35C6E8, ORB chrome with a gold halo, THE COUNT matte black with red seven-segment digits; no photoreal humans anywhere; no logos, wordmarks or brand props; on-screen text is never generated (composited later in the FFmpeg renderer); same costume, same scarf, same goggle in every shot for all 30 story days — only the planet changes.",
+ "ladder": {
+  "1": 1000,
+  "2": 1000,
+  "4": 1000,
+  "5": 500,
+  "6": 500,
+  "7": 500,
+  "9": 500,
+  "10": 300,
+  "14": 300,
+  "15": 300,
+  "16": 300,
+  "19": 300,
+  "20": 25,
+  "24": 25,
+  "25": 20,
+  "26": 12,
+  "27": 7,
+  "28": 4,
+  "29": 2,
+  "30": 2
+ },
+ "ladder_note": "Keys 1/5/10/20/25/26/27/28/29/30 are the bible ladder; the extra keys (2,4,6,7,9,14,15,16,19,24) are the intermediate story days used by shots and carry the size in force that day. Convention: ORB visits at midnight and THE COUNT rolls the day over at the instant the planet shrinks, so the pre-shrink half of an offer beat is tagged to the previous day (e.g. Day 4 · 1000 M → Day 5 · 500 M inside B09).",
+ "devices": {
+  "RED_LINE": "quit device — painted ring around the landing pad; cross it and BOTH go home with nothing (B05 open, B30 pay: nobody crossed)",
+  "LAUNCH_KEY": "steal device — brass key on a platter inside the ring from Day 25; turning it launches the one-seat pod with the whole prize (B21 open, B28 pay: never turned)"
+ },
+ "characters": {
+  "ORB": {
+   "role": "host",
+   "design": "60-cm floating chrome sphere, one large glass lens-eye, gold ring-light halo that pulses in brightness when it speaks, always the same starfield reflection on the chrome; no mouth, no arms; objects arrive on tray drones",
+   "speech": "halo brightness keyframe in FFmpeg — no lip-sync",
+   "voice": "announcer energy, dry, precise, mischievous; ~55% of words",
+   "seed": "M_ORB"
+  },
+  "PIP": {
+   "role": "contestant (the singer who went solo)",
+   "design": "1-m axolotl-like creature, matte magenta skin, six frilly gill-fronds that act as hair and emote (droop = sad, flare = angry, curl = flirt, fold flat = fear), oversized glossy black eyes, one yellow scarf that never changes, small mouth, one brass anklet with a glowing tether",
+   "speech": "mouth-visible lines capped at 20 for the episode; all other lines are voice-over on reactions/inserts",
+   "voice": "bright, quick, fragile underneath; ~22% of words",
+   "seed": "M_PIP_front"
+  },
+  "GRUFF": {
+   "role": "contestant (the drummer who got left)",
+   "design": "2.5-m cyan-blue yeti, long fur completely covers the mouth (speech reads as fur movement and heavy brows), one cracked brass goggle worn on the forehead (the plot object), no clothes, one brass anklet with a glowing tether",
+   "speech": "fur-covered mouth — no lip-sync required",
+   "voice": "low, gravelly, few words, deadpan; ~23% of words",
+   "seed": "M_GRUFF_front"
+  },
+  "COUNT": {
+   "role": "scoreboard / comic foil",
+   "design": "matte-black hovering 40-cm cube, red seven-segment displays on every face (clean plate — digits composited in FFmpeg), one wobbling antenna, four corner thrusters (gained on Day 10)",
+   "speech": "beeps only",
+   "voice": "none",
+   "seed": "M_COUNT"
+  }
+ },
+ "seed_masters": [
+  {
+   "id": "M_PIP_front",
+   "kind": "character",
+   "prompt": "Front three-quarter full-body master of PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf, neutral stance on grey basalt, black space behind, warm orange key + blue fill, small closed mouth, fronds relaxed; matte skin, no gloss except the eyes.",
+   "notes": "ONE approved seed; every PIP composite derives from it. Scarf and anklet locked."
+  },
+  {
+   "id": "M_GRUFF_front",
+   "kind": "character",
+   "prompt": "Front three-quarter full-body master of GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead, standing on grey basalt against black space, fur groomed, mouth fully hidden by fur, heavy brows visible, goggle strap worn shiny, brass anklet on left leg.",
+   "notes": "ONE approved seed; goggle crack pattern must be identical in every derivative."
+  },
+  {
+   "id": "M_ORB",
+   "kind": "character",
+   "prompt": "Master of ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo, hovering at eye level, chrome reflecting a fixed starfield, halo at mid brightness, no arms, no mouth.",
+   "notes": "Halo brightness is animated in FFmpeg; starfield reflection is locked."
+  },
+  {
+   "id": "M_COUNT",
+   "kind": "character",
+   "prompt": "Master of THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna, faces blank matte red (clean plate for composited digits), antenna mid-wobble, no thrusters (Day-10 thruster variant is a composite).",
+   "notes": "Digits are never generated; composited over the clean plate."
+  },
+  {
+   "id": "M_PLANET_1000",
+   "kind": "planet",
+   "prompt": "Orbital hero still of a 1,000-metre grey basalt planetoid with a faint thin blue atmosphere haze, one small orange sun, dense starfield, tiny landing pad with a red ring visible on the equator.",
+   "notes": "Hero orbit master; used for the 0:45 pull-out and the 19:55 bookend."
+  },
+  {
+   "id": "M_PLANET_500",
+   "kind": "planet",
+   "prompt": "Orbital still of the same planetoid after a wedge is sheared away: a clean glowing meridian scar, half the mass gone, thin haze thinner, same sun and starfield.",
+   "notes": "Wedge scar geometry locked for all Day 5–9 shots."
+  },
+  {
+   "id": "M_PLANET_300",
+   "kind": "planet",
+   "prompt": "Orbital still of the same planetoid at 300 metres, two scars, no atmosphere haze left, landing pad now a large feature on the surface.",
+   "notes": "Most-used mid-episode master (Days 10–19)."
+  },
+  {
+   "id": "M_PLANET_25",
+   "kind": "planet",
+   "prompt": "Orbital still of a house-sized (25 m) basalt rock with the landing pad, crate and pod door covering most of one face, two figures visible as specks.",
+   "notes": "Days 20–24."
+  },
+  {
+   "id": "M_PLANET_20",
+   "kind": "planet",
+   "prompt": "Orbital still of a 20-metre basalt rock, pad and pod door filling one hemisphere, red pod light visible from space.",
+   "notes": "Day 25. The 12-m (Day 26) planet is a scale composite between this and M_PLANET_4."
+  },
+  {
+   "id": "M_PLANET_4",
+   "kind": "planet",
+   "prompt": "Ground-level hero still of a 4-metre basalt rock in space with the pod door and crate on it, sized so a 2.5-m creature would stand taller than the world.",
+   "notes": "THUMBNAIL SEED (Day 28). The 7-m (Day 27) planet is a scale composite from this master."
+  },
+  {
+   "id": "M_PLANET_2",
+   "kind": "planet",
+   "prompt": "Ground-level hero still of a car-sized (2 m) basalt rock in space, crate, clock face and red pod door crammed onto it, room for two bodies and nothing else.",
+   "notes": "Days 29–30; finale and rescue-ship plate."
+  },
+  {
+   "id": "M_SET_pad",
+   "kind": "set",
+   "prompt": "Set master: the landing pad — a flat basalt disc with a painted red ring, a steel crate stencilled with a question mark, and a small escape-pod hatch set into the rock beside it (door unlit).",
+   "notes": "Red ring = QUIT line. Pod door = STEAL device (lit red only from Day 25). Same set at every planet size."
+  },
+  {
+   "id": "M_SET_camp",
+   "kind": "set",
+   "prompt": "Set master: PIP's north-pole camp — a small magenta-trimmed tent, a kettle on a rock, a keyboard under a tarp, planet horizon curving close behind.",
+   "notes": "Re-lit for sunrise and night variants; slides into the valley from Day 6."
+  },
+  {
+   "id": "M_SET_cave",
+   "kind": "set",
+   "prompt": "Set master: GRUFF's south-pole cave mouth — a mattress half outside, a wall with one fresh dent, cyan-tinted shadow inside.",
+   "notes": "Heart moon-rock (Day 10) and paperback (Day 16) are props added in composites."
+  },
+  {
+   "id": "M_SET_booth",
+   "kind": "set",
+   "prompt": "Set master: a bare confessional booth — one stool, one lens-height mark, walls that take colour light (magenta for PIP, cyan for GRUFF).",
+   "notes": "Booth angle varies per use; also re-dressed as the glass soundproof pods (Day 26)."
+  },
+  {
+   "id": "M_SET_vent",
+   "kind": "set",
+   "prompt": "Set master: a plasma vent — a crack in the basalt breathing violet light like a campfire, two sitting rocks either side.",
+   "notes": "The Talk (7:05), the goggle plant (10:25)."
+  },
+  {
+   "id": "M_SET_valley",
+   "kind": "set",
+   "prompt": "Set master: the shallow valley both camps slide into after Day 5 — two tents almost touching, tether coiled between them, wedge scar glowing on the horizon.",
+   "notes": "Day 6 night, Day 7 fight and truce, Day 10 arrival."
+  },
+  {
+   "id": "M_ARCH_01",
+   "kind": "archive",
+   "prompt": "Archive still, faded print: PIP and GRUFF's old tour van at night, goggle on GRUFF's forehead, scarf on PIP.",
+   "notes": "Hook photo stack #1 (0.4 s)."
+  },
+  {
+   "id": "M_ARCH_02",
+   "kind": "archive",
+   "prompt": "Archive still, stage-lit: PIP at a microphone, GRUFF behind a drum kit, goggle up.",
+   "notes": "Hook photo stack #2."
+  },
+  {
+   "id": "M_ARCH_03",
+   "kind": "archive",
+   "prompt": "Archive still, phone-photo look: the two of them mid-song, laughing, in a tiny club.",
+   "notes": "Hook photo stack #3."
+  },
+  {
+   "id": "M_ARCH_04",
+   "kind": "archive",
+   "prompt": "Archive still: a battered drum kit with a heart drawn on the bass-drum case.",
+   "notes": "Hook photo stack #4; pays off 'drawn worse ones on drum cases' (9:45)."
+  },
+  {
+   "id": "M_ARCH_05",
+   "kind": "archive",
+   "prompt": "Archive still, close: GRUFF's cracked brass goggle on a dressing-room table next to a set list.",
+   "notes": "Hook photo stack #5; goggle loop seed."
+  },
+  {
+   "id": "M_ARCH_06",
+   "kind": "archive",
+   "prompt": "Archive still: a torn tour poster with PIP's name printed alone.",
+   "notes": "Hook photo stack #6 ('he found out from a poster')."
+  }
+ ],
+ "planet_master_note": "12-m (Day 26) and 7-m (Day 27) planets are scale composites derived from M_PLANET_20 and M_PLANET_4 respectively; the 100-m dome offer (B15) is a hologram overlay on M_PLANET_300, not a planet master.",
+ "insert_library": {
+  "INS_WIDE_A": "S002",
+  "INS_CRATE_HERO": "S004",
+  "INS_PIP_CU_GASP": "S005",
+  "INS_GRUFF_CU_BROW": "S006",
+  "INS_TETHER": "S007",
+  "INS_PIP_LAUGH": "S012",
+  "INS_GRUFF_SMIRK": "S016",
+  "INS_ORB_CU": "S020",
+  "INS_ORBIT_1000": "S021",
+  "INS_COUNT_HOVER": "S024",
+  "INS_HOLE": "S027",
+  "INS_BOOTH_PIP_A": "S031",
+  "INS_BOOTH_GRUFF_A": "S032",
+  "INS_WEDGE_SPACE": "S050",
+  "INS_ORBIT_500": "S054",
+  "INS_TALLY": "S061",
+  "INS_PIP_DUST": "S066",
+  "INS_PIP_CRY": "S069",
+  "INS_COUNT_THRUST": "S078",
+  "INS_TIN_RIFF": "S108",
+  "INS_GOGGLE_MACRO": "S111",
+  "INS_LID": "S117",
+  "INS_ORBIT_25": "S129",
+  "INS_KEY_MACRO": "S141",
+  "INS_POD_DOOR": "S142",
+  "INS_BEAM_WIDE": "S148",
+  "INS_BEAM_PIP": "S151",
+  "INS_PIP_POD": "S170",
+  "INS_THUMB_4M": "S176",
+  "INS_LEVER_HAND": "S177",
+  "INS_TWOSHOT_2M": "S182",
+  "INS_CLOCK": "S183"
+ },
+ "counts": {
+  "shots": 211,
+  "unique": 175,
+  "inserts": 36,
+  "beats": 30
+ },
+ "shots": [
+  {
+   "id": "S001",
+   "beat": "B01",
+   "t_in": "00:00",
+   "t_out": "00:03",
+   "t_in_s": 0,
+   "t_out_s": 3.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "extreme close-up on ORB lens-eye",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C001",
+   "shot_type": "ECU",
+   "i2v_prompt": "ORB punched in so tight the gold halo bleeds off both frame edges, halo pulsing hard with speech, starfield in the chrome. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S002",
+   "beat": "B01",
+   "t_in": "00:03",
+   "t_out": "00:08",
+   "t_in_s": 3.0,
+   "t_out_s": 8.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "wide 3-shot low angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C002",
+   "shot_type": "WS",
+   "i2v_prompt": "PIP and GRUFF pull off space helmets on a bare grey rock hanging in black space, ORB hovering between them, red ring and steel crate behind; one steady 6-s take for FFmpeg punch-ins. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_WIDE_A"
+  },
+  {
+   "id": "S003",
+   "beat": "B01",
+   "t_in": "00:08",
+   "t_out": "00:10",
+   "t_in_s": 8.0,
+   "t_out_s": 10.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "archive",
+   "vantage": "archive photo stack",
+   "seed_masters": [
+    "M_ARCH_01",
+    "M_ARCH_02",
+    "M_ARCH_03",
+    "M_ARCH_04",
+    "M_ARCH_05",
+    "M_ARCH_06"
+   ],
+   "composite_seed_id": "C_INS_ARCHIVE_STACK",
+   "shot_type": "STILL",
+   "i2v_prompt": "Six faded band photos flip past as a stack with whiteouts between them (composited from the archive masters). Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ARCHIVE_STACK",
+   "reuse_of": null
+  },
+  {
+   "id": "S004",
+   "beat": "B01",
+   "t_in": "00:10",
+   "t_out": "00:12",
+   "t_in_s": 10.0,
+   "t_out_s": 12.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "crate bloom macro",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C003",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Slow push on the steel crate with the stencilled question mark as a hot white light bloom blows out across its lid. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_CRATE_HERO"
+  },
+  {
+   "id": "S005",
+   "beat": "B02",
+   "t_in": "00:12",
+   "t_out": "00:14",
+   "t_in_s": 12,
+   "t_out_s": 13.6,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "camp_north",
+   "vantage": "PIP close-up open-mouthed",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_camp",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C004",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP at the rock edge, mouth slightly open, gill-fronds lifting slowly, eyes huge; no dialogue, held. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_CU_GASP"
+  },
+  {
+   "id": "S006",
+   "beat": "B02",
+   "t_in": "00:14",
+   "t_out": "00:15",
+   "t_in_s": 13.6,
+   "t_out_s": 15.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF close-up brows down",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C005",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF's face, brows down, fur drifting in a wind that should not exist, silent. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_GRUFF_CU_BROW"
+  },
+  {
+   "id": "S007",
+   "beat": "B02",
+   "t_in": "00:15",
+   "t_out": "00:16",
+   "t_in_s": 15.0,
+   "t_out_s": 16.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "tether insert with ORB above",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C006",
+   "shot_type": "INSERT",
+   "i2v_prompt": "The coiled glowing gravity tether on basalt, ORB hovering above it with a dim halo; one sub hit. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_TETHER"
+  },
+  {
+   "id": "S008",
+   "beat": "B02",
+   "t_in": "00:16",
+   "t_out": "00:17",
+   "t_in_s": 16.0,
+   "t_out_s": 17.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "wide 3-shot slow pull-back",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C002",
+   "shot_type": "WS",
+   "i2v_prompt": "Slow 1.6-s pull-back on the landing-pad wide, all three motionless. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_WIDE_A",
+   "reuse_of": "S002"
+  },
+  {
+   "id": "S009",
+   "beat": "B03",
+   "t_in": "00:17",
+   "t_out": "00:18",
+   "t_in_s": 17,
+   "t_out_s": 18.5,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "over-the-shoulder 2-shot ORB and GRUFF",
+   "seed_masters": [
+    "M_ORB",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C007",
+   "shot_type": "OTS",
+   "i2v_prompt": "Over ORB's chrome curve onto GRUFF, fur bristling as he answers, halo pulsing in the foreground. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S010",
+   "beat": "B03",
+   "t_in": "00:18",
+   "t_out": "00:20",
+   "t_in_s": 18.5,
+   "t_out_s": 19.5,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up against the crate",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C008",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP framed against the steel crate, bright and quick, small mouth visible as she speaks two words. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S011",
+   "beat": "B03",
+   "t_in": "00:20",
+   "t_out": "00:20",
+   "t_in_s": 19.5,
+   "t_out_s": 20.3,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "punch-in on the 2-shot",
+   "seed_masters": [
+    "M_ORB",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C_INS_OTS_A",
+   "shot_type": "MCU",
+   "i2v_prompt": "Tighter on GRUFF's heavy brows over ORB's halo; FFmpeg punch-in of the OTS take. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 0.8,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_OTS_A",
+   "reuse_of": null
+  },
+  {
+   "id": "S012",
+   "beat": "B03",
+   "t_in": "00:20",
+   "t_out": "00:21",
+   "t_in_s": 20.3,
+   "t_out_s": 21.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP laugh close-up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C009",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP barks one surprised laugh and pulls the yellow scarf up over her mouth, fronds bouncing. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 0.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_LAUGH"
+  },
+  {
+   "id": "S013",
+   "beat": "B04",
+   "t_in": "00:21",
+   "t_out": "00:24",
+   "t_in_s": 21,
+   "t_out_s": 24.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "wide 3-shot halo flare",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C010",
+   "shot_type": "WS",
+   "i2v_prompt": "Wide take B: ORB's halo flares white across the whole pad while PIP and GRUFF each hold a brass anklet. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S014",
+   "beat": "B04",
+   "t_in": "00:24",
+   "t_out": "00:26",
+   "t_in_s": 24.0,
+   "t_out_s": 26.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "side medium on GRUFF, ORB drifting out of foreground",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C011",
+   "shot_type": "MS",
+   "i2v_prompt": "Side angle: GRUFF bends and snaps the anklet shut, ORB drifting out of the near foreground, motion blur on the click. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S015",
+   "beat": "B04",
+   "t_in": "00:26",
+   "t_out": "00:28",
+   "t_in_s": 26.0,
+   "t_out_s": 28.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "2-shot anklet click fast punch-in",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C012",
+   "shot_type": "MS",
+   "i2v_prompt": "PIP looks at her anklet, at him, closes it — second click, fast punch-in with motion blur. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S016",
+   "beat": "B04",
+   "t_in": "00:28",
+   "t_out": "00:29",
+   "t_in_s": 28.0,
+   "t_out_s": 29.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF smirk close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C013",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF's smirk under the fur, brows lifting a millimetre, one full second of silence. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_GRUFF_SMIRK"
+  },
+  {
+   "id": "S017",
+   "beat": "B04",
+   "t_in": "00:29",
+   "t_out": "00:30",
+   "t_in_s": 29.0,
+   "t_out_s": 30.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up open-mouthed",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C004",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP's reaction close-up, fronds lifting. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_CU_GASP",
+   "reuse_of": "S005"
+  },
+  {
+   "id": "S018",
+   "beat": "B05",
+   "t_in": "00:30",
+   "t_out": "00:32",
+   "t_in_s": 30,
+   "t_out_s": 31.5,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "whip tilt from anklet to face",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C014",
+   "shot_type": "TILT",
+   "i2v_prompt": "Whip-tilt up from PIP's locked brass anklet to her face, fronds settling. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S019",
+   "beat": "B05",
+   "t_in": "00:32",
+   "t_out": "00:36",
+   "t_in_s": 31.5,
+   "t_out_s": 36.5,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "landing pad wide with red ring, all three",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C015",
+   "shot_type": "WS",
+   "i2v_prompt": "ORB inside the painted red ring, PIP and GRUFF outside it, the crate to one side; ORB delivers the rule with no music. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [
+    "redline:OPEN"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S020",
+   "beat": "B05",
+   "t_in": "00:36",
+   "t_out": "00:39",
+   "t_in_s": 36.5,
+   "t_out_s": 39.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up dry",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C016",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB's lens-eye close, halo steady and low, the red ring reflected in the chrome. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORB_CU"
+  },
+  {
+   "id": "S021",
+   "beat": "B05",
+   "t_in": "00:39",
+   "t_out": "00:45",
+   "t_in_s": 39.0,
+   "t_out_s": 45.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "space",
+   "vantage": "orbit pull-out hero",
+   "seed_masters": [
+    "M_ORB",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C017",
+   "shot_type": "HERO",
+   "i2v_prompt": "ORB launches and the camera rises with it: pad, two figures, the whole grey rock shrinking to a marble against the stars (1,000-m planet master). Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_1000"
+  },
+  {
+   "id": "S022",
+   "beat": "B06",
+   "t_in": "00:45",
+   "t_out": "00:51",
+   "t_in_s": 45,
+   "t_out_s": 51.4,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "camp_north",
+   "vantage": "orbital push-in to the north-pole camp",
+   "seed_masters": [
+    "M_SET_camp",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C018",
+   "shot_type": "PUSH",
+   "i2v_prompt": "From black space down through thin haze to a small tent, a kettle on a rock and a keyboard under a tarp. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [
+    "crate:OPEN"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S023",
+   "beat": "B06",
+   "t_in": "00:51",
+   "t_out": "00:57",
+   "t_in_s": 51.4,
+   "t_out_s": 56.8,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "cave_south",
+   "vantage": "south-pole cave mouth medium",
+   "seed_masters": [
+    "M_SET_cave",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C019",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF's cave: mattress half outside, a wall with a fresh dent, cyan shadow inside. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S024",
+   "beat": "B06",
+   "t_in": "00:57",
+   "t_out": "01:00",
+   "t_in_s": 56.8,
+   "t_out_s": 60.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "space",
+   "vantage": "THE COUNT hover insert",
+   "seed_masters": [
+    "M_COUNT",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C020",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT drifts past the lens, antenna wobbling, blank red faces (digits composited: DAY 1 · 1,000 M). Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_COUNT_HOVER"
+  },
+  {
+   "id": "S025",
+   "beat": "B06",
+   "t_in": "01:00",
+   "t_out": "01:03",
+   "t_in_s": 60.0,
+   "t_out_s": 63.2,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "tether insert with ORB above",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C006",
+   "shot_type": "INSERT",
+   "i2v_prompt": "The braided, faintly glowing tether paying out across the rock. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.2,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_TETHER",
+   "reuse_of": "S007"
+  },
+  {
+   "id": "S026",
+   "beat": "B06",
+   "t_in": "01:03",
+   "t_out": "01:09",
+   "t_in_s": 63.2,
+   "t_out_s": 68.6,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "crate hero slow push",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C003",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Slow hero push on the sealed steel crate, dust on the lid, the question mark stencil. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_CRATE_HERO",
+   "reuse_of": "S004"
+  },
+  {
+   "id": "S027",
+   "beat": "B06",
+   "t_in": "01:09",
+   "t_out": "01:14",
+   "t_in_s": 68.6,
+   "t_out_s": 73.9,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "wide over the hole, two figures",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C021",
+   "shot_type": "WS",
+   "i2v_prompt": "A hole in the rock with stars beyond it; GRUFF hands on hips over it, PIP arriving and stopping dead. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_HOLE"
+  },
+  {
+   "id": "S028",
+   "beat": "B06",
+   "t_in": "01:14",
+   "t_out": "01:18",
+   "t_in_s": 73.9,
+   "t_out_s": 78.2,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP appalled reaction close-up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C022",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP staring down into the hole, fronds flaring, scarf clutched; voice-over only. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S029",
+   "beat": "B06",
+   "t_in": "01:18",
+   "t_out": "01:24",
+   "t_in_s": 78.2,
+   "t_out_s": 83.6,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF pleased medium at the hole",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C023",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF, pleased, brows up, fur moving with speech, gesturing at the hole like an estate agent. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S030",
+   "beat": "B06",
+   "t_in": "01:24",
+   "t_out": "01:30",
+   "t_in_s": 83.6,
+   "t_out_s": 90.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "2-shot walking the equator, tether paying out",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C024",
+   "shot_type": "WS",
+   "i2v_prompt": "They walk the equator in opposite directions, the tether paying out between them, planet horizon curving. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S031",
+   "beat": "B07",
+   "t_in": "01:30",
+   "t_out": "01:38",
+   "t_in_s": 90,
+   "t_out_s": 98.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "magenta booth PIP frontal",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C025",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP alone in a booth lit magenta, speaking to the lens, fronds low, small mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ],
+   "insert_id": "INS_BOOTH_PIP_A"
+  },
+  {
+   "id": "S032",
+   "beat": "B07",
+   "t_in": "01:38",
+   "t_out": "01:46",
+   "t_in_s": 98.0,
+   "t_out_s": 106.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "cyan booth GRUFF frontal",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C026",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF alone in a booth lit cyan, brows down, fur moving when he talks. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_BOOTH_GRUFF_A"
+  },
+  {
+   "id": "S033",
+   "beat": "B07",
+   "t_in": "01:46",
+   "t_out": "01:52",
+   "t_in_s": 106.0,
+   "t_out_s": 112.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "space",
+   "vantage": "ORB against black space",
+   "seed_masters": [
+    "M_ORB",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C027",
+   "shot_type": "MS",
+   "i2v_prompt": "ORB alone against the starfield, halo steady, then dimming to almost nothing on the beat. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S034",
+   "beat": "B07",
+   "t_in": "01:52",
+   "t_out": "01:56",
+   "t_in_s": 112.0,
+   "t_out_s": 116.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "space",
+   "vantage": "flash-forward stack",
+   "seed_masters": [
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C_INS_FLASH_STACK",
+   "shot_type": "FLASH",
+   "i2v_prompt": "Five borrowed shots at 0.5 s with whiteouts: wedge tearing away (S055), GRUFF's hand on the red lever (S158), PIP shouting in rock dust (S062), truth beam flashing red (S142), a clock face with unreadable digits (S166). Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_FLASH_STACK",
+   "reuse_of": null
+  },
+  {
+   "id": "S035",
+   "beat": "B07",
+   "t_in": "01:56",
+   "t_out": "02:00",
+   "t_in_s": 116.0,
+   "t_out_s": 120.0,
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "space",
+   "vantage": "ORB against black space, halo rising",
+   "seed_masters": [
+    "M_ORB",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C016",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB's halo comes back up slowly as it speaks the premise line. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORB_CU",
+   "reuse_of": "S020"
+  },
+  {
+   "id": "S036",
+   "beat": "B08",
+   "t_in": "02:00",
+   "t_out": "02:05",
+   "t_in_s": 120,
+   "t_out_s": 125.4,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "camp_north",
+   "vantage": "split-screen sunrise over the camp",
+   "seed_masters": [
+    "M_SET_camp",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C028",
+   "shot_type": "WS",
+   "i2v_prompt": "Magenta dawn sky over the north-pole tent, the small sun breaking the too-close horizon. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S037",
+   "beat": "B08",
+   "t_in": "02:05",
+   "t_out": "02:11",
+   "t_in_s": 125.4,
+   "t_out_s": 130.7,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "cave_south",
+   "vantage": "split-screen sunrise over the cave",
+   "seed_masters": [
+    "M_SET_cave",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C029",
+   "shot_type": "WS",
+   "i2v_prompt": "Cyan dawn over the south-pole cave, same sun from the other hemisphere. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S038",
+   "beat": "B08",
+   "t_in": "02:11",
+   "t_out": "02:18",
+   "t_in_s": 130.7,
+   "t_out_s": 138.2,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "space",
+   "vantage": "orbital wide with diameter ring",
+   "seed_masters": [
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C017",
+   "shot_type": "HERO",
+   "i2v_prompt": "The 1,000-m planet from orbit; a glowing diameter ring (composited) draws around it and ticks one notch smaller. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_1000",
+   "reuse_of": "S021"
+  },
+  {
+   "id": "S039",
+   "beat": "B08",
+   "t_in": "02:18",
+   "t_out": "02:27",
+   "t_in_s": 138.2,
+   "t_out_s": 146.8,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF at the cave mouth medium",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C030",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF at the cave mouth looking at a horizon that curves away too soon, content, fur moving with speech. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S040",
+   "beat": "B08",
+   "t_in": "02:27",
+   "t_out": "02:35",
+   "t_in_s": 146.8,
+   "t_out_s": 155.4,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "camp_north",
+   "vantage": "PIP at the covered keyboard",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_camp",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C031",
+   "shot_type": "MS",
+   "i2v_prompt": "PIP, one hand resting on the tarp over the keyboard, not lifting it; voice-over only, fronds soft. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S041",
+   "beat": "B08",
+   "t_in": "02:35",
+   "t_out": "02:42",
+   "t_in_s": 155.4,
+   "t_out_s": 161.8,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB hover over the equator",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C032",
+   "shot_type": "MS",
+   "i2v_prompt": "ORB hovering low over the equator, halo pulsing with the question, music gone. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S042",
+   "beat": "B08",
+   "t_in": "02:42",
+   "t_out": "02:45",
+   "t_in_s": 161.8,
+   "t_out_s": 165.0,
+   "day": 2,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "space",
+   "vantage": "THE COUNT hover insert",
+   "seed_masters": [
+    "M_COUNT",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C020",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT drifting past with DAY 2 · 1,000 M composited. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.2,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_COUNT_HOVER",
+   "reuse_of": "S024"
+  },
+  {
+   "id": "S043",
+   "beat": "B09",
+   "t_in": "02:45",
+   "t_out": "02:53",
+   "t_in_s": 165,
+   "t_out_s": 172.5,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB arrival from orbit onto the pad",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C033",
+   "shot_type": "WS",
+   "i2v_prompt": "Midnight: ORB drops out of the black onto the pad, halo blazing, a tray drone settling beside it with two covered platters. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "unique",
+   "loops": [
+    "crate:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S044",
+   "beat": "B09",
+   "t_in": "02:53",
+   "t_out": "02:58",
+   "t_in_s": 172.5,
+   "t_out_s": 177.9,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "tray-drone platter reveal macro",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C034",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Two silver lids lift: a tiny model planet whole, then the same model sawn clean in half. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S045",
+   "beat": "B09",
+   "t_in": "02:58",
+   "t_out": "03:07",
+   "t_in_s": 177.9,
+   "t_out_s": 186.5,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "deliberation 2-shot, a metre apart",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C035",
+   "shot_type": "MS",
+   "i2v_prompt": "PIP and GRUFF a metre apart looking at the model planet instead of each other, rubbing sleep from their eyes. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S046",
+   "beat": "B09",
+   "t_in": "03:07",
+   "t_out": "03:13",
+   "t_in_s": 186.5,
+   "t_out_s": 193.0,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF medium shrugging",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C036",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF shrugs — money is money — fur rippling with speech, brass anklet catching the halo. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S047",
+   "beat": "B09",
+   "t_in": "03:13",
+   "t_out": "03:21",
+   "t_in_s": 193.0,
+   "t_out_s": 200.5,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up over the platters",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C037",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB close over the two platters, their silver lids reflected in the chrome, stating the two rules of every visit, halo ticking. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S048",
+   "beat": "B09",
+   "t_in": "03:21",
+   "t_out": "03:28",
+   "t_in_s": 200.5,
+   "t_out_s": 208.0,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "COUNT",
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT lap around the pad, tracking",
+   "seed_masters": [
+    "M_COUNT",
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C038",
+   "shot_type": "TRACK",
+   "i2v_prompt": "THE COUNT begins a slow lap of the pad, digits glowing, the two contestants in the background arguing. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S049",
+   "beat": "B09",
+   "t_in": "03:28",
+   "t_out": "03:33",
+   "t_in_s": 208.0,
+   "t_out_s": 213.4,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up cold decision",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C039",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP's fronds go dead still; she says two words with her small mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S050",
+   "beat": "B09",
+   "t_in": "03:33",
+   "t_out": "03:44",
+   "t_in_s": 213.4,
+   "t_out_s": 224.2,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [],
+   "set": "space",
+   "vantage": "hero wedge shearing away from space",
+   "seed_masters": [
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C040",
+   "shot_type": "HERO",
+   "i2v_prompt": "From orbit: a seam of light opens along a meridian and a whole wedge of the planet shears off, turning slowly into the dark. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.8,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_WEDGE_SPACE"
+  },
+  {
+   "id": "S051",
+   "beat": "B09",
+   "t_in": "03:44",
+   "t_out": "03:53",
+   "t_in_s": 224.2,
+   "t_out_s": 232.8,
+   "day": 4,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "ground-level POV, the camp drifting past their feet",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_1000"
+   ],
+   "composite_seed_id": "C041",
+   "shot_type": "POV",
+   "i2v_prompt": "Ground level: tents, kettle and the dented wall drift past two pairs of feet and out of reach; crack, rumble, then vacuum silence. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 1000 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S052",
+   "beat": "B09",
+   "t_in": "03:53",
+   "t_out": "03:56",
+   "t_in_s": 232.8,
+   "t_out_s": 236.0,
+   "day": 5,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT digit flip insert",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C020",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT's faces flip (composited) to DAY 5 · 500 M with one beep. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.2,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_COUNT_HOVER",
+   "reuse_of": "S024"
+  },
+  {
+   "id": "S053",
+   "beat": "B09",
+   "t_in": "03:56",
+   "t_out": "04:02",
+   "t_in_s": 236.0,
+   "t_out_s": 242.5,
+   "day": 5,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "GRUFF watching the wedge go, close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C042",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF watching his mattress leave on a wedge of planet, brows up, fur still. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S054",
+   "beat": "B09",
+   "t_in": "04:02",
+   "t_out": "04:10",
+   "t_in_s": 242.5,
+   "t_out_s": 250.0,
+   "day": 5,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [],
+   "set": "space",
+   "vantage": "orbital 500-m planet with scar",
+   "seed_masters": [
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C043",
+   "shot_type": "HERO",
+   "i2v_prompt": "The half-planet from orbit, the fresh meridian scar glowing, ORB a speck rising away. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_500"
+  },
+  {
+   "id": "S055",
+   "beat": "B10",
+   "t_in": "04:10",
+   "t_out": "04:18",
+   "t_in_s": 250,
+   "t_out_s": 257.6,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [],
+   "set": "valley",
+   "vantage": "night wide, two tents sliding toward the valley",
+   "seed_masters": [
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C044",
+   "shot_type": "WS",
+   "i2v_prompt": "Night: two tents on a half-planet, both creeping slowly downhill toward the same shallow valley. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S056",
+   "beat": "B10",
+   "t_in": "04:18",
+   "t_out": "04:23",
+   "t_in_s": 257.6,
+   "t_out_s": 263.0,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF snore close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C045",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF asleep, fur rippling out from the mouth with each enormous snore. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S057",
+   "beat": "B10",
+   "t_in": "04:23",
+   "t_out": "04:31",
+   "t_in_s": 263.0,
+   "t_out_s": 270.5,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP"
+   ],
+   "set": "cave_south",
+   "vantage": "PIP tiptoe POV into the cave",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_cave",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C046",
+   "shot_type": "POV",
+   "i2v_prompt": "PIP's point of view tiptoeing into the cave mouth, one frond raised like a candle, whispering. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S058",
+   "beat": "B10",
+   "t_in": "04:31",
+   "t_out": "04:36",
+   "t_in_s": 270.5,
+   "t_out_s": 275.9,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "low wide, PIP trips on the tether",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C047",
+   "shot_type": "WS",
+   "i2v_prompt": "Her foot hooks the tether and she goes down flat beside the mattress; GRUFF does not move. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S059",
+   "beat": "B10",
+   "t_in": "04:36",
+   "t_out": "04:41",
+   "t_in_s": 275.9,
+   "t_out_s": 281.4,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF one-eye-open close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C048",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF, one eye open, brows confused, fur moving with two mumbled sentences. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S060",
+   "beat": "B10",
+   "t_in": "04:41",
+   "t_out": "04:46",
+   "t_in_s": 281.4,
+   "t_out_s": 285.7,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP"
+   ],
+   "set": "cave_south",
+   "vantage": "PIP retreating reaction, over the shoulder",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_cave",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C049",
+   "shot_type": "OTS",
+   "i2v_prompt": "Over GRUFF's shoulder: PIP backing out of the cave, sweet and guilty; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S061",
+   "beat": "B10",
+   "t_in": "04:46",
+   "t_out": "04:50",
+   "t_in_s": 285.7,
+   "t_out_s": 290.0,
+   "day": 6,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [],
+   "set": "cave_south",
+   "vantage": "tally marks insert",
+   "seed_masters": [
+    "M_SET_cave",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C050",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Six tally marks scratched into basalt, the sixth still pale and fresh. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_TALLY"
+  },
+  {
+   "id": "S062",
+   "beat": "B11",
+   "t_in": "04:50",
+   "t_out": "05:00",
+   "t_in_s": 290,
+   "t_out_s": 299.7,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "handheld 2-shot, fronds flared",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C051",
+   "shot_type": "MS",
+   "i2v_prompt": "Morning in the valley, tents almost touching; PIP arms crossed, fronds flaring wide as she speaks; handheld energy. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S063",
+   "beat": "B11",
+   "t_in": "05:00",
+   "t_out": "05:08",
+   "t_in_s": 299.7,
+   "t_out_s": 308.2,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "reverse 2-shot, fur bristled",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C052",
+   "shot_type": "MS",
+   "i2v_prompt": "Reverse angle: GRUFF's fur standing up along the shoulders as he answers, PIP small in the foreground. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S064",
+   "beat": "B11",
+   "t_in": "05:08",
+   "t_out": "05:17",
+   "t_in_s": 308.2,
+   "t_out_s": 316.8,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP"
+   ],
+   "set": "valley",
+   "vantage": "PIP furious close-up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C053",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP escalating — one song, Gruff — small mouth visible, fronds rigid. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S065",
+   "beat": "B11",
+   "t_in": "05:17",
+   "t_out": "05:25",
+   "t_in_s": 316.8,
+   "t_out_s": 325.3,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "GRUFF cold close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C054",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF, cold and quiet, brows flat, fur barely moving. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S066",
+   "beat": "B11",
+   "t_in": "05:25",
+   "t_out": "05:31",
+   "t_in_s": 325.3,
+   "t_out_s": 331.4,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "valley wide, dust kicking, PIP shouting",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C055",
+   "shot_type": "WS",
+   "i2v_prompt": "Wide of the valley; PIP shouting into a storm of kicked-up rock dust, GRUFF a wall beside her; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_DUST"
+  },
+  {
+   "id": "S067",
+   "beat": "B11",
+   "t_in": "05:31",
+   "t_out": "05:33",
+   "t_in_s": 331.4,
+   "t_out_s": 332.6,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "space",
+   "vantage": "2-shot on a 2-metre rock, shoulder to shoulder",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C151",
+   "shot_type": "FLASH",
+   "i2v_prompt": "Flash-forward: both bodies jammed shoulder to shoulder on a car-sized rock with no room to turn away. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 1.2,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_TWOSHOT_2M",
+   "reuse_of": "S182"
+  },
+  {
+   "id": "S068",
+   "beat": "B11",
+   "t_in": "05:33",
+   "t_out": "05:40",
+   "t_in_s": 332.6,
+   "t_out_s": 339.9,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF",
+    "PIP"
+   ],
+   "set": "valley",
+   "vantage": "GRUFF turning away, wide",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_PIP_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C056",
+   "shot_type": "WS",
+   "i2v_prompt": "GRUFF turns his back and walks the tether out to its full length; PIP left standing. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S069",
+   "beat": "B11",
+   "t_in": "05:40",
+   "t_out": "05:48",
+   "t_in_s": 339.9,
+   "t_out_s": 348.4,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP"
+   ],
+   "set": "valley",
+   "vantage": "PIP crying behind the boulder",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C057",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP on the far side of a boulder, crying without sound, fronds drooping to her shoulders. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_CRY"
+  },
+  {
+   "id": "S070",
+   "beat": "B11",
+   "t_in": "05:48",
+   "t_out": "05:57",
+   "t_in_s": 348.4,
+   "t_out_s": 356.9,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "cyan booth GRUFF, high angle",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C058",
+   "shot_type": "MCU",
+   "i2v_prompt": "GRUFF in the cyan booth from a high angle, shoulders down, ashamed. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S071",
+   "beat": "B11",
+   "t_in": "05:57",
+   "t_out": "06:03",
+   "t_in_s": 356.9,
+   "t_out_s": 363.0,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [],
+   "set": "valley",
+   "vantage": "hands on one ration bar insert",
+   "seed_masters": [
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C059",
+   "shot_type": "MACRO",
+   "i2v_prompt": "One magenta hand and one enormous cyan hand on a single ration bar; the bar snaps. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S072",
+   "beat": "B11",
+   "t_in": "06:03",
+   "t_out": "06:13",
+   "t_in_s": 363.0,
+   "t_out_s": 372.7,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "2-shot sitting a metre apart",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C060",
+   "shot_type": "MS",
+   "i2v_prompt": "They sit with a metre of rock between them, eating, not looking at each other; PIP's mouth visible for the truce line. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S073",
+   "beat": "B11",
+   "t_in": "06:13",
+   "t_out": "06:20",
+   "t_in_s": 372.7,
+   "t_out_s": 380.0,
+   "day": 7,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [],
+   "set": "space",
+   "vantage": "orbital 500-m planet with scar",
+   "seed_masters": [
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C043",
+   "shot_type": "HERO",
+   "i2v_prompt": "The half-planet from orbit at dusk; strings. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.3,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_500",
+   "reuse_of": "S054"
+  },
+  {
+   "id": "S074",
+   "beat": "B12",
+   "t_in": "06:20",
+   "t_out": "06:25",
+   "t_in_s": 380,
+   "t_out_s": 385.4,
+   "day": 9,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "ORB"
+   ],
+   "set": "valley",
+   "vantage": "ORB arrival low over the valley",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C061",
+   "shot_type": "WS",
+   "i2v_prompt": "Midnight: ORB drops in low over the valley from a new angle, halo bright, no tray drone. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S075",
+   "beat": "B12",
+   "t_in": "06:25",
+   "t_out": "06:30",
+   "t_in_s": 385.4,
+   "t_out_s": 389.9,
+   "day": 9,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "2-shot arriving tethered",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C062",
+   "shot_type": "MS",
+   "i2v_prompt": "PIP and GRUFF arrive together, tethered, still a metre apart, blinking at the light. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S076",
+   "beat": "B12",
+   "t_in": "06:30",
+   "t_out": "06:35",
+   "t_in_s": 389.9,
+   "t_out_s": 395.3,
+   "day": 9,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "valley",
+   "vantage": "GRUFF close-up brows down",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_valley",
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C005",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF, suspicious — a gift — brows down; PIP's wary voice-over lands on his face. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_GRUFF_CU_BROW",
+   "reuse_of": "S006"
+  },
+  {
+   "id": "S077",
+   "beat": "B12",
+   "t_in": "06:35",
+   "t_out": "06:40",
+   "t_in_s": 395.3,
+   "t_out_s": 399.8,
+   "day": 9,
+   "planet_m": 500,
+   "count_display": 500,
+   "characters": [],
+   "set": "space",
+   "vantage": "hero wedge shearing away from space",
+   "seed_masters": [
+    "M_PLANET_500"
+   ],
+   "composite_seed_id": "C040",
+   "shot_type": "HERO",
+   "i2v_prompt": "A smaller wedge shears off, cleaner and faster than the first, and drifts away like a slice off a loaf. Planet 500 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.5,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_WEDGE_SPACE",
+   "reuse_of": "S050"
+  },
+  {
+   "id": "S078",
+   "beat": "B12",
+   "t_in": "06:40",
+   "t_out": "06:45",
+   "t_in_s": 399.8,
+   "t_out_s": 405.2,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT thruster gag, wobbling across frame",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C063",
+   "shot_type": "INSERT",
+   "i2v_prompt": "Four little thrusters ignite on THE COUNT's corners; it lurches, wobbling, across frame with a ration tin in a claw (digits DAY 10 · 300 M composited). Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_COUNT_THRUST"
+  },
+  {
+   "id": "S079",
+   "beat": "B12",
+   "t_in": "06:45",
+   "t_out": "06:52",
+   "t_in_s": 405.2,
+   "t_out_s": 412.4,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "cave_south",
+   "vantage": "2-shot at the cave mouth with ORB",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_cave",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C064",
+   "shot_type": "MS",
+   "i2v_prompt": "ORB delivers the promise at the cave mouth, halo dimming a shade; GRUFF dry, PIP watching ORB lift away. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S080",
+   "beat": "B12",
+   "t_in": "06:52",
+   "t_out": "06:56",
+   "t_in_s": 412.4,
+   "t_out_s": 416.0,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "cave_south",
+   "vantage": "moon-rock heart insert on the mattress",
+   "seed_masters": [
+    "M_SET_cave",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C065",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Dawn: a moon rock chipped and scraped into a lopsided heart, sitting on the mattress. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S081",
+   "beat": "B12",
+   "t_in": "06:56",
+   "t_out": "07:00",
+   "t_in_s": 416.0,
+   "t_out_s": 420.5,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF picks up the heart, medium",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C066",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF looks at the rock heart, says nothing, and tucks it inside the cave. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S082",
+   "beat": "B12",
+   "t_in": "07:00",
+   "t_out": "07:05",
+   "t_in_s": 420.5,
+   "t_out_s": 425.0,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "valley",
+   "vantage": "PIP on the ridge watching, long lens",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_valley",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C067",
+   "shot_type": "LS",
+   "i2v_prompt": "PIP small on a ridge, watching him keep it; fronds curling at the tips. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S083",
+   "beat": "B13",
+   "t_in": "07:05",
+   "t_out": "07:15",
+   "t_in_s": 425,
+   "t_out_s": 435.1,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "vent 2-shot lit from below",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C068",
+   "shot_type": "MS",
+   "i2v_prompt": "Night: a plasma vent hisses violet in a crack in the rock; the two of them sit either side, lit from below. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S084",
+   "beat": "B13",
+   "t_in": "07:15",
+   "t_out": "07:29",
+   "t_in_s": 435.1,
+   "t_out_s": 448.5,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "vent",
+   "vantage": "PIP close-up firelit",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C069",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP firelit, fronds folded not drooping, telling it; small mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 13.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S085",
+   "beat": "B13",
+   "t_in": "07:29",
+   "t_out": "07:29",
+   "t_in_s": 448.5,
+   "t_out_s": 449.1,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP in a column of green light",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C125",
+   "shot_type": "FLASH",
+   "i2v_prompt": "Flash-forward: PIP standing in a column of pale green light on the equator. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 0.6,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_BEAM_PIP",
+   "reuse_of": "S151"
+  },
+  {
+   "id": "S086",
+   "beat": "B13",
+   "t_in": "07:29",
+   "t_out": "07:40",
+   "t_in_s": 449.1,
+   "t_out_s": 460.3,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "GRUFF close-up firelit slow push",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C070",
+   "shot_type": "CU",
+   "i2v_prompt": "Slow push-in on GRUFF looking at the vent, not at her, admitting it. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 11.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S087",
+   "beat": "B13",
+   "t_in": "07:40",
+   "t_out": "07:49",
+   "t_in_s": 460.3,
+   "t_out_s": 469.2,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "space",
+   "vantage": "starfield time-lapse over the tiny horizon",
+   "seed_masters": [
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C071",
+   "shot_type": "TIMELAPSE",
+   "i2v_prompt": "Stars wheel over a too-small horizon with the violet vent glow at the bottom of frame. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S088",
+   "beat": "B13",
+   "t_in": "07:49",
+   "t_out": "07:59",
+   "t_in_s": 469.2,
+   "t_out_s": 479.3,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "GRUFF profile firelit",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C072",
+   "shot_type": "MCU",
+   "i2v_prompt": "GRUFF in profile against the vent, rueful, the dentist story. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S089",
+   "beat": "B13",
+   "t_in": "07:59",
+   "t_out": "08:08",
+   "t_in_s": 479.3,
+   "t_out_s": 488.3,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "vent",
+   "vantage": "PIP profile firelit, wet laugh",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C073",
+   "shot_type": "MCU",
+   "i2v_prompt": "PIP in profile laughs once and it comes out wet; voice-over over her looking at the fire. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S090",
+   "beat": "B13",
+   "t_in": "08:08",
+   "t_out": "08:15",
+   "t_in_s": 488.3,
+   "t_out_s": 495.0,
+   "day": 10,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "GRUFF close-up plain",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C074",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF, plain — now we survive a rock — brows level. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S091",
+   "beat": "B14",
+   "t_in": "08:15",
+   "t_out": "08:22",
+   "t_in_s": 495,
+   "t_out_s": 502.0,
+   "day": 14,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF at the cave mouth staring at the horizon",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C075",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF at the cave mouth staring at a horizon he can nearly touch, hollow. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.0,
+   "reuse": "unique",
+   "loops": [
+    "crate:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S092",
+   "beat": "B14",
+   "t_in": "08:22",
+   "t_out": "08:37",
+   "t_in_s": 502.0,
+   "t_out_s": 517.0,
+   "day": 14,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "continuous tracking lap of the planet, sped 2x",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C076",
+   "shot_type": "TRACK",
+   "i2v_prompt": "One continuous tracking shot: GRUFF walks the full circumference — past the crate, the vent, her tent, the crate again — back to his start; sped to feel like ten seconds. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 15.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S093",
+   "beat": "B14",
+   "t_in": "08:37",
+   "t_out": "08:45",
+   "t_in_s": 517.0,
+   "t_out_s": 525.0,
+   "day": 14,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "cyan booth GRUFF, low angle",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C077",
+   "shot_type": "MCU",
+   "i2v_prompt": "GRUFF in the cyan booth from a low angle, taps the side of his own head once. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S094",
+   "beat": "B15",
+   "t_in": "08:45",
+   "t_out": "08:54",
+   "t_in_s": 525,
+   "t_out_s": 533.6,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "space",
+   "vantage": "dome hologram unfolding over the planet",
+   "seed_masters": [
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C078",
+   "shot_type": "HERO",
+   "i2v_prompt": "Above the 300-m planet a hologram unfolds: a glass dome the width of the sky, a garden, trees, a bath steaming. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.6,
+   "reuse": "unique",
+   "loops": [
+    "crate:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S095",
+   "beat": "B15",
+   "t_in": "08:54",
+   "t_out": "09:00",
+   "t_in_s": 533.6,
+   "t_out_s": 540.0,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB arrival with no platters, high angle",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C079",
+   "shot_type": "WS",
+   "i2v_prompt": "ORB drops in with nothing on the tray drone, halo generous, the dome's green light on the pad. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S096",
+   "beat": "B15",
+   "t_in": "09:00",
+   "t_out": "09:06",
+   "t_in_s": 540.0,
+   "t_out_s": 546.4,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF face green-lit, tilted up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C080",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF's face lit green by the hologram, tilted up like a child's, awed, fur moving. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S097",
+   "beat": "B15",
+   "t_in": "09:06",
+   "t_out": "09:10",
+   "t_in_s": 546.4,
+   "t_out_s": 549.6,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up, has not looked up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C081",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP, firm, eyes on ORB not the dome, one word with her small mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S098",
+   "beat": "B15",
+   "t_in": "09:10",
+   "t_out": "09:16",
+   "t_in_s": 549.6,
+   "t_out_s": 556.1,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "2-shot wide with 10-s timer over it",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C082",
+   "shot_type": "WS",
+   "i2v_prompt": "Wide two-shot under the dome; a 10-second timer draws itself over the frame (composited) and ticks. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S099",
+   "beat": "B15",
+   "t_in": "09:16",
+   "t_out": "09:21",
+   "t_in_s": 556.1,
+   "t_out_s": 561.4,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF pleading medium",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C083",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF turns to her, huge and pleading — there's a bath — brows up. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S100",
+   "beat": "B15",
+   "t_in": "09:21",
+   "t_out": "09:28",
+   "t_in_s": 561.4,
+   "t_out_s": 567.9,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up open-mouthed",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C004",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP's steely reaction over the ticking timer; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_CU_GASP",
+   "reuse_of": "S005"
+  },
+  {
+   "id": "S101",
+   "beat": "B15",
+   "t_in": "09:28",
+   "t_out": "09:33",
+   "t_in_s": 567.9,
+   "t_out_s": 573.2,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "space",
+   "vantage": "dome folding away into a point of light",
+   "seed_masters": [
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C084",
+   "shot_type": "HERO",
+   "i2v_prompt": "The dome folds itself into a single point of light and is gone; the planet stays. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S102",
+   "beat": "B15",
+   "t_in": "09:33",
+   "t_out": "09:41",
+   "t_in_s": 573.2,
+   "t_out_s": 580.7,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "cyan booth GRUFF, sulking, three-quarter",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C085",
+   "shot_type": "MCU",
+   "i2v_prompt": "GRUFF in the booth, three-quarter angle, sulking so hard the fur droops. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S103",
+   "beat": "B15",
+   "t_in": "09:41",
+   "t_out": "09:45",
+   "t_in_s": 580.7,
+   "t_out_s": 585.0,
+   "day": 15,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "crate hero slow push",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C003",
+   "shot_type": "MACRO",
+   "i2v_prompt": "The crate below ORB in frame, sealed, waiting. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.3,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_CRATE_HERO",
+   "reuse_of": "S004"
+  },
+  {
+   "id": "S104",
+   "beat": "B16",
+   "t_in": "09:45",
+   "t_out": "09:51",
+   "t_in_s": 585,
+   "t_out_s": 590.6,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "camp_north",
+   "vantage": "ration-bar heart insert",
+   "seed_masters": [
+    "M_SET_camp",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C086",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Ration bars laid out on a flat rock in a slightly lopsided heart. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.6,
+   "reuse": "unique",
+   "loops": [
+    "riff:OPEN"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S105",
+   "beat": "B16",
+   "t_in": "09:51",
+   "t_out": "09:57",
+   "t_in_s": 590.6,
+   "t_out_s": 597.2,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "camp_north",
+   "vantage": "2-shot over the plate",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_camp",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C087",
+   "shot_type": "MS",
+   "i2v_prompt": "Over the plate: GRUFF picks a bar from the top of the heart and puts it back exactly where it was; PIP defensive, voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S106",
+   "beat": "B16",
+   "t_in": "09:57",
+   "t_out": "10:02",
+   "t_in_s": 597.2,
+   "t_out_s": 601.7,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "camp_north",
+   "vantage": "PIP close-up bright, testing",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_camp",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C088",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP bright, testing — colleagues? — small mouth visible, fronds half-curled. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S107",
+   "beat": "B16",
+   "t_in": "10:02",
+   "t_out": "10:08",
+   "t_in_s": 601.7,
+   "t_out_s": 608.3,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "camp_north",
+   "vantage": "GRUFF close-up firm",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_camp",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C089",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF firm — say the real word — brows level, fur moving; PIP's small reply lands as voice-over on him. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S108",
+   "beat": "B16",
+   "t_in": "10:08",
+   "t_out": "10:14",
+   "t_in_s": 608.3,
+   "t_out_s": 613.9,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "camp_north",
+   "vantage": "ration-tin tap macro",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_camp",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C090",
+   "shot_type": "MACRO",
+   "i2v_prompt": "A magenta fingernail taps four notes on the rim of a ration tin; GRUFF's shadow shifts as he looks up. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_TIN_RIFF"
+  },
+  {
+   "id": "S109",
+   "beat": "B16",
+   "t_in": "10:14",
+   "t_out": "10:21",
+   "t_in_s": 613.9,
+   "t_out_s": 620.6,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "cave_south",
+   "vantage": "GRUFF reading against the cave wall, medium",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_cave",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C091",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF alone against the cave wall reading a battered paperback, pencil in his fist. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S110",
+   "beat": "B16",
+   "t_in": "10:21",
+   "t_out": "10:25",
+   "t_in_s": 620.6,
+   "t_out_s": 625.0,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "cave_south",
+   "vantage": "book cover macro",
+   "seed_masters": [
+    "M_SET_cave",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C092",
+   "shot_type": "MACRO",
+   "i2v_prompt": "The paperback's cover held up — blank white panel for the composited title HOW TO STOP BEING A DRUMMER ABOUT IT. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S111",
+   "beat": "B17",
+   "t_in": "10:25",
+   "t_out": "10:30",
+   "t_in_s": 625,
+   "t_out_s": 630.0,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "goggle macro on the forehead",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C093",
+   "shot_type": "MACRO",
+   "i2v_prompt": "The cracked brass goggle on GRUFF's forehead, one lens starred, strap worn shiny, vent light in the crack. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [
+    "goggle:OPEN"
+   ],
+   "mouth_visible": [],
+   "insert_id": "INS_GOGGLE_MACRO"
+  },
+  {
+   "id": "S112",
+   "beat": "B17",
+   "t_in": "10:30",
+   "t_out": "10:37",
+   "t_in_s": 630.0,
+   "t_out_s": 637.0,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "vent 2-shot, reverse side",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C094",
+   "shot_type": "MS",
+   "i2v_prompt": "The two at the vent from the opposite side; PIP teasing him about the goggle, small mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S113",
+   "beat": "B17",
+   "t_in": "10:37",
+   "t_out": "10:44",
+   "t_in_s": 637.0,
+   "t_out_s": 644.0,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "vent",
+   "vantage": "GRUFF hand-on-goggle close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C095",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF's hand rises to the goggle and rests there; guarded; fur moving with the promise. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S114",
+   "beat": "B17",
+   "t_in": "10:44",
+   "t_out": "10:48",
+   "t_in_s": 644.0,
+   "t_out_s": 648.0,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "vent",
+   "vantage": "PIP thrown reaction close-up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_vent",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C096",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP thrown — why the last night — fronds lifting; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S115",
+   "beat": "B17",
+   "t_in": "10:48",
+   "t_out": "10:55",
+   "t_in_s": 648.0,
+   "t_out_s": 655.0,
+   "day": 16,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "magenta booth PIP, side angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C097",
+   "shot_type": "MCU",
+   "i2v_prompt": "PIP in the magenta booth from the side, turning the scarf over in her hands, rattled; voice-over on her hands. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S116",
+   "beat": "B18",
+   "t_in": "10:55",
+   "t_out": "11:03",
+   "t_in_s": 655,
+   "t_out_s": 663.3,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "ORB",
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "five-platter wide with the crate lit behind",
+   "seed_masters": [
+    "M_ORB",
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C098",
+   "shot_type": "WS",
+   "i2v_prompt": "Midnight: ORB, a tray drone and five covered platters in a row; the crate behind them lit for the first time. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.3,
+   "reuse": "unique",
+   "loops": [
+    "crate:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S117",
+   "beat": "B18",
+   "t_in": "11:03",
+   "t_out": "11:06",
+   "t_in_s": 663.3,
+   "t_out_s": 666.3,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "lid one macro, cash with a bite out",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C099",
+   "shot_type": "MACRO",
+   "i2v_prompt": "A silver lid lifts on a stack of prop cash with a bite taken out of it. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_LID"
+  },
+  {
+   "id": "S118",
+   "beat": "B18",
+   "t_in": "11:06",
+   "t_out": "11:08",
+   "t_in_s": 666.3,
+   "t_out_s": 668.4,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF close-up instant no",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C100",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF — no — instant, brows flat. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S119",
+   "beat": "B18",
+   "t_in": "11:08",
+   "t_out": "11:12",
+   "t_in_s": 668.4,
+   "t_out_s": 671.5,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "lid two macro, bigger bite, re-lit",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C099",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Second lid, cooler light and a tighter crop (re-lit re-use of lid one): a bigger bite; PIP's appalled voice-over. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.1,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_LID",
+   "reuse_of": "S117"
+  },
+  {
+   "id": "S120",
+   "beat": "B18",
+   "t_in": "11:12",
+   "t_out": "11:15",
+   "t_in_s": 671.5,
+   "t_out_s": 674.6,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "lid three macro, two model planets",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C101",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Third lid: a tiny model planet and, beside it, a tinier one. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S121",
+   "beat": "B18",
+   "t_in": "11:15",
+   "t_out": "11:21",
+   "t_in_s": 674.6,
+   "t_out_s": 680.8,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "debate 2-shot with 5-s timer",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C102",
+   "shot_type": "MS",
+   "i2v_prompt": "Fast debate two-shot, a five-second timer composited over their heads; GRUFF eager, PIP reckless with her mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S122",
+   "beat": "B18",
+   "t_in": "11:21",
+   "t_out": "11:26",
+   "t_in_s": 680.8,
+   "t_out_s": 686.0,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB lifting platter four, slow push",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C103",
+   "shot_type": "MS",
+   "i2v_prompt": "ORB tips platter four's lid with a tray-drone arm as the camera pushes in slowly. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S123",
+   "beat": "B18",
+   "t_in": "11:26",
+   "t_out": "11:30",
+   "t_in_s": 686.0,
+   "t_out_s": 690.1,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "empty plate macro, one engraved word",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C104",
+   "shot_type": "MACRO",
+   "i2v_prompt": "An empty silver plate with one engraved word (blank panel for the composited FREE). Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S124",
+   "beat": "B18",
+   "t_in": "11:30",
+   "t_out": "11:34",
+   "t_in_s": 690.1,
+   "t_out_s": 694.2,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF stunned close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C105",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF stunned, mouth-fur still, brows climbing. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.1,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S125",
+   "beat": "B18",
+   "t_in": "11:34",
+   "t_out": "11:36",
+   "t_in_s": 694.2,
+   "t_out_s": 696.3,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP"
+   ],
+   "set": "valley",
+   "vantage": "PIP crying behind the boulder",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_valley",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C057",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP's stricken face; no dialogue. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.1,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_CRY",
+   "reuse_of": "S069"
+  },
+  {
+   "id": "S126",
+   "beat": "B18",
+   "t_in": "11:36",
+   "t_out": "11:40",
+   "t_in_s": 696.3,
+   "t_out_s": 700.4,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up unrepentant",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C016",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB, halo full, unrepentant — I said it out loud. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.1,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORB_CU",
+   "reuse_of": "S020"
+  },
+  {
+   "id": "S127",
+   "beat": "B18",
+   "t_in": "11:40",
+   "t_out": "11:50",
+   "t_in_s": 700.4,
+   "t_out_s": 709.7,
+   "day": 19,
+   "planet_m": 300,
+   "count_display": 300,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "big wedge tearing away, ground angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_300"
+   ],
+   "composite_seed_id": "C106",
+   "shot_type": "HERO",
+   "i2v_prompt": "From the pad: a third of the sky tears away and drifts off; what remains is small enough to see its whole curve. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 300 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S128",
+   "beat": "B18",
+   "t_in": "11:50",
+   "t_out": "11:53",
+   "t_in_s": 709.7,
+   "t_out_s": 712.8,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT hover insert",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C020",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT beeps and flips (composited) to DAY 20 · 25 M. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.1,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_COUNT_HOVER",
+   "reuse_of": "S024"
+  },
+  {
+   "id": "S129",
+   "beat": "B18",
+   "t_in": "11:53",
+   "t_out": "12:00",
+   "t_in_s": 712.8,
+   "t_out_s": 720.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [],
+   "set": "space",
+   "vantage": "house-sized planet from orbit",
+   "seed_masters": [
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C107",
+   "shot_type": "HERO",
+   "i2v_prompt": "A rock the size of a house from orbit, two specks and a crate on it. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_25"
+  },
+  {
+   "id": "S130",
+   "beat": "B19",
+   "t_in": "12:00",
+   "t_out": "12:05",
+   "t_in_s": 720,
+   "t_out_s": 725.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "crate doors opening with light",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C108",
+   "shot_type": "WS",
+   "i2v_prompt": "The crate doors swing open and light pours out over both faces. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [
+    "crate:PAY"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S131",
+   "beat": "B19",
+   "t_in": "12:05",
+   "t_out": "12:10",
+   "t_in_s": 725.0,
+   "t_out_s": 730.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "ticket macro, two embossed names",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C109",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Two paper tickets, embossed, each with a blank name panel (names composited). Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S132",
+   "beat": "B19",
+   "t_in": "12:10",
+   "t_out": "12:15",
+   "t_in_s": 730.0,
+   "t_out_s": 735.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP sobbing close-up, new angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C110",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP folds in half sobbing, fronds over her face; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S133",
+   "beat": "B19",
+   "t_in": "12:15",
+   "t_out": "12:21",
+   "t_in_s": 735.0,
+   "t_out_s": 741.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "2-shot hug from behind",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C111",
+   "shot_type": "MS",
+   "i2v_prompt": "From behind: GRUFF's arm around her without either of them deciding it. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S134",
+   "beat": "B19",
+   "t_in": "12:21",
+   "t_out": "12:25",
+   "t_in_s": 741.0,
+   "t_out_s": 745.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up turning",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C112",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB's halo dims — the tickets have a price — and the lens tilts down. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S135",
+   "beat": "B20",
+   "t_in": "12:25",
+   "t_out": "12:29",
+   "t_in_s": 745,
+   "t_out_s": 749.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [],
+   "set": "space",
+   "vantage": "house-sized planet from orbit",
+   "seed_masters": [
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C107",
+   "shot_type": "HERO",
+   "i2v_prompt": "The 25-m rock from orbit, two figures and the crate between them. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_25",
+   "reuse_of": "S129"
+  },
+  {
+   "id": "S136",
+   "beat": "B20",
+   "t_in": "12:29",
+   "t_out": "12:34",
+   "t_in_s": 749.0,
+   "t_out_s": 754.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "ground shoulder-bump 2-shot",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C113",
+   "shot_type": "MS",
+   "i2v_prompt": "They turn to walk and bump shoulders; turn the other way and bump shoulders again. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S137",
+   "beat": "B20",
+   "t_in": "12:34",
+   "t_out": "12:37",
+   "t_in_s": 754.0,
+   "t_out_s": 757.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "wide over the hole, two figures",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C021",
+   "shot_type": "WS",
+   "i2v_prompt": "Callback: the hole, now two metres from the mattress. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_HOLE",
+   "reuse_of": "S027"
+  },
+  {
+   "id": "S138",
+   "beat": "B20",
+   "t_in": "12:37",
+   "t_out": "12:41",
+   "t_in_s": 757.0,
+   "t_out_s": 761.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF resigned close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C114",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF resigned — I can hear you swallow — brows down. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S139",
+   "beat": "B20",
+   "t_in": "12:41",
+   "t_out": "12:45",
+   "t_in_s": 761.0,
+   "t_out_s": 765.0,
+   "day": 20,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP flat close-up disbelieving",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C115",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP flat, disbelieving, small mouth visible; ORB's stinger lands as she stares. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S140",
+   "beat": "B21",
+   "t_in": "12:45",
+   "t_out": "12:51",
+   "t_in_s": 765,
+   "t_out_s": 771.0,
+   "day": 24,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB low-angle arrival, hard white halo",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C116",
+   "shot_type": "WS",
+   "i2v_prompt": "Midnight: ORB arrives low, halo a hard white ring; behind it the escape-pod door lit red for the first time. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [
+    "launch:OPEN"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S141",
+   "beat": "B21",
+   "t_in": "12:51",
+   "t_out": "12:56",
+   "t_in_s": 771.0,
+   "t_out_s": 776.0,
+   "day": 24,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "key-under-platter macro",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C117",
+   "shot_type": "MACRO",
+   "i2v_prompt": "A single brass key on a silver platter as the lid lifts; clink. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_KEY_MACRO"
+  },
+  {
+   "id": "S142",
+   "beat": "B21",
+   "t_in": "12:56",
+   "t_out": "13:02",
+   "t_in_s": 776.0,
+   "t_out_s": 782.0,
+   "day": 24,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "pod door lit red with one seat visible",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C118",
+   "shot_type": "MS",
+   "i2v_prompt": "The small escape pod set into the rock, door glowing red, one seat visible inside. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_POD_DOOR"
+  },
+  {
+   "id": "S143",
+   "beat": "B21",
+   "t_in": "13:02",
+   "t_out": "13:08",
+   "t_in_s": 782.0,
+   "t_out_s": 788.0,
+   "day": 24,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "split-screen reactions PIP and GRUFF",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C_INS_SPLIT_REACT",
+   "shot_type": "SPLIT",
+   "i2v_prompt": "Split-screen: PIP's fronds folding flat / GRUFF looking at the key, then her, then the key. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_SPLIT_REACT",
+   "reuse_of": null
+  },
+  {
+   "id": "S144",
+   "beat": "B21",
+   "t_in": "13:08",
+   "t_out": "13:17",
+   "t_in_s": 788.0,
+   "t_out_s": 797.0,
+   "day": 24,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "ORB",
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "key on the platter inside the red ring, wide",
+   "seed_masters": [
+    "M_ORB",
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_25"
+   ],
+   "composite_seed_id": "C119",
+   "shot_type": "WS",
+   "i2v_prompt": "Wide: the platter set down inside the red ring, the key on it, both contestants outside the ring looking at it. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 25 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S145",
+   "beat": "B21",
+   "t_in": "13:17",
+   "t_out": "13:20",
+   "t_in_s": 797.0,
+   "t_out_s": 800.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [],
+   "set": "space",
+   "vantage": "hero wedge shearing away from space",
+   "seed_masters": [
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C040",
+   "shot_type": "HERO",
+   "i2v_prompt": "A fresh sliver shears off the small rock from orbit. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_WEDGE_SPACE",
+   "reuse_of": "S050"
+  },
+  {
+   "id": "S146",
+   "beat": "B21",
+   "t_in": "13:20",
+   "t_out": "13:26",
+   "t_in_s": 800.0,
+   "t_out_s": 806.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT flip with ladder graphic",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C120",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT flips (composited) to DAY 25 · 20 M as the ladder's last five rungs draw beside it. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S147",
+   "beat": "B21",
+   "t_in": "13:26",
+   "t_out": "13:30",
+   "t_in_s": 806.0,
+   "t_out_s": 810.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF close-up to himself",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C121",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF, to himself — two metres, that's a doormat — brows up; ORB's reply as it leaves. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S148",
+   "beat": "B22",
+   "t_in": "13:30",
+   "t_out": "13:38",
+   "t_in_s": 810,
+   "t_out_s": 818.3,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "COUNT",
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "truth-beam wide on the equator",
+   "seed_masters": [
+    "M_COUNT",
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C122",
+   "shot_type": "WS",
+   "i2v_prompt": "Dawn on a 20-m world: a pale humming column of light on the equator, THE COUNT hovering above it holding the beam like a lantern. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.3,
+   "reuse": "unique",
+   "loops": [
+    "launch:FEED"
+   ],
+   "mouth_visible": [],
+   "insert_id": "INS_BEAM_WIDE"
+  },
+  {
+   "id": "S149",
+   "beat": "B22",
+   "t_in": "13:38",
+   "t_out": "13:47",
+   "t_in_s": 818.3,
+   "t_out_s": 826.7,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up with the beam in the chrome",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C123",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB gleeful, the pale beam column reflected across the chrome, halo strobing softly with the rules. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S150",
+   "beat": "B22",
+   "t_in": "13:47",
+   "t_out": "13:53",
+   "t_in_s": 826.7,
+   "t_out_s": 832.9,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF steps into the light, medium",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C124",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF steps into the beam first; it turns his fur white. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S151",
+   "beat": "B22",
+   "t_in": "13:53",
+   "t_out": "13:59",
+   "t_in_s": 832.9,
+   "t_out_s": 839.2,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up in the beam",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C125",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP in the beam, fronds glowing through, answers one word with her small mouth visible; light shifts green. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ],
+   "insert_id": "INS_BEAM_PIP"
+  },
+  {
+   "id": "S152",
+   "beat": "B22",
+   "t_in": "13:59",
+   "t_out": "14:06",
+   "t_in_s": 839.2,
+   "t_out_s": 846.5,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF thrown close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C126",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF thrown — you sold twice what we sold — brows up; PIP's reply as voice-over. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S153",
+   "beat": "B22",
+   "t_in": "14:06",
+   "t_out": "14:12",
+   "t_in_s": 846.5,
+   "t_out_s": 851.7,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "swap wide, GRUFF in the beam",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C127",
+   "shot_type": "WS",
+   "i2v_prompt": "They swap; GRUFF in the beam, enormous, the light barely reaching his shoulders. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S154",
+   "beat": "B22",
+   "t_in": "14:12",
+   "t_out": "14:16",
+   "t_in_s": 851.7,
+   "t_out_s": 855.8,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up brave",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C128",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP asks the question, brave and small, mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S155",
+   "beat": "B22",
+   "t_in": "14:16",
+   "t_out": "14:21",
+   "t_in_s": 855.8,
+   "t_out_s": 861.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF close-up immediate answer",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C129",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF answers instantly; the beam behind him flickers green, red, green. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S156",
+   "beat": "B22",
+   "t_in": "14:21",
+   "t_out": "14:27",
+   "t_in_s": 861.0,
+   "t_out_s": 867.3,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "COUNT",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT falls, beam dies, wide",
+   "seed_masters": [
+    "M_COUNT",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C130",
+   "shot_type": "WS",
+   "i2v_prompt": "THE COUNT's thrusters cough; it lurches, tips and lands upside-down on the equator with a clatter; the light goes out. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S157",
+   "beat": "B22",
+   "t_in": "14:27",
+   "t_out": "14:31",
+   "t_in_s": 867.3,
+   "t_out_s": 871.5,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF urgent close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C131",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF urgent — fix it, ask me again — fur bristling. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S158",
+   "beat": "B22",
+   "t_in": "14:31",
+   "t_out": "14:36",
+   "t_in_s": 871.5,
+   "t_out_s": 875.6,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up final",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C132",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB, level and final — one question per person. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S159",
+   "beat": "B22",
+   "t_in": "14:36",
+   "t_out": "14:42",
+   "t_in_s": 875.6,
+   "t_out_s": 881.9,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up in the beam",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C125",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP beside the dead beam, shaken, light gone; voice-over — ask me the same thing. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.2,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_BEAM_PIP",
+   "reuse_of": "S151"
+  },
+  {
+   "id": "S160",
+   "beat": "B22",
+   "t_in": "14:42",
+   "t_out": "14:47",
+   "t_in_s": 881.9,
+   "t_out_s": 887.1,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP",
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "beam relit, PIP steps in, low angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C133",
+   "shot_type": "WS",
+   "i2v_prompt": "THE COUNT rights itself with a beep; the beam relights; PIP steps in from a low angle. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S161",
+   "beat": "B22",
+   "t_in": "14:47",
+   "t_out": "14:52",
+   "t_in_s": 887.1,
+   "t_out_s": 892.3,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up steady, eyes on GRUFF",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C134",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP steady, eyes on GRUFF, one word, mouth visible; green. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S162",
+   "beat": "B22",
+   "t_in": "14:52",
+   "t_out": "15:00",
+   "t_in_s": 892.3,
+   "t_out_s": 899.6,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "COUNT",
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "truth-beam wide on the equator",
+   "seed_masters": [
+    "M_COUNT",
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C122",
+   "shot_type": "WS",
+   "i2v_prompt": "The beam wide, green, then silence; ORB lays it out in voice-over. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.3,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_BEAM_WIDE",
+   "reuse_of": "S148"
+  },
+  {
+   "id": "S163",
+   "beat": "B22",
+   "t_in": "15:00",
+   "t_out": "15:06",
+   "t_in_s": 899.6,
+   "t_out_s": 905.8,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "cyan booth GRUFF, insisting, frontal tight",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C135",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF in the booth, tight, insisting it was true — mostly. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S164",
+   "beat": "B22",
+   "t_in": "15:06",
+   "t_out": "15:10",
+   "t_in_s": 905.8,
+   "t_out_s": 910.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "magenta booth PIP, three-quarter, over her hands",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C136",
+   "shot_type": "MCU",
+   "i2v_prompt": "PIP in the booth, three-quarter, looking at her hands; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S165",
+   "beat": "B23",
+   "t_in": "15:10",
+   "t_out": "15:20",
+   "t_in_s": 910,
+   "t_out_s": 920.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF alone at the pod door, wide",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C137",
+   "shot_type": "WS",
+   "i2v_prompt": "Night: GRUFF alone at the pod door, red light on his fur, PIP a sleeping shape ten metres behind. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.0,
+   "reuse": "unique",
+   "loops": [
+    "launch:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S166",
+   "beat": "B23",
+   "t_in": "15:20",
+   "t_out": "15:26",
+   "t_in_s": 920.0,
+   "t_out_s": 926.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "key in his fist macro",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C138",
+   "shot_type": "MACRO",
+   "i2v_prompt": "GRUFF's fist opens: the brass key, red light along its teeth. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S167",
+   "beat": "B23",
+   "t_in": "15:26",
+   "t_out": "15:36",
+   "t_in_s": 926.0,
+   "t_out_s": 936.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF close-up in red light",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C139",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF's face in the red door light, colder, then the hand closing again — not tonight. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S168",
+   "beat": "B23",
+   "t_in": "15:36",
+   "t_out": "15:40",
+   "t_in_s": 936.0,
+   "t_out_s": 940.0,
+   "day": 25,
+   "planet_m": 20,
+   "count_display": 20,
+   "characters": [],
+   "set": "landing_pad",
+   "vantage": "key-under-platter macro",
+   "seed_masters": [
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C117",
+   "shot_type": "MACRO",
+   "i2v_prompt": "The key, then hard cut to black. Planet 20 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_KEY_MACRO",
+   "reuse_of": "S141"
+  },
+  {
+   "id": "S169",
+   "beat": "B24",
+   "t_in": "15:40",
+   "t_out": "15:46",
+   "t_in_s": 940,
+   "t_out_s": 946.4,
+   "day": 26,
+   "planet_m": 12,
+   "count_display": 12,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "two glass pods wide on a 12-m world",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C140",
+   "shot_type": "WS",
+   "i2v_prompt": "Two glass soundproof pods side by side on a twelve-metre rock, one creature in each. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 12 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.4,
+   "reuse": "unique",
+   "loops": [
+    "goggle:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S170",
+   "beat": "B24",
+   "t_in": "15:46",
+   "t_out": "15:57",
+   "t_in_s": 946.4,
+   "t_out_s": 957.1,
+   "day": 26,
+   "planet_m": 12,
+   "count_display": 12,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "PIP pod interior, knees up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C141",
+   "shot_type": "MCU",
+   "i2v_prompt": "Inside her pod, knees up, scarf wound twice, speaking to the glass — small mouth visible, muffled treatment. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 12 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.7,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ],
+   "insert_id": "INS_PIP_POD"
+  },
+  {
+   "id": "S171",
+   "beat": "B24",
+   "t_in": "15:57",
+   "t_out": "16:02",
+   "t_in_s": 957.1,
+   "t_out_s": 962.5,
+   "day": 26,
+   "planet_m": 12,
+   "count_display": 12,
+   "characters": [
+    "ORB",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB at GRUFF's pod glass",
+   "seed_masters": [
+    "M_ORB",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_20"
+   ],
+   "composite_seed_id": "C142",
+   "shot_type": "MS",
+   "i2v_prompt": "ORB hovering at the glass of GRUFF's pod, needling; GRUFF's shape inside. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 12 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S172",
+   "beat": "B24",
+   "t_in": "16:02",
+   "t_out": "16:10",
+   "t_in_s": 962.5,
+   "t_out_s": 970.0,
+   "day": 26,
+   "planet_m": 12,
+   "count_display": 12,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "GRUFF pod interior, evasive",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C143",
+   "shot_type": "MCU",
+   "i2v_prompt": "GRUFF inside the pod, looking at ORB a long time, evasive. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 12 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S173",
+   "beat": "B24",
+   "t_in": "16:10",
+   "t_out": "16:15",
+   "t_in_s": 970.0,
+   "t_out_s": 975.4,
+   "day": 26,
+   "planet_m": 12,
+   "count_display": 12,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "PIP pod interior, knees up",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C141",
+   "shot_type": "MCU",
+   "i2v_prompt": "PIP watching his pod through her glass, his mouth-fur moving, no sound; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 12 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_PIP_POD",
+   "reuse_of": "S170"
+  },
+  {
+   "id": "S174",
+   "beat": "B24",
+   "t_in": "16:15",
+   "t_out": "16:20",
+   "t_in_s": 975.4,
+   "t_out_s": 979.6,
+   "day": 27,
+   "planet_m": 7,
+   "count_display": 7,
+   "characters": [],
+   "set": "space",
+   "vantage": "seven-metre planet from orbit",
+   "seed_masters": [
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C144",
+   "shot_type": "HERO",
+   "i2v_prompt": "A seven-metre rock from orbit, two pods and a crate covering most of it. Planet 7 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.3,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S175",
+   "beat": "B24",
+   "t_in": "16:20",
+   "t_out": "16:25",
+   "t_in_s": 979.6,
+   "t_out_s": 985.0,
+   "day": 27,
+   "planet_m": 7,
+   "count_display": 7,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "tethered walk gag, ground level",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C145",
+   "shot_type": "WS",
+   "i2v_prompt": "The two try to walk to the hole, tethered, on a surface curving away under every second step. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 7 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S176",
+   "beat": "B25",
+   "t_in": "16:25",
+   "t_out": "16:37",
+   "t_in_s": 985,
+   "t_out_s": 997.0,
+   "day": 28,
+   "planet_m": 4,
+   "count_display": 4,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "thumbnail hero: GRUFF taller than the world",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C146",
+   "shot_type": "HERO",
+   "i2v_prompt": "GRUFF standing on a four-metre planet, taller than the world under him; PIP at his feet in his shadow; black space; the pod's red door the only colour. THUMBNAIL SEED. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 4 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 12.0,
+   "reuse": "unique",
+   "loops": [
+    "launch:FEED"
+   ],
+   "mouth_visible": [],
+   "insert_id": "INS_THUMB_4M"
+  },
+  {
+   "id": "S177",
+   "beat": "B25",
+   "t_in": "16:37",
+   "t_out": "16:44",
+   "t_in_s": 997.0,
+   "t_out_s": 1004.0,
+   "day": 28,
+   "planet_m": 4,
+   "count_display": 4,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "lever-hand macro inside the pod door",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C147",
+   "shot_type": "MACRO",
+   "i2v_prompt": "GRUFF's hand resting on the red launch lever inside the pod door. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 4 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_LEVER_HAND"
+  },
+  {
+   "id": "S178",
+   "beat": "B25",
+   "t_in": "16:44",
+   "t_out": "16:52",
+   "t_in_s": 1004.0,
+   "t_out_s": 1012.0,
+   "day": 28,
+   "planet_m": 4,
+   "count_display": 4,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF strained close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C148",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF strained — every time she bumps me — brows knotted. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 4 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S179",
+   "beat": "B25",
+   "t_in": "16:52",
+   "t_out": "17:01",
+   "t_in_s": 1012.0,
+   "t_out_s": 1021.0,
+   "day": 28,
+   "planet_m": 4,
+   "count_display": 4,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP in his shadow, low angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C149",
+   "shot_type": "LOW",
+   "i2v_prompt": "Low angle: PIP small inside GRUFF's shadow, looking up; her frightened voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 4 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S180",
+   "beat": "B25",
+   "t_in": "17:01",
+   "t_out": "17:06",
+   "t_in_s": 1021.0,
+   "t_out_s": 1026.0,
+   "day": 28,
+   "planet_m": 4,
+   "count_display": 4,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "magenta booth PIP, high angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C150",
+   "shot_type": "MCU",
+   "i2v_prompt": "PIP in the booth from a high angle, frightened; voice-over continues. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 4 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S181",
+   "beat": "B25",
+   "t_in": "17:06",
+   "t_out": "17:10",
+   "t_in_s": 1026.0,
+   "t_out_s": 1030.0,
+   "day": 28,
+   "planet_m": 4,
+   "count_display": 4,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT thruster gag, wobbling across frame",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_4"
+   ],
+   "composite_seed_id": "C063",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT wobbles past with DAY 28 · 4 M composited; a clock tick begins. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 4 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_COUNT_THRUST",
+   "reuse_of": "S078"
+  },
+  {
+   "id": "S182",
+   "beat": "B26",
+   "t_in": "17:10",
+   "t_out": "17:17",
+   "t_in_s": 1030,
+   "t_out_s": 1036.6,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "2-shot on a 2-metre rock, bodies fill the frame",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C151",
+   "shot_type": "MS",
+   "i2v_prompt": "A two-metre planet: both bodies fill the frame because there is nothing else to fill it. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.6,
+   "reuse": "unique",
+   "loops": [
+    "goggle:PAY"
+   ],
+   "mouth_visible": [],
+   "insert_id": "INS_TWOSHOT_2M"
+  },
+  {
+   "id": "S183",
+   "beat": "B26",
+   "t_in": "17:17",
+   "t_out": "17:22",
+   "t_in_s": 1036.6,
+   "t_out_s": 1042.1,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT bolting the clock into the rock",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C152",
+   "shot_type": "INSERT",
+   "i2v_prompt": "THE COUNT bolts a clock face into the rock with three metal taps (digits composited: 24:00:00). Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.5,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_CLOCK"
+  },
+  {
+   "id": "S184",
+   "beat": "B26",
+   "t_in": "17:22",
+   "t_out": "17:35",
+   "t_in_s": 1042.1,
+   "t_out_s": 1055.2,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF takes the goggle off, close-up",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C153",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF takes the goggle off his forehead for the first time and holds it in both hands, telling it. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 13.2,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S185",
+   "beat": "B26",
+   "t_in": "17:35",
+   "t_out": "17:44",
+   "t_in_s": 1055.2,
+   "t_out_s": 1064.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "goggle macro in his hands",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C154",
+   "shot_type": "MACRO",
+   "i2v_prompt": "The goggle turned over in enormous hands, the cracked lens catching red door light. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 8.8,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S186",
+   "beat": "B26",
+   "t_in": "17:44",
+   "t_out": "17:48",
+   "t_in_s": 1064.0,
+   "t_out_s": 1068.4,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up undone",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C155",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP undone, scarf in her fists, barely voiced — you sold the van for me — mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.4,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S187",
+   "beat": "B26",
+   "t_in": "17:48",
+   "t_out": "17:55",
+   "t_in_s": 1068.4,
+   "t_out_s": 1075.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP"
+   ],
+   "set": "booth",
+   "vantage": "magenta booth PIP, frontal, wrecked",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C156",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP in the booth, frontal, wrecked, not getting the words in order; voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S188",
+   "beat": "B27",
+   "t_in": "17:55",
+   "t_out": "18:05",
+   "t_in_s": 1075,
+   "t_out_s": 1085.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "space",
+   "vantage": "night wide, tiny rock, two sleeping shapes",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C157",
+   "shot_type": "WS",
+   "i2v_prompt": "From a distance: a rock the size of a car, two shapes asleep against the crate, the clock glowing between them. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.0,
+   "reuse": "unique",
+   "loops": [
+    "launch:FEED"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S189",
+   "beat": "B27",
+   "t_in": "18:05",
+   "t_out": "18:09",
+   "t_in_s": 1085.0,
+   "t_out_s": 1089.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "COUNT"
+   ],
+   "set": "landing_pad",
+   "vantage": "THE COUNT bolting the clock into the rock",
+   "seed_masters": [
+    "M_COUNT",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C152",
+   "shot_type": "INSERT",
+   "i2v_prompt": "The clock face on the rock (composited 11:07:00). Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_CLOCK",
+   "reuse_of": "S183"
+  },
+  {
+   "id": "S190",
+   "beat": "B27",
+   "t_in": "18:09",
+   "t_out": "18:19",
+   "t_in_s": 1089.0,
+   "t_out_s": 1099.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP eyes open in the dark",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C158",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP's face in the dark, eyes open, not asleep; whispered voice-over. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 10.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S191",
+   "beat": "B27",
+   "t_in": "18:19",
+   "t_out": "18:31",
+   "t_in_s": 1099.0,
+   "t_out_s": 1111.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "booth",
+   "vantage": "cyan booth GRUFF, cold, half-lit",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_booth"
+   ],
+   "composite_seed_id": "C159",
+   "shot_type": "MCU",
+   "i2v_prompt": "GRUFF in the booth half-lit, honest and cold; two seconds of nothing after. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 12.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S192",
+   "beat": "B27",
+   "t_in": "18:31",
+   "t_out": "18:35",
+   "t_in_s": 1111.0,
+   "t_out_s": 1115.0,
+   "day": 29,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "2-shot on a 2-metre rock, bodies fill the frame",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C151",
+   "shot_type": "MS",
+   "i2v_prompt": "The two shapes against the crate, the tick only. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_TWOSHOT_2M",
+   "reuse_of": "S182"
+  },
+  {
+   "id": "S193",
+   "beat": "B28",
+   "t_in": "18:35",
+   "t_out": "18:38",
+   "t_in_s": 1115,
+   "t_out_s": 1118.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "two hands on the lever macro",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C160",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Flash-forward: 00:00:03 on the clock (composited); two hands on a lever — one huge, one small; whiteout. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "unique",
+   "loops": [
+    "launch:PAY"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S194",
+   "beat": "B28",
+   "t_in": "18:38",
+   "t_out": "18:45",
+   "t_in_s": 1118.0,
+   "t_out_s": 1125.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "day-30 wide, no room to pace",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C161",
+   "shot_type": "WS",
+   "i2v_prompt": "Ten minutes left: two creatures, a crate, a pod, a clock, on a rock with no room to pace; ORB above. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 7.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S195",
+   "beat": "B28",
+   "t_in": "18:45",
+   "t_out": "18:51",
+   "t_in_s": 1125.0,
+   "t_out_s": 1131.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up, clock reflected in the lens",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C162",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB close, the clock face reflected in its lens-eye, saying the numbers out loud because that's the job. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S196",
+   "beat": "B28",
+   "t_in": "18:51",
+   "t_out": "18:53",
+   "t_in_s": 1131.0,
+   "t_out_s": 1133.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "COUNT",
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "truth-beam wide on the equator",
+   "seed_masters": [
+    "M_COUNT",
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C122",
+   "shot_type": "WS",
+   "i2v_prompt": "Replay in his head: the beam flickering red, THE COUNT falling. Characters: THE COUNT, the matte-black hovering cube with blank red display faces and a wobbling antenna; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_BEAM_WIDE",
+   "reuse_of": "S148"
+  },
+  {
+   "id": "S197",
+   "beat": "B28",
+   "t_in": "18:53",
+   "t_out": "18:59",
+   "t_in_s": 1133.0,
+   "t_out_s": 1139.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF",
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF at the lever, medium",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C163",
+   "shot_type": "MS",
+   "i2v_prompt": "GRUFF at the pod, hand on the lever, PIP right behind him because there is nowhere else to be. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S198",
+   "beat": "B28",
+   "t_in": "18:59",
+   "t_out": "19:04",
+   "t_in_s": 1139.0,
+   "t_out_s": 1144.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "over PIP's shoulder onto his back",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C164",
+   "shot_type": "OTS",
+   "i2v_prompt": "Over PIP's shoulder onto GRUFF's back; her quiet voice-over; he does not turn round. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S199",
+   "beat": "B28",
+   "t_in": "19:04",
+   "t_out": "19:08",
+   "t_in_s": 1144.0,
+   "t_out_s": 1148.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF close-up, sweat in the fur",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C165",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF's face, sweat in the fur, the tick speeding up. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S200",
+   "beat": "B28",
+   "t_in": "19:08",
+   "t_out": "19:11",
+   "t_in_s": 1148.0,
+   "t_out_s": 1151.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "lever-hand macro inside the pod door",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C147",
+   "shot_type": "MACRO",
+   "i2v_prompt": "His hand lifts off the lever. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "insert_id": "INS_LEVER_HAND",
+   "reuse_of": "S177"
+  },
+  {
+   "id": "S201",
+   "beat": "B28",
+   "t_in": "19:11",
+   "t_out": "19:14",
+   "t_in_s": 1151.0,
+   "t_out_s": 1154.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP grabs his hand macro",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C166",
+   "shot_type": "MACRO",
+   "i2v_prompt": "A magenta hand grabs the enormous cyan one before it gets anywhere else. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S202",
+   "beat": "B28",
+   "t_in": "19:14",
+   "t_out": "19:16",
+   "t_in_s": 1154.0,
+   "t_out_s": 1156.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up one word",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C167",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP, fierce, one word — Stay — mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 2.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S203",
+   "beat": "B28",
+   "t_in": "19:16",
+   "t_out": "19:21",
+   "t_in_s": 1156.0,
+   "t_out_s": 1161.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB close-up, each number alone",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C168",
+   "shot_type": "CU",
+   "i2v_prompt": "ORB counting three, two, one; halo pulses on each; then one full second of nothing. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S204",
+   "beat": "B28",
+   "t_in": "19:21",
+   "t_out": "19:30",
+   "t_in_s": 1161.0,
+   "t_out_s": 1170.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "space",
+   "vantage": "rescue ship rising over the tiny planet",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C169",
+   "shot_type": "HERO",
+   "i2v_prompt": "Over the horizon of a car-sized planet a rescue ship rises — enormous, slow, lights on, engines rolling. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 9.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S205",
+   "beat": "B29",
+   "t_in": "19:30",
+   "t_out": "19:33",
+   "t_in_s": 1170,
+   "t_out_s": 1173.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "anklet release macro",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C170",
+   "shot_type": "MACRO",
+   "i2v_prompt": "Two brass anklets spring open — the hook's two clicks, reversed. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "unique",
+   "loops": [
+    "riff:PAY"
+   ],
+   "mouth_visible": []
+  },
+  {
+   "id": "S206",
+   "beat": "B29",
+   "t_in": "19:33",
+   "t_out": "19:39",
+   "t_in_s": 1173.0,
+   "t_out_s": 1179.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF",
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "crate 2-shot, new high angle",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C171",
+   "shot_type": "MS",
+   "i2v_prompt": "High angle over the open crate: the tickets in their hands, ORB warm above them. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead; ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 6.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S207",
+   "beat": "B29",
+   "t_in": "19:39",
+   "t_out": "19:44",
+   "t_in_s": 1179.0,
+   "t_out_s": 1184.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "ration-tin riff macro",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C172",
+   "shot_type": "MACRO",
+   "i2v_prompt": "PIP taps four notes on the ration tin; two cyan fingers answer on the crate lid. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf; GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S208",
+   "beat": "B29",
+   "t_in": "19:44",
+   "t_out": "19:47",
+   "t_in_s": 1184.0,
+   "t_out_s": 1187.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "ORB"
+   ],
+   "set": "landing_pad",
+   "vantage": "ORB spinning in place",
+   "seed_masters": [
+    "M_ORB",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C173",
+   "shot_type": "MS",
+   "i2v_prompt": "ORB spins in place, halo strobing, delighted. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 3.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S209",
+   "beat": "B29",
+   "t_in": "19:47",
+   "t_out": "19:51",
+   "t_in_s": 1187.0,
+   "t_out_s": 1191.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "PIP"
+   ],
+   "set": "landing_pad",
+   "vantage": "PIP close-up wet-eyed bright",
+   "seed_masters": [
+    "M_PIP_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C174",
+   "shot_type": "CU",
+   "i2v_prompt": "PIP bright and wet-eyed — we'll need a new van — mouth visible. Characters: PIP, the 1-m matte-magenta axolotl creature with six gill-fronds, glossy black eyes and a yellow scarf. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "id": "S210",
+   "beat": "B29",
+   "t_in": "19:51",
+   "t_out": "19:55",
+   "t_in_s": 1191.0,
+   "t_out_s": 1195.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "GRUFF"
+   ],
+   "set": "landing_pad",
+   "vantage": "GRUFF close-up grinning under the fur",
+   "seed_masters": [
+    "M_GRUFF_front",
+    "M_SET_pad",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C175",
+   "shot_type": "CU",
+   "i2v_prompt": "GRUFF grinning under the fur, brows high. Characters: GRUFF, the 2.5-m cyan-blue yeti with fur covering his mouth and a cracked brass goggle on his forehead. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 4.0,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": []
+  },
+  {
+   "id": "S211",
+   "beat": "B30",
+   "t_in": "19:55",
+   "t_out": "20:00",
+   "t_in_s": 1195,
+   "t_out_s": 1200.0,
+   "day": 30,
+   "planet_m": 2,
+   "count_display": 2,
+   "characters": [
+    "ORB"
+   ],
+   "set": "space",
+   "vantage": "orbit pull-out hero",
+   "seed_masters": [
+    "M_ORB",
+    "M_PLANET_2"
+   ],
+   "composite_seed_id": "C017",
+   "shot_type": "HERO",
+   "i2v_prompt": "The 0:45 orbit pull-out re-used with a new warm grade: the planet becomes a dot; hard cut to black. Characters: ORB, the 60-cm floating chrome sphere with one glass lens-eye and a pulsing gold ring halo. Planet 2 m; on-screen text and digits are NOT generated. Locked art style.",
+   "duration_s": 5.0,
+   "reuse": "insert",
+   "loops": [
+    "redline:PAY"
+   ],
+   "mouth_visible": [],
+   "insert_id": "INS_ORBIT_1000",
+   "reuse_of": "S021"
+  }
+ ]
+}
