@@ -1,0 +1,417 @@
+{
+ "_schema": "Grok Imagine i2v batch for 0:00-3:00 \u2014 ONE clip per seed, i2v from the SHA-locked seed only (SUBJECT LOCK); duration_s = generation length, slot_s = edit slot; run via the 3-tab recipe on the paid acct AFTER owner spend sign-off",
+ "count": 37,
+ "clips": [
+  {
+   "shot": "S001",
+   "beat": "B01",
+   "seed": "assets/shrinking_planet/seeds/S001.png",
+   "seed_sha256": "6e98596082f2b8345c3796f47e78548acb28f5ff73733cd1879027650246a5cb",
+   "duration_s": 4,
+   "slot_s": 2.0,
+   "i2v_prompt": "Camera locked. The halo brightens in two short pulses as if speaking, the lens iris tightens slightly, a faint drift of the sphere up and down by a few centimetres. Nothing else moves.",
+   "foley_prompt": "soft electronic halo pulse, two short tones, deep-space silence bed",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S002",
+   "beat": "B01",
+   "seed": "assets/shrinking_planet/seeds/S002.png",
+   "seed_sha256": "8a77bfb20bb223180996271691529427d8920a4dbfb91e3bfe792f0f9874bf33",
+   "duration_s": 10,
+   "slot_s": 1.0,
+   "i2v_prompt": "Camera locked low and wide. Both contestants lift bubble helmets off their heads in one motion and lower them to their sides; PIP's fronds spring up as the helmet clears; GRUFF shakes his fur once. ORB hovers between them, halo pulsing on speech. Faint dust drifts off the pad. Hold the wide the entire clip (punch-ins are done in post).",
+   "foley_prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S005",
+   "beat": "B01",
+   "seed": "assets/shrinking_planet/seeds/S005.png",
+   "seed_sha256": "09a6b9b2d182e857acb8434d92dd1469c6c768ec0a90004674ff389936053d3b",
+   "duration_s": 6,
+   "slot_s": 4.0,
+   "i2v_prompt": "Camera locked. A slow bloom of warm light rises from the crate's question-mark plate between them; PIP glances down at it, GRUFF looks away over his shoulder. Subtle breathing, fronds settle.",
+   "foley_prompt": "deep low hum rising as warm light blooms from a metal crate, faint metallic creak",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S006",
+   "beat": "B02",
+   "seed": "assets/shrinking_planet/seeds/S006.png",
+   "seed_sha256": "fa11dfd34495c25ffdb30f27446b62a732988d959864ba97fc8a34e837985331",
+   "duration_s": 6,
+   "slot_s": 2.0,
+   "i2v_prompt": "Camera locked. PIP's eyes widen further, fronds lift slowly outward, the mouth stays open; a tiny blink at the end. Camp lamp flickers once behind her.",
+   "foley_prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S007",
+   "beat": "B02",
+   "seed": "assets/shrinking_planet/seeds/S007.png",
+   "seed_sha256": "026da82249c4a1315d7d17a7071e8f59aa656bcd8a105bf12730e5bac9d3f5e2",
+   "duration_s": 6,
+   "slot_s": 1.0,
+   "i2v_prompt": "Camera locked. GRUFF's brows lower and knot, fur bristles around the mouth region, one slow exhale moves the fur, the goggle catches a passing highlight. Moss glow breathes behind him.",
+   "foley_prompt": "low bristling fur rustle, a heavy exhale through fur",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S008",
+   "beat": "B02",
+   "seed": "assets/shrinking_planet/seeds/S008.png",
+   "seed_sha256": "4e6b116a5496d4acd386c209596873df02b1fbe74fab2ff317ab0ee6ff1e1f65",
+   "duration_s": 6,
+   "slot_s": 2.0,
+   "i2v_prompt": "Camera locked on the coiled silver tether. ORB drifts down into frame from the top, halo dim, and settles in a slow hover; the tether's anklet ring rocks once as if nudged. Dust motes.",
+   "foley_prompt": "metal chain links settling on rock, a soft hover whir descending",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S009",
+   "beat": "B03",
+   "seed": "assets/shrinking_planet/seeds/S009.png",
+   "seed_sha256": "c083fde5bd974619b58f5b3cd8f146db8e4897b14bb57b37dc6b6e858447d67e",
+   "duration_s": 6,
+   "slot_s": 1.0,
+   "i2v_prompt": "Camera locked over ORB's chrome curve. GRUFF's fur bristles outward as he speaks, brows drop, he leans in ten centimetres and back. ORB's halo pulses in reply.",
+   "foley_prompt": "fur bristling, a low rumble in the chest",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S010",
+   "beat": "B03",
+   "seed": "assets/shrinking_planet/seeds/S010.png",
+   "seed_sha256": "a2337f385e191c644d09b6fce02759c7ab3ea3f6410f5d6fa3670607bedca90d",
+   "duration_s": 6,
+   "slot_s": 1.0,
+   "i2v_prompt": "Camera locked. PIP answers quickly with a small mouth movement, fronds bounce once, then she laughs \u2014 head tips back a few degrees, fronds curl at the tips, eyes squint.",
+   "foley_prompt": "quick bright breath, small mouth click",
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "shot": "S013",
+   "beat": "B04",
+   "seed": "assets/shrinking_planet/seeds/S013.png",
+   "seed_sha256": "4856d7dce5272e515d3b2a5282df242b82afb604863628144983dfee5d3ba8d6",
+   "duration_s": 6,
+   "slot_s": 3.0,
+   "i2v_prompt": "Camera locked from slightly above. ORB's halo flares into a wide starburst and holds, throwing gold light across both contestants; PIP steps back half a pace; GRUFF folds his arms. Pad lights brighten in sync with the flare.",
+   "foley_prompt": "electric flare of a ring light, faint capacitor whine",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S014",
+   "beat": "B04",
+   "seed": "assets/shrinking_planet/seeds/S014.png",
+   "seed_sha256": "492fc238cc6f7be2942c36107c96424232f052da81dad4444b741a55057b862c",
+   "duration_s": 6,
+   "slot_s": 2.0,
+   "i2v_prompt": "Camera locked in profile. ORB drifts out of the foreground to the right, defocusing; GRUFF bends and snaps an anklet shut on his leg with a sharp jerk, then straightens and rolls his shoulders.",
+   "foley_prompt": "heavy footfall on basalt, a hover whir receding",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S015",
+   "beat": "B04",
+   "seed": "assets/shrinking_planet/seeds/S015.png",
+   "seed_sha256": "28f2fb38175b8a710acd505362851d6a9159707e85ce0b71fcc7a8cc0f45c6e0",
+   "duration_s": 6,
+   "slot_s": 2.0,
+   "i2v_prompt": "Camera locked at ankle height. GRUFF's locked anklet sits still in the foreground; PIP's foot enters, she hesitates, then the anklet snaps closed with a small burst of dust and a brief motion-blur of the clasp. Tether cable tightens once.",
+   "foley_prompt": "two hard metallic anklet clicks with a short ring, then silence",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S018",
+   "beat": "B05",
+   "seed": "assets/shrinking_planet/seeds/S018.png",
+   "seed_sha256": "f363b6db63397bacc7ebf450f3f39914868ca3cfa63608e5b4d265421c6a86a2",
+   "duration_s": 4,
+   "slot_s": 2.0,
+   "i2v_prompt": "Camera starts on the locked anklet then tilts up fast along the body to PIP's face in half a second and settles; PIP's fronds are flat, eyes locked forward, no smile.",
+   "foley_prompt": "anklet chain jerk, a fast whip of cloth",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S019",
+   "beat": "B05",
+   "seed": "assets/shrinking_planet/seeds/S019.png",
+   "seed_sha256": "465cf1e0e149bdb532eb4da6840c0726e325607992f9fb09bcff42188cb8f4a7",
+   "duration_s": 6,
+   "slot_s": 4.0,
+   "i2v_prompt": "Camera locked wide with the red ring filling the lower third. ORB drifts backward toward the ring's edge while its halo pulses; PIP and GRUFF stand still, GRUFF's fur moving in a faint breeze, PIP's scarf lifting.",
+   "foley_prompt": "distant thin wind over rock, three small pad lights ticking",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S020",
+   "beat": "B05",
+   "seed": "assets/shrinking_planet/seeds/S020.png",
+   "seed_sha256": "aa9064f96f830196f55a48d0609bd05fc62d4848c405283bce592ee02029839f",
+   "duration_s": 4,
+   "slot_s": 3.0,
+   "i2v_prompt": "Camera locked. ORB's halo pulses in speech rhythm then dims; the lens-eye tilts down toward the two off-screen contestants, then straight back at camera; the starfield reflection slides across the chrome as it turns.",
+   "foley_prompt": "electronic halo pulse in speech rhythm, then a dimming hum",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S021",
+   "beat": "B05",
+   "seed": "assets/shrinking_planet/seeds/S021.png",
+   "seed_sha256": "9c69c61d716506c912076053ec27c642a7b629039591dcaf972cb9834fa3affc",
+   "duration_s": 10,
+   "slot_s": 6.0,
+   "i2v_prompt": "Camera rides up with ORB: the sphere lifts off the pad and the camera pulls straight back and up, the pad and two tiny figures shrinking, the thin sky haze appearing as a rim, until the entire 1000-metre planet hangs as a marble in black space with ORB a chrome speck in the foreground. Smooth continuous acceleration, no cuts.",
+   "foley_prompt": "launch whoosh, rising thruster roar that thins to vacuum silence, low sub swell",
+   "mouth_visible": []
+  },
+  {
+   "shot": "S022",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S022.png",
+   "seed_sha256": "31f6a868756b5383a2170e283506a1bec3e86e605011264601e4fec7cb3dd810",
+   "duration_s": 8,
+   "slot_s": 6.0,
+   "i2v_prompt": "Camera dives from orbit toward the planet's north pole, the sky haze thickening as it passes through, settling on a slow glide over the magenta tent. Stars streak slightly then stabilise.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S023",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S023.png",
+   "seed_sha256": "033aff9babda97513641fdc017eeea7fe3b5d1b1d0d5e310ca8a041e1e677bf2",
+   "duration_s": 6,
+   "slot_s": 4.0,
+   "i2v_prompt": "Camera locked. PIP pulls a ration crate open, lays three bars in a neat row, straightens the scarf, looks up at the curved horizon and sighs; fronds settle.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S024",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S024.png",
+   "seed_sha256": "e59e8525981e66d3746bf9cf968f09f424b6aa9e9ca931e91ba00dbb26c7db62",
+   "duration_s": 6,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked wide. ORB hovers high over the tent, halo pulsing as it narrates, drifting a slow arc; PIP below shades her eyes and looks up at it; the horizon curves behind.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S025",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S025.png",
+   "seed_sha256": "6014cb5827c90d95e7727fa1eb00acc26e4fb272a703f29bfdccbc213633b88e",
+   "duration_s": 6,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera glides low over the south pole toward the cave mouth, moss glow growing brighter as it approaches, slow steady speed.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S026",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S026.png",
+   "seed_sha256": "7b82f9e0d06348bfd3698c59152f6159a10ab2642ac388a828b5f44205173f02",
+   "duration_s": 6,
+   "slot_s": 4.0,
+   "i2v_prompt": "Camera locked inside the cave. GRUFF ducks under the entrance, thumps down onto the ledge, stacks two moon rocks, then lies back with one arm behind his head. Moss glow breathes.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S027",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S027.png",
+   "seed_sha256": "5cad74fdafdda485b97cb96f87c21e0b27a0a3ca18a6165ad3c8a6eca6eabfdc",
+   "duration_s": 6,
+   "slot_s": 4.0,
+   "i2v_prompt": "Camera locked. THE COUNT hovers in from frame left, thrusters puffing, antenna wobbling, its display faces blank and steady (digits composited later), and drifts out frame right. Faint horizon behind.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S028",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S028.png",
+   "seed_sha256": "d5f6d6b9cb49131ab684dc6810795cd12d0b9721cd6a2c5ba079734e50bbf78a",
+   "duration_s": 6,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked low. GRUFF walks into frame, looks down at the hole, looks up at the stars, looks at the camera, and slowly sits; fur puffs. The horizon curves sharply behind him.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S029",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S029.png",
+   "seed_sha256": "9261139206392710c4ea6b9ee3c08f430e3a3fdb66deefa9431deb8d6c94c880",
+   "duration_s": 8,
+   "slot_s": 6.0,
+   "i2v_prompt": "Camera arcs slowly around the sealed crate, the raised question-mark plate catching light as the angle changes; pad lights blink in sequence; a thin dust haze drifts. Full 90-degree arc over the clip.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S030",
+   "beat": "B06",
+   "seed": "assets/shrinking_planet/seeds/S030.png",
+   "seed_sha256": "c1a8a3cc67228e942cbfd267ae78a8e4a08d3ddcf6659bdafae2aaa42bad730b",
+   "duration_s": 6,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera tracks sideways at walking pace. PIP walks ahead with quick steps, GRUFF lumbers three metres behind with the tether slack between them; the horizon rolls under their feet; neither looks at the other.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S032",
+   "beat": "B07",
+   "seed": "assets/shrinking_planet/seeds/S032.png",
+   "seed_sha256": "d3ad40a7ab766d0c5bba223c26b15faf337fcd1d6bd620e7a834ce34cf36c9ad",
+   "duration_s": 8,
+   "slot_s": 8.0,
+   "i2v_prompt": "Camera locked. PIP speaks with small mouth movements, fronds drooping slightly, eyes flick down then back to camera; magenta strip light steady.",
+   "foley_prompt": null,
+   "mouth_visible": [
+    "PIP"
+   ]
+  },
+  {
+   "shot": "S033",
+   "beat": "B07",
+   "seed": "assets/shrinking_planet/seeds/S033.png",
+   "seed_sha256": "083ce757ceb547d59a019109e86cdbd76a4ef36c5e319cecc913ddcb862afadc",
+   "duration_s": 8,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked from slightly above. GRUFF sits hunched, fur over the mouth shifting as he speaks, brows flat and cold, one hand rubs the goggle on his forehead.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S035",
+   "beat": "B07",
+   "seed": "assets/shrinking_planet/seeds/S035.png",
+   "seed_sha256": "3e4ff3fc37fb28b0fad1a3b83258eeb22d62dd3f5fbafa38760b6f2acb461cc5",
+   "duration_s": 9,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked. ORB hovers with the planet large behind it; the halo pulses twice then drops to almost nothing; the lens-eye slowly turns to face camera dead-on.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S037",
+   "beat": "B07",
+   "seed": "assets/shrinking_planet/seeds/S037.png",
+   "seed_sha256": "1b4a568c3be2683f848ade92c9333fa84e4f4095326b3ecd9f947d54c10b290f",
+   "duration_s": 5,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera handheld shake. A storm of grey rock dust blows left to right across a black void, small pebbles tumbling, a red light pulsing somewhere behind the dust.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S038",
+   "beat": "B08",
+   "seed": "assets/shrinking_planet/seeds/S038.png",
+   "seed_sha256": "0e1642ffef022bee07f06ee068773f915cd615f07d767b81aa10766651f4bc06",
+   "duration_s": 7,
+   "slot_s": 7.0,
+   "i2v_prompt": "Camera locked. A hard white sun rises fast over the curved horizon behind the tent, long shadows sweeping across the rock, haze glowing; the tent flap moves once.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S039",
+   "beat": "B08",
+   "seed": "assets/shrinking_planet/seeds/S039.png",
+   "seed_sha256": "56858f4b518a95597c85d89ed3835f1ee728e2fd035e3e11281272ad89006e5e",
+   "duration_s": 8,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked outside the cave. Sunlight crawls down the cave mouth from top to bottom, moss glow fading as it brightens; GRUFF's silhouette stirs on the ledge inside.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S041",
+   "beat": "B08",
+   "seed": "assets/shrinking_planet/seeds/S041.png",
+   "seed_sha256": "b735bc0e56ea337637870bb19b7641a675d49a7bcec0482d94a5a2bacb53307b",
+   "duration_s": 6,
+   "slot_s": 6.0,
+   "i2v_prompt": "Camera locked. PIP steps out of the tent into hard low sunlight, stretches both arms, fronds fanning out, scarf lifting in a breeze, then squints toward the far horizon.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S042",
+   "beat": "B08",
+   "seed": "assets/shrinking_planet/seeds/S042.png",
+   "seed_sha256": "e0d92118d63783378b9b8a5841416946f9e67c69f7ea52fa7601bfdfb075b3ae",
+   "duration_s": 9,
+   "slot_s": 9.0,
+   "i2v_prompt": "Camera locked in orbit. The full planet rotates slowly, a quarter turn over the clip, haze rim glinting, stars fixed.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S043",
+   "beat": "B08",
+   "seed": "assets/shrinking_planet/seeds/S043.png",
+   "seed_sha256": "d190adbb537b5438c5768484eeb0fde6e6974fda612000f3a3b953b5b9bc3fad",
+   "duration_s": 8,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked. ORB drifts toward the lens over the clip, halo pulsing steadily as it narrates, the starfield reflection sliding; it stops just short of filling the frame.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S045",
+   "beat": "B08",
+   "seed": "assets/shrinking_planet/seeds/S045.png",
+   "seed_sha256": "a4e3bde97a56bf165d027526910a4ee05fde1c2c40aebc9c9ef231d2eb83c242",
+   "duration_s": 7,
+   "slot_s": 7.0,
+   "i2v_prompt": "Camera locked extremely wide. Two tiny figures stand on opposite sides of a ridge, each facing away; PIP kicks a pebble; GRUFF sits down. The horizon curves away; haze drifts.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S046",
+   "beat": "B09",
+   "seed": "assets/shrinking_planet/seeds/S046.png",
+   "seed_sha256": "c958cd2f194db4b3af36c86f653ccda7c786b73f9bd3242a927f36532a1ae0dd",
+   "duration_s": 6,
+   "slot_s": 6.0,
+   "i2v_prompt": "Camera locked low. ORB drops from the black sky into frame, decelerates, and settles into a hover a metre above the red ring; halo brightens as it arrives; pad lights wake.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S047",
+   "beat": "B09",
+   "seed": "assets/shrinking_planet/seeds/S047.png",
+   "seed_sha256": "bc4af6a46f2093dd51dad3212d0f37c3cc5eca86562d2b2e4418951a05e5a103",
+   "duration_s": 6,
+   "slot_s": 6.0,
+   "i2v_prompt": "Camera tracks low alongside. PIP and GRUFF walk onto the pad three metres apart, the tether dragging and catching on the rock between them; GRUFF tugs it free without looking at her; pad lights glow in the dusk.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  },
+  {
+   "shot": "S048",
+   "beat": "B09",
+   "seed": "assets/shrinking_planet/seeds/S048.png",
+   "seed_sha256": "012bba7466bdb260f53931e3599bb18a0067ea641c3ec5decc93177d28c0d32f",
+   "duration_s": 8,
+   "slot_s": 5.0,
+   "i2v_prompt": "Camera locked at platter height. A small tray drone lowers two silver cloches into frame and retreats; the cloches rock and settle; a highlight slides over the domes.",
+   "foley_prompt": null,
+   "mouth_visible": []
+  }
+ ]
+}

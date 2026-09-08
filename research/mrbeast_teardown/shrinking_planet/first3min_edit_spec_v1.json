@@ -1,0 +1,822 @@
+{
+ "lane": "shrinking_planet",
+ "version": "first3min_edit_spec_v1",
+ "fps": 24,
+ "size": "1920x1080",
+ "window": [
+  0.0,
+  182.0
+ ],
+ "base": "hook_edit_spec_v1 (segments verbatim)",
+ "known_gaps": [
+  "B07 FLASHFWD: the five flash-forward frames are later-video shots (not in the 0-3min seed set); placeholder = dust plate + five whiteouts",
+  "audio: VO/music/foley attached at assembly after ElevenLabs + MMAudio (credits pending)"
+ ],
+ "segments": [
+  {
+   "shot": "S001",
+   "beat": "B01",
+   "t_in": 0.0,
+   "t_out": 2.0,
+   "src": "ledger:S001",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.6,
+     "z1": 1.0,
+     "t0": 1.375,
+     "note": "snap punch-out on the halo pulse (ref 1.375)"
+    }
+   ]
+  },
+  {
+   "shot": "S002",
+   "beat": "B01",
+   "t_in": 2.0,
+   "t_out": 3.0,
+   "src": "ledger:S002",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "PIP / WENT SOLO",
+     "t_on": 0.0,
+     "t_off": 1.0,
+     "lead": 0.3,
+     "size": 72,
+     "y": "h*0.80",
+     "color": "0xE0479E"
+    },
+    {
+     "op": "text",
+     "text": "GRUFF / GOT LEFT",
+     "t_on": 0.0,
+     "t_off": 1.0,
+     "lead": 0.3,
+     "size": 72,
+     "y": "h*0.88",
+     "color": "0x2FB8D6"
+    },
+    {
+     "op": "whiteout",
+     "t": 0.92,
+     "dur": 0.08,
+     "note": "hides the cut into the card stack (ref 3.375)"
+    }
+   ]
+  },
+  {
+   "shot": "S003",
+   "beat": "B01",
+   "t_in": 3.0,
+   "t_out": 6.0,
+   "src": "ledger:S003",
+   "reuse": "post",
+   "ops": [
+    {
+     "op": "cards",
+     "stills": [
+      "M_ARCH_01_stage_wide",
+      "M_ARCH_02_stage_drums",
+      "M_ARCH_03_bus_road",
+      "M_ARCH_04_bus_bunks",
+      "M_ARCH_05_dressing_room",
+      "M_ARCH_06_empty_hall"
+     ],
+     "t_start": 0.0,
+     "each": 0.4,
+     "note": "six archive stills as overlay cards over the running take, whiteout between (ref 3.5-5.75); ARCH_01 = owner pick v1/v2"
+    }
+   ]
+  },
+  {
+   "shot": "S004",
+   "beat": "B01",
+   "t_in": 6.0,
+   "t_out": 8.0,
+   "src": "ledger:S002",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 0.0,
+     "note": "S004 IS the 1.6x re-crop of S002"
+    },
+    {
+     "op": "whiteout",
+     "t": 1.95,
+     "dur": 0.08,
+     "note": "ref 8.0 hidden cut"
+    }
+   ]
+  },
+  {
+   "shot": "S005",
+   "beat": "B01",
+   "t_in": 8.0,
+   "t_out": 12.0,
+   "src": "ledger:S005",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.9,
+     "t0": 0.25,
+     "t1": 0.6,
+     "note": "push-in leading the constraint number (ref 8.25->8.6)"
+    },
+    {
+     "op": "punch",
+     "z0": 1.9,
+     "z1": 1.0,
+     "t0": 1.0,
+     "t1": 2.0,
+     "note": "eased pull-back (ref 9.0-10.0)"
+    },
+    {
+     "op": "text",
+     "text": "30 DAYS",
+     "t_on": 0.55,
+     "t_off": 2.35,
+     "lead": 0.3,
+     "size": 140,
+     "y": "h*0.40",
+     "note": "text LEADS the spoken '30' by 0.2-0.5 s (ref 8.25 vs 8.44)"
+    },
+    {
+     "op": "flash",
+     "t": 3.5,
+     "dur": 0.08,
+     "alpha": 0.7
+    },
+    {
+     "op": "flash",
+     "t": 3.9,
+     "dur": 0.06,
+     "alpha": 0.5
+    },
+    {
+     "op": "bloom",
+     "t": 3.5,
+     "dur": 0.4,
+     "amount": 0.25,
+     "note": "bloom centred on the prize crate on the money line (ref 11.5-12.25)"
+    }
+   ]
+  },
+  {
+   "shot": "S006",
+   "beat": "B02",
+   "t_in": 12.0,
+   "t_out": 14.0,
+   "src": "ledger:S006",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S007",
+   "beat": "B02",
+   "t_in": 14.0,
+   "t_out": 15.0,
+   "src": "ledger:S007",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S008",
+   "beat": "B02",
+   "t_in": 15.0,
+   "t_out": 17.0,
+   "src": "ledger:S008",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.15,
+     "z1": 1.0,
+     "t0": 0.4,
+     "t1": 2.0,
+     "note": "slow pull-back on the tether insert (ref 14.5-16.0)"
+    }
+   ]
+  },
+  {
+   "shot": "S009",
+   "beat": "B03",
+   "t_in": 17.0,
+   "t_out": 18.0,
+   "src": "ledger:S009",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S010",
+   "beat": "B03",
+   "t_in": 18.0,
+   "t_out": 19.0,
+   "src": "ledger:S010",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S011",
+   "beat": "B03",
+   "t_in": 19.0,
+   "t_out": 20.0,
+   "src": "ledger:S009",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 0.0
+    }
+   ]
+  },
+  {
+   "shot": "S012",
+   "beat": "B03",
+   "t_in": 20.0,
+   "t_out": 21.0,
+   "src": "ledger:S010",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "text",
+     "text": "STILL SORE",
+     "t_on": 0.0,
+     "t_off": 0.6,
+     "lead": 0.15,
+     "size": 110,
+     "y": "h*0.45",
+     "color": "0x2FB8D6",
+     "note": "ref 'HE'S SALTY' 0.625 s shot"
+    }
+   ]
+  },
+  {
+   "shot": "S013",
+   "beat": "B04",
+   "t_in": 21.0,
+   "t_out": 24.0,
+   "src": "ledger:S013",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S014",
+   "beat": "B04",
+   "t_in": 24.0,
+   "t_out": 26.0,
+   "src": "ledger:S014",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S015",
+   "beat": "B04",
+   "t_in": 26.0,
+   "t_out": 28.0,
+   "src": "ledger:S015",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.35,
+     "t0": 0.4,
+     "t1": 0.55,
+     "note": "fast punch-in on the first CLICK (ref 25.75)"
+    },
+    {
+     "op": "flash",
+     "t": 0.5,
+     "dur": 0.05,
+     "alpha": 0.35
+    }
+   ]
+  },
+  {
+   "shot": "S016",
+   "beat": "B04",
+   "t_in": 28.0,
+   "t_out": 29.0,
+   "src": "ledger:S007",
+   "reuse": "insert",
+   "ops": []
+  },
+  {
+   "shot": "S017",
+   "beat": "B04",
+   "t_in": 29.0,
+   "t_out": 30.0,
+   "src": "ledger:S006",
+   "reuse": "insert",
+   "ops": []
+  },
+  {
+   "shot": "S018",
+   "beat": "B05",
+   "t_in": 30.0,
+   "t_out": 32.0,
+   "src": "ledger:S018",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S019",
+   "beat": "B05",
+   "t_in": 32.0,
+   "t_out": 36.0,
+   "src": "ledger:S019",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "CROSS IT = YOU BOTH GO HOME",
+     "t_on": 1.2,
+     "t_off": 3.6,
+     "lead": 0.3,
+     "size": 64,
+     "y": "h*0.82",
+     "color": "0xD93B3B"
+    }
+   ]
+  },
+  {
+   "shot": "S020",
+   "beat": "B05",
+   "t_in": 36.0,
+   "t_out": 39.0,
+   "src": "ledger:S020",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S021",
+   "beat": "B05",
+   "t_in": 39.0,
+   "t_out": 45.0,
+   "src": "ledger:S021",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "bloom",
+     "t": 5.2,
+     "dur": 0.5,
+     "amount": 0.2,
+     "note": "planet reveal slam"
+    }
+   ]
+  },
+  {
+   "shot": "S022",
+   "beat": "B06",
+   "t_in": 45.0,
+   "t_out": 51.0,
+   "src": "ledger:S022",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "DAY 1",
+     "t_on": 0.3,
+     "t_off": 2.8,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.10",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "1,000 M",
+     "t_on": 0.6,
+     "t_off": 2.8,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.19",
+     "color": "0xFFD24A"
+    }
+   ]
+  },
+  {
+   "shot": "S023",
+   "beat": "B06",
+   "t_in": 51.0,
+   "t_out": 55.0,
+   "src": "ledger:S023",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S024",
+   "beat": "B06",
+   "t_in": 55.0,
+   "t_out": 60.0,
+   "src": "ledger:S024",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S025",
+   "beat": "B06",
+   "t_in": 60.0,
+   "t_out": 65.0,
+   "src": "ledger:S025",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S026",
+   "beat": "B06",
+   "t_in": 65.0,
+   "t_out": 69.0,
+   "src": "ledger:S026",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S027",
+   "beat": "B06",
+   "t_in": 69.0,
+   "t_out": 73.0,
+   "src": "ledger:S027",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S028",
+   "beat": "B06",
+   "t_in": 73.0,
+   "t_out": 78.0,
+   "src": "ledger:S028",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S029",
+   "beat": "B06",
+   "t_in": 78.0,
+   "t_out": 84.0,
+   "src": "ledger:S029",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S030",
+   "beat": "B06",
+   "t_in": 84.0,
+   "t_out": 89.0,
+   "src": "ledger:S030",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S031",
+   "beat": "B06",
+   "t_in": 89.0,
+   "t_out": 90.0,
+   "src": "ledger:S027",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.3,
+     "z1": 1.3,
+     "t0": 0.0,
+     "note": "re-use insert, static re-crop so it never matches its source frame"
+    }
+   ]
+  },
+  {
+   "shot": "S032",
+   "beat": "B07",
+   "t_in": 90.0,
+   "t_out": 98.0,
+   "src": "ledger:S032",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S033",
+   "beat": "B07",
+   "t_in": 98.0,
+   "t_out": 103.0,
+   "src": "ledger:S033",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S034",
+   "beat": "B07",
+   "t_in": 103.0,
+   "t_out": 106.0,
+   "src": "ledger:S033",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 3.0,
+     "note": "insert = free punch-in on source shot"
+    }
+   ]
+  },
+  {
+   "shot": "S035",
+   "beat": "B07",
+   "t_in": 106.0,
+   "t_out": 111.0,
+   "src": "ledger:S035",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S036",
+   "beat": "B07",
+   "t_in": 111.0,
+   "t_out": 115.0,
+   "src": "ledger:S035",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.5,
+     "t0": 0.0,
+     "t1": 4.0,
+     "note": "insert = free punch-in on source shot"
+    }
+   ]
+  },
+  {
+   "shot": "S037",
+   "beat": "B07",
+   "t_in": 115.0,
+   "t_out": 120.0,
+   "src": "ledger:S037",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "whiteout",
+     "t": 0.6,
+     "dur": 0.1,
+     "alpha": 0.9
+    },
+    {
+     "op": "whiteout",
+     "t": 1.45,
+     "dur": 0.1,
+     "alpha": 0.9
+    },
+    {
+     "op": "whiteout",
+     "t": 2.3,
+     "dur": 0.1,
+     "alpha": 0.9
+    },
+    {
+     "op": "whiteout",
+     "t": 3.15,
+     "dur": 0.1,
+     "alpha": 0.9
+    },
+    {
+     "op": "whiteout",
+     "t": 4.0,
+     "dur": 0.1,
+     "alpha": 0.9
+    }
+   ]
+  },
+  {
+   "shot": "S038",
+   "beat": "B08",
+   "t_in": 120.0,
+   "t_out": 127.0,
+   "src": "ledger:S038",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "DAY 2",
+     "t_on": 0.3,
+     "t_off": 2.8,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.10",
+     "color": "white"
+    }
+   ]
+  },
+  {
+   "shot": "S039",
+   "beat": "B08",
+   "t_in": 127.0,
+   "t_out": 132.0,
+   "src": "ledger:S039",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S040",
+   "beat": "B08",
+   "t_in": 132.0,
+   "t_out": 135.0,
+   "src": "ledger:S039",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 3.0,
+     "note": "insert = free punch-in on source shot"
+    }
+   ]
+  },
+  {
+   "shot": "S041",
+   "beat": "B08",
+   "t_in": 135.0,
+   "t_out": 141.0,
+   "src": "ledger:S041",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S042",
+   "beat": "B08",
+   "t_in": 141.0,
+   "t_out": 150.0,
+   "src": "ledger:S042",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "1,000 M",
+     "t_on": 0.8,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.14",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "500 M",
+     "t_on": 1.85,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.24",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "300 M",
+     "t_on": 2.9000000000000004,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.34",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "25 M",
+     "t_on": 3.95,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.44",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "12 M",
+     "t_on": 5.0,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.54",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "4 M",
+     "t_on": 6.05,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.64",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "2 M",
+     "t_on": 7.1000000000000005,
+     "t_off": 8.8,
+     "lead": 0.2,
+     "size": 64,
+     "y": "h*0.74",
+     "color": "0xFF4040"
+    }
+   ]
+  },
+  {
+   "shot": "S043",
+   "beat": "B08",
+   "t_in": 150.0,
+   "t_out": 155.0,
+   "src": "ledger:S043",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S044",
+   "beat": "B08",
+   "t_in": 155.0,
+   "t_out": 158.0,
+   "src": "ledger:S043",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 3.0,
+     "note": "insert = free punch-in on source shot"
+    }
+   ]
+  },
+  {
+   "shot": "S045",
+   "beat": "B08",
+   "t_in": 158.0,
+   "t_out": 165.0,
+   "src": "ledger:S045",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S046",
+   "beat": "B09",
+   "t_in": 165.0,
+   "t_out": 171.0,
+   "src": "ledger:S046",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "DAY 4",
+     "t_on": 0.3,
+     "t_off": 2.8,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.10",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "OFFER #1",
+     "t_on": 1.2,
+     "t_off": 4.0,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.19",
+     "color": "0xFFD24A"
+    }
+   ]
+  },
+  {
+   "shot": "S047",
+   "beat": "B09",
+   "t_in": 171.0,
+   "t_out": 177.0,
+   "src": "ledger:S047",
+   "reuse": "unique",
+   "ops": []
+  },
+  {
+   "shot": "S048",
+   "beat": "B09",
+   "t_in": 177.0,
+   "t_out": 182.0,
+   "src": "ledger:S048",
+   "reuse": "unique",
+   "ops": []
+  }
+ ]
+}
