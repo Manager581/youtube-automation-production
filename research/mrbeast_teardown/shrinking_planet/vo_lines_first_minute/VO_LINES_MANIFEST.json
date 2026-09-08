@@ -1,0 +1,176 @@
+{
+ "_schema": "per-line VO for 0:00-1:00; ONE generation per line (ElevenLabs), SHA-verify textarea before Generate",
+ "lines": [
+  {
+   "id": "L01_ORB",
+   "beat": "B01",
+   "t": "00:00",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 12,
+   "sha256": "360c27f181841868",
+   "text": "Helmets off."
+  },
+  {
+   "id": "L02_ORB",
+   "beat": "B01",
+   "t": "00:03",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 110,
+   "sha256": "311f2d363a7d20d8",
+   "text": "These two used to be a band. Four years. One bus. One stage. Two hundred shows and one song anybody remembers."
+  },
+  {
+   "id": "L03_ORB",
+   "beat": "B01",
+   "t": "00:06",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 84,
+   "sha256": "c6b708bfea5efdc6",
+   "text": "She went solo. He's still angry about it. They have not been in the same room since."
+  },
+  {
+   "id": "L04_ORB",
+   "beat": "B01",
+   "t": "00:09",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 139,
+   "sha256": "abecc2093e8a0ba1",
+   "text": "If they survive thirty days on this planet \u2014 together \u2014 they go home with what's in that crate. If they don't, the crate goes home with me."
+  },
+  {
+   "id": "L05_ORB",
+   "beat": "B03",
+   "t": "00:17",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 22,
+   "sha256": "65df5f84ba1eaa13",
+   "text": "When did the band end?"
+  },
+  {
+   "id": "L06_PIP",
+   "beat": "B03",
+   "t": "00:18",
+   "speaker": "PIP",
+   "mouth": "ON",
+   "chars": 16,
+   "sha256": "7ff1b44f88faf7f8",
+   "text": "Three years ago."
+  },
+  {
+   "id": "L07_GRUFF",
+   "beat": "B03",
+   "t": "00:19",
+   "speaker": "GRUFF",
+   "mouth": null,
+   "chars": 56,
+   "sha256": "9a0559aab0b3a93d",
+   "text": "She quit. Mid-tour. Between the soundcheck and the show."
+  },
+  {
+   "id": "L08_ORB",
+   "beat": "B03",
+   "t": "00:20",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 11,
+   "sha256": "240afd35d1e16eb9",
+   "text": "Still sore."
+  },
+  {
+   "id": "L09_ORB",
+   "beat": "B04",
+   "t": "00:21",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 242,
+   "sha256": "47e4a13233568b98",
+   "text": "Nobody's making you. You can put the helmets back on and I'll fly you home and we never speak of this. But the second those anklets lock, the thirty days are running, and the tether between you does not come off for any reason I can think of."
+  },
+  {
+   "id": "L10_GRUFF",
+   "beat": "B04",
+   "t": "00:24",
+   "speaker": "GRUFF",
+   "mouth": null,
+   "chars": 8,
+   "sha256": "117f7d1eef9783f0",
+   "text": "Running."
+  },
+  {
+   "id": "L11_ORB",
+   "beat": "B04",
+   "t": "00:27",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 12,
+   "sha256": "db37bd0cc84cdd4e",
+   "text": "Both locked."
+  },
+  {
+   "id": "L12_ORB",
+   "beat": "B05",
+   "t": "00:30",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 241,
+   "sha256": "293ec0cb6df3ca7a",
+   "text": "One rule. This ring is the only door off this planet. Cross this line and you quit. If either of you quits, I take you both home tonight \u2014 and the crate goes home with me. There is no version where one of you crosses and the other one stays."
+  },
+  {
+   "id": "L13_ORB",
+   "beat": "B05",
+   "t": "00:37",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 20,
+   "sha256": "c7301483909e99b9",
+   "text": "Have fun down there."
+  },
+  {
+   "id": "L14_ORB",
+   "beat": "B06",
+   "t": "00:45",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 187,
+   "sha256": "23ad7b265ab812c8",
+   "text": "One thousand metres across. Its own sky, if you squint. Its own sunrise every eleven hours, because I got the spin slightly wrong and I'm not fixing it now. Her camp is at the north pole."
+  },
+  {
+   "id": "L15_PIP",
+   "beat": "B06",
+   "t": "00:49",
+   "speaker": "PIP",
+   "mouth": "OFF",
+   "chars": 112,
+   "sha256": "69b9768060c19dcc",
+   "text": "It's actually kind of nice? The horizon's right there. You could walk to the edge of the world before breakfast."
+  },
+  {
+   "id": "L16_ORB",
+   "beat": "B06",
+   "t": "00:54",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 135,
+   "sha256": "b8ed09341c4b0146",
+   "text": "His cave is at the south. On a planet this size they can go a week without seeing each other. Which, from what I can tell, is the plan."
+  },
+  {
+   "id": "L17_GRUFF",
+   "beat": "B06",
+   "t": "00:58",
+   "speaker": "GRUFF",
+   "mouth": null,
+   "chars": 51,
+   "sha256": "f5848f9cc596009a",
+   "text": "It's a hole. I like a hole. Nobody sings in a hole."
+  }
+ ],
+ "total_chars": 1458
+}

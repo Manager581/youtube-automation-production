@@ -1,0 +1,206 @@
+{
+ "duration": 60.0,
+ "vo": [
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L01_ORB.mp3",
+   "t": 0.15,
+   "gain_db": 0,
+   "line": "L01_ORB",
+   "dur": 1.202
+  }
+ ],
+ "foley": [
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S001.flac",
+   "t": 0.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S001"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S002.flac",
+   "t": 2.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S002"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S004.flac",
+   "t": 6.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S004"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S005.flac",
+   "t": 8.0,
+   "gain_db": -10,
+   "dur": 4.0,
+   "shot": "S005"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S006.flac",
+   "t": 12.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S006"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S007.flac",
+   "t": 14.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S007"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S008.flac",
+   "t": 15.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S008"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S009.flac",
+   "t": 17.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S009"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S010.flac",
+   "t": 18.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S010"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S011.flac",
+   "t": 19.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S011"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S012.flac",
+   "t": 20.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S012"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S013.flac",
+   "t": 21.0,
+   "gain_db": -10,
+   "dur": 3.0,
+   "shot": "S013"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S014.flac",
+   "t": 24.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S014"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S015.flac",
+   "t": 26.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S015"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S016.flac",
+   "t": 28.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S016"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S017.flac",
+   "t": 29.0,
+   "gain_db": -10,
+   "dur": 1.0,
+   "shot": "S017"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S018.flac",
+   "t": 30.0,
+   "gain_db": -10,
+   "dur": 2.0,
+   "shot": "S018"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S019.flac",
+   "t": 32.0,
+   "gain_db": -10,
+   "dur": 4.0,
+   "shot": "S019"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S020.flac",
+   "t": 36.0,
+   "gain_db": -10,
+   "dur": 3.0,
+   "shot": "S020"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S021.flac",
+   "t": 39.0,
+   "gain_db": -10,
+   "dur": 6.0,
+   "shot": "S021"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S022.flac",
+   "t": 45.0,
+   "gain_db": -10,
+   "dur": 6.0,
+   "shot": "S022"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S023.flac",
+   "t": 51.0,
+   "gain_db": -10,
+   "dur": 4.0,
+   "shot": "S023"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/output/shrinking_planet/foley/S024.flac",
+   "t": 55.0,
+   "gain_db": -10,
+   "dur": 5.0,
+   "shot": "S024"
+  }
+ ],
+ "music": {
+  "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/dino_music/light_playful.mp3",
+  "gain_db": -18,
+  "duck_db": -8,
+  "sections": [
+   {
+    "t0": 0.0,
+    "t1": 0.4,
+    "gain_db": 4,
+    "why": "[MUSIC hit] on the cold open"
+   },
+   {
+    "t0": 30.0,
+    "t1": 39.0,
+    "gain_db": -60,
+    "why": "B05 [MUSIC out]: the rule is delivered dry"
+   },
+   {
+    "t0": 39.0,
+    "t1": 40.0,
+    "gain_db": 5,
+    "why": "[MUSIC hit] slam on the planet reveal (S021)"
+   }
+  ],
+  "placeholder": "library bed (Pixabay CC0, from assets/dino_music); swap for a driving MrBeast-style cue when the owner allows a Pixabay download"
+ },
+ "target_lufs": -14,
+ "true_peak": -1.5,
+ "notes": {
+  "vo_overrun_shifts": []
+ }
+}
