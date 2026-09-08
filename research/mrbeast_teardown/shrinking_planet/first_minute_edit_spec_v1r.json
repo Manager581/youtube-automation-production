@@ -1,0 +1,669 @@
+{
+ "lane": "shrinking_planet",
+ "version": "first_minute_edit_spec_v1r",
+ "fps": 24,
+ "size": "1920x1080",
+ "window": [
+  0.0,
+  98.147
+ ],
+ "base": "hook_edit_spec_v1 (segments verbatim)",
+ "known_gaps": [
+  "B07 FLASHFWD: the five flash-forward frames are later-video shots (not in the 0-3min seed set); placeholder = dust plate + five whiteouts",
+  "audio: VO/music/foley attached at assembly after ElevenLabs + MMAudio (credits pending)"
+ ],
+ "segments": [
+  {
+   "shot": "S001",
+   "beat": "B01",
+   "t_in": 0.0,
+   "t_out": 2.0,
+   "src": "ledger:S001",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.6,
+     "z1": 1.0,
+     "t0": 1.375,
+     "note": "snap punch-out on the halo pulse (ref 1.375)"
+    }
+   ],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S002",
+   "beat": "B01",
+   "t_in": 2.0,
+   "t_out": 3.0,
+   "src": "ledger:S002",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "PIP / WENT SOLO",
+     "t_on": 0.0,
+     "t_off": 1.0,
+     "lead": 0.3,
+     "size": 72,
+     "y": "h*0.80",
+     "color": "0xE0479E"
+    },
+    {
+     "op": "text",
+     "text": "GRUFF / GOT LEFT",
+     "t_on": 0.0,
+     "t_off": 1.0,
+     "lead": 0.3,
+     "size": 72,
+     "y": "h*0.88",
+     "color": "0x2FB8D6"
+    },
+    {
+     "op": "whiteout",
+     "t": 0.92,
+     "dur": 0.08,
+     "note": "hides the cut into the card stack (ref 3.375)"
+    }
+   ],
+   "t0": 4.5,
+   "t0_note": "in-point chosen from the banked strip (S002 helmets lowered ~4-7s; S007 mouth-line-free 0-2s)",
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S003",
+   "beat": "B01",
+   "t_in": 3.0,
+   "t_out": 9.73,
+   "src": "ledger:S002",
+   "reuse": "post",
+   "ops": [
+    {
+     "op": "cards",
+     "stills": [
+      "M_ARCH_01_stage_wide",
+      "M_ARCH_02_stage_drums",
+      "M_ARCH_03_bus_road",
+      "M_ARCH_04_bus_bunks",
+      "M_ARCH_05_dressing_room",
+      "M_ARCH_06_empty_hall"
+     ],
+     "t_start": 0.0,
+     "each": 0.897,
+     "note": "six archive stills as overlay cards over the running take, whiteout between (ref 3.5-5.75); ARCH_01 = owner pick v1/v2"
+    }
+   ],
+   "t0": 0.0,
+   "note": "archive card stack overlays on the S002 wide plate (S003 is post-only, no clip)",
+   "retime_k": 2.243
+  },
+  {
+   "shot": "S004",
+   "beat": "B01",
+   "t_in": 9.73,
+   "t_out": 12.733,
+   "src": "ledger:S002",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 0.0,
+     "note": "S004 IS the 1.6x re-crop of S002"
+    },
+    {
+     "op": "whiteout",
+     "t": 2.928,
+     "dur": 0.08,
+     "note": "ref 8.0 hidden cut"
+    }
+   ],
+   "t0": 5.5,
+   "t0_note": "in-point chosen from the banked strip (S002 helmets lowered ~4-7s; S007 mouth-line-free 0-2s)",
+   "retime_k": 1.501
+  },
+  {
+   "shot": "S005",
+   "beat": "B01",
+   "t_in": 12.733,
+   "t_out": 17.234,
+   "src": "ledger:S005",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.9,
+     "t0": 0.281,
+     "t1": 0.675,
+     "note": "push-in leading the constraint number (ref 8.25->8.6)"
+    },
+    {
+     "op": "punch",
+     "z0": 1.9,
+     "z1": 1.0,
+     "t0": 1.125,
+     "t1": 2.251,
+     "note": "eased pull-back (ref 9.0-10.0)"
+    },
+    {
+     "op": "text",
+     "text": "30 DAYS",
+     "t_on": 0.619,
+     "t_off": 2.645,
+     "lead": 0.3,
+     "size": 140,
+     "y": "h*0.40",
+     "note": "text LEADS the spoken '30' by 0.2-0.5 s (ref 8.25 vs 8.44)"
+    },
+    {
+     "op": "flash",
+     "t": 3.939,
+     "dur": 0.08,
+     "alpha": 0.7
+    },
+    {
+     "op": "flash",
+     "t": 4.389,
+     "dur": 0.06,
+     "alpha": 0.5
+    },
+    {
+     "op": "bloom",
+     "t": 3.939,
+     "dur": 0.4,
+     "amount": 0.25,
+     "note": "bloom centred on the prize crate on the money line (ref 11.5-12.25)"
+    }
+   ],
+   "retime_k": 1.125
+  },
+  {
+   "shot": "S006",
+   "beat": "B02",
+   "t_in": 17.234,
+   "t_out": 19.234,
+   "src": "ledger:S006",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S007",
+   "beat": "B02",
+   "t_in": 19.234,
+   "t_out": 20.234,
+   "src": "ledger:S007",
+   "reuse": "unique",
+   "ops": [],
+   "t0": 0.0,
+   "t0_note": "in-point chosen from the banked strip (S002 helmets lowered ~4-7s; S007 mouth-line-free 0-2s)",
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S008",
+   "beat": "B02",
+   "t_in": 20.234,
+   "t_out": 22.234,
+   "src": "ledger:S008",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.15,
+     "z1": 1.0,
+     "t0": 0.4,
+     "t1": 2.0,
+     "note": "slow pull-back on the tether insert (ref 14.5-16.0)"
+    }
+   ],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S009",
+   "beat": "B03",
+   "t_in": 22.234,
+   "t_out": 23.512,
+   "src": "ledger:S009",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.278
+  },
+  {
+   "shot": "S010",
+   "beat": "B03",
+   "t_in": 23.512,
+   "t_out": 24.727,
+   "src": "ledger:S010",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.215
+  },
+  {
+   "shot": "S011",
+   "beat": "B03",
+   "t_in": 24.727,
+   "t_out": 29.81,
+   "src": "ledger:S009",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.6,
+     "t0": 0.0,
+     "t1": 0.0
+    },
+    {
+     "op": "whiteout",
+     "t": 0.0,
+     "dur": 0.08,
+     "alpha": 0.85,
+     "note": "added: soft transition on the re-use cut (hook transitions floor)"
+    }
+   ],
+   "retime_k": 5.083
+  },
+  {
+   "shot": "S012",
+   "beat": "B03",
+   "t_in": 29.81,
+   "t_out": 30.81,
+   "src": "ledger:S010",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "text",
+     "text": "STILL SORE",
+     "t_on": 0.0,
+     "t_off": 0.6,
+     "lead": 0.15,
+     "size": 110,
+     "y": "h*0.45",
+     "color": "0x2FB8D6",
+     "note": "ref 'HE'S SALTY' 0.625 s shot"
+    },
+    {
+     "op": "whiteout",
+     "t": 0.0,
+     "dur": 0.08,
+     "alpha": 0.85,
+     "note": "added: soft transition on the re-use cut (hook transitions floor)"
+    }
+   ],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S013a",
+   "beat": "B04",
+   "t_in": 30.81,
+   "t_out": 34.848,
+   "src": "ledger:S013",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 4.038,
+   "split_of": "S013"
+  },
+  {
+   "shot": "S013b",
+   "beat": "B04",
+   "t_in": 34.848,
+   "t_out": 38.886,
+   "src": "ledger:S013",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.3,
+     "z1": 1.3,
+     "t0": 0.0,
+     "note": "split: alternating punch-in so a long slot never loops its clip"
+    }
+   ],
+   "retime_k": 4.038,
+   "split_of": "S013"
+  },
+  {
+   "shot": "S013c",
+   "beat": "B04",
+   "t_in": 38.886,
+   "t_out": 42.924,
+   "src": "ledger:S013",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 4.038,
+   "split_of": "S013"
+  },
+  {
+   "shot": "S014",
+   "beat": "B04",
+   "t_in": 42.924,
+   "t_out": 44.924,
+   "src": "ledger:S014",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S015",
+   "beat": "B04",
+   "t_in": 44.924,
+   "t_out": 46.924,
+   "src": "ledger:S015",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.0,
+     "z1": 1.35,
+     "t0": 0.4,
+     "t1": 0.55,
+     "note": "fast punch-in on the first CLICK (ref 25.75)"
+    },
+    {
+     "op": "flash",
+     "t": 0.5,
+     "dur": 0.05,
+     "alpha": 0.35
+    }
+   ],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S016",
+   "beat": "B04",
+   "t_in": 46.924,
+   "t_out": 47.924,
+   "src": "ledger:S007",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "whiteout",
+     "t": 0.0,
+     "dur": 0.08,
+     "alpha": 0.85,
+     "note": "added: soft transition on the re-use cut (hook transitions floor)"
+    }
+   ],
+   "t0": 0.0,
+   "t0_note": "in-point chosen from the banked strip (S002 helmets lowered ~4-7s; S007 mouth-line-free 0-2s)",
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S017",
+   "beat": "B04",
+   "t_in": 47.924,
+   "t_out": 48.924,
+   "src": "ledger:S006",
+   "reuse": "insert",
+   "ops": [
+    {
+     "op": "whiteout",
+     "t": 0.0,
+     "dur": 0.08,
+     "alpha": 0.85,
+     "note": "added: soft transition on the re-use cut (hook transitions floor)"
+    }
+   ],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S018",
+   "beat": "B05",
+   "t_in": 48.924,
+   "t_out": 52.268,
+   "src": "ledger:S018",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.672
+  },
+  {
+   "shot": "S019a",
+   "beat": "B05",
+   "t_in": 52.268,
+   "t_out": 55.612,
+   "src": "ledger:S019",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "CROSS IT = YOU BOTH GO HOME",
+     "t_on": 2.007,
+     "t_off": 6.02,
+     "lead": 0.3,
+     "size": 64,
+     "y": "h*0.82",
+     "color": "0xD93B3B"
+    }
+   ],
+   "retime_k": 1.672,
+   "split_of": "S019"
+  },
+  {
+   "shot": "S019b",
+   "beat": "B05",
+   "t_in": 55.612,
+   "t_out": 58.957,
+   "src": "ledger:S019",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.3,
+     "z1": 1.3,
+     "t0": 0.0,
+     "note": "split: alternating punch-in so a long slot never loops its clip"
+    }
+   ],
+   "retime_k": 1.672,
+   "split_of": "S019"
+  },
+  {
+   "shot": "S020",
+   "beat": "B05",
+   "t_in": 58.957,
+   "t_out": 62.629,
+   "src": "ledger:S020",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.224
+  },
+  {
+   "shot": "S021",
+   "beat": "B05",
+   "t_in": 62.629,
+   "t_out": 68.629,
+   "src": "ledger:S021",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "bloom",
+     "t": 5.2,
+     "dur": 0.5,
+     "amount": 0.2,
+     "note": "planet reveal slam"
+    }
+   ],
+   "retime_k": 1.0
+  },
+  {
+   "shot": "S022a",
+   "beat": "B06",
+   "t_in": 68.629,
+   "t_out": 75.122,
+   "src": "ledger:S022",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "text",
+     "text": "DAY 1",
+     "t_on": 0.649,
+     "t_off": 6.06,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.10",
+     "color": "white"
+    },
+    {
+     "op": "text",
+     "text": "1,000 M",
+     "t_on": 1.299,
+     "t_off": 6.06,
+     "lead": 0.3,
+     "size": 84,
+     "y": "h*0.19",
+     "color": "0xFFD24A"
+    }
+   ],
+   "retime_k": 2.164,
+   "split_of": "S022"
+  },
+  {
+   "shot": "S022b",
+   "beat": "B06",
+   "t_in": 75.122,
+   "t_out": 81.615,
+   "src": "ledger:S022",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.3,
+     "z1": 1.3,
+     "t0": 0.0,
+     "note": "split: alternating punch-in so a long slot never loops its clip"
+    }
+   ],
+   "retime_k": 2.164,
+   "split_of": "S022"
+  },
+  {
+   "shot": "S023",
+   "beat": "B06",
+   "t_in": 81.615,
+   "t_out": 87.2,
+   "src": "ledger:S023",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 1.396
+  },
+  {
+   "shot": "S024a",
+   "beat": "B06",
+   "t_in": 87.2,
+   "t_out": 92.674,
+   "src": "ledger:S024",
+   "reuse": "unique",
+   "ops": [],
+   "retime_k": 2.189,
+   "split_of": "S024"
+  },
+  {
+   "shot": "S024b",
+   "beat": "B06",
+   "t_in": 92.674,
+   "t_out": 98.147,
+   "src": "ledger:S024",
+   "reuse": "unique",
+   "ops": [
+    {
+     "op": "punch",
+     "z0": 1.3,
+     "z1": 1.3,
+     "t0": 0.0,
+     "note": "split: alternating punch-in so a long slot never loops its clip"
+    }
+   ],
+   "retime_k": 2.189,
+   "split_of": "S024"
+  }
+ ],
+ "retime": {
+  "anchors": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    3.0,
+    3.0
+   ],
+   [
+    6.0,
+    9.73
+   ],
+   [
+    9.0,
+    14.234
+   ],
+   [
+    17.0,
+    22.234
+   ],
+   [
+    18.0,
+    23.512
+   ],
+   [
+    19.0,
+    24.727
+   ],
+   [
+    20.0,
+    29.81
+   ],
+   [
+    21.0,
+    30.81
+   ],
+   [
+    24.0,
+    42.924
+   ],
+   [
+    27.0,
+    45.924
+   ],
+   [
+    30.0,
+    48.924
+   ],
+   [
+    37.0,
+    60.629
+   ],
+   [
+    45.0,
+    68.629
+   ],
+   [
+    49.0,
+    79.039
+   ],
+   [
+    54.0,
+    85.478
+   ],
+   [
+    58.0,
+    92.367
+   ],
+   [
+    60.0,
+    98.147
+   ]
+  ],
+  "tempo": {
+   "ORB": 1.15,
+   "PIP": 1.05,
+   "GRUFF": 1.0
+  },
+  "gap": 0.12
+ }
+}

@@ -7,7 +7,7 @@ import whisper
 model = whisper.load_model("base")
 assigned = {l["id"]: os.path.exists(f"{D}/{l['id']}.mp3") for l in lines}
 rep = json.load(open(f"{D}/VO_ASSIGN.json")) if os.path.exists(f"{D}/VO_ASSIGN.json") else {}
-for f in sorted(glob.glob(os.path.expanduser("~/Downloads/ElevenLabs_2026-09-08*.mp3")), key=os.path.getmtime):
+for f in sorted(glob.glob(os.path.expanduser("~/Downloads/ElevenLabs_2026-09-08*.mp3"))+glob.glob(os.path.expanduser("~/Downloads/EL_line_*.mp3"))+glob.glob(os.path.expanduser("~/Downloads/EL_row*.mp3")), key=os.path.getmtime):
     if f in rep: continue
     txt = model.transcribe(f, fp16=False)["text"].strip()
     best = max(lines, key=lambda l: difflib.SequenceMatcher(None, " ".join(norm(l["text"])), " ".join(norm(txt))).ratio())

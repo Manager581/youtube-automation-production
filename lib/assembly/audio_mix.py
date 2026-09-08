@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """lib/assembly/audio_mix.py — config-driven audio mix for the shared assembly path (plan S6/S7).
 MIX SPEC (JSON): {"duration": 60.0,
-  "vo":    [{"file": "L01.mp3", "t": 0.0, "gain_db": 0}],          # dialogue/narration lines placed at absolute seconds
+  "vo":    [{"file": "L01.mp3", "t": 0.0, "gain_db": 0, "tempo": 1.1}],   # lines at absolute seconds; optional pitch-preserving tempo
   "foley": [{"file": "S001.flac", "t": 0.0, "gain_db": -8, "dur": 2.0}],   # generated foley per segment window (trimmed to dur)
   "sfx":   [{"file": "hit.wav", "t": 11.5, "gain_db": -6}],        # optional library hits
   "music": {"file": "bed.mp3", "gain_db": -16, "duck_db": -8,      # bed; ducked under the VO bus (sidechain)
@@ -20,7 +20,8 @@ def build(spec, out):
         labels = []
         for k, it in enumerate(spec.get(bus, [])):
             i = add(it["file"]); ms = int(round(float(it["t"]) * 1000)); trim = f"atrim=0:{float(it['dur']):.3f}," if it.get("dur") else ""
-            fc.append(f"[{i}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,{trim}{_vol(it.get('gain_db',0))},adelay={ms}|{ms}[{bus}{k}]"); labels.append(f"[{bus}{k}]")
+            tempo = f"atempo={float(it['tempo']):.4f}," if it.get("tempo") and abs(float(it["tempo"]) - 1.0) > 1e-3 else ""   # pitch-preserving pace change (0.5-2.0)
+            fc.append(f"[{i}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,{tempo}{trim}{_vol(it.get('gain_db',0))},adelay={ms}|{ms}[{bus}{k}]"); labels.append(f"[{bus}{k}]")
         if labels:
             fc.append("".join(labels) + f"amix=inputs={len(labels)}:duration=longest:dropout_transition=0:normalize=0,apad=whole_dur={dur:.3f},atrim=0:{dur:.3f}[{bus}]"); buses[bus] = f"[{bus}]"
     m = spec.get("music")
