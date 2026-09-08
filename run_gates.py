@@ -327,10 +327,14 @@ def cmd_all(args):
     print(f"all: stage={stage} {sum(1 for v in rep['gates'].values() if v['status']=='PASS')} PASS / {bad} FAIL / {sum(1 for v in rep['gates'].values() if v['status']=='NOT-READY')} NOT-READY -> {out}"); return 1 if bad else 0
 
 def cmd_list(_):
-    for g, s in GATES.items():
-        print(f"  {g:12s} {s}")
+    """Registered gates (derived from the real subcommands + each handler's docstring — never a hand-typed list)."""
+    import inspect
+    g=globals(); rows=[]
+    for name,fn in sorted(((k[4:],v) for k,v in g.items() if k.startswith("cmd_") and callable(v)), key=lambda kv: kv[0]):
+        doc=(inspect.getdoc(fn) or "").strip().splitlines(); rows.append((name.replace("_","-"), doc[0] if doc else ""))
+    for n,d in rows: print(f"  {n:12s} {d[:110]}")
+    print("  vision       TODO — standing in-session recipe (build step 7; subscription labor, no APIs)")
     return 0
-
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
