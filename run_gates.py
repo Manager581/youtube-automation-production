@@ -279,6 +279,12 @@ def cmd_hook(args):
     cmd=[os.path.join(REPO,"venv","bin","python"), os.path.join(REPO,"scripts","hook_score.py"), "--video", args.video, "--targets", args.targets, "--t0", str(args.t0), "--t1", str(args.t1)]
     r=subprocess.run(cmd); print("hook: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed; fix in the edit layer, not by regenerating)")); return r.returncode
 
+def cmd_seedlock(args):
+    """GATE 1 check: locked masters present + unchanged (sha) + cover the manifest (scripts/seed_lock.py check)."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","seed_lock.py"), "check", "--lane", args.lane]
+    if args.manifest: cmd += ["--manifest", args.manifest]
+    r=subprocess.run(cmd); print("seedlock: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed; no generation before GATE 1)")); return r.returncode
+
 def cmd_list(_):
     for g, s in GATES.items():
         print(f"  {g:12s} {s}")
@@ -311,6 +317,7 @@ def main():
     p = sub.add_parser("story"); p.add_argument("script"); p.add_argument("--ladder"); p.set_defaults(fn=cmd_story)
     p = sub.add_parser("continuity"); p.add_argument("manifest"); p.add_argument("--beats", type=int, default=30); p.add_argument("--lines"); p.set_defaults(fn=cmd_continuity)
     p = sub.add_parser("hook"); p.add_argument("--video", required=True); p.add_argument("--targets", required=True); p.add_argument("--t0", type=float, default=0.0); p.add_argument("--t1", type=float, default=45.0); p.set_defaults(fn=cmd_hook)
+    p = sub.add_parser("seedlock"); p.add_argument("--lane", required=True); p.add_argument("--manifest"); p.set_defaults(fn=cmd_seedlock)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()
     sys.exit(args.fn(args))
