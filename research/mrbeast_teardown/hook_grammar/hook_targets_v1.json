@@ -1,0 +1,17 @@
+{
+ "reference": "research/mrbeast_teardown/hook_grammar/hook.webm",
+ "t0": 0.0,
+ "t1": 45.0,
+ "band": 0.35,
+ "measured": {
+  "hard_cuts": 23,
+  "transitions": 62,
+  "transitions_first12s": 24,
+  "longest_gap_s": 4.57,
+  "onsets_per_min": 161.3,
+  "cut_on_onset_rate": 0.61,
+  "integrated_lufs": -7.7,
+  "lra_lu": 2.8,
+  "max_dip_lu": 5.7
+ }
+}

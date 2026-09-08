@@ -26,6 +26,7 @@ Subcommands (v0 — wrapped gates only; `list` shows what is still TODO):
                   PIP mouth:ON cap, word band, DAY/PLANET/COUNT vs ladder, brand tokens). No waivers.
   continuity    S4/S6 shot-manifest continuity + coverage gate (count==planet==ladder, adjacent vantage,
                   seed refs, beat coverage, unique band, 23 masters). No waivers.
+  hook          GATE 2: score our hook render vs reference-derived bands (--video --targets [--t0 --t1]).
   list          registered gates + wrap status
 
 Usage: python3 run_gates.py <subcommand> [options]
@@ -273,6 +274,11 @@ def cmd_continuity(args):
     if args.lines: cmd += ["--lines", args.lines]
     r=subprocess.run(cmd); print("continuity: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed; fix the manifest)")); return r.returncode
 
+def cmd_hook(args):
+    """GATE 2 hook scorer: measure our hook with the reference's measuring code; bands derive from the reference (scripts/hook_score.py)."""
+    cmd=[os.path.join(REPO,"venv","bin","python"), os.path.join(REPO,"scripts","hook_score.py"), "--video", args.video, "--targets", args.targets, "--t0", str(args.t0), "--t1", str(args.t1)]
+    r=subprocess.run(cmd); print("hook: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed; fix in the edit layer, not by regenerating)")); return r.returncode
+
 def cmd_list(_):
     for g, s in GATES.items():
         print(f"  {g:12s} {s}")
@@ -304,6 +310,7 @@ def main():
     p = sub.add_parser("shots"); p.set_defaults(fn=cmd_shots)
     p = sub.add_parser("story"); p.add_argument("script"); p.add_argument("--ladder"); p.set_defaults(fn=cmd_story)
     p = sub.add_parser("continuity"); p.add_argument("manifest"); p.add_argument("--beats", type=int, default=30); p.add_argument("--lines"); p.set_defaults(fn=cmd_continuity)
+    p = sub.add_parser("hook"); p.add_argument("--video", required=True); p.add_argument("--targets", required=True); p.add_argument("--t0", type=float, default=0.0); p.add_argument("--t1", type=float, default=45.0); p.set_defaults(fn=cmd_hook)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()
     sys.exit(args.fn(args))
