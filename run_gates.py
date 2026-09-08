@@ -303,6 +303,14 @@ def cmd_assembly(args):
     for f in fails: print("  FAIL", f)
     print("assembly: " + ("PASS" if not fails else f"FAIL ({len(fails)})")); return 1 if fails else 0
 
+def cmd_listen(args):
+    """S7 listen gate v0 (DSP): score a mix against reference-derived loudness/silence/dip bands (scripts/listen_gate.py)."""
+    r=subprocess.run([os.path.join(REPO,"venv","bin","python"), os.path.join(REPO,"scripts","listen_gate.py"), "--video", args.video, "--targets", args.targets, "--t0", str(args.t0), "--t1", str(args.t1)]); print("listen: " + ("PASS" if r.returncode==0 else "FAIL (fail-closed)")); return r.returncode
+
+def cmd_title(args):
+    """S2 title gate: deterministic winner-grammar checks (scripts/title_gate.py)."""
+    r=subprocess.run([sys.executable, os.path.join(REPO,"scripts","title_gate.py")] + args.titles); print("title: " + ("PASS" if r.returncode==0 else "FAIL")); return r.returncode
+
 def cmd_list(_):
     for g, s in GATES.items():
         print(f"  {g:12s} {s}")
@@ -338,6 +346,8 @@ def main():
     p = sub.add_parser("seedlock"); p.add_argument("--lane", required=True); p.add_argument("--manifest"); p.set_defaults(fn=cmd_seedlock)
     p = sub.add_parser("bank"); p.add_argument("--ledger", required=True); p.add_argument("--manifest"); p.add_argument("--require-complete", action="store_true"); p.set_defaults(fn=cmd_bank)
     p = sub.add_parser("assembly"); p.add_argument("--report", required=True); p.set_defaults(fn=cmd_assembly)
+    p = sub.add_parser("listen"); p.add_argument("--video", required=True); p.add_argument("--targets", required=True); p.add_argument("--t0", type=float, default=0.0); p.add_argument("--t1", type=float, default=45.0); p.set_defaults(fn=cmd_listen)
+    p = sub.add_parser("title"); p.add_argument("titles", nargs="+"); p.set_defaults(fn=cmd_title)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()
     sys.exit(args.fn(args))

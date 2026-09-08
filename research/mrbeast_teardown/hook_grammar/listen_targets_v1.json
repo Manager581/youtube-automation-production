@@ -1,0 +1,14 @@
+{
+ "reference": "research/mrbeast_teardown/hook_grammar/hook.webm",
+ "t0": 0.0,
+ "t1": 45.0,
+ "band": 0.35,
+ "measured": {
+  "integrated_lufs": -7.7,
+  "lra_lu": 2.8,
+  "silent_frac": 0.0,
+  "longest_silence_s": 0,
+  "max_dip_lu": 5.7,
+  "floor_lufs": -13.4
+ }
+}
