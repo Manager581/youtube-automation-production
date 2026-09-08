@@ -7,7 +7,7 @@
     "conversation": "1a356203-47d4-4b07-9d10-2411d9296fc6",
     "tab": 2108384067,
     "gen_s": 6,
-    "status": "DONE_IN_TAB"
+    "status": "BANKED_PASS"
    }
   ],
   "S002": [
@@ -16,7 +16,7 @@
     "conversation": "17eb2831-2cfd-4578-b753-f09122c53db6",
     "tab": 2108384117,
     "gen_s": 10,
-    "status": "DONE_IN_TAB"
+    "status": "BANKED_PASS"
    }
   ],
   "S005": [
@@ -25,9 +25,146 @@
     "conversation": "e027e084-891b-44c8-a868-317f22ef3b73",
     "tab": 2108384118,
     "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S006": [
+   {
+    "post": "64b5cac6-dee8-41f7-9201-778b3100a168",
+    "conversation": "cd966bac-1465-4488-bac8-26e990a488f9",
+    "tab": 2108384067,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S007": [
+   {
+    "post": "b00584ab-6a75-4fe1-a240-9a6670aed050",
+    "conversation": "8ad202a9-08af-4bfc-a53b-5c3530efa42a",
+    "tab": 2108384117,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S008": [
+   {
+    "post": "5605f15b-5a6b-47fb-8e4c-f6d8e8edb252",
+    "conversation": "7e1d7a90-2644-48be-86f4-206ea9ff1e82",
+    "tab": 2108384118,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S009": [
+   {
+    "post": "5a000fd5-736c-4a79-887d-f26afdb69260",
+    "conversation": "a10703d4-f483-47ef-b514-455952275461",
+    "tab": 2108384067,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S010": [
+   {
+    "post": "470b2121-b575-41a4-8ce0-043512f48fa8",
+    "conversation": "6be4f9e8-9b0f-43b2-a1dc-29c289521ffa",
+    "tab": 2108384117,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S013": [
+   {
+    "post": "66298bbc-f342-4a22-8c60-ad95df725ab8",
+    "conversation": "d6f3dd38-f84b-405a-9464-f07bf0d5786d",
+    "tab": 2108384118,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S014": [
+   {
+    "post": "11f64800-6e99-4628-86ee-985900126146",
+    "conversation": "49ef6913-2a0c-4578-b71b-b229f9505597",
+    "tab": 2108384067,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S015": [
+   {
+    "post": "35e90a52-2c59-4f11-ac93-b2c9be65a9e9",
+    "conversation": "a32df861-ca4c-4122-918f-d86aeacd73ce",
+    "tab": 2108384117,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S018": [
+   {
+    "post": "f82dc3e1-7d07-42fa-9ed0-772408293eb4",
+    "conversation": "887f5c08-d6d6-4d3c-9686-05d6f1e97094",
+    "tab": 2108384118,
+    "gen_s": 6,
+    "status": "BANKED_PASS",
+    "note": "first URL showed post 9b2bcd4e without a conversation; tab re-keyed"
+   }
+  ],
+  "S019": [
+   {
+    "post": "8b4e9472-0f27-48ab-8dbe-4e2141c18fe2",
+    "conversation": "23d2d201-c7b5-48ab-8313-14cb59d549e3",
+    "tab": 2108384067,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S020": [
+   {
+    "post": "617237eb-4dad-468d-a11b-fb1726a99739",
+    "conversation": "dbc72fef-b3e4-474f-a7c5-879b9a7087ab",
+    "tab": 2108384117,
+    "gen_s": 6,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S021": [
+   {
+    "post": "f830e385-7d4a-4525-8572-a1ad5eb93a64",
+    "conversation": "29a2d245-5a79-43dc-a690-7b1b3e620461",
+    "tab": 2108384118,
+    "gen_s": 10,
+    "status": "BANKED_PASS"
+   }
+  ],
+  "S022": [
+   {
+    "post": "343bf8f8-b18a-46a1-96d0-dc0dd818357f",
+    "conversation": "077a9282-243a-45c2-84c1-3b7f136e2b11",
+    "tab": 2108384067,
+    "gen_s": 10,
+    "status": "SUBMITTED",
+    "note": "tab re-keyed from post 2c89c33a"
+   }
+  ],
+  "S023": [
+   {
+    "post": "699cee80-31f6-480b-bbde-82f29cbeba52",
+    "conversation": "878361d1-dfef-4951-baa4-b5d8bf9ad041",
+    "tab": 2108384117,
+    "gen_s": 6,
+    "status": "SUBMITTED"
+   }
+  ],
+  "S024": [
+   {
+    "post": "d0588ae4-d090-4639-9e53-b5ef2adf5d18",
+    "conversation": "456daaac-d564-4f8d-80b6-6fba14d61e38",
+    "tab": 2108384118,
+    "gen_s": 6,
     "status": "SUBMITTED"
    }
   ]
  },
- "blocker_2026-09-08": "Claude Code auto-mode classifier blocked the Grok 'Download' click. Files are ready in-tab: S001, S002 (S005 rendering). Expected files: ~/Downloads/grok-video-<conversation>.mp4. Owner must allow the download action (or download the 3 posts by hand) before clips can be banked + frame-strip QA'd. No further clips submitted until S001/S002 motion is verified (no-spend-without-prototype)."
+ "blocker_2026-09-08": "RESOLVED: owner confirmed downloads; exact 'Download' button click works (position clicks hit Share)."
 }
