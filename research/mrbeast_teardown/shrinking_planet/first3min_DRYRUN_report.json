@@ -1,0 +1,390 @@
+{
+ "out": "output/shrinking_planet/first3min_DRYRUN.mp4",
+ "segments": [
+  {
+   "shot": "S001",
+   "src": "output/shrinking_planet/dryrun_standins/S001_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S002",
+   "src": "output/shrinking_planet/dryrun_standins/S002_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 3,
+   "cards": 0
+  },
+  {
+   "shot": "S003",
+   "src": "output/shrinking_planet/dryrun_standins/S002_standin.mp4",
+   "how": "ledger",
+   "slot": 3.0,
+   "ops": 0,
+   "cards": 1
+  },
+  {
+   "shot": "S004",
+   "src": "output/shrinking_planet/dryrun_standins/S002_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 2,
+   "cards": 0
+  },
+  {
+   "shot": "S005",
+   "src": "output/shrinking_planet/dryrun_standins/S005_standin.mp4",
+   "how": "ledger",
+   "slot": 4.0,
+   "ops": 6,
+   "cards": 0
+  },
+  {
+   "shot": "S006",
+   "src": "output/shrinking_planet/dryrun_standins/S006_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S007",
+   "src": "output/shrinking_planet/dryrun_standins/S007_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S008",
+   "src": "output/shrinking_planet/dryrun_standins/S008_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S009",
+   "src": "output/shrinking_planet/dryrun_standins/S009_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S010",
+   "src": "output/shrinking_planet/dryrun_standins/S010_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S011",
+   "src": "output/shrinking_planet/dryrun_standins/S009_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S012",
+   "src": "output/shrinking_planet/dryrun_standins/S010_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S013",
+   "src": "output/shrinking_planet/dryrun_standins/S013_standin.mp4",
+   "how": "ledger",
+   "slot": 3.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S014",
+   "src": "output/shrinking_planet/dryrun_standins/S014_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S015",
+   "src": "output/shrinking_planet/dryrun_standins/S015_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 2,
+   "cards": 0
+  },
+  {
+   "shot": "S016",
+   "src": "output/shrinking_planet/dryrun_standins/S007_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S017",
+   "src": "output/shrinking_planet/dryrun_standins/S006_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S018",
+   "src": "output/shrinking_planet/dryrun_standins/S018_standin.mp4",
+   "how": "ledger",
+   "slot": 2.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S019",
+   "src": "output/shrinking_planet/dryrun_standins/S019_standin.mp4",
+   "how": "ledger",
+   "slot": 4.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S020",
+   "src": "output/shrinking_planet/dryrun_standins/S020_standin.mp4",
+   "how": "ledger",
+   "slot": 3.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S021",
+   "src": "output/shrinking_planet/dryrun_standins/S021_standin.mp4",
+   "how": "ledger",
+   "slot": 6.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S022",
+   "src": "output/shrinking_planet/dryrun_standins/S022_standin.mp4",
+   "how": "ledger",
+   "slot": 6.0,
+   "ops": 2,
+   "cards": 0
+  },
+  {
+   "shot": "S023",
+   "src": "output/shrinking_planet/dryrun_standins/S023_standin.mp4",
+   "how": "ledger",
+   "slot": 4.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S024",
+   "src": "output/shrinking_planet/dryrun_standins/S024_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S025",
+   "src": "output/shrinking_planet/dryrun_standins/S025_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S026",
+   "src": "output/shrinking_planet/dryrun_standins/S026_standin.mp4",
+   "how": "ledger",
+   "slot": 4.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S027",
+   "src": "output/shrinking_planet/dryrun_standins/S027_standin.mp4",
+   "how": "ledger",
+   "slot": 4.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S028",
+   "src": "output/shrinking_planet/dryrun_standins/S028_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S029",
+   "src": "output/shrinking_planet/dryrun_standins/S029_standin.mp4",
+   "how": "ledger",
+   "slot": 6.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S030",
+   "src": "output/shrinking_planet/dryrun_standins/S030_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S031",
+   "src": "output/shrinking_planet/dryrun_standins/S027_standin.mp4",
+   "how": "ledger",
+   "slot": 1.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S032",
+   "src": "output/shrinking_planet/dryrun_standins/S032_standin.mp4",
+   "how": "ledger",
+   "slot": 8.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S033",
+   "src": "output/shrinking_planet/dryrun_standins/S033_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S034",
+   "src": "output/shrinking_planet/dryrun_standins/S033_standin.mp4",
+   "how": "ledger",
+   "slot": 3.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S035",
+   "src": "output/shrinking_planet/dryrun_standins/S035_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S036",
+   "src": "output/shrinking_planet/dryrun_standins/S035_standin.mp4",
+   "how": "ledger",
+   "slot": 4.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S037",
+   "src": "output/shrinking_planet/dryrun_standins/S037_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 5,
+   "cards": 0
+  },
+  {
+   "shot": "S038",
+   "src": "output/shrinking_planet/dryrun_standins/S038_standin.mp4",
+   "how": "ledger",
+   "slot": 7.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S039",
+   "src": "output/shrinking_planet/dryrun_standins/S039_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S040",
+   "src": "output/shrinking_planet/dryrun_standins/S039_standin.mp4",
+   "how": "ledger",
+   "slot": 3.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S041",
+   "src": "output/shrinking_planet/dryrun_standins/S041_standin.mp4",
+   "how": "ledger",
+   "slot": 6.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S042",
+   "src": "output/shrinking_planet/dryrun_standins/S042_standin.mp4",
+   "how": "ledger",
+   "slot": 9.0,
+   "ops": 7,
+   "cards": 0
+  },
+  {
+   "shot": "S043",
+   "src": "output/shrinking_planet/dryrun_standins/S043_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S044",
+   "src": "output/shrinking_planet/dryrun_standins/S043_standin.mp4",
+   "how": "ledger",
+   "slot": 3.0,
+   "ops": 1,
+   "cards": 0
+  },
+  {
+   "shot": "S045",
+   "src": "output/shrinking_planet/dryrun_standins/S045_standin.mp4",
+   "how": "ledger",
+   "slot": 7.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S046",
+   "src": "output/shrinking_planet/dryrun_standins/S046_standin.mp4",
+   "how": "ledger",
+   "slot": 6.0,
+   "ops": 2,
+   "cards": 0
+  },
+  {
+   "shot": "S047",
+   "src": "output/shrinking_planet/dryrun_standins/S047_standin.mp4",
+   "how": "ledger",
+   "slot": 6.0,
+   "ops": 0,
+   "cards": 0
+  },
+  {
+   "shot": "S048",
+   "src": "output/shrinking_planet/dryrun_standins/S048_standin.mp4",
+   "how": "ledger",
+   "slot": 5.0,
+   "ops": 0,
+   "cards": 0
+  }
+ ],
+ "fallbacks": 0
+}
