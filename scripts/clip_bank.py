@@ -19,7 +19,9 @@ def main():
     if a.cmd == "add":
         if not os.path.exists(a.clip): print(f"FAIL clip missing: {a.clip}"); sys.exit(1)
         strip = os.path.splitext(a.clip)[0] + "_strip.jpg"
-        r = subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", a.clip, "-vf", f"fps={a.fps},scale=240:-1,tile=8x6", strip], capture_output=True, text=True)
+        pr = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.clip], capture_output=True, text=True)
+        dur = float(pr.stdout.strip() or 6.0); n = max(1, int(dur * a.fps + 0.999)); rows = max(1, (n + 7) // 8)
+        r = subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", a.clip, "-vf", f"fps={a.fps},scale=240:-1,tile=8x{rows}", "-frames:v", "1", strip], capture_output=True, text=True)
         if r.returncode != 0 or not os.path.exists(strip): print(f"FAIL strip extraction: {r.stderr[-200:]}"); sys.exit(1)
         L["clips"][a.shot] = {"clip": os.path.abspath(a.clip), "sha": sha(a.clip), "strip": os.path.abspath(strip), "composite": a.composite, "added": datetime.datetime.now().isoformat(timespec="seconds"), "verdict": "PENDING", "rolls": L["clips"].get(a.shot, {}).get("rolls", 0) + 1}
         save(a.ledger, L); print(f"added {a.shot} (roll {L['clips'][a.shot]['rolls']}) strip={strip} verdict=PENDING"); sys.exit(0)
