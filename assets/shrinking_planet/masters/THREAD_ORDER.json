@@ -1,0 +1,31 @@
+{
+ "thread": "https://chatgpt.com/c/6aa03fb8-8918-83ea-8942-5968d181db93",
+ "note": "generated-image order in the ChatGPT thread == this list (index 6 = duplicate PLANET_500 kept as alt; last = ARCH_01 regen for identity drift)",
+ "order": [
+  "M_PIP",
+  "M_GRUFF",
+  "M_ORB",
+  "M_COUNT",
+  "M_PLANET_1000",
+  "M_PLANET_500",
+  "M_PLANET_500_alt",
+  "M_PLANET_300",
+  "M_PLANET_25",
+  "M_PLANET_12",
+  "M_PLANET_4",
+  "M_PLANET_2",
+  "M_SET_pip_camp",
+  "M_SET_gruff_cave",
+  "M_SET_pad",
+  "M_SET_pod_door",
+  "M_SET_confessional",
+  "M_SET_truth_beam",
+  "M_ARCH_01_stage_wide",
+  "M_ARCH_02_stage_drums",
+  "M_ARCH_03_bus_road",
+  "M_ARCH_04_bus_bunks",
+  "M_ARCH_05_dressing_room",
+  "M_ARCH_06_empty_hall",
+  "M_ARCH_01_stage_wide_v2"
+ ]
+}
