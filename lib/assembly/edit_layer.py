@@ -47,6 +47,23 @@ def photo_stack(stills, each, out, fps=24, W=1920, H=1080, white=0.08):
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-loop", "1", "-t", f"{each:.3f}", "-i", p, "-vf", vf, "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), s]); segs.append(s)
     concat(segs, out); return out
 
+def photo_cards_overlay(stills, t_start, each, W=1920, H=1080, card_w=0.46, slide=0.12):
+    """Reference grammar: archive stills SLIDE IN as cards over the RUNNING take (no full-frame cut), one every `each` s,
+    alternating left/right, each card held until the next replaces it. Returns (extra_inputs, filter_chain_suffix)
+    to append to an ffmpeg command whose base video is [0:v]. Cards register as transitions (th 0.1) but not hard cuts."""
+    inputs, chain, prev = [], [], "0:v"
+    cw = int(W * card_w); ch = int(cw * 9 / 16)
+    for i, p in enumerate(stills):
+        idx = i + 1; inputs += ["-loop", "1", "-t", f"{each*(len(stills)-i)+0.5:.3f}", "-i", p]
+        t0 = t_start + i * each; t1 = t_start + (i + 1) * each + (0 if i == len(stills)-1 else 0.0)
+        side = i % 2; x_end = int(W * 0.04) if side == 0 else W - cw - int(W * 0.04); x_start = -cw if side == 0 else W
+        y = int(H * 0.12) + (i % 3) * int(H * 0.06)
+        x_expr = f"if(lt(t,{t0+slide:.3f}),{x_start}+({x_end}-{x_start})*(t-{t0:.3f})/{slide},{x_end})"
+        chain.append(f"[{idx}:v]scale={cw}:{ch},setpts=PTS-STARTPTS+{t0:.3f}/TB[c{idx}]")
+        chain.append(f"[{prev}][c{idx}]overlay=x='{x_expr}':y={y}:enable='between(t,{t0:.3f},{t1+each:.3f})'[v{idx}]")
+        prev = f"v{idx}"
+    return inputs, ";".join(chain), prev
+
 def concat(segments, out):
     lst = out + ".txt"
     with open(lst, "w") as f:
@@ -65,13 +82,17 @@ def selftest(outdir):
     A = os.path.join(outdir, "A.mp4")
     vfA = ",".join([punch_in(1.6, 1.0, 1.375, 1.375, fps, W, H), text_pop("PIP / WENT SOLO", 1.375, 3.3, 0.3, 72, "h*0.80", "0xE0479E"), text_pop("GRUFF / GOT LEFT", 1.375, 3.3, 0.3, 72, "h*0.88", "0x2FB8D6"), whiteout(3.275, 0.10)])
     segment_from_take(take, 0.0, 3.375, vfA, A, fps, W, H)
-    # segment B 3.375-5.9: the 6-photo stack (~0.42 s each with whiteouts between)
-    B = photo_stack(stills, 0.42, os.path.join(outdir, "B.mp4"), fps, W, H)
-    # segment C 5.9-12: same take resumed, split wipe substitute = whiteout at start, push-in 1.0->1.9 at 8.25 (over 0.35 s) then eased back by 10.0, "30 DAYS" leading VO at 8.25, flash+bloom on the money line at 11.5
-    C = os.path.join(outdir, "C.mp4"); tC = lambda t: t - 5.9
-    vfC = ",".join([whiteout(0.0, 0.08), punch_in(1.0, 1.9, tC(8.25), tC(8.6), fps, W, H), text_pop("30 DAYS", 8.25 - 5.9 + 0.3, tC(10.35), 0.3, 140, "h*0.40"), flash(tC(11.5), 0.08, 0.7), flash(tC(11.9), 0.06, 0.5), bloom(tC(11.5), 0.4, 0.25)])
-    segment_from_take(take, 5.9, 12.0, vfC, C, fps, W, H)
-    hook = os.path.join(outdir, "hook_edit_layer_demo.mp4"); concat([A, B, C], hook)
+    # ONE continuous take 0-12 s: punch-out at 1.375, name cards, archive photos SLIDE IN as cards 3.5-5.9 over the take
+    # (no full-frame cut), soft whiteouts at 3.4 / 8.0, push-in at 8.25 eased back, "30 DAYS" leading VO, flash+bloom at 11.5
+    base = os.path.join(outdir, "base.mp4")
+    vf = ",".join([punch_in(1.6, 1.0, 1.375, 1.375, fps, W, H), text_pop("PIP / WENT SOLO", 1.375, 3.3, 0.3, 72, "h*0.80", "0xE0479E"), text_pop("GRUFF / GOT LEFT", 1.375, 3.3, 0.3, 72, "h*0.88", "0x2FB8D6"), whiteout(3.375, 0.08), whiteout(8.0, 0.08), text_pop("30 DAYS", 8.25 + 0.3, 10.35, 0.3, 140, "h*0.40"), flash(11.5, 0.08, 0.7), flash(11.9, 0.06, 0.5), bloom(11.5, 0.4, 0.25)])
+    segment_from_take(take, 0.0, 12.0, vf, base, fps, W, H)
+    ins, chain, last = photo_cards_overlay(stills, 3.5, 0.40, W, H)
+    A = os.path.join(outdir, "A_cards.mp4")
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", base] + ins + ["-filter_complex", chain, "-map", f"[{last}]", "-t", "12", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), A])
+    # second pass punch-in 8.25 must apply AFTER cards? cards end 5.9 — punch already baked in base (cards ride the zoomed take, as in the reference)
+    B = C = None
+    hook = os.path.join(outdir, "hook_edit_layer_demo.mp4"); concat([A], hook)
     # synthetic audio: pulses ~2.7/s so onset metrics are exercised (not a claim about real sound design)
     hooka = hook.replace(".mp4", "_a.mp4")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", hook, "-f", "lavfi", "-i", "sine=frequency=220:beep_factor=8:duration=12", "-af", "volume=0.5", "-c:v", "copy", "-c:a", "aac", "-shortest", hooka])
