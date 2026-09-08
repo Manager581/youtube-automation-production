@@ -4950,7 +4950,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "soft electronic halo pulse, two short tones, deep-space silence bed"
   },
   {
    "id": "S002",
@@ -4993,7 +4994,8 @@
    "mouth_visible": [],
    "props": [
     "helmet"
-   ]
+   ],
+   "foley_prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot"
   },
   {
    "id": "S003",
@@ -5121,7 +5123,8 @@
     "crate:OPEN"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "deep low hum rising as warm light blooms from a metal crate, faint metallic creak"
   },
   {
    "id": "S006",
@@ -5156,7 +5159,8 @@
    "mouth_visible": [],
    "props": [
     "lamp"
-   ]
+   ],
+   "foley_prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence"
   },
   {
    "id": "S007",
@@ -5189,7 +5193,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "low bristling fur rustle, a heavy exhale through fur"
   },
   {
    "id": "S008",
@@ -5225,7 +5230,8 @@
    "props": [
     "tether",
     "anklet"
-   ]
+   ],
+   "foley_prompt": "metal chain links settling on rock, a soft hover whir descending"
   },
   {
    "id": "S009",
@@ -5261,7 +5267,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "fur bristling, a low rumble in the chest"
   },
   {
    "id": "S010",
@@ -5296,7 +5303,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "foley_prompt": "quick bright breath, small mouth click"
   },
   {
    "id": "S011",
@@ -5410,7 +5418,8 @@
    "mouth_visible": [],
    "props": [
     "helmet"
-   ]
+   ],
+   "foley_prompt": "electric flare of a ring light, faint capacitor whine"
   },
   {
    "id": "S014",
@@ -5449,7 +5458,8 @@
    "props": [
     "anklet",
     "tether"
-   ]
+   ],
+   "foley_prompt": "heavy footfall on basalt, a hover whir receding"
   },
   {
    "id": "S015",
@@ -5488,7 +5498,8 @@
    "props": [
     "anklet",
     "tether"
-   ]
+   ],
+   "foley_prompt": "two hard metallic anklet clicks with a short ring, then silence"
   },
   {
    "id": "S016",
@@ -5595,7 +5606,8 @@
    "mouth_visible": [],
    "props": [
     "anklet"
-   ]
+   ],
+   "foley_prompt": "anklet chain jerk, a fast whip of cloth"
   },
   {
    "id": "S019",
@@ -5636,7 +5648,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "distant thin wind over rock, three small pad lights ticking"
   },
   {
    "id": "S020",
@@ -5669,7 +5682,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "electronic halo pulse in speech rhythm, then a dimming hum"
   },
   {
    "id": "S021",
@@ -5704,7 +5718,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "foley_prompt": "launch whoosh, rising thruster roar that thins to vacuum silence, low sub swell"
   },
   {
    "id": "S022",
