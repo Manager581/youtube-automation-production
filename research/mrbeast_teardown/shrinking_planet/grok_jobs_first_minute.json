@@ -1,0 +1,33 @@
+{
+ "_schema": "Grok i2v jobs for 0:00-1:00; post/conversation ids -> ~/Downloads/grok-video-<conversation>.mp4",
+ "jobs": {
+  "S001": [
+   {
+    "post": "53ace35a-a27f-4523-9229-8d765f393f2c",
+    "conversation": "1a356203-47d4-4b07-9d10-2411d9296fc6",
+    "tab": 2108384067,
+    "gen_s": 6,
+    "status": "DONE_IN_TAB"
+   }
+  ],
+  "S002": [
+   {
+    "post": "75490b1b-07e8-483e-88ed-57a6d2f7db43",
+    "conversation": "17eb2831-2cfd-4578-b753-f09122c53db6",
+    "tab": 2108384117,
+    "gen_s": 10,
+    "status": "DONE_IN_TAB"
+   }
+  ],
+  "S005": [
+   {
+    "post": "c5802540-24c9-48bf-8150-8cb7d8214d29",
+    "conversation": "e027e084-891b-44c8-a868-317f22ef3b73",
+    "tab": 2108384118,
+    "gen_s": 6,
+    "status": "SUBMITTED"
+   }
+  ]
+ },
+ "blocker_2026-09-08": "Claude Code auto-mode classifier blocked the Grok 'Download' click. Files are ready in-tab: S001, S002 (S005 rendering). Expected files: ~/Downloads/grok-video-<conversation>.mp4. Owner must allow the download action (or download the 3 posts by hand) before clips can be banked + frame-strip QA'd. No further clips submitted until S001/S002 motion is verified (no-spend-without-prototype)."
+}
