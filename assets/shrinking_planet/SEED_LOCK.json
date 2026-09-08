@@ -1,0 +1,100 @@
+{
+ "lane": "assets/shrinking_planet",
+ "locked_at": "2026-09-08T14:38:34",
+ "locked_by": "owner: keep (2026-08-31)",
+ "masters": {
+  "M_ORB": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ORB.png",
+   "sha256": "6dc96e4f30cdcf51ce098e7834243e263397899a1cae051bd2ce3210f0b7a5b6"
+  },
+  "M_PIP": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PIP.png",
+   "sha256": "3d8c2f40495e8af07f74d10b37c56a7c28a148b5ee98849093a8dfb52ad22657"
+  },
+  "M_GRUFF": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_GRUFF.png",
+   "sha256": "24e74683eef078a8d0b3e60ffbc13ce613d97a1718e7baf54746d864dbf1c252"
+  },
+  "M_COUNT": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_COUNT.png",
+   "sha256": "d4484afe32c57e7c2d7ac94d8929c388369c88181ea09593e55440f8d5a6a6ca"
+  },
+  "M_PLANET_1000": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_1000.png",
+   "sha256": "3f1d4ed2ff09ad4c26ab36019a5a6d9031c291d7ad6c401122399d33ef92255c"
+  },
+  "M_PLANET_500": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_500.png",
+   "sha256": "85147a4044c9db4cdb589b6f9aa3034cd409781bdfbd18bb0b34631d9b00b102"
+  },
+  "M_PLANET_300": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_300.png",
+   "sha256": "430f5a642c4de812aee1aa514240a224f503c1d04680e057faf5680ada3d58c4"
+  },
+  "M_PLANET_25": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_25.png",
+   "sha256": "edda1a5217c8e64c0e1fcab10caeb4208d2423b9f851a02c9beaf33ebf88a2fe"
+  },
+  "M_PLANET_12": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_12.png",
+   "sha256": "ded711582fafe0ab08e0d00d5c26a8e0b2e1f5234b735b1c6084fa2f46172ce4"
+  },
+  "M_PLANET_4": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_4.png",
+   "sha256": "26756a046869cbf551b93010a67d4e5643af1eb61b184fae36b1e9cf3f395b5f"
+  },
+  "M_PLANET_2": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_PLANET_2.png",
+   "sha256": "2c4da5773b3a8857bd2ad8b0ca2ce3cb549d669503e3bb0fc20e2fb1368a846c"
+  },
+  "M_SET_pip_camp": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_SET_pip_camp.png",
+   "sha256": "25fdb9f2e081b12d5807057340256febb65563fb99a59f01b229fdd0b37fda85"
+  },
+  "M_SET_gruff_cave": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_SET_gruff_cave.png",
+   "sha256": "2bcb0d6b4b6c36339a32f0629242ac115afcf97b057bfba2728bdc1c73e47643"
+  },
+  "M_SET_pad": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_SET_pad.png",
+   "sha256": "f04f6678a7a8000f0cdb5331c8783a24ef6a460f3524f37bcf3ea27e1d2adc0a"
+  },
+  "M_SET_pod_door": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_SET_pod_door.png",
+   "sha256": "16f7003b5b9235ebd527474d9857fd19e1af928153588ed8b7660cfc0788260f"
+  },
+  "M_SET_confessional": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_SET_confessional.png",
+   "sha256": "32332b8cff28dd5ab9592ff5bfb7c5b5b4a799f894945d13fe413f301a79bb04"
+  },
+  "M_SET_truth_beam": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_SET_truth_beam.png",
+   "sha256": "aada87d4f8dca4757948933e797eeef585ac68155ba9b027f1304104951a90b6"
+  },
+  "M_ARCH_01_stage_wide": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ARCH_01_stage_wide.png",
+   "sha256": "c7649e1959dea4cfb777bcdd52ca3127e90161274cce0dfb31860697bb51ea5a"
+  },
+  "M_ARCH_02_stage_drums": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ARCH_02_stage_drums.png",
+   "sha256": "1a7d5a619ea46b30465c54cbf2761fdc572272bce9c0458a550e03d8f72b2b3e"
+  },
+  "M_ARCH_03_bus_road": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ARCH_03_bus_road.png",
+   "sha256": "9d540fa748be7c73c4681178b9a7733fb72548cdcc653f1c6b0ca0c2bba0b5b9"
+  },
+  "M_ARCH_04_bus_bunks": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ARCH_04_bus_bunks.png",
+   "sha256": "b0c1e354f7e29c263ad9abc3b1ce21480f02329ce5862bff713c679b7f171af7"
+  },
+  "M_ARCH_05_dressing_room": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ARCH_05_dressing_room.png",
+   "sha256": "dfc919c36242a1a7cbd63e32ba2670228fdd657a6d3ac01a97d04625597dd22a"
+  },
+  "M_ARCH_06_empty_hall": {
+   "path": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/masters/M_ARCH_06_empty_hall.png",
+   "sha256": "8142fef1c7e0522f37c41ca6f617740140963a1b6b9a3dedfdf832512363e42e"
+  }
+ },
+ "history": []
+}

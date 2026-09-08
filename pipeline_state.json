@@ -107,7 +107,7 @@
       "channel": "TBD (owner)",
       "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
       "next": "(1) owner allows chatgpt.com automatic downloads -> download remaining 23 -> contact sheet (scripts/contact_sheet.py) -> GATE 1 packet -> owner picks (incl. PLANET_500 vs _alt, ARCH_01 v1 vs v2) -> scripts/seed_lock.py lock; (2) composite seeds (build_composite_seeds.py) -> hook prototype (~14 Grok clips, first credit spend) -> hook_score vs hook_targets_v1.json -> GATE 2.",
-      "gate": 0,
+      "gate": 1,
       "activated": "2026-08-31",
       "built_2026-08-31": "Phase A machinery: story_gate (S3), continuity_check (S4/S6), seed_lock (GATE 1), clip_bank (GATE 5), hook_score (GATE 2, ref-calibrated), lib/assembly/{edit_layer,assemble_manifest,render_edit_spec}, build_composite_seeds, contact_sheet \u2014 all wired in run_gates.py, all self-tested fail-closed. SCRIPT_v1 written (story_gate: 10 FAILs -> fix pass pending after reviewer).",
       "seeds_2026-08-31": "ALL 23 masters + 1 alt (PLANET_500) + 1 regen (ARCH_01_v2, identity fix) GENERATED in one ChatGPT image thread (https://chatgpt.com/c/6aa03fb8-8918-83ea-8942-5968d181db93; standing-rules recipe; order map = assets/shrinking_planet/masters/THREAD_ORDER.json). Visually confirmed on-anchor: PIP, GRUFF, ORB, COUNT, pad, pod door, confessional, truth beam, camp, PLANET_4, ARCH_02/03/05. Downloaded so far: M_PIP, M_GRUFF (assets/shrinking_planet/masters/).",
@@ -118,7 +118,9 @@
         "GATE 1 seed pick (incl. PLANET_500 vs _alt, ARCH_01 v1 vs v2) -> seed_lock",
         "GATE 3 script read/edit -> hash -> ElevenLabs one pass (credits)",
         "GATE 2 spend sign-off: ~14 Grok clips for the hook prototype (credits)"
-      ]
+      ],
+      "gate1_2026-08-31": "OWNER: keep (current look). 23 masters sha-locked (SEED_LOCK.json); ARCH_01 = identity regen v2; PLANET_500_alt + ARCH_01 v1 kept unlocked as alternates. Owner deferred look iteration to a later pass.",
+      "first_3min_target": "Owner wants 0:00-3:00 FULLY finished (not a shortened video): beats B01-B09 = 48 shots (37 unique Grok clips + 11 free inserts), 37 composite seeds, VO 41 lines (~769 words / 3,938 chars: ORB 3124, PIP 501, GRUFF 313), foley via MMAudio, music bed, full gates, 1080p."
     }
   },
   "meta": {
