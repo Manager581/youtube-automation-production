@@ -1,6 +1,6 @@
 {
  "_schema": "pipeline_state v1 (PIPELINE_OVERHAUL_PLAN \u00a7S0 / build step 1). Every production lane has exactly one status: ACTIVE | BLOCKED-ON-OWNER | PARKED | KILLED | PUBLISHED | UNTRIAGED. Max 1 ACTIVE production lane. UNTRIAGED is only legal until the owner's triage sitting; run_gates.py state must fail on >1 ACTIVE or any UNTRIAGED after triage.",
- "updated": "2026-08-31",
+ "updated": "2026-09-09",
  "triage": {
   "done": false,
   "note": "Factual state verified 2026-08-31 (yt-dlp + disk). Statuses below marked UNTRIAGED await the owner's one-sitting triage; 'proposed' is machine advice only."
@@ -106,7 +106,7 @@
    "status": "ACTIVE",
    "channel": "TBD (owner)",
    "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
-   "next": "FORMAT_LAWS v1.1 (2026-09-08 late): machinery v2 landed + self-tested (reference PASSES its own watch gate 8/8; v3 FAILS 12/19; deliver.py refuses v3 with 6 reasons; send guard blocks ungated video; spend gate refuses batches without owner_go). ORDER: A ($0) SCRIPT_v4 (B01 -77 chars; [REACT] beats after [STAKES]; [FLASHFWD] rule or live open decided on the stand-in strip; emphasis/tension/[SILENT]) -> story_gate PASS (chars/s 15.8 measured) -> whisper words on the 6 kept lines -> build_edit_from_alignment (floor 15.8) + text2 + look + music arc + ambience -> STAND-IN render + plate + stems -> watch_gate with declared expected-FAIL {longest_static_s, motion_mean, foley_cover}, all else PASS -> strips -> WATCH_NOTES (machine format). B ($0) bank re-verdict --characters (subject events); ORB halo-mask prototype; angle distinctness S002 vs S002B; Gemini listen test on v3 + reference. C (OWNER GO batch e8d65762 = 3 Grok clips 18 s + 60 chars: S000 cold open, S002B alt, S010 TALKING clip, L04 directed) -> each through its gate -> prototype_record; FAIL = BLOCKED. D (OWNER GO, hash printed by run_gates spend): 4 reshoots (S006 S007 S008 S019) + 4 alts (M03 M06 M08 M10) + 9 lines ~496 chars -> bank -> freeze edit -> foley FINAL windows -> render+plate+stems -> run_gates all --render -> watch PASS -> notes -> listen record -> deliver.py -> owner.",
+   "next": "2026-09-09: STEP A is most of the way done at $0. DONE: (1) Law 2c host_halo gate wired + prototyped on S001xL01 (halo std 4.70, best-lag r 0.54, null 0.02 -> floors 2.0/0.30) and the reference still PASSES its own watch gate 8/8. (2) story_gate HARDENED on two holes an adversarial pass found: a [WOW] tag must NAME lane.promise.proof_shots, and a [REACT X] must have a readable shot (CU/ECU/MCU/MS/OTS/INS holding X) in that beat - counting tags let all four v4 drafts pass while beats held only wides. (3) SCRIPT_v4_first_minute.md WRITTEN and PASSES the hardened gate: 108 words, share ORB 0.78/PIP 0.13/GRUFF 0.09, 563 chars of which 484 are new (v3: 556), FLASHFWD open whose WOW names S000. (4) vo_lines_v4/VO_LINES_MANIFEST.json built by the new scripts/script_to_lines.py (refuses an ORB line without (on)/(vo); strips **emphasis** out of billable chars). (5) 17 placeholder lines generated at $0 by scripts/standin_vo.py (local Chatterbox, tempo-normalised to the measured 15.8 chars/s) - 7 flagged garbled, so cut_on_word_rate must NOT be cited from them. (6) spend_gate now ENFORCES lane.prototypes_required, which was declared and read by nothing. (7) MANIFEST: S019B added - a $0 GRUFF reaction re-crop of S014 in B05, because the LOCK beat had no shot in which GRUFF could be seen hearing the rule; continuity PASS. NEXT (still $0): build the v4 edit spec + mix spec from the new line manifest -> build_edit_from_alignment (floor 15.8, --ledger for action-on-word) -> render_edit_spec with --fallback stand-ins + --no-overlays plate -> audio_mix stems -> watch_gate with the DECLARED expected-FAIL set {longest_static_s, motion_mean, foley_cover, and cut_on_word_rate on the 7 garbled placeholder lines} -> strips LOOKED AT -> WATCH_NOTES. THEN batch C (owner go still outstanding on e8d65762).",
    "gate": 1,
    "activated": "2026-08-31",
    "built_2026-08-31": "Phase A machinery: story_gate (S3), continuity_check (S4/S6), seed_lock (GATE 1), clip_bank (GATE 5), hook_score (GATE 2, ref-calibrated), lib/assembly/{edit_layer,assemble_manifest,render_edit_spec}, build_composite_seeds, contact_sheet \u2014 all wired in run_gates.py, all self-tested fail-closed. SCRIPT_v1 written (story_gate: 10 FAILs -> fix pass pending after reviewer).",
@@ -129,11 +129,13 @@
    "fix_2026-09-08": "FAIL-CLOSED machinery built + proven on v3 (10/11 FAIL): scripts/watch_gate.py (render-level, vs reference, writes 4fps strips, always UNHEARD until an ear check); render_edit_spec refuses loops/replays; retime_to_vo refuses >1.25x and prints per-beat cuts; story_gate per-beat speech budget (15/36 beats over on SCRIPT_v2); clip_bank motion score + --hook refusal (6/18 first-minute clips refused). CLAUDE.md rules 8-11. First-minute v3 lines: 635 chars (was 1,458), every beat within budget, 6 takes reused. Design SFX (Pixabay) + 129-bpm cue wired at hook moments; text pops >=110px.",
    "blocked": null,
    "owner_gates": [
-    "spend C: batch e8d65762 (3 Grok clips / 18 gen-s + 60 ElevenLabs chars)",
-    "spend D (hash from run_gates spend after C passes)",
-    "listen verdict only if no model route works",
-    "SCRIPT_v4 read"
-   ]
+    "spend C: batch e8d65762 (3 Grok clips / 18 gen-s + 60 ElevenLabs chars) - spend_gate reaches NO GO cleanly, prototype precondition satisfied (it is marked prototype: true)",
+    "spend D (hash printed by run_gates spend after C passes)",
+    "SCRIPT_v4 read: research/mrbeast_teardown/shrinking_planet/SCRIPT_v4_first_minute.md (484 new ElevenLabs chars)",
+    "Law 8 listen route: uploading a render to the Gemini app sends unreleased footage to a third party - NOT done unilaterally",
+    "cold open: FLASHFWD (shipped) vs LIVE open, which needs lane.promise changed and a new ORB-in-frame seed"
+   ],
+   "step_a_2026-09-09": "Four SCRIPT_v4 variants drafted independently and judged (ear + reference lenses): flashfwd_lean 56, flashfwd_rich 65, live_open 65, live_open_stakes_first 50. All four PASSED the old story gate and ALL FOUR FAIL the hardened one - the judges' two most common criticisms were gate holes, not writing defects. Shipped script is a merge: the lean draft's beat grid (which matches the manifest for B02-B06) and budget, the rich draft's contestant exchanges. A live open remains possible but is an OWNER change to lane.promise, not a script edit: proof_shots is ['S000'] and deliver.py forces WATCH_NOTES first_3s to name it."
   }
  },
  "meta": {
