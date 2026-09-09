@@ -30,5 +30,7 @@
    "gate": "lipsync discrimination test on THIS clip (true line vs 1 s shift vs wrong line must rank correctly) + strip look; if the test cannot discriminate, mouth:ON shots stay silent-mouthed and the law is rewritten honestly",
    "prompt": "Animate this exact image as one continuous shot, 16:9. Keep every character exactly as drawn: same colours, same proportions, same eyes, nothing added. Stylized 3D-animated feature look, real physics, no text, no captions, no new characters. Handheld push toward PIP as she looks straight into the lens and SAYS the words \"Three years ago.\" with clear lip movement, then throws her head back laughing; fronds bounce, scarf swings; the crate's glow flickers on her face. She speaks exactly: \"Three years ago.\""
   }
- ]
+ ],
+ "prototype": true,
+ "prototype_note": "Law 0 PROTOTYPE batch: exempt from the prototypes_required precondition because this is the batch that EARNS those records; still refused if any lane prototype has FAILED."
 }
