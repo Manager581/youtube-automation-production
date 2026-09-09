@@ -51,5 +51,16 @@
   "hole_lu": 20
  },
  "nonvo_dyn_range_db": 19.2,
- "nonvo_stem_sha": "f3e3dd5c911228c1b3bfc8af6b01072574067391a8c98155bfe9e0ddc9fec865"
+ "nonvo_stem_sha": "f3e3dd5c911228c1b3bfc8af6b01072574067391a8c98155bfe9e0ddc9fec865",
+ "text_bands": {
+  "pops_per_45s": [
+   4,
+   8
+  ],
+  "on_screen_s": [
+   0.5,
+   2.5
+  ],
+  "source": "hook_event_ledger: 5 text_on events / 45 s, holds 0.6-2.2 s (+ slack)"
+ }
 }

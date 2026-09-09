@@ -214,6 +214,10 @@ def main():
     R = json.load(open(a.video.replace(".mp4", "_report.json"))) if os.path.exists(a.video.replace(".mp4", "_report.json")) else None
     texts = [o for s in (R or {}).get("segments", []) for o in s.get("abs_ops", []) if o["op"] in ("text", "text2") and o["appear"] < hw] if R else [dict(op=o["op"], appear=sg["t_in"] + o["t_on"] - o.get("lead", 0.3), t_off=sg["t_in"] + o.get("t_off", 0), text=o.get("text")) for sg in segs if sg["t_in"] < hw for o in sg.get("ops", []) if o.get("op") in ("text", "text2")]
     chk("text_count", len(texts), len(texts) >= 1, ">= 1 in the hook", "a hook without a single text pop is a Law 4 failure, not a vacuous pass", "spec")
+    tb = P.get("text_bands", {"pops_per_45s": [4, 8], "on_screen_s": [0.5, 2.5]}); n45 = round(len(texts) * 45.0 / max(hw, 1), 1)
+    chk("text_pops_per_45s", n45, tb["pops_per_45s"][0] <= n45 <= tb["pops_per_45s"][1], f"in {tb['pops_per_45s']} (reference ledger: 5 pops / 45 s)", "text is sparse and designed; a pop per claim reads as captions", "spec")
+    longs = [round(o["t_off"] - o["appear"], 2) for o in texts if "t_off" in o and o["t_off"] is not None]
+    chk("text_on_screen_s", longs, all(tb["on_screen_s"][0] <= x <= tb["on_screen_s"][1] for x in longs), f"each in {tb['on_screen_s']} s", "the reference's pops hold 0.6-2.2 s: long enough to read, gone before it becomes a caption", "spec")
     if a.plate and os.path.exists(a.plate) and texts:
         shas["plate"] = sha(a.plate); W, H = 1920, 1080; hs = []; anim = []
         for o in texts:

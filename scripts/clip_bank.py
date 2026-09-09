@@ -51,7 +51,7 @@ def main():
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     a1 = sub.add_parser("add"); a1.add_argument("--ledger", required=True); a1.add_argument("--shot", required=True); a1.add_argument("--clip", required=True); a1.add_argument("--composite", required=True); a1.add_argument("--fps", type=int, default=8)
     a2 = sub.add_parser("verdict"); a2.add_argument("--ledger", required=True); a2.add_argument("--shot", required=True); g = a2.add_mutually_exclusive_group(required=True); g.add_argument("--pass", dest="ok", action="store_true"); g.add_argument("--fail", dest="ok", action="store_false"); a2.add_argument("--note", default=""); a2.add_argument("--by", default="session"); a2.add_argument("--hook", action="store_true", help="this shot sits in the hook window (<=45 s): static clips are refused"); a2.add_argument("--min-motion", type=float, default=4.0); a2.add_argument("--allow-static", action="store_true"); a2.add_argument("--characters", default="", help="comma list: hook verdict measures motion INSIDE these subjects' colour masks (somebody moves), not the whole frame"); a2.add_argument("--min-events", type=int, default=2, help="subject motion events per 6 s clip (reference: hands/heads move every ~1.5 s)")
-    a3 = sub.add_parser("status"); a3.add_argument("--ledger", required=True); a3.add_argument("--manifest"); a3.add_argument("--require-complete", action="store_true")
+    a3 = sub.add_parser("status"); a3.add_argument("--ledger", required=True); a3.add_argument("--manifest"); a3.add_argument("--require-complete", action="store_true"); a3.add_argument("--hook-coverage", action="store_true", help="Law 3: every hook moment (moment_id) needs >= 2 PASS angles from DISTINCT seeds that are visually distinct (pHash) and pass the hook motion rule"); a3.add_argument("--seeds", default="assets/shrinking_planet/seeds/SEEDS_0-3min.json"); a3.add_argument("--hook-s", type=float, default=45.0)
     a = ap.parse_args(); L = load(a.ledger)
     if a.cmd == "add":
         if not os.path.exists(a.clip): print(f"FAIL clip missing: {a.clip}"); sys.exit(1)
@@ -88,6 +88,40 @@ def main():
         m = json.load(open(a.manifest)); ids = [s["id"] for s in m.get("shots", []) if s.get("reuse", "unique") != "insert"]; total = len(ids)
         missing = [i for i in ids if L["clips"].get(i, {}).get("verdict") != "PASS"]
         if a.require_complete and missing: fails.append(f"{len(missing)} manifest shots not banked (assembly precondition): {missing[:8]}{'...' if len(missing) > 8 else ''}")
+    if a.manifest and a.hook_coverage:
+        # LAW 3 — two angles of every hook moment. An angle counts only if: verdict PASS, its seed is a different file from the other angle's,
+        # it passes the hook motion rule (subject_events >= 2 when measured, else whole-frame rule), and its first frame is visually distinct
+        # (pHash hamming >= 16/63) from the other angle. Punch-in re-crops of the same seed (reuse=insert) never count.
+        import numpy as np
+        from scipy.fft import dctn
+        def first_hash(clip):
+            raw = subprocess.run(["ffmpeg", "-v", "error", "-i", clip, "-vf", "scale=32:32", "-pix_fmt", "gray", "-frames:v", "1", "-f", "rawvideo", "-"], capture_output=True).stdout
+            f = np.frombuffer(raw[:1024], dtype=np.uint8).reshape(32, 32).astype(np.float32); d = dctn(f, norm="ortho")[:8, :8].flatten()[1:]; return int.from_bytes(np.packbits(d > np.median(d)).tobytes(), "big")
+        seeds = json.load(open(a.seeds)).get("seeds", {}) if os.path.exists(a.seeds) else {}
+        moments = {}
+        for sh in m.get("shots", []):
+            t_in = sh.get("t_in", "99:99"); t = int(t_in.split(":")[0]) * 60 + int(t_in.split(":")[1]) if ":" in str(t_in) else float(t_in)
+            if sh.get("moment_id") and sh.get("reuse", "unique") != "insert" and t < a.hook_s: moments.setdefault(sh["moment_id"], []).append((sh["id"], sh.get("composite_seed_id") or sh.get("id")))
+        for sid, sd in seeds.items():   # extra angles that live only in the seed ledger (e.g. S002B)
+            if sd.get("moment_id") and sid not in [x for v in moments.values() for x, _ in v]: moments.setdefault(sd["moment_id"], []).append((sid, sid))
+        short = []
+        for mid, rows in sorted(moments.items()):
+            ok = []
+            for sid, seed in rows:
+                r = L["clips"].get(sid)
+                if not r or r.get("verdict") != "PASS": continue
+                hook_ok = (r["subject_events"] >= 2) if "subject_events" in r else (r.get("motion_mean", 0) >= 4.0 and r.get("static_run_s", 9) <= 2.0)
+                if not hook_ok: continue
+                ok.append((sid, r.get("composite") or seed, r["clip"]))
+            distinct = []
+            for sid, seed, clip in ok:
+                if any(seed == s2 for _, s2, _ in distinct): continue
+                h = first_hash(clip)
+                if any(bin(h ^ first_hash(c2)).count("1") < 16 for _, _, c2 in distinct): continue
+                distinct.append((sid, seed, clip))
+            if len(distinct) < 2: short.append(f"{mid}: {len(distinct)} usable angle(s) {[x for x,_,_ in distinct]} of {[x for x,_ in rows]}")
+        if short: fails.append(f"LAW 3: {len(short)} hook moments have < 2 distinct PASS angles that also pass the hook motion rule:\n      " + "\n      ".join(short))
+        print(f"clip_bank: hook coverage {len(moments) - len(short)}/{len(moments)} moments with >= 2 usable angles")
     print(f"clip_bank: {banked} banked" + (f" / {total} unique in manifest" if total is not None else "") + f"; {len(L['clips'])} rows")
     for f in fails: print("  FAIL", f)
     print("clip_bank: " + ("PASS" if not fails else f"FAIL ({len(fails)})")); sys.exit(1 if fails else 0)
