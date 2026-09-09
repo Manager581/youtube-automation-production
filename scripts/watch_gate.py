@@ -261,6 +261,30 @@ def main():
         y, sr = load_mono(mr); db = frame_db(y, sr, 0.5); lv = db[db > -70]; levels = len(set(np.round(lv / 3.0))) if len(lv) else 0; rng = round(float(np.percentile(lv, 95) - np.percentile(lv, 5)), 1) if len(lv) else 0
         chk("music_arc", {"levels": int(levels), "range_db": rng}, levels >= 3 and rng >= 6, ">= 3 distinct levels and >= 6 dB range on the raw music stem", "the cue must move (sections/hits), measured pre-duck so VO ducking cannot fake it")
     else: chk("music_arc", None, False, "measured", "no music stem: unmeasurable = FAIL")
+    # HOST PERFORMS (Law 2c): ORB has no mouth — its speech IS the halo. For every ORB line over a shot that holds ORB, the render's halo
+    # luminance (brightest 1.5% of pixels per frame) must PULSE (std >= floor) and track the line's envelope (best-lag r >= floor).
+    # Prototype 2026-09-09 on S001 x L01: std 4.70, r 0.54 at lag 0.50 s, shuffled null 0.02 -> floors 2.0 / 0.30.
+    hb = P.get("halo_bands", {"std_min": 2.0, "corr_min": 0.30, "max_lag_s": 0.6}); halo_rows = []; halo_bad = []
+    for v in vo:
+        spk = v.get("speaker") or v.get("line", "").split("_")[-1]
+        if spk != "ORB": continue
+        sg = next((s_ for s_ in segs if s_["t_in"] <= v["t"] < s_["t_out"]), None); shot = man.get((sg or {}).get("split_of", (sg or {}).get("shot")), {})
+        if not sg or "ORB" not in shot.get("characters", []) or shot.get("reuse") == "insert": continue
+        try:
+            import librosa
+            t0w = max(0.0, v["t"] - 0.3); durw = float(v.get("dur", 1.0)) + 0.9; fr = frames(a.video, 24, 320, 180, t0=t0w, dur=durw).astype(np.float32)
+            if fr.ndim < 3 or len(fr) < 12: continue
+            halo = np.array([np.sort(f.flatten())[-int(320 * 180 * 0.015):].mean() for f in fr]); hz = (halo - halo.mean()) / (halo.std() + 1e-6)
+            y, sr = librosa.load(v["file"], sr=16000); env = librosa.feature.rms(y=y, frame_length=1333, hop_length=667)[0]; env = env / (env.max() + 1e-9)
+            best = -9.0
+            for lag in range(0, max(1, min(len(hz) - len(env), int(hb["max_lag_s"] * 24) + 8))):
+                seg = hz[lag:lag + len(env)]
+                if len(seg) < len(env): break
+                best = max(best, float(np.corrcoef(seg, env)[0, 1]))
+            row = {"line": v.get("line"), "shot": sg["shot"], "halo_std": round(float(halo.std()), 2), "corr": round(best, 2)}; halo_rows.append(row)
+            if row["halo_std"] < hb["std_min"] or row["corr"] < hb["corr_min"]: halo_bad.append(row)
+        except Exception as e: halo_bad.append({"line": v.get("line"), "error": str(e)[:60]})
+    if halo_rows or halo_bad: chk("host_halo", halo_rows, not halo_bad, f"halo std >= {hb['std_min']} and best-lag r >= {hb['corr_min']} on every ORB on-camera line", f"the host must visibly perform its line (halo pulse tracks the voice); failing: {halo_bad[:4]}")
     # camera language (Law 4/6): per-KIND counts of the ops the assembler actually drew (render report), floors = 0.8 x the reference ledger
     kinds = {"punch_in": 0, "punch_out": 0, "flash_cut": 0, "whip": 0, "wipe": 0, "glow_key": 0, "eased": 0}
     for sgr in (R or {}).get("segments", []):

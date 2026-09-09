@@ -75,5 +75,11 @@
  "action_on_word_per_45s": {
   "floor": 4,
   "source": "hook_event_ledger: 5 explicit word/action matches in 45 s (23.25, 34.125, 35.5, 1.0, 11.5)"
+ },
+ "halo_bands": {
+  "std_min": 2.0,
+  "corr_min": 0.3,
+  "max_lag_s": 0.6,
+  "source": "prototype 2026-09-09 S001 x L01_ORB: halo std 4.70, best-lag r 0.54 @0.50 s, shuffled null 0.02"
  }
 }
