@@ -333,6 +333,11 @@ def cmd_deliver(args):
     cmd=[sys.executable, os.path.join(REPO,"scripts","deliver.py"), "--render", args.render, "--lane", args.lane, "--caption", args.caption or ""]
     return subprocess.run(cmd, cwd=REPO).returncode
 
+def cmd_spend(args):
+    """SPEND gate (Law 0): exact batch totals from packs + an owner-go record for that batch hash; refuses retakes without a reason."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","spend_gate.py"), "--lane", args.lane] + sum([["--grok", g] for g in (args.grok or [])], []) + sum([["--vo", v] for v in (args.vo or [])], []) + (["--record-go", args.record_go] if args.record_go else []) + (["--allow-retake", args.allow_retake] if args.allow_retake else [])
+    return subprocess.run(cmd, cwd=REPO).returncode
+
 def cmd_all(args):
     """Run EVERY gate in a lane config (lane.json) and write ONE report. Fail-closed: a required gate with missing inputs = FAIL;
     a gate whose stage has not been reached yet = NOT-READY (reported, never silent). Exit 1 if any required gate fails."""
@@ -392,6 +397,7 @@ def main():
     p = sub.add_parser("voqc"); p.add_argument("--lines", required=True); p.add_argument("--manifest", required=True); p.add_argument("--profile", required=True); p.add_argument("--json"); p.set_defaults(fn=cmd_voqc)
     p = sub.add_parser("wordedit"); p.add_argument("--spec", required=True); p.set_defaults(fn=cmd_wordedit)
     p = sub.add_parser("deliver"); p.add_argument("--render", required=True); p.add_argument("--lane", required=True); p.add_argument("--caption"); p.set_defaults(fn=cmd_deliver)
+    p = sub.add_parser("spend"); p.add_argument("--lane", required=True); p.add_argument("--grok", action="append"); p.add_argument("--vo", action="append"); p.add_argument("--record-go"); p.add_argument("--allow-retake"); p.set_defaults(fn=cmd_spend)
     p = sub.add_parser("all"); p.add_argument("lane_config"); p.add_argument("--report"); p.set_defaults(fn=cmd_all)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()

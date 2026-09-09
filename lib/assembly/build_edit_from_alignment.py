@@ -20,7 +20,7 @@ def align_lines(mix, lines_dir, cache):
     json.dump(out, open(cache, "w"), indent=1); return out
 def norm(w): return "".join(c for c in w.lower() if c.isalnum())
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--spec", required=True); ap.add_argument("--mix", required=True); ap.add_argument("--lines", required=True); ap.add_argument("--out", required=True); ap.add_argument("--lead", type=float, default=0.3); ap.add_argument("--ops-floor", type=float, default=20.0); ap.add_argument("--hook", type=float, default=45.0)
+    ap = argparse.ArgumentParser(); ap.add_argument("--spec", required=True); ap.add_argument("--mix", required=True); ap.add_argument("--lines", required=True); ap.add_argument("--out", required=True); ap.add_argument("--lead", type=float, default=0.3); ap.add_argument("--ops-floor", type=float, default=15.8)  # 0.8 x the reference ledger (89 spec-equivalent ops / 45 s = 19.8 per 10 s); ap.add_argument("--hook", type=float, default=45.0)
     a = ap.parse_args(); spec = json.load(open(a.spec)); mix = json.load(open(a.mix)); man = {l["id"]: l for l in json.load(open(a.lines))["lines"]}
     for v in mix["vo"]: v["text"] = man.get(v["line"], {}).get("text", "")
     words = align_lines(mix, os.path.dirname(a.lines), a.out + ".words.json")
