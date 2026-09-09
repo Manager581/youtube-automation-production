@@ -81,7 +81,8 @@ def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, repo
             for st in c["stills"]:
                 cand = os.path.join(masters_dir or "", st + ".png") if masters_dir else st
                 stills.append(cand if os.path.exists(cand) else (fallback_still(work, st, W, H)))
-            ins, chain, last = E.photo_cards_overlay(stills, c.get("t_start", 0.0), c.get("each", 0.4), W, H, c.get("card_w", 0.46), c.get("slide", 0.12))
+            if c.get("stack"): ins, chain, last = E.photo_stack_overlay(stills, c.get("t_start", 0.0), c.get("each", 0.35), c.get("t_end", c.get("t_start", 0.0) + c.get("each", 0.35) * len(stills) + 0.8), W, H, c.get("card_w", 0.42), c.get("slide", 0.14))
+            else: ins, chain, last = E.photo_cards_overlay(stills, c.get("t_start", 0.0), c.get("each", 0.4), W, H, c.get("card_w", 0.46), c.get("slide", 0.12))
             nxt = seg.replace(".mp4", "_cards.mp4")
             E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", seg] + ins + ["-filter_complex", chain, "-map", f"[{last}]", "-t", f"{slot:.3f}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), nxt]); seg = nxt
         t_in_abs = sg.get("t_in", sum(r["slot"] for r in rep)); abs_ops = []

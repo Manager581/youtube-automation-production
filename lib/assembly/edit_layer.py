@@ -64,6 +64,27 @@ def photo_cards_overlay(stills, t_start, each, W=1920, H=1080, card_w=0.46, slid
         prev = f"v{idx}"
     return inputs, ";".join(chain), prev
 
+def photo_stack_overlay(stills, t_start, each, t_end, W=1920, H=1080, card_w=0.42, slide=0.14, tilt_deg=6.0, leak_on=(1, 3)):
+    """Reference grammar (hook ledger 3.5-5.9 s): archive photos STACK UP over the running take — photo 2 slides in from the right tilted,
+    photo 3 from the left, later ones scale in at centre, each with a slow drift; every card STAYS until the stack exits on a whiteout at
+    t_end. >= 3 photos on screen at peak. Light-leak flashes on the cards indexed in leak_on. Returns (extra_inputs, chain, last_label)."""
+    inputs, chain, prev = [], [], "0:v"; cw = int(W * card_w); ch = int(cw * 9 / 16); n = len(stills)
+    for i, p in enumerate(stills):
+        idx = i + 1; t0 = t_start + i * each; inputs += ["-loop", "1", "-t", f"{t_end - t0 + 0.5:.3f}", "-i", p]
+        ang = (tilt_deg if i % 2 == 0 else -tilt_deg) * 3.14159 / 180.0
+        if i < 3:   # slide in from alternating sides
+            chain.append(f"[{idx}:v]scale={cw}:{ch},format=rgba,rotate={ang:.4f}:c=black@0:ow=rotw({ang:.4f}):oh=roth({ang:.4f}),setpts=PTS-STARTPTS+{t0:.3f}/TB[c{idx}]")
+            side = i % 2; x_end = int(W * 0.05 + i * W * 0.10) if side == 0 else int(W - cw - W * 0.05 - i * W * 0.06); x_start = -cw if side == 0 else W
+            x_expr = f"if(lt(t,{t0+slide:.3f}),{x_start}+({x_end}-{x_start})*(t-{t0:.3f})/{slide},{x_end}+6*(t-{t0:.3f}))"; y_expr = f"{int(H*0.10 + i*H*0.12)}+3*(t-{t0:.3f})"
+        else:       # scale in at centre (pop), smaller each time
+            sc = 0.85 - 0.12 * (i - 3); x_end = int((W - cw * sc) / 2 + (i - 3) * W * 0.05); y_end = int((H - ch * sc) / 2 + (i - 3) * H * 0.05)
+            chain.append(f"[{idx}:v]scale={cw}:{ch},format=rgba,rotate={ang:.4f}:c=black@0:ow=rotw({ang:.4f}):oh=roth({ang:.4f}),setpts=PTS-STARTPTS+{t0:.3f}/TB,scale=w='iw*{sc:.3f}*min(1,0.3+0.7*(t-{t0:.3f})/{slide})':h=-1:eval=frame[c{idx}]")
+            x_expr = f"{x_end}-5*(t-{t0:.3f})"; y_expr = f"{y_end}"
+        chain.append(f"[{prev}][c{idx}]overlay=x='{x_expr}':y='{y_expr}':enable='between(t,{t0:.3f},{t_end:.3f})'[v{idx}]"); prev = f"v{idx}"
+    for i in leak_on:   # light leaks on two of the entries (ref 3.625, 5.375)
+        if i < n: t = t_start + i * each; chain.append(f"[{prev}]drawbox=c=white@0.35:t=fill:enable='between(t,{t+0.02:.3f},{t+0.08:.3f})'[l{i}]"); prev = f"l{i}"
+    chain.append(f"[{prev}]drawbox=c=white@0.9:t=fill:enable='between(t,{t_end:.3f},{t_end+0.08:.3f})'[stack]"); prev = "stack"   # exit whiteout hides the cut out of the stack
+    return inputs, ";".join(chain), prev
 def concat(segments, out):
     lst = out + ".txt"
     with open(lst, "w") as f:

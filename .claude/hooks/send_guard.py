@@ -16,6 +16,7 @@ if tool == "SendUserFile":
             if json.load(open(ck)).get("delivered_as") and os.path.abspath(json.load(open(ck))["delivered_as"]) != p: blocked("send_guard: checklist does not name this file.")
 elif tool == "Bash":
     cmd = ti.get("command", "")
-    if re.search(r"\bopen\b[^|;&]*\.(mp4|mov|webm)\b", cmd) and "deliveries/" not in cmd: blocked("send_guard: opening a render outside deliveries/ is the owner's eyes on an ungated cut. Run scripts/deliver.py first.")
+    # the macOS `open` COMMAND (start of a shell segment) on a video — not Python's open( inside heredocs
+    if re.search(r"(?:^|[|;&]\s*|\n\s*)open\s+(?:-[a-zA-Z]+\s+)*[^|;&\n]*\.(mp4|mov|webm)\b", cmd) and "deliveries/" not in cmd: blocked("send_guard: opening a render outside deliveries/ is the owner's eyes on an ungated cut. Run scripts/deliver.py first.")
     if re.search(r"\b(cp|mv|rsync|ditto)\b[^|;&]*output/[^|;&]*\.(mp4|mov|webm)\b[^|;&]*(Desktop|Downloads|iCloud|Mobile Documents|Dropbox|Drive)", cmd): blocked("send_guard: copying a render out of output/ bypasses deliver.py.")
 sys.exit(0)
