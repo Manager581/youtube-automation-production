@@ -1,0 +1,50 @@
+{
+ "_schema": "re-shoot pack: hook clips refused by the motion gate; same SHA-locked seeds, camera-energy prompts",
+ "clips": [
+  {
+   "shot": "S006",
+   "seed": "assets/shrinking_planet/seeds/S006.png",
+   "gen_s": 6,
+   "slot_s": 2.0,
+   "old_motion": 1.86,
+   "why": "refused for a hook slot: motion below 4 / camera locked",
+   "prompt": "Animate this exact image as one continuous shot, 16:9. Keep every character exactly as drawn: same colours, same proportions, same eyes, nothing added. Stylized 3D-animated feature look, real physics, no text, no captions, no new characters. Fast push-in from a medium to a tight close-up on PIP's face as her eyes go wide and her fronds spring up; the camp lamp behind her flares; a quick hand-held settle at the end. No spoken words."
+  },
+  {
+   "shot": "S007",
+   "seed": "assets/shrinking_planet/seeds/S007.png",
+   "gen_s": 6,
+   "slot_s": 1.0,
+   "old_motion": 3.28,
+   "why": "refused for a hook slot: motion below 4 / camera locked",
+   "prompt": "Animate this exact image as one continuous shot, 16:9. Keep every character exactly as drawn: same colours, same proportions, same eyes, nothing added. Stylized 3D-animated feature look, real physics, no text, no captions, no new characters. Snap zoom into GRUFF's face inside the cave mouth as his brows slam down and the fur bristles; cyan cave light pulses behind him; a slow creeping push after the snap. No spoken words."
+  },
+  {
+   "shot": "S008",
+   "seed": "assets/shrinking_planet/seeds/S008.png",
+   "gen_s": 6,
+   "slot_s": 2.0,
+   "old_motion": 3.52,
+   "why": "refused for a hook slot: motion below 4 / camera locked",
+   "prompt": "Animate this exact image as one continuous shot, 16:9. Keep every character exactly as drawn: same colours, same proportions, same eyes, nothing added. Stylized 3D-animated feature look, real physics, no text, no captions, no new characters. Camera whips down from black sky to the coiled tether as ORB drops fast into frame and stops dead in a hover above it; the anklet ring bounces once; dust kicks up and settles. No spoken words."
+  },
+  {
+   "shot": "S010",
+   "seed": "assets/shrinking_planet/seeds/S010.png",
+   "gen_s": 6,
+   "slot_s": 1.0,
+   "old_motion": 3.52,
+   "why": "refused for a hook slot: motion below 4 / camera locked",
+   "prompt": "Animate this exact image as one continuous shot, 16:9. Keep every character exactly as drawn: same colours, same proportions, same eyes, nothing added. Stylized 3D-animated feature look, real physics, no text, no captions, no new characters. Handheld push toward PIP as she answers with a quick mouth movement, then throws her head back laughing; fronds bounce, scarf swings; the crate's glow flickers on her face. No spoken words."
+  },
+  {
+   "shot": "S019",
+   "seed": "assets/shrinking_planet/seeds/S019.png",
+   "gen_s": 6,
+   "slot_s": 4.0,
+   "old_motion": 2.35,
+   "why": "refused for a hook slot: motion below 4 / camera locked",
+   "prompt": "Animate this exact image as one continuous shot, 16:9. Keep every character exactly as drawn: same colours, same proportions, same eyes, nothing added. Stylized 3D-animated feature look, real physics, no text, no captions, no new characters. Slow drone-style push forward and down over the red ring toward the three of them as ORB drifts back to the ring's edge, halo pulsing; PIP's scarf lifts and GRUFF's fur moves in the wind. No spoken words."
+  }
+ ]
+}
