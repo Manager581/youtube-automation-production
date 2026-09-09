@@ -5685,7 +5685,7 @@
    "beat": "B05",
    "act": "HOOK",
    "t_in": "00:32",
-   "t_out": "00:36",
+   "t_out": "00:35",
    "day": 1,
    "planet_m": 1000,
    "count_display": 1000,
@@ -5722,6 +5722,44 @@
    "foley_prompt": "distant thin wind over rock, three small pad lights ticking",
    "tension": 5,
    "moment_id": "M09_rule"
+  },
+  {
+   "id": "S019B",
+   "beat": "B05",
+   "act": "HOOK",
+   "t_in": "00:35",
+   "t_out": "00:36",
+   "day": 1,
+   "planet_m": 1000,
+   "count_display": 1000,
+   "characters": [
+    "GRUFF"
+   ],
+   "partial": [],
+   "set": "landing_pad",
+   "vantage": "GRUFF reaction re-use: the rule lands on him, jaw set, eyes flick to the ring",
+   "seed_masters": [
+    "M_GRUFF",
+    "M_SET_pad"
+   ],
+   "seed_views": [
+    "M_GRUFF_3q",
+    "M_SET_pad"
+   ],
+   "composite_seed_id": "C010",
+   "shot_type": "CU",
+   "i2v_prompt": "REUSE of S014 (same clip; re-crop/re-grade in FFmpeg only, no new generation)",
+   "duration_s": 1,
+   "reuse": "insert",
+   "loops": [],
+   "mouth_visible": [],
+   "props": [
+    "anklet"
+   ],
+   "foley_prompt": "fur rustle, a breath",
+   "tension": 5,
+   "moment_id": "M09_rule",
+   "why": "story_gate 2026-09-09: B05 is the LOCK ('cross the ring and you quit; one quits, both go home') and the beat held no shot in which GRUFF could be SEEN hearing it - only the S019 wide. Law 2(d) needs two readable reactions on a lock. $0: a re-crop of the S014 clip already banked, a different window from S016's."
   },
   {
    "id": "S020",

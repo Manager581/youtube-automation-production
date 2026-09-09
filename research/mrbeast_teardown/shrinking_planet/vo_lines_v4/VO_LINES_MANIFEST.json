@@ -1,0 +1,341 @@
+{
+ "_schema": "lines built from SCRIPT_v4_first_minute.md by script_to_lines.py; reuse_audio_from = an existing take with EXACTLY this text",
+ "source_script": "research/mrbeast_teardown/shrinking_planet/SCRIPT_v4_first_minute.md",
+ "source_sha256": "12f43abd4d4a15cfb96430e04c33aaacaee97ebec8b385840add32ce0ee721ef",
+ "lines": [
+  {
+   "id": "L01_ORB",
+   "beat": "B00",
+   "t": "00:01",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 24,
+   "sha256": "a54faf80ec5fadab",
+   "text": "That's the whole planet.",
+   "emphasis": [
+    "planet"
+   ],
+   "on_camera": false,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L02_ORB",
+   "beat": "B01",
+   "t": "00:04",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 12,
+   "sha256": "360c27f181841868",
+   "text": "Helmets off.",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": "L01_ORB"
+  },
+  {
+   "id": "L03_ORB",
+   "beat": "B01",
+   "t": "00:06",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 26,
+   "sha256": "8a2ebeb396b21675",
+   "text": "They were a band. One hit.",
+   "emphasis": [
+    "band"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L04_ORB",
+   "beat": "B01",
+   "t": "00:08",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 30,
+   "sha256": "1248780c31b35864",
+   "text": "She went solo. He's still mad.",
+   "emphasis": [
+    "solo"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L05_ORB",
+   "beat": "B01",
+   "t": "00:10",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 32,
+   "sha256": "d6595347c8892dc0",
+   "text": "Thirty days. The crate is yours.",
+   "emphasis": [
+    "crate"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L06_ORB",
+   "beat": "B02",
+   "t": "00:14",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 14,
+   "sha256": "5f987be5385320be",
+   "text": "Rapport: none.",
+   "emphasis": [
+    "none"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L07_ORB",
+   "beat": "B03",
+   "t": "00:17",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 14,
+   "sha256": "a2a34935af577d08",
+   "text": "When'd it end?",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L08_PIP",
+   "beat": "B03",
+   "t": "00:18",
+   "speaker": "PIP",
+   "mouth": "ON",
+   "chars": 16,
+   "sha256": "7ff1b44f88faf7f8",
+   "text": "Three years ago.",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": "L06_PIP"
+  },
+  {
+   "id": "L09_GRUFF",
+   "beat": "B03",
+   "t": "00:19",
+   "speaker": "GRUFF",
+   "mouth": "OFF",
+   "chars": 9,
+   "sha256": "cd89e92a9170c43d",
+   "text": "Mid-tour.",
+   "emphasis": [
+    "Mid"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L10_ORB",
+   "beat": "B03",
+   "t": "00:20",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 11,
+   "sha256": "240afd35d1e16eb9",
+   "text": "Still sore.",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": "L08_ORB"
+  },
+  {
+   "id": "L11_ORB",
+   "beat": "B04",
+   "t": "00:22",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 48,
+   "sha256": "f895da303c4072ca",
+   "text": "Nobody's making you. Helmets on, I fly you home.",
+   "emphasis": [
+    "home"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L12_GRUFF",
+   "beat": "B04",
+   "t": "00:24",
+   "speaker": "GRUFF",
+   "mouth": "OFF",
+   "chars": 8,
+   "sha256": "117f7d1eef9783f0",
+   "text": "Running.",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": "L11_GRUFF"
+  },
+  {
+   "id": "L13_PIP",
+   "beat": "B04",
+   "t": "00:26",
+   "speaker": "PIP",
+   "mouth": "OFF",
+   "chars": 21,
+   "sha256": "94b426d569aa8d5a",
+   "text": "Still here, aren't I?",
+   "emphasis": [
+    "here"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L14_ORB",
+   "beat": "B04",
+   "t": "00:28",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 12,
+   "sha256": "db37bd0cc84cdd4e",
+   "text": "Both locked.",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": "L12_ORB"
+  },
+  {
+   "id": "L15_ORB",
+   "beat": "B05",
+   "t": "00:31",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 53,
+   "sha256": "e7a0892811632a90",
+   "text": "One rule. That ring is the only door off this planet.",
+   "emphasis": [
+    "ring"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L16_ORB",
+   "beat": "B05",
+   "t": "00:34",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 44,
+   "sha256": "61902d0bc79d890d",
+   "text": "Cross it, you quit. One quits, both go home.",
+   "emphasis": [
+    "both"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L17_GRUFF",
+   "beat": "B05",
+   "t": "00:37",
+   "speaker": "GRUFF",
+   "mouth": "OFF",
+   "chars": 28,
+   "sha256": "e3b32a757ee94c8a",
+   "text": "So she can end this one too.",
+   "emphasis": [
+    "this"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L18_PIP",
+   "beat": "B05",
+   "t": "00:40",
+   "speaker": "PIP",
+   "mouth": "OFF",
+   "chars": 13,
+   "sha256": "69f502eb4bd618f1",
+   "text": "Or you could.",
+   "emphasis": [
+    "you"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L19_ORB",
+   "beat": "B05",
+   "t": "00:43",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 20,
+   "sha256": "c7301483909e99b9",
+   "text": "Have fun down there.",
+   "emphasis": [],
+   "on_camera": true,
+   "reuse_audio_from": "L14_ORB"
+  },
+  {
+   "id": "L20_ORB",
+   "beat": "B06",
+   "t": "00:46",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 40,
+   "sha256": "5901447652ba7244",
+   "text": "One thousand metres across. Its own sky.",
+   "emphasis": [
+    "sky"
+   ],
+   "on_camera": false,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L21_ORB",
+   "beat": "B06",
+   "t": "00:50",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 44,
+   "sha256": "2af1ac8412f4e1af",
+   "text": "Sunrise every eleven hours. Spin's my fault.",
+   "emphasis": [
+    "eleven"
+   ],
+   "on_camera": false,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L22_PIP",
+   "beat": "B06",
+   "t": "00:54",
+   "speaker": "PIP",
+   "mouth": "OFF",
+   "chars": 23,
+   "sha256": "6a65fe1938695713",
+   "text": "Honestly? Kind of nice.",
+   "emphasis": [
+    "nice"
+   ],
+   "on_camera": true,
+   "reuse_audio_from": null
+  },
+  {
+   "id": "L23_ORB",
+   "beat": "B06",
+   "t": "00:58",
+   "speaker": "ORB",
+   "mouth": "OFF",
+   "chars": 21,
+   "sha256": "ca35d9e44330aa72",
+   "text": "Enjoy it. It shrinks.",
+   "emphasis": [
+    "shrinks"
+   ],
+   "on_camera": false,
+   "reuse_audio_from": null
+  }
+ ],
+ "total_chars": 563,
+ "revoice_lines": 17,
+ "revoice_chars": 484
+}
