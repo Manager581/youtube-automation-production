@@ -33,16 +33,24 @@ def main():
     ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--chars-per-sec", type=float, default=None, help="MEASURED value; normally read from --lane speech.chars_per_sec"); ap.add_argument("--lane"); ap.add_argument("--partial", action="store_true", help="the script is an excerpt (e.g. first minute): loops that never PAY and the word band are WARN, everything else still FAILs"); ap.add_argument("--air", type=float, default=0.2); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
     a = ap.parse_args()
     ladder = DEFAULT_LADDER
+    shots = []
     if a.ladder:
-        try: ladder = json.load(open(a.ladder)).get("ladder", DEFAULT_LADDER)
+        try:
+            M = json.load(open(a.ladder)); ladder = M.get("ladder", DEFAULT_LADDER); shots = M.get("shots", [])
         except Exception as e: print(f"  WARN ladder file unreadable ({e}); using default")
+    # A reaction has to be READABLE. Presence in a wide is not a reaction: the reference cuts to a face.
+    REACTION_FRAMINGS = {"CU", "ECU", "MCU", "MS", "OTS", "INS"}
+    react_shots = {}   # beat -> {character: [shot ids framed tightly enough to read]}
+    for sh in shots:
+        if sh.get("shot_type") in REACTION_FRAMINGS:
+            for c in (sh.get("characters") or []): react_shots.setdefault(sh.get("beat"), {}).setdefault(c.upper(), []).append(sh.get("id"))
     fails, warns, info = [], [], {}
     if a.lane and a.chars_per_sec is None:
         L = json.load(open(a.lane)); a.chars_per_sec = (L.get("speech") or {}).get("chars_per_sec")
     if a.chars_per_sec is None:
         print("story_gate REFUSED: chars/s is not measured yet (lane.speech.chars_per_sec is None). Run vo_qc.py --measure-cps on the directed prototype line first; a constant would be a guess that fails after credits are spent."); sys.exit(2)
     beats = []  # (t_in, t_out, name)
-    silences = []; react_needed = []; reacts = []; flashfwd = set(); wow_beats = []
+    silences = []; react_needed = []; reacts = []; flashfwd = set(); wow_beats = []; wow_text = []
     cur_t = None; cur_day = None; last_day = -1
     events = []  # (t, kind, detail)
     loops = {}   # id -> {"OPEN":t, "FEED":[t], "PAY":t}
@@ -81,7 +89,7 @@ def main():
                 m = re.match(r"^\[REACT\s+(\w+)", tag)
                 if m: reacts.append((cur, m.group(1).upper())); events.append((cur_t, "tag", tag)); continue
                 if re.match(r"^\[FLASHFWD\b", tag): flashfwd.add(cur); events.append((cur_t, "tag", tag)); continue
-                if re.match(r"^\[WOW\b", tag): wow_beats.append(cur); events.append((cur_t, "tag", tag)); continue
+                if re.match(r"^\[WOW\b", tag): wow_beats.append(cur); wow_text.append((cur, tag)); events.append((cur_t, "tag", tag)); continue
                 if re.match(r"^\[(TEXT|MUSIC|SFX|TIMER|HOST)\b", tag): events.append((cur_t, "tag", tag)); continue
             continue
         m = re.match(r"^\*\*(\w+)\*\*\s*\(([^)]*)\):\s*(.+)$", s)
@@ -106,6 +114,17 @@ def main():
     for (b, tag) in react_needed:
         who = {c for bb, c in reacts if bb == b}
         if len(who) < 2: fails.append(f"{b}: {tag} has {len(who)} [REACT <char>] tags after it (need >= 2, one per contestant): nobody listens")
+    # ...and a [REACT X] tag must have somewhere to BE. Counting tags is what let four drafts satisfy this law on paper
+    # while the beat held only wides: you cannot read a face in a WS or a HERO, so the tag has to point at a real
+    # tight shot on that character in that beat.
+    if react_shots:
+        for (b, c) in sorted(set(reacts)):
+            got = react_shots.get(b, {}).get(c, [])
+            if not got:
+                have = sorted(react_shots.get(b, {}))
+                fails.append(f"{b}: [REACT {c}] has no shot in this beat that can carry it — no {sorted(REACTION_FRAMINGS)} shot holds {c} "
+                             f"(readable reactions available here: {have or 'none'}). A reaction nobody can see is not a reaction.")
+    info["reaction_shots_available"] = {b: {c: v for c, v in d.items()} for b, d in react_shots.items()}
     info["reaction_tags"] = len(reacts)
     # loops
     for lid, L in loops.items():
@@ -134,6 +153,14 @@ def main():
         first = beats[0]
         if first[2] not in wow_beats: fails.append(f"{first[2]}: first beat has no [WOW ...] tag — the promise ('{prom.get('claim','')[:50]}') is not on screen by {prom.get('by_s', 3)} s")
         elif first[0] > float(prom.get("by_s", 3)): fails.append(f"{first[2]}: WOW beat starts at {first[0]}s > by_s {prom.get('by_s')}")
+        # The tag used to satisfy Law 1 by merely EXISTING — its text was never compared to the promise it claims to prove.
+        # A [WOW ...] must NAME one of lane.promise.proof_shots, the same shot deliver.py makes WATCH_NOTES name for first_3s.
+        proof = [p for p in (prom.get("proof_shots") or [])]
+        if proof:
+            txt = " ".join(t for b, t in wow_text if b == first[2])
+            if not any(ps in txt for ps in proof):
+                fails.append(f"{first[2]}: [WOW ...] does not name a promise proof shot {proof} — the tag asserts the promise instead of "
+                             f"pointing at the shot that shows it (deliver.py demands the same shot in WATCH_NOTES first_3s)")
     for b in flashfwd:
         t = next(((ti, to) for ti, to, n in beats if n == b), None)
         if t and (t[1] - t[0]) > 3.0: fails.append(f"{b}: [FLASHFWD] beat is {t[1]-t[0]:.0f}s (> 3 s): a flash-forward is a glimpse, not a scene")
