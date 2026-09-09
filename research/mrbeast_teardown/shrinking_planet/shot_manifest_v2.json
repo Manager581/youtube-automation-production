@@ -4920,6 +4920,40 @@
  },
  "shots": [
   {
+   "id": "S000",
+   "beat": "B00",
+   "act": "A1",
+   "t_in": "00:00",
+   "t_out": "00:03",
+   "day": 27,
+   "planet_m": 25,
+   "count_display": 25,
+   "characters": [
+    "PIP",
+    "GRUFF"
+   ],
+   "set": "equator",
+   "vantage": "COLD OPEN flash-forward: the whole planet is a 25-metre rock in black space; PIP and GRUFF cling to it on opposite sides, the crate wedged between them, GRUFF's foot hanging over the edge",
+   "seed_masters": [
+    "M_PLANET_25",
+    "M_PIP",
+    "M_GRUFF"
+   ],
+   "composite_seed_id": "C000",
+   "shot_type": "HERO",
+   "i2v_prompt": "Camera orbits fast around the tiny rock, half a turn, then snaps to a hard stop; PIP and GRUFF cling on, fur and fronds whipping, pebbles floating off into space; the crate creaks between them.",
+   "duration_s": 6,
+   "reuse": "unique",
+   "loops": [],
+   "mouth_visible": [],
+   "props": [
+    "crate"
+   ],
+   "moment_id": "M00_wow",
+   "tension": 5,
+   "promise_proof": true
+  },
+  {
    "id": "S001",
    "v1_id": "S001",
    "beat": "B01",
@@ -4952,7 +4986,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "soft electronic halo pulse, two short tones, deep-space silence bed",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M01_helmets"
   },
   {
    "id": "S002",
@@ -4997,7 +5032,8 @@
     "helmet"
    ],
    "foley_prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M01_helmets"
   },
   {
    "id": "S003",
@@ -5038,7 +5074,8 @@
    "mouth_visible": [],
    "props": [],
    "continuity_note": "archive stills: the band (PIP, GRUFF + two silhouettes) inside the stills; no composite, no generation; banked as the FFmpeg-built clip",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M02_archive"
   },
   {
    "id": "S004",
@@ -5089,7 +5126,8 @@
    "props": [
     "helmet"
    ],
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M01_helmets"
   },
   {
    "id": "S005",
@@ -5129,7 +5167,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "deep low hum rising as warm light blooms from a metal crate, faint metallic creak",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M03_crate_stakes"
   },
   {
    "id": "S006",
@@ -5166,7 +5205,8 @@
     "lamp"
    ],
    "foley_prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence",
-   "tension": 2
+   "tension": 2,
+   "moment_id": "M04_silent_hold"
   },
   {
    "id": "S007",
@@ -5201,7 +5241,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "low bristling fur rustle, a heavy exhale through fur",
-   "tension": 2
+   "tension": 2,
+   "moment_id": "M04_silent_hold"
   },
   {
    "id": "S008",
@@ -5239,7 +5280,8 @@
     "anklet"
    ],
    "foley_prompt": "metal chain links settling on rock, a soft hover whir descending",
-   "tension": 2
+   "tension": 2,
+   "moment_id": "M04_silent_hold"
   },
   {
    "id": "S009",
@@ -5277,7 +5319,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "fur bristling, a low rumble in the chest",
-   "tension": 3
+   "tension": 3,
+   "moment_id": "M05_wound"
   },
   {
    "id": "S010",
@@ -5314,7 +5357,8 @@
    ],
    "props": [],
    "foley_prompt": "quick bright breath, small mouth click",
-   "tension": 3
+   "tension": 3,
+   "moment_id": "M05_wound"
   },
   {
    "id": "S011",
@@ -5353,7 +5397,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "tension": 3
+   "tension": 3,
+   "moment_id": "M05_wound"
   },
   {
    "id": "S012",
@@ -5389,7 +5434,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "tension": 3
+   "tension": 3,
+   "moment_id": "M05_wound"
   },
   {
    "id": "S013",
@@ -5432,7 +5478,8 @@
     "helmet"
    ],
    "foley_prompt": "electric flare of a ring light, faint capacitor whine",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M06_nobody_making_you"
   },
   {
    "id": "S014",
@@ -5473,7 +5520,8 @@
     "tether"
    ],
    "foley_prompt": "heavy footfall on basalt, a hover whir receding",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M07_anklets"
   },
   {
    "id": "S015",
@@ -5514,7 +5562,8 @@
     "tether"
    ],
    "foley_prompt": "two hard metallic anklet clicks with a short ring, then silence",
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M07_anklets"
   },
   {
    "id": "S016",
@@ -5550,7 +5599,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M07_anklets"
   },
   {
    "id": "S017",
@@ -5588,7 +5638,8 @@
    "props": [
     "lamp"
    ],
-   "tension": 4
+   "tension": 4,
+   "moment_id": "M07_anklets"
   },
   {
    "id": "S018",
@@ -5625,7 +5676,8 @@
     "anklet"
    ],
    "foley_prompt": "anklet chain jerk, a fast whip of cloth",
-   "tension": 5
+   "tension": 5,
+   "moment_id": "M08_locked"
   },
   {
    "id": "S019",
@@ -5668,7 +5720,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "distant thin wind over rock, three small pad lights ticking",
-   "tension": 5
+   "tension": 5,
+   "moment_id": "M09_rule"
   },
   {
    "id": "S020",
@@ -5703,7 +5756,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "electronic halo pulse in speech rhythm, then a dimming hum",
-   "tension": 5
+   "tension": 5,
+   "moment_id": "M09_rule"
   },
   {
    "id": "S021",
@@ -5740,7 +5794,8 @@
    "mouth_visible": [],
    "props": [],
    "foley_prompt": "launch whoosh, rising thruster roar that thins to vacuum silence, low sub swell",
-   "tension": 5
+   "tension": 5,
+   "moment_id": "M10_launch"
   },
   {
    "id": "S022",

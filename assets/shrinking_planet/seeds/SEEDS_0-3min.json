@@ -427,6 +427,28 @@
    "prompt": "IMAGE S048 (standing rules apply, generate it now, ONE image only): Insert detail shot. tray drone landing with two covered platters, close. Location: the landing pad: grey basalt, a red painted ring, a car-sized crate stencilled with a question mark. The planet is ~1 km across: the horizon curves visibly close, thin sky haze. Freeze-frame of the moment: A small tray drone lowers two silver cloches into frame and retreats; the cloches rock and settle; a highlight slides over the domes. No characters in frame. Stylized 3D-animated feature look, matte materials, soft global illumination, 16:9, no text.",
    "status": "PASS",
    "verdict": "cloche insert; on-anchor"
+  },
+  "S000": {
+   "file": "assets/shrinking_planet/seeds/S000.png",
+   "sha256": "afcf337461e568b3185db83944a53e1a0c272565338529fbdc219ee784f17d69",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "COLD OPEN flash-forward: 25 m rock, PIP+GRUFF clinging, crate wedged (Law 1 promise proof)",
+   "status": "PASS",
+   "verdict": "COLD OPEN: 25 m rock, both clinging, crate wedged \u2014 promise proof, on-anchor (looked)"
+  },
+  "S002B": {
+   "file": "assets/shrinking_planet/seeds/S002B.png",
+   "sha256": "23e5bab0a4ccbf10614dbcb3a62ef72e9df9526bca76b3320540499242a25053",
+   "size": [
+    1672,
+    941
+   ],
+   "prompt": "S002 alternate angle (Law 3 coverage prototype): low OTS behind PIP up at GRUFF, helmets in hand, ORB beyond",
+   "status": "GEN",
+   "moment_id": "M01_helmets"
   }
  }
 }
