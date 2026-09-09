@@ -40,13 +40,15 @@ def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, repo
     work = os.path.splitext(out)[0] + "_segs"; os.makedirs(work, exist_ok=True); segs = []; rep = []
     # FAIL-CLOSED (2026-09-08 first-minute lesson): a slot longer than its clip would LOOP (visible jump); a setup replayed
     # outside a designed <=1.5 s insert is a REPEAT the viewer notices. Both refuse unless explicitly allowed (dry runs only).
-    seen = set(); problems = []
+    seen = {}; problems = []
     for sg in spec["segments"]:
         src, how = resolve_src(sg["src"], ledger, fallback); slot = (sg["t_out"] - sg["t_in"]) if "t_out" in sg else (sg["t1"] - sg["t0"]); t0 = sg.get("t0", 0.0)
         if how == "ledger" and not allow_loop and _dur(src) > 0 and t0 + slot > _dur(src) + 0.05: problems.append(f"{sg.get('shot')}: slot {slot:.2f}s from {t0:.2f}s exceeds clip {_dur(src):.2f}s (would LOOP)")
         key = sg["src"]; designed = (sg.get("reuse") == "insert" and slot <= 1.5)
-        if key in seen and not designed and not allow_replay: problems.append(f"{sg.get('shot')}: REPLAYS {key} for {slot:.2f}s (not a designed <=1.5 s insert)")
-        seen.add(key)
+        last = seen.get(key)
+        is_return = sg.get("reuse") == "return" and last is not None and (sg.get("t_in", 0) - last["t_out"]) >= 8.0 and (abs(t0 - last["t0"]) >= 1.0 or any(o.get("op") == "punch" for o in sg.get("ops", [])))
+        if last is not None and not designed and not is_return and not allow_replay: problems.append(f"{sg.get('shot')}: REPLAYS {key} for {slot:.2f}s (not a designed <=1.5 s insert nor a 'return' >=8 s later with a new in-point/zoom)")
+        seen[key] = {"t_out": sg.get("t_out", 0), "t0": t0}
     if problems: raise SystemExit("render_edit_spec REFUSED (fix the cut, don't stretch it):\n  " + "\n  ".join(problems))
     for i, sg in enumerate(spec["segments"]):
         src, how = resolve_src(sg["src"], ledger, fallback)

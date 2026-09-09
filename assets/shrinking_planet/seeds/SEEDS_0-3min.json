@@ -435,7 +435,7 @@
     1672,
     941
    ],
-   "prompt": "COLD OPEN flash-forward: 25 m rock, PIP+GRUFF clinging, crate wedged (Law 1 promise proof)",
+   "prompt": "COLD OPEN flash-forward: 12 m rock (ladder: day 26), PIP+GRUFF clinging, crate wedged (Law 1 promise proof)",
    "status": "PASS",
    "verdict": "COLD OPEN: 25 m rock, both clinging, crate wedged \u2014 promise proof, on-anchor (looked)"
   },
@@ -447,8 +447,9 @@
     941
    ],
    "prompt": "S002 alternate angle (Law 3 coverage prototype): low OTS behind PIP up at GRUFF, helmets in hand, ORB beyond",
-   "status": "GEN",
-   "moment_id": "M01_helmets"
+   "status": "PASS",
+   "moment_id": "M01_helmets",
+   "verdict": "alt angle of M01: low OTS behind PIP, GRUFF+ORB+crate, on-anchor (looked)"
   }
  }
 }

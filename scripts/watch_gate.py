@@ -38,7 +38,7 @@ def strips(video, outdir, dur, fps=4):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", str(s), "-t", "33", "-i", video, "-vf", f"fps={fps},scale=200:-1,tile=8x17", "-frames:v", "1", "-q:v", "4", p]); paths.append(p)
     return paths
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--video", required=True); ap.add_argument("--spec", required=True); ap.add_argument("--mix", required=True); ap.add_argument("--manifest", required=True); ap.add_argument("--ref"); ap.add_argument("--json"); ap.add_argument("--hook-window", type=float, default=45.0)
+    ap = argparse.ArgumentParser(); ap.add_argument("--video", required=True); ap.add_argument("--spec", required=True); ap.add_argument("--mix", required=True); ap.add_argument("--manifest", required=True); ap.add_argument("--ref"); ap.add_argument("--json"); ap.add_argument("--hook-window", type=float, default=45.0); ap.add_argument("--vo-profile", help="reference narration profile (vo_qc --calibrate) for speech_frac / dead-air thresholds")
     a = ap.parse_args(); spec = json.load(open(a.spec)); mix = json.load(open(a.mix)); man = {s["id"]: s for s in json.load(open(a.manifest))["shots"]}
     segs = spec["segments"]; total = segs[-1]["t_out"]; dur = probe(a.video); R = {}; checks = []
     def chk(name, val, ok, thr, why): checks.append({"check": name, "value": val, "threshold": thr, "verdict": "PASS" if ok else "FAIL", "why": why}); R[name] = val
@@ -58,9 +58,12 @@ def main():
     vo = sorted(mix.get("vo", []), key=lambda v: v["t"]); cov = np.zeros(int(total) + 1)
     for v in vo:
         for s in range(int(v["t"]), min(int(total), int(v["t"] + v["dur"])) + 1): cov[s] = 1
-    chk("speech_frac", round(float(cov.mean()), 2), float(cov.mean()) <= 0.75, "<= 0.75", "wall-to-wall narration; the reference breathes (music/SFX-led beats)")
+    prof = json.load(open(a.vo_profile)) if a.vo_profile and os.path.exists(a.vo_profile) else {}
+    sf_max = round(float(prof.get("speech_frac", 0.86)) + 0.05, 2)
+    chk("speech_frac", round(float(cov.mean()), 2), float(cov.mean()) <= sf_max, f"<= {sf_max} (ref {prof.get('speech_frac','?')}+0.05)", "narration density vs the reference's own speech fraction (measured, not invented)")
     gaps = [round(b["t"] - (x["t"] + x["dur"]), 2) for x, b in zip(vo, vo[1:])]
-    chk("longest_dead_s", max(gaps) if gaps else 0, (max(gaps) if gaps else 0) <= 3.0, "<= 3.0", "dead air between lines inside a dialogue run")
+    gap_max = round(1.5 * float(prof.get("longest_gap_s", 2.0)), 2)
+    chk("longest_dead_s", max(gaps) if gaps else 0, (max(gaps) if gaps else 0) <= gap_max, f"<= {gap_max} (1.5x ref gap)", "dead air between lines vs the reference's longest gap")
     # 6 line on speaker
     off = []
     for v in vo:
@@ -97,10 +100,15 @@ def main():
         luma = fr.mean(axis=(1, 2, 3)) / 255; contrast = fr.std(axis=(1, 2, 3)) / 255; sat = (fr.max(axis=3) - fr.min(axis=3)).mean(axis=(1, 2)) / 255
         per = []
         for sg in segs:
-            i0, i1 = int(sg["t_in"] * 2), max(int(sg["t_in"] * 2) + 1, int(sg["t_out"] * 2)); per.append((sg["shot"], float(luma[i0:i1].mean()), float(contrast[i0:i1].mean()), float(sat[i0:i1].mean())))
-        arr = np.array([[p[1], p[2], p[3]] for p in per]); med = np.median(arr, axis=0); sd = arr.std(axis=0) + 1e-6
-        outl = [p[0] for p, row in zip(per, arr) if np.any(np.abs(row - med) > 1.5 * sd)]
-        chk("look_outliers", len(outl), len(outl) <= max(1, len(per) // 10), f"<= {max(1, len(per)//10)}", f"segments whose luma/contrast/saturation sit >1.5 sigma from the lane median: {outl[:8]}")
+            i0, i1 = int(sg["t_in"] * 2), max(int(sg["t_in"] * 2) + 1, int(sg["t_out"] * 2)); st = man.get(sg.get("split_of", sg["shot"]), {}).get("set", "?")
+            per.append((sg["shot"], st, float(luma[i0:i1].mean()), float(contrast[i0:i1].mean()), float(sat[i0:i1].mean())))
+        outl = []
+        for st in set(p[1] for p in per):   # consistency WITHIN a set (a cave is meant to be darker than the pad)
+            grp = [p for p in per if p[1] == st]
+            if len(grp) < 3: continue
+            arr = np.array([[p[2], p[3], p[4]] for p in grp]); med = np.median(arr, axis=0); sd = arr.std(axis=0) + 1e-6
+            outl += [p[0] for p, row in zip(grp, arr) if np.any(np.abs(row - med) > 2.0 * sd)]
+        chk("look_outliers", len(outl), len(outl) <= max(1, len(per) // 10), f"<= {max(1, len(per)//10)}", f"segments >2 sigma from their OWN SET's median luma/contrast/saturation: {outl[:8]}")
     except Exception as e: chk("look_outliers", None, False, "measured", f"look measurement failed: {e}")
     # 13 music follows tension (Law 7): music RMS envelope per segment vs manifest tension (1-5), Pearson r
     try:

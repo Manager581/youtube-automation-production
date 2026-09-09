@@ -4925,15 +4925,15 @@
    "act": "A1",
    "t_in": "00:00",
    "t_out": "00:03",
-   "day": 27,
-   "planet_m": 25,
-   "count_display": 25,
+   "day": 26,
+   "planet_m": 12,
+   "count_display": 12,
    "characters": [
     "PIP",
     "GRUFF"
    ],
    "set": "equator",
-   "vantage": "COLD OPEN flash-forward: the whole planet is a 25-metre rock in black space; PIP and GRUFF cling to it on opposite sides, the crate wedged between them, GRUFF's foot hanging over the edge",
+   "vantage": "COLD OPEN flash-forward: the whole planet is a 12-metre rock in black space; PIP and GRUFF cling to it on opposite sides, the crate wedged between them, GRUFF's foot hanging over the edge",
    "seed_masters": [
     "M_PLANET_25",
     "M_PIP",
