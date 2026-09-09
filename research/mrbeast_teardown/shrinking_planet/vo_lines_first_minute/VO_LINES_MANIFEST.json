@@ -10,7 +10,8 @@
    "chars": 12,
    "sha256": "360c27f181841868",
    "text": "Helmets off.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L02_ORB",
@@ -26,7 +27,8 @@
     "four",
     "one",
     "remembers"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L03_ORB",
@@ -40,7 +42,8 @@
    "emphasis": [
     "solo",
     "angry"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L04_ORB",
@@ -56,7 +59,8 @@
     "together",
     "crate",
     "nothing"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L05_ORB",
@@ -67,7 +71,8 @@
    "chars": 22,
    "sha256": "65df5f84ba1eaa13",
    "text": "When did the band end?",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L06_PIP",
@@ -78,7 +83,8 @@
    "chars": 16,
    "sha256": "7ff1b44f88faf7f8",
    "text": "Three years ago.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L07_GRUFF",
@@ -89,7 +95,8 @@
    "chars": 56,
    "sha256": "9a0559aab0b3a93d",
    "text": "She quit. Mid-tour. Between the soundcheck and the show.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L08_ORB",
@@ -100,7 +107,8 @@
    "chars": 11,
    "sha256": "240afd35d1e16eb9",
    "text": "Still sore.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L09_ORB",
@@ -116,7 +124,8 @@
     "lock",
     "running",
     "off"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L10_GRUFF",
@@ -127,7 +136,8 @@
    "chars": 8,
    "sha256": "117f7d1eef9783f0",
    "text": "Running.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L11_ORB",
@@ -138,7 +148,8 @@
    "chars": 12,
    "sha256": "db37bd0cc84cdd4e",
    "text": "Both locked.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L12_ORB",
@@ -155,7 +166,8 @@
     "quit",
     "both",
     "crate"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L13_ORB",
@@ -166,7 +178,8 @@
    "chars": 20,
    "sha256": "c7301483909e99b9",
    "text": "Have fun down there.",
-   "emphasis": []
+   "emphasis": [],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L14_ORB",
@@ -182,7 +195,8 @@
     "sky",
     "sunrise",
     "wrong"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L15_PIP",
@@ -197,7 +211,8 @@
     "nice",
     "edge",
     "breakfast"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L16_ORB",
@@ -212,7 +227,8 @@
     "south",
     "week",
     "plan"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   },
   {
    "id": "L17_GRUFF",
@@ -226,7 +242,8 @@
    "emphasis": [
     "hole",
     "nobody"
-   ]
+   ],
+   "setting_hash": "dbf42deaaa00"
   }
  ],
  "total_chars": 1458

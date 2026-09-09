@@ -30,7 +30,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("script"); ap.add_argument("--ladder"); ap.add_argument("--json")
     ap.add_argument("--max-loop-gap", type=int, default=300); ap.add_argument("--max-device-gap", type=int, default=60)
-    ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--chars-per-sec", type=float, default=None, help="MEASURED value; normally read from --lane speech.chars_per_sec"); ap.add_argument("--lane"); ap.add_argument("--air", type=float, default=0.2); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
+    ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--chars-per-sec", type=float, default=None, help="MEASURED value; normally read from --lane speech.chars_per_sec"); ap.add_argument("--lane"); ap.add_argument("--partial", action="store_true", help="the script is an excerpt (e.g. first minute): loops that never PAY and the word band are WARN, everything else still FAILs"); ap.add_argument("--air", type=float, default=0.2); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
     a = ap.parse_args()
     ladder = DEFAULT_LADDER
     if a.ladder:
@@ -42,7 +42,7 @@ def main():
     if a.chars_per_sec is None:
         print("story_gate REFUSED: chars/s is not measured yet (lane.speech.chars_per_sec is None). Run vo_qc.py --measure-cps on the directed prototype line first; a constant would be a guess that fails after credits are spent."); sys.exit(2)
     beats = []  # (t_in, t_out, name)
-    silences = []; react_needed = []; reacts = []
+    silences = []; react_needed = []; reacts = []; flashfwd = set(); wow_beats = []
     cur_t = None; cur_day = None; last_day = -1
     events = []  # (t, kind, detail)
     loops = {}   # id -> {"OPEN":t, "FEED":[t], "PAY":t}
@@ -55,28 +55,35 @@ def main():
             cur = m.group(1); cur_t = tc(m.group(2)); beats.append((cur_t, tc(m.group(3)), cur)); events.append((cur_t, "beat", cur)); continue
         if cur_t is None: continue
         cur = beats[-1][2]
-        m = re.match(r"^\[DAY\s+(\d+)\]", s)
-        if m:
-            d = int(m.group(1)); day_by_beat[cur] = d
-            if d < last_day: fails.append(f"{cur}: DAY {d} < previous {last_day} (non-monotonic)")
-            last_day = max(last_day, d); events.append((cur_t, "tag", s)); continue
-        m = re.match(r"^\[PLANET\s+(\d+)\]", s)
-        if m: planet_by_beat[cur] = int(m.group(1)); events.append((cur_t, "tag", s)); continue
-        m = re.match(r"^\[COUNT\s+(\d+)\]", s)
-        if m: count_by_beat[cur] = int(m.group(1)); events.append((cur_t, "tag", s)); continue
-        m = re.match(r"^\[LOOP\s+(\w+)\s+(OPEN|FEED|PAY)\]", s)
-        if m:
-            lid, k = m.group(1), m.group(2); L = loops.setdefault(lid, {"OPEN": None, "FEED": [], "PAY": None})
-            if k == "OPEN": L["OPEN"] = cur_t
-            elif k == "FEED": L["FEED"].append(cur_t)
-            else: L["PAY"] = cur_t
-            events.append((cur_t, "tag", s)); continue
-        m = re.match(r"^\[SILENT\s+(\d+(?:\.\d+)?)s?\]", s)
-        if m: silences.append((cur, float(m.group(1)))); events.append((cur_t, "tag", s)); continue
-        if re.match(r"^\[(STAKES|REVEAL|LOCK)\b", s): react_needed.append((cur, s[:24])); events.append((cur_t, "tag", s)); continue
-        m = re.match(r"^\[REACT\s+(\w+)", s)
-        if m: reacts.append((cur, m.group(1).upper())); events.append((cur_t, "tag", s)); continue
-        if re.match(r"^\[(TEXT|MUSIC|SFX|FLASHFWD|TIMER|WOW)\b", s): events.append((cur_t, "tag", s)); continue
+        if s.startswith("["):   # EVERY bracket tag on the line is parsed (v3 scripts put several tags on one line; the old parser read only the first)
+            for tag in re.findall(r"\[[^\]]*\]", s):
+                m = re.match(r"^\[DAY\s+(\d+)\]", tag)
+                if m:
+                    d = int(m.group(1)); day_by_beat[cur] = d
+                    if cur in flashfwd: pass   # a flash-forward beat may show a later day without advancing the ladder clock
+                    elif d < last_day: fails.append(f"{cur}: DAY {d} < previous {last_day} (non-monotonic)")
+                    else: last_day = max(last_day, d)
+                    events.append((cur_t, "tag", tag)); continue
+                m = re.match(r"^\[PLANET\s+(\d+)\]", tag)
+                if m: planet_by_beat[cur] = int(m.group(1)); events.append((cur_t, "tag", tag)); continue
+                m = re.match(r"^\[COUNT\s+(\d+)\]", tag)
+                if m: count_by_beat[cur] = int(m.group(1)); events.append((cur_t, "tag", tag)); continue
+                m = re.match(r"^\[LOOP\s+(\w+)\s+(OPEN|FEED|PAY)\]", tag)
+                if m:
+                    lid, k = m.group(1), m.group(2); L = loops.setdefault(lid, {"OPEN": None, "FEED": [], "PAY": None})
+                    if k == "OPEN": L["OPEN"] = cur_t
+                    elif k == "FEED": L["FEED"].append(cur_t)
+                    else: L["PAY"] = cur_t
+                    events.append((cur_t, "tag", tag)); continue
+                m = re.match(r"^\[SILENT\s+(\d+(?:\.\d+)?)s?\]", tag)
+                if m: silences.append((cur, float(m.group(1)))); events.append((cur_t, "tag", tag)); continue
+                if re.match(r"^\[(STAKES|REVEAL|LOCK)\b", tag): react_needed.append((cur, tag[:24])); events.append((cur_t, "tag", tag)); continue
+                m = re.match(r"^\[REACT\s+(\w+)", tag)
+                if m: reacts.append((cur, m.group(1).upper())); events.append((cur_t, "tag", tag)); continue
+                if re.match(r"^\[FLASHFWD\b", tag): flashfwd.add(cur); events.append((cur_t, "tag", tag)); continue
+                if re.match(r"^\[WOW\b", tag): wow_beats.append(cur); events.append((cur_t, "tag", tag)); continue
+                if re.match(r"^\[(TEXT|MUSIC|SFX|TIMER|HOST)\b", tag): events.append((cur_t, "tag", tag)); continue
+            continue
         m = re.match(r"^\*\*(\w+)\*\*\s*\(([^)]*)\):\s*(.+)$", s)
         if m:
             spk, meta, text = m.group(1), m.group(2), m.group(3)
@@ -103,7 +110,7 @@ def main():
     # loops
     for lid, L in loops.items():
         if L["OPEN"] is None: fails.append(f"loop '{lid}' has FEED/PAY but no OPEN")
-        if L["PAY"] is None: fails.append(f"loop '{lid}' OPEN at {L['OPEN']}s never PAYs")
+        if L["PAY"] is None: (warns if a.partial else fails).append(f"loop '{lid}' OPEN at {L['OPEN']}s never PAYs" + (" (excerpt)" if a.partial else ""))
         pts = sorted([t for t in [L["OPEN"]] + L["FEED"] + [L["PAY"]] if t is not None])
         for x, y in zip(pts, pts[1:]):
             if y - x > a.max_loop_gap: fails.append(f"loop '{lid}': gap {y-x}s between touches at {x}s→{y}s exceeds {a.max_loop_gap}s")
@@ -119,10 +126,24 @@ def main():
         if exp is not None and p != exp: fails.append(f"{b}: PLANET {p} but ladder says {exp} on day {d}")
         c = count_by_beat.get(b)
         if c is not None and c != p: fails.append(f"{b}: COUNT {c} != PLANET {p}")
+    # LAW 1 — the promise is on screen by lane.promise.by_s: the FIRST beat carries [WOW ...] and starts by by_s; a [FLASHFWD] beat
+    # must be that first beat, <= 3 s, and its DAY/PLANET must sit on the ladder (checked above) so the cold open cannot contradict the story
+    lane_cfg = json.load(open(a.lane)) if a.lane else {}
+    prom = lane_cfg.get("promise")
+    if prom and beats:
+        first = beats[0]
+        if first[2] not in wow_beats: fails.append(f"{first[2]}: first beat has no [WOW ...] tag — the promise ('{prom.get('claim','')[:50]}') is not on screen by {prom.get('by_s', 3)} s")
+        elif first[0] > float(prom.get("by_s", 3)): fails.append(f"{first[2]}: WOW beat starts at {first[0]}s > by_s {prom.get('by_s')}")
+    for b in flashfwd:
+        t = next(((ti, to) for ti, to, n in beats if n == b), None)
+        if t and (t[1] - t[0]) > 3.0: fails.append(f"{b}: [FLASHFWD] beat is {t[1]-t[0]:.0f}s (> 3 s): a flash-forward is a glimpse, not a scene")
+        if beats and b != beats[0][2]: fails.append(f"{b}: [FLASHFWD] is only legal as the first beat (cold open)")
+        if b not in day_by_beat or b not in planet_by_beat: fails.append(f"{b}: [FLASHFWD] must carry [DAY] and [PLANET] on the ladder (a wrong-size rock is a continuity reject later)")
+    info_extra = {"flashfwd": sorted(flashfwd), "wow_beats": wow_beats}
     # caps
     if pip_on > a.pip_cap: fails.append(f"PIP mouth:ON lines = {pip_on} > cap {a.pip_cap}")
-    if not (a.min_words <= words <= a.max_words): fails.append(f"dialogue words = {words}, outside [{a.min_words},{a.max_words}]")
-    info = {"beats": len(beats), "words": words, "pip_mouth_on": pip_on, "loops": {k: v for k, v in loops.items()}, "share": {k: round(v/words, 2) for k, v in share.items()} if words else {}}
+    if not a.partial and not (a.min_words <= words <= a.max_words): fails.append(f"dialogue words = {words}, outside [{a.min_words},{a.max_words}]")
+    info = {"beats": len(beats), "words": words, "pip_mouth_on": pip_on, "loops": {k: v for k, v in loops.items()}, "share": {k: round(v/words, 2) for k, v in share.items()} if words else {}, **info_extra}
     print(f"story_gate: beats={len(beats)} words={words} PIP mouth:ON={pip_on} loops={list(loops)} share={info['share']}")
     for w in warns: print(f"  WARN {w}")
     for f in fails: print(f"  FAIL {f}")
