@@ -2,123 +2,46 @@
  "duration": 60.0,
  "vo": [
   {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L01_ORB.mp3",
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/L01_ORB.mp3",
    "t": 0.15,
    "gain_db": 0,
    "line": "L01_ORB",
    "dur": 1.202
   },
   {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L02_ORB.mp3",
-   "t": 3.0,
-   "gain_db": 0,
-   "line": "L02_ORB",
-   "dur": 7.602
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L03_ORB.mp3",
-   "t": 10.752,
-   "gain_db": 0,
-   "line": "L03_ORB",
-   "dur": 5.042
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L04_ORB.mp3",
-   "t": 15.943,
-   "gain_db": 0,
-   "line": "L04_ORB",
-   "dur": 7.602
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L05_ORB.mp3",
-   "t": 23.695,
-   "gain_db": 0,
-   "line": "L05_ORB",
-   "dur": 1.332
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L06_PIP.mp3",
-   "t": 25.177,
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/L06_PIP.mp3",
+   "t": 18.0,
    "gain_db": 0,
    "line": "L06_PIP",
    "dur": 1.149
   },
   {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L07_GRUFF.mp3",
-   "t": 26.476,
-   "gain_db": 0,
-   "line": "L07_GRUFF",
-   "dur": 4.963
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L08_ORB.mp3",
-   "t": 31.59,
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/L08_ORB.mp3",
+   "t": 20.0,
    "gain_db": 0,
    "line": "L08_ORB",
    "dur": 0.967
   },
   {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L09_ORB.mp3",
-   "t": 32.706,
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/L11_GRUFF.mp3",
+   "t": 26.0,
    "gain_db": 0,
-   "line": "L09_ORB",
-   "dur": 13.793
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L10_GRUFF.mp3",
-   "t": 46.649,
-   "gain_db": 0,
-   "line": "L10_GRUFF",
+   "line": "L11_GRUFF",
    "dur": 0.653
   },
   {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L11_ORB.mp3",
-   "t": 47.452,
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/L12_ORB.mp3",
+   "t": 28.0,
    "gain_db": 0,
-   "line": "L11_ORB",
+   "line": "L12_ORB",
    "dur": 1.071
   },
   {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L12_ORB.mp3",
-   "t": 48.673,
-   "gain_db": 0,
-   "line": "L12_ORB",
-   "dur": 13.322
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L13_ORB.mp3",
-   "t": 62.145,
-   "gain_db": 0,
-   "line": "L13_ORB",
-   "dur": 1.202
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L14_ORB.mp3",
-   "t": 63.497,
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/L14_ORB.mp3",
+   "t": 40.0,
    "gain_db": 0,
    "line": "L14_ORB",
-   "dur": 11.833
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L15_PIP.mp3",
-   "t": 75.48,
-   "gain_db": 0,
-   "line": "L15_PIP",
-   "dur": 6.635
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L16_ORB.mp3",
-   "t": 82.265,
-   "gain_db": 0,
-   "line": "L16_ORB",
-   "dur": 7.784
-  },
-  {
-   "file": "/Users/jefflawrence/Documents/youtube-automation-production/research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute/L17_GRUFF.mp3",
-   "t": 90.2,
-   "gain_db": 0,
-   "line": "L17_GRUFF",
-   "dur": 4.78
+   "dur": 1.202
   }
  ],
  "foley": [
@@ -284,8 +207,130 @@
    "shot": "S024"
   }
  ],
+ "sfx": [
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 1.95,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop 'PIP / WENT SOLO'"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 1.95,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop 'GRUFF / GOT LEFT'"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "t": 3.0,
+   "gain_db": -8,
+   "why": "whoosh per archive card"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "t": 3.4,
+   "gain_db": -8,
+   "why": "whoosh per archive card"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "t": 3.8,
+   "gain_db": -8,
+   "why": "whoosh per archive card"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "t": 4.2,
+   "gain_db": -8,
+   "why": "whoosh per archive card"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "t": 4.6,
+   "gain_db": -8,
+   "why": "whoosh per archive card"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "t": 5.0,
+   "gain_db": -8,
+   "why": "whoosh per archive card"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 8.5,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop '30 DAYS'"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/riser.wav",
+   "t": 5.0,
+   "gain_db": -12,
+   "dur": 3.4,
+   "why": "riser into 30 DAYS"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/cash_register.wav",
+   "t": 8.6,
+   "gain_db": -10,
+   "dur": 1.2,
+   "why": "cash-register hit on the crate bloom"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/sub_drop.wav",
+   "t": 15.0,
+   "gain_db": -8,
+   "dur": 2.0,
+   "why": "single sub hit on the tether insert (B02 mix note)"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 19.95,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop 'STILL SORE'"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/dark_drone.wav",
+   "t": 30.0,
+   "gain_db": -14,
+   "dur": 9.0,
+   "why": "low drone under the rule while music is out (B05 mix note)"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 33.15,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop 'CROSS IT = YOU BOTH GO HOME'"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 39.0,
+   "gain_db": -4,
+   "dur": 2.5,
+   "why": "music slam on the planet reveal"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 45.25,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop 'DAY 1'"
+  },
+  {
+   "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/sfx/impact_hit.wav",
+   "t": 45.55,
+   "gain_db": -9,
+   "dur": 0.9,
+   "why": "hit under text pop '1,000 M'"
+  }
+ ],
  "music": {
-  "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/dino_music/light_playful.mp3",
+  "file": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/music/cue_upbeat_epic_134_raw.mp3",
   "gain_db": -18,
   "duck_db": -8,
   "sections": [
@@ -308,27 +353,11 @@
     "why": "[MUSIC hit] slam on the planet reveal (S021)"
    }
   ],
-  "placeholder": "library bed (Pixabay CC0, from assets/dino_music); swap for a driving MrBeast-style cue when the owner allows a Pixabay download"
+  "source": "Pixabay music (Content License): epic upbeat trailer cue, 1:34"
  },
  "target_lufs": -14,
  "true_peak": -1.5,
  "notes": {
-  "vo_overrun_shifts": [
-   "L03_ORB",
-   "L04_ORB",
-   "L05_ORB",
-   "L06_PIP",
-   "L07_GRUFF",
-   "L08_ORB",
-   "L09_ORB",
-   "L10_GRUFF",
-   "L11_ORB",
-   "L12_ORB",
-   "L13_ORB",
-   "L14_ORB",
-   "L15_PIP",
-   "L16_ORB",
-   "L17_GRUFF"
-  ]
+  "vo_overrun_shifts": []
  }
 }

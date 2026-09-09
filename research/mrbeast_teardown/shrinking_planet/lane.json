@@ -70,27 +70,29 @@
    "cmd": [
     "hook",
     "--video",
-    "output/shrinking_planet/hook_v1.mp4",
+    "{render}",
     "--targets",
     "research/mrbeast_teardown/hook_grammar/hook_targets_v1.json"
    ],
    "needs": [
-    "output/shrinking_planet/hook_v1.mp4"
+    "{render}"
    ],
-   "from_stage": 2
+   "from_stage": 2,
+   "hook_window": true
   },
   "listen": {
    "cmd": [
     "listen",
     "--video",
-    "output/shrinking_planet/hook_v1.mp4",
+    "{render}",
     "--targets",
     "research/mrbeast_teardown/hook_grammar/listen_targets_v1.json"
    ],
    "needs": [
-    "output/shrinking_planet/hook_v1.mp4"
+    "{render}"
    ],
-   "from_stage": 2
+   "from_stage": 2,
+   "hook_window": true
   },
   "assembly": {
    "cmd": [
@@ -135,25 +137,32 @@
   "watch": {
    "from_stage": 8,
    "needs": [
-    "output/shrinking_planet/first_minute_v4.mp4"
+    "{render}",
+    "research/mrbeast_teardown/hook_grammar/style_profile_v1.json"
    ],
    "cmd": [
     "watch",
     "--video",
-    "output/shrinking_planet/first_minute_v4.mp4",
+    "{render}",
     "--spec",
     "output/shrinking_planet/first_minute_edit_spec_words.json",
     "--mix",
-    "research/mrbeast_teardown/shrinking_planet/first_minute_mix_spec_r.json",
+    "research/mrbeast_teardown/shrinking_planet/first_minute_mix_spec_words.json",
     "--manifest",
     "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json",
-    "--ref",
-    "research/mrbeast_teardown/hook_grammar/hook.webm"
+    "--lane",
+    "research/mrbeast_teardown/shrinking_planet/lane.json",
+    "--profile",
+    "research/mrbeast_teardown/hook_grammar/style_profile_v1.json",
+    "--mix-report",
+    "output/shrinking_planet/first_minute_v4_mix_report.json",
+    "--plate",
+    "output/shrinking_planet/first_minute_v4_plate.mp4"
    ],
    "hook_window": true
   }
  },
- "_notes": "from_stage = the build stage at which the gate becomes REQUIRED (missing inputs before that stage = NOT-READY, not FAIL). Stage index: 0 paper, 1 seeds locked, 2 hook prototype, 3 VO, 4 hero shots, 5 acts banked+assembled, 6 full render, 7 package.",
+ "_notes": "from_stage = the build stage at which the gate becomes REQUIRED (missing inputs before that stage = NOT-READY, not FAIL). Stage index: 0 paper, 1 seeds locked, 2 hook prototype, 3 VO, 4 hero shots, 5 acts banked+assembled, 6 full render, 7 package. {render} in a gate cmd/needs is substituted by `run_gates.py all lane.json --render R.mp4`, which writes gates_<R>.json beside the render (list form, sha-bound).",
  "prototypes_required": [
   "voice_direction",
   "talking_clip",
@@ -165,5 +174,10 @@
    "S000"
   ],
   "by_s": 3.0
+ },
+ "style_profile": "research/mrbeast_teardown/hook_grammar/style_profile_v1.json",
+ "speech": {
+  "chars_per_sec": 15.8,
+  "source": "MEASURED 2026-09-08 by vo_qc --measure-cps on the 17 undirected first-minute lines (whisper-verified, median); RE-MEASURE on the directed prototype line before the batch"
  }
 }

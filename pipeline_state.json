@@ -1,138 +1,145 @@
 {
-  "_schema": "pipeline_state v1 (PIPELINE_OVERHAUL_PLAN \u00a7S0 / build step 1). Every production lane has exactly one status: ACTIVE | BLOCKED-ON-OWNER | PARKED | KILLED | PUBLISHED | UNTRIAGED. Max 1 ACTIVE production lane. UNTRIAGED is only legal until the owner's triage sitting; run_gates.py state must fail on >1 ACTIVE or any UNTRIAGED after triage.",
-  "updated": "2026-08-31",
-  "triage": {
-    "done": false,
-    "note": "Factual state verified 2026-08-31 (yt-dlp + disk). Statuses below marked UNTRIAGED await the owner's one-sitting triage; 'proposed' is machine advice only."
+ "_schema": "pipeline_state v1 (PIPELINE_OVERHAUL_PLAN \u00a7S0 / build step 1). Every production lane has exactly one status: ACTIVE | BLOCKED-ON-OWNER | PARKED | KILLED | PUBLISHED | UNTRIAGED. Max 1 ACTIVE production lane. UNTRIAGED is only legal until the owner's triage sitting; run_gates.py state must fail on >1 ACTIVE or any UNTRIAGED after triage.",
+ "updated": "2026-08-31",
+ "triage": {
+  "done": false,
+  "note": "Factual state verified 2026-08-31 (yt-dlp + disk). Statuses below marked UNTRIAGED await the owner's one-sitting triage; 'proposed' is machine advice only."
+ },
+ "lanes": {
+  "breaking_law": {
+   "status": "KILLED",
+   "reason": "Strategy-killed at ~95% complete (owner decision, 2026-06). Never propose resuming. Bizdoc pipeline/tools stay alive.",
+   "channel": null
   },
-  "lanes": {
-    "breaking_law": {
-      "status": "KILLED",
-      "reason": "Strategy-killed at ~95% complete (owner decision, 2026-06). Never propose resuming. Bizdoc pipeline/tools stay alive.",
-      "channel": null
-    },
-    "dinoverse_v7": {
-      "status": "PUBLISHED",
-      "channel": "prehistoric_pov",
-      "video_id": "EUp3PX5mUWQ"
-    },
-    "rexcaped_pilot_trex_nyc": {
-      "status": "PUBLISHED",
-      "channel": "rexcaped",
-      "video_id": "Dmmtwvx7qnE",
-      "note": "Deliberate rough draft publish."
-    },
-    "rexcaped_variant_dino_zoo": {
-      "status": "PUBLISHED",
-      "channel": "rexcaped",
-      "video_id": "p6g4fwdTwyk",
-      "note": "Confirmed live (public) 2026-08-31; was previously CANNOT-CONFIRM."
-    },
-    "sam_neill_tribute": {
-      "status": "PUBLISHED",
-      "channel": "prehistoric_pov",
-      "video_id": "u_2Wdt4zGa0",
-      "note": "Confirmed live 2026-08-31; 1,416 views \u2014 best 2026 own upload."
-    },
-    "wbs_ep02_vampire_finch": {
-      "status": "UNTRIAGED",
-      "proposed": "ACTIVE",
-      "channel": "feral_planet",
-      "state": "31/88 clips banked (ledger disk-verified); VO done + block manifest; 23/23 seeds; assembler proven end-to-end with placeholders; gate_style preflight 9/9.",
-      "next": "Resume clip grind at S032 per research/wildbirdsurvival_teardown/NEXT_SESSION.md; this is plan build step 5.",
-      "why_proposed": "Most-advanced unfinished lane; the plan's build order (steps 5-10) runs through it; first upload slate for the branded-but-empty Feral Planet TV channel."
-    },
-    "spino_short": {
-      "status": "UNTRIAGED",
-      "proposed": "BLOCKED-ON-OWNER",
-      "channel": "rexcaped",
-      "state": "FINAL built 2026-07-24 (output/spino_short_FINAL.mp4, 70.3s, QA'd). NOT live on any owned channel.",
-      "next": "One owner decision: publish as-is / fix water-continuity cosmetic first / kill.",
-      "why_proposed": "Zero build cost remaining; it is a delivered packet awaiting verdict (S0 WARN class)."
-    },
-    "rexcaped_video2_spino_lagos": {
-      "status": "UNTRIAGED",
-      "proposed": "PARKED",
-      "channel": "rexcaped",
-      "state": "Script + single-pass Mark VO (9:48) + whisperx alignment done; 4 hook stills; composite pipeline validated. No work since ~2026-06-13.",
-      "next": "If activated: chapter-by-chapter stills -> cutouts -> composites per NEXT_VIDEO.md.",
-      "why_proposed": "Real sunk value (VO paid for) but behind wbs_ep02 in maturity; parking preserves it without splitting focus."
-    },
-    "spinosnack_dunkleosteus": {
-      "status": "UNTRIAGED",
-      "proposed": "PARKED",
-      "channel": "rexcaped",
-      "state": "June proof renders (540p AISIM cut) + 18 shot stills on disk (assets/dunkleosteus/sh01-18, 2026-06-09, never committed). Branch name is stale legacy.",
-      "next": "If activated: re-plan against current pipeline; stills may be reusable seeds.",
-      "why_proposed": "Superseded in practice by the Rexcaped lane doing the same genre."
-    },
-    "christ_cares": {
-      "status": "UNTRIAGED",
-      "proposed": "PARKED",
-      "channel": "christ_cares",
-      "state": "Format decided (own-words summaries + sparse quotes, faceless-God gate).",
-      "next": "Per plan step 10: runs only after the style-profile schema's content-policy section exists.",
-      "why_proposed": "Plan explicitly sequences it after the first config-swap lane."
-    },
-    "techjoint_cookies_v4": {
-      "status": "BLOCKED-ON-OWNER",
-      "channel": "techjoint",
-      "state": "v4 generated-foley rebuild (commit 224ec8b) delivered; awaiting owner EAR CHECK. Review packet DELIVERED 2026-08-31: research/techjoint_cookies/V4_REVIEW_PACKET.md (31 pre-declared waiver candidates, timecoded) + v4_verdict_ledger.json (31 PENDING slots).",
-      "next": "Owner watches ~/Movies/TechJoint_Cookies_v4_preview_watch.mp4 once with the packet; per-defect verdicts (WAIVE/REGEN/MUTE) recorded in the ledger; ship or v5 list.",
-      "note": "Delivered-packet class: blocks NEW lane starts only, per S0 split semantics."
-    },
-    "techjoint_top25_series": {
-      "status": "UNTRIAGED",
-      "proposed": "PARKED",
-      "channel": "techjoint",
-      "state": "Look-alike series through #9; next = #10.",
-      "why_proposed": "Separate channel with its own cadence; owner call whether it counts against the WIP cap."
-    },
-    "prehistoric_pov_walkthroughs": {
-      "status": "UNTRIAGED",
-      "proposed": "PARKED",
-      "channel": "prehistoric_pov",
-      "state": "Owner-direct uploads (velociraptor 52s, spinosaurus lagoon 36s, + 2 Rexcaped walkthroughs) with no repo artifacts \u2014 a lane that exists outside the pipeline.",
-      "why_proposed": "Owner's personal upload lane; pipeline should record (publish ledger) but not gate it."
-    },
-    "feral_planet_first_upload": {
-      "status": "UNTRIAGED",
-      "proposed": "BLOCKED-ON-OWNER",
-      "channel": "feral_planet",
-      "state": "Channel branded + settings done 2026-08-27; 0 public uploads. First slate = wbs_ep02 (or a fast tick-formula episode).",
-      "why_proposed": "Not a separate build \u2014 it is wbs_ep02's destination; kept as a line so the empty channel is visible in triage."
-    },
-    "shrinking_planet": {
-      "status": "ACTIVE",
-      "channel": "TBD (owner)",
-      "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
-      "next": "OWNER GO needed for the batch: 10 ElevenLabs lines (556 chars: ORB 462 / PIP 85 / GRUFF 9) + 5 Grok re-shoots (S006 S007 S008 S010 S019, camera-energy prompts, grok_i2v_pack_reshoot_v1.json). Then: retime (must PASS) -> bank re-shoots with clip_bank verdict --hook -> foley regen on final windows -> mix -> render -> watch_gate PASS + strips looked at -> owner ear check (UNHEARD until then). Script-wide: 15/36 beats over the speech budget -> trim before any 1:00-3:00 voice.",
-      "gate": 1,
-      "activated": "2026-08-31",
-      "built_2026-08-31": "Phase A machinery: story_gate (S3), continuity_check (S4/S6), seed_lock (GATE 1), clip_bank (GATE 5), hook_score (GATE 2, ref-calibrated), lib/assembly/{edit_layer,assemble_manifest,render_edit_spec}, build_composite_seeds, contact_sheet \u2014 all wired in run_gates.py, all self-tested fail-closed. SCRIPT_v1 written (story_gate: 10 FAILs -> fix pass pending after reviewer).",
-      "seeds_2026-08-31": "ALL 23 masters + 1 alt (PLANET_500) + 1 regen (ARCH_01_v2, identity fix) GENERATED in one ChatGPT image thread (https://chatgpt.com/c/6aa03fb8-8918-83ea-8942-5968d181db93; standing-rules recipe; order map = assets/shrinking_planet/masters/THREAD_ORDER.json). Visually confirmed on-anchor: PIP, GRUFF, ORB, COUNT, pad, pod door, confessional, truth beam, camp, PLANET_4, ARCH_02/03/05. Downloaded so far: M_PIP, M_GRUFF (assets/shrinking_planet/masters/).",
-      "blocker": "Chrome blocks automatic multiple downloads from chatgpt.com after the first file (per-site permission). Per memory rule (Chrome download-block -> ask owner, no workarounds): owner must allow 'Automatic downloads' for chatgpt.com (address-bar blocked-downloads icon, or chrome://settings/content/automaticDownloads), then rerun the ordered download loop (23 remaining, order + src map in the tab's localStorage 'sp_final').",
-      "hook_prep_2026-08-31": "hook_edit_spec_v1.json (21 segments, 20 edit-layer ops + 6 archive overlay cards, reference-measured timings) renders END-TO-END via lib/assembly/render_edit_spec.py (dry run with a synthetic stand-in clip in every slot: 45.0 s, output/shrinking_planet/hook_dryrun.mp4; stand-ins make cuts between identical clips invisible to the scorer, so the dry-run FAIL on hard_cuts/gap is expected and not a spec defect). Foley prompts on 15 hook shots. VO chunks for script v2 pre-cut (5 chunks / 20.5k chars; re-chunk after owner edit).",
-      "owner_gates_pending": [
-        "SPEND: 37 Grok i2v clips + ~4k ElevenLabs chars for 0:00-3:00 (first credits of this lane)",
-        "GATE 3 script read/edit (SCRIPT_v2_first3min_readthrough.md sent 2026-09-08) -> hash -> ElevenLabs one pass"
-      ],
-      "gate1_2026-08-31": "OWNER: keep (current look). 23 masters sha-locked (SEED_LOCK.json); ARCH_01 = identity regen v2; PLANET_500_alt + ARCH_01 v1 kept unlocked as alternates. Owner deferred look iteration to a later pass.",
-      "first_3min_target": "Owner wants 0:00-3:00 FULLY finished (not a shortened video): beats B01-B09 = 48 shots (37 unique Grok clips + 11 free inserts), 37 composite seeds, VO 41 lines (~769 words / 3,938 chars: ORB 3124, PIP 501, GRUFF 313), foley via MMAudio, music bed, full gates, 1080p.",
-      "course_correction_2026-08-31": "Cutout composites (build_composite_seeds.py) judged UNUSABLE as i2v seeds on the contact sheet (fixed character scale ignores framing; characters pasted over orbital plates). Switched to the PROVEN method: per-shot seed STILLS generated in the identity-locked ChatGPT thread (subscription, no credits). Composites kept only as fallback references.",
-      "seeds_0-3min_2026-09-08": "ALL 37 per-shot seed stills for 0:00-3:00 GENERATED in the identity thread and PASSED on contact-sheet inspection (5 regens: GRUFF-grey x2, PIP-eye-drift x2, COUNT-brown x1; anchors hardened mid-run; S030/S047 'tether' wording refused by ChatGPT guardrail -> 'safety cable'). Ledger = assets/shrinking_planet/seeds/SEEDS_0-3min.json; sheets A-G + ALL37 in assets/shrinking_planet/gate1/. ZERO credits spent.",
-      "dryrun_2026-09-08": "first3min_edit_spec_v1 rendered END-TO-END with seed stand-ins (output/shrinking_planet/first3min_DRYRUN.mp4, 182.0 s, 1920x1080@24, 48 segments, 0 FALLBACK, all slots from the dry-run ledger): text chips, card stack, punch-ins, ladder ticks, flashfwd whiteouts all land (sheet: assets/shrinking_planet/gate1/FIRST3MIN_DRYRUN_sheet.jpg). Stills-only by design \u2014 NOT shippable; it proves timing/coverage only.",
-      "first_minute_2026-09-08": "OWNER re-scoped to 0:00-1:00 fully finished first. DONE: 18/18 Grok i2v clips (paid acct, fingerprint-verified seeds) banked + strip-PASS (CLIP_LEDGER.json); picture cut rendered from real clips (output/shrinking_planet/first_minute_PICTURE.mp4, 60.0 s, 24 segs, 0 fallbacks; hook_score video metrics 3/4 PASS, transitions 38 vs >=40); 23/23 MMAudio foley windows (assets/shrinking_planet/foley, DSP-checked); 17/17 ElevenLabs lines generated ONCE (Adam=ORB, Jessica=PIP, Joe Scott=GRUFF; credits 347,980 -> 346,522 = exactly the 1,458-char budget); lib/assembly/audio_mix.py + first_minute_mix_spec builder ready.",
-      "blocker_2026-09-08": "RESOLVED: ElevenLabs History rows do not download from automation clicks; recipe = play the row (audio loads as a data: URL in the page's <audio>) then save it through a download anchor (same mechanism the site's own card download uses).",
-      "first_minute_v3_2026-09-08": "DELIVERED to owner: output/shrinking_planet/first_minute_v3.mp4 (+_720p watch copy). 18 real clips, 17/17 ElevenLabs lines (Adam/Jessica/Joe Scott), 23 MMAudio foley windows, placeholder bed (light_playful). VO-DRIVEN RETIME: script 0:00-1:00 carries 91 s of speech -> picture warped to the voice (ORB 1.15x) = 98.1 s; long slots split into alternating punch-ins. Gates: listen_gate PASS (-8.6 LUFS); hook_score 7/9 (transitions 30/>=40, first-12s 10/>=15.6 = density diluted by the stretch). ROOT CAUSE = script density (~256 wpm written vs 150-190 wpm spoken); owner decision: trim the hook dialogue ~30% (recommended) or accept longer beats.",
-      "owner_verdict_2026-09-08": "first_minute_v3: 'not even remotely close to being good enough'. Forensics: 39% replayed screen time, 15 s frozen run (ref 2 s), speech 89% of timeline, 7 s dead air, lines off-speaker, foley 38% coverage, 13.7 s music hole, 72px text, 0.9 s/card slideshow. Every item was on screen in numbers before delivery; I shipped through a 7/9 hook FAIL.",
-      "fix_2026-09-08": "FAIL-CLOSED machinery built + proven on v3 (10/11 FAIL): scripts/watch_gate.py (render-level, vs reference, writes 4fps strips, always UNHEARD until an ear check); render_edit_spec refuses loops/replays; retime_to_vo refuses >1.25x and prints per-beat cuts; story_gate per-beat speech budget (15/36 beats over on SCRIPT_v2); clip_bank motion score + --hook refusal (6/18 first-minute clips refused). CLAUDE.md rules 8-11. First-minute v3 lines: 635 chars (was 1,458), every beat within budget, 6 takes reused. Design SFX (Pixabay) + 129-bpm cue wired at hook moments; text pops >=110px."
-    }
+  "dinoverse_v7": {
+   "status": "PUBLISHED",
+   "channel": "prehistoric_pov",
+   "video_id": "EUp3PX5mUWQ"
   },
-  "meta": {
-    "pipeline_overhaul": {
-      "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 COMPLETE (run_gates.py: state/foley/bank-status/render/thumb/style/shots all wrapped fail-closed + verified on real artifacts; waiver mechanics tested; style-gate inputs restored \u2014 refs/BEST.mp4 re-downloaded, forensics_BEST.json regenerated, extract_forensics adaptive-threshold knife-edge fixed to match its own comment, BEST grades 10/11 vs recorded 11/11 with only hook-cuts off by re-encode), step 2 machine half (V4_REVIEW_PACKET.md + v4_verdict_ledger.json delivered). Next machine step: step 6 lib/assembly prep. Step 2 verdicts + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
-      "note": "Meta-lane; does not count against the 1-ACTIVE production cap."
-    }
+  "rexcaped_pilot_trex_nyc": {
+   "status": "PUBLISHED",
+   "channel": "rexcaped",
+   "video_id": "Dmmtwvx7qnE",
+   "note": "Deliberate rough draft publish."
+  },
+  "rexcaped_variant_dino_zoo": {
+   "status": "PUBLISHED",
+   "channel": "rexcaped",
+   "video_id": "p6g4fwdTwyk",
+   "note": "Confirmed live (public) 2026-08-31; was previously CANNOT-CONFIRM."
+  },
+  "sam_neill_tribute": {
+   "status": "PUBLISHED",
+   "channel": "prehistoric_pov",
+   "video_id": "u_2Wdt4zGa0",
+   "note": "Confirmed live 2026-08-31; 1,416 views \u2014 best 2026 own upload."
+  },
+  "wbs_ep02_vampire_finch": {
+   "status": "UNTRIAGED",
+   "proposed": "ACTIVE",
+   "channel": "feral_planet",
+   "state": "31/88 clips banked (ledger disk-verified); VO done + block manifest; 23/23 seeds; assembler proven end-to-end with placeholders; gate_style preflight 9/9.",
+   "next": "Resume clip grind at S032 per research/wildbirdsurvival_teardown/NEXT_SESSION.md; this is plan build step 5.",
+   "why_proposed": "Most-advanced unfinished lane; the plan's build order (steps 5-10) runs through it; first upload slate for the branded-but-empty Feral Planet TV channel."
+  },
+  "spino_short": {
+   "status": "UNTRIAGED",
+   "proposed": "BLOCKED-ON-OWNER",
+   "channel": "rexcaped",
+   "state": "FINAL built 2026-07-24 (output/spino_short_FINAL.mp4, 70.3s, QA'd). NOT live on any owned channel.",
+   "next": "One owner decision: publish as-is / fix water-continuity cosmetic first / kill.",
+   "why_proposed": "Zero build cost remaining; it is a delivered packet awaiting verdict (S0 WARN class)."
+  },
+  "rexcaped_video2_spino_lagos": {
+   "status": "UNTRIAGED",
+   "proposed": "PARKED",
+   "channel": "rexcaped",
+   "state": "Script + single-pass Mark VO (9:48) + whisperx alignment done; 4 hook stills; composite pipeline validated. No work since ~2026-06-13.",
+   "next": "If activated: chapter-by-chapter stills -> cutouts -> composites per NEXT_VIDEO.md.",
+   "why_proposed": "Real sunk value (VO paid for) but behind wbs_ep02 in maturity; parking preserves it without splitting focus."
+  },
+  "spinosnack_dunkleosteus": {
+   "status": "UNTRIAGED",
+   "proposed": "PARKED",
+   "channel": "rexcaped",
+   "state": "June proof renders (540p AISIM cut) + 18 shot stills on disk (assets/dunkleosteus/sh01-18, 2026-06-09, never committed). Branch name is stale legacy.",
+   "next": "If activated: re-plan against current pipeline; stills may be reusable seeds.",
+   "why_proposed": "Superseded in practice by the Rexcaped lane doing the same genre."
+  },
+  "christ_cares": {
+   "status": "UNTRIAGED",
+   "proposed": "PARKED",
+   "channel": "christ_cares",
+   "state": "Format decided (own-words summaries + sparse quotes, faceless-God gate).",
+   "next": "Per plan step 10: runs only after the style-profile schema's content-policy section exists.",
+   "why_proposed": "Plan explicitly sequences it after the first config-swap lane."
+  },
+  "techjoint_cookies_v4": {
+   "status": "BLOCKED-ON-OWNER",
+   "channel": "techjoint",
+   "state": "v4 generated-foley rebuild (commit 224ec8b) delivered; awaiting owner EAR CHECK. Review packet DELIVERED 2026-08-31: research/techjoint_cookies/V4_REVIEW_PACKET.md (31 pre-declared waiver candidates, timecoded) + v4_verdict_ledger.json (31 PENDING slots).",
+   "next": "Owner watches ~/Movies/TechJoint_Cookies_v4_preview_watch.mp4 once with the packet; per-defect verdicts (WAIVE/REGEN/MUTE) recorded in the ledger; ship or v5 list.",
+   "note": "Delivered-packet class: blocks NEW lane starts only, per S0 split semantics."
+  },
+  "techjoint_top25_series": {
+   "status": "UNTRIAGED",
+   "proposed": "PARKED",
+   "channel": "techjoint",
+   "state": "Look-alike series through #9; next = #10.",
+   "why_proposed": "Separate channel with its own cadence; owner call whether it counts against the WIP cap."
+  },
+  "prehistoric_pov_walkthroughs": {
+   "status": "UNTRIAGED",
+   "proposed": "PARKED",
+   "channel": "prehistoric_pov",
+   "state": "Owner-direct uploads (velociraptor 52s, spinosaurus lagoon 36s, + 2 Rexcaped walkthroughs) with no repo artifacts \u2014 a lane that exists outside the pipeline.",
+   "why_proposed": "Owner's personal upload lane; pipeline should record (publish ledger) but not gate it."
+  },
+  "feral_planet_first_upload": {
+   "status": "UNTRIAGED",
+   "proposed": "BLOCKED-ON-OWNER",
+   "channel": "feral_planet",
+   "state": "Channel branded + settings done 2026-08-27; 0 public uploads. First slate = wbs_ep02 (or a fast tick-formula episode).",
+   "why_proposed": "Not a separate build \u2014 it is wbs_ep02's destination; kept as a line so the empty channel is visible in triage."
+  },
+  "shrinking_planet": {
+   "status": "ACTIVE",
+   "channel": "TBD (owner)",
+   "state": "Gate 0 APPROVED by owner ('build it', 2026-08-31) with recommended defaults: fictional prize + survival title, cast of 4 (ORB/PIP/GRUFF/THE COUNT), 20:00, series-capable. Bible = research/mrbeast_teardown/SHRINKING_PLANET_bible_v2.html (adversarially reviewed).",
+   "next": "FORMAT_LAWS v1.1 (2026-09-08 late): machinery v2 landed + self-tested (reference PASSES its own watch gate 8/8; v3 FAILS 12/19; deliver.py refuses v3 with 6 reasons; send guard blocks ungated video; spend gate refuses batches without owner_go). ORDER: A ($0) SCRIPT_v4 (B01 -77 chars; [REACT] beats after [STAKES]; [FLASHFWD] rule or live open decided on the stand-in strip; emphasis/tension/[SILENT]) -> story_gate PASS (chars/s 15.8 measured) -> whisper words on the 6 kept lines -> build_edit_from_alignment (floor 15.8) + text2 + look + music arc + ambience -> STAND-IN render + plate + stems -> watch_gate with declared expected-FAIL {longest_static_s, motion_mean, foley_cover}, all else PASS -> strips -> WATCH_NOTES (machine format). B ($0) bank re-verdict --characters (subject events); ORB halo-mask prototype; angle distinctness S002 vs S002B; Gemini listen test on v3 + reference. C (OWNER GO batch e8d65762 = 3 Grok clips 18 s + 60 chars: S000 cold open, S002B alt, S010 TALKING clip, L04 directed) -> each through its gate -> prototype_record; FAIL = BLOCKED. D (OWNER GO, hash printed by run_gates spend): 4 reshoots (S006 S007 S008 S019) + 4 alts (M03 M06 M08 M10) + 9 lines ~496 chars -> bank -> freeze edit -> foley FINAL windows -> render+plate+stems -> run_gates all --render -> watch PASS -> notes -> listen record -> deliver.py -> owner.",
+   "gate": 1,
+   "activated": "2026-08-31",
+   "built_2026-08-31": "Phase A machinery: story_gate (S3), continuity_check (S4/S6), seed_lock (GATE 1), clip_bank (GATE 5), hook_score (GATE 2, ref-calibrated), lib/assembly/{edit_layer,assemble_manifest,render_edit_spec}, build_composite_seeds, contact_sheet \u2014 all wired in run_gates.py, all self-tested fail-closed. SCRIPT_v1 written (story_gate: 10 FAILs -> fix pass pending after reviewer).",
+   "seeds_2026-08-31": "ALL 23 masters + 1 alt (PLANET_500) + 1 regen (ARCH_01_v2, identity fix) GENERATED in one ChatGPT image thread (https://chatgpt.com/c/6aa03fb8-8918-83ea-8942-5968d181db93; standing-rules recipe; order map = assets/shrinking_planet/masters/THREAD_ORDER.json). Visually confirmed on-anchor: PIP, GRUFF, ORB, COUNT, pad, pod door, confessional, truth beam, camp, PLANET_4, ARCH_02/03/05. Downloaded so far: M_PIP, M_GRUFF (assets/shrinking_planet/masters/).",
+   "blocker": "Chrome blocks automatic multiple downloads from chatgpt.com after the first file (per-site permission). Per memory rule (Chrome download-block -> ask owner, no workarounds): owner must allow 'Automatic downloads' for chatgpt.com (address-bar blocked-downloads icon, or chrome://settings/content/automaticDownloads), then rerun the ordered download loop (23 remaining, order + src map in the tab's localStorage 'sp_final').",
+   "hook_prep_2026-08-31": "hook_edit_spec_v1.json (21 segments, 20 edit-layer ops + 6 archive overlay cards, reference-measured timings) renders END-TO-END via lib/assembly/render_edit_spec.py (dry run with a synthetic stand-in clip in every slot: 45.0 s, output/shrinking_planet/hook_dryrun.mp4; stand-ins make cuts between identical clips invisible to the scorer, so the dry-run FAIL on hard_cuts/gap is expected and not a spec defect). Foley prompts on 15 hook shots. VO chunks for script v2 pre-cut (5 chunks / 20.5k chars; re-chunk after owner edit).",
+   "owner_gates_pending": [
+    "SPEND: 37 Grok i2v clips + ~4k ElevenLabs chars for 0:00-3:00 (first credits of this lane)",
+    "GATE 3 script read/edit (SCRIPT_v2_first3min_readthrough.md sent 2026-09-08) -> hash -> ElevenLabs one pass"
+   ],
+   "gate1_2026-08-31": "OWNER: keep (current look). 23 masters sha-locked (SEED_LOCK.json); ARCH_01 = identity regen v2; PLANET_500_alt + ARCH_01 v1 kept unlocked as alternates. Owner deferred look iteration to a later pass.",
+   "first_3min_target": "Owner wants 0:00-3:00 FULLY finished (not a shortened video): beats B01-B09 = 48 shots (37 unique Grok clips + 11 free inserts), 37 composite seeds, VO 41 lines (~769 words / 3,938 chars: ORB 3124, PIP 501, GRUFF 313), foley via MMAudio, music bed, full gates, 1080p.",
+   "course_correction_2026-08-31": "Cutout composites (build_composite_seeds.py) judged UNUSABLE as i2v seeds on the contact sheet (fixed character scale ignores framing; characters pasted over orbital plates). Switched to the PROVEN method: per-shot seed STILLS generated in the identity-locked ChatGPT thread (subscription, no credits). Composites kept only as fallback references.",
+   "seeds_0-3min_2026-09-08": "ALL 37 per-shot seed stills for 0:00-3:00 GENERATED in the identity thread and PASSED on contact-sheet inspection (5 regens: GRUFF-grey x2, PIP-eye-drift x2, COUNT-brown x1; anchors hardened mid-run; S030/S047 'tether' wording refused by ChatGPT guardrail -> 'safety cable'). Ledger = assets/shrinking_planet/seeds/SEEDS_0-3min.json; sheets A-G + ALL37 in assets/shrinking_planet/gate1/. ZERO credits spent.",
+   "dryrun_2026-09-08": "first3min_edit_spec_v1 rendered END-TO-END with seed stand-ins (output/shrinking_planet/first3min_DRYRUN.mp4, 182.0 s, 1920x1080@24, 48 segments, 0 FALLBACK, all slots from the dry-run ledger): text chips, card stack, punch-ins, ladder ticks, flashfwd whiteouts all land (sheet: assets/shrinking_planet/gate1/FIRST3MIN_DRYRUN_sheet.jpg). Stills-only by design \u2014 NOT shippable; it proves timing/coverage only.",
+   "first_minute_2026-09-08": "OWNER re-scoped to 0:00-1:00 fully finished first. DONE: 18/18 Grok i2v clips (paid acct, fingerprint-verified seeds) banked + strip-PASS (CLIP_LEDGER.json); picture cut rendered from real clips (output/shrinking_planet/first_minute_PICTURE.mp4, 60.0 s, 24 segs, 0 fallbacks; hook_score video metrics 3/4 PASS, transitions 38 vs >=40); 23/23 MMAudio foley windows (assets/shrinking_planet/foley, DSP-checked); 17/17 ElevenLabs lines generated ONCE (Adam=ORB, Jessica=PIP, Joe Scott=GRUFF; credits 347,980 -> 346,522 = exactly the 1,458-char budget); lib/assembly/audio_mix.py + first_minute_mix_spec builder ready.",
+   "blocker_2026-09-08": "RESOLVED: ElevenLabs History rows do not download from automation clicks; recipe = play the row (audio loads as a data: URL in the page's <audio>) then save it through a download anchor (same mechanism the site's own card download uses).",
+   "first_minute_v3_2026-09-08": "DELIVERED to owner: output/shrinking_planet/first_minute_v3.mp4 (+_720p watch copy). 18 real clips, 17/17 ElevenLabs lines (Adam/Jessica/Joe Scott), 23 MMAudio foley windows, placeholder bed (light_playful). VO-DRIVEN RETIME: script 0:00-1:00 carries 91 s of speech -> picture warped to the voice (ORB 1.15x) = 98.1 s; long slots split into alternating punch-ins. Gates: listen_gate PASS (-8.6 LUFS); hook_score 7/9 (transitions 30/>=40, first-12s 10/>=15.6 = density diluted by the stretch). ROOT CAUSE = script density (~256 wpm written vs 150-190 wpm spoken); owner decision: trim the hook dialogue ~30% (recommended) or accept longer beats.",
+   "owner_verdict_2026-09-08": "first_minute_v3: 'not even remotely close to being good enough'. Forensics: 39% replayed screen time, 15 s frozen run (ref 2 s), speech 89% of timeline, 7 s dead air, lines off-speaker, foley 38% coverage, 13.7 s music hole, 72px text, 0.9 s/card slideshow. Every item was on screen in numbers before delivery; I shipped through a 7/9 hook FAIL.",
+   "fix_2026-09-08": "FAIL-CLOSED machinery built + proven on v3 (10/11 FAIL): scripts/watch_gate.py (render-level, vs reference, writes 4fps strips, always UNHEARD until an ear check); render_edit_spec refuses loops/replays; retime_to_vo refuses >1.25x and prints per-beat cuts; story_gate per-beat speech budget (15/36 beats over on SCRIPT_v2); clip_bank motion score + --hook refusal (6/18 first-minute clips refused). CLAUDE.md rules 8-11. First-minute v3 lines: 635 chars (was 1,458), every beat within budget, 6 takes reused. Design SFX (Pixabay) + 129-bpm cue wired at hook moments; text pops >=110px.",
+   "blocked": null,
+   "owner_gates": [
+    "spend C: batch e8d65762 (3 Grok clips / 18 gen-s + 60 ElevenLabs chars)",
+    "spend D (hash from run_gates spend after C passes)",
+    "listen verdict only if no model route works",
+    "SCRIPT_v4 read"
+   ]
   }
+ },
+ "meta": {
+  "pipeline_overhaul": {
+   "state": "Plan v1.5 committed (76eea0c). DONE 2026-08-31: step 1 machine half (this file + publish_ledger.json; owner triage sitting still pending), step 3 (scripts/own_channel_read.py ran for real, reads/ + schedules/ artifacts), step 4 COMPLETE (run_gates.py: state/foley/bank-status/render/thumb/style/shots all wrapped fail-closed + verified on real artifacts; waiver mechanics tested; style-gate inputs restored \u2014 refs/BEST.mp4 re-downloaded, forensics_BEST.json regenerated, extract_forensics adaptive-threshold knife-edge fixed to match its own comment, BEST grades 10/11 vs recorded 11/11 with only hook-cuts off by re-encode), step 2 machine half (V4_REVIEW_PACKET.md + v4_verdict_ledger.json delivered). Next machine step: step 6 lib/assembly prep. Step 2 verdicts + triage = owner. Step 5 (Ep02 grind) = production, starts only on owner activation.",
+   "note": "Meta-lane; does not count against the 1-ACTIVE production cap."
+  }
+ }
 }

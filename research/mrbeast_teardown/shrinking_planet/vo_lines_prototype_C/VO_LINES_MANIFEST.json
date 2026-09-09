@@ -1,0 +1,31 @@
+{
+ "_schema": "Law 0 prototype: ONE directed line (new voice settings) -> vo_qc on the stem profile + chars/s measured + owner ear; no batch before this passes",
+ "voice_direction": {
+  "voice": "Adam",
+  "model": "eleven_multilingual_v2 or v3 expressive (decide on the prototype)",
+  "stability": 0.35,
+  "style": 0.65,
+  "similarity": 0.8,
+  "emotion": "big, game-show announcer, lands the stakes on 'thirty days' and 'crate'",
+  "emphasis": [
+   "thirty days",
+   "together",
+   "crate"
+  ]
+ },
+ "lines": [
+  {
+   "id": "L04_ORB",
+   "beat": "B01",
+   "t": "00:08",
+   "speaker": "ORB",
+   "mouth": null,
+   "chars": 60,
+   "sha256": "3c67b6c445641ded",
+   "text": "Survive thirty days here, together, and that crate is yours.",
+   "note": "was L04 (stakes + crate loop OPEN)",
+   "reuse_audio_from": null,
+   "on_camera": false
+  }
+ ]
+}

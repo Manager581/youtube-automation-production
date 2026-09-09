@@ -30,14 +30,19 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("script"); ap.add_argument("--ladder"); ap.add_argument("--json")
     ap.add_argument("--max-loop-gap", type=int, default=300); ap.add_argument("--max-device-gap", type=int, default=60)
-    ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--chars-per-sec", type=float, default=16.0); ap.add_argument("--air", type=float, default=0.2); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
+    ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--chars-per-sec", type=float, default=None, help="MEASURED value; normally read from --lane speech.chars_per_sec"); ap.add_argument("--lane"); ap.add_argument("--air", type=float, default=0.2); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
     a = ap.parse_args()
     ladder = DEFAULT_LADDER
     if a.ladder:
         try: ladder = json.load(open(a.ladder)).get("ladder", DEFAULT_LADDER)
         except Exception as e: print(f"  WARN ladder file unreadable ({e}); using default")
     fails, warns, info = [], [], {}
+    if a.lane and a.chars_per_sec is None:
+        L = json.load(open(a.lane)); a.chars_per_sec = (L.get("speech") or {}).get("chars_per_sec")
+    if a.chars_per_sec is None:
+        print("story_gate REFUSED: chars/s is not measured yet (lane.speech.chars_per_sec is None). Run vo_qc.py --measure-cps on the directed prototype line first; a constant would be a guess that fails after credits are spent."); sys.exit(2)
     beats = []  # (t_in, t_out, name)
+    silences = []; react_needed = []; reacts = []
     cur_t = None; cur_day = None; last_day = -1
     events = []  # (t, kind, detail)
     loops = {}   # id -> {"OPEN":t, "FEED":[t], "PAY":t}
@@ -66,7 +71,12 @@ def main():
             elif k == "FEED": L["FEED"].append(cur_t)
             else: L["PAY"] = cur_t
             events.append((cur_t, "tag", s)); continue
-        if re.match(r"^\[(TEXT|MUSIC|SFX|FLASHFWD|TIMER)\b", s): events.append((cur_t, "tag", s)); continue
+        m = re.match(r"^\[SILENT\s+(\d+(?:\.\d+)?)s?\]", s)
+        if m: silences.append((cur, float(m.group(1)))); events.append((cur_t, "tag", s)); continue
+        if re.match(r"^\[(STAKES|REVEAL|LOCK)\b", s): react_needed.append((cur, s[:24])); events.append((cur_t, "tag", s)); continue
+        m = re.match(r"^\[REACT\s+(\w+)", s)
+        if m: reacts.append((cur, m.group(1).upper())); events.append((cur_t, "tag", s)); continue
+        if re.match(r"^\[(TEXT|MUSIC|SFX|FLASHFWD|TIMER|WOW)\b", s): events.append((cur_t, "tag", s)); continue
         m = re.match(r"^\*\*(\w+)\*\*\s*\(([^)]*)\):\s*(.+)$", s)
         if m:
             spk, meta, text = m.group(1), m.group(2), m.group(3)
@@ -80,6 +90,16 @@ def main():
         spoken = chars_by_beat.get(name, 0) / a.chars_per_sec; budget = (1 - a.air) * (t_out - t_in)
         if spoken > budget + 0.25: fails.append(f"{name}: {spoken:.1f}s of speech in a {t_out - t_in:.0f}s beat (budget {budget:.1f}s) -> cut ~{spoken - budget:.1f}s (~{int((spoken - budget) * a.chars_per_sec)} chars)")
     info["speech_seconds_by_beat"] = {n: round(chars_by_beat.get(n, 0) / a.chars_per_sec, 1) for _, _, n in beats}
+    # designed silences count against the beat's air, and a beat holding [SILENT] must still fit its speech
+    for (b, secs) in silences:
+        t = next(((ti, to) for ti, to, n in beats if n == b), None)
+        if t and chars_by_beat.get(b, 0) / a.chars_per_sec + secs > (t[1] - t[0]) + 0.25: fails.append(f"{b}: [SILENT {secs}s] + {chars_by_beat.get(b, 0) / a.chars_per_sec:.1f}s speech exceed the {t[1] - t[0]:.0f}s beat")
+    info["designed_silences"] = silences
+    # REACTION LAW (reference: every stakes/reveal/lock line is followed by contestant reaction CUs, often a silent matched pair)
+    for (b, tag) in react_needed:
+        who = {c for bb, c in reacts if bb == b}
+        if len(who) < 2: fails.append(f"{b}: {tag} has {len(who)} [REACT <char>] tags after it (need >= 2, one per contestant): nobody listens")
+    info["reaction_tags"] = len(reacts)
     # loops
     for lid, L in loops.items():
         if L["OPEN"] is None: fails.append(f"loop '{lid}' has FEED/PAY but no OPEN")

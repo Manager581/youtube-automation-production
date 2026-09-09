@@ -23,21 +23,26 @@ DaVinci-as-assembler era) are archived at `archive/CLAUDE_archive_2026-06-01.md`
 7. **LOOK BEFORE YOU REPORT** — judge a render on a dense contact sheet (same creature
    every shot? title claim un-contradicted? story happens?) before citing any metric.
    Green gates on a bad video = a failed report.
-8. **THE CUT IS JUDGED BY EYES AND EARS, NOT METERS** (2026-09-08 first-minute failure). Before ANY render
-   is sent to the owner: `scripts/watch_gate.py` must print PASS (replayed screen time, frozen runs, speech
-   coverage, dead air, line-on-speaker, foley coverage, text size, card hold, music holes, text hits — vs the
-   reference), AND every 4 fps strip it writes has been LOOKED AT, AND the report says "UNHEARD" until a
-   listening pass (owner ear check or a listening model) is recorded. A gate FAIL is a stop, never "diluted".
-   The ONLY file that may be sent is the one `scripts/deliver.py` writes to `deliveries/` (it refuses otherwise).
-   Format laws + their gates: `research/mrbeast_teardown/FORMAT_LAWS_AND_GATES_v1.md`.
-9. **A PROTOTYPE THAT CONTRADICTS THE PLAN STOPS THE BUILD.** The first voiced line ran 7.6 s for a 3 s slot
-   and the build continued for two hours. When the first real sample breaks the timing/density assumption,
-   stop, show the number, and put the choice to the owner. Never stretch the picture, replay a clip, or loop a
-   clip to make a script fit: `render_edit_spec.py` and `retime_to_vo.py` now refuse; the script loses seconds.
-10. **SPEECH BUDGET BEFORE VOICE.** ~16 chars/s spoken; a beat may carry at most 0.8 × its length in speech.
-    `story_gate.py` enforces it per beat; no ElevenLabs pass on a script that fails it.
-11. **HOOK SHOTS MOVE.** No "camera locked" prompts in the hook window; `clip_bank.py verdict --hook` refuses
-    static clips (motion < 4, static run > 2 s). Prompt fidelity is not picture energy.
+8. **THE DOOR IS MACHINE-ENFORCED** — a render reaches the owner ONLY as `deliveries/<lane>/<stem>_<sha8>.mp4`
+   written by `scripts/deliver.py` (sha-bound watch JSON PASS + machine-checked WATCH_NOTES + list-form gates file with
+   no hook-window waivers + a LISTEN record + prototype/owner-go binding). `.claude/hooks/send_guard.py` blocks
+   SendUserFile/`open`/copy of any other video. UNHEARD is not a delivery state. "Diluted" is banned. A FAIL is a stop.
+   Plan: `research/mrbeast_teardown/FORMAT_LAWS_AND_GATES_v1.1.md`.
+9. **GATES GRADE THE RENDER, THRESHOLDS COME FROM THE REFERENCE** — `scripts/watch_gate.py` measures rendered pixels
+   (pHash replay, static runs, density per 10 s, sharpness, text via render-minus-plate) and rendered STEMS (VAD speech,
+   dead air carried by the non-VO bus, foley level, holes, hits on the sfx bus, raw music arc). Every threshold is read from
+   `style_profile_v1.json` calibrated on the reference WITH THE SAME CODE, and the reference must PASS its own gate
+   (`--ref-selftest`). Unmeasurable = FAIL. Spec-level counts are never evidence.
+10. **A contradicting prototype STOPS the build** — `scripts/prototype_record.py` binds every generator setting (hash) to
+   ONE gated sample; a FAIL writes BLOCKED into `pipeline_state.json`; deliver.py refuses items without a PASS record.
+11. **SPEECH BUDGET FROM A MEASURED chars/s** — `lane.speech.chars_per_sec` is measured by `vo_qc.py --measure-cps`
+   (whisper-verified); `story_gate.py` refuses to run on a constant. ≤ 0.8 × beat length per beat; every
+   [STAKES]/[REVEAL]/[LOCK] needs ≥2 [REACT <char>] beats (nothing listens = FAIL). No ElevenLabs pass on a failing script.
+12. **SOMEBODY MOVES, not the camera** — `clip_bank.py verdict --hook --characters` measures motion INSIDE the cast's colour
+   masks (≥2 subject events per clip, mask cover ≥1%); camera drift over a frozen creature is refused. Hook prompts carry a
+   physical VERB for a named character.
+13. **CREDITS DERIVE FROM GATES** — `run_gates.py spend --grok PACK --vo MANIFEST --lane lane.json` prints the exact batch
+   (clips × seconds + chars) and its hash; nothing is generated without `owner_go_<hash>.json`; a re-take needs a reason.
 
 ## ⚠️ Tool Policy (FFmpeg is the engine — DaVinci is optional)
 1. **FFmpeg = the assembly/render engine.** `scripts/ffmpeg_production_render.py` builds

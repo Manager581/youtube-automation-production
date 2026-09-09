@@ -1,0 +1,93 @@
+{
+ "video": "research/mrbeast_teardown/hook_grammar/ref_hook_45s.mp4",
+ "duration": 45.011633,
+ "verdict": "PASS",
+ "profile": "research/mrbeast_teardown/hook_grammar/style_profile_v1.json",
+ "sha256": {
+  "video": "06f71f69e5056dc328aa046e9570f246a5a164476611a397ac4694f4a3e36771",
+  "profile": "b74aea35b03c382e24a17e46a4bb169d999b8bbaf1081f5614ca813166601166",
+  "vo_stem": "2c70d1502554513d06ebd0894ce4cea2ac22065e6affef06dd219ba434374d35",
+  "strips": {
+   "strip_000s.jpg": "70c180e30c1771410c8d7bda2745ef3b7f0edc5ebc8ebf0d783b8663675caa26",
+   "strip_033s.jpg": "373fb74644760c9710aee38ec163dda73728211e47d85d8b2dc1d9eaf5540f1e"
+  }
+ },
+ "checks": [
+  {
+   "check": "replay_s",
+   "value": 0,
+   "threshold": "== 0",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "seconds the viewer sees frames already shown (pHash runs >=1.5 s): []"
+  },
+  {
+   "check": "longest_static_s",
+   "value": 2,
+   "threshold": "<= 3.0 (ref 2 x1.5)",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "seconds where almost nothing moves read as a frozen frame"
+  },
+  {
+   "check": "motion_mean",
+   "value": 28.64,
+   "threshold": ">= 14.32",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "picture energy vs the reference"
+  },
+  {
+   "check": "density_per_10s",
+   "value": [
+    24,
+    6,
+    11,
+    16,
+    5
+   ],
+   "threshold": ">= [19.2, 4.8, 8.8, 12.8, 4.0] (ref [24, 6, 11, 16, 5] x0.8)",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "edit events per 10 s in the hook, bucket by bucket, measured on the render like the reference"
+  },
+  {
+   "check": "sharpness_median",
+   "value": 805.7,
+   "threshold": ">= 402.9 (ref 805.7)",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "a soft upscale reads as unfinished"
+  },
+  {
+   "check": "speech_frac",
+   "value": 0.844,
+   "threshold": "<= 0.928 (ref 0.844 x1.1)",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "speech density measured by VAD on the rendered VO stem"
+  },
+  {
+   "check": "dead_air",
+   "value": [],
+   "threshold": "gaps > 5.25s must be carried by the non-VO bus (>= 90% above median-20 dB)",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "a hold is fine when sound carries it; silence over a hero shot is dead air"
+  },
+  {
+   "check": "cut_on_word_rate",
+   "value": 0.48,
+   "threshold": ">= 0.38 (ref 0.48)",
+   "verdict": "PASS",
+   "level": "render",
+   "why": "cuts land on WORD onsets (whisper on the VO stem), not on design hits the mix builder placed itself"
+  }
+ ],
+ "strips": [
+  "research/mrbeast_teardown/hook_grammar/ref_selftest_watch_strips/strip_000s.jpg",
+  "research/mrbeast_teardown/hook_grammar/ref_selftest_watch_strips/strip_033s.jpg"
+ ],
+ "promise_proof": null,
+ "rule": "deliver.py recomputes every sha above; WATCH_NOTES must name each strip's sha8 and agree with these numbers; a listen record is REQUIRED"
+}

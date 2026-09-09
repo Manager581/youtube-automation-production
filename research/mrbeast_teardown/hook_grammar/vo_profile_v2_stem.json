@@ -1,0 +1,179 @@
+{
+ "source": "research/mrbeast_teardown/hook_grammar/stems/htdemucs/hook_22k_mono/vocals.wav",
+ "stem": true,
+ "window": [
+  0.0,
+  45.0
+ ],
+ "pace_wps": 3.18,
+ "pitch_std_st": 5.25,
+ "pitch_range_st": 19.64,
+ "energy_std_db": 7.53,
+ "voiced_frac": 0.31,
+ "speech_frac": 0.87,
+ "per_cue": [
+  {
+   "text": "Take off your blindfolds!",
+   "dur": 1.3,
+   "pitch_std_st": 4.1,
+   "pitch_range_st": 14.5,
+   "energy_std_db": 3.52,
+   "voiced_frac": 0.72
+  },
+  {
+   "text": "These two people used to date.",
+   "dur": 1.87,
+   "pitch_std_st": 0.61,
+   "pitch_range_st": 1.6,
+   "energy_std_db": 2.96,
+   "voiced_frac": 0.28
+  },
+  {
+   "text": "They had a four-year romantic relationship and now they're exes.",
+   "dur": 4.07,
+   "pitch_std_st": 3.34,
+   "pitch_range_st": 10.58,
+   "energy_std_db": 3.83,
+   "voiced_frac": 0.32
+  },
+  {
+   "text": "And if they spend 30 days chained together\u2026",
+   "dur": 2.57,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 3.04,
+   "voiced_frac": 0.0
+  },
+  {
+   "text": "I will give them $250,000.",
+   "dur": 2.6,
+   "pitch_std_st": 1.58,
+   "pitch_range_st": 4.26,
+   "energy_std_db": 4.89,
+   "voiced_frac": 0.26
+  },
+  {
+   "text": "How long ago did you two date?",
+   "dur": 1.17,
+   "pitch_std_st": 2.54,
+   "pitch_range_st": 7.5,
+   "energy_std_db": 3.32,
+   "voiced_frac": 0.8
+  },
+  {
+   "text": "Three years ago.",
+   "dur": 1.0,
+   "pitch_std_st": 1.52,
+   "pitch_range_st": 4.45,
+   "energy_std_db": 8.92,
+   "voiced_frac": 0.82
+  },
+  {
+   "text": "She broke up with me.",
+   "dur": 1.37,
+   "pitch_std_st": 3.26,
+   "pitch_range_st": 11.15,
+   "energy_std_db": 4.41,
+   "voiced_frac": 0.44
+  },
+  {
+   "text": "He's salty.",
+   "dur": 0.7,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 4.47,
+   "voiced_frac": 0.0
+  },
+  {
+   "text": "I can't force you guys to do it,",
+   "dur": 1.27,
+   "pitch_std_st": 3.34,
+   "pitch_range_st": 8.37,
+   "energy_std_db": 4.49,
+   "voiced_frac": 0.64
+  },
+  {
+   "text": "but once you clip on the handcuffs, the 30 day challenge has begun.",
+   "dur": 3.6,
+   "pitch_std_st": 1.26,
+   "pitch_range_st": 3.84,
+   "energy_std_db": 4.92,
+   "voiced_frac": 0.15
+  },
+  {
+   "text": "I\u2019m locked in.",
+   "dur": 0.83,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 7.75,
+   "voiced_frac": 0.0
+  },
+  {
+   "text": "- Oh, gosh. - They're both handcuffed.",
+   "dur": 1.13,
+   "pitch_std_st": 0.61,
+   "pitch_range_st": 1.82,
+   "energy_std_db": 3.49,
+   "voiced_frac": 0.33
+  },
+  {
+   "text": "From this point forward,",
+   "dur": 1.2,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 5.84,
+   "voiced_frac": 0.15
+  },
+  {
+   "text": "if either of you decide to quit by crossing this red line,",
+   "dur": 2.9,
+   "pitch_std_st": 5.07,
+   "pitch_range_st": 15.9,
+   "energy_std_db": 3.96,
+   "voiced_frac": 0.6
+  },
+  {
+   "text": "I will instantly unhandcuff both of you.",
+   "dur": 1.8,
+   "pitch_std_st": 3.09,
+   "pitch_range_st": 9.09,
+   "energy_std_db": 3.29,
+   "voiced_frac": 0.81
+  },
+  {
+   "text": "The video is over, but neither of you wins anything.",
+   "dur": 3.07,
+   "pitch_std_st": 5.82,
+   "pitch_range_st": 18.3,
+   "energy_std_db": 5.16,
+   "voiced_frac": 0.68
+  },
+  {
+   "text": "Have fun, you two.",
+   "dur": 1.37,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 11.57,
+   "voiced_frac": 0.0
+  },
+  {
+   "text": "My ex-boyfriend? Really, Jimmy?",
+   "dur": 2.1,
+   "pitch_std_st": 3.63,
+   "pitch_range_st": 10.2,
+   "energy_std_db": 5.69,
+   "voiced_frac": 0.51
+  },
+  {
+   "text": "Bro, what?",
+   "dur": 0.87,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 8.87,
+   "voiced_frac": 0.0
+  }
+ ],
+ "cue_floor_pitch_std_st": 3.09,
+ "cue_floor_energy_std_db": 3.52,
+ "cue_median_pitch_std_st": 3.34
+}

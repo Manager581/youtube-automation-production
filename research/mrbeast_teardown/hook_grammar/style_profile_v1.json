@@ -1,0 +1,55 @@
+{
+ "source": "research/mrbeast_teardown/hook_grammar/ref_hook_45s.mp4",
+ "video_sha": "06f71f69e5056dc328aa046e9570f246a5a164476611a397ac4694f4a3e36771",
+ "vo_stem": "research/mrbeast_teardown/hook_grammar/stems/ref_vocals_45s.wav",
+ "vo_stem_sha": "2c70d1502554513d06ebd0894ce4cea2ac22065e6affef06dd219ba434374d35",
+ "window_s": 45.0,
+ "duration": 45.011633,
+ "motion_mean": 28.64,
+ "motion_p15": 15.99,
+ "longest_static_s": 2,
+ "speech_frac": 0.844,
+ "longest_gap_s": 4.2,
+ "gaps_top3": [
+  [
+   12.75,
+   4.2
+  ],
+  [
+   27.7,
+   0.95
+  ],
+  [
+   40.7,
+   0.7
+  ]
+ ],
+ "hard_cuts": 23,
+ "transitions": 62,
+ "transitions_per_10s": [
+  24,
+  6,
+  11,
+  16,
+  5
+ ],
+ "cut_on_word_rate": 0.48,
+ "replay_runs": [],
+ "sharpness_median": 805.7,
+ "text_min_frac_h": 0.15,
+ "text_min_frac_h_source": "hook_event_ledger: pops fill ~15% of frame height (not measurable without a plate)",
+ "tolerances": {
+  "static_x": 1.5,
+  "motion_x": 0.5,
+  "speech_x": 1.1,
+  "gap_x": 1.25,
+  "density_x": 0.8,
+  "cut_on_word_x": 0.8,
+  "sharp_x": 0.5,
+  "look_k": 3.5,
+  "foley_under_vo_db": 12,
+  "hole_lu": 20
+ },
+ "nonvo_dyn_range_db": 19.2,
+ "nonvo_stem_sha": "f3e3dd5c911228c1b3bfc8af6b01072574067391a8c98155bfe9e0ddc9fec865"
+}

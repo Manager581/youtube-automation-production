@@ -74,6 +74,9 @@ for sg in segs:
     if os.path.exists(f): foley.append({"file": f, "t": sg["t_in"], "gain_db": -10, "dur": round(sg["t_out"] - sg["t_in"], 3), "shot": sg["shot"]})
 music = dict(mix["music"]); music["sections"] = [dict(s, t0=round(warp(s["t0"]), 3), t1=round(warp(s["t1"]), 3)) for s in mix["music"]["sections"]]
 mix2 = {"duration": round(total, 3), "vo": vo, "foley": foley, "music": music, "target_lufs": -7, "true_peak": -1.0, "retimed_from": "first_minute_mix_spec.json"}
+import sys as _s; _s.path.insert(0, REPO); from lib.assembly.audio_mix import check_buses_kept
+mix2["sfx"] = [dict(x, t=round(warp(x["t"]), 3)) for x in mix.get("sfx", [])]; mix2["ambience"] = [dict(x, t=round(warp(x["t"]), 3)) for x in mix.get("ambience", [])]
+check_buses_kept(mix, mix2)   # FAIL CLOSED: a rewrite may never drop a bus the input had
 json.dump(mix2, open(f"{S}/first_minute_mix_spec_r.json", "w"), indent=1)
 over = [(sg["shot"], round(sg["t_out"] - sg["t_in"], 2)) for sg in segs if sg["t_out"] - sg["t_in"] > 6.0]
 print(f"retimed: {len(segs)} segments, total {total:.1f}s (was 60.0); lines placed {lines[0]['r']:.1f}..{last['r']:.1f}; slots >6s: {over}")

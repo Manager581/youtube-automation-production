@@ -11,6 +11,30 @@ def sha(p): return hashlib.sha256(open(p, "rb").read()).hexdigest()[:16]
 def load(p): return json.load(open(p)) if os.path.exists(p) else {"lane": os.path.dirname(os.path.abspath(p)), "clips": {}}
 def save(p, L): json.dump(L, open(p, "w"), indent=1)
 
+SUBJECT_MASKS = {   # HSV hue ranges (OpenCV 0-179) + min saturation: the cast's locked colours (SEED_LOCK anchors)
+    "PIP": [(140, 175, 90)],            # magenta fur/fronds
+    "GRUFF": [(85, 105, 90)],           # saturated cyan-blue fur
+    "ORB": [(15, 35, 60), (0, 179, 0)], # gold ring; chrome = low-sat bright handled by the fallback below
+}
+def subject_motion(clip, characters, fps=4, w=320, h=180):
+    """Motion INSIDE the subject's colour mask (the reference's energy is bodies/hands on a mostly static camera, not camera drift):
+    per-second mean |diff| over masked pixels, the count of motion EVENTS (peak > 3x median) and their times. Returns (mean, events, peaks)."""
+    import cv2, numpy as np, subprocess
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", clip, "-vf", f"fps={fps},scale={w}:{h}", "-pix_fmt", "bgr24", "-f", "rawvideo", "-"], capture_output=True).stdout
+    n = len(raw) // (w * h * 3); fr = np.frombuffer(raw[: n * w * h * 3], dtype=np.uint8).reshape(n, h, w, 3)
+    if n < 2: return 0.0, 0, []
+    hsv = np.stack([cv2.cvtColor(f, cv2.COLOR_BGR2HSV) for f in fr]); mask = np.zeros((n, h, w), bool)
+    for c in characters:
+        for (h0, h1, smin) in SUBJECT_MASKS.get(c, []):
+            if h1 - h0 >= 170: mask |= (hsv[..., 1] < 40) & (hsv[..., 2] > 200)   # chrome: bright + desaturated
+            else: mask |= (hsv[..., 0] >= h0) & (hsv[..., 0] <= h1) & (hsv[..., 1] >= smin) & (hsv[..., 2] > 60)
+    g = fr.mean(axis=3).astype(np.float32); d = np.abs(np.diff(g, axis=0)); m = mask[1:] | mask[:-1]
+    per = np.array([float(d[i][m[i]].mean()) if m[i].sum() > 50 else 0.0 for i in range(len(d))]); cover = float(mask.mean())
+    med = float(np.median(per)) + 1e-3; peaks = [round(i / fps, 2) for i in range(len(per)) if per[i] > 3 * med and per[i] > 4.0]
+    events = []; last = -9
+    for t in peaks:
+        if t - last > 0.5: events.append(t); last = t
+    return round(float(per.mean()), 2), len(events), events, round(cover, 3)
 def motion_score(clip, fps=4, w=160, h=90):
     """mean per-second frame-difference energy + longest run of near-static seconds (same metric as scripts/watch_gate.py)."""
     import numpy as np
@@ -26,7 +50,7 @@ def motion_score(clip, fps=4, w=160, h=90):
 def main():
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     a1 = sub.add_parser("add"); a1.add_argument("--ledger", required=True); a1.add_argument("--shot", required=True); a1.add_argument("--clip", required=True); a1.add_argument("--composite", required=True); a1.add_argument("--fps", type=int, default=8)
-    a2 = sub.add_parser("verdict"); a2.add_argument("--ledger", required=True); a2.add_argument("--shot", required=True); g = a2.add_mutually_exclusive_group(required=True); g.add_argument("--pass", dest="ok", action="store_true"); g.add_argument("--fail", dest="ok", action="store_false"); a2.add_argument("--note", default=""); a2.add_argument("--by", default="session"); a2.add_argument("--hook", action="store_true", help="this shot sits in the hook window (<=45 s): static clips are refused"); a2.add_argument("--min-motion", type=float, default=4.0); a2.add_argument("--allow-static", action="store_true")
+    a2 = sub.add_parser("verdict"); a2.add_argument("--ledger", required=True); a2.add_argument("--shot", required=True); g = a2.add_mutually_exclusive_group(required=True); g.add_argument("--pass", dest="ok", action="store_true"); g.add_argument("--fail", dest="ok", action="store_false"); a2.add_argument("--note", default=""); a2.add_argument("--by", default="session"); a2.add_argument("--hook", action="store_true", help="this shot sits in the hook window (<=45 s): static clips are refused"); a2.add_argument("--min-motion", type=float, default=4.0); a2.add_argument("--allow-static", action="store_true"); a2.add_argument("--characters", default="", help="comma list: hook verdict measures motion INSIDE these subjects' colour masks (somebody moves), not the whole frame"); a2.add_argument("--min-events", type=int, default=2, help="subject motion events per 6 s clip (reference: hands/heads move every ~1.5 s)")
     a3 = sub.add_parser("status"); a3.add_argument("--ledger", required=True); a3.add_argument("--manifest"); a3.add_argument("--require-complete", action="store_true")
     a = ap.parse_args(); L = load(a.ledger)
     if a.cmd == "add":
@@ -45,6 +69,10 @@ def main():
         if "motion_mean" not in row: row["motion_mean"], row["static_run_s"] = motion_score(row["clip"])
         # STATIC clips cannot be PASSED for hook slots (2026-09-08: 13/18 first-minute clips were prompted "camera locked" and passed
         # against their own prompt; the assembled hook froze for 15 s). A hook shot needs picture energy, not just prompt fidelity.
+        if a.ok and a.hook and a.characters:
+            sm, ev, peaks, cover = subject_motion(row["clip"], a.characters.split(",")); row.update(subject_motion_mean=sm, subject_events=ev, subject_peaks=peaks, subject_cover=cover)
+            if cover < 0.01: print(f"REFUSED {a.shot}: subject mask covers {cover:.1%} of the frame — the named character is not visibly in this clip (drift or wrong seed)"); save(a.ledger, L); sys.exit(1)
+            if ev < a.min_events and not a.allow_static: print(f"REFUSED {a.shot}: {ev} subject motion events (< {a.min_events}) — SOMEBODY must move (reference: a body/hand action every ~1.5 s); camera drift over a frozen creature does not count"); save(a.ledger, L); sys.exit(1)
         if a.ok and a.hook and (row["motion_mean"] < a.min_motion or row["static_run_s"] > 2.0) and not a.allow_static:
             print(f"REFUSED {a.shot}: motion {row['motion_mean']} (< {a.min_motion}) / static run {row['static_run_s']}s — a hook slot needs a moving shot; re-prompt with camera energy (push/whip/snap) or use --allow-static with a reason"); save(a.ledger, L); sys.exit(1)
         L["clips"][a.shot].update({"verdict": "PASS" if a.ok else "FAIL", "note": a.note, "by": a.by, "judged": datetime.datetime.now().isoformat(timespec="seconds")}); save(a.ledger, L); print(f"{a.shot}: {'PASS' if a.ok else 'FAIL'} ({a.note})"); sys.exit(0)

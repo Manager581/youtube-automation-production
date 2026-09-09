@@ -11,10 +11,12 @@ Usage: render_edit_spec.py SPEC.json OUT.mp4
 import json, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from lib.assembly import edit_layer as E
+OVERLAY_OPS = ("text", "text2", "cards")
 def build_vf(ops, fps, W, H):
     parts = []
     for o in ops:
         k = o["op"]
+        if k == "text2": continue   # rendered in a second pass (PNG overlay), see apply_text2
         if k == "punch": parts.append(E.punch_in(o["z0"], o["z1"], o["t0"], o.get("t1", o["t0"]), fps, W, H))
         elif k == "whiteout": parts.append(E.whiteout(o["t"], o.get("dur", 0.10), o.get("alpha", 0.85)))
         elif k == "flash": parts.append(E.flash(o["t"], o.get("dur", 0.08), o.get("alpha", 0.6)))
@@ -22,6 +24,19 @@ def build_vf(ops, fps, W, H):
         elif k == "text": parts.append(E.text_pop(o["text"], o["t_on"], o["t_off"], o.get("lead", 0.3), o.get("size", 96), o.get("y", "h*0.72"), o.get("color", "white"), o.get("pop", 1.15)))
         else: raise ValueError(f"unknown op {k}")
     return ",".join(parts)
+def apply_text2(seg, ops, work, i, slot, fps, W, H):
+    """Second pass: every text2 op becomes a PIL PNG (stroke/shadow/keyword colour) animated in with overshoot (edit_layer.text_pop2_filter)."""
+    t2 = [o for o in ops if o.get("op") == "text2"]
+    if not t2: return seg
+    ins = []; fc = []; cur = "0:v"
+    for j, o in enumerate(t2):
+        png = os.path.join(work, f"seg{i:02d}_text{j}.png"); E.text_png(o["text"], png, o.get("size", 150), o.get("color", "#FFFFFF"), o.get("key_color", "#FFE433"), o.get("stroke", 10), o.get("shadow", 12))
+        ins += ["-loop", "1", "-framerate", str(fps), "-i", png]; lab = f"p{j}"
+        fc.append(E.text_pop2_filter(f"{j+1}:v", cur, f"v{j}", o["t_on"], o.get("t_off", slot), o.get("lead", 0.3), o.get("y", "H*0.72"), o.get("x", "(W-w)/2"), o.get("pop", 1.18), o.get("rise", 0.16), o.get("settle", 0.30), o.get("shake", 0.0))); cur = f"v{j}"
+    nxt = seg.replace(".mp4", "_t2.mp4")
+    E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", seg] + ins + ["-filter_complex", ";".join(fc), "-map", f"[{cur}]", "-t", f"{slot:.3f}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), nxt]); return nxt
+def _sha(p):
+    import hashlib; h = hashlib.sha256(); h.update(open(p, "rb").read()); return h.hexdigest()
 def resolve_src(src, ledger, fallback=None):
     if src.startswith("ledger:"):
         sid = src.split(":",1)[1]
@@ -34,7 +49,7 @@ def resolve_src(src, ledger, fallback=None):
 def _dur(p):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True); return float(r.stdout.strip() or 0)
 
-def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, report_path=None, allow_loop=False, allow_replay=False):
+def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, report_path=None, allow_loop=False, allow_replay=False, no_overlays=False):
     spec = json.load(open(spec_path)); fps = spec.get("fps", 24); W, H = map(int, spec.get("size", "1920x1080").split("x"))
     ledger = json.load(open(ledger_path)) if ledger_path and os.path.exists(ledger_path) else None
     work = os.path.splitext(out)[0] + "_segs"; os.makedirs(work, exist_ok=True); segs = []; rep = []
@@ -54,10 +69,13 @@ def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, repo
         src, how = resolve_src(sg["src"], ledger, fallback)
         slot = (sg["t_out"] - sg["t_in"]) if "t_out" in sg else (sg["t1"] - sg["t0"])
         t0 = sg.get("t0", 0.0); t1 = t0 + slot
-        ops = [o for o in sg.get("ops", []) if o.get("op") != "cards"]; cards = [o for o in sg.get("ops", []) if o.get("op") == "cards"]
+        all_ops = sg.get("ops", [])
+        if no_overlays: all_ops = [o for o in all_ops if o.get("op") not in OVERLAY_OPS]   # PLATE: same picture ops, no text/cards (the watch gate diffs render vs plate to MEASURE text)
+        ops = [o for o in all_ops if o.get("op") != "cards"]; cards = [o for o in all_ops if o.get("op") == "cards"]
         seg = os.path.join(work, f"seg{i:02d}_{sg.get('shot', i)}.mp4")
         vf = build_vf(ops, fps, W, H)
         E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{t0:.3f}", "-t", f"{slot:.3f}", "-i", src, "-vf", (f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,fps={fps}" + ("," + vf if vf else "")), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), seg])
+        seg = apply_text2(seg, ops, work, i, slot, fps, W, H)
         for c in cards:
             stills = []
             for st in c["stills"]:
@@ -66,7 +84,13 @@ def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, repo
             ins, chain, last = E.photo_cards_overlay(stills, c.get("t_start", 0.0), c.get("each", 0.4), W, H, c.get("card_w", 0.46), c.get("slide", 0.12))
             nxt = seg.replace(".mp4", "_cards.mp4")
             E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", seg] + ins + ["-filter_complex", chain, "-map", f"[{last}]", "-t", f"{slot:.3f}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), nxt]); seg = nxt
-        segs.append(seg); rep.append({"shot": sg.get("shot"), "src": src, "how": how, "slot": round(slot, 3), "ops": len(ops), "cards": len(cards)})
+        t_in_abs = sg.get("t_in", sum(r["slot"] for r in rep)); abs_ops = []
+        for o in sg.get("ops", []):
+            if o.get("op") in ("text", "text2"): abs_ops.append({"op": o["op"], "text": o.get("text"), "appear": round(t_in_abs + o["t_on"] - o.get("lead", 0.3), 3), "t_off": round(t_in_abs + o.get("t_off", slot), 3), "size": o.get("size")})
+            elif o.get("op") == "cards": abs_ops.append({"op": "cards", "n": len(o["stills"]), "t0": round(t_in_abs + o.get("t_start", 0.0), 3), "t1": round(t_in_abs + o.get("t_start", 0.0) + o.get("each", 0.4) * len(o["stills"]), 3), "each": o.get("each", 0.4)})
+            elif o.get("op") in ("whiteout", "flash", "bloom"): abs_ops.append({"op": o["op"], "t": round(t_in_abs + o["t"], 3)})
+            elif o.get("op") == "punch": abs_ops.append({"op": "punch", "t": round(t_in_abs + o["t0"], 3), "z0": o["z0"], "z1": o["z1"], "dur": round(o.get("t1", o["t0"]) - o["t0"], 3)})
+        segs.append(seg); rep.append({"shot": sg.get("shot"), "src": src, "src_sha": (_sha(src) if os.path.exists(src) and how != "path" else None), "how": how, "t_in": round(t_in_abs, 3), "slot": round(slot, 3), "clip_t0": round(t0, 3), "ops": len(ops), "cards": len(cards), "abs_ops": abs_ops})
     silent = os.path.join(work, "silent.mp4"); E.concat(segs, silent); cur = silent
     for j, c in enumerate(spec.get("cards", [])):
         ins, chain, last = E.photo_cards_overlay(c["stills"], c["t_start"], c["each"], W, H, c.get("card_w", 0.46), c.get("slide", 0.12))
@@ -74,7 +98,7 @@ def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, repo
         E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", cur] + ins + ["-filter_complex", chain, "-map", f"[{last}]", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(fps), nxt]); cur = nxt
     if spec.get("audio") and os.path.exists(spec["audio"]): E.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", cur, "-i", spec["audio"], "-c:v", "copy", "-c:a", "aac", "-shortest", out])
     else: os.replace(cur, out)
-    json.dump({"out": out, "segments": rep, "fallbacks": sum(r["how"] == "FALLBACK" for r in rep)}, open(report_path or out.replace(".mp4", "_report.json"), "w"), indent=1)
+    json.dump({"out": out, "out_sha": _sha(out), "spec": spec_path, "spec_sha": _sha(spec_path), "plate": no_overlays, "segments": rep, "fallbacks": sum(r["how"] == "FALLBACK" for r in rep)}, open(report_path or out.replace(".mp4", "_report.json"), "w"), indent=1)
     print(f"rendered {out} ({len(rep)} segments, {sum(r['how']=='FALLBACK' for r in rep)} FALLBACK stand-ins)"); return out
 
 def fallback_still(work, name, W, H):
@@ -84,5 +108,5 @@ def fallback_still(work, name, W, H):
 
 if __name__ == "__main__":
     import argparse
-    ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("out"); ap.add_argument("--ledger"); ap.add_argument("--masters"); ap.add_argument("--fallback", help="stand-in clip for unbanked ledger refs (prototype/dry runs ONLY; report counts them)"); ap.add_argument("--report"); ap.add_argument("--allow-loop", action="store_true", help="DRY RUNS ONLY"); ap.add_argument("--allow-replay", action="store_true", help="DRY RUNS ONLY")
-    a = ap.parse_args(); main(a.spec, a.out, a.ledger, a.masters, a.fallback, a.report, a.allow_loop, a.allow_replay)
+    ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("out"); ap.add_argument("--ledger"); ap.add_argument("--masters"); ap.add_argument("--fallback", help="stand-in clip for unbanked ledger refs (prototype/dry runs ONLY; report counts them)"); ap.add_argument("--report"); ap.add_argument("--allow-loop", action="store_true", help="DRY RUNS ONLY"); ap.add_argument("--allow-replay", action="store_true", help="DRY RUNS ONLY"); ap.add_argument("--no-overlays", action="store_true", help="render the PLATE (no text/cards) for the watch gate's text measurement")
+    a = ap.parse_args(); main(a.spec, a.out, a.ledger, a.masters, a.fallback, a.report, a.allow_loop, a.allow_replay, a.no_overlays)

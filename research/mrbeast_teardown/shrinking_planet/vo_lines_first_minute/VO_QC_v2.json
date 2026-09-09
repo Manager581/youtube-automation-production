@@ -1,0 +1,399 @@
+{
+ "profile": {
+  "source": "research/mrbeast_teardown/hook_grammar/stems/htdemucs/hook_22k_mono/vocals.wav",
+  "stem": true,
+  "window": [
+   0.0,
+   45.0
+  ],
+  "pace_wps": 3.18,
+  "pitch_std_st": 5.25,
+  "pitch_range_st": 19.64,
+  "energy_std_db": 7.53,
+  "voiced_frac": 0.31,
+  "speech_frac": 0.87,
+  "per_cue": [
+   {
+    "text": "Take off your blindfolds!",
+    "dur": 1.3,
+    "pitch_std_st": 4.1,
+    "pitch_range_st": 14.5,
+    "energy_std_db": 3.52,
+    "voiced_frac": 0.72
+   },
+   {
+    "text": "These two people used to date.",
+    "dur": 1.87,
+    "pitch_std_st": 0.61,
+    "pitch_range_st": 1.6,
+    "energy_std_db": 2.96,
+    "voiced_frac": 0.28
+   },
+   {
+    "text": "They had a four-year romantic relationship and now they're exes.",
+    "dur": 4.07,
+    "pitch_std_st": 3.34,
+    "pitch_range_st": 10.58,
+    "energy_std_db": 3.83,
+    "voiced_frac": 0.32
+   },
+   {
+    "text": "And if they spend 30 days chained together\u2026",
+    "dur": 2.57,
+    "pitch_std_st": 0.0,
+    "pitch_range_st": 0.0,
+    "energy_std_db": 3.04,
+    "voiced_frac": 0.0
+   },
+   {
+    "text": "I will give them $250,000.",
+    "dur": 2.6,
+    "pitch_std_st": 1.58,
+    "pitch_range_st": 4.26,
+    "energy_std_db": 4.89,
+    "voiced_frac": 0.26
+   },
+   {
+    "text": "How long ago did you two date?",
+    "dur": 1.17,
+    "pitch_std_st": 2.54,
+    "pitch_range_st": 7.5,
+    "energy_std_db": 3.32,
+    "voiced_frac": 0.8
+   },
+   {
+    "text": "Three years ago.",
+    "dur": 1.0,
+    "pitch_std_st": 1.52,
+    "pitch_range_st": 4.45,
+    "energy_std_db": 8.92,
+    "voiced_frac": 0.82
+   },
+   {
+    "text": "She broke up with me.",
+    "dur": 1.37,
+    "pitch_std_st": 3.26,
+    "pitch_range_st": 11.15,
+    "energy_std_db": 4.41,
+    "voiced_frac": 0.44
+   },
+   {
+    "text": "He's salty.",
+    "dur": 0.7,
+    "pitch_std_st": 0.0,
+    "pitch_range_st": 0.0,
+    "energy_std_db": 4.47,
+    "voiced_frac": 0.0
+   },
+   {
+    "text": "I can't force you guys to do it,",
+    "dur": 1.27,
+    "pitch_std_st": 3.34,
+    "pitch_range_st": 8.37,
+    "energy_std_db": 4.49,
+    "voiced_frac": 0.64
+   },
+   {
+    "text": "but once you clip on the handcuffs, the 30 day challenge has begun.",
+    "dur": 3.6,
+    "pitch_std_st": 1.26,
+    "pitch_range_st": 3.84,
+    "energy_std_db": 4.92,
+    "voiced_frac": 0.15
+   },
+   {
+    "text": "I\u2019m locked in.",
+    "dur": 0.83,
+    "pitch_std_st": 0.0,
+    "pitch_range_st": 0.0,
+    "energy_std_db": 7.75,
+    "voiced_frac": 0.0
+   },
+   {
+    "text": "- Oh, gosh. - They're both handcuffed.",
+    "dur": 1.13,
+    "pitch_std_st": 0.61,
+    "pitch_range_st": 1.82,
+    "energy_std_db": 3.49,
+    "voiced_frac": 0.33
+   },
+   {
+    "text": "From this point forward,",
+    "dur": 1.2,
+    "pitch_std_st": 0.0,
+    "pitch_range_st": 0.0,
+    "energy_std_db": 5.84,
+    "voiced_frac": 0.15
+   },
+   {
+    "text": "if either of you decide to quit by crossing this red line,",
+    "dur": 2.9,
+    "pitch_std_st": 5.07,
+    "pitch_range_st": 15.9,
+    "energy_std_db": 3.96,
+    "voiced_frac": 0.6
+   },
+   {
+    "text": "I will instantly unhandcuff both of you.",
+    "dur": 1.8,
+    "pitch_std_st": 3.09,
+    "pitch_range_st": 9.09,
+    "energy_std_db": 3.29,
+    "voiced_frac": 0.81
+   },
+   {
+    "text": "The video is over, but neither of you wins anything.",
+    "dur": 3.07,
+    "pitch_std_st": 5.82,
+    "pitch_range_st": 18.3,
+    "energy_std_db": 5.16,
+    "voiced_frac": 0.68
+   },
+   {
+    "text": "Have fun, you two.",
+    "dur": 1.37,
+    "pitch_std_st": 0.0,
+    "pitch_range_st": 0.0,
+    "energy_std_db": 11.57,
+    "voiced_frac": 0.0
+   },
+   {
+    "text": "My ex-boyfriend? Really, Jimmy?",
+    "dur": 2.1,
+    "pitch_std_st": 3.63,
+    "pitch_range_st": 10.2,
+    "energy_std_db": 5.69,
+    "voiced_frac": 0.51
+   },
+   {
+    "text": "Bro, what?",
+    "dur": 0.87,
+    "pitch_std_st": 0.0,
+    "pitch_range_st": 0.0,
+    "energy_std_db": 8.87,
+    "voiced_frac": 0.0
+   }
+  ],
+  "cue_floor_pitch_std_st": 3.09,
+  "cue_floor_energy_std_db": 3.52,
+  "cue_median_pitch_std_st": 3.34
+ },
+ "lines": [
+  {
+   "id": "L01_ORB",
+   "dur": 1.2,
+   "pace_wps": 1.66,
+   "acc": 1.0,
+   "pitch_std_st": 2.92,
+   "pitch_range_st": 7.49,
+   "energy_std_db": 10.99,
+   "voiced_frac": 0.29,
+   "heard": "helmets off",
+   "note": "too little voiced audio to judge (0.35s)",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L02_ORB",
+   "dur": 7.6,
+   "pace_wps": 2.76,
+   "acc": 0.93,
+   "pitch_std_st": 5.67,
+   "pitch_range_st": 17.83,
+   "energy_std_db": 8.24,
+   "voiced_frac": 0.47,
+   "heard": "These two used to be a band. Four years, one bus, one stage,",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L03_ORB",
+   "dur": 5.04,
+   "pace_wps": 3.37,
+   "acc": 1.0,
+   "pitch_std_st": 2.56,
+   "pitch_range_st": 9.03,
+   "energy_std_db": 7.56,
+   "voiced_frac": 0.4,
+   "heard": "She went solo, he's still angry about it. They have not been",
+   "verdict": "FAIL: FLAT pitch std 2.56 < floor 3.09"
+  },
+  {
+   "id": "L04_ORB",
+   "dur": 7.6,
+   "pace_wps": 3.42,
+   "acc": 0.97,
+   "pitch_std_st": 5.08,
+   "pitch_range_st": 16.21,
+   "energy_std_db": 8.1,
+   "voiced_frac": 0.49,
+   "heard": "If they survive 30 days on this planet together, they go hom",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L05_ORB",
+   "dur": 1.33,
+   "pace_wps": 3.75,
+   "acc": 1.0,
+   "pitch_std_st": 1.16,
+   "pitch_range_st": 3.54,
+   "energy_std_db": 7.49,
+   "voiced_frac": 0.57,
+   "heard": "When did the band end?",
+   "note": "too little voiced audio to judge (0.76s)",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L06_PIP",
+   "dur": 1.15,
+   "pace_wps": 2.61,
+   "acc": 1.0,
+   "pitch_std_st": 2.77,
+   "pitch_range_st": 7.43,
+   "energy_std_db": 7.43,
+   "voiced_frac": 0.7,
+   "heard": "Three years ago.",
+   "verdict": "FAIL: FLAT pitch std 2.77 < floor 3.09"
+  },
+  {
+   "id": "L07_GRUFF",
+   "dur": 4.96,
+   "pace_wps": 2.01,
+   "acc": 1.0,
+   "pitch_std_st": 3.05,
+   "pitch_range_st": 8.99,
+   "energy_std_db": 7.34,
+   "voiced_frac": 0.39,
+   "heard": "She quit mid-tour between the soundcheck and the show.",
+   "verdict": "FAIL: pace 2.01 vs ref 3.18; FLAT pitch std 3.05 < floor 3.09"
+  },
+  {
+   "id": "L08_ORB",
+   "dur": 0.97,
+   "pace_wps": 2.07,
+   "acc": 1.0,
+   "pitch_std_st": 1.62,
+   "pitch_range_st": 4.22,
+   "energy_std_db": 8.92,
+   "voiced_frac": 0.31,
+   "heard": "Still sore.",
+   "note": "too little voiced audio to judge (0.30s)",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L09_ORB",
+   "dur": 13.79,
+   "pace_wps": 3.48,
+   "acc": 0.98,
+   "pitch_std_st": 3.98,
+   "pitch_range_st": 13.13,
+   "energy_std_db": 7.1,
+   "voiced_frac": 0.4,
+   "heard": "Nobody's making you. You can put the helmets back on and I'l",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L10_GRUFF",
+   "dur": 0.65,
+   "pace_wps": 1.53,
+   "acc": 1.0,
+   "pitch_std_st": 3.55,
+   "pitch_range_st": 10.23,
+   "energy_std_db": 6.0,
+   "voiced_frac": 0.69,
+   "heard": "Running.",
+   "note": "too little voiced audio to judge (0.45s)",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L11_ORB",
+   "dur": 1.07,
+   "pace_wps": 1.87,
+   "acc": 1.0,
+   "pitch_std_st": 0.0,
+   "pitch_range_st": 0.0,
+   "energy_std_db": 9.95,
+   "voiced_frac": 0.0,
+   "heard": "both locked.",
+   "note": "too little voiced audio to judge (0.00s)",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L12_ORB",
+   "dur": 13.32,
+   "pace_wps": 3.68,
+   "acc": 1.0,
+   "pitch_std_st": 3.34,
+   "pitch_range_st": 10.73,
+   "energy_std_db": 7.73,
+   "voiced_frac": 0.55,
+   "heard": "One rule, this ring is the only door off this planet. Cross ",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L13_ORB",
+   "dur": 1.2,
+   "pace_wps": 3.33,
+   "acc": 1.0,
+   "pitch_std_st": 3.79,
+   "pitch_range_st": 10.87,
+   "energy_std_db": 8.27,
+   "voiced_frac": 0.58,
+   "heard": "Have fun down there.",
+   "note": "too little voiced audio to judge (0.70s)",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L14_ORB",
+   "dur": 11.83,
+   "pace_wps": 3.04,
+   "acc": 0.93,
+   "pitch_std_st": 4.5,
+   "pitch_range_st": 13.7,
+   "energy_std_db": 7.64,
+   "voiced_frac": 0.35,
+   "heard": "1,000 meters across its own sky if you squint its own sunris",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L15_PIP",
+   "dur": 6.64,
+   "pace_wps": 3.01,
+   "acc": 1.0,
+   "pitch_std_st": 11.17,
+   "pitch_range_st": 29.09,
+   "energy_std_db": 6.22,
+   "voiced_frac": 0.71,
+   "heard": "It's actually kind of nice. The horizons right there. You co",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L16_ORB",
+   "dur": 7.78,
+   "pace_wps": 3.73,
+   "acc": 1.0,
+   "pitch_std_st": 4.65,
+   "pitch_range_st": 14.66,
+   "energy_std_db": 7.9,
+   "voiced_frac": 0.53,
+   "heard": "His cave is at the south. On a planet this size they can go ",
+   "verdict": "PASS"
+  },
+  {
+   "id": "L17_GRUFF",
+   "dur": 4.78,
+   "pace_wps": 2.51,
+   "acc": 1.0,
+   "pitch_std_st": 7.41,
+   "pitch_range_st": 18.98,
+   "energy_std_db": 6.02,
+   "voiced_frac": 0.42,
+   "heard": "It's a hole. I like a hole. Nobody sings in a hole.",
+   "verdict": "PASS"
+  }
+ ],
+ "verdict": "FAIL",
+ "fails": [
+  "L03_ORB: FAIL: FLAT pitch std 2.56 < floor 3.09",
+  "L06_PIP: FAIL: FLAT pitch std 2.77 < floor 3.09",
+  "L07_GRUFF: FAIL: pace 2.01 vs ref 3.18; FLAT pitch std 3.05 < floor 3.09"
+ ]
+}
