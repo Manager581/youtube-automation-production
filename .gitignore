@@ -102,3 +102,6 @@ assets/*/intro_cards/
 *.prebak
 assets/shrinking_planet/clips/*.mp4
 assets/shrinking_planet/foley/*.flac
+assets/shrinking_planet/sfx/*.wav
+assets/shrinking_planet/sfx/*_raw.mp3
+assets/shrinking_planet/music/*.mp3

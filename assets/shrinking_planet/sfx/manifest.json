@@ -1,0 +1,35 @@
+{
+ "_schema": "design-layer SFX (Pixabay Content License, no attribution); loudnorm I=-18; hits/whooshes/risers are EDIT-LAYER ops (library allowed) \u2014 diegetic foley stays GENERATED (MMAudio)",
+ "items": {
+  "whoosh_simple": {
+   "file": "assets/shrinking_planet/sfx/whoosh_simple.wav",
+   "source": "https://cdn.pixabay.com/audio/2025/07/30/audio_b3087a581e.mp3",
+   "license": "Pixabay Content License"
+  },
+  "impact_hit": {
+   "file": "assets/shrinking_planet/sfx/impact_hit.wav",
+   "source": "https://cdn.pixabay.com/audio/2025/06/02/audio_316d8e1c15.mp3",
+   "license": "Pixabay Content License"
+  },
+  "riser": {
+   "file": "assets/shrinking_planet/sfx/riser.wav",
+   "source": "https://cdn.pixabay.com/audio/2022/12/24/audio_74f3679d6a.mp3",
+   "license": "Pixabay Content License"
+  },
+  "sub_drop": {
+   "file": "assets/shrinking_planet/sfx/sub_drop.wav",
+   "source": "https://cdn.pixabay.com/audio/2025/12/12/audio_800c0ace20.mp3",
+   "license": "Pixabay Content License"
+  },
+  "dark_drone": {
+   "file": "assets/shrinking_planet/sfx/dark_drone.wav",
+   "source": "https://cdn.pixabay.com/audio/2026/02/10/audio_3309cf5b66.mp3",
+   "license": "Pixabay Content License"
+  },
+  "cash_register": {
+   "file": "assets/shrinking_planet/sfx/cash_register.wav",
+   "source": "https://cdn.pixabay.com/audio/2022/11/04/audio_7650b73fdb.mp3",
+   "license": "Pixabay Content License"
+  }
+ }
+}

@@ -44,9 +44,10 @@
      "t_on": 0.0,
      "t_off": 1.0,
      "lead": 0.3,
-     "size": 72,
+     "size": 115,
      "y": "h*0.80",
-     "color": "0xE0479E"
+     "color": "0xE0479E",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -54,9 +55,10 @@
      "t_on": 0.0,
      "t_off": 1.0,
      "lead": 0.3,
-     "size": 72,
+     "size": 115,
      "y": "h*0.88",
-     "color": "0x2FB8D6"
+     "color": "0x2FB8D6",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "whiteout",
@@ -352,9 +354,10 @@
      "t_on": 1.2,
      "t_off": 3.6,
      "lead": 0.3,
-     "size": 64,
+     "size": 110,
      "y": "h*0.82",
-     "color": "0xD93B3B"
+     "color": "0xD93B3B",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     }
    ]
   },
@@ -398,9 +401,10 @@
      "t_on": 0.3,
      "t_off": 2.8,
      "lead": 0.3,
-     "size": 84,
+     "size": 134,
      "y": "h*0.10",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -408,9 +412,10 @@
      "t_on": 0.6,
      "t_off": 2.8,
      "lead": 0.3,
-     "size": 84,
+     "size": 134,
      "y": "h*0.19",
-     "color": "0xFFD24A"
+     "color": "0xFFD24A",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     }
    ]
   },
@@ -620,9 +625,10 @@
      "t_on": 0.3,
      "t_off": 2.8,
      "lead": 0.3,
-     "size": 84,
+     "size": 134,
      "y": "h*0.10",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     }
    ]
   },
@@ -676,9 +682,10 @@
      "t_on": 0.8,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.14",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -686,9 +693,10 @@
      "t_on": 1.85,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.24",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -696,9 +704,10 @@
      "t_on": 2.9000000000000004,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.34",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -706,9 +715,10 @@
      "t_on": 3.95,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.44",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -716,9 +726,10 @@
      "t_on": 5.0,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.54",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -726,9 +737,10 @@
      "t_on": 6.05,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.64",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -736,9 +748,10 @@
      "t_on": 7.1000000000000005,
      "t_off": 8.8,
      "lead": 0.2,
-     "size": 64,
+     "size": 110,
      "y": "h*0.74",
-     "color": "0xFF4040"
+     "color": "0xFF4040",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     }
    ]
   },
@@ -792,9 +805,10 @@
      "t_on": 0.3,
      "t_off": 2.8,
      "lead": 0.3,
-     "size": 84,
+     "size": 134,
      "y": "h*0.10",
-     "color": "white"
+     "color": "white",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     },
     {
      "op": "text",
@@ -802,9 +816,10 @@
      "t_on": 1.2,
      "t_off": 4.0,
      "lead": 0.3,
-     "size": 84,
+     "size": 134,
      "y": "h*0.19",
-     "color": "0xFFD24A"
+     "color": "0xFFD24A",
+     "size_note": "raised to the watch-gate floor (2026-09-08)"
     }
    ]
   },
