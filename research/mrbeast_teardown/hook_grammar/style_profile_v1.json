@@ -62,5 +62,18 @@
    2.5
   ],
   "source": "hook_event_ledger: 5 text_on events / 45 s, holds 0.6-2.2 s (+ slack)"
+ },
+ "camera_bands": {
+  "punch_in": 8,
+  "punch_out": 6,
+  "flash_cut": 2,
+  "whip": 1,
+  "wipe": 1,
+  "glow_key": 1,
+  "source": "hook_event_ledger 0-45 s: zoom_in 10, zoom_out 8, whiteout/flash 3, whip 2, wipe 2, glow-key 1; floors = 0.8x"
+ },
+ "action_on_word_per_45s": {
+  "floor": 4,
+  "source": "hook_event_ledger: 5 explicit word/action matches in 45 s (23.25, 34.125, 35.5, 1.0, 11.5)"
  }
 }

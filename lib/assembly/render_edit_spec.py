@@ -14,10 +14,14 @@ from lib.assembly import edit_layer as E
 OVERLAY_OPS = ("text", "text2", "cards")
 def build_vf(ops, fps, W, H):
     parts = []
+    zooms = [dict(o, t1=o.get("t1", o["t0"])) for o in ops if o.get("op") == "punch"] + [{"z0": o["z0"], "z1": 1.0, "t0": o["t"], "t1": o["t"] + 2.0 / fps, "ease": "linear"} for o in ops if o.get("op") == "snap_out"]
+    if zooms: parts.append(E.zoom_chain(zooms, fps, W, H))   # ALL zoom moves of the segment in ONE zoompan (chained zoompans multiply)
     for o in ops:
         k = o["op"]
-        if k == "text2": continue   # rendered in a second pass (PNG overlay), see apply_text2
-        if k == "punch": parts.append(E.punch_in(o["z0"], o["z1"], o["t0"], o.get("t1", o["t0"]), fps, W, H))
+        if k in ("text2", "punch", "snap_out"): continue
+        elif k == "whip": parts.append(E.whip(o["t"], o.get("dur", 0.2), o.get("dir", "up"), o.get("amount", 0.12), fps, W, H, o.get("blur_sigma", 8.0)))
+        elif k == "glow_key": parts.append(E.glow_key(o["t0"], o["t1"], o.get("sat", 0.35), o.get("dim", -0.10)))
+        elif k == "fg_wipe": continue   # overlay pass (apply_text2): a sliding colour slab needs per-frame x, which drawbox cannot do
         elif k == "whiteout": parts.append(E.whiteout(o["t"], o.get("dur", 0.10), o.get("alpha", 0.85)))
         elif k == "flash": parts.append(E.flash(o["t"], o.get("dur", 0.08), o.get("alpha", 0.6)))
         elif k == "bloom": parts.append(E.bloom(o["t"], o.get("dur", 0.25), o.get("amount", 0.3)))
@@ -26,9 +30,12 @@ def build_vf(ops, fps, W, H):
     return ",".join(parts)
 def apply_text2(seg, ops, work, i, slot, fps, W, H):
     """Second pass: every text2 op becomes a PIL PNG (stroke/shadow/keyword colour) animated in with overshoot (edit_layer.text_pop2_filter)."""
-    t2 = [o for o in ops if o.get("op") == "text2"]
-    if not t2: return seg
+    t2 = [o for o in ops if o.get("op") == "text2"]; wipes = [o for o in ops if o.get("op") == "fg_wipe"]
+    if not t2 and not wipes: return seg
     ins = []; fc = []; cur = "0:v"
+    for j, o in enumerate(wipes):   # foreground wipe: a dark slab sweeps left->right across the frame over dur, hiding the cut under it (ledger 24.25 s)
+        ins += ["-f", "lavfi", "-t", f"{slot:.3f}", "-i", f"color=c={o.get('color', '0x0b0b10')}:s={W}x{H}:r={fps}"]; k = len(t2) + j + 1
+        fc.append(f"[{cur}][{k}:v]overlay=x='-{W}+2*{W}*((t-{o['t']:.3f})/{o.get('dur', 0.15)})':y=0:enable='between(t,{o['t']:.3f},{o['t'] + o.get('dur', 0.15):.3f})'[w{j}]"); cur = f"w{j}"
     for j, o in enumerate(t2):
         png = os.path.join(work, f"seg{i:02d}_text{j}.png"); E.text_png(o["text"], png, o.get("size", 150), o.get("color", "#FFFFFF"), o.get("key_color", "#FFE433"), o.get("stroke", 10), o.get("shadow", 12))
         ins += ["-loop", "1", "-framerate", str(fps), "-i", png]; lab = f"p{j}"
@@ -90,7 +97,9 @@ def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, repo
             if o.get("op") in ("text", "text2"): abs_ops.append({"op": o["op"], "text": o.get("text"), "appear": round(t_in_abs + o["t_on"] - o.get("lead", 0.3), 3), "t_off": round(t_in_abs + o.get("t_off", slot), 3), "size": o.get("size")})
             elif o.get("op") == "cards": abs_ops.append({"op": "cards", "n": len(o["stills"]), "t0": round(t_in_abs + o.get("t_start", 0.0), 3), "t1": round(t_in_abs + o.get("t_start", 0.0) + o.get("each", 0.4) * len(o["stills"]), 3), "each": o.get("each", 0.4)})
             elif o.get("op") in ("whiteout", "flash", "bloom"): abs_ops.append({"op": o["op"], "t": round(t_in_abs + o["t"], 3)})
-            elif o.get("op") == "punch": abs_ops.append({"op": "punch", "t": round(t_in_abs + o["t0"], 3), "z0": o["z0"], "z1": o["z1"], "dur": round(o.get("t1", o["t0"]) - o["t0"], 3)})
+            elif o.get("op") == "punch": abs_ops.append({"op": "punch", "t": round(t_in_abs + o["t0"], 3), "z0": o["z0"], "z1": o["z1"], "dur": round(o.get("t1", o["t0"]) - o["t0"], 3), "ease": o.get("ease", "linear"), "blur": bool(o.get("blur"))})
+            elif o.get("op") in ("snap_out", "whip", "fg_wipe"): abs_ops.append({"op": o["op"], "t": round(t_in_abs + o["t"], 3), "dur": o.get("dur")})
+            elif o.get("op") == "glow_key": abs_ops.append({"op": "glow_key", "t": round(t_in_abs + o["t0"], 3), "t1": round(t_in_abs + o["t1"], 3)})
         segs.append(seg); rep.append({"shot": sg.get("shot"), "src": src, "src_sha": (_sha(src) if os.path.exists(src) and how != "path" else None), "how": how, "t_in": round(t_in_abs, 3), "slot": round(slot, 3), "clip_t0": round(t0, 3), "ops": len(ops), "cards": len(cards), "abs_ops": abs_ops})
     silent = os.path.join(work, "silent.mp4"); E.concat(segs, silent); cur = silent
     for j, c in enumerate(spec.get("cards", [])):

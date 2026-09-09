@@ -150,9 +150,27 @@ C. OWNER GO (batch hash printed by `run_gates spend --grok grok_i2v_pack_prototy
 D. OWNER GO (second batch hash): 4 reshoots + 4 alts + 9 lines → bank → freeze edit → foley on FINAL windows → render + plate +
    stems → `run_gates all --render` → watch PASS → notes → listen record → `deliver.py` → owner (via the guarded path only).
 
-## Still prose (not built tonight — listed so nobody mistakes them for checks)
-story_gate `[FLASHFWD]` + per-lane proof-shot t_in check · action-on-word in-point selection · camera-language ops + per-kind
-bands · text profile bands · archive STACK overlay (≥3 photos on screen at peak, alternating sides) · ORB halo check ·
-per-moment angle count + distinctness · grade LUT + resolution per row · ambience generator + seam check · `listen_record.py`
-· lipsync discrimination test · retroactive `setting_hash` stamping of the 13 kept clips (write their prototype records from the
-pack prompts + strip verdicts, marked retroactive) · a foley-vs-motion onset check reused from `verify_foley_v4.py`.
+## Built after the first report (2026-09-09, each self-tested on frames or numbers)
+- Law 1: `story_gate` now parses EVERY tag on a line (v3 scripts were half-read), accepts `[FLASHFWD]` only as a ≤3 s first beat with
+  DAY/PLANET on the ladder, and requires the first beat to carry `[WOW]` by `lane.promise.by_s`; `--partial` for excerpts.
+- Law 3: `clip_bank status --hook-coverage` counts distinct PASS angles per hook moment that also pass the hook motion rule (pHash
+  distinctness, punch-ins never count): today 2/11 moments covered (M01, M07); the missing list is the alt-angle order.
+- Law 4: `build_edit_from_alignment --ledger` slides a clip's in-point so a recorded subject-motion peak lands on the emphasis word
+  (never stretches); dry run on v3 placed 1 (S018 "One"). Watch gate `action_on_word_rate` re-measures it on the render.
+- Law 4/6 camera language: `edit_layer` gained eased snap-in with blur, snap-out (≤2 frames), whip with blur frames, glow-key,
+  foreground wipe (overlay pass); all zoom moves of a segment are merged into ONE zoompan (chained zoompans multiplied — a
+  punch-in followed by a snap-out never returned to 1.0x). Watch gate `camera_kinds` checks per-kind floors (0.8 × ledger) and
+  that ≥80% of punches are eased. Verified on 8 labelled frames.
+- Law 4 archive: `photo_stack_overlay` = the reference's accumulating stack (tilted alternating slide-ins, centre pops, light
+  leaks, whiteout exit; 6 up at peak) — cards op `stack:true`. Verified on 6 labelled frames.
+- Law 5: text bands (pops/45 s in [4,8], on-screen 0.5–2.5 s) in the watch gate + profile.
+- Law 8: `listen_record.py` writes the LISTEN record; a model record is refused unless the model first called v3 FAIL and the
+  reference PASS (calibration file).
+- Law 0: the 18 banked clips and 17 lines carry retroactive `setting_hash`es with honest records (the camera-locked template:
+  PASS only outside the hook window; the undirected voice setting: FAIL, superseded by batch C).
+- Spine: the send guard's Bash rule matches only the real `open` command (Python `open(` in heredocs was a false positive).
+
+## Still prose (listed so nobody mistakes them for checks)
+ORB halo check (Law 2c; prototype below decides) · grade LUT + source resolution per ledger row · ambience generator + loop-seam
+check · lipsync discrimination test (needs the S010 talking clip from batch C) · a foley-vs-motion onset check reused from
+`verify_foley_v4.py` · text colour-change / punch-coupled transform events.

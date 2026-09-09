@@ -16,10 +16,43 @@ import os, subprocess, sys, tempfile
 
 FONT = "/System/Library/Fonts/Supplemental/Arial Black.ttf"
 
-def punch_in(z0, z1, t0, t1, fps=24, W=1920, H=1080):
-    f0, f1 = int(round(t0 * fps)), int(round(max(t1, t0 + 1.0 / fps) * fps))
-    z = f"if(lt(in,{f0}),{z0},if(gt(in,{f1}),{z1},{z0}+({z1}-{z0})*(in-{f0})/({f1}-{f0})))"
-    return f"zoompan=z='{z}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={fps}"
+def punch_in(z0, z1, t0, t1, fps=24, W=1920, H=1080, ease="linear", blur=False, blur_sigma=5.0):
+    """Digital punch with the reference's camera language: ease='snap' = fast ease-OUT (ledger 8.25 s: 1.4x->1.9x in 0.25 s),
+    'pull' = ease-IN pull-back (~1.0 s), 'linear' = the old behaviour; blur=True adds a directional-feel blur during the move
+    (ledger 25.875: 'motion-blur frame mid-punch')."""
+    f0, f1 = int(round(t0 * fps)), int(round(max(t1, t0 + 1.0 / fps) * fps)); p = f"((in-{f0})/({f1}-{f0}))"
+    e = {"snap": f"(1-pow(1-{p},3))", "pull": f"pow({p},3)", "linear": p}[ease]
+    z = f"if(lt(in,{f0}),{z0},if(gt(in,{f1}),{z1},{z0}+({z1}-{z0})*{e}))"
+    vf = f"zoompan=z='{z}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={fps}"
+    if blur and f1 > f0: vf += f",gblur=sigma={blur_sigma}:enable='between(t,{t0:.3f},{t1:.3f})'"
+    return vf
+def zoom_chain(ops, fps=24, W=1920, H=1080):
+    """ONE zoompan for ALL the zoom ops of a segment (chained zoompans multiply — a punch-in followed by a snap-out never returned to 1.0x).
+    ops: [{z0,z1,t0,t1,ease,blur}] in any order. Piecewise: hold, ease, hold... plus a gblur window per blurred move."""
+    ops = sorted(ops, key=lambda o: o["t0"]); expr = str(ops[0]["z0"]); blurs = []
+    for o in ops:
+        f0, f1 = int(round(o["t0"] * fps)), int(round(max(o.get("t1", o["t0"]), o["t0"] + 1.0 / fps) * fps)); pr = f"((in-{f0})/({f1}-{f0}))"
+        e = {"snap": f"(1-pow(1-{pr},3))", "pull": f"pow({pr},3)", "linear": pr}[o.get("ease", "linear")]
+        expr = f"if(lt(in,{f0}),{expr},if(gt(in,{f1}),{o['z1']},{o['z0']}+({o['z1']}-{o['z0']})*{e}))"
+        if o.get("blur"): blurs.append(f"gblur=sigma={o.get('blur_sigma', 5.0)}:enable='between(t,{o['t0']:.3f},{f1 / fps:.3f})'")
+    return ",".join([f"zoompan=z='{expr}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={fps}"] + blurs)
+def snap_out(z0, t, fps=24, W=1920, H=1080):
+    """SNAP DIGITAL PUNCH-OUT: z0 -> 1.0 in <= 2 frames (ledger 1.375 s)."""
+    return punch_in(z0, 1.0, t, t + 2.0 / fps, fps, W, H, "linear")
+def whip(t, dur=0.2, direction="up", amount=0.12, fps=24, W=1920, H=1080, blur_sigma=8.0):
+    """Whip-tilt/pan: the frame is pushed off in `direction` over `dur` with heavy blur on the moving frames (ledger 32.25 s)."""
+    p = f"min(1,max(0,(t-{t:.3f})/{dur}))"; dx = {"left": -1, "right": 1}.get(direction, 0); dy = {"up": -1, "down": 1}.get(direction, 0)
+    z = 1.0 + amount
+    return (f"scale=iw*{z:.3f}:ih*{z:.3f},crop={W}:{H}:x='(iw-{W})/2+{dx}*(iw-{W})/2*{p}':y='(ih-{H})/2+{dy}*(ih-{H})/2*{p}'"
+            f",gblur=sigma={blur_sigma}:enable='between(t,{t:.3f},{t+dur:.3f})'")
+def glow_key(t0, t1, sat=0.35, dim=-0.10):
+    """Glow-key look event (ledger 1.375 s: background dimmed/desaturated under a neon-lit subject). Tag the segment look_event."""
+    return f"eq=saturation={sat}:brightness={dim}:enable='between(t,{t0:.3f},{t1:.3f})',vignette=angle=PI/4:enable='between(t,{t0:.3f},{t1:.3f})'"
+def fg_wipe(t, dur=0.15, W=1920, color="0x0b0b10"):
+    """Foreground wipe: a dark slab grows in from the left over dur/2 (covering the cut at t+dur/2), then exits to the right (ledger 24.25 s)."""
+    h = dur / 2.0; p1 = f"((t-{t:.3f})/{h:.4f})"; p2 = f"((t-{t + h:.3f})/{h:.4f})"
+    return (f"drawbox=c={color}:t=fill:x=0:w='{W}*{p1}':enable='between(t,{t:.3f},{t + h:.3f})',"
+            f"drawbox=c={color}:t=fill:x='{W}*{p2}':w='{W}*(1-{p2})':enable='between(t,{t + h:.3f},{t + dur:.3f})'")
 
 def whiteout(t, dur=0.10, alpha=0.85):
     """Soft whiteout: hides a cut at scene-th 0.1 (a transition) WITHOUT registering as a hard cut at 0.3 — the reference's

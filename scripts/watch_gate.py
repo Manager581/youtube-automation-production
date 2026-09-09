@@ -261,6 +261,40 @@ def main():
         y, sr = load_mono(mr); db = frame_db(y, sr, 0.5); lv = db[db > -70]; levels = len(set(np.round(lv / 3.0))) if len(lv) else 0; rng = round(float(np.percentile(lv, 95) - np.percentile(lv, 5)), 1) if len(lv) else 0
         chk("music_arc", {"levels": int(levels), "range_db": rng}, levels >= 3 and rng >= 6, ">= 3 distinct levels and >= 6 dB range on the raw music stem", "the cue must move (sections/hits), measured pre-duck so VO ducking cannot fake it")
     else: chk("music_arc", None, False, "measured", "no music stem: unmeasurable = FAIL")
+    # camera language (Law 4/6): per-KIND counts of the ops the assembler actually drew (render report), floors = 0.8 x the reference ledger
+    kinds = {"punch_in": 0, "punch_out": 0, "flash_cut": 0, "whip": 0, "wipe": 0, "glow_key": 0, "eased": 0}
+    for sgr in (R or {}).get("segments", []):
+        if sgr.get("t_in", 0) >= hw: continue
+        for o in sgr.get("abs_ops", []):
+            if o["op"] == "punch": kinds["punch_in" if o.get("z1", 1) > o.get("z0", 1) else "punch_out"] += 1; kinds["eased"] += (o.get("ease", "linear") != "linear")
+            elif o["op"] == "snap_out": kinds["punch_out"] += 1
+            elif o["op"] in ("whiteout", "flash"): kinds["flash_cut"] += 1
+            elif o["op"] == "whip": kinds["whip"] += 1
+            elif o["op"] == "fg_wipe": kinds["wipe"] += 1
+            elif o["op"] == "glow_key": kinds["glow_key"] += 1
+    cb = P.get("camera_bands", {"punch_in": 8, "punch_out": 6, "flash_cut": 2, "whip": 1, "wipe": 1, "glow_key": 1})
+    short = {k: (kinds.get(k, 0), v) for k, v in cb.items() if kinds.get(k, 0) < v}
+    chk("camera_kinds", kinds, not short and (kinds["punch_in"] == 0 or kinds["eased"] >= 0.8 * kinds["punch_in"]), f"floors {cb} (0.8 x ledger: zoom_in 10, zoom_out 8, flashes 3, whip 2, wipe 2, glow 1) and >= 80% of punches eased", f"the reference's camera grammar per kind, not a total op count; short: {short}", "report")
+    # action on the word (Law 4): a subject-motion event on the render within 0.25 s of each emphasis-word onset the builder placed
+    aw = [o for sgr in (R or {}).get("segments", []) for o in [sgr.get("action_on_word")] if o] if R else []
+    placed = [x for sg in segs for x in [sg.get("action_on_word")] if x]
+    if placed:
+        try:
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import clip_bank as CB; hit = 0; miss = []
+            for sg in segs:
+                x = sg.get("action_on_word")
+                if not x: continue
+                chars = man.get(sg.get("split_of", sg["shot"]), {}).get("characters", [])
+                _, ev, peaks, cover = CB.subject_motion(a.video, chars) if False else (None, None, None, None)
+                # measure the RENDER around the word: subject motion on a 1.5 s window centred on the word onset
+                t0w = max(0.0, x["word_t"] - 0.75); tmp = os.path.join(os.path.dirname(a.video), f"_aow_{sg['shot']}.mp4")
+                subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", f"{t0w:.3f}", "-t", "1.5", "-i", a.video, "-an", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", tmp])
+                sm, ev, pk, cov = CB.subject_motion(tmp, chars); os.remove(tmp)
+                if any(abs((t0w + p_) - x["word_t"]) <= 0.25 for p_ in pk): hit += 1
+                else: miss.append((x["word"], sg["shot"]))
+            rate = round(hit / len(placed), 2); chk("action_on_word_rate", rate, rate >= 0.8, ">= 0.80 of placed actions land within 0.25 s (render-measured subject motion)", f"the clip's action lands ON the word; missed: {miss[:5]}")
+        except Exception as e: chk("action_on_word_rate", None, False, "measured", f"measurement failed: {e}")
+    else: chk("action_on_word_placed", 0, False, ">= 1 emphasis word with the action landed on it (builder --ledger)", "no action-on-word placements in the spec: the reference lands 5 explicit actions on words in 45 s", "spec")
     # look
     per = look_stats(a.video, segs, man); outl = mad_outliers(per, T["look_k"]); ceil = max(1, len(per) // 10)
     chk("look_outliers", outl, len(outl) <= ceil, f"<= {ceil} (MAD k={T['look_k']}, look_event segments excluded)", "segments far from their own set's look, designed events excluded")

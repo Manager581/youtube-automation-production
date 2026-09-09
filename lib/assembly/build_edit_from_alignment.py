@@ -20,7 +20,8 @@ def align_lines(mix, lines_dir, cache):
     json.dump(out, open(cache, "w"), indent=1); return out
 def norm(w): return "".join(c for c in w.lower() if c.isalnum())
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--spec", required=True); ap.add_argument("--mix", required=True); ap.add_argument("--lines", required=True); ap.add_argument("--out", required=True); ap.add_argument("--lead", type=float, default=0.3); ap.add_argument("--ops-floor", type=float, default=15.8)  # 0.8 x the reference ledger (89 spec-equivalent ops / 45 s = 19.8 per 10 s); ap.add_argument("--hook", type=float, default=45.0)
+    ap = argparse.ArgumentParser(); ap.add_argument("--spec", required=True); ap.add_argument("--mix", required=True); ap.add_argument("--lines", required=True); ap.add_argument("--out", required=True); ap.add_argument("--lead", type=float, default=0.3); ap.add_argument("--ops-floor", type=float, default=15.8); ap.add_argument("--hook", type=float, default=45.0);  # ops floor = 0.8 x the reference ledger (89 spec-equivalent ops / 45 s = 19.8 per 10 s)
+    ap.add_argument("--ledger", help="CLIP_LEDGER.json: rows with subject_peaks let the builder slide each clip's in-point so the ACTION lands on the word (never stretch)"); ap.add_argument("--manifest", help="shot manifest (characters per shot)")
     a = ap.parse_args(); spec = json.load(open(a.spec)); mix = json.load(open(a.mix)); man = {l["id"]: l for l in json.load(open(a.lines))["lines"]}
     for v in mix["vo"]: v["text"] = man.get(v["line"], {}).get("text", "")
     words = align_lines(mix, os.path.dirname(a.lines), a.out + ".words.json")
@@ -41,9 +42,26 @@ def main():
                 sg = seg_at(w["t"])
                 if not sg: continue
                 sg.setdefault("ops", []).append({"op": "punch", "z0": 1.0, "z1": 1.12, "t0": round(max(0, w["t"] - 0.05 - sg["t_in"]), 3), "t1": round(max(0, w["t"] + 0.07 - sg["t_in"]), 3), "why": f"emphasis '{w['word']}'"}); punches += 1
+    # ACTION ON THE WORD (Law 4, reference ledger 23.25/34.125/35.5 s: the clip's physical action lands ON the spoken word). i2v cannot
+    # time the action internally, so the builder SLIDES the clip's in-point (t0) so a recorded subject-motion peak = the emphasis word onset.
+    action_hits = []; action_miss = []
+    if a.ledger and os.path.exists(a.ledger):
+        led = json.load(open(a.ledger)).get("clips", {}); import subprocess as _sp
+        def _dur(pth): return float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", pth], capture_output=True, text=True).stdout.strip() or 0)
+        for lid, ws in words.items():
+            emph = [norm(e) for e in man.get(lid, {}).get("emphasis", [])]
+            for w in ws:
+                if norm(w["word"]) not in emph: continue
+                sg = seg_at(w["t"]); row = led.get((sg or {}).get("split_of", (sg or {}).get("shot", "")).split("_")[0]) if sg else None
+                peaks = (row or {}).get("subject_peaks") or []
+                if not sg or not peaks or sg.get("action_locked"): continue
+                slot = sg["t_out"] - sg["t_in"]; rel = w["t"] - sg["t_in"]; clip_len = _dur(row["clip"]) if os.path.exists(row.get("clip", "")) else 0
+                cands = [(abs(pk - rel - sg.get("t0", 0.0)), pk - rel) for pk in peaks if 0.0 <= pk - rel and pk - rel + slot <= clip_len + 0.05]
+                if not cands: action_miss.append((w["word"], sg["shot"])); continue
+                _, t0 = min(cands); sg["t0"] = round(t0, 3); sg["action_locked"] = True; sg["action_on_word"] = {"word": w["word"], "word_t": w["t"], "clip_t0": round(t0, 3), "peak_abs": round(w["t"], 3)}; action_hits.append((w["word"], sg["shot"], round(t0, 2)))
     n_ops = sum(1 for s in segs if s["t_in"] < a.hook) + sum(len(s.get("ops", [])) for s in segs if s["t_in"] < a.hook)
     dens = n_ops / (min(a.hook, segs[-1]["t_out"]) / 10.0)
-    spec["word_driven"] = {"anchored_text": anchored, "emphasis_punches": punches, "missing_anchors": missing, "hook_ops_per_10s": round(dens, 1), "floor": a.ops_floor, "verdict": "PASS" if dens >= a.ops_floor and not missing else "FAIL"}
+    spec["word_driven"] = {"anchored_text": anchored, "emphasis_punches": punches, "missing_anchors": missing, "hook_ops_per_10s": round(dens, 1), "floor": a.ops_floor, "action_on_word": action_hits, "action_unplaceable": action_miss, "verdict": "PASS" if dens >= a.ops_floor and not missing else "FAIL"}
     json.dump(spec, open(a.out, "w"), indent=1)
-    print(f"word-driven edit: {anchored} text pops anchored to words, {punches} emphasis punch-ins, missing anchors {missing}; hook ops/10s = {dens:.1f} (floor {a.ops_floor}) -> {spec['word_driven']['verdict']}")
+    print(f"word-driven edit: {anchored} text pops anchored to words, {punches} emphasis punch-ins, missing anchors {missing}; action-on-word placed {len(action_hits)} {action_hits[:4]} unplaceable {len(action_miss)}; hook ops/10s = {dens:.1f} (floor {a.ops_floor}) -> {spec['word_driven']['verdict']}")
 if __name__ == "__main__": main()

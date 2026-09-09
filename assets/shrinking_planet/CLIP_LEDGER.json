@@ -15,7 +15,11 @@
    "motion_mean": 4.14,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 11.22,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.227
   },
   "S001": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S001_take1.mp4",
@@ -31,7 +35,11 @@
    "motion_mean": 6.06,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 30.91,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.067
   },
   "S002": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S002_take1.mp4",
@@ -47,7 +55,14 @@
    "motion_mean": 5.79,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 14.49,
+   "subject_events": 2,
+   "subject_peaks": [
+    1.5,
+    4.25
+   ],
+   "subject_cover": 0.218
   },
   "S006": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S006_take1.mp4",
@@ -95,7 +110,13 @@
    "motion_mean": 3.52,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 29.11,
+   "subject_events": 1,
+   "subject_peaks": [
+    0.0
+   ],
+   "subject_cover": 0.031
   },
   "S009": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S009_take1.mp4",
@@ -111,7 +132,11 @@
    "motion_mean": 6.74,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 16.41,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.318
   },
   "S010": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S010_take1.mp4",
@@ -127,7 +152,13 @@
    "motion_mean": 3.52,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 10.95,
+   "subject_events": 1,
+   "subject_peaks": [
+    3.25
+   ],
+   "subject_cover": 0.195
   },
   "S013": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S013_take1.mp4",
@@ -143,7 +174,11 @@
    "motion_mean": 4.27,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 5.29,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.305
   },
   "S014": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S014_take1.mp4",
@@ -159,7 +194,11 @@
    "motion_mean": 9.81,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 25.14,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.256
   },
   "S015": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S015_take1.mp4",
@@ -175,7 +214,15 @@
    "motion_mean": 5.22,
    "static_run_s": 1,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 9.53,
+   "subject_events": 3,
+   "subject_peaks": [
+    0.0,
+    0.75,
+    4.25
+   ],
+   "subject_cover": 0.313
   },
   "S018": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S018_take1.mp4",
@@ -191,7 +238,16 @@
    "motion_mean": 12.04,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 9.41,
+   "subject_events": 4,
+   "subject_peaks": [
+    0.0,
+    0.75,
+    1.5,
+    2.25
+   ],
+   "subject_cover": 0.172
   },
   "S019": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S019_take1.mp4",
@@ -223,7 +279,11 @@
    "motion_mean": 5.44,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 36.23,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.052
   },
   "S021": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S021_take1.mp4",
@@ -239,7 +299,11 @@
    "motion_mean": 12.8,
    "static_run_s": 0,
    "setting_hash": "8ad967240795",
-   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)"
+   "setting_note": "retroactive 2026-09-09: first-minute pack template (bought before the setting rule)",
+   "subject_motion_mean": 23.84,
+   "subject_events": 0,
+   "subject_peaks": [],
+   "subject_cover": 0.091
   },
   "S022": {
    "clip": "/Users/jefflawrence/Documents/youtube-automation-production/assets/shrinking_planet/clips/S022_take1.mp4",
