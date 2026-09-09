@@ -437,7 +437,8 @@
    ],
    "prompt": "COLD OPEN flash-forward: 12 m rock (ladder: day 26), PIP+GRUFF clinging, crate wedged (Law 1 promise proof)",
    "status": "PASS",
-   "verdict": "COLD OPEN: 25 m rock, both clinging, crate wedged \u2014 promise proof, on-anchor (looked)"
+   "verdict": "COLD OPEN: 25 m rock, both clinging, crate wedged \u2014 promise proof, on-anchor (looked)",
+   "verdict_correction": "2026-09-09 (looked again at the PNG): the verdict text above says '25 m rock', inherited from the M_PLANET_25 master this was seeded from. The manifest and the ladder put S000 at DAY 26 / PLANET 12, and the rendered image supports 12 m - PIP and GRUFF each span a large fraction of the rock's circumference. Keep the script at [DAY 26] [PLANET 12] [COUNT 12]; do NOT 'fix' it to 25 on the strength of the stale note."
   },
   "S002B": {
    "file": "assets/shrinking_planet/seeds/S002B.png",
