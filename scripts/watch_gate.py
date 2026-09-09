@@ -89,6 +89,34 @@ def main():
     # 11 text hits
     hits = sum(1 for sg in segs if sg["t_in"] < a.hook_window for o in sg.get("ops", []) if o.get("op") == "text" and any(abs((sg["t_in"] + o.get("t_on", 0)) - x["t"]) <= 0.2 for x in sfx))
     chk("text_hits", f"{hits}/{len(texts)}", hits == len(texts), "== all", "every text pop in the hook lands with a hit")
+    # 12 look consistency (Law 6): per-segment luma / contrast / saturation vs the lane median (1.5 sigma)
+    try:
+        import subprocess as _sp
+        raw = _sp.run(["ffmpeg", "-v", "error", "-i", a.video, "-vf", "fps=2,scale=96:54", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
+        n = len(raw) // (96 * 54 * 3); fr = np.frombuffer(raw[: n * 96 * 54 * 3], dtype=np.uint8).reshape(n, 54, 96, 3).astype(np.float32)
+        luma = fr.mean(axis=(1, 2, 3)) / 255; contrast = fr.std(axis=(1, 2, 3)) / 255; sat = (fr.max(axis=3) - fr.min(axis=3)).mean(axis=(1, 2)) / 255
+        per = []
+        for sg in segs:
+            i0, i1 = int(sg["t_in"] * 2), max(int(sg["t_in"] * 2) + 1, int(sg["t_out"] * 2)); per.append((sg["shot"], float(luma[i0:i1].mean()), float(contrast[i0:i1].mean()), float(sat[i0:i1].mean())))
+        arr = np.array([[p[1], p[2], p[3]] for p in per]); med = np.median(arr, axis=0); sd = arr.std(axis=0) + 1e-6
+        outl = [p[0] for p, row in zip(per, arr) if np.any(np.abs(row - med) > 1.5 * sd)]
+        chk("look_outliers", len(outl), len(outl) <= max(1, len(per) // 10), f"<= {max(1, len(per)//10)}", f"segments whose luma/contrast/saturation sit >1.5 sigma from the lane median: {outl[:8]}")
+    except Exception as e: chk("look_outliers", None, False, "measured", f"look measurement failed: {e}")
+    # 13 music follows tension (Law 7): music RMS envelope per segment vs manifest tension (1-5), Pearson r
+    try:
+        mf = mix.get("music", {}).get("file")
+        if mf:
+            import librosa
+            y, sr = librosa.load(a.video, sr=22050, mono=True); rms = librosa.feature.rms(y=y, frame_length=2048, hop_length=1024)[0]; tps = sr / 1024
+            tens = []; lev = []
+            for sg in segs:
+                t = man.get(sg.get("split_of", sg["shot"]), {}).get("tension")
+                if t is None: continue
+                seg_rms = rms[int(sg["t_in"] * tps):max(int(sg["t_in"] * tps) + 1, int(sg["t_out"] * tps))]
+                tens.append(t); lev.append(float(np.mean(seg_rms)))
+            r = float(np.corrcoef(tens, lev)[0, 1]) if len(set(tens)) > 1 else 0.0
+            chk("music_tension_corr", round(r, 2), r >= 0.3, ">= 0.30", "the mix's loudness should rise and fall with the script's tension curve, not sit flat")
+    except Exception as e: chk("music_tension_corr", None, False, "measured", f"tension measurement failed: {e}")
     out = os.path.splitext(a.json or a.video)[0]; paths = strips(a.video, out + "_strips", dur)
     verdict = "PASS" if all(c["verdict"] == "PASS" for c in checks) else "FAIL"
     rep = {"video": a.video, "duration": dur, "verdict": verdict, "unheard": True, "checks": checks, "strips": paths, "rule": "NO delivery without verdict PASS AND every strip looked at AND the owner's ear check recorded"}

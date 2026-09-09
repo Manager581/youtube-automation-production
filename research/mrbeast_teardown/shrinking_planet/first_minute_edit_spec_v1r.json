@@ -47,7 +47,8 @@
      "lead": 0.3,
      "size": 72,
      "y": "h*0.80",
-     "color": "0xE0479E"
+     "color": "0xE0479E",
+     "anchor": "solo"
     },
     {
      "op": "text",
@@ -57,7 +58,8 @@
      "lead": 0.3,
      "size": 72,
      "y": "h*0.88",
-     "color": "0x2FB8D6"
+     "color": "0x2FB8D6",
+     "anchor": "angry"
     },
     {
      "op": "whiteout",
@@ -156,7 +158,8 @@
      "lead": 0.3,
      "size": 140,
      "y": "h*0.40",
-     "note": "text LEADS the spoken '30' by 0.2-0.5 s (ref 8.25 vs 8.44)"
+     "note": "text LEADS the spoken '30' by 0.2-0.5 s (ref 8.25 vs 8.44)",
+     "anchor": "thirty"
     },
     {
      "op": "flash",
@@ -283,7 +286,8 @@
      "size": 110,
      "y": "h*0.45",
      "color": "0x2FB8D6",
-     "note": "ref 'HE'S SALTY' 0.625 s shot"
+     "note": "ref 'HE'S SALTY' 0.625 s shot",
+     "anchor": "sore"
     },
     {
      "op": "whiteout",
@@ -435,7 +439,8 @@
      "lead": 0.3,
      "size": 64,
      "y": "h*0.82",
-     "color": "0xD93B3B"
+     "color": "0xD93B3B",
+     "anchor": "cross"
     }
    ],
    "retime_k": 1.672,
@@ -504,7 +509,8 @@
      "lead": 0.3,
      "size": 84,
      "y": "h*0.10",
-     "color": "white"
+     "color": "white",
+     "anchor": "thousand"
     },
     {
      "op": "text",
@@ -514,7 +520,8 @@
      "lead": 0.3,
      "size": 84,
      "y": "h*0.19",
-     "color": "0xFFD24A"
+     "color": "0xFFD24A",
+     "anchor": "across"
     }
    ],
    "retime_k": 2.164,

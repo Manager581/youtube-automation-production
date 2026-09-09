@@ -101,3 +101,34 @@ def selftest(outdir):
 if __name__ == "__main__":
     if len(sys.argv) >= 3 and sys.argv[1] == "--selftest": selftest(sys.argv[2])
     else: print(__doc__)
+
+# ---- TEXT v2 (Law 5): a DESIGNED text element — PIL-rendered PNG with stroke + shadow + keyword colour, animated scale-in with overshoot.
+IMPACT = "/System/Library/Fonts/Supplemental/Impact.ttf"
+def text_png(text, out, size=140, color="#FFFFFF", key_color="#FFE433", stroke=10, shadow=12, font=IMPACT):
+    """Render text to a transparent PNG. Words wrapped in {braces} take key_color. Returns path."""
+    from PIL import Image, ImageDraw, ImageFont
+    import re as _re
+    fnt = ImageFont.truetype(font if os.path.exists(font) else FONT, size); parts = _re.findall(r"\{[^}]*\}|[^{]+", text)
+    words = []
+    for pt in parts:
+        key = pt.startswith("{"); pt = pt.strip("{}")
+        for wd in pt.split(" "):
+            if wd: words.append((wd, key))
+    space = fnt.getlength(" "); widths = [fnt.getlength(wd) for wd, _ in words]; W = int(sum(widths) + space * (len(words) - 1) + 2 * stroke + shadow + 8); H = int(size * 1.35 + 2 * stroke + shadow)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im); x = stroke + 4; y = stroke
+    for (wd, key), wdt in zip(words, widths):
+        d.text((x + shadow, y + shadow), wd, font=fnt, fill=(0, 0, 0, 140))
+        d.text((x, y), wd, font=fnt, fill=key_color if key else color, stroke_width=stroke, stroke_fill="#000000"); x += wdt + space
+    im.save(out); return out
+def text_pop2_filter(png_label, vid_label, out_label, t_on, t_off, lead=0.3, y="H*0.72", x="(W-w)/2", pop=1.18, rise=0.16, settle=0.30, shake=0.0):
+    """filter_complex fragment: animated scale (overshoot) + overlay window. Text lands `lead` s BEFORE the word (t_on already includes it)."""
+    on = t_on - lead
+    sc = f"if(lt(t-{on:.3f},0),0.01,if(lt(t-{on:.3f},{rise}),0.55+{pop-0.55}*((t-{on:.3f})/{rise}),if(lt(t-{on:.3f},{settle}),{pop}-({pop}-1.0)*((t-{on:.3f}-{rise})/({settle}-{rise})),1.0)))"
+    shk = f"+{shake}*sin(140*(t-{on:.3f}))*lt(t-{on:.3f},0.25)" if shake else ""
+    return (f"[{png_label}]scale=w='iw*({sc})':h=-1:eval=frame[{png_label}s];"
+            f"[{vid_label}][{png_label}s]overlay=x='{x}':y='{y}-h/2{shk}':enable='between(t,{on:.3f},{t_off:.3f})'[{out_label}]")
+def text_pop2_selftest(outdir):
+    os.makedirs(outdir, exist_ok=True); png = text_png("{30} DAYS", os.path.join(outdir, "t.png"), size=150); base = os.path.join(outdir, "base.mp4")
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i", "color=c=0x202838:size=1920x1080:rate=24", "-t", "2", base])
+    out = os.path.join(outdir, "text2.mp4"); fc = text_pop2_filter("1:v", "0:v", "out", 0.5, 1.8, lead=0.3, shake=6)
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", base, "-loop", "1", "-i", png, "-filter_complex", fc, "-map", "[out]", "-t", "2", "-c:v", "libx264", "-pix_fmt", "yuv420p", out]); return out

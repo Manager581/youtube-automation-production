@@ -4951,7 +4951,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "soft electronic halo pulse, two short tones, deep-space silence bed"
+   "foley_prompt": "soft electronic halo pulse, two short tones, deep-space silence bed",
+   "tension": 4
   },
   {
    "id": "S002",
@@ -4995,7 +4996,8 @@
    "props": [
     "helmet"
    ],
-   "foley_prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot"
+   "foley_prompt": "two space helmets unlatching and lifting off with a pneumatic hiss, small rock crunch underfoot",
+   "tension": 4
   },
   {
    "id": "S003",
@@ -5035,7 +5037,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "archive stills: the band (PIP, GRUFF + two silhouettes) inside the stills; no composite, no generation; banked as the FFmpeg-built clip"
+   "continuity_note": "archive stills: the band (PIP, GRUFF + two silhouettes) inside the stills; no composite, no generation; banked as the FFmpeg-built clip",
+   "tension": 4
   },
   {
    "id": "S004",
@@ -5085,7 +5088,8 @@
    "mouth_visible": [],
    "props": [
     "helmet"
-   ]
+   ],
+   "tension": 4
   },
   {
    "id": "S005",
@@ -5124,7 +5128,8 @@
    ],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "deep low hum rising as warm light blooms from a metal crate, faint metallic creak"
+   "foley_prompt": "deep low hum rising as warm light blooms from a metal crate, faint metallic creak",
+   "tension": 4
   },
   {
    "id": "S006",
@@ -5160,7 +5165,8 @@
    "props": [
     "lamp"
    ],
-   "foley_prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence"
+   "foley_prompt": "sharp inhale of surprise, tiny fabric rustle of a scarf, wind-less silence",
+   "tension": 2
   },
   {
    "id": "S007",
@@ -5194,7 +5200,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "low bristling fur rustle, a heavy exhale through fur"
+   "foley_prompt": "low bristling fur rustle, a heavy exhale through fur",
+   "tension": 2
   },
   {
    "id": "S008",
@@ -5231,7 +5238,8 @@
     "tether",
     "anklet"
    ],
-   "foley_prompt": "metal chain links settling on rock, a soft hover whir descending"
+   "foley_prompt": "metal chain links settling on rock, a soft hover whir descending",
+   "tension": 2
   },
   {
    "id": "S009",
@@ -5268,7 +5276,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "fur bristling, a low rumble in the chest"
+   "foley_prompt": "fur bristling, a low rumble in the chest",
+   "tension": 3
   },
   {
    "id": "S010",
@@ -5304,7 +5313,8 @@
     "PIP"
    ],
    "props": [],
-   "foley_prompt": "quick bright breath, small mouth click"
+   "foley_prompt": "quick bright breath, small mouth click",
+   "tension": 3
   },
   {
    "id": "S011",
@@ -5342,7 +5352,8 @@
    "v1_source": "S007",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S012",
@@ -5377,7 +5388,8 @@
    "v1_source": "S008",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S013",
@@ -5419,7 +5431,8 @@
    "props": [
     "helmet"
    ],
-   "foley_prompt": "electric flare of a ring light, faint capacitor whine"
+   "foley_prompt": "electric flare of a ring light, faint capacitor whine",
+   "tension": 4
   },
   {
    "id": "S014",
@@ -5459,7 +5472,8 @@
     "anklet",
     "tether"
    ],
-   "foley_prompt": "heavy footfall on basalt, a hover whir receding"
+   "foley_prompt": "heavy footfall on basalt, a hover whir receding",
+   "tension": 4
   },
   {
    "id": "S015",
@@ -5499,7 +5513,8 @@
     "anklet",
     "tether"
    ],
-   "foley_prompt": "two hard metallic anklet clicks with a short ring, then silence"
+   "foley_prompt": "two hard metallic anklet clicks with a short ring, then silence",
+   "tension": 4
   },
   {
    "id": "S016",
@@ -5534,7 +5549,8 @@
    "v1_source": "S005",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 4
   },
   {
    "id": "S017",
@@ -5571,7 +5587,8 @@
    "mouth_visible": [],
    "props": [
     "lamp"
-   ]
+   ],
+   "tension": 4
   },
   {
    "id": "S018",
@@ -5607,7 +5624,8 @@
    "props": [
     "anklet"
    ],
-   "foley_prompt": "anklet chain jerk, a fast whip of cloth"
+   "foley_prompt": "anklet chain jerk, a fast whip of cloth",
+   "tension": 5
   },
   {
    "id": "S019",
@@ -5649,7 +5667,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "distant thin wind over rock, three small pad lights ticking"
+   "foley_prompt": "distant thin wind over rock, three small pad lights ticking",
+   "tension": 5
   },
   {
    "id": "S020",
@@ -5683,7 +5702,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "electronic halo pulse in speech rhythm, then a dimming hum"
+   "foley_prompt": "electronic halo pulse in speech rhythm, then a dimming hum",
+   "tension": 5
   },
   {
    "id": "S021",
@@ -5719,7 +5739,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "foley_prompt": "launch whoosh, rising thruster roar that thins to vacuum silence, low sub swell"
+   "foley_prompt": "launch whoosh, rising thruster roar that thins to vacuum silence, low sub swell",
+   "tension": 5
   },
   {
    "id": "S022",
@@ -5753,7 +5774,8 @@
    "props": [
     "tent"
    ],
-   "foley_prompt": "thin atmospheric rush growing as the camera dives from orbit, settling to a soft wind over rock"
+   "foley_prompt": "thin atmospheric rush growing as the camera dives from orbit, settling to a soft wind over rock",
+   "tension": 2
   },
   {
    "id": "S023",
@@ -5790,7 +5812,8 @@
     "ration_bar",
     "keyboard"
    ],
-   "foley_prompt": "a metal ration crate lid creaks open, three foil-wrapped bars set down one by one on metal, a small sigh, thin wind over rock"
+   "foley_prompt": "a metal ration crate lid creaks open, three foil-wrapped bars set down one by one on metal, a small sigh, thin wind over rock",
+   "tension": 2
   },
   {
    "id": "S024",
@@ -5829,7 +5852,8 @@
    "props": [
     "tent"
    ],
-   "foley_prompt": "soft hover whir drifting overhead, a faint halo pulse, thin wind over rock"
+   "foley_prompt": "soft hover whir drifting overhead, a faint halo pulse, thin wind over rock",
+   "tension": 2
   },
   {
    "id": "S025",
@@ -5860,7 +5884,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S026",
@@ -5893,7 +5918,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S027",
@@ -5926,7 +5952,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S028",
@@ -5959,7 +5986,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S029",
@@ -5990,7 +6018,8 @@
     "crate:FEED"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S030",
@@ -6028,7 +6057,8 @@
    "mouth_visible": [],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 2
   },
   {
    "id": "S031",
@@ -6063,7 +6093,8 @@
    "v1_source": "S025",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S032",
@@ -6098,7 +6129,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S033",
@@ -6131,7 +6163,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S034",
@@ -6171,7 +6204,8 @@
    "v1_source": "S031",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S035",
@@ -6204,7 +6238,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S036",
@@ -6244,7 +6279,8 @@
    "v1_source": "S032",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S037",
@@ -6274,7 +6310,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "planet not visible in frame (macro/re-crop)"
+   "continuity_note": "planet not visible in frame (macro/re-crop)",
+   "tension": 3
   },
   {
    "id": "S038",
@@ -6308,7 +6345,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "tension": 2
   },
   {
    "id": "S039",
@@ -6340,7 +6378,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S040",
@@ -6379,7 +6418,8 @@
    "v1_source": "S035",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S041",
@@ -6414,7 +6454,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "tension": 2
   },
   {
    "id": "S042",
@@ -6443,7 +6484,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S043",
@@ -6476,7 +6518,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S044",
@@ -6516,7 +6559,8 @@
    "v1_source": "S038",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S045",
@@ -6552,7 +6596,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 2
   },
   {
    "id": "S046",
@@ -6587,7 +6632,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S047",
@@ -6623,7 +6669,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S048",
@@ -6655,7 +6702,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S049",
@@ -6691,7 +6739,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S050",
@@ -6730,7 +6779,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S051",
@@ -6770,7 +6820,8 @@
    "mouth_visible": [],
    "props": [
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S052",
@@ -6803,7 +6854,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S053",
@@ -6848,7 +6900,8 @@
    "mouth_visible": [],
    "props": [
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S054",
@@ -6883,7 +6936,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S055",
@@ -6914,7 +6968,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S056",
@@ -6943,7 +6998,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S057",
@@ -6981,7 +7037,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S058",
@@ -7026,7 +7083,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S059",
@@ -7059,7 +7117,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S060",
@@ -7088,7 +7147,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S061",
@@ -7121,7 +7181,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S062",
@@ -7157,7 +7218,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S063",
@@ -7193,7 +7255,8 @@
    "props": [
     "tent",
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S064",
@@ -7236,7 +7299,8 @@
    "props": [
     "tent",
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S065",
@@ -7271,7 +7335,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S066",
@@ -7304,7 +7369,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S067",
@@ -7336,7 +7402,8 @@
    "mouth_visible": [],
    "props": [
     "lamp"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S068",
@@ -7371,7 +7438,8 @@
    "mouth_visible": [],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S069",
@@ -7402,7 +7470,8 @@
    "mouth_visible": [],
    "props": [
     "tally_marks"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S070",
@@ -7435,7 +7504,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S071",
@@ -7470,7 +7540,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S072",
@@ -7508,7 +7579,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S073",
@@ -7541,7 +7613,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S074",
@@ -7581,7 +7654,8 @@
    "v1_source": "S059",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S075",
@@ -7621,7 +7695,8 @@
    ],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S076",
@@ -7654,7 +7729,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S077",
@@ -7689,7 +7765,8 @@
    "v1_source": "S057",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S078",
@@ -7722,7 +7799,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S079",
@@ -7762,7 +7840,8 @@
    "v1_source": "S063",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S080",
@@ -7800,7 +7879,8 @@
    "mouth_visible": [],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S081",
@@ -7841,7 +7921,8 @@
    "mouth_visible": [],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S082",
@@ -7876,7 +7957,8 @@
    "mouth_visible": [],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S083",
@@ -7909,7 +7991,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S084",
@@ -7942,7 +8025,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S085",
@@ -7977,7 +8061,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S086",
@@ -8017,7 +8102,8 @@
    "v1_source": "S065",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S087",
@@ -8052,7 +8138,8 @@
    "v1_source": "S063",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S088",
@@ -8083,7 +8170,8 @@
    "v1_source": "S047",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S089",
@@ -8114,7 +8202,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S090",
@@ -8149,7 +8238,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S091",
@@ -8182,7 +8272,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S092",
@@ -8213,7 +8304,8 @@
    "mouth_visible": [],
    "props": [
     "moon_rock_heart"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S093",
@@ -8245,7 +8337,8 @@
    "mouth_visible": [],
    "props": [
     "moon_rock_heart"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S094",
@@ -8283,7 +8376,8 @@
    "mouth_visible": [],
    "props": [
     "moon_rock_heart"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S095",
@@ -8318,7 +8412,8 @@
     "crate:FEED"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S096",
@@ -8354,7 +8449,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S097",
@@ -8385,7 +8481,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S098",
@@ -8423,7 +8520,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S099",
@@ -8468,7 +8566,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S100",
@@ -8505,7 +8604,8 @@
    ],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S101",
@@ -8543,7 +8643,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S102",
@@ -8578,7 +8679,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S103",
@@ -8613,7 +8715,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S104",
@@ -8655,7 +8758,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S105",
@@ -8686,7 +8790,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S106",
@@ -8724,7 +8829,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S107",
@@ -8761,7 +8867,8 @@
    ],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S108",
@@ -8796,7 +8903,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S109",
@@ -8836,7 +8944,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S110",
@@ -8874,7 +8983,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S111",
@@ -8907,7 +9017,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S112",
@@ -8940,7 +9051,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S113",
@@ -8975,7 +9087,8 @@
    "mouth_visible": [],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S114",
@@ -9010,7 +9123,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S115",
@@ -9043,7 +9157,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S116",
@@ -9076,7 +9191,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S117",
@@ -9107,7 +9223,8 @@
    "mouth_visible": [],
    "props": [
     "dome_hologram"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S118",
@@ -9149,7 +9266,8 @@
    "props": [
     "dome_hologram",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S119",
@@ -9184,7 +9302,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S120",
@@ -9227,7 +9346,8 @@
    "mouth_visible": [],
    "props": [
     "dome_hologram"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S121",
@@ -9277,7 +9397,8 @@
    "mouth_visible": [],
    "props": [
     "dome_hologram"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S122",
@@ -9312,7 +9433,8 @@
    "v1_source": "S088",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S123",
@@ -9345,7 +9467,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S124",
@@ -9381,7 +9504,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S125",
@@ -9414,7 +9538,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S126",
@@ -9447,7 +9572,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S127",
@@ -9481,7 +9607,8 @@
    ],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S128",
@@ -9512,7 +9639,8 @@
    "mouth_visible": [],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S129",
@@ -9554,7 +9682,8 @@
    ],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S130",
@@ -9589,7 +9718,8 @@
    "mouth_visible": [],
    "props": [
     "paperback"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S131",
@@ -9631,7 +9761,8 @@
    "mouth_visible": [],
    "props": [
     "paperback"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S132",
@@ -9662,7 +9793,8 @@
    "mouth_visible": [],
    "props": [
     "paperback"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S133",
@@ -9697,7 +9829,8 @@
    "mouth_visible": [],
    "props": [
     "paperback"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S134",
@@ -9732,7 +9865,8 @@
    "mouth_visible": [],
    "props": [
     "tent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S135",
@@ -9771,7 +9905,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S136",
@@ -9815,7 +9950,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S137",
@@ -9853,7 +9989,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S138",
@@ -9898,7 +10035,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S139",
@@ -9931,7 +10069,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S140",
@@ -9966,7 +10105,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S141",
@@ -10008,7 +10148,8 @@
    "mouth_visible": [],
    "props": [
     "plasma_vent"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S142",
@@ -10052,7 +10193,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S143",
@@ -10103,7 +10245,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S144",
@@ -10135,7 +10278,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S145",
@@ -10174,7 +10318,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S146",
@@ -10210,7 +10355,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S147",
@@ -10242,7 +10388,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S148",
@@ -10275,7 +10422,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S149",
@@ -10310,7 +10458,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S150",
@@ -10346,7 +10495,8 @@
    "props": [
     "tray_drone",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S151",
@@ -10382,7 +10532,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S152",
@@ -10415,7 +10566,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S153",
@@ -10453,7 +10605,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S154",
@@ -10486,7 +10639,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S155",
@@ -10521,7 +10675,8 @@
    "mouth_visible": [],
    "props": [
     "crate_open"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S156",
@@ -10553,7 +10708,8 @@
    "props": [
     "tickets",
     "crate_open"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S157",
@@ -10589,7 +10745,8 @@
    "props": [
     "tickets",
     "crate_open"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S158",
@@ -10622,7 +10779,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S159",
@@ -10660,7 +10818,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S160",
@@ -10689,7 +10848,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S161",
@@ -10731,7 +10891,8 @@
    ],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S162",
@@ -10769,7 +10930,8 @@
    "mouth_visible": [],
    "props": [
     "bedroll"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S163",
@@ -10802,7 +10964,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S164",
@@ -10838,7 +11001,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay of the Day-1 toilet gag on the 25 m rock: crop must exclude the horizon (house-sized planet on this day)"
+   "continuity_note": "replay of the Day-1 toilet gag on the 25 m rock: crop must exclude the horizon (house-sized planet on this day)",
+   "tension": 3
   },
   {
    "id": "S165",
@@ -10873,7 +11037,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S166",
@@ -10907,7 +11072,8 @@
    "props": [
     "launch_key",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S167",
@@ -10940,7 +11106,8 @@
    "mouth_visible": [],
    "props": [
     "lamp"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S168",
@@ -10980,7 +11147,8 @@
    "mouth_visible": [],
    "props": [
     "lamp"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S169",
@@ -11021,7 +11189,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S170",
@@ -11069,7 +11238,8 @@
    "v1_source": "S130",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S171",
@@ -11102,7 +11272,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S172",
@@ -11137,7 +11308,8 @@
    "mouth_visible": [],
    "props": [
     "launch_key"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S173",
@@ -11173,7 +11345,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S174",
@@ -11204,7 +11377,8 @@
    "mouth_visible": [],
    "props": [
     "tray_drone"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S175",
@@ -11247,7 +11421,8 @@
     "trust:OPEN"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S176",
@@ -11280,7 +11455,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S177",
@@ -11328,7 +11504,8 @@
    "v1_source": "S134",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S178",
@@ -11361,7 +11538,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S179",
@@ -11397,7 +11575,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S180",
@@ -11432,7 +11611,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S181",
@@ -11468,7 +11648,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S182",
@@ -11503,7 +11684,8 @@
    "v1_source": "S135",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S183",
@@ -11536,7 +11718,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S184",
@@ -11576,7 +11759,8 @@
    "v1_source": "S137",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S185",
@@ -11609,7 +11793,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S186",
@@ -11642,7 +11827,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S187",
@@ -11677,7 +11863,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S188",
@@ -11712,7 +11899,8 @@
     "goggle:FEED"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S189",
@@ -11752,7 +11940,8 @@
    "v1_source": "S141",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S190",
@@ -11787,7 +11976,8 @@
    "v1_source": "S131",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S191",
@@ -11823,7 +12013,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S192",
@@ -11866,7 +12057,8 @@
    "v1_source": "S143",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S193",
@@ -11899,7 +12091,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S194",
@@ -11936,7 +12129,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S195",
@@ -11976,7 +12170,8 @@
    "props": [
     "launch_key",
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S196",
@@ -12021,7 +12216,8 @@
    "props": [
     "launch_key",
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S197",
@@ -12054,7 +12250,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S198",
@@ -12085,7 +12282,8 @@
    "mouth_visible": [],
    "props": [
     "lamp"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S199",
@@ -12119,7 +12317,8 @@
    "props": [
     "launch_key",
     "cloche"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S200",
@@ -12152,7 +12351,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S201",
@@ -12183,7 +12383,8 @@
    "mouth_visible": [],
    "props": [
     "glass_pod"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S202",
@@ -12220,7 +12421,8 @@
    ],
    "props": [
     "glass_pod"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S203",
@@ -12257,7 +12459,8 @@
    "mouth_visible": [],
    "props": [
     "glass_pod"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S204",
@@ -12297,7 +12500,8 @@
    "mouth_visible": [],
    "props": [
     "glass_pod"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S205",
@@ -12332,7 +12536,8 @@
    "mouth_visible": [],
    "props": [
     "glass_pod"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S206",
@@ -12365,7 +12570,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S207",
@@ -12396,7 +12602,8 @@
    "mouth_visible": [],
    "props": [
     "glass_pod"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S208",
@@ -12434,7 +12641,8 @@
    "mouth_visible": [],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S209",
@@ -12472,7 +12680,8 @@
    "mouth_visible": [],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S210",
@@ -12512,7 +12721,8 @@
    "mouth_visible": [],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S211",
@@ -12547,7 +12757,8 @@
    "mouth_visible": [],
    "props": [
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S212",
@@ -12583,7 +12794,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S213",
@@ -12616,7 +12828,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S214",
@@ -12655,7 +12868,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S215",
@@ -12694,7 +12908,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S216",
@@ -12736,7 +12951,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S217",
@@ -12771,7 +12987,8 @@
    "mouth_visible": [
     "PIP"
    ],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S218",
@@ -12809,7 +13026,8 @@
    "v1_source": "S162",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S219",
@@ -12847,7 +13065,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S220",
@@ -12885,7 +13104,8 @@
     "goggle:PAY"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S221",
@@ -12915,7 +13135,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "archive stills: the band (PIP, GRUFF + two silhouettes) inside the stills; no composite, no generation; banked as the FFmpeg-built clip"
+   "continuity_note": "archive stills: the band (PIP, GRUFF + two silhouettes) inside the stills; no composite, no generation; banked as the FFmpeg-built clip",
+   "tension": 3
   },
   {
    "id": "S222",
@@ -12958,7 +13179,8 @@
    "v1_source": "S169",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S223",
@@ -12991,7 +13213,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S224",
@@ -13031,7 +13254,8 @@
    "v1_source": "S170",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S225",
@@ -13071,7 +13295,8 @@
    "props": [
     "plasma_vent"
    ],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S226",
@@ -13104,7 +13329,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S227",
@@ -13144,7 +13370,8 @@
    "v1_source": "S172",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S228",
@@ -13178,7 +13405,8 @@
    "props": [
     "clock_housing",
     "tray_drone"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S229",
@@ -13219,7 +13447,8 @@
    "props": [
     "clock_housing",
     "tray_drone"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S230",
@@ -13252,7 +13481,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S231",
@@ -13290,7 +13520,8 @@
    "mouth_visible": [],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S232",
@@ -13321,7 +13552,8 @@
    "mouth_visible": [],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S233",
@@ -13359,7 +13591,8 @@
    "mouth_visible": [],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S234",
@@ -13404,7 +13637,8 @@
    "mouth_visible": [],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S235",
@@ -13441,7 +13675,8 @@
    ],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S236",
@@ -13476,7 +13711,8 @@
     "launch:FEED"
    ],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S237",
@@ -13516,7 +13752,8 @@
    "v1_source": "S178",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S238",
@@ -13556,7 +13793,8 @@
    "props": [
     "red_lever"
    ],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S239",
@@ -13587,7 +13825,8 @@
    "mouth_visible": [],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S240",
@@ -13633,7 +13872,8 @@
    ],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S241",
@@ -13668,7 +13908,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S242",
@@ -13705,7 +13946,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S243",
@@ -13740,7 +13982,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S244",
@@ -13780,7 +14023,8 @@
    "props": [
     "red_lever"
    ],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S245",
@@ -13813,7 +14057,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S246",
@@ -13852,7 +14097,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S247",
@@ -13892,7 +14138,8 @@
    "mouth_visible": [],
    "props": [
     "red_lever"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S248",
@@ -13931,7 +14178,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S249",
@@ -13962,7 +14210,8 @@
    "mouth_visible": [],
    "props": [
     "rescue_ship"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S250",
@@ -14000,7 +14249,8 @@
    "mouth_visible": [],
    "props": [
     "rescue_ship"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S251",
@@ -14033,7 +14283,8 @@
    "mouth_visible": [],
    "props": [
     "clock_housing"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S252",
@@ -14075,7 +14326,8 @@
    "props": [
     "anklet",
     "tether"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S253",
@@ -14111,7 +14363,8 @@
    "loops": [],
    "mouth_visible": [],
    "props": [],
-   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's"
+   "continuity_note": "replay/flashback clip \u2014 planet size on screen is the source day's",
+   "tension": 3
   },
   {
    "id": "S254",
@@ -14153,7 +14406,8 @@
    "props": [
     "crate_open",
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S255",
@@ -14193,7 +14447,8 @@
    "mouth_visible": [],
    "props": [
     "ration_bar"
-   ]
+   ],
+   "tension": 3
   },
   {
    "id": "S256",
@@ -14229,7 +14484,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S257",
@@ -14262,7 +14518,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   },
   {
    "id": "S258",
@@ -14295,7 +14552,8 @@
    "reuse": "unique",
    "loops": [],
    "mouth_visible": [],
-   "props": []
+   "props": [],
+   "tension": 3
   }
  ]
 }

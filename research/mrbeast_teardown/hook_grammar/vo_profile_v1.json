@@ -1,0 +1,13 @@
+{
+ "source": "research/mrbeast_teardown/hook_grammar/hook.webm",
+ "window": [
+  0.0,
+  45.0
+ ],
+ "pace_wps": 3.32,
+ "pitch_std_st": 11.01,
+ "pitch_range_st": 31.8,
+ "energy_std_db": 3.87,
+ "voiced_frac": 0.11,
+ "speech_frac": 0.86
+}
