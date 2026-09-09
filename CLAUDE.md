@@ -23,6 +23,19 @@ DaVinci-as-assembler era) are archived at `archive/CLAUDE_archive_2026-06-01.md`
 7. **LOOK BEFORE YOU REPORT** — judge a render on a dense contact sheet (same creature
    every shot? title claim un-contradicted? story happens?) before citing any metric.
    Green gates on a bad video = a failed report.
+8. **THE CUT IS JUDGED BY EYES AND EARS, NOT METERS** (2026-09-08 first-minute failure). Before ANY render
+   is sent to the owner: `scripts/watch_gate.py` must print PASS (replayed screen time, frozen runs, speech
+   coverage, dead air, line-on-speaker, foley coverage, text size, card hold, music holes, text hits — vs the
+   reference), AND every 4 fps strip it writes has been LOOKED AT, AND the report says "UNHEARD" until a
+   listening pass (owner ear check or a listening model) is recorded. A gate FAIL is a stop, never "diluted".
+9. **A PROTOTYPE THAT CONTRADICTS THE PLAN STOPS THE BUILD.** The first voiced line ran 7.6 s for a 3 s slot
+   and the build continued for two hours. When the first real sample breaks the timing/density assumption,
+   stop, show the number, and put the choice to the owner. Never stretch the picture, replay a clip, or loop a
+   clip to make a script fit: `render_edit_spec.py` and `retime_to_vo.py` now refuse; the script loses seconds.
+10. **SPEECH BUDGET BEFORE VOICE.** ~16 chars/s spoken; a beat may carry at most 0.8 × its length in speech.
+    `story_gate.py` enforces it per beat; no ElevenLabs pass on a script that fails it.
+11. **HOOK SHOTS MOVE.** No "camera locked" prompts in the hook window; `clip_bank.py verdict --hook` refuses
+    static clips (motion < 4, static run > 2 s). Prompt fidelity is not picture energy.
 
 ## ⚠️ Tool Policy (FFmpeg is the engine — DaVinci is optional)
 1. **FFmpeg = the assembly/render engine.** `scripts/ffmpeg_production_render.py` builds

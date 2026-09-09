@@ -30,7 +30,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("script"); ap.add_argument("--ladder"); ap.add_argument("--json")
     ap.add_argument("--max-loop-gap", type=int, default=300); ap.add_argument("--max-device-gap", type=int, default=60)
-    ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
+    ap.add_argument("--pip-cap", type=int, default=20); ap.add_argument("--chars-per-sec", type=float, default=16.0); ap.add_argument("--air", type=float, default=0.2); ap.add_argument("--min-words", type=int, default=3800); ap.add_argument("--max-words", type=int, default=4200)
     a = ap.parse_args()
     ladder = DEFAULT_LADDER
     if a.ladder:
@@ -41,7 +41,7 @@ def main():
     cur_t = None; cur_day = None; last_day = -1
     events = []  # (t, kind, detail)
     loops = {}   # id -> {"OPEN":t, "FEED":[t], "PAY":t}
-    pip_on = 0; words = 0; share = {}
+    pip_on = 0; words = 0; share = {}; chars_by_beat = {}
     planet_by_beat = {}; count_by_beat = {}; day_by_beat = {}
     for ln in open(a.script, encoding="utf-8"):
         s = ln.strip()
@@ -71,8 +71,15 @@ def main():
         if m:
             spk, meta, text = m.group(1), m.group(2), m.group(3)
             n = len(re.findall(r"[A-Za-z0-9']+", text)); words += n; share[spk] = share.get(spk, 0) + n
+            chars_by_beat[cur] = chars_by_beat.get(cur, 0) + len(text)
             if spk.upper() == "PIP" and re.search(r"mouth:\s*ON", meta, re.I): pip_on += 1
             if BANNED.search(text): fails.append(f"{cur}: banned brand/likeness token in line: {text[:60]!r}")
+    # SPEECH BUDGET per beat (2026-09-08: the first minute carried 91 s of speech in 60 s; ~16 chars/s spoken at announcer pace,
+    # a beat may hold at most (1-air) of its length in speech). Fails BEFORE any voice is bought.
+    for (t_in, t_out, name) in beats:
+        spoken = chars_by_beat.get(name, 0) / a.chars_per_sec; budget = (1 - a.air) * (t_out - t_in)
+        if spoken > budget + 0.25: fails.append(f"{name}: {spoken:.1f}s of speech in a {t_out - t_in:.0f}s beat (budget {budget:.1f}s) -> cut ~{spoken - budget:.1f}s (~{int((spoken - budget) * a.chars_per_sec)} chars)")
+    info["speech_seconds_by_beat"] = {n: round(chars_by_beat.get(n, 0) / a.chars_per_sec, 1) for _, _, n in beats}
     # loops
     for lid, L in loops.items():
         if L["OPEN"] is None: fails.append(f"loop '{lid}' has FEED/PAY but no OPEN")

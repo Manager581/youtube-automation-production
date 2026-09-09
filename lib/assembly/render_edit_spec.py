@@ -31,10 +31,23 @@ def resolve_src(src, ledger, fallback=None):
         raise FileNotFoundError(f"no PASS-banked clip for {sid} and no --fallback")
     return src, "path"
 
-def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, report_path=None):
+def _dur(p):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True); return float(r.stdout.strip() or 0)
+
+def main(spec_path, out, ledger_path=None, masters_dir=None, fallback=None, report_path=None, allow_loop=False, allow_replay=False):
     spec = json.load(open(spec_path)); fps = spec.get("fps", 24); W, H = map(int, spec.get("size", "1920x1080").split("x"))
     ledger = json.load(open(ledger_path)) if ledger_path and os.path.exists(ledger_path) else None
     work = os.path.splitext(out)[0] + "_segs"; os.makedirs(work, exist_ok=True); segs = []; rep = []
+    # FAIL-CLOSED (2026-09-08 first-minute lesson): a slot longer than its clip would LOOP (visible jump); a setup replayed
+    # outside a designed <=1.5 s insert is a REPEAT the viewer notices. Both refuse unless explicitly allowed (dry runs only).
+    seen = set(); problems = []
+    for sg in spec["segments"]:
+        src, how = resolve_src(sg["src"], ledger, fallback); slot = (sg["t_out"] - sg["t_in"]) if "t_out" in sg else (sg["t1"] - sg["t0"]); t0 = sg.get("t0", 0.0)
+        if how == "ledger" and not allow_loop and _dur(src) > 0 and t0 + slot > _dur(src) + 0.05: problems.append(f"{sg.get('shot')}: slot {slot:.2f}s from {t0:.2f}s exceeds clip {_dur(src):.2f}s (would LOOP)")
+        key = sg["src"]; designed = (sg.get("reuse") == "insert" and slot <= 1.5)
+        if key in seen and not designed and not allow_replay: problems.append(f"{sg.get('shot')}: REPLAYS {key} for {slot:.2f}s (not a designed <=1.5 s insert)")
+        seen.add(key)
+    if problems: raise SystemExit("render_edit_spec REFUSED (fix the cut, don't stretch it):\n  " + "\n  ".join(problems))
     for i, sg in enumerate(spec["segments"]):
         src, how = resolve_src(sg["src"], ledger, fallback)
         slot = (sg["t_out"] - sg["t_in"]) if "t_out" in sg else (sg["t1"] - sg["t0"])
@@ -69,5 +82,5 @@ def fallback_still(work, name, W, H):
 
 if __name__ == "__main__":
     import argparse
-    ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("out"); ap.add_argument("--ledger"); ap.add_argument("--masters"); ap.add_argument("--fallback", help="stand-in clip for unbanked ledger refs (prototype/dry runs ONLY; report counts them)"); ap.add_argument("--report")
-    a = ap.parse_args(); main(a.spec, a.out, a.ledger, a.masters, a.fallback, a.report)
+    ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("out"); ap.add_argument("--ledger"); ap.add_argument("--masters"); ap.add_argument("--fallback", help="stand-in clip for unbanked ledger refs (prototype/dry runs ONLY; report counts them)"); ap.add_argument("--report"); ap.add_argument("--allow-loop", action="store_true", help="DRY RUNS ONLY"); ap.add_argument("--allow-replay", action="store_true", help="DRY RUNS ONLY")
+    a = ap.parse_args(); main(a.spec, a.out, a.ledger, a.masters, a.fallback, a.report, a.allow_loop, a.allow_replay)

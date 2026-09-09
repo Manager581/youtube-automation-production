@@ -24,6 +24,18 @@ def warp(t):
         if t <= s1: return r0 + (r1 - r0) * ((t - s0) / (s1 - s0) if s1 > s0 else 0)
     s0, r0 = anchors[-1]; return r0 + (t - s0)
 EXTRA_WHITEOUT = {"S011", "S012", "S016", "S017"}
+MAX_K = 1.25   # the reference tolerates ~25% timing slack; beyond that the hook grammar dilutes -> the SCRIPT must lose seconds
+over = {}
+for sg in spec["segments"]:
+    a, b = warp(sg["t_in"]), warp(sg["t_out"]); k = (b - a) / max(sg["t_out"] - sg["t_in"], 1e-6)
+    if k > MAX_K: over.setdefault(sg["beat"], []).append((sg["shot"], round(k, 2)))
+if over:
+    print("retime REFUSED: the voice runs longer than the cut allows. Cut dialogue, do not stretch picture:")
+    for beat, shots in over.items():
+        bl = [l for l in lines if any(m["id"] == l["id"] and m["beat"] == beat for m in man)]
+        spoken = sum(l["d"] for l in bl); alloc = sum(sg["t_out"] - sg["t_in"] for sg in spec["segments"] if sg["beat"] == beat)
+        print(f"  {beat}: {spoken:.1f}s of speech in a {alloc:.1f}s beat -> cut ~{max(0, spoken - 0.8 * alloc):.1f}s of dialogue (~{int(max(0, spoken - 0.8 * alloc) * 16)} chars)  worst stretch {max(k for _, k in shots)}x")
+    raise SystemExit(1)
 segs = []
 for sg in spec["segments"]:
     a, b = warp(sg["t_in"]), warp(sg["t_out"]); old = sg["t_out"] - sg["t_in"]; new = b - a; k = new / old if old > 0 else 1
