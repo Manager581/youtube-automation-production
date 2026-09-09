@@ -312,6 +312,27 @@ def cmd_title(args):
     """S2 title gate: deterministic winner-grammar checks (scripts/title_gate.py)."""
     r=subprocess.run([sys.executable, os.path.join(REPO,"scripts","title_gate.py")] + args.titles); print("title: " + ("PASS" if r.returncode==0 else "FAIL")); return r.returncode
 
+def cmd_watch(args):
+    """WATCH gate (Law 8/S8): render-level eyes vs the reference — replay/frozen/speech/dead-air/line-on-speaker/foley/text/cards/music/hits/look/tension; writes 4fps strips; always UNHEARD."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","watch_gate.py"), "--video", args.video, "--spec", args.spec, "--mix", args.mix, "--manifest", args.manifest] + (["--ref", args.ref] if args.ref else []) + (["--json", args.json] if args.json else [])
+    return subprocess.run(cmd, cwd=REPO).returncode
+
+def cmd_voqc(args):
+    """VO PERFORMANCE gate (Law 2): words + pace + pitch/energy variance per line vs the reference narration profile; flat reads FAIL."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","vo_qc.py"), "--lines", args.lines, "--manifest", args.manifest, "--profile", args.profile] + (["--json", args.json] if args.json else [])
+    return subprocess.run(cmd, cwd=REPO).returncode
+
+def cmd_wordedit(args):
+    """WORD-DRIVEN EDIT check (Law 4): text pops anchored to words, emphasis punch-ins, hook ops density vs floor (reads the spec's word_driven block)."""
+    spec=json.load(open(args.spec)); wd=spec.get("word_driven")
+    if not wd: print("FAIL: spec has no word_driven block (run lib/assembly/build_edit_from_alignment.py)"); return 1
+    print(f"  word_driven: anchored={wd['anchored_text']} punches={wd['emphasis_punches']} hook_ops_per_10s={wd['hook_ops_per_10s']} floor={wd['floor']} missing={wd['missing_anchors']} -> {wd['verdict']}"); return 0 if wd["verdict"]=="PASS" else 1
+
+def cmd_deliver(args):
+    """DELIVER door (Law 0/8): the only way a render leaves — refuses without watch PASS + WATCH_NOTES + gates PASS + listen line + prototype records."""
+    cmd=[sys.executable, os.path.join(REPO,"scripts","deliver.py"), "--render", args.render, "--lane", args.lane, "--caption", args.caption or ""]
+    return subprocess.run(cmd, cwd=REPO).returncode
+
 def cmd_all(args):
     """Run EVERY gate in a lane config (lane.json) and write ONE report. Fail-closed: a required gate with missing inputs = FAIL;
     a gate whose stage has not been reached yet = NOT-READY (reported, never silent). Exit 1 if any required gate fails."""
@@ -367,6 +388,10 @@ def main():
     p = sub.add_parser("assembly"); p.add_argument("--report", required=True); p.set_defaults(fn=cmd_assembly)
     p = sub.add_parser("listen"); p.add_argument("--video", required=True); p.add_argument("--targets", required=True); p.add_argument("--t0", type=float, default=0.0); p.add_argument("--t1", type=float, default=45.0); p.set_defaults(fn=cmd_listen)
     p = sub.add_parser("title"); p.add_argument("titles", nargs="+"); p.set_defaults(fn=cmd_title)
+    p = sub.add_parser("watch"); p.add_argument("--video", required=True); p.add_argument("--spec", required=True); p.add_argument("--mix", required=True); p.add_argument("--manifest", required=True); p.add_argument("--ref"); p.add_argument("--json"); p.set_defaults(fn=cmd_watch)
+    p = sub.add_parser("voqc"); p.add_argument("--lines", required=True); p.add_argument("--manifest", required=True); p.add_argument("--profile", required=True); p.add_argument("--json"); p.set_defaults(fn=cmd_voqc)
+    p = sub.add_parser("wordedit"); p.add_argument("--spec", required=True); p.set_defaults(fn=cmd_wordedit)
+    p = sub.add_parser("deliver"); p.add_argument("--render", required=True); p.add_argument("--lane", required=True); p.add_argument("--caption"); p.set_defaults(fn=cmd_deliver)
     p = sub.add_parser("all"); p.add_argument("lane_config"); p.add_argument("--report"); p.set_defaults(fn=cmd_all)
     p = sub.add_parser("list"); p.set_defaults(fn=cmd_list)
     args = ap.parse_args()

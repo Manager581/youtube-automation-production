@@ -1,108 +1,169 @@
 {
-  "lane": "shrinking_planet",
-  "stage": 1,
-  "gates": {
-    "state": {
-      "cmd": [
-        "state"
-      ]
-    },
-    "story": {
-      "cmd": [
-        "story",
-        "research/mrbeast_teardown/shrinking_planet/SCRIPT_v2.md",
-        "--ladder",
-        "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
-      ],
-      "needs": [
-        "research/mrbeast_teardown/shrinking_planet/SCRIPT_v2.md"
-      ],
-      "from_stage": 0
-    },
-    "continuity": {
-      "cmd": [
-        "continuity",
-        "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json",
-        "--beats",
-        "30",
-        "--lines",
-        "research/mrbeast_teardown/shrinking_planet/script_lines_v2.json"
-      ],
-      "needs": [
-        "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
-      ],
-      "from_stage": 0
-    },
-    "title": {
-      "cmd": [
-        "title",
-        "Survive 30 Days On A Shrinking Planet Or Fall Into Space"
-      ],
-      "from_stage": 0
-    },
-    "seedlock": {
-      "cmd": [
-        "seedlock",
-        "--lane",
-        "assets/shrinking_planet",
-        "--manifest",
-        "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
-      ],
-      "needs": [
-        "assets/shrinking_planet/SEED_LOCK.json"
-      ],
-      "from_stage": 1
-    },
-    "bank": {
-      "cmd": [
-        "bank",
-        "--ledger",
-        "assets/shrinking_planet/CLIP_LEDGER.json",
-        "--manifest",
-        "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
-      ],
-      "needs": [
-        "assets/shrinking_planet/CLIP_LEDGER.json"
-      ],
-      "from_stage": 2
-    },
-    "hook": {
-      "cmd": [
-        "hook",
-        "--video",
-        "output/shrinking_planet/hook_v1.mp4",
-        "--targets",
-        "research/mrbeast_teardown/hook_grammar/hook_targets_v1.json"
-      ],
-      "needs": [
-        "output/shrinking_planet/hook_v1.mp4"
-      ],
-      "from_stage": 2
-    },
-    "listen": {
-      "cmd": [
-        "listen",
-        "--video",
-        "output/shrinking_planet/hook_v1.mp4",
-        "--targets",
-        "research/mrbeast_teardown/hook_grammar/listen_targets_v1.json"
-      ],
-      "needs": [
-        "output/shrinking_planet/hook_v1.mp4"
-      ],
-      "from_stage": 2
-    },
-    "assembly": {
-      "cmd": [
-        "assembly",
-        "--report",
-        "output/shrinking_planet/preview_report.json"
-      ],
-      "needs": [
-        "output/shrinking_planet/preview_report.json"
-      ],
-      "from_stage": 5
-    }
+ "lane": "shrinking_planet",
+ "stage": 1,
+ "gates": {
+  "state": {
+   "cmd": [
+    "state"
+   ]
   },
-  "_notes": "from_stage = the build stage at which the gate becomes REQUIRED (missing inputs before that stage = NOT-READY, not FAIL). Stage index: 0 paper, 1 seeds locked, 2 hook prototype, 3 VO, 4 hero shots, 5 acts banked+assembled, 6 full render, 7 package."
+  "story": {
+   "cmd": [
+    "story",
+    "research/mrbeast_teardown/shrinking_planet/SCRIPT_v2.md",
+    "--ladder",
+    "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
+   ],
+   "needs": [
+    "research/mrbeast_teardown/shrinking_planet/SCRIPT_v2.md"
+   ],
+   "from_stage": 0
+  },
+  "continuity": {
+   "cmd": [
+    "continuity",
+    "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json",
+    "--beats",
+    "30",
+    "--lines",
+    "research/mrbeast_teardown/shrinking_planet/script_lines_v2.json"
+   ],
+   "needs": [
+    "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
+   ],
+   "from_stage": 0
+  },
+  "title": {
+   "cmd": [
+    "title",
+    "Survive 30 Days On A Shrinking Planet Or Fall Into Space"
+   ],
+   "from_stage": 0
+  },
+  "seedlock": {
+   "cmd": [
+    "seedlock",
+    "--lane",
+    "assets/shrinking_planet",
+    "--manifest",
+    "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
+   ],
+   "needs": [
+    "assets/shrinking_planet/SEED_LOCK.json"
+   ],
+   "from_stage": 1
+  },
+  "bank": {
+   "cmd": [
+    "bank",
+    "--ledger",
+    "assets/shrinking_planet/CLIP_LEDGER.json",
+    "--manifest",
+    "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json"
+   ],
+   "needs": [
+    "assets/shrinking_planet/CLIP_LEDGER.json"
+   ],
+   "from_stage": 2
+  },
+  "hook": {
+   "cmd": [
+    "hook",
+    "--video",
+    "output/shrinking_planet/hook_v1.mp4",
+    "--targets",
+    "research/mrbeast_teardown/hook_grammar/hook_targets_v1.json"
+   ],
+   "needs": [
+    "output/shrinking_planet/hook_v1.mp4"
+   ],
+   "from_stage": 2
+  },
+  "listen": {
+   "cmd": [
+    "listen",
+    "--video",
+    "output/shrinking_planet/hook_v1.mp4",
+    "--targets",
+    "research/mrbeast_teardown/hook_grammar/listen_targets_v1.json"
+   ],
+   "needs": [
+    "output/shrinking_planet/hook_v1.mp4"
+   ],
+   "from_stage": 2
+  },
+  "assembly": {
+   "cmd": [
+    "assembly",
+    "--report",
+    "output/shrinking_planet/preview_report.json"
+   ],
+   "needs": [
+    "output/shrinking_planet/preview_report.json"
+   ],
+   "from_stage": 5
+  },
+  "voqc": {
+   "from_stage": 3,
+   "needs": [
+    "research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/VO_LINES_MANIFEST.json",
+    "research/mrbeast_teardown/hook_grammar/vo_profile_v1.json"
+   ],
+   "cmd": [
+    "voqc",
+    "--lines",
+    "research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3",
+    "--manifest",
+    "research/mrbeast_teardown/shrinking_planet/vo_lines_first_minute_v3/VO_LINES_MANIFEST.json",
+    "--profile",
+    "research/mrbeast_teardown/hook_grammar/vo_profile_v1.json"
+   ],
+   "hook_window": true
+  },
+  "wordedit": {
+   "from_stage": 6,
+   "needs": [
+    "output/shrinking_planet/first_minute_edit_spec_words.json"
+   ],
+   "cmd": [
+    "wordedit",
+    "--spec",
+    "output/shrinking_planet/first_minute_edit_spec_words.json"
+   ],
+   "hook_window": true
+  },
+  "watch": {
+   "from_stage": 8,
+   "needs": [
+    "output/shrinking_planet/first_minute_v4.mp4"
+   ],
+   "cmd": [
+    "watch",
+    "--video",
+    "output/shrinking_planet/first_minute_v4.mp4",
+    "--spec",
+    "output/shrinking_planet/first_minute_edit_spec_words.json",
+    "--mix",
+    "research/mrbeast_teardown/shrinking_planet/first_minute_mix_spec_r.json",
+    "--manifest",
+    "research/mrbeast_teardown/shrinking_planet/shot_manifest_v2.json",
+    "--ref",
+    "research/mrbeast_teardown/hook_grammar/hook.webm"
+   ],
+   "hook_window": true
+  }
+ },
+ "_notes": "from_stage = the build stage at which the gate becomes REQUIRED (missing inputs before that stage = NOT-READY, not FAIL). Stage index: 0 paper, 1 seeds locked, 2 hook prototype, 3 VO, 4 hero shots, 5 acts banked+assembled, 6 full render, 7 package.",
+ "prototypes_required": [
+  "voice_direction",
+  "talking_clip",
+  "alt_angle"
+ ],
+ "promise": {
+  "claim": "a planet that shrinks under two contestants until it is a rock they cling to",
+  "proof_shots": [
+   "S000"
+  ],
+  "by_s": 3.0
+ }
 }
