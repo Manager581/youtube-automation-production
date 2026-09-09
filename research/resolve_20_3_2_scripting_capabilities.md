@@ -26,3 +26,30 @@ pre-baking. Building our own MCP adds nothing (and violates the no-parallel-solu
 make an edit feel alive — animated moves, transitions, the audio mix — are exactly what NO API (and therefore
 no MCP, ours or anyone's) can do. FFmpeg pre-baking stays the engine; Resolve = polish + SmartReframe layer.
 Our architecture is what the API forces on everyone, including the 2.3K-star MCP project itself.
+
+---
+
+## 2026-09-09 UPDATE — Blackmagic shipped a NATIVE MCP server in Resolve 21.1
+
+**Verified:** Resolve 21.1 released 2026-09-08 (IBC 2026), free update, ~100+ new tools, and it includes a
+**first-party MCP server** for Claude / ChatGPT-Codex. Corroborated by CG Channel, Sports Video Group,
+digitalproduction, Newsshooter, ProVideo Coalition. Blackmagic's own marketing "what's new" page does NOT
+mention MCP (checked 2026-09-09) — it's in the release/press coverage, not the feature grid.
+Installed here = **20.3.2 Studio** → 21.1 is a free upgrade.
+
+**What this changes:** removes the install/bridge friction of samuelgursky's community MCP. Nothing else.
+An MCP is still a wrapper over the same scripting API, so the table above still governs what is possible.
+
+**UNVERIFIED CLAIM worth one cheap measurement:** one second-hand blog (explainx.ai) lists "transitions"
+among the native MCP's operations. The table above says NO Add/Create-transition method exists at 21.0.4.5.
+If Blackmagic added transition methods in 21.1 that is a real architectural change — measure it with
+`dir()` on a 21.1 TimelineItem/Timeline before believing any blog. Do NOT re-plan around it until measured.
+
+**Trigger video (Danny Why, "ChatGPT Just Changed YouTube Forever", 2026-09-09, 13:59):** demo = Codex +
+Resolve MCP → `TranscribeAudio` → cut pauses/retakes from the transcript → place clips on a new timeline.
+That is exactly the ✅ CAN rows above; our whisperx + FFmpeg path already does it unattended at $0.
+Two things the video does NOT show: (a) any animated move, transition, or audio-level automation done by
+Resolve — the "motion graphics" are pre-rendered Higgsfield clips PLACED on a track (placement, not
+animation), so the three ❌ IMPOSSIBLE rows are untouched; (b) pure MCP control — at 09:07 the creator
+says "it started moving my mouse", i.e. part of the run was computer-use driving the Resolve UI, which is
+not reproducible headlessly. Higgsfield is metered credits + an affiliate link → fails the no-API-spend rule.
