@@ -1,0 +1,90 @@
+{
+  "_about": "Stage-by-stage physical effects of the crucifixion of Jesus, from public medical/forensic/archaeological literature. Drives the Blender layout (pose + wound placement) that seeds the AI stills. Face never readable (Christ Cares faceless gate).",
+  "subject": "Jesus of Nazareth, adult male ~33, 1.66 m, lean/muscular labourer build",
+  "sources": {
+    "edwards1986": "Edwards WD, Gabel WJ, Hosmer FE. On the Physical Death of Jesus Christ. JAMA 1986;255(11):1455-63. https://pubmed.ncbi.nlm.nih.gov/3512867/",
+    "retief2003": "Retief FP, Cilliers L. The history and pathology of crucifixion. S Afr Med J 2003;93(12):938. http://www.samj.org.za/index.php/samj/article/view/2462",
+    "maslen2006": "Maslen MW, Mitchell PD. Medical theories on the cause of death in crucifixion. J R Soc Med 2006;99(4):185-8. https://pubmed.ncbi.nlm.nih.gov/16574970/",
+    "zugibe": "Zugibe FT. The Crucifixion of Jesus: A Forensic Inquiry (2005); 'Pierre Barbet Revisited' https://www.shroud.com/zugibe.htm",
+    "zias1985": "Zias J, Sekeles E. The crucified man from Giv'at ha-Mivtar: a reappraisal. Israel Exploration Journal 1985;35:22-27",
+    "ingham2022": "Ingham D, Duhig C. Crucifixion in the Fens (Fenstanton skeleton 4926). British Archaeology 2022; https://www.cam.ac.uk/stories/romancrucifixion",
+    "mcgovern2023": "McGovern TW, Kaminskas DA, Fernandes ES. Did Jesus Die by Suffocation? An Appraisal of the Evidence. Linacre Q 2023;90(1):64-79. https://pubmed.ncbi.nlm.nih.gov/36923675/"
+  },
+  "stages": [
+    {
+      "id": 1, "name": "Gethsemane - hematidrosis", "text": "Luke 22:44",
+      "physical": "Extreme distress; sweat described as like drops of blood. Hemorrhage into sweat glands leaves skin fragile and tender; blood loss probably minimal; possible chills in night air.",
+      "visible": "Thin blood-tinged sweat beading and running on forehead/face, scalp line; skin otherwise intact.",
+      "locations": ["forehead", "scalp hairline", "face (hidden: faceless gate - show as drops falling from bowed head)"],
+      "confidence": "contested - rare but documented condition; whether Luke describes literal blood is debated",
+      "cite": ["edwards1986"]
+    },
+    {
+      "id": 2, "name": "Beaten by guards", "text": "Mark 14:65; Matthew 26:67",
+      "physical": "Struck, spat on, blindfolded and punched at the Sanhedrin hearing.",
+      "visible": "Facial contusions/swelling (face hidden per gate: show via bowed head, bruising at cheekbone edge in shadow only).",
+      "locations": ["face", "head"],
+      "confidence": "textual; no medical specifics in literature",
+      "cite": ["edwards1986"]
+    },
+    {
+      "id": 3, "name": "Roman scourging", "text": "Mark 15:15; John 19:1",
+      "implement": "Short whip (flagrum/flagellum): several single or braided leather thongs of variable length with small iron balls or sharp sheep-bone pieces tied at intervals.",
+      "procedure": "Stripped, hands tied to an upright post; struck by two lictors (one each side) or one alternating sides. Number of lashes unknown (Jewish 39 limit may not have applied).",
+      "physical": "Iron balls -> deep contusions; thongs and bone -> cut skin and subcutaneous tissue; continued blows tear into skeletal muscle ('ribbons of bleeding flesh'). Pain + blood loss -> onset of circulatory (hypovolemic) shock; likely left him in a preshock state.",
+      "visible": "Progression: red welts -> dark contusions (ball-shaped bruises) -> stripe-like lacerations, crossing diagonally from both sides; open torn tissue on back; blood running down back and legs.",
+      "locations": ["upper back + shoulders", "lower back", "buttocks", "backs of thighs", "calves"],
+      "confidence": "well-supported for implement/regions (Roman sources); severity for Jesus inferred",
+      "cite": ["edwards1986", "retief2003"]
+    },
+    {
+      "id": 4, "name": "Crown of thorns and mockery", "text": "Matthew 27:27-31; John 19:2-3",
+      "physical": "Woven thorn branches pressed on head (plant likely Ziziphus spina-christi or Sarcopoterium spinosum - uncertain). Struck on the head with a staff. Robe placed on and then torn off, probably reopening the scourge wounds.",
+      "visible": "Many small punctures around scalp with blood trickling through hair onto forehead, temples, neck; re-bleeding of back wounds where the robe was ripped away.",
+      "locations": ["scalp circumference", "forehead", "temples", "back of head/neck", "back (re-opened)"],
+      "confidence": "well-supported textually; plant species and cap-vs-circlet form speculative",
+      "cite": ["edwards1986"]
+    },
+    {
+      "id": 5, "name": "Carrying the crossbar", "text": "John 19:17; Mark 15:21",
+      "physical": "Only the crossbar (patibulum) carried: est. 34-57 kg, laid across nape and balanced on both shoulders, arms often tied to it. Route ~600-650 m. Too weakened; Simon of Cyrene compelled to carry it.",
+      "visible": "Rough-wood abrasion across nape and tops of shoulders over already-lacerated skin; stooped posture; dirt/grazes on knees consistent with falls (falls are tradition, not in the gospels).",
+      "locations": ["nape", "trapezius / tops of shoulders", "knees (tradition)"],
+      "confidence": "weight estimate = Edwards citing older sources (moderate); falls = tradition (speculative)",
+      "cite": ["edwards1986"]
+    },
+    {
+      "id": 6, "name": "Nailing", "text": "John 20:25; Luke 24:39",
+      "physical_hands": "Square-shaft iron spikes. Wrist favoured over palm in most medical literature (between radius and carpals or between carpal rows); nail would crush/sever the median nerve -> fiery pain, partial hand paralysis, claw-like grasp. Zugibe argues upper palm via the thenar furrow angled toward the wrist also holds weight without fractures. Ancients counted the wrist as part of the 'hand'.",
+      "physical_feet": "ARCHAEOLOGY OVERRIDES EDWARDS: both surviving crucifixion nails went through the RIGHT HEEL BONE (calcaneus) side-to-side, lateral to medial - Jerusalem man ~1st c. (Zias & Sekeles 1985) and Fenstanton skeleton 4926, 2nd-4th c. (Ingham & Duhig 2022). Heels nailed separately to either side of the upright (straddling) or knees turned out with heels at the front. Edwards 1986 instead describes a nail through the 1st/2nd intermetatarsal space into the front of the post.",
+      "visible": "Wrist: puncture on flexor (palm) side at wrist crease, exit on back of wrist; hands clawed. Heels: nail through side of each heel, knees bent and splayed; slow venous bleeding (crucifixion itself relatively bloodless - no major arteries).",
+      "locations": ["left + right wrist, thumb side (radial) of carpal region", "left + right calcaneus, lateral side"],
+      "confidence": "wrist vs palm: contested; heel-through-calcaneus: best physical evidence (2 skeletons); metatarsal site: older view",
+      "cite": ["edwards1986", "zugibe", "zias1985", "ingham2022", "mcgovern2023"]
+    },
+    {
+      "id": 7, "name": "Hanging on the cross (~3-6 hours)", "text": "Mark 15:25,33-34",
+      "posture": "Roman-era images (Puteoli/Alkimilla graffito, Alexamenos graffito, 2nd-3rd c. gem): arms roughly horizontal, wrists slightly above shoulder level; knees out, heels fixed to front or sides of post; bodies NOT shown sagging. Zugibe's volunteers: arms 65-75 deg from vertical; body sagged FORWARD, back touching the cross only when arching to relieve cramps. A crude seat (sedile) may have been fitted midway (Edwards).",
+      "physical": "Debated. Zugibe (~100 volunteers): no breathing difficulty, oxygen saturation 97-99.5%, breathing rate rose to 2-3x normal, lactate rose 3.5x in 15 min, heart rate up to 175 bpm; volunteers quit after 5-45 min from shoulder/arm cramps, never breathlessness. Older view (Edwards, from Barbet): breathing out required pushing up on the feet, scraping the scourged back on the wood.",
+      "visible": "Pallor from blood loss, sweating, arm/shoulder/chest muscle cramping, forward sag with head bowed, dried blood tracks down arms from wrists, dehydration.",
+      "locations": ["whole body"],
+      "confidence": "posture: moderate (period images + experiments); breathing mechanics: actively contested, recent evidence against suffocation",
+      "cite": ["edwards1986", "zugibe", "mcgovern2023"]
+    },
+    {
+      "id": 8, "name": "Death", "text": "Mark 15:37; John 19:30",
+      "physical": "Theories reviewed in the literature: exhaustion asphyxia + hypovolemic shock (Edwards 1986; Retief & Cilliers 2003 multifactorial with progressive asphyxia most important); traumatic + hypovolemic shock (Zugibe); also cardiac rupture, heart failure, arrhythmia, pulmonary embolism, acidosis, coagulopathy (Maslen & Mitchell 2006). McGovern et al. 2023 find no direct evidence for suffocation and suggest shock with possible late breathing failure from electrolyte loss. The loud cry just before death (gospels) argues against slow suffocation.",
+      "visible": "Head drops forward onto chest, body goes slack, deathly pallor/cyanotic lips (lips hidden).",
+      "confidence": "cause of death unresolved; shock-centred explanations currently favoured over pure asphyxia",
+      "cite": ["edwards1986", "retief2003", "maslen2006", "zugibe", "mcgovern2023"]
+    },
+    {
+      "id": 9, "name": "Spear wound", "text": "John 19:34",
+      "physical": "Soldier's spear (~1.5-1.8 m) thrust into the side; tradition and Edwards place it between the RIGHT ribs, through the right lung into the pericardium and heart (right atrium/ventricle). 'Blood and water': water = pleural/pericardial fluid from shock/heart failure; blood = right atrium/ventricle or haemopericardium (Edwards).",
+      "visible": "Elliptical wound on right lateral chest wall between lower ribs; stream of dark blood followed by clearer watery fluid running down the right flank and hip.",
+      "locations": ["right side of chest between the ribs (exact rib space not given in sources - placement is an estimate)"],
+      "confidence": "side: tradition (right) - gospel does not specify; organ path: plausible inference",
+      "cite": ["edwards1986"]
+    }
+  ]
+}
